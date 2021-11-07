@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DCFBDCF6-0DC2-45F5-9AB2-7C330EA09C29")]
     [NativeTypeName("struct IFilterChain : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFilterChain
+    public unsafe partial struct IFilterChain : IFilterChain.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT RemoveChain(IBaseFilter* pStartFilter, IBaseFilter* pEndFilter)
         {
             return ((delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int>)(lpVtbl[6]))((IFilterChain*)Unsafe.AsPointer(ref this), pStartFilter, pEndFilter);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT StartChain(IBaseFilter* pStartFilter, IBaseFilter* pEndFilter);
+
+            [VtblIndex(4)]
+            HRESULT PauseChain(IBaseFilter* pStartFilter, IBaseFilter* pEndFilter);
+
+            [VtblIndex(5)]
+            HRESULT StopChain(IBaseFilter* pStartFilter, IBaseFilter* pEndFilter);
+
+            [VtblIndex(6)]
+            HRESULT RemoveChain(IBaseFilter* pStartFilter, IBaseFilter* pEndFilter);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterChain*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterChain*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterChain*, uint> Release;
+
+            [NativeTypeName("HRESULT (IBaseFilter *, IBaseFilter *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int> StartChain;
+
+            [NativeTypeName("HRESULT (IBaseFilter *, IBaseFilter *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int> PauseChain;
+
+            [NativeTypeName("HRESULT (IBaseFilter *, IBaseFilter *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int> StopChain;
+
+            [NativeTypeName("HRESULT (IBaseFilter *, IBaseFilter *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int> RemoveChain;
         }
     }
 }

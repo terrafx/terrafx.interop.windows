@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("000214E5-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IShellIcon : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellIcon
+    public unsafe partial struct IShellIcon : IShellIcon.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetIconOf([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, uint flags, int* pIconIndex)
         {
             return ((delegate* unmanaged<IShellIcon*, ITEMIDLIST*, uint, int*, int>)(lpVtbl[3]))((IShellIcon*)Unsafe.AsPointer(ref this), pidl, flags, pIconIndex);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetIconOf([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, uint flags, int* pIconIndex);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellIcon*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellIcon*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellIcon*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST, UINT, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellIcon*, ITEMIDLIST*, uint, int*, int> GetIconOf;
         }
     }
 }

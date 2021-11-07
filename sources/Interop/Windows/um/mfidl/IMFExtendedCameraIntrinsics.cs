@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("687F6DAC-6987-4750-A16A-734D1E7A10FE")]
     [NativeTypeName("struct IMFExtendedCameraIntrinsics : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFExtendedCameraIntrinsics
+    public unsafe partial struct IMFExtendedCameraIntrinsics : IMFExtendedCameraIntrinsics.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,57 @@ namespace TerraFX.Interop
         public HRESULT AddIntrinsicModel(IMFExtendedCameraIntrinsicModel* pIntrinsicModel)
         {
             return ((delegate* unmanaged<IMFExtendedCameraIntrinsics*, IMFExtendedCameraIntrinsicModel*, int>)(lpVtbl[8]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this), pIntrinsicModel);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT InitializeFromBuffer(byte* pbBuffer, [NativeTypeName("DWORD")] uint dwBufferSize);
+
+            [VtblIndex(4)]
+            HRESULT GetBufferSize([NativeTypeName("DWORD *")] uint* pdwBufferSize);
+
+            [VtblIndex(5)]
+            HRESULT SerializeToBuffer(byte* pbBuffer, [NativeTypeName("DWORD *")] uint* pdwBufferSize);
+
+            [VtblIndex(6)]
+            HRESULT GetIntrinsicModelCount([NativeTypeName("DWORD *")] uint* pdwCount);
+
+            [VtblIndex(7)]
+            HRESULT GetIntrinsicModelByIndex([NativeTypeName("DWORD")] uint dwIndex, IMFExtendedCameraIntrinsicModel** ppIntrinsicModel);
+
+            [VtblIndex(8)]
+            HRESULT AddIntrinsicModel(IMFExtendedCameraIntrinsicModel* pIntrinsicModel);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsics*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint> Release;
+
+            [NativeTypeName("HRESULT (BYTE *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsics*, byte*, uint, int> InitializeFromBuffer;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint*, int> GetBufferSize;
+
+            [NativeTypeName("HRESULT (BYTE *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsics*, byte*, uint*, int> SerializeToBuffer;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint*, int> GetIntrinsicModelCount;
+
+            [NativeTypeName("HRESULT (DWORD, IMFExtendedCameraIntrinsicModel **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint, IMFExtendedCameraIntrinsicModel**, int> GetIntrinsicModelByIndex;
+
+            [NativeTypeName("HRESULT (IMFExtendedCameraIntrinsicModel *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsics*, IMFExtendedCameraIntrinsicModel*, int> AddIntrinsicModel;
         }
     }
 }

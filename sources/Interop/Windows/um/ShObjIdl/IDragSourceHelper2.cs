@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("83E07D0D-0C5F-4163-BF1A-60B274051E40")]
     [NativeTypeName("struct IDragSourceHelper2 : IDragSourceHelper")]
     [NativeInheritance("IDragSourceHelper")]
-    public unsafe partial struct IDragSourceHelper2
+    public unsafe partial struct IDragSourceHelper2 : IDragSourceHelper2.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,33 @@ namespace TerraFX.Interop
         public HRESULT SetFlags([NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IDragSourceHelper2*, uint, int>)(lpVtbl[5]))((IDragSourceHelper2*)Unsafe.AsPointer(ref this), dwFlags);
+        }
+
+        public interface Interface : IDragSourceHelper.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT SetFlags([NativeTypeName("DWORD")] uint dwFlags);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDragSourceHelper2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDragSourceHelper2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDragSourceHelper2*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPSHDRAGIMAGE, IDataObject *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDragSourceHelper2*, SHDRAGIMAGE*, IDataObject*, int> InitializeFromBitmap;
+
+            [NativeTypeName("HRESULT (HWND, POINT *, IDataObject *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDragSourceHelper2*, HWND, POINT*, IDataObject*, int> InitializeFromWindow;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDragSourceHelper2*, uint, int> SetFlags;
         }
     }
 }

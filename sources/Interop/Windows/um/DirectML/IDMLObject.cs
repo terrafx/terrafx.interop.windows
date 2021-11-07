@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C8263AAC-9E0C-4A2D-9B8E-007521A3317C")]
     [NativeTypeName("struct IDMLObject : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDMLObject
+    public unsafe partial struct IDMLObject : IDMLObject.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT SetName([NativeTypeName("PCWSTR")] ushort* name)
         {
             return ((delegate* unmanaged<IDMLObject*, ushort*, int>)(lpVtbl[6]))((IDMLObject*)Unsafe.AsPointer(ref this), name);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* dataSize, void* data);
+
+            [VtblIndex(4)]
+            HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint dataSize, [NativeTypeName("const void *")] void* data);
+
+            [VtblIndex(5)]
+            HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, IUnknown* data);
+
+            [VtblIndex(6)]
+            HRESULT SetName([NativeTypeName("PCWSTR")] ushort* name);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLObject*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLObject*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLObject*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLObject*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLObject*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, IUnknown *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLObject*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLObject*, ushort*, int> SetName;
         }
     }
 }

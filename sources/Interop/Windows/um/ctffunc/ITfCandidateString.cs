@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("581F317E-FD9D-443F-B972-ED00467C5D40")]
     [NativeTypeName("struct ITfCandidateString : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfCandidateString
+    public unsafe partial struct ITfCandidateString : ITfCandidateString.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetIndex([NativeTypeName("ULONG *")] uint* pnIndex)
         {
             return ((delegate* unmanaged<ITfCandidateString*, uint*, int>)(lpVtbl[4]))((ITfCandidateString*)Unsafe.AsPointer(ref this), pnIndex);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetString([NativeTypeName("BSTR *")] ushort** pbstr);
+
+            [VtblIndex(4)]
+            HRESULT GetIndex([NativeTypeName("ULONG *")] uint* pnIndex);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCandidateString*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCandidateString*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCandidateString*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCandidateString*, ushort**, int> GetString;
+
+            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCandidateString*, uint*, int> GetIndex;
         }
     }
 }

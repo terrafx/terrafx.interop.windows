@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4A59FB77-ABAC-469B-A30B-9ECC85BFEF14")]
     [NativeTypeName("struct IDiaTable : IEnumUnknown")]
     [NativeInheritance("IEnumUnknown")]
-    public unsafe partial struct IDiaTable
+    public unsafe partial struct IDiaTable : IDiaTable.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,57 @@ namespace TerraFX.Interop
         public HRESULT Item([NativeTypeName("DWORD")] uint index, IUnknown** element)
         {
             return ((delegate* unmanaged<IDiaTable*, uint, IUnknown**, int>)(lpVtbl[10]))((IDiaTable*)Unsafe.AsPointer(ref this), index, element);
+        }
+
+        public interface Interface : IEnumUnknown.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get__NewEnum(IUnknown** pRetVal);
+
+            [VtblIndex(8)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** pRetVal);
+
+            [VtblIndex(9)]
+            HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal);
+
+            [VtblIndex(10)]
+            HRESULT Item([NativeTypeName("DWORD")] uint index, IUnknown** element);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaTable*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaTable*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaTable*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, IUnknown **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaTable*, uint, IUnknown**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaTable*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaTable*, int> Reset;
+
+            [NativeTypeName("HRESULT (IEnumUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaTable*, IEnumUnknown**, int> Clone;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaTable*, IUnknown**, int> get__NewEnum;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaTable*, ushort**, int> get_name;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaTable*, int*, int> get_Count;
+
+            [NativeTypeName("HRESULT (DWORD, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaTable*, uint, IUnknown**, int> Item;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("765763E6-6C01-4B01-BB0F-B829F60ED28C")]
     [NativeTypeName("struct IMFMediaEngineOPMInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaEngineOPMInfo
+    public unsafe partial struct IMFMediaEngineOPMInfo : IMFMediaEngineOPMInfo.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetOPMInfo(MF_MEDIA_ENGINE_OPM_STATUS* pStatus, BOOL* pConstricted)
         {
             return ((delegate* unmanaged<IMFMediaEngineOPMInfo*, MF_MEDIA_ENGINE_OPM_STATUS*, BOOL*, int>)(lpVtbl[3]))((IMFMediaEngineOPMInfo*)Unsafe.AsPointer(ref this), pStatus, pConstricted);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetOPMInfo(MF_MEDIA_ENGINE_OPM_STATUS* pStatus, BOOL* pConstricted);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineOPMInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineOPMInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineOPMInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (MF_MEDIA_ENGINE_OPM_STATUS *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineOPMInfo*, MF_MEDIA_ENGINE_OPM_STATUS*, BOOL*, int> GetOPMInfo;
         }
     }
 }

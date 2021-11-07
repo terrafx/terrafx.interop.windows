@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C3E4F353-433F-43D6-89A1-6A62A7054C3D")]
     [NativeTypeName("struct ISpeechPhoneConverter : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechPhoneConverter
+    public unsafe partial struct ISpeechPhoneConverter : ISpeechPhoneConverter.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,57 @@ namespace TerraFX.Interop
         public HRESULT IdToPhone([NativeTypeName("const VARIANT")] VARIANT IdArray, [NativeTypeName("BSTR *")] ushort** Phonemes)
         {
             return ((delegate* unmanaged<ISpeechPhoneConverter*, VARIANT, ushort**, int>)(lpVtbl[10]))((ISpeechPhoneConverter*)Unsafe.AsPointer(ref this), IdArray, Phonemes);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_LanguageId([NativeTypeName("SpeechLanguageId *")] int* LanguageId);
+
+            [VtblIndex(8)]
+            HRESULT put_LanguageId([NativeTypeName("SpeechLanguageId")] int LanguageId);
+
+            [VtblIndex(9)]
+            HRESULT PhoneToId([NativeTypeName("const BSTR")] ushort* Phonemes, VARIANT* IdArray);
+
+            [VtblIndex(10)]
+            HRESULT IdToPhone([NativeTypeName("const VARIANT")] VARIANT IdArray, [NativeTypeName("BSTR *")] ushort** Phonemes);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhoneConverter*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhoneConverter*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhoneConverter*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhoneConverter*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhoneConverter*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhoneConverter*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhoneConverter*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (SpeechLanguageId *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhoneConverter*, int*, int> get_LanguageId;
+
+            [NativeTypeName("HRESULT (SpeechLanguageId) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhoneConverter*, int, int> put_LanguageId;
+
+            [NativeTypeName("HRESULT (const BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhoneConverter*, ushort*, VARIANT*, int> PhoneToId;
+
+            [NativeTypeName("HRESULT (const VARIANT, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhoneConverter*, VARIANT, ushort**, int> IdToPhone;
         }
     }
 }

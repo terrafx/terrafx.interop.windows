@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0000010B-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IPersistFile : IPersist")]
     [NativeInheritance("IPersist")]
-    public unsafe partial struct IPersistFile
+    public unsafe partial struct IPersistFile : IPersistFile.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,54 @@ namespace TerraFX.Interop
         public HRESULT GetCurFile([NativeTypeName("LPOLESTR *")] ushort** ppszFileName)
         {
             return ((delegate* unmanaged<IPersistFile*, ushort**, int>)(lpVtbl[8]))((IPersistFile*)Unsafe.AsPointer(ref this), ppszFileName);
+        }
+
+        public interface Interface : IPersist.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT IsDirty();
+
+            [VtblIndex(5)]
+            HRESULT Load([NativeTypeName("LPCOLESTR")] ushort* pszFileName, [NativeTypeName("DWORD")] uint dwMode);
+
+            [VtblIndex(6)]
+            HRESULT Save([NativeTypeName("LPCOLESTR")] ushort* pszFileName, BOOL fRemember);
+
+            [VtblIndex(7)]
+            HRESULT SaveCompleted([NativeTypeName("LPCOLESTR")] ushort* pszFileName);
+
+            [VtblIndex(8)]
+            HRESULT GetCurFile([NativeTypeName("LPOLESTR *")] ushort** ppszFileName);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFile*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFile*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFile*, uint> Release;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFile*, Guid*, int> GetClassID;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFile*, int> IsDirty;
+
+            [NativeTypeName("HRESULT (LPCOLESTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFile*, ushort*, uint, int> Load;
+
+            [NativeTypeName("HRESULT (LPCOLESTR, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFile*, ushort*, BOOL, int> Save;
+
+            [NativeTypeName("HRESULT (LPCOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFile*, ushort*, int> SaveCompleted;
+
+            [NativeTypeName("HRESULT (LPOLESTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFile*, ushort**, int> GetCurFile;
         }
     }
 }

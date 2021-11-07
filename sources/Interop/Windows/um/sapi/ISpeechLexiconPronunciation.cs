@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("95252C5D-9E43-4F4A-9899-48EE73352F9F")]
     [NativeTypeName("struct ISpeechLexiconPronunciation : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechLexiconPronunciation
+    public unsafe partial struct ISpeechLexiconPronunciation : ISpeechLexiconPronunciation.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,63 @@ namespace TerraFX.Interop
         public HRESULT get_Symbolic([NativeTypeName("BSTR *")] ushort** Symbolic)
         {
             return ((delegate* unmanaged<ISpeechLexiconPronunciation*, ushort**, int>)(lpVtbl[11]))((ISpeechLexiconPronunciation*)Unsafe.AsPointer(ref this), Symbolic);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Type(SpeechLexiconType* LexiconType);
+
+            [VtblIndex(8)]
+            HRESULT get_LangId([NativeTypeName("SpeechLanguageId *")] int* LangId);
+
+            [VtblIndex(9)]
+            HRESULT get_PartOfSpeech(SpeechPartOfSpeech* PartOfSpeech);
+
+            [VtblIndex(10)]
+            HRESULT get_PhoneIds(VARIANT* PhoneIds);
+
+            [VtblIndex(11)]
+            HRESULT get_Symbolic([NativeTypeName("BSTR *")] ushort** Symbolic);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechLexiconPronunciation*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechLexiconPronunciation*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechLexiconPronunciation*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechLexiconPronunciation*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechLexiconPronunciation*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechLexiconPronunciation*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechLexiconPronunciation*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (SpeechLexiconType *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechLexiconPronunciation*, SpeechLexiconType*, int> get_Type;
+
+            [NativeTypeName("HRESULT (SpeechLanguageId *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechLexiconPronunciation*, int*, int> get_LangId;
+
+            [NativeTypeName("HRESULT (SpeechPartOfSpeech *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechLexiconPronunciation*, SpeechPartOfSpeech*, int> get_PartOfSpeech;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechLexiconPronunciation*, VARIANT*, int> get_PhoneIds;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechLexiconPronunciation*, ushort**, int> get_Symbolic;
         }
     }
 }

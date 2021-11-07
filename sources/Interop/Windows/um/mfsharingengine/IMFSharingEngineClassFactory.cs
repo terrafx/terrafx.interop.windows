@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2BA61F92-8305-413B-9733-FAF15F259384")]
     [NativeTypeName("struct IMFSharingEngineClassFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSharingEngineClassFactory
+    public unsafe partial struct IMFSharingEngineClassFactory : IMFSharingEngineClassFactory.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT CreateInstance([NativeTypeName("DWORD")] uint dwFlags, IMFAttributes* pAttr, IUnknown** ppEngine)
         {
             return ((delegate* unmanaged<IMFSharingEngineClassFactory*, uint, IMFAttributes*, IUnknown**, int>)(lpVtbl[3]))((IMFSharingEngineClassFactory*)Unsafe.AsPointer(ref this), dwFlags, pAttr, ppEngine);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateInstance([NativeTypeName("DWORD")] uint dwFlags, IMFAttributes* pAttr, IUnknown** ppEngine);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSharingEngineClassFactory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSharingEngineClassFactory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSharingEngineClassFactory*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, IMFAttributes *, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSharingEngineClassFactory*, uint, IMFAttributes*, IUnknown**, int> CreateInstance;
         }
     }
 }

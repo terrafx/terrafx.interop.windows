@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104D3-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGAngle : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGAngle
+    public unsafe partial struct ISVGAngle : ISVGAngle.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,93 @@ namespace TerraFX.Interop
         public HRESULT convertToSpecifiedUnits(short unitType)
         {
             return ((delegate* unmanaged<ISVGAngle*, short, int>)(lpVtbl[16]))((ISVGAngle*)Unsafe.AsPointer(ref this), unitType);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_unitType(short v);
+
+            [VtblIndex(8)]
+            HRESULT get_unitType(short* p);
+
+            [VtblIndex(9)]
+            HRESULT put_value(float v);
+
+            [VtblIndex(10)]
+            HRESULT get_value(float* p);
+
+            [VtblIndex(11)]
+            HRESULT put_valueInSpecifiedUnits(float v);
+
+            [VtblIndex(12)]
+            HRESULT get_valueInSpecifiedUnits(float* p);
+
+            [VtblIndex(13)]
+            HRESULT put_valueAsString([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(14)]
+            HRESULT get_valueAsString([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(15)]
+            HRESULT newValueSpecifiedUnits(short unitType, float valueInSpecifiedUnits);
+
+            [VtblIndex(16)]
+            HRESULT convertToSpecifiedUnits(short unitType);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAngle*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAngle*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAngle*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAngle*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAngle*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAngle*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAngle*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (short) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAngle*, short, int> put_unitType;
+
+            [NativeTypeName("HRESULT (short *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAngle*, short*, int> get_unitType;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAngle*, float, int> put_value;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAngle*, float*, int> get_value;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAngle*, float, int> put_valueInSpecifiedUnits;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAngle*, float*, int> get_valueInSpecifiedUnits;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAngle*, ushort*, int> put_valueAsString;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAngle*, ushort**, int> get_valueAsString;
+
+            [NativeTypeName("HRESULT (short, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAngle*, short, float, int> newValueSpecifiedUnits;
+
+            [NativeTypeName("HRESULT (short) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAngle*, short, int> convertToSpecifiedUnits;
         }
     }
 }

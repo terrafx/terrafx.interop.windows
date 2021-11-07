@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("969DC708-5C76-11D1-8D86-0000F804B057")]
     [NativeTypeName("struct IThumbnailExtractor : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IThumbnailExtractor
+    public unsafe partial struct IThumbnailExtractor : IThumbnailExtractor.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT OnFileUpdated(IStorage* pStg)
         {
             return ((delegate* unmanaged<IThumbnailExtractor*, IStorage*, int>)(lpVtbl[4]))((IThumbnailExtractor*)Unsafe.AsPointer(ref this), pStg);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ExtractThumbnail(IStorage* pStg, [NativeTypeName("ULONG")] uint ulLength, [NativeTypeName("ULONG")] uint ulHeight, [NativeTypeName("ULONG *")] uint* pulOutputLength, [NativeTypeName("ULONG *")] uint* pulOutputHeight, HBITMAP* phOutputBitmap);
+
+            [VtblIndex(4)]
+            HRESULT OnFileUpdated(IStorage* pStg);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IThumbnailExtractor*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IThumbnailExtractor*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IThumbnailExtractor*, uint> Release;
+
+            [NativeTypeName("HRESULT (IStorage *, ULONG, ULONG, ULONG *, ULONG *, HBITMAP *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, HBITMAP*, int> ExtractThumbnail;
+
+            [NativeTypeName("HRESULT (IStorage *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IThumbnailExtractor*, IStorage*, int> OnFileUpdated;
         }
     }
 }

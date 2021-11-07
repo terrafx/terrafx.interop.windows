@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C3ACEFB5-F69D-4905-938F-FCADCF4BE830")]
     [NativeTypeName("struct ITfCategoryMgr : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfCategoryMgr
+    public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,105 @@ namespace TerraFX.Interop
         public HRESULT IsEqualTfGuidAtom([NativeTypeName("TfGuidAtom")] uint guidatom, [NativeTypeName("const GUID &")] Guid* rguid, BOOL* pfEqual)
         {
             return ((delegate* unmanaged<ITfCategoryMgr*, uint, Guid*, BOOL*, int>)(lpVtbl[16]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), guidatom, rguid, pfEqual);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RegisterCategory([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rcatid, [NativeTypeName("const GUID &")] Guid* rguid);
+
+            [VtblIndex(4)]
+            HRESULT UnregisterCategory([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rcatid, [NativeTypeName("const GUID &")] Guid* rguid);
+
+            [VtblIndex(5)]
+            HRESULT EnumCategoriesInItem([NativeTypeName("const GUID &")] Guid* rguid, IEnumGUID** ppEnum);
+
+            [VtblIndex(6)]
+            HRESULT EnumItemsInCategory([NativeTypeName("const GUID &")] Guid* rcatid, IEnumGUID** ppEnum);
+
+            [VtblIndex(7)]
+            HRESULT FindClosestCategory([NativeTypeName("const GUID &")] Guid* rguid, Guid* pcatid, [NativeTypeName("const GUID **")] Guid** ppcatidList, [NativeTypeName("ULONG")] uint ulCount);
+
+            [VtblIndex(8)]
+            HRESULT RegisterGUIDDescription([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cch);
+
+            [VtblIndex(9)]
+            HRESULT UnregisterGUIDDescription([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid);
+
+            [VtblIndex(10)]
+            HRESULT GetGUIDDescription([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("BSTR *")] ushort** pbstrDesc);
+
+            [VtblIndex(11)]
+            HRESULT RegisterGUIDDWORD([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("DWORD")] uint dw);
+
+            [VtblIndex(12)]
+            HRESULT UnregisterGUIDDWORD([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid);
+
+            [VtblIndex(13)]
+            HRESULT GetGUIDDWORD([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("DWORD *")] uint* pdw);
+
+            [VtblIndex(14)]
+            HRESULT RegisterGUID([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("TfGuidAtom *")] uint* pguidatom);
+
+            [VtblIndex(15)]
+            HRESULT GetGUID([NativeTypeName("TfGuidAtom")] uint guidatom, Guid* pguid);
+
+            [VtblIndex(16)]
+            HRESULT IsEqualTfGuidAtom([NativeTypeName("TfGuidAtom")] uint guidatom, [NativeTypeName("const GUID &")] Guid* rguid, BOOL* pfEqual);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCategoryMgr*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCategoryMgr*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCategoryMgr*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, const GUID &, const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, Guid*, int> RegisterCategory;
+
+            [NativeTypeName("HRESULT (const IID &, const GUID &, const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, Guid*, int> UnregisterCategory;
+
+            [NativeTypeName("HRESULT (const GUID &, IEnumGUID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCategoryMgr*, Guid*, IEnumGUID**, int> EnumCategoriesInItem;
+
+            [NativeTypeName("HRESULT (const GUID &, IEnumGUID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCategoryMgr*, Guid*, IEnumGUID**, int> EnumItemsInCategory;
+
+            [NativeTypeName("HRESULT (const GUID &, GUID *, const GUID **, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, Guid**, uint, int> FindClosestCategory;
+
+            [NativeTypeName("HRESULT (const IID &, const GUID &, const WCHAR *, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, ushort*, uint, int> RegisterGUIDDescription;
+
+            [NativeTypeName("HRESULT (const IID &, const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, int> UnregisterGUIDDescription;
+
+            [NativeTypeName("HRESULT (const GUID &, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCategoryMgr*, Guid*, ushort**, int> GetGUIDDescription;
+
+            [NativeTypeName("HRESULT (const IID &, const GUID &, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, uint, int> RegisterGUIDDWORD;
+
+            [NativeTypeName("HRESULT (const IID &, const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, int> UnregisterGUIDDWORD;
+
+            [NativeTypeName("HRESULT (const GUID &, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCategoryMgr*, Guid*, uint*, int> GetGUIDDWORD;
+
+            [NativeTypeName("HRESULT (const GUID &, TfGuidAtom *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCategoryMgr*, Guid*, uint*, int> RegisterGUID;
+
+            [NativeTypeName("HRESULT (TfGuidAtom, GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCategoryMgr*, uint, Guid*, int> GetGUID;
+
+            [NativeTypeName("HRESULT (TfGuidAtom, const GUID &, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCategoryMgr*, uint, Guid*, BOOL*, int> IsEqualTfGuidAtom;
         }
     }
 }

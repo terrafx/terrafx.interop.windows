@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("981611AD-A144-4C83-9890-F30E26D658AB")]
     [NativeTypeName("struct ID3D12VideoDevice1 : ID3D12VideoDevice")]
     [NativeInheritance("ID3D12VideoDevice")]
-    public unsafe partial struct ID3D12VideoDevice1
+    public unsafe partial struct ID3D12VideoDevice1 : ID3D12VideoDevice1.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,45 @@ namespace TerraFX.Interop
         public HRESULT CreateVideoMotionVectorHeap([NativeTypeName("const D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC *")] D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, [NativeTypeName("const IID &")] Guid* riid, void** ppVideoMotionVectorHeap)
         {
             return ((delegate* unmanaged<ID3D12VideoDevice1*, D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)(lpVtbl[8]))((ID3D12VideoDevice1*)Unsafe.AsPointer(ref this), pDesc, pProtectedResourceSession, riid, ppVideoMotionVectorHeap);
+        }
+
+        public interface Interface : ID3D12VideoDevice.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT CreateVideoMotionEstimator([NativeTypeName("const D3D12_VIDEO_MOTION_ESTIMATOR_DESC *")] D3D12_VIDEO_MOTION_ESTIMATOR_DESC* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, [NativeTypeName("const IID &")] Guid* riid, void** ppVideoMotionEstimator);
+
+            [VtblIndex(8)]
+            HRESULT CreateVideoMotionVectorHeap([NativeTypeName("const D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC *")] D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, [NativeTypeName("const IID &")] Guid* riid, void** ppVideoMotionVectorHeap);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDevice1*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDevice1*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDevice1*, uint> Release;
+
+            [NativeTypeName("HRESULT (D3D12_FEATURE_VIDEO, void *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDevice1*, D3D12_FEATURE_VIDEO, void*, uint, int> CheckFeatureSupport;
+
+            [NativeTypeName("HRESULT (const D3D12_VIDEO_DECODER_DESC *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDevice1*, D3D12_VIDEO_DECODER_DESC*, Guid*, void**, int> CreateVideoDecoder;
+
+            [NativeTypeName("HRESULT (const D3D12_VIDEO_DECODER_HEAP_DESC *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDevice1*, D3D12_VIDEO_DECODER_HEAP_DESC*, Guid*, void**, int> CreateVideoDecoderHeap;
+
+            [NativeTypeName("HRESULT (UINT, const D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC *, UINT, const D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDevice1*, uint, D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC*, uint, D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC*, Guid*, void**, int> CreateVideoProcessor;
+
+            [NativeTypeName("HRESULT (const D3D12_VIDEO_MOTION_ESTIMATOR_DESC *, ID3D12ProtectedResourceSession *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDevice1*, D3D12_VIDEO_MOTION_ESTIMATOR_DESC*, ID3D12ProtectedResourceSession*, Guid*, void**, int> CreateVideoMotionEstimator;
+
+            [NativeTypeName("HRESULT (const D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC *, ID3D12ProtectedResourceSession *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDevice1*, D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC*, ID3D12ProtectedResourceSession*, Guid*, void**, int> CreateVideoMotionVectorHeap;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0A97B3CF-8E7C-4A3D-8F8C-0C843DC247FB")]
     [NativeTypeName("struct IMFStreamSink : IMFMediaEventGenerator")]
     [NativeInheritance("IMFMediaEventGenerator")]
-    public unsafe partial struct IMFStreamSink
+    public unsafe partial struct IMFStreamSink : IMFStreamSink.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,69 @@ namespace TerraFX.Interop
         public HRESULT Flush()
         {
             return ((delegate* unmanaged<IMFStreamSink*, int>)(lpVtbl[12]))((IMFStreamSink*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IMFMediaEventGenerator.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetMediaSink(IMFMediaSink** ppMediaSink);
+
+            [VtblIndex(8)]
+            HRESULT GetIdentifier([NativeTypeName("DWORD *")] uint* pdwIdentifier);
+
+            [VtblIndex(9)]
+            HRESULT GetMediaTypeHandler(IMFMediaTypeHandler** ppHandler);
+
+            [VtblIndex(10)]
+            HRESULT ProcessSample(IMFSample* pSample);
+
+            [VtblIndex(11)]
+            HRESULT PlaceMarker(MFSTREAMSINK_MARKER_TYPE eMarkerType, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarMarkerValue, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarContextValue);
+
+            [VtblIndex(12)]
+            HRESULT Flush();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, IMFMediaEvent **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamSink*, uint, IMFMediaEvent**, int> GetEvent;
+
+            [NativeTypeName("HRESULT (IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamSink*, IMFAsyncCallback*, IUnknown*, int> BeginGetEvent;
+
+            [NativeTypeName("HRESULT (IMFAsyncResult *, IMFMediaEvent **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamSink*, IMFAsyncResult*, IMFMediaEvent**, int> EndGetEvent;
+
+            [NativeTypeName("HRESULT (MediaEventType, const GUID &, HRESULT, const PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamSink*, uint, Guid*, HRESULT, PROPVARIANT*, int> QueueEvent;
+
+            [NativeTypeName("HRESULT (IMFMediaSink **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamSink*, IMFMediaSink**, int> GetMediaSink;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamSink*, uint*, int> GetIdentifier;
+
+            [NativeTypeName("HRESULT (IMFMediaTypeHandler **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamSink*, IMFMediaTypeHandler**, int> GetMediaTypeHandler;
+
+            [NativeTypeName("HRESULT (IMFSample *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamSink*, IMFSample*, int> ProcessSample;
+
+            [NativeTypeName("HRESULT (MFSTREAMSINK_MARKER_TYPE, const PROPVARIANT *, const PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamSink*, MFSTREAMSINK_MARKER_TYPE, PROPVARIANT*, PROPVARIANT*, int> PlaceMarker;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamSink*, int> Flush;
         }
     }
 }

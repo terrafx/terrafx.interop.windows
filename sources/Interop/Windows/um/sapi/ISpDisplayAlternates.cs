@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C8D7C7E2-0DDE-44B7-AFE3-B0C991FBEB5E")]
     [NativeTypeName("struct ISpDisplayAlternates : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpDisplayAlternates
+    public unsafe partial struct ISpDisplayAlternates : ISpDisplayAlternates.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT SetFullStopTrailSpace([NativeTypeName("ULONG")] uint ulTrailSpace)
         {
             return ((delegate* unmanaged<ISpDisplayAlternates*, uint, int>)(lpVtbl[4]))((ISpDisplayAlternates*)Unsafe.AsPointer(ref this), ulTrailSpace);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDisplayAlternates([NativeTypeName("const SPDISPLAYPHRASE *")] SPDISPLAYPHRASE* pPhrase, [NativeTypeName("ULONG")] uint cRequestCount, SPDISPLAYPHRASE** ppCoMemPhrases, [NativeTypeName("ULONG *")] uint* pcPhrasesReturned);
+
+            [VtblIndex(4)]
+            HRESULT SetFullStopTrailSpace([NativeTypeName("ULONG")] uint ulTrailSpace);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpDisplayAlternates*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpDisplayAlternates*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpDisplayAlternates*, uint> Release;
+
+            [NativeTypeName("HRESULT (const SPDISPLAYPHRASE *, ULONG, SPDISPLAYPHRASE **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpDisplayAlternates*, SPDISPLAYPHRASE*, uint, SPDISPLAYPHRASE**, uint*, int> GetDisplayAlternates;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpDisplayAlternates*, uint, int> SetFullStopTrailSpace;
         }
     }
 }

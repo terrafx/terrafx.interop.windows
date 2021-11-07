@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B4F34A19-2383-4D76-94F6-EC343657C3DC")]
     [NativeTypeName("struct ID2D1CommandList : ID2D1Image")]
     [NativeInheritance("ID2D1Image")]
-    public unsafe partial struct ID2D1CommandList
+    public unsafe partial struct ID2D1CommandList : ID2D1CommandList.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,36 @@ namespace TerraFX.Interop
         public HRESULT Close()
         {
             return ((delegate* unmanaged<ID2D1CommandList*, int>)(lpVtbl[5]))((ID2D1CommandList*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ID2D1Image.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT Stream(ID2D1CommandSink* sink);
+
+            [VtblIndex(5)]
+            HRESULT Close();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1CommandList*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1CommandList*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1CommandList*, uint> Release;
+
+            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1CommandList*, ID2D1Factory**, void> GetFactory;
+
+            [NativeTypeName("HRESULT (ID2D1CommandSink *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1CommandList*, ID2D1CommandSink*, int> Stream;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1CommandList*, int> Close;
         }
     }
 }

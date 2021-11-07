@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("88A05C00-F000-11CE-8350-444553540000")]
     [NativeTypeName("struct IShellLinkDual : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IShellLinkDual
+    public unsafe partial struct IShellLinkDual : IShellLinkDual.Interface
     {
         public void** lpVtbl;
 
@@ -177,6 +177,129 @@ namespace TerraFX.Interop
         public HRESULT Save(VARIANT vWhere)
         {
             return ((delegate* unmanaged<IShellLinkDual*, VARIANT, int>)(lpVtbl[22]))((IShellLinkDual*)Unsafe.AsPointer(ref this), vWhere);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Path([NativeTypeName("BSTR *")] ushort** pbs);
+
+            [VtblIndex(8)]
+            HRESULT put_Path([NativeTypeName("BSTR")] ushort* bs);
+
+            [VtblIndex(9)]
+            HRESULT get_Description([NativeTypeName("BSTR *")] ushort** pbs);
+
+            [VtblIndex(10)]
+            HRESULT put_Description([NativeTypeName("BSTR")] ushort* bs);
+
+            [VtblIndex(11)]
+            HRESULT get_WorkingDirectory([NativeTypeName("BSTR *")] ushort** pbs);
+
+            [VtblIndex(12)]
+            HRESULT put_WorkingDirectory([NativeTypeName("BSTR")] ushort* bs);
+
+            [VtblIndex(13)]
+            HRESULT get_Arguments([NativeTypeName("BSTR *")] ushort** pbs);
+
+            [VtblIndex(14)]
+            HRESULT put_Arguments([NativeTypeName("BSTR")] ushort* bs);
+
+            [VtblIndex(15)]
+            HRESULT get_Hotkey(int* piHK);
+
+            [VtblIndex(16)]
+            HRESULT put_Hotkey(int iHK);
+
+            [VtblIndex(17)]
+            HRESULT get_ShowCommand(int* piShowCommand);
+
+            [VtblIndex(18)]
+            HRESULT put_ShowCommand(int iShowCommand);
+
+            [VtblIndex(19)]
+            HRESULT Resolve(int fFlags);
+
+            [VtblIndex(20)]
+            HRESULT GetIconLocation([NativeTypeName("BSTR *")] ushort** pbs, int* piIcon);
+
+            [VtblIndex(21)]
+            HRESULT SetIconLocation([NativeTypeName("BSTR")] ushort* bs, int iIcon);
+
+            [VtblIndex(22)]
+            HRESULT Save(VARIANT vWhere);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDual*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDual*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDual*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDual*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDual*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDual*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDual*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDual*, ushort**, int> get_Path;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDual*, ushort*, int> put_Path;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDual*, ushort**, int> get_Description;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDual*, ushort*, int> put_Description;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDual*, ushort**, int> get_WorkingDirectory;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDual*, ushort*, int> put_WorkingDirectory;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDual*, ushort**, int> get_Arguments;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDual*, ushort*, int> put_Arguments;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDual*, int*, int> get_Hotkey;
+
+            [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDual*, int, int> put_Hotkey;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDual*, int*, int> get_ShowCommand;
+
+            [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDual*, int, int> put_ShowCommand;
+
+            [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDual*, int, int> Resolve;
+
+            [NativeTypeName("HRESULT (BSTR *, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDual*, ushort**, int*, int> GetIconLocation;
+
+            [NativeTypeName("HRESULT (BSTR, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDual*, ushort*, int, int> SetIconLocation;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellLinkDual*, VARIANT, int> Save;
         }
     }
 }

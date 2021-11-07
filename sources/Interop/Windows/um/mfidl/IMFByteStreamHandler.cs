@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BB420AA4-765B-4A1F-91FE-D6A8A143924C")]
     [NativeTypeName("struct IMFByteStreamHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFByteStreamHandler
+    public unsafe partial struct IMFByteStreamHandler : IMFByteStreamHandler.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetMaxNumberOfBytesRequiredForResolution([NativeTypeName("QWORD *")] ulong* pqwBytes)
         {
             return ((delegate* unmanaged<IMFByteStreamHandler*, ulong*, int>)(lpVtbl[6]))((IMFByteStreamHandler*)Unsafe.AsPointer(ref this), pqwBytes);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT BeginCreateObject(IMFByteStream* pByteStream, [NativeTypeName("LPCWSTR")] ushort* pwszURL, [NativeTypeName("DWORD")] uint dwFlags, IPropertyStore* pProps, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState);
+
+            [VtblIndex(4)]
+            HRESULT EndCreateObject(IMFAsyncResult* pResult, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject);
+
+            [VtblIndex(5)]
+            HRESULT CancelObjectCreation(IUnknown* pIUnknownCancelCookie);
+
+            [VtblIndex(6)]
+            HRESULT GetMaxNumberOfBytesRequiredForResolution([NativeTypeName("QWORD *")] ulong* pqwBytes);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStreamHandler*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStreamHandler*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStreamHandler*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFByteStream *, LPCWSTR, DWORD, IPropertyStore *, IUnknown **, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStreamHandler*, IMFByteStream*, ushort*, uint, IPropertyStore*, IUnknown**, IMFAsyncCallback*, IUnknown*, int> BeginCreateObject;
+
+            [NativeTypeName("HRESULT (IMFAsyncResult *, MF_OBJECT_TYPE *, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStreamHandler*, IMFAsyncResult*, MF_OBJECT_TYPE*, IUnknown**, int> EndCreateObject;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStreamHandler*, IUnknown*, int> CancelObjectCreation;
+
+            [NativeTypeName("HRESULT (QWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFByteStreamHandler*, ulong*, int> GetMaxNumberOfBytesRequiredForResolution;
         }
     }
 }

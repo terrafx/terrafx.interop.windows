@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("41D949AB-9862-444A-80F6-C261334DA5EB")]
     [NativeTypeName("struct IActivateAudioInterfaceCompletionHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IActivateAudioInterfaceCompletionHandler
+    public unsafe partial struct IActivateAudioInterfaceCompletionHandler : IActivateAudioInterfaceCompletionHandler.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT ActivateCompleted(IActivateAudioInterfaceAsyncOperation* activateOperation)
         {
             return ((delegate* unmanaged<IActivateAudioInterfaceCompletionHandler*, IActivateAudioInterfaceAsyncOperation*, int>)(lpVtbl[3]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this), activateOperation);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ActivateCompleted(IActivateAudioInterfaceAsyncOperation* activateOperation);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActivateAudioInterfaceCompletionHandler*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActivateAudioInterfaceCompletionHandler*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActivateAudioInterfaceCompletionHandler*, uint> Release;
+
+            [NativeTypeName("HRESULT (IActivateAudioInterfaceAsyncOperation *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActivateAudioInterfaceCompletionHandler*, IActivateAudioInterfaceAsyncOperation*, int> ActivateCompleted;
         }
     }
 }

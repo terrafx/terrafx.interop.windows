@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9B496CE1-811B-11CF-8C77-00AA006B6814")]
     [NativeTypeName("struct IAMTimecodeReader : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMTimecodeReader
+    public unsafe partial struct IAMTimecodeReader : IAMTimecodeReader.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT GetTimecode([NativeTypeName("PTIMECODE_SAMPLE")] TIMECODE_SAMPLE* pTimecodeSample)
         {
             return ((delegate* unmanaged<IAMTimecodeReader*, TIMECODE_SAMPLE*, int>)(lpVtbl[7]))((IAMTimecodeReader*)Unsafe.AsPointer(ref this), pTimecodeSample);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetTCRMode([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue);
+
+            [VtblIndex(4)]
+            HRESULT SetTCRMode([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value);
+
+            [VtblIndex(5)]
+            HRESULT put_VITCLine([NativeTypeName("long")] int Line);
+
+            [VtblIndex(6)]
+            HRESULT get_VITCLine([NativeTypeName("long *")] int* pLine);
+
+            [VtblIndex(7)]
+            HRESULT GetTimecode([NativeTypeName("PTIMECODE_SAMPLE")] TIMECODE_SAMPLE* pTimecodeSample);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTimecodeReader*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTimecodeReader*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTimecodeReader*, uint> Release;
+
+            [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTimecodeReader*, int, int*, int> GetTCRMode;
+
+            [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTimecodeReader*, int, int, int> SetTCRMode;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTimecodeReader*, int, int> put_VITCLine;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTimecodeReader*, int*, int> get_VITCLine;
+
+            [NativeTypeName("HRESULT (PTIMECODE_SAMPLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTimecodeReader*, TIMECODE_SAMPLE*, int> GetTimecode;
         }
     }
 }

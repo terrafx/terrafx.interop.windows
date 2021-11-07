@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4B37BC9E-9ED6-44A3-93D3-18F022B79EC3")]
     [NativeTypeName("struct ISpRecoGrammar2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpRecoGrammar2
+    public unsafe partial struct ISpRecoGrammar2 : ISpRecoGrammar2.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,69 @@ namespace TerraFX.Interop
         public HRESULT SetSMLSecurityManager(IInternetSecurityManager* pSMLSecurityManager)
         {
             return ((delegate* unmanaged<ISpRecoGrammar2*, IInternetSecurityManager*, int>)(lpVtbl[10]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this), pSMLSecurityManager);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetRules(SPRULE** ppCoMemRules, uint* puNumRules);
+
+            [VtblIndex(4)]
+            HRESULT LoadCmdFromFile2([NativeTypeName("LPCWSTR")] ushort* pszFileName, SPLOADOPTIONS Options, [NativeTypeName("LPCWSTR")] ushort* pszSharingUri, [NativeTypeName("LPCWSTR")] ushort* pszBaseUri);
+
+            [VtblIndex(5)]
+            HRESULT LoadCmdFromMemory2([NativeTypeName("const SPBINARYGRAMMAR *")] SPBINARYGRAMMAR* pGrammar, SPLOADOPTIONS Options, [NativeTypeName("LPCWSTR")] ushort* pszSharingUri, [NativeTypeName("LPCWSTR")] ushort* pszBaseUri);
+
+            [VtblIndex(6)]
+            HRESULT SetRulePriority([NativeTypeName("LPCWSTR")] ushort* pszRuleName, [NativeTypeName("ULONG")] uint ulRuleId, int nRulePriority);
+
+            [VtblIndex(7)]
+            HRESULT SetRuleWeight([NativeTypeName("LPCWSTR")] ushort* pszRuleName, [NativeTypeName("ULONG")] uint ulRuleId, float flWeight);
+
+            [VtblIndex(8)]
+            HRESULT SetDictationWeight(float flWeight);
+
+            [VtblIndex(9)]
+            HRESULT SetGrammarLoader(ISpeechResourceLoader* pLoader);
+
+            [VtblIndex(10)]
+            HRESULT SetSMLSecurityManager(IInternetSecurityManager* pSMLSecurityManager);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar2*, uint> Release;
+
+            [NativeTypeName("HRESULT (SPRULE **, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar2*, SPRULE**, uint*, int> GetRules;
+
+            [NativeTypeName("HRESULT (LPCWSTR, SPLOADOPTIONS, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar2*, ushort*, SPLOADOPTIONS, ushort*, ushort*, int> LoadCmdFromFile2;
+
+            [NativeTypeName("HRESULT (const SPBINARYGRAMMAR *, SPLOADOPTIONS, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar2*, SPBINARYGRAMMAR*, SPLOADOPTIONS, ushort*, ushort*, int> LoadCmdFromMemory2;
+
+            [NativeTypeName("HRESULT (LPCWSTR, ULONG, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar2*, ushort*, uint, int, int> SetRulePriority;
+
+            [NativeTypeName("HRESULT (LPCWSTR, ULONG, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar2*, ushort*, uint, float, int> SetRuleWeight;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar2*, float, int> SetDictationWeight;
+
+            [NativeTypeName("HRESULT (ISpeechResourceLoader *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar2*, ISpeechResourceLoader*, int> SetGrammarLoader;
+
+            [NativeTypeName("HRESULT (IInternetSecurityManager *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar2*, IInternetSecurityManager*, int> SetSMLSecurityManager;
         }
     }
 }

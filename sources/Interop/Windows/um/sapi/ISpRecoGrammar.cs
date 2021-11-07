@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2177DB29-7F45-47D0-8554-067E91C80502")]
     [NativeTypeName("struct ISpRecoGrammar : ISpGrammarBuilder")]
     [NativeInheritance("ISpGrammarBuilder")]
-    public unsafe partial struct ISpRecoGrammar
+    public unsafe partial struct ISpRecoGrammar : ISpRecoGrammar.Interface
     {
         public void** lpVtbl;
 
@@ -219,6 +219,153 @@ namespace TerraFX.Interop
         public HRESULT GetGrammarState(SPGRAMMARSTATE* peGrammarState)
         {
             return ((delegate* unmanaged<ISpRecoGrammar*, SPGRAMMARSTATE*, int>)(lpVtbl[28]))((ISpRecoGrammar*)Unsafe.AsPointer(ref this), peGrammarState);
+        }
+
+        public interface Interface : ISpGrammarBuilder.Interface
+        {
+            [VtblIndex(11)]
+            HRESULT GetGrammarId([NativeTypeName("ULONGLONG *")] ulong* pullGrammarId);
+
+            [VtblIndex(12)]
+            HRESULT GetRecoContext(ISpRecoContext** ppRecoCtxt);
+
+            [VtblIndex(13)]
+            HRESULT LoadCmdFromFile([NativeTypeName("LPCWSTR")] ushort* pszFileName, SPLOADOPTIONS Options);
+
+            [VtblIndex(14)]
+            HRESULT LoadCmdFromObject([NativeTypeName("const IID &")] Guid* rcid, [NativeTypeName("LPCWSTR")] ushort* pszGrammarName, SPLOADOPTIONS Options);
+
+            [VtblIndex(15)]
+            HRESULT LoadCmdFromResource(HMODULE hModule, [NativeTypeName("LPCWSTR")] ushort* pszResourceName, [NativeTypeName("LPCWSTR")] ushort* pszResourceType, [NativeTypeName("WORD")] ushort wLanguage, SPLOADOPTIONS Options);
+
+            [VtblIndex(16)]
+            HRESULT LoadCmdFromMemory([NativeTypeName("const SPBINARYGRAMMAR *")] SPBINARYGRAMMAR* pGrammar, SPLOADOPTIONS Options);
+
+            [VtblIndex(17)]
+            HRESULT LoadCmdFromProprietaryGrammar([NativeTypeName("const GUID &")] Guid* rguidParam, [NativeTypeName("LPCWSTR")] ushort* pszStringParam, [NativeTypeName("const void *")] void* pvDataPrarm, [NativeTypeName("ULONG")] uint cbDataSize, SPLOADOPTIONS Options);
+
+            [VtblIndex(18)]
+            HRESULT SetRuleState([NativeTypeName("LPCWSTR")] ushort* pszName, void* pReserved, SPRULESTATE NewState);
+
+            [VtblIndex(19)]
+            HRESULT SetRuleIdState([NativeTypeName("ULONG")] uint ulRuleId, SPRULESTATE NewState);
+
+            [VtblIndex(20)]
+            HRESULT LoadDictation([NativeTypeName("LPCWSTR")] ushort* pszTopicName, SPLOADOPTIONS Options);
+
+            [VtblIndex(21)]
+            HRESULT UnloadDictation();
+
+            [VtblIndex(22)]
+            HRESULT SetDictationState(SPRULESTATE NewState);
+
+            [VtblIndex(23)]
+            HRESULT SetWordSequenceData([NativeTypeName("const WCHAR *")] ushort* pText, [NativeTypeName("ULONG")] uint cchText, [NativeTypeName("const SPTEXTSELECTIONINFO *")] SPTEXTSELECTIONINFO* pInfo);
+
+            [VtblIndex(24)]
+            HRESULT SetTextSelection([NativeTypeName("const SPTEXTSELECTIONINFO *")] SPTEXTSELECTIONINFO* pInfo);
+
+            [VtblIndex(25)]
+            HRESULT IsPronounceable([NativeTypeName("LPCWSTR")] ushort* pszWord, SPWORDPRONOUNCEABLE* pWordPronounceable);
+
+            [VtblIndex(26)]
+            HRESULT SetGrammarState(SPGRAMMARSTATE eGrammarState);
+
+            [VtblIndex(27)]
+            HRESULT SaveCmd(IStream* pStream, [NativeTypeName("LPWSTR *")] ushort** ppszCoMemErrorText);
+
+            [VtblIndex(28)]
+            HRESULT GetGrammarState(SPGRAMMARSTATE* peGrammarState);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, uint> Release;
+
+            [NativeTypeName("HRESULT (WORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, ushort, int> ResetGrammar;
+
+            [NativeTypeName("HRESULT (LPCWSTR, DWORD, DWORD, BOOL, SPSTATEHANDLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, ushort*, uint, uint, BOOL, SPSTATEHANDLE*, int> GetRule;
+
+            [NativeTypeName("HRESULT (SPSTATEHANDLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, SPSTATEHANDLE, int> ClearRule;
+
+            [NativeTypeName("HRESULT (SPSTATEHANDLE, SPSTATEHANDLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, SPSTATEHANDLE, SPSTATEHANDLE*, int> CreateNewState;
+
+            [NativeTypeName("HRESULT (SPSTATEHANDLE, SPSTATEHANDLE, LPCWSTR, LPCWSTR, SPGRAMMARWORDTYPE, float, const SPPROPERTYINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, SPSTATEHANDLE, SPSTATEHANDLE, ushort*, ushort*, SPGRAMMARWORDTYPE, float, SPPROPERTYINFO*, int> AddWordTransition;
+
+            [NativeTypeName("HRESULT (SPSTATEHANDLE, SPSTATEHANDLE, SPSTATEHANDLE, float, const SPPROPERTYINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, SPSTATEHANDLE, SPSTATEHANDLE, SPSTATEHANDLE, float, SPPROPERTYINFO*, int> AddRuleTransition;
+
+            [NativeTypeName("HRESULT (SPSTATEHANDLE, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, SPSTATEHANDLE, ushort*, ushort*, int> AddResource;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, uint, int> Commit;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, ulong*, int> GetGrammarId;
+
+            [NativeTypeName("HRESULT (ISpRecoContext **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, ISpRecoContext**, int> GetRecoContext;
+
+            [NativeTypeName("HRESULT (LPCWSTR, SPLOADOPTIONS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, ushort*, SPLOADOPTIONS, int> LoadCmdFromFile;
+
+            [NativeTypeName("HRESULT (const IID &, LPCWSTR, SPLOADOPTIONS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, Guid*, ushort*, SPLOADOPTIONS, int> LoadCmdFromObject;
+
+            [NativeTypeName("HRESULT (HMODULE, LPCWSTR, LPCWSTR, WORD, SPLOADOPTIONS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, HMODULE, ushort*, ushort*, ushort, SPLOADOPTIONS, int> LoadCmdFromResource;
+
+            [NativeTypeName("HRESULT (const SPBINARYGRAMMAR *, SPLOADOPTIONS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, SPBINARYGRAMMAR*, SPLOADOPTIONS, int> LoadCmdFromMemory;
+
+            [NativeTypeName("HRESULT (const GUID &, LPCWSTR, const void *, ULONG, SPLOADOPTIONS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, Guid*, ushort*, void*, uint, SPLOADOPTIONS, int> LoadCmdFromProprietaryGrammar;
+
+            [NativeTypeName("HRESULT (LPCWSTR, void *, SPRULESTATE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, ushort*, void*, SPRULESTATE, int> SetRuleState;
+
+            [NativeTypeName("HRESULT (ULONG, SPRULESTATE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, uint, SPRULESTATE, int> SetRuleIdState;
+
+            [NativeTypeName("HRESULT (LPCWSTR, SPLOADOPTIONS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, ushort*, SPLOADOPTIONS, int> LoadDictation;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, int> UnloadDictation;
+
+            [NativeTypeName("HRESULT (SPRULESTATE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, SPRULESTATE, int> SetDictationState;
+
+            [NativeTypeName("HRESULT (const WCHAR *, ULONG, const SPTEXTSELECTIONINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, ushort*, uint, SPTEXTSELECTIONINFO*, int> SetWordSequenceData;
+
+            [NativeTypeName("HRESULT (const SPTEXTSELECTIONINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, SPTEXTSELECTIONINFO*, int> SetTextSelection;
+
+            [NativeTypeName("HRESULT (LPCWSTR, SPWORDPRONOUNCEABLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, ushort*, SPWORDPRONOUNCEABLE*, int> IsPronounceable;
+
+            [NativeTypeName("HRESULT (SPGRAMMARSTATE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, SPGRAMMARSTATE, int> SetGrammarState;
+
+            [NativeTypeName("HRESULT (IStream *, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, IStream*, ushort**, int> SaveCmd;
+
+            [NativeTypeName("HRESULT (SPGRAMMARSTATE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoGrammar*, SPGRAMMARSTATE*, int> GetGrammarState;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104D2-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGAnimatedLengthList : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGAnimatedLengthList
+    public unsafe partial struct ISVGAnimatedLengthList : ISVGAnimatedLengthList.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,57 @@ namespace TerraFX.Interop
         public HRESULT get_animVal(ISVGLengthList** p)
         {
             return ((delegate* unmanaged<ISVGAnimatedLengthList*, ISVGLengthList**, int>)(lpVtbl[10]))((ISVGAnimatedLengthList*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_baseVal(ISVGLengthList* v);
+
+            [VtblIndex(8)]
+            HRESULT get_baseVal(ISVGLengthList** p);
+
+            [VtblIndex(9)]
+            HRESULT putref_animVal(ISVGLengthList* v);
+
+            [VtblIndex(10)]
+            HRESULT get_animVal(ISVGLengthList** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedLengthList*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedLengthList*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedLengthList*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedLengthList*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedLengthList*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedLengthList*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedLengthList*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (ISVGLengthList *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedLengthList*, ISVGLengthList*, int> putref_baseVal;
+
+            [NativeTypeName("HRESULT (ISVGLengthList **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedLengthList*, ISVGLengthList**, int> get_baseVal;
+
+            [NativeTypeName("HRESULT (ISVGLengthList *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedLengthList*, ISVGLengthList*, int> putref_animVal;
+
+            [NativeTypeName("HRESULT (ISVGLengthList **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGAnimatedLengthList*, ISVGLengthList**, int> get_animVal;
         }
     }
 }

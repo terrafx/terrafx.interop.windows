@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8D7AE132-A690-4C00-B75A-6AAE1FEAAC80")]
     [NativeTypeName("struct IAppxManifestReader5 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestReader5
+    public unsafe partial struct IAppxManifestReader5 : IAppxManifestReader5.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetMainPackageDependencies(IAppxManifestMainPackageDependenciesEnumerator** mainPackageDependencies)
         {
             return ((delegate* unmanaged<IAppxManifestReader5*, IAppxManifestMainPackageDependenciesEnumerator**, int>)(lpVtbl[3]))((IAppxManifestReader5*)Unsafe.AsPointer(ref this), mainPackageDependencies);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetMainPackageDependencies(IAppxManifestMainPackageDependenciesEnumerator** mainPackageDependencies);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader5*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader5*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader5*, uint> Release;
+
+            [NativeTypeName("HRESULT (IAppxManifestMainPackageDependenciesEnumerator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader5*, IAppxManifestMainPackageDependenciesEnumerator**, int> GetMainPackageDependencies;
         }
     }
 }

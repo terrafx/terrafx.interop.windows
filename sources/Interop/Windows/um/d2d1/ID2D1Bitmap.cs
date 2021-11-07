@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A2296057-EA42-4099-983B-539FB6505426")]
     [NativeTypeName("struct ID2D1Bitmap : ID2D1Image")]
     [NativeInheritance("ID2D1Image")]
-    public unsafe partial struct ID2D1Bitmap
+    public unsafe partial struct ID2D1Bitmap : ID2D1Bitmap.Interface
     {
         public void** lpVtbl;
 
@@ -98,6 +98,68 @@ namespace TerraFX.Interop
         public HRESULT CopyFromMemory([NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* dstRect, [NativeTypeName("const void *")] void* srcData, [NativeTypeName("UINT32")] uint pitch)
         {
             return ((delegate* unmanaged<ID2D1Bitmap*, D2D_RECT_U*, void*, uint, int>)(lpVtbl[10]))((ID2D1Bitmap*)Unsafe.AsPointer(ref this), dstRect, srcData, pitch);
+        }
+
+        public interface Interface : ID2D1Image.Interface
+        {
+            [VtblIndex(4)]
+            [return: NativeTypeName("D2D1_SIZE_F")]
+            D2D_SIZE_F GetSize();
+
+            [VtblIndex(5)]
+            [return: NativeTypeName("D2D1_SIZE_U")]
+            D2D_SIZE_U GetPixelSize();
+
+            [VtblIndex(6)]
+            D2D1_PIXEL_FORMAT GetPixelFormat();
+
+            [VtblIndex(7)]
+            void GetDpi(float* dpiX, float* dpiY);
+
+            [VtblIndex(8)]
+            HRESULT CopyFromBitmap([NativeTypeName("const D2D1_POINT_2U *")] D2D_POINT_2U* destPoint, ID2D1Bitmap* bitmap, [NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* srcRect);
+
+            [VtblIndex(9)]
+            HRESULT CopyFromRenderTarget([NativeTypeName("const D2D1_POINT_2U *")] D2D_POINT_2U* destPoint, ID2D1RenderTarget* renderTarget, [NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* srcRect);
+
+            [VtblIndex(10)]
+            HRESULT CopyFromMemory([NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* dstRect, [NativeTypeName("const void *")] void* srcData, [NativeTypeName("UINT32")] uint pitch);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Bitmap*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Bitmap*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Bitmap*, uint> Release;
+
+            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Bitmap*, ID2D1Factory**, void> GetFactory;
+
+            [NativeTypeName("D2D1_SIZE_F () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Bitmap*, D2D_SIZE_F*, D2D_SIZE_F*> GetSize;
+
+            [NativeTypeName("D2D1_SIZE_U () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Bitmap*, D2D_SIZE_U*, D2D_SIZE_U*> GetPixelSize;
+
+            [NativeTypeName("D2D1_PIXEL_FORMAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Bitmap*, D2D1_PIXEL_FORMAT*, D2D1_PIXEL_FORMAT*> GetPixelFormat;
+
+            [NativeTypeName("void (FLOAT *, FLOAT *) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Bitmap*, float*, float*, void> GetDpi;
+
+            [NativeTypeName("HRESULT (const D2D1_POINT_2U *, ID2D1Bitmap *, const D2D1_RECT_U *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Bitmap*, D2D_POINT_2U*, ID2D1Bitmap*, D2D_RECT_U*, int> CopyFromBitmap;
+
+            [NativeTypeName("HRESULT (const D2D1_POINT_2U *, ID2D1RenderTarget *, const D2D1_RECT_U *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Bitmap*, D2D_POINT_2U*, ID2D1RenderTarget*, D2D_RECT_U*, int> CopyFromRenderTarget;
+
+            [NativeTypeName("HRESULT (const D2D1_RECT_U *, const void *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Bitmap*, D2D_RECT_U*, void*, uint, int> CopyFromMemory;
         }
     }
 }

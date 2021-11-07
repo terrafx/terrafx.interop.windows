@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E08DEEF9-5363-406E-9FDC-080EE247BBE0")]
     [NativeTypeName("struct ISpatialAudioObjectRenderStreamForHrtf : ISpatialAudioObjectRenderStreamBase")]
     [NativeInheritance("ISpatialAudioObjectRenderStreamBase")]
-    public unsafe partial struct ISpatialAudioObjectRenderStreamForHrtf
+    public unsafe partial struct ISpatialAudioObjectRenderStreamForHrtf : ISpatialAudioObjectRenderStreamForHrtf.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,48 @@ namespace TerraFX.Interop
         public HRESULT ActivateSpatialAudioObjectForHrtf(AudioObjectType type, ISpatialAudioObjectForHrtf** audioObject)
         {
             return ((delegate* unmanaged<ISpatialAudioObjectRenderStreamForHrtf*, AudioObjectType, ISpatialAudioObjectForHrtf**, int>)(lpVtbl[10]))((ISpatialAudioObjectRenderStreamForHrtf*)Unsafe.AsPointer(ref this), type, audioObject);
+        }
+
+        public interface Interface : ISpatialAudioObjectRenderStreamBase.Interface
+        {
+            [VtblIndex(10)]
+            HRESULT ActivateSpatialAudioObjectForHrtf(AudioObjectType type, ISpatialAudioObjectForHrtf** audioObject);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioObjectRenderStreamForHrtf*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioObjectRenderStreamForHrtf*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioObjectRenderStreamForHrtf*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioObjectRenderStreamForHrtf*, uint*, int> GetAvailableDynamicObjectCount;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioObjectRenderStreamForHrtf*, Guid*, void**, int> GetService;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioObjectRenderStreamForHrtf*, int> Start;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioObjectRenderStreamForHrtf*, int> Stop;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioObjectRenderStreamForHrtf*, int> Reset;
+
+            [NativeTypeName("HRESULT (UINT32 *, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioObjectRenderStreamForHrtf*, uint*, uint*, int> BeginUpdatingAudioObjects;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioObjectRenderStreamForHrtf*, int> EndUpdatingAudioObjects;
+
+            [NativeTypeName("HRESULT (AudioObjectType, ISpatialAudioObjectForHrtf **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioObjectRenderStreamForHrtf*, AudioObjectType, ISpatialAudioObjectForHrtf**, int> ActivateSpatialAudioObjectForHrtf;
         }
     }
 }

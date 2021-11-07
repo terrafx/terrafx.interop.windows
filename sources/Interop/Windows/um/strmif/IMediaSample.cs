@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A8689A-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IMediaSample : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMediaSample
+    public unsafe partial struct IMediaSample : IMediaSample.Interface
     {
         public void** lpVtbl;
 
@@ -151,6 +151,119 @@ namespace TerraFX.Interop
         public HRESULT SetMediaTime([NativeTypeName("LONGLONG *")] long* pTimeStart, [NativeTypeName("LONGLONG *")] long* pTimeEnd)
         {
             return ((delegate* unmanaged<IMediaSample*, long*, long*, int>)(lpVtbl[18]))((IMediaSample*)Unsafe.AsPointer(ref this), pTimeStart, pTimeEnd);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPointer(byte** ppBuffer);
+
+            [VtblIndex(4)]
+            [return: NativeTypeName("long")]
+            int GetSize();
+
+            [VtblIndex(5)]
+            HRESULT GetTime([NativeTypeName("REFERENCE_TIME *")] long* pTimeStart, [NativeTypeName("REFERENCE_TIME *")] long* pTimeEnd);
+
+            [VtblIndex(6)]
+            HRESULT SetTime([NativeTypeName("REFERENCE_TIME *")] long* pTimeStart, [NativeTypeName("REFERENCE_TIME *")] long* pTimeEnd);
+
+            [VtblIndex(7)]
+            HRESULT IsSyncPoint();
+
+            [VtblIndex(8)]
+            HRESULT SetSyncPoint(BOOL bIsSyncPoint);
+
+            [VtblIndex(9)]
+            HRESULT IsPreroll();
+
+            [VtblIndex(10)]
+            HRESULT SetPreroll(BOOL bIsPreroll);
+
+            [VtblIndex(11)]
+            [return: NativeTypeName("long")]
+            int GetActualDataLength();
+
+            [VtblIndex(12)]
+            HRESULT SetActualDataLength([NativeTypeName("long")] int __MIDL__IMediaSample0000);
+
+            [VtblIndex(13)]
+            HRESULT GetMediaType(AM_MEDIA_TYPE** ppMediaType);
+
+            [VtblIndex(14)]
+            HRESULT SetMediaType(AM_MEDIA_TYPE* pMediaType);
+
+            [VtblIndex(15)]
+            HRESULT IsDiscontinuity();
+
+            [VtblIndex(16)]
+            HRESULT SetDiscontinuity(BOOL bDiscontinuity);
+
+            [VtblIndex(17)]
+            HRESULT GetMediaTime([NativeTypeName("LONGLONG *")] long* pTimeStart, [NativeTypeName("LONGLONG *")] long* pTimeEnd);
+
+            [VtblIndex(18)]
+            HRESULT SetMediaTime([NativeTypeName("LONGLONG *")] long* pTimeStart, [NativeTypeName("LONGLONG *")] long* pTimeEnd);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSample*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSample*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSample*, uint> Release;
+
+            [NativeTypeName("HRESULT (BYTE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSample*, byte**, int> GetPointer;
+
+            [NativeTypeName("long () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSample*, int> GetSize;
+
+            [NativeTypeName("HRESULT (REFERENCE_TIME *, REFERENCE_TIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSample*, long*, long*, int> GetTime;
+
+            [NativeTypeName("HRESULT (REFERENCE_TIME *, REFERENCE_TIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSample*, long*, long*, int> SetTime;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSample*, int> IsSyncPoint;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSample*, BOOL, int> SetSyncPoint;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSample*, int> IsPreroll;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSample*, BOOL, int> SetPreroll;
+
+            [NativeTypeName("long () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSample*, int> GetActualDataLength;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSample*, int, int> SetActualDataLength;
+
+            [NativeTypeName("HRESULT (AM_MEDIA_TYPE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSample*, AM_MEDIA_TYPE**, int> GetMediaType;
+
+            [NativeTypeName("HRESULT (AM_MEDIA_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSample*, AM_MEDIA_TYPE*, int> SetMediaType;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSample*, int> IsDiscontinuity;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSample*, BOOL, int> SetDiscontinuity;
+
+            [NativeTypeName("HRESULT (LONGLONG *, LONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSample*, long*, long*, int> GetMediaTime;
+
+            [NativeTypeName("HRESULT (LONGLONG *, LONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaSample*, long*, long*, int> SetMediaTime;
         }
     }
 }

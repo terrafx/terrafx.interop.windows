@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("48ADDD32-3CA5-4124-ABE3-B5A72531B207")]
     [NativeTypeName("struct ITransferDestination : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITransferDestination
+    public unsafe partial struct ITransferDestination : ITransferDestination.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT CreateItem([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("DWORD")] uint dwAttributes, [NativeTypeName("ULONGLONG")] ulong ullSize, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, [NativeTypeName("const IID &")] Guid* riidItem, void** ppvItem, [NativeTypeName("const IID &")] Guid* riidResources, void** ppvResources)
         {
             return ((delegate* unmanaged<ITransferDestination*, ushort*, uint, ulong, uint, Guid*, void**, Guid*, void**, int>)(lpVtbl[5]))((ITransferDestination*)Unsafe.AsPointer(ref this), pszName, dwAttributes, ullSize, flags, riidItem, ppvItem, riidResources, ppvResources);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Advise(ITransferAdviseSink* psink, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(4)]
+            HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie);
+
+            [VtblIndex(5)]
+            HRESULT CreateItem([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("DWORD")] uint dwAttributes, [NativeTypeName("ULONGLONG")] ulong ullSize, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, [NativeTypeName("const IID &")] Guid* riidItem, void** ppvItem, [NativeTypeName("const IID &")] Guid* riidResources, void** ppvResources);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITransferDestination*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITransferDestination*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITransferDestination*, uint> Release;
+
+            [NativeTypeName("HRESULT (ITransferAdviseSink *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITransferDestination*, ITransferAdviseSink*, uint*, int> Advise;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITransferDestination*, uint, int> Unadvise;
+
+            [NativeTypeName("HRESULT (LPCWSTR, DWORD, ULONGLONG, TRANSFER_SOURCE_FLAGS, const IID &, void **, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITransferDestination*, ushort*, uint, ulong, uint, Guid*, void**, Guid*, void**, int> CreateItem;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("77AA99A0-1BD6-484F-8BC7-2C654C9A9B6F")]
     [NativeTypeName("struct IAudioSessionManager2 : IAudioSessionManager")]
     [NativeInheritance("IAudioSessionManager")]
-    public unsafe partial struct IAudioSessionManager2
+    public unsafe partial struct IAudioSessionManager2 : IAudioSessionManager2.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,57 @@ namespace TerraFX.Interop
         public HRESULT UnregisterDuckNotification(IAudioVolumeDuckNotification* duckNotification)
         {
             return ((delegate* unmanaged<IAudioSessionManager2*, IAudioVolumeDuckNotification*, int>)(lpVtbl[9]))((IAudioSessionManager2*)Unsafe.AsPointer(ref this), duckNotification);
+        }
+
+        public interface Interface : IAudioSessionManager.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT GetSessionEnumerator(IAudioSessionEnumerator** SessionEnum);
+
+            [VtblIndex(6)]
+            HRESULT RegisterSessionNotification(IAudioSessionNotification* SessionNotification);
+
+            [VtblIndex(7)]
+            HRESULT UnregisterSessionNotification(IAudioSessionNotification* SessionNotification);
+
+            [VtblIndex(8)]
+            HRESULT RegisterDuckNotification([NativeTypeName("LPCWSTR")] ushort* sessionID, IAudioVolumeDuckNotification* duckNotification);
+
+            [VtblIndex(9)]
+            HRESULT UnregisterDuckNotification(IAudioVolumeDuckNotification* duckNotification);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionManager2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionManager2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionManager2*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCGUID, DWORD, IAudioSessionControl **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionManager2*, Guid*, uint, IAudioSessionControl**, int> GetAudioSessionControl;
+
+            [NativeTypeName("HRESULT (LPCGUID, DWORD, ISimpleAudioVolume **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionManager2*, Guid*, uint, ISimpleAudioVolume**, int> GetSimpleAudioVolume;
+
+            [NativeTypeName("HRESULT (IAudioSessionEnumerator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionManager2*, IAudioSessionEnumerator**, int> GetSessionEnumerator;
+
+            [NativeTypeName("HRESULT (IAudioSessionNotification *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionManager2*, IAudioSessionNotification*, int> RegisterSessionNotification;
+
+            [NativeTypeName("HRESULT (IAudioSessionNotification *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionManager2*, IAudioSessionNotification*, int> UnregisterSessionNotification;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IAudioVolumeDuckNotification *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionManager2*, ushort*, IAudioVolumeDuckNotification*, int> RegisterDuckNotification;
+
+            [NativeTypeName("HRESULT (IAudioVolumeDuckNotification *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionManager2*, IAudioVolumeDuckNotification*, int> UnregisterDuckNotification;
         }
     }
 }

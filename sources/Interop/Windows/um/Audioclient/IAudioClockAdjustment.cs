@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F6E4C0A0-46D9-4FB8-BE21-57A3EF2B626C")]
     [NativeTypeName("struct IAudioClockAdjustment : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioClockAdjustment
+    public unsafe partial struct IAudioClockAdjustment : IAudioClockAdjustment.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT SetSampleRate(float flSampleRate)
         {
             return ((delegate* unmanaged<IAudioClockAdjustment*, float, int>)(lpVtbl[3]))((IAudioClockAdjustment*)Unsafe.AsPointer(ref this), flSampleRate);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetSampleRate(float flSampleRate);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClockAdjustment*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClockAdjustment*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClockAdjustment*, uint> Release;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClockAdjustment*, float, int> SetSampleRate;
         }
     }
 }

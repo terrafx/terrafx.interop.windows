@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F5CA-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLAppBehavior : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLAppBehavior
+    public unsafe partial struct IHTMLAppBehavior : IHTMLAppBehavior.Interface
     {
         public void** lpVtbl;
 
@@ -240,6 +240,183 @@ namespace TerraFX.Interop
         public HRESULT get_commandLine([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLAppBehavior*, ushort**, int>)(lpVtbl[31]))((IHTMLAppBehavior*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_applicationName([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_applicationName([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_version([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_version([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT put_icon([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(12)]
+            HRESULT get_icon([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT put_singleInstance([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(14)]
+            HRESULT get_singleInstance([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(15)]
+            HRESULT put_minimizeButton([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(16)]
+            HRESULT get_minimizeButton([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(17)]
+            HRESULT put_maximizeButton([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(18)]
+            HRESULT get_maximizeButton([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(19)]
+            HRESULT put_border([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(20)]
+            HRESULT get_border([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(21)]
+            HRESULT put_borderStyle([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(22)]
+            HRESULT get_borderStyle([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(23)]
+            HRESULT put_sysMenu([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(24)]
+            HRESULT get_sysMenu([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(25)]
+            HRESULT put_caption([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(26)]
+            HRESULT get_caption([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(27)]
+            HRESULT put_windowState([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(28)]
+            HRESULT get_windowState([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(29)]
+            HRESULT put_showInTaskBar([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(30)]
+            HRESULT get_showInTaskBar([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(31)]
+            HRESULT get_commandLine([NativeTypeName("BSTR *")] ushort** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort*, int> put_applicationName;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort**, int> get_applicationName;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort*, int> put_version;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort**, int> get_version;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort*, int> put_icon;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort**, int> get_icon;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort*, int> put_singleInstance;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort**, int> get_singleInstance;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort*, int> put_minimizeButton;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort**, int> get_minimizeButton;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort*, int> put_maximizeButton;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort**, int> get_maximizeButton;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort*, int> put_border;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort**, int> get_border;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort*, int> put_borderStyle;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort**, int> get_borderStyle;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort*, int> put_sysMenu;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort**, int> get_sysMenu;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort*, int> put_caption;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort**, int> get_caption;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort*, int> put_windowState;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort**, int> get_windowState;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort*, int> put_showInTaskBar;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort**, int> get_showInTaskBar;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLAppBehavior*, ushort**, int> get_commandLine;
         }
     }
 }

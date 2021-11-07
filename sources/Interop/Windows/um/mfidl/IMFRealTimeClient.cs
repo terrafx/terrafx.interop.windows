@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2347D60B-3FB5-480C-8803-8DF3ADCD3EF0")]
     [NativeTypeName("struct IMFRealTimeClient : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFRealTimeClient
+    public unsafe partial struct IMFRealTimeClient : IMFRealTimeClient.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT SetWorkQueue([NativeTypeName("DWORD")] uint dwWorkQueueId)
         {
             return ((delegate* unmanaged<IMFRealTimeClient*, uint, int>)(lpVtbl[5]))((IMFRealTimeClient*)Unsafe.AsPointer(ref this), dwWorkQueueId);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RegisterThreads([NativeTypeName("DWORD")] uint dwTaskIndex, [NativeTypeName("LPCWSTR")] ushort* wszClass);
+
+            [VtblIndex(4)]
+            HRESULT UnregisterThreads();
+
+            [VtblIndex(5)]
+            HRESULT SetWorkQueue([NativeTypeName("DWORD")] uint dwWorkQueueId);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRealTimeClient*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRealTimeClient*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRealTimeClient*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRealTimeClient*, uint, ushort*, int> RegisterThreads;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRealTimeClient*, int> UnregisterThreads;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRealTimeClient*, uint, int> SetWorkQueue;
         }
     }
 }

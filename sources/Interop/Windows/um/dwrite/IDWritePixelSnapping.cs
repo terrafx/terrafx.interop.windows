@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EAF3A2DA-ECF4-4D24-B644-B34F6842024B")]
     [NativeTypeName("struct IDWritePixelSnapping : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWritePixelSnapping
+    public unsafe partial struct IDWritePixelSnapping : IDWritePixelSnapping.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT GetPixelsPerDip(void* clientDrawingContext, float* pixelsPerDip)
         {
             return ((delegate* unmanaged<IDWritePixelSnapping*, void*, float*, int>)(lpVtbl[5]))((IDWritePixelSnapping*)Unsafe.AsPointer(ref this), clientDrawingContext, pixelsPerDip);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT IsPixelSnappingDisabled(void* clientDrawingContext, BOOL* isDisabled);
+
+            [VtblIndex(4)]
+            HRESULT GetCurrentTransform(void* clientDrawingContext, DWRITE_MATRIX* transform);
+
+            [VtblIndex(5)]
+            HRESULT GetPixelsPerDip(void* clientDrawingContext, float* pixelsPerDip);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWritePixelSnapping*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWritePixelSnapping*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWritePixelSnapping*, uint> Release;
+
+            [NativeTypeName("HRESULT (void *, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWritePixelSnapping*, void*, BOOL*, int> IsPixelSnappingDisabled;
+
+            [NativeTypeName("HRESULT (void *, DWRITE_MATRIX *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWritePixelSnapping*, void*, DWRITE_MATRIX*, int> GetCurrentTransform;
+
+            [NativeTypeName("HRESULT (void *, FLOAT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWritePixelSnapping*, void*, float*, int> GetPixelsPerDip;
         }
     }
 }

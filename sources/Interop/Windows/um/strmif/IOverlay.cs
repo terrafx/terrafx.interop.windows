@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868A1-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IOverlay : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IOverlay
+    public unsafe partial struct IOverlay : IOverlay.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,81 @@ namespace TerraFX.Interop
         public HRESULT Unadvise()
         {
             return ((delegate* unmanaged<IOverlay*, int>)(lpVtbl[12]))((IOverlay*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPalette([NativeTypeName("DWORD *")] uint* pdwColors, PALETTEENTRY** ppPalette);
+
+            [VtblIndex(4)]
+            HRESULT SetPalette([NativeTypeName("DWORD")] uint dwColors, PALETTEENTRY* pPalette);
+
+            [VtblIndex(5)]
+            HRESULT GetDefaultColorKey(COLORKEY* pColorKey);
+
+            [VtblIndex(6)]
+            HRESULT GetColorKey(COLORKEY* pColorKey);
+
+            [VtblIndex(7)]
+            HRESULT SetColorKey(COLORKEY* pColorKey);
+
+            [VtblIndex(8)]
+            HRESULT GetWindowHandle(HWND* pHwnd);
+
+            [VtblIndex(9)]
+            HRESULT GetClipList(RECT* pSourceRect, RECT* pDestinationRect, RGNDATA** ppRgnData);
+
+            [VtblIndex(10)]
+            HRESULT GetVideoPosition(RECT* pSourceRect, RECT* pDestinationRect);
+
+            [VtblIndex(11)]
+            HRESULT Advise(IOverlayNotify* pOverlayNotify, [NativeTypeName("DWORD")] uint dwInterests);
+
+            [VtblIndex(12)]
+            HRESULT Unadvise();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *, PALETTEENTRY **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, uint*, PALETTEENTRY**, int> GetPalette;
+
+            [NativeTypeName("HRESULT (DWORD, PALETTEENTRY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, uint, PALETTEENTRY*, int> SetPalette;
+
+            [NativeTypeName("HRESULT (COLORKEY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, COLORKEY*, int> GetDefaultColorKey;
+
+            [NativeTypeName("HRESULT (COLORKEY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, COLORKEY*, int> GetColorKey;
+
+            [NativeTypeName("HRESULT (COLORKEY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, COLORKEY*, int> SetColorKey;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, HWND*, int> GetWindowHandle;
+
+            [NativeTypeName("HRESULT (RECT *, RECT *, RGNDATA **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, RECT*, RECT*, RGNDATA**, int> GetClipList;
+
+            [NativeTypeName("HRESULT (RECT *, RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, RECT*, RECT*, int> GetVideoPosition;
+
+            [NativeTypeName("HRESULT (IOverlayNotify *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, IOverlayNotify*, uint, int> Advise;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOverlay*, int> Unadvise;
         }
     }
 }

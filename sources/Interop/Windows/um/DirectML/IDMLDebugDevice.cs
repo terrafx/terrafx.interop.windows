@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7D6F3AC9-394A-4AC3-92A7-390CC57A8217")]
     [NativeTypeName("struct IDMLDebugDevice : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDMLDebugDevice
+    public unsafe partial struct IDMLDebugDevice : IDMLDebugDevice.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public void SetMuteDebugOutput(BOOL mute)
         {
             ((delegate* unmanaged<IDMLDebugDevice*, BOOL, void>)(lpVtbl[3]))((IDMLDebugDevice*)Unsafe.AsPointer(ref this), mute);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void SetMuteDebugOutput(BOOL mute);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDebugDevice*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDebugDevice*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDebugDevice*, uint> Release;
+
+            [NativeTypeName("void (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLDebugDevice*, BOOL, void> SetMuteDebugOutput;
         }
     }
 }

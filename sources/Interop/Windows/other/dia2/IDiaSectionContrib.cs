@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0CF4B60E-35B1-4C6C-BDD8-854B9C8E3857")]
     [NativeTypeName("struct IDiaSectionContrib : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaSectionContrib
+    public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
     {
         public void** lpVtbl;
 
@@ -191,6 +191,153 @@ namespace TerraFX.Interop
         public HRESULT get_code16bit(BOOL* pRetVal)
         {
             return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[24]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_compiland(IDiaSymbol** pRetVal);
+
+            [VtblIndex(4)]
+            HRESULT get_addressSection([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(5)]
+            HRESULT get_addressOffset([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(6)]
+            HRESULT get_relativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(7)]
+            HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
+
+            [VtblIndex(8)]
+            HRESULT get_length([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(9)]
+            HRESULT get_notPaged(BOOL* pRetVal);
+
+            [VtblIndex(10)]
+            HRESULT get_code(BOOL* pRetVal);
+
+            [VtblIndex(11)]
+            HRESULT get_initializedData(BOOL* pRetVal);
+
+            [VtblIndex(12)]
+            HRESULT get_uninitializedData(BOOL* pRetVal);
+
+            [VtblIndex(13)]
+            HRESULT get_remove(BOOL* pRetVal);
+
+            [VtblIndex(14)]
+            HRESULT get_comdat(BOOL* pRetVal);
+
+            [VtblIndex(15)]
+            HRESULT get_discardable(BOOL* pRetVal);
+
+            [VtblIndex(16)]
+            HRESULT get_notCached(BOOL* pRetVal);
+
+            [VtblIndex(17)]
+            HRESULT get_share(BOOL* pRetVal);
+
+            [VtblIndex(18)]
+            HRESULT get_execute(BOOL* pRetVal);
+
+            [VtblIndex(19)]
+            HRESULT get_read(BOOL* pRetVal);
+
+            [VtblIndex(20)]
+            HRESULT get_write(BOOL* pRetVal);
+
+            [VtblIndex(21)]
+            HRESULT get_dataCrc([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(22)]
+            HRESULT get_relocationsCrc([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(23)]
+            HRESULT get_compilandId([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(24)]
+            HRESULT get_code16bit(BOOL* pRetVal);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, IDiaSymbol**, int> get_compiland;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, uint*, int> get_addressSection;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, uint*, int> get_addressOffset;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, uint*, int> get_relativeVirtualAddress;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, ulong*, int> get_virtualAddress;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, uint*, int> get_length;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, BOOL*, int> get_notPaged;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, BOOL*, int> get_code;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, BOOL*, int> get_initializedData;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, BOOL*, int> get_uninitializedData;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, BOOL*, int> get_remove;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, BOOL*, int> get_comdat;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, BOOL*, int> get_discardable;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, BOOL*, int> get_notCached;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, BOOL*, int> get_share;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, BOOL*, int> get_execute;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, BOOL*, int> get_read;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, BOOL*, int> get_write;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, uint*, int> get_dataCrc;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, uint*, int> get_relocationsCrc;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, uint*, int> get_compilandId;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaSectionContrib*, BOOL*, int> get_code16bit;
         }
     }
 }

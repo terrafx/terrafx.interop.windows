@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E4B24DB0-0990-11D3-8DF0-00105A2799B5")]
     [NativeTypeName("struct IEnumTfFunctionProviders : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumTfFunctionProviders
+    public unsafe partial struct IEnumTfFunctionProviders : IEnumTfFunctionProviders.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
         {
             return ((delegate* unmanaged<IEnumTfFunctionProviders*, uint, int>)(lpVtbl[6]))((IEnumTfFunctionProviders*)Unsafe.AsPointer(ref this), ulCount);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Clone(IEnumTfFunctionProviders** ppEnum);
+
+            [VtblIndex(4)]
+            HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfFunctionProvider** ppCmdobj, [NativeTypeName("ULONG *")] uint* pcFetch);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint ulCount);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfFunctionProviders*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfFunctionProviders*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfFunctionProviders*, uint> Release;
+
+            [NativeTypeName("HRESULT (IEnumTfFunctionProviders **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfFunctionProviders*, IEnumTfFunctionProviders**, int> Clone;
+
+            [NativeTypeName("HRESULT (ULONG, ITfFunctionProvider **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfFunctionProviders*, uint, ITfFunctionProvider**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfFunctionProviders*, int> Reset;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfFunctionProviders*, uint, int> Skip;
         }
     }
 }

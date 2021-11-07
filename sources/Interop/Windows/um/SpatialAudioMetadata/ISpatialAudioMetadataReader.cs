@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B78E86A2-31D9-4C32-94D2-7DF40FC7EBEC")]
     [NativeTypeName("struct ISpatialAudioMetadataReader : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpatialAudioMetadataReader
+    public unsafe partial struct ISpatialAudioMetadataReader : ISpatialAudioMetadataReader.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Close()
         {
             return ((delegate* unmanaged<ISpatialAudioMetadataReader*, int>)(lpVtbl[6]))((ISpatialAudioMetadataReader*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Open(ISpatialAudioMetadataItems* metadataItems);
+
+            [VtblIndex(4)]
+            HRESULT ReadNextItem([NativeTypeName("UINT8 *")] byte* commandCount, [NativeTypeName("UINT16 *")] ushort* frameOffset);
+
+            [VtblIndex(5)]
+            HRESULT ReadNextItemCommand(byte* commandID, void* valueBuffer, [NativeTypeName("UINT32")] uint maxValueBufferLength, [NativeTypeName("UINT32 *")] uint* valueBufferLength);
+
+            [VtblIndex(6)]
+            HRESULT Close();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioMetadataReader*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioMetadataReader*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioMetadataReader*, uint> Release;
+
+            [NativeTypeName("HRESULT (ISpatialAudioMetadataItems *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioMetadataReader*, ISpatialAudioMetadataItems*, int> Open;
+
+            [NativeTypeName("HRESULT (UINT8 *, UINT16 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioMetadataReader*, byte*, ushort*, int> ReadNextItem;
+
+            [NativeTypeName("HRESULT (BYTE *, void *, UINT32, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioMetadataReader*, byte*, void*, uint, uint*, int> ReadNextItemCommand;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpatialAudioMetadataReader*, int> Close;
         }
     }
 }

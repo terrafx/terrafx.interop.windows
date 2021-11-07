@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EB5DDB08-8BBF-449B-AC21-B02DDEB3B136")]
     [NativeTypeName("struct IXblIdpAuthManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IXblIdpAuthManager
+    public unsafe partial struct IXblIdpAuthManager : IXblIdpAuthManager.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,57 @@ namespace TerraFX.Interop
         public HRESULT GetTokenAndSignatureWithTokenResult([NativeTypeName("LPCWSTR")] ushort* msaAccountId, [NativeTypeName("LPCWSTR")] ushort* appSid, [NativeTypeName("LPCWSTR")] ushort* msaTarget, [NativeTypeName("LPCWSTR")] ushort* msaPolicy, [NativeTypeName("LPCWSTR")] ushort* httpMethod, [NativeTypeName("LPCWSTR")] ushort* uri, [NativeTypeName("LPCWSTR")] ushort* headers, byte* body, [NativeTypeName("DWORD")] uint bodySize, BOOL forceRefresh, IXblIdpAuthTokenResult** result)
         {
             return ((delegate* unmanaged<IXblIdpAuthManager*, ushort*, ushort*, ushort*, ushort*, ushort*, ushort*, ushort*, byte*, uint, BOOL, IXblIdpAuthTokenResult**, int>)(lpVtbl[8]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this), msaAccountId, appSid, msaTarget, msaPolicy, httpMethod, uri, headers, body, bodySize, forceRefresh, result);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetGamerAccount([NativeTypeName("LPCWSTR")] ushort* msaAccountId, [NativeTypeName("LPCWSTR")] ushort* xuid);
+
+            [VtblIndex(4)]
+            HRESULT GetGamerAccount([NativeTypeName("LPWSTR *")] ushort** msaAccountId, [NativeTypeName("LPWSTR *")] ushort** xuid);
+
+            [VtblIndex(5)]
+            HRESULT SetAppViewInitialized([NativeTypeName("LPCWSTR")] ushort* appSid, [NativeTypeName("LPCWSTR")] ushort* msaAccountId);
+
+            [VtblIndex(6)]
+            HRESULT GetEnvironment([NativeTypeName("LPWSTR *")] ushort** environment);
+
+            [VtblIndex(7)]
+            HRESULT GetSandbox([NativeTypeName("LPWSTR *")] ushort** sandbox);
+
+            [VtblIndex(8)]
+            HRESULT GetTokenAndSignatureWithTokenResult([NativeTypeName("LPCWSTR")] ushort* msaAccountId, [NativeTypeName("LPCWSTR")] ushort* appSid, [NativeTypeName("LPCWSTR")] ushort* msaTarget, [NativeTypeName("LPCWSTR")] ushort* msaPolicy, [NativeTypeName("LPCWSTR")] ushort* httpMethod, [NativeTypeName("LPCWSTR")] ushort* uri, [NativeTypeName("LPCWSTR")] ushort* headers, byte* body, [NativeTypeName("DWORD")] uint bodySize, BOOL forceRefresh, IXblIdpAuthTokenResult** result);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthManager*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthManager*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthManager*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthManager*, ushort*, ushort*, int> SetGamerAccount;
+
+            [NativeTypeName("HRESULT (LPWSTR *, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthManager*, ushort**, ushort**, int> GetGamerAccount;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthManager*, ushort*, ushort*, int> SetAppViewInitialized;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthManager*, ushort**, int> GetEnvironment;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthManager*, ushort**, int> GetSandbox;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR, BYTE *, DWORD, BOOL, IXblIdpAuthTokenResult **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXblIdpAuthManager*, ushort*, ushort*, ushort*, ushort*, ushort*, ushort*, ushort*, byte*, uint, BOOL, IXblIdpAuthTokenResult**, int> GetTokenAndSignatureWithTokenResult;
         }
     }
 }

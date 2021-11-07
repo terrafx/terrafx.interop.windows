@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106DA-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMMutationEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMMutationEvent
+    public unsafe partial struct IDOMMutationEvent : IDOMMutationEvent.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,69 @@ namespace TerraFX.Interop
         public HRESULT initMutationEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IDispatch* relatedNodeArg, [NativeTypeName("BSTR")] ushort* prevValueArg, [NativeTypeName("BSTR")] ushort* newValueArg, [NativeTypeName("BSTR")] ushort* attrNameArg, ushort attrChangeArg)
         {
             return ((delegate* unmanaged<IDOMMutationEvent*, ushort*, short, short, IDispatch*, ushort*, ushort*, ushort*, ushort, int>)(lpVtbl[12]))((IDOMMutationEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, relatedNodeArg, prevValueArg, newValueArg, attrNameArg, attrChangeArg);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_relatedNode(IDispatch** p);
+
+            [VtblIndex(8)]
+            HRESULT get_prevValue([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT get_newValue([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(10)]
+            HRESULT get_attrName([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT get_attrChange(ushort* p);
+
+            [VtblIndex(12)]
+            HRESULT initMutationEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IDispatch* relatedNodeArg, [NativeTypeName("BSTR")] ushort* prevValueArg, [NativeTypeName("BSTR")] ushort* newValueArg, [NativeTypeName("BSTR")] ushort* attrNameArg, ushort attrChangeArg);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMutationEvent*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMutationEvent*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMutationEvent*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMutationEvent*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMutationEvent*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMutationEvent*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMutationEvent*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMutationEvent*, IDispatch**, int> get_relatedNode;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMutationEvent*, ushort**, int> get_prevValue;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMutationEvent*, ushort**, int> get_newValue;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMutationEvent*, ushort**, int> get_attrName;
+
+            [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMutationEvent*, ushort*, int> get_attrChange;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, IDispatch *, BSTR, BSTR, BSTR, USHORT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMutationEvent*, ushort*, short, short, IDispatch*, ushort*, ushort*, ushort*, ushort, int> initMutationEvent;
         }
     }
 }

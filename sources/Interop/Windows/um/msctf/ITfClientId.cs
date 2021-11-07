@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D60A7B49-1B9F-4BE2-B702-47E9DC05DEC3")]
     [NativeTypeName("struct ITfClientId : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfClientId
+    public unsafe partial struct ITfClientId : ITfClientId.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetClientId([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("TfClientId *")] uint* ptid)
         {
             return ((delegate* unmanaged<ITfClientId*, Guid*, uint*, int>)(lpVtbl[3]))((ITfClientId*)Unsafe.AsPointer(ref this), rclsid, ptid);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetClientId([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("TfClientId *")] uint* ptid);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfClientId*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfClientId*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfClientId*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, TfClientId *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfClientId*, Guid*, uint*, int> GetClientId;
         }
     }
 }

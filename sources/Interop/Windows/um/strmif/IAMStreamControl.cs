@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("36B73881-C2C8-11CF-8B46-00805F6CEF60")]
     [NativeTypeName("struct IAMStreamControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMStreamControl
+    public unsafe partial struct IAMStreamControl : IAMStreamControl.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT GetInfo(AM_STREAM_INFO* pInfo)
         {
             return ((delegate* unmanaged<IAMStreamControl*, AM_STREAM_INFO*, int>)(lpVtbl[5]))((IAMStreamControl*)Unsafe.AsPointer(ref this), pInfo);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT StartAt([NativeTypeName("const REFERENCE_TIME *")] long* ptStart, [NativeTypeName("DWORD")] uint dwCookie);
+
+            [VtblIndex(4)]
+            HRESULT StopAt([NativeTypeName("const REFERENCE_TIME *")] long* ptStop, BOOL bSendExtra, [NativeTypeName("DWORD")] uint dwCookie);
+
+            [VtblIndex(5)]
+            HRESULT GetInfo(AM_STREAM_INFO* pInfo);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStreamControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStreamControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStreamControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (const REFERENCE_TIME *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStreamControl*, long*, uint, int> StartAt;
+
+            [NativeTypeName("HRESULT (const REFERENCE_TIME *, BOOL, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStreamControl*, long*, BOOL, uint, int> StopAt;
+
+            [NativeTypeName("HRESULT (AM_STREAM_INFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMStreamControl*, AM_STREAM_INFO*, int> GetInfo;
         }
     }
 }

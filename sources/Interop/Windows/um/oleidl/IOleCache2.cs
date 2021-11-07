@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000128-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IOleCache2 : IOleCache")]
     [NativeInheritance("IOleCache")]
-    public unsafe partial struct IOleCache2
+    public unsafe partial struct IOleCache2 : IOleCache2.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,48 @@ namespace TerraFX.Interop
         public HRESULT DiscardCache([NativeTypeName("DWORD")] uint dwDiscardOptions)
         {
             return ((delegate* unmanaged<IOleCache2*, uint, int>)(lpVtbl[9]))((IOleCache2*)Unsafe.AsPointer(ref this), dwDiscardOptions);
+        }
+
+        public interface Interface : IOleCache.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT UpdateCache([NativeTypeName("LPDATAOBJECT")] IDataObject* pDataObject, [NativeTypeName("DWORD")] uint grfUpdf, [NativeTypeName("LPVOID")] void* pReserved);
+
+            [VtblIndex(9)]
+            HRESULT DiscardCache([NativeTypeName("DWORD")] uint dwDiscardOptions);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleCache2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleCache2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleCache2*, uint> Release;
+
+            [NativeTypeName("HRESULT (FORMATETC *, DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleCache2*, FORMATETC*, uint, uint*, int> Cache;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleCache2*, uint, int> Uncache;
+
+            [NativeTypeName("HRESULT (IEnumSTATDATA **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleCache2*, IEnumSTATDATA**, int> EnumCache;
+
+            [NativeTypeName("HRESULT (IDataObject *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleCache2*, IDataObject*, int> InitCache;
+
+            [NativeTypeName("HRESULT (FORMATETC *, STGMEDIUM *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleCache2*, FORMATETC*, STGMEDIUM*, BOOL, int> SetData;
+
+            [NativeTypeName("HRESULT (LPDATAOBJECT, DWORD, LPVOID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleCache2*, IDataObject*, uint, void*, int> UpdateCache;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleCache2*, uint, int> DiscardCache;
         }
     }
 }

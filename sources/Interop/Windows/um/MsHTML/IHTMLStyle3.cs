@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F656-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLStyle3 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLStyle3
+    public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
     {
         public void** lpVtbl;
 
@@ -275,6 +275,213 @@ namespace TerraFX.Interop
         public HRESULT get_textKashidaSpace(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[36]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_layoutFlow([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_layoutFlow([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_zoom(VARIANT v);
+
+            [VtblIndex(10)]
+            HRESULT get_zoom(VARIANT* p);
+
+            [VtblIndex(11)]
+            HRESULT put_wordWrap([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(12)]
+            HRESULT get_wordWrap([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT put_textUnderlinePosition([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(14)]
+            HRESULT get_textUnderlinePosition([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(15)]
+            HRESULT put_scrollbarBaseColor(VARIANT v);
+
+            [VtblIndex(16)]
+            HRESULT get_scrollbarBaseColor(VARIANT* p);
+
+            [VtblIndex(17)]
+            HRESULT put_scrollbarFaceColor(VARIANT v);
+
+            [VtblIndex(18)]
+            HRESULT get_scrollbarFaceColor(VARIANT* p);
+
+            [VtblIndex(19)]
+            HRESULT put_scrollbar3dLightColor(VARIANT v);
+
+            [VtblIndex(20)]
+            HRESULT get_scrollbar3dLightColor(VARIANT* p);
+
+            [VtblIndex(21)]
+            HRESULT put_scrollbarShadowColor(VARIANT v);
+
+            [VtblIndex(22)]
+            HRESULT get_scrollbarShadowColor(VARIANT* p);
+
+            [VtblIndex(23)]
+            HRESULT put_scrollbarHighlightColor(VARIANT v);
+
+            [VtblIndex(24)]
+            HRESULT get_scrollbarHighlightColor(VARIANT* p);
+
+            [VtblIndex(25)]
+            HRESULT put_scrollbarDarkShadowColor(VARIANT v);
+
+            [VtblIndex(26)]
+            HRESULT get_scrollbarDarkShadowColor(VARIANT* p);
+
+            [VtblIndex(27)]
+            HRESULT put_scrollbarArrowColor(VARIANT v);
+
+            [VtblIndex(28)]
+            HRESULT get_scrollbarArrowColor(VARIANT* p);
+
+            [VtblIndex(29)]
+            HRESULT put_scrollbarTrackColor(VARIANT v);
+
+            [VtblIndex(30)]
+            HRESULT get_scrollbarTrackColor(VARIANT* p);
+
+            [VtblIndex(31)]
+            HRESULT put_writingMode([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(32)]
+            HRESULT get_writingMode([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(33)]
+            HRESULT put_textAlignLast([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(34)]
+            HRESULT get_textAlignLast([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(35)]
+            HRESULT put_textKashidaSpace(VARIANT v);
+
+            [VtblIndex(36)]
+            HRESULT get_textKashidaSpace(VARIANT* p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, ushort*, int> put_layoutFlow;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, ushort**, int> get_layoutFlow;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, VARIANT, int> put_zoom;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, VARIANT*, int> get_zoom;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, ushort*, int> put_wordWrap;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, ushort**, int> get_wordWrap;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, ushort*, int> put_textUnderlinePosition;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, ushort**, int> get_textUnderlinePosition;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, VARIANT, int> put_scrollbarBaseColor;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, VARIANT*, int> get_scrollbarBaseColor;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, VARIANT, int> put_scrollbarFaceColor;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, VARIANT*, int> get_scrollbarFaceColor;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, VARIANT, int> put_scrollbar3dLightColor;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, VARIANT*, int> get_scrollbar3dLightColor;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, VARIANT, int> put_scrollbarShadowColor;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, VARIANT*, int> get_scrollbarShadowColor;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, VARIANT, int> put_scrollbarHighlightColor;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, VARIANT*, int> get_scrollbarHighlightColor;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, VARIANT, int> put_scrollbarDarkShadowColor;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, VARIANT*, int> get_scrollbarDarkShadowColor;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, VARIANT, int> put_scrollbarArrowColor;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, VARIANT*, int> get_scrollbarArrowColor;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, VARIANT, int> put_scrollbarTrackColor;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, VARIANT*, int> get_scrollbarTrackColor;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, ushort*, int> put_writingMode;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, ushort**, int> get_writingMode;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, ushort*, int> put_textAlignLast;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, ushort**, int> get_textAlignLast;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, VARIANT, int> put_textKashidaSpace;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyle3*, VARIANT*, int> get_textKashidaSpace;
         }
     }
 }

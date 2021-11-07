@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A39184B7-6A36-42DE-8EEC-7DF9F3F59F33")]
     [NativeTypeName("struct IDiaFrameData : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaFrameData
+    public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,129 @@ namespace TerraFX.Interop
         public HRESULT execute(IDiaStackWalkFrame* frame)
         {
             return ((delegate* unmanaged<IDiaFrameData*, IDiaStackWalkFrame*, int>)(lpVtbl[20]))((IDiaFrameData*)Unsafe.AsPointer(ref this), frame);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_addressSection([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(4)]
+            HRESULT get_addressOffset([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(5)]
+            HRESULT get_relativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(6)]
+            HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
+
+            [VtblIndex(7)]
+            HRESULT get_lengthBlock([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(8)]
+            HRESULT get_lengthLocals([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(9)]
+            HRESULT get_lengthParams([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(10)]
+            HRESULT get_maxStack([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(11)]
+            HRESULT get_lengthProlog([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(12)]
+            HRESULT get_lengthSavedRegisters([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(13)]
+            HRESULT get_program([NativeTypeName("BSTR *")] ushort** pRetVal);
+
+            [VtblIndex(14)]
+            HRESULT get_systemExceptionHandling(BOOL* pRetVal);
+
+            [VtblIndex(15)]
+            HRESULT get_cplusplusExceptionHandling(BOOL* pRetVal);
+
+            [VtblIndex(16)]
+            HRESULT get_functionStart(BOOL* pRetVal);
+
+            [VtblIndex(17)]
+            HRESULT get_allocatesBasePointer(BOOL* pRetVal);
+
+            [VtblIndex(18)]
+            HRESULT get_type([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(19)]
+            HRESULT get_functionParent(IDiaFrameData** pRetVal);
+
+            [VtblIndex(20)]
+            HRESULT execute(IDiaStackWalkFrame* frame);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_addressSection;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_addressOffset;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_relativeVirtualAddress;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, ulong*, int> get_virtualAddress;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_lengthBlock;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_lengthLocals;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_lengthParams;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_maxStack;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_lengthProlog;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_lengthSavedRegisters;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, ushort**, int> get_program;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, BOOL*, int> get_systemExceptionHandling;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, BOOL*, int> get_cplusplusExceptionHandling;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, BOOL*, int> get_functionStart;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, BOOL*, int> get_allocatesBasePointer;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_type;
+
+            [NativeTypeName("HRESULT (IDiaFrameData **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, IDiaFrameData**, int> get_functionParent;
+
+            [NativeTypeName("HRESULT (IDiaStackWalkFrame *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaFrameData*, IDiaStackWalkFrame*, int> execute;
         }
     }
 }

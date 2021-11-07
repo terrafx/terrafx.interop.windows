@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9FD52741-176D-4B36-8F51-CA8F933223BE")]
     [NativeTypeName("struct IAMClockSlave : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMClockSlave
+    public unsafe partial struct IAMClockSlave : IAMClockSlave.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetErrorTolerance([NativeTypeName("DWORD *")] uint* pdwTolerance)
         {
             return ((delegate* unmanaged<IAMClockSlave*, uint*, int>)(lpVtbl[4]))((IAMClockSlave*)Unsafe.AsPointer(ref this), pdwTolerance);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetErrorTolerance([NativeTypeName("DWORD")] uint dwTolerance);
+
+            [VtblIndex(4)]
+            HRESULT GetErrorTolerance([NativeTypeName("DWORD *")] uint* pdwTolerance);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMClockSlave*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMClockSlave*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMClockSlave*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMClockSlave*, uint, int> SetErrorTolerance;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMClockSlave*, uint*, int> GetErrorTolerance;
         }
     }
 }

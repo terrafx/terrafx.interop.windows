@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("812D5F95-B572-45DC-BAFC-AE24199DDDA8")]
     [NativeTypeName("struct IMFExtendedCameraIntrinsicsDistortionModelArcTan : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFExtendedCameraIntrinsicsDistortionModelArcTan
+    public unsafe partial struct IMFExtendedCameraIntrinsicsDistortionModelArcTan : IMFExtendedCameraIntrinsicsDistortionModelArcTan.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT SetDistortionModel([NativeTypeName("const MFCameraIntrinsic_DistortionModelArcTan *")] MFCameraIntrinsic_DistortionModelArcTan* pDistortionModel)
         {
             return ((delegate* unmanaged<IMFExtendedCameraIntrinsicsDistortionModelArcTan*, MFCameraIntrinsic_DistortionModelArcTan*, int>)(lpVtbl[4]))((IMFExtendedCameraIntrinsicsDistortionModelArcTan*)Unsafe.AsPointer(ref this), pDistortionModel);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDistortionModel(MFCameraIntrinsic_DistortionModelArcTan* pDistortionModel);
+
+            [VtblIndex(4)]
+            HRESULT SetDistortionModel([NativeTypeName("const MFCameraIntrinsic_DistortionModelArcTan *")] MFCameraIntrinsic_DistortionModelArcTan* pDistortionModel);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsicsDistortionModelArcTan*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsicsDistortionModelArcTan*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsicsDistortionModelArcTan*, uint> Release;
+
+            [NativeTypeName("HRESULT (MFCameraIntrinsic_DistortionModelArcTan *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsicsDistortionModelArcTan*, MFCameraIntrinsic_DistortionModelArcTan*, int> GetDistortionModel;
+
+            [NativeTypeName("HRESULT (const MFCameraIntrinsic_DistortionModelArcTan *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsicsDistortionModelArcTan*, MFCameraIntrinsic_DistortionModelArcTan*, int> SetDistortionModel;
         }
     }
 }

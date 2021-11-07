@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27354155-8F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct IDiscFormat2RawCD : IDiscFormat2")]
     [NativeInheritance("IDiscFormat2")]
-    public unsafe partial struct IDiscFormat2RawCD
+    public unsafe partial struct IDiscFormat2RawCD : IDiscFormat2RawCD.Interface
     {
         public void** lpVtbl;
 
@@ -268,6 +268,192 @@ namespace TerraFX.Interop
         public HRESULT get_SupportedWriteSpeedDescriptors(SAFEARRAY** supportedSpeedDescriptors)
         {
             return ((delegate* unmanaged<IDiscFormat2RawCD*, SAFEARRAY**, int>)(lpVtbl[35]))((IDiscFormat2RawCD*)Unsafe.AsPointer(ref this), supportedSpeedDescriptors);
+        }
+
+        public interface Interface : IDiscFormat2.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT PrepareMedia();
+
+            [VtblIndex(13)]
+            HRESULT WriteMedia(IStream* data);
+
+            [VtblIndex(14)]
+            HRESULT WriteMedia2(IStream* data, [NativeTypeName("LONG")] int streamLeadInSectors);
+
+            [VtblIndex(15)]
+            HRESULT CancelWrite();
+
+            [VtblIndex(16)]
+            HRESULT ReleaseMedia();
+
+            [VtblIndex(17)]
+            HRESULT SetWriteSpeed([NativeTypeName("LONG")] int RequestedSectorsPerSecond, [NativeTypeName("VARIANT_BOOL")] short RotationTypeIsPureCAV);
+
+            [VtblIndex(18)]
+            HRESULT put_Recorder(IDiscRecorder2* value);
+
+            [VtblIndex(19)]
+            HRESULT get_Recorder(IDiscRecorder2** value);
+
+            [VtblIndex(20)]
+            HRESULT put_BufferUnderrunFreeDisabled([NativeTypeName("VARIANT_BOOL")] short value);
+
+            [VtblIndex(21)]
+            HRESULT get_BufferUnderrunFreeDisabled([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(22)]
+            HRESULT get_StartOfNextSession([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(23)]
+            HRESULT get_LastPossibleStartOfLeadout([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(24)]
+            HRESULT get_CurrentPhysicalMediaType(IMAPI_MEDIA_PHYSICAL_TYPE* value);
+
+            [VtblIndex(25)]
+            HRESULT get_SupportedSectorTypes(SAFEARRAY** value);
+
+            [VtblIndex(26)]
+            HRESULT put_RequestedSectorType(IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE value);
+
+            [VtblIndex(27)]
+            HRESULT get_RequestedSectorType(IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE* value);
+
+            [VtblIndex(28)]
+            HRESULT put_ClientName([NativeTypeName("BSTR")] ushort* value);
+
+            [VtblIndex(29)]
+            HRESULT get_ClientName([NativeTypeName("BSTR *")] ushort** value);
+
+            [VtblIndex(30)]
+            HRESULT get_RequestedWriteSpeed([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(31)]
+            HRESULT get_RequestedRotationTypeIsPureCAV([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(32)]
+            HRESULT get_CurrentWriteSpeed([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(33)]
+            HRESULT get_CurrentRotationTypeIsPureCAV([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(34)]
+            HRESULT get_SupportedWriteSpeeds(SAFEARRAY** supportedSpeeds);
+
+            [VtblIndex(35)]
+            HRESULT get_SupportedWriteSpeedDescriptors(SAFEARRAY** supportedSpeedDescriptors);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IDiscRecorder2 *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, IDiscRecorder2*, short*, int> IsRecorderSupported;
+
+            [NativeTypeName("HRESULT (IDiscRecorder2 *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, IDiscRecorder2*, short*, int> IsCurrentMediaSupported;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, short*, int> get_MediaPhysicallyBlank;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, short*, int> get_MediaHeuristicallyBlank;
+
+            [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, SAFEARRAY**, int> get_SupportedMediaTypes;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, int> PrepareMedia;
+
+            [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, IStream*, int> WriteMedia;
+
+            [NativeTypeName("HRESULT (IStream *, LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, IStream*, int, int> WriteMedia2;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, int> CancelWrite;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, int> ReleaseMedia;
+
+            [NativeTypeName("HRESULT (LONG, VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, int, short, int> SetWriteSpeed;
+
+            [NativeTypeName("HRESULT (IDiscRecorder2 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, IDiscRecorder2*, int> put_Recorder;
+
+            [NativeTypeName("HRESULT (IDiscRecorder2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, IDiscRecorder2**, int> get_Recorder;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, short, int> put_BufferUnderrunFreeDisabled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, short*, int> get_BufferUnderrunFreeDisabled;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, int*, int> get_StartOfNextSession;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, int*, int> get_LastPossibleStartOfLeadout;
+
+            [NativeTypeName("HRESULT (IMAPI_MEDIA_PHYSICAL_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, IMAPI_MEDIA_PHYSICAL_TYPE*, int> get_CurrentPhysicalMediaType;
+
+            [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, SAFEARRAY**, int> get_SupportedSectorTypes;
+
+            [NativeTypeName("HRESULT (IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE, int> put_RequestedSectorType;
+
+            [NativeTypeName("HRESULT (IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE*, int> get_RequestedSectorType;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, ushort*, int> put_ClientName;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, ushort**, int> get_ClientName;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, int*, int> get_RequestedWriteSpeed;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, short*, int> get_RequestedRotationTypeIsPureCAV;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, int*, int> get_CurrentWriteSpeed;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, short*, int> get_CurrentRotationTypeIsPureCAV;
+
+            [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, SAFEARRAY**, int> get_SupportedWriteSpeeds;
+
+            [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2RawCD*, SAFEARRAY**, int> get_SupportedWriteSpeedDescriptors;
         }
     }
 }

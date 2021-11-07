@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct ISpNotifyCallback
+    public unsafe partial struct ISpNotifyCallback : ISpNotifyCallback.Interface
     {
         public void** lpVtbl;
 
@@ -16,6 +16,18 @@ namespace TerraFX.Interop
         public HRESULT NotifyCallback(WPARAM wParam, LPARAM lParam)
         {
             return ((delegate* unmanaged<ISpNotifyCallback*, WPARAM, LPARAM, int>)(lpVtbl[0]))((ISpNotifyCallback*)Unsafe.AsPointer(ref this), wParam, lParam);
+        }
+
+        public interface Interface
+        {
+            [VtblIndex(0)]
+            HRESULT NotifyCallback(WPARAM wParam, LPARAM lParam);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (WPARAM, LPARAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifyCallback*, WPARAM, LPARAM, int> NotifyCallback;
         }
     }
 }

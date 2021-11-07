@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("26D95C66-80F2-499A-AD54-5AE7F01C6D98")]
     [NativeTypeName("struct IXAPOParameters : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IXAPOParameters
+    public unsafe partial struct IXAPOParameters : IXAPOParameters.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public void GetParameters(void* pParameters, [NativeTypeName("UINT32")] uint ParameterByteSize)
         {
             ((delegate* unmanaged<IXAPOParameters*, void*, uint, void>)(lpVtbl[4]))((IXAPOParameters*)Unsafe.AsPointer(ref this), pParameters, ParameterByteSize);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void SetParameters([NativeTypeName("const void *")] void* pParameters, [NativeTypeName("UINT32")] uint ParameterByteSize);
+
+            [VtblIndex(4)]
+            void GetParameters(void* pParameters, [NativeTypeName("UINT32")] uint ParameterByteSize);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAPOParameters*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAPOParameters*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAPOParameters*, uint> Release;
+
+            [NativeTypeName("void (const void *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAPOParameters*, void*, uint, void> SetParameters;
+
+            [NativeTypeName("void (void *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXAPOParameters*, void*, uint, void> GetParameters;
         }
     }
 }

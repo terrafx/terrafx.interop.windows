@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F1F7-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLFormElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLFormElement
+    public unsafe partial struct IHTMLFormElement : IHTMLFormElement.Interface
     {
         public void** lpVtbl;
 
@@ -233,6 +233,177 @@ namespace TerraFX.Interop
         public HRESULT tags(VARIANT tagName, IDispatch** pdisp)
         {
             return ((delegate* unmanaged<IHTMLFormElement*, VARIANT, IDispatch**, int>)(lpVtbl[30]))((IHTMLFormElement*)Unsafe.AsPointer(ref this), tagName, pdisp);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_action([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_action([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_dir([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_dir([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT put_encoding([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(12)]
+            HRESULT get_encoding([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT put_method([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(14)]
+            HRESULT get_method([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(15)]
+            HRESULT get_elements(IDispatch** p);
+
+            [VtblIndex(16)]
+            HRESULT put_target([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(17)]
+            HRESULT get_target([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(18)]
+            HRESULT put_name([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(19)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(20)]
+            HRESULT put_onsubmit(VARIANT v);
+
+            [VtblIndex(21)]
+            HRESULT get_onsubmit(VARIANT* p);
+
+            [VtblIndex(22)]
+            HRESULT put_onreset(VARIANT v);
+
+            [VtblIndex(23)]
+            HRESULT get_onreset(VARIANT* p);
+
+            [VtblIndex(24)]
+            HRESULT submit();
+
+            [VtblIndex(25)]
+            HRESULT reset();
+
+            [VtblIndex(26)]
+            HRESULT put_length([NativeTypeName("long")] int v);
+
+            [VtblIndex(27)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(28)]
+            HRESULT get__newEnum(IUnknown** p);
+
+            [VtblIndex(29)]
+            HRESULT item(VARIANT name, VARIANT index, IDispatch** pdisp);
+
+            [VtblIndex(30)]
+            HRESULT tags(VARIANT tagName, IDispatch** pdisp);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, ushort*, int> put_action;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, ushort**, int> get_action;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, ushort*, int> put_dir;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, ushort**, int> get_dir;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, ushort*, int> put_encoding;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, ushort**, int> get_encoding;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, ushort*, int> put_method;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, ushort**, int> get_method;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, IDispatch**, int> get_elements;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, ushort*, int> put_target;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, ushort**, int> get_target;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, ushort*, int> put_name;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, ushort**, int> get_name;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, VARIANT, int> put_onsubmit;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, VARIANT*, int> get_onsubmit;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, VARIANT, int> put_onreset;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, VARIANT*, int> get_onreset;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, int> submit;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, int> reset;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, int, int> put_length;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, int*, int> get_length;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, IUnknown**, int> get__newEnum;
+
+            [NativeTypeName("HRESULT (VARIANT, VARIANT, IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, VARIANT, VARIANT, IDispatch**, int> item;
+
+            [NativeTypeName("HRESULT (VARIANT, IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFormElement*, VARIANT, IDispatch**, int> tags;
         }
     }
 }

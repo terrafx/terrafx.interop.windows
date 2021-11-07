@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F4376F00-BEF5-4D45-80F3-1E023BBF1209")]
     [NativeTypeName("struct IThumbnailSettings : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IThumbnailSettings
+    public unsafe partial struct IThumbnailSettings : IThumbnailSettings.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT SetContext(WTS_CONTEXTFLAGS dwContext)
         {
             return ((delegate* unmanaged<IThumbnailSettings*, WTS_CONTEXTFLAGS, int>)(lpVtbl[3]))((IThumbnailSettings*)Unsafe.AsPointer(ref this), dwContext);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetContext(WTS_CONTEXTFLAGS dwContext);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IThumbnailSettings*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IThumbnailSettings*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IThumbnailSettings*, uint> Release;
+
+            [NativeTypeName("HRESULT (WTS_CONTEXTFLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<IThumbnailSettings*, WTS_CONTEXTFLAGS, int> SetContext;
         }
     }
 }

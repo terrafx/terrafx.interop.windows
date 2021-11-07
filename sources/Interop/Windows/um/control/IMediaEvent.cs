@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868B6-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IMediaEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IMediaEvent
+    public unsafe partial struct IMediaEvent : IMediaEvent.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,69 @@ namespace TerraFX.Interop
         public HRESULT FreeEventParams([NativeTypeName("long")] int lEvCode, [NativeTypeName("LONG_PTR")] nint lParam1, [NativeTypeName("LONG_PTR")] nint lParam2)
         {
             return ((delegate* unmanaged<IMediaEvent*, int, nint, nint, int>)(lpVtbl[12]))((IMediaEvent*)Unsafe.AsPointer(ref this), lEvCode, lParam1, lParam2);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetEventHandle([NativeTypeName("OAEVENT *")] nint* hEvent);
+
+            [VtblIndex(8)]
+            HRESULT GetEvent([NativeTypeName("long *")] int* lEventCode, [NativeTypeName("LONG_PTR *")] nint* lParam1, [NativeTypeName("LONG_PTR *")] nint* lParam2, [NativeTypeName("long")] int msTimeout);
+
+            [VtblIndex(9)]
+            HRESULT WaitForCompletion([NativeTypeName("long")] int msTimeout, [NativeTypeName("long *")] int* pEvCode);
+
+            [VtblIndex(10)]
+            HRESULT CancelDefaultHandling([NativeTypeName("long")] int lEvCode);
+
+            [VtblIndex(11)]
+            HRESULT RestoreDefaultHandling([NativeTypeName("long")] int lEvCode);
+
+            [VtblIndex(12)]
+            HRESULT FreeEventParams([NativeTypeName("long")] int lEvCode, [NativeTypeName("LONG_PTR")] nint lParam1, [NativeTypeName("LONG_PTR")] nint lParam2);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEvent*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEvent*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEvent*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEvent*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEvent*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEvent*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEvent*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (OAEVENT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEvent*, nint*, int> GetEventHandle;
+
+            [NativeTypeName("HRESULT (long *, LONG_PTR *, LONG_PTR *, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEvent*, int*, nint*, nint*, int, int> GetEvent;
+
+            [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEvent*, int, int*, int> WaitForCompletion;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEvent*, int, int> CancelDefaultHandling;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEvent*, int, int> RestoreDefaultHandling;
+
+            [NativeTypeName("HRESULT (long, LONG_PTR, LONG_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaEvent*, int, nint, nint, int> FreeEventParams;
         }
     }
 }

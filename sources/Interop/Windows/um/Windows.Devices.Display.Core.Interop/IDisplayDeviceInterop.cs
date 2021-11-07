@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("64338358-366A-471B-BD56-DD8EF48E439B")]
     [NativeTypeName("struct IDisplayDeviceInterop : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDisplayDeviceInterop
+    public unsafe partial struct IDisplayDeviceInterop : IDisplayDeviceInterop.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT OpenSharedHandle(HANDLE NTHandle, [NativeTypeName("IID")] Guid riid, void** ppvObj)
         {
             return ((delegate* unmanaged<IDisplayDeviceInterop*, HANDLE, Guid, void**, int>)(lpVtbl[4]))((IDisplayDeviceInterop*)Unsafe.AsPointer(ref this), NTHandle, riid, ppvObj);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateSharedHandle(IInspectable* pObject, [NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pSecurityAttributes, [NativeTypeName("DWORD")] uint Access, HSTRING Name, HANDLE* pHandle);
+
+            [VtblIndex(4)]
+            HRESULT OpenSharedHandle(HANDLE NTHandle, [NativeTypeName("IID")] Guid riid, void** ppvObj);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDisplayDeviceInterop*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDisplayDeviceInterop*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDisplayDeviceInterop*, uint> Release;
+
+            [NativeTypeName("HRESULT (IInspectable *, const SECURITY_ATTRIBUTES *, DWORD, HSTRING, HANDLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDisplayDeviceInterop*, IInspectable*, SECURITY_ATTRIBUTES*, uint, HSTRING, HANDLE*, int> CreateSharedHandle;
+
+            [NativeTypeName("HRESULT (HANDLE, IID, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDisplayDeviceInterop*, HANDLE, Guid, void**, int> OpenSharedHandle;
         }
     }
 }

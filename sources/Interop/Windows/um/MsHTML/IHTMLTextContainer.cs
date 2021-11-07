@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F230-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLTextContainer : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLTextContainer
+    public unsafe partial struct IHTMLTextContainer : IHTMLTextContainer.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,87 @@ namespace TerraFX.Interop
         public HRESULT get_onscroll(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLTextContainer*, VARIANT*, int>)(lpVtbl[15]))((IHTMLTextContainer*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT createControlRange(IDispatch** range);
+
+            [VtblIndex(8)]
+            HRESULT get_scrollHeight([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT get_scrollWidth([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(10)]
+            HRESULT put_scrollTop([NativeTypeName("long")] int v);
+
+            [VtblIndex(11)]
+            HRESULT get_scrollTop([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(12)]
+            HRESULT put_scrollLeft([NativeTypeName("long")] int v);
+
+            [VtblIndex(13)]
+            HRESULT get_scrollLeft([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(14)]
+            HRESULT put_onscroll(VARIANT v);
+
+            [VtblIndex(15)]
+            HRESULT get_onscroll(VARIANT* p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextContainer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextContainer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextContainer*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextContainer*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextContainer*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextContainer*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextContainer*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextContainer*, IDispatch**, int> createControlRange;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextContainer*, int*, int> get_scrollHeight;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextContainer*, int*, int> get_scrollWidth;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextContainer*, int, int> put_scrollTop;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextContainer*, int*, int> get_scrollTop;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextContainer*, int, int> put_scrollLeft;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextContainer*, int*, int> get_scrollLeft;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextContainer*, VARIANT, int> put_onscroll;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextContainer*, VARIANT*, int> get_onscroll;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F817-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLRuleStyle4 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLRuleStyle4
+    public unsafe partial struct IHTMLRuleStyle4 : IHTMLRuleStyle4.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,57 @@ namespace TerraFX.Interop
         public HRESULT get_minHeight(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLRuleStyle4*, VARIANT*, int>)(lpVtbl[10]))((IHTMLRuleStyle4*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_textOverflow([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_textOverflow([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_minHeight(VARIANT v);
+
+            [VtblIndex(10)]
+            HRESULT get_minHeight(VARIANT* p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle4*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle4*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle4*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle4*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle4*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle4*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle4*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle4*, ushort*, int> put_textOverflow;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle4*, ushort**, int> get_textOverflow;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle4*, VARIANT, int> put_minHeight;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRuleStyle4*, VARIANT*, int> get_minHeight;
         }
     }
 }

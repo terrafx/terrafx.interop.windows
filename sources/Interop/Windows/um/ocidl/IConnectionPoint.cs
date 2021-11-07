@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B196B286-BAB4-101A-B69C-00AA00341D07")]
     [NativeTypeName("struct IConnectionPoint : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IConnectionPoint
+    public unsafe partial struct IConnectionPoint : IConnectionPoint.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT EnumConnections(IEnumConnections** ppEnum)
         {
             return ((delegate* unmanaged<IConnectionPoint*, IEnumConnections**, int>)(lpVtbl[7]))((IConnectionPoint*)Unsafe.AsPointer(ref this), ppEnum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetConnectionInterface([NativeTypeName("IID *")] Guid* pIID);
+
+            [VtblIndex(4)]
+            HRESULT GetConnectionPointContainer(IConnectionPointContainer** ppCPC);
+
+            [VtblIndex(5)]
+            HRESULT Advise(IUnknown* pUnkSink, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(6)]
+            HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie);
+
+            [VtblIndex(7)]
+            HRESULT EnumConnections(IEnumConnections** ppEnum);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnectionPoint*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnectionPoint*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnectionPoint*, uint> Release;
+
+            [NativeTypeName("HRESULT (IID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnectionPoint*, Guid*, int> GetConnectionInterface;
+
+            [NativeTypeName("HRESULT (IConnectionPointContainer **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnectionPoint*, IConnectionPointContainer**, int> GetConnectionPointContainer;
+
+            [NativeTypeName("HRESULT (IUnknown *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnectionPoint*, IUnknown*, uint*, int> Advise;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnectionPoint*, uint, int> Unadvise;
+
+            [NativeTypeName("HRESULT (IEnumConnections **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnectionPoint*, IEnumConnections**, int> EnumConnections;
         }
     }
 }

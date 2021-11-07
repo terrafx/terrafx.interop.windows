@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5CACDB4C-407E-41B3-B936-D0F010CD6732")]
     [NativeTypeName("struct IWICDdsEncoder : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWICDdsEncoder
+    public unsafe partial struct IWICDdsEncoder : IWICDdsEncoder.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT CreateNewFrame(IWICBitmapFrameEncode** ppIFrameEncode, uint* pArrayIndex, uint* pMipLevel, uint* pSliceIndex)
         {
             return ((delegate* unmanaged<IWICDdsEncoder*, IWICBitmapFrameEncode**, uint*, uint*, uint*, int>)(lpVtbl[5]))((IWICDdsEncoder*)Unsafe.AsPointer(ref this), ppIFrameEncode, pArrayIndex, pMipLevel, pSliceIndex);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetParameters(WICDdsParameters* pParameters);
+
+            [VtblIndex(4)]
+            HRESULT GetParameters(WICDdsParameters* pParameters);
+
+            [VtblIndex(5)]
+            HRESULT CreateNewFrame(IWICBitmapFrameEncode** ppIFrameEncode, uint* pArrayIndex, uint* pMipLevel, uint* pSliceIndex);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICDdsEncoder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICDdsEncoder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICDdsEncoder*, uint> Release;
+
+            [NativeTypeName("HRESULT (WICDdsParameters *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICDdsEncoder*, WICDdsParameters*, int> SetParameters;
+
+            [NativeTypeName("HRESULT (WICDdsParameters *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICDdsEncoder*, WICDdsParameters*, int> GetParameters;
+
+            [NativeTypeName("HRESULT (IWICBitmapFrameEncode **, UINT *, UINT *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICDdsEncoder*, IWICBitmapFrameEncode**, uint*, uint*, uint*, int> CreateNewFrame;
         }
     }
 }

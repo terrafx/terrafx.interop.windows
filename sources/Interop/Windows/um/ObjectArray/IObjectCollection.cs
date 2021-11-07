@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5632B1A4-E38A-400A-928A-D4CD63230295")]
     [NativeTypeName("struct IObjectCollection : IObjectArray")]
     [NativeInheritance("IObjectArray")]
-    public unsafe partial struct IObjectCollection
+    public unsafe partial struct IObjectCollection : IObjectCollection.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,51 @@ namespace TerraFX.Interop
         public HRESULT Clear()
         {
             return ((delegate* unmanaged<IObjectCollection*, int>)(lpVtbl[8]))((IObjectCollection*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IObjectArray.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT AddObject(IUnknown* punk);
+
+            [VtblIndex(6)]
+            HRESULT AddFromArray(IObjectArray* poaSource);
+
+            [VtblIndex(7)]
+            HRESULT RemoveObjectAt(uint uiIndex);
+
+            [VtblIndex(8)]
+            HRESULT Clear();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectCollection*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectCollection*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectCollection*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectCollection*, uint*, int> GetCount;
+
+            [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectCollection*, uint, Guid*, void**, int> GetAt;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectCollection*, IUnknown*, int> AddObject;
+
+            [NativeTypeName("HRESULT (IObjectArray *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectCollection*, IObjectArray*, int> AddFromArray;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectCollection*, uint, int> RemoveObjectAt;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectCollection*, int> Clear;
         }
     }
 }

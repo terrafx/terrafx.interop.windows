@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B79BB0B1-33C1-11D1-ABE1-00A0C905F375")]
     [NativeTypeName("struct IFilterMapper3 : IFilterMapper2")]
     [NativeInheritance("IFilterMapper2")]
-    public unsafe partial struct IFilterMapper3
+    public unsafe partial struct IFilterMapper3 : IFilterMapper3.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,39 @@ namespace TerraFX.Interop
         public HRESULT GetICreateDevEnum(ICreateDevEnum** ppEnum)
         {
             return ((delegate* unmanaged<IFilterMapper3*, ICreateDevEnum**, int>)(lpVtbl[7]))((IFilterMapper3*)Unsafe.AsPointer(ref this), ppEnum);
+        }
+
+        public interface Interface : IFilterMapper2.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetICreateDevEnum(ICreateDevEnum** ppEnum);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper3*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, DWORD, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper3*, Guid*, uint, ushort*, int> CreateCategory;
+
+            [NativeTypeName("HRESULT (const CLSID *, LPCOLESTR, const IID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper3*, Guid*, ushort*, Guid*, int> UnregisterFilter;
+
+            [NativeTypeName("HRESULT (const IID &, LPCWSTR, IMoniker **, const CLSID *, LPCOLESTR, const REGFILTER2 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper3*, Guid*, ushort*, IMoniker**, Guid*, ushort*, REGFILTER2*, int> RegisterFilter;
+
+            [NativeTypeName("HRESULT (IEnumMoniker **, DWORD, BOOL, DWORD, BOOL, DWORD, const GUID *, const REGPINMEDIUM *, const CLSID *, BOOL, BOOL, DWORD, const GUID *, const REGPINMEDIUM *, const CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper3*, IEnumMoniker**, uint, BOOL, uint, BOOL, uint, Guid*, REGPINMEDIUM*, Guid*, BOOL, BOOL, uint, Guid*, REGPINMEDIUM*, Guid*, int> EnumMatchingFilters;
+
+            [NativeTypeName("HRESULT (ICreateDevEnum **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper3*, ICreateDevEnum**, int> GetICreateDevEnum;
         }
     }
 }

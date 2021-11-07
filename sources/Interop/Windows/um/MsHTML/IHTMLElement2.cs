@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F434-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLElement2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLElement2
+    public unsafe partial struct IHTMLElement2 : IHTMLElement2.Interface
     {
         public void** lpVtbl;
 
@@ -751,6 +751,621 @@ namespace TerraFX.Interop
         public HRESULT getElementsByTagName([NativeTypeName("BSTR")] ushort* v, IHTMLElementCollection** pelColl)
         {
             return ((delegate* unmanaged<IHTMLElement2*, ushort*, IHTMLElementCollection**, int>)(lpVtbl[104]))((IHTMLElement2*)Unsafe.AsPointer(ref this), v, pelColl);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_scopeName([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT setCapture([NativeTypeName("VARIANT_BOOL")] short containerCapture = -1);
+
+            [VtblIndex(9)]
+            HRESULT releaseCapture();
+
+            [VtblIndex(10)]
+            HRESULT put_onlosecapture(VARIANT v);
+
+            [VtblIndex(11)]
+            HRESULT get_onlosecapture(VARIANT* p);
+
+            [VtblIndex(12)]
+            HRESULT componentFromPoint([NativeTypeName("long")] int x, [NativeTypeName("long")] int y, [NativeTypeName("BSTR *")] ushort** component);
+
+            [VtblIndex(13)]
+            HRESULT doScroll(VARIANT component);
+
+            [VtblIndex(14)]
+            HRESULT put_onscroll(VARIANT v);
+
+            [VtblIndex(15)]
+            HRESULT get_onscroll(VARIANT* p);
+
+            [VtblIndex(16)]
+            HRESULT put_ondrag(VARIANT v);
+
+            [VtblIndex(17)]
+            HRESULT get_ondrag(VARIANT* p);
+
+            [VtblIndex(18)]
+            HRESULT put_ondragend(VARIANT v);
+
+            [VtblIndex(19)]
+            HRESULT get_ondragend(VARIANT* p);
+
+            [VtblIndex(20)]
+            HRESULT put_ondragenter(VARIANT v);
+
+            [VtblIndex(21)]
+            HRESULT get_ondragenter(VARIANT* p);
+
+            [VtblIndex(22)]
+            HRESULT put_ondragover(VARIANT v);
+
+            [VtblIndex(23)]
+            HRESULT get_ondragover(VARIANT* p);
+
+            [VtblIndex(24)]
+            HRESULT put_ondragleave(VARIANT v);
+
+            [VtblIndex(25)]
+            HRESULT get_ondragleave(VARIANT* p);
+
+            [VtblIndex(26)]
+            HRESULT put_ondrop(VARIANT v);
+
+            [VtblIndex(27)]
+            HRESULT get_ondrop(VARIANT* p);
+
+            [VtblIndex(28)]
+            HRESULT put_onbeforecut(VARIANT v);
+
+            [VtblIndex(29)]
+            HRESULT get_onbeforecut(VARIANT* p);
+
+            [VtblIndex(30)]
+            HRESULT put_oncut(VARIANT v);
+
+            [VtblIndex(31)]
+            HRESULT get_oncut(VARIANT* p);
+
+            [VtblIndex(32)]
+            HRESULT put_onbeforecopy(VARIANT v);
+
+            [VtblIndex(33)]
+            HRESULT get_onbeforecopy(VARIANT* p);
+
+            [VtblIndex(34)]
+            HRESULT put_oncopy(VARIANT v);
+
+            [VtblIndex(35)]
+            HRESULT get_oncopy(VARIANT* p);
+
+            [VtblIndex(36)]
+            HRESULT put_onbeforepaste(VARIANT v);
+
+            [VtblIndex(37)]
+            HRESULT get_onbeforepaste(VARIANT* p);
+
+            [VtblIndex(38)]
+            HRESULT put_onpaste(VARIANT v);
+
+            [VtblIndex(39)]
+            HRESULT get_onpaste(VARIANT* p);
+
+            [VtblIndex(40)]
+            HRESULT get_currentStyle(IHTMLCurrentStyle** p);
+
+            [VtblIndex(41)]
+            HRESULT put_onpropertychange(VARIANT v);
+
+            [VtblIndex(42)]
+            HRESULT get_onpropertychange(VARIANT* p);
+
+            [VtblIndex(43)]
+            HRESULT getClientRects(IHTMLRectCollection** pRectCol);
+
+            [VtblIndex(44)]
+            HRESULT getBoundingClientRect(IHTMLRect** pRect);
+
+            [VtblIndex(45)]
+            HRESULT setExpression([NativeTypeName("BSTR")] ushort* propname, [NativeTypeName("BSTR")] ushort* expression, [NativeTypeName("BSTR")] ushort* language = null);
+
+            [VtblIndex(46)]
+            HRESULT getExpression([NativeTypeName("BSTR")] ushort* propname, VARIANT* expression);
+
+            [VtblIndex(47)]
+            HRESULT removeExpression([NativeTypeName("BSTR")] ushort* propname, [NativeTypeName("VARIANT_BOOL *")] short* pfSuccess);
+
+            [VtblIndex(48)]
+            HRESULT put_tabIndex(short v);
+
+            [VtblIndex(49)]
+            HRESULT get_tabIndex(short* p);
+
+            [VtblIndex(50)]
+            HRESULT focus();
+
+            [VtblIndex(51)]
+            HRESULT put_accessKey([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(52)]
+            HRESULT get_accessKey([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(53)]
+            HRESULT put_onblur(VARIANT v);
+
+            [VtblIndex(54)]
+            HRESULT get_onblur(VARIANT* p);
+
+            [VtblIndex(55)]
+            HRESULT put_onfocus(VARIANT v);
+
+            [VtblIndex(56)]
+            HRESULT get_onfocus(VARIANT* p);
+
+            [VtblIndex(57)]
+            HRESULT put_onresize(VARIANT v);
+
+            [VtblIndex(58)]
+            HRESULT get_onresize(VARIANT* p);
+
+            [VtblIndex(59)]
+            HRESULT blur();
+
+            [VtblIndex(60)]
+            HRESULT addFilter(IUnknown* pUnk);
+
+            [VtblIndex(61)]
+            HRESULT removeFilter(IUnknown* pUnk);
+
+            [VtblIndex(62)]
+            HRESULT get_clientHeight([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(63)]
+            HRESULT get_clientWidth([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(64)]
+            HRESULT get_clientTop([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(65)]
+            HRESULT get_clientLeft([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(66)]
+            HRESULT attachEvent([NativeTypeName("BSTR")] ushort* @event, IDispatch* pDisp, [NativeTypeName("VARIANT_BOOL *")] short* pfResult);
+
+            [VtblIndex(67)]
+            HRESULT detachEvent([NativeTypeName("BSTR")] ushort* @event, IDispatch* pDisp);
+
+            [VtblIndex(68)]
+            HRESULT get_readyState(VARIANT* p);
+
+            [VtblIndex(69)]
+            HRESULT put_onreadystatechange(VARIANT v);
+
+            [VtblIndex(70)]
+            HRESULT get_onreadystatechange(VARIANT* p);
+
+            [VtblIndex(71)]
+            HRESULT put_onrowsdelete(VARIANT v);
+
+            [VtblIndex(72)]
+            HRESULT get_onrowsdelete(VARIANT* p);
+
+            [VtblIndex(73)]
+            HRESULT put_onrowsinserted(VARIANT v);
+
+            [VtblIndex(74)]
+            HRESULT get_onrowsinserted(VARIANT* p);
+
+            [VtblIndex(75)]
+            HRESULT put_oncellchange(VARIANT v);
+
+            [VtblIndex(76)]
+            HRESULT get_oncellchange(VARIANT* p);
+
+            [VtblIndex(77)]
+            HRESULT put_dir([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(78)]
+            HRESULT get_dir([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(79)]
+            HRESULT createControlRange(IDispatch** range);
+
+            [VtblIndex(80)]
+            HRESULT get_scrollHeight([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(81)]
+            HRESULT get_scrollWidth([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(82)]
+            HRESULT put_scrollTop([NativeTypeName("long")] int v);
+
+            [VtblIndex(83)]
+            HRESULT get_scrollTop([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(84)]
+            HRESULT put_scrollLeft([NativeTypeName("long")] int v);
+
+            [VtblIndex(85)]
+            HRESULT get_scrollLeft([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(86)]
+            HRESULT clearAttributes();
+
+            [VtblIndex(87)]
+            HRESULT mergeAttributes(IHTMLElement* mergeThis);
+
+            [VtblIndex(88)]
+            HRESULT put_oncontextmenu(VARIANT v);
+
+            [VtblIndex(89)]
+            HRESULT get_oncontextmenu(VARIANT* p);
+
+            [VtblIndex(90)]
+            HRESULT insertAdjacentElement([NativeTypeName("BSTR")] ushort* where, IHTMLElement* insertedElement, IHTMLElement** inserted);
+
+            [VtblIndex(91)]
+            HRESULT applyElement(IHTMLElement* apply, [NativeTypeName("BSTR")] ushort* where, IHTMLElement** applied);
+
+            [VtblIndex(92)]
+            HRESULT getAdjacentText([NativeTypeName("BSTR")] ushort* where, [NativeTypeName("BSTR *")] ushort** text);
+
+            [VtblIndex(93)]
+            HRESULT replaceAdjacentText([NativeTypeName("BSTR")] ushort* where, [NativeTypeName("BSTR")] ushort* newText, [NativeTypeName("BSTR *")] ushort** oldText);
+
+            [VtblIndex(94)]
+            HRESULT get_canHaveChildren([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(95)]
+            HRESULT addBehavior([NativeTypeName("BSTR")] ushort* bstrUrl, VARIANT* pvarFactory, [NativeTypeName("long *")] int* pCookie);
+
+            [VtblIndex(96)]
+            HRESULT removeBehavior([NativeTypeName("long")] int cookie, [NativeTypeName("VARIANT_BOOL *")] short* pfResult);
+
+            [VtblIndex(97)]
+            HRESULT get_runtimeStyle(IHTMLStyle** p);
+
+            [VtblIndex(98)]
+            HRESULT get_behaviorUrns(IDispatch** p);
+
+            [VtblIndex(99)]
+            HRESULT put_tagUrn([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(100)]
+            HRESULT get_tagUrn([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(101)]
+            HRESULT put_onbeforeeditfocus(VARIANT v);
+
+            [VtblIndex(102)]
+            HRESULT get_onbeforeeditfocus(VARIANT* p);
+
+            [VtblIndex(103)]
+            HRESULT get_readyStateValue([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(104)]
+            HRESULT getElementsByTagName([NativeTypeName("BSTR")] ushort* v, IHTMLElementCollection** pelColl);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, ushort**, int> get_scopeName;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, short, int> setCapture;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, int> releaseCapture;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> put_onlosecapture;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_onlosecapture;
+
+            [NativeTypeName("HRESULT (long, long, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, int, int, ushort**, int> componentFromPoint;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> doScroll;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> put_onscroll;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_onscroll;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> put_ondrag;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_ondrag;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> put_ondragend;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_ondragend;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> put_ondragenter;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_ondragenter;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> put_ondragover;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_ondragover;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> put_ondragleave;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_ondragleave;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> put_ondrop;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_ondrop;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> put_onbeforecut;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_onbeforecut;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> put_oncut;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_oncut;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> put_onbeforecopy;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_onbeforecopy;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> put_oncopy;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_oncopy;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> put_onbeforepaste;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_onbeforepaste;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> put_onpaste;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_onpaste;
+
+            [NativeTypeName("HRESULT (IHTMLCurrentStyle **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, IHTMLCurrentStyle**, int> get_currentStyle;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> put_onpropertychange;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_onpropertychange;
+
+            [NativeTypeName("HRESULT (IHTMLRectCollection **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, IHTMLRectCollection**, int> getClientRects;
+
+            [NativeTypeName("HRESULT (IHTMLRect **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, IHTMLRect**, int> getBoundingClientRect;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, ushort*, ushort*, ushort*, int> setExpression;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, ushort*, VARIANT*, int> getExpression;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, ushort*, short*, int> removeExpression;
+
+            [NativeTypeName("HRESULT (short) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, short, int> put_tabIndex;
+
+            [NativeTypeName("HRESULT (short *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, short*, int> get_tabIndex;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, int> focus;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, ushort*, int> put_accessKey;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, ushort**, int> get_accessKey;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> put_onblur;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_onblur;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> put_onfocus;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_onfocus;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> put_onresize;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_onresize;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, int> blur;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, IUnknown*, int> addFilter;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, IUnknown*, int> removeFilter;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, int*, int> get_clientHeight;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, int*, int> get_clientWidth;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, int*, int> get_clientTop;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, int*, int> get_clientLeft;
+
+            [NativeTypeName("HRESULT (BSTR, IDispatch *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, ushort*, IDispatch*, short*, int> attachEvent;
+
+            [NativeTypeName("HRESULT (BSTR, IDispatch *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, ushort*, IDispatch*, int> detachEvent;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_readyState;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> put_onreadystatechange;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_onreadystatechange;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> put_onrowsdelete;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_onrowsdelete;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> put_onrowsinserted;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_onrowsinserted;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> put_oncellchange;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_oncellchange;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, ushort*, int> put_dir;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, ushort**, int> get_dir;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, IDispatch**, int> createControlRange;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, int*, int> get_scrollHeight;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, int*, int> get_scrollWidth;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, int, int> put_scrollTop;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, int*, int> get_scrollTop;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, int, int> put_scrollLeft;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, int*, int> get_scrollLeft;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, int> clearAttributes;
+
+            [NativeTypeName("HRESULT (IHTMLElement *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, IHTMLElement*, int> mergeAttributes;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> put_oncontextmenu;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_oncontextmenu;
+
+            [NativeTypeName("HRESULT (BSTR, IHTMLElement *, IHTMLElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, ushort*, IHTMLElement*, IHTMLElement**, int> insertAdjacentElement;
+
+            [NativeTypeName("HRESULT (IHTMLElement *, BSTR, IHTMLElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, IHTMLElement*, ushort*, IHTMLElement**, int> applyElement;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, ushort*, ushort**, int> getAdjacentText;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, ushort*, ushort*, ushort**, int> replaceAdjacentText;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, short*, int> get_canHaveChildren;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, ushort*, VARIANT*, int*, int> addBehavior;
+
+            [NativeTypeName("HRESULT (long, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, int, short*, int> removeBehavior;
+
+            [NativeTypeName("HRESULT (IHTMLStyle **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, IHTMLStyle**, int> get_runtimeStyle;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, IDispatch**, int> get_behaviorUrns;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, ushort*, int> put_tagUrn;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, ushort**, int> get_tagUrn;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT, int> put_onbeforeeditfocus;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, VARIANT*, int> get_onbeforeeditfocus;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, int*, int> get_readyStateValue;
+
+            [NativeTypeName("HRESULT (BSTR, IHTMLElementCollection **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLElement2*, ushort*, IHTMLElementCollection**, int> getElementsByTagName;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DB639199-C809-4C89-BFCA-D0BBB9729D6E")]
     [NativeTypeName("struct IMFTimedTextStyle2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTimedTextStyle2
+    public unsafe partial struct IMFTimedTextStyle2 : IMFTimedTextStyle2.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetFontAngleInDegrees(double* value)
         {
             return ((delegate* unmanaged<IMFTimedTextStyle2*, double*, int>)(lpVtbl[6]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetRuby(IMFTimedTextRuby** ruby);
+
+            [VtblIndex(4)]
+            HRESULT GetBouten(IMFTimedTextBouten** bouten);
+
+            [VtblIndex(5)]
+            HRESULT IsTextCombined(BOOL* value);
+
+            [VtblIndex(6)]
+            HRESULT GetFontAngleInDegrees(double* value);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextStyle2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextStyle2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextStyle2*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFTimedTextRuby **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextStyle2*, IMFTimedTextRuby**, int> GetRuby;
+
+            [NativeTypeName("HRESULT (IMFTimedTextBouten **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextStyle2*, IMFTimedTextBouten**, int> GetBouten;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextStyle2*, BOOL*, int> IsTextCombined;
+
+            [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextStyle2*, double*, int> GetFontAngleInDegrees;
         }
     }
 }

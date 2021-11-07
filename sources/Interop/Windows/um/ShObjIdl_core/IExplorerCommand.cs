@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A08CE4D0-FA25-44AB-B57C-C7B1C323E0B9")]
     [NativeTypeName("struct IExplorerCommand : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IExplorerCommand
+    public unsafe partial struct IExplorerCommand : IExplorerCommand.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,69 @@ namespace TerraFX.Interop
         public HRESULT EnumSubCommands(IEnumExplorerCommand** ppEnum)
         {
             return ((delegate* unmanaged<IExplorerCommand*, IEnumExplorerCommand**, int>)(lpVtbl[10]))((IExplorerCommand*)Unsafe.AsPointer(ref this), ppEnum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetTitle(IShellItemArray* psiItemArray, [NativeTypeName("LPWSTR *")] ushort** ppszName);
+
+            [VtblIndex(4)]
+            HRESULT GetIcon(IShellItemArray* psiItemArray, [NativeTypeName("LPWSTR *")] ushort** ppszIcon);
+
+            [VtblIndex(5)]
+            HRESULT GetToolTip(IShellItemArray* psiItemArray, [NativeTypeName("LPWSTR *")] ushort** ppszInfotip);
+
+            [VtblIndex(6)]
+            HRESULT GetCanonicalName(Guid* pguidCommandName);
+
+            [VtblIndex(7)]
+            HRESULT GetState(IShellItemArray* psiItemArray, BOOL fOkToBeSlow, [NativeTypeName("EXPCMDSTATE *")] uint* pCmdState);
+
+            [VtblIndex(8)]
+            HRESULT Invoke(IShellItemArray* psiItemArray, IBindCtx* pbc);
+
+            [VtblIndex(9)]
+            HRESULT GetFlags([NativeTypeName("EXPCMDFLAGS *")] uint* pFlags);
+
+            [VtblIndex(10)]
+            HRESULT EnumSubCommands(IEnumExplorerCommand** ppEnum);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerCommand*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerCommand*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerCommand*, uint> Release;
+
+            [NativeTypeName("HRESULT (IShellItemArray *, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerCommand*, IShellItemArray*, ushort**, int> GetTitle;
+
+            [NativeTypeName("HRESULT (IShellItemArray *, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerCommand*, IShellItemArray*, ushort**, int> GetIcon;
+
+            [NativeTypeName("HRESULT (IShellItemArray *, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerCommand*, IShellItemArray*, ushort**, int> GetToolTip;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerCommand*, Guid*, int> GetCanonicalName;
+
+            [NativeTypeName("HRESULT (IShellItemArray *, BOOL, EXPCMDSTATE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerCommand*, IShellItemArray*, BOOL, uint*, int> GetState;
+
+            [NativeTypeName("HRESULT (IShellItemArray *, IBindCtx *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerCommand*, IShellItemArray*, IBindCtx*, int> Invoke;
+
+            [NativeTypeName("HRESULT (EXPCMDFLAGS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerCommand*, uint*, int> GetFlags;
+
+            [NativeTypeName("HRESULT (IEnumExplorerCommand **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExplorerCommand*, IEnumExplorerCommand**, int> EnumSubCommands;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C6545BF0-E76B-11D0-BD52-00A0C911CE86")]
     [NativeTypeName("struct IAMDevMemoryAllocator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMDevMemoryAllocator
+    public unsafe partial struct IAMDevMemoryAllocator : IAMDevMemoryAllocator.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT GetDevMemoryObject(IUnknown** ppUnkInnner, IUnknown* pUnkOuter)
         {
             return ((delegate* unmanaged<IAMDevMemoryAllocator*, IUnknown**, IUnknown*, int>)(lpVtbl[7]))((IAMDevMemoryAllocator*)Unsafe.AsPointer(ref this), ppUnkInnner, pUnkOuter);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetInfo([NativeTypeName("DWORD *")] uint* pdwcbTotalFree, [NativeTypeName("DWORD *")] uint* pdwcbLargestFree, [NativeTypeName("DWORD *")] uint* pdwcbTotalMemory, [NativeTypeName("DWORD *")] uint* pdwcbMinimumChunk);
+
+            [VtblIndex(4)]
+            HRESULT CheckMemory([NativeTypeName("const BYTE *")] byte* pBuffer);
+
+            [VtblIndex(5)]
+            HRESULT Alloc(byte** ppBuffer, [NativeTypeName("DWORD *")] uint* pdwcbBuffer);
+
+            [VtblIndex(6)]
+            HRESULT Free(byte* pBuffer);
+
+            [VtblIndex(7)]
+            HRESULT GetDevMemoryObject(IUnknown** ppUnkInnner, IUnknown* pUnkOuter);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDevMemoryAllocator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDevMemoryAllocator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDevMemoryAllocator*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *, DWORD *, DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDevMemoryAllocator*, uint*, uint*, uint*, uint*, int> GetInfo;
+
+            [NativeTypeName("HRESULT (const BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDevMemoryAllocator*, byte*, int> CheckMemory;
+
+            [NativeTypeName("HRESULT (BYTE **, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDevMemoryAllocator*, byte**, uint*, int> Alloc;
+
+            [NativeTypeName("HRESULT (BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDevMemoryAllocator*, byte*, int> Free;
+
+            [NativeTypeName("HRESULT (IUnknown **, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMDevMemoryAllocator*, IUnknown**, IUnknown*, int> GetDevMemoryObject;
         }
     }
 }

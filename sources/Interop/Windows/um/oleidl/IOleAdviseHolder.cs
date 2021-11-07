@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000111-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IOleAdviseHolder : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IOleAdviseHolder
+    public unsafe partial struct IOleAdviseHolder : IOleAdviseHolder.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,57 @@ namespace TerraFX.Interop
         public HRESULT SendOnClose()
         {
             return ((delegate* unmanaged<IOleAdviseHolder*, int>)(lpVtbl[8]))((IOleAdviseHolder*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Advise(IAdviseSink* pAdvise, [NativeTypeName("DWORD *")] uint* pdwConnection);
+
+            [VtblIndex(4)]
+            HRESULT Unadvise([NativeTypeName("DWORD")] uint dwConnection);
+
+            [VtblIndex(5)]
+            HRESULT EnumAdvise(IEnumSTATDATA** ppenumAdvise);
+
+            [VtblIndex(6)]
+            HRESULT SendOnRename(IMoniker* pmk);
+
+            [VtblIndex(7)]
+            HRESULT SendOnSave();
+
+            [VtblIndex(8)]
+            HRESULT SendOnClose();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleAdviseHolder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleAdviseHolder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleAdviseHolder*, uint> Release;
+
+            [NativeTypeName("HRESULT (IAdviseSink *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleAdviseHolder*, IAdviseSink*, uint*, int> Advise;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleAdviseHolder*, uint, int> Unadvise;
+
+            [NativeTypeName("HRESULT (IEnumSTATDATA **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleAdviseHolder*, IEnumSTATDATA**, int> EnumAdvise;
+
+            [NativeTypeName("HRESULT (IMoniker *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleAdviseHolder*, IMoniker*, int> SendOnRename;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleAdviseHolder*, int> SendOnSave;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleAdviseHolder*, int> SendOnClose;
         }
     }
 }

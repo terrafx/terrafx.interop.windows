@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("01689689-7ACB-4E9B-AB7C-7EA46B12B522")]
     [NativeTypeName("struct ITfCleanupContextSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfCleanupContextSink
+    public unsafe partial struct ITfCleanupContextSink : ITfCleanupContextSink.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OnCleanupContext([NativeTypeName("TfEditCookie")] uint ecWrite, ITfContext* pic)
         {
             return ((delegate* unmanaged<ITfCleanupContextSink*, uint, ITfContext*, int>)(lpVtbl[3]))((ITfCleanupContextSink*)Unsafe.AsPointer(ref this), ecWrite, pic);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnCleanupContext([NativeTypeName("TfEditCookie")] uint ecWrite, ITfContext* pic);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCleanupContextSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCleanupContextSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCleanupContextSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (TfEditCookie, ITfContext *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCleanupContextSink*, uint, ITfContext*, int> OnCleanupContext;
         }
     }
 }

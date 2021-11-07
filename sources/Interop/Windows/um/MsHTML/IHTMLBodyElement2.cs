@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F5C5-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLBodyElement2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLBodyElement2
+    public unsafe partial struct IHTMLBodyElement2 : IHTMLBodyElement2.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,57 @@ namespace TerraFX.Interop
         public HRESULT get_onafterprint(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLBodyElement2*, VARIANT*, int>)(lpVtbl[10]))((IHTMLBodyElement2*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_onbeforeprint(VARIANT v);
+
+            [VtblIndex(8)]
+            HRESULT get_onbeforeprint(VARIANT* p);
+
+            [VtblIndex(9)]
+            HRESULT put_onafterprint(VARIANT v);
+
+            [VtblIndex(10)]
+            HRESULT get_onafterprint(VARIANT* p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement2*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement2*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement2*, VARIANT, int> put_onbeforeprint;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement2*, VARIANT*, int> get_onbeforeprint;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement2*, VARIANT, int> put_onafterprint;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement2*, VARIANT*, int> get_onafterprint;
         }
     }
 }

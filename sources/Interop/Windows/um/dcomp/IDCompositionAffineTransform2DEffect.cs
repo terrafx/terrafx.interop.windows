@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0B74B9E8-CDD6-492F-BBBC-5ED32157026D")]
     [NativeTypeName("struct IDCompositionAffineTransform2DEffect : IDCompositionFilterEffect")]
     [NativeInheritance("IDCompositionFilterEffect")]
-    public unsafe partial struct IDCompositionAffineTransform2DEffect
+    public unsafe partial struct IDCompositionAffineTransform2DEffect : IDCompositionAffineTransform2DEffect.Interface
     {
         public void** lpVtbl;
 
@@ -68,6 +68,13 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
+        public HRESULT SetTransformMatrixElement(int row, int column, IDCompositionAnimation* animation)
+        {
+            return ((delegate* unmanaged<IDCompositionAffineTransform2DEffect*, int, int, IDCompositionAnimation*, int>)(lpVtbl[7]))((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this), row, column, animation);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         public HRESULT SetTransformMatrixElement(int row, int column, float value)
         {
@@ -75,10 +82,10 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(7)]
-        public HRESULT SetTransformMatrixElement(int row, int column, IDCompositionAnimation* animation)
+        [VtblIndex(9)]
+        public HRESULT SetSharpness(IDCompositionAnimation* animation)
         {
-            return ((delegate* unmanaged<IDCompositionAffineTransform2DEffect*, int, int, IDCompositionAnimation*, int>)(lpVtbl[7]))((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this), row, column, animation);
+            return ((delegate* unmanaged<IDCompositionAffineTransform2DEffect*, IDCompositionAnimation*, int>)(lpVtbl[9]))((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this), animation);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -88,11 +95,64 @@ namespace TerraFX.Interop
             return ((delegate* unmanaged<IDCompositionAffineTransform2DEffect*, float, int>)(lpVtbl[10]))((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this), sharpness);
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(9)]
-        public HRESULT SetSharpness(IDCompositionAnimation* animation)
+        public interface Interface : IDCompositionFilterEffect.Interface
         {
-            return ((delegate* unmanaged<IDCompositionAffineTransform2DEffect*, IDCompositionAnimation*, int>)(lpVtbl[9]))((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this), animation);
+            [VtblIndex(4)]
+            HRESULT SetInterpolationMode(D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE interpolationMode);
+
+            [VtblIndex(5)]
+            HRESULT SetBorderMode(D2D1_BORDER_MODE borderMode);
+
+            [VtblIndex(6)]
+            HRESULT SetTransformMatrix([NativeTypeName("const D2D1_MATRIX_3X2_F &")] D2D_MATRIX_3X2_F* transformMatrix);
+
+            [VtblIndex(7)]
+            HRESULT SetTransformMatrixElement(int row, int column, IDCompositionAnimation* animation);
+
+            [VtblIndex(8)]
+            HRESULT SetTransformMatrixElement(int row, int column, float value);
+
+            [VtblIndex(9)]
+            HRESULT SetSharpness(IDCompositionAnimation* animation);
+
+            [VtblIndex(10)]
+            HRESULT SetSharpness(float sharpness);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionAffineTransform2DEffect*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionAffineTransform2DEffect*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionAffineTransform2DEffect*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionAffineTransform2DEffect*, uint, IUnknown*, uint, int> SetInput;
+
+            [NativeTypeName("HRESULT (D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionAffineTransform2DEffect*, D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE, int> SetInterpolationMode;
+
+            [NativeTypeName("HRESULT (D2D1_BORDER_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionAffineTransform2DEffect*, D2D1_BORDER_MODE, int> SetBorderMode;
+
+            [NativeTypeName("HRESULT (const D2D1_MATRIX_3X2_F &) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionAffineTransform2DEffect*, D2D_MATRIX_3X2_F*, int> SetTransformMatrix;
+
+            [NativeTypeName("HRESULT (int, int, IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionAffineTransform2DEffect*, int, int, IDCompositionAnimation*, int> SetTransformMatrixElement;
+
+            [NativeTypeName("HRESULT (int, int, float) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionAffineTransform2DEffect*, int, int, float, int> SetTransformMatrixElement1;
+
+            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionAffineTransform2DEffect*, IDCompositionAnimation*, int> SetSharpness;
+
+            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionAffineTransform2DEffect*, float, int> SetSharpness1;
         }
     }
 }

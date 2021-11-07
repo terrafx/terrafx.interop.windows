@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("71604B0F-97B0-4764-8577-2F13E98A1422")]
     [NativeTypeName("struct INamedPropertyStore : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct INamedPropertyStore
+    public unsafe partial struct INamedPropertyStore : INamedPropertyStore.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetNameAt([NativeTypeName("DWORD")] uint iProp, [NativeTypeName("BSTR *")] ushort** pbstrName)
         {
             return ((delegate* unmanaged<INamedPropertyStore*, uint, ushort**, int>)(lpVtbl[6]))((INamedPropertyStore*)Unsafe.AsPointer(ref this), iProp, pbstrName);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetNamedValue([NativeTypeName("LPCWSTR")] ushort* pszName, PROPVARIANT* ppropvar);
+
+            [VtblIndex(4)]
+            HRESULT SetNamedValue([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar);
+
+            [VtblIndex(5)]
+            HRESULT GetNameCount([NativeTypeName("DWORD *")] uint* pdwCount);
+
+            [VtblIndex(6)]
+            HRESULT GetNameAt([NativeTypeName("DWORD")] uint iProp, [NativeTypeName("BSTR *")] ushort** pbstrName);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamedPropertyStore*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INamedPropertyStore*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INamedPropertyStore*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamedPropertyStore*, ushort*, PROPVARIANT*, int> GetNamedValue;
+
+            [NativeTypeName("HRESULT (LPCWSTR, const PROPVARIANT &) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamedPropertyStore*, ushort*, PROPVARIANT*, int> SetNamedValue;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamedPropertyStore*, uint*, int> GetNameCount;
+
+            [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamedPropertyStore*, uint, ushort**, int> GetNameAt;
         }
     }
 }

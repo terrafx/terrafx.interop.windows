@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E43F45B8-42B4-403E-B1F2-273B8F510830")]
     [NativeTypeName("struct IDirectManipulationInteractionEventHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDirectManipulationInteractionEventHandler
+    public unsafe partial struct IDirectManipulationInteractionEventHandler : IDirectManipulationInteractionEventHandler.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OnInteraction(IDirectManipulationViewport2* viewport, DIRECTMANIPULATION_INTERACTION_TYPE interaction)
         {
             return ((delegate* unmanaged<IDirectManipulationInteractionEventHandler*, IDirectManipulationViewport2*, DIRECTMANIPULATION_INTERACTION_TYPE, int>)(lpVtbl[3]))((IDirectManipulationInteractionEventHandler*)Unsafe.AsPointer(ref this), viewport, interaction);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnInteraction(IDirectManipulationViewport2* viewport, DIRECTMANIPULATION_INTERACTION_TYPE interaction);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationInteractionEventHandler*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationInteractionEventHandler*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationInteractionEventHandler*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDirectManipulationViewport2 *, DIRECTMANIPULATION_INTERACTION_TYPE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationInteractionEventHandler*, IDirectManipulationViewport2*, DIRECTMANIPULATION_INTERACTION_TYPE, int> OnInteraction;
         }
     }
 }

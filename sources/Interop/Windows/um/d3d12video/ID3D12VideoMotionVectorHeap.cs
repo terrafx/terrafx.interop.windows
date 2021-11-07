@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5BE17987-743A-4061-834B-23D22DAEA505")]
     [NativeTypeName("struct ID3D12VideoMotionVectorHeap : ID3D12Pageable")]
     [NativeInheritance("ID3D12Pageable")]
-    public unsafe partial struct ID3D12VideoMotionVectorHeap
+    public unsafe partial struct ID3D12VideoMotionVectorHeap : ID3D12VideoMotionVectorHeap.Interface
     {
         public void** lpVtbl;
 
@@ -87,6 +87,48 @@ namespace TerraFX.Interop
         public HRESULT GetProtectedResourceSession([NativeTypeName("const IID &")] Guid* riid, void** ppProtectedSession)
         {
             return ((delegate* unmanaged<ID3D12VideoMotionVectorHeap*, Guid*, void**, int>)(lpVtbl[9]))((ID3D12VideoMotionVectorHeap*)Unsafe.AsPointer(ref this), riid, ppProtectedSession);
+        }
+
+        public interface Interface : ID3D12Pageable.Interface
+        {
+            [VtblIndex(8)]
+            D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC GetDesc();
+
+            [VtblIndex(9)]
+            HRESULT GetProtectedResourceSession([NativeTypeName("const IID &")] Guid* riid, void** ppProtectedSession);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoMotionVectorHeap*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoMotionVectorHeap*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoMotionVectorHeap*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoMotionVectorHeap*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoMotionVectorHeap*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoMotionVectorHeap*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoMotionVectorHeap*, ushort*, int> SetName;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoMotionVectorHeap*, Guid*, void**, int> GetDevice;
+
+            [NativeTypeName("D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoMotionVectorHeap*, D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC*, D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC*> GetDesc;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoMotionVectorHeap*, Guid*, void**, int> GetProtectedResourceSession;
         }
     }
 }

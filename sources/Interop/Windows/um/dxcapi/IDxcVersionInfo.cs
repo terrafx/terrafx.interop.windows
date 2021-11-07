@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B04F5B50-2059-4F12-A8FF-A1E0CDE1CC7E")]
     [NativeTypeName("struct IDxcVersionInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDxcVersionInfo
+    public unsafe partial struct IDxcVersionInfo : IDxcVersionInfo.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetFlags([NativeTypeName("UINT32 *")] uint* pFlags)
         {
             return ((delegate* unmanaged<IDxcVersionInfo*, uint*, int>)(lpVtbl[4]))((IDxcVersionInfo*)Unsafe.AsPointer(ref this), pFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetVersion([NativeTypeName("UINT32 *")] uint* pMajor, [NativeTypeName("UINT32 *")] uint* pMinor);
+
+            [VtblIndex(4)]
+            HRESULT GetFlags([NativeTypeName("UINT32 *")] uint* pFlags);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcVersionInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcVersionInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcVersionInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT32 *, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcVersionInfo*, uint*, uint*, int> GetVersion;
+
+            [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcVersionInfo*, uint*, int> GetFlags;
         }
     }
 }

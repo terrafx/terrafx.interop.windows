@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4E233EFD-1DD2-49E8-B577-D63EEE4C0D33")]
     [NativeTypeName("struct IMFContentDecryptionModuleSession : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFContentDecryptionModuleSession
+    public unsafe partial struct IMFContentDecryptionModuleSession : IMFContentDecryptionModuleSession.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,69 @@ namespace TerraFX.Interop
         public HRESULT Remove()
         {
             return ((delegate* unmanaged<IMFContentDecryptionModuleSession*, int>)(lpVtbl[10]))((IMFContentDecryptionModuleSession*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSessionId([NativeTypeName("LPWSTR *")] ushort** sessionId);
+
+            [VtblIndex(4)]
+            HRESULT GetExpiration(double* expiration);
+
+            [VtblIndex(5)]
+            HRESULT GetKeyStatuses(MFMediaKeyStatus** keyStatuses, uint* numKeyStatuses);
+
+            [VtblIndex(6)]
+            HRESULT Load([NativeTypeName("LPCWSTR")] ushort* sessionId, BOOL* loaded);
+
+            [VtblIndex(7)]
+            HRESULT GenerateRequest([NativeTypeName("LPCWSTR")] ushort* initDataType, [NativeTypeName("const BYTE *")] byte* initData, [NativeTypeName("DWORD")] uint initDataSize);
+
+            [VtblIndex(8)]
+            HRESULT Update([NativeTypeName("const BYTE *")] byte* response, [NativeTypeName("DWORD")] uint responseSize);
+
+            [VtblIndex(9)]
+            HRESULT Close();
+
+            [VtblIndex(10)]
+            HRESULT Remove();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModuleSession*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModuleSession*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModuleSession*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModuleSession*, ushort**, int> GetSessionId;
+
+            [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModuleSession*, double*, int> GetExpiration;
+
+            [NativeTypeName("HRESULT (MFMediaKeyStatus **, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModuleSession*, MFMediaKeyStatus**, uint*, int> GetKeyStatuses;
+
+            [NativeTypeName("HRESULT (LPCWSTR, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModuleSession*, ushort*, BOOL*, int> Load;
+
+            [NativeTypeName("HRESULT (LPCWSTR, const BYTE *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModuleSession*, ushort*, byte*, uint, int> GenerateRequest;
+
+            [NativeTypeName("HRESULT (const BYTE *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModuleSession*, byte*, uint, int> Update;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModuleSession*, int> Close;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFContentDecryptionModuleSession*, int> Remove;
         }
     }
 }

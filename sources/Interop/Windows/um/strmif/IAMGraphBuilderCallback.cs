@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4995F511-9DDB-4F12-BD3B-F04611807B79")]
     [NativeTypeName("struct IAMGraphBuilderCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMGraphBuilderCallback
+    public unsafe partial struct IAMGraphBuilderCallback : IAMGraphBuilderCallback.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT CreatedFilter(IBaseFilter* pFil)
         {
             return ((delegate* unmanaged<IAMGraphBuilderCallback*, IBaseFilter*, int>)(lpVtbl[4]))((IAMGraphBuilderCallback*)Unsafe.AsPointer(ref this), pFil);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SelectedFilter(IMoniker* pMon);
+
+            [VtblIndex(4)]
+            HRESULT CreatedFilter(IBaseFilter* pFil);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMGraphBuilderCallback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMGraphBuilderCallback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMGraphBuilderCallback*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMoniker *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMGraphBuilderCallback*, IMoniker*, int> SelectedFilter;
+
+            [NativeTypeName("HRESULT (IBaseFilter *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMGraphBuilderCallback*, IBaseFilter*, int> CreatedFilter;
         }
     }
 }

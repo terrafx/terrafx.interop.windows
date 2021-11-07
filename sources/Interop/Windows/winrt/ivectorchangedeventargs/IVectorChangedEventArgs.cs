@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("575933DF-34FE-4480-AF15-07691F3D5D9B")]
     [NativeTypeName("struct IVectorChangedEventArgs : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IVectorChangedEventArgs
+    public unsafe partial struct IVectorChangedEventArgs : IVectorChangedEventArgs.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,42 @@ namespace TerraFX.Interop
         public HRESULT get_Index([NativeTypeName("unsigned int *")] uint* value)
         {
             return ((delegate* unmanaged<IVectorChangedEventArgs*, uint*, int>)(lpVtbl[7]))((IVectorChangedEventArgs*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT get_CollectionChange([NativeTypeName("ABI::Windows::Foundation::Collections::CollectionChange *")] CollectionChange* value);
+
+            [VtblIndex(7)]
+            HRESULT get_Index([NativeTypeName("unsigned int *")] uint* value);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVectorChangedEventArgs*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVectorChangedEventArgs*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVectorChangedEventArgs*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVectorChangedEventArgs*, uint*, Guid**, int> GetIids;
+
+            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVectorChangedEventArgs*, HSTRING*, int> GetRuntimeClassName;
+
+            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVectorChangedEventArgs*, TrustLevel*, int> GetTrustLevel;
+
+            [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::CollectionChange *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVectorChangedEventArgs*, CollectionChange*, int> get_CollectionChange;
+
+            [NativeTypeName("HRESULT (unsigned int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVectorChangedEventArgs*, uint*, int> get_Index;
         }
     }
 }

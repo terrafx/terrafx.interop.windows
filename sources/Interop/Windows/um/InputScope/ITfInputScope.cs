@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FDE1EAEE-6924-4CDF-91E7-DA38CFF5559D")]
     [NativeTypeName("struct ITfInputScope : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfInputScope
+    public unsafe partial struct ITfInputScope : ITfInputScope.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT GetXML([NativeTypeName("BSTR *")] ushort** pbstrXML)
         {
             return ((delegate* unmanaged<ITfInputScope*, ushort**, int>)(lpVtbl[7]))((ITfInputScope*)Unsafe.AsPointer(ref this), pbstrXML);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetInputScopes(InputScope** pprgInputScopes, uint* pcCount);
+
+            [VtblIndex(4)]
+            HRESULT GetPhrase([NativeTypeName("BSTR **")] ushort*** ppbstrPhrases, uint* pcCount);
+
+            [VtblIndex(5)]
+            HRESULT GetRegularExpression([NativeTypeName("BSTR *")] ushort** pbstrRegExp);
+
+            [VtblIndex(6)]
+            HRESULT GetSRGS([NativeTypeName("BSTR *")] ushort** pbstrSRGS);
+
+            [VtblIndex(7)]
+            HRESULT GetXML([NativeTypeName("BSTR *")] ushort** pbstrXML);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputScope*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputScope*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputScope*, uint> Release;
+
+            [NativeTypeName("HRESULT (InputScope **, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputScope*, InputScope**, uint*, int> GetInputScopes;
+
+            [NativeTypeName("HRESULT (BSTR **, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputScope*, ushort***, uint*, int> GetPhrase;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputScope*, ushort**, int> GetRegularExpression;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputScope*, ushort**, int> GetSRGS;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputScope*, ushort**, int> GetXML;
         }
     }
 }

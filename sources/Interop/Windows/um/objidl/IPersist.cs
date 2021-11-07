@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0000010C-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IPersist : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPersist
+    public unsafe partial struct IPersist : IPersist.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
         {
             return ((delegate* unmanaged<IPersist*, Guid*, int>)(lpVtbl[3]))((IPersist*)Unsafe.AsPointer(ref this), pClassID);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersist*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersist*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersist*, uint> Release;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersist*, Guid*, int> GetClassID;
         }
     }
 }

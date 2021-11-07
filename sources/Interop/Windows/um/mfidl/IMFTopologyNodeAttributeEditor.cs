@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("676AA6DD-238A-410D-BB99-65668D01605A")]
     [NativeTypeName("struct IMFTopologyNodeAttributeEditor : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTopologyNodeAttributeEditor
+    public unsafe partial struct IMFTopologyNodeAttributeEditor : IMFTopologyNodeAttributeEditor.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT UpdateNodeAttributes([NativeTypeName("TOPOID")] ulong TopoId, [NativeTypeName("DWORD")] uint cUpdates, MFTOPONODE_ATTRIBUTE_UPDATE* pUpdates)
         {
             return ((delegate* unmanaged<IMFTopologyNodeAttributeEditor*, ulong, uint, MFTOPONODE_ATTRIBUTE_UPDATE*, int>)(lpVtbl[3]))((IMFTopologyNodeAttributeEditor*)Unsafe.AsPointer(ref this), TopoId, cUpdates, pUpdates);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT UpdateNodeAttributes([NativeTypeName("TOPOID")] ulong TopoId, [NativeTypeName("DWORD")] uint cUpdates, MFTOPONODE_ATTRIBUTE_UPDATE* pUpdates);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTopologyNodeAttributeEditor*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTopologyNodeAttributeEditor*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTopologyNodeAttributeEditor*, uint> Release;
+
+            [NativeTypeName("HRESULT (TOPOID, DWORD, MFTOPONODE_ATTRIBUTE_UPDATE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTopologyNodeAttributeEditor*, ulong, uint, MFTOPONODE_ATTRIBUTE_UPDATE*, int> UpdateNodeAttributes;
         }
     }
 }

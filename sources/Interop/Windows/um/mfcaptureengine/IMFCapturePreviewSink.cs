@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("77346CFD-5B49-4D73-ACE0-5B52A859F2E0")]
     [NativeTypeName("struct IMFCapturePreviewSink : IMFCaptureSink")]
     [NativeInheritance("IMFCaptureSink")]
-    public unsafe partial struct IMFCapturePreviewSink
+    public unsafe partial struct IMFCapturePreviewSink : IMFCapturePreviewSink.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,90 @@ namespace TerraFX.Interop
         public HRESULT SetCustomSink(IMFMediaSink* pMediaSink)
         {
             return ((delegate* unmanaged<IMFCapturePreviewSink*, IMFMediaSink*, int>)(lpVtbl[16]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this), pMediaSink);
+        }
+
+        public interface Interface : IMFCaptureSink.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT SetRenderHandle(HANDLE handle);
+
+            [VtblIndex(9)]
+            HRESULT SetRenderSurface(IUnknown* pSurface);
+
+            [VtblIndex(10)]
+            HRESULT UpdateVideo([NativeTypeName("const MFVideoNormalizedRect *")] MFVideoNormalizedRect* pSrc, [NativeTypeName("const RECT *")] RECT* pDst, [NativeTypeName("const COLORREF *")] COLORREF* pBorderClr);
+
+            [VtblIndex(11)]
+            HRESULT SetSampleCallback([NativeTypeName("DWORD")] uint dwStreamSinkIndex, IMFCaptureEngineOnSampleCallback* pCallback);
+
+            [VtblIndex(12)]
+            HRESULT GetMirrorState(BOOL* pfMirrorState);
+
+            [VtblIndex(13)]
+            HRESULT SetMirrorState(BOOL fMirrorState);
+
+            [VtblIndex(14)]
+            HRESULT GetRotation([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD *")] uint* pdwRotationValue);
+
+            [VtblIndex(15)]
+            HRESULT SetRotation([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwRotationValue);
+
+            [VtblIndex(16)]
+            HRESULT SetCustomSink(IMFMediaSink* pMediaSink);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCapturePreviewSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCapturePreviewSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCapturePreviewSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, IMFMediaType **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCapturePreviewSink*, uint, IMFMediaType**, int> GetOutputMediaType;
+
+            [NativeTypeName("HRESULT (DWORD, const GUID &, const IID &, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCapturePreviewSink*, uint, Guid*, Guid*, IUnknown**, int> GetService;
+
+            [NativeTypeName("HRESULT (DWORD, IMFMediaType *, IMFAttributes *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCapturePreviewSink*, uint, IMFMediaType*, IMFAttributes*, uint*, int> AddStream;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCapturePreviewSink*, int> Prepare;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCapturePreviewSink*, int> RemoveAllStreams;
+
+            [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCapturePreviewSink*, HANDLE, int> SetRenderHandle;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCapturePreviewSink*, IUnknown*, int> SetRenderSurface;
+
+            [NativeTypeName("HRESULT (const MFVideoNormalizedRect *, const RECT *, const COLORREF *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCapturePreviewSink*, MFVideoNormalizedRect*, RECT*, COLORREF*, int> UpdateVideo;
+
+            [NativeTypeName("HRESULT (DWORD, IMFCaptureEngineOnSampleCallback *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCapturePreviewSink*, uint, IMFCaptureEngineOnSampleCallback*, int> SetSampleCallback;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCapturePreviewSink*, BOOL*, int> GetMirrorState;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCapturePreviewSink*, BOOL, int> SetMirrorState;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCapturePreviewSink*, uint, uint*, int> GetRotation;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCapturePreviewSink*, uint, uint, int> SetRotation;
+
+            [NativeTypeName("HRESULT (IMFMediaSink *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCapturePreviewSink*, IMFMediaSink*, int> SetCustomSink;
         }
     }
 }

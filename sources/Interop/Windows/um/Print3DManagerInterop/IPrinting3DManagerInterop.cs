@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9CA31010-1484-4587-B26B-DDDF9F9CAECD")]
     [NativeTypeName("struct IPrinting3DManagerInterop : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IPrinting3DManagerInterop
+    public unsafe partial struct IPrinting3DManagerInterop : IPrinting3DManagerInterop.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,42 @@ namespace TerraFX.Interop
         public HRESULT ShowPrintUIForWindowAsync(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
         {
             return ((delegate* unmanaged<IPrinting3DManagerInterop*, HWND, Guid*, void**, int>)(lpVtbl[7]))((IPrinting3DManagerInterop*)Unsafe.AsPointer(ref this), appWindow, riid, asyncOperation);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** printManager);
+
+            [VtblIndex(7)]
+            HRESULT ShowPrintUIForWindowAsync(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrinting3DManagerInterop*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrinting3DManagerInterop*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrinting3DManagerInterop*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrinting3DManagerInterop*, uint*, Guid**, int> GetIids;
+
+            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrinting3DManagerInterop*, HSTRING*, int> GetRuntimeClassName;
+
+            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrinting3DManagerInterop*, TrustLevel*, int> GetTrustLevel;
+
+            [NativeTypeName("HRESULT (HWND, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrinting3DManagerInterop*, HWND, Guid*, void**, int> GetForWindow;
+
+            [NativeTypeName("HRESULT (HWND, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrinting3DManagerInterop*, HWND, Guid*, void**, int> ShowPrintUIForWindowAsync;
         }
     }
 }

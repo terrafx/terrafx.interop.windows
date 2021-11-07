@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1994DEB2-2C82-4B1D-A57F-AFF424D54A68")]
     [NativeTypeName("struct IDiaEnumSectionContribs : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaEnumSectionContribs
+    public unsafe partial struct IDiaEnumSectionContribs : IDiaEnumSectionContribs.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,63 @@ namespace TerraFX.Interop
         public HRESULT Clone(IDiaEnumSectionContribs** ppenum)
         {
             return ((delegate* unmanaged<IDiaEnumSectionContribs*, IDiaEnumSectionContribs**, int>)(lpVtbl[9]))((IDiaEnumSectionContribs*)Unsafe.AsPointer(ref this), ppenum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get__NewEnum(IUnknown** pRetVal);
+
+            [VtblIndex(4)]
+            HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal);
+
+            [VtblIndex(5)]
+            HRESULT Item([NativeTypeName("DWORD")] uint index, IDiaSectionContrib** section);
+
+            [VtblIndex(6)]
+            HRESULT Next([NativeTypeName("ULONG")] uint celt, IDiaSectionContrib** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
+
+            [VtblIndex(7)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint celt);
+
+            [VtblIndex(8)]
+            HRESULT Reset();
+
+            [VtblIndex(9)]
+            HRESULT Clone(IDiaEnumSectionContribs** ppenum);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSectionContribs*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSectionContribs*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSectionContribs*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSectionContribs*, IUnknown**, int> get__NewEnum;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSectionContribs*, int*, int> get_Count;
+
+            [NativeTypeName("HRESULT (DWORD, IDiaSectionContrib **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSectionContribs*, uint, IDiaSectionContrib**, int> Item;
+
+            [NativeTypeName("HRESULT (ULONG, IDiaSectionContrib **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSectionContribs*, uint, IDiaSectionContrib**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSectionContribs*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSectionContribs*, int> Reset;
+
+            [NativeTypeName("HRESULT (IDiaEnumSectionContribs **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumSectionContribs*, IDiaEnumSectionContribs**, int> Clone;
         }
     }
 }

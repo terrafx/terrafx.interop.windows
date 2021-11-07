@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9B7E4E00-342C-4106-A19F-4F2704F689F0")]
     [NativeTypeName("struct ID3D11Multithread : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D11Multithread
+    public unsafe partial struct ID3D11Multithread : ID3D11Multithread.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public BOOL GetMultithreadProtected()
         {
             return ((delegate* unmanaged<ID3D11Multithread*, int>)(lpVtbl[6]))((ID3D11Multithread*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void Enter();
+
+            [VtblIndex(4)]
+            void Leave();
+
+            [VtblIndex(5)]
+            BOOL SetMultithreadProtected(BOOL bMTProtect);
+
+            [VtblIndex(6)]
+            BOOL GetMultithreadProtected();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Multithread*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Multithread*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Multithread*, uint> Release;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Multithread*, void> Enter;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Multithread*, void> Leave;
+
+            [NativeTypeName("BOOL (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Multithread*, BOOL, int> SetMultithreadProtected;
+
+            [NativeTypeName("BOOL () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Multithread*, int> GetMultithreadProtected;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A3B14589-9174-49A8-89A3-06A1AE2B9BA7")]
     [NativeTypeName("struct ICategorizer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICategorizer
+    public unsafe partial struct ICategorizer : ICategorizer.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT CompareCategory(CATSORT_FLAGS csfFlags, [NativeTypeName("DWORD")] uint dwCategoryId1, [NativeTypeName("DWORD")] uint dwCategoryId2)
         {
             return ((delegate* unmanaged<ICategorizer*, CATSORT_FLAGS, uint, uint, int>)(lpVtbl[6]))((ICategorizer*)Unsafe.AsPointer(ref this), csfFlags, dwCategoryId1, dwCategoryId2);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDescription([NativeTypeName("LPWSTR")] ushort* pszDesc, uint cch);
+
+            [VtblIndex(4)]
+            HRESULT GetCategory(uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, [NativeTypeName("DWORD *")] uint* rgCategoryIds);
+
+            [VtblIndex(5)]
+            HRESULT GetCategoryInfo([NativeTypeName("DWORD")] uint dwCategoryId, CATEGORY_INFO* pci);
+
+            [VtblIndex(6)]
+            HRESULT CompareCategory(CATSORT_FLAGS csfFlags, [NativeTypeName("DWORD")] uint dwCategoryId1, [NativeTypeName("DWORD")] uint dwCategoryId2);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICategorizer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICategorizer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICategorizer*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICategorizer*, ushort*, uint, int> GetDescription;
+
+            [NativeTypeName("HRESULT (UINT, LPCITEMIDLIST *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICategorizer*, uint, ITEMIDLIST**, uint*, int> GetCategory;
+
+            [NativeTypeName("HRESULT (DWORD, CATEGORY_INFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICategorizer*, uint, CATEGORY_INFO*, int> GetCategoryInfo;
+
+            [NativeTypeName("HRESULT (CATSORT_FLAGS, DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICategorizer*, CATSORT_FLAGS, uint, uint, int> CompareCategory;
         }
     }
 }

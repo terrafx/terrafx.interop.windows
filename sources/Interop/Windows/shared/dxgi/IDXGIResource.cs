@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("035F3AB4-482E-4E50-B41F-8A7F8BD8960B")]
     [NativeTypeName("struct IDXGIResource : IDXGIDeviceSubObject")]
     [NativeInheritance("IDXGIDeviceSubObject")]
-    public unsafe partial struct IDXGIResource
+    public unsafe partial struct IDXGIResource : IDXGIResource.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,60 @@ namespace TerraFX.Interop
         public HRESULT GetEvictionPriority(uint* pEvictionPriority)
         {
             return ((delegate* unmanaged<IDXGIResource*, uint*, int>)(lpVtbl[11]))((IDXGIResource*)Unsafe.AsPointer(ref this), pEvictionPriority);
+        }
+
+        public interface Interface : IDXGIDeviceSubObject.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT GetSharedHandle(HANDLE* pSharedHandle);
+
+            [VtblIndex(9)]
+            HRESULT GetUsage([NativeTypeName("DXGI_USAGE *")] uint* pUsage);
+
+            [VtblIndex(10)]
+            HRESULT SetEvictionPriority(uint EvictionPriority);
+
+            [VtblIndex(11)]
+            HRESULT GetEvictionPriority(uint* pEvictionPriority);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIResource*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIResource*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIResource*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIResource*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIResource*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIResource*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIResource*, Guid*, void**, int> GetParent;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIResource*, Guid*, void**, int> GetDevice;
+
+            [NativeTypeName("HRESULT (HANDLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIResource*, HANDLE*, int> GetSharedHandle;
+
+            [NativeTypeName("HRESULT (DXGI_USAGE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIResource*, uint*, int> GetUsage;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIResource*, uint, int> SetEvictionPriority;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIResource*, uint*, int> GetEvictionPriority;
         }
     }
 }

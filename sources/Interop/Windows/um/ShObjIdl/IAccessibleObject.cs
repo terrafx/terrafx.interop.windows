@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("95A391C5-9ED4-4C28-8401-AB9E06719E11")]
     [NativeTypeName("struct IAccessibleObject : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAccessibleObject
+    public unsafe partial struct IAccessibleObject : IAccessibleObject.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT SetAccessibleName([NativeTypeName("LPCWSTR")] ushort* pszName)
         {
             return ((delegate* unmanaged<IAccessibleObject*, ushort*, int>)(lpVtbl[3]))((IAccessibleObject*)Unsafe.AsPointer(ref this), pszName);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetAccessibleName([NativeTypeName("LPCWSTR")] ushort* pszName);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccessibleObject*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccessibleObject*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccessibleObject*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAccessibleObject*, ushort*, int> SetAccessibleName;
         }
     }
 }

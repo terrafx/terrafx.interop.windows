@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0D2C969A-BC9C-437C-84EE-951C49B1A764")]
     [NativeTypeName("struct ITfConfigureSystemKeystrokeFeed : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfConfigureSystemKeystrokeFeed
+    public unsafe partial struct ITfConfigureSystemKeystrokeFeed : ITfConfigureSystemKeystrokeFeed.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT EnableSystemKeystrokeFeed()
         {
             return ((delegate* unmanaged<ITfConfigureSystemKeystrokeFeed*, int>)(lpVtbl[4]))((ITfConfigureSystemKeystrokeFeed*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT DisableSystemKeystrokeFeed();
+
+            [VtblIndex(4)]
+            HRESULT EnableSystemKeystrokeFeed();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfConfigureSystemKeystrokeFeed*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfConfigureSystemKeystrokeFeed*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfConfigureSystemKeystrokeFeed*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfConfigureSystemKeystrokeFeed*, int> DisableSystemKeystrokeFeed;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfConfigureSystemKeystrokeFeed*, int> EnableSystemKeystrokeFeed;
         }
     }
 }

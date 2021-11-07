@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00020402-0000-0000-C000-000000000046")]
     [NativeTypeName("struct ITypeLib : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITypeLib
+    public unsafe partial struct ITypeLib : ITypeLib.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,81 @@ namespace TerraFX.Interop
         public void ReleaseTLibAttr(TLIBATTR* pTLibAttr)
         {
             ((delegate* unmanaged<ITypeLib*, TLIBATTR*, void>)(lpVtbl[12]))((ITypeLib*)Unsafe.AsPointer(ref this), pTLibAttr);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            uint GetTypeInfoCount();
+
+            [VtblIndex(4)]
+            HRESULT GetTypeInfo(uint index, ITypeInfo** ppTInfo);
+
+            [VtblIndex(5)]
+            HRESULT GetTypeInfoType(uint index, TYPEKIND* pTKind);
+
+            [VtblIndex(6)]
+            HRESULT GetTypeInfoOfGuid([NativeTypeName("const GUID &")] Guid* guid, ITypeInfo** ppTinfo);
+
+            [VtblIndex(7)]
+            HRESULT GetLibAttr(TLIBATTR** ppTLibAttr);
+
+            [VtblIndex(8)]
+            HRESULT GetTypeComp(ITypeComp** ppTComp);
+
+            [VtblIndex(9)]
+            HRESULT GetDocumentation(int index, [NativeTypeName("BSTR *")] ushort** pBstrName, [NativeTypeName("BSTR *")] ushort** pBstrDocString, [NativeTypeName("DWORD *")] uint* pdwHelpContext, [NativeTypeName("BSTR *")] ushort** pBstrHelpFile);
+
+            [VtblIndex(10)]
+            HRESULT IsName([NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, BOOL* pfName);
+
+            [VtblIndex(11)]
+            HRESULT FindName([NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, ITypeInfo** ppTInfo, [NativeTypeName("MEMBERID *")] int* rgMemId, ushort* pcFound);
+
+            [VtblIndex(12)]
+            void ReleaseTLibAttr(TLIBATTR* pTLibAttr);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeLib*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeLib*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeLib*, uint> Release;
+
+            [NativeTypeName("UINT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeLib*, uint> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeLib*, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (UINT, TYPEKIND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeLib*, uint, TYPEKIND*, int> GetTypeInfoType;
+
+            [NativeTypeName("HRESULT (const GUID &, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeLib*, Guid*, ITypeInfo**, int> GetTypeInfoOfGuid;
+
+            [NativeTypeName("HRESULT (TLIBATTR **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeLib*, TLIBATTR**, int> GetLibAttr;
+
+            [NativeTypeName("HRESULT (ITypeComp **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeLib*, ITypeComp**, int> GetTypeComp;
+
+            [NativeTypeName("HRESULT (INT, BSTR *, BSTR *, DWORD *, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeLib*, int, ushort**, ushort**, uint*, ushort**, int> GetDocumentation;
+
+            [NativeTypeName("HRESULT (LPOLESTR, ULONG, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeLib*, ushort*, uint, BOOL*, int> IsName;
+
+            [NativeTypeName("HRESULT (LPOLESTR, ULONG, ITypeInfo **, MEMBERID *, USHORT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeLib*, ushort*, uint, ITypeInfo**, int*, ushort*, int> FindName;
+
+            [NativeTypeName("void (TLIBATTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeLib*, TLIBATTR*, void> ReleaseTLibAttr;
         }
     }
 }

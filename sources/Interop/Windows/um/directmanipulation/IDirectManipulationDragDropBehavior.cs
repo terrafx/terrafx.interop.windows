@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("814B5AF5-C2C8-4270-A9B7-A198CE8D02FA")]
     [NativeTypeName("struct IDirectManipulationDragDropBehavior : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDirectManipulationDragDropBehavior
+    public unsafe partial struct IDirectManipulationDragDropBehavior : IDirectManipulationDragDropBehavior.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetStatus(DIRECTMANIPULATION_DRAG_DROP_STATUS* status)
         {
             return ((delegate* unmanaged<IDirectManipulationDragDropBehavior*, DIRECTMANIPULATION_DRAG_DROP_STATUS*, int>)(lpVtbl[4]))((IDirectManipulationDragDropBehavior*)Unsafe.AsPointer(ref this), status);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetConfiguration(DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION configuration);
+
+            [VtblIndex(4)]
+            HRESULT GetStatus(DIRECTMANIPULATION_DRAG_DROP_STATUS* status);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationDragDropBehavior*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationDragDropBehavior*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationDragDropBehavior*, uint> Release;
+
+            [NativeTypeName("HRESULT (DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationDragDropBehavior*, DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION, int> SetConfiguration;
+
+            [NativeTypeName("HRESULT (DIRECTMANIPULATION_DRAG_DROP_STATUS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationDragDropBehavior*, DIRECTMANIPULATION_DRAG_DROP_STATUS*, int> GetStatus;
         }
     }
 }

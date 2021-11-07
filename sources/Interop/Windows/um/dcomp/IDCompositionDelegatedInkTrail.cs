@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C2448E9B-547D-4057-8CF5-8144EDE1C2DA")]
     [NativeTypeName("struct IDCompositionDelegatedInkTrail : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDCompositionDelegatedInkTrail
+    public unsafe partial struct IDCompositionDelegatedInkTrail : IDCompositionDelegatedInkTrail.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT StartNewTrail([NativeTypeName("const D2D1_COLOR_F &")] DXGI_RGBA* color)
         {
             return ((delegate* unmanaged<IDCompositionDelegatedInkTrail*, DXGI_RGBA*, int>)(lpVtbl[6]))((IDCompositionDelegatedInkTrail*)Unsafe.AsPointer(ref this), color);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddTrailPoints([NativeTypeName("const DCompositionInkTrailPoint *")] DCompositionInkTrailPoint* inkPoints, uint inkPointsCount, uint* generationId);
+
+            [VtblIndex(4)]
+            HRESULT AddTrailPointsWithPrediction([NativeTypeName("const DCompositionInkTrailPoint *")] DCompositionInkTrailPoint* inkPoints, uint inkPointsCount, [NativeTypeName("const DCompositionInkTrailPoint *")] DCompositionInkTrailPoint* predictedInkPoints, uint predictedInkPointsCount, uint* generationId);
+
+            [VtblIndex(5)]
+            HRESULT RemoveTrailPoints(uint generationId);
+
+            [VtblIndex(6)]
+            HRESULT StartNewTrail([NativeTypeName("const D2D1_COLOR_F &")] DXGI_RGBA* color);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDelegatedInkTrail*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDelegatedInkTrail*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDelegatedInkTrail*, uint> Release;
+
+            [NativeTypeName("HRESULT (const DCompositionInkTrailPoint *, UINT, UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDelegatedInkTrail*, DCompositionInkTrailPoint*, uint, uint*, int> AddTrailPoints;
+
+            [NativeTypeName("HRESULT (const DCompositionInkTrailPoint *, UINT, const DCompositionInkTrailPoint *, UINT, UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDelegatedInkTrail*, DCompositionInkTrailPoint*, uint, DCompositionInkTrailPoint*, uint, uint*, int> AddTrailPointsWithPrediction;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDelegatedInkTrail*, uint, int> RemoveTrailPoints;
+
+            [NativeTypeName("HRESULT (const D2D1_COLOR_F &) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDelegatedInkTrail*, DXGI_RGBA*, int> StartNewTrail;
         }
     }
 }

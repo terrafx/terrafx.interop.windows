@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9BE8ED5C-EDAB-4D75-90F3-BD5BDBB21C82")]
     [NativeTypeName("struct IShellImageDataFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellImageDataFactory
+    public unsafe partial struct IShellImageDataFactory : IShellImageDataFactory.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetDataFormatFromPath([NativeTypeName("LPCWSTR")] ushort* pszPath, Guid* pDataFormat)
         {
             return ((delegate* unmanaged<IShellImageDataFactory*, ushort*, Guid*, int>)(lpVtbl[6]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), pszPath, pDataFormat);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateIShellImageData(IShellImageData** ppshimg);
+
+            [VtblIndex(4)]
+            HRESULT CreateImageFromFile([NativeTypeName("LPCWSTR")] ushort* pszPath, IShellImageData** ppshimg);
+
+            [VtblIndex(5)]
+            HRESULT CreateImageFromStream(IStream* pStream, IShellImageData** ppshimg);
+
+            [VtblIndex(6)]
+            HRESULT GetDataFormatFromPath([NativeTypeName("LPCWSTR")] ushort* pszPath, Guid* pDataFormat);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellImageDataFactory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellImageDataFactory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellImageDataFactory*, uint> Release;
+
+            [NativeTypeName("HRESULT (IShellImageData **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellImageDataFactory*, IShellImageData**, int> CreateIShellImageData;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IShellImageData **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellImageDataFactory*, ushort*, IShellImageData**, int> CreateImageFromFile;
+
+            [NativeTypeName("HRESULT (IStream *, IShellImageData **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellImageDataFactory*, IStream*, IShellImageData**, int> CreateImageFromStream;
+
+            [NativeTypeName("HRESULT (LPCWSTR, GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellImageDataFactory*, ushort*, Guid*, int> GetDataFormatFromPath;
         }
     }
 }

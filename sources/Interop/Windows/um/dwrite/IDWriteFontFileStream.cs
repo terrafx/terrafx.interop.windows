@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6D4865FE-0AB8-4D91-8F62-5DD6BE34A3E0")]
     [NativeTypeName("struct IDWriteFontFileStream : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWriteFontFileStream
+    public unsafe partial struct IDWriteFontFileStream : IDWriteFontFileStream.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetLastWriteTime([NativeTypeName("UINT64 *")] ulong* lastWriteTime)
         {
             return ((delegate* unmanaged<IDWriteFontFileStream*, ulong*, int>)(lpVtbl[6]))((IDWriteFontFileStream*)Unsafe.AsPointer(ref this), lastWriteTime);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ReadFileFragment([NativeTypeName("const void **")] void** fragmentStart, [NativeTypeName("UINT64")] ulong fileOffset, [NativeTypeName("UINT64")] ulong fragmentSize, void** fragmentContext);
+
+            [VtblIndex(4)]
+            void ReleaseFileFragment(void* fragmentContext);
+
+            [VtblIndex(5)]
+            HRESULT GetFileSize([NativeTypeName("UINT64 *")] ulong* fileSize);
+
+            [VtblIndex(6)]
+            HRESULT GetLastWriteTime([NativeTypeName("UINT64 *")] ulong* lastWriteTime);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFileStream*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFileStream*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFileStream*, uint> Release;
+
+            [NativeTypeName("HRESULT (const void **, UINT64, UINT64, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFileStream*, void**, ulong, ulong, void**, int> ReadFileFragment;
+
+            [NativeTypeName("void (void *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFileStream*, void*, void> ReleaseFileFragment;
+
+            [NativeTypeName("HRESULT (UINT64 *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFileStream*, ulong*, int> GetFileSize;
+
+            [NativeTypeName("HRESULT (UINT64 *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFileStream*, ulong*, int> GetLastWriteTime;
         }
     }
 }

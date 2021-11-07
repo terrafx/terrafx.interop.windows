@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4CD19ADA-25A5-4A32-B3B7-347BEE5BE36B")]
     [NativeTypeName("struct IStartMenuPinnedList : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IStartMenuPinnedList
+    public unsafe partial struct IStartMenuPinnedList : IStartMenuPinnedList.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT RemoveFromList(IShellItem* pitem)
         {
             return ((delegate* unmanaged<IStartMenuPinnedList*, IShellItem*, int>)(lpVtbl[3]))((IStartMenuPinnedList*)Unsafe.AsPointer(ref this), pitem);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RemoveFromList(IShellItem* pitem);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStartMenuPinnedList*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IStartMenuPinnedList*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IStartMenuPinnedList*, uint> Release;
+
+            [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IStartMenuPinnedList*, IShellItem*, int> RemoveFromList;
         }
     }
 }

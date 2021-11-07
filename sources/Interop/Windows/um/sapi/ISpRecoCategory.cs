@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DA0CD0F9-14A2-4F09-8C2A-85CC48979345")]
     [NativeTypeName("struct ISpRecoCategory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpRecoCategory
+    public unsafe partial struct ISpRecoCategory : ISpRecoCategory.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetType(SPCATEGORYTYPE* peCategoryType)
         {
             return ((delegate* unmanaged<ISpRecoCategory*, SPCATEGORYTYPE*, int>)(lpVtbl[3]))((ISpRecoCategory*)Unsafe.AsPointer(ref this), peCategoryType);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetType(SPCATEGORYTYPE* peCategoryType);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoCategory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoCategory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoCategory*, uint> Release;
+
+            [NativeTypeName("HRESULT (SPCATEGORYTYPE *) __attribute__((stdcall))")]
+            public new delegate* unmanaged<ISpRecoCategory*, SPCATEGORYTYPE*, int> GetType;
         }
     }
 }

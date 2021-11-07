@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AEC22FB8-76F3-4639-9BE0-28EB43A67A2E")]
     [NativeTypeName("struct IDXGIObject : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDXGIObject
+    public unsafe partial struct IDXGIObject : IDXGIObject.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetParent([NativeTypeName("const IID &")] Guid* riid, void** ppParent)
         {
             return ((delegate* unmanaged<IDXGIObject*, Guid*, void**, int>)(lpVtbl[6]))((IDXGIObject*)Unsafe.AsPointer(ref this), riid, ppParent);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint DataSize, [NativeTypeName("const void *")] void* pData);
+
+            [VtblIndex(4)]
+            HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown);
+
+            [VtblIndex(5)]
+            HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint* pDataSize, void* pData);
+
+            [VtblIndex(6)]
+            HRESULT GetParent([NativeTypeName("const IID &")] Guid* riid, void** ppParent);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIObject*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIObject*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIObject*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIObject*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIObject*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIObject*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIObject*, Guid*, void**, int> GetParent;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("334B1F50-2292-4B35-99A1-25588D8C17FE")]
     [NativeTypeName("struct IDxcContainerBuilder : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDxcContainerBuilder
+    public unsafe partial struct IDxcContainerBuilder : IDxcContainerBuilder.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT SerializeContainer(IDxcOperationResult** ppResult)
         {
             return ((delegate* unmanaged<IDxcContainerBuilder*, IDxcOperationResult**, int>)(lpVtbl[6]))((IDxcContainerBuilder*)Unsafe.AsPointer(ref this), ppResult);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Load(IDxcBlob* pDxilContainerHeader);
+
+            [VtblIndex(4)]
+            HRESULT AddPart([NativeTypeName("UINT32")] uint fourCC, IDxcBlob* pSource);
+
+            [VtblIndex(5)]
+            HRESULT RemovePart([NativeTypeName("UINT32")] uint fourCC);
+
+            [VtblIndex(6)]
+            HRESULT SerializeContainer(IDxcOperationResult** ppResult);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcContainerBuilder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcContainerBuilder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcContainerBuilder*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDxcBlob *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcContainerBuilder*, IDxcBlob*, int> Load;
+
+            [NativeTypeName("HRESULT (UINT32, IDxcBlob *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcContainerBuilder*, uint, IDxcBlob*, int> AddPart;
+
+            [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcContainerBuilder*, uint, int> RemovePart;
+
+            [NativeTypeName("HRESULT (IDxcOperationResult **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcContainerBuilder*, IDxcOperationResult**, int> SerializeContainer;
         }
     }
 }

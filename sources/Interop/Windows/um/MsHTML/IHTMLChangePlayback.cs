@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F6E0-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLChangePlayback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHTMLChangePlayback
+    public unsafe partial struct IHTMLChangePlayback : IHTMLChangePlayback.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT ExecChange(byte* pbRecord, BOOL fForward)
         {
             return ((delegate* unmanaged<IHTMLChangePlayback*, byte*, BOOL, int>)(lpVtbl[3]))((IHTMLChangePlayback*)Unsafe.AsPointer(ref this), pbRecord, fForward);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ExecChange(byte* pbRecord, BOOL fForward);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLChangePlayback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLChangePlayback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLChangePlayback*, uint> Release;
+
+            [NativeTypeName("HRESULT (BYTE *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLChangePlayback*, byte*, BOOL, int> ExecChange;
         }
     }
 }

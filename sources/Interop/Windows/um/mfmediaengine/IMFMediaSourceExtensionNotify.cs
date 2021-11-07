@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A7901327-05DD-4469-A7B7-0E01979E361D")]
     [NativeTypeName("struct IMFMediaSourceExtensionNotify : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaSourceExtensionNotify
+    public unsafe partial struct IMFMediaSourceExtensionNotify : IMFMediaSourceExtensionNotify.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public void OnSourceClose()
         {
             ((delegate* unmanaged<IMFMediaSourceExtensionNotify*, void>)(lpVtbl[5]))((IMFMediaSourceExtensionNotify*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void OnSourceOpen();
+
+            [VtblIndex(4)]
+            void OnSourceEnded();
+
+            [VtblIndex(5)]
+            void OnSourceClose();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceExtensionNotify*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceExtensionNotify*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceExtensionNotify*, uint> Release;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceExtensionNotify*, void> OnSourceOpen;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceExtensionNotify*, void> OnSourceEnded;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaSourceExtensionNotify*, void> OnSourceClose;
         }
     }
 }

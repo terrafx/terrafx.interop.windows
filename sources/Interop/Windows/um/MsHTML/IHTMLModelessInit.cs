@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F5E4-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLModelessInit : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLModelessInit
+    public unsafe partial struct IHTMLModelessInit : IHTMLModelessInit.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,57 @@ namespace TerraFX.Interop
         public HRESULT get_document(IUnknown** p)
         {
             return ((delegate* unmanaged<IHTMLModelessInit*, IUnknown**, int>)(lpVtbl[10]))((IHTMLModelessInit*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_parameters(VARIANT* p);
+
+            [VtblIndex(8)]
+            HRESULT get_optionString(VARIANT* p);
+
+            [VtblIndex(9)]
+            HRESULT get_moniker(IUnknown** p);
+
+            [VtblIndex(10)]
+            HRESULT get_document(IUnknown** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLModelessInit*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLModelessInit*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLModelessInit*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLModelessInit*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLModelessInit*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLModelessInit*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLModelessInit*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLModelessInit*, VARIANT*, int> get_parameters;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLModelessInit*, VARIANT*, int> get_optionString;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLModelessInit*, IUnknown**, int> get_moniker;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLModelessInit*, IUnknown**, int> get_document;
         }
     }
 }

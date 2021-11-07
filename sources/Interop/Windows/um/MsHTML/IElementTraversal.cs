@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510736-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IElementTraversal : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IElementTraversal
+    public unsafe partial struct IElementTraversal : IElementTraversal.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,63 @@ namespace TerraFX.Interop
         public HRESULT get_childElementCount([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<IElementTraversal*, int*, int>)(lpVtbl[11]))((IElementTraversal*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_firstElementChild(IHTMLElement** p);
+
+            [VtblIndex(8)]
+            HRESULT get_lastElementChild(IHTMLElement** p);
+
+            [VtblIndex(9)]
+            HRESULT get_previousElementSibling(IHTMLElement** p);
+
+            [VtblIndex(10)]
+            HRESULT get_nextElementSibling(IHTMLElement** p);
+
+            [VtblIndex(11)]
+            HRESULT get_childElementCount([NativeTypeName("long *")] int* p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementTraversal*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementTraversal*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementTraversal*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementTraversal*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementTraversal*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementTraversal*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementTraversal*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementTraversal*, IHTMLElement**, int> get_firstElementChild;
+
+            [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementTraversal*, IHTMLElement**, int> get_lastElementChild;
+
+            [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementTraversal*, IHTMLElement**, int> get_previousElementSibling;
+
+            [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementTraversal*, IHTMLElement**, int> get_nextElementSibling;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementTraversal*, int*, int> get_childElementCount;
         }
     }
 }

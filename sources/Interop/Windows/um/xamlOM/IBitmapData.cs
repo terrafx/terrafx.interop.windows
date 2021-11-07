@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D1A34EF2-CAD8-4635-A3D2-FCDA8D3F3CAF")]
     [NativeTypeName("struct IBitmapData : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IBitmapData
+    public unsafe partial struct IBitmapData : IBitmapData.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetSourceBitmapDescription(BitmapDescription* pBitmapDescription)
         {
             return ((delegate* unmanaged<IBitmapData*, BitmapDescription*, int>)(lpVtbl[6]))((IBitmapData*)Unsafe.AsPointer(ref this), pBitmapDescription);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CopyBytesTo([NativeTypeName("unsigned int")] uint sourceOffsetInBytes, [NativeTypeName("unsigned int")] uint maxBytesToCopy, byte* pvBytes, [NativeTypeName("unsigned int *")] uint* numberOfBytesCopied);
+
+            [VtblIndex(4)]
+            HRESULT GetStride([NativeTypeName("unsigned int *")] uint* pStride);
+
+            [VtblIndex(5)]
+            HRESULT GetBitmapDescription(BitmapDescription* pBitmapDescription);
+
+            [VtblIndex(6)]
+            HRESULT GetSourceBitmapDescription(BitmapDescription* pBitmapDescription);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBitmapData*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBitmapData*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBitmapData*, uint> Release;
+
+            [NativeTypeName("HRESULT (unsigned int, unsigned int, byte *, unsigned int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBitmapData*, uint, uint, byte*, uint*, int> CopyBytesTo;
+
+            [NativeTypeName("HRESULT (unsigned int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBitmapData*, uint*, int> GetStride;
+
+            [NativeTypeName("HRESULT (BitmapDescription *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBitmapData*, BitmapDescription*, int> GetBitmapDescription;
+
+            [NativeTypeName("HRESULT (BitmapDescription *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBitmapData*, BitmapDescription*, int> GetSourceBitmapDescription;
         }
     }
 }

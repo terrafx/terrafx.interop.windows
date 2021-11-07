@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27354153-9F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct IDiscFormat2Data : IDiscFormat2")]
     [NativeInheritance("IDiscFormat2")]
-    public unsafe partial struct IDiscFormat2Data
+    public unsafe partial struct IDiscFormat2Data : IDiscFormat2Data.Interface
     {
         public void** lpVtbl;
 
@@ -324,6 +324,240 @@ namespace TerraFX.Interop
         public HRESULT SetWriteSpeed([NativeTypeName("LONG")] int RequestedSectorsPerSecond, [NativeTypeName("VARIANT_BOOL")] short RotationTypeIsPureCAV)
         {
             return ((delegate* unmanaged<IDiscFormat2Data*, int, short, int>)(lpVtbl[43]))((IDiscFormat2Data*)Unsafe.AsPointer(ref this), RequestedSectorsPerSecond, RotationTypeIsPureCAV);
+        }
+
+        public interface Interface : IDiscFormat2.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT put_Recorder(IDiscRecorder2* value);
+
+            [VtblIndex(13)]
+            HRESULT get_Recorder(IDiscRecorder2** value);
+
+            [VtblIndex(14)]
+            HRESULT put_BufferUnderrunFreeDisabled([NativeTypeName("VARIANT_BOOL")] short value);
+
+            [VtblIndex(15)]
+            HRESULT get_BufferUnderrunFreeDisabled([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(16)]
+            HRESULT put_PostgapAlreadyInImage([NativeTypeName("VARIANT_BOOL")] short value);
+
+            [VtblIndex(17)]
+            HRESULT get_PostgapAlreadyInImage([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(18)]
+            HRESULT get_CurrentMediaStatus(IMAPI_FORMAT2_DATA_MEDIA_STATE* value);
+
+            [VtblIndex(19)]
+            HRESULT get_WriteProtectStatus(IMAPI_MEDIA_WRITE_PROTECT_STATE* value);
+
+            [VtblIndex(20)]
+            HRESULT get_TotalSectorsOnMedia([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(21)]
+            HRESULT get_FreeSectorsOnMedia([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(22)]
+            HRESULT get_NextWritableAddress([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(23)]
+            HRESULT get_StartAddressOfPreviousSession([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(24)]
+            HRESULT get_LastWrittenAddressOfPreviousSession([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(25)]
+            HRESULT put_ForceMediaToBeClosed([NativeTypeName("VARIANT_BOOL")] short value);
+
+            [VtblIndex(26)]
+            HRESULT get_ForceMediaToBeClosed([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(27)]
+            HRESULT put_DisableConsumerDvdCompatibilityMode([NativeTypeName("VARIANT_BOOL")] short value);
+
+            [VtblIndex(28)]
+            HRESULT get_DisableConsumerDvdCompatibilityMode([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(29)]
+            HRESULT get_CurrentPhysicalMediaType(IMAPI_MEDIA_PHYSICAL_TYPE* value);
+
+            [VtblIndex(30)]
+            HRESULT put_ClientName([NativeTypeName("BSTR")] ushort* value);
+
+            [VtblIndex(31)]
+            HRESULT get_ClientName([NativeTypeName("BSTR *")] ushort** value);
+
+            [VtblIndex(32)]
+            HRESULT get_RequestedWriteSpeed([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(33)]
+            HRESULT get_RequestedRotationTypeIsPureCAV([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(34)]
+            HRESULT get_CurrentWriteSpeed([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(35)]
+            HRESULT get_CurrentRotationTypeIsPureCAV([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(36)]
+            HRESULT get_SupportedWriteSpeeds(SAFEARRAY** supportedSpeeds);
+
+            [VtblIndex(37)]
+            HRESULT get_SupportedWriteSpeedDescriptors(SAFEARRAY** supportedSpeedDescriptors);
+
+            [VtblIndex(38)]
+            HRESULT put_ForceOverwrite([NativeTypeName("VARIANT_BOOL")] short value);
+
+            [VtblIndex(39)]
+            HRESULT get_ForceOverwrite([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(40)]
+            HRESULT get_MultisessionInterfaces(SAFEARRAY** value);
+
+            [VtblIndex(41)]
+            HRESULT Write(IStream* data);
+
+            [VtblIndex(42)]
+            HRESULT CancelWrite();
+
+            [VtblIndex(43)]
+            HRESULT SetWriteSpeed([NativeTypeName("LONG")] int RequestedSectorsPerSecond, [NativeTypeName("VARIANT_BOOL")] short RotationTypeIsPureCAV);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IDiscRecorder2 *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, IDiscRecorder2*, short*, int> IsRecorderSupported;
+
+            [NativeTypeName("HRESULT (IDiscRecorder2 *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, IDiscRecorder2*, short*, int> IsCurrentMediaSupported;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, short*, int> get_MediaPhysicallyBlank;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, short*, int> get_MediaHeuristicallyBlank;
+
+            [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, SAFEARRAY**, int> get_SupportedMediaTypes;
+
+            [NativeTypeName("HRESULT (IDiscRecorder2 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, IDiscRecorder2*, int> put_Recorder;
+
+            [NativeTypeName("HRESULT (IDiscRecorder2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, IDiscRecorder2**, int> get_Recorder;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, short, int> put_BufferUnderrunFreeDisabled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, short*, int> get_BufferUnderrunFreeDisabled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, short, int> put_PostgapAlreadyInImage;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, short*, int> get_PostgapAlreadyInImage;
+
+            [NativeTypeName("HRESULT (IMAPI_FORMAT2_DATA_MEDIA_STATE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, IMAPI_FORMAT2_DATA_MEDIA_STATE*, int> get_CurrentMediaStatus;
+
+            [NativeTypeName("HRESULT (IMAPI_MEDIA_WRITE_PROTECT_STATE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, IMAPI_MEDIA_WRITE_PROTECT_STATE*, int> get_WriteProtectStatus;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, int*, int> get_TotalSectorsOnMedia;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, int*, int> get_FreeSectorsOnMedia;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, int*, int> get_NextWritableAddress;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, int*, int> get_StartAddressOfPreviousSession;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, int*, int> get_LastWrittenAddressOfPreviousSession;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, short, int> put_ForceMediaToBeClosed;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, short*, int> get_ForceMediaToBeClosed;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, short, int> put_DisableConsumerDvdCompatibilityMode;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, short*, int> get_DisableConsumerDvdCompatibilityMode;
+
+            [NativeTypeName("HRESULT (IMAPI_MEDIA_PHYSICAL_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, IMAPI_MEDIA_PHYSICAL_TYPE*, int> get_CurrentPhysicalMediaType;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, ushort*, int> put_ClientName;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, ushort**, int> get_ClientName;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, int*, int> get_RequestedWriteSpeed;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, short*, int> get_RequestedRotationTypeIsPureCAV;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, int*, int> get_CurrentWriteSpeed;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, short*, int> get_CurrentRotationTypeIsPureCAV;
+
+            [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, SAFEARRAY**, int> get_SupportedWriteSpeeds;
+
+            [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, SAFEARRAY**, int> get_SupportedWriteSpeedDescriptors;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, short, int> put_ForceOverwrite;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, short*, int> get_ForceOverwrite;
+
+            [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, SAFEARRAY**, int> get_MultisessionInterfaces;
+
+            [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, IStream*, int> Write;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, int> CancelWrite;
+
+            [NativeTypeName("HRESULT (LONG, VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscFormat2Data*, int, short, int> SetWriteSpeed;
         }
     }
 }

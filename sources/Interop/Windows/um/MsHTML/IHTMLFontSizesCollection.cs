@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F377-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLFontSizesCollection : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLFontSizesCollection
+    public unsafe partial struct IHTMLFontSizesCollection : IHTMLFontSizesCollection.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,57 @@ namespace TerraFX.Interop
         public HRESULT item([NativeTypeName("long")] int index, [NativeTypeName("long *")] int* plSize)
         {
             return ((delegate* unmanaged<IHTMLFontSizesCollection*, int, int*, int>)(lpVtbl[10]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this), index, plSize);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT get__newEnum(IUnknown** p);
+
+            [VtblIndex(9)]
+            HRESULT get_forFont([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(10)]
+            HRESULT item([NativeTypeName("long")] int index, [NativeTypeName("long *")] int* plSize);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFontSizesCollection*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFontSizesCollection*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFontSizesCollection*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFontSizesCollection*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFontSizesCollection*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFontSizesCollection*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFontSizesCollection*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFontSizesCollection*, int*, int> get_length;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFontSizesCollection*, IUnknown**, int> get__newEnum;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFontSizesCollection*, ushort**, int> get_forFont;
+
+            [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLFontSizesCollection*, int, int*, int> item;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6295DF2A-35EE-11D1-8707-00C04FD93327")]
     [NativeTypeName("struct ISyncMgrEnumItems : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrEnumItems
+    public unsafe partial struct ISyncMgrEnumItems : ISyncMgrEnumItems.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Clone(ISyncMgrEnumItems** ppenum)
         {
             return ((delegate* unmanaged<ISyncMgrEnumItems*, ISyncMgrEnumItems**, int>)(lpVtbl[6]))((ISyncMgrEnumItems*)Unsafe.AsPointer(ref this), ppenum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Next([NativeTypeName("ULONG")] uint celt, SYNCMGRITEM* rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
+
+            [VtblIndex(4)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint celt);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Clone(ISyncMgrEnumItems** ppenum);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEnumItems*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEnumItems*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEnumItems*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, SYNCMGRITEM *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEnumItems*, uint, SYNCMGRITEM*, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEnumItems*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEnumItems*, int> Reset;
+
+            [NativeTypeName("HRESULT (ISyncMgrEnumItems **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEnumItems*, ISyncMgrEnumItems**, int> Clone;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("90701133-BE32-4129-A65C-99E616CAFFF4")]
     [NativeTypeName("struct ISyncMgrSyncItemContainer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrSyncItemContainer
+    public unsafe partial struct ISyncMgrSyncItemContainer : ISyncMgrSyncItemContainer.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT GetSyncItemCount([NativeTypeName("ULONG *")] uint* pcItems)
         {
             return ((delegate* unmanaged<ISyncMgrSyncItemContainer*, uint*, int>)(lpVtbl[5]))((ISyncMgrSyncItemContainer*)Unsafe.AsPointer(ref this), pcItems);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSyncItem([NativeTypeName("LPCWSTR")] ushort* pszItemID, ISyncMgrSyncItem** ppItem);
+
+            [VtblIndex(4)]
+            HRESULT GetSyncItemEnumerator(IEnumSyncMgrSyncItems** ppenum);
+
+            [VtblIndex(5)]
+            HRESULT GetSyncItemCount([NativeTypeName("ULONG *")] uint* pcItems);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSyncItemContainer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSyncItemContainer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSyncItemContainer*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, ISyncMgrSyncItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSyncItemContainer*, ushort*, ISyncMgrSyncItem**, int> GetSyncItem;
+
+            [NativeTypeName("HRESULT (IEnumSyncMgrSyncItems **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSyncItemContainer*, IEnumSyncMgrSyncItems**, int> GetSyncItemEnumerator;
+
+            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSyncItemContainer*, uint*, int> GetSyncItemCount;
         }
     }
 }

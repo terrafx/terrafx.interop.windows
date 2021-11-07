@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("089EDF13-CF71-4338-8D13-9E569DBDC319")]
     [NativeTypeName("struct IMFSimpleAudioVolume : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSimpleAudioVolume
+    public unsafe partial struct IMFSimpleAudioVolume : IMFSimpleAudioVolume.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetMute(BOOL* pbMute)
         {
             return ((delegate* unmanaged<IMFSimpleAudioVolume*, BOOL*, int>)(lpVtbl[6]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), pbMute);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetMasterVolume(float fLevel);
+
+            [VtblIndex(4)]
+            HRESULT GetMasterVolume(float* pfLevel);
+
+            [VtblIndex(5)]
+            HRESULT SetMute([NativeTypeName("const BOOL")] BOOL bMute);
+
+            [VtblIndex(6)]
+            HRESULT GetMute(BOOL* pbMute);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSimpleAudioVolume*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSimpleAudioVolume*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSimpleAudioVolume*, uint> Release;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSimpleAudioVolume*, float, int> SetMasterVolume;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSimpleAudioVolume*, float*, int> GetMasterVolume;
+
+            [NativeTypeName("HRESULT (const BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSimpleAudioVolume*, BOOL, int> SetMute;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSimpleAudioVolume*, BOOL*, int> GetMute;
         }
     }
 }

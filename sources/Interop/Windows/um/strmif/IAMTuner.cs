@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("211A8761-03AC-11D1-8D13-00AA00BD8339")]
     [NativeTypeName("struct IAMTuner : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMTuner
+    public unsafe partial struct IAMTuner : IAMTuner.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,111 @@ namespace TerraFX.Interop
         public HRESULT UnRegisterNotificationCallBack(IAMTunerNotification* pNotify)
         {
             return ((delegate* unmanaged<IAMTuner*, IAMTunerNotification*, int>)(lpVtbl[17]))((IAMTuner*)Unsafe.AsPointer(ref this), pNotify);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT put_Channel([NativeTypeName("long")] int lChannel, [NativeTypeName("long")] int lVideoSubChannel, [NativeTypeName("long")] int lAudioSubChannel);
+
+            [VtblIndex(4)]
+            HRESULT get_Channel([NativeTypeName("long *")] int* plChannel, [NativeTypeName("long *")] int* plVideoSubChannel, [NativeTypeName("long *")] int* plAudioSubChannel);
+
+            [VtblIndex(5)]
+            HRESULT ChannelMinMax([NativeTypeName("long *")] int* lChannelMin, [NativeTypeName("long *")] int* lChannelMax);
+
+            [VtblIndex(6)]
+            HRESULT put_CountryCode([NativeTypeName("long")] int lCountryCode);
+
+            [VtblIndex(7)]
+            HRESULT get_CountryCode([NativeTypeName("long *")] int* plCountryCode);
+
+            [VtblIndex(8)]
+            HRESULT put_TuningSpace([NativeTypeName("long")] int lTuningSpace);
+
+            [VtblIndex(9)]
+            HRESULT get_TuningSpace([NativeTypeName("long *")] int* plTuningSpace);
+
+            [VtblIndex(10)]
+            HRESULT Logon(HANDLE hCurrentUser);
+
+            [VtblIndex(11)]
+            HRESULT Logout();
+
+            [VtblIndex(12)]
+            HRESULT SignalPresent([NativeTypeName("long *")] int* plSignalStrength);
+
+            [VtblIndex(13)]
+            HRESULT put_Mode(AMTunerModeType lMode);
+
+            [VtblIndex(14)]
+            HRESULT get_Mode(AMTunerModeType* plMode);
+
+            [VtblIndex(15)]
+            HRESULT GetAvailableModes([NativeTypeName("long *")] int* plModes);
+
+            [VtblIndex(16)]
+            HRESULT RegisterNotificationCallBack(IAMTunerNotification* pNotify, [NativeTypeName("long")] int lEvents);
+
+            [VtblIndex(17)]
+            HRESULT UnRegisterNotificationCallBack(IAMTunerNotification* pNotify);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, uint> Release;
+
+            [NativeTypeName("HRESULT (long, long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, int, int, int, int> put_Channel;
+
+            [NativeTypeName("HRESULT (long *, long *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, int*, int*, int*, int> get_Channel;
+
+            [NativeTypeName("HRESULT (long *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, int*, int*, int> ChannelMinMax;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, int, int> put_CountryCode;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, int*, int> get_CountryCode;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, int, int> put_TuningSpace;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, int*, int> get_TuningSpace;
+
+            [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, HANDLE, int> Logon;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, int> Logout;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, int*, int> SignalPresent;
+
+            [NativeTypeName("HRESULT (AMTunerModeType) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, AMTunerModeType, int> put_Mode;
+
+            [NativeTypeName("HRESULT (AMTunerModeType *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, AMTunerModeType*, int> get_Mode;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, int*, int> GetAvailableModes;
+
+            [NativeTypeName("HRESULT (IAMTunerNotification *, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, IAMTunerNotification*, int, int> RegisterNotificationCallBack;
+
+            [NativeTypeName("HRESULT (IAMTunerNotification *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTuner*, IAMTunerNotification*, int> UnRegisterNotificationCallBack;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EB0FE175-1A3A-11D0-89B3-00A0C90A90AC")]
     [NativeTypeName("struct IDeskBarClient : IOleWindow")]
     [NativeInheritance("IOleWindow")]
-    public unsafe partial struct IDeskBarClient
+    public unsafe partial struct IDeskBarClient : IDeskBarClient.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,51 @@ namespace TerraFX.Interop
         public HRESULT GetSize([NativeTypeName("DWORD")] uint dwWhich, [NativeTypeName("LPRECT")] RECT* prc)
         {
             return ((delegate* unmanaged<IDeskBarClient*, uint, RECT*, int>)(lpVtbl[8]))((IDeskBarClient*)Unsafe.AsPointer(ref this), dwWhich, prc);
+        }
+
+        public interface Interface : IOleWindow.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT SetDeskBarSite(IUnknown* punkSite);
+
+            [VtblIndex(6)]
+            HRESULT SetModeDBC([NativeTypeName("DWORD")] uint dwMode);
+
+            [VtblIndex(7)]
+            HRESULT UIActivateDBC([NativeTypeName("DWORD")] uint dwState);
+
+            [VtblIndex(8)]
+            HRESULT GetSize([NativeTypeName("DWORD")] uint dwWhich, [NativeTypeName("LPRECT")] RECT* prc);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBarClient*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBarClient*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBarClient*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBarClient*, HWND*, int> GetWindow;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBarClient*, BOOL, int> ContextSensitiveHelp;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBarClient*, IUnknown*, int> SetDeskBarSite;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBarClient*, uint, int> SetModeDBC;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBarClient*, uint, int> UIActivateDBC;
+
+            [NativeTypeName("HRESULT (DWORD, LPRECT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBarClient*, uint, RECT*, int> GetSize;
         }
     }
 }

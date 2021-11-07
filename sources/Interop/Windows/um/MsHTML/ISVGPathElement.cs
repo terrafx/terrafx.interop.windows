@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510512-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGPathElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGPathElement
+    public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
     {
         public void** lpVtbl;
 
@@ -233,6 +233,177 @@ namespace TerraFX.Interop
         public HRESULT createSVGPathSegCurvetoQuadraticSmoothRel(float x, float y, ISVGPathSegCurvetoQuadraticSmoothRel** ppResult)
         {
             return ((delegate* unmanaged<ISVGPathElement*, float, float, ISVGPathSegCurvetoQuadraticSmoothRel**, int>)(lpVtbl[30]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, ppResult);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_pathLength(ISVGAnimatedNumber* v);
+
+            [VtblIndex(8)]
+            HRESULT get_pathLength(ISVGAnimatedNumber** p);
+
+            [VtblIndex(9)]
+            HRESULT getTotalLength(float* pfltResult);
+
+            [VtblIndex(10)]
+            HRESULT getPointAtLength(float fltdistance, ISVGPoint** ppPointResult);
+
+            [VtblIndex(11)]
+            HRESULT getPathSegAtLength(float fltdistance, [NativeTypeName("long *")] int* plResult);
+
+            [VtblIndex(12)]
+            HRESULT createSVGPathSegClosePath(ISVGPathSegClosePath** ppResult);
+
+            [VtblIndex(13)]
+            HRESULT createSVGPathSegMovetoAbs(float x, float y, ISVGPathSegMovetoAbs** ppResult);
+
+            [VtblIndex(14)]
+            HRESULT createSVGPathSegMovetoRel(float x, float y, ISVGPathSegMovetoRel** ppResult);
+
+            [VtblIndex(15)]
+            HRESULT createSVGPathSegLinetoAbs(float x, float y, ISVGPathSegLinetoAbs** ppResult);
+
+            [VtblIndex(16)]
+            HRESULT createSVGPathSegLinetoRel(float x, float y, ISVGPathSegLinetoRel** ppResult);
+
+            [VtblIndex(17)]
+            HRESULT createSVGPathSegCurvetoCubicAbs(float x, float y, float x1, float y1, float x2, float y2, ISVGPathSegCurvetoCubicAbs** ppResult);
+
+            [VtblIndex(18)]
+            HRESULT createSVGPathSegCurvetoCubicRel(float x, float y, float x1, float y1, float x2, float y2, ISVGPathSegCurvetoCubicRel** ppResult);
+
+            [VtblIndex(19)]
+            HRESULT createSVGPathSegCurvetoQuadraticAbs(float x, float y, float x1, float y1, ISVGPathSegCurvetoQuadraticAbs** ppResult);
+
+            [VtblIndex(20)]
+            HRESULT createSVGPathSegCurvetoQuadraticRel(float x, float y, float x1, float y1, ISVGPathSegCurvetoQuadraticRel** ppResult);
+
+            [VtblIndex(21)]
+            HRESULT createSVGPathSegArcAbs(float x, float y, float r1, float r2, float angle, [NativeTypeName("VARIANT_BOOL")] short largeArcFlag, [NativeTypeName("VARIANT_BOOL")] short sweepFlag, ISVGPathSegArcAbs** ppResult);
+
+            [VtblIndex(22)]
+            HRESULT createSVGPathSegArcRel(float x, float y, float r1, float r2, float angle, [NativeTypeName("VARIANT_BOOL")] short largeArcFlag, [NativeTypeName("VARIANT_BOOL")] short sweepFlag, ISVGPathSegArcRel** ppResult);
+
+            [VtblIndex(23)]
+            HRESULT createSVGPathSegLinetoHorizontalAbs(float x, ISVGPathSegLinetoHorizontalAbs** ppResult);
+
+            [VtblIndex(24)]
+            HRESULT createSVGPathSegLinetoHorizontalRel(float x, ISVGPathSegLinetoHorizontalRel** ppResult);
+
+            [VtblIndex(25)]
+            HRESULT createSVGPathSegLinetoVerticalAbs(float y, ISVGPathSegLinetoVerticalAbs** ppResult);
+
+            [VtblIndex(26)]
+            HRESULT createSVGPathSegLinetoVerticalRel(float y, ISVGPathSegLinetoVerticalRel** ppResult);
+
+            [VtblIndex(27)]
+            HRESULT createSVGPathSegCurvetoCubicSmoothAbs(float x, float y, float x2, float y2, ISVGPathSegCurvetoCubicSmoothAbs** ppResult);
+
+            [VtblIndex(28)]
+            HRESULT createSVGPathSegCurvetoCubicSmoothRel(float x, float y, float x2, float y2, ISVGPathSegCurvetoCubicSmoothRel** ppResult);
+
+            [VtblIndex(29)]
+            HRESULT createSVGPathSegCurvetoQuadraticSmoothAbs(float x, float y, ISVGPathSegCurvetoQuadraticSmoothAbs** ppResult);
+
+            [VtblIndex(30)]
+            HRESULT createSVGPathSegCurvetoQuadraticSmoothRel(float x, float y, ISVGPathSegCurvetoQuadraticSmoothRel** ppResult);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedNumber *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, ISVGAnimatedNumber*, int> putref_pathLength;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedNumber **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, ISVGAnimatedNumber**, int> get_pathLength;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, float*, int> getTotalLength;
+
+            [NativeTypeName("HRESULT (float, ISVGPoint **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, float, ISVGPoint**, int> getPointAtLength;
+
+            [NativeTypeName("HRESULT (float, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, float, int*, int> getPathSegAtLength;
+
+            [NativeTypeName("HRESULT (ISVGPathSegClosePath **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, ISVGPathSegClosePath**, int> createSVGPathSegClosePath;
+
+            [NativeTypeName("HRESULT (float, float, ISVGPathSegMovetoAbs **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, float, float, ISVGPathSegMovetoAbs**, int> createSVGPathSegMovetoAbs;
+
+            [NativeTypeName("HRESULT (float, float, ISVGPathSegMovetoRel **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, float, float, ISVGPathSegMovetoRel**, int> createSVGPathSegMovetoRel;
+
+            [NativeTypeName("HRESULT (float, float, ISVGPathSegLinetoAbs **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, float, float, ISVGPathSegLinetoAbs**, int> createSVGPathSegLinetoAbs;
+
+            [NativeTypeName("HRESULT (float, float, ISVGPathSegLinetoRel **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, float, float, ISVGPathSegLinetoRel**, int> createSVGPathSegLinetoRel;
+
+            [NativeTypeName("HRESULT (float, float, float, float, float, float, ISVGPathSegCurvetoCubicAbs **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, float, float, float, float, float, float, ISVGPathSegCurvetoCubicAbs**, int> createSVGPathSegCurvetoCubicAbs;
+
+            [NativeTypeName("HRESULT (float, float, float, float, float, float, ISVGPathSegCurvetoCubicRel **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, float, float, float, float, float, float, ISVGPathSegCurvetoCubicRel**, int> createSVGPathSegCurvetoCubicRel;
+
+            [NativeTypeName("HRESULT (float, float, float, float, ISVGPathSegCurvetoQuadraticAbs **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, float, float, float, float, ISVGPathSegCurvetoQuadraticAbs**, int> createSVGPathSegCurvetoQuadraticAbs;
+
+            [NativeTypeName("HRESULT (float, float, float, float, ISVGPathSegCurvetoQuadraticRel **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, float, float, float, float, ISVGPathSegCurvetoQuadraticRel**, int> createSVGPathSegCurvetoQuadraticRel;
+
+            [NativeTypeName("HRESULT (float, float, float, float, float, VARIANT_BOOL, VARIANT_BOOL, ISVGPathSegArcAbs **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, float, float, float, float, float, short, short, ISVGPathSegArcAbs**, int> createSVGPathSegArcAbs;
+
+            [NativeTypeName("HRESULT (float, float, float, float, float, VARIANT_BOOL, VARIANT_BOOL, ISVGPathSegArcRel **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, float, float, float, float, float, short, short, ISVGPathSegArcRel**, int> createSVGPathSegArcRel;
+
+            [NativeTypeName("HRESULT (float, ISVGPathSegLinetoHorizontalAbs **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, float, ISVGPathSegLinetoHorizontalAbs**, int> createSVGPathSegLinetoHorizontalAbs;
+
+            [NativeTypeName("HRESULT (float, ISVGPathSegLinetoHorizontalRel **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, float, ISVGPathSegLinetoHorizontalRel**, int> createSVGPathSegLinetoHorizontalRel;
+
+            [NativeTypeName("HRESULT (float, ISVGPathSegLinetoVerticalAbs **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, float, ISVGPathSegLinetoVerticalAbs**, int> createSVGPathSegLinetoVerticalAbs;
+
+            [NativeTypeName("HRESULT (float, ISVGPathSegLinetoVerticalRel **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, float, ISVGPathSegLinetoVerticalRel**, int> createSVGPathSegLinetoVerticalRel;
+
+            [NativeTypeName("HRESULT (float, float, float, float, ISVGPathSegCurvetoCubicSmoothAbs **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, float, float, float, float, ISVGPathSegCurvetoCubicSmoothAbs**, int> createSVGPathSegCurvetoCubicSmoothAbs;
+
+            [NativeTypeName("HRESULT (float, float, float, float, ISVGPathSegCurvetoCubicSmoothRel **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, float, float, float, float, ISVGPathSegCurvetoCubicSmoothRel**, int> createSVGPathSegCurvetoCubicSmoothRel;
+
+            [NativeTypeName("HRESULT (float, float, ISVGPathSegCurvetoQuadraticSmoothAbs **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, float, float, ISVGPathSegCurvetoQuadraticSmoothAbs**, int> createSVGPathSegCurvetoQuadraticSmoothAbs;
+
+            [NativeTypeName("HRESULT (float, float, ISVGPathSegCurvetoQuadraticSmoothRel **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathElement*, float, float, ISVGPathSegCurvetoQuadraticSmoothRel**, int> createSVGPathSegCurvetoQuadraticSmoothRel;
         }
     }
 }

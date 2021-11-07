@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DFDBA067-0B8D-4865-875B-D7B4516CC164")]
     [NativeTypeName("struct ID3D11RenderTargetView : ID3D11View")]
     [NativeInheritance("ID3D11View")]
-    public unsafe partial struct ID3D11RenderTargetView
+    public unsafe partial struct ID3D11RenderTargetView : ID3D11RenderTargetView.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,42 @@ namespace TerraFX.Interop
         public void GetDesc(D3D11_RENDER_TARGET_VIEW_DESC* pDesc)
         {
             ((delegate* unmanaged<ID3D11RenderTargetView*, D3D11_RENDER_TARGET_VIEW_DESC*, void>)(lpVtbl[8]))((ID3D11RenderTargetView*)Unsafe.AsPointer(ref this), pDesc);
+        }
+
+        public interface Interface : ID3D11View.Interface
+        {
+            [VtblIndex(8)]
+            void GetDesc(D3D11_RENDER_TARGET_VIEW_DESC* pDesc);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11RenderTargetView*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11RenderTargetView*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11RenderTargetView*, uint> Release;
+
+            [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11RenderTargetView*, ID3D11Device**, void> GetDevice;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11RenderTargetView*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11RenderTargetView*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11RenderTargetView*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("void (ID3D11Resource **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11RenderTargetView*, ID3D11Resource**, void> GetResource;
+
+            [NativeTypeName("void (D3D11_RENDER_TARGET_VIEW_DESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11RenderTargetView*, D3D11_RENDER_TARGET_VIEW_DESC*, void> GetDesc;
         }
     }
 }

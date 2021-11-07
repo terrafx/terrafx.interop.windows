@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EDAD8D99-8A35-4D6D-8566-2EA276CDE161")]
     [NativeTypeName("struct ID3D10BlendState1 : ID3D10BlendState")]
     [NativeInheritance("ID3D10BlendState")]
-    public unsafe partial struct ID3D10BlendState1
+    public unsafe partial struct ID3D10BlendState1 : ID3D10BlendState1.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,42 @@ namespace TerraFX.Interop
         public void GetDesc1(D3D10_BLEND_DESC1* pDesc)
         {
             ((delegate* unmanaged<ID3D10BlendState1*, D3D10_BLEND_DESC1*, void>)(lpVtbl[8]))((ID3D10BlendState1*)Unsafe.AsPointer(ref this), pDesc);
+        }
+
+        public interface Interface : ID3D10BlendState.Interface
+        {
+            [VtblIndex(8)]
+            void GetDesc1(D3D10_BLEND_DESC1* pDesc);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10BlendState1*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10BlendState1*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10BlendState1*, uint> Release;
+
+            [NativeTypeName("void (ID3D10Device **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10BlendState1*, ID3D10Device**, void> GetDevice;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10BlendState1*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10BlendState1*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10BlendState1*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("void (D3D10_BLEND_DESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10BlendState1*, D3D10_BLEND_DESC*, void> GetDesc;
+
+            [NativeTypeName("void (D3D10_BLEND_DESC1 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10BlendState1*, D3D10_BLEND_DESC1*, void> GetDesc1;
         }
     }
 }

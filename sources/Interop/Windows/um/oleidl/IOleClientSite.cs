@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000118-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IOleClientSite : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IOleClientSite
+    public unsafe partial struct IOleClientSite : IOleClientSite.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,57 @@ namespace TerraFX.Interop
         public HRESULT RequestNewObjectLayout()
         {
             return ((delegate* unmanaged<IOleClientSite*, int>)(lpVtbl[8]))((IOleClientSite*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SaveObject();
+
+            [VtblIndex(4)]
+            HRESULT GetMoniker([NativeTypeName("DWORD")] uint dwAssign, [NativeTypeName("DWORD")] uint dwWhichMoniker, IMoniker** ppmk);
+
+            [VtblIndex(5)]
+            HRESULT GetContainer(IOleContainer** ppContainer);
+
+            [VtblIndex(6)]
+            HRESULT ShowObject();
+
+            [VtblIndex(7)]
+            HRESULT OnShowWindow(BOOL fShow);
+
+            [VtblIndex(8)]
+            HRESULT RequestNewObjectLayout();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleClientSite*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleClientSite*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleClientSite*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleClientSite*, int> SaveObject;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, IMoniker **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleClientSite*, uint, uint, IMoniker**, int> GetMoniker;
+
+            [NativeTypeName("HRESULT (IOleContainer **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleClientSite*, IOleContainer**, int> GetContainer;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleClientSite*, int> ShowObject;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleClientSite*, BOOL, int> OnShowWindow;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleClientSite*, int> RequestNewObjectLayout;
         }
     }
 }

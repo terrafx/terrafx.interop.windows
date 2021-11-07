@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5ACD6AA0-F482-11CE-8B67-00AA00A3F1A6")]
     [NativeTypeName("struct IConfigAviMux : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IConfigAviMux
+    public unsafe partial struct IConfigAviMux : IConfigAviMux.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetOutputCompatibilityIndex(BOOL* pfOldIndex)
         {
             return ((delegate* unmanaged<IConfigAviMux*, BOOL*, int>)(lpVtbl[6]))((IConfigAviMux*)Unsafe.AsPointer(ref this), pfOldIndex);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetMasterStream([NativeTypeName("LONG")] int iStream);
+
+            [VtblIndex(4)]
+            HRESULT GetMasterStream([NativeTypeName("LONG *")] int* pStream);
+
+            [VtblIndex(5)]
+            HRESULT SetOutputCompatibilityIndex(BOOL fOldIndex);
+
+            [VtblIndex(6)]
+            HRESULT GetOutputCompatibilityIndex(BOOL* pfOldIndex);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConfigAviMux*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IConfigAviMux*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IConfigAviMux*, uint> Release;
+
+            [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConfigAviMux*, int, int> SetMasterStream;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConfigAviMux*, int*, int> GetMasterStream;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConfigAviMux*, BOOL, int> SetOutputCompatibilityIndex;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConfigAviMux*, BOOL*, int> GetOutputCompatibilityIndex;
         }
     }
 }

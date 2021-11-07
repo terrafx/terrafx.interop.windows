@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("57D2EDED-5062-400E-B107-5DAE79FE57A6")]
     [NativeTypeName("struct IPropertyDescription2 : IPropertyDescription")]
     [NativeInheritance("IPropertyDescription")]
-    public unsafe partial struct IPropertyDescription2
+    public unsafe partial struct IPropertyDescription2 : IPropertyDescription2.Interface
     {
         public void** lpVtbl;
 
@@ -191,6 +191,90 @@ namespace TerraFX.Interop
         public HRESULT GetImageReferenceForValue([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, [NativeTypeName("LPWSTR *")] ushort** ppszImageRes)
         {
             return ((delegate* unmanaged<IPropertyDescription2*, PROPVARIANT*, ushort**, int>)(lpVtbl[24]))((IPropertyDescription2*)Unsafe.AsPointer(ref this), propvar, ppszImageRes);
+        }
+
+        public interface Interface : IPropertyDescription.Interface
+        {
+            [VtblIndex(24)]
+            HRESULT GetImageReferenceForValue([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, [NativeTypeName("LPWSTR *")] ushort** ppszImageRes);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, uint> Release;
+
+            [NativeTypeName("HRESULT (PROPERTYKEY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, PROPERTYKEY*, int> GetPropertyKey;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, ushort**, int> GetCanonicalName;
+
+            [NativeTypeName("HRESULT (VARTYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, ushort*, int> GetPropertyType;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, ushort**, int> GetDisplayName;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, ushort**, int> GetEditInvitation;
+
+            [NativeTypeName("HRESULT (PROPDESC_TYPE_FLAGS, PROPDESC_TYPE_FLAGS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, PROPDESC_TYPE_FLAGS, PROPDESC_TYPE_FLAGS*, int> GetTypeFlags;
+
+            [NativeTypeName("HRESULT (PROPDESC_VIEW_FLAGS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, PROPDESC_VIEW_FLAGS*, int> GetViewFlags;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, uint*, int> GetDefaultColumnWidth;
+
+            [NativeTypeName("HRESULT (PROPDESC_DISPLAYTYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, PROPDESC_DISPLAYTYPE*, int> GetDisplayType;
+
+            [NativeTypeName("HRESULT (SHCOLSTATEF *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, uint*, int> GetColumnState;
+
+            [NativeTypeName("HRESULT (PROPDESC_GROUPING_RANGE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, PROPDESC_GROUPING_RANGE*, int> GetGroupingRange;
+
+            [NativeTypeName("HRESULT (PROPDESC_RELATIVEDESCRIPTION_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, PROPDESC_RELATIVEDESCRIPTION_TYPE*, int> GetRelativeDescriptionType;
+
+            [NativeTypeName("HRESULT (const PROPVARIANT &, const PROPVARIANT &, LPWSTR *, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, PROPVARIANT*, PROPVARIANT*, ushort**, ushort**, int> GetRelativeDescription;
+
+            [NativeTypeName("HRESULT (PROPDESC_SORTDESCRIPTION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, PROPDESC_SORTDESCRIPTION*, int> GetSortDescription;
+
+            [NativeTypeName("HRESULT (BOOL, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, BOOL, ushort**, int> GetSortDescriptionLabel;
+
+            [NativeTypeName("HRESULT (PROPDESC_AGGREGATION_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, PROPDESC_AGGREGATION_TYPE*, int> GetAggregationType;
+
+            [NativeTypeName("HRESULT (PROPDESC_CONDITION_TYPE *, CONDITION_OPERATION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, PROPDESC_CONDITION_TYPE*, CONDITION_OPERATION*, int> GetConditionType;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, Guid*, void**, int> GetEnumTypeList;
+
+            [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, PROPVARIANT*, int> CoerceToCanonicalValue;
+
+            [NativeTypeName("HRESULT (const PROPVARIANT &, PROPDESC_FORMAT_FLAGS, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, PROPVARIANT*, PROPDESC_FORMAT_FLAGS, ushort**, int> FormatForDisplay;
+
+            [NativeTypeName("HRESULT (const PROPVARIANT &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, PROPVARIANT*, int> IsValueCanonical;
+
+            [NativeTypeName("HRESULT (const PROPVARIANT &, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyDescription2*, PROPVARIANT*, ushort**, int> GetImageReferenceForValue;
         }
     }
 }

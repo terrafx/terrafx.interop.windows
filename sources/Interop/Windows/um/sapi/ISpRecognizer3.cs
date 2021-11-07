@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DF1B943C-5838-4AA2-8706-D7CD5B333499")]
     [NativeTypeName("struct ISpRecognizer3 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpRecognizer3
+    public unsafe partial struct ISpRecognizer3 : ISpRecognizer3.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT GetActiveCategory(ISpRecoCategory** ppCategory)
         {
             return ((delegate* unmanaged<ISpRecognizer3*, ISpRecoCategory**, int>)(lpVtbl[5]))((ISpRecognizer3*)Unsafe.AsPointer(ref this), ppCategory);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCategory(SPCATEGORYTYPE categoryType, ISpRecoCategory** ppCategory);
+
+            [VtblIndex(4)]
+            HRESULT SetActiveCategory(ISpRecoCategory* pCategory);
+
+            [VtblIndex(5)]
+            HRESULT GetActiveCategory(ISpRecoCategory** ppCategory);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer3*, uint> Release;
+
+            [NativeTypeName("HRESULT (SPCATEGORYTYPE, ISpRecoCategory **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer3*, SPCATEGORYTYPE, ISpRecoCategory**, int> GetCategory;
+
+            [NativeTypeName("HRESULT (ISpRecoCategory *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer3*, ISpRecoCategory*, int> SetActiveCategory;
+
+            [NativeTypeName("HRESULT (ISpRecoCategory **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecognizer3*, ISpRecoCategory**, int> GetActiveCategory;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A65C9109-42AB-4B94-A7B1-DD2E4E68515E")]
     [NativeTypeName("struct IUnbufferedFileHandleProvider : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUnbufferedFileHandleProvider
+    public unsafe partial struct IUnbufferedFileHandleProvider : IUnbufferedFileHandleProvider.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT CloseUnbufferedFileHandle()
         {
             return ((delegate* unmanaged<IUnbufferedFileHandleProvider*, int>)(lpVtbl[4]))((IUnbufferedFileHandleProvider*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OpenUnbufferedFileHandle(IUnbufferedFileHandleOplockCallback* oplockBreakCallback, [NativeTypeName("DWORD_PTR *")] nuint* fileHandle);
+
+            [VtblIndex(4)]
+            HRESULT CloseUnbufferedFileHandle();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUnbufferedFileHandleProvider*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUnbufferedFileHandleProvider*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUnbufferedFileHandleProvider*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnbufferedFileHandleOplockCallback *, DWORD_PTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUnbufferedFileHandleProvider*, IUnbufferedFileHandleOplockCallback*, nuint*, int> OpenUnbufferedFileHandle;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUnbufferedFileHandleProvider*, int> CloseUnbufferedFileHandle;
         }
     }
 }

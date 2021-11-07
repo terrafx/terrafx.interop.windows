@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4EF89150-0807-11D3-8DF0-00105A2799B5")]
     [NativeTypeName("struct ITfPersistentPropertyLoaderACP : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfPersistentPropertyLoaderACP
+    public unsafe partial struct ITfPersistentPropertyLoaderACP : ITfPersistentPropertyLoaderACP.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT LoadProperty([NativeTypeName("const TF_PERSISTENT_PROPERTY_HEADER_ACP *")] TF_PERSISTENT_PROPERTY_HEADER_ACP* pHdr, IStream** ppStream)
         {
             return ((delegate* unmanaged<ITfPersistentPropertyLoaderACP*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream**, int>)(lpVtbl[3]))((ITfPersistentPropertyLoaderACP*)Unsafe.AsPointer(ref this), pHdr, ppStream);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT LoadProperty([NativeTypeName("const TF_PERSISTENT_PROPERTY_HEADER_ACP *")] TF_PERSISTENT_PROPERTY_HEADER_ACP* pHdr, IStream** ppStream);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPersistentPropertyLoaderACP*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPersistentPropertyLoaderACP*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPersistentPropertyLoaderACP*, uint> Release;
+
+            [NativeTypeName("HRESULT (const TF_PERSISTENT_PROPERTY_HEADER_ACP *, IStream **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPersistentPropertyLoaderACP*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream**, int> LoadProperty;
         }
     }
 }

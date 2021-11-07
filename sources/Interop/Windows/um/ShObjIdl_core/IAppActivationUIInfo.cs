@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("ABAD189D-9FA3-4278-B3CA-8CA448A88DCB")]
     [NativeTypeName("struct IAppActivationUIInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppActivationUIInfo
+    public unsafe partial struct IAppActivationUIInfo : IAppActivationUIInfo.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT GetKeyState([NativeTypeName("DWORD *")] uint* value)
         {
             return ((delegate* unmanaged<IAppActivationUIInfo*, uint*, int>)(lpVtbl[7]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetMonitor(HMONITOR* value);
+
+            [VtblIndex(4)]
+            HRESULT GetInvokePoint(POINT* value);
+
+            [VtblIndex(5)]
+            HRESULT GetShowCommand(int* value);
+
+            [VtblIndex(6)]
+            HRESULT GetShowUI(BOOL* value);
+
+            [VtblIndex(7)]
+            HRESULT GetKeyState([NativeTypeName("DWORD *")] uint* value);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppActivationUIInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppActivationUIInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppActivationUIInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (HMONITOR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppActivationUIInfo*, HMONITOR*, int> GetMonitor;
+
+            [NativeTypeName("HRESULT (POINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppActivationUIInfo*, POINT*, int> GetInvokePoint;
+
+            [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppActivationUIInfo*, int*, int> GetShowCommand;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppActivationUIInfo*, BOOL*, int> GetShowUI;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppActivationUIInfo*, uint*, int> GetKeyState;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A2F05A09-27A2-42B5-BC0E-AC163EF49D9B")]
     [NativeTypeName("struct IApartmentShutdown : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IApartmentShutdown
+    public unsafe partial struct IApartmentShutdown : IApartmentShutdown.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public void OnUninitialize([NativeTypeName("UINT64")] ulong ui64ApartmentIdentifier)
         {
             ((delegate* unmanaged<IApartmentShutdown*, ulong, void>)(lpVtbl[3]))((IApartmentShutdown*)Unsafe.AsPointer(ref this), ui64ApartmentIdentifier);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void OnUninitialize([NativeTypeName("UINT64")] ulong ui64ApartmentIdentifier);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApartmentShutdown*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IApartmentShutdown*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IApartmentShutdown*, uint> Release;
+
+            [NativeTypeName("void (UINT64) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApartmentShutdown*, ulong, void> OnUninitialize;
         }
     }
 }

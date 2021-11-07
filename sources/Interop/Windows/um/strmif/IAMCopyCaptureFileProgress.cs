@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("670D1D20-A068-11D0-B3F0-00AA003761C5")]
     [NativeTypeName("struct IAMCopyCaptureFileProgress : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMCopyCaptureFileProgress
+    public unsafe partial struct IAMCopyCaptureFileProgress : IAMCopyCaptureFileProgress.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT Progress(int iProgress)
         {
             return ((delegate* unmanaged<IAMCopyCaptureFileProgress*, int, int>)(lpVtbl[3]))((IAMCopyCaptureFileProgress*)Unsafe.AsPointer(ref this), iProgress);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Progress(int iProgress);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCopyCaptureFileProgress*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCopyCaptureFileProgress*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCopyCaptureFileProgress*, uint> Release;
+
+            [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCopyCaptureFileProgress*, int, int> Progress;
         }
     }
 }

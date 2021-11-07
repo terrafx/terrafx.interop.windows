@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000121-A8F2-4877-BA0A-FD2B6645FB94")]
     [NativeTypeName("struct IWICBitmap : IWICBitmapSource")]
     [NativeInheritance("IWICBitmapSource")]
-    public unsafe partial struct IWICBitmap
+    public unsafe partial struct IWICBitmap : IWICBitmap.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,54 @@ namespace TerraFX.Interop
         public HRESULT SetResolution(double dpiX, double dpiY)
         {
             return ((delegate* unmanaged<IWICBitmap*, double, double, int>)(lpVtbl[10]))((IWICBitmap*)Unsafe.AsPointer(ref this), dpiX, dpiY);
+        }
+
+        public interface Interface : IWICBitmapSource.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT Lock([NativeTypeName("const WICRect *")] WICRect* prcLock, [NativeTypeName("DWORD")] uint flags, IWICBitmapLock** ppILock);
+
+            [VtblIndex(9)]
+            HRESULT SetPalette(IWICPalette* pIPalette);
+
+            [VtblIndex(10)]
+            HRESULT SetResolution(double dpiX, double dpiY);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmap*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmap*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmap*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmap*, uint*, uint*, int> GetSize;
+
+            [NativeTypeName("HRESULT (WICPixelFormatGUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmap*, Guid*, int> GetPixelFormat;
+
+            [NativeTypeName("HRESULT (double *, double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmap*, double*, double*, int> GetResolution;
+
+            [NativeTypeName("HRESULT (IWICPalette *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmap*, IWICPalette*, int> CopyPalette;
+
+            [NativeTypeName("HRESULT (const WICRect *, UINT, UINT, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmap*, WICRect*, uint, uint, byte*, int> CopyPixels;
+
+            [NativeTypeName("HRESULT (const WICRect *, DWORD, IWICBitmapLock **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmap*, WICRect*, uint, IWICBitmapLock**, int> Lock;
+
+            [NativeTypeName("HRESULT (IWICPalette *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmap*, IWICPalette*, int> SetPalette;
+
+            [NativeTypeName("HRESULT (double, double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICBitmap*, double, double, int> SetResolution;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79EAC9C9-BAF9-11CE-8C82-00AA004BA90B")]
     [NativeTypeName("struct IPersistMoniker : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPersistMoniker
+    public unsafe partial struct IPersistMoniker : IPersistMoniker.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,57 @@ namespace TerraFX.Interop
         public HRESULT GetCurMoniker(IMoniker** ppimkName)
         {
             return ((delegate* unmanaged<IPersistMoniker*, IMoniker**, int>)(lpVtbl[8]))((IPersistMoniker*)Unsafe.AsPointer(ref this), ppimkName);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID);
+
+            [VtblIndex(4)]
+            HRESULT IsDirty();
+
+            [VtblIndex(5)]
+            HRESULT Load(BOOL fFullyAvailable, IMoniker* pimkName, [NativeTypeName("LPBC")] IBindCtx* pibc, [NativeTypeName("DWORD")] uint grfMode);
+
+            [VtblIndex(6)]
+            HRESULT Save(IMoniker* pimkName, [NativeTypeName("LPBC")] IBindCtx* pbc, BOOL fRemember);
+
+            [VtblIndex(7)]
+            HRESULT SaveCompleted(IMoniker* pimkName, [NativeTypeName("LPBC")] IBindCtx* pibc);
+
+            [VtblIndex(8)]
+            HRESULT GetCurMoniker(IMoniker** ppimkName);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistMoniker*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistMoniker*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistMoniker*, uint> Release;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistMoniker*, Guid*, int> GetClassID;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistMoniker*, int> IsDirty;
+
+            [NativeTypeName("HRESULT (BOOL, IMoniker *, LPBC, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistMoniker*, BOOL, IMoniker*, IBindCtx*, uint, int> Load;
+
+            [NativeTypeName("HRESULT (IMoniker *, LPBC, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistMoniker*, IMoniker*, IBindCtx*, BOOL, int> Save;
+
+            [NativeTypeName("HRESULT (IMoniker *, LPBC) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistMoniker*, IMoniker*, IBindCtx*, int> SaveCompleted;
+
+            [NativeTypeName("HRESULT (IMoniker **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistMoniker*, IMoniker**, int> GetCurMoniker;
         }
     }
 }

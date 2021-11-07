@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("259684DC-37C3-11D2-9603-00C04F8EE628")]
     [NativeTypeName("struct ISpNotifySink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpNotifySink
+    public unsafe partial struct ISpNotifySink : ISpNotifySink.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT Notify()
         {
             return ((delegate* unmanaged<ISpNotifySink*, int>)(lpVtbl[3]))((ISpNotifySink*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Notify();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifySink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifySink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifySink*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpNotifySink*, int> Notify;
         }
     }
 }

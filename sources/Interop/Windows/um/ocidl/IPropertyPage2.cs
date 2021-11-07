@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("01E44665-24AC-101B-84ED-08002B2EC713")]
     [NativeTypeName("struct IPropertyPage2 : IPropertyPage")]
     [NativeInheritance("IPropertyPage")]
-    public unsafe partial struct IPropertyPage2
+    public unsafe partial struct IPropertyPage2 : IPropertyPage2.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,60 @@ namespace TerraFX.Interop
         public HRESULT EditProperty([NativeTypeName("DISPID")] int dispID)
         {
             return ((delegate* unmanaged<IPropertyPage2*, int, int>)(lpVtbl[14]))((IPropertyPage2*)Unsafe.AsPointer(ref this), dispID);
+        }
+
+        public interface Interface : IPropertyPage.Interface
+        {
+            [VtblIndex(14)]
+            HRESULT EditProperty([NativeTypeName("DISPID")] int dispID);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage2*, uint> Release;
+
+            [NativeTypeName("HRESULT (IPropertyPageSite *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage2*, IPropertyPageSite*, int> SetPageSite;
+
+            [NativeTypeName("HRESULT (HWND, LPCRECT, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage2*, HWND, RECT*, BOOL, int> Activate;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage2*, int> Deactivate;
+
+            [NativeTypeName("HRESULT (PROPPAGEINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage2*, PROPPAGEINFO*, int> GetPageInfo;
+
+            [NativeTypeName("HRESULT (ULONG, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage2*, uint, IUnknown**, int> SetObjects;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage2*, uint, int> Show;
+
+            [NativeTypeName("HRESULT (LPCRECT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage2*, RECT*, int> Move;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage2*, int> IsPageDirty;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage2*, int> Apply;
+
+            [NativeTypeName("HRESULT (LPCOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage2*, ushort*, int> Help;
+
+            [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage2*, MSG*, int> TranslateAccelerator;
+
+            [NativeTypeName("HRESULT (DISPID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyPage2*, int, int> EditProperty;
         }
     }
 }

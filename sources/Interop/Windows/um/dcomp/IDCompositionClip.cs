@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("64AC3703-9D3F-45EC-A109-7CAC0E7A13A7")]
     [NativeTypeName("struct IDCompositionClip : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDCompositionClip
+    public unsafe partial struct IDCompositionClip : IDCompositionClip.Interface
     {
         public void** lpVtbl;
 
@@ -37,6 +37,22 @@ namespace TerraFX.Interop
         public uint Release()
         {
             return ((delegate* unmanaged<IDCompositionClip*, uint>)(lpVtbl[2]))((IDCompositionClip*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionClip*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionClip*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionClip*, uint> Release;
         }
     }
 }

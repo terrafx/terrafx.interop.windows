@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5C1E0D8A-7C23-48F9-8C59-A92958CEFF11")]
     [NativeTypeName("struct ID3DDeviceContextState : ID3D11DeviceChild")]
     [NativeInheritance("ID3D11DeviceChild")]
-    public unsafe partial struct ID3DDeviceContextState
+    public unsafe partial struct ID3DDeviceContextState : ID3DDeviceContextState.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,34 @@ namespace TerraFX.Interop
         public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
         {
             return ((delegate* unmanaged<ID3DDeviceContextState*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3DDeviceContextState*)Unsafe.AsPointer(ref this), guid, pData);
+        }
+
+        public interface Interface : ID3D11DeviceChild.Interface
+        {
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3DDeviceContextState*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3DDeviceContextState*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3DDeviceContextState*, uint> Release;
+
+            [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3DDeviceContextState*, ID3D11Device**, void> GetDevice;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3DDeviceContextState*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3DDeviceContextState*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3DDeviceContextState*, Guid*, IUnknown*, int> SetPrivateDataInterface;
         }
     }
 }

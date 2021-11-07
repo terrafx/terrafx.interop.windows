@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F690-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHighlightSegment : ISegment")]
     [NativeInheritance("ISegment")]
-    public unsafe partial struct IHighlightSegment
+    public unsafe partial struct IHighlightSegment : IHighlightSegment.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,25 @@ namespace TerraFX.Interop
         public HRESULT GetPointers(IMarkupPointer* pIStart, IMarkupPointer* pIEnd)
         {
             return ((delegate* unmanaged<IHighlightSegment*, IMarkupPointer*, IMarkupPointer*, int>)(lpVtbl[3]))((IHighlightSegment*)Unsafe.AsPointer(ref this), pIStart, pIEnd);
+        }
+
+        public interface Interface : ISegment.Interface
+        {
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHighlightSegment*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHighlightSegment*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHighlightSegment*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHighlightSegment*, IMarkupPointer*, IMarkupPointer*, int> GetPointers;
         }
     }
 }

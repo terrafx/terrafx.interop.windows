@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2C941FD7-975B-59BE-A960-9A2A262853A5")]
     [NativeTypeName("struct IProgressItems : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IProgressItems
+    public unsafe partial struct IProgressItems : IProgressItems.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,69 @@ namespace TerraFX.Interop
         public HRESULT get_EnumProgressItems(IEnumProgressItems** NewEnum)
         {
             return ((delegate* unmanaged<IProgressItems*, IEnumProgressItems**, int>)(lpVtbl[12]))((IProgressItems*)Unsafe.AsPointer(ref this), NewEnum);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get__NewEnum(IEnumVARIANT** NewEnum);
+
+            [VtblIndex(8)]
+            HRESULT get_Item([NativeTypeName("long")] int Index, IProgressItem** item);
+
+            [VtblIndex(9)]
+            HRESULT get_Count([NativeTypeName("long *")] int* Count);
+
+            [VtblIndex(10)]
+            HRESULT ProgressItemFromBlock([NativeTypeName("ULONG")] uint block, IProgressItem** item);
+
+            [VtblIndex(11)]
+            HRESULT ProgressItemFromDescription([NativeTypeName("BSTR")] ushort* description, IProgressItem** item);
+
+            [VtblIndex(12)]
+            HRESULT get_EnumProgressItems(IEnumProgressItems** NewEnum);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressItems*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressItems*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressItems*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressItems*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressItems*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressItems*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressItems*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IEnumVARIANT **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressItems*, IEnumVARIANT**, int> get__NewEnum;
+
+            [NativeTypeName("HRESULT (long, IProgressItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressItems*, int, IProgressItem**, int> get_Item;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressItems*, int*, int> get_Count;
+
+            [NativeTypeName("HRESULT (ULONG, IProgressItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressItems*, uint, IProgressItem**, int> ProgressItemFromBlock;
+
+            [NativeTypeName("HRESULT (BSTR, IProgressItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressItems*, ushort*, IProgressItem**, int> ProgressItemFromDescription;
+
+            [NativeTypeName("HRESULT (IEnumProgressItems **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProgressItems*, IEnumProgressItems**, int> get_EnumProgressItems;
         }
     }
 }

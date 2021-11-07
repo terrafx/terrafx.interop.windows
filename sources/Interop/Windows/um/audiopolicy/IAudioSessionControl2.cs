@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BFB7FF88-7239-4FC9-8FA2-07C950BE9C6D")]
     [NativeTypeName("struct IAudioSessionControl2 : IAudioSessionControl")]
     [NativeInheritance("IAudioSessionControl")]
-    public unsafe partial struct IAudioSessionControl2
+    public unsafe partial struct IAudioSessionControl2 : IAudioSessionControl2.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,78 @@ namespace TerraFX.Interop
         public HRESULT SetDuckingPreference(BOOL optOut)
         {
             return ((delegate* unmanaged<IAudioSessionControl2*, BOOL, int>)(lpVtbl[16]))((IAudioSessionControl2*)Unsafe.AsPointer(ref this), optOut);
+        }
+
+        public interface Interface : IAudioSessionControl.Interface
+        {
+            [VtblIndex(12)]
+            HRESULT GetSessionIdentifier([NativeTypeName("LPWSTR *")] ushort** pRetVal);
+
+            [VtblIndex(13)]
+            HRESULT GetSessionInstanceIdentifier([NativeTypeName("LPWSTR *")] ushort** pRetVal);
+
+            [VtblIndex(14)]
+            HRESULT GetProcessId([NativeTypeName("DWORD *")] uint* pRetVal);
+
+            [VtblIndex(15)]
+            HRESULT IsSystemSoundsSession();
+
+            [VtblIndex(16)]
+            HRESULT SetDuckingPreference(BOOL optOut);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionControl2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionControl2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionControl2*, uint> Release;
+
+            [NativeTypeName("HRESULT (AudioSessionState *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionControl2*, AudioSessionState*, int> GetState;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionControl2*, ushort**, int> GetDisplayName;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionControl2*, ushort*, Guid*, int> SetDisplayName;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionControl2*, ushort**, int> GetIconPath;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionControl2*, ushort*, Guid*, int> SetIconPath;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionControl2*, Guid*, int> GetGroupingParam;
+
+            [NativeTypeName("HRESULT (LPCGUID, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionControl2*, Guid*, Guid*, int> SetGroupingParam;
+
+            [NativeTypeName("HRESULT (IAudioSessionEvents *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionControl2*, IAudioSessionEvents*, int> RegisterAudioSessionNotification;
+
+            [NativeTypeName("HRESULT (IAudioSessionEvents *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionControl2*, IAudioSessionEvents*, int> UnregisterAudioSessionNotification;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionControl2*, ushort**, int> GetSessionIdentifier;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionControl2*, ushort**, int> GetSessionInstanceIdentifier;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionControl2*, uint*, int> GetProcessId;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionControl2*, int> IsSystemSoundsSession;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionControl2*, BOOL, int> SetDuckingPreference;
         }
     }
 }

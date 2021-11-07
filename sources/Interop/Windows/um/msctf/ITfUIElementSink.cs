@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EA1EA136-19DF-11D7-A6D2-00065B84435C")]
     [NativeTypeName("struct ITfUIElementSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfUIElementSink
+    public unsafe partial struct ITfUIElementSink : ITfUIElementSink.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT EndUIElement([NativeTypeName("DWORD")] uint dwUIElementId)
         {
             return ((delegate* unmanaged<ITfUIElementSink*, uint, int>)(lpVtbl[5]))((ITfUIElementSink*)Unsafe.AsPointer(ref this), dwUIElementId);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT BeginUIElement([NativeTypeName("DWORD")] uint dwUIElementId, BOOL* pbShow);
+
+            [VtblIndex(4)]
+            HRESULT UpdateUIElement([NativeTypeName("DWORD")] uint dwUIElementId);
+
+            [VtblIndex(5)]
+            HRESULT EndUIElement([NativeTypeName("DWORD")] uint dwUIElementId);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfUIElementSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfUIElementSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfUIElementSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfUIElementSink*, uint, BOOL*, int> BeginUIElement;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfUIElementSink*, uint, int> UpdateUIElement;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfUIElementSink*, uint, int> EndUIElement;
         }
     }
 }

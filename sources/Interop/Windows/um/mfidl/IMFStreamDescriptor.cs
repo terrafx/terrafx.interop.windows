@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56C03D9C-9DBB-45F5-AB4B-D80F47C05938")]
     [NativeTypeName("struct IMFStreamDescriptor : IMFAttributes")]
     [NativeInheritance("IMFAttributes")]
-    public unsafe partial struct IMFStreamDescriptor
+    public unsafe partial struct IMFStreamDescriptor : IMFStreamDescriptor.Interface
     {
         public void** lpVtbl;
 
@@ -261,6 +261,123 @@ namespace TerraFX.Interop
         public HRESULT GetMediaTypeHandler(IMFMediaTypeHandler** ppMediaTypeHandler)
         {
             return ((delegate* unmanaged<IMFStreamDescriptor*, IMFMediaTypeHandler**, int>)(lpVtbl[34]))((IMFStreamDescriptor*)Unsafe.AsPointer(ref this), ppMediaTypeHandler);
+        }
+
+        public interface Interface : IMFAttributes.Interface
+        {
+            [VtblIndex(33)]
+            HRESULT GetStreamIdentifier([NativeTypeName("DWORD *")] uint* pdwStreamIdentifier);
+
+            [VtblIndex(34)]
+            HRESULT GetMediaTypeHandler(IMFMediaTypeHandler** ppMediaTypeHandler);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, Guid*, PROPVARIANT*, int> GetItem;
+
+            [NativeTypeName("HRESULT (const GUID &, MF_ATTRIBUTE_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, Guid*, MF_ATTRIBUTE_TYPE*, int> GetItemType;
+
+            [NativeTypeName("HRESULT (const GUID &, const PROPVARIANT &, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, Guid*, PROPVARIANT*, BOOL*, int> CompareItem;
+
+            [NativeTypeName("HRESULT (IMFAttributes *, MF_ATTRIBUTES_MATCH_TYPE, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, BOOL*, int> Compare;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, Guid*, uint*, int> GetUINT32;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT64 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, Guid*, ulong*, int> GetUINT64;
+
+            [NativeTypeName("HRESULT (const GUID &, double *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, Guid*, double*, int> GetDouble;
+
+            [NativeTypeName("HRESULT (const GUID &, GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, Guid*, Guid*, int> GetGUID;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, Guid*, uint*, int> GetStringLength;
+
+            [NativeTypeName("HRESULT (const GUID &, LPWSTR, UINT32, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, Guid*, ushort*, uint, uint*, int> GetString;
+
+            [NativeTypeName("HRESULT (const GUID &, LPWSTR *, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, Guid*, ushort**, uint*, int> GetAllocatedString;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, Guid*, uint*, int> GetBlobSize;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT8 *, UINT32, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, Guid*, byte*, uint, uint*, int> GetBlob;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT8 **, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, Guid*, byte**, uint*, int> GetAllocatedBlob;
+
+            [NativeTypeName("HRESULT (const GUID &, const IID &, LPVOID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, Guid*, Guid*, void**, int> GetUnknown;
+
+            [NativeTypeName("HRESULT (const GUID &, const PROPVARIANT &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, Guid*, PROPVARIANT*, int> SetItem;
+
+            [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, Guid*, int> DeleteItem;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, int> DeleteAllItems;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, Guid*, uint, int> SetUINT32;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT64) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, Guid*, ulong, int> SetUINT64;
+
+            [NativeTypeName("HRESULT (const GUID &, double) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, Guid*, double, int> SetDouble;
+
+            [NativeTypeName("HRESULT (const GUID &, const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, Guid*, Guid*, int> SetGUID;
+
+            [NativeTypeName("HRESULT (const GUID &, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, Guid*, ushort*, int> SetString;
+
+            [NativeTypeName("HRESULT (const GUID &, const UINT8 *, UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, Guid*, byte*, uint, int> SetBlob;
+
+            [NativeTypeName("HRESULT (const GUID &, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, Guid*, IUnknown*, int> SetUnknown;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, int> LockStore;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, int> UnlockStore;
+
+            [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, uint*, int> GetCount;
+
+            [NativeTypeName("HRESULT (UINT32, GUID *, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, uint, Guid*, PROPVARIANT*, int> GetItemByIndex;
+
+            [NativeTypeName("HRESULT (IMFAttributes *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, IMFAttributes*, int> CopyAllItems;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, uint*, int> GetStreamIdentifier;
+
+            [NativeTypeName("HRESULT (IMFMediaTypeHandler **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFStreamDescriptor*, IMFMediaTypeHandler**, int> GetMediaTypeHandler;
         }
     }
 }

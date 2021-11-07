@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("101D6610-0990-11D3-8DF0-00105A2799B5")]
     [NativeTypeName("struct ITfFunctionProvider : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfFunctionProvider
+    public unsafe partial struct ITfFunctionProvider : ITfFunctionProvider.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT GetFunction([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
         {
             return ((delegate* unmanaged<ITfFunctionProvider*, Guid*, Guid*, IUnknown**, int>)(lpVtbl[5]))((ITfFunctionProvider*)Unsafe.AsPointer(ref this), rguid, riid, ppunk);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetType(Guid* pguid);
+
+            [VtblIndex(4)]
+            HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDesc);
+
+            [VtblIndex(5)]
+            HRESULT GetFunction([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFunctionProvider*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFunctionProvider*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFunctionProvider*, uint> Release;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public new delegate* unmanaged<ITfFunctionProvider*, Guid*, int> GetType;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFunctionProvider*, ushort**, int> GetDescription;
+
+            [NativeTypeName("HRESULT (const GUID &, const IID &, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFunctionProvider*, Guid*, Guid*, IUnknown**, int> GetFunction;
         }
     }
 }

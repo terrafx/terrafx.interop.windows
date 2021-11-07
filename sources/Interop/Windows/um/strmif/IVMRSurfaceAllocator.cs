@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("31CE832E-4484-458B-8CCA-F4D7E3DB0B52")]
     [NativeTypeName("struct IVMRSurfaceAllocator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IVMRSurfaceAllocator
+    public unsafe partial struct IVMRSurfaceAllocator : IVMRSurfaceAllocator.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT AdviseNotify(IVMRSurfaceAllocatorNotify* lpIVMRSurfAllocNotify)
         {
             return ((delegate* unmanaged<IVMRSurfaceAllocator*, IVMRSurfaceAllocatorNotify*, int>)(lpVtbl[6]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this), lpIVMRSurfAllocNotify);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AllocateSurface([NativeTypeName("DWORD_PTR")] nuint dwUserID, VMRALLOCATIONINFO* lpAllocInfo, [NativeTypeName("DWORD *")] uint* lpdwActualBuffers, [NativeTypeName("LPDIRECTDRAWSURFACE7 *")] IDirectDrawSurface7** lplpSurface);
+
+            [VtblIndex(4)]
+            HRESULT FreeSurface([NativeTypeName("DWORD_PTR")] nuint dwID);
+
+            [VtblIndex(5)]
+            HRESULT PrepareSurface([NativeTypeName("DWORD_PTR")] nuint dwUserID, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* lpSurface, [NativeTypeName("DWORD")] uint dwSurfaceFlags);
+
+            [VtblIndex(6)]
+            HRESULT AdviseNotify(IVMRSurfaceAllocatorNotify* lpIVMRSurfAllocNotify);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRSurfaceAllocator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRSurfaceAllocator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRSurfaceAllocator*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD_PTR, VMRALLOCATIONINFO *, DWORD *, LPDIRECTDRAWSURFACE7 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRSurfaceAllocator*, nuint, VMRALLOCATIONINFO*, uint*, IDirectDrawSurface7**, int> AllocateSurface;
+
+            [NativeTypeName("HRESULT (DWORD_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRSurfaceAllocator*, nuint, int> FreeSurface;
+
+            [NativeTypeName("HRESULT (DWORD_PTR, LPDIRECTDRAWSURFACE7, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRSurfaceAllocator*, nuint, IDirectDrawSurface7*, uint, int> PrepareSurface;
+
+            [NativeTypeName("HRESULT (IVMRSurfaceAllocatorNotify *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRSurfaceAllocator*, IVMRSurfaceAllocatorNotify*, int> AdviseNotify;
         }
     }
 }

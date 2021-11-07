@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C2B937A9-3110-4398-8A56-F34C6342D244")]
     [NativeTypeName("struct ICreatingProcess : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICreatingProcess
+    public unsafe partial struct ICreatingProcess : ICreatingProcess.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OnCreating(ICreateProcessInputs* pcpi)
         {
             return ((delegate* unmanaged<ICreatingProcess*, ICreateProcessInputs*, int>)(lpVtbl[3]))((ICreatingProcess*)Unsafe.AsPointer(ref this), pcpi);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnCreating(ICreateProcessInputs* pcpi);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreatingProcess*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreatingProcess*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreatingProcess*, uint> Release;
+
+            [NativeTypeName("HRESULT (ICreateProcessInputs *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreatingProcess*, ICreateProcessInputs*, int> OnCreating;
         }
     }
 }

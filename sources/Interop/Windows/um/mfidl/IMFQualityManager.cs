@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8D009D86-5B9F-4115-B1FC-9F80D52AB8AB")]
     [NativeTypeName("struct IMFQualityManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFQualityManager
+    public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,57 @@ namespace TerraFX.Interop
         public HRESULT Shutdown()
         {
             return ((delegate* unmanaged<IMFQualityManager*, int>)(lpVtbl[8]))((IMFQualityManager*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT NotifyTopology(IMFTopology* pTopology);
+
+            [VtblIndex(4)]
+            HRESULT NotifyPresentationClock(IMFPresentationClock* pClock);
+
+            [VtblIndex(5)]
+            HRESULT NotifyProcessInput(IMFTopologyNode* pNode, [NativeTypeName("long")] int lInputIndex, IMFSample* pSample);
+
+            [VtblIndex(6)]
+            HRESULT NotifyProcessOutput(IMFTopologyNode* pNode, [NativeTypeName("long")] int lOutputIndex, IMFSample* pSample);
+
+            [VtblIndex(7)]
+            HRESULT NotifyQualityEvent(IUnknown* pObject, IMFMediaEvent* pEvent);
+
+            [VtblIndex(8)]
+            HRESULT Shutdown();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFQualityManager*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFQualityManager*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFQualityManager*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFTopology *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFQualityManager*, IMFTopology*, int> NotifyTopology;
+
+            [NativeTypeName("HRESULT (IMFPresentationClock *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFQualityManager*, IMFPresentationClock*, int> NotifyPresentationClock;
+
+            [NativeTypeName("HRESULT (IMFTopologyNode *, long, IMFSample *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFQualityManager*, IMFTopologyNode*, int, IMFSample*, int> NotifyProcessInput;
+
+            [NativeTypeName("HRESULT (IMFTopologyNode *, long, IMFSample *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFQualityManager*, IMFTopologyNode*, int, IMFSample*, int> NotifyProcessOutput;
+
+            [NativeTypeName("HRESULT (IUnknown *, IMFMediaEvent *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFQualityManager*, IUnknown*, IMFMediaEvent*, int> NotifyQualityEvent;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFQualityManager*, int> Shutdown;
         }
     }
 }

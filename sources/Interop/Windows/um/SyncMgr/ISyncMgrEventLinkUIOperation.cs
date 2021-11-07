@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("64522E52-848B-4015-89CE-5A36F00B94FF")]
     [NativeTypeName("struct ISyncMgrEventLinkUIOperation : ISyncMgrUIOperation")]
     [NativeInheritance("ISyncMgrUIOperation")]
-    public unsafe partial struct ISyncMgrEventLinkUIOperation
+    public unsafe partial struct ISyncMgrEventLinkUIOperation : ISyncMgrEventLinkUIOperation.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,30 @@ namespace TerraFX.Interop
         public HRESULT Init([NativeTypeName("const GUID &")] Guid* rguidEventID, ISyncMgrEvent* pEvent)
         {
             return ((delegate* unmanaged<ISyncMgrEventLinkUIOperation*, Guid*, ISyncMgrEvent*, int>)(lpVtbl[4]))((ISyncMgrEventLinkUIOperation*)Unsafe.AsPointer(ref this), rguidEventID, pEvent);
+        }
+
+        public interface Interface : ISyncMgrUIOperation.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT Init([NativeTypeName("const GUID &")] Guid* rguidEventID, ISyncMgrEvent* pEvent);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEventLinkUIOperation*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEventLinkUIOperation*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEventLinkUIOperation*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEventLinkUIOperation*, HWND, int> Run;
+
+            [NativeTypeName("HRESULT (const GUID &, ISyncMgrEvent *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEventLinkUIOperation*, Guid*, ISyncMgrEvent*, int> Init;
         }
     }
 }

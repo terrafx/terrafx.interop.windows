@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BB95808A-6D8F-4BCA-8400-5390B586AEDF")]
     [NativeTypeName("struct ITfFnConfigureRegisterWord : ITfFunction")]
     [NativeInheritance("ITfFunction")]
-    public unsafe partial struct ITfFnConfigureRegisterWord
+    public unsafe partial struct ITfFnConfigureRegisterWord : ITfFnConfigureRegisterWord.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,30 @@ namespace TerraFX.Interop
         public HRESULT Show(HWND hwndParent, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* rguidProfile, [NativeTypeName("BSTR")] ushort* bstrRegistered)
         {
             return ((delegate* unmanaged<ITfFnConfigureRegisterWord*, HWND, ushort, Guid*, ushort*, int>)(lpVtbl[4]))((ITfFnConfigureRegisterWord*)Unsafe.AsPointer(ref this), hwndParent, langid, rguidProfile, bstrRegistered);
+        }
+
+        public interface Interface : ITfFunction.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT Show(HWND hwndParent, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* rguidProfile, [NativeTypeName("BSTR")] ushort* bstrRegistered);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnConfigureRegisterWord*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnConfigureRegisterWord*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnConfigureRegisterWord*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnConfigureRegisterWord*, ushort**, int> GetDisplayName;
+
+            [NativeTypeName("HRESULT (HWND, LANGID, const GUID &, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnConfigureRegisterWord*, HWND, ushort, Guid*, ushort*, int> Show;
         }
     }
 }

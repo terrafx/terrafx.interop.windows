@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("24230452-FE54-40CC-94F3-FCC394C340D6")]
     [NativeTypeName("struct IMFMediaEngineTransferSource : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaEngineTransferSource
+    public unsafe partial struct IMFMediaEngineTransferSource : IMFMediaEngineTransferSource.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT TransferSourceToMediaEngine(IMFMediaEngine* destination)
         {
             return ((delegate* unmanaged<IMFMediaEngineTransferSource*, IMFMediaEngine*, int>)(lpVtbl[3]))((IMFMediaEngineTransferSource*)Unsafe.AsPointer(ref this), destination);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT TransferSourceToMediaEngine(IMFMediaEngine* destination);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineTransferSource*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineTransferSource*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineTransferSource*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFMediaEngine *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineTransferSource*, IMFMediaEngine*, int> TransferSourceToMediaEngine;
         }
     }
 }

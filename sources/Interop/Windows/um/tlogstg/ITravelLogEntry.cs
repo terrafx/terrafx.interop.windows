@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7EBFDD87-AD18-11D3-A4C5-00C04F72D6B8")]
     [NativeTypeName("struct ITravelLogEntry : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITravelLogEntry
+    public unsafe partial struct ITravelLogEntry : ITravelLogEntry.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetURL([NativeTypeName("LPWSTR *")] ushort** ppszURL)
         {
             return ((delegate* unmanaged<ITravelLogEntry*, ushort**, int>)(lpVtbl[4]))((ITravelLogEntry*)Unsafe.AsPointer(ref this), ppszURL);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetTitle([NativeTypeName("LPWSTR *")] ushort** ppszTitle);
+
+            [VtblIndex(4)]
+            HRESULT GetURL([NativeTypeName("LPWSTR *")] ushort** ppszURL);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogEntry*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogEntry*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogEntry*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogEntry*, ushort**, int> GetTitle;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogEntry*, ushort**, int> GetURL;
         }
     }
 }

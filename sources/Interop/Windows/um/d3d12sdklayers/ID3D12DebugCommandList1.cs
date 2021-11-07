@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("102CA951-311B-4B01-B11F-ECB83E061B37")]
     [NativeTypeName("struct ID3D12DebugCommandList1 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D12DebugCommandList1
+    public unsafe partial struct ID3D12DebugCommandList1 : ID3D12DebugCommandList1.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT GetDebugParameter(D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, void* pData, uint DataSize)
         {
             return ((delegate* unmanaged<ID3D12DebugCommandList1*, D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE, void*, uint, int>)(lpVtbl[5]))((ID3D12DebugCommandList1*)Unsafe.AsPointer(ref this), Type, pData, DataSize);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            BOOL AssertResourceState(ID3D12Resource* pResource, uint Subresource, uint State);
+
+            [VtblIndex(4)]
+            HRESULT SetDebugParameter(D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, [NativeTypeName("const void *")] void* pData, uint DataSize);
+
+            [VtblIndex(5)]
+            HRESULT GetDebugParameter(D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, void* pData, uint DataSize);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugCommandList1*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugCommandList1*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugCommandList1*, uint> Release;
+
+            [NativeTypeName("BOOL (ID3D12Resource *, UINT, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugCommandList1*, ID3D12Resource*, uint, uint, int> AssertResourceState;
+
+            [NativeTypeName("HRESULT (D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE, const void *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugCommandList1*, D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE, void*, uint, int> SetDebugParameter;
+
+            [NativeTypeName("HRESULT (D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE, void *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugCommandList1*, D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE, void*, uint, int> GetDebugParameter;
         }
     }
 }

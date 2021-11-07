@@ -13,7 +13,7 @@ namespace TerraFX.Interop
     [Guid("D4286F2C-EE67-45AE-B928-28D695362EDA")]
     [NativeTypeName("struct ISpeechGrammarRuleState : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechGrammarRuleState
+    public unsafe partial struct ISpeechGrammarRuleState : ISpeechGrammarRuleState.Interface
     {
         public void** lpVtbl;
 
@@ -101,6 +101,63 @@ namespace TerraFX.Interop
         public HRESULT AddSpecialTransition(ISpeechGrammarRuleState* DestinationState, SpeechSpecialTransitionType Type, [NativeTypeName("const BSTR")] ushort* PropertyName = null, [NativeTypeName("long")] int PropertyId = 0, VARIANT* PropertyValue = null, float Weight = 1)
         {
             return ((delegate* unmanaged<ISpeechGrammarRuleState*, ISpeechGrammarRuleState*, SpeechSpecialTransitionType, ushort*, int, VARIANT*, float, int>)(lpVtbl[11]))((ISpeechGrammarRuleState*)Unsafe.AsPointer(ref this), DestinationState, Type, PropertyName, PropertyId, PropertyValue, Weight);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Rule(ISpeechGrammarRule** Rule);
+
+            [VtblIndex(8)]
+            HRESULT get_Transitions(ISpeechGrammarRuleStateTransitions** Transitions);
+
+            [VtblIndex(9)]
+            HRESULT AddWordTransition(ISpeechGrammarRuleState* DestState, [NativeTypeName("const BSTR")] ushort* Words, [NativeTypeName("const BSTR")] ushort* Separators = null, SpeechGrammarWordType Type = SGLexical, [NativeTypeName("const BSTR")] ushort* PropertyName = null, [NativeTypeName("long")] int PropertyId = 0, VARIANT* PropertyValue = null, float Weight = 1);
+
+            [VtblIndex(10)]
+            HRESULT AddRuleTransition(ISpeechGrammarRuleState* DestinationState, ISpeechGrammarRule* Rule, [NativeTypeName("const BSTR")] ushort* PropertyName = null, [NativeTypeName("long")] int PropertyId = 0, VARIANT* PropertyValue = null, float Weight = 1);
+
+            [VtblIndex(11)]
+            HRESULT AddSpecialTransition(ISpeechGrammarRuleState* DestinationState, SpeechSpecialTransitionType Type, [NativeTypeName("const BSTR")] ushort* PropertyName = null, [NativeTypeName("long")] int PropertyId = 0, VARIANT* PropertyValue = null, float Weight = 1);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRuleState*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRuleState*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRuleState*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRuleState*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRuleState*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRuleState*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRuleState*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (ISpeechGrammarRule **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRuleState*, ISpeechGrammarRule**, int> get_Rule;
+
+            [NativeTypeName("HRESULT (ISpeechGrammarRuleStateTransitions **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRuleState*, ISpeechGrammarRuleStateTransitions**, int> get_Transitions;
+
+            [NativeTypeName("HRESULT (ISpeechGrammarRuleState *, const BSTR, const BSTR, SpeechGrammarWordType, const BSTR, long, VARIANT *, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRuleState*, ISpeechGrammarRuleState*, ushort*, ushort*, SpeechGrammarWordType, ushort*, int, VARIANT*, float, int> AddWordTransition;
+
+            [NativeTypeName("HRESULT (ISpeechGrammarRuleState *, ISpeechGrammarRule *, const BSTR, long, VARIANT *, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRuleState*, ISpeechGrammarRuleState*, ISpeechGrammarRule*, ushort*, int, VARIANT*, float, int> AddRuleTransition;
+
+            [NativeTypeName("HRESULT (ISpeechGrammarRuleState *, SpeechSpecialTransitionType, const BSTR, long, VARIANT *, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRuleState*, ISpeechGrammarRuleState*, SpeechSpecialTransitionType, ushort*, int, VARIANT*, float, int> AddSpecialTransition;
         }
     }
 }

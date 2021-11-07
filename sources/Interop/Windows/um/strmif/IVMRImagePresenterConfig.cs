@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9F3A1C85-8555-49BA-935F-BE5B5B29D178")]
     [NativeTypeName("struct IVMRImagePresenterConfig : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IVMRImagePresenterConfig
+    public unsafe partial struct IVMRImagePresenterConfig : IVMRImagePresenterConfig.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetRenderingPrefs([NativeTypeName("DWORD *")] uint* dwRenderFlags)
         {
             return ((delegate* unmanaged<IVMRImagePresenterConfig*, uint*, int>)(lpVtbl[4]))((IVMRImagePresenterConfig*)Unsafe.AsPointer(ref this), dwRenderFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetRenderingPrefs([NativeTypeName("DWORD")] uint dwRenderFlags);
+
+            [VtblIndex(4)]
+            HRESULT GetRenderingPrefs([NativeTypeName("DWORD *")] uint* dwRenderFlags);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRImagePresenterConfig*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRImagePresenterConfig*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRImagePresenterConfig*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRImagePresenterConfig*, uint, int> SetRenderingPrefs;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRImagePresenterConfig*, uint*, int> GetRenderingPrefs;
         }
     }
 }

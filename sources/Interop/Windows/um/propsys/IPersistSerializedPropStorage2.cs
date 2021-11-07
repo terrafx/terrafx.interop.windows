@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("77EFFA68-4F98-4366-BA72-573B3D880571")]
     [NativeTypeName("struct IPersistSerializedPropStorage2 : IPersistSerializedPropStorage")]
     [NativeInheritance("IPersistSerializedPropStorage")]
-    public unsafe partial struct IPersistSerializedPropStorage2
+    public unsafe partial struct IPersistSerializedPropStorage2 : IPersistSerializedPropStorage2.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,42 @@ namespace TerraFX.Interop
         public HRESULT GetPropertyStorageBuffer(PCUSERIALIZEDPROPSTORAGE psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("DWORD *")] uint* pcbWritten)
         {
             return ((delegate* unmanaged<IPersistSerializedPropStorage2*, PCUSERIALIZEDPROPSTORAGE, uint, uint*, int>)(lpVtbl[7]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), psps, cb, pcbWritten);
+        }
+
+        public interface Interface : IPersistSerializedPropStorage.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT GetPropertyStorageSize([NativeTypeName("DWORD *")] uint* pcb);
+
+            [VtblIndex(7)]
+            HRESULT GetPropertyStorageBuffer(PCUSERIALIZEDPROPSTORAGE psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("DWORD *")] uint* pcbWritten);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistSerializedPropStorage2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistSerializedPropStorage2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistSerializedPropStorage2*, uint> Release;
+
+            [NativeTypeName("HRESULT (PERSIST_SPROPSTORE_FLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistSerializedPropStorage2*, int, int> SetFlags;
+
+            [NativeTypeName("HRESULT (PCUSERIALIZEDPROPSTORAGE, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistSerializedPropStorage2*, PCUSERIALIZEDPROPSTORAGE, uint, int> SetPropertyStorage;
+
+            [NativeTypeName("HRESULT (SERIALIZEDPROPSTORAGE **, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistSerializedPropStorage2*, PCUSERIALIZEDPROPSTORAGE*, uint*, int> GetPropertyStorage;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistSerializedPropStorage2*, uint*, int> GetPropertyStorageSize;
+
+            [NativeTypeName("HRESULT (SERIALIZEDPROPSTORAGE *, DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistSerializedPropStorage2*, PCUSERIALIZEDPROPSTORAGE, uint, uint*, int> GetPropertyStorageBuffer;
         }
     }
 }

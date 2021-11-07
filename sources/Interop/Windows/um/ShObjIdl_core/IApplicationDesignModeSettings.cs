@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2A3DEE9A-E31D-46D6-8508-BCC597DB3557")]
     [NativeTypeName("struct IApplicationDesignModeSettings : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IApplicationDesignModeSettings
+    public unsafe partial struct IApplicationDesignModeSettings : IApplicationDesignModeSettings.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,57 @@ namespace TerraFX.Interop
         public HRESULT TriggerEdgeGesture(EDGE_GESTURE_KIND edgeGestureKind)
         {
             return ((delegate* unmanaged<IApplicationDesignModeSettings*, EDGE_GESTURE_KIND, int>)(lpVtbl[8]))((IApplicationDesignModeSettings*)Unsafe.AsPointer(ref this), edgeGestureKind);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetNativeDisplaySize(SIZE nativeDisplaySizePixels);
+
+            [VtblIndex(4)]
+            HRESULT SetScaleFactor(DEVICE_SCALE_FACTOR scaleFactor);
+
+            [VtblIndex(5)]
+            HRESULT SetApplicationViewState(APPLICATION_VIEW_STATE viewState);
+
+            [VtblIndex(6)]
+            HRESULT ComputeApplicationSize(SIZE* applicationSizePixels);
+
+            [VtblIndex(7)]
+            HRESULT IsApplicationViewStateSupported(APPLICATION_VIEW_STATE viewState, SIZE nativeDisplaySizePixels, DEVICE_SCALE_FACTOR scaleFactor, BOOL* supported);
+
+            [VtblIndex(8)]
+            HRESULT TriggerEdgeGesture(EDGE_GESTURE_KIND edgeGestureKind);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings*, uint> Release;
+
+            [NativeTypeName("HRESULT (SIZE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings*, SIZE, int> SetNativeDisplaySize;
+
+            [NativeTypeName("HRESULT (DEVICE_SCALE_FACTOR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings*, DEVICE_SCALE_FACTOR, int> SetScaleFactor;
+
+            [NativeTypeName("HRESULT (APPLICATION_VIEW_STATE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings*, APPLICATION_VIEW_STATE, int> SetApplicationViewState;
+
+            [NativeTypeName("HRESULT (SIZE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings*, SIZE*, int> ComputeApplicationSize;
+
+            [NativeTypeName("HRESULT (APPLICATION_VIEW_STATE, SIZE, DEVICE_SCALE_FACTOR, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings*, APPLICATION_VIEW_STATE, SIZE, DEVICE_SCALE_FACTOR, BOOL*, int> IsApplicationViewStateSupported;
+
+            [NativeTypeName("HRESULT (EDGE_GESTURE_KIND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDesignModeSettings*, EDGE_GESTURE_KIND, int> TriggerEdgeGesture;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D37D7598-09BE-4222-A236-2081341CC1F2")]
     [NativeTypeName("struct IDWriteFontFace3 : IDWriteFontFace2")]
     [NativeInheritance("IDWriteFontFace2")]
-    public unsafe partial struct IDWriteFontFace3
+    public unsafe partial struct IDWriteFontFace3 : IDWriteFontFace3.Interface
     {
         public void** lpVtbl;
 
@@ -363,6 +363,201 @@ namespace TerraFX.Interop
         public HRESULT AreGlyphsLocal([NativeTypeName("const UINT16 *")] ushort* glyphIndices, [NativeTypeName("UINT32")] uint glyphCount, BOOL enqueueIfNotLocal, BOOL* isLocal)
         {
             return ((delegate* unmanaged<IDWriteFontFace3*, ushort*, uint, BOOL, BOOL*, int>)(lpVtbl[48]))((IDWriteFontFace3*)Unsafe.AsPointer(ref this), glyphIndices, glyphCount, enqueueIfNotLocal, isLocal);
+        }
+
+        public interface Interface : IDWriteFontFace2.Interface
+        {
+            [VtblIndex(35)]
+            HRESULT GetFontFaceReference(IDWriteFontFaceReference** fontFaceReference);
+
+            [VtblIndex(36)]
+            void GetPanose(DWRITE_PANOSE* panose);
+
+            [VtblIndex(37)]
+            DWRITE_FONT_WEIGHT GetWeight();
+
+            [VtblIndex(38)]
+            DWRITE_FONT_STRETCH GetStretch();
+
+            [VtblIndex(39)]
+            DWRITE_FONT_STYLE GetStyle();
+
+            [VtblIndex(40)]
+            HRESULT GetFamilyNames(IDWriteLocalizedStrings** names);
+
+            [VtblIndex(41)]
+            HRESULT GetFaceNames(IDWriteLocalizedStrings** names);
+
+            [VtblIndex(42)]
+            HRESULT GetInformationalStrings(DWRITE_INFORMATIONAL_STRING_ID informationalStringID, IDWriteLocalizedStrings** informationalStrings, BOOL* exists);
+
+            [VtblIndex(43)]
+            BOOL HasCharacter([NativeTypeName("UINT32")] uint unicodeValue);
+
+            [VtblIndex(44)]
+            HRESULT GetRecommendedRenderingMode(float fontEmSize, float dpiX, float dpiY, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, BOOL isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, IDWriteRenderingParams* renderingParams, DWRITE_RENDERING_MODE1* renderingMode, DWRITE_GRID_FIT_MODE* gridFitMode);
+
+            [VtblIndex(45)]
+            BOOL IsCharacterLocal([NativeTypeName("UINT32")] uint unicodeValue);
+
+            [VtblIndex(46)]
+            BOOL IsGlyphLocal([NativeTypeName("UINT16")] ushort glyphId);
+
+            [VtblIndex(47)]
+            HRESULT AreCharactersLocal([NativeTypeName("const WCHAR *")] ushort* characters, [NativeTypeName("UINT32")] uint characterCount, BOOL enqueueIfNotLocal, BOOL* isLocal);
+
+            [VtblIndex(48)]
+            HRESULT AreGlyphsLocal([NativeTypeName("const UINT16 *")] ushort* glyphIndices, [NativeTypeName("UINT32")] uint glyphCount, BOOL enqueueIfNotLocal, BOOL* isLocal);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, uint> Release;
+
+            [NativeTypeName("DWRITE_FONT_FACE_TYPE () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public new delegate* unmanaged<IDWriteFontFace3*, DWRITE_FONT_FACE_TYPE> GetType;
+
+            [NativeTypeName("HRESULT (UINT32 *, IDWriteFontFile **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, uint*, IDWriteFontFile**, int> GetFiles;
+
+            [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, uint> GetIndex;
+
+            [NativeTypeName("DWRITE_FONT_SIMULATIONS () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, DWRITE_FONT_SIMULATIONS> GetSimulations;
+
+            [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, int> IsSymbolFont;
+
+            [NativeTypeName("void (DWRITE_FONT_METRICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, DWRITE_FONT_METRICS*, void> GetMetrics;
+
+            [NativeTypeName("UINT16 () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, ushort> GetGlyphCount;
+
+            [NativeTypeName("HRESULT (const UINT16 *, UINT32, DWRITE_GLYPH_METRICS *, BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, ushort*, uint, DWRITE_GLYPH_METRICS*, BOOL, int> GetDesignGlyphMetrics;
+
+            [NativeTypeName("HRESULT (const UINT32 *, UINT32, UINT16 *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, uint*, uint, ushort*, int> GetGlyphIndices;
+
+            [NativeTypeName("HRESULT (UINT32, const void **, UINT32 *, void **, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, uint, void**, uint*, void**, BOOL*, int> TryGetFontTable;
+
+            [NativeTypeName("void (void *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, void*, void> ReleaseFontTable;
+
+            [NativeTypeName("HRESULT (FLOAT, const UINT16 *, const FLOAT *, const DWRITE_GLYPH_OFFSET *, UINT32, BOOL, BOOL, IDWriteGeometrySink *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, float, ushort*, float*, DWRITE_GLYPH_OFFSET*, uint, BOOL, BOOL, ID2D1SimplifiedGeometrySink*, int> GetGlyphRunOutline;
+
+            [NativeTypeName("HRESULT (FLOAT, FLOAT, DWRITE_MEASURING_MODE, IDWriteRenderingParams *, DWRITE_RENDERING_MODE *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, float, float, DWRITE_MEASURING_MODE, IDWriteRenderingParams*, DWRITE_RENDERING_MODE*, int> GetRecommendedRenderingMode;
+
+            [NativeTypeName("HRESULT (FLOAT, FLOAT, const DWRITE_MATRIX *, DWRITE_FONT_METRICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, float, float, DWRITE_MATRIX*, DWRITE_FONT_METRICS*, int> GetGdiCompatibleMetrics;
+
+            [NativeTypeName("HRESULT (FLOAT, FLOAT, const DWRITE_MATRIX *, BOOL, const UINT16 *, UINT32, DWRITE_GLYPH_METRICS *, BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, float, float, DWRITE_MATRIX*, BOOL, ushort*, uint, DWRITE_GLYPH_METRICS*, BOOL, int> GetGdiCompatibleGlyphMetrics;
+
+            [NativeTypeName("void (DWRITE_FONT_METRICS1 *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, DWRITE_FONT_METRICS1*, void> GetMetrics1;
+
+            [NativeTypeName("HRESULT (FLOAT, FLOAT, const DWRITE_MATRIX *, DWRITE_FONT_METRICS1 *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, float, float, DWRITE_MATRIX*, DWRITE_FONT_METRICS1*, int> GetGdiCompatibleMetrics1;
+
+            [NativeTypeName("void (DWRITE_CARET_METRICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, DWRITE_CARET_METRICS*, void> GetCaretMetrics;
+
+            [NativeTypeName("HRESULT (UINT32, DWRITE_UNICODE_RANGE *, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, uint, DWRITE_UNICODE_RANGE*, uint*, int> GetUnicodeRanges;
+
+            [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, int> IsMonospacedFont;
+
+            [NativeTypeName("HRESULT (UINT32, const UINT16 *, INT32 *, BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, uint, ushort*, int*, BOOL, int> GetDesignGlyphAdvances;
+
+            [NativeTypeName("HRESULT (FLOAT, FLOAT, const DWRITE_MATRIX *, BOOL, BOOL, UINT32, const UINT16 *, INT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, float, float, DWRITE_MATRIX*, BOOL, BOOL, uint, ushort*, int*, int> GetGdiCompatibleGlyphAdvances;
+
+            [NativeTypeName("HRESULT (UINT32, const UINT16 *, INT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, uint, ushort*, int*, int> GetKerningPairAdjustments;
+
+            [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, int> HasKerningPairs;
+
+            [NativeTypeName("HRESULT (FLOAT, FLOAT, FLOAT, const DWRITE_MATRIX *, BOOL, DWRITE_OUTLINE_THRESHOLD, DWRITE_MEASURING_MODE, DWRITE_RENDERING_MODE *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, float, float, float, DWRITE_MATRIX*, BOOL, DWRITE_OUTLINE_THRESHOLD, DWRITE_MEASURING_MODE, DWRITE_RENDERING_MODE*, int> GetRecommendedRenderingMode1;
+
+            [NativeTypeName("HRESULT (UINT32, const UINT16 *, UINT16 *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, uint, ushort*, ushort*, int> GetVerticalGlyphVariants;
+
+            [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, int> HasVerticalGlyphVariants;
+
+            [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, int> IsColorFont;
+
+            [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, uint> GetColorPaletteCount;
+
+            [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, uint> GetPaletteEntryCount;
+
+            [NativeTypeName("HRESULT (UINT32, UINT32, UINT32, DWRITE_COLOR_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, uint, uint, uint, DXGI_RGBA*, int> GetPaletteEntries;
+
+            [NativeTypeName("HRESULT (FLOAT, FLOAT, FLOAT, const DWRITE_MATRIX *, BOOL, DWRITE_OUTLINE_THRESHOLD, DWRITE_MEASURING_MODE, IDWriteRenderingParams *, DWRITE_RENDERING_MODE *, DWRITE_GRID_FIT_MODE *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, float, float, float, DWRITE_MATRIX*, BOOL, DWRITE_OUTLINE_THRESHOLD, DWRITE_MEASURING_MODE, IDWriteRenderingParams*, DWRITE_RENDERING_MODE*, DWRITE_GRID_FIT_MODE*, int> GetRecommendedRenderingMode2;
+
+            [NativeTypeName("HRESULT (IDWriteFontFaceReference **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, IDWriteFontFaceReference**, int> GetFontFaceReference;
+
+            [NativeTypeName("void (DWRITE_PANOSE *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, DWRITE_PANOSE*, void> GetPanose;
+
+            [NativeTypeName("DWRITE_FONT_WEIGHT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, DWRITE_FONT_WEIGHT> GetWeight;
+
+            [NativeTypeName("DWRITE_FONT_STRETCH () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, DWRITE_FONT_STRETCH> GetStretch;
+
+            [NativeTypeName("DWRITE_FONT_STYLE () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, DWRITE_FONT_STYLE> GetStyle;
+
+            [NativeTypeName("HRESULT (IDWriteLocalizedStrings **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, IDWriteLocalizedStrings**, int> GetFamilyNames;
+
+            [NativeTypeName("HRESULT (IDWriteLocalizedStrings **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, IDWriteLocalizedStrings**, int> GetFaceNames;
+
+            [NativeTypeName("HRESULT (DWRITE_INFORMATIONAL_STRING_ID, IDWriteLocalizedStrings **, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, DWRITE_INFORMATIONAL_STRING_ID, IDWriteLocalizedStrings**, BOOL*, int> GetInformationalStrings;
+
+            [NativeTypeName("BOOL (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, uint, int> HasCharacter;
+
+            [NativeTypeName("HRESULT (FLOAT, FLOAT, FLOAT, const DWRITE_MATRIX *, BOOL, DWRITE_OUTLINE_THRESHOLD, DWRITE_MEASURING_MODE, IDWriteRenderingParams *, DWRITE_RENDERING_MODE1 *, DWRITE_GRID_FIT_MODE *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, float, float, float, DWRITE_MATRIX*, BOOL, DWRITE_OUTLINE_THRESHOLD, DWRITE_MEASURING_MODE, IDWriteRenderingParams*, DWRITE_RENDERING_MODE1*, DWRITE_GRID_FIT_MODE*, int> GetRecommendedRenderingMode3;
+
+            [NativeTypeName("BOOL (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, uint, int> IsCharacterLocal;
+
+            [NativeTypeName("BOOL (UINT16) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, ushort, int> IsGlyphLocal;
+
+            [NativeTypeName("HRESULT (const WCHAR *, UINT32, BOOL, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, ushort*, uint, BOOL, BOOL*, int> AreCharactersLocal;
+
+            [NativeTypeName("HRESULT (const UINT16 *, UINT32, BOOL, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFace3*, ushort*, uint, BOOL, BOOL*, int> AreGlyphsLocal;
         }
     }
 }

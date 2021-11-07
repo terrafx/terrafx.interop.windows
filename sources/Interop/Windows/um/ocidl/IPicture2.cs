@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F5185DD8-2012-4B0B-AAD9-F052C6BD482B")]
     [NativeTypeName("struct IPicture2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPicture2
+    public unsafe partial struct IPicture2 : IPicture2.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,105 @@ namespace TerraFX.Interop
         public HRESULT get_Attributes([NativeTypeName("DWORD *")] uint* pDwAttr)
         {
             return ((delegate* unmanaged<IPicture2*, uint*, int>)(lpVtbl[16]))((IPicture2*)Unsafe.AsPointer(ref this), pDwAttr);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_Handle(HHANDLE* pHandle);
+
+            [VtblIndex(4)]
+            HRESULT get_hPal(HHANDLE* phPal);
+
+            [VtblIndex(5)]
+            HRESULT get_Type(short* pType);
+
+            [VtblIndex(6)]
+            HRESULT get_Width([NativeTypeName("OLE_XSIZE_HIMETRIC *")] int* pWidth);
+
+            [VtblIndex(7)]
+            HRESULT get_Height([NativeTypeName("OLE_YSIZE_HIMETRIC *")] int* pHeight);
+
+            [VtblIndex(8)]
+            HRESULT Render(HDC hDC, [NativeTypeName("LONG")] int x, [NativeTypeName("LONG")] int y, [NativeTypeName("LONG")] int cx, [NativeTypeName("LONG")] int cy, [NativeTypeName("OLE_XPOS_HIMETRIC")] int xSrc, [NativeTypeName("OLE_YPOS_HIMETRIC")] int ySrc, [NativeTypeName("OLE_XSIZE_HIMETRIC")] int cxSrc, [NativeTypeName("OLE_YSIZE_HIMETRIC")] int cySrc, [NativeTypeName("LPCRECT")] RECT* pRcWBounds);
+
+            [VtblIndex(9)]
+            HRESULT set_hPal(HHANDLE hPal);
+
+            [VtblIndex(10)]
+            HRESULT get_CurDC(HDC* phDC);
+
+            [VtblIndex(11)]
+            HRESULT SelectPicture(HDC hDCIn, HDC* phDCOut, HHANDLE* phBmpOut);
+
+            [VtblIndex(12)]
+            HRESULT get_KeepOriginalFormat(BOOL* pKeep);
+
+            [VtblIndex(13)]
+            HRESULT put_KeepOriginalFormat(BOOL keep);
+
+            [VtblIndex(14)]
+            HRESULT PictureChanged();
+
+            [VtblIndex(15)]
+            HRESULT SaveAsFile([NativeTypeName("LPSTREAM")] IStream* pStream, BOOL fSaveMemCopy, [NativeTypeName("LONG *")] int* pCbSize);
+
+            [VtblIndex(16)]
+            HRESULT get_Attributes([NativeTypeName("DWORD *")] uint* pDwAttr);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPicture2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPicture2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPicture2*, uint> Release;
+
+            [NativeTypeName("HRESULT (HHANDLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPicture2*, HHANDLE*, int> get_Handle;
+
+            [NativeTypeName("HRESULT (HHANDLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPicture2*, HHANDLE*, int> get_hPal;
+
+            [NativeTypeName("HRESULT (SHORT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPicture2*, short*, int> get_Type;
+
+            [NativeTypeName("HRESULT (OLE_XSIZE_HIMETRIC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPicture2*, int*, int> get_Width;
+
+            [NativeTypeName("HRESULT (OLE_YSIZE_HIMETRIC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPicture2*, int*, int> get_Height;
+
+            [NativeTypeName("HRESULT (HDC, LONG, LONG, LONG, LONG, OLE_XPOS_HIMETRIC, OLE_YPOS_HIMETRIC, OLE_XSIZE_HIMETRIC, OLE_YSIZE_HIMETRIC, LPCRECT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPicture2*, HDC, int, int, int, int, int, int, int, int, RECT*, int> Render;
+
+            [NativeTypeName("HRESULT (HHANDLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPicture2*, HHANDLE, int> set_hPal;
+
+            [NativeTypeName("HRESULT (HDC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPicture2*, HDC*, int> get_CurDC;
+
+            [NativeTypeName("HRESULT (HDC, HDC *, HHANDLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPicture2*, HDC, HDC*, HHANDLE*, int> SelectPicture;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPicture2*, BOOL*, int> get_KeepOriginalFormat;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPicture2*, BOOL, int> put_KeepOriginalFormat;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPicture2*, int> PictureChanged;
+
+            [NativeTypeName("HRESULT (LPSTREAM, BOOL, LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPicture2*, IStream*, BOOL, int*, int> SaveAsFile;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPicture2*, uint*, int> get_Attributes;
         }
     }
 }

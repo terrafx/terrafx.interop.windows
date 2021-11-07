@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("88960F5B-422F-4E7B-8013-73415381C3C3")]
     [NativeTypeName("struct IWizardSite : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWizardSite
+    public unsafe partial struct IWizardSite : IWizardSite.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT GetCancelledPage(HPROPSHEETPAGE* phpage)
         {
             return ((delegate* unmanaged<IWizardSite*, HPROPSHEETPAGE*, int>)(lpVtbl[5]))((IWizardSite*)Unsafe.AsPointer(ref this), phpage);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPreviousPage(HPROPSHEETPAGE* phpage);
+
+            [VtblIndex(4)]
+            HRESULT GetNextPage(HPROPSHEETPAGE* phpage);
+
+            [VtblIndex(5)]
+            HRESULT GetCancelledPage(HPROPSHEETPAGE* phpage);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWizardSite*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWizardSite*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWizardSite*, uint> Release;
+
+            [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWizardSite*, HPROPSHEETPAGE*, int> GetPreviousPage;
+
+            [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWizardSite*, HPROPSHEETPAGE*, int> GetNextPage;
+
+            [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWizardSite*, HPROPSHEETPAGE*, int> GetCancelledPage;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4968B601-9D00-4CDE-8346-8E7F675819B6")]
     [NativeTypeName("struct ID3D10PixelShader : ID3D10DeviceChild")]
     [NativeInheritance("ID3D10DeviceChild")]
-    public unsafe partial struct ID3D10PixelShader
+    public unsafe partial struct ID3D10PixelShader : ID3D10PixelShader.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,34 @@ namespace TerraFX.Interop
         public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
         {
             return ((delegate* unmanaged<ID3D10PixelShader*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3D10PixelShader*)Unsafe.AsPointer(ref this), guid, pData);
+        }
+
+        public interface Interface : ID3D10DeviceChild.Interface
+        {
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10PixelShader*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10PixelShader*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10PixelShader*, uint> Release;
+
+            [NativeTypeName("void (ID3D10Device **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10PixelShader*, ID3D10Device**, void> GetDevice;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10PixelShader*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10PixelShader*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10PixelShader*, Guid*, IUnknown*, int> SetPrivateDataInterface;
         }
     }
 }

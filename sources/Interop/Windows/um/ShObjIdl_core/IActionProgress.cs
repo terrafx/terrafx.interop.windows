@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("49FF1173-EADC-446D-9285-156453A6431C")]
     [NativeTypeName("struct IActionProgress : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IActionProgress
+    public unsafe partial struct IActionProgress : IActionProgress.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,57 @@ namespace TerraFX.Interop
         public HRESULT End()
         {
             return ((delegate* unmanaged<IActionProgress*, int>)(lpVtbl[8]))((IActionProgress*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Begin(SPACTION action, [NativeTypeName("SPBEGINF")] uint flags);
+
+            [VtblIndex(4)]
+            HRESULT UpdateProgress([NativeTypeName("ULONGLONG")] ulong ulCompleted, [NativeTypeName("ULONGLONG")] ulong ulTotal);
+
+            [VtblIndex(5)]
+            HRESULT UpdateText(SPTEXT sptext, [NativeTypeName("LPCWSTR")] ushort* pszText, BOOL fMayCompact);
+
+            [VtblIndex(6)]
+            HRESULT QueryCancel(BOOL* pfCancelled);
+
+            [VtblIndex(7)]
+            HRESULT ResetCancel();
+
+            [VtblIndex(8)]
+            HRESULT End();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActionProgress*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActionProgress*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActionProgress*, uint> Release;
+
+            [NativeTypeName("HRESULT (SPACTION, SPBEGINF) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActionProgress*, SPACTION, uint, int> Begin;
+
+            [NativeTypeName("HRESULT (ULONGLONG, ULONGLONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActionProgress*, ulong, ulong, int> UpdateProgress;
+
+            [NativeTypeName("HRESULT (SPTEXT, LPCWSTR, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActionProgress*, SPTEXT, ushort*, BOOL, int> UpdateText;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActionProgress*, BOOL*, int> QueryCancel;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActionProgress*, int> ResetCancel;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActionProgress*, int> End;
         }
     }
 }

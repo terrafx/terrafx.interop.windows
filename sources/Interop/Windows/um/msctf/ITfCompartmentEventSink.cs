@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("743ABD5F-F26D-48DF-8CC5-238492419B64")]
     [NativeTypeName("struct ITfCompartmentEventSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfCompartmentEventSink
+    public unsafe partial struct ITfCompartmentEventSink : ITfCompartmentEventSink.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OnChange([NativeTypeName("const GUID &")] Guid* rguid)
         {
             return ((delegate* unmanaged<ITfCompartmentEventSink*, Guid*, int>)(lpVtbl[3]))((ITfCompartmentEventSink*)Unsafe.AsPointer(ref this), rguid);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnChange([NativeTypeName("const GUID &")] Guid* rguid);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCompartmentEventSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCompartmentEventSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCompartmentEventSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfCompartmentEventSink*, Guid*, int> OnChange;
         }
     }
 }

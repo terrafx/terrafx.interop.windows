@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D92995F8-CF5E-4A76-BF59-EAD39EA2B97E")]
     [NativeTypeName("struct INamespaceWalkCB : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct INamespaceWalkCB
+    public unsafe partial struct INamespaceWalkCB : INamespaceWalkCB.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT InitializeProgressDialog([NativeTypeName("LPWSTR *")] ushort** ppszTitle, [NativeTypeName("LPWSTR *")] ushort** ppszCancel)
         {
             return ((delegate* unmanaged<INamespaceWalkCB*, ushort**, ushort**, int>)(lpVtbl[6]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this), ppszTitle, ppszCancel);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT FoundItem(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
+
+            [VtblIndex(4)]
+            HRESULT EnterFolder(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
+
+            [VtblIndex(5)]
+            HRESULT LeaveFolder(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
+
+            [VtblIndex(6)]
+            HRESULT InitializeProgressDialog([NativeTypeName("LPWSTR *")] ushort** ppszTitle, [NativeTypeName("LPWSTR *")] ushort** ppszCancel);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalkCB*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalkCB*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalkCB*, uint> Release;
+
+            [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalkCB*, IShellFolder*, ITEMIDLIST*, int> FoundItem;
+
+            [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalkCB*, IShellFolder*, ITEMIDLIST*, int> EnterFolder;
+
+            [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalkCB*, IShellFolder*, ITEMIDLIST*, int> LeaveFolder;
+
+            [NativeTypeName("HRESULT (LPWSTR *, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INamespaceWalkCB*, ushort**, ushort**, int> InitializeProgressDialog;
         }
     }
 }

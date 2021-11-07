@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("72755049-5FF7-435D-8348-4BE97CFA6C7C")]
     [NativeTypeName("struct IDWriteFontFileEnumerator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWriteFontFileEnumerator
+    public unsafe partial struct IDWriteFontFileEnumerator : IDWriteFontFileEnumerator.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetCurrentFontFile(IDWriteFontFile** fontFile)
         {
             return ((delegate* unmanaged<IDWriteFontFileEnumerator*, IDWriteFontFile**, int>)(lpVtbl[4]))((IDWriteFontFileEnumerator*)Unsafe.AsPointer(ref this), fontFile);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT MoveNext(BOOL* hasCurrentFile);
+
+            [VtblIndex(4)]
+            HRESULT GetCurrentFontFile(IDWriteFontFile** fontFile);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFileEnumerator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFileEnumerator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFileEnumerator*, uint> Release;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFileEnumerator*, BOOL*, int> MoveNext;
+
+            [NativeTypeName("HRESULT (IDWriteFontFile **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFileEnumerator*, IDWriteFontFile**, int> GetCurrentFontFile;
         }
     }
 }

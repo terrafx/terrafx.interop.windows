@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A27003CF-2354-4F2A-8D6A-AB7CFF15437E")]
     [NativeTypeName("struct IMFAsyncCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFAsyncCallback
+    public unsafe partial struct IMFAsyncCallback : IMFAsyncCallback.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT Invoke(IMFAsyncResult* pAsyncResult)
         {
             return ((delegate* unmanaged<IMFAsyncCallback*, IMFAsyncResult*, int>)(lpVtbl[4]))((IMFAsyncCallback*)Unsafe.AsPointer(ref this), pAsyncResult);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetParameters([NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("DWORD *")] uint* pdwQueue);
+
+            [VtblIndex(4)]
+            HRESULT Invoke(IMFAsyncResult* pAsyncResult);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncCallback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncCallback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncCallback*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncCallback*, uint*, uint*, int> GetParameters;
+
+            [NativeTypeName("HRESULT (IMFAsyncResult *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncCallback*, IMFAsyncResult*, int> Invoke;
         }
     }
 }

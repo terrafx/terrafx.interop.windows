@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A24BC4D1-769E-43F7-8013-98FF566C18E2")]
     [NativeTypeName("struct ID3D11CommandList : ID3D11DeviceChild")]
     [NativeInheritance("ID3D11DeviceChild")]
-    public unsafe partial struct ID3D11CommandList
+    public unsafe partial struct ID3D11CommandList : ID3D11CommandList.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,39 @@ namespace TerraFX.Interop
         public uint GetContextFlags()
         {
             return ((delegate* unmanaged<ID3D11CommandList*, uint>)(lpVtbl[7]))((ID3D11CommandList*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ID3D11DeviceChild.Interface
+        {
+            [VtblIndex(7)]
+            uint GetContextFlags();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11CommandList*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11CommandList*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11CommandList*, uint> Release;
+
+            [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11CommandList*, ID3D11Device**, void> GetDevice;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11CommandList*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11CommandList*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11CommandList*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("UINT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11CommandList*, uint> GetContextFlags;
         }
     }
 }

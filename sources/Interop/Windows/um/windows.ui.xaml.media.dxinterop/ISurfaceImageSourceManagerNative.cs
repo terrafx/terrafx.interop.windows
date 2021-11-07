@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4C8798B7-1D88-4A0F-B59B-B93F600DE8C8")]
     [NativeTypeName("struct ISurfaceImageSourceManagerNative : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISurfaceImageSourceManagerNative
+    public unsafe partial struct ISurfaceImageSourceManagerNative : ISurfaceImageSourceManagerNative.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT FlushAllSurfacesWithDevice(IUnknown* device)
         {
             return ((delegate* unmanaged<ISurfaceImageSourceManagerNative*, IUnknown*, int>)(lpVtbl[3]))((ISurfaceImageSourceManagerNative*)Unsafe.AsPointer(ref this), device);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT FlushAllSurfacesWithDevice(IUnknown* device);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurfaceImageSourceManagerNative*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurfaceImageSourceManagerNative*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurfaceImageSourceManagerNative*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurfaceImageSourceManagerNative*, IUnknown*, int> FlushAllSurfacesWithDevice;
         }
     }
 }

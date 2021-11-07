@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("000214EA-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IPersistFolder : IPersist")]
     [NativeInheritance("IPersist")]
-    public unsafe partial struct IPersistFolder
+    public unsafe partial struct IPersistFolder : IPersistFolder.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,30 @@ namespace TerraFX.Interop
         public HRESULT Initialize([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
         {
             return ((delegate* unmanaged<IPersistFolder*, ITEMIDLIST*, int>)(lpVtbl[4]))((IPersistFolder*)Unsafe.AsPointer(ref this), pidl);
+        }
+
+        public interface Interface : IPersist.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT Initialize([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFolder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFolder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFolder*, uint> Release;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFolder*, Guid*, int> GetClassID;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFolder*, ITEMIDLIST*, int> Initialize;
         }
     }
 }

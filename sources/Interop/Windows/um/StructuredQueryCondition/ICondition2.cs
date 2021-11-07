@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0DB8851D-2E5B-47EB-9208-D28C325A01D7")]
     [NativeTypeName("struct ICondition2 : ICondition")]
     [NativeInheritance("ICondition")]
-    public unsafe partial struct ICondition2
+    public unsafe partial struct ICondition2 : ICondition2.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,69 @@ namespace TerraFX.Interop
         public HRESULT GetLeafConditionInfo(PROPERTYKEY* ppropkey, CONDITION_OPERATION* pcop, PROPVARIANT* ppropvar)
         {
             return ((delegate* unmanaged<ICondition2*, PROPERTYKEY*, CONDITION_OPERATION*, PROPVARIANT*, int>)(lpVtbl[16]))((ICondition2*)Unsafe.AsPointer(ref this), ppropkey, pcop, ppropvar);
+        }
+
+        public interface Interface : ICondition.Interface
+        {
+            [VtblIndex(15)]
+            HRESULT GetLocale([NativeTypeName("LPWSTR *")] ushort** ppszLocaleName);
+
+            [VtblIndex(16)]
+            HRESULT GetLeafConditionInfo(PROPERTYKEY* ppropkey, CONDITION_OPERATION* pcop, PROPVARIANT* ppropvar);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition2*, uint> Release;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition2*, Guid*, int> GetClassID;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition2*, int> IsDirty;
+
+            [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition2*, IStream*, int> Load;
+
+            [NativeTypeName("HRESULT (IStream *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition2*, IStream*, BOOL, int> Save;
+
+            [NativeTypeName("HRESULT (ULARGE_INTEGER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition2*, ULARGE_INTEGER*, int> GetSizeMax;
+
+            [NativeTypeName("HRESULT (CONDITION_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition2*, CONDITION_TYPE*, int> GetConditionType;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition2*, Guid*, void**, int> GetSubConditions;
+
+            [NativeTypeName("HRESULT (LPWSTR *, CONDITION_OPERATION *, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition2*, ushort**, CONDITION_OPERATION*, PROPVARIANT*, int> GetComparisonInfo;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition2*, ushort**, int> GetValueType;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition2*, ushort**, int> GetValueNormalization;
+
+            [NativeTypeName("HRESULT (IRichChunk **, IRichChunk **, IRichChunk **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition2*, IRichChunk**, IRichChunk**, IRichChunk**, int> GetInputTerms;
+
+            [NativeTypeName("HRESULT (ICondition **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition2*, ICondition**, int> Clone;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition2*, ushort**, int> GetLocale;
+
+            [NativeTypeName("HRESULT (PROPERTYKEY *, CONDITION_OPERATION *, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition2*, PROPERTYKEY*, CONDITION_OPERATION*, PROPVARIANT*, int> GetLeafConditionInfo;
         }
     }
 }

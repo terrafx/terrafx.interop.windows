@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("43826D1E-E718-42EE-BC55-A1E261C37BFE")]
     [NativeTypeName("struct IShellItem : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellItem
+    public unsafe partial struct IShellItem : IShellItem.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT Compare(IShellItem* psi, [NativeTypeName("SICHINTF")] uint hint, int* piOrder)
         {
             return ((delegate* unmanaged<IShellItem*, IShellItem*, uint, int*, int>)(lpVtbl[7]))((IShellItem*)Unsafe.AsPointer(ref this), psi, hint, piOrder);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT BindToHandler(IBindCtx* pbc, [NativeTypeName("const GUID &")] Guid* bhid, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(4)]
+            HRESULT GetParent(IShellItem** ppsi);
+
+            [VtblIndex(5)]
+            HRESULT GetDisplayName(SIGDN sigdnName, [NativeTypeName("LPWSTR *")] ushort** ppszName);
+
+            [VtblIndex(6)]
+            HRESULT GetAttributes([NativeTypeName("SFGAOF")] uint sfgaoMask, [NativeTypeName("SFGAOF *")] uint* psfgaoAttribs);
+
+            [VtblIndex(7)]
+            HRESULT Compare(IShellItem* psi, [NativeTypeName("SICHINTF")] uint hint, int* piOrder);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItem*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItem*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItem*, uint> Release;
+
+            [NativeTypeName("HRESULT (IBindCtx *, const GUID &, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItem*, IBindCtx*, Guid*, Guid*, void**, int> BindToHandler;
+
+            [NativeTypeName("HRESULT (IShellItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItem*, IShellItem**, int> GetParent;
+
+            [NativeTypeName("HRESULT (SIGDN, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItem*, SIGDN, ushort**, int> GetDisplayName;
+
+            [NativeTypeName("HRESULT (SFGAOF, SFGAOF *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItem*, uint, uint*, int> GetAttributes;
+
+            [NativeTypeName("HRESULT (IShellItem *, SICHINTF, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItem*, IShellItem*, uint, int*, int> Compare;
         }
     }
 }

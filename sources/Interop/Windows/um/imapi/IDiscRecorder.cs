@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("85AC9776-CA88-4CF2-894E-09598C078A41")]
     [NativeTypeName("struct IDiscRecorder : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiscRecorder
+    public unsafe partial struct IDiscRecorder : IDiscRecorder.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,111 @@ namespace TerraFX.Interop
         public HRESULT Close()
         {
             return ((delegate* unmanaged<IDiscRecorder*, int>)(lpVtbl[17]))((IDiscRecorder*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Init(byte* pbyUniqueID, [NativeTypeName("ULONG")] uint nulIDSize, [NativeTypeName("ULONG")] uint nulDriveNumber);
+
+            [VtblIndex(4)]
+            HRESULT GetRecorderGUID(byte* pbyUniqueID, [NativeTypeName("ULONG")] uint ulBufferSize, [NativeTypeName("ULONG *")] uint* pulReturnSizeRequired);
+
+            [VtblIndex(5)]
+            HRESULT GetRecorderType([NativeTypeName("long *")] int* fTypeCode);
+
+            [VtblIndex(6)]
+            HRESULT GetDisplayNames([NativeTypeName("BSTR *")] ushort** pbstrVendorID, [NativeTypeName("BSTR *")] ushort** pbstrProductID, [NativeTypeName("BSTR *")] ushort** pbstrRevision);
+
+            [VtblIndex(7)]
+            HRESULT GetBasePnPID([NativeTypeName("BSTR *")] ushort** pbstrBasePnPID);
+
+            [VtblIndex(8)]
+            HRESULT GetPath([NativeTypeName("BSTR *")] ushort** pbstrPath);
+
+            [VtblIndex(9)]
+            HRESULT GetRecorderProperties(IPropertyStorage** ppPropStg);
+
+            [VtblIndex(10)]
+            HRESULT SetRecorderProperties(IPropertyStorage* pPropStg);
+
+            [VtblIndex(11)]
+            HRESULT GetRecorderState([NativeTypeName("ULONG *")] uint* pulDevStateFlags);
+
+            [VtblIndex(12)]
+            HRESULT OpenExclusive();
+
+            [VtblIndex(13)]
+            HRESULT QueryMediaType([NativeTypeName("long *")] int* fMediaType, [NativeTypeName("long *")] int* fMediaFlags);
+
+            [VtblIndex(14)]
+            HRESULT QueryMediaInfo(byte* pbSessions, byte* pbLastTrack, [NativeTypeName("ULONG *")] uint* ulStartAddress, [NativeTypeName("ULONG *")] uint* ulNextWritable, [NativeTypeName("ULONG *")] uint* ulFreeBlocks);
+
+            [VtblIndex(15)]
+            HRESULT Eject();
+
+            [VtblIndex(16)]
+            HRESULT Erase([NativeTypeName("boolean")] byte bFullErase);
+
+            [VtblIndex(17)]
+            HRESULT Close();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder*, uint> Release;
+
+            [NativeTypeName("HRESULT (byte *, ULONG, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder*, byte*, uint, uint, int> Init;
+
+            [NativeTypeName("HRESULT (byte *, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder*, byte*, uint, uint*, int> GetRecorderGUID;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder*, int*, int> GetRecorderType;
+
+            [NativeTypeName("HRESULT (BSTR *, BSTR *, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder*, ushort**, ushort**, ushort**, int> GetDisplayNames;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder*, ushort**, int> GetBasePnPID;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder*, ushort**, int> GetPath;
+
+            [NativeTypeName("HRESULT (IPropertyStorage **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder*, IPropertyStorage**, int> GetRecorderProperties;
+
+            [NativeTypeName("HRESULT (IPropertyStorage *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder*, IPropertyStorage*, int> SetRecorderProperties;
+
+            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder*, uint*, int> GetRecorderState;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder*, int> OpenExclusive;
+
+            [NativeTypeName("HRESULT (long *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder*, int*, int*, int> QueryMediaType;
+
+            [NativeTypeName("HRESULT (byte *, byte *, ULONG *, ULONG *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder*, byte*, byte*, uint*, uint*, uint*, int> QueryMediaInfo;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder*, int> Eject;
+
+            [NativeTypeName("HRESULT (boolean) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder*, byte, int> Erase;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscRecorder*, int> Close;
         }
     }
 }

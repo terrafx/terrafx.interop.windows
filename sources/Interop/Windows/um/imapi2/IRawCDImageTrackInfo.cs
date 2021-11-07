@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("25983551-9D65-49CE-B335-40630D901227")]
     [NativeTypeName("struct IRawCDImageTrackInfo : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IRawCDImageTrackInfo
+    public unsafe partial struct IRawCDImageTrackInfo : IRawCDImageTrackInfo.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,111 @@ namespace TerraFX.Interop
         public HRESULT ClearTrackIndex([NativeTypeName("LONG")] int lbaOffset)
         {
             return ((delegate* unmanaged<IRawCDImageTrackInfo*, int, int>)(lpVtbl[19]))((IRawCDImageTrackInfo*)Unsafe.AsPointer(ref this), lbaOffset);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_StartingLba([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(8)]
+            HRESULT get_SectorCount([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(9)]
+            HRESULT get_TrackNumber([NativeTypeName("LONG *")] int* value);
+
+            [VtblIndex(10)]
+            HRESULT get_SectorType(IMAPI_CD_SECTOR_TYPE* value);
+
+            [VtblIndex(11)]
+            HRESULT get_ISRC([NativeTypeName("BSTR *")] ushort** value);
+
+            [VtblIndex(12)]
+            HRESULT put_ISRC([NativeTypeName("BSTR")] ushort* value);
+
+            [VtblIndex(13)]
+            HRESULT get_DigitalAudioCopySetting(IMAPI_CD_TRACK_DIGITAL_COPY_SETTING* value);
+
+            [VtblIndex(14)]
+            HRESULT put_DigitalAudioCopySetting(IMAPI_CD_TRACK_DIGITAL_COPY_SETTING value);
+
+            [VtblIndex(15)]
+            HRESULT get_AudioHasPreemphasis([NativeTypeName("VARIANT_BOOL *")] short* value);
+
+            [VtblIndex(16)]
+            HRESULT put_AudioHasPreemphasis([NativeTypeName("VARIANT_BOOL")] short value);
+
+            [VtblIndex(17)]
+            HRESULT get_TrackIndexes(SAFEARRAY** value);
+
+            [VtblIndex(18)]
+            HRESULT AddTrackIndex([NativeTypeName("LONG")] int lbaOffset);
+
+            [VtblIndex(19)]
+            HRESULT ClearTrackIndex([NativeTypeName("LONG")] int lbaOffset);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRawCDImageTrackInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRawCDImageTrackInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRawCDImageTrackInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRawCDImageTrackInfo*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRawCDImageTrackInfo*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRawCDImageTrackInfo*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRawCDImageTrackInfo*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRawCDImageTrackInfo*, int*, int> get_StartingLba;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRawCDImageTrackInfo*, int*, int> get_SectorCount;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRawCDImageTrackInfo*, int*, int> get_TrackNumber;
+
+            [NativeTypeName("HRESULT (IMAPI_CD_SECTOR_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRawCDImageTrackInfo*, IMAPI_CD_SECTOR_TYPE*, int> get_SectorType;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRawCDImageTrackInfo*, ushort**, int> get_ISRC;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRawCDImageTrackInfo*, ushort*, int> put_ISRC;
+
+            [NativeTypeName("HRESULT (IMAPI_CD_TRACK_DIGITAL_COPY_SETTING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRawCDImageTrackInfo*, IMAPI_CD_TRACK_DIGITAL_COPY_SETTING*, int> get_DigitalAudioCopySetting;
+
+            [NativeTypeName("HRESULT (IMAPI_CD_TRACK_DIGITAL_COPY_SETTING) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRawCDImageTrackInfo*, IMAPI_CD_TRACK_DIGITAL_COPY_SETTING, int> put_DigitalAudioCopySetting;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRawCDImageTrackInfo*, short*, int> get_AudioHasPreemphasis;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRawCDImageTrackInfo*, short, int> put_AudioHasPreemphasis;
+
+            [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRawCDImageTrackInfo*, SAFEARRAY**, int> get_TrackIndexes;
+
+            [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRawCDImageTrackInfo*, int, int> AddTrackIndex;
+
+            [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRawCDImageTrackInfo*, int, int> ClearTrackIndex;
         }
     }
 }

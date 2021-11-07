@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("87E47623-2CEB-45D6-9B88-D8520C4DCBBC")]
     [NativeTypeName("struct IMFSourceBufferNotify : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSourceBufferNotify
+    public unsafe partial struct IMFSourceBufferNotify : IMFSourceBufferNotify.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public void OnUpdateEnd()
         {
             ((delegate* unmanaged<IMFSourceBufferNotify*, void>)(lpVtbl[7]))((IMFSourceBufferNotify*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void OnUpdateStart();
+
+            [VtblIndex(4)]
+            void OnAbort();
+
+            [VtblIndex(5)]
+            void OnError(HRESULT hr);
+
+            [VtblIndex(6)]
+            void OnUpdate();
+
+            [VtblIndex(7)]
+            void OnUpdateEnd();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBufferNotify*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBufferNotify*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBufferNotify*, uint> Release;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBufferNotify*, void> OnUpdateStart;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBufferNotify*, void> OnAbort;
+
+            [NativeTypeName("void (HRESULT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBufferNotify*, HRESULT, void> OnError;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBufferNotify*, void> OnUpdate;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceBufferNotify*, void> OnUpdateEnd;
         }
     }
 }

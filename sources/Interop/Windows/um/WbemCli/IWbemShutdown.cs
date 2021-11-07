@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B7B31DF9-D515-11D3-A11C-00105A1F515A")]
     [NativeTypeName("struct IWbemShutdown : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWbemShutdown
+    public unsafe partial struct IWbemShutdown : IWbemShutdown.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT Shutdown([NativeTypeName("LONG")] int uReason, [NativeTypeName("ULONG")] uint uMaxMilliseconds, IWbemContext* pCtx)
         {
             return ((delegate* unmanaged<IWbemShutdown*, int, uint, IWbemContext*, int>)(lpVtbl[3]))((IWbemShutdown*)Unsafe.AsPointer(ref this), uReason, uMaxMilliseconds, pCtx);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Shutdown([NativeTypeName("LONG")] int uReason, [NativeTypeName("ULONG")] uint uMaxMilliseconds, IWbemContext* pCtx);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemShutdown*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemShutdown*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemShutdown*, uint> Release;
+
+            [NativeTypeName("HRESULT (LONG, ULONG, IWbemContext *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemShutdown*, int, uint, IWbemContext*, int> Shutdown;
         }
     }
 }

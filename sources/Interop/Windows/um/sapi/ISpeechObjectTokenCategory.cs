@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CA7EAC50-2D01-4145-86D4-5AE7D70F4469")]
     [NativeTypeName("struct ISpeechObjectTokenCategory : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechObjectTokenCategory
+    public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCategory.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,69 @@ namespace TerraFX.Interop
         public HRESULT EnumerateTokens([NativeTypeName("BSTR")] ushort* RequiredAttributes, [NativeTypeName("BSTR")] ushort* OptionalAttributes, ISpeechObjectTokens** Tokens)
         {
             return ((delegate* unmanaged<ISpeechObjectTokenCategory*, ushort*, ushort*, ISpeechObjectTokens**, int>)(lpVtbl[12]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), RequiredAttributes, OptionalAttributes, Tokens);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Id([NativeTypeName("BSTR *")] ushort** Id);
+
+            [VtblIndex(8)]
+            HRESULT put_Default([NativeTypeName("const BSTR")] ushort* TokenId);
+
+            [VtblIndex(9)]
+            HRESULT get_Default([NativeTypeName("BSTR *")] ushort** TokenId);
+
+            [VtblIndex(10)]
+            HRESULT SetId([NativeTypeName("const BSTR")] ushort* Id, [NativeTypeName("VARIANT_BOOL")] short CreateIfNotExist = 0);
+
+            [VtblIndex(11)]
+            HRESULT GetDataKey(SpeechDataKeyLocation Location, ISpeechDataKey** DataKey);
+
+            [VtblIndex(12)]
+            HRESULT EnumerateTokens([NativeTypeName("BSTR")] ushort* RequiredAttributes, [NativeTypeName("BSTR")] ushort* OptionalAttributes, ISpeechObjectTokens** Tokens);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechObjectTokenCategory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechObjectTokenCategory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechObjectTokenCategory*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechObjectTokenCategory*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechObjectTokenCategory*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechObjectTokenCategory*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechObjectTokenCategory*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechObjectTokenCategory*, ushort**, int> get_Id;
+
+            [NativeTypeName("HRESULT (const BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechObjectTokenCategory*, ushort*, int> put_Default;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechObjectTokenCategory*, ushort**, int> get_Default;
+
+            [NativeTypeName("HRESULT (const BSTR, VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechObjectTokenCategory*, ushort*, short, int> SetId;
+
+            [NativeTypeName("HRESULT (SpeechDataKeyLocation, ISpeechDataKey **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechObjectTokenCategory*, SpeechDataKeyLocation, ISpeechDataKey**, int> GetDataKey;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, ISpeechObjectTokens **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechObjectTokenCategory*, ushort*, ushort*, ISpeechObjectTokens**, int> EnumerateTokens;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("45D37C3F-5140-444A-AE24-400789F3CBF3")]
     [NativeTypeName("struct IControlInterface : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IControlInterface
+    public unsafe partial struct IControlInterface : IControlInterface.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetIID(Guid* pIID)
         {
             return ((delegate* unmanaged<IControlInterface*, Guid*, int>)(lpVtbl[4]))((IControlInterface*)Unsafe.AsPointer(ref this), pIID);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppwstrName);
+
+            [VtblIndex(4)]
+            HRESULT GetIID(Guid* pIID);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IControlInterface*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IControlInterface*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IControlInterface*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IControlInterface*, ushort**, int> GetName;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IControlInterface*, Guid*, int> GetIID;
         }
     }
 }

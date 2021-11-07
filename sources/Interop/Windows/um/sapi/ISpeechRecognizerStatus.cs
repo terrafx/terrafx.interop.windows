@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BFF9E781-53EC-484E-BB8A-0E1B5551E35C")]
     [NativeTypeName("struct ISpeechRecognizerStatus : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechRecognizerStatus
+    public unsafe partial struct ISpeechRecognizerStatus : ISpeechRecognizerStatus.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,69 @@ namespace TerraFX.Interop
         public HRESULT get_SupportedLanguages(VARIANT* SupportedLanguages)
         {
             return ((delegate* unmanaged<ISpeechRecognizerStatus*, VARIANT*, int>)(lpVtbl[12]))((ISpeechRecognizerStatus*)Unsafe.AsPointer(ref this), SupportedLanguages);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_AudioStatus(ISpeechAudioStatus** AudioStatus);
+
+            [VtblIndex(8)]
+            HRESULT get_CurrentStreamPosition(VARIANT* pCurrentStreamPos);
+
+            [VtblIndex(9)]
+            HRESULT get_CurrentStreamNumber([NativeTypeName("long *")] int* StreamNumber);
+
+            [VtblIndex(10)]
+            HRESULT get_NumberOfActiveRules([NativeTypeName("long *")] int* NumberOfActiveRules);
+
+            [VtblIndex(11)]
+            HRESULT get_ClsidEngine([NativeTypeName("BSTR *")] ushort** ClsidEngine);
+
+            [VtblIndex(12)]
+            HRESULT get_SupportedLanguages(VARIANT* SupportedLanguages);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecognizerStatus*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecognizerStatus*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecognizerStatus*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecognizerStatus*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecognizerStatus*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecognizerStatus*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecognizerStatus*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (ISpeechAudioStatus **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecognizerStatus*, ISpeechAudioStatus**, int> get_AudioStatus;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecognizerStatus*, VARIANT*, int> get_CurrentStreamPosition;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecognizerStatus*, int*, int> get_CurrentStreamNumber;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecognizerStatus*, int*, int> get_NumberOfActiveRules;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecognizerStatus*, ushort**, int> get_ClsidEngine;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechRecognizerStatus*, VARIANT*, int> get_SupportedLanguages;
         }
     }
 }

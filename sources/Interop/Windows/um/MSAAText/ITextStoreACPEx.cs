@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A2DE3BC2-3D8E-11D3-81A9-F753FBE61A00")]
     [NativeTypeName("struct ITextStoreACPEx : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITextStoreACPEx
+    public unsafe partial struct ITextStoreACPEx : ITextStoreACPEx.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT ScrollToRect([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, RECT rc, [NativeTypeName("DWORD")] uint dwPosition)
         {
             return ((delegate* unmanaged<ITextStoreACPEx*, int, int, RECT, uint, int>)(lpVtbl[3]))((ITextStoreACPEx*)Unsafe.AsPointer(ref this), acpStart, acpEnd, rc, dwPosition);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ScrollToRect([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, RECT rc, [NativeTypeName("DWORD")] uint dwPosition);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreACPEx*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreACPEx*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreACPEx*, uint> Release;
+
+            [NativeTypeName("HRESULT (LONG, LONG, RECT, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreACPEx*, int, int, RECT, uint, int> ScrollToRect;
         }
     }
 }

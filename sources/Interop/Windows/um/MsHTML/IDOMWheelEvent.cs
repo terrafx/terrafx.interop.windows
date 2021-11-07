@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106D2-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMWheelEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMWheelEvent
+    public unsafe partial struct IDOMWheelEvent : IDOMWheelEvent.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,63 @@ namespace TerraFX.Interop
         public HRESULT initWheelEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int screenXArg, [NativeTypeName("long")] int screenYArg, [NativeTypeName("long")] int clientXArg, [NativeTypeName("long")] int clientYArg, ushort buttonArg, IEventTarget* relatedTargetArg, [NativeTypeName("BSTR")] ushort* modifiersListArg, [NativeTypeName("long")] int deltaX, [NativeTypeName("long")] int deltaY, [NativeTypeName("long")] int deltaZ, [NativeTypeName("ULONG")] uint deltaMode)
         {
             return ((delegate* unmanaged<IDOMWheelEvent*, ushort*, short, short, IHTMLWindow2*, int, int, int, int, int, ushort, IEventTarget*, ushort*, int, int, int, uint, int>)(lpVtbl[11]))((IDOMWheelEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, viewArg, detailArg, screenXArg, screenYArg, clientXArg, clientYArg, buttonArg, relatedTargetArg, modifiersListArg, deltaX, deltaY, deltaZ, deltaMode);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_deltaX([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT get_deltaY([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT get_deltaZ([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(10)]
+            HRESULT get_deltaMode([NativeTypeName("ULONG *")] uint* p);
+
+            [VtblIndex(11)]
+            HRESULT initWheelEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int screenXArg, [NativeTypeName("long")] int screenYArg, [NativeTypeName("long")] int clientXArg, [NativeTypeName("long")] int clientYArg, ushort buttonArg, IEventTarget* relatedTargetArg, [NativeTypeName("BSTR")] ushort* modifiersListArg, [NativeTypeName("long")] int deltaX, [NativeTypeName("long")] int deltaY, [NativeTypeName("long")] int deltaZ, [NativeTypeName("ULONG")] uint deltaMode);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMWheelEvent*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMWheelEvent*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMWheelEvent*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMWheelEvent*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMWheelEvent*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMWheelEvent*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMWheelEvent*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMWheelEvent*, int*, int> get_deltaX;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMWheelEvent*, int*, int> get_deltaY;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMWheelEvent*, int*, int> get_deltaZ;
+
+            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMWheelEvent*, uint*, int> get_deltaMode;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, IHTMLWindow2 *, long, long, long, long, long, USHORT, IEventTarget *, BSTR, long, long, long, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMWheelEvent*, ushort*, short, short, IHTMLWindow2*, int, int, int, int, int, ushort, IEventTarget*, ushort*, int, int, int, uint, int> initWheelEvent;
         }
     }
 }

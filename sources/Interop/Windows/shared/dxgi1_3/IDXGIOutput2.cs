@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("595E39D1-2724-4663-99B1-DA969DE28364")]
     [NativeTypeName("struct IDXGIOutput2 : IDXGIOutput1")]
     [NativeInheritance("IDXGIOutput1")]
-    public unsafe partial struct IDXGIOutput2
+    public unsafe partial struct IDXGIOutput2 : IDXGIOutput2.Interface
     {
         public void** lpVtbl;
 
@@ -184,6 +184,87 @@ namespace TerraFX.Interop
         public BOOL SupportsOverlays()
         {
             return ((delegate* unmanaged<IDXGIOutput2*, int>)(lpVtbl[23]))((IDXGIOutput2*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDXGIOutput1.Interface
+        {
+            [VtblIndex(23)]
+            BOOL SupportsOverlays();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIOutput2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIOutput2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIOutput2*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIOutput2*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIOutput2*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIOutput2*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIOutput2*, Guid*, void**, int> GetParent;
+
+            [NativeTypeName("HRESULT (DXGI_OUTPUT_DESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIOutput2*, DXGI_OUTPUT_DESC*, int> GetDesc;
+
+            [NativeTypeName("HRESULT (DXGI_FORMAT, UINT, UINT *, DXGI_MODE_DESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIOutput2*, DXGI_FORMAT, uint, uint*, DXGI_MODE_DESC*, int> GetDisplayModeList;
+
+            [NativeTypeName("HRESULT (const DXGI_MODE_DESC *, DXGI_MODE_DESC *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIOutput2*, DXGI_MODE_DESC*, DXGI_MODE_DESC*, IUnknown*, int> FindClosestMatchingMode;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIOutput2*, int> WaitForVBlank;
+
+            [NativeTypeName("HRESULT (IUnknown *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIOutput2*, IUnknown*, BOOL, int> TakeOwnership;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIOutput2*, void> ReleaseOwnership;
+
+            [NativeTypeName("HRESULT (DXGI_GAMMA_CONTROL_CAPABILITIES *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIOutput2*, DXGI_GAMMA_CONTROL_CAPABILITIES*, int> GetGammaControlCapabilities;
+
+            [NativeTypeName("HRESULT (const DXGI_GAMMA_CONTROL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIOutput2*, DXGI_GAMMA_CONTROL*, int> SetGammaControl;
+
+            [NativeTypeName("HRESULT (DXGI_GAMMA_CONTROL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIOutput2*, DXGI_GAMMA_CONTROL*, int> GetGammaControl;
+
+            [NativeTypeName("HRESULT (IDXGISurface *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIOutput2*, IDXGISurface*, int> SetDisplaySurface;
+
+            [NativeTypeName("HRESULT (IDXGISurface *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIOutput2*, IDXGISurface*, int> GetDisplaySurfaceData;
+
+            [NativeTypeName("HRESULT (DXGI_FRAME_STATISTICS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIOutput2*, DXGI_FRAME_STATISTICS*, int> GetFrameStatistics;
+
+            [NativeTypeName("HRESULT (DXGI_FORMAT, UINT, UINT *, DXGI_MODE_DESC1 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIOutput2*, DXGI_FORMAT, uint, uint*, DXGI_MODE_DESC1*, int> GetDisplayModeList1;
+
+            [NativeTypeName("HRESULT (const DXGI_MODE_DESC1 *, DXGI_MODE_DESC1 *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIOutput2*, DXGI_MODE_DESC1*, DXGI_MODE_DESC1*, IUnknown*, int> FindClosestMatchingMode1;
+
+            [NativeTypeName("HRESULT (IDXGIResource *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIOutput2*, IDXGIResource*, int> GetDisplaySurfaceData1;
+
+            [NativeTypeName("HRESULT (IUnknown *, IDXGIOutputDuplication **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIOutput2*, IUnknown*, IDXGIOutputDuplication**, int> DuplicateOutput;
+
+            [NativeTypeName("BOOL () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIOutput2*, int> SupportsOverlays;
         }
     }
 }

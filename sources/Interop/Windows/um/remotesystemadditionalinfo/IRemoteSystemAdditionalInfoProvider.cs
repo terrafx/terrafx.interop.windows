@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EEAA3D5F-EC63-4D27-AF38-E86B1D7292CB")]
     [NativeTypeName("struct IRemoteSystemAdditionalInfoProvider : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRemoteSystemAdditionalInfoProvider
+    public unsafe partial struct IRemoteSystemAdditionalInfoProvider : IRemoteSystemAdditionalInfoProvider.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetAdditionalInfo(HSTRING* deduplicationId, [NativeTypeName("const IID &")] Guid* riid, void** mapView)
         {
             return ((delegate* unmanaged<IRemoteSystemAdditionalInfoProvider*, HSTRING*, Guid*, void**, int>)(lpVtbl[3]))((IRemoteSystemAdditionalInfoProvider*)Unsafe.AsPointer(ref this), deduplicationId, riid, mapView);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetAdditionalInfo(HSTRING* deduplicationId, [NativeTypeName("const IID &")] Guid* riid, void** mapView);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRemoteSystemAdditionalInfoProvider*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRemoteSystemAdditionalInfoProvider*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRemoteSystemAdditionalInfoProvider*, uint> Release;
+
+            [NativeTypeName("HRESULT (HSTRING *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRemoteSystemAdditionalInfoProvider*, HSTRING*, Guid*, void**, int> GetAdditionalInfo;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9C2CAD80-3424-11CF-B670-00AA004CD6D8")]
     [NativeTypeName("struct IOleInPlaceSiteEx : IOleInPlaceSite")]
     [NativeInheritance("IOleInPlaceSite")]
-    public unsafe partial struct IOleInPlaceSiteEx
+    public unsafe partial struct IOleInPlaceSiteEx : IOleInPlaceSiteEx.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,75 @@ namespace TerraFX.Interop
         public HRESULT RequestUIActivate()
         {
             return ((delegate* unmanaged<IOleInPlaceSiteEx*, int>)(lpVtbl[17]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IOleInPlaceSite.Interface
+        {
+            [VtblIndex(15)]
+            HRESULT OnInPlaceActivateEx(BOOL* pfNoRedraw, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(16)]
+            HRESULT OnInPlaceDeactivateEx(BOOL fNoRedraw);
+
+            [VtblIndex(17)]
+            HRESULT RequestUIActivate();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceSiteEx*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceSiteEx*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceSiteEx*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceSiteEx*, HWND*, int> GetWindow;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceSiteEx*, BOOL, int> ContextSensitiveHelp;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceSiteEx*, int> CanInPlaceActivate;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceSiteEx*, int> OnInPlaceActivate;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceSiteEx*, int> OnUIActivate;
+
+            [NativeTypeName("HRESULT (IOleInPlaceFrame **, IOleInPlaceUIWindow **, LPRECT, LPRECT, LPOLEINPLACEFRAMEINFO) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceSiteEx*, IOleInPlaceFrame**, IOleInPlaceUIWindow**, RECT*, RECT*, OLEINPLACEFRAMEINFO*, int> GetWindowContext;
+
+            [NativeTypeName("HRESULT (SIZE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceSiteEx*, SIZE, int> Scroll;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceSiteEx*, BOOL, int> OnUIDeactivate;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceSiteEx*, int> OnInPlaceDeactivate;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceSiteEx*, int> DiscardUndoState;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceSiteEx*, int> DeactivateAndUndo;
+
+            [NativeTypeName("HRESULT (LPCRECT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceSiteEx*, RECT*, int> OnPosRectChange;
+
+            [NativeTypeName("HRESULT (BOOL *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceSiteEx*, BOOL*, uint, int> OnInPlaceActivateEx;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceSiteEx*, BOOL, int> OnInPlaceDeactivateEx;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceSiteEx*, int> RequestUIActivate;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F2E9EDC1-D307-4525-9886-0FAFAA44163C")]
     [NativeTypeName("struct ISurfaceImageSourceNative : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISurfaceImageSourceNative
+    public unsafe partial struct ISurfaceImageSourceNative : ISurfaceImageSourceNative.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT EndDraw()
         {
             return ((delegate* unmanaged<ISurfaceImageSourceNative*, int>)(lpVtbl[5]))((ISurfaceImageSourceNative*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetDevice(IDXGIDevice* device);
+
+            [VtblIndex(4)]
+            HRESULT BeginDraw(RECT updateRect, IDXGISurface** surface, POINT* offset);
+
+            [VtblIndex(5)]
+            HRESULT EndDraw();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurfaceImageSourceNative*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurfaceImageSourceNative*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurfaceImageSourceNative*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDXGIDevice *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurfaceImageSourceNative*, IDXGIDevice*, int> SetDevice;
+
+            [NativeTypeName("HRESULT (RECT, IDXGISurface **, POINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurfaceImageSourceNative*, RECT, IDXGISurface**, POINT*, int> BeginDraw;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurfaceImageSourceNative*, int> EndDraw;
         }
     }
 }

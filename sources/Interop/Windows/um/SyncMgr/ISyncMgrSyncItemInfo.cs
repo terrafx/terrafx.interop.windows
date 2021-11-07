@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E7FD9502-BE0C-4464-90A1-2B5277031232")]
     [NativeTypeName("struct ISyncMgrSyncItemInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrSyncItemInfo
+    public unsafe partial struct ISyncMgrSyncItemInfo : ISyncMgrSyncItemInfo.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT IsConnected()
         {
             return ((delegate* unmanaged<ISyncMgrSyncItemInfo*, int>)(lpVtbl[7]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetTypeLabel([NativeTypeName("LPWSTR *")] ushort** ppszTypeLabel);
+
+            [VtblIndex(4)]
+            HRESULT GetComment([NativeTypeName("LPWSTR *")] ushort** ppszComment);
+
+            [VtblIndex(5)]
+            HRESULT GetLastSyncTime(FILETIME* pftLastSync);
+
+            [VtblIndex(6)]
+            HRESULT IsEnabled();
+
+            [VtblIndex(7)]
+            HRESULT IsConnected();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSyncItemInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSyncItemInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSyncItemInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSyncItemInfo*, ushort**, int> GetTypeLabel;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSyncItemInfo*, ushort**, int> GetComment;
+
+            [NativeTypeName("HRESULT (FILETIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSyncItemInfo*, FILETIME*, int> GetLastSyncTime;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSyncItemInfo*, int> IsEnabled;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSyncItemInfo*, int> IsConnected;
         }
     }
 }

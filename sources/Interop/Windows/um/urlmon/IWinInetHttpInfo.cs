@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79EAC9D8-BAFA-11CE-8C82-00AA004BA90B")]
     [NativeTypeName("struct IWinInetHttpInfo : IWinInetInfo")]
     [NativeInheritance("IWinInetInfo")]
-    public unsafe partial struct IWinInetHttpInfo
+    public unsafe partial struct IWinInetHttpInfo : IWinInetHttpInfo.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,30 @@ namespace TerraFX.Interop
         public HRESULT QueryInfo([NativeTypeName("DWORD")] uint dwOption, [NativeTypeName("LPVOID")] void* pBuffer, [NativeTypeName("DWORD *")] uint* pcbBuf, [NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("DWORD *")] uint* pdwReserved)
         {
             return ((delegate* unmanaged<IWinInetHttpInfo*, uint, void*, uint*, uint*, uint*, int>)(lpVtbl[4]))((IWinInetHttpInfo*)Unsafe.AsPointer(ref this), dwOption, pBuffer, pcbBuf, pdwFlags, pdwReserved);
+        }
+
+        public interface Interface : IWinInetInfo.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT QueryInfo([NativeTypeName("DWORD")] uint dwOption, [NativeTypeName("LPVOID")] void* pBuffer, [NativeTypeName("DWORD *")] uint* pcbBuf, [NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("DWORD *")] uint* pdwReserved);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWinInetHttpInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWinInetHttpInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWinInetHttpInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, LPVOID, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWinInetHttpInfo*, uint, void*, uint*, int> QueryOption;
+
+            [NativeTypeName("HRESULT (DWORD, LPVOID, DWORD *, DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWinInetHttpInfo*, uint, void*, uint*, uint*, uint*, int> QueryInfo;
         }
     }
 }

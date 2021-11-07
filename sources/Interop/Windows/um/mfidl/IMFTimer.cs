@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E56E4CBD-8F70-49D8-A0F8-EDB3D6AB9BF2")]
     [NativeTypeName("struct IMFTimer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTimer
+    public unsafe partial struct IMFTimer : IMFTimer.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT CancelTimer(IUnknown* punkKey)
         {
             return ((delegate* unmanaged<IMFTimer*, IUnknown*, int>)(lpVtbl[4]))((IMFTimer*)Unsafe.AsPointer(ref this), punkKey);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetTimer([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LONGLONG")] long llClockTime, IMFAsyncCallback* pCallback, IUnknown* punkState, IUnknown** ppunkKey);
+
+            [VtblIndex(4)]
+            HRESULT CancelTimer(IUnknown* punkKey);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimer*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, LONGLONG, IMFAsyncCallback *, IUnknown *, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimer*, uint, long, IMFAsyncCallback*, IUnknown*, IUnknown**, int> SetTimer;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimer*, IUnknown*, int> CancelTimer;
         }
     }
 }

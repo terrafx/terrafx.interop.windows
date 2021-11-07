@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EB87E1BC-3233-11D2-AEC9-00C04FB68820")]
     [NativeTypeName("struct IWbemStatusCodeText : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWbemStatusCodeText
+    public unsafe partial struct IWbemStatusCodeText : IWbemStatusCodeText.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetFacilityCodeText(HRESULT hRes, [NativeTypeName("LCID")] uint LocaleId, [NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** MessageText)
         {
             return ((delegate* unmanaged<IWbemStatusCodeText*, HRESULT, uint, int, ushort**, int>)(lpVtbl[4]))((IWbemStatusCodeText*)Unsafe.AsPointer(ref this), hRes, LocaleId, lFlags, MessageText);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetErrorCodeText(HRESULT hRes, [NativeTypeName("LCID")] uint LocaleId, [NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** MessageText);
+
+            [VtblIndex(4)]
+            HRESULT GetFacilityCodeText(HRESULT hRes, [NativeTypeName("LCID")] uint LocaleId, [NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** MessageText);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemStatusCodeText*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemStatusCodeText*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemStatusCodeText*, uint> Release;
+
+            [NativeTypeName("HRESULT (HRESULT, LCID, long, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemStatusCodeText*, HRESULT, uint, int, ushort**, int> GetErrorCodeText;
+
+            [NativeTypeName("HRESULT (HRESULT, LCID, long, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemStatusCodeText*, HRESULT, uint, int, ushort**, int> GetFacilityCodeText;
         }
     }
 }

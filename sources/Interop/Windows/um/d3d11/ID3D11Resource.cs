@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DC8E63F3-D12B-4952-B47B-5E45026A862D")]
     [NativeTypeName("struct ID3D11Resource : ID3D11DeviceChild")]
     [NativeInheritance("ID3D11DeviceChild")]
-    public unsafe partial struct ID3D11Resource
+    public unsafe partial struct ID3D11Resource : ID3D11Resource.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,51 @@ namespace TerraFX.Interop
         public uint GetEvictionPriority()
         {
             return ((delegate* unmanaged<ID3D11Resource*, uint>)(lpVtbl[9]))((ID3D11Resource*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ID3D11DeviceChild.Interface
+        {
+            [VtblIndex(7)]
+            void GetType(D3D11_RESOURCE_DIMENSION* pResourceDimension);
+
+            [VtblIndex(8)]
+            void SetEvictionPriority(uint EvictionPriority);
+
+            [VtblIndex(9)]
+            uint GetEvictionPriority();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Resource*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Resource*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Resource*, uint> Release;
+
+            [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Resource*, ID3D11Device**, void> GetDevice;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Resource*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Resource*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Resource*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("void (D3D11_RESOURCE_DIMENSION *) __attribute__((stdcall))")]
+            public new delegate* unmanaged<ID3D11Resource*, D3D11_RESOURCE_DIMENSION*, void> GetType;
+
+            [NativeTypeName("void (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Resource*, uint, void> SetEvictionPriority;
+
+            [NativeTypeName("UINT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Resource*, uint> GetEvictionPriority;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("92CA9DCD-5622-4BBA-A805-5E9F541BD8C9")]
     [NativeTypeName("struct IObjectArray : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IObjectArray
+    public unsafe partial struct IObjectArray : IObjectArray.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetAt(uint uiIndex, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IObjectArray*, uint, Guid*, void**, int>)(lpVtbl[4]))((IObjectArray*)Unsafe.AsPointer(ref this), uiIndex, riid, ppv);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCount(uint* pcObjects);
+
+            [VtblIndex(4)]
+            HRESULT GetAt(uint uiIndex, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectArray*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectArray*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectArray*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectArray*, uint*, int> GetCount;
+
+            [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectArray*, uint, Guid*, void**, int> GetAt;
         }
     }
 }

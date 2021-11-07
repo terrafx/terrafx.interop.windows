@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct IAMFilterGraphCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMFilterGraphCallback
+    public unsafe partial struct IAMFilterGraphCallback : IAMFilterGraphCallback.Interface
     {
         public void** lpVtbl;
 
@@ -42,6 +42,27 @@ namespace TerraFX.Interop
         public HRESULT UnableToRender(IPin* pPin)
         {
             return ((delegate* unmanaged<IAMFilterGraphCallback*, IPin*, int>)(lpVtbl[3]))((IAMFilterGraphCallback*)Unsafe.AsPointer(ref this), pPin);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT UnableToRender(IPin* pPin);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMFilterGraphCallback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMFilterGraphCallback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMFilterGraphCallback*, uint> Release;
+
+            [NativeTypeName("HRESULT (IPin *)")]
+            public delegate* unmanaged<IAMFilterGraphCallback*, IPin*, int> UnableToRender;
         }
     }
 }

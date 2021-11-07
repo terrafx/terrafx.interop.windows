@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("651B9AD0-0FC7-4AA9-9538-D89931010741")]
     [NativeTypeName("struct IMediaObjectInPlace : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMediaObjectInPlace
+    public unsafe partial struct IMediaObjectInPlace : IMediaObjectInPlace.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT GetLatency([NativeTypeName("REFERENCE_TIME *")] long* pLatencyTime)
         {
             return ((delegate* unmanaged<IMediaObjectInPlace*, long*, int>)(lpVtbl[5]))((IMediaObjectInPlace*)Unsafe.AsPointer(ref this), pLatencyTime);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Process([NativeTypeName("ULONG")] uint ulSize, byte* pData, [NativeTypeName("REFERENCE_TIME")] long refTimeStart, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(4)]
+            HRESULT Clone(IMediaObjectInPlace** ppMediaObject);
+
+            [VtblIndex(5)]
+            HRESULT GetLatency([NativeTypeName("REFERENCE_TIME *")] long* pLatencyTime);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObjectInPlace*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObjectInPlace*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObjectInPlace*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, BYTE *, REFERENCE_TIME, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObjectInPlace*, uint, byte*, long, uint, int> Process;
+
+            [NativeTypeName("HRESULT (IMediaObjectInPlace **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObjectInPlace*, IMediaObjectInPlace**, int> Clone;
+
+            [NativeTypeName("HRESULT (REFERENCE_TIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMediaObjectInPlace*, long*, int> GetLatency;
         }
     }
 }

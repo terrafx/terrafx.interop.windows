@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F5E2-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLUrnCollection : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLUrnCollection
+    public unsafe partial struct IHTMLUrnCollection : IHTMLUrnCollection.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,45 @@ namespace TerraFX.Interop
         public HRESULT item([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** ppUrn)
         {
             return ((delegate* unmanaged<IHTMLUrnCollection*, int, ushort**, int>)(lpVtbl[8]))((IHTMLUrnCollection*)Unsafe.AsPointer(ref this), index, ppUrn);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT item([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** ppUrn);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLUrnCollection*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLUrnCollection*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLUrnCollection*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLUrnCollection*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLUrnCollection*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLUrnCollection*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLUrnCollection*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLUrnCollection*, int*, int> get_length;
+
+            [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLUrnCollection*, int, ushort**, int> item;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("77E425FC-CBF9-4307-BA6A-BB5727745661")]
     [NativeTypeName("struct IDeskBandInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDeskBandInfo
+    public unsafe partial struct IDeskBandInfo : IDeskBandInfo.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetDefaultBandWidth([NativeTypeName("DWORD")] uint dwBandID, [NativeTypeName("DWORD")] uint dwViewMode, int* pnWidth)
         {
             return ((delegate* unmanaged<IDeskBandInfo*, uint, uint, int*, int>)(lpVtbl[3]))((IDeskBandInfo*)Unsafe.AsPointer(ref this), dwBandID, dwViewMode, pnWidth);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDefaultBandWidth([NativeTypeName("DWORD")] uint dwBandID, [NativeTypeName("DWORD")] uint dwViewMode, int* pnWidth);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBandInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBandInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBandInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, int *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDeskBandInfo*, uint, uint, int*, int> GetDefaultBandWidth;
         }
     }
 }

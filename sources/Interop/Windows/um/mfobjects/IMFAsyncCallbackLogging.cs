@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C7A4DCA1-F5F0-47B6-B92B-BF0106D25791")]
     [NativeTypeName("struct IMFAsyncCallbackLogging : IMFAsyncCallback")]
     [NativeInheritance("IMFAsyncCallback")]
-    public unsafe partial struct IMFAsyncCallbackLogging
+    public unsafe partial struct IMFAsyncCallbackLogging : IMFAsyncCallbackLogging.Interface
     {
         public void** lpVtbl;
 
@@ -66,6 +66,40 @@ namespace TerraFX.Interop
         public uint GetObjectTag()
         {
             return ((delegate* unmanaged<IMFAsyncCallbackLogging*, uint>)(lpVtbl[6]))((IMFAsyncCallbackLogging*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IMFAsyncCallback.Interface
+        {
+            [VtblIndex(5)]
+            void* GetObjectPointer();
+
+            [VtblIndex(6)]
+            [return: NativeTypeName("DWORD")]
+            uint GetObjectTag();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncCallbackLogging*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncCallbackLogging*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncCallbackLogging*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncCallbackLogging*, uint*, uint*, int> GetParameters;
+
+            [NativeTypeName("HRESULT (IMFAsyncResult *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncCallbackLogging*, IMFAsyncResult*, int> Invoke;
+
+            [NativeTypeName("void *() __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncCallbackLogging*, void*> GetObjectPointer;
+
+            [NativeTypeName("DWORD () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFAsyncCallbackLogging*, uint> GetObjectTag;
         }
     }
 }

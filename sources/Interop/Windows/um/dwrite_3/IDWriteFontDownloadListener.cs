@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B06FE5B9-43EC-4393-881B-DBE4DC72FDA7")]
     [NativeTypeName("struct IDWriteFontDownloadListener : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWriteFontDownloadListener
+    public unsafe partial struct IDWriteFontDownloadListener : IDWriteFontDownloadListener.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public void DownloadCompleted(IDWriteFontDownloadQueue* downloadQueue, IUnknown* context, HRESULT downloadResult)
         {
             ((delegate* unmanaged<IDWriteFontDownloadListener*, IDWriteFontDownloadQueue*, IUnknown*, HRESULT, void>)(lpVtbl[3]))((IDWriteFontDownloadListener*)Unsafe.AsPointer(ref this), downloadQueue, context, downloadResult);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void DownloadCompleted(IDWriteFontDownloadQueue* downloadQueue, IUnknown* context, HRESULT downloadResult);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontDownloadListener*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontDownloadListener*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontDownloadListener*, uint> Release;
+
+            [NativeTypeName("void (IDWriteFontDownloadQueue *, IUnknown *, HRESULT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontDownloadListener*, IDWriteFontDownloadQueue*, IUnknown*, HRESULT, void> DownloadCompleted;
         }
     }
 }

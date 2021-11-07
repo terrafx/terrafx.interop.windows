@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct IDirectDrawPalette : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDirectDrawPalette
+    public unsafe partial struct IDirectDrawPalette : IDirectDrawPalette.Interface
     {
         public void** lpVtbl;
 
@@ -63,6 +63,45 @@ namespace TerraFX.Interop
         public HRESULT SetEntries([NativeTypeName("DWORD")] uint param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPPALETTEENTRY")] PALETTEENTRY* param3)
         {
             return ((delegate* unmanaged<IDirectDrawPalette*, uint, uint, uint, PALETTEENTRY*, int>)(lpVtbl[6]))((IDirectDrawPalette*)Unsafe.AsPointer(ref this), param0, param1, param2, param3);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCaps([NativeTypeName("LPDWORD")] uint* param0);
+
+            [VtblIndex(4)]
+            HRESULT GetEntries([NativeTypeName("DWORD")] uint param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPPALETTEENTRY")] PALETTEENTRY* param3);
+
+            [VtblIndex(5)]
+            HRESULT Initialize([NativeTypeName("LPDIRECTDRAW")] IDirectDraw* param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("LPPALETTEENTRY")] PALETTEENTRY* param2);
+
+            [VtblIndex(6)]
+            HRESULT SetEntries([NativeTypeName("DWORD")] uint param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPPALETTEENTRY")] PALETTEENTRY* param3);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawPalette*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawPalette*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawPalette*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPDWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawPalette*, uint*, int> GetCaps;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, DWORD, LPPALETTEENTRY) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawPalette*, uint, uint, uint, PALETTEENTRY*, int> GetEntries;
+
+            [NativeTypeName("HRESULT (LPDIRECTDRAW, DWORD, LPPALETTEENTRY) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawPalette*, IDirectDraw*, uint, PALETTEENTRY*, int> Initialize;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, DWORD, LPPALETTEENTRY) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawPalette*, uint, uint, uint, PALETTEENTRY*, int> SetEntries;
         }
     }
 }

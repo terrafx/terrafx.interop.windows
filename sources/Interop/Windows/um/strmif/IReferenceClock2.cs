@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("36B73885-C2C8-11CF-8B46-00805F6CEF60")]
     [NativeTypeName("struct IReferenceClock2 : IReferenceClock")]
     [NativeInheritance("IReferenceClock")]
-    public unsafe partial struct IReferenceClock2
+    public unsafe partial struct IReferenceClock2 : IReferenceClock2.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,34 @@ namespace TerraFX.Interop
         public HRESULT Unadvise([NativeTypeName("DWORD_PTR")] nuint dwAdviseCookie)
         {
             return ((delegate* unmanaged<IReferenceClock2*, nuint, int>)(lpVtbl[6]))((IReferenceClock2*)Unsafe.AsPointer(ref this), dwAdviseCookie);
+        }
+
+        public interface Interface : IReferenceClock.Interface
+        {
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IReferenceClock2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IReferenceClock2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IReferenceClock2*, uint> Release;
+
+            [NativeTypeName("HRESULT (REFERENCE_TIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IReferenceClock2*, long*, int> GetTime;
+
+            [NativeTypeName("HRESULT (REFERENCE_TIME, REFERENCE_TIME, HEVENT, DWORD_PTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IReferenceClock2*, long, long, HEVENT, nuint*, int> AdviseTime;
+
+            [NativeTypeName("HRESULT (REFERENCE_TIME, REFERENCE_TIME, HSEMAPHORE, DWORD_PTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IReferenceClock2*, long, long, HSEMAPHORE, nuint*, int> AdvisePeriodic;
+
+            [NativeTypeName("HRESULT (DWORD_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IReferenceClock2*, nuint, int> Unadvise;
         }
     }
 }

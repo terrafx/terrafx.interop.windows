@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A9521922-0812-4D44-9EC3-7FD38C726F3D")]
     [NativeTypeName("struct IRegTreeItem : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRegTreeItem
+    public unsafe partial struct IRegTreeItem : IRegTreeItem.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT SetCheckState(BOOL bCheck)
         {
             return ((delegate* unmanaged<IRegTreeItem*, BOOL, int>)(lpVtbl[4]))((IRegTreeItem*)Unsafe.AsPointer(ref this), bCheck);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCheckState(BOOL* pbCheck);
+
+            [VtblIndex(4)]
+            HRESULT SetCheckState(BOOL bCheck);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRegTreeItem*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRegTreeItem*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRegTreeItem*, uint> Release;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRegTreeItem*, BOOL*, int> GetCheckState;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRegTreeItem*, BOOL, int> SetCheckState;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7BD67CF8-BF7D-43E6-AF8D-B170EE0C0110")]
     [NativeTypeName("struct IAudioFrameNativeFactory : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IAudioFrameNativeFactory
+    public unsafe partial struct IAudioFrameNativeFactory : IAudioFrameNativeFactory.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,36 @@ namespace TerraFX.Interop
         public HRESULT CreateFromMFSample(IMFSample* data, BOOL forceReadOnly, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
         {
             return ((delegate* unmanaged<IAudioFrameNativeFactory*, IMFSample*, BOOL, Guid*, void**, int>)(lpVtbl[6]))((IAudioFrameNativeFactory*)Unsafe.AsPointer(ref this), data, forceReadOnly, riid, ppv);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT CreateFromMFSample(IMFSample* data, BOOL forceReadOnly, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioFrameNativeFactory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioFrameNativeFactory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioFrameNativeFactory*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioFrameNativeFactory*, uint*, Guid**, int> GetIids;
+
+            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioFrameNativeFactory*, HSTRING*, int> GetRuntimeClassName;
+
+            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioFrameNativeFactory*, TrustLevel*, int> GetTrustLevel;
+
+            [NativeTypeName("HRESULT (IMFSample *, BOOL, const IID &, LPVOID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioFrameNativeFactory*, IMFSample*, BOOL, Guid*, void**, int> CreateFromMFSample;
         }
     }
 }

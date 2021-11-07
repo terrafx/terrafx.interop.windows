@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7A4FB5AF-479F-4074-BB40-CE6722E43C82")]
     [NativeTypeName("struct IVMRImageCompositor : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IVMRImageCompositor
+    public unsafe partial struct IVMRImageCompositor : IVMRImageCompositor.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT CompositeImage(IUnknown* pD3DDevice, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* pddsRenderTarget, AM_MEDIA_TYPE* pmtRenderTarget, [NativeTypeName("REFERENCE_TIME")] long rtStart, [NativeTypeName("REFERENCE_TIME")] long rtEnd, [NativeTypeName("DWORD")] uint dwClrBkGnd, VMRVIDEOSTREAMINFO* pVideoStreamInfo, uint cStreams)
         {
             return ((delegate* unmanaged<IVMRImageCompositor*, IUnknown*, IDirectDrawSurface7*, AM_MEDIA_TYPE*, long, long, uint, VMRVIDEOSTREAMINFO*, uint, int>)(lpVtbl[6]))((IVMRImageCompositor*)Unsafe.AsPointer(ref this), pD3DDevice, pddsRenderTarget, pmtRenderTarget, rtStart, rtEnd, dwClrBkGnd, pVideoStreamInfo, cStreams);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT InitCompositionTarget(IUnknown* pD3DDevice, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* pddsRenderTarget);
+
+            [VtblIndex(4)]
+            HRESULT TermCompositionTarget(IUnknown* pD3DDevice, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* pddsRenderTarget);
+
+            [VtblIndex(5)]
+            HRESULT SetStreamMediaType([NativeTypeName("DWORD")] uint dwStrmID, AM_MEDIA_TYPE* pmt, BOOL fTexture);
+
+            [VtblIndex(6)]
+            HRESULT CompositeImage(IUnknown* pD3DDevice, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* pddsRenderTarget, AM_MEDIA_TYPE* pmtRenderTarget, [NativeTypeName("REFERENCE_TIME")] long rtStart, [NativeTypeName("REFERENCE_TIME")] long rtEnd, [NativeTypeName("DWORD")] uint dwClrBkGnd, VMRVIDEOSTREAMINFO* pVideoStreamInfo, uint cStreams);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRImageCompositor*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRImageCompositor*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRImageCompositor*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *, LPDIRECTDRAWSURFACE7) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRImageCompositor*, IUnknown*, IDirectDrawSurface7*, int> InitCompositionTarget;
+
+            [NativeTypeName("HRESULT (IUnknown *, LPDIRECTDRAWSURFACE7) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRImageCompositor*, IUnknown*, IDirectDrawSurface7*, int> TermCompositionTarget;
+
+            [NativeTypeName("HRESULT (DWORD, AM_MEDIA_TYPE *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRImageCompositor*, uint, AM_MEDIA_TYPE*, BOOL, int> SetStreamMediaType;
+
+            [NativeTypeName("HRESULT (IUnknown *, LPDIRECTDRAWSURFACE7, AM_MEDIA_TYPE *, REFERENCE_TIME, REFERENCE_TIME, DWORD, VMRVIDEOSTREAMINFO *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRImageCompositor*, IUnknown*, IDirectDrawSurface7*, AM_MEDIA_TYPE*, long, long, uint, VMRVIDEOSTREAMINFO*, uint, int> CompositeImage;
         }
     }
 }

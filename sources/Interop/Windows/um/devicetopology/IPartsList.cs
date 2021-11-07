@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6DAA848C-5EB0-45CC-AEA5-998A2CDA1FFB")]
     [NativeTypeName("struct IPartsList : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPartsList
+    public unsafe partial struct IPartsList : IPartsList.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetPart(uint nIndex, IPart** ppPart)
         {
             return ((delegate* unmanaged<IPartsList*, uint, IPart**, int>)(lpVtbl[4]))((IPartsList*)Unsafe.AsPointer(ref this), nIndex, ppPart);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCount(uint* pCount);
+
+            [VtblIndex(4)]
+            HRESULT GetPart(uint nIndex, IPart** ppPart);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPartsList*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPartsList*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPartsList*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPartsList*, uint*, int> GetCount;
+
+            [NativeTypeName("HRESULT (UINT, IPart **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPartsList*, uint, IPart**, int> GetPart;
         }
     }
 }

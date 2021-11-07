@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("60ECCBC1-378D-4DF1-894C-F8AC5CE4D7DD")]
     [NativeTypeName("struct ID3D12DebugDevice2 : ID3D12DebugDevice")]
     [NativeInheritance("ID3D12DebugDevice")]
-    public unsafe partial struct ID3D12DebugDevice2
+    public unsafe partial struct ID3D12DebugDevice2 : ID3D12DebugDevice2.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,42 @@ namespace TerraFX.Interop
         public HRESULT GetDebugParameter(D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, uint DataSize)
         {
             return ((delegate* unmanaged<ID3D12DebugDevice2*, D3D12_DEBUG_DEVICE_PARAMETER_TYPE, void*, uint, int>)(lpVtbl[7]))((ID3D12DebugDevice2*)Unsafe.AsPointer(ref this), Type, pData, DataSize);
+        }
+
+        public interface Interface : ID3D12DebugDevice.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT SetDebugParameter(D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, [NativeTypeName("const void *")] void* pData, uint DataSize);
+
+            [VtblIndex(7)]
+            HRESULT GetDebugParameter(D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, uint DataSize);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugDevice2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugDevice2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugDevice2*, uint> Release;
+
+            [NativeTypeName("HRESULT (D3D12_DEBUG_FEATURE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugDevice2*, D3D12_DEBUG_FEATURE, int> SetFeatureMask;
+
+            [NativeTypeName("D3D12_DEBUG_FEATURE () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugDevice2*, D3D12_DEBUG_FEATURE> GetFeatureMask;
+
+            [NativeTypeName("HRESULT (D3D12_RLDO_FLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugDevice2*, D3D12_RLDO_FLAGS, int> ReportLiveDeviceObjects;
+
+            [NativeTypeName("HRESULT (D3D12_DEBUG_DEVICE_PARAMETER_TYPE, const void *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugDevice2*, D3D12_DEBUG_DEVICE_PARAMETER_TYPE, void*, uint, int> SetDebugParameter;
+
+            [NativeTypeName("HRESULT (D3D12_DEBUG_DEVICE_PARAMETER_TYPE, void *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugDevice2*, D3D12_DEBUG_DEVICE_PARAMETER_TYPE, void*, uint, int> GetDebugParameter;
         }
     }
 }

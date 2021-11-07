@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("08256209-099A-4B34-B86D-C22B110E7771")]
     [NativeTypeName("struct IDWriteLocalizedStrings : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWriteLocalizedStrings
+    public unsafe partial struct IDWriteLocalizedStrings : IDWriteLocalizedStrings.Interface
     {
         public void** lpVtbl;
 
@@ -80,6 +80,58 @@ namespace TerraFX.Interop
         public HRESULT GetString([NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR *")] ushort* stringBuffer, [NativeTypeName("UINT32")] uint size)
         {
             return ((delegate* unmanaged<IDWriteLocalizedStrings*, uint, ushort*, uint, int>)(lpVtbl[8]))((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this), index, stringBuffer, size);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            [return: NativeTypeName("UINT32")]
+            uint GetCount();
+
+            [VtblIndex(4)]
+            HRESULT FindLocaleName([NativeTypeName("const WCHAR *")] ushort* localeName, [NativeTypeName("UINT32 *")] uint* index, BOOL* exists);
+
+            [VtblIndex(5)]
+            HRESULT GetLocaleNameLength([NativeTypeName("UINT32")] uint index, [NativeTypeName("UINT32 *")] uint* length);
+
+            [VtblIndex(6)]
+            HRESULT GetLocaleName([NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR *")] ushort* localeName, [NativeTypeName("UINT32")] uint size);
+
+            [VtblIndex(7)]
+            HRESULT GetStringLength([NativeTypeName("UINT32")] uint index, [NativeTypeName("UINT32 *")] uint* length);
+
+            [VtblIndex(8)]
+            HRESULT GetString([NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR *")] ushort* stringBuffer, [NativeTypeName("UINT32")] uint size);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteLocalizedStrings*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteLocalizedStrings*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteLocalizedStrings*, uint> Release;
+
+            [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteLocalizedStrings*, uint> GetCount;
+
+            [NativeTypeName("HRESULT (const WCHAR *, UINT32 *, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteLocalizedStrings*, ushort*, uint*, BOOL*, int> FindLocaleName;
+
+            [NativeTypeName("HRESULT (UINT32, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteLocalizedStrings*, uint, uint*, int> GetLocaleNameLength;
+
+            [NativeTypeName("HRESULT (UINT32, WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteLocalizedStrings*, uint, ushort*, uint, int> GetLocaleName;
+
+            [NativeTypeName("HRESULT (UINT32, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteLocalizedStrings*, uint, uint*, int> GetStringLength;
+
+            [NativeTypeName("HRESULT (UINT32, WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteLocalizedStrings*, uint, ushort*, uint, int> GetString;
         }
     }
 }

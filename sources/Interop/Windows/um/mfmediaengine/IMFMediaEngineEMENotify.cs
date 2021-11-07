@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9E184D15-CDB7-4F86-B49E-566689F4A601")]
     [NativeTypeName("struct IMFMediaEngineEMENotify : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaEngineEMENotify
+    public unsafe partial struct IMFMediaEngineEMENotify : IMFMediaEngineEMENotify.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public void WaitingForKey()
         {
             ((delegate* unmanaged<IMFMediaEngineEMENotify*, void>)(lpVtbl[4]))((IMFMediaEngineEMENotify*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void Encrypted([NativeTypeName("const BYTE *")] byte* pbInitData, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("BSTR")] ushort* bstrInitDataType);
+
+            [VtblIndex(4)]
+            void WaitingForKey();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineEMENotify*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineEMENotify*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineEMENotify*, uint> Release;
+
+            [NativeTypeName("void (const BYTE *, DWORD, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineEMENotify*, byte*, uint, ushort*, void> Encrypted;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineEMENotify*, void> WaitingForKey;
         }
     }
 }

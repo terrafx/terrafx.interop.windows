@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BBA65864-965F-4A5F-855F-F074BDBF3A7B")]
     [NativeTypeName("struct IAppxBundleFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxBundleFactory
+    public unsafe partial struct IAppxBundleFactory : IAppxBundleFactory.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT CreateBundleManifestReader(IStream* inputStream, IAppxBundleManifestReader** manifestReader)
         {
             return ((delegate* unmanaged<IAppxBundleFactory*, IStream*, IAppxBundleManifestReader**, int>)(lpVtbl[5]))((IAppxBundleFactory*)Unsafe.AsPointer(ref this), inputStream, manifestReader);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateBundleWriter(IStream* outputStream, [NativeTypeName("UINT64")] ulong bundleVersion, IAppxBundleWriter** bundleWriter);
+
+            [VtblIndex(4)]
+            HRESULT CreateBundleReader(IStream* inputStream, IAppxBundleReader** bundleReader);
+
+            [VtblIndex(5)]
+            HRESULT CreateBundleManifestReader(IStream* inputStream, IAppxBundleManifestReader** manifestReader);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleFactory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleFactory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleFactory*, uint> Release;
+
+            [NativeTypeName("HRESULT (IStream *, UINT64, IAppxBundleWriter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleFactory*, IStream*, ulong, IAppxBundleWriter**, int> CreateBundleWriter;
+
+            [NativeTypeName("HRESULT (IStream *, IAppxBundleReader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleFactory*, IStream*, IAppxBundleReader**, int> CreateBundleReader;
+
+            [NativeTypeName("HRESULT (IStream *, IAppxBundleManifestReader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleFactory*, IStream*, IAppxBundleManifestReader**, int> CreateBundleManifestReader;
         }
     }
 }

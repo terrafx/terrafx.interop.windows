@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510525-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGMarkerElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGMarkerElement
+    public unsafe partial struct ISVGMarkerElement : ISVGMarkerElement.Interface
     {
         public void** lpVtbl;
 
@@ -177,6 +177,129 @@ namespace TerraFX.Interop
         public HRESULT setOrientToAngle(ISVGAngle* pSVGAngle)
         {
             return ((delegate* unmanaged<ISVGMarkerElement*, ISVGAngle*, int>)(lpVtbl[22]))((ISVGMarkerElement*)Unsafe.AsPointer(ref this), pSVGAngle);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_refX(ISVGAnimatedLength* v);
+
+            [VtblIndex(8)]
+            HRESULT get_refX(ISVGAnimatedLength** p);
+
+            [VtblIndex(9)]
+            HRESULT putref_refY(ISVGAnimatedLength* v);
+
+            [VtblIndex(10)]
+            HRESULT get_refY(ISVGAnimatedLength** p);
+
+            [VtblIndex(11)]
+            HRESULT putref_markerUnits(ISVGAnimatedEnumeration* v);
+
+            [VtblIndex(12)]
+            HRESULT get_markerUnits(ISVGAnimatedEnumeration** p);
+
+            [VtblIndex(13)]
+            HRESULT putref_markerWidth(ISVGAnimatedLength* v);
+
+            [VtblIndex(14)]
+            HRESULT get_markerWidth(ISVGAnimatedLength** p);
+
+            [VtblIndex(15)]
+            HRESULT putref_markerHeight(ISVGAnimatedLength* v);
+
+            [VtblIndex(16)]
+            HRESULT get_markerHeight(ISVGAnimatedLength** p);
+
+            [VtblIndex(17)]
+            HRESULT putref_orientType(ISVGAnimatedEnumeration* v);
+
+            [VtblIndex(18)]
+            HRESULT get_orientType(ISVGAnimatedEnumeration** p);
+
+            [VtblIndex(19)]
+            HRESULT putref_orientAngle(ISVGAnimatedAngle* v);
+
+            [VtblIndex(20)]
+            HRESULT get_orientAngle(ISVGAnimatedAngle** p);
+
+            [VtblIndex(21)]
+            HRESULT setOrientToAuto();
+
+            [VtblIndex(22)]
+            HRESULT setOrientToAngle(ISVGAngle* pSVGAngle);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMarkerElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMarkerElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMarkerElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMarkerElement*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMarkerElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMarkerElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMarkerElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMarkerElement*, ISVGAnimatedLength*, int> putref_refX;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMarkerElement*, ISVGAnimatedLength**, int> get_refX;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMarkerElement*, ISVGAnimatedLength*, int> putref_refY;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMarkerElement*, ISVGAnimatedLength**, int> get_refY;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedEnumeration *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMarkerElement*, ISVGAnimatedEnumeration*, int> putref_markerUnits;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedEnumeration **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMarkerElement*, ISVGAnimatedEnumeration**, int> get_markerUnits;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMarkerElement*, ISVGAnimatedLength*, int> putref_markerWidth;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMarkerElement*, ISVGAnimatedLength**, int> get_markerWidth;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMarkerElement*, ISVGAnimatedLength*, int> putref_markerHeight;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMarkerElement*, ISVGAnimatedLength**, int> get_markerHeight;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedEnumeration *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMarkerElement*, ISVGAnimatedEnumeration*, int> putref_orientType;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedEnumeration **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMarkerElement*, ISVGAnimatedEnumeration**, int> get_orientType;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedAngle *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMarkerElement*, ISVGAnimatedAngle*, int> putref_orientAngle;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedAngle **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMarkerElement*, ISVGAnimatedAngle**, int> get_orientAngle;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMarkerElement*, int> setOrientToAuto;
+
+            [NativeTypeName("HRESULT (ISVGAngle *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGMarkerElement*, ISVGAngle*, int> setOrientToAngle;
         }
     }
 }

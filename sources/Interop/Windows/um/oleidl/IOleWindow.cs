@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000114-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IOleWindow : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IOleWindow
+    public unsafe partial struct IOleWindow : IOleWindow.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
         {
             return ((delegate* unmanaged<IOleWindow*, BOOL, int>)(lpVtbl[4]))((IOleWindow*)Unsafe.AsPointer(ref this), fEnterMode);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetWindow(HWND* phwnd);
+
+            [VtblIndex(4)]
+            HRESULT ContextSensitiveHelp(BOOL fEnterMode);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleWindow*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleWindow*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleWindow*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleWindow*, HWND*, int> GetWindow;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleWindow*, BOOL, int> ContextSensitiveHelp;
         }
     }
 }

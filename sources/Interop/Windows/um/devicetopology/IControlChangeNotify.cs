@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A09513ED-C709-4D21-BD7B-5F34C47F3947")]
     [NativeTypeName("struct IControlChangeNotify : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IControlChangeNotify
+    public unsafe partial struct IControlChangeNotify : IControlChangeNotify.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OnNotify([NativeTypeName("DWORD")] uint dwSenderProcessId, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
         {
             return ((delegate* unmanaged<IControlChangeNotify*, uint, Guid*, int>)(lpVtbl[3]))((IControlChangeNotify*)Unsafe.AsPointer(ref this), dwSenderProcessId, pguidEventContext);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnNotify([NativeTypeName("DWORD")] uint dwSenderProcessId, [NativeTypeName("LPCGUID")] Guid* pguidEventContext);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IControlChangeNotify*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IControlChangeNotify*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IControlChangeNotify*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IControlChangeNotify*, uint, Guid*, int> OnNotify;
         }
     }
 }

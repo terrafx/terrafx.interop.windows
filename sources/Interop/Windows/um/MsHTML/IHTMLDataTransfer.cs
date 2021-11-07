@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F4B3-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDataTransfer : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDataTransfer
+    public unsafe partial struct IHTMLDataTransfer : IHTMLDataTransfer.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,75 @@ namespace TerraFX.Interop
         public HRESULT get_effectAllowed([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLDataTransfer*, ushort**, int>)(lpVtbl[13]))((IHTMLDataTransfer*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT setData([NativeTypeName("BSTR")] ushort* format, VARIANT* data, [NativeTypeName("VARIANT_BOOL *")] short* pret);
+
+            [VtblIndex(8)]
+            HRESULT getData([NativeTypeName("BSTR")] ushort* format, VARIANT* pvarRet);
+
+            [VtblIndex(9)]
+            HRESULT clearData([NativeTypeName("BSTR")] ushort* format, [NativeTypeName("VARIANT_BOOL *")] short* pret);
+
+            [VtblIndex(10)]
+            HRESULT put_dropEffect([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(11)]
+            HRESULT get_dropEffect([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(12)]
+            HRESULT put_effectAllowed([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(13)]
+            HRESULT get_effectAllowed([NativeTypeName("BSTR *")] ushort** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDataTransfer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDataTransfer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDataTransfer*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDataTransfer*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDataTransfer*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDataTransfer*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDataTransfer*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDataTransfer*, ushort*, VARIANT*, short*, int> setData;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDataTransfer*, ushort*, VARIANT*, int> getData;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDataTransfer*, ushort*, short*, int> clearData;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDataTransfer*, ushort*, int> put_dropEffect;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDataTransfer*, ushort**, int> get_dropEffect;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDataTransfer*, ushort*, int> put_effectAllowed;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDataTransfer*, ushort**, int> get_effectAllowed;
         }
     }
 }

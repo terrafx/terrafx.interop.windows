@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B1AB0825-4542-4A4B-8617-6DDE6E8F6201")]
     [NativeTypeName("struct IDMLPageable : IDMLDeviceChild")]
     [NativeInheritance("IDMLDeviceChild")]
-    public unsafe partial struct IDMLPageable
+    public unsafe partial struct IDMLPageable : IDMLPageable.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,37 @@ namespace TerraFX.Interop
         public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IDMLPageable*, Guid*, void**, int>)(lpVtbl[7]))((IDMLPageable*)Unsafe.AsPointer(ref this), riid, ppv);
+        }
+
+        public interface Interface : IDMLDeviceChild.Interface
+        {
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLPageable*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLPageable*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLPageable*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLPageable*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLPageable*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, IUnknown *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLPageable*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLPageable*, ushort*, int> SetName;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMLPageable*, Guid*, void**, int> GetDevice;
         }
     }
 }

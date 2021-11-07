@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BE7A9CC9-5F9E-11D2-960F-00C04F8EE628")]
     [NativeTypeName("struct ISpEventSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpEventSink
+    public unsafe partial struct ISpEventSink : ISpEventSink.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetEventInterest([NativeTypeName("ULONGLONG *")] ulong* pullEventInterest)
         {
             return ((delegate* unmanaged<ISpEventSink*, ulong*, int>)(lpVtbl[4]))((ISpEventSink*)Unsafe.AsPointer(ref this), pullEventInterest);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddEvents([NativeTypeName("const SPEVENT *")] SPEVENT* pEventArray, [NativeTypeName("ULONG")] uint ulCount);
+
+            [VtblIndex(4)]
+            HRESULT GetEventInterest([NativeTypeName("ULONGLONG *")] ulong* pullEventInterest);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpEventSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpEventSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpEventSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (const SPEVENT *, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpEventSink*, SPEVENT*, uint, int> AddEvents;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpEventSink*, ulong*, int> GetEventInterest;
         }
     }
 }

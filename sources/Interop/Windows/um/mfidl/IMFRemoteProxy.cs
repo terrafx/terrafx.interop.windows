@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("994E23AD-1CC2-493C-B9FA-46F1CB040FA4")]
     [NativeTypeName("struct IMFRemoteProxy : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFRemoteProxy
+    public unsafe partial struct IMFRemoteProxy : IMFRemoteProxy.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetRemoteHost([NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IMFRemoteProxy*, Guid*, void**, int>)(lpVtbl[4]))((IMFRemoteProxy*)Unsafe.AsPointer(ref this), riid, ppv);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetRemoteObject([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(4)]
+            HRESULT GetRemoteHost([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRemoteProxy*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRemoteProxy*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRemoteProxy*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRemoteProxy*, Guid*, void**, int> GetRemoteObject;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRemoteProxy*, Guid*, void**, int> GetRemoteHost;
         }
     }
 }

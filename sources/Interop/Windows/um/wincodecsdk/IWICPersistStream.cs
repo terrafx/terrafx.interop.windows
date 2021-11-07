@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00675040-6908-45F8-86A3-49C7DFD6D9AD")]
     [NativeTypeName("struct IWICPersistStream : IPersistStream")]
     [NativeInheritance("IPersistStream")]
-    public unsafe partial struct IWICPersistStream
+    public unsafe partial struct IWICPersistStream : IWICPersistStream.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,48 @@ namespace TerraFX.Interop
         public HRESULT SaveEx(IStream* pIStream, [NativeTypeName("DWORD")] uint dwPersistOptions, BOOL fClearDirty)
         {
             return ((delegate* unmanaged<IWICPersistStream*, IStream*, uint, BOOL, int>)(lpVtbl[9]))((IWICPersistStream*)Unsafe.AsPointer(ref this), pIStream, dwPersistOptions, fClearDirty);
+        }
+
+        public interface Interface : IPersistStream.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT LoadEx(IStream* pIStream, [NativeTypeName("const GUID *")] Guid* pguidPreferredVendor, [NativeTypeName("DWORD")] uint dwPersistOptions);
+
+            [VtblIndex(9)]
+            HRESULT SaveEx(IStream* pIStream, [NativeTypeName("DWORD")] uint dwPersistOptions, BOOL fClearDirty);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPersistStream*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPersistStream*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPersistStream*, uint> Release;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPersistStream*, Guid*, int> GetClassID;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPersistStream*, int> IsDirty;
+
+            [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPersistStream*, IStream*, int> Load;
+
+            [NativeTypeName("HRESULT (IStream *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPersistStream*, IStream*, BOOL, int> Save;
+
+            [NativeTypeName("HRESULT (ULARGE_INTEGER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPersistStream*, ULARGE_INTEGER*, int> GetSizeMax;
+
+            [NativeTypeName("HRESULT (IStream *, const GUID *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPersistStream*, IStream*, Guid*, uint, int> LoadEx;
+
+            [NativeTypeName("HRESULT (IStream *, DWORD, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPersistStream*, IStream*, uint, BOOL, int> SaveEx;
         }
     }
 }

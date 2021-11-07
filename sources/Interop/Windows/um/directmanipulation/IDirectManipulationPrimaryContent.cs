@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C12851E4-1698-4625-B9B1-7CA3EC18630B")]
     [NativeTypeName("struct IDirectManipulationPrimaryContent : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDirectManipulationPrimaryContent
+    public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipulationPrimaryContent.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,75 @@ namespace TerraFX.Interop
         public HRESULT GetCenterPoint(float* centerX, float* centerY)
         {
             return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, float*, float*, int>)(lpVtbl[11]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), centerX, centerY);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetSnapInterval(DIRECTMANIPULATION_MOTION_TYPES motion, float interval, float offset);
+
+            [VtblIndex(4)]
+            HRESULT SetSnapPoints(DIRECTMANIPULATION_MOTION_TYPES motion, [NativeTypeName("const float *")] float* points, [NativeTypeName("DWORD")] uint pointCount);
+
+            [VtblIndex(5)]
+            HRESULT SetSnapType(DIRECTMANIPULATION_MOTION_TYPES motion, DIRECTMANIPULATION_SNAPPOINT_TYPE type);
+
+            [VtblIndex(6)]
+            HRESULT SetSnapCoordinate(DIRECTMANIPULATION_MOTION_TYPES motion, DIRECTMANIPULATION_SNAPPOINT_COORDINATE coordinate, float origin);
+
+            [VtblIndex(7)]
+            HRESULT SetZoomBoundaries(float zoomMinimum, float zoomMaximum);
+
+            [VtblIndex(8)]
+            HRESULT SetHorizontalAlignment(DIRECTMANIPULATION_HORIZONTALALIGNMENT alignment);
+
+            [VtblIndex(9)]
+            HRESULT SetVerticalAlignment(DIRECTMANIPULATION_VERTICALALIGNMENT alignment);
+
+            [VtblIndex(10)]
+            HRESULT GetInertiaEndTransform(float* matrix, [NativeTypeName("DWORD")] uint pointCount);
+
+            [VtblIndex(11)]
+            HRESULT GetCenterPoint(float* centerX, float* centerY);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationPrimaryContent*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationPrimaryContent*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationPrimaryContent*, uint> Release;
+
+            [NativeTypeName("HRESULT (DIRECTMANIPULATION_MOTION_TYPES, float, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_MOTION_TYPES, float, float, int> SetSnapInterval;
+
+            [NativeTypeName("HRESULT (DIRECTMANIPULATION_MOTION_TYPES, const float *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_MOTION_TYPES, float*, uint, int> SetSnapPoints;
+
+            [NativeTypeName("HRESULT (DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_SNAPPOINT_TYPE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_SNAPPOINT_TYPE, int> SetSnapType;
+
+            [NativeTypeName("HRESULT (DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_SNAPPOINT_COORDINATE, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_SNAPPOINT_COORDINATE, float, int> SetSnapCoordinate;
+
+            [NativeTypeName("HRESULT (float, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationPrimaryContent*, float, float, int> SetZoomBoundaries;
+
+            [NativeTypeName("HRESULT (DIRECTMANIPULATION_HORIZONTALALIGNMENT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_HORIZONTALALIGNMENT, int> SetHorizontalAlignment;
+
+            [NativeTypeName("HRESULT (DIRECTMANIPULATION_VERTICALALIGNMENT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_VERTICALALIGNMENT, int> SetVerticalAlignment;
+
+            [NativeTypeName("HRESULT (float *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationPrimaryContent*, float*, uint, int> GetInertiaEndTransform;
+
+            [NativeTypeName("HRESULT (float *, float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationPrimaryContent*, float*, float*, int> GetCenterPoint;
         }
     }
 }

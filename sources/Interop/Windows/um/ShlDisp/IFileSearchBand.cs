@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2D91EEA1-9932-11D2-BE86-00A0C9A83DA1")]
     [NativeTypeName("struct IFileSearchBand : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IFileSearchBand
+    public unsafe partial struct IFileSearchBand : IFileSearchBand.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,63 @@ namespace TerraFX.Interop
         public HRESULT get_QueryFile(VARIANT* pvarFile)
         {
             return ((delegate* unmanaged<IFileSearchBand*, VARIANT*, int>)(lpVtbl[11]))((IFileSearchBand*)Unsafe.AsPointer(ref this), pvarFile);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT SetFocus();
+
+            [VtblIndex(8)]
+            HRESULT SetSearchParameters([NativeTypeName("BSTR *")] ushort** pbstrSearchID, [NativeTypeName("VARIANT_BOOL")] short bNavToResults, VARIANT* pvarScope, VARIANT* pvarQueryFile);
+
+            [VtblIndex(9)]
+            HRESULT get_SearchID([NativeTypeName("BSTR *")] ushort** pbstrSearchID);
+
+            [VtblIndex(10)]
+            HRESULT get_Scope(VARIANT* pvarScope);
+
+            [VtblIndex(11)]
+            HRESULT get_QueryFile(VARIANT* pvarFile);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSearchBand*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSearchBand*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSearchBand*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSearchBand*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSearchBand*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSearchBand*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSearchBand*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSearchBand*, int> SetFocus;
+
+            [NativeTypeName("HRESULT (BSTR *, VARIANT_BOOL, VARIANT *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSearchBand*, ushort**, short, VARIANT*, VARIANT*, int> SetSearchParameters;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSearchBand*, ushort**, int> get_SearchID;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSearchBand*, VARIANT*, int> get_Scope;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSearchBand*, VARIANT*, int> get_QueryFile;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("09083CEF-867F-4BF6-8776-DEE3A7B42FCA")]
     [NativeTypeName("struct IMFMediaEngineClassFactory2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaEngineClassFactory2
+    public unsafe partial struct IMFMediaEngineClassFactory2 : IMFMediaEngineClassFactory2.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT CreateMediaKeys2([NativeTypeName("BSTR")] ushort* keySystem, [NativeTypeName("BSTR")] ushort* defaultCdmStorePath, [NativeTypeName("BSTR")] ushort* inprivateCdmStorePath, IMFMediaKeys** ppKeys)
         {
             return ((delegate* unmanaged<IMFMediaEngineClassFactory2*, ushort*, ushort*, ushort*, IMFMediaKeys**, int>)(lpVtbl[3]))((IMFMediaEngineClassFactory2*)Unsafe.AsPointer(ref this), keySystem, defaultCdmStorePath, inprivateCdmStorePath, ppKeys);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateMediaKeys2([NativeTypeName("BSTR")] ushort* keySystem, [NativeTypeName("BSTR")] ushort* defaultCdmStorePath, [NativeTypeName("BSTR")] ushort* inprivateCdmStorePath, IMFMediaKeys** ppKeys);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineClassFactory2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineClassFactory2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineClassFactory2*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, BSTR, IMFMediaKeys **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineClassFactory2*, ushort*, ushort*, ushort*, IMFMediaKeys**, int> CreateMediaKeys2;
         }
     }
 }

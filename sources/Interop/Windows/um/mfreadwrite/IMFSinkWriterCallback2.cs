@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2456BD58-C067-4513-84FE-8D0C88FFDC61")]
     [NativeTypeName("struct IMFSinkWriterCallback2 : IMFSinkWriterCallback")]
     [NativeInheritance("IMFSinkWriterCallback")]
-    public unsafe partial struct IMFSinkWriterCallback2
+    public unsafe partial struct IMFSinkWriterCallback2 : IMFSinkWriterCallback2.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,39 @@ namespace TerraFX.Interop
         public HRESULT OnStreamError([NativeTypeName("DWORD")] uint dwStreamIndex, HRESULT hrStatus)
         {
             return ((delegate* unmanaged<IMFSinkWriterCallback2*, uint, HRESULT, int>)(lpVtbl[6]))((IMFSinkWriterCallback2*)Unsafe.AsPointer(ref this), dwStreamIndex, hrStatus);
+        }
+
+        public interface Interface : IMFSinkWriterCallback.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT OnTransformChange();
+
+            [VtblIndex(6)]
+            HRESULT OnStreamError([NativeTypeName("DWORD")] uint dwStreamIndex, HRESULT hrStatus);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriterCallback2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriterCallback2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriterCallback2*, uint> Release;
+
+            [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriterCallback2*, HRESULT, int> OnFinalize;
+
+            [NativeTypeName("HRESULT (DWORD, LPVOID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriterCallback2*, uint, void*, int> OnMarker;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriterCallback2*, int> OnTransformChange;
+
+            [NativeTypeName("HRESULT (DWORD, HRESULT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriterCallback2*, uint, HRESULT, int> OnStreamError;
         }
     }
 }

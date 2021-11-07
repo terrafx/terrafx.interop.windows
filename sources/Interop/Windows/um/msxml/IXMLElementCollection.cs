@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("65725580-9B5D-11D0-9BFE-00C04FC99C8E")]
     [NativeTypeName("struct IXMLElementCollection : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IXMLElementCollection
+    public unsafe partial struct IXMLElementCollection : IXMLElementCollection.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,57 @@ namespace TerraFX.Interop
         public HRESULT item(VARIANT var1, VARIANT var2, IDispatch** ppDisp)
         {
             return ((delegate* unmanaged<IXMLElementCollection*, VARIANT, VARIANT, IDispatch**, int>)(lpVtbl[10]))((IXMLElementCollection*)Unsafe.AsPointer(ref this), var1, var2, ppDisp);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_length([NativeTypeName("long")] int v);
+
+            [VtblIndex(8)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT get__newEnum(IUnknown** ppUnk);
+
+            [VtblIndex(10)]
+            HRESULT item(VARIANT var1, VARIANT var2, IDispatch** ppDisp);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLElementCollection*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLElementCollection*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLElementCollection*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLElementCollection*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLElementCollection*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLElementCollection*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLElementCollection*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLElementCollection*, int, int> put_length;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLElementCollection*, int*, int> get_length;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLElementCollection*, IUnknown**, int> get__newEnum;
+
+            [NativeTypeName("HRESULT (VARIANT, VARIANT, IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLElementCollection*, VARIANT, VARIANT, IDispatch**, int> item;
         }
     }
 }

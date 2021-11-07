@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("091F7A26-1C1F-4948-904B-E6E3A8A771D5")]
     [NativeTypeName("struct IDxcAssembler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDxcAssembler
+    public unsafe partial struct IDxcAssembler : IDxcAssembler.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT AssembleToContainer(IDxcBlob* pShader, IDxcOperationResult** ppResult)
         {
             return ((delegate* unmanaged<IDxcAssembler*, IDxcBlob*, IDxcOperationResult**, int>)(lpVtbl[3]))((IDxcAssembler*)Unsafe.AsPointer(ref this), pShader, ppResult);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AssembleToContainer(IDxcBlob* pShader, IDxcOperationResult** ppResult);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcAssembler*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcAssembler*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcAssembler*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDxcBlob *, IDxcOperationResult **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcAssembler*, IDxcBlob*, IDxcOperationResult**, int> AssembleToContainer;
         }
     }
 }

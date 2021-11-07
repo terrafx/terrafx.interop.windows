@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EC5EC8A9-C395-4314-9C77-54D7A935FF70")]
     [NativeTypeName("struct IWICImagingFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWICImagingFactory
+    public unsafe partial struct IWICImagingFactory : IWICImagingFactory.Interface
     {
         public void** lpVtbl;
 
@@ -212,6 +212,171 @@ namespace TerraFX.Interop
         public HRESULT CreateQueryWriterFromReader(IWICMetadataQueryReader* pIQueryReader, [NativeTypeName("const GUID *")] Guid* pguidVendor, IWICMetadataQueryWriter** ppIQueryWriter)
         {
             return ((delegate* unmanaged<IWICImagingFactory*, IWICMetadataQueryReader*, Guid*, IWICMetadataQueryWriter**, int>)(lpVtbl[27]))((IWICImagingFactory*)Unsafe.AsPointer(ref this), pIQueryReader, pguidVendor, ppIQueryWriter);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateDecoderFromFilename([NativeTypeName("LPCWSTR")] ushort* wzFilename, [NativeTypeName("const GUID *")] Guid* pguidVendor, [NativeTypeName("DWORD")] uint dwDesiredAccess, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder);
+
+            [VtblIndex(4)]
+            HRESULT CreateDecoderFromStream(IStream* pIStream, [NativeTypeName("const GUID *")] Guid* pguidVendor, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder);
+
+            [VtblIndex(5)]
+            HRESULT CreateDecoderFromFileHandle([NativeTypeName("ULONG_PTR")] nuint hFile, [NativeTypeName("const GUID *")] Guid* pguidVendor, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder);
+
+            [VtblIndex(6)]
+            HRESULT CreateComponentInfo([NativeTypeName("const IID &")] Guid* clsidComponent, IWICComponentInfo** ppIInfo);
+
+            [VtblIndex(7)]
+            HRESULT CreateDecoder([NativeTypeName("const GUID &")] Guid* guidContainerFormat, [NativeTypeName("const GUID *")] Guid* pguidVendor, IWICBitmapDecoder** ppIDecoder);
+
+            [VtblIndex(8)]
+            HRESULT CreateEncoder([NativeTypeName("const GUID &")] Guid* guidContainerFormat, [NativeTypeName("const GUID *")] Guid* pguidVendor, IWICBitmapEncoder** ppIEncoder);
+
+            [VtblIndex(9)]
+            HRESULT CreatePalette(IWICPalette** ppIPalette);
+
+            [VtblIndex(10)]
+            HRESULT CreateFormatConverter(IWICFormatConverter** ppIFormatConverter);
+
+            [VtblIndex(11)]
+            HRESULT CreateBitmapScaler(IWICBitmapScaler** ppIBitmapScaler);
+
+            [VtblIndex(12)]
+            HRESULT CreateBitmapClipper(IWICBitmapClipper** ppIBitmapClipper);
+
+            [VtblIndex(13)]
+            HRESULT CreateBitmapFlipRotator(IWICBitmapFlipRotator** ppIBitmapFlipRotator);
+
+            [VtblIndex(14)]
+            HRESULT CreateStream(IWICStream** ppIWICStream);
+
+            [VtblIndex(15)]
+            HRESULT CreateColorContext(IWICColorContext** ppIWICColorContext);
+
+            [VtblIndex(16)]
+            HRESULT CreateColorTransformer(IWICColorTransform** ppIWICColorTransform);
+
+            [VtblIndex(17)]
+            HRESULT CreateBitmap(uint uiWidth, uint uiHeight, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat, WICBitmapCreateCacheOption option, IWICBitmap** ppIBitmap);
+
+            [VtblIndex(18)]
+            HRESULT CreateBitmapFromSource(IWICBitmapSource* pIBitmapSource, WICBitmapCreateCacheOption option, IWICBitmap** ppIBitmap);
+
+            [VtblIndex(19)]
+            HRESULT CreateBitmapFromSourceRect(IWICBitmapSource* pIBitmapSource, uint x, uint y, uint width, uint height, IWICBitmap** ppIBitmap);
+
+            [VtblIndex(20)]
+            HRESULT CreateBitmapFromMemory(uint uiWidth, uint uiHeight, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat, uint cbStride, uint cbBufferSize, byte* pbBuffer, IWICBitmap** ppIBitmap);
+
+            [VtblIndex(21)]
+            HRESULT CreateBitmapFromHBITMAP(HBITMAP hBitmap, HPALETTE hPalette, WICBitmapAlphaChannelOption options, IWICBitmap** ppIBitmap);
+
+            [VtblIndex(22)]
+            HRESULT CreateBitmapFromHICON(HICON hIcon, IWICBitmap** ppIBitmap);
+
+            [VtblIndex(23)]
+            HRESULT CreateComponentEnumerator([NativeTypeName("DWORD")] uint componentTypes, [NativeTypeName("DWORD")] uint options, IEnumUnknown** ppIEnumUnknown);
+
+            [VtblIndex(24)]
+            HRESULT CreateFastMetadataEncoderFromDecoder(IWICBitmapDecoder* pIDecoder, IWICFastMetadataEncoder** ppIFastEncoder);
+
+            [VtblIndex(25)]
+            HRESULT CreateFastMetadataEncoderFromFrameDecode(IWICBitmapFrameDecode* pIFrameDecoder, IWICFastMetadataEncoder** ppIFastEncoder);
+
+            [VtblIndex(26)]
+            HRESULT CreateQueryWriter([NativeTypeName("const GUID &")] Guid* guidMetadataFormat, [NativeTypeName("const GUID *")] Guid* pguidVendor, IWICMetadataQueryWriter** ppIQueryWriter);
+
+            [VtblIndex(27)]
+            HRESULT CreateQueryWriterFromReader(IWICMetadataQueryReader* pIQueryReader, [NativeTypeName("const GUID *")] Guid* pguidVendor, IWICMetadataQueryWriter** ppIQueryWriter);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, const GUID *, DWORD, WICDecodeOptions, IWICBitmapDecoder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, ushort*, Guid*, uint, WICDecodeOptions, IWICBitmapDecoder**, int> CreateDecoderFromFilename;
+
+            [NativeTypeName("HRESULT (IStream *, const GUID *, WICDecodeOptions, IWICBitmapDecoder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, IStream*, Guid*, WICDecodeOptions, IWICBitmapDecoder**, int> CreateDecoderFromStream;
+
+            [NativeTypeName("HRESULT (ULONG_PTR, const GUID *, WICDecodeOptions, IWICBitmapDecoder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, nuint, Guid*, WICDecodeOptions, IWICBitmapDecoder**, int> CreateDecoderFromFileHandle;
+
+            [NativeTypeName("HRESULT (const IID &, IWICComponentInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, Guid*, IWICComponentInfo**, int> CreateComponentInfo;
+
+            [NativeTypeName("HRESULT (const GUID &, const GUID *, IWICBitmapDecoder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, Guid*, Guid*, IWICBitmapDecoder**, int> CreateDecoder;
+
+            [NativeTypeName("HRESULT (const GUID &, const GUID *, IWICBitmapEncoder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, Guid*, Guid*, IWICBitmapEncoder**, int> CreateEncoder;
+
+            [NativeTypeName("HRESULT (IWICPalette **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, IWICPalette**, int> CreatePalette;
+
+            [NativeTypeName("HRESULT (IWICFormatConverter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, IWICFormatConverter**, int> CreateFormatConverter;
+
+            [NativeTypeName("HRESULT (IWICBitmapScaler **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, IWICBitmapScaler**, int> CreateBitmapScaler;
+
+            [NativeTypeName("HRESULT (IWICBitmapClipper **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, IWICBitmapClipper**, int> CreateBitmapClipper;
+
+            [NativeTypeName("HRESULT (IWICBitmapFlipRotator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, IWICBitmapFlipRotator**, int> CreateBitmapFlipRotator;
+
+            [NativeTypeName("HRESULT (IWICStream **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, IWICStream**, int> CreateStream;
+
+            [NativeTypeName("HRESULT (IWICColorContext **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, IWICColorContext**, int> CreateColorContext;
+
+            [NativeTypeName("HRESULT (IWICColorTransform **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, IWICColorTransform**, int> CreateColorTransformer;
+
+            [NativeTypeName("HRESULT (UINT, UINT, REFWICPixelFormatGUID, WICBitmapCreateCacheOption, IWICBitmap **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, uint, uint, Guid*, WICBitmapCreateCacheOption, IWICBitmap**, int> CreateBitmap;
+
+            [NativeTypeName("HRESULT (IWICBitmapSource *, WICBitmapCreateCacheOption, IWICBitmap **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, IWICBitmapSource*, WICBitmapCreateCacheOption, IWICBitmap**, int> CreateBitmapFromSource;
+
+            [NativeTypeName("HRESULT (IWICBitmapSource *, UINT, UINT, UINT, UINT, IWICBitmap **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, IWICBitmapSource*, uint, uint, uint, uint, IWICBitmap**, int> CreateBitmapFromSourceRect;
+
+            [NativeTypeName("HRESULT (UINT, UINT, REFWICPixelFormatGUID, UINT, UINT, BYTE *, IWICBitmap **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, uint, uint, Guid*, uint, uint, byte*, IWICBitmap**, int> CreateBitmapFromMemory;
+
+            [NativeTypeName("HRESULT (HBITMAP, HPALETTE, WICBitmapAlphaChannelOption, IWICBitmap **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, HBITMAP, HPALETTE, WICBitmapAlphaChannelOption, IWICBitmap**, int> CreateBitmapFromHBITMAP;
+
+            [NativeTypeName("HRESULT (HICON, IWICBitmap **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, HICON, IWICBitmap**, int> CreateBitmapFromHICON;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, IEnumUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, uint, uint, IEnumUnknown**, int> CreateComponentEnumerator;
+
+            [NativeTypeName("HRESULT (IWICBitmapDecoder *, IWICFastMetadataEncoder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, IWICBitmapDecoder*, IWICFastMetadataEncoder**, int> CreateFastMetadataEncoderFromDecoder;
+
+            [NativeTypeName("HRESULT (IWICBitmapFrameDecode *, IWICFastMetadataEncoder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, IWICBitmapFrameDecode*, IWICFastMetadataEncoder**, int> CreateFastMetadataEncoderFromFrameDecode;
+
+            [NativeTypeName("HRESULT (const GUID &, const GUID *, IWICMetadataQueryWriter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, Guid*, Guid*, IWICMetadataQueryWriter**, int> CreateQueryWriter;
+
+            [NativeTypeName("HRESULT (IWICMetadataQueryReader *, const GUID *, IWICMetadataQueryWriter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICImagingFactory*, IWICMetadataQueryReader*, Guid*, IWICMetadataQueryWriter**, int> CreateQueryWriterFromReader;
         }
     }
 }

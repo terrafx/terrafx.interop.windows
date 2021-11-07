@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B196B285-BAB4-101A-B69C-00AA00341D07")]
     [NativeTypeName("struct IEnumConnectionPoints : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumConnectionPoints
+    public unsafe partial struct IEnumConnectionPoints : IEnumConnectionPoints.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Clone(IEnumConnectionPoints** ppEnum)
         {
             return ((delegate* unmanaged<IEnumConnectionPoints*, IEnumConnectionPoints**, int>)(lpVtbl[6]))((IEnumConnectionPoints*)Unsafe.AsPointer(ref this), ppEnum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Next([NativeTypeName("ULONG")] uint cConnections, [NativeTypeName("LPCONNECTIONPOINT *")] IConnectionPoint** ppCP, [NativeTypeName("ULONG *")] uint* pcFetched);
+
+            [VtblIndex(4)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint cConnections);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Clone(IEnumConnectionPoints** ppEnum);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumConnectionPoints*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumConnectionPoints*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumConnectionPoints*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, LPCONNECTIONPOINT *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumConnectionPoints*, uint, IConnectionPoint**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumConnectionPoints*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumConnectionPoints*, int> Reset;
+
+            [NativeTypeName("HRESULT (IEnumConnectionPoints **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumConnectionPoints*, IEnumConnectionPoints**, int> Clone;
         }
     }
 }

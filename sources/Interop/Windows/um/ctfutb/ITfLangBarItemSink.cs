@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("57DBE1A0-DE25-11D2-AFDD-00105A2799B5")]
     [NativeTypeName("struct ITfLangBarItemSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfLangBarItemSink
+    public unsafe partial struct ITfLangBarItemSink : ITfLangBarItemSink.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OnUpdate([NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<ITfLangBarItemSink*, uint, int>)(lpVtbl[3]))((ITfLangBarItemSink*)Unsafe.AsPointer(ref this), dwFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnUpdate([NativeTypeName("DWORD")] uint dwFlags);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemSink*, uint, int> OnUpdate;
         }
     }
 }

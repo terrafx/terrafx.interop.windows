@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000022-0000-0000-C000-000000000046")]
     [NativeTypeName("struct ISurrogate : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISurrogate
+    public unsafe partial struct ISurrogate : ISurrogate.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT FreeSurrogate()
         {
             return ((delegate* unmanaged<ISurrogate*, int>)(lpVtbl[4]))((ISurrogate*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT LoadDllServer([NativeTypeName("const IID &")] Guid* Clsid);
+
+            [VtblIndex(4)]
+            HRESULT FreeSurrogate();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurrogate*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurrogate*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurrogate*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurrogate*, Guid*, int> LoadDllServer;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurrogate*, int> FreeSurrogate;
         }
     }
 }

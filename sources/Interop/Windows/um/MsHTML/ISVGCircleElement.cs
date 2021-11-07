@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510514-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGCircleElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGCircleElement
+    public unsafe partial struct ISVGCircleElement : ISVGCircleElement.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,69 @@ namespace TerraFX.Interop
         public HRESULT get_r(ISVGAnimatedLength** p)
         {
             return ((delegate* unmanaged<ISVGCircleElement*, ISVGAnimatedLength**, int>)(lpVtbl[12]))((ISVGCircleElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_cx(ISVGAnimatedLength* v);
+
+            [VtblIndex(8)]
+            HRESULT get_cx(ISVGAnimatedLength** p);
+
+            [VtblIndex(9)]
+            HRESULT putref_cy(ISVGAnimatedLength* v);
+
+            [VtblIndex(10)]
+            HRESULT get_cy(ISVGAnimatedLength** p);
+
+            [VtblIndex(11)]
+            HRESULT putref_r(ISVGAnimatedLength* v);
+
+            [VtblIndex(12)]
+            HRESULT get_r(ISVGAnimatedLength** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGCircleElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGCircleElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGCircleElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGCircleElement*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGCircleElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGCircleElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGCircleElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGCircleElement*, ISVGAnimatedLength*, int> putref_cx;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGCircleElement*, ISVGAnimatedLength**, int> get_cx;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGCircleElement*, ISVGAnimatedLength*, int> putref_cy;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGCircleElement*, ISVGAnimatedLength**, int> get_cy;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGCircleElement*, ISVGAnimatedLength*, int> putref_r;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGCircleElement*, ISVGAnimatedLength**, int> get_r;
         }
     }
 }

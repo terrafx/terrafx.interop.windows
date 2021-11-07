@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F662-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLEditDesigner : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHTMLEditDesigner
+    public unsafe partial struct IHTMLEditDesigner : IHTMLEditDesigner.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT PostEditorEventNotify([NativeTypeName("DISPID")] int inEvtDispId, IHTMLEventObj* pIEventObj)
         {
             return ((delegate* unmanaged<IHTMLEditDesigner*, int, IHTMLEventObj*, int>)(lpVtbl[6]))((IHTMLEditDesigner*)Unsafe.AsPointer(ref this), inEvtDispId, pIEventObj);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT PreHandleEvent([NativeTypeName("DISPID")] int inEvtDispId, IHTMLEventObj* pIEventObj);
+
+            [VtblIndex(4)]
+            HRESULT PostHandleEvent([NativeTypeName("DISPID")] int inEvtDispId, IHTMLEventObj* pIEventObj);
+
+            [VtblIndex(5)]
+            HRESULT TranslateAcceleratorW([NativeTypeName("DISPID")] int inEvtDispId, IHTMLEventObj* pIEventObj);
+
+            [VtblIndex(6)]
+            HRESULT PostEditorEventNotify([NativeTypeName("DISPID")] int inEvtDispId, IHTMLEventObj* pIEventObj);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditDesigner*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditDesigner*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditDesigner*, uint> Release;
+
+            [NativeTypeName("HRESULT (DISPID, IHTMLEventObj *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditDesigner*, int, IHTMLEventObj*, int> PreHandleEvent;
+
+            [NativeTypeName("HRESULT (DISPID, IHTMLEventObj *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditDesigner*, int, IHTMLEventObj*, int> PostHandleEvent;
+
+            [NativeTypeName("HRESULT (DISPID, IHTMLEventObj *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditDesigner*, int, IHTMLEventObj*, int> TranslateAcceleratorW;
+
+            [NativeTypeName("HRESULT (DISPID, IHTMLEventObj *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditDesigner*, int, IHTMLEventObj*, int> PostEditorEventNotify;
         }
     }
 }

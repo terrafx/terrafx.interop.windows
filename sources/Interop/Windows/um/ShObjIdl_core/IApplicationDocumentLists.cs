@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3C594F9F-9F30-47A1-979A-C9E83D3D0A06")]
     [NativeTypeName("struct IApplicationDocumentLists : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IApplicationDocumentLists
+    public unsafe partial struct IApplicationDocumentLists : IApplicationDocumentLists.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetList(APPDOCLISTTYPE listtype, uint cItemsDesired, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IApplicationDocumentLists*, APPDOCLISTTYPE, uint, Guid*, void**, int>)(lpVtbl[4]))((IApplicationDocumentLists*)Unsafe.AsPointer(ref this), listtype, cItemsDesired, riid, ppv);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetAppID([NativeTypeName("LPCWSTR")] ushort* pszAppID);
+
+            [VtblIndex(4)]
+            HRESULT GetList(APPDOCLISTTYPE listtype, uint cItemsDesired, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDocumentLists*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDocumentLists*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDocumentLists*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDocumentLists*, ushort*, int> SetAppID;
+
+            [NativeTypeName("HRESULT (APPDOCLISTTYPE, UINT, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IApplicationDocumentLists*, APPDOCLISTTYPE, uint, Guid*, void**, int> GetList;
         }
     }
 }

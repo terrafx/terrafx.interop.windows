@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000002-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IMalloc : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMalloc
+    public unsafe partial struct IMalloc : IMalloc.Interface
     {
         public void** lpVtbl;
 
@@ -80,6 +80,58 @@ namespace TerraFX.Interop
         public void HeapMinimize()
         {
             ((delegate* unmanaged<IMalloc*, void>)(lpVtbl[8]))((IMalloc*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void* Alloc([NativeTypeName("SIZE_T")] nuint cb);
+
+            [VtblIndex(4)]
+            void* Realloc(void* pv, [NativeTypeName("SIZE_T")] nuint cb);
+
+            [VtblIndex(5)]
+            void Free(void* pv);
+
+            [VtblIndex(6)]
+            [return: NativeTypeName("SIZE_T")]
+            nuint GetSize(void* pv);
+
+            [VtblIndex(7)]
+            int DidAlloc(void* pv);
+
+            [VtblIndex(8)]
+            void HeapMinimize();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMalloc*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMalloc*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMalloc*, uint> Release;
+
+            [NativeTypeName("void *(SIZE_T) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMalloc*, nuint, void*> Alloc;
+
+            [NativeTypeName("void *(void *, SIZE_T) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMalloc*, void*, nuint, void*> Realloc;
+
+            [NativeTypeName("void (void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMalloc*, void*, void> Free;
+
+            [NativeTypeName("SIZE_T (void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMalloc*, void*, nuint> GetSize;
+
+            [NativeTypeName("int (void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMalloc*, void*, int> DidAlloc;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMalloc*, void> HeapMinimize;
         }
     }
 }

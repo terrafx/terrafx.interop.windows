@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3137F1CD-FE5E-4805-A5D8-FB477448CB3D")]
     [NativeTypeName("struct IMFSinkWriter : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSinkWriter
+    public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,87 @@ namespace TerraFX.Interop
         public HRESULT GetStatistics([NativeTypeName("DWORD")] uint dwStreamIndex, MF_SINK_WRITER_STATISTICS* pStats)
         {
             return ((delegate* unmanaged<IMFSinkWriter*, uint, MF_SINK_WRITER_STATISTICS*, int>)(lpVtbl[13]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex, pStats);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddStream(IMFMediaType* pTargetMediaType, [NativeTypeName("DWORD *")] uint* pdwStreamIndex);
+
+            [VtblIndex(4)]
+            HRESULT SetInputMediaType([NativeTypeName("DWORD")] uint dwStreamIndex, IMFMediaType* pInputMediaType, IMFAttributes* pEncodingParameters);
+
+            [VtblIndex(5)]
+            HRESULT BeginWriting();
+
+            [VtblIndex(6)]
+            HRESULT WriteSample([NativeTypeName("DWORD")] uint dwStreamIndex, IMFSample* pSample);
+
+            [VtblIndex(7)]
+            HRESULT SendStreamTick([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("LONGLONG")] long llTimestamp);
+
+            [VtblIndex(8)]
+            HRESULT PlaceMarker([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("LPVOID")] void* pvContext);
+
+            [VtblIndex(9)]
+            HRESULT NotifyEndOfSegment([NativeTypeName("DWORD")] uint dwStreamIndex);
+
+            [VtblIndex(10)]
+            HRESULT Flush([NativeTypeName("DWORD")] uint dwStreamIndex);
+
+            [VtblIndex(11)]
+            HRESULT Finalize();
+
+            [VtblIndex(12)]
+            HRESULT GetServiceForStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("const GUID &")] Guid* guidService, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject);
+
+            [VtblIndex(13)]
+            HRESULT GetStatistics([NativeTypeName("DWORD")] uint dwStreamIndex, MF_SINK_WRITER_STATISTICS* pStats);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriter*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriter*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriter*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFMediaType *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriter*, IMFMediaType*, uint*, int> AddStream;
+
+            [NativeTypeName("HRESULT (DWORD, IMFMediaType *, IMFAttributes *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriter*, uint, IMFMediaType*, IMFAttributes*, int> SetInputMediaType;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriter*, int> BeginWriting;
+
+            [NativeTypeName("HRESULT (DWORD, IMFSample *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriter*, uint, IMFSample*, int> WriteSample;
+
+            [NativeTypeName("HRESULT (DWORD, LONGLONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriter*, uint, long, int> SendStreamTick;
+
+            [NativeTypeName("HRESULT (DWORD, LPVOID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriter*, uint, void*, int> PlaceMarker;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriter*, uint, int> NotifyEndOfSegment;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriter*, uint, int> Flush;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriter*, int> Finalize;
+
+            [NativeTypeName("HRESULT (DWORD, const GUID &, const IID &, LPVOID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriter*, uint, Guid*, Guid*, void**, int> GetServiceForStream;
+
+            [NativeTypeName("HRESULT (DWORD, MF_SINK_WRITER_STATISTICS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSinkWriter*, uint, MF_SINK_WRITER_STATISTICS*, int> GetStatistics;
         }
     }
 }

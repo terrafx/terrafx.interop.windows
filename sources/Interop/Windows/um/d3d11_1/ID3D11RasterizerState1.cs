@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1217D7A6-5039-418C-B042-9CBE256AFD6E")]
     [NativeTypeName("struct ID3D11RasterizerState1 : ID3D11RasterizerState")]
     [NativeInheritance("ID3D11RasterizerState")]
-    public unsafe partial struct ID3D11RasterizerState1
+    public unsafe partial struct ID3D11RasterizerState1 : ID3D11RasterizerState1.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,42 @@ namespace TerraFX.Interop
         public void GetDesc1(D3D11_RASTERIZER_DESC1* pDesc)
         {
             ((delegate* unmanaged<ID3D11RasterizerState1*, D3D11_RASTERIZER_DESC1*, void>)(lpVtbl[8]))((ID3D11RasterizerState1*)Unsafe.AsPointer(ref this), pDesc);
+        }
+
+        public interface Interface : ID3D11RasterizerState.Interface
+        {
+            [VtblIndex(8)]
+            void GetDesc1(D3D11_RASTERIZER_DESC1* pDesc);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11RasterizerState1*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11RasterizerState1*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11RasterizerState1*, uint> Release;
+
+            [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11RasterizerState1*, ID3D11Device**, void> GetDevice;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11RasterizerState1*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11RasterizerState1*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11RasterizerState1*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("void (D3D11_RASTERIZER_DESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11RasterizerState1*, D3D11_RASTERIZER_DESC*, void> GetDesc;
+
+            [NativeTypeName("void (D3D11_RASTERIZER_DESC1 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11RasterizerState1*, D3D11_RASTERIZER_DESC1*, void> GetDesc1;
         }
     }
 }

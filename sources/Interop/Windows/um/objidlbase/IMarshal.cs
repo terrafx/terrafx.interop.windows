@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000003-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IMarshal : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMarshal
+    public unsafe partial struct IMarshal : IMarshal.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,57 @@ namespace TerraFX.Interop
         public HRESULT DisconnectObject([NativeTypeName("DWORD")] uint dwReserved)
         {
             return ((delegate* unmanaged<IMarshal*, uint, int>)(lpVtbl[8]))((IMarshal*)Unsafe.AsPointer(ref this), dwReserved);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetUnmarshalClass([NativeTypeName("const IID &")] Guid* riid, void* pv, [NativeTypeName("DWORD")] uint dwDestContext, void* pvDestContext, [NativeTypeName("DWORD")] uint mshlflags, [NativeTypeName("CLSID *")] Guid* pCid);
+
+            [VtblIndex(4)]
+            HRESULT GetMarshalSizeMax([NativeTypeName("const IID &")] Guid* riid, void* pv, [NativeTypeName("DWORD")] uint dwDestContext, void* pvDestContext, [NativeTypeName("DWORD")] uint mshlflags, [NativeTypeName("DWORD *")] uint* pSize);
+
+            [VtblIndex(5)]
+            HRESULT MarshalInterface(IStream* pStm, [NativeTypeName("const IID &")] Guid* riid, void* pv, [NativeTypeName("DWORD")] uint dwDestContext, void* pvDestContext, [NativeTypeName("DWORD")] uint mshlflags);
+
+            [VtblIndex(6)]
+            HRESULT UnmarshalInterface(IStream* pStm, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(7)]
+            HRESULT ReleaseMarshalData(IStream* pStm);
+
+            [VtblIndex(8)]
+            HRESULT DisconnectObject([NativeTypeName("DWORD")] uint dwReserved);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarshal*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarshal*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarshal*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, void *, DWORD, void *, DWORD, CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarshal*, Guid*, void*, uint, void*, uint, Guid*, int> GetUnmarshalClass;
+
+            [NativeTypeName("HRESULT (const IID &, void *, DWORD, void *, DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarshal*, Guid*, void*, uint, void*, uint, uint*, int> GetMarshalSizeMax;
+
+            [NativeTypeName("HRESULT (IStream *, const IID &, void *, DWORD, void *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarshal*, IStream*, Guid*, void*, uint, void*, uint, int> MarshalInterface;
+
+            [NativeTypeName("HRESULT (IStream *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarshal*, IStream*, Guid*, void**, int> UnmarshalInterface;
+
+            [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarshal*, IStream*, int> ReleaseMarshalData;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMarshal*, uint, int> DisconnectObject;
         }
     }
 }

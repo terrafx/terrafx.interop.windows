@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F6AE-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLRenderStyle : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLRenderStyle
+    public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface
     {
         public void** lpVtbl;
 
@@ -191,6 +191,141 @@ namespace TerraFX.Interop
         public HRESULT get_textDecoration([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLRenderStyle*, ushort**, int>)(lpVtbl[24]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_textLineThroughStyle([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_textLineThroughStyle([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_textUnderlineStyle([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_textUnderlineStyle([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT put_textEffect([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(12)]
+            HRESULT get_textEffect([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(13)]
+            HRESULT put_textColor(VARIANT v);
+
+            [VtblIndex(14)]
+            HRESULT get_textColor(VARIANT* p);
+
+            [VtblIndex(15)]
+            HRESULT put_textBackgroundColor(VARIANT v);
+
+            [VtblIndex(16)]
+            HRESULT get_textBackgroundColor(VARIANT* p);
+
+            [VtblIndex(17)]
+            HRESULT put_textDecorationColor(VARIANT v);
+
+            [VtblIndex(18)]
+            HRESULT get_textDecorationColor(VARIANT* p);
+
+            [VtblIndex(19)]
+            HRESULT put_renderingPriority([NativeTypeName("long")] int v);
+
+            [VtblIndex(20)]
+            HRESULT get_renderingPriority([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(21)]
+            HRESULT put_defaultTextSelection([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(22)]
+            HRESULT get_defaultTextSelection([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(23)]
+            HRESULT put_textDecoration([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(24)]
+            HRESULT get_textDecoration([NativeTypeName("BSTR *")] ushort** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, ushort*, int> put_textLineThroughStyle;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, ushort**, int> get_textLineThroughStyle;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, ushort*, int> put_textUnderlineStyle;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, ushort**, int> get_textUnderlineStyle;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, ushort*, int> put_textEffect;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, ushort**, int> get_textEffect;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, VARIANT, int> put_textColor;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, VARIANT*, int> get_textColor;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, VARIANT, int> put_textBackgroundColor;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, VARIANT*, int> get_textBackgroundColor;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, VARIANT, int> put_textDecorationColor;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, VARIANT*, int> get_textDecorationColor;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, int, int> put_renderingPriority;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, int*, int> get_renderingPriority;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, ushort*, int> put_defaultTextSelection;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, ushort**, int> get_defaultTextSelection;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, ushort*, int> put_textDecoration;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRenderStyle*, ushort**, int> get_textDecoration;
         }
     }
 }

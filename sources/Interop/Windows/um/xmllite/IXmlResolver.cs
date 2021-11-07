@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7279FC82-709D-4095-B63D-69FE4B0D9030")]
     [NativeTypeName("struct IXmlResolver : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IXmlResolver
+    public unsafe partial struct IXmlResolver : IXmlResolver.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT ResolveUri([NativeTypeName("LPCWSTR")] ushort* pwszBaseUri, [NativeTypeName("LPCWSTR")] ushort* pwszPublicIdentifier, [NativeTypeName("LPCWSTR")] ushort* pwszSystemIdentifier, IUnknown** ppResolvedInput)
         {
             return ((delegate* unmanaged<IXmlResolver*, ushort*, ushort*, ushort*, IUnknown**, int>)(lpVtbl[3]))((IXmlResolver*)Unsafe.AsPointer(ref this), pwszBaseUri, pwszPublicIdentifier, pwszSystemIdentifier, ppResolvedInput);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT ResolveUri([NativeTypeName("LPCWSTR")] ushort* pwszBaseUri, [NativeTypeName("LPCWSTR")] ushort* pwszPublicIdentifier, [NativeTypeName("LPCWSTR")] ushort* pwszSystemIdentifier, IUnknown** ppResolvedInput);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlResolver*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlResolver*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlResolver*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXmlResolver*, ushort*, ushort*, ushort*, IUnknown**, int> ResolveUri;
         }
     }
 }

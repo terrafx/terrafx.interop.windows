@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C9B664E5-74A1-4378-9AC2-EEFC37A3F4D8")]
     [NativeTypeName("struct ID2D1ImageSource : ID2D1Image")]
     [NativeInheritance("ID2D1Image")]
-    public unsafe partial struct ID2D1ImageSource
+    public unsafe partial struct ID2D1ImageSource : ID2D1ImageSource.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,36 @@ namespace TerraFX.Interop
         public HRESULT TryReclaimResources(BOOL* resourcesDiscarded)
         {
             return ((delegate* unmanaged<ID2D1ImageSource*, BOOL*, int>)(lpVtbl[5]))((ID2D1ImageSource*)Unsafe.AsPointer(ref this), resourcesDiscarded);
+        }
+
+        public interface Interface : ID2D1Image.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT OfferResources();
+
+            [VtblIndex(5)]
+            HRESULT TryReclaimResources(BOOL* resourcesDiscarded);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageSource*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageSource*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageSource*, uint> Release;
+
+            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageSource*, ID2D1Factory**, void> GetFactory;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageSource*, int> OfferResources;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1ImageSource*, BOOL*, int> TryReclaimResources;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9B7E4C00-342C-4106-A19F-4F2704F689F0")]
     [NativeTypeName("struct ID3D10DeviceChild : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D10DeviceChild
+    public unsafe partial struct ID3D10DeviceChild : ID3D10DeviceChild.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
         {
             return ((delegate* unmanaged<ID3D10DeviceChild*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3D10DeviceChild*)Unsafe.AsPointer(ref this), guid, pData);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void GetDevice(ID3D10Device** ppDevice);
+
+            [VtblIndex(4)]
+            HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* pDataSize, void* pData);
+
+            [VtblIndex(5)]
+            HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint DataSize, [NativeTypeName("const void *")] void* pData);
+
+            [VtblIndex(6)]
+            HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10DeviceChild*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10DeviceChild*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10DeviceChild*, uint> Release;
+
+            [NativeTypeName("void (ID3D10Device **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10DeviceChild*, ID3D10Device**, void> GetDevice;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10DeviceChild*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10DeviceChild*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10DeviceChild*, Guid*, IUnknown*, int> SetPrivateDataInterface;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("91DF827B-94FD-468F-827B-57F41B2F6F2E")]
     [NativeTypeName("struct IAppxFile : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxFile
+    public unsafe partial struct IAppxFile : IAppxFile.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT GetStream(IStream** stream)
         {
             return ((delegate* unmanaged<IAppxFile*, IStream**, int>)(lpVtbl[7]))((IAppxFile*)Unsafe.AsPointer(ref this), stream);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCompressionOption(APPX_COMPRESSION_OPTION* compressionOption);
+
+            [VtblIndex(4)]
+            HRESULT GetContentType([NativeTypeName("LPWSTR *")] ushort** contentType);
+
+            [VtblIndex(5)]
+            HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** fileName);
+
+            [VtblIndex(6)]
+            HRESULT GetSize([NativeTypeName("UINT64 *")] ulong* size);
+
+            [VtblIndex(7)]
+            HRESULT GetStream(IStream** stream);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFile*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFile*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFile*, uint> Release;
+
+            [NativeTypeName("HRESULT (APPX_COMPRESSION_OPTION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFile*, APPX_COMPRESSION_OPTION*, int> GetCompressionOption;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFile*, ushort**, int> GetContentType;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFile*, ushort**, int> GetName;
+
+            [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFile*, ulong*, int> GetSize;
+
+            [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxFile*, IStream**, int> GetStream;
         }
     }
 }

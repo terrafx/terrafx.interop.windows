@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DD75B8C0-BA76-43B0-AE0F-68656A1DC5C8")]
     [NativeTypeName("struct IAppxBundleReader : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxBundleReader
+    public unsafe partial struct IAppxBundleReader : IAppxBundleReader.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT GetPayloadPackage([NativeTypeName("LPCWSTR")] ushort* fileName, IAppxFile** payloadPackage)
         {
             return ((delegate* unmanaged<IAppxBundleReader*, ushort*, IAppxFile**, int>)(lpVtbl[7]))((IAppxBundleReader*)Unsafe.AsPointer(ref this), fileName, payloadPackage);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetFootprintFile(APPX_BUNDLE_FOOTPRINT_FILE_TYPE fileType, IAppxFile** footprintFile);
+
+            [VtblIndex(4)]
+            HRESULT GetBlockMap(IAppxBlockMapReader** blockMapReader);
+
+            [VtblIndex(5)]
+            HRESULT GetManifest(IAppxBundleManifestReader** manifestReader);
+
+            [VtblIndex(6)]
+            HRESULT GetPayloadPackages(IAppxFilesEnumerator** payloadPackages);
+
+            [VtblIndex(7)]
+            HRESULT GetPayloadPackage([NativeTypeName("LPCWSTR")] ushort* fileName, IAppxFile** payloadPackage);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleReader*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleReader*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleReader*, uint> Release;
+
+            [NativeTypeName("HRESULT (APPX_BUNDLE_FOOTPRINT_FILE_TYPE, IAppxFile **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleReader*, APPX_BUNDLE_FOOTPRINT_FILE_TYPE, IAppxFile**, int> GetFootprintFile;
+
+            [NativeTypeName("HRESULT (IAppxBlockMapReader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleReader*, IAppxBlockMapReader**, int> GetBlockMap;
+
+            [NativeTypeName("HRESULT (IAppxBundleManifestReader **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleReader*, IAppxBundleManifestReader**, int> GetManifest;
+
+            [NativeTypeName("HRESULT (IAppxFilesEnumerator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleReader*, IAppxFilesEnumerator**, int> GetPayloadPackages;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IAppxFile **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBundleReader*, ushort*, IAppxFile**, int> GetPayloadPackage;
         }
     }
 }

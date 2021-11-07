@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000021-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IInternalUnknown : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInternalUnknown
+    public unsafe partial struct IInternalUnknown : IInternalUnknown.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT QueryInternalInterface([NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IInternalUnknown*, Guid*, void**, int>)(lpVtbl[3]))((IInternalUnknown*)Unsafe.AsPointer(ref this), riid, ppv);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT QueryInternalInterface([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternalUnknown*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternalUnknown*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternalUnknown*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternalUnknown*, Guid*, void**, int> QueryInternalInterface;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5AB1D30C-094D-4C29-8EA5-0BF59BE87BF3")]
     [NativeTypeName("struct ITfFnShowHelp : ITfFunction")]
     [NativeInheritance("ITfFunction")]
-    public unsafe partial struct ITfFnShowHelp
+    public unsafe partial struct ITfFnShowHelp : ITfFnShowHelp.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,30 @@ namespace TerraFX.Interop
         public HRESULT Show(HWND hwndParent)
         {
             return ((delegate* unmanaged<ITfFnShowHelp*, HWND, int>)(lpVtbl[4]))((ITfFnShowHelp*)Unsafe.AsPointer(ref this), hwndParent);
+        }
+
+        public interface Interface : ITfFunction.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT Show(HWND hwndParent);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnShowHelp*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnShowHelp*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnShowHelp*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnShowHelp*, ushort**, int> GetDisplayName;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfFnShowHelp*, HWND, int> Show;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4B1B1759-EC40-466C-AAB4-BEB5347FD24C")]
     [NativeTypeName("struct IMLOperatorAttributes : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMLOperatorAttributes
+    public unsafe partial struct IMLOperatorAttributes : IMLOperatorAttributes.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetStringAttributeElement([NativeTypeName("const char *")] sbyte* name, [NativeTypeName("uint32_t")] uint elementIndex, [NativeTypeName("uint32_t")] uint attributeElementByteSize, [NativeTypeName("char *")] sbyte* attributeElement)
         {
             return ((delegate* unmanaged<IMLOperatorAttributes*, sbyte*, uint, uint, sbyte*, int>)(lpVtbl[6]))((IMLOperatorAttributes*)Unsafe.AsPointer(ref this), name, elementIndex, attributeElementByteSize, attributeElement);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetAttributeElementCount([NativeTypeName("const char *")] sbyte* name, MLOperatorAttributeType type, [NativeTypeName("uint32_t *")] uint* elementCount);
+
+            [VtblIndex(4)]
+            HRESULT GetAttribute([NativeTypeName("const char *")] sbyte* name, MLOperatorAttributeType type, [NativeTypeName("uint32_t")] uint elementCount, [NativeTypeName("size_t")] nuint elementByteSize, void* value);
+
+            [VtblIndex(5)]
+            HRESULT GetStringAttributeElementLength([NativeTypeName("const char *")] sbyte* name, [NativeTypeName("uint32_t")] uint elementIndex, [NativeTypeName("uint32_t *")] uint* attributeElementByteSize);
+
+            [VtblIndex(6)]
+            HRESULT GetStringAttributeElement([NativeTypeName("const char *")] sbyte* name, [NativeTypeName("uint32_t")] uint elementIndex, [NativeTypeName("uint32_t")] uint attributeElementByteSize, [NativeTypeName("char *")] sbyte* attributeElement);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorAttributes*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorAttributes*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorAttributes*, uint> Release;
+
+            [NativeTypeName("HRESULT (const char *, MLOperatorAttributeType, uint32_t *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorAttributes*, sbyte*, MLOperatorAttributeType, uint*, int> GetAttributeElementCount;
+
+            [NativeTypeName("HRESULT (const char *, MLOperatorAttributeType, uint32_t, size_t, void *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorAttributes*, sbyte*, MLOperatorAttributeType, uint, nuint, void*, int> GetAttribute;
+
+            [NativeTypeName("HRESULT (const char *, uint32_t, uint32_t *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorAttributes*, sbyte*, uint, uint*, int> GetStringAttributeElementLength;
+
+            [NativeTypeName("HRESULT (const char *, uint32_t, uint32_t, char *) const noexcept __attribute__((stdcall))")]
+            public delegate* unmanaged<IMLOperatorAttributes*, sbyte*, uint, uint, sbyte*, int> GetStringAttributeElement;
         }
     }
 }

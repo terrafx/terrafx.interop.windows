@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("470141A0-5186-11D2-BBB6-0060977B464C")]
     [NativeTypeName("struct IACList2 : IACList")]
     [NativeInheritance("IACList")]
-    public unsafe partial struct IACList2
+    public unsafe partial struct IACList2 : IACList2.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,36 @@ namespace TerraFX.Interop
         public HRESULT GetOptions([NativeTypeName("DWORD *")] uint* pdwFlag)
         {
             return ((delegate* unmanaged<IACList2*, uint*, int>)(lpVtbl[5]))((IACList2*)Unsafe.AsPointer(ref this), pdwFlag);
+        }
+
+        public interface Interface : IACList.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT SetOptions([NativeTypeName("DWORD")] uint dwFlag);
+
+            [VtblIndex(5)]
+            HRESULT GetOptions([NativeTypeName("DWORD *")] uint* pdwFlag);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IACList2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IACList2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IACList2*, uint> Release;
+
+            [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IACList2*, ushort*, int> Expand;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IACList2*, uint, int> SetOptions;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IACList2*, uint*, int> GetOptions;
         }
     }
 }

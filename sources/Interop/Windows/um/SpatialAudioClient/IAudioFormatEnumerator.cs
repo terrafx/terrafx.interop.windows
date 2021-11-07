@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DCDAA858-895A-4A22-A5EB-67BDA506096D")]
     [NativeTypeName("struct IAudioFormatEnumerator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioFormatEnumerator
+    public unsafe partial struct IAudioFormatEnumerator : IAudioFormatEnumerator.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetFormat([NativeTypeName("UINT32")] uint index, WAVEFORMATEX** format)
         {
             return ((delegate* unmanaged<IAudioFormatEnumerator*, uint, WAVEFORMATEX**, int>)(lpVtbl[4]))((IAudioFormatEnumerator*)Unsafe.AsPointer(ref this), index, format);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCount([NativeTypeName("UINT32 *")] uint* count);
+
+            [VtblIndex(4)]
+            HRESULT GetFormat([NativeTypeName("UINT32")] uint index, WAVEFORMATEX** format);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioFormatEnumerator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioFormatEnumerator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioFormatEnumerator*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioFormatEnumerator*, uint*, int> GetCount;
+
+            [NativeTypeName("HRESULT (UINT32, WAVEFORMATEX **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioFormatEnumerator*, uint, WAVEFORMATEX**, int> GetFormat;
         }
     }
 }

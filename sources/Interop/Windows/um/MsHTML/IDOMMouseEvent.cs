@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106CE-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMMouseEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMMouseEvent
+    public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface
     {
         public void** lpVtbl;
 
@@ -233,6 +233,177 @@ namespace TerraFX.Interop
         public HRESULT get_which(ushort* p)
         {
             return ((delegate* unmanaged<IDOMMouseEvent*, ushort*, int>)(lpVtbl[30]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_screenX([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT get_screenY([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT get_clientX([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(10)]
+            HRESULT get_clientY([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(11)]
+            HRESULT get_ctrlKey([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(12)]
+            HRESULT get_shiftKey([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(13)]
+            HRESULT get_altKey([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(14)]
+            HRESULT get_metaKey([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(15)]
+            HRESULT get_button(ushort* p);
+
+            [VtblIndex(16)]
+            HRESULT get_relatedTarget(IEventTarget** p);
+
+            [VtblIndex(17)]
+            HRESULT initMouseEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int screenXArg, [NativeTypeName("long")] int screenYArg, [NativeTypeName("long")] int clientXArg, [NativeTypeName("long")] int clientYArg, [NativeTypeName("VARIANT_BOOL")] short ctrlKeyArg, [NativeTypeName("VARIANT_BOOL")] short altKeyArg, [NativeTypeName("VARIANT_BOOL")] short shiftKeyArg, [NativeTypeName("VARIANT_BOOL")] short metaKeyArg, ushort buttonArg, IEventTarget* relatedTargetArg);
+
+            [VtblIndex(18)]
+            HRESULT getModifierState([NativeTypeName("BSTR")] ushort* keyArg, [NativeTypeName("VARIANT_BOOL *")] short* activated);
+
+            [VtblIndex(19)]
+            HRESULT get_buttons(ushort* p);
+
+            [VtblIndex(20)]
+            HRESULT get_fromElement(IHTMLElement** p);
+
+            [VtblIndex(21)]
+            HRESULT get_toElement(IHTMLElement** p);
+
+            [VtblIndex(22)]
+            HRESULT get_x([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(23)]
+            HRESULT get_y([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(24)]
+            HRESULT get_offsetX([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(25)]
+            HRESULT get_offsetY([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(26)]
+            HRESULT get_pageX([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(27)]
+            HRESULT get_pageY([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(28)]
+            HRESULT get_layerX([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(29)]
+            HRESULT get_layerY([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(30)]
+            HRESULT get_which(ushort* p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, int*, int> get_screenX;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, int*, int> get_screenY;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, int*, int> get_clientX;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, int*, int> get_clientY;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, short*, int> get_ctrlKey;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, short*, int> get_shiftKey;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, short*, int> get_altKey;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, short*, int> get_metaKey;
+
+            [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, ushort*, int> get_button;
+
+            [NativeTypeName("HRESULT (IEventTarget **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, IEventTarget**, int> get_relatedTarget;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, IHTMLWindow2 *, long, long, long, long, long, VARIANT_BOOL, VARIANT_BOOL, VARIANT_BOOL, VARIANT_BOOL, USHORT, IEventTarget *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, ushort*, short, short, IHTMLWindow2*, int, int, int, int, int, short, short, short, short, ushort, IEventTarget*, int> initMouseEvent;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, ushort*, short*, int> getModifierState;
+
+            [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, ushort*, int> get_buttons;
+
+            [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, IHTMLElement**, int> get_fromElement;
+
+            [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, IHTMLElement**, int> get_toElement;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, int*, int> get_x;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, int*, int> get_y;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, int*, int> get_offsetX;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, int*, int> get_offsetY;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, int*, int> get_pageX;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, int*, int> get_pageY;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, int*, int> get_layerX;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, int*, int> get_layerY;
+
+            [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMouseEvent*, ushort*, int> get_which;
         }
     }
 }

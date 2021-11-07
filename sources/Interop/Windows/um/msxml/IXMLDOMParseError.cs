@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3EFAA426-272F-11D2-836F-0000F87A7782")]
     [NativeTypeName("struct IXMLDOMParseError : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IXMLDOMParseError
+    public unsafe partial struct IXMLDOMParseError : IXMLDOMParseError.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,75 @@ namespace TerraFX.Interop
         public HRESULT get_filepos([NativeTypeName("long *")] int* filePosition)
         {
             return ((delegate* unmanaged<IXMLDOMParseError*, int*, int>)(lpVtbl[13]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), filePosition);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_errorCode([NativeTypeName("long *")] int* errorCode);
+
+            [VtblIndex(8)]
+            HRESULT get_url([NativeTypeName("BSTR *")] ushort** urlString);
+
+            [VtblIndex(9)]
+            HRESULT get_reason([NativeTypeName("BSTR *")] ushort** reasonString);
+
+            [VtblIndex(10)]
+            HRESULT get_srcText([NativeTypeName("BSTR *")] ushort** sourceString);
+
+            [VtblIndex(11)]
+            HRESULT get_line([NativeTypeName("long *")] int* lineNumber);
+
+            [VtblIndex(12)]
+            HRESULT get_linepos([NativeTypeName("long *")] int* linePosition);
+
+            [VtblIndex(13)]
+            HRESULT get_filepos([NativeTypeName("long *")] int* filePosition);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDOMParseError*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDOMParseError*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDOMParseError*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDOMParseError*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDOMParseError*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDOMParseError*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDOMParseError*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDOMParseError*, int*, int> get_errorCode;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDOMParseError*, ushort**, int> get_url;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDOMParseError*, ushort**, int> get_reason;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDOMParseError*, ushort**, int> get_srcText;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDOMParseError*, int*, int> get_line;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDOMParseError*, int*, int> get_linepos;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDOMParseError*, int*, int> get_filepos;
         }
     }
 }

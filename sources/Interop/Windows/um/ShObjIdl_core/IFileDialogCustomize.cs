@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E6FDD21A-163F-4975-9C8C-A69F1BA37034")]
     [NativeTypeName("struct IFileDialogCustomize : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFileDialogCustomize
+    public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interface
     {
         public void** lpVtbl;
 
@@ -226,6 +226,183 @@ namespace TerraFX.Interop
         public HRESULT SetControlItemText([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem, [NativeTypeName("LPCWSTR")] ushort* pszLabel)
         {
             return ((delegate* unmanaged<IFileDialogCustomize*, uint, uint, ushort*, int>)(lpVtbl[29]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, dwIDItem, pszLabel);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT EnableOpenDropDown([NativeTypeName("DWORD")] uint dwIDCtl);
+
+            [VtblIndex(4)]
+            HRESULT AddMenu([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] ushort* pszLabel);
+
+            [VtblIndex(5)]
+            HRESULT AddPushButton([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] ushort* pszLabel);
+
+            [VtblIndex(6)]
+            HRESULT AddComboBox([NativeTypeName("DWORD")] uint dwIDCtl);
+
+            [VtblIndex(7)]
+            HRESULT AddRadioButtonList([NativeTypeName("DWORD")] uint dwIDCtl);
+
+            [VtblIndex(8)]
+            HRESULT AddCheckButton([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] ushort* pszLabel, BOOL bChecked);
+
+            [VtblIndex(9)]
+            HRESULT AddEditBox([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] ushort* pszText);
+
+            [VtblIndex(10)]
+            HRESULT AddSeparator([NativeTypeName("DWORD")] uint dwIDCtl);
+
+            [VtblIndex(11)]
+            HRESULT AddText([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] ushort* pszText);
+
+            [VtblIndex(12)]
+            HRESULT SetControlLabel([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] ushort* pszLabel);
+
+            [VtblIndex(13)]
+            HRESULT GetControlState([NativeTypeName("DWORD")] uint dwIDCtl, CDCONTROLSTATEF* pdwState);
+
+            [VtblIndex(14)]
+            HRESULT SetControlState([NativeTypeName("DWORD")] uint dwIDCtl, CDCONTROLSTATEF dwState);
+
+            [VtblIndex(15)]
+            HRESULT GetEditBoxText([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("WCHAR **")] ushort** ppszText);
+
+            [VtblIndex(16)]
+            HRESULT SetEditBoxText([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] ushort* pszText);
+
+            [VtblIndex(17)]
+            HRESULT GetCheckButtonState([NativeTypeName("DWORD")] uint dwIDCtl, BOOL* pbChecked);
+
+            [VtblIndex(18)]
+            HRESULT SetCheckButtonState([NativeTypeName("DWORD")] uint dwIDCtl, BOOL bChecked);
+
+            [VtblIndex(19)]
+            HRESULT AddControlItem([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem, [NativeTypeName("LPCWSTR")] ushort* pszLabel);
+
+            [VtblIndex(20)]
+            HRESULT RemoveControlItem([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem);
+
+            [VtblIndex(21)]
+            HRESULT RemoveAllControlItems([NativeTypeName("DWORD")] uint dwIDCtl);
+
+            [VtblIndex(22)]
+            HRESULT GetControlItemState([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem, CDCONTROLSTATEF* pdwState);
+
+            [VtblIndex(23)]
+            HRESULT SetControlItemState([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem, CDCONTROLSTATEF dwState);
+
+            [VtblIndex(24)]
+            HRESULT GetSelectedControlItem([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD *")] uint* pdwIDItem);
+
+            [VtblIndex(25)]
+            HRESULT SetSelectedControlItem([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem);
+
+            [VtblIndex(26)]
+            HRESULT StartVisualGroup([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] ushort* pszLabel);
+
+            [VtblIndex(27)]
+            HRESULT EndVisualGroup();
+
+            [VtblIndex(28)]
+            HRESULT MakeProminent([NativeTypeName("DWORD")] uint dwIDCtl);
+
+            [VtblIndex(29)]
+            HRESULT SetControlItemText([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem, [NativeTypeName("LPCWSTR")] ushort* pszLabel);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, int> EnableOpenDropDown;
+
+            [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, ushort*, int> AddMenu;
+
+            [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, ushort*, int> AddPushButton;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, int> AddComboBox;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, int> AddRadioButtonList;
+
+            [NativeTypeName("HRESULT (DWORD, LPCWSTR, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, ushort*, BOOL, int> AddCheckButton;
+
+            [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, ushort*, int> AddEditBox;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, int> AddSeparator;
+
+            [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, ushort*, int> AddText;
+
+            [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, ushort*, int> SetControlLabel;
+
+            [NativeTypeName("HRESULT (DWORD, CDCONTROLSTATEF *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, CDCONTROLSTATEF*, int> GetControlState;
+
+            [NativeTypeName("HRESULT (DWORD, CDCONTROLSTATEF) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, CDCONTROLSTATEF, int> SetControlState;
+
+            [NativeTypeName("HRESULT (DWORD, WCHAR **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, ushort**, int> GetEditBoxText;
+
+            [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, ushort*, int> SetEditBoxText;
+
+            [NativeTypeName("HRESULT (DWORD, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, BOOL*, int> GetCheckButtonState;
+
+            [NativeTypeName("HRESULT (DWORD, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, BOOL, int> SetCheckButtonState;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, uint, ushort*, int> AddControlItem;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, uint, int> RemoveControlItem;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, int> RemoveAllControlItems;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, CDCONTROLSTATEF *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, uint, CDCONTROLSTATEF*, int> GetControlItemState;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, CDCONTROLSTATEF) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, uint, CDCONTROLSTATEF, int> SetControlItemState;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, uint*, int> GetSelectedControlItem;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, uint, int> SetSelectedControlItem;
+
+            [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, ushort*, int> StartVisualGroup;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, int> EndVisualGroup;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, int> MakeProminent;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileDialogCustomize*, uint, uint, ushort*, int> SetControlItemText;
         }
     }
 }

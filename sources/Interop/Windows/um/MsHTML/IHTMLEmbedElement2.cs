@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510493-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLEmbedElement2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLEmbedElement2
+    public unsafe partial struct IHTMLEmbedElement2 : IHTMLEmbedElement2.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,51 @@ namespace TerraFX.Interop
         public HRESULT get_pluginspage([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLEmbedElement2*, ushort**, int>)(lpVtbl[9]))((IHTMLEmbedElement2*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_src([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_src([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT get_pluginspage([NativeTypeName("BSTR *")] ushort** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEmbedElement2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEmbedElement2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEmbedElement2*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEmbedElement2*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEmbedElement2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEmbedElement2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEmbedElement2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEmbedElement2*, ushort*, int> put_src;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEmbedElement2*, ushort**, int> get_src;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEmbedElement2*, ushort**, int> get_pluginspage;
         }
     }
 }

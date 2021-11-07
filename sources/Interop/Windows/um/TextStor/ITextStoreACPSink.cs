@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("22D44C94-A419-4542-A272-AE26093ECECF")]
     [NativeTypeName("struct ITextStoreACPSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITextStoreACPSink
+    public unsafe partial struct ITextStoreACPSink : ITextStoreACPSink.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,69 @@ namespace TerraFX.Interop
         public HRESULT OnEndEditTransaction()
         {
             return ((delegate* unmanaged<ITextStoreACPSink*, int>)(lpVtbl[10]))((ITextStoreACPSink*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnTextChange([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const TS_TEXTCHANGE *")] TS_TEXTCHANGE* pChange);
+
+            [VtblIndex(4)]
+            HRESULT OnSelectionChange();
+
+            [VtblIndex(5)]
+            HRESULT OnLayoutChange(TsLayoutCode lcode, [NativeTypeName("TsViewCookie")] uint vcView);
+
+            [VtblIndex(6)]
+            HRESULT OnStatusChange([NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(7)]
+            HRESULT OnAttrsChange([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, [NativeTypeName("ULONG")] uint cAttrs, [NativeTypeName("const TS_ATTRID *")] Guid* paAttrs);
+
+            [VtblIndex(8)]
+            HRESULT OnLockGranted([NativeTypeName("DWORD")] uint dwLockFlags);
+
+            [VtblIndex(9)]
+            HRESULT OnStartEditTransaction();
+
+            [VtblIndex(10)]
+            HRESULT OnEndEditTransaction();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreACPSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreACPSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreACPSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, const TS_TEXTCHANGE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreACPSink*, uint, TS_TEXTCHANGE*, int> OnTextChange;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreACPSink*, int> OnSelectionChange;
+
+            [NativeTypeName("HRESULT (TsLayoutCode, TsViewCookie) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreACPSink*, TsLayoutCode, uint, int> OnLayoutChange;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreACPSink*, uint, int> OnStatusChange;
+
+            [NativeTypeName("HRESULT (LONG, LONG, ULONG, const TS_ATTRID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreACPSink*, int, int, uint, Guid*, int> OnAttrsChange;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreACPSink*, uint, int> OnLockGranted;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreACPSink*, int> OnStartEditTransaction;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITextStoreACPSink*, int> OnEndEditTransaction;
         }
     }
 }

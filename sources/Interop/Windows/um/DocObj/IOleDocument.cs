@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B722BCC5-4E68-101B-A2BC-00AA00404770")]
     [NativeTypeName("struct IOleDocument : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IOleDocument
+    public unsafe partial struct IOleDocument : IOleDocument.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT EnumViews(IEnumOleDocumentViews** ppEnum, IOleDocumentView** ppView)
         {
             return ((delegate* unmanaged<IOleDocument*, IEnumOleDocumentViews**, IOleDocumentView**, int>)(lpVtbl[5]))((IOleDocument*)Unsafe.AsPointer(ref this), ppEnum, ppView);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateView(IOleInPlaceSite* pIPSite, IStream* pstm, [NativeTypeName("DWORD")] uint dwReserved, IOleDocumentView** ppView);
+
+            [VtblIndex(4)]
+            HRESULT GetDocMiscStatus([NativeTypeName("DWORD *")] uint* pdwStatus);
+
+            [VtblIndex(5)]
+            HRESULT EnumViews(IEnumOleDocumentViews** ppEnum, IOleDocumentView** ppView);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocument*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocument*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocument*, uint> Release;
+
+            [NativeTypeName("HRESULT (IOleInPlaceSite *, IStream *, DWORD, IOleDocumentView **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocument*, IOleInPlaceSite*, IStream*, uint, IOleDocumentView**, int> CreateView;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocument*, uint*, int> GetDocMiscStatus;
+
+            [NativeTypeName("HRESULT (IEnumOleDocumentViews **, IOleDocumentView **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleDocument*, IEnumOleDocumentViews**, IOleDocumentView**, int> EnumViews;
         }
     }
 }

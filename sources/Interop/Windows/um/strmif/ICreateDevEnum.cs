@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("29840822-5B84-11D0-BD3B-00A0C911CE86")]
     [NativeTypeName("struct ICreateDevEnum : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICreateDevEnum
+    public unsafe partial struct ICreateDevEnum : ICreateDevEnum.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT CreateClassEnumerator([NativeTypeName("const IID &")] Guid* clsidDeviceClass, IEnumMoniker** ppEnumMoniker, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<ICreateDevEnum*, Guid*, IEnumMoniker**, uint, int>)(lpVtbl[3]))((ICreateDevEnum*)Unsafe.AsPointer(ref this), clsidDeviceClass, ppEnumMoniker, dwFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateClassEnumerator([NativeTypeName("const IID &")] Guid* clsidDeviceClass, IEnumMoniker** ppEnumMoniker, [NativeTypeName("DWORD")] uint dwFlags);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateDevEnum*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateDevEnum*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateDevEnum*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, IEnumMoniker **, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateDevEnum*, Guid*, IEnumMoniker**, uint, int> CreateClassEnumerator;
         }
     }
 }

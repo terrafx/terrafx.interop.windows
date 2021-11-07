@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EB533D5D-2DB6-40F8-97A9-494692014F07")]
     [NativeTypeName("struct IMFDXGIDeviceManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFDXGIDeviceManager
+    public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,63 @@ namespace TerraFX.Interop
         public HRESULT UnlockDevice(HANDLE hDevice, BOOL fSaveState)
         {
             return ((delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, BOOL, int>)(lpVtbl[9]))((IMFDXGIDeviceManager*)Unsafe.AsPointer(ref this), hDevice, fSaveState);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CloseDeviceHandle(HANDLE hDevice);
+
+            [VtblIndex(4)]
+            HRESULT GetVideoService(HANDLE hDevice, [NativeTypeName("const IID &")] Guid* riid, void** ppService);
+
+            [VtblIndex(5)]
+            HRESULT LockDevice(HANDLE hDevice, [NativeTypeName("const IID &")] Guid* riid, void** ppUnkDevice, BOOL fBlock);
+
+            [VtblIndex(6)]
+            HRESULT OpenDeviceHandle(HANDLE* phDevice);
+
+            [VtblIndex(7)]
+            HRESULT ResetDevice(IUnknown* pUnkDevice, uint resetToken);
+
+            [VtblIndex(8)]
+            HRESULT TestDevice(HANDLE hDevice);
+
+            [VtblIndex(9)]
+            HRESULT UnlockDevice(HANDLE hDevice, BOOL fSaveState);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIDeviceManager*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIDeviceManager*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIDeviceManager*, uint> Release;
+
+            [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, int> CloseDeviceHandle;
+
+            [NativeTypeName("HRESULT (HANDLE, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, Guid*, void**, int> GetVideoService;
+
+            [NativeTypeName("HRESULT (HANDLE, const IID &, void **, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, Guid*, void**, BOOL, int> LockDevice;
+
+            [NativeTypeName("HRESULT (HANDLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE*, int> OpenDeviceHandle;
+
+            [NativeTypeName("HRESULT (IUnknown *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIDeviceManager*, IUnknown*, uint, int> ResetDevice;
+
+            [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, int> TestDevice;
+
+            [NativeTypeName("HRESULT (HANDLE, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, BOOL, int> UnlockDevice;
         }
     }
 }

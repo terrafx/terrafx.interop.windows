@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1BB12A62-2AD8-432B-8CCF-0C2C52AFCD5B")]
     [NativeTypeName("struct IPackageExecutionStateChangeNotification : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPackageExecutionStateChangeNotification
+    public unsafe partial struct IPackageExecutionStateChangeNotification : IPackageExecutionStateChangeNotification.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OnStateChanged([NativeTypeName("LPCWSTR")] ushort* pszPackageFullName, PACKAGE_EXECUTION_STATE pesNewState)
         {
             return ((delegate* unmanaged<IPackageExecutionStateChangeNotification*, ushort*, PACKAGE_EXECUTION_STATE, int>)(lpVtbl[3]))((IPackageExecutionStateChangeNotification*)Unsafe.AsPointer(ref this), pszPackageFullName, pesNewState);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnStateChanged([NativeTypeName("LPCWSTR")] ushort* pszPackageFullName, PACKAGE_EXECUTION_STATE pesNewState);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPackageExecutionStateChangeNotification*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPackageExecutionStateChangeNotification*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPackageExecutionStateChangeNotification*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, PACKAGE_EXECUTION_STATE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPackageExecutionStateChangeNotification*, ushort*, PACKAGE_EXECUTION_STATE, int> OnStateChanged;
         }
     }
 }

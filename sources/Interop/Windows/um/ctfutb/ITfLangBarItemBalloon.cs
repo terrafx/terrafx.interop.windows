@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("01C2D285-D3C7-4B7B-B5B5-D97411D0C283")]
     [NativeTypeName("struct ITfLangBarItemBalloon : ITfLangBarItem")]
     [NativeInheritance("ITfLangBarItem")]
-    public unsafe partial struct ITfLangBarItemBalloon
+    public unsafe partial struct ITfLangBarItemBalloon : ITfLangBarItemBalloon.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,51 @@ namespace TerraFX.Interop
         public HRESULT GetBalloonInfo(TF_LBBALLOONINFO* pInfo)
         {
             return ((delegate* unmanaged<ITfLangBarItemBalloon*, TF_LBBALLOONINFO*, int>)(lpVtbl[9]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), pInfo);
+        }
+
+        public interface Interface : ITfLangBarItem.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT OnClick(TfLBIClick click, POINT pt, [NativeTypeName("const RECT *")] RECT* prcArea);
+
+            [VtblIndex(8)]
+            HRESULT GetPreferredSize([NativeTypeName("const SIZE *")] SIZE* pszDefault, SIZE* psz);
+
+            [VtblIndex(9)]
+            HRESULT GetBalloonInfo(TF_LBBALLOONINFO* pInfo);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemBalloon*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemBalloon*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemBalloon*, uint> Release;
+
+            [NativeTypeName("HRESULT (TF_LANGBARITEMINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemBalloon*, TF_LANGBARITEMINFO*, int> GetInfo;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemBalloon*, uint*, int> GetStatus;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemBalloon*, BOOL, int> Show;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemBalloon*, ushort**, int> GetTooltipString;
+
+            [NativeTypeName("HRESULT (TfLBIClick, POINT, const RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemBalloon*, TfLBIClick, POINT, RECT*, int> OnClick;
+
+            [NativeTypeName("HRESULT (const SIZE *, SIZE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemBalloon*, SIZE*, SIZE*, int> GetPreferredSize;
+
+            [NativeTypeName("HRESULT (TF_LBBALLOONINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemBalloon*, TF_LBBALLOONINFO*, int> GetBalloonInfo;
         }
     }
 }

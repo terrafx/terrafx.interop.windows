@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3FEBD6DD-4973-4787-8194-E45F9E28923E")]
     [NativeTypeName("struct ID3D12DebugDevice : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D12DebugDevice
+    public unsafe partial struct ID3D12DebugDevice : ID3D12DebugDevice.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT ReportLiveDeviceObjects(D3D12_RLDO_FLAGS Flags)
         {
             return ((delegate* unmanaged<ID3D12DebugDevice*, D3D12_RLDO_FLAGS, int>)(lpVtbl[5]))((ID3D12DebugDevice*)Unsafe.AsPointer(ref this), Flags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetFeatureMask(D3D12_DEBUG_FEATURE Mask);
+
+            [VtblIndex(4)]
+            D3D12_DEBUG_FEATURE GetFeatureMask();
+
+            [VtblIndex(5)]
+            HRESULT ReportLiveDeviceObjects(D3D12_RLDO_FLAGS Flags);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugDevice*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugDevice*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugDevice*, uint> Release;
+
+            [NativeTypeName("HRESULT (D3D12_DEBUG_FEATURE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugDevice*, D3D12_DEBUG_FEATURE, int> SetFeatureMask;
+
+            [NativeTypeName("D3D12_DEBUG_FEATURE () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugDevice*, D3D12_DEBUG_FEATURE> GetFeatureMask;
+
+            [NativeTypeName("HRESULT (D3D12_RLDO_FLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugDevice*, D3D12_RLDO_FLAGS, int> ReportLiveDeviceObjects;
         }
     }
 }

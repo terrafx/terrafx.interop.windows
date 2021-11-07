@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("277672AC-4F63-42C1-8ABC-BEAE3600EB59")]
     [NativeTypeName("struct IAppxBlockMapFile : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxBlockMapFile
+    public unsafe partial struct IAppxBlockMapFile : IAppxBlockMapFile.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT ValidateFileHash(IStream* fileStream, BOOL* isValid)
         {
             return ((delegate* unmanaged<IAppxBlockMapFile*, IStream*, BOOL*, int>)(lpVtbl[7]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this), fileStream, isValid);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetBlocks(IAppxBlockMapBlocksEnumerator** blocks);
+
+            [VtblIndex(4)]
+            HRESULT GetLocalFileHeaderSize([NativeTypeName("UINT32 *")] uint* lfhSize);
+
+            [VtblIndex(5)]
+            HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name);
+
+            [VtblIndex(6)]
+            HRESULT GetUncompressedSize([NativeTypeName("UINT64 *")] ulong* size);
+
+            [VtblIndex(7)]
+            HRESULT ValidateFileHash(IStream* fileStream, BOOL* isValid);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapFile*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapFile*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapFile*, uint> Release;
+
+            [NativeTypeName("HRESULT (IAppxBlockMapBlocksEnumerator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapFile*, IAppxBlockMapBlocksEnumerator**, int> GetBlocks;
+
+            [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapFile*, uint*, int> GetLocalFileHeaderSize;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapFile*, ushort**, int> GetName;
+
+            [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapFile*, ulong*, int> GetUncompressedSize;
+
+            [NativeTypeName("HRESULT (IStream *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxBlockMapFile*, IStream*, BOOL*, int> ValidateFileHash;
         }
     }
 }

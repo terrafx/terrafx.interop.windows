@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("45D64A29-A63E-4CB6-B498-5781D298CB4F")]
     [NativeTypeName("struct ICoreWindowInterop : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICoreWindowInterop
+    public unsafe partial struct ICoreWindowInterop : ICoreWindowInterop.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT put_MessageHandled([NativeTypeName("boolean")] byte value)
         {
             return ((delegate* unmanaged<ICoreWindowInterop*, byte, int>)(lpVtbl[4]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_WindowHandle(HWND* hwnd);
+
+            [VtblIndex(4)]
+            HRESULT put_MessageHandled([NativeTypeName("boolean")] byte value);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICoreWindowInterop*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICoreWindowInterop*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICoreWindowInterop*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICoreWindowInterop*, HWND*, int> get_WindowHandle;
+
+            [NativeTypeName("HRESULT (boolean) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICoreWindowInterop*, byte, int> put_MessageHandled;
         }
     }
 }

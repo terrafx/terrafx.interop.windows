@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B196B283-BAB4-101A-B69C-00AA00341D07")]
     [NativeTypeName("struct IProvideClassInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IProvideClassInfo
+    public unsafe partial struct IProvideClassInfo : IProvideClassInfo.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetClassInfo(ITypeInfo** ppTI)
         {
             return ((delegate* unmanaged<IProvideClassInfo*, ITypeInfo**, int>)(lpVtbl[3]))((IProvideClassInfo*)Unsafe.AsPointer(ref this), ppTI);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetClassInfo(ITypeInfo** ppTI);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProvideClassInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IProvideClassInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IProvideClassInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IProvideClassInfo*, ITypeInfo**, int> GetClassInfo;
         }
     }
 }

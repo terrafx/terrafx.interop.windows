@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("11EC5A5F-51DC-4945-AB34-6E8C21300EA5")]
     [NativeTypeName("struct ID3D11VideoProcessorInputView : ID3D11View")]
     [NativeInheritance("ID3D11View")]
-    public unsafe partial struct ID3D11VideoProcessorInputView
+    public unsafe partial struct ID3D11VideoProcessorInputView : ID3D11VideoProcessorInputView.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,42 @@ namespace TerraFX.Interop
         public void GetDesc(D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC* pDesc)
         {
             ((delegate* unmanaged<ID3D11VideoProcessorInputView*, D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC*, void>)(lpVtbl[8]))((ID3D11VideoProcessorInputView*)Unsafe.AsPointer(ref this), pDesc);
+        }
+
+        public interface Interface : ID3D11View.Interface
+        {
+            [VtblIndex(8)]
+            void GetDesc(D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC* pDesc);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoProcessorInputView*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoProcessorInputView*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoProcessorInputView*, uint> Release;
+
+            [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoProcessorInputView*, ID3D11Device**, void> GetDevice;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoProcessorInputView*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoProcessorInputView*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoProcessorInputView*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("void (ID3D11Resource **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoProcessorInputView*, ID3D11Resource**, void> GetResource;
+
+            [NativeTypeName("void (D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoProcessorInputView*, D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC*, void> GetDesc;
         }
     }
 }

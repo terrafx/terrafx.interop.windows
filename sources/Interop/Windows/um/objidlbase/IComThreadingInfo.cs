@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("000001CE-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IComThreadingInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IComThreadingInfo
+    public unsafe partial struct IComThreadingInfo : IComThreadingInfo.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT SetCurrentLogicalThreadId([NativeTypeName("const GUID &")] Guid* rguid)
         {
             return ((delegate* unmanaged<IComThreadingInfo*, Guid*, int>)(lpVtbl[6]))((IComThreadingInfo*)Unsafe.AsPointer(ref this), rguid);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCurrentApartmentType(APTTYPE* pAptType);
+
+            [VtblIndex(4)]
+            HRESULT GetCurrentThreadType(THDTYPE* pThreadType);
+
+            [VtblIndex(5)]
+            HRESULT GetCurrentLogicalThreadId(Guid* pguidLogicalThreadId);
+
+            [VtblIndex(6)]
+            HRESULT SetCurrentLogicalThreadId([NativeTypeName("const GUID &")] Guid* rguid);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IComThreadingInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IComThreadingInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IComThreadingInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (APTTYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IComThreadingInfo*, APTTYPE*, int> GetCurrentApartmentType;
+
+            [NativeTypeName("HRESULT (THDTYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IComThreadingInfo*, THDTYPE*, int> GetCurrentThreadType;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IComThreadingInfo*, Guid*, int> GetCurrentLogicalThreadId;
+
+            [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IComThreadingInfo*, Guid*, int> SetCurrentLogicalThreadId;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000112-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IOleObject : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IOleObject
+    public unsafe partial struct IOleObject : IOleObject.Interface
     {
         public void** lpVtbl;
 
@@ -184,6 +184,147 @@ namespace TerraFX.Interop
         public HRESULT SetColorScheme(LOGPALETTE* pLogpal)
         {
             return ((delegate* unmanaged<IOleObject*, LOGPALETTE*, int>)(lpVtbl[23]))((IOleObject*)Unsafe.AsPointer(ref this), pLogpal);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetClientSite(IOleClientSite* pClientSite);
+
+            [VtblIndex(4)]
+            HRESULT GetClientSite(IOleClientSite** ppClientSite);
+
+            [VtblIndex(5)]
+            HRESULT SetHostNames([NativeTypeName("LPCOLESTR")] ushort* szContainerApp, [NativeTypeName("LPCOLESTR")] ushort* szContainerObj);
+
+            [VtblIndex(6)]
+            HRESULT Close([NativeTypeName("DWORD")] uint dwSaveOption);
+
+            [VtblIndex(7)]
+            HRESULT SetMoniker([NativeTypeName("DWORD")] uint dwWhichMoniker, IMoniker* pmk);
+
+            [VtblIndex(8)]
+            HRESULT GetMoniker([NativeTypeName("DWORD")] uint dwAssign, [NativeTypeName("DWORD")] uint dwWhichMoniker, IMoniker** ppmk);
+
+            [VtblIndex(9)]
+            HRESULT InitFromData(IDataObject* pDataObject, BOOL fCreation, [NativeTypeName("DWORD")] uint dwReserved);
+
+            [VtblIndex(10)]
+            HRESULT GetClipboardData([NativeTypeName("DWORD")] uint dwReserved, IDataObject** ppDataObject);
+
+            [VtblIndex(11)]
+            HRESULT DoVerb([NativeTypeName("LONG")] int iVerb, [NativeTypeName("LPMSG")] MSG* lpmsg, IOleClientSite* pActiveSite, [NativeTypeName("LONG")] int lindex, HWND hwndParent, [NativeTypeName("LPCRECT")] RECT* lprcPosRect);
+
+            [VtblIndex(12)]
+            HRESULT EnumVerbs(IEnumOLEVERB** ppEnumOleVerb);
+
+            [VtblIndex(13)]
+            HRESULT Update();
+
+            [VtblIndex(14)]
+            HRESULT IsUpToDate();
+
+            [VtblIndex(15)]
+            HRESULT GetUserClassID([NativeTypeName("CLSID *")] Guid* pClsid);
+
+            [VtblIndex(16)]
+            HRESULT GetUserType([NativeTypeName("DWORD")] uint dwFormOfType, [NativeTypeName("LPOLESTR *")] ushort** pszUserType);
+
+            [VtblIndex(17)]
+            HRESULT SetExtent([NativeTypeName("DWORD")] uint dwDrawAspect, [NativeTypeName("SIZEL *")] SIZE* psizel);
+
+            [VtblIndex(18)]
+            HRESULT GetExtent([NativeTypeName("DWORD")] uint dwDrawAspect, [NativeTypeName("SIZEL *")] SIZE* psizel);
+
+            [VtblIndex(19)]
+            HRESULT Advise(IAdviseSink* pAdvSink, [NativeTypeName("DWORD *")] uint* pdwConnection);
+
+            [VtblIndex(20)]
+            HRESULT Unadvise([NativeTypeName("DWORD")] uint dwConnection);
+
+            [VtblIndex(21)]
+            HRESULT EnumAdvise(IEnumSTATDATA** ppenumAdvise);
+
+            [VtblIndex(22)]
+            HRESULT GetMiscStatus([NativeTypeName("DWORD")] uint dwAspect, [NativeTypeName("DWORD *")] uint* pdwStatus);
+
+            [VtblIndex(23)]
+            HRESULT SetColorScheme(LOGPALETTE* pLogpal);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, uint> Release;
+
+            [NativeTypeName("HRESULT (IOleClientSite *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, IOleClientSite*, int> SetClientSite;
+
+            [NativeTypeName("HRESULT (IOleClientSite **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, IOleClientSite**, int> GetClientSite;
+
+            [NativeTypeName("HRESULT (LPCOLESTR, LPCOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, ushort*, ushort*, int> SetHostNames;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, uint, int> Close;
+
+            [NativeTypeName("HRESULT (DWORD, IMoniker *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, uint, IMoniker*, int> SetMoniker;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, IMoniker **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, uint, uint, IMoniker**, int> GetMoniker;
+
+            [NativeTypeName("HRESULT (IDataObject *, BOOL, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, IDataObject*, BOOL, uint, int> InitFromData;
+
+            [NativeTypeName("HRESULT (DWORD, IDataObject **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, uint, IDataObject**, int> GetClipboardData;
+
+            [NativeTypeName("HRESULT (LONG, LPMSG, IOleClientSite *, LONG, HWND, LPCRECT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, int, MSG*, IOleClientSite*, int, HWND, RECT*, int> DoVerb;
+
+            [NativeTypeName("HRESULT (IEnumOLEVERB **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, IEnumOLEVERB**, int> EnumVerbs;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, int> Update;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, int> IsUpToDate;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, Guid*, int> GetUserClassID;
+
+            [NativeTypeName("HRESULT (DWORD, LPOLESTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, uint, ushort**, int> GetUserType;
+
+            [NativeTypeName("HRESULT (DWORD, SIZEL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, uint, SIZE*, int> SetExtent;
+
+            [NativeTypeName("HRESULT (DWORD, SIZEL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, uint, SIZE*, int> GetExtent;
+
+            [NativeTypeName("HRESULT (IAdviseSink *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, IAdviseSink*, uint*, int> Advise;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, uint, int> Unadvise;
+
+            [NativeTypeName("HRESULT (IEnumSTATDATA **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, IEnumSTATDATA**, int> EnumAdvise;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, uint, uint*, int> GetMiscStatus;
+
+            [NativeTypeName("HRESULT (LOGPALETTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleObject*, LOGPALETTE*, int> SetColorScheme;
         }
     }
 }

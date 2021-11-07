@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D80DD70C-8D2F-4751-94A1-03C79B3556DB")]
     [NativeTypeName("struct ID3D11LinkingNode : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D11LinkingNode
+    public unsafe partial struct ID3D11LinkingNode : ID3D11LinkingNode.Interface
     {
         public void** lpVtbl;
 
@@ -37,6 +37,22 @@ namespace TerraFX.Interop
         public uint Release()
         {
             return ((delegate* unmanaged<ID3D11LinkingNode*, uint>)(lpVtbl[2]))((ID3D11LinkingNode*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11LinkingNode*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11LinkingNode*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11LinkingNode*, uint> Release;
         }
     }
 }

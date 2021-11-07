@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9C2C4058-23F5-41DE-877A-DF3AF236A09E")]
     [NativeTypeName("struct IConnector : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IConnector
+    public unsafe partial struct IConnector : IConnector.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,69 @@ namespace TerraFX.Interop
         public HRESULT GetDeviceIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrDeviceId)
         {
             return ((delegate* unmanaged<IConnector*, ushort**, int>)(lpVtbl[10]))((IConnector*)Unsafe.AsPointer(ref this), ppwstrDeviceId);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetType(ConnectorType* pType);
+
+            [VtblIndex(4)]
+            HRESULT GetDataFlow(DataFlow* pFlow);
+
+            [VtblIndex(5)]
+            HRESULT ConnectTo(IConnector* pConnectTo);
+
+            [VtblIndex(6)]
+            HRESULT Disconnect();
+
+            [VtblIndex(7)]
+            HRESULT IsConnected(BOOL* pbConnected);
+
+            [VtblIndex(8)]
+            HRESULT GetConnectedTo(IConnector** ppConTo);
+
+            [VtblIndex(9)]
+            HRESULT GetConnectorIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrConnectorId);
+
+            [VtblIndex(10)]
+            HRESULT GetDeviceIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrDeviceId);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnector*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnector*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnector*, uint> Release;
+
+            [NativeTypeName("HRESULT (ConnectorType *) __attribute__((stdcall))")]
+            public new delegate* unmanaged<IConnector*, ConnectorType*, int> GetType;
+
+            [NativeTypeName("HRESULT (DataFlow *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnector*, DataFlow*, int> GetDataFlow;
+
+            [NativeTypeName("HRESULT (IConnector *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnector*, IConnector*, int> ConnectTo;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnector*, int> Disconnect;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnector*, BOOL*, int> IsConnected;
+
+            [NativeTypeName("HRESULT (IConnector **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnector*, IConnector**, int> GetConnectedTo;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnector*, ushort**, int> GetConnectorIdConnectedTo;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IConnector*, ushort**, int> GetDeviceIdConnectedTo;
         }
     }
 }

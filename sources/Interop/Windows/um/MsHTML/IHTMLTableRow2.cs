@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F4A1-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLTableRow2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLTableRow2
+    public unsafe partial struct IHTMLTableRow2 : IHTMLTableRow2.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,45 @@ namespace TerraFX.Interop
         public HRESULT get_height(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLTableRow2*, VARIANT*, int>)(lpVtbl[8]))((IHTMLTableRow2*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_height(VARIANT v);
+
+            [VtblIndex(8)]
+            HRESULT get_height(VARIANT* p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTableRow2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTableRow2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTableRow2*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTableRow2*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTableRow2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTableRow2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTableRow2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTableRow2*, VARIANT, int> put_height;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTableRow2*, VARIANT*, int> get_height;
         }
     }
 }

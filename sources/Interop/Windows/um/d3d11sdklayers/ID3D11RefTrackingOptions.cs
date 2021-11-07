@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("193DACDF-0DB2-4C05-A55C-EF06CAC56FD9")]
     [NativeTypeName("struct ID3D11RefTrackingOptions : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D11RefTrackingOptions
+    public unsafe partial struct ID3D11RefTrackingOptions : ID3D11RefTrackingOptions.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT SetTrackingOptions(uint uOptions)
         {
             return ((delegate* unmanaged<ID3D11RefTrackingOptions*, uint, int>)(lpVtbl[3]))((ID3D11RefTrackingOptions*)Unsafe.AsPointer(ref this), uOptions);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetTrackingOptions(uint uOptions);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11RefTrackingOptions*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11RefTrackingOptions*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11RefTrackingOptions*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11RefTrackingOptions*, uint, int> SetTrackingOptions;
         }
     }
 }

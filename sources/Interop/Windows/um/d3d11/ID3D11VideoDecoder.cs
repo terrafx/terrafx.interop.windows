@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3C9C5B51-995D-48D1-9B8D-FA5CAEDED65C")]
     [NativeTypeName("struct ID3D11VideoDecoder : ID3D11DeviceChild")]
     [NativeInheritance("ID3D11DeviceChild")]
-    public unsafe partial struct ID3D11VideoDecoder
+    public unsafe partial struct ID3D11VideoDecoder : ID3D11VideoDecoder.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,45 @@ namespace TerraFX.Interop
         public HRESULT GetDriverHandle(HANDLE* pDriverHandle)
         {
             return ((delegate* unmanaged<ID3D11VideoDecoder*, HANDLE*, int>)(lpVtbl[8]))((ID3D11VideoDecoder*)Unsafe.AsPointer(ref this), pDriverHandle);
+        }
+
+        public interface Interface : ID3D11DeviceChild.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetCreationParameters(D3D11_VIDEO_DECODER_DESC* pVideoDesc, D3D11_VIDEO_DECODER_CONFIG* pConfig);
+
+            [VtblIndex(8)]
+            HRESULT GetDriverHandle(HANDLE* pDriverHandle);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoDecoder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoDecoder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoDecoder*, uint> Release;
+
+            [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoDecoder*, ID3D11Device**, void> GetDevice;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoDecoder*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoDecoder*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoDecoder*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (D3D11_VIDEO_DECODER_DESC *, D3D11_VIDEO_DECODER_CONFIG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoDecoder*, D3D11_VIDEO_DECODER_DESC*, D3D11_VIDEO_DECODER_CONFIG*, int> GetCreationParameters;
+
+            [NativeTypeName("HRESULT (HANDLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoDecoder*, HANDLE*, int> GetDriverHandle;
         }
     }
 }

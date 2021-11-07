@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3D25F6D6-4B2A-433C-9184-7C33AD35D001")]
     [NativeTypeName("struct IDataObjectProvider : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDataObjectProvider
+    public unsafe partial struct IDataObjectProvider : IDataObjectProvider.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT SetDataObject(IDataObject* dataObject)
         {
             return ((delegate* unmanaged<IDataObjectProvider*, IDataObject*, int>)(lpVtbl[4]))((IDataObjectProvider*)Unsafe.AsPointer(ref this), dataObject);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDataObject(IDataObject** dataObject);
+
+            [VtblIndex(4)]
+            HRESULT SetDataObject(IDataObject* dataObject);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDataObjectProvider*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDataObjectProvider*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDataObjectProvider*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDataObject **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDataObjectProvider*, IDataObject**, int> GetDataObject;
+
+            [NativeTypeName("HRESULT (IDataObject *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDataObjectProvider*, IDataObject*, int> SetDataObject;
         }
     }
 }

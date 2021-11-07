@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F5DA-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDOMNode : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDOMNode
+    public unsafe partial struct IHTMLDOMNode : IHTMLDOMNode.Interface
     {
         public void** lpVtbl;
 
@@ -205,6 +205,153 @@ namespace TerraFX.Interop
         public HRESULT get_nextSibling(IHTMLDOMNode** p)
         {
             return ((delegate* unmanaged<IHTMLDOMNode*, IHTMLDOMNode**, int>)(lpVtbl[26]))((IHTMLDOMNode*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_nodeType([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT get_parentNode(IHTMLDOMNode** p);
+
+            [VtblIndex(9)]
+            HRESULT hasChildNodes([NativeTypeName("VARIANT_BOOL *")] short* fChildren);
+
+            [VtblIndex(10)]
+            HRESULT get_childNodes(IDispatch** p);
+
+            [VtblIndex(11)]
+            HRESULT get_attributes(IDispatch** p);
+
+            [VtblIndex(12)]
+            HRESULT insertBefore(IHTMLDOMNode* newChild, VARIANT refChild, IHTMLDOMNode** node);
+
+            [VtblIndex(13)]
+            HRESULT removeChild(IHTMLDOMNode* oldChild, IHTMLDOMNode** node);
+
+            [VtblIndex(14)]
+            HRESULT replaceChild(IHTMLDOMNode* newChild, IHTMLDOMNode* oldChild, IHTMLDOMNode** node);
+
+            [VtblIndex(15)]
+            HRESULT cloneNode([NativeTypeName("VARIANT_BOOL")] short fDeep, IHTMLDOMNode** clonedNode);
+
+            [VtblIndex(16)]
+            HRESULT removeNode([NativeTypeName("VARIANT_BOOL")] short fDeep, IHTMLDOMNode** removed);
+
+            [VtblIndex(17)]
+            HRESULT swapNode(IHTMLDOMNode* otherNode, IHTMLDOMNode** swappedNode);
+
+            [VtblIndex(18)]
+            HRESULT replaceNode(IHTMLDOMNode* replacement, IHTMLDOMNode** replaced);
+
+            [VtblIndex(19)]
+            HRESULT appendChild(IHTMLDOMNode* newChild, IHTMLDOMNode** node);
+
+            [VtblIndex(20)]
+            HRESULT get_nodeName([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(21)]
+            HRESULT put_nodeValue(VARIANT v);
+
+            [VtblIndex(22)]
+            HRESULT get_nodeValue(VARIANT* p);
+
+            [VtblIndex(23)]
+            HRESULT get_firstChild(IHTMLDOMNode** p);
+
+            [VtblIndex(24)]
+            HRESULT get_lastChild(IHTMLDOMNode** p);
+
+            [VtblIndex(25)]
+            HRESULT get_previousSibling(IHTMLDOMNode** p);
+
+            [VtblIndex(26)]
+            HRESULT get_nextSibling(IHTMLDOMNode** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, int*, int> get_nodeType;
+
+            [NativeTypeName("HRESULT (IHTMLDOMNode **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, IHTMLDOMNode**, int> get_parentNode;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, short*, int> hasChildNodes;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, IDispatch**, int> get_childNodes;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, IDispatch**, int> get_attributes;
+
+            [NativeTypeName("HRESULT (IHTMLDOMNode *, VARIANT, IHTMLDOMNode **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, IHTMLDOMNode*, VARIANT, IHTMLDOMNode**, int> insertBefore;
+
+            [NativeTypeName("HRESULT (IHTMLDOMNode *, IHTMLDOMNode **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, IHTMLDOMNode*, IHTMLDOMNode**, int> removeChild;
+
+            [NativeTypeName("HRESULT (IHTMLDOMNode *, IHTMLDOMNode *, IHTMLDOMNode **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, IHTMLDOMNode*, IHTMLDOMNode*, IHTMLDOMNode**, int> replaceChild;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL, IHTMLDOMNode **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, short, IHTMLDOMNode**, int> cloneNode;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL, IHTMLDOMNode **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, short, IHTMLDOMNode**, int> removeNode;
+
+            [NativeTypeName("HRESULT (IHTMLDOMNode *, IHTMLDOMNode **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, IHTMLDOMNode*, IHTMLDOMNode**, int> swapNode;
+
+            [NativeTypeName("HRESULT (IHTMLDOMNode *, IHTMLDOMNode **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, IHTMLDOMNode*, IHTMLDOMNode**, int> replaceNode;
+
+            [NativeTypeName("HRESULT (IHTMLDOMNode *, IHTMLDOMNode **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, IHTMLDOMNode*, IHTMLDOMNode**, int> appendChild;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, ushort**, int> get_nodeName;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, VARIANT, int> put_nodeValue;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, VARIANT*, int> get_nodeValue;
+
+            [NativeTypeName("HRESULT (IHTMLDOMNode **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, IHTMLDOMNode**, int> get_firstChild;
+
+            [NativeTypeName("HRESULT (IHTMLDOMNode **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, IHTMLDOMNode**, int> get_lastChild;
+
+            [NativeTypeName("HRESULT (IHTMLDOMNode **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, IHTMLDOMNode**, int> get_previousSibling;
+
+            [NativeTypeName("HRESULT (IHTMLDOMNode **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMNode*, IHTMLDOMNode**, int> get_nextSibling;
         }
     }
 }

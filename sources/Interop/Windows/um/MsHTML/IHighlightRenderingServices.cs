@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F606-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHighlightRenderingServices : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHighlightRenderingServices
+    public unsafe partial struct IHighlightRenderingServices : IHighlightRenderingServices.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT RemoveSegment(IHighlightSegment* pISegment)
         {
             return ((delegate* unmanaged<IHighlightRenderingServices*, IHighlightSegment*, int>)(lpVtbl[5]))((IHighlightRenderingServices*)Unsafe.AsPointer(ref this), pISegment);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddSegment(IDisplayPointer* pDispPointerStart, IDisplayPointer* pDispPointerEnd, IHTMLRenderStyle* pIRenderStyle, IHighlightSegment** ppISegment);
+
+            [VtblIndex(4)]
+            HRESULT MoveSegmentToPointers(IHighlightSegment* pISegment, IDisplayPointer* pDispPointerStart, IDisplayPointer* pDispPointerEnd);
+
+            [VtblIndex(5)]
+            HRESULT RemoveSegment(IHighlightSegment* pISegment);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHighlightRenderingServices*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHighlightRenderingServices*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHighlightRenderingServices*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDisplayPointer *, IDisplayPointer *, IHTMLRenderStyle *, IHighlightSegment **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHighlightRenderingServices*, IDisplayPointer*, IDisplayPointer*, IHTMLRenderStyle*, IHighlightSegment**, int> AddSegment;
+
+            [NativeTypeName("HRESULT (IHighlightSegment *, IDisplayPointer *, IDisplayPointer *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHighlightRenderingServices*, IHighlightSegment*, IDisplayPointer*, IDisplayPointer*, int> MoveSegmentToPointers;
+
+            [NativeTypeName("HRESULT (IHighlightSegment *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHighlightRenderingServices*, IHighlightSegment*, int> RemoveSegment;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct IDxDiagContainer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDxDiagContainer
+    public unsafe partial struct IDxDiagContainer : IDxDiagContainer.Interface
     {
         public void** lpVtbl;
 
@@ -77,6 +77,57 @@ namespace TerraFX.Interop
         public HRESULT GetProp([NativeTypeName("LPCWSTR")] ushort* pwszPropName, VARIANT* pvarProp)
         {
             return ((delegate* unmanaged<IDxDiagContainer*, ushort*, VARIANT*, int>)(lpVtbl[8]))((IDxDiagContainer*)Unsafe.AsPointer(ref this), pwszPropName, pvarProp);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetNumberOfChildContainers([NativeTypeName("DWORD *")] uint* pdwCount);
+
+            [VtblIndex(4)]
+            HRESULT EnumChildContainerNames([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* pwszContainer, [NativeTypeName("DWORD")] uint cchContainer);
+
+            [VtblIndex(5)]
+            HRESULT GetChildContainer([NativeTypeName("LPCWSTR")] ushort* pwszContainer, IDxDiagContainer** ppInstance);
+
+            [VtblIndex(6)]
+            HRESULT GetNumberOfProps([NativeTypeName("DWORD *")] uint* pdwCount);
+
+            [VtblIndex(7)]
+            HRESULT EnumPropNames([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* pwszPropName, [NativeTypeName("DWORD")] uint cchPropName);
+
+            [VtblIndex(8)]
+            HRESULT GetProp([NativeTypeName("LPCWSTR")] ushort* pwszPropName, VARIANT* pvarProp);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxDiagContainer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxDiagContainer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxDiagContainer*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxDiagContainer*, uint*, int> GetNumberOfChildContainers;
+
+            [NativeTypeName("HRESULT (DWORD, LPWSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxDiagContainer*, uint, ushort*, uint, int> EnumChildContainerNames;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IDxDiagContainer **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxDiagContainer*, ushort*, IDxDiagContainer**, int> GetChildContainer;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxDiagContainer*, uint*, int> GetNumberOfProps;
+
+            [NativeTypeName("HRESULT (DWORD, LPWSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxDiagContainer*, uint, ushort*, uint, int> EnumPropNames;
+
+            [NativeTypeName("HRESULT (LPCWSTR, VARIANT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxDiagContainer*, ushort*, VARIANT*, int> GetProp;
         }
     }
 }

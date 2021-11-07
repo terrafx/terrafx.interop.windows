@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("ADD8BA80-002B-11D0-8F0F-00C04FD7D062")]
     [NativeTypeName("struct IDelegateFolder : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDelegateFolder
+    public unsafe partial struct IDelegateFolder : IDelegateFolder.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT SetItemAlloc(IMalloc* pmalloc)
         {
             return ((delegate* unmanaged<IDelegateFolder*, IMalloc*, int>)(lpVtbl[3]))((IDelegateFolder*)Unsafe.AsPointer(ref this), pmalloc);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetItemAlloc(IMalloc* pmalloc);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDelegateFolder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDelegateFolder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDelegateFolder*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMalloc *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDelegateFolder*, IMalloc*, int> SetItemAlloc;
         }
     }
 }

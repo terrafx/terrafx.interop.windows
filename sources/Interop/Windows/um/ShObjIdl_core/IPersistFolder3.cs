@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CEF04FDF-FE72-11D2-87A5-00C04F6837CF")]
     [NativeTypeName("struct IPersistFolder3 : IPersistFolder2")]
     [NativeInheritance("IPersistFolder2")]
-    public unsafe partial struct IPersistFolder3
+    public unsafe partial struct IPersistFolder3 : IPersistFolder3.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,42 @@ namespace TerraFX.Interop
         public HRESULT GetFolderTargetInfo(PERSIST_FOLDER_TARGET_INFO* ppfti)
         {
             return ((delegate* unmanaged<IPersistFolder3*, PERSIST_FOLDER_TARGET_INFO*, int>)(lpVtbl[7]))((IPersistFolder3*)Unsafe.AsPointer(ref this), ppfti);
+        }
+
+        public interface Interface : IPersistFolder2.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT InitializeEx(IBindCtx* pbc, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlRoot, [NativeTypeName("const PERSIST_FOLDER_TARGET_INFO *")] PERSIST_FOLDER_TARGET_INFO* ppfti);
+
+            [VtblIndex(7)]
+            HRESULT GetFolderTargetInfo(PERSIST_FOLDER_TARGET_INFO* ppfti);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFolder3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFolder3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFolder3*, uint> Release;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFolder3*, Guid*, int> GetClassID;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFolder3*, ITEMIDLIST*, int> Initialize;
+
+            [NativeTypeName("HRESULT (LPITEMIDLIST *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFolder3*, ITEMIDLIST**, int> GetCurFolder;
+
+            [NativeTypeName("HRESULT (IBindCtx *, LPCITEMIDLIST, const PERSIST_FOLDER_TARGET_INFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFolder3*, IBindCtx*, ITEMIDLIST*, PERSIST_FOLDER_TARGET_INFO*, int> InitializeEx;
+
+            [NativeTypeName("HRESULT (PERSIST_FOLDER_TARGET_INFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistFolder3*, PERSIST_FOLDER_TARGET_INFO*, int> GetFolderTargetInfo;
         }
     }
 }

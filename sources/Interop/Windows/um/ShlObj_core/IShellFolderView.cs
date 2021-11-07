@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("37A378C0-F82D-11CE-AE65-08002B2E1262")]
     [NativeTypeName("struct IShellFolderView : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellFolderView
+    public unsafe partial struct IShellFolderView : IShellFolderView.Interface
     {
         public void** lpVtbl;
 
@@ -233,6 +233,189 @@ namespace TerraFX.Interop
         public HRESULT SetAutomationObject(IDispatch* pdisp)
         {
             return ((delegate* unmanaged<IShellFolderView*, IDispatch*, int>)(lpVtbl[30]))((IShellFolderView*)Unsafe.AsPointer(ref this), pdisp);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Rearrange(LPARAM lParamSort);
+
+            [VtblIndex(4)]
+            HRESULT GetArrangeParam(LPARAM* plParamSort);
+
+            [VtblIndex(5)]
+            HRESULT ArrangeGrid();
+
+            [VtblIndex(6)]
+            HRESULT AutoArrange();
+
+            [VtblIndex(7)]
+            HRESULT GetAutoArrange();
+
+            [VtblIndex(8)]
+            HRESULT AddObject([NativeTypeName("LPITEMIDLIST")] ITEMIDLIST* pidl, uint* puItem);
+
+            [VtblIndex(9)]
+            HRESULT GetObjectW([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl, uint uItem);
+
+            [VtblIndex(10)]
+            HRESULT RemoveObject([NativeTypeName("LPITEMIDLIST")] ITEMIDLIST* pidl, uint* puItem);
+
+            [VtblIndex(11)]
+            HRESULT GetObjectCount(uint* puCount);
+
+            [VtblIndex(12)]
+            HRESULT SetObjectCount(uint uCount, uint dwFlags);
+
+            [VtblIndex(13)]
+            HRESULT UpdateObject([NativeTypeName("LPITEMIDLIST")] ITEMIDLIST* pidlOld, [NativeTypeName("LPITEMIDLIST")] ITEMIDLIST* pidlNew, uint* puItem);
+
+            [VtblIndex(14)]
+            HRESULT RefreshObject([NativeTypeName("LPITEMIDLIST")] ITEMIDLIST* pidl, uint* puItem);
+
+            [VtblIndex(15)]
+            HRESULT SetRedraw(BOOL bRedraw);
+
+            [VtblIndex(16)]
+            HRESULT GetSelectedCount(uint* puSelected);
+
+            [VtblIndex(17)]
+            HRESULT GetSelectedObjects([NativeTypeName("LPCITEMIDLIST **")] ITEMIDLIST*** pppidl, uint* puItems);
+
+            [VtblIndex(18)]
+            HRESULT IsDropOnSource(IDropTarget* pDropTarget);
+
+            [VtblIndex(19)]
+            HRESULT GetDragPoint(POINT* ppt);
+
+            [VtblIndex(20)]
+            HRESULT GetDropPoint(POINT* ppt);
+
+            [VtblIndex(21)]
+            HRESULT MoveIcons(IDataObject* pDataObject);
+
+            [VtblIndex(22)]
+            HRESULT SetItemPos([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, POINT* ppt);
+
+            [VtblIndex(23)]
+            HRESULT IsBkDropTarget(IDropTarget* pDropTarget);
+
+            [VtblIndex(24)]
+            HRESULT SetClipboard(BOOL bMove);
+
+            [VtblIndex(25)]
+            HRESULT SetPoints(IDataObject* pDataObject);
+
+            [VtblIndex(26)]
+            HRESULT GetItemSpacing(ITEMSPACING* pSpacing);
+
+            [VtblIndex(27)]
+            HRESULT SetCallback(IShellFolderViewCB* pNewCB, IShellFolderViewCB** ppOldCB);
+
+            [VtblIndex(28)]
+            HRESULT Select(uint dwFlags);
+
+            [VtblIndex(29)]
+            HRESULT QuerySupport(uint* pdwSupport);
+
+            [VtblIndex(30)]
+            HRESULT SetAutomationObject(IDispatch* pdisp);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPARAM) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, LPARAM, int> Rearrange;
+
+            [NativeTypeName("HRESULT (LPARAM *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, LPARAM*, int> GetArrangeParam;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, int> ArrangeGrid;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, int> AutoArrange;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, int> GetAutoArrange;
+
+            [NativeTypeName("HRESULT (LPITEMIDLIST, UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, ITEMIDLIST*, uint*, int> AddObject;
+
+            [NativeTypeName("HRESULT (LPITEMIDLIST *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, ITEMIDLIST**, uint, int> GetObjectW;
+
+            [NativeTypeName("HRESULT (LPITEMIDLIST, UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, ITEMIDLIST*, uint*, int> RemoveObject;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, uint*, int> GetObjectCount;
+
+            [NativeTypeName("HRESULT (UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, uint, uint, int> SetObjectCount;
+
+            [NativeTypeName("HRESULT (LPITEMIDLIST, LPITEMIDLIST, UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, ITEMIDLIST*, ITEMIDLIST*, uint*, int> UpdateObject;
+
+            [NativeTypeName("HRESULT (LPITEMIDLIST, UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, ITEMIDLIST*, uint*, int> RefreshObject;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, BOOL, int> SetRedraw;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, uint*, int> GetSelectedCount;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST **, UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, ITEMIDLIST***, uint*, int> GetSelectedObjects;
+
+            [NativeTypeName("HRESULT (IDropTarget *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, IDropTarget*, int> IsDropOnSource;
+
+            [NativeTypeName("HRESULT (POINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, POINT*, int> GetDragPoint;
+
+            [NativeTypeName("HRESULT (POINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, POINT*, int> GetDropPoint;
+
+            [NativeTypeName("HRESULT (IDataObject *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, IDataObject*, int> MoveIcons;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST, POINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, ITEMIDLIST*, POINT*, int> SetItemPos;
+
+            [NativeTypeName("HRESULT (IDropTarget *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, IDropTarget*, int> IsBkDropTarget;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, BOOL, int> SetClipboard;
+
+            [NativeTypeName("HRESULT (IDataObject *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, IDataObject*, int> SetPoints;
+
+            [NativeTypeName("HRESULT (ITEMSPACING *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, ITEMSPACING*, int> GetItemSpacing;
+
+            [NativeTypeName("HRESULT (IShellFolderViewCB *, IShellFolderViewCB **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, IShellFolderViewCB*, IShellFolderViewCB**, int> SetCallback;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, uint, int> Select;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, uint*, int> QuerySupport;
+
+            [NativeTypeName("HRESULT (IDispatch *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellFolderView*, IDispatch*, int> SetAutomationObject;
         }
     }
 }

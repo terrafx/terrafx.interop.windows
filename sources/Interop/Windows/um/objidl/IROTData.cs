@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F29F6BC0-5021-11CE-AA15-00006901293F")]
     [NativeTypeName("struct IROTData : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IROTData
+    public unsafe partial struct IROTData : IROTData.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetComparisonData(byte* pbData, [NativeTypeName("ULONG")] uint cbMax, [NativeTypeName("ULONG *")] uint* pcbData)
         {
             return ((delegate* unmanaged<IROTData*, byte*, uint, uint*, int>)(lpVtbl[3]))((IROTData*)Unsafe.AsPointer(ref this), pbData, cbMax, pcbData);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetComparisonData(byte* pbData, [NativeTypeName("ULONG")] uint cbMax, [NativeTypeName("ULONG *")] uint* pcbData);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IROTData*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IROTData*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IROTData*, uint> Release;
+
+            [NativeTypeName("HRESULT (byte *, ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IROTData*, byte*, uint, uint*, int> GetComparisonData;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F7E3-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLPainterOverlay : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHTMLPainterOverlay
+    public unsafe partial struct IHTMLPainterOverlay : IHTMLPainterOverlay.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OnMove(RECT rcDevice)
         {
             return ((delegate* unmanaged<IHTMLPainterOverlay*, RECT, int>)(lpVtbl[3]))((IHTMLPainterOverlay*)Unsafe.AsPointer(ref this), rcDevice);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnMove(RECT rcDevice);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPainterOverlay*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPainterOverlay*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPainterOverlay*, uint> Release;
+
+            [NativeTypeName("HRESULT (RECT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPainterOverlay*, RECT, int> OnMove;
         }
     }
 }

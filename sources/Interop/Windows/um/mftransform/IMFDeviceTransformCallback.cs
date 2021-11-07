@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6D5CB646-29EC-41FB-8179-8C4C6D750811")]
     [NativeTypeName("struct IMFDeviceTransformCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFDeviceTransformCallback
+    public unsafe partial struct IMFDeviceTransformCallback : IMFDeviceTransformCallback.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OnBufferSent(IMFAttributes* pCallbackAttributes, [NativeTypeName("DWORD")] uint pinId)
         {
             return ((delegate* unmanaged<IMFDeviceTransformCallback*, IMFAttributes*, uint, int>)(lpVtbl[3]))((IMFDeviceTransformCallback*)Unsafe.AsPointer(ref this), pCallbackAttributes, pinId);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnBufferSent(IMFAttributes* pCallbackAttributes, [NativeTypeName("DWORD")] uint pinId);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransformCallback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransformCallback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransformCallback*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFAttributes *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDeviceTransformCallback*, IMFAttributes*, uint, int> OnBufferSent;
         }
     }
 }

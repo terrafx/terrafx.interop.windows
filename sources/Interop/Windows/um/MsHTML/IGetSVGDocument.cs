@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305105AB-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IGetSVGDocument : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IGetSVGDocument
+    public unsafe partial struct IGetSVGDocument : IGetSVGDocument.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,39 @@ namespace TerraFX.Interop
         public HRESULT getSVGDocument(IDispatch** ppSVGDocument)
         {
             return ((delegate* unmanaged<IGetSVGDocument*, IDispatch**, int>)(lpVtbl[7]))((IGetSVGDocument*)Unsafe.AsPointer(ref this), ppSVGDocument);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT getSVGDocument(IDispatch** ppSVGDocument);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGetSVGDocument*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IGetSVGDocument*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IGetSVGDocument*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGetSVGDocument*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGetSVGDocument*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGetSVGDocument*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGetSVGDocument*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGetSVGDocument*, IDispatch**, int> getSVGDocument;
         }
     }
 }

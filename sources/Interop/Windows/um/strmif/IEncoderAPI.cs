@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("70423839-6ACC-4B23-B079-21DBF08156A5")]
     [NativeTypeName("struct IEncoderAPI : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEncoderAPI
+    public unsafe partial struct IEncoderAPI : IEncoderAPI.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,63 @@ namespace TerraFX.Interop
         public HRESULT SetValue([NativeTypeName("const GUID *")] Guid* Api, VARIANT* Value)
         {
             return ((delegate* unmanaged<IEncoderAPI*, Guid*, VARIANT*, int>)(lpVtbl[9]))((IEncoderAPI*)Unsafe.AsPointer(ref this), Api, Value);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT IsSupported([NativeTypeName("const GUID *")] Guid* Api);
+
+            [VtblIndex(4)]
+            HRESULT IsAvailable([NativeTypeName("const GUID *")] Guid* Api);
+
+            [VtblIndex(5)]
+            HRESULT GetParameterRange([NativeTypeName("const GUID *")] Guid* Api, VARIANT* ValueMin, VARIANT* ValueMax, VARIANT* SteppingDelta);
+
+            [VtblIndex(6)]
+            HRESULT GetParameterValues([NativeTypeName("const GUID *")] Guid* Api, VARIANT** Values, [NativeTypeName("ULONG *")] uint* ValuesCount);
+
+            [VtblIndex(7)]
+            HRESULT GetDefaultValue([NativeTypeName("const GUID *")] Guid* Api, VARIANT* Value);
+
+            [VtblIndex(8)]
+            HRESULT GetValue([NativeTypeName("const GUID *")] Guid* Api, VARIANT* Value);
+
+            [VtblIndex(9)]
+            HRESULT SetValue([NativeTypeName("const GUID *")] Guid* Api, VARIANT* Value);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEncoderAPI*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEncoderAPI*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEncoderAPI*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEncoderAPI*, Guid*, int> IsSupported;
+
+            [NativeTypeName("HRESULT (const GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEncoderAPI*, Guid*, int> IsAvailable;
+
+            [NativeTypeName("HRESULT (const GUID *, VARIANT *, VARIANT *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEncoderAPI*, Guid*, VARIANT*, VARIANT*, VARIANT*, int> GetParameterRange;
+
+            [NativeTypeName("HRESULT (const GUID *, VARIANT **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEncoderAPI*, Guid*, VARIANT**, uint*, int> GetParameterValues;
+
+            [NativeTypeName("HRESULT (const GUID *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEncoderAPI*, Guid*, VARIANT*, int> GetDefaultValue;
+
+            [NativeTypeName("HRESULT (const GUID *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEncoderAPI*, Guid*, VARIANT*, int> GetValue;
+
+            [NativeTypeName("HRESULT (const GUID *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEncoderAPI*, Guid*, VARIANT*, int> SetValue;
         }
     }
 }

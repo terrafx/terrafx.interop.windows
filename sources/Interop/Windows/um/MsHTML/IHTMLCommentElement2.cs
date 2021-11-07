@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F813-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLCommentElement2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLCommentElement2
+    public unsafe partial struct IHTMLCommentElement2 : IHTMLCommentElement2.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,81 @@ namespace TerraFX.Interop
         public HRESULT replaceData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count, [NativeTypeName("BSTR")] ushort* bstrstring)
         {
             return ((delegate* unmanaged<IHTMLCommentElement2*, int, int, ushort*, int>)(lpVtbl[14]))((IHTMLCommentElement2*)Unsafe.AsPointer(ref this), offset, Count, bstrstring);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_data([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_data([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT get_length([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(10)]
+            HRESULT substringData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count, [NativeTypeName("BSTR *")] ushort** pbstrsubString);
+
+            [VtblIndex(11)]
+            HRESULT appendData([NativeTypeName("BSTR")] ushort* bstrstring);
+
+            [VtblIndex(12)]
+            HRESULT insertData([NativeTypeName("long")] int offset, [NativeTypeName("BSTR")] ushort* bstrstring);
+
+            [VtblIndex(13)]
+            HRESULT deleteData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count);
+
+            [VtblIndex(14)]
+            HRESULT replaceData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count, [NativeTypeName("BSTR")] ushort* bstrstring);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCommentElement2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCommentElement2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCommentElement2*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCommentElement2*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCommentElement2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCommentElement2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCommentElement2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCommentElement2*, ushort*, int> put_data;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCommentElement2*, ushort**, int> get_data;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCommentElement2*, int*, int> get_length;
+
+            [NativeTypeName("HRESULT (long, long, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCommentElement2*, int, int, ushort**, int> substringData;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCommentElement2*, ushort*, int> appendData;
+
+            [NativeTypeName("HRESULT (long, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCommentElement2*, int, ushort*, int> insertData;
+
+            [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCommentElement2*, int, int, int> deleteData;
+
+            [NativeTypeName("HRESULT (long, long, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCommentElement2*, int, int, ushort*, int> replaceData;
         }
     }
 }

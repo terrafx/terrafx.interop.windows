@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EC9E51C1-4E5D-11D3-9144-00104BA11C5E")]
     [NativeTypeName("struct IDiscMasterProgressEvents : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiscMasterProgressEvents
+    public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEvents.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,75 @@ namespace TerraFX.Interop
         public HRESULT NotifyEraseComplete(HRESULT status)
         {
             return ((delegate* unmanaged<IDiscMasterProgressEvents*, HRESULT, int>)(lpVtbl[11]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), status);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT QueryCancel([NativeTypeName("boolean *")] byte* pbCancel);
+
+            [VtblIndex(4)]
+            HRESULT NotifyPnPActivity();
+
+            [VtblIndex(5)]
+            HRESULT NotifyAddProgress([NativeTypeName("long")] int nCompletedSteps, [NativeTypeName("long")] int nTotalSteps);
+
+            [VtblIndex(6)]
+            HRESULT NotifyBlockProgress([NativeTypeName("long")] int nCompleted, [NativeTypeName("long")] int nTotal);
+
+            [VtblIndex(7)]
+            HRESULT NotifyTrackProgress([NativeTypeName("long")] int nCurrentTrack, [NativeTypeName("long")] int nTotalTracks);
+
+            [VtblIndex(8)]
+            HRESULT NotifyPreparingBurn([NativeTypeName("long")] int nEstimatedSeconds);
+
+            [VtblIndex(9)]
+            HRESULT NotifyClosingDisc([NativeTypeName("long")] int nEstimatedSeconds);
+
+            [VtblIndex(10)]
+            HRESULT NotifyBurnComplete(HRESULT status);
+
+            [VtblIndex(11)]
+            HRESULT NotifyEraseComplete(HRESULT status);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMasterProgressEvents*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMasterProgressEvents*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMasterProgressEvents*, uint> Release;
+
+            [NativeTypeName("HRESULT (boolean *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMasterProgressEvents*, byte*, int> QueryCancel;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMasterProgressEvents*, int> NotifyPnPActivity;
+
+            [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMasterProgressEvents*, int, int, int> NotifyAddProgress;
+
+            [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMasterProgressEvents*, int, int, int> NotifyBlockProgress;
+
+            [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMasterProgressEvents*, int, int, int> NotifyTrackProgress;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMasterProgressEvents*, int, int> NotifyPreparingBurn;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMasterProgressEvents*, int, int> NotifyClosingDisc;
+
+            [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMasterProgressEvents*, HRESULT, int> NotifyBurnComplete;
+
+            [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiscMasterProgressEvents*, HRESULT, int> NotifyEraseComplete;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C6982083-3DDC-45CB-AF5E-0F7A8CE4DE77")]
     [NativeTypeName("struct IMFPluginControl2 : IMFPluginControl")]
     [NativeInheritance("IMFPluginControl")]
-    public unsafe partial struct IMFPluginControl2
+    public unsafe partial struct IMFPluginControl2 : IMFPluginControl2.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,45 @@ namespace TerraFX.Interop
         public HRESULT SetPolicy(MF_PLUGIN_CONTROL_POLICY policy)
         {
             return ((delegate* unmanaged<IMFPluginControl2*, MF_PLUGIN_CONTROL_POLICY, int>)(lpVtbl[9]))((IMFPluginControl2*)Unsafe.AsPointer(ref this), policy);
+        }
+
+        public interface Interface : IMFPluginControl.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT SetPolicy(MF_PLUGIN_CONTROL_POLICY policy);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPluginControl2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPluginControl2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPluginControl2*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, LPCWSTR, CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPluginControl2*, uint, ushort*, Guid*, int> GetPreferredClsid;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, LPWSTR *, CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPluginControl2*, uint, uint, ushort**, Guid*, int> GetPreferredClsidByIndex;
+
+            [NativeTypeName("HRESULT (DWORD, LPCWSTR, const CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPluginControl2*, uint, ushort*, Guid*, int> SetPreferredClsid;
+
+            [NativeTypeName("HRESULT (DWORD, const IID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPluginControl2*, uint, Guid*, int> IsDisabled;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD, CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPluginControl2*, uint, uint, Guid*, int> GetDisabledByIndex;
+
+            [NativeTypeName("HRESULT (DWORD, const IID &, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPluginControl2*, uint, Guid*, BOOL, int> SetDisabled;
+
+            [NativeTypeName("HRESULT (MF_PLUGIN_CONTROL_POLICY) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFPluginControl2*, MF_PLUGIN_CONTROL_POLICY, int> SetPolicy;
         }
     }
 }

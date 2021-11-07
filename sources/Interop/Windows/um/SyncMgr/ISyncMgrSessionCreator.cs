@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("17F48517-F305-4321-A08D-B25A834918FD")]
     [NativeTypeName("struct ISyncMgrSessionCreator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrSessionCreator
+    public unsafe partial struct ISyncMgrSessionCreator : ISyncMgrSessionCreator.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT CreateSession([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR *")] ushort** ppszItemIDs, [NativeTypeName("ULONG")] uint cItems, ISyncMgrSyncCallback** ppCallback)
         {
             return ((delegate* unmanaged<ISyncMgrSessionCreator*, ushort*, ushort**, uint, ISyncMgrSyncCallback**, int>)(lpVtbl[3]))((ISyncMgrSessionCreator*)Unsafe.AsPointer(ref this), pszHandlerID, ppszItemIDs, cItems, ppCallback);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateSession([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR *")] ushort** ppszItemIDs, [NativeTypeName("ULONG")] uint cItems, ISyncMgrSyncCallback** ppCallback);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSessionCreator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSessionCreator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSessionCreator*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR *, ULONG, ISyncMgrSyncCallback **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrSessionCreator*, ushort*, ushort**, uint, ISyncMgrSyncCallback**, int> CreateSession;
         }
     }
 }

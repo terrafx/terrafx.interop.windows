@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00020403-0000-0000-C000-000000000046")]
     [NativeTypeName("struct ITypeComp : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITypeComp
+    public unsafe partial struct ITypeComp : ITypeComp.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT BindType([NativeTypeName("LPOLESTR")] ushort* szName, [NativeTypeName("ULONG")] uint lHashVal, ITypeInfo** ppTInfo, ITypeComp** ppTComp)
         {
             return ((delegate* unmanaged<ITypeComp*, ushort*, uint, ITypeInfo**, ITypeComp**, int>)(lpVtbl[4]))((ITypeComp*)Unsafe.AsPointer(ref this), szName, lHashVal, ppTInfo, ppTComp);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Bind([NativeTypeName("LPOLESTR")] ushort* szName, [NativeTypeName("ULONG")] uint lHashVal, [NativeTypeName("WORD")] ushort wFlags, ITypeInfo** ppTInfo, DESCKIND* pDescKind, BINDPTR* pBindPtr);
+
+            [VtblIndex(4)]
+            HRESULT BindType([NativeTypeName("LPOLESTR")] ushort* szName, [NativeTypeName("ULONG")] uint lHashVal, ITypeInfo** ppTInfo, ITypeComp** ppTComp);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeComp*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeComp*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeComp*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPOLESTR, ULONG, WORD, ITypeInfo **, DESCKIND *, BINDPTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeComp*, ushort*, uint, ushort, ITypeInfo**, DESCKIND*, BINDPTR*, int> Bind;
+
+            [NativeTypeName("HRESULT (LPOLESTR, ULONG, ITypeInfo **, ITypeComp **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITypeComp*, ushort*, uint, ITypeInfo**, ITypeComp**, int> BindType;
         }
     }
 }

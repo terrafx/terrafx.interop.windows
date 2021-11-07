@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868AA-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IAsyncReader : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAsyncReader
+    public unsafe partial struct IAsyncReader : IAsyncReader.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,69 @@ namespace TerraFX.Interop
         public HRESULT EndFlush()
         {
             return ((delegate* unmanaged<IAsyncReader*, int>)(lpVtbl[10]))((IAsyncReader*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RequestAllocator(IMemAllocator* pPreferred, ALLOCATOR_PROPERTIES* pProps, IMemAllocator** ppActual);
+
+            [VtblIndex(4)]
+            HRESULT Request(IMediaSample* pSample, [NativeTypeName("DWORD_PTR")] nuint dwUser);
+
+            [VtblIndex(5)]
+            HRESULT WaitForNext([NativeTypeName("DWORD")] uint dwTimeout, IMediaSample** ppSample, [NativeTypeName("DWORD_PTR *")] nuint* pdwUser);
+
+            [VtblIndex(6)]
+            HRESULT SyncReadAligned(IMediaSample* pSample);
+
+            [VtblIndex(7)]
+            HRESULT SyncRead([NativeTypeName("LONGLONG")] long llPosition, [NativeTypeName("LONG")] int lLength, byte* pBuffer);
+
+            [VtblIndex(8)]
+            HRESULT Length([NativeTypeName("LONGLONG *")] long* pTotal, [NativeTypeName("LONGLONG *")] long* pAvailable);
+
+            [VtblIndex(9)]
+            HRESULT BeginFlush();
+
+            [VtblIndex(10)]
+            HRESULT EndFlush();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncReader*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncReader*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncReader*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMemAllocator *, ALLOCATOR_PROPERTIES *, IMemAllocator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncReader*, IMemAllocator*, ALLOCATOR_PROPERTIES*, IMemAllocator**, int> RequestAllocator;
+
+            [NativeTypeName("HRESULT (IMediaSample *, DWORD_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncReader*, IMediaSample*, nuint, int> Request;
+
+            [NativeTypeName("HRESULT (DWORD, IMediaSample **, DWORD_PTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncReader*, uint, IMediaSample**, nuint*, int> WaitForNext;
+
+            [NativeTypeName("HRESULT (IMediaSample *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncReader*, IMediaSample*, int> SyncReadAligned;
+
+            [NativeTypeName("HRESULT (LONGLONG, LONG, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncReader*, long, int, byte*, int> SyncRead;
+
+            [NativeTypeName("HRESULT (LONGLONG *, LONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncReader*, long*, long*, int> Length;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncReader*, int> BeginFlush;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAsyncReader*, int> EndFlush;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F2AA-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLTextAreaElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLTextAreaElement
+    public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interface
     {
         public void** lpVtbl;
 
@@ -247,6 +247,189 @@ namespace TerraFX.Interop
         public HRESULT createTextRange(IHTMLTxtRange** range)
         {
             return ((delegate* unmanaged<IHTMLTextAreaElement*, IHTMLTxtRange**, int>)(lpVtbl[32]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), range);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT put_value([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(9)]
+            HRESULT get_value([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(10)]
+            HRESULT put_name([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(11)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(12)]
+            HRESULT put_status(VARIANT v);
+
+            [VtblIndex(13)]
+            HRESULT get_status(VARIANT* p);
+
+            [VtblIndex(14)]
+            HRESULT put_disabled([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(15)]
+            HRESULT get_disabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(16)]
+            HRESULT get_form(IHTMLFormElement** p);
+
+            [VtblIndex(17)]
+            HRESULT put_defaultValue([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(18)]
+            HRESULT get_defaultValue([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(19)]
+            HRESULT select();
+
+            [VtblIndex(20)]
+            HRESULT put_onchange(VARIANT v);
+
+            [VtblIndex(21)]
+            HRESULT get_onchange(VARIANT* p);
+
+            [VtblIndex(22)]
+            HRESULT put_onselect(VARIANT v);
+
+            [VtblIndex(23)]
+            HRESULT get_onselect(VARIANT* p);
+
+            [VtblIndex(24)]
+            HRESULT put_readOnly([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(25)]
+            HRESULT get_readOnly([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(26)]
+            HRESULT put_rows([NativeTypeName("long")] int v);
+
+            [VtblIndex(27)]
+            HRESULT get_rows([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(28)]
+            HRESULT put_cols([NativeTypeName("long")] int v);
+
+            [VtblIndex(29)]
+            HRESULT get_cols([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(30)]
+            HRESULT put_wrap([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(31)]
+            HRESULT get_wrap([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(32)]
+            HRESULT createTextRange(IHTMLTxtRange** range);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, ushort**, int> get_type;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, ushort*, int> put_value;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, ushort**, int> get_value;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, ushort*, int> put_name;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, ushort**, int> get_name;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, VARIANT, int> put_status;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, VARIANT*, int> get_status;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, short, int> put_disabled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, short*, int> get_disabled;
+
+            [NativeTypeName("HRESULT (IHTMLFormElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, IHTMLFormElement**, int> get_form;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, ushort*, int> put_defaultValue;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, ushort**, int> get_defaultValue;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, int> select;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, VARIANT, int> put_onchange;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, VARIANT*, int> get_onchange;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, VARIANT, int> put_onselect;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, VARIANT*, int> get_onselect;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, short, int> put_readOnly;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, short*, int> get_readOnly;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, int, int> put_rows;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, int*, int> get_rows;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, int, int> put_cols;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, int*, int> get_cols;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, ushort*, int> put_wrap;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, ushort**, int> get_wrap;
+
+            [NativeTypeName("HRESULT (IHTMLTxtRange **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLTextAreaElement*, IHTMLTxtRange**, int> createTextRange;
         }
     }
 }

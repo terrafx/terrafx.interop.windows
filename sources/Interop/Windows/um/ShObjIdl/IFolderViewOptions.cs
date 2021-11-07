@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3CC974D2-B302-4D36-AD3E-06D93F695D3F")]
     [NativeTypeName("struct IFolderViewOptions : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFolderViewOptions
+    public unsafe partial struct IFolderViewOptions : IFolderViewOptions.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetFolderViewOptions(FOLDERVIEWOPTIONS* pfvoFlags)
         {
             return ((delegate* unmanaged<IFolderViewOptions*, FOLDERVIEWOPTIONS*, int>)(lpVtbl[4]))((IFolderViewOptions*)Unsafe.AsPointer(ref this), pfvoFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetFolderViewOptions(FOLDERVIEWOPTIONS fvoMask, FOLDERVIEWOPTIONS fvoFlags);
+
+            [VtblIndex(4)]
+            HRESULT GetFolderViewOptions(FOLDERVIEWOPTIONS* pfvoFlags);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderViewOptions*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderViewOptions*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderViewOptions*, uint> Release;
+
+            [NativeTypeName("HRESULT (FOLDERVIEWOPTIONS, FOLDERVIEWOPTIONS) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderViewOptions*, FOLDERVIEWOPTIONS, FOLDERVIEWOPTIONS, int> SetFolderViewOptions;
+
+            [NativeTypeName("HRESULT (FOLDERVIEWOPTIONS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFolderViewOptions*, FOLDERVIEWOPTIONS*, int> GetFolderViewOptions;
         }
     }
 }

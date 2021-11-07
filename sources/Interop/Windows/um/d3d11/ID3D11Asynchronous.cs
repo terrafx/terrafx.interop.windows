@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4B35D0CD-1E15-4258-9C98-1B1333F6DD3B")]
     [NativeTypeName("struct ID3D11Asynchronous : ID3D11DeviceChild")]
     [NativeInheritance("ID3D11DeviceChild")]
-    public unsafe partial struct ID3D11Asynchronous
+    public unsafe partial struct ID3D11Asynchronous : ID3D11Asynchronous.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,39 @@ namespace TerraFX.Interop
         public uint GetDataSize()
         {
             return ((delegate* unmanaged<ID3D11Asynchronous*, uint>)(lpVtbl[7]))((ID3D11Asynchronous*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ID3D11DeviceChild.Interface
+        {
+            [VtblIndex(7)]
+            uint GetDataSize();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Asynchronous*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Asynchronous*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Asynchronous*, uint> Release;
+
+            [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Asynchronous*, ID3D11Device**, void> GetDevice;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Asynchronous*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Asynchronous*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Asynchronous*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("UINT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11Asynchronous*, uint> GetDataSize;
         }
     }
 }

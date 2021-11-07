@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C1209904-E584-4752-A2D6-7F21693F8B21")]
     [NativeTypeName("struct IMFSecureBuffer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSecureBuffer
+    public unsafe partial struct IMFSecureBuffer : IMFSecureBuffer.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetIdentifier(Guid* pGuidIdentifier)
         {
             return ((delegate* unmanaged<IMFSecureBuffer*, Guid*, int>)(lpVtbl[3]))((IMFSecureBuffer*)Unsafe.AsPointer(ref this), pGuidIdentifier);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetIdentifier(Guid* pGuidIdentifier);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSecureBuffer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSecureBuffer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSecureBuffer*, uint> Release;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSecureBuffer*, Guid*, int> GetIdentifier;
         }
     }
 }

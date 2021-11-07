@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B196B28F-BAB4-101A-B69C-00AA00341D07")]
     [NativeTypeName("struct IClassFactory2 : IClassFactory")]
     [NativeInheritance("IClassFactory")]
-    public unsafe partial struct IClassFactory2
+    public unsafe partial struct IClassFactory2 : IClassFactory2.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,45 @@ namespace TerraFX.Interop
         public HRESULT CreateInstanceLic(IUnknown* pUnkOuter, IUnknown* pUnkReserved, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("BSTR")] ushort* bstrKey, [NativeTypeName("PVOID *")] void** ppvObj)
         {
             return ((delegate* unmanaged<IClassFactory2*, IUnknown*, IUnknown*, Guid*, ushort*, void**, int>)(lpVtbl[7]))((IClassFactory2*)Unsafe.AsPointer(ref this), pUnkOuter, pUnkReserved, riid, bstrKey, ppvObj);
+        }
+
+        public interface Interface : IClassFactory.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT GetLicInfo(LICINFO* pLicInfo);
+
+            [VtblIndex(6)]
+            HRESULT RequestLicKey([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("BSTR *")] ushort** pBstrKey);
+
+            [VtblIndex(7)]
+            HRESULT CreateInstanceLic(IUnknown* pUnkOuter, IUnknown* pUnkReserved, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("BSTR")] ushort* bstrKey, [NativeTypeName("PVOID *")] void** ppvObj);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IClassFactory2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IClassFactory2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IClassFactory2*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IClassFactory2*, IUnknown*, Guid*, void**, int> CreateInstance;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IClassFactory2*, BOOL, int> LockServer;
+
+            [NativeTypeName("HRESULT (LICINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IClassFactory2*, LICINFO*, int> GetLicInfo;
+
+            [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IClassFactory2*, uint, ushort**, int> RequestLicKey;
+
+            [NativeTypeName("HRESULT (IUnknown *, IUnknown *, const IID &, BSTR, PVOID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IClassFactory2*, IUnknown*, IUnknown*, Guid*, ushort*, void**, int> CreateInstanceLic;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("014B816E-9EC5-4A2F-A845-FFBE441CE13A")]
     [NativeTypeName("struct ID3D12Debug4 : ID3D12Debug3")]
     [NativeInheritance("ID3D12Debug3")]
-    public unsafe partial struct ID3D12Debug4
+    public unsafe partial struct ID3D12Debug4 : ID3D12Debug4.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,39 @@ namespace TerraFX.Interop
         public void DisableDebugLayer()
         {
             ((delegate* unmanaged<ID3D12Debug4*, void>)(lpVtbl[7]))((ID3D12Debug4*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ID3D12Debug3.Interface
+        {
+            [VtblIndex(7)]
+            void DisableDebugLayer();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug4*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug4*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug4*, uint> Release;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug4*, void> EnableDebugLayer;
+
+            [NativeTypeName("void (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug4*, BOOL, void> SetEnableGPUBasedValidation;
+
+            [NativeTypeName("void (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug4*, BOOL, void> SetEnableSynchronizedCommandQueueValidation;
+
+            [NativeTypeName("void (D3D12_GPU_BASED_VALIDATION_FLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug4*, D3D12_GPU_BASED_VALIDATION_FLAGS, void> SetGPUBasedValidationFlags;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Debug4*, void> DisableDebugLayer;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("07250A10-9CF9-11D1-9076-006008059382")]
     [NativeTypeName("struct IAppPublisher : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppPublisher
+    public unsafe partial struct IAppPublisher : IAppPublisher.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT EnumApps(Guid* pAppCategoryId, IEnumPublishedApps** ppepa)
         {
             return ((delegate* unmanaged<IAppPublisher*, Guid*, IEnumPublishedApps**, int>)(lpVtbl[6]))((IAppPublisher*)Unsafe.AsPointer(ref this), pAppCategoryId, ppepa);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetNumberOfCategories([NativeTypeName("DWORD *")] uint* pdwCat);
+
+            [VtblIndex(4)]
+            HRESULT GetCategories(APPCATEGORYINFOLIST* pAppCategoryList);
+
+            [VtblIndex(5)]
+            HRESULT GetNumberOfApps([NativeTypeName("DWORD *")] uint* pdwApps);
+
+            [VtblIndex(6)]
+            HRESULT EnumApps(Guid* pAppCategoryId, IEnumPublishedApps** ppepa);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppPublisher*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppPublisher*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppPublisher*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppPublisher*, uint*, int> GetNumberOfCategories;
+
+            [NativeTypeName("HRESULT (APPCATEGORYINFOLIST *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppPublisher*, APPCATEGORYINFOLIST*, int> GetCategories;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppPublisher*, uint*, int> GetNumberOfApps;
+
+            [NativeTypeName("HRESULT (GUID *, IEnumPublishedApps **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppPublisher*, Guid*, IEnumPublishedApps**, int> EnumApps;
         }
     }
 }

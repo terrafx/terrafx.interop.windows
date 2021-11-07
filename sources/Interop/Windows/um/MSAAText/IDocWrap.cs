@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DCD285FE-0BE0-43BD-99C9-AAAEC513C555")]
     [NativeTypeName("struct IDocWrap : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDocWrap
+    public unsafe partial struct IDocWrap : IDocWrap.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetWrappedDoc([NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
         {
             return ((delegate* unmanaged<IDocWrap*, Guid*, IUnknown**, int>)(lpVtbl[4]))((IDocWrap*)Unsafe.AsPointer(ref this), riid, ppunk);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetDoc([NativeTypeName("const IID &")] Guid* riid, IUnknown* punk);
+
+            [VtblIndex(4)]
+            HRESULT GetWrappedDoc([NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDocWrap*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDocWrap*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDocWrap*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDocWrap*, Guid*, IUnknown*, int> SetDoc;
+
+            [NativeTypeName("HRESULT (const IID &, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDocWrap*, Guid*, IUnknown**, int> GetWrappedDoc;
         }
     }
 }

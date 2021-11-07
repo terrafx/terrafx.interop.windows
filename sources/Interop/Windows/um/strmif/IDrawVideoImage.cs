@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("48EFB120-AB49-11D2-AED2-00A0C995E8D5")]
     [NativeTypeName("struct IDrawVideoImage : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDrawVideoImage
+    public unsafe partial struct IDrawVideoImage : IDrawVideoImage.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT DrawVideoImageDraw(HDC hdc, [NativeTypeName("LPRECT")] RECT* lprcSrc, [NativeTypeName("LPRECT")] RECT* lprcDst)
         {
             return ((delegate* unmanaged<IDrawVideoImage*, HDC, RECT*, RECT*, int>)(lpVtbl[5]))((IDrawVideoImage*)Unsafe.AsPointer(ref this), hdc, lprcSrc, lprcDst);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT DrawVideoImageBegin();
+
+            [VtblIndex(4)]
+            HRESULT DrawVideoImageEnd();
+
+            [VtblIndex(5)]
+            HRESULT DrawVideoImageDraw(HDC hdc, [NativeTypeName("LPRECT")] RECT* lprcSrc, [NativeTypeName("LPRECT")] RECT* lprcDst);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDrawVideoImage*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDrawVideoImage*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDrawVideoImage*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDrawVideoImage*, int> DrawVideoImageBegin;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDrawVideoImage*, int> DrawVideoImageEnd;
+
+            [NativeTypeName("HRESULT (HDC, LPRECT, LPRECT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDrawVideoImage*, HDC, RECT*, RECT*, int> DrawVideoImageDraw;
         }
     }
 }

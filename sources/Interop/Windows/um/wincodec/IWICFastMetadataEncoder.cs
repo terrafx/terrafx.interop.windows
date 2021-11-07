@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B84E2C09-78C9-4AC4-8BD3-524AE1663A2F")]
     [NativeTypeName("struct IWICFastMetadataEncoder : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWICFastMetadataEncoder
+    public unsafe partial struct IWICFastMetadataEncoder : IWICFastMetadataEncoder.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetMetadataQueryWriter(IWICMetadataQueryWriter** ppIMetadataQueryWriter)
         {
             return ((delegate* unmanaged<IWICFastMetadataEncoder*, IWICMetadataQueryWriter**, int>)(lpVtbl[4]))((IWICFastMetadataEncoder*)Unsafe.AsPointer(ref this), ppIMetadataQueryWriter);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Commit();
+
+            [VtblIndex(4)]
+            HRESULT GetMetadataQueryWriter(IWICMetadataQueryWriter** ppIMetadataQueryWriter);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICFastMetadataEncoder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICFastMetadataEncoder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICFastMetadataEncoder*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICFastMetadataEncoder*, int> Commit;
+
+            [NativeTypeName("HRESULT (IWICMetadataQueryWriter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICFastMetadataEncoder*, IWICMetadataQueryWriter**, int> GetMetadataQueryWriter;
         }
     }
 }

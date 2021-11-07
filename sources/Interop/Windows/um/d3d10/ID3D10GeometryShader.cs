@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6316BE88-54CD-4040-AB44-20461BC81F68")]
     [NativeTypeName("struct ID3D10GeometryShader : ID3D10DeviceChild")]
     [NativeInheritance("ID3D10DeviceChild")]
-    public unsafe partial struct ID3D10GeometryShader
+    public unsafe partial struct ID3D10GeometryShader : ID3D10GeometryShader.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,34 @@ namespace TerraFX.Interop
         public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
         {
             return ((delegate* unmanaged<ID3D10GeometryShader*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3D10GeometryShader*)Unsafe.AsPointer(ref this), guid, pData);
+        }
+
+        public interface Interface : ID3D10DeviceChild.Interface
+        {
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10GeometryShader*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10GeometryShader*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10GeometryShader*, uint> Release;
+
+            [NativeTypeName("void (ID3D10Device **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10GeometryShader*, ID3D10Device**, void> GetDevice;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10GeometryShader*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10GeometryShader*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10GeometryShader*, Guid*, IUnknown*, int> SetPrivateDataInterface;
         }
     }
 }

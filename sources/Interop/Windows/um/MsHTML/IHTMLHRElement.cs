@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F1F4-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLHRElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLHRElement
+    public unsafe partial struct IHTMLHRElement : IHTMLHRElement.Interface
     {
         public void** lpVtbl;
 
@@ -135,6 +135,93 @@ namespace TerraFX.Interop
         public HRESULT get_size(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLHRElement*, VARIANT*, int>)(lpVtbl[16]))((IHTMLHRElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_align([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_align([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_color(VARIANT v);
+
+            [VtblIndex(10)]
+            HRESULT get_color(VARIANT* p);
+
+            [VtblIndex(11)]
+            HRESULT put_noShade([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(12)]
+            HRESULT get_noShade([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(13)]
+            HRESULT put_width(VARIANT v);
+
+            [VtblIndex(14)]
+            HRESULT get_width(VARIANT* p);
+
+            [VtblIndex(15)]
+            HRESULT put_size(VARIANT v);
+
+            [VtblIndex(16)]
+            HRESULT get_size(VARIANT* p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLHRElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLHRElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLHRElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLHRElement*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLHRElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLHRElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLHRElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLHRElement*, ushort*, int> put_align;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLHRElement*, ushort**, int> get_align;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLHRElement*, VARIANT, int> put_color;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLHRElement*, VARIANT*, int> get_color;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLHRElement*, short, int> put_noShade;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLHRElement*, short*, int> get_noShade;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLHRElement*, VARIANT, int> put_width;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLHRElement*, VARIANT*, int> get_width;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLHRElement*, VARIANT, int> put_size;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLHRElement*, VARIANT*, int> get_size;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CCA920E4-52F0-492B-BFA8-29C72EE0A468")]
     [NativeTypeName("struct IDWriteFontCollectionLoader : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWriteFontCollectionLoader
+    public unsafe partial struct IDWriteFontCollectionLoader : IDWriteFontCollectionLoader.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT CreateEnumeratorFromKey(IDWriteFactory* factory, [NativeTypeName("const void *")] void* collectionKey, [NativeTypeName("UINT32")] uint collectionKeySize, IDWriteFontFileEnumerator** fontFileEnumerator)
         {
             return ((delegate* unmanaged<IDWriteFontCollectionLoader*, IDWriteFactory*, void*, uint, IDWriteFontFileEnumerator**, int>)(lpVtbl[3]))((IDWriteFontCollectionLoader*)Unsafe.AsPointer(ref this), factory, collectionKey, collectionKeySize, fontFileEnumerator);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateEnumeratorFromKey(IDWriteFactory* factory, [NativeTypeName("const void *")] void* collectionKey, [NativeTypeName("UINT32")] uint collectionKeySize, IDWriteFontFileEnumerator** fontFileEnumerator);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontCollectionLoader*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontCollectionLoader*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontCollectionLoader*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDWriteFactory *, const void *, UINT32, IDWriteFontFileEnumerator **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontCollectionLoader*, IDWriteFactory*, void*, uint, IDWriteFontFileEnumerator**, int> CreateEnumeratorFromKey;
         }
     }
 }

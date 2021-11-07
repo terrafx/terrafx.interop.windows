@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305107B5-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMMSTransitionEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMMSTransitionEvent
+    public unsafe partial struct IDOMMSTransitionEvent : IDOMMSTransitionEvent.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,51 @@ namespace TerraFX.Interop
         public HRESULT initMSTransitionEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("BSTR")] ushort* propertyName, float elapsedTime)
         {
             return ((delegate* unmanaged<IDOMMSTransitionEvent*, ushort*, short, short, ushort*, float, int>)(lpVtbl[9]))((IDOMMSTransitionEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, propertyName, elapsedTime);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_propertyName([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT get_elapsedTime(float* p);
+
+            [VtblIndex(9)]
+            HRESULT initMSTransitionEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("BSTR")] ushort* propertyName, float elapsedTime);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMSTransitionEvent*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMSTransitionEvent*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMSTransitionEvent*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMSTransitionEvent*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMSTransitionEvent*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMSTransitionEvent*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMSTransitionEvent*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMSTransitionEvent*, ushort**, int> get_propertyName;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMSTransitionEvent*, float*, int> get_elapsedTime;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, BSTR, float) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMMSTransitionEvent*, ushort*, short, short, ushort*, float, int> initMSTransitionEvent;
         }
     }
 }

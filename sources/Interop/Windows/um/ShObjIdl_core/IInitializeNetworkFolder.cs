@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6E0F9881-42A8-4F2A-97F8-8AF4E026D92D")]
     [NativeTypeName("struct IInitializeNetworkFolder : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInitializeNetworkFolder
+    public unsafe partial struct IInitializeNetworkFolder : IInitializeNetworkFolder.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT Initialize([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlTarget, uint uDisplayType, [NativeTypeName("LPCWSTR")] ushort* pszResName, [NativeTypeName("LPCWSTR")] ushort* pszProvider)
         {
             return ((delegate* unmanaged<IInitializeNetworkFolder*, ITEMIDLIST*, ITEMIDLIST*, uint, ushort*, ushort*, int>)(lpVtbl[3]))((IInitializeNetworkFolder*)Unsafe.AsPointer(ref this), pidl, pidlTarget, uDisplayType, pszResName, pszProvider);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlTarget, uint uDisplayType, [NativeTypeName("LPCWSTR")] ushort* pszResName, [NativeTypeName("LPCWSTR")] ushort* pszProvider);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInitializeNetworkFolder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInitializeNetworkFolder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInitializeNetworkFolder*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCITEMIDLIST, LPCITEMIDLIST, UINT, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInitializeNetworkFolder*, ITEMIDLIST*, ITEMIDLIST*, uint, ushort*, ushort*, int> Initialize;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EED9C2EE-66B4-4F18-A697-AC7D3960215C")]
     [NativeTypeName("struct IMFSensorTransformFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSensorTransformFactory
+    public unsafe partial struct IMFSensorTransformFactory : IMFSensorTransformFactory.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT CreateTransform([NativeTypeName("const GUID &")] Guid* guidSensorTransformID, IMFAttributes* pAttributes, IMFDeviceTransform** ppDeviceMFT)
         {
             return ((delegate* unmanaged<IMFSensorTransformFactory*, Guid*, IMFAttributes*, IMFDeviceTransform**, int>)(lpVtbl[7]))((IMFSensorTransformFactory*)Unsafe.AsPointer(ref this), guidSensorTransformID, pAttributes, ppDeviceMFT);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetFactoryAttributes(IMFAttributes** ppAttributes);
+
+            [VtblIndex(4)]
+            HRESULT InitializeFactory([NativeTypeName("DWORD")] uint dwMaxTransformCount, IMFCollection* pSensorDevices, IMFAttributes* pAttributes);
+
+            [VtblIndex(5)]
+            HRESULT GetTransformCount([NativeTypeName("DWORD *")] uint* pdwCount);
+
+            [VtblIndex(6)]
+            HRESULT GetTransformInformation([NativeTypeName("DWORD")] uint TransformIndex, Guid* pguidTransformId, IMFAttributes** ppAttributes, IMFCollection** ppStreamInformation);
+
+            [VtblIndex(7)]
+            HRESULT CreateTransform([NativeTypeName("const GUID &")] Guid* guidSensorTransformID, IMFAttributes* pAttributes, IMFDeviceTransform** ppDeviceMFT);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorTransformFactory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorTransformFactory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorTransformFactory*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFAttributes **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorTransformFactory*, IMFAttributes**, int> GetFactoryAttributes;
+
+            [NativeTypeName("HRESULT (DWORD, IMFCollection *, IMFAttributes *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorTransformFactory*, uint, IMFCollection*, IMFAttributes*, int> InitializeFactory;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorTransformFactory*, uint*, int> GetTransformCount;
+
+            [NativeTypeName("HRESULT (DWORD, GUID *, IMFAttributes **, IMFCollection **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorTransformFactory*, uint, Guid*, IMFAttributes**, IMFCollection**, int> GetTransformInformation;
+
+            [NativeTypeName("HRESULT (const GUID &, IMFAttributes *, IMFDeviceTransform **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorTransformFactory*, Guid*, IMFAttributes*, IMFDeviceTransform**, int> CreateTransform;
         }
     }
 }

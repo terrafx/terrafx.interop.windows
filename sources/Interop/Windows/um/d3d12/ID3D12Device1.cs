@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("77ACCE80-638E-4E65-8895-C1F23386863E")]
     [NativeTypeName("struct ID3D12Device1 : ID3D12Device")]
     [NativeInheritance("ID3D12Device")]
-    public unsafe partial struct ID3D12Device1
+    public unsafe partial struct ID3D12Device1 : ID3D12Device1.Interface
     {
         public void** lpVtbl;
 
@@ -348,6 +348,162 @@ namespace TerraFX.Interop
         public HRESULT SetResidencyPriority(uint NumObjects, [NativeTypeName("ID3D12Pageable *const *")] ID3D12Pageable** ppObjects, [NativeTypeName("const D3D12_RESIDENCY_PRIORITY *")] D3D12_RESIDENCY_PRIORITY* pPriorities)
         {
             return ((delegate* unmanaged<ID3D12Device1*, uint, ID3D12Pageable**, D3D12_RESIDENCY_PRIORITY*, int>)(lpVtbl[46]))((ID3D12Device1*)Unsafe.AsPointer(ref this), NumObjects, ppObjects, pPriorities);
+        }
+
+        public interface Interface : ID3D12Device.Interface
+        {
+            [VtblIndex(44)]
+            HRESULT CreatePipelineLibrary([NativeTypeName("const void *")] void* pLibraryBlob, [NativeTypeName("SIZE_T")] nuint BlobLength, [NativeTypeName("const IID &")] Guid* riid, void** ppPipelineLibrary);
+
+            [VtblIndex(45)]
+            HRESULT SetEventOnMultipleFenceCompletion([NativeTypeName("ID3D12Fence *const *")] ID3D12Fence** ppFences, [NativeTypeName("const UINT64 *")] ulong* pFenceValues, uint NumFences, D3D12_MULTIPLE_FENCE_WAIT_FLAGS Flags, HANDLE hEvent);
+
+            [VtblIndex(46)]
+            HRESULT SetResidencyPriority(uint NumObjects, [NativeTypeName("ID3D12Pageable *const *")] ID3D12Pageable** ppObjects, [NativeTypeName("const D3D12_RESIDENCY_PRIORITY *")] D3D12_RESIDENCY_PRIORITY* pPriorities);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, ushort*, int> SetName;
+
+            [NativeTypeName("UINT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, uint> GetNodeCount;
+
+            [NativeTypeName("HRESULT (const D3D12_COMMAND_QUEUE_DESC *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, D3D12_COMMAND_QUEUE_DESC*, Guid*, void**, int> CreateCommandQueue;
+
+            [NativeTypeName("HRESULT (D3D12_COMMAND_LIST_TYPE, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, D3D12_COMMAND_LIST_TYPE, Guid*, void**, int> CreateCommandAllocator;
+
+            [NativeTypeName("HRESULT (const D3D12_GRAPHICS_PIPELINE_STATE_DESC *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, D3D12_GRAPHICS_PIPELINE_STATE_DESC*, Guid*, void**, int> CreateGraphicsPipelineState;
+
+            [NativeTypeName("HRESULT (const D3D12_COMPUTE_PIPELINE_STATE_DESC *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, D3D12_COMPUTE_PIPELINE_STATE_DESC*, Guid*, void**, int> CreateComputePipelineState;
+
+            [NativeTypeName("HRESULT (UINT, D3D12_COMMAND_LIST_TYPE, ID3D12CommandAllocator *, ID3D12PipelineState *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, uint, D3D12_COMMAND_LIST_TYPE, ID3D12CommandAllocator*, ID3D12PipelineState*, Guid*, void**, int> CreateCommandList;
+
+            [NativeTypeName("HRESULT (D3D12_FEATURE, void *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, D3D12_FEATURE, void*, uint, int> CheckFeatureSupport;
+
+            [NativeTypeName("HRESULT (const D3D12_DESCRIPTOR_HEAP_DESC *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, D3D12_DESCRIPTOR_HEAP_DESC*, Guid*, void**, int> CreateDescriptorHeap;
+
+            [NativeTypeName("UINT (D3D12_DESCRIPTOR_HEAP_TYPE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, D3D12_DESCRIPTOR_HEAP_TYPE, uint> GetDescriptorHandleIncrementSize;
+
+            [NativeTypeName("HRESULT (UINT, const void *, SIZE_T, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, uint, void*, nuint, Guid*, void**, int> CreateRootSignature;
+
+            [NativeTypeName("void (const D3D12_CONSTANT_BUFFER_VIEW_DESC *, D3D12_CPU_DESCRIPTOR_HANDLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, D3D12_CONSTANT_BUFFER_VIEW_DESC*, D3D12_CPU_DESCRIPTOR_HANDLE, void> CreateConstantBufferView;
+
+            [NativeTypeName("void (ID3D12Resource *, const D3D12_SHADER_RESOURCE_VIEW_DESC *, D3D12_CPU_DESCRIPTOR_HANDLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, ID3D12Resource*, D3D12_SHADER_RESOURCE_VIEW_DESC*, D3D12_CPU_DESCRIPTOR_HANDLE, void> CreateShaderResourceView;
+
+            [NativeTypeName("void (ID3D12Resource *, ID3D12Resource *, const D3D12_UNORDERED_ACCESS_VIEW_DESC *, D3D12_CPU_DESCRIPTOR_HANDLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, ID3D12Resource*, ID3D12Resource*, D3D12_UNORDERED_ACCESS_VIEW_DESC*, D3D12_CPU_DESCRIPTOR_HANDLE, void> CreateUnorderedAccessView;
+
+            [NativeTypeName("void (ID3D12Resource *, const D3D12_RENDER_TARGET_VIEW_DESC *, D3D12_CPU_DESCRIPTOR_HANDLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, ID3D12Resource*, D3D12_RENDER_TARGET_VIEW_DESC*, D3D12_CPU_DESCRIPTOR_HANDLE, void> CreateRenderTargetView;
+
+            [NativeTypeName("void (ID3D12Resource *, const D3D12_DEPTH_STENCIL_VIEW_DESC *, D3D12_CPU_DESCRIPTOR_HANDLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, ID3D12Resource*, D3D12_DEPTH_STENCIL_VIEW_DESC*, D3D12_CPU_DESCRIPTOR_HANDLE, void> CreateDepthStencilView;
+
+            [NativeTypeName("void (const D3D12_SAMPLER_DESC *, D3D12_CPU_DESCRIPTOR_HANDLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, D3D12_SAMPLER_DESC*, D3D12_CPU_DESCRIPTOR_HANDLE, void> CreateSampler;
+
+            [NativeTypeName("void (UINT, const D3D12_CPU_DESCRIPTOR_HANDLE *, const UINT *, UINT, const D3D12_CPU_DESCRIPTOR_HANDLE *, const UINT *, D3D12_DESCRIPTOR_HEAP_TYPE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, uint, D3D12_CPU_DESCRIPTOR_HANDLE*, uint*, uint, D3D12_CPU_DESCRIPTOR_HANDLE*, uint*, D3D12_DESCRIPTOR_HEAP_TYPE, void> CopyDescriptors;
+
+            [NativeTypeName("void (UINT, D3D12_CPU_DESCRIPTOR_HANDLE, D3D12_CPU_DESCRIPTOR_HANDLE, D3D12_DESCRIPTOR_HEAP_TYPE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, uint, D3D12_CPU_DESCRIPTOR_HANDLE, D3D12_CPU_DESCRIPTOR_HANDLE, D3D12_DESCRIPTOR_HEAP_TYPE, void> CopyDescriptorsSimple;
+
+            [NativeTypeName("D3D12_RESOURCE_ALLOCATION_INFO (UINT, UINT, const D3D12_RESOURCE_DESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, D3D12_RESOURCE_ALLOCATION_INFO*, uint, uint, D3D12_RESOURCE_DESC*, D3D12_RESOURCE_ALLOCATION_INFO*> GetResourceAllocationInfo;
+
+            [NativeTypeName("D3D12_HEAP_PROPERTIES (UINT, D3D12_HEAP_TYPE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, D3D12_HEAP_PROPERTIES*, uint, D3D12_HEAP_TYPE, D3D12_HEAP_PROPERTIES*> GetCustomHeapProperties;
+
+            [NativeTypeName("HRESULT (const D3D12_HEAP_PROPERTIES *, D3D12_HEAP_FLAGS, const D3D12_RESOURCE_DESC *, D3D12_RESOURCE_STATES, const D3D12_CLEAR_VALUE *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, D3D12_HEAP_PROPERTIES*, D3D12_HEAP_FLAGS, D3D12_RESOURCE_DESC*, D3D12_RESOURCE_STATES, D3D12_CLEAR_VALUE*, Guid*, void**, int> CreateCommittedResource;
+
+            [NativeTypeName("HRESULT (const D3D12_HEAP_DESC *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, D3D12_HEAP_DESC*, Guid*, void**, int> CreateHeap;
+
+            [NativeTypeName("HRESULT (ID3D12Heap *, UINT64, const D3D12_RESOURCE_DESC *, D3D12_RESOURCE_STATES, const D3D12_CLEAR_VALUE *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, ID3D12Heap*, ulong, D3D12_RESOURCE_DESC*, D3D12_RESOURCE_STATES, D3D12_CLEAR_VALUE*, Guid*, void**, int> CreatePlacedResource;
+
+            [NativeTypeName("HRESULT (const D3D12_RESOURCE_DESC *, D3D12_RESOURCE_STATES, const D3D12_CLEAR_VALUE *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, D3D12_RESOURCE_DESC*, D3D12_RESOURCE_STATES, D3D12_CLEAR_VALUE*, Guid*, void**, int> CreateReservedResource;
+
+            [NativeTypeName("HRESULT (ID3D12DeviceChild *, const SECURITY_ATTRIBUTES *, DWORD, LPCWSTR, HANDLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, ID3D12DeviceChild*, SECURITY_ATTRIBUTES*, uint, ushort*, HANDLE*, int> CreateSharedHandle;
+
+            [NativeTypeName("HRESULT (HANDLE, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, HANDLE, Guid*, void**, int> OpenSharedHandle;
+
+            [NativeTypeName("HRESULT (LPCWSTR, DWORD, HANDLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, ushort*, uint, HANDLE*, int> OpenSharedHandleByName;
+
+            [NativeTypeName("HRESULT (UINT, ID3D12Pageable *const *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, uint, ID3D12Pageable**, int> MakeResident;
+
+            [NativeTypeName("HRESULT (UINT, ID3D12Pageable *const *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, uint, ID3D12Pageable**, int> Evict;
+
+            [NativeTypeName("HRESULT (UINT64, D3D12_FENCE_FLAGS, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, ulong, D3D12_FENCE_FLAGS, Guid*, void**, int> CreateFence;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, int> GetDeviceRemovedReason;
+
+            [NativeTypeName("void (const D3D12_RESOURCE_DESC *, UINT, UINT, UINT64, D3D12_PLACED_SUBRESOURCE_FOOTPRINT *, UINT *, UINT64 *, UINT64 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, D3D12_RESOURCE_DESC*, uint, uint, ulong, D3D12_PLACED_SUBRESOURCE_FOOTPRINT*, uint*, ulong*, ulong*, void> GetCopyableFootprints;
+
+            [NativeTypeName("HRESULT (const D3D12_QUERY_HEAP_DESC *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, D3D12_QUERY_HEAP_DESC*, Guid*, void**, int> CreateQueryHeap;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, BOOL, int> SetStablePowerState;
+
+            [NativeTypeName("HRESULT (const D3D12_COMMAND_SIGNATURE_DESC *, ID3D12RootSignature *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, D3D12_COMMAND_SIGNATURE_DESC*, ID3D12RootSignature*, Guid*, void**, int> CreateCommandSignature;
+
+            [NativeTypeName("void (ID3D12Resource *, UINT *, D3D12_PACKED_MIP_INFO *, D3D12_TILE_SHAPE *, UINT *, UINT, D3D12_SUBRESOURCE_TILING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, ID3D12Resource*, uint*, D3D12_PACKED_MIP_INFO*, D3D12_TILE_SHAPE*, uint*, uint, D3D12_SUBRESOURCE_TILING*, void> GetResourceTiling;
+
+            [NativeTypeName("LUID () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, LUID*, LUID*> GetAdapterLuid;
+
+            [NativeTypeName("HRESULT (const void *, SIZE_T, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, void*, nuint, Guid*, void**, int> CreatePipelineLibrary;
+
+            [NativeTypeName("HRESULT (ID3D12Fence *const *, const UINT64 *, UINT, D3D12_MULTIPLE_FENCE_WAIT_FLAGS, HANDLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, ID3D12Fence**, ulong*, uint, D3D12_MULTIPLE_FENCE_WAIT_FLAGS, HANDLE, int> SetEventOnMultipleFenceCompletion;
+
+            [NativeTypeName("HRESULT (UINT, ID3D12Pageable *const *, const D3D12_RESIDENCY_PRIORITY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Device1*, uint, ID3D12Pageable**, D3D12_RESIDENCY_PRIORITY*, int> SetResidencyPriority;
         }
     }
 }

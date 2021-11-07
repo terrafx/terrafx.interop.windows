@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("65219584-F9CB-4AE3-81F9-A28A6CA450D9")]
     [NativeTypeName("struct IAppServiceConnectionExtendedExecution : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppServiceConnectionExtendedExecution
+    public unsafe partial struct IAppServiceConnectionExtendedExecution : IAppServiceConnectionExtendedExecution.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OpenForExtendedExecutionAsync([NativeTypeName("const IID &")] Guid* riid, void** operation)
         {
             return ((delegate* unmanaged<IAppServiceConnectionExtendedExecution*, Guid*, void**, int>)(lpVtbl[3]))((IAppServiceConnectionExtendedExecution*)Unsafe.AsPointer(ref this), riid, operation);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OpenForExtendedExecutionAsync([NativeTypeName("const IID &")] Guid* riid, void** operation);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppServiceConnectionExtendedExecution*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppServiceConnectionExtendedExecution*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppServiceConnectionExtendedExecution*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppServiceConnectionExtendedExecution*, Guid*, void**, int> OpenForExtendedExecutionAsync;
         }
     }
 }

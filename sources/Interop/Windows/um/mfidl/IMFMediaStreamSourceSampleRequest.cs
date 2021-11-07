@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("380B9AF9-A85B-4E78-A2AF-EA5CE645C6B4")]
     [NativeTypeName("struct IMFMediaStreamSourceSampleRequest : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaStreamSourceSampleRequest
+    public unsafe partial struct IMFMediaStreamSourceSampleRequest : IMFMediaStreamSourceSampleRequest.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT SetSample(IMFSample* value)
         {
             return ((delegate* unmanaged<IMFMediaStreamSourceSampleRequest*, IMFSample*, int>)(lpVtbl[3]))((IMFMediaStreamSourceSampleRequest*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetSample(IMFSample* value);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaStreamSourceSampleRequest*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaStreamSourceSampleRequest*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaStreamSourceSampleRequest*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFSample *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaStreamSourceSampleRequest*, IMFSample*, int> SetSample;
         }
     }
 }

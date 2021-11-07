@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("059054B3-027C-494C-A27D-9113291CF87F")]
     [NativeTypeName("struct IMFSourceOpenMonitor : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSourceOpenMonitor
+    public unsafe partial struct IMFSourceOpenMonitor : IMFSourceOpenMonitor.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OnSourceEvent(IMFMediaEvent* pEvent)
         {
             return ((delegate* unmanaged<IMFSourceOpenMonitor*, IMFMediaEvent*, int>)(lpVtbl[3]))((IMFSourceOpenMonitor*)Unsafe.AsPointer(ref this), pEvent);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnSourceEvent(IMFMediaEvent* pEvent);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceOpenMonitor*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceOpenMonitor*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceOpenMonitor*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFMediaEvent *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSourceOpenMonitor*, IMFMediaEvent*, int> OnSourceEvent;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("000214E9-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IShellPropSheetExt : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellPropSheetExt
+    public unsafe partial struct IShellPropSheetExt : IShellPropSheetExt.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,28 @@ namespace TerraFX.Interop
         public HRESULT ReplacePage([NativeTypeName("EXPPS")] uint uPageID, [NativeTypeName("LPFNSVADDPROPSHEETPAGE")] delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL> pfnReplaceWith, LPARAM lParam)
         {
             return ((delegate* unmanaged<IShellPropSheetExt*, uint, delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL>, LPARAM, int>)(lpVtbl[4]))((IShellPropSheetExt*)Unsafe.AsPointer(ref this), uPageID, pfnReplaceWith, lParam);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellPropSheetExt*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellPropSheetExt*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellPropSheetExt*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPFNSVADDPROPSHEETPAGE, LPARAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellPropSheetExt*, delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL>, LPARAM, int> AddPages;
+
+            [NativeTypeName("HRESULT (EXPPS, LPFNSVADDPROPSHEETPAGE, LPARAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellPropSheetExt*, uint, delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL>, LPARAM, int> ReplacePage;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("52B83A42-2543-416A-81D9-C0DE7969C8B3")]
     [NativeTypeName("struct ISuspensionDependencyManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISuspensionDependencyManager
+    public unsafe partial struct ISuspensionDependencyManager : ISuspensionDependencyManager.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT UngroupChildFromParent(HANDLE childProcessHandle)
         {
             return ((delegate* unmanaged<ISuspensionDependencyManager*, HANDLE, int>)(lpVtbl[5]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this), childProcessHandle);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RegisterAsChild(HANDLE processHandle);
+
+            [VtblIndex(4)]
+            HRESULT GroupChildWithParent(HANDLE childProcessHandle);
+
+            [VtblIndex(5)]
+            HRESULT UngroupChildFromParent(HANDLE childProcessHandle);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISuspensionDependencyManager*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISuspensionDependencyManager*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISuspensionDependencyManager*, uint> Release;
+
+            [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISuspensionDependencyManager*, HANDLE, int> RegisterAsChild;
+
+            [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISuspensionDependencyManager*, HANDLE, int> GroupChildWithParent;
+
+            [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISuspensionDependencyManager*, HANDLE, int> UngroupChildFromParent;
         }
     }
 }

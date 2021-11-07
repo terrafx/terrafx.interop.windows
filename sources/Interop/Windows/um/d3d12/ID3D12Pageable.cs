@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("63EE58FB-1268-4835-86DA-F008CE62F0D6")]
     [NativeTypeName("struct ID3D12Pageable : ID3D12DeviceChild")]
     [NativeInheritance("ID3D12DeviceChild")]
-    public unsafe partial struct ID3D12Pageable
+    public unsafe partial struct ID3D12Pageable : ID3D12Pageable.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,37 @@ namespace TerraFX.Interop
         public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppvDevice)
         {
             return ((delegate* unmanaged<ID3D12Pageable*, Guid*, void**, int>)(lpVtbl[7]))((ID3D12Pageable*)Unsafe.AsPointer(ref this), riid, ppvDevice);
+        }
+
+        public interface Interface : ID3D12DeviceChild.Interface
+        {
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Pageable*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Pageable*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Pageable*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Pageable*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Pageable*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Pageable*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Pageable*, ushort*, int> SetName;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Pageable*, Guid*, void**, int> GetDevice;
         }
     }
 }

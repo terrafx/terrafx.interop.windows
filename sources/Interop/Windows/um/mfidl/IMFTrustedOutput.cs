@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D19F8E95-B126-4446-890C-5DCB7AD71453")]
     [NativeTypeName("struct IMFTrustedOutput : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTrustedOutput
+    public unsafe partial struct IMFTrustedOutput : IMFTrustedOutput.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT IsFinal(BOOL* pfIsFinal)
         {
             return ((delegate* unmanaged<IMFTrustedOutput*, BOOL*, int>)(lpVtbl[5]))((IMFTrustedOutput*)Unsafe.AsPointer(ref this), pfIsFinal);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetOutputTrustAuthorityCount([NativeTypeName("DWORD *")] uint* pcOutputTrustAuthorities);
+
+            [VtblIndex(4)]
+            HRESULT GetOutputTrustAuthorityByIndex([NativeTypeName("DWORD")] uint dwIndex, IMFOutputTrustAuthority** ppauthority);
+
+            [VtblIndex(5)]
+            HRESULT IsFinal(BOOL* pfIsFinal);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTrustedOutput*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTrustedOutput*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTrustedOutput*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTrustedOutput*, uint*, int> GetOutputTrustAuthorityCount;
+
+            [NativeTypeName("HRESULT (DWORD, IMFOutputTrustAuthority **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTrustedOutput*, uint, IMFOutputTrustAuthority**, int> GetOutputTrustAuthorityByIndex;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTrustedOutput*, BOOL*, int> IsFinal;
         }
     }
 }

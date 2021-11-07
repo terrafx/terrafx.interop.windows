@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510804-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct INavigatorDoNotTrack : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct INavigatorDoNotTrack
+    public unsafe partial struct INavigatorDoNotTrack : INavigatorDoNotTrack.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,39 @@ namespace TerraFX.Interop
         public HRESULT get_msDoNotTrack([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<INavigatorDoNotTrack*, ushort**, int>)(lpVtbl[7]))((INavigatorDoNotTrack*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_msDoNotTrack([NativeTypeName("BSTR *")] ushort** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INavigatorDoNotTrack*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INavigatorDoNotTrack*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INavigatorDoNotTrack*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INavigatorDoNotTrack*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INavigatorDoNotTrack*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INavigatorDoNotTrack*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INavigatorDoNotTrack*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<INavigatorDoNotTrack*, ushort**, int> get_msDoNotTrack;
         }
     }
 }

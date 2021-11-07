@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct ID3D10EffectDepthStencilVariable : ID3D10EffectVariable")]
     [NativeInheritance("ID3D10EffectVariable")]
-    public unsafe partial struct ID3D10EffectDepthStencilVariable
+    public unsafe partial struct ID3D10EffectDepthStencilVariable : ID3D10EffectDepthStencilVariable.Interface
     {
         public void** lpVtbl;
 
@@ -200,6 +200,99 @@ namespace TerraFX.Interop
         public HRESULT GetBackingStore(uint Index, D3D10_DEPTH_STENCIL_DESC* pDepthStencilDesc)
         {
             return ((delegate* unmanaged<ID3D10EffectDepthStencilVariable*, uint, D3D10_DEPTH_STENCIL_DESC*, int>)(lpVtbl[26]))((ID3D10EffectDepthStencilVariable*)Unsafe.AsPointer(ref this), Index, pDepthStencilDesc);
+        }
+
+        public interface Interface : ID3D10EffectVariable.Interface
+        {
+            [VtblIndex(25)]
+            HRESULT GetDepthStencilState(uint Index, ID3D10DepthStencilState** ppDepthStencilState);
+
+            [VtblIndex(26)]
+            HRESULT GetBackingStore(uint Index, D3D10_DEPTH_STENCIL_DESC* pDepthStencilDesc);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, int> IsValid;
+
+            [NativeTypeName("ID3D10EffectType *() __attribute__((nothrow)) __attribute__((stdcall))")]
+            public new delegate* unmanaged<ID3D10EffectDepthStencilVariable*, ID3D10EffectType*> GetType;
+
+            [NativeTypeName("HRESULT (D3D10_EFFECT_VARIABLE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, D3D10_EFFECT_VARIABLE_DESC*, int> GetDesc;
+
+            [NativeTypeName("ID3D10EffectVariable *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, uint, ID3D10EffectVariable*> GetAnnotationByIndex;
+
+            [NativeTypeName("ID3D10EffectVariable *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, sbyte*, ID3D10EffectVariable*> GetAnnotationByName;
+
+            [NativeTypeName("ID3D10EffectVariable *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, uint, ID3D10EffectVariable*> GetMemberByIndex;
+
+            [NativeTypeName("ID3D10EffectVariable *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, sbyte*, ID3D10EffectVariable*> GetMemberByName;
+
+            [NativeTypeName("ID3D10EffectVariable *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, sbyte*, ID3D10EffectVariable*> GetMemberBySemantic;
+
+            [NativeTypeName("ID3D10EffectVariable *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, uint, ID3D10EffectVariable*> GetElement;
+
+            [NativeTypeName("ID3D10EffectConstantBuffer *() __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, ID3D10EffectConstantBuffer*> GetParentConstantBuffer;
+
+            [NativeTypeName("ID3D10EffectScalarVariable *() __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, ID3D10EffectScalarVariable*> AsScalar;
+
+            [NativeTypeName("ID3D10EffectVectorVariable *() __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, ID3D10EffectVectorVariable*> AsVector;
+
+            [NativeTypeName("ID3D10EffectMatrixVariable *() __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, ID3D10EffectMatrixVariable*> AsMatrix;
+
+            [NativeTypeName("ID3D10EffectStringVariable *() __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, ID3D10EffectStringVariable*> AsString;
+
+            [NativeTypeName("ID3D10EffectShaderResourceVariable *() __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, ID3D10EffectShaderResourceVariable*> AsShaderResource;
+
+            [NativeTypeName("ID3D10EffectRenderTargetViewVariable *() __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, ID3D10EffectRenderTargetViewVariable*> AsRenderTargetView;
+
+            [NativeTypeName("ID3D10EffectDepthStencilViewVariable *() __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, ID3D10EffectDepthStencilViewVariable*> AsDepthStencilView;
+
+            [NativeTypeName("ID3D10EffectConstantBuffer *() __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, ID3D10EffectConstantBuffer*> AsConstantBuffer;
+
+            [NativeTypeName("ID3D10EffectShaderVariable *() __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, ID3D10EffectShaderVariable*> AsShader;
+
+            [NativeTypeName("ID3D10EffectBlendVariable *() __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, ID3D10EffectBlendVariable*> AsBlend;
+
+            [NativeTypeName("ID3D10EffectDepthStencilVariable *() __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, ID3D10EffectDepthStencilVariable*> AsDepthStencil;
+
+            [NativeTypeName("ID3D10EffectRasterizerVariable *() __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, ID3D10EffectRasterizerVariable*> AsRasterizer;
+
+            [NativeTypeName("ID3D10EffectSamplerVariable *() __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, ID3D10EffectSamplerVariable*> AsSampler;
+
+            [NativeTypeName("HRESULT (void *, UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, void*, uint, uint, int> SetRawValue;
+
+            [NativeTypeName("HRESULT (void *, UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, void*, uint, uint, int> GetRawValue;
+
+            [NativeTypeName("HRESULT (UINT, ID3D10DepthStencilState **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, uint, ID3D10DepthStencilState**, int> GetDepthStencilState;
+
+            [NativeTypeName("HRESULT (UINT, D3D10_DEPTH_STENCIL_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10EffectDepthStencilVariable*, uint, D3D10_DEPTH_STENCIL_DESC*, int> GetBackingStore;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A06EB39A-50DA-425B-8C31-4EECD6C270F3")]
     [NativeTypeName("struct ID3DDestructionNotifier : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3DDestructionNotifier
+    public unsafe partial struct ID3DDestructionNotifier : ID3DDestructionNotifier.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,30 @@ namespace TerraFX.Interop
         public HRESULT UnregisterDestructionCallback(uint callbackID)
         {
             return ((delegate* unmanaged<ID3DDestructionNotifier*, uint, int>)(lpVtbl[4]))((ID3DDestructionNotifier*)Unsafe.AsPointer(ref this), callbackID);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT UnregisterDestructionCallback(uint callbackID);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3DDestructionNotifier*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3DDestructionNotifier*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3DDestructionNotifier*, uint> Release;
+
+            [NativeTypeName("HRESULT (PFN_DESTRUCTION_CALLBACK, void *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3DDestructionNotifier*, delegate* unmanaged<void*, void>, void*, uint*, int> RegisterDestructionCallback;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3DDestructionNotifier*, uint, int> UnregisterDestructionCallback;
         }
     }
 }

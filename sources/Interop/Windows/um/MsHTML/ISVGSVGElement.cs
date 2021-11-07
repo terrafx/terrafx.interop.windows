@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104E7-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGSVGElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGSVGElement
+    public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
     {
         public void** lpVtbl;
 
@@ -436,6 +436,351 @@ namespace TerraFX.Interop
         public HRESULT getElementById([NativeTypeName("BSTR")] ushort* elementId, IHTMLElement** pResult)
         {
             return ((delegate* unmanaged<ISVGSVGElement*, ushort*, IHTMLElement**, int>)(lpVtbl[59]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), elementId, pResult);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_x(ISVGAnimatedLength* v);
+
+            [VtblIndex(8)]
+            HRESULT get_x(ISVGAnimatedLength** p);
+
+            [VtblIndex(9)]
+            HRESULT putref_y(ISVGAnimatedLength* v);
+
+            [VtblIndex(10)]
+            HRESULT get_y(ISVGAnimatedLength** p);
+
+            [VtblIndex(11)]
+            HRESULT putref_width(ISVGAnimatedLength* v);
+
+            [VtblIndex(12)]
+            HRESULT get_width(ISVGAnimatedLength** p);
+
+            [VtblIndex(13)]
+            HRESULT putref_height(ISVGAnimatedLength* v);
+
+            [VtblIndex(14)]
+            HRESULT get_height(ISVGAnimatedLength** p);
+
+            [VtblIndex(15)]
+            HRESULT put_contentScriptType([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(16)]
+            HRESULT get_contentScriptType([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(17)]
+            HRESULT put_contentStyleType([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(18)]
+            HRESULT get_contentStyleType([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(19)]
+            HRESULT putref_viewport(ISVGRect* v);
+
+            [VtblIndex(20)]
+            HRESULT get_viewport(ISVGRect** p);
+
+            [VtblIndex(21)]
+            HRESULT put_pixelUnitToMillimeterX(float v);
+
+            [VtblIndex(22)]
+            HRESULT get_pixelUnitToMillimeterX(float* p);
+
+            [VtblIndex(23)]
+            HRESULT put_pixelUnitToMillimeterY(float v);
+
+            [VtblIndex(24)]
+            HRESULT get_pixelUnitToMillimeterY(float* p);
+
+            [VtblIndex(25)]
+            HRESULT put_screenPixelToMillimeterX(float v);
+
+            [VtblIndex(26)]
+            HRESULT get_screenPixelToMillimeterX(float* p);
+
+            [VtblIndex(27)]
+            HRESULT put_screenPixelToMillimeterY(float v);
+
+            [VtblIndex(28)]
+            HRESULT get_screenPixelToMillimeterY(float* p);
+
+            [VtblIndex(29)]
+            HRESULT put_useCurrentView([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(30)]
+            HRESULT get_useCurrentView([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(31)]
+            HRESULT putref_currentView(ISVGViewSpec* v);
+
+            [VtblIndex(32)]
+            HRESULT get_currentView(ISVGViewSpec** p);
+
+            [VtblIndex(33)]
+            HRESULT put_currentScale(float v);
+
+            [VtblIndex(34)]
+            HRESULT get_currentScale(float* p);
+
+            [VtblIndex(35)]
+            HRESULT putref_currentTranslate(ISVGPoint* v);
+
+            [VtblIndex(36)]
+            HRESULT get_currentTranslate(ISVGPoint** p);
+
+            [VtblIndex(37)]
+            HRESULT suspendRedraw([NativeTypeName("ULONG")] uint maxWaitMilliseconds, [NativeTypeName("ULONG *")] uint* pResult);
+
+            [VtblIndex(38)]
+            HRESULT unsuspendRedraw([NativeTypeName("ULONG")] uint suspendHandeID);
+
+            [VtblIndex(39)]
+            HRESULT unsuspendRedrawAll();
+
+            [VtblIndex(40)]
+            HRESULT forceRedraw();
+
+            [VtblIndex(41)]
+            HRESULT pauseAnimations();
+
+            [VtblIndex(42)]
+            HRESULT unpauseAnimations();
+
+            [VtblIndex(43)]
+            HRESULT animationsPaused([NativeTypeName("VARIANT_BOOL *")] short* pResult);
+
+            [VtblIndex(44)]
+            HRESULT getCurrentTime(float* pResult);
+
+            [VtblIndex(45)]
+            HRESULT setCurrentTime(float seconds);
+
+            [VtblIndex(46)]
+            HRESULT getIntersectionList(ISVGRect* rect, ISVGElement* referenceElement, VARIANT* pResult);
+
+            [VtblIndex(47)]
+            HRESULT getEnclosureList(ISVGRect* rect, ISVGElement* referenceElement, VARIANT* pResult);
+
+            [VtblIndex(48)]
+            HRESULT checkIntersection(ISVGElement* element, ISVGRect* rect, [NativeTypeName("VARIANT_BOOL *")] short* pResult);
+
+            [VtblIndex(49)]
+            HRESULT checkEnclosure(ISVGElement* element, ISVGRect* rect, [NativeTypeName("VARIANT_BOOL *")] short* pResult);
+
+            [VtblIndex(50)]
+            HRESULT deselectAll();
+
+            [VtblIndex(51)]
+            HRESULT createSVGNumber(ISVGNumber** pResult);
+
+            [VtblIndex(52)]
+            HRESULT createSVGLength(ISVGLength** pResult);
+
+            [VtblIndex(53)]
+            HRESULT createSVGAngle(ISVGAngle** pResult);
+
+            [VtblIndex(54)]
+            HRESULT createSVGPoint(ISVGPoint** pResult);
+
+            [VtblIndex(55)]
+            HRESULT createSVGMatrix(ISVGMatrix** pResult);
+
+            [VtblIndex(56)]
+            HRESULT createSVGRect(ISVGRect** pResult);
+
+            [VtblIndex(57)]
+            HRESULT createSVGTransform(ISVGTransform** pResult);
+
+            [VtblIndex(58)]
+            HRESULT createSVGTransformFromMatrix(ISVGMatrix* matrix, ISVGTransform** pResult);
+
+            [VtblIndex(59)]
+            HRESULT getElementById([NativeTypeName("BSTR")] ushort* elementId, IHTMLElement** pResult);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength*, int> putref_x;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength**, int> get_x;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength*, int> putref_y;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength**, int> get_y;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength*, int> putref_width;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength**, int> get_width;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength*, int> putref_height;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength**, int> get_height;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ushort*, int> put_contentScriptType;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ushort**, int> get_contentScriptType;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ushort*, int> put_contentStyleType;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ushort**, int> get_contentStyleType;
+
+            [NativeTypeName("HRESULT (ISVGRect *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGRect*, int> putref_viewport;
+
+            [NativeTypeName("HRESULT (ISVGRect **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGRect**, int> get_viewport;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, float, int> put_pixelUnitToMillimeterX;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, float*, int> get_pixelUnitToMillimeterX;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, float, int> put_pixelUnitToMillimeterY;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, float*, int> get_pixelUnitToMillimeterY;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, float, int> put_screenPixelToMillimeterX;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, float*, int> get_screenPixelToMillimeterX;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, float, int> put_screenPixelToMillimeterY;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, float*, int> get_screenPixelToMillimeterY;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, short, int> put_useCurrentView;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, short*, int> get_useCurrentView;
+
+            [NativeTypeName("HRESULT (ISVGViewSpec *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGViewSpec*, int> putref_currentView;
+
+            [NativeTypeName("HRESULT (ISVGViewSpec **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGViewSpec**, int> get_currentView;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, float, int> put_currentScale;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, float*, int> get_currentScale;
+
+            [NativeTypeName("HRESULT (ISVGPoint *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGPoint*, int> putref_currentTranslate;
+
+            [NativeTypeName("HRESULT (ISVGPoint **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGPoint**, int> get_currentTranslate;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, uint, uint*, int> suspendRedraw;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, uint, int> unsuspendRedraw;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, int> unsuspendRedrawAll;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, int> forceRedraw;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, int> pauseAnimations;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, int> unpauseAnimations;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, short*, int> animationsPaused;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, float*, int> getCurrentTime;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, float, int> setCurrentTime;
+
+            [NativeTypeName("HRESULT (ISVGRect *, ISVGElement *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGRect*, ISVGElement*, VARIANT*, int> getIntersectionList;
+
+            [NativeTypeName("HRESULT (ISVGRect *, ISVGElement *, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGRect*, ISVGElement*, VARIANT*, int> getEnclosureList;
+
+            [NativeTypeName("HRESULT (ISVGElement *, ISVGRect *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGElement*, ISVGRect*, short*, int> checkIntersection;
+
+            [NativeTypeName("HRESULT (ISVGElement *, ISVGRect *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGElement*, ISVGRect*, short*, int> checkEnclosure;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, int> deselectAll;
+
+            [NativeTypeName("HRESULT (ISVGNumber **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGNumber**, int> createSVGNumber;
+
+            [NativeTypeName("HRESULT (ISVGLength **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGLength**, int> createSVGLength;
+
+            [NativeTypeName("HRESULT (ISVGAngle **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGAngle**, int> createSVGAngle;
+
+            [NativeTypeName("HRESULT (ISVGPoint **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGPoint**, int> createSVGPoint;
+
+            [NativeTypeName("HRESULT (ISVGMatrix **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGMatrix**, int> createSVGMatrix;
+
+            [NativeTypeName("HRESULT (ISVGRect **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGRect**, int> createSVGRect;
+
+            [NativeTypeName("HRESULT (ISVGTransform **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGTransform**, int> createSVGTransform;
+
+            [NativeTypeName("HRESULT (ISVGMatrix *, ISVGTransform **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ISVGMatrix*, ISVGTransform**, int> createSVGTransformFromMatrix;
+
+            [NativeTypeName("HRESULT (BSTR, IHTMLElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGSVGElement*, ushort*, IHTMLElement**, int> getElementById;
         }
     }
 }

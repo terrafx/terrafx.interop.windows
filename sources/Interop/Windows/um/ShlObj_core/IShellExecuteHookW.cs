@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("000214FB-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IShellExecuteHookW : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellExecuteHookW
+    public unsafe partial struct IShellExecuteHookW : IShellExecuteHookW.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT Execute([NativeTypeName("LPSHELLEXECUTEINFOW")] void* pei)
         {
             return ((delegate* unmanaged<IShellExecuteHookW*, void*, int>)(lpVtbl[3]))((IShellExecuteHookW*)Unsafe.AsPointer(ref this), pei);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Execute([NativeTypeName("LPSHELLEXECUTEINFOW")] void* pei);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellExecuteHookW*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellExecuteHookW*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellExecuteHookW*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPSHELLEXECUTEINFOW) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellExecuteHookW*, void*, int> Execute;
         }
     }
 }

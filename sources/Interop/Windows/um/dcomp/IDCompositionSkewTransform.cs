@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E57AA735-DCDB-4C72-9C61-0591F58889EE")]
     [NativeTypeName("struct IDCompositionSkewTransform : IDCompositionTransform")]
     [NativeInheritance("IDCompositionTransform")]
-    public unsafe partial struct IDCompositionSkewTransform
+    public unsafe partial struct IDCompositionSkewTransform : IDCompositionSkewTransform.Interface
     {
         public void** lpVtbl;
 
@@ -40,13 +40,6 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT SetAngleX(float angleX)
-        {
-            return ((delegate* unmanaged<IDCompositionSkewTransform*, float, int>)(lpVtbl[4]))((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), angleX);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         public HRESULT SetAngleX(IDCompositionAnimation* animation)
         {
@@ -54,10 +47,10 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(6)]
-        public HRESULT SetAngleY(float angleY)
+        [VtblIndex(4)]
+        public HRESULT SetAngleX(float angleX)
         {
-            return ((delegate* unmanaged<IDCompositionSkewTransform*, float, int>)(lpVtbl[6]))((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), angleY);
+            return ((delegate* unmanaged<IDCompositionSkewTransform*, float, int>)(lpVtbl[4]))((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), angleX);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -68,10 +61,10 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(8)]
-        public HRESULT SetCenterX(float centerX)
+        [VtblIndex(6)]
+        public HRESULT SetAngleY(float angleY)
         {
-            return ((delegate* unmanaged<IDCompositionSkewTransform*, float, int>)(lpVtbl[8]))((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), centerX);
+            return ((delegate* unmanaged<IDCompositionSkewTransform*, float, int>)(lpVtbl[6]))((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), angleY);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -82,10 +75,10 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(10)]
-        public HRESULT SetCenterY(float centerY)
+        [VtblIndex(8)]
+        public HRESULT SetCenterX(float centerX)
         {
-            return ((delegate* unmanaged<IDCompositionSkewTransform*, float, int>)(lpVtbl[10]))((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), centerY);
+            return ((delegate* unmanaged<IDCompositionSkewTransform*, float, int>)(lpVtbl[8]))((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), centerX);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -93,6 +86,76 @@ namespace TerraFX.Interop
         public HRESULT SetCenterY(IDCompositionAnimation* animation)
         {
             return ((delegate* unmanaged<IDCompositionSkewTransform*, IDCompositionAnimation*, int>)(lpVtbl[9]))((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), animation);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(10)]
+        public HRESULT SetCenterY(float centerY)
+        {
+            return ((delegate* unmanaged<IDCompositionSkewTransform*, float, int>)(lpVtbl[10]))((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), centerY);
+        }
+
+        public interface Interface : IDCompositionTransform.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetAngleX(IDCompositionAnimation* animation);
+
+            [VtblIndex(4)]
+            HRESULT SetAngleX(float angleX);
+
+            [VtblIndex(5)]
+            HRESULT SetAngleY(IDCompositionAnimation* animation);
+
+            [VtblIndex(6)]
+            HRESULT SetAngleY(float angleY);
+
+            [VtblIndex(7)]
+            HRESULT SetCenterX(IDCompositionAnimation* animation);
+
+            [VtblIndex(8)]
+            HRESULT SetCenterX(float centerX);
+
+            [VtblIndex(9)]
+            HRESULT SetCenterY(IDCompositionAnimation* animation);
+
+            [VtblIndex(10)]
+            HRESULT SetCenterY(float centerY);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionSkewTransform*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionSkewTransform*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionSkewTransform*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionSkewTransform*, IDCompositionAnimation*, int> SetAngleX;
+
+            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionSkewTransform*, float, int> SetAngleX1;
+
+            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionSkewTransform*, IDCompositionAnimation*, int> SetAngleY;
+
+            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionSkewTransform*, float, int> SetAngleY1;
+
+            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionSkewTransform*, IDCompositionAnimation*, int> SetCenterX;
+
+            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionSkewTransform*, float, int> SetCenterX1;
+
+            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionSkewTransform*, IDCompositionAnimation*, int> SetCenterY;
+
+            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionSkewTransform*, float, int> SetCenterY1;
         }
     }
 }

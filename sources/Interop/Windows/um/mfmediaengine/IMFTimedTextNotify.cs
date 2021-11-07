@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DF6B87B6-CE12-45DB-ABA7-432FE054E57D")]
     [NativeTypeName("struct IMFTimedTextNotify : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTimedTextNotify
+    public unsafe partial struct IMFTimedTextNotify : IMFTimedTextNotify.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,63 @@ namespace TerraFX.Interop
         public void Reset()
         {
             ((delegate* unmanaged<IMFTimedTextNotify*, void>)(lpVtbl[9]))((IMFTimedTextNotify*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void TrackAdded([NativeTypeName("DWORD")] uint trackId);
+
+            [VtblIndex(4)]
+            void TrackRemoved([NativeTypeName("DWORD")] uint trackId);
+
+            [VtblIndex(5)]
+            void TrackSelected([NativeTypeName("DWORD")] uint trackId, BOOL selected);
+
+            [VtblIndex(6)]
+            void TrackReadyStateChanged([NativeTypeName("DWORD")] uint trackId);
+
+            [VtblIndex(7)]
+            void Error(MF_TIMED_TEXT_ERROR_CODE errorCode, HRESULT extendedErrorCode, [NativeTypeName("DWORD")] uint sourceTrackId);
+
+            [VtblIndex(8)]
+            void Cue(MF_TIMED_TEXT_CUE_EVENT cueEvent, double currentTime, IMFTimedTextCue* cue);
+
+            [VtblIndex(9)]
+            void Reset();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextNotify*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextNotify*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextNotify*, uint> Release;
+
+            [NativeTypeName("void (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextNotify*, uint, void> TrackAdded;
+
+            [NativeTypeName("void (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextNotify*, uint, void> TrackRemoved;
+
+            [NativeTypeName("void (DWORD, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextNotify*, uint, BOOL, void> TrackSelected;
+
+            [NativeTypeName("void (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextNotify*, uint, void> TrackReadyStateChanged;
+
+            [NativeTypeName("void (MF_TIMED_TEXT_ERROR_CODE, HRESULT, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextNotify*, MF_TIMED_TEXT_ERROR_CODE, HRESULT, uint, void> Error;
+
+            [NativeTypeName("void (MF_TIMED_TEXT_CUE_EVENT, double, IMFTimedTextCue *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextNotify*, MF_TIMED_TEXT_CUE_EVENT, double, IMFTimedTextCue*, void> Cue;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFTimedTextNotify*, void> Reset;
         }
     }
 }

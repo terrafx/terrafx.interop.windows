@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F928B7B8-2221-40C1-B72E-7E82F1974D1A")]
     [NativeTypeName("struct IWICPlanarBitmapFrameEncode : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWICPlanarBitmapFrameEncode
+    public unsafe partial struct IWICPlanarBitmapFrameEncode : IWICPlanarBitmapFrameEncode.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT WriteSource(IWICBitmapSource** ppPlanes, uint cPlanes, WICRect* prcSource)
         {
             return ((delegate* unmanaged<IWICPlanarBitmapFrameEncode*, IWICBitmapSource**, uint, WICRect*, int>)(lpVtbl[4]))((IWICPlanarBitmapFrameEncode*)Unsafe.AsPointer(ref this), ppPlanes, cPlanes, prcSource);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT WritePixels(uint lineCount, WICBitmapPlane* pPlanes, uint cPlanes);
+
+            [VtblIndex(4)]
+            HRESULT WriteSource(IWICBitmapSource** ppPlanes, uint cPlanes, WICRect* prcSource);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPlanarBitmapFrameEncode*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPlanarBitmapFrameEncode*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPlanarBitmapFrameEncode*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT, WICBitmapPlane *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPlanarBitmapFrameEncode*, uint, WICBitmapPlane*, uint, int> WritePixels;
+
+            [NativeTypeName("HRESULT (IWICBitmapSource **, UINT, WICRect *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICPlanarBitmapFrameEncode*, IWICBitmapSource**, uint, WICRect*, int> WriteSource;
         }
     }
 }

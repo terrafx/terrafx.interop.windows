@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("71FA9A2C-53CE-4662-A132-1A7E8CBF62DB")]
     [NativeTypeName("struct IMFHttpDownloadSession : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFHttpDownloadSession
+    public unsafe partial struct IMFHttpDownloadSession : IMFHttpDownloadSession.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT Close()
         {
             return ((delegate* unmanaged<IMFHttpDownloadSession*, int>)(lpVtbl[5]))((IMFHttpDownloadSession*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetServer([NativeTypeName("LPCWSTR")] ushort* szServerName, [NativeTypeName("DWORD")] uint nPort);
+
+            [VtblIndex(4)]
+            HRESULT CreateRequest([NativeTypeName("LPCWSTR")] ushort* szObjectName, BOOL fBypassProxyCache, BOOL fSecure, [NativeTypeName("LPCWSTR")] ushort* szVerb, [NativeTypeName("LPCWSTR")] ushort* szReferrer, IMFHttpDownloadRequest** ppRequest);
+
+            [VtblIndex(5)]
+            HRESULT Close();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadSession*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadSession*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadSession*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadSession*, ushort*, uint, int> SetServer;
+
+            [NativeTypeName("HRESULT (LPCWSTR, BOOL, BOOL, LPCWSTR, LPCWSTR, IMFHttpDownloadRequest **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadSession*, ushort*, BOOL, BOOL, ushort*, ushort*, IMFHttpDownloadRequest**, int> CreateRequest;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFHttpDownloadSession*, int> Close;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104B9-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IEventTarget : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IEventTarget
+    public unsafe partial struct IEventTarget : IEventTarget.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,51 @@ namespace TerraFX.Interop
         public HRESULT dispatchEvent(IDOMEvent* evt, [NativeTypeName("VARIANT_BOOL *")] short* pfResult)
         {
             return ((delegate* unmanaged<IEventTarget*, IDOMEvent*, short*, int>)(lpVtbl[9]))((IEventTarget*)Unsafe.AsPointer(ref this), evt, pfResult);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT addEventListener([NativeTypeName("BSTR")] ushort* type, IDispatch* listener, [NativeTypeName("VARIANT_BOOL")] short useCapture);
+
+            [VtblIndex(8)]
+            HRESULT removeEventListener([NativeTypeName("BSTR")] ushort* type, IDispatch* listener, [NativeTypeName("VARIANT_BOOL")] short useCapture);
+
+            [VtblIndex(9)]
+            HRESULT dispatchEvent(IDOMEvent* evt, [NativeTypeName("VARIANT_BOOL *")] short* pfResult);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEventTarget*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEventTarget*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEventTarget*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEventTarget*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEventTarget*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEventTarget*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEventTarget*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR, IDispatch *, VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEventTarget*, ushort*, IDispatch*, short, int> addEventListener;
+
+            [NativeTypeName("HRESULT (BSTR, IDispatch *, VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEventTarget*, ushort*, IDispatch*, short, int> removeEventListener;
+
+            [NativeTypeName("HRESULT (IDOMEvent *, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEventTarget*, IDOMEvent*, short*, int> dispatchEvent;
         }
     }
 }

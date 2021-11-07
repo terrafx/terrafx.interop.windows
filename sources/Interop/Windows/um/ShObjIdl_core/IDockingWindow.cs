@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("012DD920-7B26-11D0-8CA9-00A0C92DBFE8")]
     [NativeTypeName("struct IDockingWindow : IOleWindow")]
     [NativeInheritance("IOleWindow")]
-    public unsafe partial struct IDockingWindow
+    public unsafe partial struct IDockingWindow : IDockingWindow.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,45 @@ namespace TerraFX.Interop
         public HRESULT ResizeBorderDW([NativeTypeName("LPCRECT")] RECT* prcBorder, IUnknown* punkToolbarSite, BOOL fReserved)
         {
             return ((delegate* unmanaged<IDockingWindow*, RECT*, IUnknown*, BOOL, int>)(lpVtbl[7]))((IDockingWindow*)Unsafe.AsPointer(ref this), prcBorder, punkToolbarSite, fReserved);
+        }
+
+        public interface Interface : IOleWindow.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT ShowDW(BOOL fShow);
+
+            [VtblIndex(6)]
+            HRESULT CloseDW([NativeTypeName("DWORD")] uint dwReserved);
+
+            [VtblIndex(7)]
+            HRESULT ResizeBorderDW([NativeTypeName("LPCRECT")] RECT* prcBorder, IUnknown* punkToolbarSite, BOOL fReserved);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDockingWindow*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDockingWindow*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDockingWindow*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDockingWindow*, HWND*, int> GetWindow;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDockingWindow*, BOOL, int> ContextSensitiveHelp;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDockingWindow*, BOOL, int> ShowDW;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDockingWindow*, uint, int> CloseDW;
+
+            [NativeTypeName("HRESULT (LPCRECT, IUnknown *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDockingWindow*, RECT*, IUnknown*, BOOL, int> ResizeBorderDW;
         }
     }
 }

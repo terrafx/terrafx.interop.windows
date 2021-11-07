@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EDE80B5C-BAD6-4623-B537-65586C9F8DFD")]
     [NativeTypeName("struct IVMRAspectRatioControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IVMRAspectRatioControl
+    public unsafe partial struct IVMRAspectRatioControl : IVMRAspectRatioControl.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT SetAspectRatioMode([NativeTypeName("DWORD")] uint dwARMode)
         {
             return ((delegate* unmanaged<IVMRAspectRatioControl*, uint, int>)(lpVtbl[4]))((IVMRAspectRatioControl*)Unsafe.AsPointer(ref this), dwARMode);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetAspectRatioMode([NativeTypeName("LPDWORD")] uint* lpdwARMode);
+
+            [VtblIndex(4)]
+            HRESULT SetAspectRatioMode([NativeTypeName("DWORD")] uint dwARMode);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRAspectRatioControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRAspectRatioControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRAspectRatioControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPDWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRAspectRatioControl*, uint*, int> GetAspectRatioMode;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVMRAspectRatioControl*, uint, int> SetAspectRatioMode;
         }
     }
 }

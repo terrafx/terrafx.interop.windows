@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3C613A02-34B2-44EA-9A7C-45AEA9C6FD6D")]
     [NativeTypeName("struct IWICColorContext : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWICColorContext
+    public unsafe partial struct IWICColorContext : IWICColorContext.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,57 @@ namespace TerraFX.Interop
         public HRESULT GetExifColorSpace(uint* pValue)
         {
             return ((delegate* unmanaged<IWICColorContext*, uint*, int>)(lpVtbl[8]))((IWICColorContext*)Unsafe.AsPointer(ref this), pValue);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT InitializeFromFilename([NativeTypeName("LPCWSTR")] ushort* wzFilename);
+
+            [VtblIndex(4)]
+            HRESULT InitializeFromMemory([NativeTypeName("const BYTE *")] byte* pbBuffer, uint cbBufferSize);
+
+            [VtblIndex(5)]
+            HRESULT InitializeFromExifColorSpace(uint value);
+
+            [VtblIndex(6)]
+            HRESULT GetType(WICColorContextType* pType);
+
+            [VtblIndex(7)]
+            HRESULT GetProfileBytes(uint cbBuffer, byte* pbBuffer, uint* pcbActual);
+
+            [VtblIndex(8)]
+            HRESULT GetExifColorSpace(uint* pValue);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICColorContext*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICColorContext*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICColorContext*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICColorContext*, ushort*, int> InitializeFromFilename;
+
+            [NativeTypeName("HRESULT (const BYTE *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICColorContext*, byte*, uint, int> InitializeFromMemory;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICColorContext*, uint, int> InitializeFromExifColorSpace;
+
+            [NativeTypeName("HRESULT (WICColorContextType *) __attribute__((stdcall))")]
+            public new delegate* unmanaged<IWICColorContext*, WICColorContextType*, int> GetType;
+
+            [NativeTypeName("HRESULT (UINT, BYTE *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICColorContext*, uint, byte*, uint*, int> GetProfileBytes;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICColorContext*, uint*, int> GetExifColorSpace;
         }
     }
 }

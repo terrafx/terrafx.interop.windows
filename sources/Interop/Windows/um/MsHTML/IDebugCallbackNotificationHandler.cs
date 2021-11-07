@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510842-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDebugCallbackNotificationHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDebugCallbackNotificationHandler
+    public unsafe partial struct IDebugCallbackNotificationHandler : IDebugCallbackNotificationHandler.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,63 @@ namespace TerraFX.Interop
         public HRESULT InvokeCallbackComplete(SCRIPT_TIMER_TYPE eCallbackType, [NativeTypeName("DWORD")] uint callbackCookie, IDispatch* pDispHandler, [NativeTypeName("ULONGLONG")] ulong ullHandlerCookie, [NativeTypeName("BSTR")] ushort* functionName, [NativeTypeName("UINT32")] uint line, [NativeTypeName("UINT32")] uint column, [NativeTypeName("UINT32")] uint cchLength, IUnknown* pDebugDocumentContext)
         {
             return ((delegate* unmanaged<IDebugCallbackNotificationHandler*, SCRIPT_TIMER_TYPE, uint, IDispatch*, ulong, ushort*, uint, uint, uint, IUnknown*, int>)(lpVtbl[9]))((IDebugCallbackNotificationHandler*)Unsafe.AsPointer(ref this), eCallbackType, callbackCookie, pDispHandler, ullHandlerCookie, functionName, line, column, cchLength, pDebugDocumentContext);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RequestedCallbackTypes([NativeTypeName("DWORD *")] uint* pCallbackMask);
+
+            [VtblIndex(4)]
+            HRESULT BeforeDispatchEvent(IUnknown* pEvent);
+
+            [VtblIndex(5)]
+            HRESULT DispatchEventComplete(IUnknown* pEvent, [NativeTypeName("DWORD")] uint propagationStatus);
+
+            [VtblIndex(6)]
+            HRESULT BeforeInvokeDomCallback(IUnknown* pEvent, IScriptEventHandler* pCallback, DOM_EVENT_PHASE eStage, [NativeTypeName("DWORD")] uint propagationStatus);
+
+            [VtblIndex(7)]
+            HRESULT InvokeDomCallbackComplete(IUnknown* pEvent, IScriptEventHandler* pCallback, DOM_EVENT_PHASE eStage, [NativeTypeName("DWORD")] uint propagationStatus);
+
+            [VtblIndex(8)]
+            HRESULT BeforeInvokeCallback(SCRIPT_TIMER_TYPE eCallbackType, [NativeTypeName("DWORD")] uint callbackCookie, IDispatch* pDispHandler, [NativeTypeName("ULONGLONG")] ulong ullHandlerCookie, [NativeTypeName("BSTR")] ushort* functionName, [NativeTypeName("UINT32")] uint line, [NativeTypeName("UINT32")] uint column, [NativeTypeName("UINT32")] uint cchLength, IUnknown* pDebugDocumentContext);
+
+            [VtblIndex(9)]
+            HRESULT InvokeCallbackComplete(SCRIPT_TIMER_TYPE eCallbackType, [NativeTypeName("DWORD")] uint callbackCookie, IDispatch* pDispHandler, [NativeTypeName("ULONGLONG")] ulong ullHandlerCookie, [NativeTypeName("BSTR")] ushort* functionName, [NativeTypeName("UINT32")] uint line, [NativeTypeName("UINT32")] uint column, [NativeTypeName("UINT32")] uint cchLength, IUnknown* pDebugDocumentContext);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDebugCallbackNotificationHandler*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDebugCallbackNotificationHandler*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDebugCallbackNotificationHandler*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDebugCallbackNotificationHandler*, uint*, int> RequestedCallbackTypes;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDebugCallbackNotificationHandler*, IUnknown*, int> BeforeDispatchEvent;
+
+            [NativeTypeName("HRESULT (IUnknown *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDebugCallbackNotificationHandler*, IUnknown*, uint, int> DispatchEventComplete;
+
+            [NativeTypeName("HRESULT (IUnknown *, IScriptEventHandler *, DOM_EVENT_PHASE, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDebugCallbackNotificationHandler*, IUnknown*, IScriptEventHandler*, DOM_EVENT_PHASE, uint, int> BeforeInvokeDomCallback;
+
+            [NativeTypeName("HRESULT (IUnknown *, IScriptEventHandler *, DOM_EVENT_PHASE, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDebugCallbackNotificationHandler*, IUnknown*, IScriptEventHandler*, DOM_EVENT_PHASE, uint, int> InvokeDomCallbackComplete;
+
+            [NativeTypeName("HRESULT (SCRIPT_TIMER_TYPE, DWORD, IDispatch *, ULONGLONG, BSTR, UINT32, UINT32, UINT32, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDebugCallbackNotificationHandler*, SCRIPT_TIMER_TYPE, uint, IDispatch*, ulong, ushort*, uint, uint, uint, IUnknown*, int> BeforeInvokeCallback;
+
+            [NativeTypeName("HRESULT (SCRIPT_TIMER_TYPE, DWORD, IDispatch *, ULONGLONG, BSTR, UINT32, UINT32, UINT32, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDebugCallbackNotificationHandler*, SCRIPT_TIMER_TYPE, uint, IDispatch*, ulong, ushort*, uint, uint, uint, IUnknown*, int> InvokeCallbackComplete;
         }
     }
 }

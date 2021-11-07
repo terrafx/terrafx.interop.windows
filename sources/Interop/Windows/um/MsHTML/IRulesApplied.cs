@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104BF-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IRulesApplied : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IRulesApplied
+    public unsafe partial struct IRulesApplied : IRulesApplied.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,69 @@ namespace TerraFX.Interop
         public HRESULT hasInheritableProperty([NativeTypeName("VARIANT_BOOL *")] short* p)
         {
             return ((delegate* unmanaged<IRulesApplied*, short*, int>)(lpVtbl[12]))((IRulesApplied*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_element(IHTMLElement** p);
+
+            [VtblIndex(8)]
+            HRESULT get_inlineStyles(IHTMLStyle** p);
+
+            [VtblIndex(9)]
+            HRESULT get_appliedRules(IHTMLStyleSheetRulesAppliedCollection** p);
+
+            [VtblIndex(10)]
+            HRESULT propertyIsInline([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(11)]
+            HRESULT propertyIsInheritable([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(12)]
+            HRESULT hasInheritableProperty([NativeTypeName("VARIANT_BOOL *")] short* p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesApplied*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesApplied*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesApplied*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesApplied*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesApplied*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesApplied*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesApplied*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesApplied*, IHTMLElement**, int> get_element;
+
+            [NativeTypeName("HRESULT (IHTMLStyle **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesApplied*, IHTMLStyle**, int> get_inlineStyles;
+
+            [NativeTypeName("HRESULT (IHTMLStyleSheetRulesAppliedCollection **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesApplied*, IHTMLStyleSheetRulesAppliedCollection**, int> get_appliedRules;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesApplied*, ushort*, short*, int> propertyIsInline;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesApplied*, ushort*, short*, int> propertyIsInheritable;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRulesApplied*, short*, int> hasInheritableProperty;
         }
     }
 }

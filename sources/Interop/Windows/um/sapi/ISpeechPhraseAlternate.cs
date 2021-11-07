@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27864A2A-2B9F-4CB8-92D3-0D2722FD1E73")]
     [NativeTypeName("struct ISpeechPhraseAlternate : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechPhraseAlternate
+    public unsafe partial struct ISpeechPhraseAlternate : ISpeechPhraseAlternate.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,63 @@ namespace TerraFX.Interop
         public HRESULT Commit()
         {
             return ((delegate* unmanaged<ISpeechPhraseAlternate*, int>)(lpVtbl[11]))((ISpeechPhraseAlternate*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_RecoResult(ISpeechRecoResult** RecoResult);
+
+            [VtblIndex(8)]
+            HRESULT get_StartElementInResult([NativeTypeName("long *")] int* StartElement);
+
+            [VtblIndex(9)]
+            HRESULT get_NumberOfElementsInResult([NativeTypeName("long *")] int* NumberOfElements);
+
+            [VtblIndex(10)]
+            HRESULT get_PhraseInfo(ISpeechPhraseInfo** PhraseInfo);
+
+            [VtblIndex(11)]
+            HRESULT Commit();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseAlternate*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseAlternate*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseAlternate*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseAlternate*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseAlternate*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseAlternate*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseAlternate*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (ISpeechRecoResult **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseAlternate*, ISpeechRecoResult**, int> get_RecoResult;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseAlternate*, int*, int> get_StartElementInResult;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseAlternate*, int*, int> get_NumberOfElementsInResult;
+
+            [NativeTypeName("HRESULT (ISpeechPhraseInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseAlternate*, ISpeechPhraseInfo**, int> get_PhraseInfo;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseAlternate*, int> Commit;
         }
     }
 }

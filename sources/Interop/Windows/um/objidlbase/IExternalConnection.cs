@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000019-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IExternalConnection : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IExternalConnection
+    public unsafe partial struct IExternalConnection : IExternalConnection.Interface
     {
         public void** lpVtbl;
 
@@ -53,6 +53,35 @@ namespace TerraFX.Interop
         public uint ReleaseConnection([NativeTypeName("DWORD")] uint extconn, [NativeTypeName("DWORD")] uint reserved, BOOL fLastReleaseCloses)
         {
             return ((delegate* unmanaged<IExternalConnection*, uint, uint, BOOL, uint>)(lpVtbl[4]))((IExternalConnection*)Unsafe.AsPointer(ref this), extconn, reserved, fLastReleaseCloses);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            [return: NativeTypeName("DWORD")]
+            uint AddConnection([NativeTypeName("DWORD")] uint extconn, [NativeTypeName("DWORD")] uint reserved);
+
+            [VtblIndex(4)]
+            [return: NativeTypeName("DWORD")]
+            uint ReleaseConnection([NativeTypeName("DWORD")] uint extconn, [NativeTypeName("DWORD")] uint reserved, BOOL fLastReleaseCloses);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExternalConnection*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IExternalConnection*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IExternalConnection*, uint> Release;
+
+            [NativeTypeName("DWORD (DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExternalConnection*, uint, uint, uint> AddConnection;
+
+            [NativeTypeName("DWORD (DWORD, DWORD, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExternalConnection*, uint, uint, BOOL, uint> ReleaseConnection;
         }
     }
 }

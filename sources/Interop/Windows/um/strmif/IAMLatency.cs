@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("62EA93BA-EC62-11D2-B770-00C04FB6BD3D")]
     [NativeTypeName("struct IAMLatency : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMLatency
+    public unsafe partial struct IAMLatency : IAMLatency.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetLatency([NativeTypeName("REFERENCE_TIME *")] long* prtLatency)
         {
             return ((delegate* unmanaged<IAMLatency*, long*, int>)(lpVtbl[3]))((IAMLatency*)Unsafe.AsPointer(ref this), prtLatency);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetLatency([NativeTypeName("REFERENCE_TIME *")] long* prtLatency);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMLatency*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMLatency*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMLatency*, uint> Release;
+
+            [NativeTypeName("HRESULT (REFERENCE_TIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMLatency*, long*, int> GetLatency;
         }
     }
 }

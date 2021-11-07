@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BE8F4F4E-5B16-4D29-B350-7F6B5D9298AC")]
     [NativeTypeName("struct IDMOVideoOutputOptimizations : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDMOVideoOutputOptimizations
+    public unsafe partial struct IDMOVideoOutputOptimizations : IDMOVideoOutputOptimizations.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetCurrentSampleRequirements([NativeTypeName("ULONG")] uint ulOutputStreamIndex, [NativeTypeName("DWORD *")] uint* pdwRequestedFeatures)
         {
             return ((delegate* unmanaged<IDMOVideoOutputOptimizations*, uint, uint*, int>)(lpVtbl[6]))((IDMOVideoOutputOptimizations*)Unsafe.AsPointer(ref this), ulOutputStreamIndex, pdwRequestedFeatures);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT QueryOperationModePreferences([NativeTypeName("ULONG")] uint ulOutputStreamIndex, [NativeTypeName("DWORD *")] uint* pdwRequestedCapabilities);
+
+            [VtblIndex(4)]
+            HRESULT SetOperationMode([NativeTypeName("ULONG")] uint ulOutputStreamIndex, [NativeTypeName("DWORD")] uint dwEnabledFeatures);
+
+            [VtblIndex(5)]
+            HRESULT GetCurrentOperationMode([NativeTypeName("ULONG")] uint ulOutputStreamIndex, [NativeTypeName("DWORD *")] uint* pdwEnabledFeatures);
+
+            [VtblIndex(6)]
+            HRESULT GetCurrentSampleRequirements([NativeTypeName("ULONG")] uint ulOutputStreamIndex, [NativeTypeName("DWORD *")] uint* pdwRequestedFeatures);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMOVideoOutputOptimizations*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMOVideoOutputOptimizations*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMOVideoOutputOptimizations*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMOVideoOutputOptimizations*, uint, uint*, int> QueryOperationModePreferences;
+
+            [NativeTypeName("HRESULT (ULONG, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMOVideoOutputOptimizations*, uint, uint, int> SetOperationMode;
+
+            [NativeTypeName("HRESULT (ULONG, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMOVideoOutputOptimizations*, uint, uint*, int> GetCurrentOperationMode;
+
+            [NativeTypeName("HRESULT (ULONG, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDMOVideoOutputOptimizations*, uint, uint*, int> GetCurrentSampleRequirements;
         }
     }
 }

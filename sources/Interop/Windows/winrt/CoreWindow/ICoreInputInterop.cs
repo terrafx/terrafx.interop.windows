@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("40BFE3E3-B75A-4479-AC96-475365749BB8")]
     [NativeTypeName("struct ICoreInputInterop : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICoreInputInterop
+    public unsafe partial struct ICoreInputInterop : ICoreInputInterop.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT put_MessageHandled([NativeTypeName("boolean")] byte value)
         {
             return ((delegate* unmanaged<ICoreInputInterop*, byte, int>)(lpVtbl[4]))((ICoreInputInterop*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetInputSource(IUnknown* value);
+
+            [VtblIndex(4)]
+            HRESULT put_MessageHandled([NativeTypeName("boolean")] byte value);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICoreInputInterop*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICoreInputInterop*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICoreInputInterop*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICoreInputInterop*, IUnknown*, int> SetInputSource;
+
+            [NativeTypeName("HRESULT (boolean) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICoreInputInterop*, byte, int> put_MessageHandled;
         }
     }
 }

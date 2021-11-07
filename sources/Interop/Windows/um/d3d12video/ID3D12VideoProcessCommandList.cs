@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AEB2543A-167F-4682-ACC8-D159ED4A6209")]
     [NativeTypeName("struct ID3D12VideoProcessCommandList : ID3D12CommandList")]
     [NativeInheritance("ID3D12CommandList")]
-    public unsafe partial struct ID3D12VideoProcessCommandList
+    public unsafe partial struct ID3D12VideoProcessCommandList : ID3D12VideoProcessCommandList.Interface
     {
         public void** lpVtbl;
 
@@ -177,6 +177,123 @@ namespace TerraFX.Interop
         public void WriteBufferImmediate(uint Count, [NativeTypeName("const D3D12_WRITEBUFFERIMMEDIATE_PARAMETER *")] D3D12_WRITEBUFFERIMMEDIATE_PARAMETER* pParams, [NativeTypeName("const D3D12_WRITEBUFFERIMMEDIATE_MODE *")] D3D12_WRITEBUFFERIMMEDIATE_MODE* pModes)
         {
             ((delegate* unmanaged<ID3D12VideoProcessCommandList*, uint, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER*, D3D12_WRITEBUFFERIMMEDIATE_MODE*, void>)(lpVtbl[22]))((ID3D12VideoProcessCommandList*)Unsafe.AsPointer(ref this), Count, pParams, pModes);
+        }
+
+        public interface Interface : ID3D12CommandList.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT Close();
+
+            [VtblIndex(10)]
+            HRESULT Reset(ID3D12CommandAllocator* pAllocator);
+
+            [VtblIndex(11)]
+            void ClearState();
+
+            [VtblIndex(12)]
+            void ResourceBarrier(uint NumBarriers, [NativeTypeName("const D3D12_RESOURCE_BARRIER *")] D3D12_RESOURCE_BARRIER* pBarriers);
+
+            [VtblIndex(13)]
+            void DiscardResource(ID3D12Resource* pResource, [NativeTypeName("const D3D12_DISCARD_REGION *")] D3D12_DISCARD_REGION* pRegion);
+
+            [VtblIndex(14)]
+            void BeginQuery(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint Index);
+
+            [VtblIndex(15)]
+            void EndQuery(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint Index);
+
+            [VtblIndex(16)]
+            void ResolveQueryData(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint StartIndex, uint NumQueries, ID3D12Resource* pDestinationBuffer, [NativeTypeName("UINT64")] ulong AlignedDestinationBufferOffset);
+
+            [VtblIndex(17)]
+            void SetPredication(ID3D12Resource* pBuffer, [NativeTypeName("UINT64")] ulong AlignedBufferOffset, D3D12_PREDICATION_OP Operation);
+
+            [VtblIndex(18)]
+            void SetMarker(uint Metadata, [NativeTypeName("const void *")] void* pData, uint Size);
+
+            [VtblIndex(19)]
+            void BeginEvent(uint Metadata, [NativeTypeName("const void *")] void* pData, uint Size);
+
+            [VtblIndex(20)]
+            void EndEvent();
+
+            [VtblIndex(21)]
+            void ProcessFrames(ID3D12VideoProcessor* pVideoProcessor, [NativeTypeName("const D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS *")] D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS* pOutputArguments, uint NumInputStreams, [NativeTypeName("const D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS *")] D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS* pInputArguments);
+
+            [VtblIndex(22)]
+            void WriteBufferImmediate(uint Count, [NativeTypeName("const D3D12_WRITEBUFFERIMMEDIATE_PARAMETER *")] D3D12_WRITEBUFFERIMMEDIATE_PARAMETER* pParams, [NativeTypeName("const D3D12_WRITEBUFFERIMMEDIATE_MODE *")] D3D12_WRITEBUFFERIMMEDIATE_MODE* pModes);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessCommandList*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessCommandList*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessCommandList*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessCommandList*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessCommandList*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessCommandList*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessCommandList*, ushort*, int> SetName;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessCommandList*, Guid*, void**, int> GetDevice;
+
+            [NativeTypeName("D3D12_COMMAND_LIST_TYPE () __attribute__((stdcall))")]
+            public new delegate* unmanaged<ID3D12VideoProcessCommandList*, D3D12_COMMAND_LIST_TYPE> GetType;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessCommandList*, int> Close;
+
+            [NativeTypeName("HRESULT (ID3D12CommandAllocator *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessCommandList*, ID3D12CommandAllocator*, int> Reset;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessCommandList*, void> ClearState;
+
+            [NativeTypeName("void (UINT, const D3D12_RESOURCE_BARRIER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessCommandList*, uint, D3D12_RESOURCE_BARRIER*, void> ResourceBarrier;
+
+            [NativeTypeName("void (ID3D12Resource *, const D3D12_DISCARD_REGION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessCommandList*, ID3D12Resource*, D3D12_DISCARD_REGION*, void> DiscardResource;
+
+            [NativeTypeName("void (ID3D12QueryHeap *, D3D12_QUERY_TYPE, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessCommandList*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, void> BeginQuery;
+
+            [NativeTypeName("void (ID3D12QueryHeap *, D3D12_QUERY_TYPE, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessCommandList*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, void> EndQuery;
+
+            [NativeTypeName("void (ID3D12QueryHeap *, D3D12_QUERY_TYPE, UINT, UINT, ID3D12Resource *, UINT64) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessCommandList*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, uint, ID3D12Resource*, ulong, void> ResolveQueryData;
+
+            [NativeTypeName("void (ID3D12Resource *, UINT64, D3D12_PREDICATION_OP) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessCommandList*, ID3D12Resource*, ulong, D3D12_PREDICATION_OP, void> SetPredication;
+
+            [NativeTypeName("void (UINT, const void *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessCommandList*, uint, void*, uint, void> SetMarker;
+
+            [NativeTypeName("void (UINT, const void *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessCommandList*, uint, void*, uint, void> BeginEvent;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessCommandList*, void> EndEvent;
+
+            [NativeTypeName("void (ID3D12VideoProcessor *, const D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS *, UINT, const D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessCommandList*, ID3D12VideoProcessor*, D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS*, uint, D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS*, void> ProcessFrames;
+
+            [NativeTypeName("void (UINT, const D3D12_WRITEBUFFERIMMEDIATE_PARAMETER *, const D3D12_WRITEBUFFERIMMEDIATE_MODE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoProcessCommandList*, uint, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER*, D3D12_WRITEBUFFERIMMEDIATE_MODE*, void> WriteBufferImmediate;
         }
     }
 }

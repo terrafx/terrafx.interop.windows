@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0000013E-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IServerSecurity : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IServerSecurity
+    public unsafe partial struct IServerSecurity : IServerSecurity.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public BOOL IsImpersonating()
         {
             return ((delegate* unmanaged<IServerSecurity*, int>)(lpVtbl[6]))((IServerSecurity*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT QueryBlanket([NativeTypeName("DWORD *")] uint* pAuthnSvc, [NativeTypeName("DWORD *")] uint* pAuthzSvc, [NativeTypeName("OLECHAR **")] ushort** pServerPrincName, [NativeTypeName("DWORD *")] uint* pAuthnLevel, [NativeTypeName("DWORD *")] uint* pImpLevel, void** pPrivs, [NativeTypeName("DWORD *")] uint* pCapabilities);
+
+            [VtblIndex(4)]
+            HRESULT ImpersonateClient();
+
+            [VtblIndex(5)]
+            HRESULT RevertToSelf();
+
+            [VtblIndex(6)]
+            BOOL IsImpersonating();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IServerSecurity*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IServerSecurity*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IServerSecurity*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *, DWORD *, OLECHAR **, DWORD *, DWORD *, void **, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IServerSecurity*, uint*, uint*, ushort**, uint*, uint*, void**, uint*, int> QueryBlanket;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IServerSecurity*, int> ImpersonateClient;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IServerSecurity*, int> RevertToSelf;
+
+            [NativeTypeName("BOOL () __attribute__((stdcall))")]
+            public delegate* unmanaged<IServerSecurity*, int> IsImpersonating;
         }
     }
 }

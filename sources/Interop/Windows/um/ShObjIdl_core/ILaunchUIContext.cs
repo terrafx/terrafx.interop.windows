@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1791E8F6-21C7-4340-882A-A6A93E3FD73B")]
     [NativeTypeName("struct ILaunchUIContext : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ILaunchUIContext
+    public unsafe partial struct ILaunchUIContext : ILaunchUIContext.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT SetTabGroupingPreference([NativeTypeName("DWORD")] uint value)
         {
             return ((delegate* unmanaged<ILaunchUIContext*, uint, int>)(lpVtbl[4]))((ILaunchUIContext*)Unsafe.AsPointer(ref this), value);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetAssociatedWindow(HWND value);
+
+            [VtblIndex(4)]
+            HRESULT SetTabGroupingPreference([NativeTypeName("DWORD")] uint value);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILaunchUIContext*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILaunchUIContext*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILaunchUIContext*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILaunchUIContext*, HWND, int> SetAssociatedWindow;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILaunchUIContext*, uint, int> SetTabGroupingPreference;
         }
     }
 }

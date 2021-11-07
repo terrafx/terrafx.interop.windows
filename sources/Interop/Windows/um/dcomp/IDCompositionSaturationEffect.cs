@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A08DEBDA-3258-4FA4-9F16-9174D3FE93B1")]
     [NativeTypeName("struct IDCompositionSaturationEffect : IDCompositionFilterEffect")]
     [NativeInheritance("IDCompositionFilterEffect")]
-    public unsafe partial struct IDCompositionSaturationEffect
+    public unsafe partial struct IDCompositionSaturationEffect : IDCompositionSaturationEffect.Interface
     {
         public void** lpVtbl;
 
@@ -47,17 +47,47 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
+        public HRESULT SetSaturation(IDCompositionAnimation* animation)
+        {
+            return ((delegate* unmanaged<IDCompositionSaturationEffect*, IDCompositionAnimation*, int>)(lpVtbl[4]))((IDCompositionSaturationEffect*)Unsafe.AsPointer(ref this), animation);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
         public HRESULT SetSaturation(float ratio)
         {
             return ((delegate* unmanaged<IDCompositionSaturationEffect*, float, int>)(lpVtbl[5]))((IDCompositionSaturationEffect*)Unsafe.AsPointer(ref this), ratio);
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT SetSaturation(IDCompositionAnimation* animation)
+        public interface Interface : IDCompositionFilterEffect.Interface
         {
-            return ((delegate* unmanaged<IDCompositionSaturationEffect*, IDCompositionAnimation*, int>)(lpVtbl[4]))((IDCompositionSaturationEffect*)Unsafe.AsPointer(ref this), animation);
+            [VtblIndex(4)]
+            HRESULT SetSaturation(IDCompositionAnimation* animation);
+
+            [VtblIndex(5)]
+            HRESULT SetSaturation(float ratio);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionSaturationEffect*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionSaturationEffect*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionSaturationEffect*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionSaturationEffect*, uint, IUnknown*, uint, int> SetInput;
+
+            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionSaturationEffect*, IDCompositionAnimation*, int> SetSaturation;
+
+            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionSaturationEffect*, float, int> SetSaturation1;
         }
     }
 }

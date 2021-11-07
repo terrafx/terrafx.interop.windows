@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B79BB0B0-33C1-11D1-ABE1-00A0C905F375")]
     [NativeTypeName("struct IFilterMapper2 : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFilterMapper2
+    public unsafe partial struct IFilterMapper2 : IFilterMapper2.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT EnumMatchingFilters(IEnumMoniker** ppEnum, [NativeTypeName("DWORD")] uint dwFlags, BOOL bExactMatch, [NativeTypeName("DWORD")] uint dwMerit, BOOL bInputNeeded, [NativeTypeName("DWORD")] uint cInputTypes, [NativeTypeName("const GUID *")] Guid* pInputTypes, [NativeTypeName("const REGPINMEDIUM *")] REGPINMEDIUM* pMedIn, [NativeTypeName("const CLSID *")] Guid* pPinCategoryIn, BOOL bRender, BOOL bOutputNeeded, [NativeTypeName("DWORD")] uint cOutputTypes, [NativeTypeName("const GUID *")] Guid* pOutputTypes, [NativeTypeName("const REGPINMEDIUM *")] REGPINMEDIUM* pMedOut, [NativeTypeName("const CLSID *")] Guid* pPinCategoryOut)
         {
             return ((delegate* unmanaged<IFilterMapper2*, IEnumMoniker**, uint, BOOL, uint, BOOL, uint, Guid*, REGPINMEDIUM*, Guid*, BOOL, BOOL, uint, Guid*, REGPINMEDIUM*, Guid*, int>)(lpVtbl[6]))((IFilterMapper2*)Unsafe.AsPointer(ref this), ppEnum, dwFlags, bExactMatch, dwMerit, bInputNeeded, cInputTypes, pInputTypes, pMedIn, pPinCategoryIn, bRender, bOutputNeeded, cOutputTypes, pOutputTypes, pMedOut, pPinCategoryOut);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateCategory([NativeTypeName("const IID &")] Guid* clsidCategory, [NativeTypeName("DWORD")] uint dwCategoryMerit, [NativeTypeName("LPCWSTR")] ushort* Description);
+
+            [VtblIndex(4)]
+            HRESULT UnregisterFilter([NativeTypeName("const CLSID *")] Guid* pclsidCategory, [NativeTypeName("LPCOLESTR")] ushort* szInstance, [NativeTypeName("const IID &")] Guid* Filter);
+
+            [VtblIndex(5)]
+            HRESULT RegisterFilter([NativeTypeName("const IID &")] Guid* clsidFilter, [NativeTypeName("LPCWSTR")] ushort* Name, IMoniker** ppMoniker, [NativeTypeName("const CLSID *")] Guid* pclsidCategory, [NativeTypeName("LPCOLESTR")] ushort* szInstance, [NativeTypeName("const REGFILTER2 *")] REGFILTER2* prf2);
+
+            [VtblIndex(6)]
+            HRESULT EnumMatchingFilters(IEnumMoniker** ppEnum, [NativeTypeName("DWORD")] uint dwFlags, BOOL bExactMatch, [NativeTypeName("DWORD")] uint dwMerit, BOOL bInputNeeded, [NativeTypeName("DWORD")] uint cInputTypes, [NativeTypeName("const GUID *")] Guid* pInputTypes, [NativeTypeName("const REGPINMEDIUM *")] REGPINMEDIUM* pMedIn, [NativeTypeName("const CLSID *")] Guid* pPinCategoryIn, BOOL bRender, BOOL bOutputNeeded, [NativeTypeName("DWORD")] uint cOutputTypes, [NativeTypeName("const GUID *")] Guid* pOutputTypes, [NativeTypeName("const REGPINMEDIUM *")] REGPINMEDIUM* pMedOut, [NativeTypeName("const CLSID *")] Guid* pPinCategoryOut);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper2*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, DWORD, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper2*, Guid*, uint, ushort*, int> CreateCategory;
+
+            [NativeTypeName("HRESULT (const CLSID *, LPCOLESTR, const IID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper2*, Guid*, ushort*, Guid*, int> UnregisterFilter;
+
+            [NativeTypeName("HRESULT (const IID &, LPCWSTR, IMoniker **, const CLSID *, LPCOLESTR, const REGFILTER2 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper2*, Guid*, ushort*, IMoniker**, Guid*, ushort*, REGFILTER2*, int> RegisterFilter;
+
+            [NativeTypeName("HRESULT (IEnumMoniker **, DWORD, BOOL, DWORD, BOOL, DWORD, const GUID *, const REGPINMEDIUM *, const CLSID *, BOOL, BOOL, DWORD, const GUID *, const REGPINMEDIUM *, const CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterMapper2*, IEnumMoniker**, uint, BOOL, uint, BOOL, uint, Guid*, REGPINMEDIUM*, Guid*, BOOL, BOOL, uint, Guid*, REGPINMEDIUM*, Guid*, int> EnumMatchingFilters;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("71C6E74D-0F28-11D8-A82A-00065B84435C")]
     [NativeTypeName("struct IEnumTfInputProcessorProfiles : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumTfInputProcessorProfiles
+    public unsafe partial struct IEnumTfInputProcessorProfiles : IEnumTfInputProcessorProfiles.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
         {
             return ((delegate* unmanaged<IEnumTfInputProcessorProfiles*, uint, int>)(lpVtbl[6]))((IEnumTfInputProcessorProfiles*)Unsafe.AsPointer(ref this), ulCount);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Clone(IEnumTfInputProcessorProfiles** ppEnum);
+
+            [VtblIndex(4)]
+            HRESULT Next([NativeTypeName("ULONG")] uint ulCount, TF_INPUTPROCESSORPROFILE* pProfile, [NativeTypeName("ULONG *")] uint* pcFetch);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint ulCount);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfInputProcessorProfiles*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfInputProcessorProfiles*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfInputProcessorProfiles*, uint> Release;
+
+            [NativeTypeName("HRESULT (IEnumTfInputProcessorProfiles **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfInputProcessorProfiles*, IEnumTfInputProcessorProfiles**, int> Clone;
+
+            [NativeTypeName("HRESULT (ULONG, TF_INPUTPROCESSORPROFILE *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfInputProcessorProfiles*, uint, TF_INPUTPROCESSORPROFILE*, uint*, int> Next;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfInputProcessorProfiles*, int> Reset;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfInputProcessorProfiles*, uint, int> Skip;
         }
     }
 }

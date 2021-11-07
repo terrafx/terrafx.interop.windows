@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B89962CB-3D89-442B-BB58-5098FA0F9F16")]
     [NativeTypeName("struct IDirectManipulationContent : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDirectManipulationContent
+    public unsafe partial struct IDirectManipulationContent : IDirectManipulationContent.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,69 @@ namespace TerraFX.Interop
         public HRESULT SyncContentTransform([NativeTypeName("const float *")] float* matrix, [NativeTypeName("DWORD")] uint pointCount)
         {
             return ((delegate* unmanaged<IDirectManipulationContent*, float*, uint, int>)(lpVtbl[10]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), matrix, pointCount);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetContentRect(RECT* contentSize);
+
+            [VtblIndex(4)]
+            HRESULT SetContentRect([NativeTypeName("const RECT *")] RECT* contentSize);
+
+            [VtblIndex(5)]
+            HRESULT GetViewport([NativeTypeName("const IID &")] Guid* riid, void** @object);
+
+            [VtblIndex(6)]
+            HRESULT GetTag([NativeTypeName("const IID &")] Guid* riid, void** @object, [NativeTypeName("UINT32 *")] uint* id);
+
+            [VtblIndex(7)]
+            HRESULT SetTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id);
+
+            [VtblIndex(8)]
+            HRESULT GetOutputTransform(float* matrix, [NativeTypeName("DWORD")] uint pointCount);
+
+            [VtblIndex(9)]
+            HRESULT GetContentTransform(float* matrix, [NativeTypeName("DWORD")] uint pointCount);
+
+            [VtblIndex(10)]
+            HRESULT SyncContentTransform([NativeTypeName("const float *")] float* matrix, [NativeTypeName("DWORD")] uint pointCount);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationContent*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationContent*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationContent*, uint> Release;
+
+            [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationContent*, RECT*, int> GetContentRect;
+
+            [NativeTypeName("HRESULT (const RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationContent*, RECT*, int> SetContentRect;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationContent*, Guid*, void**, int> GetViewport;
+
+            [NativeTypeName("HRESULT (const IID &, void **, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationContent*, Guid*, void**, uint*, int> GetTag;
+
+            [NativeTypeName("HRESULT (IUnknown *, UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationContent*, IUnknown*, uint, int> SetTag;
+
+            [NativeTypeName("HRESULT (float *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationContent*, float*, uint, int> GetOutputTransform;
+
+            [NativeTypeName("HRESULT (float *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationContent*, float*, uint, int> GetContentTransform;
+
+            [NativeTypeName("HRESULT (const float *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationContent*, float*, uint, int> SyncContentTransform;
         }
     }
 }

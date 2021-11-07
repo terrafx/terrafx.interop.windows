@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000025-0000-0000-C000-000000000046")]
     [NativeTypeName("struct ISynchronizeMutex : ISynchronize")]
     [NativeInheritance("ISynchronize")]
-    public unsafe partial struct ISynchronizeMutex
+    public unsafe partial struct ISynchronizeMutex : ISynchronizeMutex.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,36 @@ namespace TerraFX.Interop
         public HRESULT ReleaseMutex()
         {
             return ((delegate* unmanaged<ISynchronizeMutex*, int>)(lpVtbl[6]))((ISynchronizeMutex*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ISynchronize.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT ReleaseMutex();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISynchronizeMutex*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISynchronizeMutex*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISynchronizeMutex*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISynchronizeMutex*, uint, uint, int> Wait;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISynchronizeMutex*, int> Signal;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISynchronizeMutex*, int> Reset;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISynchronizeMutex*, int> ReleaseMutex;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F605-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISegmentList : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISegmentList
+    public unsafe partial struct ISegmentList : ISegmentList.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT IsEmpty(BOOL* pfEmpty)
         {
             return ((delegate* unmanaged<ISegmentList*, BOOL*, int>)(lpVtbl[5]))((ISegmentList*)Unsafe.AsPointer(ref this), pfEmpty);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateIterator(ISegmentListIterator** ppIIter);
+
+            [VtblIndex(4)]
+            HRESULT GetType(SELECTION_TYPE* peType);
+
+            [VtblIndex(5)]
+            HRESULT IsEmpty(BOOL* pfEmpty);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISegmentList*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISegmentList*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISegmentList*, uint> Release;
+
+            [NativeTypeName("HRESULT (ISegmentListIterator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISegmentList*, ISegmentListIterator**, int> CreateIterator;
+
+            [NativeTypeName("HRESULT (SELECTION_TYPE *) __attribute__((stdcall))")]
+            public new delegate* unmanaged<ISegmentList*, SELECTION_TYPE*, int> GetType;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISegmentList*, BOOL*, int> IsEmpty;
         }
     }
 }

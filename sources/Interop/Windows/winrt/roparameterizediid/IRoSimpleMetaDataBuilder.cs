@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct IRoSimpleMetaDataBuilder
+    public unsafe partial struct IRoSimpleMetaDataBuilder : IRoSimpleMetaDataBuilder.Interface
     {
         public void** lpVtbl;
 
@@ -80,6 +80,72 @@ namespace TerraFX.Interop
         public HRESULT SetParameterizedDelegate(Guid piid, [NativeTypeName("UINT32")] uint numArgs)
         {
             return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, uint, int>)(lpVtbl[9]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), piid, numArgs);
+        }
+
+        public interface Interface
+        {
+            [VtblIndex(0)]
+            HRESULT SetWinRtInterface(Guid iid);
+
+            [VtblIndex(1)]
+            HRESULT SetDelegate(Guid iid);
+
+            [VtblIndex(2)]
+            HRESULT SetInterfaceGroupSimpleDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PCWSTR")] ushort* defaultInterfaceName, [NativeTypeName("const GUID *")] Guid* defaultInterfaceIID);
+
+            [VtblIndex(3)]
+            HRESULT SetInterfaceGroupParameterizedDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("UINT32")] uint elementCount, [NativeTypeName("PCWSTR *")] ushort** defaultInterfaceNameElements);
+
+            [VtblIndex(4)]
+            HRESULT SetRuntimeClassSimpleDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PCWSTR")] ushort* defaultInterfaceName, [NativeTypeName("const GUID *")] Guid* defaultInterfaceIID);
+
+            [VtblIndex(5)]
+            HRESULT SetRuntimeClassParameterizedDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("UINT32")] uint elementCount, [NativeTypeName("const PCWSTR *")] ushort** defaultInterfaceNameElements);
+
+            [VtblIndex(6)]
+            HRESULT SetStruct([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("UINT32")] uint numFields, [NativeTypeName("const PCWSTR *")] ushort** fieldTypeNames);
+
+            [VtblIndex(7)]
+            HRESULT SetEnum([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PCWSTR")] ushort* baseType);
+
+            [VtblIndex(8)]
+            HRESULT SetParameterizedInterface(Guid piid, [NativeTypeName("UINT32")] uint numArgs);
+
+            [VtblIndex(9)]
+            HRESULT SetParameterizedDelegate(Guid piid, [NativeTypeName("UINT32")] uint numArgs);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (GUID) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, int> SetWinRtInterface;
+
+            [NativeTypeName("HRESULT (GUID) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, int> SetDelegate;
+
+            [NativeTypeName("HRESULT (PCWSTR, PCWSTR, const GUID *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, ushort*, Guid*, int> SetInterfaceGroupSimpleDefault;
+
+            [NativeTypeName("HRESULT (PCWSTR, UINT32, PCWSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, uint, ushort**, int> SetInterfaceGroupParameterizedDefault;
+
+            [NativeTypeName("HRESULT (PCWSTR, PCWSTR, const GUID *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, ushort*, Guid*, int> SetRuntimeClassSimpleDefault;
+
+            [NativeTypeName("HRESULT (PCWSTR, UINT32, const PCWSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, uint, ushort**, int> SetRuntimeClassParameterizedDefault;
+
+            [NativeTypeName("HRESULT (PCWSTR, UINT32, const PCWSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, uint, ushort**, int> SetStruct;
+
+            [NativeTypeName("HRESULT (PCWSTR, PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, ushort*, int> SetEnum;
+
+            [NativeTypeName("HRESULT (GUID, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, uint, int> SetParameterizedInterface;
+
+            [NativeTypeName("HRESULT (GUID, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, uint, int> SetParameterizedDelegate;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("689F1F85-C72E-4E33-8F19-85754EFD5ACE")]
     [NativeTypeName("struct ID2D1DrawingStateBlock1 : ID2D1DrawingStateBlock")]
     [NativeInheritance("ID2D1DrawingStateBlock")]
-    public unsafe partial struct ID2D1DrawingStateBlock1
+    public unsafe partial struct ID2D1DrawingStateBlock1 : ID2D1DrawingStateBlock1.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,48 @@ namespace TerraFX.Interop
         public void SetDescription([NativeTypeName("const D2D1_DRAWING_STATE_DESCRIPTION1 *")] D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription)
         {
             ((delegate* unmanaged<ID2D1DrawingStateBlock1*, D2D1_DRAWING_STATE_DESCRIPTION1*, void>)(lpVtbl[9]))((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this), stateDescription);
+        }
+
+        public interface Interface : ID2D1DrawingStateBlock.Interface
+        {
+            [VtblIndex(8)]
+            void GetDescription(D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription);
+
+            [VtblIndex(9)]
+            void SetDescription([NativeTypeName("const D2D1_DRAWING_STATE_DESCRIPTION1 *")] D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1DrawingStateBlock1*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1DrawingStateBlock1*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1DrawingStateBlock1*, uint> Release;
+
+            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1DrawingStateBlock1*, ID2D1Factory**, void> GetFactory;
+
+            [NativeTypeName("void (D2D1_DRAWING_STATE_DESCRIPTION *) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1DrawingStateBlock1*, D2D1_DRAWING_STATE_DESCRIPTION*, void> GetDescription;
+
+            [NativeTypeName("void (const D2D1_DRAWING_STATE_DESCRIPTION *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1DrawingStateBlock1*, D2D1_DRAWING_STATE_DESCRIPTION*, void> SetDescription;
+
+            [NativeTypeName("void (IDWriteRenderingParams *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1DrawingStateBlock1*, IDWriteRenderingParams*, void> SetTextRenderingParams;
+
+            [NativeTypeName("void (IDWriteRenderingParams **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1DrawingStateBlock1*, IDWriteRenderingParams**, void> GetTextRenderingParams;
+
+            [NativeTypeName("void (D2D1_DRAWING_STATE_DESCRIPTION1 *) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1DrawingStateBlock1*, D2D1_DRAWING_STATE_DESCRIPTION1*, void> GetDescription1;
+
+            [NativeTypeName("void (const D2D1_DRAWING_STATE_DESCRIPTION1 *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1DrawingStateBlock1*, D2D1_DRAWING_STATE_DESCRIPTION1*, void> SetDescription1;
         }
     }
 }

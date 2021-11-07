@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7F1F79E5-2796-416C-8F55-700F911445E5")]
     [NativeTypeName("struct ID2D1TransformedImageSource : ID2D1Image")]
     [NativeInheritance("ID2D1Image")]
-    public unsafe partial struct ID2D1TransformedImageSource
+    public unsafe partial struct ID2D1TransformedImageSource : ID2D1TransformedImageSource.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,36 @@ namespace TerraFX.Interop
         public void GetProperties(D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES* properties)
         {
             ((delegate* unmanaged<ID2D1TransformedImageSource*, D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES*, void>)(lpVtbl[5]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this), properties);
+        }
+
+        public interface Interface : ID2D1Image.Interface
+        {
+            [VtblIndex(4)]
+            void GetSource(ID2D1ImageSource** imageSource);
+
+            [VtblIndex(5)]
+            void GetProperties(D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES* properties);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1TransformedImageSource*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1TransformedImageSource*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1TransformedImageSource*, uint> Release;
+
+            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1TransformedImageSource*, ID2D1Factory**, void> GetFactory;
+
+            [NativeTypeName("void (ID2D1ImageSource **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1TransformedImageSource*, ID2D1ImageSource**, void> GetSource;
+
+            [NativeTypeName("void (D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES *) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1TransformedImageSource*, D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES*, void> GetProperties;
         }
     }
 }

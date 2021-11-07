@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79EAC9EE-BAF9-11CE-8C82-00AA004BA90B")]
     [NativeTypeName("struct IInternetSecurityManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInternetSecurityManager
+    public unsafe partial struct IInternetSecurityManager : IInternetSecurityManager.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,69 @@ namespace TerraFX.Interop
         public HRESULT GetZoneMappings([NativeTypeName("DWORD")] uint dwZone, IEnumString** ppenumString, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<IInternetSecurityManager*, uint, IEnumString**, uint, int>)(lpVtbl[10]))((IInternetSecurityManager*)Unsafe.AsPointer(ref this), dwZone, ppenumString, dwFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetSecuritySite(IInternetSecurityMgrSite* pSite);
+
+            [VtblIndex(4)]
+            HRESULT GetSecuritySite(IInternetSecurityMgrSite** ppSite);
+
+            [VtblIndex(5)]
+            HRESULT MapUrlToZone([NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("DWORD *")] uint* pdwZone, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(6)]
+            HRESULT GetSecurityId([NativeTypeName("LPCWSTR")] ushort* pwszUrl, byte* pbSecurityId, [NativeTypeName("DWORD *")] uint* pcbSecurityId, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
+
+            [VtblIndex(7)]
+            HRESULT ProcessUrlAction([NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("DWORD")] uint dwAction, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, byte* pContext, [NativeTypeName("DWORD")] uint cbContext, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwReserved);
+
+            [VtblIndex(8)]
+            HRESULT QueryCustomPolicy([NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("const GUID &")] Guid* guidKey, byte** ppPolicy, [NativeTypeName("DWORD *")] uint* pcbPolicy, byte* pContext, [NativeTypeName("DWORD")] uint cbContext, [NativeTypeName("DWORD")] uint dwReserved);
+
+            [VtblIndex(9)]
+            HRESULT SetZoneMapping([NativeTypeName("DWORD")] uint dwZone, [NativeTypeName("LPCWSTR")] ushort* lpszPattern, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(10)]
+            HRESULT GetZoneMappings([NativeTypeName("DWORD")] uint dwZone, IEnumString** ppenumString, [NativeTypeName("DWORD")] uint dwFlags);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManager*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManager*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManager*, uint> Release;
+
+            [NativeTypeName("HRESULT (IInternetSecurityMgrSite *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManager*, IInternetSecurityMgrSite*, int> SetSecuritySite;
+
+            [NativeTypeName("HRESULT (IInternetSecurityMgrSite **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManager*, IInternetSecurityMgrSite**, int> GetSecuritySite;
+
+            [NativeTypeName("HRESULT (LPCWSTR, DWORD *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManager*, ushort*, uint*, uint, int> MapUrlToZone;
+
+            [NativeTypeName("HRESULT (LPCWSTR, BYTE *, DWORD *, DWORD_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManager*, ushort*, byte*, uint*, nuint, int> GetSecurityId;
+
+            [NativeTypeName("HRESULT (LPCWSTR, DWORD, BYTE *, DWORD, BYTE *, DWORD, DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManager*, ushort*, uint, byte*, uint, byte*, uint, uint, uint, int> ProcessUrlAction;
+
+            [NativeTypeName("HRESULT (LPCWSTR, const GUID &, BYTE **, DWORD *, BYTE *, DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManager*, ushort*, Guid*, byte**, uint*, byte*, uint, uint, int> QueryCustomPolicy;
+
+            [NativeTypeName("HRESULT (DWORD, LPCWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManager*, uint, ushort*, uint, int> SetZoneMapping;
+
+            [NativeTypeName("HRESULT (DWORD, IEnumString **, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetSecurityManager*, uint, IEnumString**, uint, int> GetZoneMappings;
         }
     }
 }

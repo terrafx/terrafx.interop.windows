@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("74C2653B-5F55-4EB1-9F0F-18B8F68B7D3D")]
     [NativeTypeName("struct IMFExtendedCameraIntrinsicsDistortionModel6KT : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFExtendedCameraIntrinsicsDistortionModel6KT
+    public unsafe partial struct IMFExtendedCameraIntrinsicsDistortionModel6KT : IMFExtendedCameraIntrinsicsDistortionModel6KT.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT SetDistortionModel([NativeTypeName("const MFCameraIntrinsic_DistortionModel6KT *")] MFCameraIntrinsic_DistortionModel6KT* pDistortionModel)
         {
             return ((delegate* unmanaged<IMFExtendedCameraIntrinsicsDistortionModel6KT*, MFCameraIntrinsic_DistortionModel6KT*, int>)(lpVtbl[4]))((IMFExtendedCameraIntrinsicsDistortionModel6KT*)Unsafe.AsPointer(ref this), pDistortionModel);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDistortionModel(MFCameraIntrinsic_DistortionModel6KT* pDistortionModel);
+
+            [VtblIndex(4)]
+            HRESULT SetDistortionModel([NativeTypeName("const MFCameraIntrinsic_DistortionModel6KT *")] MFCameraIntrinsic_DistortionModel6KT* pDistortionModel);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsicsDistortionModel6KT*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsicsDistortionModel6KT*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsicsDistortionModel6KT*, uint> Release;
+
+            [NativeTypeName("HRESULT (MFCameraIntrinsic_DistortionModel6KT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsicsDistortionModel6KT*, MFCameraIntrinsic_DistortionModel6KT*, int> GetDistortionModel;
+
+            [NativeTypeName("HRESULT (const MFCameraIntrinsic_DistortionModel6KT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFExtendedCameraIntrinsicsDistortionModel6KT*, MFCameraIntrinsic_DistortionModel6KT*, int> SetDistortionModel;
         }
     }
 }

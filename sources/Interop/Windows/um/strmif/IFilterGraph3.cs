@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AAF38154-B80B-422F-91E6-B66467509A07")]
     [NativeTypeName("struct IFilterGraph3 : IFilterGraph2")]
     [NativeInheritance("IFilterGraph2")]
-    public unsafe partial struct IFilterGraph3
+    public unsafe partial struct IFilterGraph3 : IFilterGraph3.Interface
     {
         public void** lpVtbl;
 
@@ -170,6 +170,81 @@ namespace TerraFX.Interop
         public HRESULT SetSyncSourceEx(IReferenceClock* pClockForMostOfFilterGraph, IReferenceClock* pClockForFilter, IBaseFilter* pFilter)
         {
             return ((delegate* unmanaged<IFilterGraph3*, IReferenceClock*, IReferenceClock*, IBaseFilter*, int>)(lpVtbl[21]))((IFilterGraph3*)Unsafe.AsPointer(ref this), pClockForMostOfFilterGraph, pClockForFilter, pFilter);
+        }
+
+        public interface Interface : IFilterGraph2.Interface
+        {
+            [VtblIndex(21)]
+            HRESULT SetSyncSourceEx(IReferenceClock* pClockForMostOfFilterGraph, IReferenceClock* pClockForFilter, IBaseFilter* pFilter);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph3*, uint> Release;
+
+            [NativeTypeName("HRESULT (IBaseFilter *, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph3*, IBaseFilter*, ushort*, int> AddFilter;
+
+            [NativeTypeName("HRESULT (IBaseFilter *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph3*, IBaseFilter*, int> RemoveFilter;
+
+            [NativeTypeName("HRESULT (IEnumFilters **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph3*, IEnumFilters**, int> EnumFilters;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IBaseFilter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph3*, ushort*, IBaseFilter**, int> FindFilterByName;
+
+            [NativeTypeName("HRESULT (IPin *, IPin *, const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph3*, IPin*, IPin*, AM_MEDIA_TYPE*, int> ConnectDirect;
+
+            [NativeTypeName("HRESULT (IPin *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph3*, IPin*, int> Reconnect;
+
+            [NativeTypeName("HRESULT (IPin *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph3*, IPin*, int> Disconnect;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph3*, int> SetDefaultSyncSource;
+
+            [NativeTypeName("HRESULT (IPin *, IPin *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph3*, IPin*, IPin*, int> Connect;
+
+            [NativeTypeName("HRESULT (IPin *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph3*, IPin*, int> Render;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph3*, ushort*, ushort*, int> RenderFile;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, IBaseFilter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph3*, ushort*, ushort*, IBaseFilter**, int> AddSourceFilter;
+
+            [NativeTypeName("HRESULT (DWORD_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph3*, nuint, int> SetLogFile;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph3*, int> Abort;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph3*, int> ShouldOperationContinue;
+
+            [NativeTypeName("HRESULT (IMoniker *, IBindCtx *, LPCWSTR, IBaseFilter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph3*, IMoniker*, IBindCtx*, ushort*, IBaseFilter**, int> AddSourceFilterForMoniker;
+
+            [NativeTypeName("HRESULT (IPin *, const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph3*, IPin*, AM_MEDIA_TYPE*, int> ReconnectEx;
+
+            [NativeTypeName("HRESULT (IPin *, DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph3*, IPin*, uint, uint*, int> RenderEx;
+
+            [NativeTypeName("HRESULT (IReferenceClock *, IReferenceClock *, IBaseFilter *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFilterGraph3*, IReferenceClock*, IReferenceClock*, IBaseFilter*, int> SetSyncSourceEx;
         }
     }
 }

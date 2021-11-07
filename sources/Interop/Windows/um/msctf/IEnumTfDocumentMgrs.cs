@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AA80E808-2021-11D2-93E0-0060B067B86E")]
     [NativeTypeName("struct IEnumTfDocumentMgrs : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumTfDocumentMgrs
+    public unsafe partial struct IEnumTfDocumentMgrs : IEnumTfDocumentMgrs.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
         {
             return ((delegate* unmanaged<IEnumTfDocumentMgrs*, uint, int>)(lpVtbl[6]))((IEnumTfDocumentMgrs*)Unsafe.AsPointer(ref this), ulCount);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Clone(IEnumTfDocumentMgrs** ppEnum);
+
+            [VtblIndex(4)]
+            HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfDocumentMgr** rgDocumentMgr, [NativeTypeName("ULONG *")] uint* pcFetched);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint ulCount);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfDocumentMgrs*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfDocumentMgrs*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfDocumentMgrs*, uint> Release;
+
+            [NativeTypeName("HRESULT (IEnumTfDocumentMgrs **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfDocumentMgrs*, IEnumTfDocumentMgrs**, int> Clone;
+
+            [NativeTypeName("HRESULT (ULONG, ITfDocumentMgr **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfDocumentMgrs*, uint, ITfDocumentMgr**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfDocumentMgrs*, int> Reset;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfDocumentMgrs*, uint, int> Skip;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("711C7600-6B48-11D1-B403-00AA00B92AF1")]
     [NativeTypeName("struct ICatalogFileInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICatalogFileInfo
+    public unsafe partial struct ICatalogFileInfo : ICatalogFileInfo.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetJavaTrust(void** ppJavaTrust)
         {
             return ((delegate* unmanaged<ICatalogFileInfo*, void**, int>)(lpVtbl[4]))((ICatalogFileInfo*)Unsafe.AsPointer(ref this), ppJavaTrust);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCatalogFile([NativeTypeName("LPSTR *")] sbyte** ppszCatalogFile);
+
+            [VtblIndex(4)]
+            HRESULT GetJavaTrust(void** ppJavaTrust);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatalogFileInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatalogFileInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatalogFileInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatalogFileInfo*, sbyte**, int> GetCatalogFile;
+
+            [NativeTypeName("HRESULT (void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatalogFileInfo*, void**, int> GetJavaTrust;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct IDirectDrawVideo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDirectDrawVideo
+    public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface
     {
         public void** lpVtbl;
 
@@ -147,6 +147,117 @@ namespace TerraFX.Interop
         public HRESULT WillUseFullScreen([NativeTypeName("long *")] int* UseWhenFullScreen)
         {
             return ((delegate* unmanaged<IDirectDrawVideo*, int*, int>)(lpVtbl[18]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), UseWhenFullScreen);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSwitches([NativeTypeName("DWORD *")] uint* pSwitches);
+
+            [VtblIndex(4)]
+            HRESULT SetSwitches([NativeTypeName("DWORD")] uint Switches);
+
+            [VtblIndex(5)]
+            HRESULT GetCaps([NativeTypeName("DDCAPS *")] DDCAPS_DX7* pCaps);
+
+            [VtblIndex(6)]
+            HRESULT GetEmulatedCaps([NativeTypeName("DDCAPS *")] DDCAPS_DX7* pCaps);
+
+            [VtblIndex(7)]
+            HRESULT GetSurfaceDesc(DDSURFACEDESC* pSurfaceDesc);
+
+            [VtblIndex(8)]
+            HRESULT GetFourCCCodes([NativeTypeName("DWORD *")] uint* pCount, [NativeTypeName("DWORD *")] uint* pCodes);
+
+            [VtblIndex(9)]
+            HRESULT SetDirectDraw([NativeTypeName("LPDIRECTDRAW")] IDirectDraw* pDirectDraw);
+
+            [VtblIndex(10)]
+            HRESULT GetDirectDraw([NativeTypeName("LPDIRECTDRAW *")] IDirectDraw** ppDirectDraw);
+
+            [VtblIndex(11)]
+            HRESULT GetSurfaceType([NativeTypeName("DWORD *")] uint* pSurfaceType);
+
+            [VtblIndex(12)]
+            HRESULT SetDefault();
+
+            [VtblIndex(13)]
+            HRESULT UseScanLine([NativeTypeName("long")] int UseScanLine);
+
+            [VtblIndex(14)]
+            HRESULT CanUseScanLine([NativeTypeName("long *")] int* UseScanLine);
+
+            [VtblIndex(15)]
+            HRESULT UseOverlayStretch([NativeTypeName("long")] int UseOverlayStretch);
+
+            [VtblIndex(16)]
+            HRESULT CanUseOverlayStretch([NativeTypeName("long *")] int* UseOverlayStretch);
+
+            [VtblIndex(17)]
+            HRESULT UseWhenFullScreen([NativeTypeName("long")] int UseWhenFullScreen);
+
+            [VtblIndex(18)]
+            HRESULT WillUseFullScreen([NativeTypeName("long *")] int* UseWhenFullScreen);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawVideo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawVideo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawVideo*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawVideo*, uint*, int> GetSwitches;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawVideo*, uint, int> SetSwitches;
+
+            [NativeTypeName("HRESULT (DDCAPS *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawVideo*, DDCAPS_DX7*, int> GetCaps;
+
+            [NativeTypeName("HRESULT (DDCAPS *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawVideo*, DDCAPS_DX7*, int> GetEmulatedCaps;
+
+            [NativeTypeName("HRESULT (DDSURFACEDESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawVideo*, DDSURFACEDESC*, int> GetSurfaceDesc;
+
+            [NativeTypeName("HRESULT (DWORD *, DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawVideo*, uint*, uint*, int> GetFourCCCodes;
+
+            [NativeTypeName("HRESULT (LPDIRECTDRAW) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawVideo*, IDirectDraw*, int> SetDirectDraw;
+
+            [NativeTypeName("HRESULT (LPDIRECTDRAW *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawVideo*, IDirectDraw**, int> GetDirectDraw;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawVideo*, uint*, int> GetSurfaceType;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawVideo*, int> SetDefault;
+
+            [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawVideo*, int, int> UseScanLine;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawVideo*, int*, int> CanUseScanLine;
+
+            [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawVideo*, int, int> UseOverlayStretch;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawVideo*, int*, int> CanUseOverlayStretch;
+
+            [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawVideo*, int, int> UseWhenFullScreen;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectDrawVideo*, int*, int> WillUseFullScreen;
         }
     }
 }

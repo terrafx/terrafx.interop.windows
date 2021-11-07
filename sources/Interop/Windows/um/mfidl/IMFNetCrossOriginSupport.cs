@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BC2B7D44-A72D-49D5-8376-1480DEE58B22")]
     [NativeTypeName("struct IMFNetCrossOriginSupport : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFNetCrossOriginSupport
+    public unsafe partial struct IMFNetCrossOriginSupport : IMFNetCrossOriginSupport.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT IsSameOrigin([NativeTypeName("LPCWSTR")] ushort* wszURL, BOOL* pfIsSameOrigin)
         {
             return ((delegate* unmanaged<IMFNetCrossOriginSupport*, ushort*, BOOL*, int>)(lpVtbl[5]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this), wszURL, pfIsSameOrigin);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCrossOriginPolicy(MF_CROSS_ORIGIN_POLICY* pPolicy);
+
+            [VtblIndex(4)]
+            HRESULT GetSourceOrigin([NativeTypeName("LPWSTR *")] ushort** wszSourceOrigin);
+
+            [VtblIndex(5)]
+            HRESULT IsSameOrigin([NativeTypeName("LPCWSTR")] ushort* wszURL, BOOL* pfIsSameOrigin);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCrossOriginSupport*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCrossOriginSupport*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCrossOriginSupport*, uint> Release;
+
+            [NativeTypeName("HRESULT (MF_CROSS_ORIGIN_POLICY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCrossOriginSupport*, MF_CROSS_ORIGIN_POLICY*, int> GetCrossOriginPolicy;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCrossOriginSupport*, ushort**, int> GetSourceOrigin;
+
+            [NativeTypeName("HRESULT (LPCWSTR, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCrossOriginSupport*, ushort*, BOOL*, int> IsSameOrigin;
         }
     }
 }

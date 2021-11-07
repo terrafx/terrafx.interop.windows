@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("39DC7F4A-B141-4719-813C-A7F46162A2B8")]
     [NativeTypeName("struct IMFSensorProcessActivity : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSensorProcessActivity
+    public unsafe partial struct IMFSensorProcessActivity : IMFSensorProcessActivity.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetReportTime(FILETIME* pft)
         {
             return ((delegate* unmanaged<IMFSensorProcessActivity*, FILETIME*, int>)(lpVtbl[6]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), pft);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetProcessId([NativeTypeName("ULONG *")] uint* pPID);
+
+            [VtblIndex(4)]
+            HRESULT GetStreamingState(BOOL* pfStreaming);
+
+            [VtblIndex(5)]
+            HRESULT GetStreamingMode(MFSensorDeviceMode* pMode);
+
+            [VtblIndex(6)]
+            HRESULT GetReportTime(FILETIME* pft);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProcessActivity*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProcessActivity*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProcessActivity*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProcessActivity*, uint*, int> GetProcessId;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProcessActivity*, BOOL*, int> GetStreamingState;
+
+            [NativeTypeName("HRESULT (MFSensorDeviceMode *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProcessActivity*, MFSensorDeviceMode*, int> GetStreamingMode;
+
+            [NativeTypeName("HRESULT (FILETIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorProcessActivity*, FILETIME*, int> GetReportTime;
         }
     }
 }

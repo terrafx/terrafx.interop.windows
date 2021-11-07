@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("49353C92-516B-11D1-AEA6-00C04FB68820")]
     [NativeTypeName("struct IWbemConfigureRefresher : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWbemConfigureRefresher
+    public unsafe partial struct IWbemConfigureRefresher : IWbemConfigureRefresher.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT AddEnum(IWbemServices* pNamespace, [NativeTypeName("LPCWSTR")] ushort* wszClassName, [NativeTypeName("long")] int lFlags, IWbemContext* pContext, IWbemHiPerfEnum** ppEnum, [NativeTypeName("long *")] int* plId)
         {
             return ((delegate* unmanaged<IWbemConfigureRefresher*, IWbemServices*, ushort*, int, IWbemContext*, IWbemHiPerfEnum**, int*, int>)(lpVtbl[7]))((IWbemConfigureRefresher*)Unsafe.AsPointer(ref this), pNamespace, wszClassName, lFlags, pContext, ppEnum, plId);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddObjectByPath(IWbemServices* pNamespace, [NativeTypeName("LPCWSTR")] ushort* wszPath, [NativeTypeName("long")] int lFlags, IWbemContext* pContext, IWbemClassObject** ppRefreshable, [NativeTypeName("long *")] int* plId);
+
+            [VtblIndex(4)]
+            HRESULT AddObjectByTemplate(IWbemServices* pNamespace, IWbemClassObject* pTemplate, [NativeTypeName("long")] int lFlags, IWbemContext* pContext, IWbemClassObject** ppRefreshable, [NativeTypeName("long *")] int* plId);
+
+            [VtblIndex(5)]
+            HRESULT AddRefresher(IWbemRefresher* pRefresher, [NativeTypeName("long")] int lFlags, [NativeTypeName("long *")] int* plId);
+
+            [VtblIndex(6)]
+            HRESULT Remove([NativeTypeName("long")] int lId, [NativeTypeName("long")] int lFlags);
+
+            [VtblIndex(7)]
+            HRESULT AddEnum(IWbemServices* pNamespace, [NativeTypeName("LPCWSTR")] ushort* wszClassName, [NativeTypeName("long")] int lFlags, IWbemContext* pContext, IWbemHiPerfEnum** ppEnum, [NativeTypeName("long *")] int* plId);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemConfigureRefresher*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemConfigureRefresher*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemConfigureRefresher*, uint> Release;
+
+            [NativeTypeName("HRESULT (IWbemServices *, LPCWSTR, long, IWbemContext *, IWbemClassObject **, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemConfigureRefresher*, IWbemServices*, ushort*, int, IWbemContext*, IWbemClassObject**, int*, int> AddObjectByPath;
+
+            [NativeTypeName("HRESULT (IWbemServices *, IWbemClassObject *, long, IWbemContext *, IWbemClassObject **, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemConfigureRefresher*, IWbemServices*, IWbemClassObject*, int, IWbemContext*, IWbemClassObject**, int*, int> AddObjectByTemplate;
+
+            [NativeTypeName("HRESULT (IWbemRefresher *, long, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemConfigureRefresher*, IWbemRefresher*, int, int*, int> AddRefresher;
+
+            [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemConfigureRefresher*, int, int, int> Remove;
+
+            [NativeTypeName("HRESULT (IWbemServices *, LPCWSTR, long, IWbemContext *, IWbemHiPerfEnum **, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWbemConfigureRefresher*, IWbemServices*, ushort*, int, IWbemContext*, IWbemHiPerfEnum**, int*, int> AddEnum;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0000011D-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IOleLink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IOleLink
+    public unsafe partial struct IOleLink : IOleLink.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,87 @@ namespace TerraFX.Interop
         public HRESULT Update(IBindCtx* pbc)
         {
             return ((delegate* unmanaged<IOleLink*, IBindCtx*, int>)(lpVtbl[13]))((IOleLink*)Unsafe.AsPointer(ref this), pbc);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetUpdateOptions([NativeTypeName("DWORD")] uint dwUpdateOpt);
+
+            [VtblIndex(4)]
+            HRESULT GetUpdateOptions([NativeTypeName("DWORD *")] uint* pdwUpdateOpt);
+
+            [VtblIndex(5)]
+            HRESULT SetSourceMoniker(IMoniker* pmk, [NativeTypeName("const IID &")] Guid* rclsid);
+
+            [VtblIndex(6)]
+            HRESULT GetSourceMoniker(IMoniker** ppmk);
+
+            [VtblIndex(7)]
+            HRESULT SetSourceDisplayName([NativeTypeName("LPCOLESTR")] ushort* pszStatusText);
+
+            [VtblIndex(8)]
+            HRESULT GetSourceDisplayName([NativeTypeName("LPOLESTR *")] ushort** ppszDisplayName);
+
+            [VtblIndex(9)]
+            HRESULT BindToSource([NativeTypeName("DWORD")] uint bindflags, IBindCtx* pbc);
+
+            [VtblIndex(10)]
+            HRESULT BindIfRunning();
+
+            [VtblIndex(11)]
+            HRESULT GetBoundSource(IUnknown** ppunk);
+
+            [VtblIndex(12)]
+            HRESULT UnbindSource();
+
+            [VtblIndex(13)]
+            HRESULT Update(IBindCtx* pbc);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleLink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleLink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleLink*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleLink*, uint, int> SetUpdateOptions;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleLink*, uint*, int> GetUpdateOptions;
+
+            [NativeTypeName("HRESULT (IMoniker *, const IID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleLink*, IMoniker*, Guid*, int> SetSourceMoniker;
+
+            [NativeTypeName("HRESULT (IMoniker **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleLink*, IMoniker**, int> GetSourceMoniker;
+
+            [NativeTypeName("HRESULT (LPCOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleLink*, ushort*, int> SetSourceDisplayName;
+
+            [NativeTypeName("HRESULT (LPOLESTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleLink*, ushort**, int> GetSourceDisplayName;
+
+            [NativeTypeName("HRESULT (DWORD, IBindCtx *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleLink*, uint, IBindCtx*, int> BindToSource;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleLink*, int> BindIfRunning;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleLink*, IUnknown**, int> GetBoundSource;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleLink*, int> UnbindSource;
+
+            [NativeTypeName("HRESULT (IBindCtx *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleLink*, IBindCtx*, int> Update;
         }
     }
 }

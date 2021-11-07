@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1C2056CC-5EF4-101B-8BC8-00AA003E3B29")]
     [NativeTypeName("struct IOleInPlaceObjectWindowless : IOleInPlaceObject")]
     [NativeInheritance("IOleInPlaceObject")]
-    public unsafe partial struct IOleInPlaceObjectWindowless
+    public unsafe partial struct IOleInPlaceObjectWindowless : IOleInPlaceObjectWindowless.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,51 @@ namespace TerraFX.Interop
         public HRESULT GetDropTarget(IDropTarget** ppDropTarget)
         {
             return ((delegate* unmanaged<IOleInPlaceObjectWindowless*, IDropTarget**, int>)(lpVtbl[10]))((IOleInPlaceObjectWindowless*)Unsafe.AsPointer(ref this), ppDropTarget);
+        }
+
+        public interface Interface : IOleInPlaceObject.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT OnWindowMessage(uint msg, WPARAM wParam, LPARAM lParam, LRESULT* plResult);
+
+            [VtblIndex(10)]
+            HRESULT GetDropTarget(IDropTarget** ppDropTarget);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceObjectWindowless*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceObjectWindowless*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceObjectWindowless*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceObjectWindowless*, HWND*, int> GetWindow;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceObjectWindowless*, BOOL, int> ContextSensitiveHelp;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceObjectWindowless*, int> InPlaceDeactivate;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceObjectWindowless*, int> UIDeactivate;
+
+            [NativeTypeName("HRESULT (LPCRECT, LPCRECT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceObjectWindowless*, RECT*, RECT*, int> SetObjectRects;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceObjectWindowless*, int> ReactivateAndUndo;
+
+            [NativeTypeName("HRESULT (UINT, WPARAM, LPARAM, LRESULT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceObjectWindowless*, uint, WPARAM, LPARAM, LRESULT*, int> OnWindowMessage;
+
+            [NativeTypeName("HRESULT (IDropTarget **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleInPlaceObjectWindowless*, IDropTarget**, int> GetDropTarget;
         }
     }
 }

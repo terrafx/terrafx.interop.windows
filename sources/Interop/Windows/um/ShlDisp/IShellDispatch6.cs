@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("286E6F1B-7113-4355-9562-96B7E9D64C54")]
     [NativeTypeName("struct IShellDispatch6 : IShellDispatch5")]
     [NativeInheritance("IShellDispatch5")]
-    public unsafe partial struct IShellDispatch6
+    public unsafe partial struct IShellDispatch6 : IShellDispatch6.Interface
     {
         public void** lpVtbl;
 
@@ -338,6 +338,153 @@ namespace TerraFX.Interop
         public HRESULT SearchCommand()
         {
             return ((delegate* unmanaged<IShellDispatch6*, int>)(lpVtbl[45]))((IShellDispatch6*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IShellDispatch5.Interface
+        {
+            [VtblIndex(45)]
+            HRESULT SearchCommand();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, IDispatch**, int> get_Application;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, IDispatch**, int> get_Parent;
+
+            [NativeTypeName("HRESULT (VARIANT, Folder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, VARIANT, Folder**, int> NameSpace;
+
+            [NativeTypeName("HRESULT (long, BSTR, long, VARIANT, Folder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, int, ushort*, int, VARIANT, Folder**, int> BrowseForFolder;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, IDispatch**, int> Windows;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, VARIANT, int> Open;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, VARIANT, int> Explore;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, int> MinimizeAll;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, int> UndoMinimizeALL;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, int> FileRun;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, int> CascadeWindows;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, int> TileVertically;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, int> TileHorizontally;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, int> ShutdownWindows;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, int> Suspend;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, int> EjectPC;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, int> SetTime;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, int> TrayProperties;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, int> Help;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, int> FindFiles;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, int> FindComputer;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, int> RefreshMenu;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, ushort*, int> ControlPanelItem;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, ushort*, ushort*, int*, int> IsRestricted;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT, VARIANT, VARIANT, VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, ushort*, VARIANT, VARIANT, VARIANT, VARIANT, int> ShellExecuteW;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, ushort*, ushort*, ushort*, int> FindPrinter;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, ushort*, VARIANT*, int> GetSystemInformation;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, ushort*, VARIANT, VARIANT*, int> ServiceStart;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, ushort*, VARIANT, VARIANT*, int> ServiceStop;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, ushort*, VARIANT*, int> IsServiceRunning;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, ushort*, VARIANT*, int> CanStartStopService;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, ushort*, VARIANT, VARIANT*, int> ShowBrowserBar;
+
+            [NativeTypeName("HRESULT (VARIANT, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, VARIANT, ushort*, int> AddToRecent;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, int> WindowsSecurity;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, int> ToggleDesktop;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, ushort*, VARIANT*, int> ExplorerPolicy;
+
+            [NativeTypeName("HRESULT (long, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, int, short*, int> GetSetting;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, int> WindowSwitcher;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellDispatch6*, int> SearchCommand;
         }
     }
 }

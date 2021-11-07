@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A3E14960-935F-11D1-B8B8-006008059382")]
     [NativeTypeName("struct IShellApp : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellApp
+    public unsafe partial struct IShellApp : IShellApp.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT IsInstalled()
         {
             return ((delegate* unmanaged<IShellApp*, int>)(lpVtbl[7]))((IShellApp*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetAppInfo([NativeTypeName("PAPPINFODATA")] APPINFODATA* pai);
+
+            [VtblIndex(4)]
+            HRESULT GetPossibleActions([NativeTypeName("DWORD *")] uint* pdwActions);
+
+            [VtblIndex(5)]
+            HRESULT GetSlowAppInfo([NativeTypeName("PSLOWAPPINFO")] SLOWAPPINFO* psaid);
+
+            [VtblIndex(6)]
+            HRESULT GetCachedSlowAppInfo([NativeTypeName("PSLOWAPPINFO")] SLOWAPPINFO* psaid);
+
+            [VtblIndex(7)]
+            HRESULT IsInstalled();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellApp*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellApp*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellApp*, uint> Release;
+
+            [NativeTypeName("HRESULT (PAPPINFODATA) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellApp*, APPINFODATA*, int> GetAppInfo;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellApp*, uint*, int> GetPossibleActions;
+
+            [NativeTypeName("HRESULT (PSLOWAPPINFO) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellApp*, SLOWAPPINFO*, int> GetSlowAppInfo;
+
+            [NativeTypeName("HRESULT (PSLOWAPPINFO) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellApp*, SLOWAPPINFO*, int> GetCachedSlowAppInfo;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellApp*, int> IsInstalled;
         }
     }
 }

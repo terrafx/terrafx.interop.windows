@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0FC988D4-C935-4B97-A973-46282EA175C8")]
     [NativeTypeName("struct ICondition : IPersistStream")]
     [NativeInheritance("IPersistStream")]
-    public unsafe partial struct ICondition
+    public unsafe partial struct ICondition : ICondition.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,78 @@ namespace TerraFX.Interop
         public HRESULT Clone(ICondition** ppc)
         {
             return ((delegate* unmanaged<ICondition*, ICondition**, int>)(lpVtbl[14]))((ICondition*)Unsafe.AsPointer(ref this), ppc);
+        }
+
+        public interface Interface : IPersistStream.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT GetConditionType(CONDITION_TYPE* pNodeType);
+
+            [VtblIndex(9)]
+            HRESULT GetSubConditions([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(10)]
+            HRESULT GetComparisonInfo([NativeTypeName("LPWSTR *")] ushort** ppszPropertyName, CONDITION_OPERATION* pcop, PROPVARIANT* ppropvar);
+
+            [VtblIndex(11)]
+            HRESULT GetValueType([NativeTypeName("LPWSTR *")] ushort** ppszValueTypeName);
+
+            [VtblIndex(12)]
+            HRESULT GetValueNormalization([NativeTypeName("LPWSTR *")] ushort** ppszNormalization);
+
+            [VtblIndex(13)]
+            HRESULT GetInputTerms(IRichChunk** ppPropertyTerm, IRichChunk** ppOperationTerm, IRichChunk** ppValueTerm);
+
+            [VtblIndex(14)]
+            HRESULT Clone(ICondition** ppc);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition*, uint> Release;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition*, Guid*, int> GetClassID;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition*, int> IsDirty;
+
+            [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition*, IStream*, int> Load;
+
+            [NativeTypeName("HRESULT (IStream *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition*, IStream*, BOOL, int> Save;
+
+            [NativeTypeName("HRESULT (ULARGE_INTEGER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition*, ULARGE_INTEGER*, int> GetSizeMax;
+
+            [NativeTypeName("HRESULT (CONDITION_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition*, CONDITION_TYPE*, int> GetConditionType;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition*, Guid*, void**, int> GetSubConditions;
+
+            [NativeTypeName("HRESULT (LPWSTR *, CONDITION_OPERATION *, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition*, ushort**, CONDITION_OPERATION*, PROPVARIANT*, int> GetComparisonInfo;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition*, ushort**, int> GetValueType;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition*, ushort**, int> GetValueNormalization;
+
+            [NativeTypeName("HRESULT (IRichChunk **, IRichChunk **, IRichChunk **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition*, IRichChunk**, IRichChunk**, IRichChunk**, int> GetInputTerms;
+
+            [NativeTypeName("HRESULT (ICondition **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICondition*, ICondition**, int> Clone;
         }
     }
 }

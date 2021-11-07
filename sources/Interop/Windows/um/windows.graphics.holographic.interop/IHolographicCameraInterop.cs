@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7CC1F9C5-6D02-41FA-9500-E1809EB48EEC")]
     [NativeTypeName("struct IHolographicCameraInterop : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IHolographicCameraInterop
+    public unsafe partial struct IHolographicCameraInterop : IHolographicCameraInterop.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,60 @@ namespace TerraFX.Interop
         public HRESULT UnacquireDirect3D12BufferResource(ID3D12Resource* pResourceToUnacquire)
         {
             return ((delegate* unmanaged<IHolographicCameraInterop*, ID3D12Resource*, int>)(lpVtbl[10]))((IHolographicCameraInterop*)Unsafe.AsPointer(ref this), pResourceToUnacquire);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT CreateDirect3D12BackBufferResource(ID3D12Device* pDevice, D3D12_RESOURCE_DESC* pTexture2DDesc, ID3D12Resource** ppCreatedTexture2DResource);
+
+            [VtblIndex(7)]
+            HRESULT CreateDirect3D12HardwareProtectedBackBufferResource(ID3D12Device* pDevice, D3D12_RESOURCE_DESC* pTexture2DDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ID3D12Resource** ppCreatedTexture2DResource);
+
+            [VtblIndex(8)]
+            HRESULT AcquireDirect3D12BufferResource(ID3D12Resource* pResourceToAcquire, ID3D12CommandQueue* pCommandQueue);
+
+            [VtblIndex(9)]
+            HRESULT AcquireDirect3D12BufferResourceWithTimeout(ID3D12Resource* pResourceToAcquire, ID3D12CommandQueue* pCommandQueue, [NativeTypeName("UINT64")] ulong duration);
+
+            [VtblIndex(10)]
+            HRESULT UnacquireDirect3D12BufferResource(ID3D12Resource* pResourceToUnacquire);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicCameraInterop*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicCameraInterop*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicCameraInterop*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicCameraInterop*, uint*, Guid**, int> GetIids;
+
+            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicCameraInterop*, HSTRING*, int> GetRuntimeClassName;
+
+            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicCameraInterop*, TrustLevel*, int> GetTrustLevel;
+
+            [NativeTypeName("HRESULT (ID3D12Device *, D3D12_RESOURCE_DESC *, ID3D12Resource **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicCameraInterop*, ID3D12Device*, D3D12_RESOURCE_DESC*, ID3D12Resource**, int> CreateDirect3D12BackBufferResource;
+
+            [NativeTypeName("HRESULT (ID3D12Device *, D3D12_RESOURCE_DESC *, ID3D12ProtectedResourceSession *, ID3D12Resource **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicCameraInterop*, ID3D12Device*, D3D12_RESOURCE_DESC*, ID3D12ProtectedResourceSession*, ID3D12Resource**, int> CreateDirect3D12HardwareProtectedBackBufferResource;
+
+            [NativeTypeName("HRESULT (ID3D12Resource *, ID3D12CommandQueue *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicCameraInterop*, ID3D12Resource*, ID3D12CommandQueue*, int> AcquireDirect3D12BufferResource;
+
+            [NativeTypeName("HRESULT (ID3D12Resource *, ID3D12CommandQueue *, UINT64) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicCameraInterop*, ID3D12Resource*, ID3D12CommandQueue*, ulong, int> AcquireDirect3D12BufferResourceWithTimeout;
+
+            [NativeTypeName("HRESULT (ID3D12Resource *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicCameraInterop*, ID3D12Resource*, int> UnacquireDirect3D12BufferResource;
         }
     }
 }

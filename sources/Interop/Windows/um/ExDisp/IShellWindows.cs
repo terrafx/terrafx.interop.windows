@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("85CB6900-4D95-11CF-960C-0080C7F4EE85")]
     [NativeTypeName("struct IShellWindows : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IShellWindows
+    public unsafe partial struct IShellWindows : IShellWindows.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,99 @@ namespace TerraFX.Interop
         public HRESULT ProcessAttachDetach([NativeTypeName("VARIANT_BOOL")] short fAttach)
         {
             return ((delegate* unmanaged<IShellWindows*, short, int>)(lpVtbl[17]))((IShellWindows*)Unsafe.AsPointer(ref this), fAttach);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Count([NativeTypeName("long *")] int* Count);
+
+            [VtblIndex(8)]
+            HRESULT Item(VARIANT index, IDispatch** Folder);
+
+            [VtblIndex(9)]
+            HRESULT _NewEnum(IUnknown** ppunk);
+
+            [VtblIndex(10)]
+            HRESULT Register(IDispatch* pid, [NativeTypeName("long")] int hwnd, int swClass, [NativeTypeName("long *")] int* plCookie);
+
+            [VtblIndex(11)]
+            HRESULT RegisterPending([NativeTypeName("long")] int lThreadId, VARIANT* pvarloc, VARIANT* pvarlocRoot, int swClass, [NativeTypeName("long *")] int* plCookie);
+
+            [VtblIndex(12)]
+            HRESULT Revoke([NativeTypeName("long")] int lCookie);
+
+            [VtblIndex(13)]
+            HRESULT OnNavigate([NativeTypeName("long")] int lCookie, VARIANT* pvarLoc);
+
+            [VtblIndex(14)]
+            HRESULT OnActivated([NativeTypeName("long")] int lCookie, [NativeTypeName("VARIANT_BOOL")] short fActive);
+
+            [VtblIndex(15)]
+            HRESULT FindWindowSW(VARIANT* pvarLoc, VARIANT* pvarLocRoot, int swClass, [NativeTypeName("long *")] int* phwnd, int swfwOptions, IDispatch** ppdispOut);
+
+            [VtblIndex(16)]
+            HRESULT OnCreated([NativeTypeName("long")] int lCookie, IUnknown* punk);
+
+            [VtblIndex(17)]
+            HRESULT ProcessAttachDetach([NativeTypeName("VARIANT_BOOL")] short fAttach);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellWindows*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellWindows*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellWindows*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellWindows*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellWindows*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellWindows*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellWindows*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellWindows*, int*, int> get_Count;
+
+            [NativeTypeName("HRESULT (VARIANT, IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellWindows*, VARIANT, IDispatch**, int> Item;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellWindows*, IUnknown**, int> _NewEnum;
+
+            [NativeTypeName("HRESULT (IDispatch *, long, int, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellWindows*, IDispatch*, int, int, int*, int> Register;
+
+            [NativeTypeName("HRESULT (long, VARIANT *, VARIANT *, int, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellWindows*, int, VARIANT*, VARIANT*, int, int*, int> RegisterPending;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellWindows*, int, int> Revoke;
+
+            [NativeTypeName("HRESULT (long, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellWindows*, int, VARIANT*, int> OnNavigate;
+
+            [NativeTypeName("HRESULT (long, VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellWindows*, int, short, int> OnActivated;
+
+            [NativeTypeName("HRESULT (VARIANT *, VARIANT *, int, long *, int, IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellWindows*, VARIANT*, VARIANT*, int, int*, int, IDispatch**, int> FindWindowSW;
+
+            [NativeTypeName("HRESULT (long, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellWindows*, int, IUnknown*, int> OnCreated;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellWindows*, short, int> ProcessAttachDetach;
         }
     }
 }

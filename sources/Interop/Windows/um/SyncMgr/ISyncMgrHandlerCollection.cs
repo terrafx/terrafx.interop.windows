@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A7F337A3-D20B-45CB-9ED7-87D094CA5045")]
     [NativeTypeName("struct ISyncMgrHandlerCollection : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrHandlerCollection
+    public unsafe partial struct ISyncMgrHandlerCollection : ISyncMgrHandlerCollection.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT BindToHandler([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<ISyncMgrHandlerCollection*, ushort*, Guid*, void**, int>)(lpVtbl[4]))((ISyncMgrHandlerCollection*)Unsafe.AsPointer(ref this), pszHandlerID, riid, ppv);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetHandlerEnumerator(IEnumString** ppenum);
+
+            [VtblIndex(4)]
+            HRESULT BindToHandler([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrHandlerCollection*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrHandlerCollection*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrHandlerCollection*, uint> Release;
+
+            [NativeTypeName("HRESULT (IEnumString **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrHandlerCollection*, IEnumString**, int> GetHandlerEnumerator;
+
+            [NativeTypeName("HRESULT (LPCWSTR, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrHandlerCollection*, ushort*, Guid*, void**, int> BindToHandler;
         }
     }
 }

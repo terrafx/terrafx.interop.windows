@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F211-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLOptionElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLOptionElement
+    public unsafe partial struct IHTMLOptionElement : IHTMLOptionElement.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,99 @@ namespace TerraFX.Interop
         public HRESULT get_form(IHTMLFormElement** p)
         {
             return ((delegate* unmanaged<IHTMLOptionElement*, IHTMLFormElement**, int>)(lpVtbl[17]))((IHTMLOptionElement*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_selected([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(8)]
+            HRESULT get_selected([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(9)]
+            HRESULT put_value([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(10)]
+            HRESULT get_value([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT put_defaultSelected([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(12)]
+            HRESULT get_defaultSelected([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(13)]
+            HRESULT put_index([NativeTypeName("LONG")] int v);
+
+            [VtblIndex(14)]
+            HRESULT get_index([NativeTypeName("LONG *")] int* p);
+
+            [VtblIndex(15)]
+            HRESULT put_text([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(16)]
+            HRESULT get_text([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(17)]
+            HRESULT get_form(IHTMLFormElement** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionElement*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionElement*, short, int> put_selected;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionElement*, short*, int> get_selected;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionElement*, ushort*, int> put_value;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionElement*, ushort**, int> get_value;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionElement*, short, int> put_defaultSelected;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionElement*, short*, int> get_defaultSelected;
+
+            [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionElement*, int, int> put_index;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionElement*, int*, int> get_index;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionElement*, ushort*, int> put_text;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionElement*, ushort**, int> get_text;
+
+            [NativeTypeName("HRESULT (IHTMLFormElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLOptionElement*, IHTMLFormElement**, int> get_form;
         }
     }
 }

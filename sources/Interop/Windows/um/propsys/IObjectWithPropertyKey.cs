@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FC0CA0A7-C316-4FD2-9031-3E628E6D4F23")]
     [NativeTypeName("struct IObjectWithPropertyKey : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IObjectWithPropertyKey
+    public unsafe partial struct IObjectWithPropertyKey : IObjectWithPropertyKey.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetPropertyKey(PROPERTYKEY* pkey)
         {
             return ((delegate* unmanaged<IObjectWithPropertyKey*, PROPERTYKEY*, int>)(lpVtbl[4]))((IObjectWithPropertyKey*)Unsafe.AsPointer(ref this), pkey);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetPropertyKey([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key);
+
+            [VtblIndex(4)]
+            HRESULT GetPropertyKey(PROPERTYKEY* pkey);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectWithPropertyKey*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectWithPropertyKey*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectWithPropertyKey*, uint> Release;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectWithPropertyKey*, PROPERTYKEY*, int> SetPropertyKey;
+
+            [NativeTypeName("HRESULT (PROPERTYKEY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IObjectWithPropertyKey*, PROPERTYKEY*, int> GetPropertyKey;
         }
     }
 }

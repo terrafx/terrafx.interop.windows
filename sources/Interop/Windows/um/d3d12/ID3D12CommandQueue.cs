@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0EC870A6-5D7E-4C22-8CFC-5BAAE07616ED")]
     [NativeTypeName("struct ID3D12CommandQueue : ID3D12Pageable")]
     [NativeInheritance("ID3D12Pageable")]
-    public unsafe partial struct ID3D12CommandQueue
+    public unsafe partial struct ID3D12CommandQueue : ID3D12CommandQueue.Interface
     {
         public void** lpVtbl;
 
@@ -150,6 +150,102 @@ namespace TerraFX.Interop
         {
             D3D12_COMMAND_QUEUE_DESC result;
             return *((delegate* unmanaged<ID3D12CommandQueue*, D3D12_COMMAND_QUEUE_DESC*, D3D12_COMMAND_QUEUE_DESC*>)(lpVtbl[18]))((ID3D12CommandQueue*)Unsafe.AsPointer(ref this), &result);
+        }
+
+        public interface Interface : ID3D12Pageable.Interface
+        {
+            [VtblIndex(8)]
+            void UpdateTileMappings(ID3D12Resource* pResource, uint NumResourceRegions, [NativeTypeName("const D3D12_TILED_RESOURCE_COORDINATE *")] D3D12_TILED_RESOURCE_COORDINATE* pResourceRegionStartCoordinates, [NativeTypeName("const D3D12_TILE_REGION_SIZE *")] D3D12_TILE_REGION_SIZE* pResourceRegionSizes, ID3D12Heap* pHeap, uint NumRanges, [NativeTypeName("const D3D12_TILE_RANGE_FLAGS *")] D3D12_TILE_RANGE_FLAGS* pRangeFlags, [NativeTypeName("const UINT *")] uint* pHeapRangeStartOffsets, [NativeTypeName("const UINT *")] uint* pRangeTileCounts, D3D12_TILE_MAPPING_FLAGS Flags);
+
+            [VtblIndex(9)]
+            void CopyTileMappings(ID3D12Resource* pDstResource, [NativeTypeName("const D3D12_TILED_RESOURCE_COORDINATE *")] D3D12_TILED_RESOURCE_COORDINATE* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, [NativeTypeName("const D3D12_TILED_RESOURCE_COORDINATE *")] D3D12_TILED_RESOURCE_COORDINATE* pSrcRegionStartCoordinate, [NativeTypeName("const D3D12_TILE_REGION_SIZE *")] D3D12_TILE_REGION_SIZE* pRegionSize, D3D12_TILE_MAPPING_FLAGS Flags);
+
+            [VtblIndex(10)]
+            void ExecuteCommandLists(uint NumCommandLists, [NativeTypeName("ID3D12CommandList *const *")] ID3D12CommandList** ppCommandLists);
+
+            [VtblIndex(11)]
+            void SetMarker(uint Metadata, [NativeTypeName("const void *")] void* pData, uint Size);
+
+            [VtblIndex(12)]
+            void BeginEvent(uint Metadata, [NativeTypeName("const void *")] void* pData, uint Size);
+
+            [VtblIndex(13)]
+            void EndEvent();
+
+            [VtblIndex(14)]
+            HRESULT Signal(ID3D12Fence* pFence, [NativeTypeName("UINT64")] ulong Value);
+
+            [VtblIndex(15)]
+            HRESULT Wait(ID3D12Fence* pFence, [NativeTypeName("UINT64")] ulong Value);
+
+            [VtblIndex(16)]
+            HRESULT GetTimestampFrequency([NativeTypeName("UINT64 *")] ulong* pFrequency);
+
+            [VtblIndex(17)]
+            HRESULT GetClockCalibration([NativeTypeName("UINT64 *")] ulong* pGpuTimestamp, [NativeTypeName("UINT64 *")] ulong* pCpuTimestamp);
+
+            [VtblIndex(18)]
+            D3D12_COMMAND_QUEUE_DESC GetDesc();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandQueue*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandQueue*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandQueue*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandQueue*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandQueue*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandQueue*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandQueue*, ushort*, int> SetName;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandQueue*, Guid*, void**, int> GetDevice;
+
+            [NativeTypeName("void (ID3D12Resource *, UINT, const D3D12_TILED_RESOURCE_COORDINATE *, const D3D12_TILE_REGION_SIZE *, ID3D12Heap *, UINT, const D3D12_TILE_RANGE_FLAGS *, const UINT *, const UINT *, D3D12_TILE_MAPPING_FLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandQueue*, ID3D12Resource*, uint, D3D12_TILED_RESOURCE_COORDINATE*, D3D12_TILE_REGION_SIZE*, ID3D12Heap*, uint, D3D12_TILE_RANGE_FLAGS*, uint*, uint*, D3D12_TILE_MAPPING_FLAGS, void> UpdateTileMappings;
+
+            [NativeTypeName("void (ID3D12Resource *, const D3D12_TILED_RESOURCE_COORDINATE *, ID3D12Resource *, const D3D12_TILED_RESOURCE_COORDINATE *, const D3D12_TILE_REGION_SIZE *, D3D12_TILE_MAPPING_FLAGS) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandQueue*, ID3D12Resource*, D3D12_TILED_RESOURCE_COORDINATE*, ID3D12Resource*, D3D12_TILED_RESOURCE_COORDINATE*, D3D12_TILE_REGION_SIZE*, D3D12_TILE_MAPPING_FLAGS, void> CopyTileMappings;
+
+            [NativeTypeName("void (UINT, ID3D12CommandList *const *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandQueue*, uint, ID3D12CommandList**, void> ExecuteCommandLists;
+
+            [NativeTypeName("void (UINT, const void *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandQueue*, uint, void*, uint, void> SetMarker;
+
+            [NativeTypeName("void (UINT, const void *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandQueue*, uint, void*, uint, void> BeginEvent;
+
+            [NativeTypeName("void () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandQueue*, void> EndEvent;
+
+            [NativeTypeName("HRESULT (ID3D12Fence *, UINT64) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandQueue*, ID3D12Fence*, ulong, int> Signal;
+
+            [NativeTypeName("HRESULT (ID3D12Fence *, UINT64) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandQueue*, ID3D12Fence*, ulong, int> Wait;
+
+            [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandQueue*, ulong*, int> GetTimestampFrequency;
+
+            [NativeTypeName("HRESULT (UINT64 *, UINT64 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandQueue*, ulong*, ulong*, int> GetClockCalibration;
+
+            [NativeTypeName("D3D12_COMMAND_QUEUE_DESC () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12CommandQueue*, D3D12_COMMAND_QUEUE_DESC*, D3D12_COMMAND_QUEUE_DESC*> GetDesc;
         }
     }
 }

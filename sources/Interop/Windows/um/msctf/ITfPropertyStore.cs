@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6834B120-88CB-11D2-BF45-00105A2799B5")]
     [NativeTypeName("struct ITfPropertyStore : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfPropertyStore
+    public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,75 @@ namespace TerraFX.Interop
         public HRESULT Serialize(IStream* pStream, [NativeTypeName("ULONG *")] uint* pcb)
         {
             return ((delegate* unmanaged<ITfPropertyStore*, IStream*, uint*, int>)(lpVtbl[11]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pStream, pcb);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetType(Guid* pguid);
+
+            [VtblIndex(4)]
+            HRESULT GetDataType([NativeTypeName("DWORD *")] uint* pdwReserved);
+
+            [VtblIndex(5)]
+            HRESULT GetData(VARIANT* pvarValue);
+
+            [VtblIndex(6)]
+            HRESULT OnTextUpdated([NativeTypeName("DWORD")] uint dwFlags, ITfRange* pRangeNew, BOOL* pfAccept);
+
+            [VtblIndex(7)]
+            HRESULT Shrink(ITfRange* pRangeNew, BOOL* pfFree);
+
+            [VtblIndex(8)]
+            HRESULT Divide(ITfRange* pRangeThis, ITfRange* pRangeNew, ITfPropertyStore** ppPropStore);
+
+            [VtblIndex(9)]
+            HRESULT Clone(ITfPropertyStore** pPropStore);
+
+            [VtblIndex(10)]
+            HRESULT GetPropertyRangeCreator([NativeTypeName("CLSID *")] Guid* pclsid);
+
+            [VtblIndex(11)]
+            HRESULT Serialize(IStream* pStream, [NativeTypeName("ULONG *")] uint* pcb);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPropertyStore*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPropertyStore*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPropertyStore*, uint> Release;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public new delegate* unmanaged<ITfPropertyStore*, Guid*, int> GetType;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPropertyStore*, uint*, int> GetDataType;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPropertyStore*, VARIANT*, int> GetData;
+
+            [NativeTypeName("HRESULT (DWORD, ITfRange *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPropertyStore*, uint, ITfRange*, BOOL*, int> OnTextUpdated;
+
+            [NativeTypeName("HRESULT (ITfRange *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPropertyStore*, ITfRange*, BOOL*, int> Shrink;
+
+            [NativeTypeName("HRESULT (ITfRange *, ITfRange *, ITfPropertyStore **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPropertyStore*, ITfRange*, ITfRange*, ITfPropertyStore**, int> Divide;
+
+            [NativeTypeName("HRESULT (ITfPropertyStore **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPropertyStore*, ITfPropertyStore**, int> Clone;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPropertyStore*, Guid*, int> GetPropertyRangeCreator;
+
+            [NativeTypeName("HRESULT (IStream *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfPropertyStore*, IStream*, uint*, int> Serialize;
         }
     }
 }

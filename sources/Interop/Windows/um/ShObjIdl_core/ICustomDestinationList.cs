@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6332DEBF-87B5-4670-90C0-5E57B408A49E")]
     [NativeTypeName("struct ICustomDestinationList : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICustomDestinationList
+    public unsafe partial struct ICustomDestinationList : ICustomDestinationList.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,75 @@ namespace TerraFX.Interop
         public HRESULT AbortList()
         {
             return ((delegate* unmanaged<ICustomDestinationList*, int>)(lpVtbl[11]))((ICustomDestinationList*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetAppID([NativeTypeName("LPCWSTR")] ushort* pszAppID);
+
+            [VtblIndex(4)]
+            HRESULT BeginList(uint* pcMinSlots, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(5)]
+            HRESULT AppendCategory([NativeTypeName("LPCWSTR")] ushort* pszCategory, IObjectArray* poa);
+
+            [VtblIndex(6)]
+            HRESULT AppendKnownCategory(KNOWNDESTCATEGORY category);
+
+            [VtblIndex(7)]
+            HRESULT AddUserTasks(IObjectArray* poa);
+
+            [VtblIndex(8)]
+            HRESULT CommitList();
+
+            [VtblIndex(9)]
+            HRESULT GetRemovedDestinations([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(10)]
+            HRESULT DeleteList([NativeTypeName("LPCWSTR")] ushort* pszAppID);
+
+            [VtblIndex(11)]
+            HRESULT AbortList();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICustomDestinationList*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICustomDestinationList*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICustomDestinationList*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICustomDestinationList*, ushort*, int> SetAppID;
+
+            [NativeTypeName("HRESULT (UINT *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICustomDestinationList*, uint*, Guid*, void**, int> BeginList;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IObjectArray *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICustomDestinationList*, ushort*, IObjectArray*, int> AppendCategory;
+
+            [NativeTypeName("HRESULT (KNOWNDESTCATEGORY) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICustomDestinationList*, KNOWNDESTCATEGORY, int> AppendKnownCategory;
+
+            [NativeTypeName("HRESULT (IObjectArray *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICustomDestinationList*, IObjectArray*, int> AddUserTasks;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICustomDestinationList*, int> CommitList;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICustomDestinationList*, Guid*, void**, int> GetRemovedDestinations;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICustomDestinationList*, ushort*, int> DeleteList;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICustomDestinationList*, int> AbortList;
         }
     }
 }

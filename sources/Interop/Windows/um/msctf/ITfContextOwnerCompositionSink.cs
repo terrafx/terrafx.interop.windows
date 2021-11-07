@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5F20AA40-B57A-4F34-96AB-3576F377CC79")]
     [NativeTypeName("struct ITfContextOwnerCompositionSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfContextOwnerCompositionSink
+    public unsafe partial struct ITfContextOwnerCompositionSink : ITfContextOwnerCompositionSink.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT OnEndComposition(ITfCompositionView* pComposition)
         {
             return ((delegate* unmanaged<ITfContextOwnerCompositionSink*, ITfCompositionView*, int>)(lpVtbl[5]))((ITfContextOwnerCompositionSink*)Unsafe.AsPointer(ref this), pComposition);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnStartComposition(ITfCompositionView* pComposition, BOOL* pfOk);
+
+            [VtblIndex(4)]
+            HRESULT OnUpdateComposition(ITfCompositionView* pComposition, ITfRange* pRangeNew);
+
+            [VtblIndex(5)]
+            HRESULT OnEndComposition(ITfCompositionView* pComposition);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerCompositionSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerCompositionSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerCompositionSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (ITfCompositionView *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerCompositionSink*, ITfCompositionView*, BOOL*, int> OnStartComposition;
+
+            [NativeTypeName("HRESULT (ITfCompositionView *, ITfRange *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerCompositionSink*, ITfCompositionView*, ITfRange*, int> OnUpdateComposition;
+
+            [NativeTypeName("HRESULT (ITfCompositionView *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfContextOwnerCompositionSink*, ITfCompositionView*, int> OnEndComposition;
         }
     }
 }

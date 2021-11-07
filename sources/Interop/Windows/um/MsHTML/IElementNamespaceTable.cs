@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F670-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IElementNamespaceTable : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IElementNamespaceTable
+    public unsafe partial struct IElementNamespaceTable : IElementNamespaceTable.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT AddNamespace([NativeTypeName("BSTR")] ushort* bstrNamespace, [NativeTypeName("BSTR")] ushort* bstrUrn, [NativeTypeName("LONG")] int lFlags, VARIANT* pvarFactory)
         {
             return ((delegate* unmanaged<IElementNamespaceTable*, ushort*, ushort*, int, VARIANT*, int>)(lpVtbl[3]))((IElementNamespaceTable*)Unsafe.AsPointer(ref this), bstrNamespace, bstrUrn, lFlags, pvarFactory);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddNamespace([NativeTypeName("BSTR")] ushort* bstrNamespace, [NativeTypeName("BSTR")] ushort* bstrUrn, [NativeTypeName("LONG")] int lFlags, VARIANT* pvarFactory);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementNamespaceTable*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementNamespaceTable*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementNamespaceTable*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, LONG, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementNamespaceTable*, ushort*, ushort*, int, VARIANT*, int> AddNamespace;
         }
     }
 }

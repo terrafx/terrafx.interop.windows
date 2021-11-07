@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("409CD537-8532-40CB-9774-E2FEB2DF4E9C")]
     [NativeTypeName("struct IWICDdsDecoder : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWICDdsDecoder
+    public unsafe partial struct IWICDdsDecoder : IWICDdsDecoder.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetFrame(uint arrayIndex, uint mipLevel, uint sliceIndex, IWICBitmapFrameDecode** ppIBitmapFrame)
         {
             return ((delegate* unmanaged<IWICDdsDecoder*, uint, uint, uint, IWICBitmapFrameDecode**, int>)(lpVtbl[4]))((IWICDdsDecoder*)Unsafe.AsPointer(ref this), arrayIndex, mipLevel, sliceIndex, ppIBitmapFrame);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetParameters(WICDdsParameters* pParameters);
+
+            [VtblIndex(4)]
+            HRESULT GetFrame(uint arrayIndex, uint mipLevel, uint sliceIndex, IWICBitmapFrameDecode** ppIBitmapFrame);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICDdsDecoder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICDdsDecoder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICDdsDecoder*, uint> Release;
+
+            [NativeTypeName("HRESULT (WICDdsParameters *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICDdsDecoder*, WICDdsParameters*, int> GetParameters;
+
+            [NativeTypeName("HRESULT (UINT, UINT, UINT, IWICBitmapFrameDecode **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICDdsDecoder*, uint, uint, uint, IWICBitmapFrameDecode**, int> GetFrame;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2411E7E1-12AC-4CCF-BD14-9798E8534DC0")]
     [NativeTypeName("struct IDXGIAdapter : IDXGIObject")]
     [NativeInheritance("IDXGIObject")]
-    public unsafe partial struct IDXGIAdapter
+    public unsafe partial struct IDXGIAdapter : IDXGIAdapter.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,51 @@ namespace TerraFX.Interop
         public HRESULT CheckInterfaceSupport([NativeTypeName("const GUID &")] Guid* InterfaceName, LARGE_INTEGER* pUMDVersion)
         {
             return ((delegate* unmanaged<IDXGIAdapter*, Guid*, LARGE_INTEGER*, int>)(lpVtbl[9]))((IDXGIAdapter*)Unsafe.AsPointer(ref this), InterfaceName, pUMDVersion);
+        }
+
+        public interface Interface : IDXGIObject.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT EnumOutputs(uint Output, IDXGIOutput** ppOutput);
+
+            [VtblIndex(8)]
+            HRESULT GetDesc(DXGI_ADAPTER_DESC* pDesc);
+
+            [VtblIndex(9)]
+            HRESULT CheckInterfaceSupport([NativeTypeName("const GUID &")] Guid* InterfaceName, LARGE_INTEGER* pUMDVersion);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter*, Guid*, void**, int> GetParent;
+
+            [NativeTypeName("HRESULT (UINT, IDXGIOutput **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter*, uint, IDXGIOutput**, int> EnumOutputs;
+
+            [NativeTypeName("HRESULT (DXGI_ADAPTER_DESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter*, DXGI_ADAPTER_DESC*, int> GetDesc;
+
+            [NativeTypeName("HRESULT (const GUID &, LARGE_INTEGER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIAdapter*, Guid*, LARGE_INTEGER*, int> CheckInterfaceSupport;
         }
     }
 }

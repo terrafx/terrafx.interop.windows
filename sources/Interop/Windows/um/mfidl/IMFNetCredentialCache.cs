@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5B87EF6C-7ED8-434F-BA0E-184FAC1628D1")]
     [NativeTypeName("struct IMFNetCredentialCache : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFNetCredentialCache
+    public unsafe partial struct IMFNetCredentialCache : IMFNetCredentialCache.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT SetUserOptions(IMFNetCredential* pCred, [NativeTypeName("DWORD")] uint dwOptionsFlags)
         {
             return ((delegate* unmanaged<IMFNetCredentialCache*, IMFNetCredential*, uint, int>)(lpVtbl[5]))((IMFNetCredentialCache*)Unsafe.AsPointer(ref this), pCred, dwOptionsFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetCredential([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("LPCWSTR")] ushort* pszRealm, [NativeTypeName("DWORD")] uint dwAuthenticationFlags, IMFNetCredential** ppCred, [NativeTypeName("DWORD *")] uint* pdwRequirementsFlags);
+
+            [VtblIndex(4)]
+            HRESULT SetGood(IMFNetCredential* pCred, BOOL fGood);
+
+            [VtblIndex(5)]
+            HRESULT SetUserOptions(IMFNetCredential* pCred, [NativeTypeName("DWORD")] uint dwOptionsFlags);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCredentialCache*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCredentialCache*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCredentialCache*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, DWORD, IMFNetCredential **, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCredentialCache*, ushort*, ushort*, uint, IMFNetCredential**, uint*, int> GetCredential;
+
+            [NativeTypeName("HRESULT (IMFNetCredential *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCredentialCache*, IMFNetCredential*, BOOL, int> SetGood;
+
+            [NativeTypeName("HRESULT (IMFNetCredential *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFNetCredentialCache*, IMFNetCredential*, uint, int> SetUserOptions;
         }
     }
 }

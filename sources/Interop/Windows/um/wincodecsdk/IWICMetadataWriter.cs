@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F7836E16-3BE0-470B-86BB-160D0AECD7DE")]
     [NativeTypeName("struct IWICMetadataWriter : IWICMetadataReader")]
     [NativeInheritance("IWICMetadataReader")]
-    public unsafe partial struct IWICMetadataWriter
+    public unsafe partial struct IWICMetadataWriter : IWICMetadataWriter.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,63 @@ namespace TerraFX.Interop
         public HRESULT RemoveValueByIndex(uint nIndex)
         {
             return ((delegate* unmanaged<IWICMetadataWriter*, uint, int>)(lpVtbl[12]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this), nIndex);
+        }
+
+        public interface Interface : IWICMetadataReader.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT SetValue([NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarSchema, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarId, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarValue);
+
+            [VtblIndex(10)]
+            HRESULT SetValueByIndex(uint nIndex, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarSchema, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarId, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarValue);
+
+            [VtblIndex(11)]
+            HRESULT RemoveValue([NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarSchema, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarId);
+
+            [VtblIndex(12)]
+            HRESULT RemoveValueByIndex(uint nIndex);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriter*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriter*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriter*, uint> Release;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriter*, Guid*, int> GetMetadataFormat;
+
+            [NativeTypeName("HRESULT (IWICMetadataHandlerInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriter*, IWICMetadataHandlerInfo**, int> GetMetadataHandlerInfo;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriter*, uint*, int> GetCount;
+
+            [NativeTypeName("HRESULT (UINT, PROPVARIANT *, PROPVARIANT *, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriter*, uint, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int> GetValueByIndex;
+
+            [NativeTypeName("HRESULT (const PROPVARIANT *, const PROPVARIANT *, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriter*, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int> GetValue;
+
+            [NativeTypeName("HRESULT (IWICEnumMetadataItem **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriter*, IWICEnumMetadataItem**, int> GetEnumerator;
+
+            [NativeTypeName("HRESULT (const PROPVARIANT *, const PROPVARIANT *, const PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriter*, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int> SetValue;
+
+            [NativeTypeName("HRESULT (UINT, const PROPVARIANT *, const PROPVARIANT *, const PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriter*, uint, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int> SetValueByIndex;
+
+            [NativeTypeName("HRESULT (const PROPVARIANT *, const PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriter*, PROPVARIANT*, PROPVARIANT*, int> RemoveValue;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataWriter*, uint, int> RemoveValueByIndex;
         }
     }
 }

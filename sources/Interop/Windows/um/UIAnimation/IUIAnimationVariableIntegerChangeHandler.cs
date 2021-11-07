@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BB3E1550-356E-44B0-99DA-85AC6017865E")]
     [NativeTypeName("struct IUIAnimationVariableIntegerChangeHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUIAnimationVariableIntegerChangeHandler
+    public unsafe partial struct IUIAnimationVariableIntegerChangeHandler : IUIAnimationVariableIntegerChangeHandler.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OnIntegerValueChanged(IUIAnimationStoryboard* storyboard, IUIAnimationVariable* variable, [NativeTypeName("INT32")] int newValue, [NativeTypeName("INT32")] int previousValue)
         {
             return ((delegate* unmanaged<IUIAnimationVariableIntegerChangeHandler*, IUIAnimationStoryboard*, IUIAnimationVariable*, int, int, int>)(lpVtbl[3]))((IUIAnimationVariableIntegerChangeHandler*)Unsafe.AsPointer(ref this), storyboard, variable, newValue, previousValue);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnIntegerValueChanged(IUIAnimationStoryboard* storyboard, IUIAnimationVariable* variable, [NativeTypeName("INT32")] int newValue, [NativeTypeName("INT32")] int previousValue);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariableIntegerChangeHandler*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariableIntegerChangeHandler*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariableIntegerChangeHandler*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUIAnimationStoryboard *, IUIAnimationVariable *, INT32, INT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationVariableIntegerChangeHandler*, IUIAnimationStoryboard*, IUIAnimationVariable*, int, int, int> OnIntegerValueChanged;
         }
     }
 }

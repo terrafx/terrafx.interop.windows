@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("54384F1B-5B3E-4BB7-AE01-60BA3097CBB6")]
     [NativeTypeName("struct ID3D11LibraryReflection : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D11LibraryReflection
+    public unsafe partial struct ID3D11LibraryReflection : ID3D11LibraryReflection.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public ID3D11FunctionReflection* GetFunctionByIndex(int FunctionIndex)
         {
             return ((delegate* unmanaged<ID3D11LibraryReflection*, int, ID3D11FunctionReflection*>)(lpVtbl[4]))((ID3D11LibraryReflection*)Unsafe.AsPointer(ref this), FunctionIndex);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDesc(D3D11_LIBRARY_DESC* pDesc);
+
+            [VtblIndex(4)]
+            ID3D11FunctionReflection* GetFunctionByIndex(int FunctionIndex);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11LibraryReflection*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11LibraryReflection*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11LibraryReflection*, uint> Release;
+
+            [NativeTypeName("HRESULT (D3D11_LIBRARY_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11LibraryReflection*, D3D11_LIBRARY_DESC*, int> GetDesc;
+
+            [NativeTypeName("ID3D11FunctionReflection *(INT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11LibraryReflection*, int, ID3D11FunctionReflection*> GetFunctionByIndex;
         }
     }
 }

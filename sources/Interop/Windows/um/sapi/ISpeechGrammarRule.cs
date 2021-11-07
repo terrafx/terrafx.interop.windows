@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AFE719CF-5DD1-44F2-999C-7A399F1CFCCC")]
     [NativeTypeName("struct ISpeechGrammarRule : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechGrammarRule
+    public unsafe partial struct ISpeechGrammarRule : ISpeechGrammarRule.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,75 @@ namespace TerraFX.Interop
         public HRESULT AddState(ISpeechGrammarRuleState** State)
         {
             return ((delegate* unmanaged<ISpeechGrammarRule*, ISpeechGrammarRuleState**, int>)(lpVtbl[13]))((ISpeechGrammarRule*)Unsafe.AsPointer(ref this), State);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Attributes(SpeechRuleAttributes* Attributes);
+
+            [VtblIndex(8)]
+            HRESULT get_InitialState(ISpeechGrammarRuleState** State);
+
+            [VtblIndex(9)]
+            HRESULT get_Name([NativeTypeName("BSTR *")] ushort** Name);
+
+            [VtblIndex(10)]
+            HRESULT get_Id([NativeTypeName("long *")] int* Id);
+
+            [VtblIndex(11)]
+            HRESULT Clear();
+
+            [VtblIndex(12)]
+            HRESULT AddResource([NativeTypeName("const BSTR")] ushort* ResourceName, [NativeTypeName("const BSTR")] ushort* ResourceValue);
+
+            [VtblIndex(13)]
+            HRESULT AddState(ISpeechGrammarRuleState** State);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRule*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRule*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRule*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRule*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRule*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRule*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRule*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (SpeechRuleAttributes *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRule*, SpeechRuleAttributes*, int> get_Attributes;
+
+            [NativeTypeName("HRESULT (ISpeechGrammarRuleState **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRule*, ISpeechGrammarRuleState**, int> get_InitialState;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRule*, ushort**, int> get_Name;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRule*, int*, int> get_Id;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRule*, int> Clear;
+
+            [NativeTypeName("HRESULT (const BSTR, const BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRule*, ushort*, ushort*, int> AddResource;
+
+            [NativeTypeName("HRESULT (ISpeechGrammarRuleState **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechGrammarRule*, ISpeechGrammarRuleState**, int> AddState;
         }
     }
 }

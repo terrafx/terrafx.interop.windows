@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9B7E4E02-342C-4106-A19F-4F2704F689F0")]
     [NativeTypeName("struct ID3D10SwitchToRef : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D10SwitchToRef
+    public unsafe partial struct ID3D10SwitchToRef : ID3D10SwitchToRef.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public BOOL GetUseRef()
         {
             return ((delegate* unmanaged<ID3D10SwitchToRef*, int>)(lpVtbl[4]))((ID3D10SwitchToRef*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            BOOL SetUseRef(BOOL UseRef);
+
+            [VtblIndex(4)]
+            BOOL GetUseRef();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10SwitchToRef*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10SwitchToRef*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10SwitchToRef*, uint> Release;
+
+            [NativeTypeName("BOOL (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10SwitchToRef*, BOOL, int> SetUseRef;
+
+            [NativeTypeName("BOOL () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D10SwitchToRef*, int> GetUseRef;
         }
     }
 }

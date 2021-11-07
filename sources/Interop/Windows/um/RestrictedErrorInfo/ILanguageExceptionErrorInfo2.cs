@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5746E5C4-5B97-424C-B620-2822915734DD")]
     [NativeTypeName("struct ILanguageExceptionErrorInfo2 : ILanguageExceptionErrorInfo")]
     [NativeInheritance("ILanguageExceptionErrorInfo")]
-    public unsafe partial struct ILanguageExceptionErrorInfo2
+    public unsafe partial struct ILanguageExceptionErrorInfo2 : ILanguageExceptionErrorInfo2.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,42 @@ namespace TerraFX.Interop
         public HRESULT GetPropagationContextHead(ILanguageExceptionErrorInfo2** propagatedLanguageExceptionErrorInfoHead)
         {
             return ((delegate* unmanaged<ILanguageExceptionErrorInfo2*, ILanguageExceptionErrorInfo2**, int>)(lpVtbl[6]))((ILanguageExceptionErrorInfo2*)Unsafe.AsPointer(ref this), propagatedLanguageExceptionErrorInfoHead);
+        }
+
+        public interface Interface : ILanguageExceptionErrorInfo.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT GetPreviousLanguageExceptionErrorInfo(ILanguageExceptionErrorInfo2** previousLanguageExceptionErrorInfo);
+
+            [VtblIndex(5)]
+            HRESULT CapturePropagationContext(IUnknown* languageException);
+
+            [VtblIndex(6)]
+            HRESULT GetPropagationContextHead(ILanguageExceptionErrorInfo2** propagatedLanguageExceptionErrorInfoHead);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILanguageExceptionErrorInfo2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILanguageExceptionErrorInfo2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ILanguageExceptionErrorInfo2*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILanguageExceptionErrorInfo2*, IUnknown**, int> GetLanguageException;
+
+            [NativeTypeName("HRESULT (ILanguageExceptionErrorInfo2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILanguageExceptionErrorInfo2*, ILanguageExceptionErrorInfo2**, int> GetPreviousLanguageExceptionErrorInfo;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILanguageExceptionErrorInfo2*, IUnknown*, int> CapturePropagationContext;
+
+            [NativeTypeName("HRESULT (ILanguageExceptionErrorInfo2 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ILanguageExceptionErrorInfo2*, ILanguageExceptionErrorInfo2**, int> GetPropagationContextHead;
         }
     }
 }

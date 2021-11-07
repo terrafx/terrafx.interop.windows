@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("433685FE-E22B-4CA0-A8DB-B5B4F4DD0E4A")]
     [NativeTypeName("struct ID3D12Fence1 : ID3D12Fence")]
     [NativeInheritance("ID3D12Fence")]
-    public unsafe partial struct ID3D12Fence1
+    public unsafe partial struct ID3D12Fence1 : ID3D12Fence1.Interface
     {
         public void** lpVtbl;
 
@@ -101,6 +101,51 @@ namespace TerraFX.Interop
         public D3D12_FENCE_FLAGS GetCreationFlags()
         {
             return ((delegate* unmanaged<ID3D12Fence1*, D3D12_FENCE_FLAGS>)(lpVtbl[11]))((ID3D12Fence1*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ID3D12Fence.Interface
+        {
+            [VtblIndex(11)]
+            D3D12_FENCE_FLAGS GetCreationFlags();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Fence1*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Fence1*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Fence1*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Fence1*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Fence1*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Fence1*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Fence1*, ushort*, int> SetName;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Fence1*, Guid*, void**, int> GetDevice;
+
+            [NativeTypeName("UINT64 () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Fence1*, ulong> GetCompletedValue;
+
+            [NativeTypeName("HRESULT (UINT64, HANDLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Fence1*, ulong, HANDLE, int> SetEventOnCompletion;
+
+            [NativeTypeName("HRESULT (UINT64) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Fence1*, ulong, int> Signal;
+
+            [NativeTypeName("D3D12_FENCE_FLAGS () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12Fence1*, D3D12_FENCE_FLAGS> GetCreationFlags;
         }
     }
 }

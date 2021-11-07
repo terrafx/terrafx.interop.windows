@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4579BB7C-741D-4161-B5A1-47BD3B78AD9B")]
     [NativeTypeName("struct IAppxManifestReader4 : IAppxManifestReader3")]
     [NativeInheritance("IAppxManifestReader3")]
-    public unsafe partial struct IAppxManifestReader4
+    public unsafe partial struct IAppxManifestReader4 : IAppxManifestReader4.Interface
     {
         public void** lpVtbl;
 
@@ -128,6 +128,63 @@ namespace TerraFX.Interop
         public HRESULT GetOptionalPackageInfo(IAppxManifestOptionalPackageInfo** optionalPackageInfo)
         {
             return ((delegate* unmanaged<IAppxManifestReader4*, IAppxManifestOptionalPackageInfo**, int>)(lpVtbl[15]))((IAppxManifestReader4*)Unsafe.AsPointer(ref this), optionalPackageInfo);
+        }
+
+        public interface Interface : IAppxManifestReader3.Interface
+        {
+            [VtblIndex(15)]
+            HRESULT GetOptionalPackageInfo(IAppxManifestOptionalPackageInfo** optionalPackageInfo);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader4*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader4*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader4*, uint> Release;
+
+            [NativeTypeName("HRESULT (IAppxManifestPackageId **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader4*, IAppxManifestPackageId**, int> GetPackageId;
+
+            [NativeTypeName("HRESULT (IAppxManifestProperties **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader4*, IAppxManifestProperties**, int> GetProperties;
+
+            [NativeTypeName("HRESULT (IAppxManifestPackageDependenciesEnumerator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader4*, IAppxManifestPackageDependenciesEnumerator**, int> GetPackageDependencies;
+
+            [NativeTypeName("HRESULT (APPX_CAPABILITIES *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader4*, APPX_CAPABILITIES*, int> GetCapabilities;
+
+            [NativeTypeName("HRESULT (IAppxManifestResourcesEnumerator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader4*, IAppxManifestResourcesEnumerator**, int> GetResources;
+
+            [NativeTypeName("HRESULT (IAppxManifestDeviceCapabilitiesEnumerator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader4*, IAppxManifestDeviceCapabilitiesEnumerator**, int> GetDeviceCapabilities;
+
+            [NativeTypeName("HRESULT (LPCWSTR, UINT64 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader4*, ushort*, ulong*, int> GetPrerequisite;
+
+            [NativeTypeName("HRESULT (IAppxManifestApplicationsEnumerator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader4*, IAppxManifestApplicationsEnumerator**, int> GetApplications;
+
+            [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader4*, IStream**, int> GetStream;
+
+            [NativeTypeName("HRESULT (IAppxManifestQualifiedResourcesEnumerator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader4*, IAppxManifestQualifiedResourcesEnumerator**, int> GetQualifiedResources;
+
+            [NativeTypeName("HRESULT (APPX_CAPABILITY_CLASS_TYPE, IAppxManifestCapabilitiesEnumerator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader4*, APPX_CAPABILITY_CLASS_TYPE, IAppxManifestCapabilitiesEnumerator**, int> GetCapabilitiesByCapabilityClass;
+
+            [NativeTypeName("HRESULT (IAppxManifestTargetDeviceFamiliesEnumerator **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader4*, IAppxManifestTargetDeviceFamiliesEnumerator**, int> GetTargetDeviceFamilies;
+
+            [NativeTypeName("HRESULT (IAppxManifestOptionalPackageInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestReader4*, IAppxManifestOptionalPackageInfo**, int> GetOptionalPackageInfo;
         }
     }
 }

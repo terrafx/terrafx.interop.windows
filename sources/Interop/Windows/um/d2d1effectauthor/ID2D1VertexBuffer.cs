@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9B8B1336-00A5-4668-92B7-CED5D8BF9B7B")]
     [NativeTypeName("struct ID2D1VertexBuffer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID2D1VertexBuffer
+    public unsafe partial struct ID2D1VertexBuffer : ID2D1VertexBuffer.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT Unmap()
         {
             return ((delegate* unmanaged<ID2D1VertexBuffer*, int>)(lpVtbl[4]))((ID2D1VertexBuffer*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Map(byte** data, [NativeTypeName("UINT32")] uint bufferSize);
+
+            [VtblIndex(4)]
+            HRESULT Unmap();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1VertexBuffer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1VertexBuffer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1VertexBuffer*, uint> Release;
+
+            [NativeTypeName("HRESULT (BYTE **, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1VertexBuffer*, byte**, uint, int> Map;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1VertexBuffer*, int> Unmap;
         }
     }
 }

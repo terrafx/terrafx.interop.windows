@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A7BFE112-A4A0-48D9-B602-C313843F6964")]
     [NativeTypeName("struct ISpeechPhraseRule : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechPhraseRule
+    public unsafe partial struct ISpeechPhraseRule : ISpeechPhraseRule.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,81 @@ namespace TerraFX.Interop
         public HRESULT get_EngineConfidence(float* EngineConfidence)
         {
             return ((delegate* unmanaged<ISpeechPhraseRule*, float*, int>)(lpVtbl[14]))((ISpeechPhraseRule*)Unsafe.AsPointer(ref this), EngineConfidence);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Name([NativeTypeName("BSTR *")] ushort** Name);
+
+            [VtblIndex(8)]
+            HRESULT get_Id([NativeTypeName("long *")] int* Id);
+
+            [VtblIndex(9)]
+            HRESULT get_FirstElement([NativeTypeName("long *")] int* FirstElement);
+
+            [VtblIndex(10)]
+            HRESULT get_NumberOfElements([NativeTypeName("long *")] int* NumberOfElements);
+
+            [VtblIndex(11)]
+            HRESULT get_Parent(ISpeechPhraseRule** Parent);
+
+            [VtblIndex(12)]
+            HRESULT get_Children(ISpeechPhraseRules** Children);
+
+            [VtblIndex(13)]
+            HRESULT get_Confidence(SpeechEngineConfidence* ActualConfidence);
+
+            [VtblIndex(14)]
+            HRESULT get_EngineConfidence(float* EngineConfidence);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseRule*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseRule*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseRule*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseRule*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseRule*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseRule*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseRule*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseRule*, ushort**, int> get_Name;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseRule*, int*, int> get_Id;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseRule*, int*, int> get_FirstElement;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseRule*, int*, int> get_NumberOfElements;
+
+            [NativeTypeName("HRESULT (ISpeechPhraseRule **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseRule*, ISpeechPhraseRule**, int> get_Parent;
+
+            [NativeTypeName("HRESULT (ISpeechPhraseRules **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseRule*, ISpeechPhraseRules**, int> get_Children;
+
+            [NativeTypeName("HRESULT (SpeechEngineConfidence *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseRule*, SpeechEngineConfidence*, int> get_Confidence;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseRule*, float*, int> get_EngineConfidence;
         }
     }
 }

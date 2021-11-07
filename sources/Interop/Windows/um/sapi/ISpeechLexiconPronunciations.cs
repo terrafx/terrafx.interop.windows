@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("72829128-5682-4704-A0D4-3E2BB6F2EAD3")]
     [NativeTypeName("struct ISpeechLexiconPronunciations : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechLexiconPronunciations
+    public unsafe partial struct ISpeechLexiconPronunciations : ISpeechLexiconPronunciations.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,51 @@ namespace TerraFX.Interop
         public HRESULT get__NewEnum(IUnknown** EnumVARIANT)
         {
             return ((delegate* unmanaged<ISpeechLexiconPronunciations*, IUnknown**, int>)(lpVtbl[9]))((ISpeechLexiconPronunciations*)Unsafe.AsPointer(ref this), EnumVARIANT);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Count([NativeTypeName("long *")] int* Count);
+
+            [VtblIndex(8)]
+            HRESULT Item([NativeTypeName("long")] int Index, ISpeechLexiconPronunciation** Pronunciation);
+
+            [VtblIndex(9)]
+            HRESULT get__NewEnum(IUnknown** EnumVARIANT);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechLexiconPronunciations*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechLexiconPronunciations*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechLexiconPronunciations*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechLexiconPronunciations*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechLexiconPronunciations*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechLexiconPronunciations*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechLexiconPronunciations*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechLexiconPronunciations*, int*, int> get_Count;
+
+            [NativeTypeName("HRESULT (long, ISpeechLexiconPronunciation **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechLexiconPronunciations*, int, ISpeechLexiconPronunciation**, int> Item;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechLexiconPronunciations*, IUnknown**, int> get__NewEnum;
         }
     }
 }

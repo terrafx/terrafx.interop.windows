@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8BA5FB08-5195-40E2-AC58-0D989C3A0102")]
     [NativeTypeName("struct IDxcBlob : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDxcBlob
+    public unsafe partial struct IDxcBlob : IDxcBlob.Interface
     {
         public void** lpVtbl;
 
@@ -53,6 +53,35 @@ namespace TerraFX.Interop
         public nuint GetBufferSize()
         {
             return ((delegate* unmanaged<IDxcBlob*, nuint>)(lpVtbl[4]))((IDxcBlob*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            [return: NativeTypeName("LPVOID")]
+            void* GetBufferPointer();
+
+            [VtblIndex(4)]
+            [return: NativeTypeName("SIZE_T")]
+            nuint GetBufferSize();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcBlob*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcBlob*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcBlob*, uint> Release;
+
+            [NativeTypeName("LPVOID () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcBlob*, void*> GetBufferPointer;
+
+            [NativeTypeName("SIZE_T () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDxcBlob*, nuint> GetBufferSize;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("000214EF-0000-0000-C000-000000000046")]
     [NativeTypeName("struct ICopyHookA : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICopyHookA
+    public unsafe partial struct ICopyHookA : ICopyHookA.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public uint CopyCallback(HWND hwnd, uint wFunc, uint wFlags, [NativeTypeName("PCSTR")] sbyte* pszSrcFile, [NativeTypeName("DWORD")] uint dwSrcAttribs, [NativeTypeName("PCSTR")] sbyte* pszDestFile, [NativeTypeName("DWORD")] uint dwDestAttribs)
         {
             return ((delegate* unmanaged<ICopyHookA*, HWND, uint, uint, sbyte*, uint, sbyte*, uint, uint>)(lpVtbl[3]))((ICopyHookA*)Unsafe.AsPointer(ref this), hwnd, wFunc, wFlags, pszSrcFile, dwSrcAttribs, pszDestFile, dwDestAttribs);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            uint CopyCallback(HWND hwnd, uint wFunc, uint wFlags, [NativeTypeName("PCSTR")] sbyte* pszSrcFile, [NativeTypeName("DWORD")] uint dwSrcAttribs, [NativeTypeName("PCSTR")] sbyte* pszDestFile, [NativeTypeName("DWORD")] uint dwDestAttribs);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICopyHookA*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICopyHookA*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICopyHookA*, uint> Release;
+
+            [NativeTypeName("UINT (HWND, UINT, UINT, PCSTR, DWORD, PCSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICopyHookA*, HWND, uint, uint, sbyte*, uint, sbyte*, uint, uint> CopyCallback;
         }
     }
 }

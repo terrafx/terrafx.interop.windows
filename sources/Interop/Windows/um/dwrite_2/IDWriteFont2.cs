@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("29748ED6-8C9C-4A6A-BE0B-D912E8538944")]
     [NativeTypeName("struct IDWriteFont2 : IDWriteFont1")]
     [NativeInheritance("IDWriteFont1")]
-    public unsafe partial struct IDWriteFont2
+    public unsafe partial struct IDWriteFont2 : IDWriteFont2.Interface
     {
         public void** lpVtbl;
 
@@ -149,6 +149,72 @@ namespace TerraFX.Interop
         public BOOL IsColorFont()
         {
             return ((delegate* unmanaged<IDWriteFont2*, int>)(lpVtbl[18]))((IDWriteFont2*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDWriteFont1.Interface
+        {
+            [VtblIndex(18)]
+            BOOL IsColorFont();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont2*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDWriteFontFamily **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont2*, IDWriteFontFamily**, int> GetFontFamily;
+
+            [NativeTypeName("DWRITE_FONT_WEIGHT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont2*, DWRITE_FONT_WEIGHT> GetWeight;
+
+            [NativeTypeName("DWRITE_FONT_STRETCH () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont2*, DWRITE_FONT_STRETCH> GetStretch;
+
+            [NativeTypeName("DWRITE_FONT_STYLE () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont2*, DWRITE_FONT_STYLE> GetStyle;
+
+            [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont2*, int> IsSymbolFont;
+
+            [NativeTypeName("HRESULT (IDWriteLocalizedStrings **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont2*, IDWriteLocalizedStrings**, int> GetFaceNames;
+
+            [NativeTypeName("HRESULT (DWRITE_INFORMATIONAL_STRING_ID, IDWriteLocalizedStrings **, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont2*, DWRITE_INFORMATIONAL_STRING_ID, IDWriteLocalizedStrings**, BOOL*, int> GetInformationalStrings;
+
+            [NativeTypeName("DWRITE_FONT_SIMULATIONS () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont2*, DWRITE_FONT_SIMULATIONS> GetSimulations;
+
+            [NativeTypeName("void (DWRITE_FONT_METRICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont2*, DWRITE_FONT_METRICS*, void> GetMetrics;
+
+            [NativeTypeName("HRESULT (UINT32, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont2*, uint, BOOL*, int> HasCharacter;
+
+            [NativeTypeName("HRESULT (IDWriteFontFace **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont2*, IDWriteFontFace**, int> CreateFontFace;
+
+            [NativeTypeName("void (DWRITE_FONT_METRICS1 *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont2*, DWRITE_FONT_METRICS1*, void> GetMetrics1;
+
+            [NativeTypeName("void (DWRITE_PANOSE *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont2*, DWRITE_PANOSE*, void> GetPanose;
+
+            [NativeTypeName("HRESULT (UINT32, DWRITE_UNICODE_RANGE *, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont2*, uint, DWRITE_UNICODE_RANGE*, uint*, int> GetUnicodeRanges;
+
+            [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont2*, int> IsMonospacedFont;
+
+            [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFont2*, int> IsColorFont;
         }
     }
 }

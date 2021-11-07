@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D396EC8C-605E-4249-978D-72AD1C312872")]
     [NativeTypeName("struct IMFSpatialAudioObjectBuffer : IMFMediaBuffer")]
     [NativeInheritance("IMFMediaBuffer")]
-    public unsafe partial struct IMFSpatialAudioObjectBuffer
+    public unsafe partial struct IMFSpatialAudioObjectBuffer : IMFSpatialAudioObjectBuffer.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,66 @@ namespace TerraFX.Interop
         public HRESULT GetMetadataItems(ISpatialAudioMetadataItems** ppMetadataItems)
         {
             return ((delegate* unmanaged<IMFSpatialAudioObjectBuffer*, ISpatialAudioMetadataItems**, int>)(lpVtbl[12]))((IMFSpatialAudioObjectBuffer*)Unsafe.AsPointer(ref this), ppMetadataItems);
+        }
+
+        public interface Interface : IMFMediaBuffer.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT SetID([NativeTypeName("UINT32")] uint u32ID);
+
+            [VtblIndex(9)]
+            HRESULT GetID([NativeTypeName("UINT32 *")] uint* pu32ID);
+
+            [VtblIndex(10)]
+            HRESULT SetType(AudioObjectType type);
+
+            [VtblIndex(11)]
+            HRESULT GetType(AudioObjectType* pType);
+
+            [VtblIndex(12)]
+            HRESULT GetMetadataItems(ISpatialAudioMetadataItems** ppMetadataItems);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSpatialAudioObjectBuffer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSpatialAudioObjectBuffer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSpatialAudioObjectBuffer*, uint> Release;
+
+            [NativeTypeName("HRESULT (BYTE **, DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSpatialAudioObjectBuffer*, byte**, uint*, uint*, int> Lock;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSpatialAudioObjectBuffer*, int> Unlock;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSpatialAudioObjectBuffer*, uint*, int> GetCurrentLength;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSpatialAudioObjectBuffer*, uint, int> SetCurrentLength;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSpatialAudioObjectBuffer*, uint*, int> GetMaxLength;
+
+            [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSpatialAudioObjectBuffer*, uint, int> SetID;
+
+            [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSpatialAudioObjectBuffer*, uint*, int> GetID;
+
+            [NativeTypeName("HRESULT (AudioObjectType) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSpatialAudioObjectBuffer*, AudioObjectType, int> SetType;
+
+            [NativeTypeName("HRESULT (AudioObjectType *) __attribute__((stdcall))")]
+            public new delegate* unmanaged<IMFSpatialAudioObjectBuffer*, AudioObjectType*, int> GetType;
+
+            [NativeTypeName("HRESULT (ISpatialAudioMetadataItems **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSpatialAudioObjectBuffer*, ISpatialAudioMetadataItems**, int> GetMetadataItems;
         }
     }
 }

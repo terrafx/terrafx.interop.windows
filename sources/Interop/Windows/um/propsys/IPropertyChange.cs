@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F917BC8A-1BBA-4478-A245-1BDE03EB9431")]
     [NativeTypeName("struct IPropertyChange : IObjectWithPropertyKey")]
     [NativeInheritance("IObjectWithPropertyKey")]
-    public unsafe partial struct IPropertyChange
+    public unsafe partial struct IPropertyChange : IPropertyChange.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,33 @@ namespace TerraFX.Interop
         public HRESULT ApplyToPropVariant([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvarIn, PROPVARIANT* ppropvarOut)
         {
             return ((delegate* unmanaged<IPropertyChange*, PROPVARIANT*, PROPVARIANT*, int>)(lpVtbl[5]))((IPropertyChange*)Unsafe.AsPointer(ref this), propvarIn, ppropvarOut);
+        }
+
+        public interface Interface : IObjectWithPropertyKey.Interface
+        {
+            [VtblIndex(5)]
+            HRESULT ApplyToPropVariant([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvarIn, PROPVARIANT* ppropvarOut);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyChange*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyChange*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyChange*, uint> Release;
+
+            [NativeTypeName("HRESULT (const PROPERTYKEY &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyChange*, PROPERTYKEY*, int> SetPropertyKey;
+
+            [NativeTypeName("HRESULT (PROPERTYKEY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyChange*, PROPERTYKEY*, int> GetPropertyKey;
+
+            [NativeTypeName("HRESULT (const PROPVARIANT &, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPropertyChange*, PROPVARIANT*, PROPVARIANT*, int> ApplyToPropVariant;
         }
     }
 }

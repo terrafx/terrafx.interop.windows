@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000017-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IActivationFilter : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IActivationFilter
+    public unsafe partial struct IActivationFilter : IActivationFilter.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT HandleActivation([NativeTypeName("DWORD")] uint dwActivationType, [NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("CLSID *")] Guid* pReplacementClsId)
         {
             return ((delegate* unmanaged<IActivationFilter*, uint, Guid*, Guid*, int>)(lpVtbl[3]))((IActivationFilter*)Unsafe.AsPointer(ref this), dwActivationType, rclsid, pReplacementClsId);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT HandleActivation([NativeTypeName("DWORD")] uint dwActivationType, [NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("CLSID *")] Guid* pReplacementClsId);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActivationFilter*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActivationFilter*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActivationFilter*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, const IID &, CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActivationFilter*, uint, Guid*, Guid*, int> HandleActivation;
         }
     }
 }

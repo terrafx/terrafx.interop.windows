@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F666-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLPopup : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLPopup
+    public unsafe partial struct IHTMLPopup : IHTMLPopup.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,57 @@ namespace TerraFX.Interop
         public HRESULT get_isOpen([NativeTypeName("VARIANT_BOOL *")] short* p)
         {
             return ((delegate* unmanaged<IHTMLPopup*, short*, int>)(lpVtbl[10]))((IHTMLPopup*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT show([NativeTypeName("long")] int x, [NativeTypeName("long")] int y, [NativeTypeName("long")] int w, [NativeTypeName("long")] int h, VARIANT* pElement);
+
+            [VtblIndex(8)]
+            HRESULT hide();
+
+            [VtblIndex(9)]
+            HRESULT get_document(IHTMLDocument** p);
+
+            [VtblIndex(10)]
+            HRESULT get_isOpen([NativeTypeName("VARIANT_BOOL *")] short* p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPopup*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPopup*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPopup*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPopup*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPopup*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPopup*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPopup*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long, long, long, long, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPopup*, int, int, int, int, VARIANT*, int> show;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPopup*, int> hide;
+
+            [NativeTypeName("HRESULT (IHTMLDocument **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPopup*, IHTMLDocument**, int> get_document;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPopup*, short*, int> get_isOpen;
         }
     }
 }

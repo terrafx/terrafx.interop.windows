@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510508-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGPathSegLinetoHorizontalAbs : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGPathSegLinetoHorizontalAbs
+    public unsafe partial struct ISVGPathSegLinetoHorizontalAbs : ISVGPathSegLinetoHorizontalAbs.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,45 @@ namespace TerraFX.Interop
         public HRESULT get_x(float* p)
         {
             return ((delegate* unmanaged<ISVGPathSegLinetoHorizontalAbs*, float*, int>)(lpVtbl[8]))((ISVGPathSegLinetoHorizontalAbs*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_x(float v);
+
+            [VtblIndex(8)]
+            HRESULT get_x(float* p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathSegLinetoHorizontalAbs*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathSegLinetoHorizontalAbs*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathSegLinetoHorizontalAbs*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathSegLinetoHorizontalAbs*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathSegLinetoHorizontalAbs*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathSegLinetoHorizontalAbs*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathSegLinetoHorizontalAbs*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathSegLinetoHorizontalAbs*, float, int> put_x;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGPathSegLinetoHorizontalAbs*, float*, int> get_x;
         }
     }
 }

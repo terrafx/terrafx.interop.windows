@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("596A9A94-013E-11D1-8D34-00A0C90F2719")]
     [NativeTypeName("struct IBanneredBar : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IBanneredBar
+    public unsafe partial struct IBanneredBar : IBanneredBar.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetBitmap(HBITMAP* phBitmap)
         {
             return ((delegate* unmanaged<IBanneredBar*, HBITMAP*, int>)(lpVtbl[6]))((IBanneredBar*)Unsafe.AsPointer(ref this), phBitmap);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetIconSize([NativeTypeName("DWORD")] uint iIcon);
+
+            [VtblIndex(4)]
+            HRESULT GetIconSize([NativeTypeName("DWORD *")] uint* piIcon);
+
+            [VtblIndex(5)]
+            HRESULT SetBitmap(HBITMAP hBitmap);
+
+            [VtblIndex(6)]
+            HRESULT GetBitmap(HBITMAP* phBitmap);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBanneredBar*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBanneredBar*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBanneredBar*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBanneredBar*, uint, int> SetIconSize;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBanneredBar*, uint*, int> GetIconSize;
+
+            [NativeTypeName("HRESULT (HBITMAP) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBanneredBar*, HBITMAP, int> SetBitmap;
+
+            [NativeTypeName("HRESULT (HBITMAP *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBanneredBar*, HBITMAP*, int> GetBitmap;
         }
     }
 }

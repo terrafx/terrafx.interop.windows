@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FD882D06-8ABA-4FB8-B849-8BE8B73E14DE")]
     [NativeTypeName("struct IDWriteFontFallbackBuilder : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWriteFontFallbackBuilder
+    public unsafe partial struct IDWriteFontFallbackBuilder : IDWriteFontFallbackBuilder.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT CreateFontFallback(IDWriteFontFallback** fontFallback)
         {
             return ((delegate* unmanaged<IDWriteFontFallbackBuilder*, IDWriteFontFallback**, int>)(lpVtbl[5]))((IDWriteFontFallbackBuilder*)Unsafe.AsPointer(ref this), fontFallback);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddMapping([NativeTypeName("const DWRITE_UNICODE_RANGE *")] DWRITE_UNICODE_RANGE* ranges, [NativeTypeName("UINT32")] uint rangesCount, [NativeTypeName("const WCHAR **")] ushort** targetFamilyNames, [NativeTypeName("UINT32")] uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection = null, [NativeTypeName("const WCHAR *")] ushort* localeName = null, [NativeTypeName("const WCHAR *")] ushort* baseFamilyName = null, float scale = 1.0f);
+
+            [VtblIndex(4)]
+            HRESULT AddMappings(IDWriteFontFallback* fontFallback);
+
+            [VtblIndex(5)]
+            HRESULT CreateFontFallback(IDWriteFontFallback** fontFallback);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFallbackBuilder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFallbackBuilder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFallbackBuilder*, uint> Release;
+
+            [NativeTypeName("HRESULT (const DWRITE_UNICODE_RANGE *, UINT32, const WCHAR **, UINT32, IDWriteFontCollection *, const WCHAR *, const WCHAR *, FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFallbackBuilder*, DWRITE_UNICODE_RANGE*, uint, ushort**, uint, IDWriteFontCollection*, ushort*, ushort*, float, int> AddMapping;
+
+            [NativeTypeName("HRESULT (IDWriteFontFallback *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFallbackBuilder*, IDWriteFontFallback*, int> AddMappings;
+
+            [NativeTypeName("HRESULT (IDWriteFontFallback **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontFallbackBuilder*, IDWriteFontFallback**, int> CreateFontFallback;
         }
     }
 }

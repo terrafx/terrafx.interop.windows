@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4657278B-411B-11D2-839A-00C04FD918D0")]
     [NativeTypeName("struct IDropTargetHelper : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDropTargetHelper
+    public unsafe partial struct IDropTargetHelper : IDropTargetHelper.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT Show(BOOL fShow)
         {
             return ((delegate* unmanaged<IDropTargetHelper*, BOOL, int>)(lpVtbl[7]))((IDropTargetHelper*)Unsafe.AsPointer(ref this), fShow);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT DragEnter(HWND hwndTarget, IDataObject* pDataObject, POINT* ppt, [NativeTypeName("DWORD")] uint dwEffect);
+
+            [VtblIndex(4)]
+            HRESULT DragLeave();
+
+            [VtblIndex(5)]
+            HRESULT DragOver(POINT* ppt, [NativeTypeName("DWORD")] uint dwEffect);
+
+            [VtblIndex(6)]
+            HRESULT Drop(IDataObject* pDataObject, POINT* ppt, [NativeTypeName("DWORD")] uint dwEffect);
+
+            [VtblIndex(7)]
+            HRESULT Show(BOOL fShow);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDropTargetHelper*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDropTargetHelper*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDropTargetHelper*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND, IDataObject *, POINT *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDropTargetHelper*, HWND, IDataObject*, POINT*, uint, int> DragEnter;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDropTargetHelper*, int> DragLeave;
+
+            [NativeTypeName("HRESULT (POINT *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDropTargetHelper*, POINT*, uint, int> DragOver;
+
+            [NativeTypeName("HRESULT (IDataObject *, POINT *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDropTargetHelper*, IDataObject*, POINT*, uint, int> Drop;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDropTargetHelper*, BOOL, int> Show;
         }
     }
 }

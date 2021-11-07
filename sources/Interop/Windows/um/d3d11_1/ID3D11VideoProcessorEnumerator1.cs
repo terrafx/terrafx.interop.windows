@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("465217F2-5568-43CF-B5B9-F61D54531CA1")]
     [NativeTypeName("struct ID3D11VideoProcessorEnumerator1 : ID3D11VideoProcessorEnumerator")]
     [NativeInheritance("ID3D11VideoProcessorEnumerator")]
-    public unsafe partial struct ID3D11VideoProcessorEnumerator1
+    public unsafe partial struct ID3D11VideoProcessorEnumerator1 : ID3D11VideoProcessorEnumerator1.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,57 @@ namespace TerraFX.Interop
         public HRESULT CheckVideoProcessorFormatConversion(DXGI_FORMAT InputFormat, DXGI_COLOR_SPACE_TYPE InputColorSpace, DXGI_FORMAT OutputFormat, DXGI_COLOR_SPACE_TYPE OutputColorSpace, BOOL* pSupported)
         {
             return ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, DXGI_FORMAT, DXGI_COLOR_SPACE_TYPE, DXGI_FORMAT, DXGI_COLOR_SPACE_TYPE, BOOL*, int>)(lpVtbl[13]))((ID3D11VideoProcessorEnumerator1*)Unsafe.AsPointer(ref this), InputFormat, InputColorSpace, OutputFormat, OutputColorSpace, pSupported);
+        }
+
+        public interface Interface : ID3D11VideoProcessorEnumerator.Interface
+        {
+            [VtblIndex(13)]
+            HRESULT CheckVideoProcessorFormatConversion(DXGI_FORMAT InputFormat, DXGI_COLOR_SPACE_TYPE InputColorSpace, DXGI_FORMAT OutputFormat, DXGI_COLOR_SPACE_TYPE OutputColorSpace, BOOL* pSupported);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, uint> Release;
+
+            [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, ID3D11Device**, void> GetDevice;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (D3D11_VIDEO_PROCESSOR_CONTENT_DESC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, D3D11_VIDEO_PROCESSOR_CONTENT_DESC*, int> GetVideoProcessorContentDesc;
+
+            [NativeTypeName("HRESULT (DXGI_FORMAT, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, DXGI_FORMAT, uint*, int> CheckVideoProcessorFormat;
+
+            [NativeTypeName("HRESULT (D3D11_VIDEO_PROCESSOR_CAPS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, D3D11_VIDEO_PROCESSOR_CAPS*, int> GetVideoProcessorCaps;
+
+            [NativeTypeName("HRESULT (UINT, D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, uint, D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS*, int> GetVideoProcessorRateConversionCaps;
+
+            [NativeTypeName("HRESULT (UINT, UINT, D3D11_VIDEO_PROCESSOR_CUSTOM_RATE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, uint, uint, D3D11_VIDEO_PROCESSOR_CUSTOM_RATE*, int> GetVideoProcessorCustomRate;
+
+            [NativeTypeName("HRESULT (D3D11_VIDEO_PROCESSOR_FILTER, D3D11_VIDEO_PROCESSOR_FILTER_RANGE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, D3D11_VIDEO_PROCESSOR_FILTER, D3D11_VIDEO_PROCESSOR_FILTER_RANGE*, int> GetVideoProcessorFilterRange;
+
+            [NativeTypeName("HRESULT (DXGI_FORMAT, DXGI_COLOR_SPACE_TYPE, DXGI_FORMAT, DXGI_COLOR_SPACE_TYPE, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, DXGI_FORMAT, DXGI_COLOR_SPACE_TYPE, DXGI_FORMAT, DXGI_COLOR_SPACE_TYPE, BOOL*, int> CheckVideoProcessorFormatConversion;
         }
     }
 }

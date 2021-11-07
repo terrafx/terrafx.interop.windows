@@ -13,7 +13,7 @@ namespace TerraFX.Interop
     [Guid("693CE632-7F2F-45DE-93FE-18D88B37AA21")]
     [NativeTypeName("struct ID2D1DrawInfo : ID2D1RenderInfo")]
     [NativeInheritance("ID2D1RenderInfo")]
-    public unsafe partial struct ID2D1DrawInfo
+    public unsafe partial struct ID2D1DrawInfo : ID2D1DrawInfo.Interface
     {
         public void** lpVtbl;
 
@@ -101,6 +101,63 @@ namespace TerraFX.Interop
         public HRESULT SetVertexProcessing(ID2D1VertexBuffer* vertexBuffer, D2D1_VERTEX_OPTIONS vertexOptions, [NativeTypeName("const D2D1_BLEND_DESCRIPTION *")] D2D1_BLEND_DESCRIPTION* blendDescription = null, [NativeTypeName("const D2D1_VERTEX_RANGE *")] D2D1_VERTEX_RANGE* vertexRange = null, [NativeTypeName("const GUID *")] Guid* vertexShader = null)
         {
             return ((delegate* unmanaged<ID2D1DrawInfo*, ID2D1VertexBuffer*, D2D1_VERTEX_OPTIONS, D2D1_BLEND_DESCRIPTION*, D2D1_VERTEX_RANGE*, Guid*, int>)(lpVtbl[11]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this), vertexBuffer, vertexOptions, blendDescription, vertexRange, vertexShader);
+        }
+
+        public interface Interface : ID2D1RenderInfo.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT SetPixelShaderConstantBuffer([NativeTypeName("const BYTE *")] byte* buffer, [NativeTypeName("UINT32")] uint bufferCount);
+
+            [VtblIndex(8)]
+            HRESULT SetResourceTexture([NativeTypeName("UINT32")] uint textureIndex, ID2D1ResourceTexture* resourceTexture);
+
+            [VtblIndex(9)]
+            HRESULT SetVertexShaderConstantBuffer([NativeTypeName("const BYTE *")] byte* buffer, [NativeTypeName("UINT32")] uint bufferCount);
+
+            [VtblIndex(10)]
+            HRESULT SetPixelShader([NativeTypeName("const GUID &")] Guid* shaderId, D2D1_PIXEL_OPTIONS pixelOptions = D2D1_PIXEL_OPTIONS_NONE);
+
+            [VtblIndex(11)]
+            HRESULT SetVertexProcessing(ID2D1VertexBuffer* vertexBuffer, D2D1_VERTEX_OPTIONS vertexOptions, [NativeTypeName("const D2D1_BLEND_DESCRIPTION *")] D2D1_BLEND_DESCRIPTION* blendDescription = null, [NativeTypeName("const D2D1_VERTEX_RANGE *")] D2D1_VERTEX_RANGE* vertexRange = null, [NativeTypeName("const GUID *")] Guid* vertexShader = null);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1DrawInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1DrawInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1DrawInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT32, D2D1_INPUT_DESCRIPTION) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1DrawInfo*, uint, D2D1_INPUT_DESCRIPTION, int> SetInputDescription;
+
+            [NativeTypeName("HRESULT (D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1DrawInfo*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int> SetOutputBuffer;
+
+            [NativeTypeName("void (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1DrawInfo*, BOOL, void> SetCached;
+
+            [NativeTypeName("void (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1DrawInfo*, uint, void> SetInstructionCountHint;
+
+            [NativeTypeName("HRESULT (const BYTE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1DrawInfo*, byte*, uint, int> SetPixelShaderConstantBuffer;
+
+            [NativeTypeName("HRESULT (UINT32, ID2D1ResourceTexture *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1DrawInfo*, uint, ID2D1ResourceTexture*, int> SetResourceTexture;
+
+            [NativeTypeName("HRESULT (const BYTE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1DrawInfo*, byte*, uint, int> SetVertexShaderConstantBuffer;
+
+            [NativeTypeName("HRESULT (const GUID &, D2D1_PIXEL_OPTIONS) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1DrawInfo*, Guid*, D2D1_PIXEL_OPTIONS, int> SetPixelShader;
+
+            [NativeTypeName("HRESULT (ID2D1VertexBuffer *, D2D1_VERTEX_OPTIONS, const D2D1_BLEND_DESCRIPTION *, const D2D1_VERTEX_RANGE *, const GUID *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1DrawInfo*, ID2D1VertexBuffer*, D2D1_VERTEX_OPTIONS, D2D1_BLEND_DESCRIPTION*, D2D1_VERTEX_RANGE*, Guid*, int> SetVertexProcessing;
         }
     }
 }

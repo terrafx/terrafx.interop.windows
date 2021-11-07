@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E357FCCD-A995-4576-B01F-234630154E96")]
     [NativeTypeName("struct IThumbnailProvider : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IThumbnailProvider
+    public unsafe partial struct IThumbnailProvider : IThumbnailProvider.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetThumbnail(uint cx, HBITMAP* phbmp, WTS_ALPHATYPE* pdwAlpha)
         {
             return ((delegate* unmanaged<IThumbnailProvider*, uint, HBITMAP*, WTS_ALPHATYPE*, int>)(lpVtbl[3]))((IThumbnailProvider*)Unsafe.AsPointer(ref this), cx, phbmp, pdwAlpha);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetThumbnail(uint cx, HBITMAP* phbmp, WTS_ALPHATYPE* pdwAlpha);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IThumbnailProvider*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IThumbnailProvider*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IThumbnailProvider*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT, HBITMAP *, WTS_ALPHATYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IThumbnailProvider*, uint, HBITMAP*, WTS_ALPHATYPE*, int> GetThumbnail;
         }
     }
 }

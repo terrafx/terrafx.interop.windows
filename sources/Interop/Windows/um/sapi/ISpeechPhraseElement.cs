@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E6176F96-E373-4801-B223-3B62C068C0B4")]
     [NativeTypeName("struct ISpeechPhraseElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechPhraseElement
+    public unsafe partial struct ISpeechPhraseElement : ISpeechPhraseElement.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,111 @@ namespace TerraFX.Interop
         public HRESULT get_EngineConfidence(float* EngineConfidence)
         {
             return ((delegate* unmanaged<ISpeechPhraseElement*, float*, int>)(lpVtbl[19]))((ISpeechPhraseElement*)Unsafe.AsPointer(ref this), EngineConfidence);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_AudioTimeOffset([NativeTypeName("long *")] int* AudioTimeOffset);
+
+            [VtblIndex(8)]
+            HRESULT get_AudioSizeTime([NativeTypeName("long *")] int* AudioSizeTime);
+
+            [VtblIndex(9)]
+            HRESULT get_AudioStreamOffset([NativeTypeName("long *")] int* AudioStreamOffset);
+
+            [VtblIndex(10)]
+            HRESULT get_AudioSizeBytes([NativeTypeName("long *")] int* AudioSizeBytes);
+
+            [VtblIndex(11)]
+            HRESULT get_RetainedStreamOffset([NativeTypeName("long *")] int* RetainedStreamOffset);
+
+            [VtblIndex(12)]
+            HRESULT get_RetainedSizeBytes([NativeTypeName("long *")] int* RetainedSizeBytes);
+
+            [VtblIndex(13)]
+            HRESULT get_DisplayText([NativeTypeName("BSTR *")] ushort** DisplayText);
+
+            [VtblIndex(14)]
+            HRESULT get_LexicalForm([NativeTypeName("BSTR *")] ushort** LexicalForm);
+
+            [VtblIndex(15)]
+            HRESULT get_Pronunciation(VARIANT* Pronunciation);
+
+            [VtblIndex(16)]
+            HRESULT get_DisplayAttributes(SpeechDisplayAttributes* DisplayAttributes);
+
+            [VtblIndex(17)]
+            HRESULT get_RequiredConfidence(SpeechEngineConfidence* RequiredConfidence);
+
+            [VtblIndex(18)]
+            HRESULT get_ActualConfidence(SpeechEngineConfidence* ActualConfidence);
+
+            [VtblIndex(19)]
+            HRESULT get_EngineConfidence(float* EngineConfidence);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseElement*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseElement*, int*, int> get_AudioTimeOffset;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseElement*, int*, int> get_AudioSizeTime;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseElement*, int*, int> get_AudioStreamOffset;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseElement*, int*, int> get_AudioSizeBytes;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseElement*, int*, int> get_RetainedStreamOffset;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseElement*, int*, int> get_RetainedSizeBytes;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseElement*, ushort**, int> get_DisplayText;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseElement*, ushort**, int> get_LexicalForm;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseElement*, VARIANT*, int> get_Pronunciation;
+
+            [NativeTypeName("HRESULT (SpeechDisplayAttributes *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseElement*, SpeechDisplayAttributes*, int> get_DisplayAttributes;
+
+            [NativeTypeName("HRESULT (SpeechEngineConfidence *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseElement*, SpeechEngineConfidence*, int> get_RequiredConfidence;
+
+            [NativeTypeName("HRESULT (SpeechEngineConfidence *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseElement*, SpeechEngineConfidence*, int> get_ActualConfidence;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechPhraseElement*, float*, int> get_EngineConfidence;
         }
     }
 }

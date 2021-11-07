@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6CA38BE5-FBBB-4800-95A1-A438865EB0D4")]
     [NativeTypeName("struct IIsoImageManager : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IIsoImageManager
+    public unsafe partial struct IIsoImageManager : IIsoImageManager.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,63 @@ namespace TerraFX.Interop
         public HRESULT Validate()
         {
             return ((delegate* unmanaged<IIsoImageManager*, int>)(lpVtbl[11]))((IIsoImageManager*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_Path([NativeTypeName("BSTR *")] ushort** pVal);
+
+            [VtblIndex(8)]
+            HRESULT get_Stream(IStream** data);
+
+            [VtblIndex(9)]
+            HRESULT SetPath([NativeTypeName("BSTR")] ushort* Val);
+
+            [VtblIndex(10)]
+            HRESULT SetStream(IStream* data);
+
+            [VtblIndex(11)]
+            HRESULT Validate();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIsoImageManager*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IIsoImageManager*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IIsoImageManager*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIsoImageManager*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIsoImageManager*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIsoImageManager*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIsoImageManager*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIsoImageManager*, ushort**, int> get_Path;
+
+            [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIsoImageManager*, IStream**, int> get_Stream;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIsoImageManager*, ushort*, int> SetPath;
+
+            [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IIsoImageManager*, IStream*, int> SetStream;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IIsoImageManager*, int> Validate;
         }
     }
 }

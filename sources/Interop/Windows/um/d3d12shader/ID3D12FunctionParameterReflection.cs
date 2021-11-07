@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("EC25F42D-7006-4F2B-B33E-02CC3375733F")]
-    public unsafe partial struct ID3D12FunctionParameterReflection
+    public unsafe partial struct ID3D12FunctionParameterReflection : ID3D12FunctionParameterReflection.Interface
     {
         public void** lpVtbl;
 
@@ -18,6 +18,18 @@ namespace TerraFX.Interop
         public HRESULT GetDesc(D3D12_PARAMETER_DESC* pDesc)
         {
             return ((delegate* unmanaged<ID3D12FunctionParameterReflection*, D3D12_PARAMETER_DESC*, int>)(lpVtbl[0]))((ID3D12FunctionParameterReflection*)Unsafe.AsPointer(ref this), pDesc);
+        }
+
+        public interface Interface
+        {
+            [VtblIndex(0)]
+            HRESULT GetDesc(D3D12_PARAMETER_DESC* pDesc);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (D3D12_PARAMETER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12FunctionParameterReflection*, D3D12_PARAMETER_DESC*, int> GetDesc;
         }
     }
 }

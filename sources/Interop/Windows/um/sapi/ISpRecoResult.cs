@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("20B053BE-E235-43CD-9A2A-8D17A48B7842")]
     [NativeTypeName("struct ISpRecoResult : ISpPhrase")]
     [NativeInheritance("ISpPhrase")]
-    public unsafe partial struct ISpRecoResult
+    public unsafe partial struct ISpRecoResult : ISpRecoResult.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,75 @@ namespace TerraFX.Interop
         public HRESULT GetRecoContext(ISpRecoContext** ppRecoContext)
         {
             return ((delegate* unmanaged<ISpRecoResult*, ISpRecoContext**, int>)(lpVtbl[13]))((ISpRecoResult*)Unsafe.AsPointer(ref this), ppRecoContext);
+        }
+
+        public interface Interface : ISpPhrase.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetResultTimes(SPRECORESULTTIMES* pTimes);
+
+            [VtblIndex(8)]
+            HRESULT GetAlternates([NativeTypeName("ULONG")] uint ulStartElement, [NativeTypeName("ULONG")] uint cElements, [NativeTypeName("ULONG")] uint ulRequestCount, ISpPhraseAlt** ppPhrases, [NativeTypeName("ULONG *")] uint* pcPhrasesReturned);
+
+            [VtblIndex(9)]
+            HRESULT GetAudio([NativeTypeName("ULONG")] uint ulStartElement, [NativeTypeName("ULONG")] uint cElements, ISpStreamFormat** ppStream);
+
+            [VtblIndex(10)]
+            HRESULT SpeakAudio([NativeTypeName("ULONG")] uint ulStartElement, [NativeTypeName("ULONG")] uint cElements, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG *")] uint* pulStreamNumber);
+
+            [VtblIndex(11)]
+            HRESULT Serialize(SPSERIALIZEDRESULT** ppCoMemSerializedResult);
+
+            [VtblIndex(12)]
+            HRESULT ScaleAudio([NativeTypeName("const GUID *")] Guid* pAudioFormatId, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pWaveFormatEx);
+
+            [VtblIndex(13)]
+            HRESULT GetRecoContext(ISpRecoContext** ppRecoContext);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult*, uint> Release;
+
+            [NativeTypeName("HRESULT (SPPHRASE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult*, SPPHRASE**, int> GetPhrase;
+
+            [NativeTypeName("HRESULT (SPSERIALIZEDPHRASE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult*, SPSERIALIZEDPHRASE**, int> GetSerializedPhrase;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG, BOOL, LPWSTR *, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult*, uint, uint, BOOL, ushort**, byte*, int> GetText;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult*, uint, int> Discard;
+
+            [NativeTypeName("HRESULT (SPRECORESULTTIMES *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult*, SPRECORESULTTIMES*, int> GetResultTimes;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG, ULONG, ISpPhraseAlt **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult*, uint, uint, uint, ISpPhraseAlt**, uint*, int> GetAlternates;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG, ISpStreamFormat **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult*, uint, uint, ISpStreamFormat**, int> GetAudio;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG, DWORD, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult*, uint, uint, uint, uint*, int> SpeakAudio;
+
+            [NativeTypeName("HRESULT (SPSERIALIZEDRESULT **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult*, SPSERIALIZEDRESULT**, int> Serialize;
+
+            [NativeTypeName("HRESULT (const GUID *, const WAVEFORMATEX *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult*, Guid*, WAVEFORMATEX*, int> ScaleAudio;
+
+            [NativeTypeName("HRESULT (ISpRecoContext **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpRecoResult*, ISpRecoContext**, int> GetRecoContext;
         }
     }
 }

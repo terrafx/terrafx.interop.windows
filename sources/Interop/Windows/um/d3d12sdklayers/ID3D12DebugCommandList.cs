@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("09E0BF36-54AC-484F-8847-4BAEEAB6053F")]
     [NativeTypeName("struct ID3D12DebugCommandList : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D12DebugCommandList
+    public unsafe partial struct ID3D12DebugCommandList : ID3D12DebugCommandList.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public D3D12_DEBUG_FEATURE GetFeatureMask()
         {
             return ((delegate* unmanaged<ID3D12DebugCommandList*, D3D12_DEBUG_FEATURE>)(lpVtbl[5]))((ID3D12DebugCommandList*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            BOOL AssertResourceState(ID3D12Resource* pResource, uint Subresource, uint State);
+
+            [VtblIndex(4)]
+            HRESULT SetFeatureMask(D3D12_DEBUG_FEATURE Mask);
+
+            [VtblIndex(5)]
+            D3D12_DEBUG_FEATURE GetFeatureMask();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugCommandList*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugCommandList*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugCommandList*, uint> Release;
+
+            [NativeTypeName("BOOL (ID3D12Resource *, UINT, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugCommandList*, ID3D12Resource*, uint, uint, int> AssertResourceState;
+
+            [NativeTypeName("HRESULT (D3D12_DEBUG_FEATURE) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugCommandList*, D3D12_DEBUG_FEATURE, int> SetFeatureMask;
+
+            [NativeTypeName("D3D12_DEBUG_FEATURE () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DebugCommandList*, D3D12_DEBUG_FEATURE> GetFeatureMask;
         }
     }
 }

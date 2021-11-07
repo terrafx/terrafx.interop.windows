@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     [NativeTypeName("struct tagMFASYNCRESULT : IMFAsyncResult")]
     [NativeInheritance("IMFAsyncResult")]
-    public unsafe partial struct MFASYNCRESULT
+    public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface
     {
         public void** lpVtbl;
 
@@ -81,6 +81,37 @@ namespace TerraFX.Interop
         public IUnknown* GetStateNoAddRef()
         {
             return ((delegate* unmanaged<MFASYNCRESULT*, IUnknown*>)(lpVtbl[7]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IMFAsyncResult.Interface
+        {
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<MFASYNCRESULT*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<MFASYNCRESULT*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<MFASYNCRESULT*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<MFASYNCRESULT*, IUnknown**, int> GetState;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<MFASYNCRESULT*, int> GetStatus;
+
+            [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
+            public delegate* unmanaged<MFASYNCRESULT*, HRESULT, int> SetStatus;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<MFASYNCRESULT*, IUnknown**, int> GetObject;
+
+            [NativeTypeName("IUnknown *() __attribute__((stdcall))")]
+            public delegate* unmanaged<MFASYNCRESULT*, IUnknown*> GetStateNoAddRef;
         }
     }
 }

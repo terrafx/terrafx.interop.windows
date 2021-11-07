@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104BA-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMEvent
+    public unsafe partial struct IDOMEvent : IDOMEvent.Interface
     {
         public void** lpVtbl;
 
@@ -177,6 +177,129 @@ namespace TerraFX.Interop
         public HRESULT get_srcElement(IHTMLElement** p)
         {
             return ((delegate* unmanaged<IDOMEvent*, IHTMLElement**, int>)(lpVtbl[22]))((IDOMEvent*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_bubbles([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(8)]
+            HRESULT get_cancelable([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(9)]
+            HRESULT get_currentTarget(IEventTarget** p);
+
+            [VtblIndex(10)]
+            HRESULT get_defaultPrevented([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(11)]
+            HRESULT get_eventPhase(ushort* p);
+
+            [VtblIndex(12)]
+            HRESULT get_target(IEventTarget** p);
+
+            [VtblIndex(13)]
+            HRESULT get_timeStamp([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(14)]
+            HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(15)]
+            HRESULT initEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable);
+
+            [VtblIndex(16)]
+            HRESULT preventDefault();
+
+            [VtblIndex(17)]
+            HRESULT stopPropagation();
+
+            [VtblIndex(18)]
+            HRESULT stopImmediatePropagation();
+
+            [VtblIndex(19)]
+            HRESULT get_isTrusted([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(20)]
+            HRESULT put_cancelBubble([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(21)]
+            HRESULT get_cancelBubble([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(22)]
+            HRESULT get_srcElement(IHTMLElement** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEvent*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEvent*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEvent*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEvent*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEvent*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEvent*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEvent*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEvent*, short*, int> get_bubbles;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEvent*, short*, int> get_cancelable;
+
+            [NativeTypeName("HRESULT (IEventTarget **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEvent*, IEventTarget**, int> get_currentTarget;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEvent*, short*, int> get_defaultPrevented;
+
+            [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEvent*, ushort*, int> get_eventPhase;
+
+            [NativeTypeName("HRESULT (IEventTarget **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEvent*, IEventTarget**, int> get_target;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEvent*, ulong*, int> get_timeStamp;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEvent*, ushort**, int> get_type;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEvent*, ushort*, short, short, int> initEvent;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEvent*, int> preventDefault;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEvent*, int> stopPropagation;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEvent*, int> stopImmediatePropagation;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEvent*, short*, int> get_isTrusted;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEvent*, short, int> put_cancelBubble;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEvent*, short*, int> get_cancelBubble;
+
+            [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMEvent*, IHTMLElement**, int> get_srcElement;
         }
     }
 }

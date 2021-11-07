@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510454-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLXDomainRequest : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLXDomainRequest
+    public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
     {
         public void** lpVtbl;
 
@@ -170,6 +170,123 @@ namespace TerraFX.Interop
         public HRESULT send(VARIANT varBody)
         {
             return ((delegate* unmanaged<IHTMLXDomainRequest*, VARIANT, int>)(lpVtbl[21]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), varBody);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_responseText([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT put_timeout([NativeTypeName("long")] int v);
+
+            [VtblIndex(9)]
+            HRESULT get_timeout([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(10)]
+            HRESULT get_contentType([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT put_onprogress(VARIANT v);
+
+            [VtblIndex(12)]
+            HRESULT get_onprogress(VARIANT* p);
+
+            [VtblIndex(13)]
+            HRESULT put_onerror(VARIANT v);
+
+            [VtblIndex(14)]
+            HRESULT get_onerror(VARIANT* p);
+
+            [VtblIndex(15)]
+            HRESULT put_ontimeout(VARIANT v);
+
+            [VtblIndex(16)]
+            HRESULT get_ontimeout(VARIANT* p);
+
+            [VtblIndex(17)]
+            HRESULT put_onload(VARIANT v);
+
+            [VtblIndex(18)]
+            HRESULT get_onload(VARIANT* p);
+
+            [VtblIndex(19)]
+            HRESULT abort();
+
+            [VtblIndex(20)]
+            HRESULT open([NativeTypeName("BSTR")] ushort* bstrMethod, [NativeTypeName("BSTR")] ushort* bstrUrl);
+
+            [VtblIndex(21)]
+            HRESULT send(VARIANT varBody);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXDomainRequest*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXDomainRequest*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXDomainRequest*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXDomainRequest*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXDomainRequest*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXDomainRequest*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXDomainRequest*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXDomainRequest*, ushort**, int> get_responseText;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXDomainRequest*, int, int> put_timeout;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXDomainRequest*, int*, int> get_timeout;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXDomainRequest*, ushort**, int> get_contentType;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXDomainRequest*, VARIANT, int> put_onprogress;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXDomainRequest*, VARIANT*, int> get_onprogress;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXDomainRequest*, VARIANT, int> put_onerror;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXDomainRequest*, VARIANT*, int> get_onerror;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXDomainRequest*, VARIANT, int> put_ontimeout;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXDomainRequest*, VARIANT*, int> get_ontimeout;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXDomainRequest*, VARIANT, int> put_onload;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXDomainRequest*, VARIANT*, int> get_onload;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXDomainRequest*, int> abort;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXDomainRequest*, ushort*, ushort*, int> open;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLXDomainRequest*, VARIANT, int> send;
         }
     }
 }

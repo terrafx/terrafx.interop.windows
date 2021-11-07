@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F019AC49-F838-4A95-9B17-579437C8F513")]
     [NativeTypeName("struct ID3D12VideoDevice2 : ID3D12VideoDevice1")]
     [NativeInheritance("ID3D12VideoDevice1")]
-    public unsafe partial struct ID3D12VideoDevice2
+    public unsafe partial struct ID3D12VideoDevice2 : ID3D12VideoDevice2.Interface
     {
         public void** lpVtbl;
 
@@ -114,6 +114,69 @@ namespace TerraFX.Interop
         public HRESULT ExecuteExtensionCommand(ID3D12VideoExtensionCommand* pExtensionCommand, [NativeTypeName("const void *")] void* pExecutionParameters, [NativeTypeName("SIZE_T")] nuint ExecutionParametersSizeInBytes, void* pOutputData, [NativeTypeName("SIZE_T")] nuint OutputDataSizeInBytes)
         {
             return ((delegate* unmanaged<ID3D12VideoDevice2*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int>)(lpVtbl[13]))((ID3D12VideoDevice2*)Unsafe.AsPointer(ref this), pExtensionCommand, pExecutionParameters, ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
+        }
+
+        public interface Interface : ID3D12VideoDevice1.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT CreateVideoDecoder1([NativeTypeName("const D3D12_VIDEO_DECODER_DESC *")] D3D12_VIDEO_DECODER_DESC* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, [NativeTypeName("const IID &")] Guid* riid, void** ppVideoDecoder);
+
+            [VtblIndex(10)]
+            HRESULT CreateVideoDecoderHeap1([NativeTypeName("const D3D12_VIDEO_DECODER_HEAP_DESC *")] D3D12_VIDEO_DECODER_HEAP_DESC* pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, [NativeTypeName("const IID &")] Guid* riid, void** ppVideoDecoderHeap);
+
+            [VtblIndex(11)]
+            HRESULT CreateVideoProcessor1(uint NodeMask, [NativeTypeName("const D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC *")] D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC* pOutputStreamDesc, uint NumInputStreamDescs, [NativeTypeName("const D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC *")] D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, [NativeTypeName("const IID &")] Guid* riid, void** ppVideoProcessor);
+
+            [VtblIndex(12)]
+            HRESULT CreateVideoExtensionCommand([NativeTypeName("const D3D12_VIDEO_EXTENSION_COMMAND_DESC *")] D3D12_VIDEO_EXTENSION_COMMAND_DESC* pDesc, [NativeTypeName("const void *")] void* pCreationParameters, [NativeTypeName("SIZE_T")] nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, [NativeTypeName("const IID &")] Guid* riid, void** ppVideoExtensionCommand);
+
+            [VtblIndex(13)]
+            HRESULT ExecuteExtensionCommand(ID3D12VideoExtensionCommand* pExtensionCommand, [NativeTypeName("const void *")] void* pExecutionParameters, [NativeTypeName("SIZE_T")] nuint ExecutionParametersSizeInBytes, void* pOutputData, [NativeTypeName("SIZE_T")] nuint OutputDataSizeInBytes);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDevice2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDevice2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDevice2*, uint> Release;
+
+            [NativeTypeName("HRESULT (D3D12_FEATURE_VIDEO, void *, UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDevice2*, D3D12_FEATURE_VIDEO, void*, uint, int> CheckFeatureSupport;
+
+            [NativeTypeName("HRESULT (const D3D12_VIDEO_DECODER_DESC *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDevice2*, D3D12_VIDEO_DECODER_DESC*, Guid*, void**, int> CreateVideoDecoder;
+
+            [NativeTypeName("HRESULT (const D3D12_VIDEO_DECODER_HEAP_DESC *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDevice2*, D3D12_VIDEO_DECODER_HEAP_DESC*, Guid*, void**, int> CreateVideoDecoderHeap;
+
+            [NativeTypeName("HRESULT (UINT, const D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC *, UINT, const D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDevice2*, uint, D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC*, uint, D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC*, Guid*, void**, int> CreateVideoProcessor;
+
+            [NativeTypeName("HRESULT (const D3D12_VIDEO_MOTION_ESTIMATOR_DESC *, ID3D12ProtectedResourceSession *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDevice2*, D3D12_VIDEO_MOTION_ESTIMATOR_DESC*, ID3D12ProtectedResourceSession*, Guid*, void**, int> CreateVideoMotionEstimator;
+
+            [NativeTypeName("HRESULT (const D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC *, ID3D12ProtectedResourceSession *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDevice2*, D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC*, ID3D12ProtectedResourceSession*, Guid*, void**, int> CreateVideoMotionVectorHeap;
+
+            [NativeTypeName("HRESULT (const D3D12_VIDEO_DECODER_DESC *, ID3D12ProtectedResourceSession *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDevice2*, D3D12_VIDEO_DECODER_DESC*, ID3D12ProtectedResourceSession*, Guid*, void**, int> CreateVideoDecoder1;
+
+            [NativeTypeName("HRESULT (const D3D12_VIDEO_DECODER_HEAP_DESC *, ID3D12ProtectedResourceSession *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDevice2*, D3D12_VIDEO_DECODER_HEAP_DESC*, ID3D12ProtectedResourceSession*, Guid*, void**, int> CreateVideoDecoderHeap1;
+
+            [NativeTypeName("HRESULT (UINT, const D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC *, UINT, const D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC *, ID3D12ProtectedResourceSession *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDevice2*, uint, D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC*, uint, D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC*, ID3D12ProtectedResourceSession*, Guid*, void**, int> CreateVideoProcessor1;
+
+            [NativeTypeName("HRESULT (const D3D12_VIDEO_EXTENSION_COMMAND_DESC *, const void *, SIZE_T, ID3D12ProtectedResourceSession *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDevice2*, D3D12_VIDEO_EXTENSION_COMMAND_DESC*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int> CreateVideoExtensionCommand;
+
+            [NativeTypeName("HRESULT (ID3D12VideoExtensionCommand *, const void *, SIZE_T, void *, SIZE_T) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12VideoDevice2*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int> ExecuteExtensionCommand;
         }
     }
 }

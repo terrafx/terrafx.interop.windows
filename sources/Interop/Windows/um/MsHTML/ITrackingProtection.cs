@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510803-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ITrackingProtection : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITrackingProtection
+    public unsafe partial struct ITrackingProtection : ITrackingProtection.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetEnabled(BOOL* pfEnabled)
         {
             return ((delegate* unmanaged<ITrackingProtection*, BOOL*, int>)(lpVtbl[4]))((ITrackingProtection*)Unsafe.AsPointer(ref this), pfEnabled);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT EvaluateUrl([NativeTypeName("BSTR")] ushort* bstrUrl, BOOL* pfAllowed);
+
+            [VtblIndex(4)]
+            HRESULT GetEnabled(BOOL* pfEnabled);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITrackingProtection*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITrackingProtection*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITrackingProtection*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITrackingProtection*, ushort*, BOOL*, int> EvaluateUrl;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITrackingProtection*, BOOL*, int> GetEnabled;
         }
     }
 }

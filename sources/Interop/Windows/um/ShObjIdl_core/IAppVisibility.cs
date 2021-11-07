@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2246EA2D-CAEA-4444-A3C4-6DE827E44313")]
     [NativeTypeName("struct IAppVisibility : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppVisibility
+    public unsafe partial struct IAppVisibility : IAppVisibility.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie)
         {
             return ((delegate* unmanaged<IAppVisibility*, uint, int>)(lpVtbl[6]))((IAppVisibility*)Unsafe.AsPointer(ref this), dwCookie);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetAppVisibilityOnMonitor(HMONITOR hMonitor, MONITOR_APP_VISIBILITY* pMode);
+
+            [VtblIndex(4)]
+            HRESULT IsLauncherVisible(BOOL* pfVisible);
+
+            [VtblIndex(5)]
+            HRESULT Advise(IAppVisibilityEvents* pCallback, [NativeTypeName("DWORD *")] uint* pdwCookie);
+
+            [VtblIndex(6)]
+            HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppVisibility*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppVisibility*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppVisibility*, uint> Release;
+
+            [NativeTypeName("HRESULT (HMONITOR, MONITOR_APP_VISIBILITY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppVisibility*, HMONITOR, MONITOR_APP_VISIBILITY*, int> GetAppVisibilityOnMonitor;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppVisibility*, BOOL*, int> IsLauncherVisible;
+
+            [NativeTypeName("HRESULT (IAppVisibilityEvents *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppVisibility*, IAppVisibilityEvents*, uint*, int> Advise;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppVisibility*, uint, int> Unadvise;
         }
     }
 }

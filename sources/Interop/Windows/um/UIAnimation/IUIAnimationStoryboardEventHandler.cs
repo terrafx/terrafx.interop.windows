@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3D5C9008-EC7C-4364-9F8A-9AF3C58CBAE6")]
     [NativeTypeName("struct IUIAnimationStoryboardEventHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUIAnimationStoryboardEventHandler
+    public unsafe partial struct IUIAnimationStoryboardEventHandler : IUIAnimationStoryboardEventHandler.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT OnStoryboardUpdated(IUIAnimationStoryboard* storyboard)
         {
             return ((delegate* unmanaged<IUIAnimationStoryboardEventHandler*, IUIAnimationStoryboard*, int>)(lpVtbl[4]))((IUIAnimationStoryboardEventHandler*)Unsafe.AsPointer(ref this), storyboard);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnStoryboardStatusChanged(IUIAnimationStoryboard* storyboard, UI_ANIMATION_STORYBOARD_STATUS newStatus, UI_ANIMATION_STORYBOARD_STATUS previousStatus);
+
+            [VtblIndex(4)]
+            HRESULT OnStoryboardUpdated(IUIAnimationStoryboard* storyboard);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationStoryboardEventHandler*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationStoryboardEventHandler*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationStoryboardEventHandler*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUIAnimationStoryboard *, UI_ANIMATION_STORYBOARD_STATUS, UI_ANIMATION_STORYBOARD_STATUS) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationStoryboardEventHandler*, IUIAnimationStoryboard*, UI_ANIMATION_STORYBOARD_STATUS, UI_ANIMATION_STORYBOARD_STATUS, int> OnStoryboardStatusChanged;
+
+            [NativeTypeName("HRESULT (IUIAnimationStoryboard *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUIAnimationStoryboardEventHandler*, IUIAnimationStoryboard*, int> OnStoryboardUpdated;
         }
     }
 }

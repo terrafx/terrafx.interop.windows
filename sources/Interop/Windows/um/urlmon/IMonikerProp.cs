@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A5CA5F7F-1847-4D87-9C5B-918509F7511D")]
     [NativeTypeName("struct IMonikerProp : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMonikerProp
+    public unsafe partial struct IMonikerProp : IMonikerProp.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT PutProperty(MONIKERPROPERTY mkp, [NativeTypeName("LPCWSTR")] ushort* val)
         {
             return ((delegate* unmanaged<IMonikerProp*, MONIKERPROPERTY, ushort*, int>)(lpVtbl[3]))((IMonikerProp*)Unsafe.AsPointer(ref this), mkp, val);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT PutProperty(MONIKERPROPERTY mkp, [NativeTypeName("LPCWSTR")] ushort* val);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMonikerProp*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMonikerProp*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMonikerProp*, uint> Release;
+
+            [NativeTypeName("HRESULT (MONIKERPROPERTY, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMonikerProp*, MONIKERPROPERTY, ushort*, int> PutProperty;
         }
     }
 }

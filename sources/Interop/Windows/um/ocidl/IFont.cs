@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BEF6E002-A874-101A-8BBA-00AA00300CAB")]
     [NativeTypeName("struct IFont : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFont
+    public unsafe partial struct IFont : IFont.Interface
     {
         public void** lpVtbl;
 
@@ -205,6 +205,165 @@ namespace TerraFX.Interop
         public HRESULT SetHdc(HDC hDC)
         {
             return ((delegate* unmanaged<IFont*, HDC, int>)(lpVtbl[26]))((IFont*)Unsafe.AsPointer(ref this), hDC);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT get_Name([NativeTypeName("BSTR *")] ushort** pName);
+
+            [VtblIndex(4)]
+            HRESULT put_Name([NativeTypeName("BSTR")] ushort* name);
+
+            [VtblIndex(5)]
+            HRESULT get_Size(CY* pSize);
+
+            [VtblIndex(6)]
+            HRESULT put_Size(CY size);
+
+            [VtblIndex(7)]
+            HRESULT get_Bold(BOOL* pBold);
+
+            [VtblIndex(8)]
+            HRESULT put_Bold(BOOL bold);
+
+            [VtblIndex(9)]
+            HRESULT get_Italic(BOOL* pItalic);
+
+            [VtblIndex(10)]
+            HRESULT put_Italic(BOOL italic);
+
+            [VtblIndex(11)]
+            HRESULT get_Underline(BOOL* pUnderline);
+
+            [VtblIndex(12)]
+            HRESULT put_Underline(BOOL underline);
+
+            [VtblIndex(13)]
+            HRESULT get_Strikethrough(BOOL* pStrikethrough);
+
+            [VtblIndex(14)]
+            HRESULT put_Strikethrough(BOOL strikethrough);
+
+            [VtblIndex(15)]
+            HRESULT get_Weight(short* pWeight);
+
+            [VtblIndex(16)]
+            HRESULT put_Weight(short weight);
+
+            [VtblIndex(17)]
+            HRESULT get_Charset(short* pCharset);
+
+            [VtblIndex(18)]
+            HRESULT put_Charset(short charset);
+
+            [VtblIndex(19)]
+            HRESULT get_hFont(HFONT* phFont);
+
+            [VtblIndex(20)]
+            HRESULT Clone(IFont** ppFont);
+
+            [VtblIndex(21)]
+            HRESULT IsEqual(IFont* pFontOther);
+
+            [VtblIndex(22)]
+            HRESULT SetRatio([NativeTypeName("LONG")] int cyLogical, [NativeTypeName("LONG")] int cyHimetric);
+
+            [VtblIndex(23)]
+            HRESULT QueryTextMetrics([NativeTypeName("TEXTMETRICOLE *")] TEXTMETRICW* pTM);
+
+            [VtblIndex(24)]
+            HRESULT AddRefHfont(HFONT hFont);
+
+            [VtblIndex(25)]
+            HRESULT ReleaseHfont(HFONT hFont);
+
+            [VtblIndex(26)]
+            HRESULT SetHdc(HDC hDC);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, uint> Release;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, ushort**, int> get_Name;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, ushort*, int> put_Name;
+
+            [NativeTypeName("HRESULT (CY *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, CY*, int> get_Size;
+
+            [NativeTypeName("HRESULT (CY) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, CY, int> put_Size;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, BOOL*, int> get_Bold;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, BOOL, int> put_Bold;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, BOOL*, int> get_Italic;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, BOOL, int> put_Italic;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, BOOL*, int> get_Underline;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, BOOL, int> put_Underline;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, BOOL*, int> get_Strikethrough;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, BOOL, int> put_Strikethrough;
+
+            [NativeTypeName("HRESULT (SHORT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, short*, int> get_Weight;
+
+            [NativeTypeName("HRESULT (SHORT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, short, int> put_Weight;
+
+            [NativeTypeName("HRESULT (SHORT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, short*, int> get_Charset;
+
+            [NativeTypeName("HRESULT (SHORT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, short, int> put_Charset;
+
+            [NativeTypeName("HRESULT (HFONT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, HFONT*, int> get_hFont;
+
+            [NativeTypeName("HRESULT (IFont **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, IFont**, int> Clone;
+
+            [NativeTypeName("HRESULT (IFont *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, IFont*, int> IsEqual;
+
+            [NativeTypeName("HRESULT (LONG, LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, int, int, int> SetRatio;
+
+            [NativeTypeName("HRESULT (TEXTMETRICOLE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, TEXTMETRICW*, int> QueryTextMetrics;
+
+            [NativeTypeName("HRESULT (HFONT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, HFONT, int> AddRefHfont;
+
+            [NativeTypeName("HRESULT (HFONT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, HFONT, int> ReleaseHfont;
+
+            [NativeTypeName("HRESULT (HDC) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFont*, HDC, int> SetHdc;
         }
     }
 }

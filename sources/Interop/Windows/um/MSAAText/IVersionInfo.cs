@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("401518EC-DB00-4611-9B29-2A0E4B9AFA85")]
     [NativeTypeName("struct IVersionInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IVersionInfo
+    public unsafe partial struct IVersionInfo : IVersionInfo.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT GetInstanceDescription([NativeTypeName("ULONG")] uint ulSub, [NativeTypeName("BSTR *")] ushort** pImplStr)
         {
             return ((delegate* unmanaged<IVersionInfo*, uint, ushort**, int>)(lpVtbl[7]))((IVersionInfo*)Unsafe.AsPointer(ref this), ulSub, pImplStr);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetSubcomponentCount([NativeTypeName("ULONG")] uint ulSub, [NativeTypeName("ULONG *")] uint* ulCount);
+
+            [VtblIndex(4)]
+            HRESULT GetImplementationID([NativeTypeName("ULONG")] uint ulSub, Guid* implid);
+
+            [VtblIndex(5)]
+            HRESULT GetBuildVersion([NativeTypeName("ULONG")] uint ulSub, [NativeTypeName("DWORD *")] uint* pdwMajor, [NativeTypeName("DWORD *")] uint* pdwMinor);
+
+            [VtblIndex(6)]
+            HRESULT GetComponentDescription([NativeTypeName("ULONG")] uint ulSub, [NativeTypeName("BSTR *")] ushort** pImplStr);
+
+            [VtblIndex(7)]
+            HRESULT GetInstanceDescription([NativeTypeName("ULONG")] uint ulSub, [NativeTypeName("BSTR *")] ushort** pImplStr);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVersionInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVersionInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IVersionInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVersionInfo*, uint, uint*, int> GetSubcomponentCount;
+
+            [NativeTypeName("HRESULT (ULONG, GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVersionInfo*, uint, Guid*, int> GetImplementationID;
+
+            [NativeTypeName("HRESULT (ULONG, DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVersionInfo*, uint, uint*, uint*, int> GetBuildVersion;
+
+            [NativeTypeName("HRESULT (ULONG, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVersionInfo*, uint, ushort**, int> GetComponentDescription;
+
+            [NativeTypeName("HRESULT (ULONG, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IVersionInfo*, uint, ushort**, int> GetInstanceDescription;
         }
     }
 }

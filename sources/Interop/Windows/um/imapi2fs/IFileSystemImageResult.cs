@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2C941FD8-975B-59BE-A960-9A2A262853A5")]
     [NativeTypeName("struct IFileSystemImageResult : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IFileSystemImageResult
+    public unsafe partial struct IFileSystemImageResult : IFileSystemImageResult.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,63 @@ namespace TerraFX.Interop
         public HRESULT get_DiscId([NativeTypeName("BSTR *")] ushort** pVal)
         {
             return ((delegate* unmanaged<IFileSystemImageResult*, ushort**, int>)(lpVtbl[11]))((IFileSystemImageResult*)Unsafe.AsPointer(ref this), pVal);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_ImageStream(IStream** pVal);
+
+            [VtblIndex(8)]
+            HRESULT get_ProgressItems(IProgressItems** pVal);
+
+            [VtblIndex(9)]
+            HRESULT get_TotalBlocks([NativeTypeName("LONG *")] int* pVal);
+
+            [VtblIndex(10)]
+            HRESULT get_BlockSize([NativeTypeName("LONG *")] int* pVal);
+
+            [VtblIndex(11)]
+            HRESULT get_DiscId([NativeTypeName("BSTR *")] ushort** pVal);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImageResult*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImageResult*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImageResult*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImageResult*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImageResult*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImageResult*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImageResult*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImageResult*, IStream**, int> get_ImageStream;
+
+            [NativeTypeName("HRESULT (IProgressItems **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImageResult*, IProgressItems**, int> get_ProgressItems;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImageResult*, int*, int> get_TotalBlocks;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImageResult*, int*, int> get_BlockSize;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSystemImageResult*, ushort**, int> get_DiscId;
         }
     }
 }

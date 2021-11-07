@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E982CE48-0B96-440C-BC37-0C869B27A29E")]
     [NativeTypeName("struct IUriBuilderFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUriBuilderFactory
+    public unsafe partial struct IUriBuilderFactory : IUriBuilderFactory.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT CreateInitializedIUriBuilder([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUriBuilder** ppIUriBuilder)
         {
             return ((delegate* unmanaged<IUriBuilderFactory*, uint, nuint, IUriBuilder**, int>)(lpVtbl[4]))((IUriBuilderFactory*)Unsafe.AsPointer(ref this), dwFlags, dwReserved, ppIUriBuilder);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateIUriBuilder([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUriBuilder** ppIUriBuilder);
+
+            [VtblIndex(4)]
+            HRESULT CreateInitializedIUriBuilder([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUriBuilder** ppIUriBuilder);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilderFactory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilderFactory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilderFactory*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD_PTR, IUriBuilder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilderFactory*, uint, nuint, IUriBuilder**, int> CreateIUriBuilder;
+
+            [NativeTypeName("HRESULT (DWORD, DWORD_PTR, IUriBuilder **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUriBuilderFactory*, uint, nuint, IUriBuilder**, int> CreateInitializedIUriBuilder;
         }
     }
 }

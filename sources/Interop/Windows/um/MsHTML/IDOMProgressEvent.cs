@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051071E-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMProgressEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMProgressEvent
+    public unsafe partial struct IDOMProgressEvent : IDOMProgressEvent.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,57 @@ namespace TerraFX.Interop
         public HRESULT initProgressEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("VARIANT_BOOL")] short lengthComputableArg, [NativeTypeName("ULONGLONG")] ulong loadedArg, [NativeTypeName("ULONGLONG")] ulong totalArg)
         {
             return ((delegate* unmanaged<IDOMProgressEvent*, ushort*, short, short, short, ulong, ulong, int>)(lpVtbl[10]))((IDOMProgressEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, lengthComputableArg, loadedArg, totalArg);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_lengthComputable([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(8)]
+            HRESULT get_loaded([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(9)]
+            HRESULT get_total([NativeTypeName("ULONGLONG *")] ulong* p);
+
+            [VtblIndex(10)]
+            HRESULT initProgressEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("VARIANT_BOOL")] short lengthComputableArg, [NativeTypeName("ULONGLONG")] ulong loadedArg, [NativeTypeName("ULONGLONG")] ulong totalArg);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMProgressEvent*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMProgressEvent*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMProgressEvent*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMProgressEvent*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMProgressEvent*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMProgressEvent*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMProgressEvent*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMProgressEvent*, short*, int> get_lengthComputable;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMProgressEvent*, ulong*, int> get_loaded;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMProgressEvent*, ulong*, int> get_total;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, VARIANT_BOOL, ULONGLONG, ULONGLONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMProgressEvent*, ushort*, short, short, short, ulong, ulong, int> initProgressEvent;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("03910848-AB16-4611-B100-17B88AE2F248")]
     [NativeTypeName("struct IMFRealTimeClientEx : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFRealTimeClientEx
+    public unsafe partial struct IMFRealTimeClientEx : IMFRealTimeClientEx.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT SetWorkQueueEx([NativeTypeName("DWORD")] uint dwMultithreadedWorkQueueId, [NativeTypeName("LONG")] int lWorkItemBasePriority)
         {
             return ((delegate* unmanaged<IMFRealTimeClientEx*, uint, int, int>)(lpVtbl[5]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this), dwMultithreadedWorkQueueId, lWorkItemBasePriority);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RegisterThreadsEx([NativeTypeName("DWORD *")] uint* pdwTaskIndex, [NativeTypeName("LPCWSTR")] ushort* wszClassName, [NativeTypeName("LONG")] int lBasePriority);
+
+            [VtblIndex(4)]
+            HRESULT UnregisterThreads();
+
+            [VtblIndex(5)]
+            HRESULT SetWorkQueueEx([NativeTypeName("DWORD")] uint dwMultithreadedWorkQueueId, [NativeTypeName("LONG")] int lWorkItemBasePriority);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRealTimeClientEx*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRealTimeClientEx*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRealTimeClientEx*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *, LPCWSTR, LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRealTimeClientEx*, uint*, ushort*, int, int> RegisterThreadsEx;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRealTimeClientEx*, int> UnregisterThreads;
+
+            [NativeTypeName("HRESULT (DWORD, LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFRealTimeClientEx*, uint, int, int> SetWorkQueueEx;
         }
     }
 }

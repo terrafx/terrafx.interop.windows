@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F52E2B61-18A1-11D1-B105-00805F49916B")]
     [NativeTypeName("struct IXMLDocument : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IXMLDocument
+    public unsafe partial struct IXMLDocument : IXMLDocument.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,117 @@ namespace TerraFX.Interop
         public HRESULT createElement(VARIANT vType, VARIANT var1, IXMLElement** ppElem)
         {
             return ((delegate* unmanaged<IXMLDocument*, VARIANT, VARIANT, IXMLElement**, int>)(lpVtbl[20]))((IXMLDocument*)Unsafe.AsPointer(ref this), vType, var1, ppElem);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_root(IXMLElement** p);
+
+            [VtblIndex(8)]
+            HRESULT get_fileSize([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT get_fileModifiedDate([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(10)]
+            HRESULT get_fileUpdatedDate([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT get_URL([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(12)]
+            HRESULT put_URL([NativeTypeName("BSTR")] ushort* p);
+
+            [VtblIndex(13)]
+            HRESULT get_mimeType([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(14)]
+            HRESULT get_readyState([NativeTypeName("long *")] int* pl);
+
+            [VtblIndex(15)]
+            HRESULT get_charset([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(16)]
+            HRESULT put_charset([NativeTypeName("BSTR")] ushort* p);
+
+            [VtblIndex(17)]
+            HRESULT get_version([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(18)]
+            HRESULT get_doctype([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(19)]
+            HRESULT get_dtdURL([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(20)]
+            HRESULT createElement(VARIANT vType, VARIANT var1, IXMLElement** ppElem);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDocument*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDocument*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDocument*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDocument*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDocument*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDocument*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDocument*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IXMLElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDocument*, IXMLElement**, int> get_root;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDocument*, ushort**, int> get_fileSize;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDocument*, ushort**, int> get_fileModifiedDate;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDocument*, ushort**, int> get_fileUpdatedDate;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDocument*, ushort**, int> get_URL;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDocument*, ushort*, int> put_URL;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDocument*, ushort**, int> get_mimeType;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDocument*, int*, int> get_readyState;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDocument*, ushort**, int> get_charset;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDocument*, ushort*, int> put_charset;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDocument*, ushort**, int> get_version;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDocument*, ushort**, int> get_doctype;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDocument*, ushort**, int> get_dtdURL;
+
+            [NativeTypeName("HRESULT (VARIANT, VARIANT, IXMLElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IXMLDocument*, VARIANT, VARIANT, IXMLElement**, int> createElement;
         }
     }
 }

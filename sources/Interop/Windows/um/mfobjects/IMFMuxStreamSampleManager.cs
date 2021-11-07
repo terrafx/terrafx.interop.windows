@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("74ABBC19-B1CC-4E41-BB8B-9D9B86A8F6CA")]
     [NativeTypeName("struct IMFMuxStreamSampleManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMuxStreamSampleManager
+    public unsafe partial struct IMFMuxStreamSampleManager : IMFMuxStreamSampleManager.Interface
     {
         public void** lpVtbl;
 
@@ -59,6 +59,40 @@ namespace TerraFX.Interop
         public ulong GetStreamConfiguration()
         {
             return ((delegate* unmanaged<IMFMuxStreamSampleManager*, ulong>)(lpVtbl[5]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetStreamCount([NativeTypeName("DWORD *")] uint* pdwMuxStreamCount);
+
+            [VtblIndex(4)]
+            HRESULT GetSample([NativeTypeName("DWORD")] uint dwMuxStreamIndex, IMFSample** ppSample);
+
+            [VtblIndex(5)]
+            [return: NativeTypeName("ULONGLONG")]
+            ulong GetStreamConfiguration();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMuxStreamSampleManager*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMuxStreamSampleManager*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMuxStreamSampleManager*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMuxStreamSampleManager*, uint*, int> GetStreamCount;
+
+            [NativeTypeName("HRESULT (DWORD, IMFSample **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMuxStreamSampleManager*, uint, IMFSample**, int> GetSample;
+
+            [NativeTypeName("ULONGLONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMuxStreamSampleManager*, ulong> GetStreamConfiguration;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A88826F8-186F-4987-AADE-EA0CEF8FBFE8")]
     [NativeTypeName("struct IEnumExplorerCommand : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumExplorerCommand
+    public unsafe partial struct IEnumExplorerCommand : IEnumExplorerCommand.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Clone(IEnumExplorerCommand** ppenum)
         {
             return ((delegate* unmanaged<IEnumExplorerCommand*, IEnumExplorerCommand**, int>)(lpVtbl[6]))((IEnumExplorerCommand*)Unsafe.AsPointer(ref this), ppenum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Next([NativeTypeName("ULONG")] uint celt, IExplorerCommand** pUICommand, [NativeTypeName("ULONG *")] uint* pceltFetched);
+
+            [VtblIndex(4)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint celt);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Clone(IEnumExplorerCommand** ppenum);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumExplorerCommand*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumExplorerCommand*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumExplorerCommand*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, IExplorerCommand **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumExplorerCommand*, uint, IExplorerCommand**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumExplorerCommand*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumExplorerCommand*, int> Reset;
+
+            [NativeTypeName("HRESULT (IEnumExplorerCommand **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumExplorerCommand*, IEnumExplorerCommand**, int> Clone;
         }
     }
 }

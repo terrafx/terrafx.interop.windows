@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2FC57384-A068-44D7-A331-30982FCF7177")]
     [NativeTypeName("struct IGraphicsEffectD2D1Interop : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IGraphicsEffectD2D1Interop
+    public unsafe partial struct IGraphicsEffectD2D1Interop : IGraphicsEffectD2D1Interop.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,57 @@ namespace TerraFX.Interop
         public HRESULT GetSourceCount(uint* count)
         {
             return ((delegate* unmanaged<IGraphicsEffectD2D1Interop*, uint*, int>)(lpVtbl[8]))((IGraphicsEffectD2D1Interop*)Unsafe.AsPointer(ref this), count);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetEffectId(Guid* id);
+
+            [VtblIndex(4)]
+            HRESULT GetNamedPropertyMapping([NativeTypeName("LPCWSTR")] ushort* name, uint* index, [NativeTypeName("ABI::Windows::Graphics::Effects::GRAPHICS_EFFECT_PROPERTY_MAPPING *")] GRAPHICS_EFFECT_PROPERTY_MAPPING* mapping);
+
+            [VtblIndex(5)]
+            HRESULT GetPropertyCount(uint* count);
+
+            [VtblIndex(6)]
+            HRESULT GetProperty(uint index, [NativeTypeName("Windows::Foundation::IPropertyValue **")] void** value);
+
+            [VtblIndex(7)]
+            HRESULT GetSource(uint index, [NativeTypeName("ABI::Windows::Graphics::Effects::IGraphicsEffectSource **")] void** source);
+
+            [VtblIndex(8)]
+            HRESULT GetSourceCount(uint* count);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphicsEffectD2D1Interop*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphicsEffectD2D1Interop*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphicsEffectD2D1Interop*, uint> Release;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphicsEffectD2D1Interop*, Guid*, int> GetEffectId;
+
+            [NativeTypeName("HRESULT (LPCWSTR, UINT *, ABI::Windows::Graphics::Effects::GRAPHICS_EFFECT_PROPERTY_MAPPING *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphicsEffectD2D1Interop*, ushort*, uint*, GRAPHICS_EFFECT_PROPERTY_MAPPING*, int> GetNamedPropertyMapping;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphicsEffectD2D1Interop*, uint*, int> GetPropertyCount;
+
+            [NativeTypeName("HRESULT (UINT, Windows::Foundation::IPropertyValue **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphicsEffectD2D1Interop*, uint, void**, int> GetProperty;
+
+            [NativeTypeName("HRESULT (UINT, ABI::Windows::Graphics::Effects::IGraphicsEffectSource **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphicsEffectD2D1Interop*, uint, void**, int> GetSource;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphicsEffectD2D1Interop*, uint*, int> GetSourceCount;
         }
     }
 }

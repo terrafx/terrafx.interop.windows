@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F292E401-C050-4CDE-83D7-04962D3B23C2")]
     [NativeTypeName("struct ID2D1GradientMesh : ID2D1Resource")]
     [NativeInheritance("ID2D1Resource")]
-    public unsafe partial struct ID2D1GradientMesh
+    public unsafe partial struct ID2D1GradientMesh : ID2D1GradientMesh.Interface
     {
         public void** lpVtbl;
 
@@ -59,6 +59,37 @@ namespace TerraFX.Interop
         public HRESULT GetPatches([NativeTypeName("UINT32")] uint startIndex, D2D1_GRADIENT_MESH_PATCH* patches, [NativeTypeName("UINT32")] uint patchesCount)
         {
             return ((delegate* unmanaged<ID2D1GradientMesh*, uint, D2D1_GRADIENT_MESH_PATCH*, uint, int>)(lpVtbl[5]))((ID2D1GradientMesh*)Unsafe.AsPointer(ref this), startIndex, patches, patchesCount);
+        }
+
+        public interface Interface : ID2D1Resource.Interface
+        {
+            [VtblIndex(4)]
+            [return: NativeTypeName("UINT32")]
+            uint GetPatchCount();
+
+            [VtblIndex(5)]
+            HRESULT GetPatches([NativeTypeName("UINT32")] uint startIndex, D2D1_GRADIENT_MESH_PATCH* patches, [NativeTypeName("UINT32")] uint patchesCount);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1GradientMesh*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1GradientMesh*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1GradientMesh*, uint> Release;
+
+            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1GradientMesh*, ID2D1Factory**, void> GetFactory;
+
+            [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1GradientMesh*, uint> GetPatchCount;
+
+            [NativeTypeName("HRESULT (UINT32, D2D1_GRADIENT_MESH_PATCH *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1GradientMesh*, uint, D2D1_GRADIENT_MESH_PATCH*, uint, int> GetPatches;
         }
     }
 }

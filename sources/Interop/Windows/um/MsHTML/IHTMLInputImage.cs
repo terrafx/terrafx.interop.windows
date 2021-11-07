@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F2C2-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLInputImage : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLInputImage
+    public unsafe partial struct IHTMLInputImage : IHTMLInputImage.Interface
     {
         public void** lpVtbl;
 
@@ -338,6 +338,267 @@ namespace TerraFX.Interop
         public HRESULT get_start([NativeTypeName("BSTR *")] ushort** p)
         {
             return ((delegate* unmanaged<IHTMLInputImage*, ushort**, int>)(lpVtbl[45]))((IHTMLInputImage*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT put_disabled([NativeTypeName("VARIANT_BOOL")] short v);
+
+            [VtblIndex(9)]
+            HRESULT get_disabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(10)]
+            HRESULT put_border(VARIANT v);
+
+            [VtblIndex(11)]
+            HRESULT get_border(VARIANT* p);
+
+            [VtblIndex(12)]
+            HRESULT put_vspace([NativeTypeName("long")] int v);
+
+            [VtblIndex(13)]
+            HRESULT get_vspace([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(14)]
+            HRESULT put_hspace([NativeTypeName("long")] int v);
+
+            [VtblIndex(15)]
+            HRESULT get_hspace([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(16)]
+            HRESULT put_alt([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(17)]
+            HRESULT get_alt([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(18)]
+            HRESULT put_src([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(19)]
+            HRESULT get_src([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(20)]
+            HRESULT put_lowsrc([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(21)]
+            HRESULT get_lowsrc([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(22)]
+            HRESULT put_vrml([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(23)]
+            HRESULT get_vrml([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(24)]
+            HRESULT put_dynsrc([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(25)]
+            HRESULT get_dynsrc([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(26)]
+            HRESULT get_readyState([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(27)]
+            HRESULT get_complete([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(28)]
+            HRESULT put_loop(VARIANT v);
+
+            [VtblIndex(29)]
+            HRESULT get_loop(VARIANT* p);
+
+            [VtblIndex(30)]
+            HRESULT put_align([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(31)]
+            HRESULT get_align([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(32)]
+            HRESULT put_onload(VARIANT v);
+
+            [VtblIndex(33)]
+            HRESULT get_onload(VARIANT* p);
+
+            [VtblIndex(34)]
+            HRESULT put_onerror(VARIANT v);
+
+            [VtblIndex(35)]
+            HRESULT get_onerror(VARIANT* p);
+
+            [VtblIndex(36)]
+            HRESULT put_onabort(VARIANT v);
+
+            [VtblIndex(37)]
+            HRESULT get_onabort(VARIANT* p);
+
+            [VtblIndex(38)]
+            HRESULT put_name([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(39)]
+            HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(40)]
+            HRESULT put_width([NativeTypeName("long")] int v);
+
+            [VtblIndex(41)]
+            HRESULT get_width([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(42)]
+            HRESULT put_height([NativeTypeName("long")] int v);
+
+            [VtblIndex(43)]
+            HRESULT get_height([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(44)]
+            HRESULT put_start([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(45)]
+            HRESULT get_start([NativeTypeName("BSTR *")] ushort** p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, ushort**, int> get_type;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, short, int> put_disabled;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, short*, int> get_disabled;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, VARIANT, int> put_border;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, VARIANT*, int> get_border;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, int, int> put_vspace;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, int*, int> get_vspace;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, int, int> put_hspace;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, int*, int> get_hspace;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, ushort*, int> put_alt;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, ushort**, int> get_alt;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, ushort*, int> put_src;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, ushort**, int> get_src;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, ushort*, int> put_lowsrc;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, ushort**, int> get_lowsrc;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, ushort*, int> put_vrml;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, ushort**, int> get_vrml;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, ushort*, int> put_dynsrc;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, ushort**, int> get_dynsrc;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, ushort**, int> get_readyState;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, short*, int> get_complete;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, VARIANT, int> put_loop;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, VARIANT*, int> get_loop;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, ushort*, int> put_align;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, ushort**, int> get_align;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, VARIANT, int> put_onload;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, VARIANT*, int> get_onload;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, VARIANT, int> put_onerror;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, VARIANT*, int> get_onerror;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, VARIANT, int> put_onabort;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, VARIANT*, int> get_onabort;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, ushort*, int> put_name;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, ushort**, int> get_name;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, int, int> put_width;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, int*, int> get_width;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, int, int> put_height;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, int*, int> get_height;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, ushort*, int> put_start;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLInputImage*, ushort**, int> get_start;
         }
     }
 }

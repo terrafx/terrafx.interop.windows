@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79EAC9D1-BAF9-11CE-8C82-00AA004BA90B")]
     [NativeTypeName("struct ICodeInstall : IWindowForBindingUI")]
     [NativeInheritance("IWindowForBindingUI")]
-    public unsafe partial struct ICodeInstall
+    public unsafe partial struct ICodeInstall : ICodeInstall.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,30 @@ namespace TerraFX.Interop
         public HRESULT OnCodeInstallProblem([NativeTypeName("ULONG")] uint ulStatusCode, [NativeTypeName("LPCWSTR")] ushort* szDestination, [NativeTypeName("LPCWSTR")] ushort* szSource, [NativeTypeName("DWORD")] uint dwReserved)
         {
             return ((delegate* unmanaged<ICodeInstall*, uint, ushort*, ushort*, uint, int>)(lpVtbl[4]))((ICodeInstall*)Unsafe.AsPointer(ref this), ulStatusCode, szDestination, szSource, dwReserved);
+        }
+
+        public interface Interface : IWindowForBindingUI.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT OnCodeInstallProblem([NativeTypeName("ULONG")] uint ulStatusCode, [NativeTypeName("LPCWSTR")] ushort* szDestination, [NativeTypeName("LPCWSTR")] ushort* szSource, [NativeTypeName("DWORD")] uint dwReserved);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICodeInstall*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICodeInstall*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICodeInstall*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICodeInstall*, Guid*, HWND*, int> GetWindow;
+
+            [NativeTypeName("HRESULT (ULONG, LPCWSTR, LPCWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICodeInstall*, uint, ushort*, ushort*, uint, int> OnCodeInstallProblem;
         }
     }
 }

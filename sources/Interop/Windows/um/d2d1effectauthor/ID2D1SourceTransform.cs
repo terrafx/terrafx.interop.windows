@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DB1800DD-0C34-4CF9-BE90-31CC0A5653E1")]
     [NativeTypeName("struct ID2D1SourceTransform : ID2D1Transform")]
     [NativeInheritance("ID2D1Transform")]
-    public unsafe partial struct ID2D1SourceTransform
+    public unsafe partial struct ID2D1SourceTransform : ID2D1SourceTransform.Interface
     {
         public void** lpVtbl;
 
@@ -80,6 +80,45 @@ namespace TerraFX.Interop
         public HRESULT Draw(ID2D1Bitmap1* target, [NativeTypeName("const D2D1_RECT_L *")] RECT* drawRect, [NativeTypeName("D2D1_POINT_2U")] D2D_POINT_2U targetOrigin)
         {
             return ((delegate* unmanaged<ID2D1SourceTransform*, ID2D1Bitmap1*, RECT*, D2D_POINT_2U, int>)(lpVtbl[8]))((ID2D1SourceTransform*)Unsafe.AsPointer(ref this), target, drawRect, targetOrigin);
+        }
+
+        public interface Interface : ID2D1Transform.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT SetRenderInfo(ID2D1RenderInfo* renderInfo);
+
+            [VtblIndex(8)]
+            HRESULT Draw(ID2D1Bitmap1* target, [NativeTypeName("const D2D1_RECT_L *")] RECT* drawRect, [NativeTypeName("D2D1_POINT_2U")] D2D_POINT_2U targetOrigin);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SourceTransform*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SourceTransform*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SourceTransform*, uint> Release;
+
+            [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SourceTransform*, uint> GetInputCount;
+
+            [NativeTypeName("HRESULT (const D2D1_RECT_L *, D2D1_RECT_L *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SourceTransform*, RECT*, RECT*, uint, int> MapOutputRectToInputRects;
+
+            [NativeTypeName("HRESULT (const D2D1_RECT_L *, const D2D1_RECT_L *, UINT32, D2D1_RECT_L *, D2D1_RECT_L *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SourceTransform*, RECT*, RECT*, uint, RECT*, RECT*, int> MapInputRectsToOutputRect;
+
+            [NativeTypeName("HRESULT (UINT32, D2D1_RECT_L, D2D1_RECT_L *) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SourceTransform*, uint, RECT, RECT*, int> MapInvalidRect;
+
+            [NativeTypeName("HRESULT (ID2D1RenderInfo *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SourceTransform*, ID2D1RenderInfo*, int> SetRenderInfo;
+
+            [NativeTypeName("HRESULT (ID2D1Bitmap1 *, const D2D1_RECT_L *, D2D1_POINT_2U) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1SourceTransform*, ID2D1Bitmap1*, RECT*, D2D_POINT_2U, int> Draw;
         }
     }
 }

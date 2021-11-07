@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B9AC5783-FCD0-4B21-B119-B4F8DA8FD2C3")]
     [NativeTypeName("struct ISpeechResourceLoader : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechResourceLoader
+    public unsafe partial struct ISpeechResourceLoader : ISpeechResourceLoader.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,51 @@ namespace TerraFX.Interop
         public HRESULT ReleaseLocalCopy([NativeTypeName("BSTR")] ushort* pbstrLocalPath)
         {
             return ((delegate* unmanaged<ISpeechResourceLoader*, ushort*, int>)(lpVtbl[9]))((ISpeechResourceLoader*)Unsafe.AsPointer(ref this), pbstrLocalPath);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT LoadResource([NativeTypeName("BSTR")] ushort* bstrResourceUri, [NativeTypeName("VARIANT_BOOL")] short fAlwaysReload, IUnknown** pStream, [NativeTypeName("BSTR *")] ushort** pbstrMIMEType, [NativeTypeName("VARIANT_BOOL *")] short* pfModified, [NativeTypeName("BSTR *")] ushort** pbstrRedirectUrl);
+
+            [VtblIndex(8)]
+            HRESULT GetLocalCopy([NativeTypeName("BSTR")] ushort* bstrResourceUri, [NativeTypeName("BSTR *")] ushort** pbstrLocalPath, [NativeTypeName("BSTR *")] ushort** pbstrMIMEType, [NativeTypeName("BSTR *")] ushort** pbstrRedirectUrl);
+
+            [VtblIndex(9)]
+            HRESULT ReleaseLocalCopy([NativeTypeName("BSTR")] ushort* pbstrLocalPath);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechResourceLoader*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechResourceLoader*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechResourceLoader*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechResourceLoader*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechResourceLoader*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechResourceLoader*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechResourceLoader*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, IUnknown **, BSTR *, VARIANT_BOOL *, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechResourceLoader*, ushort*, short, IUnknown**, ushort**, short*, ushort**, int> LoadResource;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR *, BSTR *, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechResourceLoader*, ushort*, ushort**, ushort**, ushort**, int> GetLocalCopy;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpeechResourceLoader*, ushort*, int> ReleaseLocalCopy;
         }
     }
 }

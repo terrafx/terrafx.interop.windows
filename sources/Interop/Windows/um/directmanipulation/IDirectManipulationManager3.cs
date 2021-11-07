@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2CB6B33D-FFE8-488C-B750-FBDFE88DCA8C")]
     [NativeTypeName("struct IDirectManipulationManager3 : IDirectManipulationManager2")]
     [NativeInheritance("IDirectManipulationManager2")]
-    public unsafe partial struct IDirectManipulationManager3
+    public unsafe partial struct IDirectManipulationManager3 : IDirectManipulationManager3.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,51 @@ namespace TerraFX.Interop
         public HRESULT GetService([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* riid, void** @object)
         {
             return ((delegate* unmanaged<IDirectManipulationManager3*, Guid*, Guid*, void**, int>)(lpVtbl[11]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), clsid, riid, @object);
+        }
+
+        public interface Interface : IDirectManipulationManager2.Interface
+        {
+            [VtblIndex(11)]
+            HRESULT GetService([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* riid, void** @object);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationManager3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationManager3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationManager3*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationManager3*, HWND, int> Activate;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationManager3*, HWND, int> Deactivate;
+
+            [NativeTypeName("HRESULT (HWND, HWND, DIRECTMANIPULATION_HITTEST_TYPE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationManager3*, HWND, HWND, DIRECTMANIPULATION_HITTEST_TYPE, int> RegisterHitTestTarget;
+
+            [NativeTypeName("HRESULT (const MSG *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationManager3*, MSG*, BOOL*, int> ProcessInput;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationManager3*, Guid*, void**, int> GetUpdateManager;
+
+            [NativeTypeName("HRESULT (IDirectManipulationFrameInfoProvider *, HWND, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationManager3*, IDirectManipulationFrameInfoProvider*, HWND, Guid*, void**, int> CreateViewport;
+
+            [NativeTypeName("HRESULT (IDirectManipulationFrameInfoProvider *, const IID &, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationManager3*, IDirectManipulationFrameInfoProvider*, Guid*, Guid*, void**, int> CreateContent;
+
+            [NativeTypeName("HRESULT (const IID &, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationManager3*, Guid*, Guid*, void**, int> CreateBehavior;
+
+            [NativeTypeName("HRESULT (const IID &, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationManager3*, Guid*, Guid*, void**, int> GetService;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4B6832A2-5F04-4C9D-B89D-727A15D103E7")]
     [NativeTypeName("struct IExecuteCommandHost : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IExecuteCommandHost
+    public unsafe partial struct IExecuteCommandHost : IExecuteCommandHost.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetUIMode(EC_HOST_UI_MODE* pUIMode)
         {
             return ((delegate* unmanaged<IExecuteCommandHost*, EC_HOST_UI_MODE*, int>)(lpVtbl[3]))((IExecuteCommandHost*)Unsafe.AsPointer(ref this), pUIMode);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetUIMode(EC_HOST_UI_MODE* pUIMode);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExecuteCommandHost*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IExecuteCommandHost*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IExecuteCommandHost*, uint> Release;
+
+            [NativeTypeName("HRESULT (EC_HOST_UI_MODE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IExecuteCommandHost*, EC_HOST_UI_MODE*, int> GetUIMode;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F6A7-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLPaintSite : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHTMLPaintSite
+    public unsafe partial struct IHTMLPaintSite : IHTMLPaintSite.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,63 @@ namespace TerraFX.Interop
         public HRESULT GetHitTestCookie([NativeTypeName("LONG *")] int* plCookie)
         {
             return ((delegate* unmanaged<IHTMLPaintSite*, int*, int>)(lpVtbl[9]))((IHTMLPaintSite*)Unsafe.AsPointer(ref this), plCookie);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT InvalidatePainterInfo();
+
+            [VtblIndex(4)]
+            HRESULT InvalidateRect(RECT* prcInvalid);
+
+            [VtblIndex(5)]
+            HRESULT InvalidateRegion(HRGN rgnInvalid);
+
+            [VtblIndex(6)]
+            HRESULT GetDrawInfo([NativeTypeName("LONG")] int lFlags, HTML_PAINT_DRAW_INFO* pDrawInfo);
+
+            [VtblIndex(7)]
+            HRESULT TransformGlobalToLocal(POINT ptGlobal, POINT* pptLocal);
+
+            [VtblIndex(8)]
+            HRESULT TransformLocalToGlobal(POINT ptLocal, POINT* pptGlobal);
+
+            [VtblIndex(9)]
+            HRESULT GetHitTestCookie([NativeTypeName("LONG *")] int* plCookie);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPaintSite*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPaintSite*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPaintSite*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPaintSite*, int> InvalidatePainterInfo;
+
+            [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPaintSite*, RECT*, int> InvalidateRect;
+
+            [NativeTypeName("HRESULT (HRGN) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPaintSite*, HRGN, int> InvalidateRegion;
+
+            [NativeTypeName("HRESULT (LONG, HTML_PAINT_DRAW_INFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPaintSite*, int, HTML_PAINT_DRAW_INFO*, int> GetDrawInfo;
+
+            [NativeTypeName("HRESULT (POINT, POINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPaintSite*, POINT, POINT*, int> TransformGlobalToLocal;
+
+            [NativeTypeName("HRESULT (POINT, POINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPaintSite*, POINT, POINT*, int> TransformLocalToGlobal;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPaintSite*, int*, int> GetHitTestCookie;
         }
     }
 }

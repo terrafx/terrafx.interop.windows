@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("27354142-7F64-5B0F-8F00-5D77AFBE261E")]
     [NativeTypeName("struct DDiscFormat2RawCDEvents : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct DDiscFormat2RawCDEvents
+    public unsafe partial struct DDiscFormat2RawCDEvents : DDiscFormat2RawCDEvents.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,39 @@ namespace TerraFX.Interop
         public HRESULT Update(IDispatch* @object, IDispatch* progress)
         {
             return ((delegate* unmanaged<DDiscFormat2RawCDEvents*, IDispatch*, IDispatch*, int>)(lpVtbl[7]))((DDiscFormat2RawCDEvents*)Unsafe.AsPointer(ref this), @object, progress);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT Update(IDispatch* @object, IDispatch* progress);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<DDiscFormat2RawCDEvents*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<DDiscFormat2RawCDEvents*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<DDiscFormat2RawCDEvents*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<DDiscFormat2RawCDEvents*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<DDiscFormat2RawCDEvents*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<DDiscFormat2RawCDEvents*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<DDiscFormat2RawCDEvents*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IDispatch *, IDispatch *) __attribute__((stdcall))")]
+            public delegate* unmanaged<DDiscFormat2RawCDEvents*, IDispatch*, IDispatch*, int> Update;
         }
     }
 }

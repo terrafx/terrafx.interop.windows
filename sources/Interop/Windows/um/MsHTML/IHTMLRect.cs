@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F4A3-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLRect : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLRect
+    public unsafe partial struct IHTMLRect : IHTMLRect.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,81 @@ namespace TerraFX.Interop
         public HRESULT get_bottom([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<IHTMLRect*, int*, int>)(lpVtbl[14]))((IHTMLRect*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_left([NativeTypeName("long")] int v);
+
+            [VtblIndex(8)]
+            HRESULT get_left([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT put_top([NativeTypeName("long")] int v);
+
+            [VtblIndex(10)]
+            HRESULT get_top([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(11)]
+            HRESULT put_right([NativeTypeName("long")] int v);
+
+            [VtblIndex(12)]
+            HRESULT get_right([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(13)]
+            HRESULT put_bottom([NativeTypeName("long")] int v);
+
+            [VtblIndex(14)]
+            HRESULT get_bottom([NativeTypeName("long *")] int* p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRect*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRect*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRect*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRect*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRect*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRect*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRect*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRect*, int, int> put_left;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRect*, int*, int> get_left;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRect*, int, int> put_top;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRect*, int*, int> get_top;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRect*, int, int> put_right;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRect*, int*, int> get_right;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRect*, int, int> put_bottom;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLRect*, int*, int> get_bottom;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F6DF-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLPainterEventInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHTMLPainterEventInfo
+    public unsafe partial struct IHTMLPainterEventInfo : IHTMLPainterEventInfo.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT StringFromPartID([NativeTypeName("LONG")] int lPartID, [NativeTypeName("BSTR *")] ushort** pbstrPart)
         {
             return ((delegate* unmanaged<IHTMLPainterEventInfo*, int, ushort**, int>)(lpVtbl[6]))((IHTMLPainterEventInfo*)Unsafe.AsPointer(ref this), lPartID, pbstrPart);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetEventInfoFlags([NativeTypeName("long *")] int* plEventInfoFlags);
+
+            [VtblIndex(4)]
+            HRESULT GetEventTarget(IHTMLElement** ppElement);
+
+            [VtblIndex(5)]
+            HRESULT SetCursor([NativeTypeName("LONG")] int lPartID);
+
+            [VtblIndex(6)]
+            HRESULT StringFromPartID([NativeTypeName("LONG")] int lPartID, [NativeTypeName("BSTR *")] ushort** pbstrPart);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPainterEventInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPainterEventInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPainterEventInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPainterEventInfo*, int*, int> GetEventInfoFlags;
+
+            [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPainterEventInfo*, IHTMLElement**, int> GetEventTarget;
+
+            [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPainterEventInfo*, int, int> SetCursor;
+
+            [NativeTypeName("HRESULT (LONG, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLPainterEventInfo*, int, ushort**, int> StringFromPartID;
         }
     }
 }

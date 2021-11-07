@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E5F549CD-C909-444F-8809-7CC18A9C8920")]
     [NativeTypeName("struct IHolographicQuadLayerUpdateParametersInterop : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IHolographicQuadLayerUpdateParametersInterop
+    public unsafe partial struct IHolographicQuadLayerUpdateParametersInterop : IHolographicQuadLayerUpdateParametersInterop.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,36 @@ namespace TerraFX.Interop
         public HRESULT CommitDirect3D12Resource(ID3D12Resource* pColorResourceToCommit, ID3D12Fence* pColorResourceFence, [NativeTypeName("UINT64")] ulong colorResourceFenceSignalValue)
         {
             return ((delegate* unmanaged<IHolographicQuadLayerUpdateParametersInterop*, ID3D12Resource*, ID3D12Fence*, ulong, int>)(lpVtbl[6]))((IHolographicQuadLayerUpdateParametersInterop*)Unsafe.AsPointer(ref this), pColorResourceToCommit, pColorResourceFence, colorResourceFenceSignalValue);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT CommitDirect3D12Resource(ID3D12Resource* pColorResourceToCommit, ID3D12Fence* pColorResourceFence, [NativeTypeName("UINT64")] ulong colorResourceFenceSignalValue);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicQuadLayerUpdateParametersInterop*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicQuadLayerUpdateParametersInterop*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicQuadLayerUpdateParametersInterop*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicQuadLayerUpdateParametersInterop*, uint*, Guid**, int> GetIids;
+
+            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicQuadLayerUpdateParametersInterop*, HSTRING*, int> GetRuntimeClassName;
+
+            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicQuadLayerUpdateParametersInterop*, TrustLevel*, int> GetTrustLevel;
+
+            [NativeTypeName("HRESULT (ID3D12Resource *, ID3D12Fence *, UINT64) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHolographicQuadLayerUpdateParametersInterop*, ID3D12Resource*, ID3D12Fence*, ulong, int> CommitDirect3D12Resource;
         }
     }
 }

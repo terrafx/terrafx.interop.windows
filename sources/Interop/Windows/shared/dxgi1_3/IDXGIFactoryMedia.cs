@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("41E7D1F2-A591-4F7B-A2E5-FA9C843E1C12")]
     [NativeTypeName("struct IDXGIFactoryMedia : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDXGIFactoryMedia
+    public unsafe partial struct IDXGIFactoryMedia : IDXGIFactoryMedia.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT CreateDecodeSwapChainForCompositionSurfaceHandle(IUnknown* pDevice, HANDLE hSurface, DXGI_DECODE_SWAP_CHAIN_DESC* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             return ((delegate* unmanaged<IDXGIFactoryMedia*, IUnknown*, HANDLE, DXGI_DECODE_SWAP_CHAIN_DESC*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)(lpVtbl[4]))((IDXGIFactoryMedia*)Unsafe.AsPointer(ref this), pDevice, hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateSwapChainForCompositionSurfaceHandle(IUnknown* pDevice, HANDLE hSurface, [NativeTypeName("const DXGI_SWAP_CHAIN_DESC1 *")] DXGI_SWAP_CHAIN_DESC1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain);
+
+            [VtblIndex(4)]
+            HRESULT CreateDecodeSwapChainForCompositionSurfaceHandle(IUnknown* pDevice, HANDLE hSurface, DXGI_DECODE_SWAP_CHAIN_DESC* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactoryMedia*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactoryMedia*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactoryMedia*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *, HANDLE, const DXGI_SWAP_CHAIN_DESC1 *, IDXGIOutput *, IDXGISwapChain1 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactoryMedia*, IUnknown*, HANDLE, DXGI_SWAP_CHAIN_DESC1*, IDXGIOutput*, IDXGISwapChain1**, int> CreateSwapChainForCompositionSurfaceHandle;
+
+            [NativeTypeName("HRESULT (IUnknown *, HANDLE, DXGI_DECODE_SWAP_CHAIN_DESC *, IDXGIResource *, IDXGIOutput *, IDXGIDecodeSwapChain **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIFactoryMedia*, IUnknown*, HANDLE, DXGI_DECODE_SWAP_CHAIN_DESC*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int> CreateDecodeSwapChainForCompositionSurfaceHandle;
         }
     }
 }

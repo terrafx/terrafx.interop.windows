@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B4DB1657-70D7-485E-8E3E-6FCB5A5C1802")]
     [NativeTypeName("struct IModalWindow : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IModalWindow
+    public unsafe partial struct IModalWindow : IModalWindow.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT Show(HWND hwndOwner)
         {
             return ((delegate* unmanaged<IModalWindow*, HWND, int>)(lpVtbl[3]))((IModalWindow*)Unsafe.AsPointer(ref this), hwndOwner);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Show(HWND hwndOwner);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IModalWindow*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IModalWindow*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IModalWindow*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IModalWindow*, HWND, int> Show;
         }
     }
 }

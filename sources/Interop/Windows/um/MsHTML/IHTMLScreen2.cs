@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F84A-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLScreen2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLScreen2
+    public unsafe partial struct IHTMLScreen2 : IHTMLScreen2.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,57 @@ namespace TerraFX.Interop
         public HRESULT get_deviceYDPI([NativeTypeName("long *")] int* p)
         {
             return ((delegate* unmanaged<IHTMLScreen2*, int*, int>)(lpVtbl[10]))((IHTMLScreen2*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_logicalXDPI([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(8)]
+            HRESULT get_logicalYDPI([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT get_deviceXDPI([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(10)]
+            HRESULT get_deviceYDPI([NativeTypeName("long *")] int* p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen2*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen2*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen2*, int*, int> get_logicalXDPI;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen2*, int*, int> get_logicalYDPI;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen2*, int*, int> get_deviceXDPI;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLScreen2*, int*, int> get_deviceYDPI;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A792CDBE-C374-4E89-8335-278E7B9956A4")]
     [NativeTypeName("struct IMFVideoSampleAllocatorNotify : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFVideoSampleAllocatorNotify
+    public unsafe partial struct IMFVideoSampleAllocatorNotify : IMFVideoSampleAllocatorNotify.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT NotifyRelease()
         {
             return ((delegate* unmanaged<IMFVideoSampleAllocatorNotify*, int>)(lpVtbl[3]))((IMFVideoSampleAllocatorNotify*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT NotifyRelease();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoSampleAllocatorNotify*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoSampleAllocatorNotify*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoSampleAllocatorNotify*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFVideoSampleAllocatorNotify*, int> NotifyRelease;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A2104830-7C70-11CF-8BCE-00AA00A3F1A6")]
     [NativeTypeName("struct IFileSinkFilter : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFileSinkFilter
+    public unsafe partial struct IFileSinkFilter : IFileSinkFilter.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetCurFile([NativeTypeName("LPOLESTR *")] ushort** ppszFileName, AM_MEDIA_TYPE* pmt)
         {
             return ((delegate* unmanaged<IFileSinkFilter*, ushort**, AM_MEDIA_TYPE*, int>)(lpVtbl[4]))((IFileSinkFilter*)Unsafe.AsPointer(ref this), ppszFileName, pmt);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetFileName([NativeTypeName("LPCOLESTR")] ushort* pszFileName, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt);
+
+            [VtblIndex(4)]
+            HRESULT GetCurFile([NativeTypeName("LPOLESTR *")] ushort** ppszFileName, AM_MEDIA_TYPE* pmt);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSinkFilter*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSinkFilter*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSinkFilter*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCOLESTR, const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSinkFilter*, ushort*, AM_MEDIA_TYPE*, int> SetFileName;
+
+            [NativeTypeName("HRESULT (LPOLESTR *, AM_MEDIA_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFileSinkFilter*, ushort**, AM_MEDIA_TYPE*, int> GetCurFile;
         }
     }
 }

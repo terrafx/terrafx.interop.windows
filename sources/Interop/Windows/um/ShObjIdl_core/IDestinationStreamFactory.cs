@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8A87781B-39A7-4A1F-AAB3-A39B9C34A7D9")]
     [NativeTypeName("struct IDestinationStreamFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDestinationStreamFactory
+    public unsafe partial struct IDestinationStreamFactory : IDestinationStreamFactory.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetDestinationStream(IStream** ppstm)
         {
             return ((delegate* unmanaged<IDestinationStreamFactory*, IStream**, int>)(lpVtbl[3]))((IDestinationStreamFactory*)Unsafe.AsPointer(ref this), ppstm);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDestinationStream(IStream** ppstm);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDestinationStreamFactory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDestinationStreamFactory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDestinationStreamFactory*, uint> Release;
+
+            [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDestinationStreamFactory*, IStream**, int> GetDestinationStream;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("82BC481C-6B9B-4030-AEDB-7EE3D1DF1E63")]
     [NativeTypeName("struct ID3D12DeviceRemovedExtendedDataSettings : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D12DeviceRemovedExtendedDataSettings
+    public unsafe partial struct ID3D12DeviceRemovedExtendedDataSettings : ID3D12DeviceRemovedExtendedDataSettings.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public void SetWatsonDumpEnablement(D3D12_DRED_ENABLEMENT Enablement)
         {
             ((delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings*, D3D12_DRED_ENABLEMENT, void>)(lpVtbl[5]))((ID3D12DeviceRemovedExtendedDataSettings*)Unsafe.AsPointer(ref this), Enablement);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            void SetAutoBreadcrumbsEnablement(D3D12_DRED_ENABLEMENT Enablement);
+
+            [VtblIndex(4)]
+            void SetPageFaultEnablement(D3D12_DRED_ENABLEMENT Enablement);
+
+            [VtblIndex(5)]
+            void SetWatsonDumpEnablement(D3D12_DRED_ENABLEMENT Enablement);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings*, uint> Release;
+
+            [NativeTypeName("void (D3D12_DRED_ENABLEMENT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings*, D3D12_DRED_ENABLEMENT, void> SetAutoBreadcrumbsEnablement;
+
+            [NativeTypeName("void (D3D12_DRED_ENABLEMENT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings*, D3D12_DRED_ENABLEMENT, void> SetPageFaultEnablement;
+
+            [NativeTypeName("void (D3D12_DRED_ENABLEMENT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings*, D3D12_DRED_ENABLEMENT, void> SetWatsonDumpEnablement;
         }
     }
 }

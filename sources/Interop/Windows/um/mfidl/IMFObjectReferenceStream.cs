@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("09EF5BE3-C8A7-469E-8B70-73BF25BB193F")]
     [NativeTypeName("struct IMFObjectReferenceStream : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFObjectReferenceStream
+    public unsafe partial struct IMFObjectReferenceStream : IMFObjectReferenceStream.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT LoadReference([NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             return ((delegate* unmanaged<IMFObjectReferenceStream*, Guid*, void**, int>)(lpVtbl[4]))((IMFObjectReferenceStream*)Unsafe.AsPointer(ref this), riid, ppv);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SaveReference([NativeTypeName("const IID &")] Guid* riid, IUnknown* pUnk);
+
+            [VtblIndex(4)]
+            HRESULT LoadReference([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFObjectReferenceStream*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFObjectReferenceStream*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFObjectReferenceStream*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFObjectReferenceStream*, Guid*, IUnknown*, int> SaveReference;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFObjectReferenceStream*, Guid*, void**, int> LoadReference;
         }
     }
 }

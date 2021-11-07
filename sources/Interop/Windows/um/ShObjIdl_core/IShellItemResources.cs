@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FF5693BE-2CE0-4D48-B5C5-40817D1ACDB9")]
     [NativeTypeName("struct IShellItemResources : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellItemResources
+    public unsafe partial struct IShellItemResources : IShellItemResources.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,81 @@ namespace TerraFX.Interop
         public HRESULT MarkForDelete()
         {
             return ((delegate* unmanaged<IShellItemResources*, int>)(lpVtbl[12]))((IShellItemResources*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetAttributes([NativeTypeName("DWORD *")] uint* pdwAttributes);
+
+            [VtblIndex(4)]
+            HRESULT GetSize([NativeTypeName("ULONGLONG *")] ulong* pullSize);
+
+            [VtblIndex(5)]
+            HRESULT GetTimes(FILETIME* pftCreation, FILETIME* pftWrite, FILETIME* pftAccess);
+
+            [VtblIndex(6)]
+            HRESULT SetTimes([NativeTypeName("const FILETIME *")] FILETIME* pftCreation, [NativeTypeName("const FILETIME *")] FILETIME* pftWrite, [NativeTypeName("const FILETIME *")] FILETIME* pftAccess);
+
+            [VtblIndex(7)]
+            HRESULT GetResourceDescription([NativeTypeName("const SHELL_ITEM_RESOURCE *")] SHELL_ITEM_RESOURCE* pcsir, [NativeTypeName("LPWSTR *")] ushort** ppszDescription);
+
+            [VtblIndex(8)]
+            HRESULT EnumResources(IEnumResources** ppenumr);
+
+            [VtblIndex(9)]
+            HRESULT SupportsResource([NativeTypeName("const SHELL_ITEM_RESOURCE *")] SHELL_ITEM_RESOURCE* pcsir);
+
+            [VtblIndex(10)]
+            HRESULT OpenResource([NativeTypeName("const SHELL_ITEM_RESOURCE *")] SHELL_ITEM_RESOURCE* pcsir, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(11)]
+            HRESULT CreateResource([NativeTypeName("const SHELL_ITEM_RESOURCE *")] SHELL_ITEM_RESOURCE* pcsir, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(12)]
+            HRESULT MarkForDelete();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, uint*, int> GetAttributes;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, ulong*, int> GetSize;
+
+            [NativeTypeName("HRESULT (FILETIME *, FILETIME *, FILETIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, FILETIME*, FILETIME*, FILETIME*, int> GetTimes;
+
+            [NativeTypeName("HRESULT (const FILETIME *, const FILETIME *, const FILETIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, FILETIME*, FILETIME*, FILETIME*, int> SetTimes;
+
+            [NativeTypeName("HRESULT (const SHELL_ITEM_RESOURCE *, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, SHELL_ITEM_RESOURCE*, ushort**, int> GetResourceDescription;
+
+            [NativeTypeName("HRESULT (IEnumResources **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, IEnumResources**, int> EnumResources;
+
+            [NativeTypeName("HRESULT (const SHELL_ITEM_RESOURCE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, SHELL_ITEM_RESOURCE*, int> SupportsResource;
+
+            [NativeTypeName("HRESULT (const SHELL_ITEM_RESOURCE *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, SHELL_ITEM_RESOURCE*, Guid*, void**, int> OpenResource;
+
+            [NativeTypeName("HRESULT (const SHELL_ITEM_RESOURCE *, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, SHELL_ITEM_RESOURCE*, Guid*, void**, int> CreateResource;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IShellItemResources*, int> MarkForDelete;
         }
     }
 }

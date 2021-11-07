@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("86303D6D-1C4A-4087-AB42-F711167048EF")]
     [NativeTypeName("struct IDvdState : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDvdState
+    public unsafe partial struct IDvdState : IDvdState.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetParentalLevel([NativeTypeName("ULONG *")] uint* pulParentalLevel)
         {
             return ((delegate* unmanaged<IDvdState*, uint*, int>)(lpVtbl[4]))((IDvdState*)Unsafe.AsPointer(ref this), pulParentalLevel);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetDiscID([NativeTypeName("ULONGLONG *")] ulong* pullUniqueID);
+
+            [VtblIndex(4)]
+            HRESULT GetParentalLevel([NativeTypeName("ULONG *")] uint* pulParentalLevel);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdState*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdState*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdState*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdState*, ulong*, int> GetDiscID;
+
+            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDvdState*, uint*, int> GetParentalLevel;
         }
     }
 }

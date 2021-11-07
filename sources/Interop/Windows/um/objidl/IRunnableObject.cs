@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000126-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IRunnableObject : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRunnableObject
+    public unsafe partial struct IRunnableObject : IRunnableObject.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT SetContainedObject(BOOL fContained)
         {
             return ((delegate* unmanaged<IRunnableObject*, BOOL, int>)(lpVtbl[7]))((IRunnableObject*)Unsafe.AsPointer(ref this), fContained);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetRunningClass([NativeTypeName("LPCLSID")] Guid* lpClsid);
+
+            [VtblIndex(4)]
+            HRESULT Run([NativeTypeName("LPBINDCTX")] IBindCtx* pbc);
+
+            [VtblIndex(5)]
+            BOOL IsRunning();
+
+            [VtblIndex(6)]
+            HRESULT LockRunning(BOOL fLock, BOOL fLastUnlockCloses);
+
+            [VtblIndex(7)]
+            HRESULT SetContainedObject(BOOL fContained);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunnableObject*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunnableObject*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunnableObject*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCLSID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunnableObject*, Guid*, int> GetRunningClass;
+
+            [NativeTypeName("HRESULT (LPBINDCTX) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunnableObject*, IBindCtx*, int> Run;
+
+            [NativeTypeName("BOOL () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunnableObject*, int> IsRunning;
+
+            [NativeTypeName("HRESULT (BOOL, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunnableObject*, BOOL, BOOL, int> LockRunning;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRunnableObject*, BOOL, int> SetContainedObject;
         }
     }
 }

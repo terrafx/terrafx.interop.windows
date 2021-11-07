@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("505F1513-6B3E-4892-A272-59F8889A4D3E")]
     [NativeTypeName("struct IImageRecompress : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IImageRecompress
+    public unsafe partial struct IImageRecompress : IImageRecompress.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT RecompressImage(IShellItem* psi, int cx, int cy, int iQuality, IStorage* pstg, IStream** ppstrmOut)
         {
             return ((delegate* unmanaged<IImageRecompress*, IShellItem*, int, int, int, IStorage*, IStream**, int>)(lpVtbl[3]))((IImageRecompress*)Unsafe.AsPointer(ref this), psi, cx, cy, iQuality, pstg, ppstrmOut);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RecompressImage(IShellItem* psi, int cx, int cy, int iQuality, IStorage* pstg, IStream** ppstrmOut);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageRecompress*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageRecompress*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageRecompress*, uint> Release;
+
+            [NativeTypeName("HRESULT (IShellItem *, int, int, int, IStorage *, IStream **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IImageRecompress*, IShellItem*, int, int, int, IStorage*, IStream**, int> RecompressImage;
         }
     }
 }

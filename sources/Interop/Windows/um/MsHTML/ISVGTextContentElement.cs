@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051051A-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISVGTextContentElement : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGTextContentElement
+    public unsafe partial struct ISVGTextContentElement : ISVGTextContentElement.Interface
     {
         public void** lpVtbl;
 
@@ -156,6 +156,111 @@ namespace TerraFX.Interop
         public HRESULT selectSubString([NativeTypeName("long")] int charnum, [NativeTypeName("long")] int nchars)
         {
             return ((delegate* unmanaged<ISVGTextContentElement*, int, int, int>)(lpVtbl[19]))((ISVGTextContentElement*)Unsafe.AsPointer(ref this), charnum, nchars);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT putref_textLength(ISVGAnimatedLength* v);
+
+            [VtblIndex(8)]
+            HRESULT get_textLength(ISVGAnimatedLength** p);
+
+            [VtblIndex(9)]
+            HRESULT putref_lengthAdjust(ISVGAnimatedEnumeration* v);
+
+            [VtblIndex(10)]
+            HRESULT get_lengthAdjust(ISVGAnimatedEnumeration** p);
+
+            [VtblIndex(11)]
+            HRESULT getNumberOfChars([NativeTypeName("long *")] int* pResult);
+
+            [VtblIndex(12)]
+            HRESULT getComputedTextLength(float* pResult);
+
+            [VtblIndex(13)]
+            HRESULT getSubStringLength([NativeTypeName("long")] int charnum, [NativeTypeName("long")] int nchars, float* pResult);
+
+            [VtblIndex(14)]
+            HRESULT getStartPositionOfChar([NativeTypeName("long")] int charnum, ISVGPoint** ppResult);
+
+            [VtblIndex(15)]
+            HRESULT getEndPositionOfChar([NativeTypeName("long")] int charnum, ISVGPoint** ppResult);
+
+            [VtblIndex(16)]
+            HRESULT getExtentOfChar([NativeTypeName("long")] int charnum, ISVGRect** ppResult);
+
+            [VtblIndex(17)]
+            HRESULT getRotationOfChar([NativeTypeName("long")] int charnum, float* pResult);
+
+            [VtblIndex(18)]
+            HRESULT getCharNumAtPosition(ISVGPoint* point, [NativeTypeName("long *")] int* pResult);
+
+            [VtblIndex(19)]
+            HRESULT selectSubString([NativeTypeName("long")] int charnum, [NativeTypeName("long")] int nchars);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextContentElement*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextContentElement*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextContentElement*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextContentElement*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextContentElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextContentElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextContentElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextContentElement*, ISVGAnimatedLength*, int> putref_textLength;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextContentElement*, ISVGAnimatedLength**, int> get_textLength;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedEnumeration *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextContentElement*, ISVGAnimatedEnumeration*, int> putref_lengthAdjust;
+
+            [NativeTypeName("HRESULT (ISVGAnimatedEnumeration **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextContentElement*, ISVGAnimatedEnumeration**, int> get_lengthAdjust;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextContentElement*, int*, int> getNumberOfChars;
+
+            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextContentElement*, float*, int> getComputedTextLength;
+
+            [NativeTypeName("HRESULT (long, long, float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextContentElement*, int, int, float*, int> getSubStringLength;
+
+            [NativeTypeName("HRESULT (long, ISVGPoint **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextContentElement*, int, ISVGPoint**, int> getStartPositionOfChar;
+
+            [NativeTypeName("HRESULT (long, ISVGPoint **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextContentElement*, int, ISVGPoint**, int> getEndPositionOfChar;
+
+            [NativeTypeName("HRESULT (long, ISVGRect **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextContentElement*, int, ISVGRect**, int> getExtentOfChar;
+
+            [NativeTypeName("HRESULT (long, float *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextContentElement*, int, float*, int> getRotationOfChar;
+
+            [NativeTypeName("HRESULT (ISVGPoint *, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextContentElement*, ISVGPoint*, int*, int> getCharNumAtPosition;
+
+            [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISVGTextContentElement*, int, int, int> selectSubString;
         }
     }
 }

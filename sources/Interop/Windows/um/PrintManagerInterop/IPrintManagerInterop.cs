@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C5435A42-8D43-4E7B-A68A-EF311E392087")]
     [NativeTypeName("struct IPrintManagerInterop : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IPrintManagerInterop
+    public unsafe partial struct IPrintManagerInterop : IPrintManagerInterop.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,42 @@ namespace TerraFX.Interop
         public HRESULT ShowPrintUIForWindowAsync(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
         {
             return ((delegate* unmanaged<IPrintManagerInterop*, HWND, Guid*, void**, int>)(lpVtbl[7]))((IPrintManagerInterop*)Unsafe.AsPointer(ref this), appWindow, riid, asyncOperation);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** printManager);
+
+            [VtblIndex(7)]
+            HRESULT ShowPrintUIForWindowAsync(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintManagerInterop*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintManagerInterop*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintManagerInterop*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintManagerInterop*, uint*, Guid**, int> GetIids;
+
+            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintManagerInterop*, HSTRING*, int> GetRuntimeClassName;
+
+            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintManagerInterop*, TrustLevel*, int> GetTrustLevel;
+
+            [NativeTypeName("HRESULT (HWND, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintManagerInterop*, HWND, Guid*, void**, int> GetForWindow;
+
+            [NativeTypeName("HRESULT (HWND, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPrintManagerInterop*, HWND, Guid*, void**, int> ShowPrintUIForWindowAsync;
         }
     }
 }

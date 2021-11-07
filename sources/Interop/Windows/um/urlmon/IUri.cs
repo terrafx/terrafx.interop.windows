@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A39EE748-6A27-4817-A6F2-13914BEF5890")]
     [NativeTypeName("struct IUri : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUri
+    public unsafe partial struct IUri : IUri.Interface
     {
         public void** lpVtbl;
 
@@ -212,6 +212,171 @@ namespace TerraFX.Interop
         public HRESULT IsEqual(IUri* pUri, BOOL* pfEqual)
         {
             return ((delegate* unmanaged<IUri*, IUri*, BOOL*, int>)(lpVtbl[27]))((IUri*)Unsafe.AsPointer(ref this), pUri, pfEqual);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetPropertyBSTR(Uri_PROPERTY uriProp, [NativeTypeName("BSTR *")] ushort** pbstrProperty, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(4)]
+            HRESULT GetPropertyLength(Uri_PROPERTY uriProp, [NativeTypeName("DWORD *")] uint* pcchProperty, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(5)]
+            HRESULT GetPropertyDWORD(Uri_PROPERTY uriProp, [NativeTypeName("DWORD *")] uint* pdwProperty, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(6)]
+            HRESULT HasProperty(Uri_PROPERTY uriProp, BOOL* pfHasProperty);
+
+            [VtblIndex(7)]
+            HRESULT GetAbsoluteUri([NativeTypeName("BSTR *")] ushort** pbstrAbsoluteUri);
+
+            [VtblIndex(8)]
+            HRESULT GetAuthority([NativeTypeName("BSTR *")] ushort** pbstrAuthority);
+
+            [VtblIndex(9)]
+            HRESULT GetDisplayUri([NativeTypeName("BSTR *")] ushort** pbstrDisplayString);
+
+            [VtblIndex(10)]
+            HRESULT GetDomain([NativeTypeName("BSTR *")] ushort** pbstrDomain);
+
+            [VtblIndex(11)]
+            HRESULT GetExtension([NativeTypeName("BSTR *")] ushort** pbstrExtension);
+
+            [VtblIndex(12)]
+            HRESULT GetFragment([NativeTypeName("BSTR *")] ushort** pbstrFragment);
+
+            [VtblIndex(13)]
+            HRESULT GetHost([NativeTypeName("BSTR *")] ushort** pbstrHost);
+
+            [VtblIndex(14)]
+            HRESULT GetPassword([NativeTypeName("BSTR *")] ushort** pbstrPassword);
+
+            [VtblIndex(15)]
+            HRESULT GetPath([NativeTypeName("BSTR *")] ushort** pbstrPath);
+
+            [VtblIndex(16)]
+            HRESULT GetPathAndQuery([NativeTypeName("BSTR *")] ushort** pbstrPathAndQuery);
+
+            [VtblIndex(17)]
+            HRESULT GetQuery([NativeTypeName("BSTR *")] ushort** pbstrQuery);
+
+            [VtblIndex(18)]
+            HRESULT GetRawUri([NativeTypeName("BSTR *")] ushort** pbstrRawUri);
+
+            [VtblIndex(19)]
+            HRESULT GetSchemeName([NativeTypeName("BSTR *")] ushort** pbstrSchemeName);
+
+            [VtblIndex(20)]
+            HRESULT GetUserInfo([NativeTypeName("BSTR *")] ushort** pbstrUserInfo);
+
+            [VtblIndex(21)]
+            HRESULT GetUserName([NativeTypeName("BSTR *")] ushort** pbstrUserName);
+
+            [VtblIndex(22)]
+            HRESULT GetHostType([NativeTypeName("DWORD *")] uint* pdwHostType);
+
+            [VtblIndex(23)]
+            HRESULT GetPort([NativeTypeName("DWORD *")] uint* pdwPort);
+
+            [VtblIndex(24)]
+            HRESULT GetScheme([NativeTypeName("DWORD *")] uint* pdwScheme);
+
+            [VtblIndex(25)]
+            HRESULT GetZone([NativeTypeName("DWORD *")] uint* pdwZone);
+
+            [VtblIndex(26)]
+            HRESULT GetProperties([NativeTypeName("LPDWORD")] uint* pdwFlags);
+
+            [VtblIndex(27)]
+            HRESULT IsEqual(IUri* pUri, BOOL* pfEqual);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, uint> Release;
+
+            [NativeTypeName("HRESULT (Uri_PROPERTY, BSTR *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, Uri_PROPERTY, ushort**, uint, int> GetPropertyBSTR;
+
+            [NativeTypeName("HRESULT (Uri_PROPERTY, DWORD *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, Uri_PROPERTY, uint*, uint, int> GetPropertyLength;
+
+            [NativeTypeName("HRESULT (Uri_PROPERTY, DWORD *, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, Uri_PROPERTY, uint*, uint, int> GetPropertyDWORD;
+
+            [NativeTypeName("HRESULT (Uri_PROPERTY, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, Uri_PROPERTY, BOOL*, int> HasProperty;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetAbsoluteUri;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetAuthority;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetDisplayUri;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetDomain;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetExtension;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetFragment;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetHost;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetPassword;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetPath;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetPathAndQuery;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetQuery;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetRawUri;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetSchemeName;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetUserInfo;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, ushort**, int> GetUserName;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, uint*, int> GetHostType;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, uint*, int> GetPort;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, uint*, int> GetScheme;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, uint*, int> GetZone;
+
+            [NativeTypeName("HRESULT (LPDWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, uint*, int> GetProperties;
+
+            [NativeTypeName("HRESULT (IUri *, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUri*, IUri*, BOOL*, int> IsEqual;
         }
     }
 }

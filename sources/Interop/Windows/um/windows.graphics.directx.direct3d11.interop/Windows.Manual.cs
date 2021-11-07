@@ -34,10 +34,9 @@ namespace TerraFX.Interop
         }
 
         public static HRESULT GetDXGIInterface<DXGI_TYPE>(IInspectable* @object, DXGI_TYPE** dxgi)
-            where DXGI_TYPE : unmanaged
+            where DXGI_TYPE : unmanaged, IUnknown.Interface
         {
-            var guid = typeof(DXGI_TYPE).GUID;
-            return GetDXGIInterfaceFromObject(@object, &guid, (void**) dxgi);
+            return GetDXGIInterfaceFromObject(@object, __uuidof<DXGI_TYPE>(), (void**) dxgi);
         }
     }
 }

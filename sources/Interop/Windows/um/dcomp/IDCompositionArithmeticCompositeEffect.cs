@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3B67DFA8-E3DD-4E61-B640-46C2F3D739DC")]
     [NativeTypeName("struct IDCompositionArithmeticCompositeEffect : IDCompositionFilterEffect")]
     [NativeInheritance("IDCompositionFilterEffect")]
-    public unsafe partial struct IDCompositionArithmeticCompositeEffect
+    public unsafe partial struct IDCompositionArithmeticCompositeEffect : IDCompositionArithmeticCompositeEffect.Interface
     {
         public void** lpVtbl;
 
@@ -61,13 +61,6 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(7)]
-        public HRESULT SetCoefficient1(float Coeffcient1)
-        {
-            return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, float, int>)(lpVtbl[7]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this), Coeffcient1);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
         public HRESULT SetCoefficient1(IDCompositionAnimation* animation)
         {
@@ -75,10 +68,10 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(9)]
-        public HRESULT SetCoefficient2(float Coefficient2)
+        [VtblIndex(7)]
+        public HRESULT SetCoefficient1(float Coeffcient1)
         {
-            return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, float, int>)(lpVtbl[9]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this), Coefficient2);
+            return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, float, int>)(lpVtbl[7]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this), Coeffcient1);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -89,10 +82,10 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(11)]
-        public HRESULT SetCoefficient3(float Coefficient3)
+        [VtblIndex(9)]
+        public HRESULT SetCoefficient2(float Coefficient2)
         {
-            return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, float, int>)(lpVtbl[11]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this), Coefficient3);
+            return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, float, int>)(lpVtbl[9]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this), Coefficient2);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -103,10 +96,10 @@ namespace TerraFX.Interop
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(13)]
-        public HRESULT SetCoefficient4(float Coefficient4)
+        [VtblIndex(11)]
+        public HRESULT SetCoefficient3(float Coefficient3)
         {
-            return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, float, int>)(lpVtbl[13]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this), Coefficient4);
+            return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, float, int>)(lpVtbl[11]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this), Coefficient3);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -114,6 +107,91 @@ namespace TerraFX.Interop
         public HRESULT SetCoefficient4(IDCompositionAnimation* animation)
         {
             return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, IDCompositionAnimation*, int>)(lpVtbl[12]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this), animation);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(13)]
+        public HRESULT SetCoefficient4(float Coefficient4)
+        {
+            return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, float, int>)(lpVtbl[13]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this), Coefficient4);
+        }
+
+        public interface Interface : IDCompositionFilterEffect.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT SetCoefficients([NativeTypeName("const D2D1_VECTOR_4F &")] D2D_VECTOR_4F* coefficients);
+
+            [VtblIndex(5)]
+            HRESULT SetClampOutput(BOOL clampoutput);
+
+            [VtblIndex(6)]
+            HRESULT SetCoefficient1(IDCompositionAnimation* animation);
+
+            [VtblIndex(7)]
+            HRESULT SetCoefficient1(float Coeffcient1);
+
+            [VtblIndex(8)]
+            HRESULT SetCoefficient2(IDCompositionAnimation* animation);
+
+            [VtblIndex(9)]
+            HRESULT SetCoefficient2(float Coefficient2);
+
+            [VtblIndex(10)]
+            HRESULT SetCoefficient3(IDCompositionAnimation* animation);
+
+            [VtblIndex(11)]
+            HRESULT SetCoefficient3(float Coefficient3);
+
+            [VtblIndex(12)]
+            HRESULT SetCoefficient4(IDCompositionAnimation* animation);
+
+            [VtblIndex(13)]
+            HRESULT SetCoefficient4(float Coefficient4);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, uint, IUnknown*, uint, int> SetInput;
+
+            [NativeTypeName("HRESULT (const D2D1_VECTOR_4F &) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, D2D_VECTOR_4F*, int> SetCoefficients;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, BOOL, int> SetClampOutput;
+
+            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, IDCompositionAnimation*, int> SetCoefficient1;
+
+            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, float, int> SetCoefficient11;
+
+            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, IDCompositionAnimation*, int> SetCoefficient2;
+
+            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, float, int> SetCoefficient21;
+
+            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, IDCompositionAnimation*, int> SetCoefficient3;
+
+            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, float, int> SetCoefficient31;
+
+            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, IDCompositionAnimation*, int> SetCoefficient4;
+
+            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, float, int> SetCoefficient41;
         }
     }
 }

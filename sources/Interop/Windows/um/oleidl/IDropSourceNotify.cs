@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0000012B-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IDropSourceNotify : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDropSourceNotify
+    public unsafe partial struct IDropSourceNotify : IDropSourceNotify.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT DragLeaveTarget()
         {
             return ((delegate* unmanaged<IDropSourceNotify*, int>)(lpVtbl[4]))((IDropSourceNotify*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT DragEnterTarget(HWND hwndTarget);
+
+            [VtblIndex(4)]
+            HRESULT DragLeaveTarget();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDropSourceNotify*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDropSourceNotify*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDropSourceNotify*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDropSourceNotify*, HWND, int> DragEnterTarget;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDropSourceNotify*, int> DragLeaveTarget;
         }
     }
 }

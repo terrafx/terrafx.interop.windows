@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2CD906A8-12E2-11DC-9FED-001143A055F9")]
     [NativeTypeName("struct ID2D1Brush : ID2D1Resource")]
     [NativeInheritance("ID2D1Resource")]
-    public unsafe partial struct ID2D1Brush
+    public unsafe partial struct ID2D1Brush : ID2D1Brush.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,48 @@ namespace TerraFX.Interop
         public void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
         {
             ((delegate* unmanaged<ID2D1Brush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[7]))((ID2D1Brush*)Unsafe.AsPointer(ref this), transform);
+        }
+
+        public interface Interface : ID2D1Resource.Interface
+        {
+            [VtblIndex(4)]
+            void SetOpacity(float opacity);
+
+            [VtblIndex(5)]
+            void SetTransform([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform);
+
+            [VtblIndex(6)]
+            float GetOpacity();
+
+            [VtblIndex(7)]
+            void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Brush*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Brush*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Brush*, uint> Release;
+
+            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Brush*, ID2D1Factory**, void> GetFactory;
+
+            [NativeTypeName("void (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Brush*, float, void> SetOpacity;
+
+            [NativeTypeName("void (const D2D1_MATRIX_3X2_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Brush*, D2D_MATRIX_3X2_F*, void> SetTransform;
+
+            [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Brush*, float> GetOpacity;
+
+            [NativeTypeName("void (D2D1_MATRIX_3X2_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID2D1Brush*, D2D_MATRIX_3X2_F*, void> GetTransform;
         }
     }
 }

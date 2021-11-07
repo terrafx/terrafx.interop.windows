@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3D61BF11-AC5F-42C8-A4CB-931BCC28C744")]
     [NativeTypeName("struct IEnumTfLanguageProfiles : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumTfLanguageProfiles
+    public unsafe partial struct IEnumTfLanguageProfiles : IEnumTfLanguageProfiles.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
         {
             return ((delegate* unmanaged<IEnumTfLanguageProfiles*, uint, int>)(lpVtbl[6]))((IEnumTfLanguageProfiles*)Unsafe.AsPointer(ref this), ulCount);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Clone(IEnumTfLanguageProfiles** ppEnum);
+
+            [VtblIndex(4)]
+            HRESULT Next([NativeTypeName("ULONG")] uint ulCount, TF_LANGUAGEPROFILE* pProfile, [NativeTypeName("ULONG *")] uint* pcFetch);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint ulCount);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfLanguageProfiles*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfLanguageProfiles*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfLanguageProfiles*, uint> Release;
+
+            [NativeTypeName("HRESULT (IEnumTfLanguageProfiles **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfLanguageProfiles*, IEnumTfLanguageProfiles**, int> Clone;
+
+            [NativeTypeName("HRESULT (ULONG, TF_LANGUAGEPROFILE *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfLanguageProfiles*, uint, TF_LANGUAGEPROFILE*, uint*, int> Next;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfLanguageProfiles*, int> Reset;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumTfLanguageProfiles*, uint, int> Skip;
         }
     }
 }

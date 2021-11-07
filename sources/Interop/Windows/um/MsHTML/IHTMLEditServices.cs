@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F663-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLEditServices : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHTMLEditServices
+    public unsafe partial struct IHTMLEditServices : IHTMLEditServices.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,57 @@ namespace TerraFX.Interop
         public HRESULT SelectRange(IMarkupPointer* pStart, IMarkupPointer* pEnd, SELECTION_TYPE eType)
         {
             return ((delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, IMarkupPointer*, SELECTION_TYPE, int>)(lpVtbl[8]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pStart, pEnd, eType);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AddDesigner(IHTMLEditDesigner* pIDesigner);
+
+            [VtblIndex(4)]
+            HRESULT RemoveDesigner(IHTMLEditDesigner* pIDesigner);
+
+            [VtblIndex(5)]
+            HRESULT GetSelectionServices(IMarkupContainer* pIContainer, ISelectionServices** ppSelSvc);
+
+            [VtblIndex(6)]
+            HRESULT MoveToSelectionAnchor(IMarkupPointer* pIStartAnchor);
+
+            [VtblIndex(7)]
+            HRESULT MoveToSelectionEnd(IMarkupPointer* pIEndAnchor);
+
+            [VtblIndex(8)]
+            HRESULT SelectRange(IMarkupPointer* pStart, IMarkupPointer* pEnd, SELECTION_TYPE eType);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditServices*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditServices*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditServices*, uint> Release;
+
+            [NativeTypeName("HRESULT (IHTMLEditDesigner *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditServices*, IHTMLEditDesigner*, int> AddDesigner;
+
+            [NativeTypeName("HRESULT (IHTMLEditDesigner *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditServices*, IHTMLEditDesigner*, int> RemoveDesigner;
+
+            [NativeTypeName("HRESULT (IMarkupContainer *, ISelectionServices **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditServices*, IMarkupContainer*, ISelectionServices**, int> GetSelectionServices;
+
+            [NativeTypeName("HRESULT (IMarkupPointer *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, int> MoveToSelectionAnchor;
+
+            [NativeTypeName("HRESULT (IMarkupPointer *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, int> MoveToSelectionEnd;
+
+            [NativeTypeName("HRESULT (IMarkupPointer *, IMarkupPointer *, SELECTION_TYPE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, IMarkupPointer*, SELECTION_TYPE, int> SelectRange;
         }
     }
 }

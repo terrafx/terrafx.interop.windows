@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("85075ACF-231F-40EA-9610-D26B7B58F638")]
     [NativeTypeName("struct IInitializeCommand : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInitializeCommand
+    public unsafe partial struct IInitializeCommand : IInitializeCommand.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT Initialize([NativeTypeName("LPCWSTR")] ushort* pszCommandName, IPropertyBag* ppb)
         {
             return ((delegate* unmanaged<IInitializeCommand*, ushort*, IPropertyBag*, int>)(lpVtbl[3]))((IInitializeCommand*)Unsafe.AsPointer(ref this), pszCommandName, ppb);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Initialize([NativeTypeName("LPCWSTR")] ushort* pszCommandName, IPropertyBag* ppb);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInitializeCommand*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInitializeCommand*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInitializeCommand*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IPropertyBag *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInitializeCommand*, ushort*, IPropertyBag*, int> Initialize;
         }
     }
 }

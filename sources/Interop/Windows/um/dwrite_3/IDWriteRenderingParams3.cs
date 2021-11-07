@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B7924BAA-391B-412A-8C5C-E44CC2D867DC")]
     [NativeTypeName("struct IDWriteRenderingParams3 : IDWriteRenderingParams2")]
     [NativeInheritance("IDWriteRenderingParams2")]
-    public unsafe partial struct IDWriteRenderingParams3
+    public unsafe partial struct IDWriteRenderingParams3 : IDWriteRenderingParams3.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,48 @@ namespace TerraFX.Interop
         public DWRITE_RENDERING_MODE1 GetRenderingMode1()
         {
             return ((delegate* unmanaged<IDWriteRenderingParams3*, DWRITE_RENDERING_MODE1>)(lpVtbl[10]))((IDWriteRenderingParams3*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IDWriteRenderingParams2.Interface
+        {
+            [VtblIndex(10)]
+            DWRITE_RENDERING_MODE1 GetRenderingMode1();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteRenderingParams3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteRenderingParams3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteRenderingParams3*, uint> Release;
+
+            [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteRenderingParams3*, float> GetGamma;
+
+            [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteRenderingParams3*, float> GetEnhancedContrast;
+
+            [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteRenderingParams3*, float> GetClearTypeLevel;
+
+            [NativeTypeName("DWRITE_PIXEL_GEOMETRY () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteRenderingParams3*, DWRITE_PIXEL_GEOMETRY> GetPixelGeometry;
+
+            [NativeTypeName("DWRITE_RENDERING_MODE () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteRenderingParams3*, DWRITE_RENDERING_MODE> GetRenderingMode;
+
+            [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteRenderingParams3*, float> GetGrayscaleEnhancedContrast;
+
+            [NativeTypeName("DWRITE_GRID_FIT_MODE () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteRenderingParams3*, DWRITE_GRID_FIT_MODE> GetGridFitMode;
+
+            [NativeTypeName("DWRITE_RENDERING_MODE1 () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteRenderingParams3*, DWRITE_RENDERING_MODE1> GetRenderingMode1;
         }
     }
 }

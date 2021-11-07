@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("52150B82-AB39-4467-980F-E48BF0822ECD")]
     [NativeTypeName("struct IMFCaptureEngineOnSampleCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFCaptureEngineOnSampleCallback
+    public unsafe partial struct IMFCaptureEngineOnSampleCallback : IMFCaptureEngineOnSampleCallback.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OnSample(IMFSample* pSample)
         {
             return ((delegate* unmanaged<IMFCaptureEngineOnSampleCallback*, IMFSample*, int>)(lpVtbl[3]))((IMFCaptureEngineOnSampleCallback*)Unsafe.AsPointer(ref this), pSample);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnSample(IMFSample* pSample);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCaptureEngineOnSampleCallback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCaptureEngineOnSampleCallback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCaptureEngineOnSampleCallback*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFSample *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCaptureEngineOnSampleCallback*, IMFSample*, int> OnSample;
         }
     }
 }

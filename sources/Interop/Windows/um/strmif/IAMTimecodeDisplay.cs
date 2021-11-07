@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9B496CE2-811B-11CF-8C77-00AA006B6814")]
     [NativeTypeName("struct IAMTimecodeDisplay : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMTimecodeDisplay
+    public unsafe partial struct IAMTimecodeDisplay : IAMTimecodeDisplay.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT SetTCDisplay([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value)
         {
             return ((delegate* unmanaged<IAMTimecodeDisplay*, int, int, int>)(lpVtbl[6]))((IAMTimecodeDisplay*)Unsafe.AsPointer(ref this), Param, Value);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetTCDisplayEnable([NativeTypeName("long *")] int* pState);
+
+            [VtblIndex(4)]
+            HRESULT SetTCDisplayEnable([NativeTypeName("long")] int State);
+
+            [VtblIndex(5)]
+            HRESULT GetTCDisplay([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue);
+
+            [VtblIndex(6)]
+            HRESULT SetTCDisplay([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTimecodeDisplay*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTimecodeDisplay*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTimecodeDisplay*, uint> Release;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTimecodeDisplay*, int*, int> GetTCDisplayEnable;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTimecodeDisplay*, int, int> SetTCDisplayEnable;
+
+            [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTimecodeDisplay*, int, int*, int> GetTCDisplay;
+
+            [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMTimecodeDisplay*, int, int, int> SetTCDisplay;
         }
     }
 }

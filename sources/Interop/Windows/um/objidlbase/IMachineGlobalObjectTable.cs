@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("26D709AC-F70B-4421-A96F-D2878FAFB00D")]
     [NativeTypeName("struct IMachineGlobalObjectTable : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMachineGlobalObjectTable
+    public unsafe partial struct IMachineGlobalObjectTable : IMachineGlobalObjectTable.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT RevokeObject(MachineGlobalObjectTableRegistrationToken token)
         {
             return ((delegate* unmanaged<IMachineGlobalObjectTable*, MachineGlobalObjectTableRegistrationToken, int>)(lpVtbl[5]))((IMachineGlobalObjectTable*)Unsafe.AsPointer(ref this), token);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT RegisterObject([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("LPCWSTR")] ushort* identifier, IUnknown* @object, MachineGlobalObjectTableRegistrationToken* token);
+
+            [VtblIndex(4)]
+            HRESULT GetObjectW([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("LPCWSTR")] ushort* identifier, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(5)]
+            HRESULT RevokeObject(MachineGlobalObjectTableRegistrationToken token);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMachineGlobalObjectTable*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMachineGlobalObjectTable*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMachineGlobalObjectTable*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, LPCWSTR, IUnknown *, MachineGlobalObjectTableRegistrationToken *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMachineGlobalObjectTable*, Guid*, ushort*, IUnknown*, MachineGlobalObjectTableRegistrationToken*, int> RegisterObject;
+
+            [NativeTypeName("HRESULT (const IID &, LPCWSTR, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMachineGlobalObjectTable*, Guid*, ushort*, Guid*, void**, int> GetObjectW;
+
+            [NativeTypeName("HRESULT (MachineGlobalObjectTableRegistrationToken) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMachineGlobalObjectTable*, MachineGlobalObjectTableRegistrationToken, int> RevokeObject;
         }
     }
 }

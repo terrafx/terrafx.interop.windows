@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("39E050C3-4E74-441A-8DC0-B81104DF949C")]
     [NativeTypeName("struct IUserConsentVerifierInterop : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IUserConsentVerifierInterop
+    public unsafe partial struct IUserConsentVerifierInterop : IUserConsentVerifierInterop.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,36 @@ namespace TerraFX.Interop
         public HRESULT RequestVerificationForWindowAsync(HWND appWindow, HSTRING message, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
         {
             return ((delegate* unmanaged<IUserConsentVerifierInterop*, HWND, HSTRING, Guid*, void**, int>)(lpVtbl[6]))((IUserConsentVerifierInterop*)Unsafe.AsPointer(ref this), appWindow, message, riid, asyncOperation);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT RequestVerificationForWindowAsync(HWND appWindow, HSTRING message, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserConsentVerifierInterop*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserConsentVerifierInterop*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserConsentVerifierInterop*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserConsentVerifierInterop*, uint*, Guid**, int> GetIids;
+
+            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserConsentVerifierInterop*, HSTRING*, int> GetRuntimeClassName;
+
+            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserConsentVerifierInterop*, TrustLevel*, int> GetTrustLevel;
+
+            [NativeTypeName("HRESULT (HWND, HSTRING, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserConsentVerifierInterop*, HWND, HSTRING, Guid*, void**, int> RequestVerificationForWindowAsync;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051049B-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDOMConstructor : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDOMConstructor
+    public unsafe partial struct IHTMLDOMConstructor : IHTMLDOMConstructor.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,63 @@ namespace TerraFX.Interop
         public HRESULT DefineSetter([NativeTypeName("BSTR")] ushort* propname, VARIANT* pdispHandler)
         {
             return ((delegate* unmanaged<IHTMLDOMConstructor*, ushort*, VARIANT*, int>)(lpVtbl[11]))((IHTMLDOMConstructor*)Unsafe.AsPointer(ref this), propname, pdispHandler);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_constructor(IDispatch** p);
+
+            [VtblIndex(8)]
+            HRESULT LookupGetter([NativeTypeName("BSTR")] ushort* propname, VARIANT* ppDispHandler);
+
+            [VtblIndex(9)]
+            HRESULT LookupSetter([NativeTypeName("BSTR")] ushort* propname, VARIANT* ppDispHandler);
+
+            [VtblIndex(10)]
+            HRESULT DefineGetter([NativeTypeName("BSTR")] ushort* propname, VARIANT* pdispHandler);
+
+            [VtblIndex(11)]
+            HRESULT DefineSetter([NativeTypeName("BSTR")] ushort* propname, VARIANT* pdispHandler);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructor*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructor*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructor*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructor*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructor*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructor*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructor*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructor*, IDispatch**, int> get_constructor;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructor*, ushort*, VARIANT*, int> LookupGetter;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructor*, ushort*, VARIANT*, int> LookupSetter;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructor*, ushort*, VARIANT*, int> DefineGetter;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMConstructor*, ushort*, VARIANT*, int> DefineSetter;
         }
     }
 }

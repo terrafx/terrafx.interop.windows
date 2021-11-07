@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3FD03D36-4EB1-424A-A582-494ECB8BA813")]
     [NativeTypeName("struct ID3D12LifetimeTracker : ID3D12DeviceChild")]
     [NativeInheritance("ID3D12DeviceChild")]
-    public unsafe partial struct ID3D12LifetimeTracker
+    public unsafe partial struct ID3D12LifetimeTracker : ID3D12LifetimeTracker.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,42 @@ namespace TerraFX.Interop
         public HRESULT DestroyOwnedObject(ID3D12DeviceChild* pObject)
         {
             return ((delegate* unmanaged<ID3D12LifetimeTracker*, ID3D12DeviceChild*, int>)(lpVtbl[8]))((ID3D12LifetimeTracker*)Unsafe.AsPointer(ref this), pObject);
+        }
+
+        public interface Interface : ID3D12DeviceChild.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT DestroyOwnedObject(ID3D12DeviceChild* pObject);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12LifetimeTracker*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12LifetimeTracker*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12LifetimeTracker*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12LifetimeTracker*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12LifetimeTracker*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12LifetimeTracker*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12LifetimeTracker*, ushort*, int> SetName;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12LifetimeTracker*, Guid*, void**, int> GetDevice;
+
+            [NativeTypeName("HRESULT (ID3D12DeviceChild *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ID3D12LifetimeTracker*, ID3D12DeviceChild*, int> DestroyOwnedObject;
         }
     }
 }

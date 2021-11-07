@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("71C6E74E-0F28-11D8-A82A-00065B84435C")]
     [NativeTypeName("struct ITfInputProcessorProfileActivationSink : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfInputProcessorProfileActivationSink
+    public unsafe partial struct ITfInputProcessorProfileActivationSink : ITfInputProcessorProfileActivationSink.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OnActivated([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* catid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hkl, [NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* unmanaged<ITfInputProcessorProfileActivationSink*, uint, ushort, Guid*, Guid*, Guid*, HKL, uint, int>)(lpVtbl[3]))((ITfInputProcessorProfileActivationSink*)Unsafe.AsPointer(ref this), dwProfileType, langid, clsid, catid, guidProfile, hkl, dwFlags);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnActivated([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* catid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hkl, [NativeTypeName("DWORD")] uint dwFlags);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfileActivationSink*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfileActivationSink*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfileActivationSink*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, LANGID, const IID &, const GUID &, const GUID &, HKL, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfInputProcessorProfileActivationSink*, uint, ushort, Guid*, Guid*, Guid*, HKL, uint, int> OnActivated;
         }
     }
 }

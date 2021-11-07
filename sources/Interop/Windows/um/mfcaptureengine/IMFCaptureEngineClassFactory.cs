@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8F02D140-56FC-4302-A705-3A97C78BE779")]
     [NativeTypeName("struct IMFCaptureEngineClassFactory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFCaptureEngineClassFactory
+    public unsafe partial struct IMFCaptureEngineClassFactory : IMFCaptureEngineClassFactory.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT CreateInstance([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject)
         {
             return ((delegate* unmanaged<IMFCaptureEngineClassFactory*, Guid*, Guid*, void**, int>)(lpVtbl[3]))((IMFCaptureEngineClassFactory*)Unsafe.AsPointer(ref this), clsid, riid, ppvObject);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT CreateInstance([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCaptureEngineClassFactory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCaptureEngineClassFactory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCaptureEngineClassFactory*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, const IID &, LPVOID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFCaptureEngineClassFactory*, Guid*, Guid*, void**, int> CreateInstance;
         }
     }
 }

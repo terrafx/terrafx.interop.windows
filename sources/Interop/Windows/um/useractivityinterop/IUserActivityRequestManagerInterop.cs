@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DD69F876-9699-4715-9095-E37EA30DFA1B")]
     [NativeTypeName("struct IUserActivityRequestManagerInterop : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IUserActivityRequestManagerInterop
+    public unsafe partial struct IUserActivityRequestManagerInterop : IUserActivityRequestManagerInterop.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,36 @@ namespace TerraFX.Interop
         public HRESULT GetForWindow(HWND window, [NativeTypeName("const IID &")] Guid* iid, void** value)
         {
             return ((delegate* unmanaged<IUserActivityRequestManagerInterop*, HWND, Guid*, void**, int>)(lpVtbl[6]))((IUserActivityRequestManagerInterop*)Unsafe.AsPointer(ref this), window, iid, value);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT GetForWindow(HWND window, [NativeTypeName("const IID &")] Guid* iid, void** value);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserActivityRequestManagerInterop*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserActivityRequestManagerInterop*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserActivityRequestManagerInterop*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserActivityRequestManagerInterop*, uint*, Guid**, int> GetIids;
+
+            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserActivityRequestManagerInterop*, HSTRING*, int> GetRuntimeClassName;
+
+            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserActivityRequestManagerInterop*, TrustLevel*, int> GetTrustLevel;
+
+            [NativeTypeName("HRESULT (HWND, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IUserActivityRequestManagerInterop*, HWND, Guid*, void**, int> GetForWindow;
         }
     }
 }

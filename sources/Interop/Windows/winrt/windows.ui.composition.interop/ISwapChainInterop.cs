@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("26F496A0-7F38-45FB-88F7-FAAABE67DD59")]
     [NativeTypeName("struct ISwapChainInterop : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISwapChainInterop
+    public unsafe partial struct ISwapChainInterop : ISwapChainInterop.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT SetSwapChain(IUnknown* swapChain)
         {
             return ((delegate* unmanaged<ISwapChainInterop*, IUnknown*, int>)(lpVtbl[3]))((ISwapChainInterop*)Unsafe.AsPointer(ref this), swapChain);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetSwapChain(IUnknown* swapChain);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISwapChainInterop*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISwapChainInterop*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISwapChainInterop*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISwapChainInterop*, IUnknown*, int> SetSwapChain;
         }
     }
 }

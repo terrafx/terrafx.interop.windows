@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("04EC2E43-AC77-49F9-9B98-0307EF7A72A2")]
     [NativeTypeName("struct ISyncMgrHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrHandler
+    public unsafe partial struct ISyncMgrHandler : ISyncMgrHandler.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,69 @@ namespace TerraFX.Interop
         public HRESULT Synchronize([NativeTypeName("LPCWSTR *")] ushort** ppszItemIDs, [NativeTypeName("ULONG")] uint cItems, HWND hwndOwner, ISyncMgrSessionCreator* pSessionCreator, IUnknown* punk)
         {
             return ((delegate* unmanaged<ISyncMgrHandler*, ushort**, uint, HWND, ISyncMgrSessionCreator*, IUnknown*, int>)(lpVtbl[10]))((ISyncMgrHandler*)Unsafe.AsPointer(ref this), ppszItemIDs, cItems, hwndOwner, pSessionCreator, punk);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppszName);
+
+            [VtblIndex(4)]
+            HRESULT GetHandlerInfo(ISyncMgrHandlerInfo** ppHandlerInfo);
+
+            [VtblIndex(5)]
+            HRESULT GetObjectW([NativeTypeName("const GUID &")] Guid* rguidObjectID, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+            [VtblIndex(6)]
+            HRESULT GetCapabilities(SYNCMGR_HANDLER_CAPABILITIES* pmCapabilities);
+
+            [VtblIndex(7)]
+            HRESULT GetPolicies(SYNCMGR_HANDLER_POLICIES* pmPolicies);
+
+            [VtblIndex(8)]
+            HRESULT Activate(BOOL fActivate);
+
+            [VtblIndex(9)]
+            HRESULT Enable(BOOL fEnable);
+
+            [VtblIndex(10)]
+            HRESULT Synchronize([NativeTypeName("LPCWSTR *")] ushort** ppszItemIDs, [NativeTypeName("ULONG")] uint cItems, HWND hwndOwner, ISyncMgrSessionCreator* pSessionCreator, IUnknown* punk);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrHandler*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrHandler*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrHandler*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrHandler*, ushort**, int> GetName;
+
+            [NativeTypeName("HRESULT (ISyncMgrHandlerInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrHandler*, ISyncMgrHandlerInfo**, int> GetHandlerInfo;
+
+            [NativeTypeName("HRESULT (const GUID &, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrHandler*, Guid*, Guid*, void**, int> GetObjectW;
+
+            [NativeTypeName("HRESULT (SYNCMGR_HANDLER_CAPABILITIES *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrHandler*, SYNCMGR_HANDLER_CAPABILITIES*, int> GetCapabilities;
+
+            [NativeTypeName("HRESULT (SYNCMGR_HANDLER_POLICIES *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrHandler*, SYNCMGR_HANDLER_POLICIES*, int> GetPolicies;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrHandler*, BOOL, int> Activate;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrHandler*, BOOL, int> Enable;
+
+            [NativeTypeName("HRESULT (LPCWSTR *, ULONG, HWND, ISyncMgrSessionCreator *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrHandler*, ushort**, uint, HWND, ISyncMgrSessionCreator*, IUnknown*, int> Synchronize;
         }
     }
 }

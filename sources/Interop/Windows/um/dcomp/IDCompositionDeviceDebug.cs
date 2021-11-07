@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A1A3C64A-224F-4A81-9773-4F03A89D3C6C")]
     [NativeTypeName("struct IDCompositionDeviceDebug : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDCompositionDeviceDebug
+    public unsafe partial struct IDCompositionDeviceDebug : IDCompositionDeviceDebug.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT DisableDebugCounters()
         {
             return ((delegate* unmanaged<IDCompositionDeviceDebug*, int>)(lpVtbl[4]))((IDCompositionDeviceDebug*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT EnableDebugCounters();
+
+            [VtblIndex(4)]
+            HRESULT DisableDebugCounters();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDeviceDebug*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDeviceDebug*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDeviceDebug*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDeviceDebug*, int> EnableDebugCounters;
+
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDCompositionDeviceDebug*, int> DisableDebugCounters;
         }
     }
 }

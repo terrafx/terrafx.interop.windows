@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3051073C-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLDOMImplementation2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDOMImplementation2
+    public unsafe partial struct IHTMLDOMImplementation2 : IHTMLDOMImplementation2.Interface
     {
         public void** lpVtbl;
 
@@ -93,6 +93,57 @@ namespace TerraFX.Interop
         public HRESULT hasFeature([NativeTypeName("BSTR")] ushort* bstrfeature, VARIANT version, [NativeTypeName("VARIANT_BOOL *")] short* pfHasFeature)
         {
             return ((delegate* unmanaged<IHTMLDOMImplementation2*, ushort*, VARIANT, short*, int>)(lpVtbl[10]))((IHTMLDOMImplementation2*)Unsafe.AsPointer(ref this), bstrfeature, version, pfHasFeature);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT createDocumentType([NativeTypeName("BSTR")] ushort* bstrQualifiedName, VARIANT* pvarPublicId, VARIANT* pvarSystemId, IDOMDocumentType** newDocumentType);
+
+            [VtblIndex(8)]
+            HRESULT createDocument(VARIANT* pvarNS, VARIANT* pvarTagName, IDOMDocumentType* pDocumentType, IHTMLDocument7** ppnewDocument);
+
+            [VtblIndex(9)]
+            HRESULT createHTMLDocument([NativeTypeName("BSTR")] ushort* bstrTitle, IHTMLDocument7** ppnewDocument);
+
+            [VtblIndex(10)]
+            HRESULT hasFeature([NativeTypeName("BSTR")] ushort* bstrfeature, VARIANT version, [NativeTypeName("VARIANT_BOOL *")] short* pfHasFeature);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMImplementation2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMImplementation2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMImplementation2*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMImplementation2*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMImplementation2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMImplementation2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMImplementation2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT *, VARIANT *, IDOMDocumentType **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMImplementation2*, ushort*, VARIANT*, VARIANT*, IDOMDocumentType**, int> createDocumentType;
+
+            [NativeTypeName("HRESULT (VARIANT *, VARIANT *, IDOMDocumentType *, IHTMLDocument7 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMImplementation2*, VARIANT*, VARIANT*, IDOMDocumentType*, IHTMLDocument7**, int> createDocument;
+
+            [NativeTypeName("HRESULT (BSTR, IHTMLDocument7 **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMImplementation2*, ushort*, IHTMLDocument7**, int> createHTMLDocument;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT, VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLDOMImplementation2*, ushort*, VARIANT, short*, int> hasFeature;
         }
     }
 }

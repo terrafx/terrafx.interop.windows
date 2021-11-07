@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EC9D461D-CE74-4711-A020-7D8F9A1DD255")]
     [NativeTypeName("struct IDiaEnumStackFrames : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaEnumStackFrames
+    public unsafe partial struct IDiaEnumStackFrames : IDiaEnumStackFrames.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT Reset()
         {
             return ((delegate* unmanaged<IDiaEnumStackFrames*, int>)(lpVtbl[4]))((IDiaEnumStackFrames*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Next([NativeTypeName("ULONG")] uint celt, IDiaStackFrame** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
+
+            [VtblIndex(4)]
+            HRESULT Reset();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumStackFrames*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumStackFrames*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumStackFrames*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, IDiaStackFrame **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumStackFrames*, uint, IDiaStackFrame**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaEnumStackFrames*, int> Reset;
         }
     }
 }

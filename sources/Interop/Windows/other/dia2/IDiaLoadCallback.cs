@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C32ADB82-73F4-421B-95D5-A4706EDF5DBE")]
     [NativeTypeName("struct IDiaLoadCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaLoadCallback
+    public unsafe partial struct IDiaLoadCallback : IDiaLoadCallback.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT RestrictSymbolServerAccess()
         {
             return ((delegate* unmanaged<IDiaLoadCallback*, int>)(lpVtbl[7]))((IDiaLoadCallback*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT NotifyDebugDir(BOOL fExecutable, [NativeTypeName("DWORD")] uint cbData, byte* pbData);
+
+            [VtblIndex(4)]
+            HRESULT NotifyOpenDBG([NativeTypeName("LPCOLESTR")] ushort* dbgPath, HRESULT resultCode);
+
+            [VtblIndex(5)]
+            HRESULT NotifyOpenPDB([NativeTypeName("LPCOLESTR")] ushort* pdbPath, HRESULT resultCode);
+
+            [VtblIndex(6)]
+            HRESULT RestrictRegistryAccess();
+
+            [VtblIndex(7)]
+            HRESULT RestrictSymbolServerAccess();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLoadCallback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLoadCallback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLoadCallback*, uint> Release;
+
+            [NativeTypeName("HRESULT (BOOL, DWORD, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLoadCallback*, BOOL, uint, byte*, int> NotifyDebugDir;
+
+            [NativeTypeName("HRESULT (LPCOLESTR, HRESULT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLoadCallback*, ushort*, HRESULT, int> NotifyOpenDBG;
+
+            [NativeTypeName("HRESULT (LPCOLESTR, HRESULT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLoadCallback*, ushort*, HRESULT, int> NotifyOpenPDB;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLoadCallback*, int> RestrictRegistryAccess;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDiaLoadCallback*, int> RestrictSymbolServerAccess;
         }
     }
 }

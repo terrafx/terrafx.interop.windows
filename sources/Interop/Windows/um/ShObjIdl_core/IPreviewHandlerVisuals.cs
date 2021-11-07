@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("196BF9A5-B346-4EF0-AA1E-5DCDB76768B1")]
     [NativeTypeName("struct IPreviewHandlerVisuals : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPreviewHandlerVisuals
+    public unsafe partial struct IPreviewHandlerVisuals : IPreviewHandlerVisuals.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT SetTextColor(COLORREF color)
         {
             return ((delegate* unmanaged<IPreviewHandlerVisuals*, COLORREF, int>)(lpVtbl[5]))((IPreviewHandlerVisuals*)Unsafe.AsPointer(ref this), color);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetBackgroundColor(COLORREF color);
+
+            [VtblIndex(4)]
+            HRESULT SetFont([NativeTypeName("const LOGFONTW *")] LOGFONTW* plf);
+
+            [VtblIndex(5)]
+            HRESULT SetTextColor(COLORREF color);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandlerVisuals*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandlerVisuals*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandlerVisuals*, uint> Release;
+
+            [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandlerVisuals*, COLORREF, int> SetBackgroundColor;
+
+            [NativeTypeName("HRESULT (const LOGFONTW *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandlerVisuals*, LOGFONTW*, int> SetFont;
+
+            [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPreviewHandlerVisuals*, COLORREF, int> SetTextColor;
         }
     }
 }

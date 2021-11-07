@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("79EAC9EB-BAF9-11CE-8C82-00AA004BA90B")]
     [NativeTypeName("struct IInternetPriority : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInternetPriority
+    public unsafe partial struct IInternetPriority : IInternetPriority.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetPriority([NativeTypeName("LONG *")] int* pnPriority)
         {
             return ((delegate* unmanaged<IInternetPriority*, int*, int>)(lpVtbl[4]))((IInternetPriority*)Unsafe.AsPointer(ref this), pnPriority);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetPriority([NativeTypeName("LONG")] int nPriority);
+
+            [VtblIndex(4)]
+            HRESULT GetPriority([NativeTypeName("LONG *")] int* pnPriority);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetPriority*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetPriority*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetPriority*, uint> Release;
+
+            [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetPriority*, int, int> SetPriority;
+
+            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInternetPriority*, int*, int> GetPriority;
         }
     }
 }

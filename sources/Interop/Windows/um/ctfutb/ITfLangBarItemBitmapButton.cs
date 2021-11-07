@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A26A0525-3FAE-4FA0-89EE-88A964F9F1B5")]
     [NativeTypeName("struct ITfLangBarItemBitmapButton : ITfLangBarItem")]
     [NativeInheritance("ITfLangBarItem")]
-    public unsafe partial struct ITfLangBarItemBitmapButton
+    public unsafe partial struct ITfLangBarItemBitmapButton : ITfLangBarItemBitmapButton.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,69 @@ namespace TerraFX.Interop
         public HRESULT GetText([NativeTypeName("BSTR *")] ushort** pbstrText)
         {
             return ((delegate* unmanaged<ITfLangBarItemBitmapButton*, ushort**, int>)(lpVtbl[12]))((ITfLangBarItemBitmapButton*)Unsafe.AsPointer(ref this), pbstrText);
+        }
+
+        public interface Interface : ITfLangBarItem.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT OnClick(TfLBIClick click, POINT pt, [NativeTypeName("const RECT *")] RECT* prcArea);
+
+            [VtblIndex(8)]
+            HRESULT InitMenu(ITfMenu* pMenu);
+
+            [VtblIndex(9)]
+            HRESULT OnMenuSelect(uint wID);
+
+            [VtblIndex(10)]
+            HRESULT GetPreferredSize([NativeTypeName("const SIZE *")] SIZE* pszDefault, SIZE* psz);
+
+            [VtblIndex(11)]
+            HRESULT DrawBitmap([NativeTypeName("LONG")] int bmWidth, [NativeTypeName("LONG")] int bmHeight, [NativeTypeName("DWORD")] uint dwFlags, HBITMAP* phbmp, HBITMAP* phbmpMask);
+
+            [VtblIndex(12)]
+            HRESULT GetText([NativeTypeName("BSTR *")] ushort** pbstrText);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemBitmapButton*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemBitmapButton*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemBitmapButton*, uint> Release;
+
+            [NativeTypeName("HRESULT (TF_LANGBARITEMINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemBitmapButton*, TF_LANGBARITEMINFO*, int> GetInfo;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemBitmapButton*, uint*, int> GetStatus;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemBitmapButton*, BOOL, int> Show;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemBitmapButton*, ushort**, int> GetTooltipString;
+
+            [NativeTypeName("HRESULT (TfLBIClick, POINT, const RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemBitmapButton*, TfLBIClick, POINT, RECT*, int> OnClick;
+
+            [NativeTypeName("HRESULT (ITfMenu *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemBitmapButton*, ITfMenu*, int> InitMenu;
+
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemBitmapButton*, uint, int> OnMenuSelect;
+
+            [NativeTypeName("HRESULT (const SIZE *, SIZE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemBitmapButton*, SIZE*, SIZE*, int> GetPreferredSize;
+
+            [NativeTypeName("HRESULT (LONG, LONG, DWORD, HBITMAP *, HBITMAP *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemBitmapButton*, int, int, uint, HBITMAP*, HBITMAP*, int> DrawBitmap;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITfLangBarItemBitmapButton*, ushort**, int> GetText;
         }
     }
 }

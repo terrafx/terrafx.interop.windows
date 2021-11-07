@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("449494BC-B468-4927-96D7-BA90D31AB505")]
     [NativeTypeName("struct IWICStreamProvider : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWICStreamProvider
+    public unsafe partial struct IWICStreamProvider : IWICStreamProvider.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT RefreshStream()
         {
             return ((delegate* unmanaged<IWICStreamProvider*, int>)(lpVtbl[6]))((IWICStreamProvider*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetStream(IStream** ppIStream);
+
+            [VtblIndex(4)]
+            HRESULT GetPersistOptions([NativeTypeName("DWORD *")] uint* pdwPersistOptions);
+
+            [VtblIndex(5)]
+            HRESULT GetPreferredVendorGUID(Guid* pguidPreferredVendor);
+
+            [VtblIndex(6)]
+            HRESULT RefreshStream();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICStreamProvider*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICStreamProvider*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICStreamProvider*, uint> Release;
+
+            [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICStreamProvider*, IStream**, int> GetStream;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICStreamProvider*, uint*, int> GetPersistOptions;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICStreamProvider*, Guid*, int> GetPreferredVendorGUID;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICStreamProvider*, int> RefreshStream;
         }
     }
 }

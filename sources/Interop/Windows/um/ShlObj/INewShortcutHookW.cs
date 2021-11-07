@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("000214F7-0000-0000-C000-000000000046")]
     [NativeTypeName("struct INewShortcutHookW : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct INewShortcutHookW
+    public unsafe partial struct INewShortcutHookW : INewShortcutHookW.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,57 @@ namespace TerraFX.Interop
         public HRESULT GetExtension([NativeTypeName("PWSTR")] ushort* pszExtension, int cchExtension)
         {
             return ((delegate* unmanaged<INewShortcutHookW*, ushort*, int, int>)(lpVtbl[8]))((INewShortcutHookW*)Unsafe.AsPointer(ref this), pszExtension, cchExtension);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetReferent([NativeTypeName("PCWSTR")] ushort* pcszReferent, HWND hwnd);
+
+            [VtblIndex(4)]
+            HRESULT GetReferent([NativeTypeName("PWSTR")] ushort* pszReferent, int cchReferent);
+
+            [VtblIndex(5)]
+            HRESULT SetFolder([NativeTypeName("PCWSTR")] ushort* pcszFolder);
+
+            [VtblIndex(6)]
+            HRESULT GetFolder([NativeTypeName("PWSTR")] ushort* pszFolder, int cchFolder);
+
+            [VtblIndex(7)]
+            HRESULT GetName([NativeTypeName("PWSTR")] ushort* pszName, int cchName);
+
+            [VtblIndex(8)]
+            HRESULT GetExtension([NativeTypeName("PWSTR")] ushort* pszExtension, int cchExtension);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewShortcutHookW*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INewShortcutHookW*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<INewShortcutHookW*, uint> Release;
+
+            [NativeTypeName("HRESULT (PCWSTR, HWND) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewShortcutHookW*, ushort*, HWND, int> SetReferent;
+
+            [NativeTypeName("HRESULT (PWSTR, int) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewShortcutHookW*, ushort*, int, int> GetReferent;
+
+            [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewShortcutHookW*, ushort*, int> SetFolder;
+
+            [NativeTypeName("HRESULT (PWSTR, int) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewShortcutHookW*, ushort*, int, int> GetFolder;
+
+            [NativeTypeName("HRESULT (PWSTR, int) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewShortcutHookW*, ushort*, int, int> GetName;
+
+            [NativeTypeName("HRESULT (PWSTR, int) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<INewShortcutHookW*, ushort*, int, int> GetExtension;
         }
     }
 }

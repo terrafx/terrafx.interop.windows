@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000035-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IActivationFactory : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IActivationFactory
+    public unsafe partial struct IActivationFactory : IActivationFactory.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,36 @@ namespace TerraFX.Interop
         public HRESULT ActivateInstance(IInspectable** instance)
         {
             return ((delegate* unmanaged<IActivationFactory*, IInspectable**, int>)(lpVtbl[6]))((IActivationFactory*)Unsafe.AsPointer(ref this), instance);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT ActivateInstance(IInspectable** instance);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActivationFactory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActivationFactory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActivationFactory*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActivationFactory*, uint*, Guid**, int> GetIids;
+
+            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActivationFactory*, HSTRING*, int> GetRuntimeClassName;
+
+            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActivationFactory*, TrustLevel*, int> GetTrustLevel;
+
+            [NativeTypeName("HRESULT (IInspectable **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActivationFactory*, IInspectable**, int> ActivateInstance;
         }
     }
 }

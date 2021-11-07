@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("24394699-1F2C-4EB3-8CD7-0EC1DA42A540")]
     [NativeTypeName("struct IPlayToManagerInterop : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IPlayToManagerInterop
+    public unsafe partial struct IPlayToManagerInterop : IPlayToManagerInterop.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,42 @@ namespace TerraFX.Interop
         public HRESULT ShowPlayToUIForWindow(HWND appWindow)
         {
             return ((delegate* unmanaged<IPlayToManagerInterop*, HWND, int>)(lpVtbl[7]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), appWindow);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** playToManager);
+
+            [VtblIndex(7)]
+            HRESULT ShowPlayToUIForWindow(HWND appWindow);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPlayToManagerInterop*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPlayToManagerInterop*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPlayToManagerInterop*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPlayToManagerInterop*, uint*, Guid**, int> GetIids;
+
+            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPlayToManagerInterop*, HSTRING*, int> GetRuntimeClassName;
+
+            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPlayToManagerInterop*, TrustLevel*, int> GetTrustLevel;
+
+            [NativeTypeName("HRESULT (HWND, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPlayToManagerInterop*, HWND, Guid*, void**, int> GetForWindow;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPlayToManagerInterop*, HWND, int> ShowPlayToUIForWindow;
         }
     }
 }

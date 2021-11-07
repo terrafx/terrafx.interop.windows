@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("641DD20B-4D41-49CC-ABA3-174B9477BB08")]
     [NativeTypeName("struct IAudioSessionNotification : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioSessionNotification
+    public unsafe partial struct IAudioSessionNotification : IAudioSessionNotification.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OnSessionCreated(IAudioSessionControl* NewSession)
         {
             return ((delegate* unmanaged<IAudioSessionNotification*, IAudioSessionControl*, int>)(lpVtbl[3]))((IAudioSessionNotification*)Unsafe.AsPointer(ref this), NewSession);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnSessionCreated(IAudioSessionControl* NewSession);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionNotification*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionNotification*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionNotification*, uint> Release;
+
+            [NativeTypeName("HRESULT (IAudioSessionControl *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioSessionNotification*, IAudioSessionControl*, int> OnSessionCreated;
         }
     }
 }

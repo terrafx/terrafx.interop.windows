@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510422-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLBodyElement3 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLBodyElement3
+    public unsafe partial struct IHTMLBodyElement3 : IHTMLBodyElement3.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,81 @@ namespace TerraFX.Interop
         public HRESULT get_onhashchange(VARIANT* p)
         {
             return ((delegate* unmanaged<IHTMLBodyElement3*, VARIANT*, int>)(lpVtbl[14]))((IHTMLBodyElement3*)Unsafe.AsPointer(ref this), p);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_background([NativeTypeName("BSTR")] ushort* v);
+
+            [VtblIndex(8)]
+            HRESULT get_background([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT put_ononline(VARIANT v);
+
+            [VtblIndex(10)]
+            HRESULT get_ononline(VARIANT* p);
+
+            [VtblIndex(11)]
+            HRESULT put_onoffline(VARIANT v);
+
+            [VtblIndex(12)]
+            HRESULT get_onoffline(VARIANT* p);
+
+            [VtblIndex(13)]
+            HRESULT put_onhashchange(VARIANT v);
+
+            [VtblIndex(14)]
+            HRESULT get_onhashchange(VARIANT* p);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement3*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement3*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement3*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement3*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement3*, ushort*, int> put_background;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement3*, ushort**, int> get_background;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement3*, VARIANT, int> put_ononline;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement3*, VARIANT*, int> get_ononline;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement3*, VARIANT, int> put_onoffline;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement3*, VARIANT*, int> get_onoffline;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement3*, VARIANT, int> put_onhashchange;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLBodyElement3*, VARIANT*, int> get_onhashchange;
         }
     }
 }

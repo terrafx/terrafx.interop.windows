@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("08C03411-F96B-11D0-A475-00AA006BCC59")]
     [NativeTypeName("struct IActiveIMMIME : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IActiveIMMIME
+    public unsafe partial struct IActiveIMMIME : IActiveIMMIME.Interface
     {
         public void** lpVtbl;
 
@@ -653,6 +653,549 @@ namespace TerraFX.Interop
         public HRESULT IsSleeping()
         {
             return ((delegate* unmanaged<IActiveIMMIME*, int>)(lpVtbl[90]))((IActiveIMMIME*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT AssociateContext(HWND hWnd, HIMC hIME, HIMC* phPrev);
+
+            [VtblIndex(4)]
+            HRESULT ConfigureIMEA(HKL hKL, HWND hWnd, [NativeTypeName("DWORD")] uint dwMode, REGISTERWORDA* pData);
+
+            [VtblIndex(5)]
+            HRESULT ConfigureIMEW(HKL hKL, HWND hWnd, [NativeTypeName("DWORD")] uint dwMode, REGISTERWORDW* pData);
+
+            [VtblIndex(6)]
+            HRESULT CreateContext(HIMC* phIMC);
+
+            [VtblIndex(7)]
+            HRESULT DestroyContext(HIMC hIME);
+
+            [VtblIndex(8)]
+            HRESULT EnumRegisterWordA(HKL hKL, [NativeTypeName("LPSTR")] sbyte* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPSTR")] sbyte* szRegister, [NativeTypeName("LPVOID")] void* pData, IEnumRegisterWordA** pEnum);
+
+            [VtblIndex(9)]
+            HRESULT EnumRegisterWordW(HKL hKL, [NativeTypeName("LPWSTR")] ushort* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] ushort* szRegister, [NativeTypeName("LPVOID")] void* pData, IEnumRegisterWordW** pEnum);
+
+            [VtblIndex(10)]
+            HRESULT EscapeA(HKL hKL, HIMC hIMC, uint uEscape, [NativeTypeName("LPVOID")] void* pData, LRESULT* plResult);
+
+            [VtblIndex(11)]
+            HRESULT EscapeW(HKL hKL, HIMC hIMC, uint uEscape, [NativeTypeName("LPVOID")] void* pData, LRESULT* plResult);
+
+            [VtblIndex(12)]
+            HRESULT GetCandidateListA(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, uint uBufLen, CANDIDATELIST* pCandList, uint* puCopied);
+
+            [VtblIndex(13)]
+            HRESULT GetCandidateListW(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, uint uBufLen, CANDIDATELIST* pCandList, uint* puCopied);
+
+            [VtblIndex(14)]
+            HRESULT GetCandidateListCountA(HIMC hIMC, [NativeTypeName("DWORD *")] uint* pdwListSize, [NativeTypeName("DWORD *")] uint* pdwBufLen);
+
+            [VtblIndex(15)]
+            HRESULT GetCandidateListCountW(HIMC hIMC, [NativeTypeName("DWORD *")] uint* pdwListSize, [NativeTypeName("DWORD *")] uint* pdwBufLen);
+
+            [VtblIndex(16)]
+            HRESULT GetCandidateWindow(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, CANDIDATEFORM* pCandidate);
+
+            [VtblIndex(17)]
+            HRESULT GetCompositionFontA(HIMC hIMC, LOGFONTA* plf);
+
+            [VtblIndex(18)]
+            HRESULT GetCompositionFontW(HIMC hIMC, LOGFONTW* plf);
+
+            [VtblIndex(19)]
+            HRESULT GetCompositionStringA(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD")] uint dwBufLen, [NativeTypeName("LONG *")] int* plCopied, [NativeTypeName("LPVOID")] void* pBuf);
+
+            [VtblIndex(20)]
+            HRESULT GetCompositionStringW(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD")] uint dwBufLen, [NativeTypeName("LONG *")] int* plCopied, [NativeTypeName("LPVOID")] void* pBuf);
+
+            [VtblIndex(21)]
+            HRESULT GetCompositionWindow(HIMC hIMC, COMPOSITIONFORM* pCompForm);
+
+            [VtblIndex(22)]
+            HRESULT GetContext(HWND hWnd, HIMC* phIMC);
+
+            [VtblIndex(23)]
+            HRESULT GetConversionListA(HKL hKL, HIMC hIMC, [NativeTypeName("LPSTR")] sbyte* pSrc, uint uBufLen, uint uFlag, CANDIDATELIST* pDst, uint* puCopied);
+
+            [VtblIndex(24)]
+            HRESULT GetConversionListW(HKL hKL, HIMC hIMC, [NativeTypeName("LPWSTR")] ushort* pSrc, uint uBufLen, uint uFlag, CANDIDATELIST* pDst, uint* puCopied);
+
+            [VtblIndex(25)]
+            HRESULT GetConversionStatus(HIMC hIMC, [NativeTypeName("DWORD *")] uint* pfdwConversion, [NativeTypeName("DWORD *")] uint* pfdwSentence);
+
+            [VtblIndex(26)]
+            HRESULT GetDefaultIMEWnd(HWND hWnd, HWND* phDefWnd);
+
+            [VtblIndex(27)]
+            HRESULT GetDescriptionA(HKL hKL, uint uBufLen, [NativeTypeName("LPSTR")] sbyte* szDescription, uint* puCopied);
+
+            [VtblIndex(28)]
+            HRESULT GetDescriptionW(HKL hKL, uint uBufLen, [NativeTypeName("LPWSTR")] ushort* szDescription, uint* puCopied);
+
+            [VtblIndex(29)]
+            HRESULT GetGuideLineA(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD")] uint dwBufLen, [NativeTypeName("LPSTR")] sbyte* pBuf, [NativeTypeName("DWORD *")] uint* pdwResult);
+
+            [VtblIndex(30)]
+            HRESULT GetGuideLineW(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD")] uint dwBufLen, [NativeTypeName("LPWSTR")] ushort* pBuf, [NativeTypeName("DWORD *")] uint* pdwResult);
+
+            [VtblIndex(31)]
+            HRESULT GetIMEFileNameA(HKL hKL, uint uBufLen, [NativeTypeName("LPSTR")] sbyte* szFileName, uint* puCopied);
+
+            [VtblIndex(32)]
+            HRESULT GetIMEFileNameW(HKL hKL, uint uBufLen, [NativeTypeName("LPWSTR")] ushort* szFileName, uint* puCopied);
+
+            [VtblIndex(33)]
+            HRESULT GetOpenStatus(HIMC hIMC);
+
+            [VtblIndex(34)]
+            HRESULT GetProperty(HKL hKL, [NativeTypeName("DWORD")] uint fdwIndex, [NativeTypeName("DWORD *")] uint* pdwProperty);
+
+            [VtblIndex(35)]
+            HRESULT GetRegisterWordStyleA(HKL hKL, uint nItem, STYLEBUFA* pStyleBuf, uint* puCopied);
+
+            [VtblIndex(36)]
+            HRESULT GetRegisterWordStyleW(HKL hKL, uint nItem, STYLEBUFW* pStyleBuf, uint* puCopied);
+
+            [VtblIndex(37)]
+            HRESULT GetStatusWindowPos(HIMC hIMC, POINT* pptPos);
+
+            [VtblIndex(38)]
+            HRESULT GetVirtualKey(HWND hWnd, uint* puVirtualKey);
+
+            [VtblIndex(39)]
+            HRESULT InstallIMEA([NativeTypeName("LPSTR")] sbyte* szIMEFileName, [NativeTypeName("LPSTR")] sbyte* szLayoutText, HKL* phKL);
+
+            [VtblIndex(40)]
+            HRESULT InstallIMEW([NativeTypeName("LPWSTR")] ushort* szIMEFileName, [NativeTypeName("LPWSTR")] ushort* szLayoutText, HKL* phKL);
+
+            [VtblIndex(41)]
+            HRESULT IsIME(HKL hKL);
+
+            [VtblIndex(42)]
+            HRESULT IsUIMessageA(HWND hWndIME, uint msg, WPARAM wParam, LPARAM lParam);
+
+            [VtblIndex(43)]
+            HRESULT IsUIMessageW(HWND hWndIME, uint msg, WPARAM wParam, LPARAM lParam);
+
+            [VtblIndex(44)]
+            HRESULT NotifyIME(HIMC hIMC, [NativeTypeName("DWORD")] uint dwAction, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD")] uint dwValue);
+
+            [VtblIndex(45)]
+            HRESULT RegisterWordA(HKL hKL, [NativeTypeName("LPSTR")] sbyte* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPSTR")] sbyte* szRegister);
+
+            [VtblIndex(46)]
+            HRESULT RegisterWordW(HKL hKL, [NativeTypeName("LPWSTR")] ushort* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] ushort* szRegister);
+
+            [VtblIndex(47)]
+            HRESULT ReleaseContext(HWND hWnd, HIMC hIMC);
+
+            [VtblIndex(48)]
+            HRESULT SetCandidateWindow(HIMC hIMC, CANDIDATEFORM* pCandidate);
+
+            [VtblIndex(49)]
+            HRESULT SetCompositionFontA(HIMC hIMC, LOGFONTA* plf);
+
+            [VtblIndex(50)]
+            HRESULT SetCompositionFontW(HIMC hIMC, LOGFONTW* plf);
+
+            [VtblIndex(51)]
+            HRESULT SetCompositionStringA(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPVOID")] void* pComp, [NativeTypeName("DWORD")] uint dwCompLen, [NativeTypeName("LPVOID")] void* pRead, [NativeTypeName("DWORD")] uint dwReadLen);
+
+            [VtblIndex(52)]
+            HRESULT SetCompositionStringW(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPVOID")] void* pComp, [NativeTypeName("DWORD")] uint dwCompLen, [NativeTypeName("LPVOID")] void* pRead, [NativeTypeName("DWORD")] uint dwReadLen);
+
+            [VtblIndex(53)]
+            HRESULT SetCompositionWindow(HIMC hIMC, COMPOSITIONFORM* pCompForm);
+
+            [VtblIndex(54)]
+            HRESULT SetConversionStatus(HIMC hIMC, [NativeTypeName("DWORD")] uint fdwConversion, [NativeTypeName("DWORD")] uint fdwSentence);
+
+            [VtblIndex(55)]
+            HRESULT SetOpenStatus(HIMC hIMC, BOOL fOpen);
+
+            [VtblIndex(56)]
+            HRESULT SetStatusWindowPos(HIMC hIMC, POINT* pptPos);
+
+            [VtblIndex(57)]
+            HRESULT SimulateHotKey(HWND hWnd, [NativeTypeName("DWORD")] uint dwHotKeyID);
+
+            [VtblIndex(58)]
+            HRESULT UnregisterWordA(HKL hKL, [NativeTypeName("LPSTR")] sbyte* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPSTR")] sbyte* szUnregister);
+
+            [VtblIndex(59)]
+            HRESULT UnregisterWordW(HKL hKL, [NativeTypeName("LPWSTR")] ushort* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] ushort* szUnregister);
+
+            [VtblIndex(60)]
+            HRESULT GenerateMessage(HIMC hIMC);
+
+            [VtblIndex(61)]
+            HRESULT LockIMC(HIMC hIMC, INPUTCONTEXT** ppIMC);
+
+            [VtblIndex(62)]
+            HRESULT UnlockIMC(HIMC hIMC);
+
+            [VtblIndex(63)]
+            HRESULT GetIMCLockCount(HIMC hIMC, [NativeTypeName("DWORD *")] uint* pdwLockCount);
+
+            [VtblIndex(64)]
+            HRESULT CreateIMCC([NativeTypeName("DWORD")] uint dwSize, HIMCC* phIMCC);
+
+            [VtblIndex(65)]
+            HRESULT DestroyIMCC(HIMCC hIMCC);
+
+            [VtblIndex(66)]
+            HRESULT LockIMCC(HIMCC hIMCC, void** ppv);
+
+            [VtblIndex(67)]
+            HRESULT UnlockIMCC(HIMCC hIMCC);
+
+            [VtblIndex(68)]
+            HRESULT ReSizeIMCC(HIMCC hIMCC, [NativeTypeName("DWORD")] uint dwSize, HIMCC* phIMCC);
+
+            [VtblIndex(69)]
+            HRESULT GetIMCCSize(HIMCC hIMCC, [NativeTypeName("DWORD *")] uint* pdwSize);
+
+            [VtblIndex(70)]
+            HRESULT GetIMCCLockCount(HIMCC hIMCC, [NativeTypeName("DWORD *")] uint* pdwLockCount);
+
+            [VtblIndex(71)]
+            HRESULT GetHotKey([NativeTypeName("DWORD")] uint dwHotKeyID, uint* puModifiers, uint* puVKey, HKL* phKL);
+
+            [VtblIndex(72)]
+            HRESULT SetHotKey([NativeTypeName("DWORD")] uint dwHotKeyID, uint uModifiers, uint uVKey, HKL hKL);
+
+            [VtblIndex(73)]
+            HRESULT CreateSoftKeyboard(uint uType, HWND hOwner, int x, int y, HWND* phSoftKbdWnd);
+
+            [VtblIndex(74)]
+            HRESULT DestroySoftKeyboard(HWND hSoftKbdWnd);
+
+            [VtblIndex(75)]
+            HRESULT ShowSoftKeyboard(HWND hSoftKbdWnd, int nCmdShow);
+
+            [VtblIndex(76)]
+            HRESULT GetCodePageA(HKL hKL, uint* uCodePage);
+
+            [VtblIndex(77)]
+            HRESULT GetLangId(HKL hKL, [NativeTypeName("LANGID *")] ushort* plid);
+
+            [VtblIndex(78)]
+            HRESULT KeybdEvent([NativeTypeName("LANGID")] ushort lgidIME, byte bVk, byte bScan, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwExtraInfo);
+
+            [VtblIndex(79)]
+            HRESULT LockModal();
+
+            [VtblIndex(80)]
+            HRESULT UnlockModal();
+
+            [VtblIndex(81)]
+            HRESULT AssociateContextEx(HWND hWnd, HIMC hIMC, [NativeTypeName("DWORD")] uint dwFlags);
+
+            [VtblIndex(82)]
+            HRESULT DisableIME([NativeTypeName("DWORD")] uint idThread);
+
+            [VtblIndex(83)]
+            HRESULT GetImeMenuItemsA(HIMC hIMC, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwType, IMEMENUITEMINFOA* pImeParentMenu, IMEMENUITEMINFOA* pImeMenu, [NativeTypeName("DWORD")] uint dwSize, [NativeTypeName("DWORD *")] uint* pdwResult);
+
+            [VtblIndex(84)]
+            HRESULT GetImeMenuItemsW(HIMC hIMC, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwType, IMEMENUITEMINFOW* pImeParentMenu, IMEMENUITEMINFOW* pImeMenu, [NativeTypeName("DWORD")] uint dwSize, [NativeTypeName("DWORD *")] uint* pdwResult);
+
+            [VtblIndex(85)]
+            HRESULT EnumInputContext([NativeTypeName("DWORD")] uint idThread, IEnumInputContext** ppEnum);
+
+            [VtblIndex(86)]
+            HRESULT RequestMessageA(HIMC hIMC, WPARAM wParam, LPARAM lParam, LRESULT* plResult);
+
+            [VtblIndex(87)]
+            HRESULT RequestMessageW(HIMC hIMC, WPARAM wParam, LPARAM lParam, LRESULT* plResult);
+
+            [VtblIndex(88)]
+            HRESULT SendIMCA(HWND hWnd, uint uMsg, WPARAM wParam, LPARAM lParam, LRESULT* plResult);
+
+            [VtblIndex(89)]
+            HRESULT SendIMCW(HWND hWnd, uint uMsg, WPARAM wParam, LPARAM lParam, LRESULT* plResult);
+
+            [VtblIndex(90)]
+            HRESULT IsSleeping();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, uint> Release;
+
+            [NativeTypeName("HRESULT (HWND, HIMC, HIMC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HWND, HIMC, HIMC*, int> AssociateContext;
+
+            [NativeTypeName("HRESULT (HKL, HWND, DWORD, REGISTERWORDA *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HKL, HWND, uint, REGISTERWORDA*, int> ConfigureIMEA;
+
+            [NativeTypeName("HRESULT (HKL, HWND, DWORD, REGISTERWORDW *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HKL, HWND, uint, REGISTERWORDW*, int> ConfigureIMEW;
+
+            [NativeTypeName("HRESULT (HIMC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC*, int> CreateContext;
+
+            [NativeTypeName("HRESULT (HIMC) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, int> DestroyContext;
+
+            [NativeTypeName("HRESULT (HKL, LPSTR, DWORD, LPSTR, LPVOID, IEnumRegisterWordA **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HKL, sbyte*, uint, sbyte*, void*, IEnumRegisterWordA**, int> EnumRegisterWordA;
+
+            [NativeTypeName("HRESULT (HKL, LPWSTR, DWORD, LPWSTR, LPVOID, IEnumRegisterWordW **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HKL, ushort*, uint, ushort*, void*, IEnumRegisterWordW**, int> EnumRegisterWordW;
+
+            [NativeTypeName("HRESULT (HKL, HIMC, UINT, LPVOID, LRESULT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HKL, HIMC, uint, void*, LRESULT*, int> EscapeA;
+
+            [NativeTypeName("HRESULT (HKL, HIMC, UINT, LPVOID, LRESULT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HKL, HIMC, uint, void*, LRESULT*, int> EscapeW;
+
+            [NativeTypeName("HRESULT (HIMC, DWORD, UINT, CANDIDATELIST *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, uint, uint, CANDIDATELIST*, uint*, int> GetCandidateListA;
+
+            [NativeTypeName("HRESULT (HIMC, DWORD, UINT, CANDIDATELIST *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, uint, uint, CANDIDATELIST*, uint*, int> GetCandidateListW;
+
+            [NativeTypeName("HRESULT (HIMC, DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, uint*, uint*, int> GetCandidateListCountA;
+
+            [NativeTypeName("HRESULT (HIMC, DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, uint*, uint*, int> GetCandidateListCountW;
+
+            [NativeTypeName("HRESULT (HIMC, DWORD, CANDIDATEFORM *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, uint, CANDIDATEFORM*, int> GetCandidateWindow;
+
+            [NativeTypeName("HRESULT (HIMC, LOGFONTA *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, LOGFONTA*, int> GetCompositionFontA;
+
+            [NativeTypeName("HRESULT (HIMC, LOGFONTW *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, LOGFONTW*, int> GetCompositionFontW;
+
+            [NativeTypeName("HRESULT (HIMC, DWORD, DWORD, LONG *, LPVOID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, uint, uint, int*, void*, int> GetCompositionStringA;
+
+            [NativeTypeName("HRESULT (HIMC, DWORD, DWORD, LONG *, LPVOID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, uint, uint, int*, void*, int> GetCompositionStringW;
+
+            [NativeTypeName("HRESULT (HIMC, COMPOSITIONFORM *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, COMPOSITIONFORM*, int> GetCompositionWindow;
+
+            [NativeTypeName("HRESULT (HWND, HIMC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HWND, HIMC*, int> GetContext;
+
+            [NativeTypeName("HRESULT (HKL, HIMC, LPSTR, UINT, UINT, CANDIDATELIST *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HKL, HIMC, sbyte*, uint, uint, CANDIDATELIST*, uint*, int> GetConversionListA;
+
+            [NativeTypeName("HRESULT (HKL, HIMC, LPWSTR, UINT, UINT, CANDIDATELIST *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HKL, HIMC, ushort*, uint, uint, CANDIDATELIST*, uint*, int> GetConversionListW;
+
+            [NativeTypeName("HRESULT (HIMC, DWORD *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, uint*, uint*, int> GetConversionStatus;
+
+            [NativeTypeName("HRESULT (HWND, HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HWND, HWND*, int> GetDefaultIMEWnd;
+
+            [NativeTypeName("HRESULT (HKL, UINT, LPSTR, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HKL, uint, sbyte*, uint*, int> GetDescriptionA;
+
+            [NativeTypeName("HRESULT (HKL, UINT, LPWSTR, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HKL, uint, ushort*, uint*, int> GetDescriptionW;
+
+            [NativeTypeName("HRESULT (HIMC, DWORD, DWORD, LPSTR, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, uint, uint, sbyte*, uint*, int> GetGuideLineA;
+
+            [NativeTypeName("HRESULT (HIMC, DWORD, DWORD, LPWSTR, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, uint, uint, ushort*, uint*, int> GetGuideLineW;
+
+            [NativeTypeName("HRESULT (HKL, UINT, LPSTR, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HKL, uint, sbyte*, uint*, int> GetIMEFileNameA;
+
+            [NativeTypeName("HRESULT (HKL, UINT, LPWSTR, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HKL, uint, ushort*, uint*, int> GetIMEFileNameW;
+
+            [NativeTypeName("HRESULT (HIMC) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, int> GetOpenStatus;
+
+            [NativeTypeName("HRESULT (HKL, DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HKL, uint, uint*, int> GetProperty;
+
+            [NativeTypeName("HRESULT (HKL, UINT, STYLEBUFA *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HKL, uint, STYLEBUFA*, uint*, int> GetRegisterWordStyleA;
+
+            [NativeTypeName("HRESULT (HKL, UINT, STYLEBUFW *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HKL, uint, STYLEBUFW*, uint*, int> GetRegisterWordStyleW;
+
+            [NativeTypeName("HRESULT (HIMC, POINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, POINT*, int> GetStatusWindowPos;
+
+            [NativeTypeName("HRESULT (HWND, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HWND, uint*, int> GetVirtualKey;
+
+            [NativeTypeName("HRESULT (LPSTR, LPSTR, HKL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, sbyte*, sbyte*, HKL*, int> InstallIMEA;
+
+            [NativeTypeName("HRESULT (LPWSTR, LPWSTR, HKL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, ushort*, ushort*, HKL*, int> InstallIMEW;
+
+            [NativeTypeName("HRESULT (HKL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HKL, int> IsIME;
+
+            [NativeTypeName("HRESULT (HWND, UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HWND, uint, WPARAM, LPARAM, int> IsUIMessageA;
+
+            [NativeTypeName("HRESULT (HWND, UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HWND, uint, WPARAM, LPARAM, int> IsUIMessageW;
+
+            [NativeTypeName("HRESULT (HIMC, DWORD, DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, uint, uint, uint, int> NotifyIME;
+
+            [NativeTypeName("HRESULT (HKL, LPSTR, DWORD, LPSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HKL, sbyte*, uint, sbyte*, int> RegisterWordA;
+
+            [NativeTypeName("HRESULT (HKL, LPWSTR, DWORD, LPWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HKL, ushort*, uint, ushort*, int> RegisterWordW;
+
+            [NativeTypeName("HRESULT (HWND, HIMC) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HWND, HIMC, int> ReleaseContext;
+
+            [NativeTypeName("HRESULT (HIMC, CANDIDATEFORM *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, CANDIDATEFORM*, int> SetCandidateWindow;
+
+            [NativeTypeName("HRESULT (HIMC, LOGFONTA *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, LOGFONTA*, int> SetCompositionFontA;
+
+            [NativeTypeName("HRESULT (HIMC, LOGFONTW *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, LOGFONTW*, int> SetCompositionFontW;
+
+            [NativeTypeName("HRESULT (HIMC, DWORD, LPVOID, DWORD, LPVOID, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, uint, void*, uint, void*, uint, int> SetCompositionStringA;
+
+            [NativeTypeName("HRESULT (HIMC, DWORD, LPVOID, DWORD, LPVOID, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, uint, void*, uint, void*, uint, int> SetCompositionStringW;
+
+            [NativeTypeName("HRESULT (HIMC, COMPOSITIONFORM *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, COMPOSITIONFORM*, int> SetCompositionWindow;
+
+            [NativeTypeName("HRESULT (HIMC, DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, uint, uint, int> SetConversionStatus;
+
+            [NativeTypeName("HRESULT (HIMC, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, BOOL, int> SetOpenStatus;
+
+            [NativeTypeName("HRESULT (HIMC, POINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, POINT*, int> SetStatusWindowPos;
+
+            [NativeTypeName("HRESULT (HWND, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HWND, uint, int> SimulateHotKey;
+
+            [NativeTypeName("HRESULT (HKL, LPSTR, DWORD, LPSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HKL, sbyte*, uint, sbyte*, int> UnregisterWordA;
+
+            [NativeTypeName("HRESULT (HKL, LPWSTR, DWORD, LPWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HKL, ushort*, uint, ushort*, int> UnregisterWordW;
+
+            [NativeTypeName("HRESULT (HIMC) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, int> GenerateMessage;
+
+            [NativeTypeName("HRESULT (HIMC, INPUTCONTEXT **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, INPUTCONTEXT**, int> LockIMC;
+
+            [NativeTypeName("HRESULT (HIMC) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, int> UnlockIMC;
+
+            [NativeTypeName("HRESULT (HIMC, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, uint*, int> GetIMCLockCount;
+
+            [NativeTypeName("HRESULT (DWORD, HIMCC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, uint, HIMCC*, int> CreateIMCC;
+
+            [NativeTypeName("HRESULT (HIMCC) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMCC, int> DestroyIMCC;
+
+            [NativeTypeName("HRESULT (HIMCC, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMCC, void**, int> LockIMCC;
+
+            [NativeTypeName("HRESULT (HIMCC) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMCC, int> UnlockIMCC;
+
+            [NativeTypeName("HRESULT (HIMCC, DWORD, HIMCC *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMCC, uint, HIMCC*, int> ReSizeIMCC;
+
+            [NativeTypeName("HRESULT (HIMCC, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMCC, uint*, int> GetIMCCSize;
+
+            [NativeTypeName("HRESULT (HIMCC, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMCC, uint*, int> GetIMCCLockCount;
+
+            [NativeTypeName("HRESULT (DWORD, UINT *, UINT *, HKL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, uint, uint*, uint*, HKL*, int> GetHotKey;
+
+            [NativeTypeName("HRESULT (DWORD, UINT, UINT, HKL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, uint, uint, uint, HKL, int> SetHotKey;
+
+            [NativeTypeName("HRESULT (UINT, HWND, int, int, HWND *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, uint, HWND, int, int, HWND*, int> CreateSoftKeyboard;
+
+            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HWND, int> DestroySoftKeyboard;
+
+            [NativeTypeName("HRESULT (HWND, int) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HWND, int, int> ShowSoftKeyboard;
+
+            [NativeTypeName("HRESULT (HKL, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HKL, uint*, int> GetCodePageA;
+
+            [NativeTypeName("HRESULT (HKL, LANGID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HKL, ushort*, int> GetLangId;
+
+            [NativeTypeName("HRESULT (LANGID, BYTE, BYTE, DWORD, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, ushort, byte, byte, uint, uint, int> KeybdEvent;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, int> LockModal;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, int> UnlockModal;
+
+            [NativeTypeName("HRESULT (HWND, HIMC, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HWND, HIMC, uint, int> AssociateContextEx;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, uint, int> DisableIME;
+
+            [NativeTypeName("HRESULT (HIMC, DWORD, DWORD, IMEMENUITEMINFOA *, IMEMENUITEMINFOA *, DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, uint, uint, IMEMENUITEMINFOA*, IMEMENUITEMINFOA*, uint, uint*, int> GetImeMenuItemsA;
+
+            [NativeTypeName("HRESULT (HIMC, DWORD, DWORD, IMEMENUITEMINFOW *, IMEMENUITEMINFOW *, DWORD, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, uint, uint, IMEMENUITEMINFOW*, IMEMENUITEMINFOW*, uint, uint*, int> GetImeMenuItemsW;
+
+            [NativeTypeName("HRESULT (DWORD, IEnumInputContext **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, uint, IEnumInputContext**, int> EnumInputContext;
+
+            [NativeTypeName("HRESULT (HIMC, WPARAM, LPARAM, LRESULT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, WPARAM, LPARAM, LRESULT*, int> RequestMessageA;
+
+            [NativeTypeName("HRESULT (HIMC, WPARAM, LPARAM, LRESULT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HIMC, WPARAM, LPARAM, LRESULT*, int> RequestMessageW;
+
+            [NativeTypeName("HRESULT (HWND, UINT, WPARAM, LPARAM, LRESULT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HWND, uint, WPARAM, LPARAM, LRESULT*, int> SendIMCA;
+
+            [NativeTypeName("HRESULT (HWND, UINT, WPARAM, LPARAM, LRESULT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, HWND, uint, WPARAM, LPARAM, LRESULT*, int> SendIMCW;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IActiveIMMIME*, int> IsSleeping;
         }
     }
 }

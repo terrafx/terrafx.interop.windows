@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9090BE5B-502B-41FB-BCCC-0049A6C7254B")]
     [NativeTypeName("struct IQueryContinueWithStatus : IQueryContinue")]
     [NativeInheritance("IQueryContinue")]
-    public unsafe partial struct IQueryContinueWithStatus
+    public unsafe partial struct IQueryContinueWithStatus : IQueryContinueWithStatus.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,30 @@ namespace TerraFX.Interop
         public HRESULT SetStatusMessage([NativeTypeName("LPCWSTR")] ushort* psz)
         {
             return ((delegate* unmanaged<IQueryContinueWithStatus*, ushort*, int>)(lpVtbl[4]))((IQueryContinueWithStatus*)Unsafe.AsPointer(ref this), psz);
+        }
+
+        public interface Interface : IQueryContinue.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT SetStatusMessage([NativeTypeName("LPCWSTR")] ushort* psz);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQueryContinueWithStatus*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IQueryContinueWithStatus*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IQueryContinueWithStatus*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IQueryContinueWithStatus*, int> QueryContinue;
+
+            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IQueryContinueWithStatus*, ushort*, int> SetStatusMessage;
         }
     }
 }

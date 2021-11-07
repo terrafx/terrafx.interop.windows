@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305104B6-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLSelection : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLSelection
+    public unsafe partial struct IHTMLSelection : IHTMLSelection.Interface
     {
         public void** lpVtbl;
 
@@ -177,6 +177,129 @@ namespace TerraFX.Interop
         public HRESULT toString([NativeTypeName("BSTR *")] ushort** pSelectionString)
         {
             return ((delegate* unmanaged<IHTMLSelection*, ushort**, int>)(lpVtbl[22]))((IHTMLSelection*)Unsafe.AsPointer(ref this), pSelectionString);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_anchorNode(IHTMLDOMNode** p);
+
+            [VtblIndex(8)]
+            HRESULT get_anchorOffset([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT get_focusNode(IHTMLDOMNode** p);
+
+            [VtblIndex(10)]
+            HRESULT get_focusOffset([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(11)]
+            HRESULT get_isCollapsed([NativeTypeName("VARIANT_BOOL *")] short* p);
+
+            [VtblIndex(12)]
+            HRESULT collapse(IDispatch* parentNode, [NativeTypeName("long")] int offfset);
+
+            [VtblIndex(13)]
+            HRESULT collapseToStart();
+
+            [VtblIndex(14)]
+            HRESULT collapseToEnd();
+
+            [VtblIndex(15)]
+            HRESULT selectAllChildren(IDispatch* parentNode);
+
+            [VtblIndex(16)]
+            HRESULT deleteFromDocument();
+
+            [VtblIndex(17)]
+            HRESULT get_rangeCount([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(18)]
+            HRESULT getRangeAt([NativeTypeName("long")] int index, IHTMLDOMRange** ppRange);
+
+            [VtblIndex(19)]
+            HRESULT addRange(IDispatch* range);
+
+            [VtblIndex(20)]
+            HRESULT removeRange(IDispatch* range);
+
+            [VtblIndex(21)]
+            HRESULT removeAllRanges();
+
+            [VtblIndex(22)]
+            HRESULT toString([NativeTypeName("BSTR *")] ushort** pSelectionString);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelection*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelection*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelection*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelection*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelection*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelection*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelection*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IHTMLDOMNode **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelection*, IHTMLDOMNode**, int> get_anchorNode;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelection*, int*, int> get_anchorOffset;
+
+            [NativeTypeName("HRESULT (IHTMLDOMNode **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelection*, IHTMLDOMNode**, int> get_focusNode;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelection*, int*, int> get_focusOffset;
+
+            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelection*, short*, int> get_isCollapsed;
+
+            [NativeTypeName("HRESULT (IDispatch *, long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelection*, IDispatch*, int, int> collapse;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelection*, int> collapseToStart;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelection*, int> collapseToEnd;
+
+            [NativeTypeName("HRESULT (IDispatch *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelection*, IDispatch*, int> selectAllChildren;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelection*, int> deleteFromDocument;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelection*, int*, int> get_rangeCount;
+
+            [NativeTypeName("HRESULT (long, IHTMLDOMRange **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelection*, int, IHTMLDOMRange**, int> getRangeAt;
+
+            [NativeTypeName("HRESULT (IDispatch *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelection*, IDispatch*, int> addRange;
+
+            [NativeTypeName("HRESULT (IDispatch *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelection*, IDispatch*, int> removeRange;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelection*, int> removeAllRanges;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLSelection*, ushort**, int> toString;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("56A868A9-0AD4-11CE-B03A-0020AF0BA770")]
     [NativeTypeName("struct IGraphBuilder : IFilterGraph")]
     [NativeInheritance("IFilterGraph")]
-    public unsafe partial struct IGraphBuilder
+    public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface
     {
         public void** lpVtbl;
 
@@ -142,6 +142,87 @@ namespace TerraFX.Interop
         public HRESULT ShouldOperationContinue()
         {
             return ((delegate* unmanaged<IGraphBuilder*, int>)(lpVtbl[17]))((IGraphBuilder*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IFilterGraph.Interface
+        {
+            [VtblIndex(11)]
+            HRESULT Connect(IPin* ppinOut, IPin* ppinIn);
+
+            [VtblIndex(12)]
+            HRESULT Render(IPin* ppinOut);
+
+            [VtblIndex(13)]
+            HRESULT RenderFile([NativeTypeName("LPCWSTR")] ushort* lpcwstrFile, [NativeTypeName("LPCWSTR")] ushort* lpcwstrPlayList);
+
+            [VtblIndex(14)]
+            HRESULT AddSourceFilter([NativeTypeName("LPCWSTR")] ushort* lpcwstrFileName, [NativeTypeName("LPCWSTR")] ushort* lpcwstrFilterName, IBaseFilter** ppFilter);
+
+            [VtblIndex(15)]
+            HRESULT SetLogFile([NativeTypeName("DWORD_PTR")] nuint hFile);
+
+            [VtblIndex(16)]
+            HRESULT Abort();
+
+            [VtblIndex(17)]
+            HRESULT ShouldOperationContinue();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphBuilder*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphBuilder*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphBuilder*, uint> Release;
+
+            [NativeTypeName("HRESULT (IBaseFilter *, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphBuilder*, IBaseFilter*, ushort*, int> AddFilter;
+
+            [NativeTypeName("HRESULT (IBaseFilter *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphBuilder*, IBaseFilter*, int> RemoveFilter;
+
+            [NativeTypeName("HRESULT (IEnumFilters **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphBuilder*, IEnumFilters**, int> EnumFilters;
+
+            [NativeTypeName("HRESULT (LPCWSTR, IBaseFilter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphBuilder*, ushort*, IBaseFilter**, int> FindFilterByName;
+
+            [NativeTypeName("HRESULT (IPin *, IPin *, const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphBuilder*, IPin*, IPin*, AM_MEDIA_TYPE*, int> ConnectDirect;
+
+            [NativeTypeName("HRESULT (IPin *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphBuilder*, IPin*, int> Reconnect;
+
+            [NativeTypeName("HRESULT (IPin *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphBuilder*, IPin*, int> Disconnect;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphBuilder*, int> SetDefaultSyncSource;
+
+            [NativeTypeName("HRESULT (IPin *, IPin *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphBuilder*, IPin*, IPin*, int> Connect;
+
+            [NativeTypeName("HRESULT (IPin *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphBuilder*, IPin*, int> Render;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphBuilder*, ushort*, ushort*, int> RenderFile;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, IBaseFilter **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphBuilder*, ushort*, ushort*, IBaseFilter**, int> AddSourceFilter;
+
+            [NativeTypeName("HRESULT (DWORD_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphBuilder*, nuint, int> SetLogFile;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphBuilder*, int> Abort;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IGraphBuilder*, int> ShouldOperationContinue;
         }
     }
 }

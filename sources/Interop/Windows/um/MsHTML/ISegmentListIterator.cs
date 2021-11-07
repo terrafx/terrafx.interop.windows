@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F692-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISegmentListIterator : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISegmentListIterator
+    public unsafe partial struct ISegmentListIterator : ISegmentListIterator.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Advance()
         {
             return ((delegate* unmanaged<ISegmentListIterator*, int>)(lpVtbl[6]))((ISegmentListIterator*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Current(ISegment** ppISegment);
+
+            [VtblIndex(4)]
+            HRESULT First();
+
+            [VtblIndex(5)]
+            HRESULT IsDone();
+
+            [VtblIndex(6)]
+            HRESULT Advance();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISegmentListIterator*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISegmentListIterator*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISegmentListIterator*, uint> Release;
+
+            [NativeTypeName("HRESULT (ISegment **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISegmentListIterator*, ISegment**, int> Current;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISegmentListIterator*, int> First;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISegmentListIterator*, int> IsDone;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISegmentListIterator*, int> Advance;
         }
     }
 }

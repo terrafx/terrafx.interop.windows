@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("20BE1E2E-930F-4746-9335-3C332F255093")]
     [NativeTypeName("struct IAudioFrameNative : IInspectable")]
     [NativeInheritance("IInspectable")]
-    public unsafe partial struct IAudioFrameNative
+    public unsafe partial struct IAudioFrameNative : IAudioFrameNative.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,36 @@ namespace TerraFX.Interop
         public HRESULT GetData([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
         {
             return ((delegate* unmanaged<IAudioFrameNative*, Guid*, void**, int>)(lpVtbl[6]))((IAudioFrameNative*)Unsafe.AsPointer(ref this), riid, ppv);
+        }
+
+        public interface Interface : IInspectable.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT GetData([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioFrameNative*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioFrameNative*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioFrameNative*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioFrameNative*, uint*, Guid**, int> GetIids;
+
+            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioFrameNative*, HSTRING*, int> GetRuntimeClassName;
+
+            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioFrameNative*, TrustLevel*, int> GetTrustLevel;
+
+            [NativeTypeName("HRESULT (const IID &, LPVOID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioFrameNative*, Guid*, void**, int> GetData;
         }
     }
 }

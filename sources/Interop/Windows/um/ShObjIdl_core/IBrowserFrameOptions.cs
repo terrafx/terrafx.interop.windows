@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("10DF43C8-1DBE-11D3-8B34-006097DF5BD4")]
     [NativeTypeName("struct IBrowserFrameOptions : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IBrowserFrameOptions
+    public unsafe partial struct IBrowserFrameOptions : IBrowserFrameOptions.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetFrameOptions([NativeTypeName("BROWSERFRAMEOPTIONS")] uint dwMask, [NativeTypeName("BROWSERFRAMEOPTIONS *")] uint* pdwOptions)
         {
             return ((delegate* unmanaged<IBrowserFrameOptions*, uint, uint*, int>)(lpVtbl[3]))((IBrowserFrameOptions*)Unsafe.AsPointer(ref this), dwMask, pdwOptions);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetFrameOptions([NativeTypeName("BROWSERFRAMEOPTIONS")] uint dwMask, [NativeTypeName("BROWSERFRAMEOPTIONS *")] uint* pdwOptions);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBrowserFrameOptions*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBrowserFrameOptions*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBrowserFrameOptions*, uint> Release;
+
+            [NativeTypeName("HRESULT (BROWSERFRAMEOPTIONS, BROWSERFRAMEOPTIONS *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBrowserFrameOptions*, uint, uint*, int> GetFrameOptions;
         }
     }
 }

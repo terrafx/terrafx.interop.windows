@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106EB-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLCSSMediaRule : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLCSSMediaRule
+    public unsafe partial struct IHTMLCSSMediaRule : IHTMLCSSMediaRule.Interface
     {
         public void** lpVtbl;
 
@@ -100,6 +100,63 @@ namespace TerraFX.Interop
         public HRESULT deleteRule([NativeTypeName("long")] int lIndex = -1)
         {
             return ((delegate* unmanaged<IHTMLCSSMediaRule*, int, int>)(lpVtbl[11]))((IHTMLCSSMediaRule*)Unsafe.AsPointer(ref this), lIndex);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT put_media(VARIANT v);
+
+            [VtblIndex(8)]
+            HRESULT get_media(VARIANT* p);
+
+            [VtblIndex(9)]
+            HRESULT get_cssRules(IHTMLStyleSheetRulesCollection** p);
+
+            [VtblIndex(10)]
+            HRESULT insertRule([NativeTypeName("BSTR")] ushort* bstrRule, [NativeTypeName("long")] int lIndex, [NativeTypeName("long *")] int* plNewIndex);
+
+            [VtblIndex(11)]
+            HRESULT deleteRule([NativeTypeName("long")] int lIndex = -1);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSMediaRule*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSMediaRule*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSMediaRule*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSMediaRule*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSMediaRule*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSMediaRule*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSMediaRule*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSMediaRule*, VARIANT, int> put_media;
+
+            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSMediaRule*, VARIANT*, int> get_media;
+
+            [NativeTypeName("HRESULT (IHTMLStyleSheetRulesCollection **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSMediaRule*, IHTMLStyleSheetRulesCollection**, int> get_cssRules;
+
+            [NativeTypeName("HRESULT (BSTR, long, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSMediaRule*, ushort*, int, int*, int> insertRule;
+
+            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLCSSMediaRule*, int, int> deleteRule;
         }
     }
 }

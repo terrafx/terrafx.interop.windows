@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("654A6BB3-E1A3-424A-9908-53A43A0DFDA0")]
     [NativeTypeName("struct IMFMediaEngineSrcElementsEx : IMFMediaEngineSrcElements")]
     [NativeInheritance("IMFMediaEngineSrcElements")]
-    public unsafe partial struct IMFMediaEngineSrcElementsEx
+    public unsafe partial struct IMFMediaEngineSrcElementsEx : IMFMediaEngineSrcElementsEx.Interface
     {
         public void** lpVtbl;
 
@@ -94,6 +94,51 @@ namespace TerraFX.Interop
         public HRESULT GetKeySystem([NativeTypeName("DWORD")] uint index, [NativeTypeName("BSTR *")] ushort** pType)
         {
             return ((delegate* unmanaged<IMFMediaEngineSrcElementsEx*, uint, ushort**, int>)(lpVtbl[10]))((IMFMediaEngineSrcElementsEx*)Unsafe.AsPointer(ref this), index, pType);
+        }
+
+        public interface Interface : IMFMediaEngineSrcElements.Interface
+        {
+            [VtblIndex(9)]
+            HRESULT AddElementEx([NativeTypeName("BSTR")] ushort* pURL, [NativeTypeName("BSTR")] ushort* pType, [NativeTypeName("BSTR")] ushort* pMedia, [NativeTypeName("BSTR")] ushort* keySystem);
+
+            [VtblIndex(10)]
+            HRESULT GetKeySystem([NativeTypeName("DWORD")] uint index, [NativeTypeName("BSTR *")] ushort** pType);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineSrcElementsEx*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineSrcElementsEx*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineSrcElementsEx*, uint> Release;
+
+            [NativeTypeName("DWORD () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineSrcElementsEx*, uint> GetLength;
+
+            [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineSrcElementsEx*, uint, ushort**, int> GetURL;
+
+            [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
+            public new delegate* unmanaged<IMFMediaEngineSrcElementsEx*, uint, ushort**, int> GetType;
+
+            [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineSrcElementsEx*, uint, ushort**, int> GetMedia;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineSrcElementsEx*, ushort*, ushort*, ushort*, int> AddElement;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineSrcElementsEx*, int> RemoveAllElements;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, BSTR, BSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineSrcElementsEx*, ushort*, ushort*, ushort*, ushort*, int> AddElementEx;
+
+            [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMediaEngineSrcElementsEx*, uint, ushort**, int> GetKeySystem;
         }
     }
 }

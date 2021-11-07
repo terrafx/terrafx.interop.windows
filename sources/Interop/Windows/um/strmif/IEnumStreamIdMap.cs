@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("945C1566-6202-46FC-96C7-D87F289C6534")]
     [NativeTypeName("struct IEnumStreamIdMap : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumStreamIdMap
+    public unsafe partial struct IEnumStreamIdMap : IEnumStreamIdMap.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Clone(IEnumStreamIdMap** ppIEnumStreamIdMap)
         {
             return ((delegate* unmanaged<IEnumStreamIdMap*, IEnumStreamIdMap**, int>)(lpVtbl[6]))((IEnumStreamIdMap*)Unsafe.AsPointer(ref this), ppIEnumStreamIdMap);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Next([NativeTypeName("ULONG")] uint cRequest, STREAM_ID_MAP* pStreamIdMap, [NativeTypeName("ULONG *")] uint* pcReceived);
+
+            [VtblIndex(4)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint cRecords);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Clone(IEnumStreamIdMap** ppIEnumStreamIdMap);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumStreamIdMap*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumStreamIdMap*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumStreamIdMap*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, STREAM_ID_MAP *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumStreamIdMap*, uint, STREAM_ID_MAP*, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumStreamIdMap*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumStreamIdMap*, int> Reset;
+
+            [NativeTypeName("HRESULT (IEnumStreamIdMap **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumStreamIdMap*, IEnumStreamIdMap**, int> Clone;
         }
     }
 }

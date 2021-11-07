@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("89C31040-846B-11CE-97D3-00AA0055595A")]
     [NativeTypeName("struct IEnumMediaTypes : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumMediaTypes
+    public unsafe partial struct IEnumMediaTypes : IEnumMediaTypes.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT Clone(IEnumMediaTypes** ppEnum)
         {
             return ((delegate* unmanaged<IEnumMediaTypes*, IEnumMediaTypes**, int>)(lpVtbl[6]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this), ppEnum);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Next([NativeTypeName("ULONG")] uint cMediaTypes, AM_MEDIA_TYPE** ppMediaTypes, [NativeTypeName("ULONG *")] uint* pcFetched);
+
+            [VtblIndex(4)]
+            HRESULT Skip([NativeTypeName("ULONG")] uint cMediaTypes);
+
+            [VtblIndex(5)]
+            HRESULT Reset();
+
+            [VtblIndex(6)]
+            HRESULT Clone(IEnumMediaTypes** ppEnum);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumMediaTypes*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumMediaTypes*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumMediaTypes*, uint> Release;
+
+            [NativeTypeName("HRESULT (ULONG, AM_MEDIA_TYPE **, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumMediaTypes*, uint, AM_MEDIA_TYPE**, uint*, int> Next;
+
+            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumMediaTypes*, uint, int> Skip;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumMediaTypes*, int> Reset;
+
+            [NativeTypeName("HRESULT (IEnumMediaTypes **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IEnumMediaTypes*, IEnumMediaTypes**, int> Clone;
         }
     }
 }

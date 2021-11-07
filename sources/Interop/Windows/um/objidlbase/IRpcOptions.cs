@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000144-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IRpcOptions : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRpcOptions
+    public unsafe partial struct IRpcOptions : IRpcOptions.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT Query(IUnknown* pPrx, RPCOPT_PROPERTIES dwProperty, [NativeTypeName("ULONG_PTR *")] nuint* pdwValue)
         {
             return ((delegate* unmanaged<IRpcOptions*, IUnknown*, RPCOPT_PROPERTIES, nuint*, int>)(lpVtbl[4]))((IRpcOptions*)Unsafe.AsPointer(ref this), pPrx, dwProperty, pdwValue);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Set(IUnknown* pPrx, RPCOPT_PROPERTIES dwProperty, [NativeTypeName("ULONG_PTR")] nuint dwValue);
+
+            [VtblIndex(4)]
+            HRESULT Query(IUnknown* pPrx, RPCOPT_PROPERTIES dwProperty, [NativeTypeName("ULONG_PTR *")] nuint* pdwValue);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcOptions*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcOptions*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcOptions*, uint> Release;
+
+            [NativeTypeName("HRESULT (IUnknown *, RPCOPT_PROPERTIES, ULONG_PTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcOptions*, IUnknown*, RPCOPT_PROPERTIES, nuint, int> Set;
+
+            [NativeTypeName("HRESULT (IUnknown *, RPCOPT_PROPERTIES, ULONG_PTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcOptions*, IUnknown*, RPCOPT_PROPERTIES, nuint*, int> Query;
         }
     }
 }

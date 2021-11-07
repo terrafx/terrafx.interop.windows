@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1F803A76-6871-48E8-987F-B975551C50F2")]
     [NativeTypeName("struct IDWriteFontResource : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDWriteFontResource
+    public unsafe partial struct IDWriteFontResource : IDWriteFontResource.Interface
     {
         public void** lpVtbl;
 
@@ -124,6 +124,96 @@ namespace TerraFX.Interop
         public HRESULT CreateFontFaceReference(DWRITE_FONT_SIMULATIONS fontSimulations, [NativeTypeName("const DWRITE_FONT_AXIS_VALUE *")] DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount, IDWriteFontFaceReference1** fontFaceReference)
         {
             return ((delegate* unmanaged<IDWriteFontResource*, DWRITE_FONT_SIMULATIONS, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontFaceReference1**, int>)(lpVtbl[14]))((IDWriteFontResource*)Unsafe.AsPointer(ref this), fontSimulations, fontAxisValues, fontAxisValueCount, fontFaceReference);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetFontFile(IDWriteFontFile** fontFile);
+
+            [VtblIndex(4)]
+            [return: NativeTypeName("UINT32")]
+            uint GetFontFaceIndex();
+
+            [VtblIndex(5)]
+            [return: NativeTypeName("UINT32")]
+            uint GetFontAxisCount();
+
+            [VtblIndex(6)]
+            HRESULT GetDefaultFontAxisValues(DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount);
+
+            [VtblIndex(7)]
+            HRESULT GetFontAxisRanges(DWRITE_FONT_AXIS_RANGE* fontAxisRanges, [NativeTypeName("UINT32")] uint fontAxisRangeCount);
+
+            [VtblIndex(8)]
+            DWRITE_FONT_AXIS_ATTRIBUTES GetFontAxisAttributes([NativeTypeName("UINT32")] uint axisIndex);
+
+            [VtblIndex(9)]
+            HRESULT GetAxisNames([NativeTypeName("UINT32")] uint axisIndex, IDWriteLocalizedStrings** names);
+
+            [VtblIndex(10)]
+            [return: NativeTypeName("UINT32")]
+            uint GetAxisValueNameCount([NativeTypeName("UINT32")] uint axisIndex);
+
+            [VtblIndex(11)]
+            HRESULT GetAxisValueNames([NativeTypeName("UINT32")] uint axisIndex, [NativeTypeName("UINT32")] uint axisValueIndex, DWRITE_FONT_AXIS_RANGE* fontAxisRange, IDWriteLocalizedStrings** names);
+
+            [VtblIndex(12)]
+            BOOL HasVariations();
+
+            [VtblIndex(13)]
+            HRESULT CreateFontFace(DWRITE_FONT_SIMULATIONS fontSimulations, [NativeTypeName("const DWRITE_FONT_AXIS_VALUE *")] DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount, IDWriteFontFace5** fontFace);
+
+            [VtblIndex(14)]
+            HRESULT CreateFontFaceReference(DWRITE_FONT_SIMULATIONS fontSimulations, [NativeTypeName("const DWRITE_FONT_AXIS_VALUE *")] DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount, IDWriteFontFaceReference1** fontFaceReference);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontResource*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontResource*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontResource*, uint> Release;
+
+            [NativeTypeName("HRESULT (IDWriteFontFile **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontResource*, IDWriteFontFile**, int> GetFontFile;
+
+            [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontResource*, uint> GetFontFaceIndex;
+
+            [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontResource*, uint> GetFontAxisCount;
+
+            [NativeTypeName("HRESULT (DWRITE_FONT_AXIS_VALUE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontResource*, DWRITE_FONT_AXIS_VALUE*, uint, int> GetDefaultFontAxisValues;
+
+            [NativeTypeName("HRESULT (DWRITE_FONT_AXIS_RANGE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontResource*, DWRITE_FONT_AXIS_RANGE*, uint, int> GetFontAxisRanges;
+
+            [NativeTypeName("DWRITE_FONT_AXIS_ATTRIBUTES (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontResource*, uint, DWRITE_FONT_AXIS_ATTRIBUTES> GetFontAxisAttributes;
+
+            [NativeTypeName("HRESULT (UINT32, IDWriteLocalizedStrings **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontResource*, uint, IDWriteLocalizedStrings**, int> GetAxisNames;
+
+            [NativeTypeName("UINT32 (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontResource*, uint, uint> GetAxisValueNameCount;
+
+            [NativeTypeName("HRESULT (UINT32, UINT32, DWRITE_FONT_AXIS_RANGE *, IDWriteLocalizedStrings **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontResource*, uint, uint, DWRITE_FONT_AXIS_RANGE*, IDWriteLocalizedStrings**, int> GetAxisValueNames;
+
+            [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontResource*, int> HasVariations;
+
+            [NativeTypeName("HRESULT (DWRITE_FONT_SIMULATIONS, const DWRITE_FONT_AXIS_VALUE *, UINT32, IDWriteFontFace5 **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontResource*, DWRITE_FONT_SIMULATIONS, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontFace5**, int> CreateFontFace;
+
+            [NativeTypeName("HRESULT (DWRITE_FONT_SIMULATIONS, const DWRITE_FONT_AXIS_VALUE *, UINT32, IDWriteFontFaceReference1 **) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDWriteFontResource*, DWRITE_FONT_SIMULATIONS, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontFaceReference1**, int> CreateFontFaceReference;
         }
     }
 }

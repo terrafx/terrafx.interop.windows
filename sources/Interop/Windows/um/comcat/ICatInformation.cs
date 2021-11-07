@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("0002E013-0000-0000-C000-000000000046")]
     [NativeTypeName("struct ICatInformation : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICatInformation
+    public unsafe partial struct ICatInformation : ICatInformation.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,57 @@ namespace TerraFX.Interop
         public HRESULT EnumReqCategoriesOfClass([NativeTypeName("const IID &")] Guid* rclsid, IEnumGUID** ppenumCatid)
         {
             return ((delegate* unmanaged<ICatInformation*, Guid*, IEnumGUID**, int>)(lpVtbl[8]))((ICatInformation*)Unsafe.AsPointer(ref this), rclsid, ppenumCatid);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT EnumCategories([NativeTypeName("LCID")] uint lcid, IEnumCATEGORYINFO** ppenumCategoryInfo);
+
+            [VtblIndex(4)]
+            HRESULT GetCategoryDesc([NativeTypeName("REFCATID")] Guid* rcatid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("LPWSTR *")] ushort** pszDesc);
+
+            [VtblIndex(5)]
+            HRESULT EnumClassesOfCategories([NativeTypeName("ULONG")] uint cImplemented, [NativeTypeName("const CATID []")] Guid* rgcatidImpl, [NativeTypeName("ULONG")] uint cRequired, [NativeTypeName("const CATID []")] Guid* rgcatidReq, IEnumGUID** ppenumClsid);
+
+            [VtblIndex(6)]
+            HRESULT IsClassOfCategories([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("ULONG")] uint cImplemented, [NativeTypeName("const CATID []")] Guid* rgcatidImpl, [NativeTypeName("ULONG")] uint cRequired, [NativeTypeName("const CATID []")] Guid* rgcatidReq);
+
+            [VtblIndex(7)]
+            HRESULT EnumImplCategoriesOfClass([NativeTypeName("const IID &")] Guid* rclsid, IEnumGUID** ppenumCatid);
+
+            [VtblIndex(8)]
+            HRESULT EnumReqCategoriesOfClass([NativeTypeName("const IID &")] Guid* rclsid, IEnumGUID** ppenumCatid);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatInformation*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatInformation*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatInformation*, uint> Release;
+
+            [NativeTypeName("HRESULT (LCID, IEnumCATEGORYINFO **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatInformation*, uint, IEnumCATEGORYINFO**, int> EnumCategories;
+
+            [NativeTypeName("HRESULT (REFCATID, LCID, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatInformation*, Guid*, uint, ushort**, int> GetCategoryDesc;
+
+            [NativeTypeName("HRESULT (ULONG, const CATID *, ULONG, const CATID *, IEnumGUID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatInformation*, uint, Guid*, uint, Guid*, IEnumGUID**, int> EnumClassesOfCategories;
+
+            [NativeTypeName("HRESULT (const IID &, ULONG, const CATID *, ULONG, const CATID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatInformation*, Guid*, uint, Guid*, uint, Guid*, int> IsClassOfCategories;
+
+            [NativeTypeName("HRESULT (const IID &, IEnumGUID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatInformation*, Guid*, IEnumGUID**, int> EnumImplCategoriesOfClass;
+
+            [NativeTypeName("HRESULT (const IID &, IEnumGUID **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICatInformation*, Guid*, IEnumGUID**, int> EnumReqCategoriesOfClass;
         }
     }
 }

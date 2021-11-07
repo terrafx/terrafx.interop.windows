@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E9931663-80BF-4C6E-98AF-5DCF58747D1F")]
     [NativeTypeName("struct IMFSaveJob : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSaveJob
+    public unsafe partial struct IMFSaveJob : IMFSaveJob.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetProgress([NativeTypeName("DWORD *")] uint* pdwPercentComplete)
         {
             return ((delegate* unmanaged<IMFSaveJob*, uint*, int>)(lpVtbl[6]))((IMFSaveJob*)Unsafe.AsPointer(ref this), pdwPercentComplete);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT BeginSave(IMFByteStream* pStream, IMFAsyncCallback* pCallback, IUnknown* pState);
+
+            [VtblIndex(4)]
+            HRESULT EndSave(IMFAsyncResult* pResult);
+
+            [VtblIndex(5)]
+            HRESULT CancelSave();
+
+            [VtblIndex(6)]
+            HRESULT GetProgress([NativeTypeName("DWORD *")] uint* pdwPercentComplete);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSaveJob*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSaveJob*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSaveJob*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFByteStream *, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSaveJob*, IMFByteStream*, IMFAsyncCallback*, IUnknown*, int> BeginSave;
+
+            [NativeTypeName("HRESULT (IMFAsyncResult *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSaveJob*, IMFAsyncResult*, int> EndSave;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSaveJob*, int> CancelSave;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSaveJob*, uint*, int> GetProgress;
         }
     }
 }

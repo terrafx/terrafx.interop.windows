@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("22F03340-547D-101B-8E65-08002B2BD119")]
     [NativeTypeName("struct ICreateErrorInfo : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICreateErrorInfo
+    public unsafe partial struct ICreateErrorInfo : ICreateErrorInfo.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT SetHelpContext([NativeTypeName("DWORD")] uint dwHelpContext)
         {
             return ((delegate* unmanaged<ICreateErrorInfo*, uint, int>)(lpVtbl[7]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), dwHelpContext);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT SetGUID([NativeTypeName("const GUID &")] Guid* rguid);
+
+            [VtblIndex(4)]
+            HRESULT SetSource([NativeTypeName("LPOLESTR")] ushort* szSource);
+
+            [VtblIndex(5)]
+            HRESULT SetDescription([NativeTypeName("LPOLESTR")] ushort* szDescription);
+
+            [VtblIndex(6)]
+            HRESULT SetHelpFile([NativeTypeName("LPOLESTR")] ushort* szHelpFile);
+
+            [VtblIndex(7)]
+            HRESULT SetHelpContext([NativeTypeName("DWORD")] uint dwHelpContext);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateErrorInfo*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateErrorInfo*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateErrorInfo*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateErrorInfo*, Guid*, int> SetGUID;
+
+            [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateErrorInfo*, ushort*, int> SetSource;
+
+            [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateErrorInfo*, ushort*, int> SetDescription;
+
+            [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateErrorInfo*, ushort*, int> SetHelpFile;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ICreateErrorInfo*, uint, int> SetHelpContext;
         }
     }
 }

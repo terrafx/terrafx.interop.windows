@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8D7B2BA7-DB05-46A8-823C-D2B6DE08EE91")]
     [NativeTypeName("struct IBannerNotificationHandler : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IBannerNotificationHandler
+    public unsafe partial struct IBannerNotificationHandler : IBannerNotificationHandler.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OnBannerEvent([NativeTypeName("const BANNER_NOTIFICATION *")] BANNER_NOTIFICATION* notification)
         {
             return ((delegate* unmanaged<IBannerNotificationHandler*, BANNER_NOTIFICATION*, int>)(lpVtbl[3]))((IBannerNotificationHandler*)Unsafe.AsPointer(ref this), notification);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnBannerEvent([NativeTypeName("const BANNER_NOTIFICATION *")] BANNER_NOTIFICATION* notification);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBannerNotificationHandler*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBannerNotificationHandler*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBannerNotificationHandler*, uint> Release;
+
+            [NativeTypeName("HRESULT (const BANNER_NOTIFICATION *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBannerNotificationHandler*, BANNER_NOTIFICATION*, int> OnBannerEvent;
         }
     }
 }

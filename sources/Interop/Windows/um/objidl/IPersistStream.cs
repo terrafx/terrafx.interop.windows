@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000109-0000-0000-C000-000000000046")]
     [NativeTypeName("struct IPersistStream : IPersist")]
     [NativeInheritance("IPersist")]
-    public unsafe partial struct IPersistStream
+    public unsafe partial struct IPersistStream : IPersistStream.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,48 @@ namespace TerraFX.Interop
         public HRESULT GetSizeMax(ULARGE_INTEGER* pcbSize)
         {
             return ((delegate* unmanaged<IPersistStream*, ULARGE_INTEGER*, int>)(lpVtbl[7]))((IPersistStream*)Unsafe.AsPointer(ref this), pcbSize);
+        }
+
+        public interface Interface : IPersist.Interface
+        {
+            [VtblIndex(4)]
+            HRESULT IsDirty();
+
+            [VtblIndex(5)]
+            HRESULT Load(IStream* pStm);
+
+            [VtblIndex(6)]
+            HRESULT Save(IStream* pStm, BOOL fClearDirty);
+
+            [VtblIndex(7)]
+            HRESULT GetSizeMax(ULARGE_INTEGER* pcbSize);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStream*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStream*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStream*, uint> Release;
+
+            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStream*, Guid*, int> GetClassID;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStream*, int> IsDirty;
+
+            [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStream*, IStream*, int> Load;
+
+            [NativeTypeName("HRESULT (IStream *, BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStream*, IStream*, BOOL, int> Save;
+
+            [NativeTypeName("HRESULT (ULARGE_INTEGER *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPersistStream*, ULARGE_INTEGER*, int> GetSizeMax;
         }
     }
 }

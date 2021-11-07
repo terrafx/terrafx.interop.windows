@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("6FEDED3E-0FF1-4901-A2F1-43F7012C8515")]
     [NativeTypeName("struct IAMCertifiedOutputProtection : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMCertifiedOutputProtection
+    public unsafe partial struct IAMCertifiedOutputProtection : IAMCertifiedOutputProtection.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT ProtectionStatus([NativeTypeName("const AMCOPPStatusInput *")] AMCOPPStatusInput* pStatusInput, AMCOPPStatusOutput* pStatusOutput)
         {
             return ((delegate* unmanaged<IAMCertifiedOutputProtection*, AMCOPPStatusInput*, AMCOPPStatusOutput*, int>)(lpVtbl[6]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this), pStatusInput, pStatusOutput);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT KeyExchange(Guid* pRandom, byte** VarLenCertGH, [NativeTypeName("DWORD *")] uint* pdwLengthCertGH);
+
+            [VtblIndex(4)]
+            HRESULT SessionSequenceStart(AMCOPPSignature* pSig);
+
+            [VtblIndex(5)]
+            HRESULT ProtectionCommand([NativeTypeName("const AMCOPPCommand *")] AMCOPPCommand* cmd);
+
+            [VtblIndex(6)]
+            HRESULT ProtectionStatus([NativeTypeName("const AMCOPPStatusInput *")] AMCOPPStatusInput* pStatusInput, AMCOPPStatusOutput* pStatusOutput);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCertifiedOutputProtection*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCertifiedOutputProtection*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCertifiedOutputProtection*, uint> Release;
+
+            [NativeTypeName("HRESULT (GUID *, BYTE **, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCertifiedOutputProtection*, Guid*, byte**, uint*, int> KeyExchange;
+
+            [NativeTypeName("HRESULT (AMCOPPSignature *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCertifiedOutputProtection*, AMCOPPSignature*, int> SessionSequenceStart;
+
+            [NativeTypeName("HRESULT (const AMCOPPCommand *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCertifiedOutputProtection*, AMCOPPCommand*, int> ProtectionCommand;
+
+            [NativeTypeName("HRESULT (const AMCOPPStatusInput *, AMCOPPStatusOutput *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAMCertifiedOutputProtection*, AMCOPPStatusInput*, AMCOPPStatusOutput*, int> ProtectionStatus;
         }
     }
 }

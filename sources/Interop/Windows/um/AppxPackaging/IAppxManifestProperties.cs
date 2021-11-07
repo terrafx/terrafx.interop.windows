@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("03FAF64D-F26F-4B2C-AAF7-8FE7789B8BCA")]
     [NativeTypeName("struct IAppxManifestProperties : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestProperties
+    public unsafe partial struct IAppxManifestProperties : IAppxManifestProperties.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetStringValue([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("LPWSTR *")] ushort** value)
         {
             return ((delegate* unmanaged<IAppxManifestProperties*, ushort*, ushort**, int>)(lpVtbl[4]))((IAppxManifestProperties*)Unsafe.AsPointer(ref this), name, value);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetBoolValue([NativeTypeName("LPCWSTR")] ushort* name, BOOL* value);
+
+            [VtblIndex(4)]
+            HRESULT GetStringValue([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("LPWSTR *")] ushort** value);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestProperties*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestProperties*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestProperties*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestProperties*, ushort*, BOOL*, int> GetBoolValue;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestProperties*, ushort*, ushort**, int> GetStringValue;
         }
     }
 }

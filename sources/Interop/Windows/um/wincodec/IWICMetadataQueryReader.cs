@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30989668-E1C9-4597-B395-458EEDB808DF")]
     [NativeTypeName("struct IWICMetadataQueryReader : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWICMetadataQueryReader
+    public unsafe partial struct IWICMetadataQueryReader : IWICMetadataQueryReader.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT GetEnumerator(IEnumString** ppIEnumString)
         {
             return ((delegate* unmanaged<IWICMetadataQueryReader*, IEnumString**, int>)(lpVtbl[6]))((IWICMetadataQueryReader*)Unsafe.AsPointer(ref this), ppIEnumString);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetContainerFormat(Guid* pguidContainerFormat);
+
+            [VtblIndex(4)]
+            HRESULT GetLocation(uint cchMaxLength, [NativeTypeName("WCHAR *")] ushort* wzNamespace, uint* pcchActualLength);
+
+            [VtblIndex(5)]
+            HRESULT GetMetadataByName([NativeTypeName("LPCWSTR")] ushort* wzName, PROPVARIANT* pvarValue);
+
+            [VtblIndex(6)]
+            HRESULT GetEnumerator(IEnumString** ppIEnumString);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataQueryReader*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataQueryReader*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataQueryReader*, uint> Release;
+
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataQueryReader*, Guid*, int> GetContainerFormat;
+
+            [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataQueryReader*, uint, ushort*, uint*, int> GetLocation;
+
+            [NativeTypeName("HRESULT (LPCWSTR, PROPVARIANT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataQueryReader*, ushort*, PROPVARIANT*, int> GetMetadataByName;
+
+            [NativeTypeName("HRESULT (IEnumString **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IWICMetadataQueryReader*, IEnumString**, int> GetEnumerator;
         }
     }
 }

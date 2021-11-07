@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F839-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IFontNames : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IFontNames
+    public unsafe partial struct IFontNames : IFontNames.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,51 @@ namespace TerraFX.Interop
         public HRESULT Item(VARIANT* pvarIndex, [NativeTypeName("BSTR *")] ushort** pbstrFontName)
         {
             return ((delegate* unmanaged<IFontNames*, VARIANT*, ushort**, int>)(lpVtbl[9]))((IFontNames*)Unsafe.AsPointer(ref this), pvarIndex, pbstrFontName);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get__NewEnum(IUnknown** p);
+
+            [VtblIndex(8)]
+            HRESULT get_Count([NativeTypeName("long *")] int* p);
+
+            [VtblIndex(9)]
+            HRESULT Item(VARIANT* pvarIndex, [NativeTypeName("BSTR *")] ushort** pbstrFontName);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFontNames*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFontNames*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IFontNames*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFontNames*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFontNames*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFontNames*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFontNames*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFontNames*, IUnknown**, int> get__NewEnum;
+
+            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFontNames*, int*, int> get_Count;
+
+            [NativeTypeName("HRESULT (VARIANT *, BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IFontNames*, VARIANT*, ushort**, int> Item;
         }
     }
 }

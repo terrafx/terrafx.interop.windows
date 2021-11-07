@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B196B288-BAB4-101A-B69C-00AA00341D07")]
     [NativeTypeName("struct IOleControl : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IOleControl
+    public unsafe partial struct IOleControl : IOleControl.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT FreezeEvents(BOOL bFreeze)
         {
             return ((delegate* unmanaged<IOleControl*, BOOL, int>)(lpVtbl[6]))((IOleControl*)Unsafe.AsPointer(ref this), bFreeze);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetControlInfo(CONTROLINFO* pCI);
+
+            [VtblIndex(4)]
+            HRESULT OnMnemonic(MSG* pMsg);
+
+            [VtblIndex(5)]
+            HRESULT OnAmbientPropertyChange([NativeTypeName("DISPID")] int dispID);
+
+            [VtblIndex(6)]
+            HRESULT FreezeEvents(BOOL bFreeze);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleControl*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleControl*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleControl*, uint> Release;
+
+            [NativeTypeName("HRESULT (CONTROLINFO *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleControl*, CONTROLINFO*, int> GetControlInfo;
+
+            [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleControl*, MSG*, int> OnMnemonic;
+
+            [NativeTypeName("HRESULT (DISPID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleControl*, int, int> OnAmbientPropertyChange;
+
+            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+            public delegate* unmanaged<IOleControl*, BOOL, int> FreezeEvents;
         }
     }
 }

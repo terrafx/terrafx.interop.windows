@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("305106E2-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct ISurfacePresenter : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISurfacePresenter
+    public unsafe partial struct ISurfacePresenter : ISurfacePresenter.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT IsCurrent(BOOL* pIsCurrent)
         {
             return ((delegate* unmanaged<ISurfacePresenter*, BOOL*, int>)(lpVtbl[5]))((ISurfacePresenter*)Unsafe.AsPointer(ref this), pIsCurrent);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT Present(uint uBuffer, RECT* pDirty);
+
+            [VtblIndex(4)]
+            HRESULT GetBuffer(uint backBufferIndex, [NativeTypeName("const IID &")] Guid* riid, void** ppBuffer);
+
+            [VtblIndex(5)]
+            HRESULT IsCurrent(BOOL* pIsCurrent);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurfacePresenter*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurfacePresenter*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurfacePresenter*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT, RECT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurfacePresenter*, uint, RECT*, int> Present;
+
+            [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurfacePresenter*, uint, Guid*, void**, int> GetBuffer;
+
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISurfacePresenter*, BOOL*, int> IsCurrent;
         }
     }
 }

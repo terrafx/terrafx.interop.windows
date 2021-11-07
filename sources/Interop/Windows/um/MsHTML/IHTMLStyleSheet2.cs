@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F3D1-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IHTMLStyleSheet2 : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLStyleSheet2
+    public unsafe partial struct IHTMLStyleSheet2 : IHTMLStyleSheet2.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,45 @@ namespace TerraFX.Interop
         public HRESULT addPageRule([NativeTypeName("BSTR")] ushort* bstrSelector, [NativeTypeName("BSTR")] ushort* bstrStyle, [NativeTypeName("long")] int lIndex, [NativeTypeName("long *")] int* plNewIndex)
         {
             return ((delegate* unmanaged<IHTMLStyleSheet2*, ushort*, ushort*, int, int*, int>)(lpVtbl[8]))((IHTMLStyleSheet2*)Unsafe.AsPointer(ref this), bstrSelector, bstrStyle, lIndex, plNewIndex);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_pages(IHTMLStyleSheetPagesCollection** p);
+
+            [VtblIndex(8)]
+            HRESULT addPageRule([NativeTypeName("BSTR")] ushort* bstrSelector, [NativeTypeName("BSTR")] ushort* bstrStyle, [NativeTypeName("long")] int lIndex, [NativeTypeName("long *")] int* plNewIndex);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet2*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet2*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet2*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet2*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (IHTMLStyleSheetPagesCollection **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet2*, IHTMLStyleSheetPagesCollection**, int> get_pages;
+
+            [NativeTypeName("HRESULT (BSTR, BSTR, long, long *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHTMLStyleSheet2*, ushort*, ushort*, int, int*, int> addPageRule;
         }
     }
 }

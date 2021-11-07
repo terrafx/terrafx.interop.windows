@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("CE8BD576-E440-43B3-BE34-1E53F565F7E8")]
     [NativeTypeName("struct IMFMuxStreamAttributesManager : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMuxStreamAttributesManager
+    public unsafe partial struct IMFMuxStreamAttributesManager : IMFMuxStreamAttributesManager.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetAttributes([NativeTypeName("DWORD")] uint dwMuxStreamIndex, IMFAttributes** ppStreamAttributes)
         {
             return ((delegate* unmanaged<IMFMuxStreamAttributesManager*, uint, IMFAttributes**, int>)(lpVtbl[4]))((IMFMuxStreamAttributesManager*)Unsafe.AsPointer(ref this), dwMuxStreamIndex, ppStreamAttributes);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetStreamCount([NativeTypeName("DWORD *")] uint* pdwMuxStreamCount);
+
+            [VtblIndex(4)]
+            HRESULT GetAttributes([NativeTypeName("DWORD")] uint dwMuxStreamIndex, IMFAttributes** ppStreamAttributes);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMuxStreamAttributesManager*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMuxStreamAttributesManager*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMuxStreamAttributesManager*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMuxStreamAttributesManager*, uint*, int> GetStreamCount;
+
+            [NativeTypeName("HRESULT (DWORD, IMFAttributes **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFMuxStreamAttributesManager*, uint, IMFAttributes**, int> GetAttributes;
         }
     }
 }

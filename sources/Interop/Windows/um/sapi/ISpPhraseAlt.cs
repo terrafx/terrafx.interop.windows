@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("8FCEBC98-4E49-4067-9C6C-D86A0E092E3D")]
     [NativeTypeName("struct ISpPhraseAlt : ISpPhrase")]
     [NativeInheritance("ISpPhrase")]
-    public unsafe partial struct ISpPhraseAlt
+    public unsafe partial struct ISpPhraseAlt : ISpPhraseAlt.Interface
     {
         public void** lpVtbl;
 
@@ -79,6 +79,45 @@ namespace TerraFX.Interop
         public HRESULT Commit()
         {
             return ((delegate* unmanaged<ISpPhraseAlt*, int>)(lpVtbl[8]))((ISpPhraseAlt*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : ISpPhrase.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT GetAltInfo(ISpPhrase** ppParent, [NativeTypeName("ULONG *")] uint* pulStartElementInParent, [NativeTypeName("ULONG *")] uint* pcElementsInParent, [NativeTypeName("ULONG *")] uint* pcElementsInAlt);
+
+            [VtblIndex(8)]
+            HRESULT Commit();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhraseAlt*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhraseAlt*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhraseAlt*, uint> Release;
+
+            [NativeTypeName("HRESULT (SPPHRASE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhraseAlt*, SPPHRASE**, int> GetPhrase;
+
+            [NativeTypeName("HRESULT (SPSERIALIZEDPHRASE **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhraseAlt*, SPSERIALIZEDPHRASE**, int> GetSerializedPhrase;
+
+            [NativeTypeName("HRESULT (ULONG, ULONG, BOOL, LPWSTR *, BYTE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhraseAlt*, uint, uint, BOOL, ushort**, byte*, int> GetText;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhraseAlt*, uint, int> Discard;
+
+            [NativeTypeName("HRESULT (ISpPhrase **, ULONG *, ULONG *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhraseAlt*, ISpPhrase**, uint*, uint*, uint*, int> GetAltInfo;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISpPhraseAlt*, int> Commit;
         }
     }
 }

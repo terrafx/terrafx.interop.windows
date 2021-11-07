@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AA9198BB-CCEC-472D-BEED-19A4F6733F7A")]
     [NativeTypeName("struct IPublishingWizard : IWizardExtension")]
     [NativeInheritance("IWizardExtension")]
-    public unsafe partial struct IPublishingWizard
+    public unsafe partial struct IPublishingWizard : IPublishingWizard.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,42 @@ namespace TerraFX.Interop
         public HRESULT GetTransferManifest(HRESULT* phrFromTransfer, IXMLDOMDocument** pdocManifest)
         {
             return ((delegate* unmanaged<IPublishingWizard*, HRESULT*, IXMLDOMDocument**, int>)(lpVtbl[7]))((IPublishingWizard*)Unsafe.AsPointer(ref this), phrFromTransfer, pdocManifest);
+        }
+
+        public interface Interface : IWizardExtension.Interface
+        {
+            [VtblIndex(6)]
+            HRESULT Initialize(IDataObject* pdo, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("LPCWSTR")] ushort* pszServiceScope);
+
+            [VtblIndex(7)]
+            HRESULT GetTransferManifest(HRESULT* phrFromTransfer, IXMLDOMDocument** pdocManifest);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishingWizard*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishingWizard*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishingWizard*, uint> Release;
+
+            [NativeTypeName("HRESULT (HPROPSHEETPAGE *, UINT, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishingWizard*, HPROPSHEETPAGE*, uint, uint*, int> AddPages;
+
+            [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishingWizard*, HPROPSHEETPAGE*, int> GetFirstPage;
+
+            [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishingWizard*, HPROPSHEETPAGE*, int> GetLastPage;
+
+            [NativeTypeName("HRESULT (IDataObject *, DWORD, LPCWSTR) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishingWizard*, IDataObject*, uint, ushort*, int> Initialize;
+
+            [NativeTypeName("HRESULT (HRESULT *, IXMLDOMDocument **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IPublishingWizard*, HRESULT*, IXMLDOMDocument**, int> GetTransferManifest;
         }
     }
 }

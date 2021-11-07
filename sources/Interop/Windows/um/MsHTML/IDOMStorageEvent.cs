@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("30510722-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IDOMStorageEvent : IDispatch")]
     [NativeInheritance("IDispatch")]
-    public unsafe partial struct IDOMStorageEvent
+    public unsafe partial struct IDOMStorageEvent : IDOMStorageEvent.Interface
     {
         public void** lpVtbl;
 
@@ -107,6 +107,69 @@ namespace TerraFX.Interop
         public HRESULT initStorageEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("BSTR")] ushort* keyArg, [NativeTypeName("BSTR")] ushort* oldValueArg, [NativeTypeName("BSTR")] ushort* newValueArg, [NativeTypeName("BSTR")] ushort* urlArg, IHTMLStorage* storageAreaArg)
         {
             return ((delegate* unmanaged<IDOMStorageEvent*, ushort*, short, short, ushort*, ushort*, ushort*, ushort*, IHTMLStorage*, int>)(lpVtbl[12]))((IDOMStorageEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, keyArg, oldValueArg, newValueArg, urlArg, storageAreaArg);
+        }
+
+        public interface Interface : IDispatch.Interface
+        {
+            [VtblIndex(7)]
+            HRESULT get_key([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(8)]
+            HRESULT get_oldValue([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(9)]
+            HRESULT get_newValue([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(10)]
+            HRESULT get_url([NativeTypeName("BSTR *")] ushort** p);
+
+            [VtblIndex(11)]
+            HRESULT get_storageArea(IHTMLStorage** p);
+
+            [VtblIndex(12)]
+            HRESULT initStorageEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("BSTR")] ushort* keyArg, [NativeTypeName("BSTR")] ushort* oldValueArg, [NativeTypeName("BSTR")] ushort* newValueArg, [NativeTypeName("BSTR")] ushort* urlArg, IHTMLStorage* storageAreaArg);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMStorageEvent*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMStorageEvent*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMStorageEvent*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMStorageEvent*, uint*, int> GetTypeInfoCount;
+
+            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMStorageEvent*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+
+            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMStorageEvent*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+
+            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMStorageEvent*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMStorageEvent*, ushort**, int> get_key;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMStorageEvent*, ushort**, int> get_oldValue;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMStorageEvent*, ushort**, int> get_newValue;
+
+            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMStorageEvent*, ushort**, int> get_url;
+
+            [NativeTypeName("HRESULT (IHTMLStorage **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMStorageEvent*, IHTMLStorage**, int> get_storageArea;
+
+            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, BSTR, BSTR, BSTR, BSTR, IHTMLStorage *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDOMStorageEvent*, ushort*, short, short, ushort*, ushort*, ushort*, ushort*, IHTMLStorage*, int> initStorageEvent;
         }
     }
 }

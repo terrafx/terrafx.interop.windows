@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("241C033E-E659-43DA-AA4D-4086DBC4758D")]
     [NativeTypeName("struct ITravelLogClient : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITravelLogClient
+    public unsafe partial struct ITravelLogClient : ITravelLogClient.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT LoadHistoryPosition([NativeTypeName("LPWSTR")] ushort* pszUrlLocation, [NativeTypeName("DWORD")] uint dwPosition)
         {
             return ((delegate* unmanaged<ITravelLogClient*, ushort*, uint, int>)(lpVtbl[5]))((ITravelLogClient*)Unsafe.AsPointer(ref this), pszUrlLocation, dwPosition);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT FindWindowByIndex([NativeTypeName("DWORD")] uint dwID, IUnknown** ppunk);
+
+            [VtblIndex(4)]
+            HRESULT GetWindowData(IStream* pStream, [NativeTypeName("LPWINDOWDATA")] WINDOWDATA* pWinData);
+
+            [VtblIndex(5)]
+            HRESULT LoadHistoryPosition([NativeTypeName("LPWSTR")] ushort* pszUrlLocation, [NativeTypeName("DWORD")] uint dwPosition);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogClient*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogClient*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogClient*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD, IUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogClient*, uint, IUnknown**, int> FindWindowByIndex;
+
+            [NativeTypeName("HRESULT (IStream *, LPWINDOWDATA) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogClient*, IStream*, WINDOWDATA*, int> GetWindowData;
+
+            [NativeTypeName("HRESULT (LPWSTR, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<ITravelLogClient*, ushort*, uint, int> LoadHistoryPosition;
         }
     }
 }

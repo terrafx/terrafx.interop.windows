@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5DA89BF4-3773-46BE-B650-7E744863B7E8")]
     [NativeTypeName("struct IAppxManifestApplication : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestApplication
+    public unsafe partial struct IAppxManifestApplication : IAppxManifestApplication.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT GetAppUserModelId([NativeTypeName("LPWSTR *")] ushort** appUserModelId)
         {
             return ((delegate* unmanaged<IAppxManifestApplication*, ushort**, int>)(lpVtbl[4]))((IAppxManifestApplication*)Unsafe.AsPointer(ref this), appUserModelId);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetStringValue([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("LPWSTR *")] ushort** value);
+
+            [VtblIndex(4)]
+            HRESULT GetAppUserModelId([NativeTypeName("LPWSTR *")] ushort** appUserModelId);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestApplication*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestApplication*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestApplication*, uint> Release;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestApplication*, ushort*, ushort**, int> GetStringValue;
+
+            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAppxManifestApplication*, ushort**, int> GetAppUserModelId;
         }
     }
 }

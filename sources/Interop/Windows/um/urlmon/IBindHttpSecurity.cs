@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A9EDA967-F50E-4A33-B358-206F6EF3086D")]
     [NativeTypeName("struct IBindHttpSecurity : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IBindHttpSecurity
+    public unsafe partial struct IBindHttpSecurity : IBindHttpSecurity.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetIgnoreCertMask([NativeTypeName("DWORD *")] uint* pdwIgnoreCertMask)
         {
             return ((delegate* unmanaged<IBindHttpSecurity*, uint*, int>)(lpVtbl[3]))((IBindHttpSecurity*)Unsafe.AsPointer(ref this), pdwIgnoreCertMask);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetIgnoreCertMask([NativeTypeName("DWORD *")] uint* pdwIgnoreCertMask);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindHttpSecurity*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindHttpSecurity*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindHttpSecurity*, uint> Release;
+
+            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IBindHttpSecurity*, uint*, int> GetIgnoreCertMask;
         }
     }
 }

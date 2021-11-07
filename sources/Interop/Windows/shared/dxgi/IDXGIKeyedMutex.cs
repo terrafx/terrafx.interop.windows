@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9D8E1289-D7B3-465F-8126-250E349AF85D")]
     [NativeTypeName("struct IDXGIKeyedMutex : IDXGIDeviceSubObject")]
     [NativeInheritance("IDXGIDeviceSubObject")]
-    public unsafe partial struct IDXGIKeyedMutex
+    public unsafe partial struct IDXGIKeyedMutex : IDXGIKeyedMutex.Interface
     {
         public void** lpVtbl;
 
@@ -86,6 +86,48 @@ namespace TerraFX.Interop
         public HRESULT ReleaseSync([NativeTypeName("UINT64")] ulong Key)
         {
             return ((delegate* unmanaged<IDXGIKeyedMutex*, ulong, int>)(lpVtbl[9]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), Key);
+        }
+
+        public interface Interface : IDXGIDeviceSubObject.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT AcquireSync([NativeTypeName("UINT64")] ulong Key, [NativeTypeName("DWORD")] uint dwMilliseconds);
+
+            [VtblIndex(9)]
+            HRESULT ReleaseSync([NativeTypeName("UINT64")] ulong Key);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIKeyedMutex*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIKeyedMutex*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIKeyedMutex*, uint> Release;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIKeyedMutex*, Guid*, uint, void*, int> SetPrivateData;
+
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIKeyedMutex*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIKeyedMutex*, Guid*, uint*, void*, int> GetPrivateData;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIKeyedMutex*, Guid*, void**, int> GetParent;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIKeyedMutex*, Guid*, void**, int> GetDevice;
+
+            [NativeTypeName("HRESULT (UINT64, DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIKeyedMutex*, ulong, uint, int> AcquireSync;
+
+            [NativeTypeName("HRESULT (UINT64) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDXGIKeyedMutex*, ulong, int> ReleaseSync;
         }
     }
 }

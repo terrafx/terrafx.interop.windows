@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D5F56B60-593B-101A-B569-08002B2DBF7A")]
     [NativeTypeName("struct IRpcChannelBuffer : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRpcChannelBuffer
+    public unsafe partial struct IRpcChannelBuffer : IRpcChannelBuffer.Interface
     {
         public void** lpVtbl;
 
@@ -72,6 +72,51 @@ namespace TerraFX.Interop
         public HRESULT IsConnected()
         {
             return ((delegate* unmanaged<IRpcChannelBuffer*, int>)(lpVtbl[7]))((IRpcChannelBuffer*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetBuffer(RPCOLEMESSAGE* pMessage, [NativeTypeName("const IID &")] Guid* riid);
+
+            [VtblIndex(4)]
+            HRESULT SendReceive(RPCOLEMESSAGE* pMessage, [NativeTypeName("ULONG *")] uint* pStatus);
+
+            [VtblIndex(5)]
+            HRESULT FreeBuffer(RPCOLEMESSAGE* pMessage);
+
+            [VtblIndex(6)]
+            HRESULT GetDestCtx([NativeTypeName("DWORD *")] uint* pdwDestContext, void** ppvDestContext);
+
+            [VtblIndex(7)]
+            HRESULT IsConnected();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcChannelBuffer*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcChannelBuffer*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcChannelBuffer*, uint> Release;
+
+            [NativeTypeName("HRESULT (RPCOLEMESSAGE *, const IID &) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcChannelBuffer*, RPCOLEMESSAGE*, Guid*, int> GetBuffer;
+
+            [NativeTypeName("HRESULT (RPCOLEMESSAGE *, ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcChannelBuffer*, RPCOLEMESSAGE*, uint*, int> SendReceive;
+
+            [NativeTypeName("HRESULT (RPCOLEMESSAGE *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcChannelBuffer*, RPCOLEMESSAGE*, int> FreeBuffer;
+
+            [NativeTypeName("HRESULT (DWORD *, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcChannelBuffer*, uint*, void**, int> GetDestCtx;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IRpcChannelBuffer*, int> IsConnected;
         }
     }
 }

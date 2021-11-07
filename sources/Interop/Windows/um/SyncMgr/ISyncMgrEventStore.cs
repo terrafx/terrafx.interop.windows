@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("37E412F9-016E-44C2-81FF-DB3ADD774266")]
     [NativeTypeName("struct ISyncMgrEventStore : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrEventStore
+    public unsafe partial struct ISyncMgrEventStore : ISyncMgrEventStore.Interface
     {
         public void** lpVtbl;
 
@@ -65,6 +65,45 @@ namespace TerraFX.Interop
         public HRESULT RemoveEvent(Guid* pguidEventIDs, [NativeTypeName("ULONG")] uint cEvents)
         {
             return ((delegate* unmanaged<ISyncMgrEventStore*, Guid*, uint, int>)(lpVtbl[6]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), pguidEventIDs, cEvents);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetEventEnumerator(IEnumSyncMgrEvents** ppenum);
+
+            [VtblIndex(4)]
+            HRESULT GetEventCount([NativeTypeName("ULONG *")] uint* pcEvents);
+
+            [VtblIndex(5)]
+            HRESULT GetEvent([NativeTypeName("const GUID &")] Guid* rguidEventID, ISyncMgrEvent** ppEvent);
+
+            [VtblIndex(6)]
+            HRESULT RemoveEvent(Guid* pguidEventIDs, [NativeTypeName("ULONG")] uint cEvents);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEventStore*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEventStore*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEventStore*, uint> Release;
+
+            [NativeTypeName("HRESULT (IEnumSyncMgrEvents **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEventStore*, IEnumSyncMgrEvents**, int> GetEventEnumerator;
+
+            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEventStore*, uint*, int> GetEventCount;
+
+            [NativeTypeName("HRESULT (const GUID &, ISyncMgrEvent **) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEventStore*, Guid*, ISyncMgrEvent**, int> GetEvent;
+
+            [NativeTypeName("HRESULT (GUID *, ULONG) __attribute__((stdcall))")]
+            public delegate* unmanaged<ISyncMgrEventStore*, Guid*, uint, int> RemoveEvent;
         }
     }
 }

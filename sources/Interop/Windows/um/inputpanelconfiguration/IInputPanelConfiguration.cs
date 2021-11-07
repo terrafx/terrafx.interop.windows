@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("41C81592-514C-48BD-A22E-E6AF638521A6")]
     [NativeTypeName("struct IInputPanelConfiguration : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInputPanelConfiguration
+    public unsafe partial struct IInputPanelConfiguration : IInputPanelConfiguration.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT EnableFocusTracking()
         {
             return ((delegate* unmanaged<IInputPanelConfiguration*, int>)(lpVtbl[3]))((IInputPanelConfiguration*)Unsafe.AsPointer(ref this));
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT EnableFocusTracking();
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IInputPanelConfiguration*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInputPanelConfiguration*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInputPanelConfiguration*, uint> Release;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IInputPanelConfiguration*, int> EnableFocusTracking;
         }
     }
 }

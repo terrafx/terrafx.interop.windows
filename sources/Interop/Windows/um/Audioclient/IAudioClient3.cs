@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("7ED4EE07-8E67-4CD4-8C1A-2B7A5987AD42")]
     [NativeTypeName("struct IAudioClient3 : IAudioClient2")]
     [NativeInheritance("IAudioClient2")]
-    public unsafe partial struct IAudioClient3
+    public unsafe partial struct IAudioClient3 : IAudioClient3.Interface
     {
         public void** lpVtbl;
 
@@ -163,6 +163,84 @@ namespace TerraFX.Interop
         public HRESULT InitializeSharedAudioStream([NativeTypeName("DWORD")] uint StreamFlags, [NativeTypeName("UINT32")] uint PeriodInFrames, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pFormat, [NativeTypeName("LPCGUID")] Guid* AudioSessionGuid)
         {
             return ((delegate* unmanaged<IAudioClient3*, uint, uint, WAVEFORMATEX*, Guid*, int>)(lpVtbl[20]))((IAudioClient3*)Unsafe.AsPointer(ref this), StreamFlags, PeriodInFrames, pFormat, AudioSessionGuid);
+        }
+
+        public interface Interface : IAudioClient2.Interface
+        {
+            [VtblIndex(18)]
+            HRESULT GetSharedModeEnginePeriod([NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pFormat, [NativeTypeName("UINT32 *")] uint* pDefaultPeriodInFrames, [NativeTypeName("UINT32 *")] uint* pFundamentalPeriodInFrames, [NativeTypeName("UINT32 *")] uint* pMinPeriodInFrames, [NativeTypeName("UINT32 *")] uint* pMaxPeriodInFrames);
+
+            [VtblIndex(19)]
+            HRESULT GetCurrentSharedModeEnginePeriod(WAVEFORMATEX** ppFormat, [NativeTypeName("UINT32 *")] uint* pCurrentPeriodInFrames);
+
+            [VtblIndex(20)]
+            HRESULT InitializeSharedAudioStream([NativeTypeName("DWORD")] uint StreamFlags, [NativeTypeName("UINT32")] uint PeriodInFrames, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pFormat, [NativeTypeName("LPCGUID")] Guid* AudioSessionGuid);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClient3*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClient3*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClient3*, uint> Release;
+
+            [NativeTypeName("HRESULT (AUDCLNT_SHAREMODE, DWORD, REFERENCE_TIME, REFERENCE_TIME, const WAVEFORMATEX *, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClient3*, AUDCLNT_SHAREMODE, uint, long, long, WAVEFORMATEX*, Guid*, int> Initialize;
+
+            [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClient3*, uint*, int> GetBufferSize;
+
+            [NativeTypeName("HRESULT (REFERENCE_TIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClient3*, long*, int> GetStreamLatency;
+
+            [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClient3*, uint*, int> GetCurrentPadding;
+
+            [NativeTypeName("HRESULT (AUDCLNT_SHAREMODE, const WAVEFORMATEX *, WAVEFORMATEX **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClient3*, AUDCLNT_SHAREMODE, WAVEFORMATEX*, WAVEFORMATEX**, int> IsFormatSupported;
+
+            [NativeTypeName("HRESULT (WAVEFORMATEX **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClient3*, WAVEFORMATEX**, int> GetMixFormat;
+
+            [NativeTypeName("HRESULT (REFERENCE_TIME *, REFERENCE_TIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClient3*, long*, long*, int> GetDevicePeriod;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClient3*, int> Start;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClient3*, int> Stop;
+
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClient3*, int> Reset;
+
+            [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClient3*, HANDLE, int> SetEventHandle;
+
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClient3*, Guid*, void**, int> GetService;
+
+            [NativeTypeName("HRESULT (AUDIO_STREAM_CATEGORY, BOOL *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClient3*, AUDIO_STREAM_CATEGORY, BOOL*, int> IsOffloadCapable;
+
+            [NativeTypeName("HRESULT (const AudioClientProperties *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClient3*, AudioClientProperties*, int> SetClientProperties;
+
+            [NativeTypeName("HRESULT (const WAVEFORMATEX *, BOOL, REFERENCE_TIME *, REFERENCE_TIME *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClient3*, WAVEFORMATEX*, BOOL, long*, long*, int> GetBufferSizeLimits;
+
+            [NativeTypeName("HRESULT (const WAVEFORMATEX *, UINT32 *, UINT32 *, UINT32 *, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClient3*, WAVEFORMATEX*, uint*, uint*, uint*, uint*, int> GetSharedModeEnginePeriod;
+
+            [NativeTypeName("HRESULT (WAVEFORMATEX **, UINT32 *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClient3*, WAVEFORMATEX**, uint*, int> GetCurrentSharedModeEnginePeriod;
+
+            [NativeTypeName("HRESULT (DWORD, UINT32, const WAVEFORMATEX *, LPCGUID) __attribute__((stdcall))")]
+            public delegate* unmanaged<IAudioClient3*, uint, uint, WAVEFORMATEX*, Guid*, int> InitializeSharedAudioStream;
         }
     }
 }

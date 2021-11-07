@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DE5072EE-DBE3-46DC-8A87-B6F631194751")]
     [NativeTypeName("struct IMFSensorActivitiesReportCallback : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSensorActivitiesReportCallback
+    public unsafe partial struct IMFSensorActivitiesReportCallback : IMFSensorActivitiesReportCallback.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT OnActivitiesReport(IMFSensorActivitiesReport* sensorActivitiesReport)
         {
             return ((delegate* unmanaged<IMFSensorActivitiesReportCallback*, IMFSensorActivitiesReport*, int>)(lpVtbl[3]))((IMFSensorActivitiesReportCallback*)Unsafe.AsPointer(ref this), sensorActivitiesReport);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT OnActivitiesReport(IMFSensorActivitiesReport* sensorActivitiesReport);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorActivitiesReportCallback*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorActivitiesReportCallback*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorActivitiesReportCallback*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFSensorActivitiesReport *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFSensorActivitiesReportCallback*, IMFSensorActivitiesReport*, int> OnActivitiesReport;
         }
     }
 }

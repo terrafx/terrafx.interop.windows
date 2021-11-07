@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("20BC074B-7A8D-4609-8C3B-64A0A3B5D7CE")]
     [NativeTypeName("struct IMFDXGIDeviceManagerSource : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFDXGIDeviceManagerSource
+    public unsafe partial struct IMFDXGIDeviceManagerSource : IMFDXGIDeviceManagerSource.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetManager(IMFDXGIDeviceManager** ppManager)
         {
             return ((delegate* unmanaged<IMFDXGIDeviceManagerSource*, IMFDXGIDeviceManager**, int>)(lpVtbl[3]))((IMFDXGIDeviceManagerSource*)Unsafe.AsPointer(ref this), ppManager);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetManager(IMFDXGIDeviceManager** ppManager);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIDeviceManagerSource*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIDeviceManagerSource*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIDeviceManagerSource*, uint> Release;
+
+            [NativeTypeName("HRESULT (IMFDXGIDeviceManager **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IMFDXGIDeviceManagerSource*, IMFDXGIDeviceManager**, int> GetManager;
         }
     }
 }

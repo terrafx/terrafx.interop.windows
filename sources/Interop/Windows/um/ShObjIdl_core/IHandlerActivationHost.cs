@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("35094A87-8BB1-4237-96C6-C417EEBDB078")]
     [NativeTypeName("struct IHandlerActivationHost : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHandlerActivationHost
+    public unsafe partial struct IHandlerActivationHost : IHandlerActivationHost.Interface
     {
         public void** lpVtbl;
 
@@ -51,6 +51,33 @@ namespace TerraFX.Interop
         public HRESULT BeforeCreateProcess([NativeTypeName("LPCWSTR")] ushort* applicationPath, [NativeTypeName("LPCWSTR")] ushort* commandLine, IHandlerInfo* handlerInfo)
         {
             return ((delegate* unmanaged<IHandlerActivationHost*, ushort*, ushort*, IHandlerInfo*, int>)(lpVtbl[4]))((IHandlerActivationHost*)Unsafe.AsPointer(ref this), applicationPath, commandLine, handlerInfo);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT BeforeCoCreateInstance([NativeTypeName("const IID &")] Guid* clsidHandler, IShellItemArray* itemsBeingActivated, IHandlerInfo* handlerInfo);
+
+            [VtblIndex(4)]
+            HRESULT BeforeCreateProcess([NativeTypeName("LPCWSTR")] ushort* applicationPath, [NativeTypeName("LPCWSTR")] ushort* commandLine, IHandlerInfo* handlerInfo);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHandlerActivationHost*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHandlerActivationHost*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IHandlerActivationHost*, uint> Release;
+
+            [NativeTypeName("HRESULT (const IID &, IShellItemArray *, IHandlerInfo *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHandlerActivationHost*, Guid*, IShellItemArray*, IHandlerInfo*, int> BeforeCoCreateInstance;
+
+            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, IHandlerInfo *) __attribute__((stdcall))")]
+            public delegate* unmanaged<IHandlerActivationHost*, ushort*, ushort*, IHandlerInfo*, int> BeforeCreateProcess;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("652D5C71-FE60-4A98-BE70-E5F21291E7F1")]
     [NativeTypeName("struct IDirectManipulationDeferContactService : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDirectManipulationDeferContactService
+    public unsafe partial struct IDirectManipulationDeferContactService : IDirectManipulationDeferContactService.Interface
     {
         public void** lpVtbl;
 
@@ -58,6 +58,39 @@ namespace TerraFX.Interop
         public HRESULT CancelDeferral([NativeTypeName("UINT32")] uint pointerId)
         {
             return ((delegate* unmanaged<IDirectManipulationDeferContactService*, uint, int>)(lpVtbl[5]))((IDirectManipulationDeferContactService*)Unsafe.AsPointer(ref this), pointerId);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT DeferContact([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32")] uint timeout);
+
+            [VtblIndex(4)]
+            HRESULT CancelContact([NativeTypeName("UINT32")] uint pointerId);
+
+            [VtblIndex(5)]
+            HRESULT CancelDeferral([NativeTypeName("UINT32")] uint pointerId);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationDeferContactService*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationDeferContactService*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationDeferContactService*, uint> Release;
+
+            [NativeTypeName("HRESULT (UINT32, UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationDeferContactService*, uint, uint, int> DeferContact;
+
+            [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationDeferContactService*, uint, int> CancelContact;
+
+            [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
+            public delegate* unmanaged<IDirectManipulationDeferContactService*, uint, int> CancelDeferral;
         }
     }
 }

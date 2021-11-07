@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3050F4EE-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IElementBehaviorSiteCategory : IUnknown")]
     [NativeInheritance("IUnknown")]
-    public unsafe partial struct IElementBehaviorSiteCategory
+    public unsafe partial struct IElementBehaviorSiteCategory : IElementBehaviorSiteCategory.Interface
     {
         public void** lpVtbl;
 
@@ -44,6 +44,27 @@ namespace TerraFX.Interop
         public HRESULT GetRelatedBehaviors([NativeTypeName("LONG")] int lDirection, [NativeTypeName("LPOLESTR")] ushort* pchCategory, IEnumUnknown** ppEnumerator)
         {
             return ((delegate* unmanaged<IElementBehaviorSiteCategory*, int, ushort*, IEnumUnknown**, int>)(lpVtbl[3]))((IElementBehaviorSiteCategory*)Unsafe.AsPointer(ref this), lDirection, pchCategory, ppEnumerator);
+        }
+
+        public interface Interface : IUnknown.Interface
+        {
+            [VtblIndex(3)]
+            HRESULT GetRelatedBehaviors([NativeTypeName("LONG")] int lDirection, [NativeTypeName("LPOLESTR")] ushort* pchCategory, IEnumUnknown** ppEnumerator);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteCategory*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteCategory*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteCategory*, uint> Release;
+
+            [NativeTypeName("HRESULT (LONG, LPOLESTR, IEnumUnknown **) __attribute__((stdcall))")]
+            public delegate* unmanaged<IElementBehaviorSiteCategory*, int, ushort*, IEnumUnknown**, int> GetRelatedBehaviors;
         }
     }
 }
