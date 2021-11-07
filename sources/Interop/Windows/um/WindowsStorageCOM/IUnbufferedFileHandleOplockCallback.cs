@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0")]
     [Guid("D1019A0E-6243-4329-8497-2E75894D7710")]
     [NativeTypeName("struct IUnbufferedFileHandleOplockCallback : IUnknown")]
     [NativeInheritance("IUnknown")]

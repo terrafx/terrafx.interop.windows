@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D11_KEY_EXCHANGE_HW_PROTECTION_DATA" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0")]
     public static unsafe partial class D3D11_KEY_EXCHANGE_HW_PROTECTION_DATATests
     {
         /// <summary>Validates that the <see cref="D3D11_KEY_EXCHANGE_HW_PROTECTION_DATA" /> struct is blittable.</summary>

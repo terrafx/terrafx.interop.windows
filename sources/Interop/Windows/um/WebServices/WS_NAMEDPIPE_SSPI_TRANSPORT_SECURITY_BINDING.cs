@@ -3,8 +3,11 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.Versioning;
+
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.0")]
     public unsafe partial struct WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING
     {
         public WS_SECURITY_BINDING binding;

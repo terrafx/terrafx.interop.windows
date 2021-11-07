@@ -4,9 +4,11 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.0")]
     public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
     {
         [NativeTypeName("DWORD")]

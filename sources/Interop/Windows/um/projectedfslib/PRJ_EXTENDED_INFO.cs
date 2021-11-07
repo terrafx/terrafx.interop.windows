@@ -5,9 +5,11 @@
 
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0.19041.0")]
     public partial struct PRJ_EXTENDED_INFO
     {
         public PRJ_EXT_INFO_TYPE InfoType;

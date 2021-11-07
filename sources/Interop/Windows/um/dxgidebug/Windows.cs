@@ -7,6 +7,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
@@ -112,6 +113,7 @@ namespace TerraFX.Interop
             }
         }
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("dxgidebug", ExactSpelling = true)]
         public static extern HRESULT DXGIGetDebugInterface([NativeTypeName("const IID &")] Guid* riid, void** ppDebug);
 

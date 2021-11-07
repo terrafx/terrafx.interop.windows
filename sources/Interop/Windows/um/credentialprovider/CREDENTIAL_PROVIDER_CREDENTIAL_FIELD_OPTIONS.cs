@@ -3,8 +3,11 @@
 // Ported from um/credentialprovider.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.Versioning;
+
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.0")]
     public enum CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS
     {
         CPCFO_NONE = 0,

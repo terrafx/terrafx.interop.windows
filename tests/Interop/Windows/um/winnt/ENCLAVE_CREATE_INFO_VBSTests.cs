@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ENCLAVE_CREATE_INFO_VBS" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0.16299.0")]
     public static unsafe partial class ENCLAVE_CREATE_INFO_VBSTests
     {
         /// <summary>Validates that the <see cref="ENCLAVE_CREATE_INFO_VBS" /> struct is blittable.</summary>

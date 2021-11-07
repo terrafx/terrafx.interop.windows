@@ -7,11 +7,13 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
     public static partial class Windows
     {
+        [SupportedOSPlatform("windows10.0.17134.0")]
         [DllImport("dxgi", ExactSpelling = true)]
         public static extern HRESULT DXGIDeclareAdapterRemovalSupport();
 

@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
@@ -129,21 +130,27 @@ namespace TerraFX.Interop
         [return: NativeTypeName("DWORD")]
         public static extern uint GenerateGPNotification(BOOL bMachine, [NativeTypeName("LPCWSTR")] ushort* lpwszMgmtProduct, [NativeTypeName("DWORD")] uint dwMgmtProductOptions);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("userenv", ExactSpelling = true)]
         public static extern HRESULT CreateAppContainerProfile([NativeTypeName("PCWSTR")] ushort* pszAppContainerName, [NativeTypeName("PCWSTR")] ushort* pszDisplayName, [NativeTypeName("PCWSTR")] ushort* pszDescription, [NativeTypeName("PSID_AND_ATTRIBUTES")] SID_AND_ATTRIBUTES* pCapabilities, [NativeTypeName("DWORD")] uint dwCapabilityCount, [NativeTypeName("PSID *")] void** ppSidAppContainerSid);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("userenv", ExactSpelling = true)]
         public static extern HRESULT DeleteAppContainerProfile([NativeTypeName("PCWSTR")] ushort* pszAppContainerName);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("userenv", ExactSpelling = true)]
         public static extern HRESULT GetAppContainerRegistryLocation([NativeTypeName("REGSAM")] uint desiredAccess, [NativeTypeName("PHKEY")] HKEY* phAppContainerKey);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("userenv", ExactSpelling = true)]
         public static extern HRESULT GetAppContainerFolderPath([NativeTypeName("PCWSTR")] ushort* pszAppContainerSid, [NativeTypeName("PWSTR *")] ushort** ppszPath);
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("userenv", ExactSpelling = true)]
         public static extern HRESULT DeriveRestrictedAppContainerSidFromAppContainerSidAndRestrictedName([NativeTypeName("PSID")] void* psidAppContainerSid, [NativeTypeName("PCWSTR")] ushort* pszRestrictedAppContainerName, [NativeTypeName("PSID *")] void** ppsidRestrictedAppContainerSid);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("userenv", ExactSpelling = true)]
         public static extern HRESULT DeriveAppContainerSidFromAppContainerName([NativeTypeName("PCWSTR")] ushort* pszAppContainerName, [NativeTypeName("PSID *")] void** ppsidAppContainerSid);
 

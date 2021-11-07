@@ -6,11 +6,13 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IAppxBundleReader" /> struct.</summary>
+    [SupportedOSPlatform("windows8.1")]
     public static unsafe partial class IAppxBundleReaderTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppxBundleReader" /> struct is correct.</summary>

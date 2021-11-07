@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="COMPRESS_ALLOCATION_ROUTINES" /> struct.</summary>
+    [SupportedOSPlatform("windows8.0")]
     public static unsafe partial class COMPRESS_ALLOCATION_ROUTINESTests
     {
         /// <summary>Validates that the <see cref="COMPRESS_ALLOCATION_ROUTINES" /> struct is blittable.</summary>

@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TOUCH_HIT_TESTING_PROXIMITY_EVALUATION" /> struct.</summary>
+    [SupportedOSPlatform("windows8.0")]
     public static unsafe partial class TOUCH_HIT_TESTING_PROXIMITY_EVALUATIONTests
     {
         /// <summary>Validates that the <see cref="TOUCH_HIT_TESTING_PROXIMITY_EVALUATION" /> struct is blittable.</summary>

@@ -6,11 +6,13 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IAppxEncryptionFactory3" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0")]
     public static unsafe partial class IAppxEncryptionFactory3Tests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppxEncryptionFactory3" /> struct is correct.</summary>

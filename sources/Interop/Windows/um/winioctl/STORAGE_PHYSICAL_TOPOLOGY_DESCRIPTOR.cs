@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0")]
     public partial struct STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR
     {
         [NativeTypeName("DWORD")]

@@ -4,9 +4,11 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0.17763.0")]
     [StructLayout(LayoutKind.Explicit)]
     public partial struct PRJ_NOTIFICATION_PARAMETERS
     {

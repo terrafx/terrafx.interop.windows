@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0")]
     [Guid("A7F026DA-A5F8-4487-A564-15E34357651E")]
     [NativeTypeName("struct ID3D11VideoContext1 : ID3D11VideoContext")]
     [NativeInheritance("ID3D11VideoContext")]

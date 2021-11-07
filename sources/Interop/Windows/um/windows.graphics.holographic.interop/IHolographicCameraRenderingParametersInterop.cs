@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0.19041.0")]
     [Guid("F75B68D6-D1FD-4707-AAFD-FA6F4C0E3BF4")]
     [NativeTypeName("struct IHolographicCameraRenderingParametersInterop : IInspectable")]
     [NativeInheritance("IInspectable")]

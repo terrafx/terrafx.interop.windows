@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
@@ -12,6 +13,7 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern HANDLE CreateJobObjectW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpJobAttributes, [NativeTypeName("LPCWSTR")] ushort* lpName);
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void FreeMemoryJobObject(void* Buffer);
 
@@ -27,6 +29,7 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SetInformationJobObject(HANDLE hJob, JOBOBJECTINFOCLASS JobObjectInformationClass, [NativeTypeName("LPVOID")] void* lpJobObjectInformation, [NativeTypeName("DWORD")] uint cbJobObjectInformationLength);
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint SetIoRateControlInformationJobObject(HANDLE hJob, JOBOBJECT_IO_RATE_CONTROL_INFORMATION* IoRateControlInfo);
@@ -34,6 +37,7 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL QueryInformationJobObject(HANDLE hJob, JOBOBJECTINFOCLASS JobObjectInformationClass, [NativeTypeName("LPVOID")] void* lpJobObjectInformation, [NativeTypeName("DWORD")] uint cbJobObjectInformationLength, [NativeTypeName("LPDWORD")] uint* lpReturnLength);
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint QueryIoRateControlInformationJobObject(HANDLE hJob, [NativeTypeName("PCWSTR")] ushort* VolumeName, JOBOBJECT_IO_RATE_CONTROL_INFORMATION** InfoBlocks, [NativeTypeName("ULONG *")] uint* InfoBlockCount);

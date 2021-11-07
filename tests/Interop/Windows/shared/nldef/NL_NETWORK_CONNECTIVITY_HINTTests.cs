@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NL_NETWORK_CONNECTIVITY_HINT" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0.19041.0")]
     public static unsafe partial class NL_NETWORK_CONNECTIVITY_HINTTests
     {
         /// <summary>Validates that the <see cref="NL_NETWORK_CONNECTIVITY_HINT" /> struct is blittable.</summary>

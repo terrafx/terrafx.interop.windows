@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0.19041.0")]
     public static unsafe partial class D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUTTests
     {
         /// <summary>Validates that the <see cref="D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT" /> struct is blittable.</summary>

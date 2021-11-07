@@ -6,11 +6,13 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ID3D11VideoContext" /> struct.</summary>
+    [SupportedOSPlatform("windows8.0")]
     public static unsafe partial class ID3D11VideoContextTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ID3D11VideoContext" /> struct is correct.</summary>

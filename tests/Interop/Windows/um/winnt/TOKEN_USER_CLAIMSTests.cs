@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="TOKEN_USER_CLAIMS" /> struct.</summary>
+    [SupportedOSPlatform("windows8.0")]
     public static unsafe partial class TOKEN_USER_CLAIMSTests
     {
         /// <summary>Validates that the <see cref="TOKEN_USER_CLAIMS" /> struct is blittable.</summary>

@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
@@ -166,6 +167,7 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern BOOL SetProcessDynamicEHContinuationTargets(HANDLE Process, ushort NumberOfTargets, [NativeTypeName("PPROCESS_DYNAMIC_EH_CONTINUATION_TARGET")] PROCESS_DYNAMIC_EH_CONTINUATION_TARGET* Targets);
 
+        [SupportedOSPlatform("windows10.0.19041.0")]
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern BOOL SetProcessDynamicEnforcedCetCompatibleRanges(HANDLE Process, ushort NumberOfRanges, [NativeTypeName("PPROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE")] PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE* Ranges);
 
@@ -178,18 +180,21 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern HANDLE CreateRemoteThreadEx(HANDLE hProcess, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpThreadAttributes, [NativeTypeName("SIZE_T")] nuint dwStackSize, [NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> lpStartAddress, [NativeTypeName("LPVOID")] void* lpParameter, [NativeTypeName("DWORD")] uint dwCreationFlags, LPPROC_THREAD_ATTRIBUTE_LIST lpAttributeList, [NativeTypeName("LPDWORD")] uint* lpThreadId);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void GetCurrentThreadStackLimits([NativeTypeName("PULONG_PTR")] nuint* LowLimit, [NativeTypeName("PULONG_PTR")] nuint* HighLimit);
 
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern BOOL GetThreadContext(HANDLE hThread, [NativeTypeName("LPCONTEXT")] void* lpContext);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetProcessMitigationPolicy(HANDLE hProcess, PROCESS_MITIGATION_POLICY MitigationPolicy, [NativeTypeName("PVOID")] void* lpBuffer, [NativeTypeName("SIZE_T")] nuint dwLength);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SetThreadContext(HANDLE hThread, [NativeTypeName("const CONTEXT *")] void* lpContext);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SetProcessMitigationPolicy(PROCESS_MITIGATION_POLICY MitigationPolicy, [NativeTypeName("PVOID")] void* lpBuffer, [NativeTypeName("SIZE_T")] nuint dwLength);
 
@@ -233,18 +238,23 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetSystemTimes([NativeTypeName("PFILETIME")] FILETIME* lpIdleTime, [NativeTypeName("PFILETIME")] FILETIME* lpKernelTime, [NativeTypeName("PFILETIME")] FILETIME* lpUserTime);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetThreadInformation(HANDLE hThread, THREAD_INFORMATION_CLASS ThreadInformationClass, [NativeTypeName("LPVOID")] void* ThreadInformation, [NativeTypeName("DWORD")] uint ThreadInformationSize);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SetThreadInformation(HANDLE hThread, THREAD_INFORMATION_CLASS ThreadInformationClass, [NativeTypeName("LPVOID")] void* ThreadInformation, [NativeTypeName("DWORD")] uint ThreadInformationSize);
 
+        [SupportedOSPlatform("windows8.1")]
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL IsProcessCritical(HANDLE hProcess, [NativeTypeName("PBOOL")] BOOL* Critical);
 
+        [SupportedOSPlatform("windows8.1")]
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern BOOL SetProtectedPolicy([NativeTypeName("LPCGUID")] Guid* PolicyGuid, [NativeTypeName("ULONG_PTR")] nuint PolicyValue, [NativeTypeName("PULONG_PTR")] nuint* OldPolicyValue);
 
+        [SupportedOSPlatform("windows8.1")]
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern BOOL QueryProtectedPolicy([NativeTypeName("LPCGUID")] Guid* PolicyGuid, [NativeTypeName("PULONG_PTR")] nuint* PolicyValue);
 
@@ -252,24 +262,31 @@ namespace TerraFX.Interop
         [return: NativeTypeName("DWORD")]
         public static extern uint SetThreadIdealProcessor(HANDLE hThread, [NativeTypeName("DWORD")] uint dwIdealProcessor);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SetProcessInformation(HANDLE hProcess, PROCESS_INFORMATION_CLASS ProcessInformationClass, [NativeTypeName("LPVOID")] void* ProcessInformation, [NativeTypeName("DWORD")] uint ProcessInformationSize);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetProcessInformation(HANDLE hProcess, PROCESS_INFORMATION_CLASS ProcessInformationClass, [NativeTypeName("LPVOID")] void* ProcessInformation, [NativeTypeName("DWORD")] uint ProcessInformationSize);
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern BOOL GetSystemCpuSetInformation([NativeTypeName("PSYSTEM_CPU_SET_INFORMATION")] SYSTEM_CPU_SET_INFORMATION* Information, [NativeTypeName("ULONG")] uint BufferLength, [NativeTypeName("PULONG")] uint* ReturnedLength, HANDLE Process, [NativeTypeName("ULONG")] uint Flags);
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern BOOL GetProcessDefaultCpuSets(HANDLE Process, [NativeTypeName("PULONG")] uint* CpuSetIds, [NativeTypeName("ULONG")] uint CpuSetIdCount, [NativeTypeName("PULONG")] uint* RequiredIdCount);
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern BOOL SetProcessDefaultCpuSets(HANDLE Process, [NativeTypeName("const ULONG *")] uint* CpuSetIds, [NativeTypeName("ULONG")] uint CpuSetIdCount);
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern BOOL GetThreadSelectedCpuSets(HANDLE Thread, [NativeTypeName("PULONG")] uint* CpuSetIds, [NativeTypeName("ULONG")] uint CpuSetIdCount, [NativeTypeName("PULONG")] uint* RequiredIdCount);
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern BOOL SetThreadSelectedCpuSets(HANDLE Thread, [NativeTypeName("const ULONG *")] uint* CpuSetIds, [NativeTypeName("ULONG")] uint CpuSetIdCount);
 
@@ -291,9 +308,11 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern BOOL SetThreadSelectedCpuSetMasks(HANDLE Thread, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, ushort CpuSetMaskCount);
 
+        [SupportedOSPlatform("windows10.0.14393.0")]
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern HRESULT SetThreadDescription(HANDLE hThread, [NativeTypeName("PCWSTR")] ushort* lpThreadDescription);
 
+        [SupportedOSPlatform("windows10.0.14393.0")]
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern HRESULT GetThreadDescription(HANDLE hThread, [NativeTypeName("PWSTR *")] ushort** ppszThreadDescription);
 

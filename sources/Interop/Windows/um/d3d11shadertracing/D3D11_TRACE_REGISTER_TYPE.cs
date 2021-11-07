@@ -3,8 +3,11 @@
 // Ported from um/d3d11shadertracing.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.Versioning;
+
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.0")]
     public enum D3D11_TRACE_REGISTER_TYPE
     {
         D3D11_TRACE_OUTPUT_NULL_REGISTER = 0,

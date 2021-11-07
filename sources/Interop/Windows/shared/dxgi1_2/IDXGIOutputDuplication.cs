@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.0")]
     [Guid("191CFAC3-A341-470D-B26E-A864F428319C")]
     [NativeTypeName("struct IDXGIOutputDuplication : IDXGIObject")]
     [NativeInheritance("IDXGIObject")]

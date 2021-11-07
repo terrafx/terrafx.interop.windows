@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.1")]
     [Guid("D31FBE17-F157-41A2-8D24-CB779E0560E8")]
     [NativeTypeName("struct IDWriteColorGlyphRunEnumerator : IUnknown")]
     [NativeInheritance("IUnknown")]

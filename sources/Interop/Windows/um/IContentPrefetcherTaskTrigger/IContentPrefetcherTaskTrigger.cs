@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.1")]
     [Guid("1B35A14A-6094-4799-A60E-E474E15D4DC9")]
     [NativeTypeName("struct IContentPrefetcherTaskTrigger : IInspectable")]
     [NativeInheritance("IInspectable")]

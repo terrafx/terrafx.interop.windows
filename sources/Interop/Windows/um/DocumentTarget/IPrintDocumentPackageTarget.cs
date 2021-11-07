@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.0")]
     [Guid("1B8EFEC4-3019-4C27-964E-367202156906")]
     [NativeTypeName("struct IPrintDocumentPackageTarget : IUnknown")]
     [NativeInheritance("IUnknown")]

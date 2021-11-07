@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="POINTER_DEVICE_PROPERTY" /> struct.</summary>
+    [SupportedOSPlatform("windows8.0")]
     public static unsafe partial class POINTER_DEVICE_PROPERTYTests
     {
         /// <summary>Validates that the <see cref="POINTER_DEVICE_PROPERTY" /> struct is blittable.</summary>

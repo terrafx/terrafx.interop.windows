@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0")]
     [Guid("652D5C71-FE60-4A98-BE70-E5F21291E7F1")]
     [NativeTypeName("struct IDirectManipulationDeferContactService : IUnknown")]
     [NativeInheritance("IUnknown")]

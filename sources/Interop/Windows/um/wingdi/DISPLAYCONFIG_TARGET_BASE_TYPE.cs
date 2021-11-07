@@ -3,8 +3,11 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.Versioning;
+
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.1")]
     public partial struct DISPLAYCONFIG_TARGET_BASE_TYPE
     {
         public DISPLAYCONFIG_DEVICE_INFO_HEADER header;

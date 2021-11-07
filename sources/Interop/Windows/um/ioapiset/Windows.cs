@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
@@ -33,6 +34,7 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL CancelIo(HANDLE hFile);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetOverlappedResultEx(HANDLE hFile, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* lpOverlapped, [NativeTypeName("LPDWORD")] uint* lpNumberOfBytesTransferred, [NativeTypeName("DWORD")] uint dwMilliseconds, BOOL bAlertable);
 

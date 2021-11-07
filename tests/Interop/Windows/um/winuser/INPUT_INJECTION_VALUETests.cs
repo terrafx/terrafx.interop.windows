@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="INPUT_INJECTION_VALUE" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0.17763.0")]
     public static unsafe partial class INPUT_INJECTION_VALUETests
     {
         /// <summary>Validates that the <see cref="INPUT_INJECTION_VALUE" /> struct is blittable.</summary>

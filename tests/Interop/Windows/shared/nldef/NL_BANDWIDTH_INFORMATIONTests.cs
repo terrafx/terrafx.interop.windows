@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="NL_BANDWIDTH_INFORMATION" /> struct.</summary>
+    [SupportedOSPlatform("windows8.0")]
     public static unsafe partial class NL_BANDWIDTH_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="NL_BANDWIDTH_INFORMATION" /> struct is blittable.</summary>

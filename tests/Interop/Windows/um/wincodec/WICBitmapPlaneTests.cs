@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WICBitmapPlane" /> struct.</summary>
+    [SupportedOSPlatform("windows8.1")]
     public static unsafe partial class WICBitmapPlaneTests
     {
         /// <summary>Validates that the <see cref="WICBitmapPlane" /> struct is blittable.</summary>

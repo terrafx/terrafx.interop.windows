@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
@@ -1217,9 +1218,11 @@ namespace TerraFX.Interop
         [DllImport("shlwapi", ExactSpelling = true)]
         public static extern BOOL SHCreateThreadWithHandle([NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> pfnThreadProc, void* pData, [NativeTypeName("SHCT_FLAGS")] uint flags, [NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> pfnCallback, HANDLE* pHandle);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("api-ms-win-shcore-thread-l1-1-0", ExactSpelling = true)]
         public static extern void SetProcessReference(IUnknown* punk);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("api-ms-win-shcore-thread-l1-1-0", ExactSpelling = true)]
         public static extern HRESULT GetProcessReference(IUnknown** punk);
 

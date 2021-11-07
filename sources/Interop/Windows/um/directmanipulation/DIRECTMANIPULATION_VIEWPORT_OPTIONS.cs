@@ -4,10 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
     [Flags]
+    [SupportedOSPlatform("windows8.0")]
     public enum DIRECTMANIPULATION_VIEWPORT_OPTIONS
     {
         DIRECTMANIPULATION_VIEWPORT_OPTIONS_DEFAULT = 0,

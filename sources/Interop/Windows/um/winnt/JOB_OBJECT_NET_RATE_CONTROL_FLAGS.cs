@@ -4,10 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
     [Flags]
+    [SupportedOSPlatform("windows10.0")]
     public enum JOB_OBJECT_NET_RATE_CONTROL_FLAGS
     {
         JOB_OBJECT_NET_RATE_CONTROL_ENABLE = 0x1,
