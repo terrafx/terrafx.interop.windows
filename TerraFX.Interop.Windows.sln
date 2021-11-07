@@ -2641,13 +2641,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DbgHelp", "DbgHelp", "{5A84
 		generation\um\DbgHelp\um-DbgHelp.h = generation\um\DbgHelp\um-DbgHelp.h
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "minidumpapiset", "minidumpapiset", "{70A80803-AE15-4679-8F76-24B95F0482D2}"
-	ProjectSection(SolutionItems) = preProject
-		generation\um\minidumpapiset\generate.rsp = generation\um\minidumpapiset\generate.rsp
-		generation\um\minidumpapiset\header.txt = generation\um\minidumpapiset\header.txt
-		generation\um\minidumpapiset\um-minidumpapiset.h = generation\um\minidumpapiset\um-minidumpapiset.h
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "verrsrc", "verrsrc", "{51F0DEC5-5336-4B7B-92F0-967356746E03}"
 	ProjectSection(SolutionItems) = preProject
 		generation\um\verrsrc\generate.rsp = generation\um\verrsrc\generate.rsp
@@ -3067,7 +3060,6 @@ Global
 		{546D542D-BEA7-4791-A9FB-44A686BA10BE} = {B09A774C-A2CD-4E0D-8DE8-AC48459E1699}
 		{3EB33755-7EB9-4ED1-AD8D-083D836D9EFA} = {B09A774C-A2CD-4E0D-8DE8-AC48459E1699}
 		{5A84C56B-6CED-44C2-8D2D-AB3F16874D8A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{70A80803-AE15-4679-8F76-24B95F0482D2} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{51F0DEC5-5336-4B7B-92F0-967356746E03} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{33ED89BB-DBA6-4F77-9E4C-3CEF7057F200} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
