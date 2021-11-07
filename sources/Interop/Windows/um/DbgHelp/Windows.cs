@@ -89,7 +89,21 @@ namespace TerraFX.Interop
         [return: NativeTypeName("DWORD")]
         public static extern uint UnDecorateSymbolNameW([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PWSTR")] ushort* outputString, [NativeTypeName("DWORD")] uint maxStringLength, [NativeTypeName("DWORD")] uint flags);
 
-        public static void KdHelp32To64([NativeTypeName("PKDHELP64")] KDHELP64* p32, [NativeTypeName("PKDHELP64")] KDHELP64* p64)
+        public static void Address32To64([NativeTypeName("LPADDRESS")] ADDRESS* a32, [NativeTypeName("LPADDRESS64")] ADDRESS64* a64)
+        {
+            a64->Offset = unchecked((ulong)((long)((int)(a32->Offset))));
+            a64->Segment = a32->Segment;
+            a64->Mode = a32->Mode;
+        }
+
+        public static void Address64To32([NativeTypeName("LPADDRESS64")] ADDRESS64* a64, [NativeTypeName("LPADDRESS")] ADDRESS* a32)
+        {
+            a32->Offset = (uint)(a64->Offset);
+            a32->Segment = a64->Segment;
+            a32->Mode = a64->Mode;
+        }
+
+        public static void KdHelp32To64([NativeTypeName("PKDHELP")] KDHELP* p32, [NativeTypeName("PKDHELP64")] KDHELP64* p64)
         {
             p64->Thread = p32->Thread;
             p64->ThCallbackStack = p32->ThCallbackStack;
@@ -108,6 +122,9 @@ namespace TerraFX.Interop
 
         [DllImport("DbgHelp", ExactSpelling = true)]
         public static extern BOOL StackWalkEx([NativeTypeName("DWORD")] uint MachineType, HANDLE hProcess, HANDLE hThread, [NativeTypeName("LPSTACKFRAME_EX")] STACKFRAME_EX* StackFrame, [NativeTypeName("PVOID")] void* ContextRecord, [NativeTypeName("PREAD_PROCESS_MEMORY_ROUTINE64")] delegate* unmanaged<HANDLE, ulong, void*, uint, uint*, BOOL> ReadMemoryRoutine, [NativeTypeName("PFUNCTION_TABLE_ACCESS_ROUTINE64")] delegate* unmanaged<HANDLE, ulong, void*> FunctionTableAccessRoutine, [NativeTypeName("PGET_MODULE_BASE_ROUTINE64")] delegate* unmanaged<HANDLE, ulong, ulong> GetModuleBaseRoutine, [NativeTypeName("PTRANSLATE_ADDRESS_ROUTINE64")] delegate* unmanaged<HANDLE, HANDLE, ADDRESS64*, ulong> TranslateAddress, [NativeTypeName("DWORD")] uint Flags);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
+        public static extern BOOL StackWalk([NativeTypeName("DWORD")] uint MachineType, HANDLE hProcess, HANDLE hThread, [NativeTypeName("LPSTACKFRAME")] STACKFRAME* StackFrame, [NativeTypeName("PVOID")] void* ContextRecord, [NativeTypeName("PREAD_PROCESS_MEMORY_ROUTINE")] delegate* unmanaged<HANDLE, uint, void*, uint, uint*, BOOL> ReadMemoryRoutine, [NativeTypeName("PFUNCTION_TABLE_ACCESS_ROUTINE")] delegate* unmanaged<HANDLE, uint, void*> FunctionTableAccessRoutine, [NativeTypeName("PGET_MODULE_BASE_ROUTINE")] delegate* unmanaged<HANDLE, uint, uint> GetModuleBaseRoutine, [NativeTypeName("PTRANSLATE_ADDRESS_ROUTINE")] delegate* unmanaged<HANDLE, HANDLE, ADDRESS*, uint> TranslateAddress);
 
         [DllImport("DbgHelp", ExactSpelling = true)]
         [return: NativeTypeName("LPAPI_VERSION")]
@@ -188,6 +205,9 @@ namespace TerraFX.Interop
         public static extern BOOL SymEnumerateModulesW64(HANDLE hProcess, [NativeTypeName("PSYM_ENUMMODULES_CALLBACKW64")] delegate* unmanaged<ushort*, ulong, void*, BOOL> EnumModulesCallback, [NativeTypeName("PVOID")] void* UserContext);
 
         [DllImport("DbgHelp", ExactSpelling = true)]
+        public static extern BOOL SymEnumerateModules(HANDLE hProcess, [NativeTypeName("PSYM_ENUMMODULES_CALLBACK")] delegate* unmanaged<sbyte*, uint, void*, BOOL> EnumModulesCallback, [NativeTypeName("PVOID")] void* UserContext);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
         public static extern BOOL EnumerateLoadedModulesEx(HANDLE hProcess, [NativeTypeName("PENUMLOADED_MODULES_CALLBACK64")] delegate* unmanaged<sbyte*, ulong, uint, void*, BOOL> EnumLoadedModulesCallback, [NativeTypeName("PVOID")] void* UserContext);
 
         [DllImport("DbgHelp", ExactSpelling = true)]
@@ -200,12 +220,19 @@ namespace TerraFX.Interop
         public static extern BOOL EnumerateLoadedModulesW64(HANDLE hProcess, [NativeTypeName("PENUMLOADED_MODULES_CALLBACKW64")] delegate* unmanaged<ushort*, ulong, uint, void*, BOOL> EnumLoadedModulesCallback, [NativeTypeName("PVOID")] void* UserContext);
 
         [DllImport("DbgHelp", ExactSpelling = true)]
+        public static extern BOOL EnumerateLoadedModules(HANDLE hProcess, [NativeTypeName("PENUMLOADED_MODULES_CALLBACK")] delegate* unmanaged<sbyte*, uint, uint, void*, BOOL> EnumLoadedModulesCallback, [NativeTypeName("PVOID")] void* UserContext);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
         [return: NativeTypeName("PVOID")]
         public static extern void* SymFunctionTableAccess64(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong AddrBase);
 
         [DllImport("DbgHelp", ExactSpelling = true)]
         [return: NativeTypeName("PVOID")]
         public static extern void* SymFunctionTableAccess64AccessRoutines(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong AddrBase, [NativeTypeName("PREAD_PROCESS_MEMORY_ROUTINE64")] delegate* unmanaged<HANDLE, ulong, void*, uint, uint*, BOOL> ReadMemoryRoutine, [NativeTypeName("PGET_MODULE_BASE_ROUTINE64")] delegate* unmanaged<HANDLE, ulong, ulong> GetModuleBaseRoutine);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
+        [return: NativeTypeName("PVOID")]
+        public static extern void* SymFunctionTableAccess(HANDLE hProcess, [NativeTypeName("DWORD")] uint AddrBase);
 
         [DllImport("DbgHelp", ExactSpelling = true)]
         public static extern BOOL SymGetUnwindInfo(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong Address, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("PULONG")] uint* Size);
@@ -217,8 +244,18 @@ namespace TerraFX.Interop
         public static extern BOOL SymGetModuleInfoW64(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong qwAddr, [NativeTypeName("PIMAGEHLP_MODULEW64")] IMAGEHLP_MODULEW64* ModuleInfo);
 
         [DllImport("DbgHelp", ExactSpelling = true)]
+        public static extern BOOL SymGetModuleInfo(HANDLE hProcess, [NativeTypeName("DWORD")] uint dwAddr, [NativeTypeName("PIMAGEHLP_MODULE")] IMAGEHLP_MODULE* ModuleInfo);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
+        public static extern BOOL SymGetModuleInfoW(HANDLE hProcess, [NativeTypeName("DWORD")] uint dwAddr, [NativeTypeName("PIMAGEHLP_MODULEW")] IMAGEHLP_MODULEW* ModuleInfo);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD64")]
         public static extern ulong SymGetModuleBase64(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong qwAddr);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
+        [return: NativeTypeName("DWORD")]
+        public static extern uint SymGetModuleBase(HANDLE hProcess, [NativeTypeName("DWORD")] uint dwAddr);
 
         [DllImport("DbgHelp", ExactSpelling = true)]
         public static extern BOOL SymEnumLines(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong Base, [NativeTypeName("PCSTR")] sbyte* Obj, [NativeTypeName("PCSTR")] sbyte* File, [NativeTypeName("PSYM_ENUMLINES_CALLBACK")] delegate* unmanaged<SRCCODEINFO*, void*, BOOL> EnumLinesCallback, [NativeTypeName("PVOID")] void* UserContext);
@@ -256,10 +293,19 @@ namespace TerraFX.Interop
         public static extern BOOL SymQueryInlineTrace(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong StartAddress, [NativeTypeName("DWORD")] uint StartContext, [NativeTypeName("DWORD64")] ulong StartRetAddress, [NativeTypeName("DWORD64")] ulong CurAddress, [NativeTypeName("LPDWORD")] uint* CurContext, [NativeTypeName("LPDWORD")] uint* CurFrameIndex);
 
         [DllImport("DbgHelp", ExactSpelling = true)]
+        public static extern BOOL SymGetLineFromAddr(HANDLE hProcess, [NativeTypeName("DWORD")] uint dwAddr, [NativeTypeName("PDWORD")] uint* pdwDisplacement, [NativeTypeName("PIMAGEHLP_LINE")] IMAGEHLP_LINE* Line);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
+        public static extern BOOL SymGetLineFromAddrW(HANDLE hProcess, [NativeTypeName("DWORD")] uint dwAddr, [NativeTypeName("PDWORD")] uint* pdwDisplacement, [NativeTypeName("PIMAGEHLP_LINEW")] IMAGEHLP_LINEW* Line);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
         public static extern BOOL SymGetLineFromName64(HANDLE hProcess, [NativeTypeName("PCSTR")] sbyte* ModuleName, [NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("DWORD")] uint dwLineNumber, [NativeTypeName("PLONG")] int* plDisplacement, [NativeTypeName("PIMAGEHLP_LINE64")] IMAGEHLP_LINE64* Line);
 
         [DllImport("DbgHelp", ExactSpelling = true)]
         public static extern BOOL SymGetLineFromNameW64(HANDLE hProcess, [NativeTypeName("PCWSTR")] ushort* ModuleName, [NativeTypeName("PCWSTR")] ushort* FileName, [NativeTypeName("DWORD")] uint dwLineNumber, [NativeTypeName("PLONG")] int* plDisplacement, [NativeTypeName("PIMAGEHLP_LINEW64")] IMAGEHLP_LINEW64* Line);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
+        public static extern BOOL SymGetLineFromName(HANDLE hProcess, [NativeTypeName("PCSTR")] sbyte* ModuleName, [NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("DWORD")] uint dwLineNumber, [NativeTypeName("PLONG")] int* plDisplacement, [NativeTypeName("PIMAGEHLP_LINE")] IMAGEHLP_LINE* Line);
 
         [DllImport("DbgHelp", ExactSpelling = true)]
         public static extern BOOL SymGetLineNext64(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_LINE64")] IMAGEHLP_LINE64* Line);
@@ -268,10 +314,22 @@ namespace TerraFX.Interop
         public static extern BOOL SymGetLineNextW64(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_LINEW64")] IMAGEHLP_LINEW64* Line);
 
         [DllImport("DbgHelp", ExactSpelling = true)]
+        public static extern BOOL SymGetLineNext(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_LINE")] IMAGEHLP_LINE* Line);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
+        public static extern BOOL SymGetLineNextW(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_LINEW")] IMAGEHLP_LINEW* Line);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
         public static extern BOOL SymGetLinePrev64(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_LINE64")] IMAGEHLP_LINE64* Line);
 
         [DllImport("DbgHelp", ExactSpelling = true)]
         public static extern BOOL SymGetLinePrevW64(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_LINEW64")] IMAGEHLP_LINEW64* Line);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
+        public static extern BOOL SymGetLinePrev(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_LINE")] IMAGEHLP_LINE* Line);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
+        public static extern BOOL SymGetLinePrevW(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_LINEW")] IMAGEHLP_LINEW* Line);
 
         [DllImport("DbgHelp", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
@@ -346,7 +404,13 @@ namespace TerraFX.Interop
         public static extern BOOL SymUnloadModule64(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong BaseOfDll);
 
         [DllImport("DbgHelp", ExactSpelling = true)]
+        public static extern BOOL SymUnloadModule(HANDLE hProcess, [NativeTypeName("DWORD")] uint BaseOfDll);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
         public static extern BOOL SymUnDName64([NativeTypeName("PIMAGEHLP_SYMBOL64")] IMAGEHLP_SYMBOL64* sym, [NativeTypeName("PSTR")] sbyte* UnDecName, [NativeTypeName("DWORD")] uint UnDecNameLength);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
+        public static extern BOOL SymUnDName([NativeTypeName("PIMAGEHLP_SYMBOL")] IMAGEHLP_SYMBOL* sym, [NativeTypeName("PSTR")] sbyte* UnDecName, [NativeTypeName("DWORD")] uint UnDecNameLength);
 
         [DllImport("DbgHelp", ExactSpelling = true)]
         public static extern BOOL SymRegisterCallback64(HANDLE hProcess, [NativeTypeName("PSYMBOL_REGISTERED_CALLBACK64")] delegate* unmanaged<HANDLE, uint, ulong, ulong, BOOL> CallbackFunction, [NativeTypeName("ULONG64")] ulong UserContext);
@@ -356,6 +420,12 @@ namespace TerraFX.Interop
 
         [DllImport("DbgHelp", ExactSpelling = true)]
         public static extern BOOL SymRegisterFunctionEntryCallback64(HANDLE hProcess, [NativeTypeName("PSYMBOL_FUNCENTRY_CALLBACK64")] delegate* unmanaged<HANDLE, ulong, ulong, void*> CallbackFunction, [NativeTypeName("ULONG64")] ulong UserContext);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
+        public static extern BOOL SymRegisterCallback(HANDLE hProcess, [NativeTypeName("PSYMBOL_REGISTERED_CALLBACK")] delegate* unmanaged<HANDLE, uint, void*, void*, BOOL> CallbackFunction, [NativeTypeName("PVOID")] void* UserContext);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
+        public static extern BOOL SymRegisterFunctionEntryCallback(HANDLE hProcess, [NativeTypeName("PSYMBOL_FUNCENTRY_CALLBACK")] delegate* unmanaged<HANDLE, uint, void*, void*> CallbackFunction, [NativeTypeName("PVOID")] void* UserContext);
 
         [DllImport("DbgHelp", ExactSpelling = true)]
         public static extern BOOL SymSetContext(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_STACK_FRAME")] IMAGEHLP_STACK_FRAME* StackFrame, [NativeTypeName("PIMAGEHLP_CONTEXT")] void* Context);
@@ -564,7 +634,13 @@ namespace TerraFX.Interop
         public static extern BOOL SymGetSymFromAddr64(HANDLE hProcess, [NativeTypeName("DWORD64")] ulong qwAddr, [NativeTypeName("PDWORD64")] ulong* pdwDisplacement, [NativeTypeName("PIMAGEHLP_SYMBOL64")] IMAGEHLP_SYMBOL64* Symbol);
 
         [DllImport("DbgHelp", ExactSpelling = true)]
+        public static extern BOOL SymGetSymFromAddr(HANDLE hProcess, [NativeTypeName("DWORD")] uint dwAddr, [NativeTypeName("PDWORD")] uint* pdwDisplacement, [NativeTypeName("PIMAGEHLP_SYMBOL")] IMAGEHLP_SYMBOL* Symbol);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
         public static extern BOOL SymGetSymFromName64(HANDLE hProcess, [NativeTypeName("PCSTR")] sbyte* Name, [NativeTypeName("PIMAGEHLP_SYMBOL64")] IMAGEHLP_SYMBOL64* Symbol);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
+        public static extern BOOL SymGetSymFromName(HANDLE hProcess, [NativeTypeName("PCSTR")] sbyte* Name, [NativeTypeName("PIMAGEHLP_SYMBOL")] IMAGEHLP_SYMBOL* Symbol);
 
         [DllImport("DbgHelp", ExactSpelling = true)]
         public static extern BOOL FindFileInPath(HANDLE hprocess, [NativeTypeName("PCSTR")] sbyte* SearchPathW, [NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("PVOID")] void* id, [NativeTypeName("DWORD")] uint two, [NativeTypeName("DWORD")] uint three, [NativeTypeName("DWORD")] uint flags, [NativeTypeName("PSTR")] sbyte* FilePath);
@@ -582,8 +658,18 @@ namespace TerraFX.Interop
         public static extern BOOL SymEnumerateSymbolsW64(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong BaseOfDll, [NativeTypeName("PSYM_ENUMSYMBOLS_CALLBACK64W")] delegate* unmanaged<ushort*, ulong, uint, void*, BOOL> EnumSymbolsCallback, [NativeTypeName("PVOID")] void* UserContext);
 
         [DllImport("DbgHelp", ExactSpelling = true)]
+        public static extern BOOL SymEnumerateSymbols(HANDLE hProcess, [NativeTypeName("ULONG")] uint BaseOfDll, [NativeTypeName("PSYM_ENUMSYMBOLS_CALLBACK")] delegate* unmanaged<sbyte*, uint, uint, void*, BOOL> EnumSymbolsCallback, [NativeTypeName("PVOID")] void* UserContext);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
+        public static extern BOOL SymEnumerateSymbolsW(HANDLE hProcess, [NativeTypeName("ULONG")] uint BaseOfDll, [NativeTypeName("PSYM_ENUMSYMBOLS_CALLBACKW")] delegate* unmanaged<ushort*, uint, uint, void*, BOOL> EnumSymbolsCallback, [NativeTypeName("PVOID")] void* UserContext);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
         [return: NativeTypeName("DWORD64")]
         public static extern ulong SymLoadModule64(HANDLE hProcess, HANDLE hFile, [NativeTypeName("PCSTR")] sbyte* ImageName, [NativeTypeName("PCSTR")] sbyte* ModuleName, [NativeTypeName("DWORD64")] ulong BaseOfDll, [NativeTypeName("DWORD")] uint SizeOfDll);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
+        [return: NativeTypeName("DWORD")]
+        public static extern uint SymLoadModule(HANDLE hProcess, HANDLE hFile, [NativeTypeName("PCSTR")] sbyte* ImageName, [NativeTypeName("PCSTR")] sbyte* ModuleName, [NativeTypeName("DWORD")] uint BaseOfDll, [NativeTypeName("DWORD")] uint SizeOfDll);
 
         [DllImport("DbgHelp", ExactSpelling = true)]
         public static extern BOOL SymGetSymNext64(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_SYMBOL64")] IMAGEHLP_SYMBOL64* Symbol);
@@ -592,10 +678,22 @@ namespace TerraFX.Interop
         public static extern BOOL SymGetSymNextW64(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_SYMBOLW64")] IMAGEHLP_SYMBOLW64* Symbol);
 
         [DllImport("DbgHelp", ExactSpelling = true)]
+        public static extern BOOL SymGetSymNext(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_SYMBOL")] IMAGEHLP_SYMBOL* Symbol);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
+        public static extern BOOL SymGetSymNextW(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_SYMBOLW")] IMAGEHLP_SYMBOLW* Symbol);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
         public static extern BOOL SymGetSymPrev64(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_SYMBOL64")] IMAGEHLP_SYMBOL64* Symbol);
 
         [DllImport("DbgHelp", ExactSpelling = true)]
         public static extern BOOL SymGetSymPrevW64(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_SYMBOLW64")] IMAGEHLP_SYMBOLW64* Symbol);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
+        public static extern BOOL SymGetSymPrev(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_SYMBOL")] IMAGEHLP_SYMBOL* Symbol);
+
+        [DllImport("DbgHelp", ExactSpelling = true)]
+        public static extern BOOL SymGetSymPrevW(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_SYMBOLW")] IMAGEHLP_SYMBOLW* Symbol);
 
         [DllImport("DbgHelp", ExactSpelling = true)]
         public static extern void SetCheckUserInterruptShared([NativeTypeName("LPCALL_BACK_USER_INTERRUPT_ROUTINE")] delegate* unmanaged<uint> lpStartAddress);
@@ -725,9 +823,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define SYM_STKWALK_ZEROEXTEND_PTRS 0x00000002")]
         public const int SYM_STKWALK_ZEROEXTEND_PTRS = 0x00000002;
-
-        [NativeTypeName("#define StackWalk StackWalk64")]
-        public static delegate*<uint, HANDLE, HANDLE, STACKFRAME64*, void*, delegate* unmanaged<HANDLE, ulong, void*, uint, uint*, BOOL>, delegate* unmanaged<HANDLE, ulong, void*>, delegate* unmanaged<HANDLE, ulong, ulong>, delegate* unmanaged<HANDLE, HANDLE, ADDRESS64*, ulong>, BOOL> StackWalk => &StackWalk64;
 
         [NativeTypeName("#define API_VERSION_NUMBER 12")]
         public const int API_VERSION_NUMBER = 12;
@@ -984,24 +1079,6 @@ namespace TerraFX.Interop
         [NativeTypeName("#define SYMOPT_DEBUG 0x80000000")]
         public const uint SYMOPT_DEBUG = 0x80000000;
 
-        [NativeTypeName("#define SymEnumerateModules SymEnumerateModules64")]
-        public static delegate*<HANDLE, delegate* unmanaged<sbyte*, ulong, void*, BOOL>, void*, BOOL> SymEnumerateModules => &SymEnumerateModules64;
-
-        [NativeTypeName("#define EnumerateLoadedModules EnumerateLoadedModules64")]
-        public static delegate*<HANDLE, delegate* unmanaged<sbyte*, ulong, uint, void*, BOOL>, void*, BOOL> EnumerateLoadedModules => &EnumerateLoadedModules64;
-
-        [NativeTypeName("#define SymFunctionTableAccess SymFunctionTableAccess64")]
-        public static delegate*<HANDLE, ulong, void*> SymFunctionTableAccess => &SymFunctionTableAccess64;
-
-        [NativeTypeName("#define SymGetModuleInfo SymGetModuleInfo64")]
-        public static delegate*<HANDLE, ulong, IMAGEHLP_MODULE64*, BOOL> SymGetModuleInfo => &SymGetModuleInfo64;
-
-        [NativeTypeName("#define SymGetModuleInfoW SymGetModuleInfoW64")]
-        public static delegate*<HANDLE, ulong, IMAGEHLP_MODULEW64*, BOOL> SymGetModuleInfoW => &SymGetModuleInfoW64;
-
-        [NativeTypeName("#define SymGetModuleBase SymGetModuleBase64")]
-        public static delegate*<HANDLE, ulong, ulong> SymGetModuleBase => &SymGetModuleBase64;
-
         [NativeTypeName("#define SYM_INLINE_COMP_ERROR 0")]
         public const int SYM_INLINE_COMP_ERROR = 0;
 
@@ -1035,21 +1112,6 @@ namespace TerraFX.Interop
         [NativeTypeName("#define ESLFLAG_INLINE_SITE 0x00000010")]
         public const int ESLFLAG_INLINE_SITE = 0x00000010;
 
-        [NativeTypeName("#define SymGetLineFromAddr SymGetLineFromAddr64")]
-        public static delegate*<HANDLE, ulong, uint*, IMAGEHLP_LINE64*, BOOL> SymGetLineFromAddr => &SymGetLineFromAddr64;
-
-        [NativeTypeName("#define SymGetLineFromAddrW SymGetLineFromAddrW64")]
-        public static delegate*<HANDLE, ulong, uint*, IMAGEHLP_LINEW64*, BOOL> SymGetLineFromAddrW => &SymGetLineFromAddrW64;
-
-        [NativeTypeName("#define SymGetLineFromName SymGetLineFromName64")]
-        public static delegate*<HANDLE, sbyte*, sbyte*, uint, int*, IMAGEHLP_LINE64*, BOOL> SymGetLineFromName => &SymGetLineFromName64;
-
-        [NativeTypeName("#define SymGetLineNext SymGetLineNext64")]
-        public static delegate*<HANDLE, IMAGEHLP_LINE64*, BOOL> SymGetLineNext => &SymGetLineNext64;
-
-        [NativeTypeName("#define SymGetLinePrev SymGetLinePrev64")]
-        public static delegate*<HANDLE, IMAGEHLP_LINE64*, BOOL> SymGetLinePrev => &SymGetLinePrev64;
-
         [NativeTypeName("#define SLMFLAG_VIRTUAL 0x1")]
         public const int SLMFLAG_VIRTUAL = 0x1;
 
@@ -1058,18 +1120,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define SLMFLAG_NO_SYMBOLS 0x4")]
         public const int SLMFLAG_NO_SYMBOLS = 0x4;
-
-        [NativeTypeName("#define SymUnloadModule SymUnloadModule64")]
-        public static delegate*<HANDLE, ulong, BOOL> SymUnloadModule => &SymUnloadModule64;
-
-        [NativeTypeName("#define SymUnDName SymUnDName64")]
-        public static delegate*<IMAGEHLP_SYMBOL64*, sbyte*, uint, BOOL> SymUnDName => &SymUnDName64;
-
-        [NativeTypeName("#define SymRegisterCallback SymRegisterCallback64")]
-        public static delegate*<HANDLE, delegate* unmanaged<HANDLE, uint, ulong, ulong, BOOL>, ulong, BOOL> SymRegisterCallback => &SymRegisterCallback64;
-
-        [NativeTypeName("#define SymRegisterFunctionEntryCallback SymRegisterFunctionEntryCallback64")]
-        public static delegate*<HANDLE, delegate* unmanaged<HANDLE, ulong, ulong, void*>, ulong, BOOL> SymRegisterFunctionEntryCallback => &SymRegisterFunctionEntryCallback64;
 
         [NativeTypeName("#define SYMENUM_OPTIONS_DEFAULT 0x00000001")]
         public const int SYMENUM_OPTIONS_DEFAULT = 0x00000001;
@@ -1094,12 +1144,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define IMAGEHLP_GET_TYPE_INFO_CHILDREN 0x00000002")]
         public const int IMAGEHLP_GET_TYPE_INFO_CHILDREN = 0x00000002;
-
-        [NativeTypeName("#define SymGetSymFromAddr SymGetSymFromAddr64")]
-        public static delegate*<HANDLE, ulong, ulong*, IMAGEHLP_SYMBOL64*, BOOL> SymGetSymFromAddr => &SymGetSymFromAddr64;
-
-        [NativeTypeName("#define SymGetSymFromName SymGetSymFromName64")]
-        public static delegate*<HANDLE, sbyte*, IMAGEHLP_SYMBOL64*, BOOL> SymGetSymFromName => &SymGetSymFromName64;
 
         [NativeTypeName("#define EXT_OUTPUT_VER 1")]
         public const int EXT_OUTPUT_VER = 1;
@@ -1295,27 +1339,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define SYMSTOREOPT_PASS_IF_EXISTS 0x40")]
         public const int SYMSTOREOPT_PASS_IF_EXISTS = 0x40;
-
-        [NativeTypeName("#define SymEnumerateSymbols SymEnumerateSymbols64")]
-        public static delegate*<HANDLE, ulong, delegate* unmanaged<sbyte*, ulong, uint, void*, BOOL>, void*, BOOL> SymEnumerateSymbols => &SymEnumerateSymbols64;
-
-        [NativeTypeName("#define SymEnumerateSymbolsW SymEnumerateSymbolsW64")]
-        public static delegate*<HANDLE, ulong, delegate* unmanaged<ushort*, ulong, uint, void*, BOOL>, void*, BOOL> SymEnumerateSymbolsW => &SymEnumerateSymbolsW64;
-
-        [NativeTypeName("#define SymLoadModule SymLoadModule64")]
-        public static delegate*<HANDLE, HANDLE, sbyte*, sbyte*, ulong, uint, ulong> SymLoadModule => &SymLoadModule64;
-
-        [NativeTypeName("#define SymGetSymNext SymGetSymNext64")]
-        public static delegate*<HANDLE, IMAGEHLP_SYMBOL64*, BOOL> SymGetSymNext => &SymGetSymNext64;
-
-        [NativeTypeName("#define SymGetSymNextW SymGetSymNextW64")]
-        public static delegate*<HANDLE, IMAGEHLP_SYMBOLW64*, BOOL> SymGetSymNextW => &SymGetSymNextW64;
-
-        [NativeTypeName("#define SymGetSymPrev SymGetSymPrev64")]
-        public static delegate*<HANDLE, IMAGEHLP_SYMBOL64*, BOOL> SymGetSymPrev => &SymGetSymPrev64;
-
-        [NativeTypeName("#define SymGetSymPrevW SymGetSymPrevW64")]
-        public static delegate*<HANDLE, IMAGEHLP_SYMBOLW64*, BOOL> SymGetSymPrevW => &SymGetSymPrevW64;
 
         [NativeTypeName("#define SYMF_OMAP_GENERATED 0x00000001")]
         public const int SYMF_OMAP_GENERATED = 0x00000001;

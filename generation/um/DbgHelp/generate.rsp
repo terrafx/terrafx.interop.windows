@@ -1,5 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
+--define-macro
+_IMAGEHLP_SOURCE_
 --file
 um-DbgHelp.h
 --output
