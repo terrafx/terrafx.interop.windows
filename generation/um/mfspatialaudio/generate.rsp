@@ -8,3 +8,6 @@ um-mfspatialaudio.h
 ../../../tests/Interop/Windows/um/mfspatialaudio
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mfspatialaudio.h
+--with-attribute
+IMFSpatialAudioObjectBuffer=SupportedOSPlatform("windows10.0.15063.0")
+IMFSpatialAudioSample=SupportedOSPlatform("windows10.0.15063.0")

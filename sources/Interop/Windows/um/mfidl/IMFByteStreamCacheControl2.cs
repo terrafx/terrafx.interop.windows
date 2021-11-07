@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.0")]
     [Guid("71CE469C-F34B-49EA-A56B-2D2A10E51149")]
     [NativeTypeName("struct IMFByteStreamCacheControl2 : IMFByteStreamCacheControl")]
     [NativeInheritance("IMFByteStreamCacheControl")]

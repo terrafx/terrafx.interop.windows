@@ -8,5 +8,7 @@ shared-dxgicommon.h
 ../../../tests/Interop/Windows/shared/dxgicommon
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/dxgicommon.h
+--with-attribute
+DXGI_COLOR_SPACE_TYPE=SupportedOSPlatform("windows10.0")
 --with-type
 DXGI_COLOR_SPACE_TYPE=uint

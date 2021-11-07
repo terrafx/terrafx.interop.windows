@@ -4,10 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
     [Flags]
+    [SupportedOSPlatform("windows10.0.19041.0")]
     public enum D3D12_VIDEO_PROTECTED_RESOURCE_SUPPORT_FLAGS
     {
         D3D12_VIDEO_PROTECTED_RESOURCE_SUPPORT_FLAG_NONE = 0,

@@ -7,11 +7,13 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
+        [SupportedOSPlatform("windows8.1")]
         [DllImport("d2d1", ExactSpelling = true)]
         public static extern float D2D1ComputeMaximumScaleFactor([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* matrix);
 

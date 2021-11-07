@@ -6,11 +6,13 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IStorageItemHandleAccess" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0")]
     public static unsafe partial class IStorageItemHandleAccessTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IStorageItemHandleAccess" /> struct is correct.</summary>

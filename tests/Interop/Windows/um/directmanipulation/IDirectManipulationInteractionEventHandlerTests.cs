@@ -6,11 +6,13 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDirectManipulationInteractionEventHandler" /> struct.</summary>
+    [SupportedOSPlatform("windows8.1")]
     public static unsafe partial class IDirectManipulationInteractionEventHandlerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDirectManipulationInteractionEventHandler" /> struct is correct.</summary>

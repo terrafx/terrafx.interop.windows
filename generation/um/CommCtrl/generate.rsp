@@ -446,6 +446,23 @@ um-CommCtrl.h
 ../../../tests/Interop/Windows/um/CommCtrl
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/CommCtrl.h
+--with-attribute
+EC_ENDOFLINE=SupportedOSPlatform("windows10.0.17763.0")
+Edit_EnableSearchWeb=SupportedOSPlatform("windows10.0.17763.0")
+Edit_GetCaretIndex=SupportedOSPlatform("windows10.0.17763.0")
+Edit_GetEndOfLine=SupportedOSPlatform("windows10.0.17763.0")
+Edit_GetExtendedStyle=SupportedOSPlatform("windows10.0.17763.0")
+Edit_GetFileLine=SupportedOSPlatform("windows10.0.17763.0")
+Edit_GetFileLineCount=SupportedOSPlatform("windows10.0.17763.0")
+Edit_GetFileLineFromChar=SupportedOSPlatform("windows10.0.17763.0")
+Edit_GetFileLineIndex=SupportedOSPlatform("windows10.0.17763.0")
+Edit_GetFileLineLength=SupportedOSPlatform("windows10.0.17763.0")
+Edit_GetZoom=SupportedOSPlatform("windows10.0.17763.0")
+Edit_SearchWeb=SupportedOSPlatform("windows10.0.17763.0")
+Edit_SetCaretIndex=SupportedOSPlatform("windows10.0.17763.0")
+Edit_SetEndOfLine=SupportedOSPlatform("windows10.0.17763.0")
+Edit_SetExtendedStyle=SupportedOSPlatform("windows10.0.17763.0")
+Edit_SetZoom=SupportedOSPlatform("windows10.0.17763.0")
 --with-librarypath
 CreateMappedBitmap=comctl32
 CreateStatusWindow=comctl32

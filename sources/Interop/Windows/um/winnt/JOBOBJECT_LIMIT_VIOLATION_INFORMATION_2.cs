@@ -5,9 +5,11 @@
 
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0")]
     public partial struct JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2
     {
         [NativeTypeName("DWORD")]

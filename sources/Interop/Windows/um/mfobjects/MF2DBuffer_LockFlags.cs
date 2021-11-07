@@ -3,8 +3,11 @@
 // Ported from um/mfobjects.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.Versioning;
+
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.0")]
     public enum MF2DBuffer_LockFlags
     {
         MF2DBuffer_LockFlags_LockTypeMask = ((0x1 | 0x2) | 0x3),

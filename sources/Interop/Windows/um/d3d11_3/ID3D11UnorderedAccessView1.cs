@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0")]
     [Guid("7B3B6153-A886-4544-AB37-6537C8500403")]
     [NativeTypeName("struct ID3D11UnorderedAccessView1 : ID3D11UnorderedAccessView")]
     [NativeInheritance("ID3D11UnorderedAccessView")]

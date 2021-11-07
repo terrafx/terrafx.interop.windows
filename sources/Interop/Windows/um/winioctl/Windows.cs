@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.STORAGE_IDENTIFIER_TYPE;
 
 namespace TerraFX.Interop
@@ -122,6 +123,7 @@ namespace TerraFX.Interop
             return Valid;
         }
 
+        [SupportedOSPlatform("windows8.0")]
         [return: NativeTypeName("PVOID")]
         public static void* DeviceDsmOutputBlock([NativeTypeName("PDEVICE_DSM_OUTPUT")] DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT* Output)
         {
@@ -180,6 +182,7 @@ namespace TerraFX.Interop
             return Bytes;
         }
 
+        [SupportedOSPlatform("windows8.0")]
         public static void DeviceDsmInitializeOutput([NativeTypeName("PDEVICE_DSM_DEFINITION")] DEVICE_DSM_DEFINITION* Definition, [NativeTypeName("PDEVICE_DSM_OUTPUT")] DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT* Output, [NativeTypeName("DWORD")] uint OutputLength, [NativeTypeName("DWORD")] uint Flags)
         {
             uint Bytes = 36;
@@ -198,6 +201,7 @@ namespace TerraFX.Interop
             return;
         }
 
+        [SupportedOSPlatform("windows8.0")]
         [return: NativeTypeName("BOOLEAN")]
         public static byte DeviceDsmValidateOutput([NativeTypeName("PDEVICE_DSM_DEFINITION")] DEVICE_DSM_DEFINITION* Definition, [NativeTypeName("PDEVICE_DSM_OUTPUT")] DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT* Output, [NativeTypeName("DWORD")] uint OutputLength)
         {
@@ -670,6 +674,7 @@ namespace TerraFX.Interop
         [NativeTypeName("#define IOCTL_STORAGE_GET_DEVICE_TELEMETRY_RAW CTL_CODE(IOCTL_STORAGE_BASE, 0x0473, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)")]
         public const int IOCTL_STORAGE_GET_DEVICE_TELEMETRY_RAW = (((0x0000002d) << 16) | (((0x0001) | (0x0002)) << 14) | ((0x0473) << 2) | (0));
 
+        [SupportedOSPlatform("windows10.0")]
         [NativeTypeName("#define IOCTL_STORAGE_SET_TEMPERATURE_THRESHOLD CTL_CODE(IOCTL_STORAGE_BASE, 0x0480, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)")]
         public const int IOCTL_STORAGE_SET_TEMPERATURE_THRESHOLD = (((0x0000002d) << 16) | (((0x0001) | (0x0002)) << 14) | ((0x0480) << 2) | (0));
 
@@ -679,6 +684,7 @@ namespace TerraFX.Interop
         [NativeTypeName("#define IOCTL_STORAGE_SET_PROPERTY CTL_CODE(IOCTL_STORAGE_BASE, 0x04FF, METHOD_BUFFERED, FILE_WRITE_ACCESS)")]
         public const int IOCTL_STORAGE_SET_PROPERTY = (((0x0000002d) << 16) | (((0x0002)) << 14) | ((0x04FF) << 2) | (0));
 
+        [SupportedOSPlatform("windows10.0")]
         [NativeTypeName("#define IOCTL_STORAGE_QUERY_PROPERTY CTL_CODE(IOCTL_STORAGE_BASE, 0x0500, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
         public const int IOCTL_STORAGE_QUERY_PROPERTY = (((0x0000002d) << 16) | ((0) << 14) | ((0x0500) << 2) | (0));
 
@@ -715,12 +721,15 @@ namespace TerraFX.Interop
         [NativeTypeName("#define OBSOLETE_IOCTL_STORAGE_RESET_DEVICE CTL_CODE(IOCTL_STORAGE_BASE, 0x0401, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)")]
         public const int OBSOLETE_IOCTL_STORAGE_RESET_DEVICE = (((0x0000002d) << 16) | (((0x0001) | (0x0002)) << 14) | ((0x0401) << 2) | (0));
 
+        [SupportedOSPlatform("windows10.0")]
         [NativeTypeName("#define IOCTL_STORAGE_FIRMWARE_GET_INFO CTL_CODE(IOCTL_STORAGE_BASE, 0x0700, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
         public const int IOCTL_STORAGE_FIRMWARE_GET_INFO = (((0x0000002d) << 16) | ((0) << 14) | ((0x0700) << 2) | (0));
 
+        [SupportedOSPlatform("windows10.0")]
         [NativeTypeName("#define IOCTL_STORAGE_FIRMWARE_DOWNLOAD CTL_CODE(IOCTL_STORAGE_BASE, 0x0701, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)")]
         public const int IOCTL_STORAGE_FIRMWARE_DOWNLOAD = (((0x0000002d) << 16) | (((0x0001) | (0x0002)) << 14) | ((0x0701) << 2) | (0));
 
+        [SupportedOSPlatform("windows10.0")]
         [NativeTypeName("#define IOCTL_STORAGE_FIRMWARE_ACTIVATE CTL_CODE(IOCTL_STORAGE_BASE, 0x0702, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)")]
         public const int IOCTL_STORAGE_FIRMWARE_ACTIVATE = (((0x0000002d) << 16) | (((0x0001) | (0x0002)) << 14) | ((0x0702) << 2) | (0));
 
@@ -739,6 +748,7 @@ namespace TerraFX.Interop
         [NativeTypeName("#define IOCTL_STORAGE_EVENT_NOTIFICATION CTL_CODE(IOCTL_STORAGE_BASE, 0x0724, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
         public const int IOCTL_STORAGE_EVENT_NOTIFICATION = (((0x0000002d) << 16) | ((0) << 14) | ((0x0724) << 2) | (0));
 
+        [SupportedOSPlatform("windows10.0")]
         [NativeTypeName("#define IOCTL_STORAGE_DEVICE_POWER_CAP CTL_CODE(IOCTL_STORAGE_BASE, 0x0725, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
         public const int IOCTL_STORAGE_DEVICE_POWER_CAP = (((0x0000002d) << 16) | ((0) << 14) | ((0x0725) << 2) | (0));
 
@@ -2431,6 +2441,7 @@ namespace TerraFX.Interop
         [NativeTypeName("#define FSCTL_FILE_TYPE_NOTIFICATION CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 129, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
         public const int FSCTL_FILE_TYPE_NOTIFICATION = (((0x00000009) << 16) | ((0) << 14) | ((129) << 2) | (0));
 
+        [SupportedOSPlatform("windows8.0")]
         [NativeTypeName("#define FSCTL_FILE_LEVEL_TRIM CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 130, METHOD_BUFFERED, FILE_WRITE_DATA)")]
         public const int FSCTL_FILE_LEVEL_TRIM = (((0x00000009) << 16) | (((0x0002)) << 14) | ((130) << 2) | (0));
 
@@ -2545,6 +2556,7 @@ namespace TerraFX.Interop
         [NativeTypeName("#define FSCTL_QUERY_REGION_INFO CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 188, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
         public const int FSCTL_QUERY_REGION_INFO = (((0x00000009) << 16) | ((0) << 14) | ((188) << 2) | (0));
 
+        [SupportedOSPlatform("windows8.1")]
         [NativeTypeName("#define FSCTL_USN_TRACK_MODIFIED_RANGES CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 189, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
         public const int FSCTL_USN_TRACK_MODIFIED_RANGES = (((0x00000009) << 16) | ((0) << 14) | ((189) << 2) | (0));
 
@@ -2629,6 +2641,7 @@ namespace TerraFX.Interop
         [NativeTypeName("#define FSCTL_VIRTUAL_STORAGE_QUERY_PROPERTY CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 226, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
         public const int FSCTL_VIRTUAL_STORAGE_QUERY_PROPERTY = (((0x00000009) << 16) | ((0) << 14) | ((226) << 2) | (0));
 
+        [SupportedOSPlatform("windows10.0")]
         [NativeTypeName("#define FSCTL_FILESYSTEM_GET_STATISTICS_EX CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 227, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
         public const int FSCTL_FILESYSTEM_GET_STATISTICS_EX = (((0x00000009) << 16) | ((0) << 14) | ((227) << 2) | (0));
 

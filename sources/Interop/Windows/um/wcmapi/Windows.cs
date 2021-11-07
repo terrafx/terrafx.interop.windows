@@ -5,27 +5,33 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("wcmapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WcmQueryProperty([NativeTypeName("const GUID *")] Guid* pInterface, [NativeTypeName("LPCWSTR")] ushort* strProfileName, WCM_PROPERTY Property, void* pReserved, [NativeTypeName("PDWORD")] uint* pdwDataSize, [NativeTypeName("PBYTE *")] byte** ppData);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("wcmapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WcmSetProperty([NativeTypeName("const GUID *")] Guid* pInterface, [NativeTypeName("LPCWSTR")] ushort* strProfileName, WCM_PROPERTY Property, void* pReserved, [NativeTypeName("DWORD")] uint dwDataSize, [NativeTypeName("const BYTE *")] byte* pbData);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("wcmapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WcmGetProfileList(void* pReserved, WCM_PROFILE_INFO_LIST** ppProfileList);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("wcmapi", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint WcmSetProfileList(WCM_PROFILE_INFO_LIST* pProfileList, [NativeTypeName("DWORD")] uint dwPosition, BOOL fIgnoreUnknownProfiles, void* pReserved);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("wcmapi", ExactSpelling = true)]
         public static extern void WcmFreeMemory(void* pMemory);
 

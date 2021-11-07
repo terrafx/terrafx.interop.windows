@@ -4,9 +4,11 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0")]
     public unsafe partial struct D3D11_VIDEO_DECODER_BEGIN_FRAME_CRYPTO_SESSION
     {
         public ID3D11CryptoSession* pCryptoSession;

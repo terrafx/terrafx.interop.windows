@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0.19041.0")]
     [Guid("4E233EFD-1DD2-49E8-B577-D63EEE4C0D33")]
     [NativeTypeName("struct IMFContentDecryptionModuleSession : IUnknown")]
     [NativeInheritance("IUnknown")]

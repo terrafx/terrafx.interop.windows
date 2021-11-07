@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D2D1_GRADIENT_MESH_PATCH" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0")]
     public static unsafe partial class D2D1_GRADIENT_MESH_PATCHTests
     {
         /// <summary>Validates that the <see cref="D2D1_GRADIENT_MESH_PATCH" /> struct is blittable.</summary>

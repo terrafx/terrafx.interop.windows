@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MFCameraExtrinsic_CalibratedTransform" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0")]
     public static unsafe partial class MFCameraExtrinsic_CalibratedTransformTests
     {
         /// <summary>Validates that the <see cref="MFCameraExtrinsic_CalibratedTransform" /> struct is blittable.</summary>

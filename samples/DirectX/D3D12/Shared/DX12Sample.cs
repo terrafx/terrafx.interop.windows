@@ -1,8 +1,8 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using TerraFX.Interop;
 using static TerraFX.Interop.D3D_FEATURE_LEVEL;
 using static TerraFX.Interop.D3D12_CLEAR_FLAGS;
@@ -20,6 +20,7 @@ using static TerraFX.Samples.DirectX.DXSampleHelper;
 
 namespace TerraFX.Samples.DirectX.D3D12
 {
+    [SupportedOSPlatform("windows10.0")]
     public abstract unsafe class DX12Sample : DXSample
     {
         private readonly ID3D12CommandAllocator*[] _commandAllocators;

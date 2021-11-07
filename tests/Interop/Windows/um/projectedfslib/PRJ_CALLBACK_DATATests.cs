@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PRJ_CALLBACK_DATA" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0.17763.0")]
     public static unsafe partial class PRJ_CALLBACK_DATATests
     {
         /// <summary>Validates that the <see cref="PRJ_CALLBACK_DATA" /> struct is blittable.</summary>

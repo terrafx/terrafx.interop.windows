@@ -12,6 +12,16 @@ um-Audioclient.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/Audioclient.h
 --with-attribute
-_AUDCLNT_BUFFERFLAGS=Flags
 AUDCLNT_STREAMOPTIONS=Flags
+AUDCLNT_STREAMOPTIONS=SupportedOSPlatform("windows8.1")
+AudioClientProperties=SupportedOSPlatform("windows10.0.22000.0")
 AUDIO_DUCKING_OPTIONS=Flags
+AUDIO_DUCKING_OPTIONS=SupportedOSPlatform("windows10.0.19043.0")
+AUDIO_EFFECT=SupportedOSPlatform("windows10.0.22000.0")
+AUDIO_EFFECT_STATE=SupportedOSPlatform("windows10.0.22000.0")
+IAudioClient2=SupportedOSPlatform("windows8.0")
+IAudioClient3=SupportedOSPlatform("windows10.0")
+IAudioClientDuckingControl=SupportedOSPlatform("windows10.0.19043.0")
+IAudioEffectsChangedNotificationClient=SupportedOSPlatform("windows10.0.22000.0")
+IAudioEffectsManager=SupportedOSPlatform("windows10.0.22000.0")
+_AUDCLNT_BUFFERFLAGS=Flags

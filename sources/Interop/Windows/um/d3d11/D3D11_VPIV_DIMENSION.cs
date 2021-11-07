@@ -3,8 +3,11 @@
 // Ported from um/d3d11.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.Versioning;
+
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.0")]
     public enum D3D11_VPIV_DIMENSION
     {
         D3D11_VPIV_DIMENSION_UNKNOWN = 0,

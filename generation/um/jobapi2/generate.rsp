@@ -8,6 +8,11 @@ um-jobapi2.h
 ../../../tests/Interop/Windows/um/jobapi2
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/jobapi2.h
+--with-attribute
+FreeMemoryJobObject=SupportedOSPlatform("windows10.0")
+JOBOBJECT_IO_RATE_CONTROL_INFORMATION=SupportedOSPlatform("windows10.0")
+QueryIoRateControlInformationJobObject=SupportedOSPlatform("windows10.0")
+SetIoRateControlInformationJobObject=SupportedOSPlatform("windows10.0")
 --with-librarypath
 AssignProcessToJobObject=kernel32
 CreateJobObject=kernel32

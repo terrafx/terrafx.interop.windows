@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="INTERFACE_HARDWARE_TIMESTAMP_CAPABILITIES" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0.22000.0")]
     public static unsafe partial class INTERFACE_HARDWARE_TIMESTAMP_CAPABILITIESTests
     {
         /// <summary>Validates that the <see cref="INTERFACE_HARDWARE_TIMESTAMP_CAPABILITIES" /> struct is blittable.</summary>

@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D11_VIDEO_DECODER_EXTENSION" /> struct.</summary>
+    [SupportedOSPlatform("windows8.0")]
     public static unsafe partial class D3D11_VIDEO_DECODER_EXTENSIONTests
     {
         /// <summary>Validates that the <see cref="D3D11_VIDEO_DECODER_EXTENSION" /> struct is blittable.</summary>

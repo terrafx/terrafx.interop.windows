@@ -6,11 +6,13 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IInkDesktopHost" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0")]
     public static unsafe partial class IInkDesktopHostTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IInkDesktopHost" /> struct is correct.</summary>

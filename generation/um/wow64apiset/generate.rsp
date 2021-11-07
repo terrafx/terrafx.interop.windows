@@ -10,6 +10,12 @@ um-wow64apiset.h
 ../../../tests/Interop/Windows/um/wow64apiset
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wow64apiset.h
+--with-attribute
+GetSystemWow64Directory2=SupportedOSPlatform("windows10.0.10586.0")
+GetSystemWow64Directory2A=SupportedOSPlatform("windows10.0.10586.0")
+GetSystemWow64Directory2W=SupportedOSPlatform("windows10.0.10586.0")
+IsWow64GuestMachineSupported=SupportedOSPlatform("windows10.0.16299.0")
+IsWow64Process2=SupportedOSPlatform("windows10.0.10586.0")
 --with-librarypath
 GetSystemWow64Directory2=kernelbase
 GetSystemWow64Directory2A=kernelbase

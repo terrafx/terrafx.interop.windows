@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0.15063.0")]
     [Guid("ABF28A9B-3393-4290-BA79-5FFC46D986B2")]
     [NativeTypeName("struct IMFSpatialAudioSample : IMFSample")]
     [NativeInheritance("IMFSample")]

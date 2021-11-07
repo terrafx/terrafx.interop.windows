@@ -3,8 +3,11 @@
 // Ported from um/xamlOM.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.Versioning;
+
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0.14393.0")]
     public enum ResourceType
     {
         ResourceTypeStatic = 0,

@@ -8,6 +8,12 @@ um-fileapi.h
 ../../../tests/Interop/Windows/um/fileapi
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/fileapi.h
+--with-attribute
+CreateFile2=SupportedOSPlatform("windows8.0")
+CREATEFILE2_EXTENDED_PARAMETERS=SupportedOSPlatform("windows8.0")
+GetTempPath2=SupportedOSPlatform("windows10.0.19043.0")
+GetTempPath2A=SupportedOSPlatform("windows10.0.19043.0")
+GetTempPath2W=SupportedOSPlatform("windows10.0.19043.0")
 --with-librarypath
 AreFileApisANSI=kernel32
 CompareFileTime=kernel32

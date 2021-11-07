@@ -6,11 +6,13 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFSensorTransformFactory" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0.15063.0")]
     public static unsafe partial class IMFSensorTransformFactoryTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFSensorTransformFactory" /> struct is correct.</summary>

@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WS_NETPIPE_URL" /> struct.</summary>
+    [SupportedOSPlatform("windows8.0")]
     public static unsafe partial class WS_NETPIPE_URLTests
     {
         /// <summary>Validates that the <see cref="WS_NETPIPE_URL" /> struct is blittable.</summary>

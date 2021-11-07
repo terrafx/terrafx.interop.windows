@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MANAGEMENT_SERVICE_INFO" /> struct.</summary>
+    [SupportedOSPlatform("windows8.1")]
     public static unsafe partial class MANAGEMENT_SERVICE_INFOTests
     {
         /// <summary>Validates that the <see cref="MANAGEMENT_SERVICE_INFO" /> struct is blittable.</summary>

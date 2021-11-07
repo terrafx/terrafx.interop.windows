@@ -3,8 +3,11 @@
 // Ported from um/ShellScalingApi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.Versioning;
+
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.1")]
     public enum PROCESS_DPI_AWARENESS
     {
         PROCESS_DPI_UNAWARE = 0,

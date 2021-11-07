@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DISPLAYCONFIG_TARGET_BASE_TYPE" /> struct.</summary>
+    [SupportedOSPlatform("windows8.1")]
     public static unsafe partial class DISPLAYCONFIG_TARGET_BASE_TYPETests
     {
         /// <summary>Validates that the <see cref="DISPLAYCONFIG_TARGET_BASE_TYPE" /> struct is blittable.</summary>

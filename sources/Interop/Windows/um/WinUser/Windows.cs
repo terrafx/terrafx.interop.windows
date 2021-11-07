@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
@@ -213,6 +214,7 @@ namespace TerraFX.Interop
         [DllImport("user32", ExactSpelling = true)]
         public static extern LPARAM GetMessageExtraInfo();
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetUnpredictedMessagePos();
@@ -278,9 +280,11 @@ namespace TerraFX.Interop
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL UnregisterPowerSettingNotification(HPOWERNOTIFY Handle);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern HPOWERNOTIFY RegisterSuspendResumeNotification(HANDLE hRecipient, [NativeTypeName("DWORD")] uint Flags);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL UnregisterSuspendResumeNotification(HPOWERNOTIFY Handle);
 
@@ -559,12 +563,15 @@ namespace TerraFX.Interop
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL SetDialogControlDpiChangeBehavior(HWND hWnd, DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS mask, DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS values);
 
+        [SupportedOSPlatform("windows10.0.15063.0")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS GetDialogControlDpiChangeBehavior(HWND hWnd);
 
+        [SupportedOSPlatform("windows10.0.15063.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SetDialogDpiChangeBehavior(HWND hDlg, DIALOG_DPI_CHANGE_BEHAVIORS mask, DIALOG_DPI_CHANGE_BEHAVIORS values);
 
+        [SupportedOSPlatform("windows10.0.15063.0")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern DIALOG_DPI_CHANGE_BEHAVIORS GetDialogDpiChangeBehavior(HWND hDlg);
 
@@ -827,102 +834,135 @@ namespace TerraFX.Interop
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL IsTouchWindow(HWND hwnd, [NativeTypeName("PULONG")] uint* pulFlags);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL InitializeTouchInjection([NativeTypeName("UINT32")] uint maxCount, [NativeTypeName("DWORD")] uint dwMode);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL InjectTouchInput([NativeTypeName("UINT32")] uint count, [NativeTypeName("const POINTER_TOUCH_INFO *")] POINTER_TOUCH_INFO* contacts);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetPointerType([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("POINTER_INPUT_TYPE *")] uint* pointerType);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetPointerCursorId([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* cursorId);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetPointerInfo([NativeTypeName("UINT32")] uint pointerId, POINTER_INFO* pointerInfo);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetPointerInfoHistory([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* entriesCount, POINTER_INFO* pointerInfo);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetPointerFrameInfo([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* pointerCount, POINTER_INFO* pointerInfo);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetPointerFrameInfoHistory([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* entriesCount, [NativeTypeName("UINT32 *")] uint* pointerCount, POINTER_INFO* pointerInfo);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetPointerTouchInfo([NativeTypeName("UINT32")] uint pointerId, POINTER_TOUCH_INFO* touchInfo);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetPointerTouchInfoHistory([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* entriesCount, POINTER_TOUCH_INFO* touchInfo);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetPointerFrameTouchInfo([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* pointerCount, POINTER_TOUCH_INFO* touchInfo);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetPointerFrameTouchInfoHistory([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* entriesCount, [NativeTypeName("UINT32 *")] uint* pointerCount, POINTER_TOUCH_INFO* touchInfo);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetPointerPenInfo([NativeTypeName("UINT32")] uint pointerId, POINTER_PEN_INFO* penInfo);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetPointerPenInfoHistory([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* entriesCount, POINTER_PEN_INFO* penInfo);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetPointerFramePenInfo([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* pointerCount, POINTER_PEN_INFO* penInfo);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetPointerFramePenInfoHistory([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* entriesCount, [NativeTypeName("UINT32 *")] uint* pointerCount, POINTER_PEN_INFO* penInfo);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SkipPointerFrameMessages([NativeTypeName("UINT32")] uint pointerId);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL RegisterPointerInputTarget(HWND hwnd, [NativeTypeName("POINTER_INPUT_TYPE")] uint pointerType);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL UnregisterPointerInputTarget(HWND hwnd, [NativeTypeName("POINTER_INPUT_TYPE")] uint pointerType);
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL RegisterPointerInputTargetEx(HWND hwnd, [NativeTypeName("POINTER_INPUT_TYPE")] uint pointerType, BOOL fObserve);
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL UnregisterPointerInputTargetEx(HWND hwnd, [NativeTypeName("POINTER_INPUT_TYPE")] uint pointerType);
 
+        [SupportedOSPlatform("windows10.0.17763.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern HSYNTHETICPOINTERDEVICE CreateSyntheticPointerDevice([NativeTypeName("POINTER_INPUT_TYPE")] uint pointerType, [NativeTypeName("ULONG")] uint maxCount, POINTER_FEEDBACK_MODE mode);
 
+        [SupportedOSPlatform("windows10.0.17763.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL InjectSyntheticPointerInput(HSYNTHETICPOINTERDEVICE device, [NativeTypeName("const POINTER_TYPE_INFO *")] POINTER_TYPE_INFO* pointerInfo, [NativeTypeName("UINT32")] uint count);
 
+        [SupportedOSPlatform("windows10.0.17763.0")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern void DestroySyntheticPointerDevice(HSYNTHETICPOINTERDEVICE device);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL EnableMouseInPointer(BOOL fEnable);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL IsMouseInPointerEnabled();
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL RegisterTouchHitTestingWindow(HWND hwnd, [NativeTypeName("ULONG")] uint value);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL EvaluateProximityToRect([NativeTypeName("const RECT *")] RECT* controlBoundingBox, [NativeTypeName("const TOUCH_HIT_TESTING_INPUT *")] TOUCH_HIT_TESTING_INPUT* pHitTestingInput, TOUCH_HIT_TESTING_PROXIMITY_EVALUATION* pProximityEval);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL EvaluateProximityToPolygon([NativeTypeName("UINT32")] uint numVertices, [NativeTypeName("const POINT *")] POINT* controlPolygon, [NativeTypeName("const TOUCH_HIT_TESTING_INPUT *")] TOUCH_HIT_TESTING_INPUT* pHitTestingInput, TOUCH_HIT_TESTING_PROXIMITY_EVALUATION* pProximityEval);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern LRESULT PackTouchHitTestingProximityEvaluation([NativeTypeName("const TOUCH_HIT_TESTING_INPUT *")] TOUCH_HIT_TESTING_INPUT* pHitTestingInput, [NativeTypeName("const TOUCH_HIT_TESTING_PROXIMITY_EVALUATION *")] TOUCH_HIT_TESTING_PROXIMITY_EVALUATION* pProximityEval);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL GetWindowFeedbackSetting(HWND hwnd, FEEDBACK_TYPE feedback, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("UINT32 *")] uint* pSize, void* config);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL SetWindowFeedbackSetting(HWND hwnd, FEEDBACK_TYPE feedback, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("UINT32")] uint size, [NativeTypeName("const void *")] void* configuration);
 
+        [SupportedOSPlatform("windows8.1")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetPointerInputTransform([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32")] uint historyCount, INPUT_TRANSFORM* inputTransform);
 
@@ -969,6 +1009,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("UINT_PTR")]
         public static extern nuint SetTimer(HWND hWnd, [NativeTypeName("UINT_PTR")] nuint nIDEvent, uint uElapse, [NativeTypeName("TIMERPROC")] delegate* unmanaged<HWND, uint, nuint, uint, void> lpTimerFunc);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("UINT_PTR")]
         public static extern nuint SetCoalescableTimer(HWND hWnd, [NativeTypeName("UINT_PTR")] nuint nIDEvent, uint uElapse, [NativeTypeName("TIMERPROC")] delegate* unmanaged<HWND, uint, nuint, uint, void> lpTimerFunc, [NativeTypeName("ULONG")] uint uToleranceDelay);
@@ -1015,6 +1056,7 @@ namespace TerraFX.Interop
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern int GetSystemMetrics(int nIndex);
 
+        [SupportedOSPlatform("windows10.0.14393.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern int GetSystemMetricsForDpi(int nIndex, uint dpi);
 
@@ -1382,6 +1424,7 @@ namespace TerraFX.Interop
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL AdjustWindowRectEx([NativeTypeName("LPRECT")] RECT* lpRect, [NativeTypeName("DWORD")] uint dwStyle, BOOL bMenu, [NativeTypeName("DWORD")] uint dwExStyle);
 
+        [SupportedOSPlatform("windows10.0.14393.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL AdjustWindowRectExForDpi([NativeTypeName("LPRECT")] RECT* lpRect, [NativeTypeName("DWORD")] uint dwStyle, BOOL bMenu, [NativeTypeName("DWORD")] uint dwExStyle, uint dpi);
 
@@ -1480,9 +1523,11 @@ namespace TerraFX.Interop
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL PhysicalToLogicalPoint(HWND hWnd, [NativeTypeName("LPPOINT")] POINT* lpPoint);
 
+        [SupportedOSPlatform("windows8.1")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL LogicalToPhysicalPointForPerMonitorDPI(HWND hWnd, [NativeTypeName("LPPOINT")] POINT* lpPoint);
 
+        [SupportedOSPlatform("windows8.1")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL PhysicalToLogicalPointForPerMonitorDPI(HWND hWnd, [NativeTypeName("LPPOINT")] POINT* lpPoint);
 
@@ -1923,6 +1968,7 @@ namespace TerraFX.Interop
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SystemParametersInfoW(uint uiAction, uint uiParam, [NativeTypeName("PVOID")] void* pvParam, uint fWinIni);
 
+        [SupportedOSPlatform("windows10.0.14393.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SystemParametersInfoForDpi(uint uiAction, uint uiParam, [NativeTypeName("PVOID")] void* pvParam, uint fWinIni, uint dpi);
 
@@ -1983,54 +2029,69 @@ namespace TerraFX.Interop
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL IsProcessDPIAware();
 
+        [SupportedOSPlatform("windows10.0.14393.0")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern DPI_AWARENESS_CONTEXT SetThreadDpiAwarenessContext(DPI_AWARENESS_CONTEXT dpiContext);
 
+        [SupportedOSPlatform("windows10.0.14393.0")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern DPI_AWARENESS_CONTEXT GetThreadDpiAwarenessContext();
 
+        [SupportedOSPlatform("windows10.0.14393.0")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern DPI_AWARENESS_CONTEXT GetWindowDpiAwarenessContext(HWND hwnd);
 
+        [SupportedOSPlatform("windows10.0.14393.0")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern DPI_AWARENESS GetAwarenessFromDpiAwarenessContext(DPI_AWARENESS_CONTEXT value);
 
+        [SupportedOSPlatform("windows10.0.17134.0")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern uint GetDpiFromDpiAwarenessContext(DPI_AWARENESS_CONTEXT value);
 
+        [SupportedOSPlatform("windows10.0.14393.0")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL AreDpiAwarenessContextsEqual(DPI_AWARENESS_CONTEXT dpiContextA, DPI_AWARENESS_CONTEXT dpiContextB);
 
+        [SupportedOSPlatform("windows10.0.14393.0")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL IsValidDpiAwarenessContext(DPI_AWARENESS_CONTEXT value);
 
+        [SupportedOSPlatform("windows10.0.14393.0")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern uint GetDpiForWindow(HWND hwnd);
 
+        [SupportedOSPlatform("windows10.0.14393.0")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern uint GetDpiForSystem();
 
+        [SupportedOSPlatform("windows10.0.17134.0")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern uint GetSystemDpiForProcess(HANDLE hProcess);
 
+        [SupportedOSPlatform("windows10.0.14393.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL EnableNonClientDpiScaling(HWND hwnd);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL InheritWindowMonitor(HWND hwnd, HWND hwndInherit);
 
+        [SupportedOSPlatform("windows10.0.15063.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SetProcessDpiAwarenessContext(DPI_AWARENESS_CONTEXT value);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern DPI_AWARENESS_CONTEXT GetDpiAwarenessContextForProcess(HANDLE hProcess);
 
+        [SupportedOSPlatform("windows10.0.17134.0")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern DPI_HOSTING_BEHAVIOR SetThreadDpiHostingBehavior(DPI_HOSTING_BEHAVIOR value);
 
+        [SupportedOSPlatform("windows10.0.17134.0")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern DPI_HOSTING_BEHAVIOR GetThreadDpiHostingBehavior();
 
+        [SupportedOSPlatform("windows10.0.17134.0")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern DPI_HOSTING_BEHAVIOR GetWindowDpiHostingBehavior(HWND hwnd);
 
@@ -2110,24 +2171,31 @@ namespace TerraFX.Interop
         [DllImport("user32", ExactSpelling = true)]
         public static extern LRESULT DefRawInputProc([NativeTypeName("PRAWINPUT *")] RAWINPUT** paRawInput, int nInput, uint cbSizeHeader);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetPointerDevices([NativeTypeName("UINT32 *")] uint* deviceCount, POINTER_DEVICE_INFO* pointerDevices);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetPointerDevice(HANDLE device, POINTER_DEVICE_INFO* pointerDevice);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetPointerDeviceProperties(HANDLE device, [NativeTypeName("UINT32 *")] uint* propertyCount, POINTER_DEVICE_PROPERTY* pointerProperties);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL RegisterPointerDeviceNotifications(HWND window, BOOL notifyRange);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetPointerDeviceRects(HANDLE device, RECT* pointerDeviceRect, RECT* displayRect);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetPointerDeviceCursors(HANDLE device, [NativeTypeName("UINT32 *")] uint* cursorCount, POINTER_DEVICE_CURSOR_INFO* deviceCursors);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetRawPointerDeviceData([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32")] uint historyCount, [NativeTypeName("UINT32")] uint propertiesCount, POINTER_DEVICE_PROPERTY* pProperties, [NativeTypeName("LONG *")] int* pValues);
 
@@ -2161,24 +2229,29 @@ namespace TerraFX.Interop
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL ShutdownBlockReasonDestroy(HWND hWnd);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetCurrentInputMessageSource(INPUT_MESSAGE_SOURCE* inputMessageSource);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL GetCIMSSM(INPUT_MESSAGE_SOURCE* inputMessageSource);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL GetAutoRotationState([NativeTypeName("PAR_STATE")] AR_STATE* pState);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL GetDisplayAutoRotationPreferences(ORIENTATION_PREFERENCE* pOrientation);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern BOOL SetDisplayAutoRotationPreferences(ORIENTATION_PREFERENCE orientation);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL IsImmersiveProcess(HANDLE hProcess);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SetProcessRestrictionExemption(BOOL fEnableExemption);
 

@@ -5,9 +5,11 @@
 
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0")]
     public partial struct SYSTEM_CPU_SET_INFORMATION
     {
         [NativeTypeName("DWORD")]

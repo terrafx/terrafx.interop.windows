@@ -4,9 +4,11 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows8.0")]
     public unsafe partial struct DXGI_INFO_QUEUE_MESSAGE
     {
         [NativeTypeName("DXGI_DEBUG_ID")]

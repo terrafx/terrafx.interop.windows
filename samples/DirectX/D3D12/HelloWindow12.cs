@@ -4,9 +4,11 @@
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
 using System;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Samples.DirectX.D3D12
 {
+    [SupportedOSPlatform("windows10.0")]
     public unsafe class HelloWindow12 : DX12Sample
     {
         public HelloWindow12(string name) : base(name)

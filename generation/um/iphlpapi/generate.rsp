@@ -8,6 +8,19 @@ um-iphlpapi.h
 ../../../tests/Interop/Windows/um/iphlpapi
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/iphlpapi.h
+--with-attribute
+CaptureInterfaceHardwareCrossTimestamp=SupportedOSPlatform("windows10.0.22000.0")
+GetInterfaceActiveTimestampCapabilities=SupportedOSPlatform("windows10.0.22000.0")
+GetInterfaceSupportedTimestampCapabilities=SupportedOSPlatform("windows10.0.22000.0")
+GetTcpStatisticsEx2=SupportedOSPlatform("windows10.0.16299.0")
+GetUdpStatisticsEx2=SupportedOSPlatform("windows10.0.16299.0")
+INTERFACE_HARDWARE_CROSSTIMESTAMP=SupportedOSPlatform("windows10.0.22000.0")
+INTERFACE_HARDWARE_TIMESTAMP_CAPABILITIES=SupportedOSPlatform("windows10.0.22000.0")
+INTERFACE_SOFTWARE_TIMESTAMP_CAPABILITIES=SupportedOSPlatform("windows10.0.22000.0")
+INTERFACE_TIMESTAMP_CAPABILITIES=SupportedOSPlatform("windows10.0.22000.0")
+INTERFACE_TIMESTAMP_CONFIG_CHANGE_CALLBACK=SupportedOSPlatform("windows10.0.22000.0")
+RegisterInterfaceTimestampConfigChange=SupportedOSPlatform("windows10.0.22000.0")
+UnregisterInterfaceTimestampConfigChange=SupportedOSPlatform("windows10.0.22000.0")
 --with-librarypath
 AddIPAddress=iphlpapi
 AllocateAndGetTcpExTableFromStack=iphlpapi

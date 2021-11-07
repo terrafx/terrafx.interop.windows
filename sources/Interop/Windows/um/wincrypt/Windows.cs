@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
@@ -514,6 +515,7 @@ namespace TerraFX.Interop
         [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL CryptVerifyCertificateSignatureEx(HCRYPTPROV_LEGACY hCryptProv, [NativeTypeName("DWORD")] uint dwCertEncodingType, [NativeTypeName("DWORD")] uint dwSubjectType, void* pvSubject, [NativeTypeName("DWORD")] uint dwIssuerType, void* pvIssuer, [NativeTypeName("DWORD")] uint dwFlags, void* pvExtra);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL CertIsStrongHashToSign([NativeTypeName("PCCERT_STRONG_SIGN_PARA")] CERT_STRONG_SIGN_PARA* pStrongSignPara, [NativeTypeName("LPCWSTR")] ushort* pwszCNGHashAlgid, [NativeTypeName("PCCERT_CONTEXT")] CERT_CONTEXT* pSigningCert);
 
@@ -768,6 +770,7 @@ namespace TerraFX.Interop
         [DllImport("crypt32", ExactSpelling = true)]
         public static extern void CertFreeCertificateChainEngine(HCERTCHAINENGINE hChainEngine);
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL CertResyncCertificateChainEngine(HCERTCHAINENGINE hChainEngine);
 

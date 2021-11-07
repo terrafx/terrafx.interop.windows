@@ -6,11 +6,13 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IMFSourceReaderEx" /> struct.</summary>
+    [SupportedOSPlatform("windows8.0")]
     public static unsafe partial class IMFSourceReaderExTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFSourceReaderEx" /> struct is correct.</summary>

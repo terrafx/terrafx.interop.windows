@@ -4,10 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
     [Flags]
+    [SupportedOSPlatform("windows10.0.15063.0")]
     public enum DIALOG_DPI_CHANGE_BEHAVIORS
     {
         DDC_DEFAULT = 0x0000,

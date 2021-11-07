@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SecPkgContext_KeyingMaterial" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0")]
     public static unsafe partial class SecPkgContext_KeyingMaterialTests
     {
         /// <summary>Validates that the <see cref="SecPkgContext_KeyingMaterial" /> struct is blittable.</summary>

@@ -4,10 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
     [Flags]
+    [SupportedOSPlatform("windows10.0")]
     public enum DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG
     {
         DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG_PRESENT = 0x1,

@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SourceInfo" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0")]
     public static unsafe partial class SourceInfoTests
     {
         /// <summary>Validates that the <see cref="SourceInfo" /> struct is blittable.</summary>

@@ -12,6 +12,12 @@ um-securitybaseapi.h
 ../../../tests/Interop/Windows/um/securitybaseapi
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/securitybaseapi.h
+--with-attribute
+AddResourceAttributeAce=SupportedOSPlatform("windows8.0")
+AddScopedPolicyIDAce=SupportedOSPlatform("windows8.0")
+CheckTokenCapability=SupportedOSPlatform("windows8.0")
+CheckTokenMembershipEx=SupportedOSPlatform("windows8.0")
+CveEventWrite=SupportedOSPlatform("windows10.0")
 --with-librarypath
 AccessCheck=advapi32
 AccessCheckAndAuditAlarmW=advapi32

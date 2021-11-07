@@ -3,8 +3,11 @@
 // Ported from um/DirectML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.Versioning;
+
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0.19041.0")]
     public unsafe partial struct DML_ELEMENT_WISE_IS_INFINITY_OPERATOR_DESC
     {
         [NativeTypeName("const DML_TENSOR_DESC *")]

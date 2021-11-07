@@ -8,6 +8,20 @@ um-MDMRegistration.h
 ../../../tests/Interop/Windows/um/MDMRegistration
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/MDMRegistration.h
+--with-attribute
+DiscoverManagementService=SupportedOSPlatform("windows8.1")
+DiscoverManagementServiceEx=SupportedOSPlatform("windows8.1")
+GetDeviceRegistrationInfo=SupportedOSPlatform("windows8.1")
+GetManagementAppHyperlink=SupportedOSPlatform("windows8.1")
+IsDeviceRegisteredWithManagement=SupportedOSPlatform("windows8.1")
+IsManagementRegistrationAllowed=SupportedOSPlatform("windows8.1")
+MANAGEMENT_SERVICE_INFO=SupportedOSPlatform("windows8.1")
+RegisterDeviceWithManagement=SupportedOSPlatform("windows8.1")
+RegisterDeviceWithManagementUsingAADCredentials=SupportedOSPlatform("windows8.1")
+RegisterDeviceWithManagementUsingAADDeviceCredentials=SupportedOSPlatform("windows8.1")
+REGISTRATION_INFORMATION_CLASS=SupportedOSPlatform("windows8.1")
+SetManagedExternally=SupportedOSPlatform("windows8.1")
+UnregisterDeviceWithManagement=SupportedOSPlatform("windows8.1")
 --with-librarypath
 DiscoverManagementService=mdmregistration
 DiscoverManagementServiceEx=mdmregistration

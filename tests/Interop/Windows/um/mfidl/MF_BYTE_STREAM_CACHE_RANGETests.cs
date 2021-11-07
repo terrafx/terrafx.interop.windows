@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MF_BYTE_STREAM_CACHE_RANGE" /> struct.</summary>
+    [SupportedOSPlatform("windows8.0")]
     public static unsafe partial class MF_BYTE_STREAM_CACHE_RANGETests
     {
         /// <summary>Validates that the <see cref="MF_BYTE_STREAM_CACHE_RANGE" /> struct is blittable.</summary>

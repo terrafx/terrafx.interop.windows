@@ -324,3 +324,8 @@ um-codecapi.h
 ../../../tests/Interop/Windows/um/codecapi
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/codecapi.h
+--with-attribute
+eAVDecDDStereoDownMixMode=SupportedOSPlatform("windows8.0")
+eAVEncAdaptiveMode=SupportedOSPlatform("windows8.0")
+eAVEncH264PictureType=SupportedOSPlatform("windows8.0")
+eAVEncVideoContentType=SupportedOSPlatform("windows8.0")

@@ -5,6 +5,7 @@
 
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using System.Runtime.Versioning;
 using TerraFX.Interop;
 using static TerraFX.Interop.D3D_PRIMITIVE_TOPOLOGY;
 using static TerraFX.Interop.D3D_ROOT_SIGNATURE_VERSION;
@@ -20,6 +21,7 @@ using static TerraFX.Samples.DirectX.DXSampleHelper;
 
 namespace TerraFX.Samples.DirectX.D3D12
 {
+    [SupportedOSPlatform("windows10.0")]
     public unsafe class HelloTriangle12 : HelloWindow12
     {
         private ID3D12Resource* _vertexBuffer;

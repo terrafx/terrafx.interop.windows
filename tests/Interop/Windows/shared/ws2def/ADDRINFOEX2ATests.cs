@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="ADDRINFOEX2A" /> struct.</summary>
+    [SupportedOSPlatform("windows8.0")]
     public static unsafe partial class ADDRINFOEX2ATests
     {
         /// <summary>Validates that the <see cref="ADDRINFOEX2A" /> struct is blittable.</summary>

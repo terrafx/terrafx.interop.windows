@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="FILE_NOTIFY_EXTENDED_INFORMATION" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0.16299.0")]
     public static unsafe partial class FILE_NOTIFY_EXTENDED_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="FILE_NOTIFY_EXTENDED_INFORMATION" /> struct is blittable.</summary>

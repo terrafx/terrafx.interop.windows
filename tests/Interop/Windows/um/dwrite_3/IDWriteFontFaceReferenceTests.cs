@@ -6,11 +6,13 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDWriteFontFaceReference" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0")]
     public static unsafe partial class IDWriteFontFaceReferenceTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWriteFontFaceReference" /> struct is correct.</summary>

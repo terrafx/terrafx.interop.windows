@@ -3,6 +3,7 @@
 // Ported from D3D12HelloBundles in https://github.com/Microsoft/DirectX-Graphics-Samples
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
+using System.Runtime.Versioning;
 using TerraFX.Interop;
 using static TerraFX.Interop.D3D_PRIMITIVE_TOPOLOGY;
 using static TerraFX.Interop.D3D12_COMMAND_LIST_TYPE;
@@ -11,6 +12,7 @@ using static TerraFX.Samples.DirectX.DXSampleHelper;
 
 namespace TerraFX.Samples.DirectX.D3D12
 {
+    [SupportedOSPlatform("windows10.0")]
     public unsafe class HelloBundles12 : HelloTriangle12
     {
         // Pipeline objects

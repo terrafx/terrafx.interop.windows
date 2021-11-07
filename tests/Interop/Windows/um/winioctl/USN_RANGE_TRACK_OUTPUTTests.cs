@@ -5,10 +5,12 @@
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="USN_RANGE_TRACK_OUTPUT" /> struct.</summary>
+    [SupportedOSPlatform("windows8.1")]
     public static unsafe partial class USN_RANGE_TRACK_OUTPUTTests
     {
         /// <summary>Validates that the <see cref="USN_RANGE_TRACK_OUTPUT" /> struct is blittable.</summary>

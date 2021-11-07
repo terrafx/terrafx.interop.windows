@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="SCHANNEL_CRED" /> struct.</summary>
+    [SupportedOSPlatform("windows8.1")]
     public static unsafe partial class SCHANNEL_CREDTests
     {
         /// <summary>Validates that the <see cref="SCHANNEL_CRED" /> struct is blittable.</summary>

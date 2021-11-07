@@ -6,10 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="CREATEFILE2_EXTENDED_PARAMETERS" /> struct.</summary>
+    [SupportedOSPlatform("windows8.0")]
     public static unsafe partial class CREATEFILE2_EXTENDED_PARAMETERSTests
     {
         /// <summary>Validates that the <see cref="CREATEFILE2_EXTENDED_PARAMETERS" /> struct is blittable.</summary>

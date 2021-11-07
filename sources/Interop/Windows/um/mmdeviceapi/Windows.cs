@@ -7,6 +7,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.EndpointFormFactor;
 
 namespace TerraFX.Interop
@@ -529,6 +530,7 @@ namespace TerraFX.Interop
             }
         }
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mmdevapi", ExactSpelling = true)]
         public static extern HRESULT ActivateAudioInterfaceAsync([NativeTypeName("LPCWSTR")] ushort* deviceInterfacePath, [NativeTypeName("const IID &")] Guid* riid, PROPVARIANT* activationParams, IActivateAudioInterfaceCompletionHandler* completionHandler, IActivateAudioInterfaceAsyncOperation** activationOperation);
 

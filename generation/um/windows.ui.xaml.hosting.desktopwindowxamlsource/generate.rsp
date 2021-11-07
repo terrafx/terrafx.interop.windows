@@ -8,3 +8,6 @@ um-windows.ui.xaml.hosting.desktopwindowxamlsource.h
 ../../../tests/Interop/Windows/um/windows.ui.xaml.hosting.desktopwindowxamlsource
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/windows.ui.xaml.hosting.desktopwindowxamlsource.h
+--with-attribute
+IDesktopWindowXamlSourceNative2=SupportedOSPlatform("windows10.0.18362.0")
+IDesktopWindowXamlSourceNative=SupportedOSPlatform("windows10.0.18362.0")

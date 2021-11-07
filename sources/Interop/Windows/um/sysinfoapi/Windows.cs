@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
@@ -48,6 +49,7 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetSystemTimeAdjustment([NativeTypeName("PDWORD")] uint* lpTimeAdjustment, [NativeTypeName("PDWORD")] uint* lpTimeIncrement, [NativeTypeName("PBOOL")] BOOL* lpTimeAdjustmentDisabled);
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL GetSystemTimeAdjustmentPrecise([NativeTypeName("PDWORD64")] ulong* lpTimeAdjustment, [NativeTypeName("PDWORD64")] ulong* lpTimeIncrement, [NativeTypeName("PBOOL")] BOOL* lpTimeAdjustmentDisabled);
 
@@ -96,6 +98,7 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void GetNativeSystemInfo([NativeTypeName("LPSYSTEM_INFO")] SYSTEM_INFO* lpSystemInfo);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void GetSystemTimePreciseAsFileTime([NativeTypeName("LPFILETIME")] FILETIME* lpSystemTimeAsFileTime);
 
@@ -127,9 +130,11 @@ namespace TerraFX.Interop
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SetSystemTimeAdjustment([NativeTypeName("DWORD")] uint dwTimeAdjustment, BOOL bTimeAdjustmentDisabled);
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SetSystemTimeAdjustmentPrecise([NativeTypeName("DWORD64")] ulong dwTimeAdjustment, BOOL bTimeAdjustmentDisabled);
 
+        [SupportedOSPlatform("windows8.1")]
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL InstallELAMCertificateInfo(HANDLE ELAMFile);
 
@@ -139,6 +144,7 @@ namespace TerraFX.Interop
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern BOOL GetOsManufacturingMode([NativeTypeName("PBOOL")] BOOL* pbEnabled);
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("kernelbase", ExactSpelling = true)]
         public static extern HRESULT GetIntegratedDisplaySize(double* sizeInInches);
 

@@ -4,10 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
     [Flags]
+    [SupportedOSPlatform("windows8.1")]
     public enum DXGI_OVERLAY_SUPPORT_FLAG
     {
         DXGI_OVERLAY_SUPPORT_FLAG_DIRECT = 0x1,

@@ -7,6 +7,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.MFWaveFormatExConvertFlags;
 
 namespace TerraFX.Interop
@@ -28,18 +29,22 @@ namespace TerraFX.Interop
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFPutWorkItem([NativeTypeName("DWORD")] uint dwQueue, IMFAsyncCallback* pCallback, IUnknown* pState);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFPutWorkItem2([NativeTypeName("DWORD")] uint dwQueue, [NativeTypeName("LONG")] int Priority, IMFAsyncCallback* pCallback, IUnknown* pState);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFPutWorkItemEx([NativeTypeName("DWORD")] uint dwQueue, IMFAsyncResult* pResult);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFPutWorkItemEx2([NativeTypeName("DWORD")] uint dwQueue, [NativeTypeName("LONG")] int Priority, IMFAsyncResult* pResult);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFPutWaitingWorkItem(HANDLE hEvent, [NativeTypeName("LONG")] int Priority, IMFAsyncResult* pResult, [NativeTypeName("MFWORKITEM_KEY *")] ulong* pKey);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFAllocateSerialWorkQueue([NativeTypeName("DWORD")] uint dwWorkQueue, [NativeTypeName("DWORD *")] uint* pdwWorkQueue);
 
@@ -76,6 +81,7 @@ namespace TerraFX.Interop
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFBeginRegisterWorkQueueWithMMCSS([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LPCWSTR")] ushort* wszClass, [NativeTypeName("DWORD")] uint dwTaskId, IMFAsyncCallback* pDoneCallback, IUnknown* pDoneState);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFBeginRegisterWorkQueueWithMMCSSEx([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LPCWSTR")] ushort* wszClass, [NativeTypeName("DWORD")] uint dwTaskId, [NativeTypeName("LONG")] int lPriority, IMFAsyncCallback* pDoneCallback, IUnknown* pDoneState);
 
@@ -94,15 +100,19 @@ namespace TerraFX.Interop
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFGetWorkQueueMMCSSTaskId([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LPDWORD")] uint* pdwTaskId);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFRegisterPlatformWithMMCSS([NativeTypeName("PCWSTR")] ushort* wszClass, [NativeTypeName("DWORD *")] uint* pdwTaskId, [NativeTypeName("LONG")] int lPriority);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFUnregisterPlatformFromMMCSS();
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFLockSharedWorkQueue([NativeTypeName("PCWSTR")] ushort* wszClass, [NativeTypeName("LONG")] int BasePriority, [NativeTypeName("DWORD *")] uint* pdwTaskId, [NativeTypeName("DWORD *")] uint* pID);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFGetWorkQueueMMCSSPriority([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LONG *")] int* lPriority);
 
@@ -136,31 +146,39 @@ namespace TerraFX.Interop
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateLegacyMediaBufferOnMFMediaBuffer(IMFSample* pSample, IMFMediaBuffer* pMFMediaBuffer, [NativeTypeName("DWORD")] uint cbOffset, IMediaBuffer** ppMediaBuffer);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern DXGI_FORMAT MFMapDX9FormatToDXGIFormat([NativeTypeName("DWORD")] uint dx9);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint MFMapDXGIFormatToDX9Format(DXGI_FORMAT dx11);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFLockDXGIDeviceManager(uint* pResetToken, IMFDXGIDeviceManager** ppManager);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFUnlockDXGIDeviceManager();
 
         [DllImport("evr", ExactSpelling = true)]
         public static extern HRESULT MFCreateDXSurfaceBuffer([NativeTypeName("const IID &")] Guid* riid, IUnknown* punkSurface, BOOL fBottomUpWhenLinear, IMFMediaBuffer** ppBuffer);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateWICBitmapBuffer([NativeTypeName("const IID &")] Guid* riid, IUnknown* punkSurface, IMFMediaBuffer** ppBuffer);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateDXGISurfaceBuffer([NativeTypeName("const IID &")] Guid* riid, IUnknown* punkSurface, uint uSubresourceIndex, BOOL fBottomUpWhenLinear, IMFMediaBuffer** ppBuffer);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateVideoSampleAllocatorEx([NativeTypeName("const IID &")] Guid* riid, void** ppSampleAllocator);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateDXGIDeviceManager(uint* resetToken, IMFDXGIDeviceManager** ppDeviceManager);
 
@@ -3262,6 +3280,7 @@ namespace TerraFX.Interop
             }
         }
 
+        [SupportedOSPlatform("windows10.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFTEnum2(Guid guidCategory, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pInputType, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pOutputType, IMFAttributes* pAttributes, IMFActivate*** pppMFTActivate, [NativeTypeName("UINT32 *")] uint* pnumMFTActivate);
 
@@ -3274,15 +3293,19 @@ namespace TerraFX.Interop
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFGetMFTMerit(IUnknown* pMFT, [NativeTypeName("UINT32")] uint cbVerifier, [NativeTypeName("const BYTE *")] byte* verifier, [NativeTypeName("DWORD *")] uint* merit);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFRegisterLocalSchemeHandler([NativeTypeName("PCWSTR")] ushort* szScheme, IMFActivate* pActivate);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFRegisterLocalByteStreamHandler([NativeTypeName("PCWSTR")] ushort* szFileExtension, [NativeTypeName("PCWSTR")] ushort* szMimeType, IMFActivate* pActivate);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateMFByteStreamWrapper(IMFByteStream* pStream, IMFByteStream** ppStreamWrapper);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateMediaExtensionActivate([NativeTypeName("PCWSTR")] ushort* szActivatableClassId, IUnknown* pConfiguration, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject);
 
@@ -6936,12 +6959,15 @@ namespace TerraFX.Interop
             }
         }
 
+        [SupportedOSPlatform("windows10.0.15063.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateMuxStreamAttributes(IMFCollection* pAttributesToMux, IMFAttributes** ppMuxAttribs);
 
+        [SupportedOSPlatform("windows10.0.15063.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateMuxStreamMediaType(IMFCollection* pMediaTypesToMux, IMFMediaType** ppMuxMediaType);
 
+        [SupportedOSPlatform("windows10.0.15063.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateMuxStreamSample(IMFCollection* pSamplesToMux, IMFSample** ppMuxSample);
 
@@ -10682,9 +10708,11 @@ namespace TerraFX.Interop
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFConvertToFP16Array([NativeTypeName("WORD *")] ushort* pDest, [NativeTypeName("const float *")] float* pSrc, [NativeTypeName("DWORD")] uint dwCount);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreate2DMediaBuffer([NativeTypeName("DWORD")] uint dwWidth, [NativeTypeName("DWORD")] uint dwHeight, [NativeTypeName("DWORD")] uint dwFourCC, BOOL fBottomUp, IMFMediaBuffer** ppBuffer);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateMediaBufferFromMediaType(IMFMediaType* pMediaType, [NativeTypeName("LONGLONG")] long llDuration, [NativeTypeName("DWORD")] uint dwMinLength, [NativeTypeName("DWORD")] uint dwMinAlignment, IMFMediaBuffer** ppBuffer);
 
@@ -10712,17 +10740,20 @@ namespace TerraFX.Interop
             *punLow = LO32(unPacked);
         }
 
+        [SupportedOSPlatform("windows8.0")]
         [return: NativeTypeName("UINT64")]
         public static ulong PackSize([NativeTypeName("UINT32")] uint unWidth, [NativeTypeName("UINT32")] uint unHeight)
         {
             return Pack2UINT32AsUINT64(unWidth, unHeight);
         }
 
+        [SupportedOSPlatform("windows8.0")]
         public static void UnpackSize([NativeTypeName("UINT64")] ulong unPacked, [NativeTypeName("UINT32 *")] uint* punWidth, [NativeTypeName("UINT32 *")] uint* punHeight)
         {
             Unpack2UINT32AsUINT64(unPacked, punWidth, punHeight);
         }
 
+        [SupportedOSPlatform("windows8.0")]
         [return: NativeTypeName("UINT64")]
         public static ulong PackRatio([NativeTypeName("INT32")] int nNumerator, [NativeTypeName("UINT32")] uint unDenominator)
         {
@@ -10850,6 +10881,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("LONGLONG")]
         public static extern long MFllMulDiv([NativeTypeName("LONGLONG")] long a, [NativeTypeName("LONGLONG")] long b, [NativeTypeName("LONGLONG")] long c, [NativeTypeName("LONGLONG")] long d);
 
+        [SupportedOSPlatform("windows8.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFGetContentProtectionSystemCLSID([NativeTypeName("const GUID &")] Guid* guidProtectionSystemID, [NativeTypeName("CLSID *")] Guid* pclsid);
 
@@ -10903,9 +10935,11 @@ namespace TerraFX.Interop
             }
         }
 
+        [SupportedOSPlatform("windows10.0.19041.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCombineSamples(IMFSample* pSample, IMFSample* pSampleToAdd, [NativeTypeName("DWORD")] uint dwMaxMergedDurationInMS, BOOL* pMerged);
 
+        [SupportedOSPlatform("windows10.0.19041.0")]
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFSplitSample(IMFSample* pSample, IMFSample** pOutputSamples, [NativeTypeName("DWORD")] uint dwOutputSampleMaxCount, [NativeTypeName("DWORD *")] uint* pdwOutputSampleCount);
 

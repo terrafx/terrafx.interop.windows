@@ -8,3 +8,5 @@ um-PrintManagerInterop.h
 ../../../tests/Interop/Windows/um/PrintManagerInterop
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/PrintManagerInterop.h
+--with-attribute
+IPrintManagerInterop=SupportedOSPlatform("windows8.0")

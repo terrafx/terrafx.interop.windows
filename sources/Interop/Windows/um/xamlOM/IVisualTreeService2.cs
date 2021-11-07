@@ -6,9 +6,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop
 {
+    [SupportedOSPlatform("windows10.0.14393.0")]
     [Guid("130F5136-EC43-4F61-89C7-9801A36D2E95")]
     [NativeTypeName("struct IVisualTreeService2 : IVisualTreeService")]
     [NativeInheritance("IVisualTreeService")]

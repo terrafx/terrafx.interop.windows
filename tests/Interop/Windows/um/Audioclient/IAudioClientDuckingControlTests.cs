@@ -6,11 +6,13 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IAudioClientDuckingControl" /> struct.</summary>
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static unsafe partial class IAudioClientDuckingControlTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAudioClientDuckingControl" /> struct is correct.</summary>
