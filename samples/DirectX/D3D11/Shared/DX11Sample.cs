@@ -2,10 +2,12 @@
 
 using System;
 using System.Drawing;
+using TerraFX.Interop.DirectX;
 using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.D3D_DRIVER_TYPE;
-using static TerraFX.Interop.Windows.D3D_FEATURE_LEVEL;
-using static TerraFX.Interop.Windows.DXGI_SWAP_EFFECT;
+using static TerraFX.Interop.DirectX.D3D_DRIVER_TYPE;
+using static TerraFX.Interop.DirectX.D3D_FEATURE_LEVEL;
+using static TerraFX.Interop.DirectX.DirectX;
+using static TerraFX.Interop.DirectX.DXGI_SWAP_EFFECT;
 using static TerraFX.Interop.Windows.Windows;
 using static TerraFX.Samples.DirectX.DXSampleHelper;
 

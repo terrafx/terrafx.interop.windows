@@ -1,0 +1,19 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+CHECKMETHOD
+DX_DECLARE_INTERFACE
+--file
+um-dcommon.h
+--methodClassName
+DirectX
+--namespace
+TerraFX.Interop.DirectX
+--output
+../../../../sources/Interop/Windows/DirectX/um/dcommon
+--test-output
+../../../../tests/Interop/Windows/DirectX/um/dcommon
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/dcommon.h
+--with-attribute
+DWRITE_GLYPH_IMAGE_FORMATS=Flags

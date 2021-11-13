@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-d2d1effects.h
+--methodClassName
+DirectX
+--namespace
+TerraFX.Interop.DirectX
+--output
+../../../../sources/Interop/Windows/DirectX/um/d2d1effects
+--test-output
+../../../../tests/Interop/Windows/DirectX/um/d2d1effects
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d2d1effects.h

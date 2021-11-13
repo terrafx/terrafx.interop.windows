@@ -4,10 +4,10 @@
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
 using System.Runtime.Versioning;
-using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.D3D_PRIMITIVE_TOPOLOGY;
-using static TerraFX.Interop.Windows.D3D12_COMMAND_LIST_TYPE;
-using static TerraFX.Interop.Windows.Windows;
+using TerraFX.Interop.DirectX;
+using static TerraFX.Interop.DirectX.D3D_PRIMITIVE_TOPOLOGY;
+using static TerraFX.Interop.DirectX.D3D12_COMMAND_LIST_TYPE;
+using static TerraFX.Interop.DirectX.DirectX;
 using static TerraFX.Samples.DirectX.DXSampleHelper;
 
 namespace TerraFX.Samples.DirectX.D3D12

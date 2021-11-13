@@ -1,0 +1,20 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+DECLARE_CROSS_PLATFORM_UUIDOF
+DEFINE_CROSS_PLATFORM_UUIDOF
+DXC_FOURCC
+--file
+um-dxcapi.h
+--methodClassName
+DirectX
+--namespace
+TerraFX.Interop.DirectX
+--output
+../../../../sources/Interop/Windows/DirectX/um/dxcapi
+--test-output
+../../../../tests/Interop/Windows/DirectX/um/dxcapi
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/dxcapi.h
+--with-librarypath
+*=dxcompiler

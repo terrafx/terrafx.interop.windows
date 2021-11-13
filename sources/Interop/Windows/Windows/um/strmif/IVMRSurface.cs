@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using TerraFX.Interop.DirectX;
 
 namespace TerraFX.Interop.Windows
 {

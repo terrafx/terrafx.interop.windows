@@ -1,0 +1,24 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+Declare_IXAudio2Voice_Methods
+FWD_DECLARE
+X2DEFAULT
+XAudio2Create(IXAudio2 **, UINT32, XAUDIO2_PROCESSOR):HRESULT
+--file
+um-xaudio2.h
+--methodClassName
+DirectX
+--namespace
+TerraFX.Interop.DirectX
+--output
+../../../../sources/Interop/Windows/DirectX/um/xaudio2
+--test-output
+../../../../tests/Interop/Windows/DirectX/um/xaudio2
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/xaudio2.h
+--with-attribute
+IXAudio2=SupportedOSPlatform("windows8.0")
+--with-librarypath
+XAudio2Create=xaudio2_9
+XAudio2CreateWithVersionInfo=xaudio2_9

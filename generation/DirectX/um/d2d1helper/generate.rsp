@@ -1,0 +1,46 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+D2D1
+operator*(const D2D1_MATRIX_3X2_F &, const D2D1_MATRIX_3X2_F &):D2D1_MATRIX_3X2_F nothrow
+operator==(const D2D1_SIZE_U &, const D2D1_SIZE_U &):bool nothrow
+operator==(const D2D1_RECT_U &, const D2D1_RECT_U &):bool nothrow
+--file
+um-d2d1helper.h
+--methodClassName
+DirectX
+--namespace
+TerraFX.Interop.DirectX
+--output
+../../../../sources/Interop/Windows/DirectX/um/d2d1helper
+--test-output
+../../../../tests/Interop/Windows/DirectX/um/d2d1helper
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d2d1helper.h
+--with-librarypath
+ArcSegment=d2d1
+BezierSegment=d2d1
+BitmapBrushProperties=d2d1
+BitmapProperties=d2d1
+BrushProperties=d2d1
+DrawingStateDescription=d2d1
+Ellipse=d2d1
+FloatMax=d2d1
+GradientStop=d2d1
+HwndRenderTargetProperties=d2d1
+IdentityMatrix=d2d1
+InfiniteRect=d2d1
+LayerParameters=d2d1
+LinearGradientBrushProperties=d2d1
+PixelFormat=d2d1
+Point2F=d2d1
+Point2U=d2d1
+QuadraticBezierSegment=d2d1
+RadialGradientBrushProperties=d2d1
+RectF=d2d1
+RectU=d2d1
+RenderTargetProperties=d2d1
+RoundedRect=d2d1
+SizeF=d2d1
+SizeU=d2d1
+StrokeStyleProperties=d2d1

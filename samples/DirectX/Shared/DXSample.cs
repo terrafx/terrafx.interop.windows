@@ -10,11 +10,12 @@ using System.Drawing;
 using System.IO;
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using TerraFX.Interop.DirectX;
 using TerraFX.Interop.Windows;
 using TerraFX.Samples.DirectX.D3D11;
 using TerraFX.Samples.DirectX.D3D12;
-using static TerraFX.Interop.Windows.DXGI_ADAPTER_FLAG;
-using static TerraFX.Interop.Windows.DXGI_FORMAT;
+using static TerraFX.Interop.DirectX.DXGI_ADAPTER_FLAG;
+using static TerraFX.Interop.DirectX.DXGI_FORMAT;
 using static TerraFX.Interop.Windows.Windows;
 using static TerraFX.Samples.DirectX.DXSampleHelper;
 

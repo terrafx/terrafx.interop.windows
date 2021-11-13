@@ -49,65 +49,65 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{F9716D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxgi", "dxgi", "{27AC8160-04C5-4FC1-AE12-C3BCCEC59B3E}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\shared\dxgi\generate.rsp = generation\Windows\shared\dxgi\generate.rsp
-		generation\Windows\shared\dxgi\header.txt = generation\Windows\shared\dxgi\header.txt
-		generation\Windows\shared\dxgi\shared-dxgi.h = generation\Windows\shared\dxgi\shared-dxgi.h
+		generation\DirectX\shared\dxgi\generate.rsp = generation\DirectX\shared\dxgi\generate.rsp
+		generation\DirectX\shared\dxgi\header.txt = generation\DirectX\shared\dxgi\header.txt
+		generation\DirectX\shared\dxgi\shared-dxgi.h = generation\DirectX\shared\dxgi\shared-dxgi.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxgi1_2", "dxgi1_2", "{5E52E621-8D72-4017-84CD-D73940044AA6}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\shared\dxgi1_2\generate.rsp = generation\Windows\shared\dxgi1_2\generate.rsp
-		generation\Windows\shared\dxgi1_2\header.txt = generation\Windows\shared\dxgi1_2\header.txt
-		generation\Windows\shared\dxgi1_2\shared-dxgi1_2.h = generation\Windows\shared\dxgi1_2\shared-dxgi1_2.h
+		generation\DirectX\shared\dxgi1_2\generate.rsp = generation\DirectX\shared\dxgi1_2\generate.rsp
+		generation\DirectX\shared\dxgi1_2\header.txt = generation\DirectX\shared\dxgi1_2\header.txt
+		generation\DirectX\shared\dxgi1_2\shared-dxgi1_2.h = generation\DirectX\shared\dxgi1_2\shared-dxgi1_2.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxgi1_3", "dxgi1_3", "{7DE990A2-DE34-4BB1-8B0E-C10DB9BFD625}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\shared\dxgi1_3\generate.rsp = generation\Windows\shared\dxgi1_3\generate.rsp
-		generation\Windows\shared\dxgi1_3\header.txt = generation\Windows\shared\dxgi1_3\header.txt
-		generation\Windows\shared\dxgi1_3\shared-dxgi1_3.h = generation\Windows\shared\dxgi1_3\shared-dxgi1_3.h
+		generation\DirectX\shared\dxgi1_3\generate.rsp = generation\DirectX\shared\dxgi1_3\generate.rsp
+		generation\DirectX\shared\dxgi1_3\header.txt = generation\DirectX\shared\dxgi1_3\header.txt
+		generation\DirectX\shared\dxgi1_3\shared-dxgi1_3.h = generation\DirectX\shared\dxgi1_3\shared-dxgi1_3.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxgi1_4", "dxgi1_4", "{2A0AF32A-A785-4055-8CB4-BCCDE7437D34}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\shared\dxgi1_4\generate.rsp = generation\Windows\shared\dxgi1_4\generate.rsp
-		generation\Windows\shared\dxgi1_4\header.txt = generation\Windows\shared\dxgi1_4\header.txt
-		generation\Windows\shared\dxgi1_4\shared-dxgi1_4.h = generation\Windows\shared\dxgi1_4\shared-dxgi1_4.h
+		generation\DirectX\shared\dxgi1_4\generate.rsp = generation\DirectX\shared\dxgi1_4\generate.rsp
+		generation\DirectX\shared\dxgi1_4\header.txt = generation\DirectX\shared\dxgi1_4\header.txt
+		generation\DirectX\shared\dxgi1_4\shared-dxgi1_4.h = generation\DirectX\shared\dxgi1_4\shared-dxgi1_4.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxgi1_5", "dxgi1_5", "{88D06B2F-FAA9-4B0A-8E50-63AC28AC4464}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\shared\dxgi1_5\generate.rsp = generation\Windows\shared\dxgi1_5\generate.rsp
-		generation\Windows\shared\dxgi1_5\header.txt = generation\Windows\shared\dxgi1_5\header.txt
-		generation\Windows\shared\dxgi1_5\shared-dxgi1_5.h = generation\Windows\shared\dxgi1_5\shared-dxgi1_5.h
+		generation\DirectX\shared\dxgi1_5\generate.rsp = generation\DirectX\shared\dxgi1_5\generate.rsp
+		generation\DirectX\shared\dxgi1_5\header.txt = generation\DirectX\shared\dxgi1_5\header.txt
+		generation\DirectX\shared\dxgi1_5\shared-dxgi1_5.h = generation\DirectX\shared\dxgi1_5\shared-dxgi1_5.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxgi1_6", "dxgi1_6", "{C46C3D04-D9B6-440F-8644-3DA27525198B}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\shared\dxgi1_6\generate.rsp = generation\Windows\shared\dxgi1_6\generate.rsp
-		generation\Windows\shared\dxgi1_6\header.txt = generation\Windows\shared\dxgi1_6\header.txt
-		generation\Windows\shared\dxgi1_6\shared-dxgi1_6.h = generation\Windows\shared\dxgi1_6\shared-dxgi1_6.h
+		generation\DirectX\shared\dxgi1_6\generate.rsp = generation\DirectX\shared\dxgi1_6\generate.rsp
+		generation\DirectX\shared\dxgi1_6\header.txt = generation\DirectX\shared\dxgi1_6\header.txt
+		generation\DirectX\shared\dxgi1_6\shared-dxgi1_6.h = generation\DirectX\shared\dxgi1_6\shared-dxgi1_6.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxgicommon", "dxgicommon", "{4D5B32E6-D5DA-4D2E-B87E-389DF3066B0C}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\shared\dxgicommon\generate.rsp = generation\Windows\shared\dxgicommon\generate.rsp
-		generation\Windows\shared\dxgicommon\header.txt = generation\Windows\shared\dxgicommon\header.txt
-		generation\Windows\shared\dxgicommon\shared-dxgicommon.h = generation\Windows\shared\dxgicommon\shared-dxgicommon.h
+		generation\DirectX\shared\dxgicommon\generate.rsp = generation\DirectX\shared\dxgicommon\generate.rsp
+		generation\DirectX\shared\dxgicommon\header.txt = generation\DirectX\shared\dxgicommon\header.txt
+		generation\DirectX\shared\dxgicommon\shared-dxgicommon.h = generation\DirectX\shared\dxgicommon\shared-dxgicommon.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxgiformat", "dxgiformat", "{79C044F1-E0EB-42EC-A4ED-1F086089853A}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\shared\dxgiformat\generate.rsp = generation\Windows\shared\dxgiformat\generate.rsp
-		generation\Windows\shared\dxgiformat\header.txt = generation\Windows\shared\dxgiformat\header.txt
-		generation\Windows\shared\dxgiformat\shared-dxgiformat.h = generation\Windows\shared\dxgiformat\shared-dxgiformat.h
+		generation\DirectX\shared\dxgiformat\generate.rsp = generation\DirectX\shared\dxgiformat\generate.rsp
+		generation\DirectX\shared\dxgiformat\header.txt = generation\DirectX\shared\dxgiformat\header.txt
+		generation\DirectX\shared\dxgiformat\shared-dxgiformat.h = generation\DirectX\shared\dxgiformat\shared-dxgiformat.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxgitype", "dxgitype", "{133D4A58-8AD4-4D46-9847-3C12F24A775E}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\shared\dxgitype\generate.rsp = generation\Windows\shared\dxgitype\generate.rsp
-		generation\Windows\shared\dxgitype\header.txt = generation\Windows\shared\dxgitype\header.txt
-		generation\Windows\shared\dxgitype\shared-dxgitype.h = generation\Windows\shared\dxgitype\shared-dxgitype.h
+		generation\DirectX\shared\dxgitype\generate.rsp = generation\DirectX\shared\dxgitype\generate.rsp
+		generation\DirectX\shared\dxgitype\header.txt = generation\DirectX\shared\dxgitype\header.txt
+		generation\DirectX\shared\dxgitype\shared-dxgitype.h = generation\DirectX\shared\dxgitype\shared-dxgitype.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tvout", "tvout", "{6B586C09-33B0-4E3E-9EBE-36152E748B42}"
@@ -121,226 +121,226 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "um", "um", "{67311E5E-FA9C-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d2d1", "d2d1", "{D07DF48F-006E-4843-8506-E156319C2601}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d2d1\generate.rsp = generation\Windows\um\d2d1\generate.rsp
-		generation\Windows\um\d2d1\header.txt = generation\Windows\um\d2d1\header.txt
-		generation\Windows\um\d2d1\um-d2d1.h = generation\Windows\um\d2d1\um-d2d1.h
+		generation\DirectX\um\d2d1\generate.rsp = generation\DirectX\um\d2d1\generate.rsp
+		generation\DirectX\um\d2d1\header.txt = generation\DirectX\um\d2d1\header.txt
+		generation\DirectX\um\d2d1\um-d2d1.h = generation\DirectX\um\d2d1\um-d2d1.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d2d1_1", "d2d1_1", "{36713FD3-DF89-4FCD-9534-6DDCE8571836}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d2d1_1\generate.rsp = generation\Windows\um\d2d1_1\generate.rsp
-		generation\Windows\um\d2d1_1\header.txt = generation\Windows\um\d2d1_1\header.txt
-		generation\Windows\um\d2d1_1\um-d2d1_1.h = generation\Windows\um\d2d1_1\um-d2d1_1.h
+		generation\DirectX\um\d2d1_1\generate.rsp = generation\DirectX\um\d2d1_1\generate.rsp
+		generation\DirectX\um\d2d1_1\header.txt = generation\DirectX\um\d2d1_1\header.txt
+		generation\DirectX\um\d2d1_1\um-d2d1_1.h = generation\DirectX\um\d2d1_1\um-d2d1_1.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d2d1_2", "d2d1_2", "{4471B4D7-342C-44B7-AA3E-8ED44CD90F33}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d2d1_2\generate.rsp = generation\Windows\um\d2d1_2\generate.rsp
-		generation\Windows\um\d2d1_2\header.txt = generation\Windows\um\d2d1_2\header.txt
-		generation\Windows\um\d2d1_2\um-d2d1_2.h = generation\Windows\um\d2d1_2\um-d2d1_2.h
+		generation\DirectX\um\d2d1_2\generate.rsp = generation\DirectX\um\d2d1_2\generate.rsp
+		generation\DirectX\um\d2d1_2\header.txt = generation\DirectX\um\d2d1_2\header.txt
+		generation\DirectX\um\d2d1_2\um-d2d1_2.h = generation\DirectX\um\d2d1_2\um-d2d1_2.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d2d1_3", "d2d1_3", "{9EBCE1E4-21A5-4DCC-8373-A65ADB7C800A}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d2d1_3\generate.rsp = generation\Windows\um\d2d1_3\generate.rsp
-		generation\Windows\um\d2d1_3\header.txt = generation\Windows\um\d2d1_3\header.txt
-		generation\Windows\um\d2d1_3\um-d2d1_3.h = generation\Windows\um\d2d1_3\um-d2d1_3.h
+		generation\DirectX\um\d2d1_3\generate.rsp = generation\DirectX\um\d2d1_3\generate.rsp
+		generation\DirectX\um\d2d1_3\header.txt = generation\DirectX\um\d2d1_3\header.txt
+		generation\DirectX\um\d2d1_3\um-d2d1_3.h = generation\DirectX\um\d2d1_3\um-d2d1_3.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d2d1effectauthor", "d2d1effectauthor", "{3FAA36F0-DC75-4C7E-8324-E69988904AE4}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d2d1effectauthor\generate.rsp = generation\Windows\um\d2d1effectauthor\generate.rsp
-		generation\Windows\um\d2d1effectauthor\header.txt = generation\Windows\um\d2d1effectauthor\header.txt
-		generation\Windows\um\d2d1effectauthor\um-d2d1effectauthor.h = generation\Windows\um\d2d1effectauthor\um-d2d1effectauthor.h
+		generation\DirectX\um\d2d1effectauthor\generate.rsp = generation\DirectX\um\d2d1effectauthor\generate.rsp
+		generation\DirectX\um\d2d1effectauthor\header.txt = generation\DirectX\um\d2d1effectauthor\header.txt
+		generation\DirectX\um\d2d1effectauthor\um-d2d1effectauthor.h = generation\DirectX\um\d2d1effectauthor\um-d2d1effectauthor.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d2d1effectauthor_1", "d2d1effectauthor_1", "{46B4E5B1-EA95-418D-B39D-982A1AF8DA35}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d2d1effectauthor_1\generate.rsp = generation\Windows\um\d2d1effectauthor_1\generate.rsp
-		generation\Windows\um\d2d1effectauthor_1\header.txt = generation\Windows\um\d2d1effectauthor_1\header.txt
-		generation\Windows\um\d2d1effectauthor_1\um-d2d1effectauthor_1.h = generation\Windows\um\d2d1effectauthor_1\um-d2d1effectauthor_1.h
+		generation\DirectX\um\d2d1effectauthor_1\generate.rsp = generation\DirectX\um\d2d1effectauthor_1\generate.rsp
+		generation\DirectX\um\d2d1effectauthor_1\header.txt = generation\DirectX\um\d2d1effectauthor_1\header.txt
+		generation\DirectX\um\d2d1effectauthor_1\um-d2d1effectauthor_1.h = generation\DirectX\um\d2d1effectauthor_1\um-d2d1effectauthor_1.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d2d1effects", "d2d1effects", "{77F9C5DB-A736-4501-B346-9E1F4FC33559}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d2d1effects\generate.rsp = generation\Windows\um\d2d1effects\generate.rsp
-		generation\Windows\um\d2d1effects\header.txt = generation\Windows\um\d2d1effects\header.txt
-		generation\Windows\um\d2d1effects\um-d2d1effects.h = generation\Windows\um\d2d1effects\um-d2d1effects.h
+		generation\DirectX\um\d2d1effects\generate.rsp = generation\DirectX\um\d2d1effects\generate.rsp
+		generation\DirectX\um\d2d1effects\header.txt = generation\DirectX\um\d2d1effects\header.txt
+		generation\DirectX\um\d2d1effects\um-d2d1effects.h = generation\DirectX\um\d2d1effects\um-d2d1effects.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d2d1effects_1", "d2d1effects_1", "{C56E4948-F4E6-4571-AFBA-14D4916FD949}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d2d1effects_1\generate.rsp = generation\Windows\um\d2d1effects_1\generate.rsp
-		generation\Windows\um\d2d1effects_1\header.txt = generation\Windows\um\d2d1effects_1\header.txt
-		generation\Windows\um\d2d1effects_1\um-d2d1effects_1.h = generation\Windows\um\d2d1effects_1\um-d2d1effects_1.h
+		generation\DirectX\um\d2d1effects_1\generate.rsp = generation\DirectX\um\d2d1effects_1\generate.rsp
+		generation\DirectX\um\d2d1effects_1\header.txt = generation\DirectX\um\d2d1effects_1\header.txt
+		generation\DirectX\um\d2d1effects_1\um-d2d1effects_1.h = generation\DirectX\um\d2d1effects_1\um-d2d1effects_1.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d2d1effects_2", "d2d1effects_2", "{8C5D6885-5588-4549-BCB2-EBEC35984ED7}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d2d1effects_2\generate.rsp = generation\Windows\um\d2d1effects_2\generate.rsp
-		generation\Windows\um\d2d1effects_2\header.txt = generation\Windows\um\d2d1effects_2\header.txt
-		generation\Windows\um\d2d1effects_2\um-d2d1effects_2.h = generation\Windows\um\d2d1effects_2\um-d2d1effects_2.h
+		generation\DirectX\um\d2d1effects_2\generate.rsp = generation\DirectX\um\d2d1effects_2\generate.rsp
+		generation\DirectX\um\d2d1effects_2\header.txt = generation\DirectX\um\d2d1effects_2\header.txt
+		generation\DirectX\um\d2d1effects_2\um-d2d1effects_2.h = generation\DirectX\um\d2d1effects_2\um-d2d1effects_2.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d2d1svg", "d2d1svg", "{4767AEE5-45C0-49D1-806A-E5817F64C6CF}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d2d1svg\generate.rsp = generation\Windows\um\d2d1svg\generate.rsp
-		generation\Windows\um\d2d1svg\header.txt = generation\Windows\um\d2d1svg\header.txt
-		generation\Windows\um\d2d1svg\um-d2d1svg.h = generation\Windows\um\d2d1svg\um-d2d1svg.h
+		generation\DirectX\um\d2d1svg\generate.rsp = generation\DirectX\um\d2d1svg\generate.rsp
+		generation\DirectX\um\d2d1svg\header.txt = generation\DirectX\um\d2d1svg\header.txt
+		generation\DirectX\um\d2d1svg\um-d2d1svg.h = generation\DirectX\um\d2d1svg\um-d2d1svg.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d11", "d3d11", "{AFDB842D-1FEC-48E1-A0F3-B4F53FD3299D}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d3d11\generate.rsp = generation\Windows\um\d3d11\generate.rsp
-		generation\Windows\um\d3d11\header.txt = generation\Windows\um\d3d11\header.txt
-		generation\Windows\um\d3d11\um-d3d11.h = generation\Windows\um\d3d11\um-d3d11.h
+		generation\DirectX\um\d3d11\generate.rsp = generation\DirectX\um\d3d11\generate.rsp
+		generation\DirectX\um\d3d11\header.txt = generation\DirectX\um\d3d11\header.txt
+		generation\DirectX\um\d3d11\um-d3d11.h = generation\DirectX\um\d3d11\um-d3d11.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d11_1", "d3d11_1", "{A9C066D4-C8B6-4062-9D86-2EFE4D8EABCD}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d3d11_1\generate.rsp = generation\Windows\um\d3d11_1\generate.rsp
-		generation\Windows\um\d3d11_1\header.txt = generation\Windows\um\d3d11_1\header.txt
-		generation\Windows\um\d3d11_1\um-d3d11_1.h = generation\Windows\um\d3d11_1\um-d3d11_1.h
+		generation\DirectX\um\d3d11_1\generate.rsp = generation\DirectX\um\d3d11_1\generate.rsp
+		generation\DirectX\um\d3d11_1\header.txt = generation\DirectX\um\d3d11_1\header.txt
+		generation\DirectX\um\d3d11_1\um-d3d11_1.h = generation\DirectX\um\d3d11_1\um-d3d11_1.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d11_2", "d3d11_2", "{CD484A42-0C12-473E-B084-68EB9C10D401}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d3d11_2\generate.rsp = generation\Windows\um\d3d11_2\generate.rsp
-		generation\Windows\um\d3d11_2\header.txt = generation\Windows\um\d3d11_2\header.txt
-		generation\Windows\um\d3d11_2\um-d3d11_2.h = generation\Windows\um\d3d11_2\um-d3d11_2.h
+		generation\DirectX\um\d3d11_2\generate.rsp = generation\DirectX\um\d3d11_2\generate.rsp
+		generation\DirectX\um\d3d11_2\header.txt = generation\DirectX\um\d3d11_2\header.txt
+		generation\DirectX\um\d3d11_2\um-d3d11_2.h = generation\DirectX\um\d3d11_2\um-d3d11_2.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d11_3", "d3d11_3", "{EAB815D2-DA56-4661-9F7E-55E38FF205A9}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d3d11_3\generate.rsp = generation\Windows\um\d3d11_3\generate.rsp
-		generation\Windows\um\d3d11_3\header.txt = generation\Windows\um\d3d11_3\header.txt
-		generation\Windows\um\d3d11_3\um-d3d11_3.h = generation\Windows\um\d3d11_3\um-d3d11_3.h
+		generation\DirectX\um\d3d11_3\generate.rsp = generation\DirectX\um\d3d11_3\generate.rsp
+		generation\DirectX\um\d3d11_3\header.txt = generation\DirectX\um\d3d11_3\header.txt
+		generation\DirectX\um\d3d11_3\um-d3d11_3.h = generation\DirectX\um\d3d11_3\um-d3d11_3.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d11_4", "d3d11_4", "{6381B008-24FA-43F6-AD66-30EBD25DC8CF}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d3d11_4\generate.rsp = generation\Windows\um\d3d11_4\generate.rsp
-		generation\Windows\um\d3d11_4\header.txt = generation\Windows\um\d3d11_4\header.txt
-		generation\Windows\um\d3d11_4\um-d3d11_4.h = generation\Windows\um\d3d11_4\um-d3d11_4.h
+		generation\DirectX\um\d3d11_4\generate.rsp = generation\DirectX\um\d3d11_4\generate.rsp
+		generation\DirectX\um\d3d11_4\header.txt = generation\DirectX\um\d3d11_4\header.txt
+		generation\DirectX\um\d3d11_4\um-d3d11_4.h = generation\DirectX\um\d3d11_4\um-d3d11_4.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d11on12", "d3d11on12", "{760D5A8A-0810-4C1A-A4F0-12982D8F38AA}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d3d11on12\generate.rsp = generation\Windows\um\d3d11on12\generate.rsp
-		generation\Windows\um\d3d11on12\header.txt = generation\Windows\um\d3d11on12\header.txt
-		generation\Windows\um\d3d11on12\um-d3d11on12.h = generation\Windows\um\d3d11on12\um-d3d11on12.h
+		generation\DirectX\um\d3d11on12\generate.rsp = generation\DirectX\um\d3d11on12\generate.rsp
+		generation\DirectX\um\d3d11on12\header.txt = generation\DirectX\um\d3d11on12\header.txt
+		generation\DirectX\um\d3d11on12\um-d3d11on12.h = generation\DirectX\um\d3d11on12\um-d3d11on12.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d11sdklayers", "d3d11sdklayers", "{9B109AFE-7566-44CC-BABB-E91EC6BA3EB0}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d3d11sdklayers\generate.rsp = generation\Windows\um\d3d11sdklayers\generate.rsp
-		generation\Windows\um\d3d11sdklayers\header.txt = generation\Windows\um\d3d11sdklayers\header.txt
-		generation\Windows\um\d3d11sdklayers\um-d3d11sdklayers.h = generation\Windows\um\d3d11sdklayers\um-d3d11sdklayers.h
+		generation\DirectX\um\d3d11sdklayers\generate.rsp = generation\DirectX\um\d3d11sdklayers\generate.rsp
+		generation\DirectX\um\d3d11sdklayers\header.txt = generation\DirectX\um\d3d11sdklayers\header.txt
+		generation\DirectX\um\d3d11sdklayers\um-d3d11sdklayers.h = generation\DirectX\um\d3d11sdklayers\um-d3d11sdklayers.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d11shader", "d3d11shader", "{A871F4B8-AC38-4393-B724-422654496AF0}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d3d11shader\generate.rsp = generation\Windows\um\d3d11shader\generate.rsp
-		generation\Windows\um\d3d11shader\header.txt = generation\Windows\um\d3d11shader\header.txt
-		generation\Windows\um\d3d11shader\um-d3d11shader.h = generation\Windows\um\d3d11shader\um-d3d11shader.h
+		generation\DirectX\um\d3d11shader\generate.rsp = generation\DirectX\um\d3d11shader\generate.rsp
+		generation\DirectX\um\d3d11shader\header.txt = generation\DirectX\um\d3d11shader\header.txt
+		generation\DirectX\um\d3d11shader\um-d3d11shader.h = generation\DirectX\um\d3d11shader\um-d3d11shader.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d11shadertracing", "d3d11shadertracing", "{1B60B7F5-0CAD-4A13-85C2-2BE7FD06665A}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d3d11shadertracing\generate.rsp = generation\Windows\um\d3d11shadertracing\generate.rsp
-		generation\Windows\um\d3d11shadertracing\header.txt = generation\Windows\um\d3d11shadertracing\header.txt
-		generation\Windows\um\d3d11shadertracing\um-d3d11shadertracing.h = generation\Windows\um\d3d11shadertracing\um-d3d11shadertracing.h
+		generation\DirectX\um\d3d11shadertracing\generate.rsp = generation\DirectX\um\d3d11shadertracing\generate.rsp
+		generation\DirectX\um\d3d11shadertracing\header.txt = generation\DirectX\um\d3d11shadertracing\header.txt
+		generation\DirectX\um\d3d11shadertracing\um-d3d11shadertracing.h = generation\DirectX\um\d3d11shadertracing\um-d3d11shadertracing.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d12", "d3d12", "{E39DBBA1-F5E9-453E-9475-EE95300CE502}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d3d12\generate.rsp = generation\Windows\um\d3d12\generate.rsp
-		generation\Windows\um\d3d12\header.txt = generation\Windows\um\d3d12\header.txt
-		generation\Windows\um\d3d12\um-d3d12.h = generation\Windows\um\d3d12\um-d3d12.h
+		generation\DirectX\um\d3d12\generate.rsp = generation\DirectX\um\d3d12\generate.rsp
+		generation\DirectX\um\d3d12\header.txt = generation\DirectX\um\d3d12\header.txt
+		generation\DirectX\um\d3d12\um-d3d12.h = generation\DirectX\um\d3d12\um-d3d12.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d12sdklayers", "d3d12sdklayers", "{6F7520F0-9CA7-4A23-A17E-77762DA10BA7}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d3d12sdklayers\generate.rsp = generation\Windows\um\d3d12sdklayers\generate.rsp
-		generation\Windows\um\d3d12sdklayers\header.txt = generation\Windows\um\d3d12sdklayers\header.txt
-		generation\Windows\um\d3d12sdklayers\um-d3d12sdklayers.h = generation\Windows\um\d3d12sdklayers\um-d3d12sdklayers.h
+		generation\DirectX\um\d3d12sdklayers\generate.rsp = generation\DirectX\um\d3d12sdklayers\generate.rsp
+		generation\DirectX\um\d3d12sdklayers\header.txt = generation\DirectX\um\d3d12sdklayers\header.txt
+		generation\DirectX\um\d3d12sdklayers\um-d3d12sdklayers.h = generation\DirectX\um\d3d12sdklayers\um-d3d12sdklayers.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d12shader", "d3d12shader", "{2463B9AF-56DB-4871-AEA5-19B3A30BFD1F}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d3d12shader\generate.rsp = generation\Windows\um\d3d12shader\generate.rsp
-		generation\Windows\um\d3d12shader\header.txt = generation\Windows\um\d3d12shader\header.txt
-		generation\Windows\um\d3d12shader\um-d3d12shader.h = generation\Windows\um\d3d12shader\um-d3d12shader.h
+		generation\DirectX\um\d3d12shader\generate.rsp = generation\DirectX\um\d3d12shader\generate.rsp
+		generation\DirectX\um\d3d12shader\header.txt = generation\DirectX\um\d3d12shader\header.txt
+		generation\DirectX\um\d3d12shader\um-d3d12shader.h = generation\DirectX\um\d3d12shader\um-d3d12shader.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d12video", "d3d12video", "{52B605C1-A287-4414-BA82-13A9BC64D644}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d3d12video\generate.rsp = generation\Windows\um\d3d12video\generate.rsp
-		generation\Windows\um\d3d12video\header.txt = generation\Windows\um\d3d12video\header.txt
-		generation\Windows\um\d3d12video\um-d3d12video.h = generation\Windows\um\d3d12video\um-d3d12video.h
+		generation\DirectX\um\d3d12video\generate.rsp = generation\DirectX\um\d3d12video\generate.rsp
+		generation\DirectX\um\d3d12video\header.txt = generation\DirectX\um\d3d12video\header.txt
+		generation\DirectX\um\d3d12video\um-d3d12video.h = generation\DirectX\um\d3d12video\um-d3d12video.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3dcommon", "d3dcommon", "{E3186B8B-0517-439C-9BE5-61BF82800E5E}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d3dcommon\generate.rsp = generation\Windows\um\d3dcommon\generate.rsp
-		generation\Windows\um\d3dcommon\header.txt = generation\Windows\um\d3dcommon\header.txt
-		generation\Windows\um\d3dcommon\um-d3dcommon.h = generation\Windows\um\d3dcommon\um-d3dcommon.h
+		generation\DirectX\um\d3dcommon\generate.rsp = generation\DirectX\um\d3dcommon\generate.rsp
+		generation\DirectX\um\d3dcommon\header.txt = generation\DirectX\um\d3dcommon\header.txt
+		generation\DirectX\um\d3dcommon\um-d3dcommon.h = generation\DirectX\um\d3dcommon\um-d3dcommon.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3dcompiler", "d3dcompiler", "{DE030AE1-665D-41D9-A64A-D9D9BC4E3484}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d3dcompiler\generate.rsp = generation\Windows\um\d3dcompiler\generate.rsp
-		generation\Windows\um\d3dcompiler\header.txt = generation\Windows\um\d3dcompiler\header.txt
-		generation\Windows\um\d3dcompiler\um-d3dcompiler.h = generation\Windows\um\d3dcompiler\um-d3dcompiler.h
+		generation\DirectX\um\d3dcompiler\generate.rsp = generation\DirectX\um\d3dcompiler\generate.rsp
+		generation\DirectX\um\d3dcompiler\header.txt = generation\DirectX\um\d3dcompiler\header.txt
+		generation\DirectX\um\d3dcompiler\um-d3dcompiler.h = generation\DirectX\um\d3dcompiler\um-d3dcompiler.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dcommon", "dcommon", "{67458011-CEA9-4383-87BC-60AF489D695F}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\dcommon\generate.rsp = generation\Windows\um\dcommon\generate.rsp
-		generation\Windows\um\dcommon\header.txt = generation\Windows\um\dcommon\header.txt
-		generation\Windows\um\dcommon\um-dcommon.h = generation\Windows\um\dcommon\um-dcommon.h
+		generation\DirectX\um\dcommon\generate.rsp = generation\DirectX\um\dcommon\generate.rsp
+		generation\DirectX\um\dcommon\header.txt = generation\DirectX\um\dcommon\header.txt
+		generation\DirectX\um\dcommon\um-dcommon.h = generation\DirectX\um\dcommon\um-dcommon.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dwrite", "dwrite", "{76F117AB-8B46-4614-99A5-5D64AF304973}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\dwrite\generate.rsp = generation\Windows\um\dwrite\generate.rsp
-		generation\Windows\um\dwrite\header.txt = generation\Windows\um\dwrite\header.txt
-		generation\Windows\um\dwrite\um-dwrite.h = generation\Windows\um\dwrite\um-dwrite.h
+		generation\DirectX\um\dwrite\generate.rsp = generation\DirectX\um\dwrite\generate.rsp
+		generation\DirectX\um\dwrite\header.txt = generation\DirectX\um\dwrite\header.txt
+		generation\DirectX\um\dwrite\um-dwrite.h = generation\DirectX\um\dwrite\um-dwrite.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dwrite_1", "dwrite_1", "{9EF3BB14-04ED-4642-9281-B4744426129C}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\dwrite_1\generate.rsp = generation\Windows\um\dwrite_1\generate.rsp
-		generation\Windows\um\dwrite_1\header.txt = generation\Windows\um\dwrite_1\header.txt
-		generation\Windows\um\dwrite_1\um-dwrite_1.h = generation\Windows\um\dwrite_1\um-dwrite_1.h
+		generation\DirectX\um\dwrite_1\generate.rsp = generation\DirectX\um\dwrite_1\generate.rsp
+		generation\DirectX\um\dwrite_1\header.txt = generation\DirectX\um\dwrite_1\header.txt
+		generation\DirectX\um\dwrite_1\um-dwrite_1.h = generation\DirectX\um\dwrite_1\um-dwrite_1.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dwrite_2", "dwrite_2", "{F21745DB-8D42-462D-A683-E1E44A060389}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\dwrite_2\generate.rsp = generation\Windows\um\dwrite_2\generate.rsp
-		generation\Windows\um\dwrite_2\header.txt = generation\Windows\um\dwrite_2\header.txt
-		generation\Windows\um\dwrite_2\um-dwrite_2.h = generation\Windows\um\dwrite_2\um-dwrite_2.h
+		generation\DirectX\um\dwrite_2\generate.rsp = generation\DirectX\um\dwrite_2\generate.rsp
+		generation\DirectX\um\dwrite_2\header.txt = generation\DirectX\um\dwrite_2\header.txt
+		generation\DirectX\um\dwrite_2\um-dwrite_2.h = generation\DirectX\um\dwrite_2\um-dwrite_2.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dwrite_3", "dwrite_3", "{58433F10-9D25-4E1E-B472-EE3CC0FA9967}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\dwrite_3\generate.rsp = generation\Windows\um\dwrite_3\generate.rsp
-		generation\Windows\um\dwrite_3\header.txt = generation\Windows\um\dwrite_3\header.txt
-		generation\Windows\um\dwrite_3\um-dwrite_3.h = generation\Windows\um\dwrite_3\um-dwrite_3.h
+		generation\DirectX\um\dwrite_3\generate.rsp = generation\DirectX\um\dwrite_3\generate.rsp
+		generation\DirectX\um\dwrite_3\header.txt = generation\DirectX\um\dwrite_3\header.txt
+		generation\DirectX\um\dwrite_3\um-dwrite_3.h = generation\DirectX\um\dwrite_3\um-dwrite_3.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxgidebug", "dxgidebug", "{9983F062-7D44-4A3B-99B9-246E8E279B9C}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\dxgidebug\generate.rsp = generation\Windows\um\dxgidebug\generate.rsp
-		generation\Windows\um\dxgidebug\header.txt = generation\Windows\um\dxgidebug\header.txt
-		generation\Windows\um\dxgidebug\um-dxgidebug.h = generation\Windows\um\dxgidebug\um-dxgidebug.h
+		generation\DirectX\um\dxgidebug\generate.rsp = generation\DirectX\um\dxgidebug\generate.rsp
+		generation\DirectX\um\dxgidebug\header.txt = generation\DirectX\um\dxgidebug\header.txt
+		generation\DirectX\um\dxgidebug\um-dxgidebug.h = generation\DirectX\um\dxgidebug\um-dxgidebug.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DXGIMessages", "DXGIMessages", "{8C9D5EA5-DB96-4900-9CFA-2E34C2238868}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\DXGIMessages\generate.rsp = generation\Windows\um\DXGIMessages\generate.rsp
-		generation\Windows\um\DXGIMessages\header.txt = generation\Windows\um\DXGIMessages\header.txt
-		generation\Windows\um\DXGIMessages\um-DXGIMessages.h = generation\Windows\um\DXGIMessages\um-DXGIMessages.h
+		generation\DirectX\um\DXGIMessages\generate.rsp = generation\DirectX\um\DXGIMessages\generate.rsp
+		generation\DirectX\um\DXGIMessages\header.txt = generation\DirectX\um\DXGIMessages\header.txt
+		generation\DirectX\um\DXGIMessages\um-DXGIMessages.h = generation\DirectX\um\DXGIMessages\um-DXGIMessages.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "handleapi", "handleapi", "{9EE9BB6F-0387-4450-B6EF-A58008E69169}"
@@ -456,9 +456,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{48E1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xinput", "Xinput", "{F54C5855-9C8D-4EDF-BFC8-41F2E46DBE3C}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\Xinput\generate.rsp = generation\Windows\um\Xinput\generate.rsp
-		generation\Windows\um\Xinput\header.txt = generation\Windows\um\Xinput\header.txt
-		generation\Windows\um\Xinput\um-Xinput.h = generation\Windows\um\Xinput\um-Xinput.h
+		generation\DirectX\um\Xinput\generate.rsp = generation\DirectX\um\Xinput\generate.rsp
+		generation\DirectX\um\Xinput\header.txt = generation\DirectX\um\Xinput\header.txt
+		generation\DirectX\um\Xinput\um-Xinput.h = generation\DirectX\um\Xinput\um-Xinput.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "combaseapi", "combaseapi", "{1A62D4BF-8828-434B-98EA-23B1F1AEDDDD}"
@@ -736,93 +736,93 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "msxml", "msxml", "{5653F94C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "D2DErr", "D2DErr", "{C51AED35-0089-4BDE-842F-5390F69BE055}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\D2DErr\generate.rsp = generation\Windows\um\D2DErr\generate.rsp
-		generation\Windows\um\D2DErr\header.txt = generation\Windows\um\D2DErr\header.txt
-		generation\Windows\um\D2DErr\um-D2DErr.h = generation\Windows\um\D2DErr\um-D2DErr.h
+		generation\DirectX\um\D2DErr\generate.rsp = generation\DirectX\um\D2DErr\generate.rsp
+		generation\DirectX\um\D2DErr\header.txt = generation\DirectX\um\D2DErr\header.txt
+		generation\DirectX\um\D2DErr\um-D2DErr.h = generation\DirectX\um\D2DErr\um-D2DErr.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxcapi", "dxcapi", "{CB8001DB-06E1-4391-B9DC-4C163DD343B6}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\dxcapi\generate.rsp = generation\Windows\um\dxcapi\generate.rsp
-		generation\Windows\um\dxcapi\header.txt = generation\Windows\um\dxcapi\header.txt
-		generation\Windows\um\dxcapi\um-dxcapi.h = generation\Windows\um\dxcapi\um-dxcapi.h
+		generation\DirectX\um\dxcapi\generate.rsp = generation\DirectX\um\dxcapi\generate.rsp
+		generation\DirectX\um\dxcapi\header.txt = generation\DirectX\um\dxcapi\header.txt
+		generation\DirectX\um\dxcapi\um-dxcapi.h = generation\DirectX\um\dxcapi\um-dxcapi.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxcore", "dxcore", "{4F134A2D-BBD7-4105-9D1E-18961D8D6600}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\dxcore\generate.rsp = generation\Windows\um\dxcore\generate.rsp
-		generation\Windows\um\dxcore\header.txt = generation\Windows\um\dxcore\header.txt
-		generation\Windows\um\dxcore\um-dxcore.h = generation\Windows\um\dxcore\um-dxcore.h
+		generation\DirectX\um\dxcore\generate.rsp = generation\DirectX\um\dxcore\generate.rsp
+		generation\DirectX\um\dxcore\header.txt = generation\DirectX\um\dxcore\header.txt
+		generation\DirectX\um\dxcore\um-dxcore.h = generation\DirectX\um\dxcore\um-dxcore.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxcore_interface", "dxcore_interface", "{B5B39F76-5BDC-400C-94B9-73DE33D8E3CF}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\dxcore_interface\generate.rsp = generation\Windows\um\dxcore_interface\generate.rsp
-		generation\Windows\um\dxcore_interface\header.txt = generation\Windows\um\dxcore_interface\header.txt
-		generation\Windows\um\dxcore_interface\um-dxcore_interface.h = generation\Windows\um\dxcore_interface\um-dxcore_interface.h
+		generation\DirectX\um\dxcore_interface\generate.rsp = generation\DirectX\um\dxcore_interface\generate.rsp
+		generation\DirectX\um\dxcore_interface\header.txt = generation\DirectX\um\dxcore_interface\header.txt
+		generation\DirectX\um\dxcore_interface\um-dxcore_interface.h = generation\DirectX\um\dxcore_interface\um-dxcore_interface.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dcomptypes", "dcomptypes", "{A91EFD53-A552-4410-9549-19F57E02E95A}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\shared\dcomptypes\generate.rsp = generation\Windows\shared\dcomptypes\generate.rsp
-		generation\Windows\shared\dcomptypes\header.txt = generation\Windows\shared\dcomptypes\header.txt
-		generation\Windows\shared\dcomptypes\shared-dcomptypes.h = generation\Windows\shared\dcomptypes\shared-dcomptypes.h
+		generation\DirectX\shared\dcomptypes\generate.rsp = generation\DirectX\shared\dcomptypes\generate.rsp
+		generation\DirectX\shared\dcomptypes\header.txt = generation\DirectX\shared\dcomptypes\header.txt
+		generation\DirectX\shared\dcomptypes\shared-dcomptypes.h = generation\DirectX\shared\dcomptypes\shared-dcomptypes.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dcomp", "dcomp", "{B05F9DF2-502C-49DE-B50D-B0A60736004B}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\dcomp\generate.rsp = generation\Windows\um\dcomp\generate.rsp
-		generation\Windows\um\dcomp\header.txt = generation\Windows\um\dcomp\header.txt
-		generation\Windows\um\dcomp\um-dcomp.h = generation\Windows\um\dcomp\um-dcomp.h
+		generation\DirectX\um\dcomp\generate.rsp = generation\DirectX\um\dcomp\generate.rsp
+		generation\DirectX\um\dcomp\header.txt = generation\DirectX\um\dcomp\header.txt
+		generation\DirectX\um\dcomp\um-dcomp.h = generation\DirectX\um\dcomp\um-dcomp.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dcompanimation", "dcompanimation", "{EC83F1EF-197E-48E8-8726-9805EC8CFBE3}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\dcompanimation\generate.rsp = generation\Windows\um\dcompanimation\generate.rsp
-		generation\Windows\um\dcompanimation\header.txt = generation\Windows\um\dcompanimation\header.txt
-		generation\Windows\um\dcompanimation\um-dcompanimation.h = generation\Windows\um\dcompanimation\um-dcompanimation.h
+		generation\DirectX\um\dcompanimation\generate.rsp = generation\DirectX\um\dcompanimation\generate.rsp
+		generation\DirectX\um\dcompanimation\header.txt = generation\DirectX\um\dcompanimation\header.txt
+		generation\DirectX\um\dcompanimation\um-dcompanimation.h = generation\DirectX\um\dcompanimation\um-dcompanimation.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xaudio2", "xaudio2", "{EF133177-5261-4B8E-9DE2-0E0E069CF542}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\xaudio2\generate.rsp = generation\Windows\um\xaudio2\generate.rsp
-		generation\Windows\um\xaudio2\header.txt = generation\Windows\um\xaudio2\header.txt
-		generation\Windows\um\xaudio2\um-xaudio2.h = generation\Windows\um\xaudio2\um-xaudio2.h
+		generation\DirectX\um\xaudio2\generate.rsp = generation\DirectX\um\xaudio2\generate.rsp
+		generation\DirectX\um\xaudio2\header.txt = generation\DirectX\um\xaudio2\header.txt
+		generation\DirectX\um\xaudio2\um-xaudio2.h = generation\DirectX\um\xaudio2\um-xaudio2.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xaudio2fx", "xaudio2fx", "{1A4B460B-F26E-4B3C-BFCC-7417C9D1B19C}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\xaudio2fx\generate.rsp = generation\Windows\um\xaudio2fx\generate.rsp
-		generation\Windows\um\xaudio2fx\header.txt = generation\Windows\um\xaudio2fx\header.txt
-		generation\Windows\um\xaudio2fx\um-xaudio2fx.h = generation\Windows\um\xaudio2fx\um-xaudio2fx.h
+		generation\DirectX\um\xaudio2fx\generate.rsp = generation\DirectX\um\xaudio2fx\generate.rsp
+		generation\DirectX\um\xaudio2fx\header.txt = generation\DirectX\um\xaudio2fx\header.txt
+		generation\DirectX\um\xaudio2fx\um-xaudio2fx.h = generation\DirectX\um\xaudio2fx\um-xaudio2fx.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xapo", "xapo", "{81650B24-E7C8-41BE-8297-DD8E50B43220}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\xapo\generate.rsp = generation\Windows\um\xapo\generate.rsp
-		generation\Windows\um\xapo\header.txt = generation\Windows\um\xapo\header.txt
-		generation\Windows\um\xapo\um-xapo.h = generation\Windows\um\xapo\um-xapo.h
+		generation\DirectX\um\xapo\generate.rsp = generation\DirectX\um\xapo\generate.rsp
+		generation\DirectX\um\xapo\header.txt = generation\DirectX\um\xapo\header.txt
+		generation\DirectX\um\xapo\um-xapo.h = generation\DirectX\um\xapo\um-xapo.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xapobase", "xapobase", "{6BC63DCF-7DF0-454C-86D5-20042D6EB9CF}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\xapobase\generate.rsp = generation\Windows\um\xapobase\generate.rsp
-		generation\Windows\um\xapobase\header.txt = generation\Windows\um\xapobase\header.txt
-		generation\Windows\um\xapobase\um-xapobase.h = generation\Windows\um\xapobase\um-xapobase.h
+		generation\DirectX\um\xapobase\generate.rsp = generation\DirectX\um\xapobase\generate.rsp
+		generation\DirectX\um\xapobase\header.txt = generation\DirectX\um\xapobase\header.txt
+		generation\DirectX\um\xapobase\um-xapobase.h = generation\DirectX\um\xapobase\um-xapobase.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xapofx", "xapofx", "{B64DCBFD-3EED-4F15-B6DD-31014BBCE1C4}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\xapofx\generate.rsp = generation\Windows\um\xapofx\generate.rsp
-		generation\Windows\um\xapofx\header.txt = generation\Windows\um\xapofx\header.txt
-		generation\Windows\um\xapofx\um-xapofx.h = generation\Windows\um\xapofx\um-xapofx.h
+		generation\DirectX\um\xapofx\generate.rsp = generation\DirectX\um\xapofx\generate.rsp
+		generation\DirectX\um\xapofx\header.txt = generation\DirectX\um\xapofx\header.txt
+		generation\DirectX\um\xapofx\um-xapofx.h = generation\DirectX\um\xapofx\um-xapofx.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "x3daudio", "x3daudio", "{A87FCD03-C198-4F4F-8951-A3EB973599F7}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\x3daudio\generate.rsp = generation\Windows\um\x3daudio\generate.rsp
-		generation\Windows\um\x3daudio\header.txt = generation\Windows\um\x3daudio\header.txt
-		generation\Windows\um\x3daudio\um-x3daudio.h = generation\Windows\um\x3daudio\um-x3daudio.h
+		generation\DirectX\um\x3daudio\generate.rsp = generation\DirectX\um\x3daudio\generate.rsp
+		generation\DirectX\um\x3daudio\header.txt = generation\DirectX\um\x3daudio\header.txt
+		generation\DirectX\um\x3daudio\um-x3daudio.h = generation\DirectX\um\x3daudio\um-x3daudio.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mmeapi", "mmeapi", "{43560D77-BB58-44C0-ACFD-33AFC1031460}"
@@ -855,9 +855,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mmreg", "mmreg", "{A6F7ABE5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DirectML", "DirectML", "{7B34FD9E-65C1-4140-80D5-6E8A8D39A8CF}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\DirectML\generate.rsp = generation\Windows\um\DirectML\generate.rsp
-		generation\Windows\um\DirectML\header.txt = generation\Windows\um\DirectML\header.txt
-		generation\Windows\um\DirectML\um-DirectML.h = generation\Windows\um\DirectML\um-DirectML.h
+		generation\DirectX\um\DirectML\generate.rsp = generation\DirectX\um\DirectML\generate.rsp
+		generation\DirectX\um\DirectML\header.txt = generation\DirectX\um\DirectML\header.txt
+		generation\DirectX\um\DirectML\um-DirectML.h = generation\DirectX\um\DirectML\um-DirectML.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sapi", "sapi", "{C06939FB-3A0B-4706-8DF3-0404392920FB}"
@@ -1030,47 +1030,47 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StructuredQueryCondition", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxdiag", "dxdiag", "{7E206372-25DC-4E61-8F29-B8C0285D06B2}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\dxdiag\generate.rsp = generation\Windows\um\dxdiag\generate.rsp
-		generation\Windows\um\dxdiag\header.txt = generation\Windows\um\dxdiag\header.txt
-		generation\Windows\um\dxdiag\um-dxdiag.h = generation\Windows\um\dxdiag\um-dxdiag.h
+		generation\DirectX\um\dxdiag\generate.rsp = generation\DirectX\um\dxdiag\generate.rsp
+		generation\DirectX\um\dxdiag\header.txt = generation\DirectX\um\dxdiag\header.txt
+		generation\DirectX\um\dxdiag\um-dxdiag.h = generation\DirectX\um\dxdiag\um-dxdiag.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "other", "other", "{B09A774C-A2CD-4E0D-8DE8-AC48459E1699}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3dx12", "d3dx12", "{2415556F-BC68-40A5-AF8C-FB66B31073C5}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\other\d3dx12\d3dx12.h = generation\Windows\other\d3dx12\d3dx12.h
-		generation\Windows\other\d3dx12\generate.rsp = generation\Windows\other\d3dx12\generate.rsp
-		generation\Windows\other\d3dx12\header.txt = generation\Windows\other\d3dx12\header.txt
-		generation\Windows\other\d3dx12\other-d3dx12.h = generation\Windows\other\d3dx12\other-d3dx12.h
+		generation\DirectX\other\d3dx12\d3dx12.h = generation\DirectX\other\d3dx12\d3dx12.h
+		generation\DirectX\other\d3dx12\generate.rsp = generation\DirectX\other\d3dx12\generate.rsp
+		generation\DirectX\other\d3dx12\header.txt = generation\DirectX\other\d3dx12\header.txt
+		generation\DirectX\other\d3dx12\other-d3dx12.h = generation\DirectX\other\d3dx12\other-d3dx12.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d2d1_1helper", "d2d1_1helper", "{2113E8BA-43E5-42AF-95AC-8E780EAF8923}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d2d1_1helper\generate.rsp = generation\Windows\um\d2d1_1helper\generate.rsp
-		generation\Windows\um\d2d1_1helper\header.txt = generation\Windows\um\d2d1_1helper\header.txt
-		generation\Windows\um\d2d1_1helper\um-d2d1_1helper.h = generation\Windows\um\d2d1_1helper\um-d2d1_1helper.h
+		generation\DirectX\um\d2d1_1helper\generate.rsp = generation\DirectX\um\d2d1_1helper\generate.rsp
+		generation\DirectX\um\d2d1_1helper\header.txt = generation\DirectX\um\d2d1_1helper\header.txt
+		generation\DirectX\um\d2d1_1helper\um-d2d1_1helper.h = generation\DirectX\um\d2d1_1helper\um-d2d1_1helper.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d2d1_2helper", "d2d1_2helper", "{E5BBCCC1-5220-4AB4-9031-F1B827496BF0}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d2d1_2helper\generate.rsp = generation\Windows\um\d2d1_2helper\generate.rsp
-		generation\Windows\um\d2d1_2helper\header.txt = generation\Windows\um\d2d1_2helper\header.txt
-		generation\Windows\um\d2d1_2helper\um-d2d1_2helper.h = generation\Windows\um\d2d1_2helper\um-d2d1_2helper.h
+		generation\DirectX\um\d2d1_2helper\generate.rsp = generation\DirectX\um\d2d1_2helper\generate.rsp
+		generation\DirectX\um\d2d1_2helper\header.txt = generation\DirectX\um\d2d1_2helper\header.txt
+		generation\DirectX\um\d2d1_2helper\um-d2d1_2helper.h = generation\DirectX\um\d2d1_2helper\um-d2d1_2helper.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d2d1_3helper", "d2d1_3helper", "{C0424079-3B2E-49E3-8F20-0083304B40DE}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d2d1_3helper\generate.rsp = generation\Windows\um\d2d1_3helper\generate.rsp
-		generation\Windows\um\d2d1_3helper\header.txt = generation\Windows\um\d2d1_3helper\header.txt
-		generation\Windows\um\d2d1_3helper\um-d2d1_3helper.h = generation\Windows\um\d2d1_3helper\um-d2d1_3helper.h
+		generation\DirectX\um\d2d1_3helper\generate.rsp = generation\DirectX\um\d2d1_3helper\generate.rsp
+		generation\DirectX\um\d2d1_3helper\header.txt = generation\DirectX\um\d2d1_3helper\header.txt
+		generation\DirectX\um\d2d1_3helper\um-d2d1_3helper.h = generation\DirectX\um\d2d1_3helper\um-d2d1_3helper.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ddraw", "ddraw", "{FCCFAB49-A9AD-453C-85C0-61A9D4E57CEE}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\ddraw\generate.rsp = generation\Windows\um\ddraw\generate.rsp
-		generation\Windows\um\ddraw\header.txt = generation\Windows\um\ddraw\header.txt
-		generation\Windows\um\ddraw\um-ddraw.h = generation\Windows\um\ddraw\um-ddraw.h
+		generation\DirectX\um\ddraw\generate.rsp = generation\DirectX\um\ddraw\generate.rsp
+		generation\DirectX\um\ddraw\header.txt = generation\DirectX\um\ddraw\header.txt
+		generation\DirectX\um\ddraw\um-ddraw.h = generation\DirectX\um\ddraw\um-ddraw.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "namespaceapi", "namespaceapi", "{DEF9E803-525D-418D-9555-3B77E2F709E6}"
@@ -1217,16 +1217,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "consoleapi3", "consoleapi3"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d2d1helper", "d2d1helper", "{0455F42E-703C-449F-988D-05C1736A3B6E}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d2d1helper\generate.rsp = generation\Windows\um\d2d1helper\generate.rsp
-		generation\Windows\um\d2d1helper\header.txt = generation\Windows\um\d2d1helper\header.txt
-		generation\Windows\um\d2d1helper\um-d2d1helper.h = generation\Windows\um\d2d1helper\um-d2d1helper.h
+		generation\DirectX\um\d2d1helper\generate.rsp = generation\DirectX\um\d2d1helper\generate.rsp
+		generation\DirectX\um\d2d1helper\header.txt = generation\DirectX\um\d2d1helper\header.txt
+		generation\DirectX\um\d2d1helper\um-d2d1helper.h = generation\DirectX\um\d2d1helper\um-d2d1helper.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DXProgrammableCapture", "DXProgrammableCapture", "{1D8C9103-83D5-43FB-B149-425B58DC3DC0}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\DXProgrammableCapture\generate.rsp = generation\Windows\um\DXProgrammableCapture\generate.rsp
-		generation\Windows\um\DXProgrammableCapture\header.txt = generation\Windows\um\DXProgrammableCapture\header.txt
-		generation\Windows\um\DXProgrammableCapture\um-dxprogrammablecapture.h = generation\Windows\um\DXProgrammableCapture\um-dxprogrammablecapture.h
+		generation\DirectX\um\DXProgrammableCapture\generate.rsp = generation\DirectX\um\DXProgrammableCapture\generate.rsp
+		generation\DirectX\um\DXProgrammableCapture\header.txt = generation\DirectX\um\DXProgrammableCapture\header.txt
+		generation\DirectX\um\DXProgrammableCapture\um-dxprogrammablecapture.h = generation\DirectX\um\DXProgrammableCapture\um-dxprogrammablecapture.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "endpointvolume", "endpointvolume", "{4DD093DF-B91C-45A5-9175-3E5528E871DA}"
@@ -1301,9 +1301,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InteractionContext", "Inter
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "directmanipulation", "directmanipulation", "{90EB0F1E-3DE0-4A44-A2AB-C0EF7C5633E0}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\directmanipulation\directmanipulation.h = generation\Windows\um\directmanipulation\directmanipulation.h
-		generation\Windows\um\directmanipulation\generate.rsp = generation\Windows\um\directmanipulation\generate.rsp
-		generation\Windows\um\directmanipulation\header.txt = generation\Windows\um\directmanipulation\header.txt
+		generation\DirectX\um\directmanipulation\directmanipulation.h = generation\DirectX\um\directmanipulation\directmanipulation.h
+		generation\DirectX\um\directmanipulation\generate.rsp = generation\DirectX\um\directmanipulation\generate.rsp
+		generation\DirectX\um\directmanipulation\header.txt = generation\DirectX\um\directmanipulation\header.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UIAnimation", "UIAnimation", "{CA909B8B-167B-43AC-AD0A-DDA43CB73F36}"
@@ -1677,60 +1677,60 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "roparameterizediid", "ropar
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d10", "d3d10", "{BA1D5849-A003-473E-A47E-6E4D1B0898E7}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d3d10\generate.rsp = generation\Windows\um\d3d10\generate.rsp
-		generation\Windows\um\d3d10\header.txt = generation\Windows\um\d3d10\header.txt
-		generation\Windows\um\d3d10\um-d3d10.h = generation\Windows\um\d3d10\um-d3d10.h
+		generation\DirectX\um\d3d10\generate.rsp = generation\DirectX\um\d3d10\generate.rsp
+		generation\DirectX\um\d3d10\header.txt = generation\DirectX\um\d3d10\header.txt
+		generation\DirectX\um\d3d10\um-d3d10.h = generation\DirectX\um\d3d10\um-d3d10.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d10misc", "d3d10misc", "{60001564-602B-48AC-87F9-EF9472658DBA}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d3d10misc\generate.rsp = generation\Windows\um\d3d10misc\generate.rsp
-		generation\Windows\um\d3d10misc\header.txt = generation\Windows\um\d3d10misc\header.txt
-		generation\Windows\um\d3d10misc\um-d3d10misc.h = generation\Windows\um\d3d10misc\um-d3d10misc.h
+		generation\DirectX\um\d3d10misc\generate.rsp = generation\DirectX\um\d3d10misc\generate.rsp
+		generation\DirectX\um\d3d10misc\header.txt = generation\DirectX\um\d3d10misc\header.txt
+		generation\DirectX\um\d3d10misc\um-d3d10misc.h = generation\DirectX\um\d3d10misc\um-d3d10misc.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d10_1", "d3d10_1", "{B1CD89D3-AEAD-4A49-9F13-0B2ADA5E2C31}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d3d10_1\generate.rsp = generation\Windows\um\d3d10_1\generate.rsp
-		generation\Windows\um\d3d10_1\header.txt = generation\Windows\um\d3d10_1\header.txt
-		generation\Windows\um\d3d10_1\um-d3d10_1.h = generation\Windows\um\d3d10_1\um-d3d10_1.h
+		generation\DirectX\um\d3d10_1\generate.rsp = generation\DirectX\um\d3d10_1\generate.rsp
+		generation\DirectX\um\d3d10_1\header.txt = generation\DirectX\um\d3d10_1\header.txt
+		generation\DirectX\um\d3d10_1\um-d3d10_1.h = generation\DirectX\um\d3d10_1\um-d3d10_1.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d10shader", "d3d10shader", "{24B7FE33-CD0F-4222-96BF-19716810BBF4}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d3d10shader\generate.rsp = generation\Windows\um\d3d10shader\generate.rsp
-		generation\Windows\um\d3d10shader\header.txt = generation\Windows\um\d3d10shader\header.txt
-		generation\Windows\um\d3d10shader\um-d3d10shader.h = generation\Windows\um\d3d10shader\um-d3d10shader.h
+		generation\DirectX\um\d3d10shader\generate.rsp = generation\DirectX\um\d3d10shader\generate.rsp
+		generation\DirectX\um\d3d10shader\header.txt = generation\DirectX\um\d3d10shader\header.txt
+		generation\DirectX\um\d3d10shader\um-d3d10shader.h = generation\DirectX\um\d3d10shader\um-d3d10shader.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d10effect", "d3d10effect", "{3E969E6F-7198-4F83-B0C5-1936D6379E01}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d3d10effect\generate.rsp = generation\Windows\um\d3d10effect\generate.rsp
-		generation\Windows\um\d3d10effect\header.txt = generation\Windows\um\d3d10effect\header.txt
-		generation\Windows\um\d3d10effect\um-d3d10effect.h = generation\Windows\um\d3d10effect\um-d3d10effect.h
+		generation\DirectX\um\d3d10effect\generate.rsp = generation\DirectX\um\d3d10effect\generate.rsp
+		generation\DirectX\um\d3d10effect\header.txt = generation\DirectX\um\d3d10effect\header.txt
+		generation\DirectX\um\d3d10effect\um-d3d10effect.h = generation\DirectX\um\d3d10effect\um-d3d10effect.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d10sdklayers", "d3d10sdklayers", "{8BDC41A2-54B8-431D-B049-538F48D5E14C}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d3d10sdklayers\generate.rsp = generation\Windows\um\d3d10sdklayers\generate.rsp
-		generation\Windows\um\d3d10sdklayers\header.txt = generation\Windows\um\d3d10sdklayers\header.txt
-		generation\Windows\um\d3d10sdklayers\um-d3d10sdklayers.h = generation\Windows\um\d3d10sdklayers\um-d3d10sdklayers.h
+		generation\DirectX\um\d3d10sdklayers\generate.rsp = generation\DirectX\um\d3d10sdklayers\generate.rsp
+		generation\DirectX\um\d3d10sdklayers\header.txt = generation\DirectX\um\d3d10sdklayers\header.txt
+		generation\DirectX\um\d3d10sdklayers\um-d3d10sdklayers.h = generation\DirectX\um\d3d10sdklayers\um-d3d10sdklayers.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d10_1shader", "d3d10_1shader", "{22B8D2FA-95B4-4A27-A08C-8168FF8B81D3}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\d3d10_1shader\generate.rsp = generation\Windows\um\d3d10_1shader\generate.rsp
-		generation\Windows\um\d3d10_1shader\header.txt = generation\Windows\um\d3d10_1shader\header.txt
-		generation\Windows\um\d3d10_1shader\um-d3d10_1shader.h = generation\Windows\um\d3d10_1shader\um-d3d10_1shader.h
+		generation\DirectX\um\d3d10_1shader\generate.rsp = generation\DirectX\um\d3d10_1shader\generate.rsp
+		generation\DirectX\um\d3d10_1shader\header.txt = generation\DirectX\um\d3d10_1shader\header.txt
+		generation\DirectX\um\d3d10_1shader\um-d3d10_1shader.h = generation\DirectX\um\d3d10_1shader\um-d3d10_1shader.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxtk12", "dxtk12", "{2B494F8E-C80A-4E97-A16F-F5AACFE43825}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DirectXHelpers", "DirectXHelpers", "{21A3721E-FCA8-445E-A95D-A73716F435CC}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\dxtk12\DirectXHelpers\dxtk12-DirectXHelpers.h = generation\Windows\dxtk12\DirectXHelpers\dxtk12-DirectXHelpers.h
-		generation\Windows\dxtk12\DirectXHelpers\generate.rsp = generation\Windows\dxtk12\DirectXHelpers\generate.rsp
-		generation\Windows\dxtk12\DirectXHelpers\header.txt = generation\Windows\dxtk12\DirectXHelpers\header.txt
+		generation\DirectX\dxtk12\DirectXHelpers\dxtk12-DirectXHelpers.h = generation\DirectX\dxtk12\DirectXHelpers\dxtk12-DirectXHelpers.h
+		generation\DirectX\dxtk12\DirectXHelpers\generate.rsp = generation\DirectX\dxtk12\DirectXHelpers\generate.rsp
+		generation\DirectX\dxtk12\DirectXHelpers\header.txt = generation\DirectX\dxtk12\DirectXHelpers\header.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TextStor", "TextStor", "{1CDD97F4-D363-4DA6-878C-42A4518D8B98}"
@@ -2297,18 +2297,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "commoncontrols", "commoncon
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "D3D11On12On7", "D3D11On12On7", "{7FFDCE64-7E80-4123-92FC-F44B71568D6E}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\other\D3D11On12On7\D3D11On12On7.h = generation\Windows\other\D3D11On12On7\D3D11On12On7.h
-		generation\Windows\other\D3D11On12On7\generate.rsp = generation\Windows\other\D3D11On12On7\generate.rsp
-		generation\Windows\other\D3D11On12On7\header.txt = generation\Windows\other\D3D11On12On7\header.txt
-		generation\Windows\other\D3D11On12On7\other-d3d11on12on7.h = generation\Windows\other\D3D11On12On7\other-d3d11on12on7.h
+		generation\DirectX\other\D3D11On12On7\D3D11On12On7.h = generation\DirectX\other\D3D11On12On7\D3D11On12On7.h
+		generation\DirectX\other\D3D11On12On7\generate.rsp = generation\DirectX\other\D3D11On12On7\generate.rsp
+		generation\DirectX\other\D3D11On12On7\header.txt = generation\DirectX\other\D3D11On12On7\header.txt
+		generation\DirectX\other\D3D11On12On7\other-d3d11on12on7.h = generation\DirectX\other\D3D11On12On7\other-d3d11on12on7.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "D3D12Downlevel", "D3D12Downlevel", "{22E814D7-5FDA-4484-BA70-78E6CDFEAFE7}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Windows\other\D3D12Downlevel\D3D12Downlevel.h = generation\Windows\other\D3D12Downlevel\D3D12Downlevel.h
-		generation\Windows\other\D3D12Downlevel\generate.rsp = generation\Windows\other\D3D12Downlevel\generate.rsp
-		generation\Windows\other\D3D12Downlevel\header.txt = generation\Windows\other\D3D12Downlevel\header.txt
-		generation\Windows\other\D3D12Downlevel\other-d3d12downlevel.h = generation\Windows\other\D3D12Downlevel\other-d3d12downlevel.h
+		generation\DirectX\other\D3D12Downlevel\D3D12Downlevel.h = generation\DirectX\other\D3D12Downlevel\D3D12Downlevel.h
+		generation\DirectX\other\D3D12Downlevel\generate.rsp = generation\DirectX\other\D3D12Downlevel\generate.rsp
+		generation\DirectX\other\D3D12Downlevel\header.txt = generation\DirectX\other\D3D12Downlevel\header.txt
+		generation\DirectX\other\D3D12Downlevel\other-d3d12downlevel.h = generation\DirectX\other\D3D12Downlevel\other-d3d12downlevel.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "audioclientactivationparams", "audioclientactivationparams", "{B3FD7D49-F8E3-4364-B84F-5706600E2825}"
@@ -2642,6 +2642,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "helper-types", "helper-type
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows", "Windows", "{F8483D3C-EAD8-48CA-86A2-FEA0A9B22C71}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DirectX", "DirectX", "{93FF551D-EF97-4703-810F-13299940A464}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "other", "other", "{8ECDCA74-5C08-43AE-9E02-5A1CA5FF3847}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{1DA11388-02AD-43F4-B67B-2CA69F60B1C7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "um", "um", "{849C4129-3383-468E-9CFA-B709015C0BE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2670,49 +2678,49 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F9716DD9-2967-4295-AC71-F1FD5A9EEFEF} = {F8483D3C-EAD8-48CA-86A2-FEA0A9B22C71}
-		{27AC8160-04C5-4FC1-AE12-C3BCCEC59B3E} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
-		{5E52E621-8D72-4017-84CD-D73940044AA6} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
-		{7DE990A2-DE34-4BB1-8B0E-C10DB9BFD625} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
-		{2A0AF32A-A785-4055-8CB4-BCCDE7437D34} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
-		{88D06B2F-FAA9-4B0A-8E50-63AC28AC4464} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
-		{C46C3D04-D9B6-440F-8644-3DA27525198B} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
-		{4D5B32E6-D5DA-4D2E-B87E-389DF3066B0C} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
-		{79C044F1-E0EB-42EC-A4ED-1F086089853A} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
-		{133D4A58-8AD4-4D46-9847-3C12F24A775E} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{27AC8160-04C5-4FC1-AE12-C3BCCEC59B3E} = {1DA11388-02AD-43F4-B67B-2CA69F60B1C7}
+		{5E52E621-8D72-4017-84CD-D73940044AA6} = {1DA11388-02AD-43F4-B67B-2CA69F60B1C7}
+		{7DE990A2-DE34-4BB1-8B0E-C10DB9BFD625} = {1DA11388-02AD-43F4-B67B-2CA69F60B1C7}
+		{2A0AF32A-A785-4055-8CB4-BCCDE7437D34} = {1DA11388-02AD-43F4-B67B-2CA69F60B1C7}
+		{88D06B2F-FAA9-4B0A-8E50-63AC28AC4464} = {1DA11388-02AD-43F4-B67B-2CA69F60B1C7}
+		{C46C3D04-D9B6-440F-8644-3DA27525198B} = {1DA11388-02AD-43F4-B67B-2CA69F60B1C7}
+		{4D5B32E6-D5DA-4D2E-B87E-389DF3066B0C} = {1DA11388-02AD-43F4-B67B-2CA69F60B1C7}
+		{79C044F1-E0EB-42EC-A4ED-1F086089853A} = {1DA11388-02AD-43F4-B67B-2CA69F60B1C7}
+		{133D4A58-8AD4-4D46-9847-3C12F24A775E} = {1DA11388-02AD-43F4-B67B-2CA69F60B1C7}
 		{6B586C09-33B0-4E3E-9EBE-36152E748B42} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 		{67311E5E-FA9C-43A6-B431-9EF10047A0CE} = {F8483D3C-EAD8-48CA-86A2-FEA0A9B22C71}
-		{D07DF48F-006E-4843-8506-E156319C2601} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{36713FD3-DF89-4FCD-9534-6DDCE8571836} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{4471B4D7-342C-44B7-AA3E-8ED44CD90F33} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{9EBCE1E4-21A5-4DCC-8373-A65ADB7C800A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{3FAA36F0-DC75-4C7E-8324-E69988904AE4} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{46B4E5B1-EA95-418D-B39D-982A1AF8DA35} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{77F9C5DB-A736-4501-B346-9E1F4FC33559} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{C56E4948-F4E6-4571-AFBA-14D4916FD949} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{8C5D6885-5588-4549-BCB2-EBEC35984ED7} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{4767AEE5-45C0-49D1-806A-E5817F64C6CF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{AFDB842D-1FEC-48E1-A0F3-B4F53FD3299D} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{A9C066D4-C8B6-4062-9D86-2EFE4D8EABCD} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{CD484A42-0C12-473E-B084-68EB9C10D401} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{EAB815D2-DA56-4661-9F7E-55E38FF205A9} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{6381B008-24FA-43F6-AD66-30EBD25DC8CF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{760D5A8A-0810-4C1A-A4F0-12982D8F38AA} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{9B109AFE-7566-44CC-BABB-E91EC6BA3EB0} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{A871F4B8-AC38-4393-B724-422654496AF0} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{1B60B7F5-0CAD-4A13-85C2-2BE7FD06665A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{E39DBBA1-F5E9-453E-9475-EE95300CE502} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{6F7520F0-9CA7-4A23-A17E-77762DA10BA7} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{2463B9AF-56DB-4871-AEA5-19B3A30BFD1F} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{52B605C1-A287-4414-BA82-13A9BC64D644} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{E3186B8B-0517-439C-9BE5-61BF82800E5E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{DE030AE1-665D-41D9-A64A-D9D9BC4E3484} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{67458011-CEA9-4383-87BC-60AF489D695F} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{76F117AB-8B46-4614-99A5-5D64AF304973} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{9EF3BB14-04ED-4642-9281-B4744426129C} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{F21745DB-8D42-462D-A683-E1E44A060389} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{58433F10-9D25-4E1E-B472-EE3CC0FA9967} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{9983F062-7D44-4A3B-99B9-246E8E279B9C} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{8C9D5EA5-DB96-4900-9CFA-2E34C2238868} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{D07DF48F-006E-4843-8506-E156319C2601} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{36713FD3-DF89-4FCD-9534-6DDCE8571836} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{4471B4D7-342C-44B7-AA3E-8ED44CD90F33} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{9EBCE1E4-21A5-4DCC-8373-A65ADB7C800A} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{3FAA36F0-DC75-4C7E-8324-E69988904AE4} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{46B4E5B1-EA95-418D-B39D-982A1AF8DA35} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{77F9C5DB-A736-4501-B346-9E1F4FC33559} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{C56E4948-F4E6-4571-AFBA-14D4916FD949} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{8C5D6885-5588-4549-BCB2-EBEC35984ED7} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{4767AEE5-45C0-49D1-806A-E5817F64C6CF} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{AFDB842D-1FEC-48E1-A0F3-B4F53FD3299D} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{A9C066D4-C8B6-4062-9D86-2EFE4D8EABCD} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{CD484A42-0C12-473E-B084-68EB9C10D401} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{EAB815D2-DA56-4661-9F7E-55E38FF205A9} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{6381B008-24FA-43F6-AD66-30EBD25DC8CF} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{760D5A8A-0810-4C1A-A4F0-12982D8F38AA} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{9B109AFE-7566-44CC-BABB-E91EC6BA3EB0} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{A871F4B8-AC38-4393-B724-422654496AF0} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{1B60B7F5-0CAD-4A13-85C2-2BE7FD06665A} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{E39DBBA1-F5E9-453E-9475-EE95300CE502} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{6F7520F0-9CA7-4A23-A17E-77762DA10BA7} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{2463B9AF-56DB-4871-AEA5-19B3A30BFD1F} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{52B605C1-A287-4414-BA82-13A9BC64D644} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{E3186B8B-0517-439C-9BE5-61BF82800E5E} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{DE030AE1-665D-41D9-A64A-D9D9BC4E3484} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{67458011-CEA9-4383-87BC-60AF489D695F} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{76F117AB-8B46-4614-99A5-5D64AF304973} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{9EF3BB14-04ED-4642-9281-B4744426129C} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{F21745DB-8D42-462D-A683-E1E44A060389} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{58433F10-9D25-4E1E-B472-EE3CC0FA9967} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{9983F062-7D44-4A3B-99B9-246E8E279B9C} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{8C9D5EA5-DB96-4900-9CFA-2E34C2238868} = {849C4129-3383-468E-9CFA-B709015C0BE2}
 		{9EE9BB6F-0387-4450-B6EF-A58008E69169} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{A81407E5-C3A9-45FA-BF70-148840B975E5} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{2DEAA573-56ED-452F-95E0-EB997592C972} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
@@ -2730,7 +2738,7 @@ Global
 		{7E31C739-2787-44ED-8304-7EFCEE1A2B2C} = {EFB05081-EC44-49D3-B6D1-52AE42085B5B}
 		{83A9C646-8419-4C1C-886C-5340C90A7D5B} = {7E31C739-2787-44ED-8304-7EFCEE1A2B2C}
 		{37ACC069-F0C9-4DC3-8E13-12C61ACF269D} = {83A9C646-8419-4C1C-886C-5340C90A7D5B}
-		{F54C5855-9C8D-4EDF-BFC8-41F2E46DBE3C} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{F54C5855-9C8D-4EDF-BFC8-41F2E46DBE3C} = {849C4129-3383-468E-9CFA-B709015C0BE2}
 		{1A62D4BF-8828-434B-98EA-23B1F1AEDDDD} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{325F3936-6CD2-4395-BD7C-972A2B75A0DD} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{3D9A2652-972F-48E3-BFC3-25D3DAB2730D} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
@@ -2770,24 +2778,24 @@ Global
 		{6F88379B-A1EC-4BEC-920C-0743822F8493} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{70A02165-57BB-48DC-A6C5-B93E253CD3BE} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{5653F94C-B8A1-4B7E-8226-34813ECA01C0} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{C51AED35-0089-4BDE-842F-5390F69BE055} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{CB8001DB-06E1-4391-B9DC-4C163DD343B6} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{4F134A2D-BBD7-4105-9D1E-18961D8D6600} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{B5B39F76-5BDC-400C-94B9-73DE33D8E3CF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{A91EFD53-A552-4410-9549-19F57E02E95A} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
-		{B05F9DF2-502C-49DE-B50D-B0A60736004B} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{EC83F1EF-197E-48E8-8726-9805EC8CFBE3} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{EF133177-5261-4B8E-9DE2-0E0E069CF542} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{1A4B460B-F26E-4B3C-BFCC-7417C9D1B19C} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{81650B24-E7C8-41BE-8297-DD8E50B43220} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{6BC63DCF-7DF0-454C-86D5-20042D6EB9CF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{B64DCBFD-3EED-4F15-B6DD-31014BBCE1C4} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{A87FCD03-C198-4F4F-8951-A3EB973599F7} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{C51AED35-0089-4BDE-842F-5390F69BE055} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{CB8001DB-06E1-4391-B9DC-4C163DD343B6} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{4F134A2D-BBD7-4105-9D1E-18961D8D6600} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{B5B39F76-5BDC-400C-94B9-73DE33D8E3CF} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{A91EFD53-A552-4410-9549-19F57E02E95A} = {1DA11388-02AD-43F4-B67B-2CA69F60B1C7}
+		{B05F9DF2-502C-49DE-B50D-B0A60736004B} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{EC83F1EF-197E-48E8-8726-9805EC8CFBE3} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{EF133177-5261-4B8E-9DE2-0E0E069CF542} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{1A4B460B-F26E-4B3C-BFCC-7417C9D1B19C} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{81650B24-E7C8-41BE-8297-DD8E50B43220} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{6BC63DCF-7DF0-454C-86D5-20042D6EB9CF} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{B64DCBFD-3EED-4F15-B6DD-31014BBCE1C4} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{A87FCD03-C198-4F4F-8951-A3EB973599F7} = {849C4129-3383-468E-9CFA-B709015C0BE2}
 		{43560D77-BB58-44C0-ACFD-33AFC1031460} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{E946BCCF-E6E9-4646-9C35-8E13F514203A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{50062655-7A86-43ED-AE26-D441B771CFDB} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{A6F7ABE5-89E1-483A-ADBD-D89EF79E6E16} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
-		{7B34FD9E-65C1-4140-80D5-6E8A8D39A8CF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{7B34FD9E-65C1-4140-80D5-6E8A8D39A8CF} = {849C4129-3383-468E-9CFA-B709015C0BE2}
 		{C06939FB-3A0B-4706-8DF3-0404392920FB} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{99A06B48-0BBC-49AB-A198-2303045529BC} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{A2B8890A-416E-4AA4-80C9-AE3E0F0B3EB6} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
@@ -2812,13 +2820,13 @@ Global
 		{C74A86CA-3656-4A8C-A6EC-C3F18C5DEB1A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{923F9247-32E5-46F5-8F45-D10580795B2B} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{6FF35ADB-F57C-40CB-9068-D8DE70A99C74} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{7E206372-25DC-4E61-8F29-B8C0285D06B2} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{7E206372-25DC-4E61-8F29-B8C0285D06B2} = {849C4129-3383-468E-9CFA-B709015C0BE2}
 		{B09A774C-A2CD-4E0D-8DE8-AC48459E1699} = {F8483D3C-EAD8-48CA-86A2-FEA0A9B22C71}
-		{2415556F-BC68-40A5-AF8C-FB66B31073C5} = {B09A774C-A2CD-4E0D-8DE8-AC48459E1699}
-		{2113E8BA-43E5-42AF-95AC-8E780EAF8923} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{E5BBCCC1-5220-4AB4-9031-F1B827496BF0} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{C0424079-3B2E-49E3-8F20-0083304B40DE} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{FCCFAB49-A9AD-453C-85C0-61A9D4E57CEE} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{2415556F-BC68-40A5-AF8C-FB66B31073C5} = {8ECDCA74-5C08-43AE-9E02-5A1CA5FF3847}
+		{2113E8BA-43E5-42AF-95AC-8E780EAF8923} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{E5BBCCC1-5220-4AB4-9031-F1B827496BF0} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{C0424079-3B2E-49E3-8F20-0083304B40DE} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{FCCFAB49-A9AD-453C-85C0-61A9D4E57CEE} = {849C4129-3383-468E-9CFA-B709015C0BE2}
 		{DEF9E803-525D-418D-9555-3B77E2F709E6} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{28118A2A-5A04-472D-A003-A4F2E00E2727} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{030D5AC2-A56E-4C79-AD45-5BD6093C8D9A} = {F8483D3C-EAD8-48CA-86A2-FEA0A9B22C71}
@@ -2840,8 +2848,8 @@ Global
 		{FB8209E1-C765-40FB-A8CF-4A1BB4A60DF4} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{C85A7CE1-25ED-4148-B03E-A5776C077A96} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{B6BE2EE4-5D90-4805-96A5-90E28E9A9F30} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{0455F42E-703C-449F-988D-05C1736A3B6E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{1D8C9103-83D5-43FB-B149-425B58DC3DC0} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{0455F42E-703C-449F-988D-05C1736A3B6E} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{1D8C9103-83D5-43FB-B149-425B58DC3DC0} = {849C4129-3383-468E-9CFA-B709015C0BE2}
 		{4DD093DF-B91C-45A5-9175-3E5528E871DA} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{1DB9058F-9333-4C9A-AFBB-07256BEE3A88} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{F7493C31-0CFF-4170-B578-1D0872576CAD} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
@@ -2852,7 +2860,7 @@ Global
 		{2491BC5C-DEF9-4E68-AC7B-B53B53CAF7EB} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{9CC7B81D-B969-4262-922E-37CF05B0C40A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{BF8FA043-B447-43AA-A0FF-72943293010A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{90EB0F1E-3DE0-4A44-A2AB-C0EF7C5633E0} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{90EB0F1E-3DE0-4A44-A2AB-C0EF7C5633E0} = {849C4129-3383-468E-9CFA-B709015C0BE2}
 		{CA909B8B-167B-43AC-AD0A-DDA43CB73F36} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{F5516159-8310-4397-B511-8750488D0261} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{2A8EEC11-DBF5-4DB8-B6E8-C2F39D5F9A8D} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
@@ -2907,14 +2915,14 @@ Global
 		{C9F4D47F-4278-45A8-B0D6-3F19B64613C9} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{37B083E1-218C-4EE2-A9CE-D9D8A62071B5} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{BAD52072-A488-45BA-AB3F-00CB382D2DC6} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
-		{BA1D5849-A003-473E-A47E-6E4D1B0898E7} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{60001564-602B-48AC-87F9-EF9472658DBA} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{B1CD89D3-AEAD-4A49-9F13-0B2ADA5E2C31} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{24B7FE33-CD0F-4222-96BF-19716810BBF4} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{3E969E6F-7198-4F83-B0C5-1936D6379E01} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{8BDC41A2-54B8-431D-B049-538F48D5E14C} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{22B8D2FA-95B4-4A27-A08C-8168FF8B81D3} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{2B494F8E-C80A-4E97-A16F-F5AACFE43825} = {F8483D3C-EAD8-48CA-86A2-FEA0A9B22C71}
+		{BA1D5849-A003-473E-A47E-6E4D1B0898E7} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{60001564-602B-48AC-87F9-EF9472658DBA} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{B1CD89D3-AEAD-4A49-9F13-0B2ADA5E2C31} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{24B7FE33-CD0F-4222-96BF-19716810BBF4} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{3E969E6F-7198-4F83-B0C5-1936D6379E01} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{8BDC41A2-54B8-431D-B049-538F48D5E14C} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{22B8D2FA-95B4-4A27-A08C-8168FF8B81D3} = {849C4129-3383-468E-9CFA-B709015C0BE2}
+		{2B494F8E-C80A-4E97-A16F-F5AACFE43825} = {93FF551D-EF97-4703-810F-13299940A464}
 		{21A3721E-FCA8-445E-A95D-A73716F435CC} = {2B494F8E-C80A-4E97-A16F-F5AACFE43825}
 		{1CDD97F4-D363-4DA6-878C-42A4518D8B98} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{A45CD075-761F-4703-8926-D10653692F82} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
@@ -2997,8 +3005,8 @@ Global
 		{2B72017F-7B3C-459B-97CC-24E988F07F62} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{BCFD3A35-8F3D-4B1C-B5D0-FBF71E8F7DC1} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{DCBBC643-78B5-411C-8001-5FE4F3F7C36E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{7FFDCE64-7E80-4123-92FC-F44B71568D6E} = {B09A774C-A2CD-4E0D-8DE8-AC48459E1699}
-		{22E814D7-5FDA-4484-BA70-78E6CDFEAFE7} = {B09A774C-A2CD-4E0D-8DE8-AC48459E1699}
+		{7FFDCE64-7E80-4123-92FC-F44B71568D6E} = {8ECDCA74-5C08-43AE-9E02-5A1CA5FF3847}
+		{22E814D7-5FDA-4484-BA70-78E6CDFEAFE7} = {8ECDCA74-5C08-43AE-9E02-5A1CA5FF3847}
 		{B3FD7D49-F8E3-4364-B84F-5706600E2825} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{AEF32986-D77E-4FBC-93AB-C11B1226A427} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{3663C9FD-E555-44F4-87BD-D912A3554FAE} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
@@ -3047,6 +3055,10 @@ Global
 		{546D542D-BEA7-4791-A9FB-44A686BA10BE} = {B09A774C-A2CD-4E0D-8DE8-AC48459E1699}
 		{3EB33755-7EB9-4ED1-AD8D-083D836D9EFA} = {B09A774C-A2CD-4E0D-8DE8-AC48459E1699}
 		{F8483D3C-EAD8-48CA-86A2-FEA0A9B22C71} = {D9638FEE-50A4-44FF-B1F6-72E59548490B}
+		{93FF551D-EF97-4703-810F-13299940A464} = {D9638FEE-50A4-44FF-B1F6-72E59548490B}
+		{8ECDCA74-5C08-43AE-9E02-5A1CA5FF3847} = {93FF551D-EF97-4703-810F-13299940A464}
+		{1DA11388-02AD-43F4-B67B-2CA69F60B1C7} = {93FF551D-EF97-4703-810F-13299940A464}
+		{849C4129-3383-468E-9CFA-B709015C0BE2} = {93FF551D-EF97-4703-810F-13299940A464}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

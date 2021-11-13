@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
+using TerraFX.Interop.DirectX;
 using static TerraFX.Interop.Windows.MFWaveFormatExConvertFlags;
 
 namespace TerraFX.Interop.Windows

@@ -1,0 +1,45 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+D3DDisassemble10Effect(struct ID3D10Effect *, UINT, ID3DBlob **):HRESULT
+--file
+um-d3dcompiler.h
+--methodClassName
+DirectX
+--namespace
+TerraFX.Interop.DirectX
+--output
+../../../../sources/Interop/Windows/DirectX/um/d3dcompiler
+--test-output
+../../../../tests/Interop/Windows/DirectX/um/d3dcompiler
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d3dcompiler.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um\d3dcompiler.inl
+--with-attribute
+D3DCOMPILER_STRIP_FLAGS=Flags
+--with-librarypath
+D3DCompile=d3dcompiler_47
+D3DCompile2=d3dcompiler_47
+D3DCompileFromFile=d3dcompiler_47
+D3DCompressShaders=d3dcompiler_47
+D3DCreateBlob=d3dcompiler_47
+D3DCreateFunctionLinkingGraph=d3dcompiler_47
+D3DCreateLinker=d3dcompiler_47
+D3DDecompressShaders=d3dcompiler_47
+D3DDisassemble=d3dcompiler_47
+D3DDisassemble10Effect=d3dcompiler_47
+D3DDisassembleRegion=d3dcompiler_47
+D3DGetBlobPart=d3dcompiler_47
+D3DGetDebugInfo=d3dcompiler_47
+D3DGetInputAndOutputSignatureBlob=d3dcompiler_47
+D3DGetInputSignatureBlob=d3dcompiler_47
+D3DGetOutputSignatureBlob=d3dcompiler_47
+D3DGetTraceInstructionOffsets=d3dcompiler_47
+D3DLoadModule=d3dcompiler_47
+D3DPreprocess=d3dcompiler_47
+D3DReadFileToBlob=d3dcompiler_47
+D3DReflect=d3dcompiler_47
+D3DReflectLibrary=d3dcompiler_47
+D3DSetBlobPart=d3dcompiler_47
+D3DStripShader=d3dcompiler_47
+D3DWriteBlobToFile=d3dcompiler_47
