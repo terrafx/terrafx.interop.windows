@@ -1,0 +1,2 @@
+--with-class
+HRESULT_FROM_WIN32=WinError
