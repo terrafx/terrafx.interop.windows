@@ -11,6 +11,10 @@ max
 min
 --file
 shared-minwindef.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/minwindef
 --test-output

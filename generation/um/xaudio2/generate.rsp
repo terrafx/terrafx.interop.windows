@@ -7,10 +7,18 @@ X2DEFAULT
 XAudio2Create(IXAudio2 **, UINT32, XAUDIO2_PROCESSOR):HRESULT
 --file
 um-xaudio2.h
+--methodClassName
+DirectX
+--namespace
+TerraFX.Interop.DirectX
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
-../../../sources/Interop/Windows/um/xaudio2
+../../../../sources/Interop/Windows/DirectX/um/xaudio2
 --test-output
-../../../tests/Interop/Windows/um/xaudio2
+../../../../tests/Interop/Windows/DirectX/um/xaudio2
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/xaudio2.h
 --with-attribute

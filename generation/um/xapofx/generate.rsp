@@ -5,10 +5,18 @@ DEFAULT
 FX_API_
 --file
 um-xapofx.h
+--methodClassName
+DirectX
+--namespace
+TerraFX.Interop.DirectX
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
-../../../sources/Interop/Windows/um/xapofx
+../../../../sources/Interop/Windows/DirectX/um/xapofx
 --test-output
-../../../tests/Interop/Windows/um/xapofx
+../../../../tests/Interop/Windows/DirectX/um/xapofx
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/xapofx.h
 --with-librarypath

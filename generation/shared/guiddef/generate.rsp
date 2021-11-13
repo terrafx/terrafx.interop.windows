@@ -12,6 +12,10 @@ operator!=(const GUID &, const GUID &):bool
 _GUID
 --file
 shared-guiddef.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/guiddef
 --test-output

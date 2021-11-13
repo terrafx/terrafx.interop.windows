@@ -541,10 +541,14 @@ __writegsqword
 __writegsword
 --file
 um-winnt.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
-../../../sources/Interop/Windows/um/winnt
+../../../../sources/Interop/Windows/Windows/um/winnt
 --test-output
-../../../tests/Interop/Windows/um/winnt
+../../../../tests/Interop/Windows/Windows/um/winnt
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h
 --with-attribute

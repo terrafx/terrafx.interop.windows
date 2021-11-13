@@ -8,6 +8,10 @@ __MIDL___MIDL_itf_strmif_0000_0026_0002
 __MIDL___MIDL_itf_strmif_0000_0122_0001
 --file
 um-strmif.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/strmif
 --test-output

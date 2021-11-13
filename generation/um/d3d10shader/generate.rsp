@@ -4,6 +4,10 @@
 D3D10_TX_VERSION
 --file
 um-d3d10shader.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/d3d10shader
 --test-output

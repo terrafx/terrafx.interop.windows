@@ -36,6 +36,10 @@ PropSheet_ShowWizButtons
 PropSheet_UnChanged
 --file
 um-prsht.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/prsht
 --test-output

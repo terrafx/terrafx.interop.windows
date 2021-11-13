@@ -6,6 +6,10 @@ PathCchSkipRoot(PWSTR, PWSTR *):HRESULT
 PathIsUNCEx(PWSTR, PWSTR *):BOOL
 --file
 um-PathCch.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/PathCch
 --test-output

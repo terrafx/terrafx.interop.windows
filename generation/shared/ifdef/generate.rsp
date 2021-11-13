@@ -5,6 +5,10 @@ NET_IS_UNSPECIFIED_NETWORK_GUID
 NET_SET_UNSPECIFIED_NETWORK_GUID
 --file
 shared-ifdef.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/ifdef
 --test-output

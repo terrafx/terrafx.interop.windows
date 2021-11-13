@@ -22,6 +22,10 @@ __MIDL___MIDL_itf_mfidl_0000_0029_0001
 __MIDL___MIDL_itf_mfidl_0000_0029_0002
 --file
 um-mfidl.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/mfidl
 --test-output

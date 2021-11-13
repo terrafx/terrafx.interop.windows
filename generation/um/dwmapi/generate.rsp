@@ -4,6 +4,10 @@
 DWMAPI_
 --file
 um-dwmapi.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/dwmapi
 --test-output

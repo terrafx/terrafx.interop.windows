@@ -4,6 +4,10 @@
 DWRITE_MAKE_FONT_AXIS_TAG
 --file
 um-dwrite_3.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/dwrite_3
 --test-output

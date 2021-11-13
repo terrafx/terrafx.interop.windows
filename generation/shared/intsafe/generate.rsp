@@ -794,6 +794,10 @@ _SIZE_T_MAX
 _umul128
 --file
 shared-intsafe.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/intsafe
 --test-output

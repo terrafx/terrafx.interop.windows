@@ -5,6 +5,10 @@ PMSIHANDLE
 _WIN32_MSI
 --file
 um-Msi.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/Msi
 --test-output

@@ -23,6 +23,10 @@ WINOLEAPI_
 _CRT_INTERNAL_COMBASE_SYMBOL_PREFIX
 --file
 um-combaseapi.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/combaseapi
 --test-output

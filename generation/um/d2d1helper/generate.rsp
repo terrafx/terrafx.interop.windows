@@ -7,6 +7,10 @@ operator==(const D2D1_SIZE_U &, const D2D1_SIZE_U &):bool nothrow
 operator==(const D2D1_RECT_U &, const D2D1_RECT_U &):bool nothrow
 --file
 um-d2d1helper.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/d2d1helper
 --test-output

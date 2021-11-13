@@ -6,6 +6,10 @@ GetCachedSigningLevel(HANDLE, PULONG, PULONG, PUCHAR, PULONG, PULONG):BOOL
 SetCachedSigningLevel(PHANDLE, ULONG, ULONG, HANDLE):BOOL
 --file
 um-securitybaseapi.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/securitybaseapi
 --test-output

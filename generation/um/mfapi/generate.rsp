@@ -6,6 +6,10 @@ DEFINE_BINARY_MEDIATYPE_GUID
 FCC
 --file
 um-mfapi.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/mfapi
 --test-output

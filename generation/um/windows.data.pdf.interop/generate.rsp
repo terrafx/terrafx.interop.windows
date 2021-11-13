@@ -4,6 +4,10 @@
 PdfRenderParams(const D2D_RECT_F &, UINT32, UINT32, const D2D_COLOR_F &, BOOLEAN):PDF_RENDER_PARAMS
 --file
 um-windows.data.pdf.interop.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/windows.data.pdf.interop
 --test-output

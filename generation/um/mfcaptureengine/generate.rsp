@@ -5,6 +5,10 @@ MFVideoNormalizedRect
 __MIDL___MIDL_itf_mfcaptureengine_0000_0000_0001
 --file
 um-mfcaptureengine.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/mfcaptureengine
 --test-output

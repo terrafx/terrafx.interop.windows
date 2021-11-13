@@ -4,6 +4,10 @@
 IDDEInitializer
 --file
 um-WindowsStorageCOM.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/WindowsStorageCOM
 --test-output

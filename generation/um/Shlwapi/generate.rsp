@@ -36,6 +36,10 @@ UrlIsFileUrlW
 UrlUnescapeInPlace
 --file
 um-Shlwapi.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/Shlwapi
 --test-output

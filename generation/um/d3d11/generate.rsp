@@ -38,6 +38,10 @@ operator==(const D3D11_RECT &, const D3D11_RECT &):bool
 operator==(const D3D11_VIEWPORT &, const D3D11_VIEWPORT &):bool
 --file
 um-d3d11.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/d3d11
 --test-output

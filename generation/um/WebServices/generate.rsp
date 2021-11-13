@@ -8,6 +8,10 @@ WsCountOf
 WsOffsetOf
 --file
 um-WebServices.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/WebServices
 --test-output

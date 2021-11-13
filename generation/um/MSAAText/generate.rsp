@@ -8,6 +8,10 @@ IID_ITextStoreAnchorSink
 IID_ITextStoreACPSink
 --file
 um-MSAAText.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/MSAAText
 --test-output

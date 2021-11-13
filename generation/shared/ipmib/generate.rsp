@@ -14,6 +14,10 @@ SIZEOF_MIB_MFE_STATS
 SIZEOF_MIB_MFE_STATS_EX
 --file
 shared-ipmib.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/ipmib
 --test-output

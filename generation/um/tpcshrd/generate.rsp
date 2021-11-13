@@ -4,6 +4,10 @@
 MICROSOFT_TABLETPENSERVICE_PROPERTY
 --file
 um-tpcshrd.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/tpcshrd
 --test-output

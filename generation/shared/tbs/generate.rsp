@@ -2,6 +2,10 @@
 @../../remap.rsp
 --file
 shared-tbs.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/tbs
 --test-output

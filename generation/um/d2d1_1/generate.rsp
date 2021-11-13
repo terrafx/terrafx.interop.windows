@@ -18,6 +18,10 @@ ID2D1Properties.SetValue<U>(U, const BYTE *, UINT32):HRESULT
 ID2D1Properties.SetValueByName<T>(PCWSTR, const T &):HRESULT
 --file
 um-d2d1_1.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/d2d1_1
 --test-output

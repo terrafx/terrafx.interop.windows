@@ -10,10 +10,14 @@ _WINHTTP_REQUEST_TIMES
 _WINHTTP_RESOLVER_CACHE_CONFIG
 --file
 um-winhttp.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
-../../../sources/Interop/Windows/um/winhttp
+../../../../sources/Interop/Windows/Windows/um/winhttp
 --test-output
-../../../tests/Interop/Windows/um/winhttp
+../../../../tests/Interop/Windows/Windows/um/winhttp
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winhttp.h
 --with-attribute

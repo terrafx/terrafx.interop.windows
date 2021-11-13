@@ -11,10 +11,18 @@ ABI.Windows.Foundation.RegisterActivationFactories(HSTRING *, PFNGETACTIVATIONFA
 ABI.Windows.Foundation.RevokeActivationFactories(RO_REGISTRATION_COOKIE):void
 --file
 winrt-roapi.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
-../../../sources/Interop/Windows/winrt/roapi
+../../../../sources/Interop/Windows/WinRT/winrt/roapi
 --test-output
-../../../tests/Interop/Windows/winrt/roapi
+../../../../tests/Interop/Windows/WinRT/winrt/roapi
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/winrt/roapi.h
 --with-librarypath

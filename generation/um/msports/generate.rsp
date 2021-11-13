@@ -6,6 +6,10 @@ SERIAL_ADVANCED_SETTINGS
 HCOMDB_INVALID_HANDLE_VALUE
 --file
 um-msports.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/msports
 --test-output

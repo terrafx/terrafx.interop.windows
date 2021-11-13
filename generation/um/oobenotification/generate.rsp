@@ -4,6 +4,10 @@
 OOBEComplete(PBOOL):BOOL
 --file
 um-oobenotification.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/oobenotification
 --test-output

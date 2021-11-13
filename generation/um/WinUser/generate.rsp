@@ -106,6 +106,10 @@ _Inout_grows_updates_bypassable_or_z_
 _In_bypassable_reads_or_z_
 --file
 um-WinUser.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/WinUser
 --test-output

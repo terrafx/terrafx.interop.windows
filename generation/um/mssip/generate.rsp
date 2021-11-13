@@ -4,6 +4,10 @@
 CryptSIPGetSealedDigest(SIP_SUBJECTINFO *, const BYTE *, DWORD, BYTE *, DWORD *):BOOL
 --file
 um-mssip.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/mssip
 --test-output

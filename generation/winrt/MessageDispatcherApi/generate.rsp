@@ -2,10 +2,18 @@
 @../../remap.rsp
 --file
 winrt-MessageDispatcherApi.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
-../../../sources/Interop/Windows/winrt/MessageDispatcherApi
+../../../../sources/Interop/Windows/WinRT/winrt/MessageDispatcherApi
 --test-output
-../../../tests/Interop/Windows/winrt/MessageDispatcherApi
+../../../../tests/Interop/Windows/WinRT/winrt/MessageDispatcherApi
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/winrt/MessageDispatcherApi.h
 --with-librarypath

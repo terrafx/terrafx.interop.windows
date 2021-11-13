@@ -53,6 +53,10 @@ _InterlockedOr
 _InterlockedXor
 --file
 um-WinBase.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/WinBase
 --test-output

@@ -34,6 +34,10 @@ DPI_AWARENESS_CONTEXT_UNAWARE
 DPI_AWARENESS_CONTEXT_UNAWARE_GDISCALED
 --file
 shared-windef.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/windef
 --test-output

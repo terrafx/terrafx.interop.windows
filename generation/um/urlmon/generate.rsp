@@ -7,6 +7,10 @@ SetUrlPolicyPermissions
 __MIDL_IInternetZoneManager_0001
 --file
 um-urlmon.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/urlmon
 --test-output

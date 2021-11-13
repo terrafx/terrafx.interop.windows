@@ -5,6 +5,10 @@ DeviceTopology
 E_NOTFOUND
 --file
 um-devicetopology.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/devicetopology
 --test-output

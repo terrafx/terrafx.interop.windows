@@ -36,6 +36,10 @@ _szPROP_ID
 __CRYPT32WTEXT
 --file
 um-wincrypt.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/wincrypt
 --test-output

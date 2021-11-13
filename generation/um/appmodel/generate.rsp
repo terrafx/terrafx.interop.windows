@@ -18,6 +18,10 @@ VerifyPackageRelativeApplicationId(PCWSTR):LONG
 _PACKAGE_INFO_REFERENCE
 --file
 um-appmodel.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/appmodel
 --test-output

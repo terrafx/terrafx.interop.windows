@@ -6,6 +6,10 @@ MPEG2_SEQUENCE_INFO
 SIZE_MPEG2VIDEOINFO
 --file
 um-dvdmedia.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/dvdmedia
 --test-output

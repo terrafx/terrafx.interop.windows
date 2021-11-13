@@ -11,6 +11,10 @@ operator!=(const DEVPROPKEY &, const DEVPROPKEY &):bool
 operator!=(const DEVPROPCOMPKEY &, const DEVPROPCOMPKEY &):bool
 --file
 shared-devpropdef.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/devpropdef
 --test-output

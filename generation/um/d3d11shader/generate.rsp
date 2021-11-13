@@ -6,6 +6,10 @@ D3D11_SHVER_GET_MINOR
 D3D11_SHVER_GET_TYPE
 --file
 um-d3d11shader.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/d3d11shader
 --test-output

@@ -25,6 +25,10 @@ WMAUDIO2_WFX_EXTRA_BYTES
 WMAUDIO3_WFX_EXTRA_BYTES
 --file
 shared-mmreg.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/mmreg
 --test-output

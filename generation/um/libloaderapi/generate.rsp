@@ -6,6 +6,10 @@ LoadStringA(HINSTANCE, UINT, LPSTR, int):int
 LoadStringW(HINSTANCE, UINT, LPWSTR, int):int
 --file
 um-libloaderapi.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/libloaderapi
 --test-output

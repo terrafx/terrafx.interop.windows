@@ -2,6 +2,10 @@
 @../../remap.rsp
 --file
 other-mssign32.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/other/mssign32
 --test-output

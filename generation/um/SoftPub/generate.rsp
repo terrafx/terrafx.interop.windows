@@ -2,6 +2,10 @@
 @../../remap.rsp
 --file
 um-SoftPub.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/SoftPub
 --test-output

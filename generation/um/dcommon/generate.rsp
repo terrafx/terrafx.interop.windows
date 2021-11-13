@@ -5,6 +5,10 @@ CHECKMETHOD
 DX_DECLARE_INTERFACE
 --file
 um-dcommon.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/dcommon
 --test-output

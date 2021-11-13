@@ -8,6 +8,10 @@ MAKE_DWRITE_HR
 MAKE_DWRITE_HR_ERR
 --file
 um-dwrite.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/dwrite
 --test-output

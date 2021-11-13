@@ -11,6 +11,10 @@ PIDLIST_ABSOLUTE_UserUnmarshal
 PIDLIST_ABSOLUTE_UserUnmarshal64
 --file
 um-tlogstg.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/tlogstg
 --test-output

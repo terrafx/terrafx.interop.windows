@@ -4,6 +4,10 @@
 SIZEOF_IFTABLE
 --file
 shared-ifmib.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/ifmib
 --test-output

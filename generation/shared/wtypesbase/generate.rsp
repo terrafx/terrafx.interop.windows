@@ -4,6 +4,10 @@
 OLESTR
 --file
 shared-wtypesbase.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/wtypesbase
 --test-output

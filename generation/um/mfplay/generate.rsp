@@ -17,6 +17,10 @@ MFP_GET_STOP_EVENT
 __MFP_CAST_EVENT
 --file
 um-mfplay.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/mfplay
 --test-output

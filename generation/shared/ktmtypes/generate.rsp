@@ -2,6 +2,10 @@
 @../../remap.rsp
 --file
 shared-ktmtypes.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/ktmtypes
 --test-output

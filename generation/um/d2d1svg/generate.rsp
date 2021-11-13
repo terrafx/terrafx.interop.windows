@@ -8,6 +8,10 @@ ID2D1SvgElement.GetAttributeValue(PCWSTR, ID2D1SvgPointCollection **):HRESULT no
 ID2D1SvgElement.GetAttributeValue(PCWSTR, ID2D1SvgStrokeDashArray **):HRESULT nothrow
 --file
 um-d2d1svg.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/d2d1svg
 --test-output

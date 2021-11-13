@@ -5,6 +5,10 @@ AUDCLNT_ERR
 AUDCLNT_SUCCESS
 --file
 um-Audioclient.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/Audioclient
 --test-output

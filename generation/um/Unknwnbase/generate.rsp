@@ -4,6 +4,10 @@
 IUnknown.QueryInterface<Q>(Q **):HRESULT
 --file
 um-Unknwnbase.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/Unknwnbase
 --test-output

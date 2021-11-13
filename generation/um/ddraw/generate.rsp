@@ -348,6 +348,10 @@ IDirectDraw_WaitForVerticalBlank
 MAKE_DDHRESULT
 --file
 um-ddraw.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/ddraw
 --test-output

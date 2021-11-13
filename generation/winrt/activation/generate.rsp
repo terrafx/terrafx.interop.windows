@@ -2,9 +2,17 @@
 @../../remap.rsp
 --file
 winrt-activation.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
-../../../sources/Interop/Windows/winrt/activation
+../../../../sources/Interop/Windows/WinRT/winrt/activation
 --test-output
-../../../tests/Interop/Windows/winrt/activation
+../../../../tests/Interop/Windows/WinRT/winrt/activation
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/winrt/activation.h

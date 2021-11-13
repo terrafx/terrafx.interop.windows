@@ -46,6 +46,10 @@ _NDIS_ERROR_TYPEDEF_
 __HRESULT_FROM_WIN32
 --file
 shared-winerror.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/winerror
 --test-output

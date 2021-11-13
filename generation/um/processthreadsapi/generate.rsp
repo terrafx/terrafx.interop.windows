@@ -6,6 +6,10 @@ GetCurrentThreadEffectiveToken():HANDLE
 GetCurrentThreadToken():HANDLE
 --file
 um-processthreadsapi.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/processthreadsapi
 --test-output

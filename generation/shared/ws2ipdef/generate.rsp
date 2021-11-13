@@ -31,6 +31,10 @@ SS_PORT
 WS2IPDEF_ASSERT
 --file
 shared-ws2ipdef.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/ws2ipdef
 --test-output

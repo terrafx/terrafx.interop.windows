@@ -5,6 +5,10 @@ ANY_SIZE
 MAKE_ROUTE_PROTOCOL
 --file
 shared-nldef.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/nldef
 --test-output

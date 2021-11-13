@@ -8,6 +8,10 @@ SslGetExtensions(const BYTE *, DWORD, SCH_EXTENSION_DATA *, BYTE, DWORD *, SchGe
 SslGetMaximumKeySize(DWORD):DWORD
 --file
 um-schannel.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/schannel
 --test-output

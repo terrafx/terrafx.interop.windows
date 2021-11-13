@@ -4,6 +4,10 @@
 GetD3D11On12On7Interface
 --file
 other-d3d11on12on7.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/other/D3D11On12On7
 --test-output

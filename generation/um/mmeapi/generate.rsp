@@ -9,6 +9,10 @@ MIDICALLBACK
 WAVECALLBACK
 --file
 um-mmeapi.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/mmeapi
 --test-output

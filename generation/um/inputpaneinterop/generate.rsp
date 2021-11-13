@@ -2,6 +2,10 @@
 @../../remap.rsp
 --file
 um-inputpaneinterop.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/inputpaneinterop
 --test-output

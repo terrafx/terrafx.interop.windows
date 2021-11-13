@@ -8,6 +8,10 @@ DXGI_CPU_ACCESS_READ_WRITE
 DXGI_CPU_ACCESS_SCRATCH
 --file
 shared-dxgi.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/dxgi
 --test-output

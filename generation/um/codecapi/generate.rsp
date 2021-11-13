@@ -318,6 +318,10 @@ STATIC_CODECAPI_SetHDCPManagerContext
 STATIC_CODECAPI_VideoEncoderDisplayContentType
 --file
 um-codecapi.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/codecapi
 --test-output

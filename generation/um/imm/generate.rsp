@@ -6,6 +6,10 @@ MOD_CONTROL
 MOD_SHIFT
 --file
 um-imm.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/imm
 --test-output

@@ -6,6 +6,10 @@ PROPSETHDR_OSVER_MINOR
 PROPSETHDR_OSVER_KIND
 --file
 um-PropIdlBase.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/PropIdlBase
 --test-output

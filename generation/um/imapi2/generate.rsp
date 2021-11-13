@@ -4,6 +4,10 @@
 LIBID_IMAPILib2
 --file
 um-imapi2.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/imapi2
 --test-output

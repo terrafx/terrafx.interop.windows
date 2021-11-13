@@ -4,6 +4,10 @@
 DoMsCtfMonitor(DWORD, HANDLE):BOOL
 --file
 um-MsCtfMonitorApi.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/MsCtfMonitorApi
 --test-output

@@ -2,6 +2,10 @@
 @../../remap.rsp
 --file
 um-Print3DManagerInterop.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/Print3DManagerInterop
 --test-output

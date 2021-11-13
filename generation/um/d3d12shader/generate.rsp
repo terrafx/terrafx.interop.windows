@@ -16,6 +16,10 @@ D3D_SHADER_REQUIRES_TILED_RESOURCES
 D3D_SHADER_REQUIRES_UAVS_AT_EVERY_STAGE
 --file
 um-d3d12shader.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/d3d12shader
 --test-output

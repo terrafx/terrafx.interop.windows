@@ -5,6 +5,10 @@ DEFINE_PROPERTYKEY
 MMDeviceEnumerator
 --file
 um-mmdeviceapi.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/mmdeviceapi
 --test-output

@@ -5,6 +5,10 @@ E_NOTFOUND
 InitializeXamlDiagnostic
 --file
 um-xamlOM.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/xamlOM
 --test-output

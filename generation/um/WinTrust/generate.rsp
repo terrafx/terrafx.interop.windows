@@ -6,6 +6,10 @@ WVT_IS_CBSTRUCT_GT_MEMBEROFFSET
 WVT_OFFSETOF
 --file
 um-WinTrust.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/wintrust
 --test-output

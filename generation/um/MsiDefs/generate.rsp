@@ -6,6 +6,10 @@ PID_DICTIONARY
 PID_SECURITY
 --file
 um-MsiDefs.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/MsiDefs
 --test-output

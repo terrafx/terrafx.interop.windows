@@ -6,6 +6,10 @@ MAKEFOURCC
 PDRVCALLBACK
 --file
 um-mmsyscom.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/mmsyscom
 --test-output

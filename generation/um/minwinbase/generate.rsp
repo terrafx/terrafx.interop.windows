@@ -4,6 +4,10 @@
 LocalDiscard
 --file
 um-minwinbase.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/minwinbase
 --test-output

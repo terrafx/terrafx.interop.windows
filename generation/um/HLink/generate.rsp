@@ -7,6 +7,10 @@ __MIDL_IHlinkBrowseContext_0003
 __MIDL_IHlinkBrowseContext_0004
 --file
 um-HLink.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/HLink
 --test-output

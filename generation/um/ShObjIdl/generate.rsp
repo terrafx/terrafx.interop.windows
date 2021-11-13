@@ -25,6 +25,10 @@ SHRemovePersonalPropertyValues(IShellItemArray *):HRESULT
 SHResolveFolderPathInLibrary
 --file
 um-ShObjIdl.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/ShObjIdl
 --test-output

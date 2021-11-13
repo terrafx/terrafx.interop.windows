@@ -4,6 +4,10 @@
 generate-helper-types
 --file
 other-helper-types.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/other/helper-types
 --test-output

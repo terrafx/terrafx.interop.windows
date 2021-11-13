@@ -19,6 +19,10 @@ MAKE_D3D10_HRESULT
 MAKE_D3D10_STATUS
 --file
 um-d3d10.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/d3d10
 --test-output

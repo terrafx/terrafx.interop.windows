@@ -2,9 +2,17 @@
 @../../remap.rsp
 --file
 winrt-EventToken.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
-../../../sources/Interop/Windows/winrt/EventToken
+../../../../sources/Interop/Windows/WinRT/winrt/EventToken
 --test-output
-../../../tests/Interop/Windows/winrt/EventToken
+../../../../tests/Interop/Windows/WinRT/winrt/EventToken
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/winrt/EventToken.h

@@ -2,6 +2,10 @@
 @../../remap.rsp
 --file
 um-msxml.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/msxml
 --test-output

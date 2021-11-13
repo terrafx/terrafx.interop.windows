@@ -4,6 +4,10 @@
 Wow64SetThreadDefaultGuestMachine(USHORT):USHORT
 --file
 um-wow64apiset.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/wow64apiset
 --test-output

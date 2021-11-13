@@ -13,6 +13,10 @@ IDXCoreAdapterList.GetAdapter<T>(uint32_t, T **):HRESULT
 IDXCoreAdapterList.GetFactory<T>(T **):HRESULT
 --file
 um-dxcore_interface.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/dxcore_interface
 --test-output

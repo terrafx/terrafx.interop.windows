@@ -2,6 +2,10 @@
 @../../remap.rsp
 --file
 um-oleidl.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/oleidl
 --test-output

@@ -8,6 +8,10 @@ SetProcessValidCallTargetsForMappedView(HANDLE, PVOID, SIZE_T, ULONG, PCFG_CALL_
 VirtualUnlockEx(HANDLE, LPVOID, SIZE_T):BOOL
 --file
 um-memoryapi.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/memoryapi
 --test-output

@@ -2,6 +2,10 @@
 @../../remap.rsp
 --file
 shared-hidusage.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/hidusage
 --test-output

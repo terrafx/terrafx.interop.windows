@@ -545,6 +545,10 @@ _nrealloc
 _nstrdup
 --file
 shared-windowsx.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/windowsx
 --test-output

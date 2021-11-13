@@ -2,6 +2,10 @@
 @../../remap.rsp
 --file
 shared-dxgicommon.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/dxgicommon
 --test-output

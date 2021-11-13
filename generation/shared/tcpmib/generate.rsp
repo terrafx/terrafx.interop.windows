@@ -12,6 +12,10 @@ SIZEOF_TCPTABLE_OWNER_MODULE
 SIZEOF_TCPTABLE_OWNER_PID
 --file
 shared-tcpmib.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/tcpmib
 --test-output

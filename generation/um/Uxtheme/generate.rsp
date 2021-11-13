@@ -6,6 +6,10 @@ SetWindowThemeNonClientAttributes
 THEMEAPI_
 --file
 um-Uxtheme.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/Uxtheme
 --test-output

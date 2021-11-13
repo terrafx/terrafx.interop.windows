@@ -56,6 +56,10 @@ SHSTDDOCAPI_
 VOID_OFFSET
 --file
 um-ShlObj_core.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/ShlObj_core
 --test-output

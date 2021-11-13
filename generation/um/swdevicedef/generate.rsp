@@ -2,6 +2,10 @@
 @../../remap.rsp
 --file
 um-swdevicedef.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/swdevicedef
 --test-output

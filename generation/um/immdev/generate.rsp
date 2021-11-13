@@ -18,6 +18,10 @@ ImeUnregisterWord(LPCTSTR, DWORD, LPCTSTR):BOOL
 NotifyIME
 --file
 um-immdev.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/immdev
 --test-output

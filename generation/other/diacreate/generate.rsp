@@ -4,6 +4,10 @@
 C:/Program Files/Microsoft Visual Studio/2022/Preview/DIA SDK/include
 --file
 other-diacreate.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/other/diacreate
 --test-output

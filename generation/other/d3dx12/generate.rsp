@@ -80,6 +80,10 @@ UpdateSubresources(ID3D12GraphicsCommandList *, ID3D12Resource *, ID3D12Resource
 __noop():int
 --file
 other-d3dx12.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/other/d3dx12
 --test-output

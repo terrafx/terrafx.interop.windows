@@ -4,6 +4,10 @@
 D3D10_BYTES_FROM_BITS
 --file
 um-d3d10effect.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/d3d10effect
 --test-output

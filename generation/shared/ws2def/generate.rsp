@@ -23,6 +23,10 @@ _WSAIORW
 _WSAIOW
 --file
 shared-ws2def.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/ws2def
 --test-output

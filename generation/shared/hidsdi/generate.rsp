@@ -4,6 +4,10 @@
 _HIDD_CONFIGURATION
 --file
 shared-hidsdi.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/hidsdi
 --test-output

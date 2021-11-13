@@ -6,6 +6,10 @@ DEFINE_CROSS_PLATFORM_UUIDOF
 DXC_FOURCC
 --file
 um-dxcapi.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/dxcapi
 --test-output

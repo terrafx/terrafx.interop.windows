@@ -9,6 +9,10 @@ MIB_INFO_SIZE_IN_DWORDS
 SIZEOF_BOUNDARY_TABLE
 --file
 shared-Iprtrmib.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/Iprtrmib
 --test-output

@@ -80,6 +80,10 @@ SHRemoveFolderPathFromLibrary
 SHSaveLibraryInFolderPath
 --file
 um-ShObjIdl_core.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/ShObjIdl_core
 --test-output

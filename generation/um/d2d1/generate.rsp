@@ -5,6 +5,10 @@ D2D1CreateFactory<Factory>(D2D1_FACTORY_TYPE, Factory **):HRESULT nothrow
 D2D1CreateFactory<Factory>(D2D1_FACTORY_TYPE, const D2D1_FACTORY_OPTIONS &, Factory **):HRESULT nothrow
 --file
 um-d2d1.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/d2d1
 --test-output

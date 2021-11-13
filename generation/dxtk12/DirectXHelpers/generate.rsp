@@ -2,9 +2,13 @@
 @../../remap.rsp
 --file
 dxtk12-DirectXHelpers.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
-../../../sources/Interop/Windows/dxtk12/DirectXHelpers
+../../../sources/Interop/Windows/DirectX/dxtk12/DirectXHelpers
 --test-output
-../../../tests/Interop/Windows/dxtk12/DirectXHelpers
+../../../tests/Interop/Windows/DirectX/dxtk12/DirectXHelpers
 --traverse
 DirectXHelpers.h

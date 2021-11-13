@@ -2,6 +2,10 @@
 @../../remap.rsp
 --file
 um-mfmediacapture.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/mfmediacapture
 --test-output

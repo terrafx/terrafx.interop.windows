@@ -9,6 +9,10 @@ STATUS_SEVERITY_WARNING
 _HRESULT_TYPEDEF_
 --file
 um-Mferror.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/Mferror
 --test-output

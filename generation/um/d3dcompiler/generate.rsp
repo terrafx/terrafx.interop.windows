@@ -4,6 +4,10 @@
 D3DDisassemble10Effect(struct ID3D10Effect *, UINT, ID3DBlob **):HRESULT
 --file
 um-d3dcompiler.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/d3dcompiler
 --test-output

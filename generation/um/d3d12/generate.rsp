@@ -16,6 +16,10 @@ D3D12_GET_COARSE_SHADING_RATE_Y_AXIS
 D3D12_MAKE_COARSE_SHADING_RATE
 --file
 um-d3d12.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/d3d12
 --test-output

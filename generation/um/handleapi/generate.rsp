@@ -4,6 +4,10 @@
 INVALID_HANDLE_VALUE
 --file
 um-handleapi.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/handleapi
 --test-output

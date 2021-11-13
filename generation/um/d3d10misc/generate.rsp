@@ -2,6 +2,10 @@
 @../../remap.rsp
 --file
 um-d3d10misc.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/d3d10misc
 --test-output

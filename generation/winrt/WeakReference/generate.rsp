@@ -2,11 +2,19 @@
 @../../remap.rsp
 --exclude
 IWeakReference.Resolve<T>(T **):HRESULT
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
 --file
 winrt-WeakReference.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
-../../../sources/Interop/Windows/winrt/WeakReference
+../../../../sources/Interop/Windows/WinRT/winrt/WeakReference
 --test-output
-../../../tests/Interop/Windows/winrt/WeakReference
+../../../../tests/Interop/Windows/WinRT/winrt/WeakReference
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/winrt/WeakReference.h

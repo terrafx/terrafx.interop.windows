@@ -29,6 +29,10 @@ STATUS_PASSWORD_MUST_CHANGE
 STATUS_WRONG_PASSWORD
 --file
 um-wincred.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/wincred
 --test-output

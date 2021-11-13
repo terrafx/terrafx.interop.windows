@@ -4,6 +4,10 @@
 _D3DCOLORVALUE
 --file
 um-dwrite_2.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/dwrite_2
 --test-output

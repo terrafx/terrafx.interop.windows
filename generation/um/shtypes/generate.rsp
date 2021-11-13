@@ -4,6 +4,10 @@
 __unaligned
 --file
 um-shtypes.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/shtypes
 --test-output

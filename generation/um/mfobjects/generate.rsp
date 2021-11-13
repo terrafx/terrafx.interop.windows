@@ -4,6 +4,10 @@
 __MIDL___MIDL_itf_mfobjects_0000_0012_0001
 --file
 um-mfobjects.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/mfobjects
 --test-output

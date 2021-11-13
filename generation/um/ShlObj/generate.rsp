@@ -33,6 +33,10 @@ SHOpenPropSheetA
 SHRunControlPanel
 --file
 um-ShlObj.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/ShlObj
 --test-output

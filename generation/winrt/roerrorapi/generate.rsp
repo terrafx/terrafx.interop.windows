@@ -11,10 +11,18 @@ ABI.Windows.Foundation.Diagnostics.TransformError(HRESULT, HRESULT, HSTRING):BOO
 RoGetMatchingRestrictedErrorInfo(HRESULT, IRestrictedErrorInfo **):HRESULT
 --file
 winrt-roerrorapi.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
-../../../sources/Interop/Windows/winrt/roerrorapi
+../../../../sources/Interop/Windows/WinRT/winrt/roerrorapi
 --test-output
-../../../tests/Interop/Windows/winrt/roerrorapi
+../../../../tests/Interop/Windows/WinRT/winrt/roerrorapi
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/winrt/roerrorapi.h
 --with-attribute

@@ -5,6 +5,10 @@ MAKE_DXGI_HRESULT
 MAKE_DXGI_STATUS
 --file
 shared-dxgitype.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/dxgitype
 --test-output

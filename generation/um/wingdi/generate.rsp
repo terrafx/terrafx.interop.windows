@@ -27,6 +27,10 @@ PALETTERGB
 RGB
 --file
 um-wingdi.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/wingdi
 --test-output

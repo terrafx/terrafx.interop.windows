@@ -70,6 +70,10 @@ STATUS_WAIT_0
 __NTSTATUS_FROM_WIN32
 --file
 shared-ntstatus.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/ntstatus
 --test-output

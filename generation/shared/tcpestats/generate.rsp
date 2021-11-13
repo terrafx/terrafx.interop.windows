@@ -2,6 +2,10 @@
 @../../remap.rsp
 --file
 shared-tcpestats.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/tcpestats
 --test-output

@@ -2,6 +2,10 @@
 @../../remap.rsp
 --file
 shared-tvout.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/tvout
 --test-output

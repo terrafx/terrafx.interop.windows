@@ -4,6 +4,10 @@
 IServiceProvider.QueryService<Q>(const GUID &, Q **):HRESULT
 --file
 um-servprov.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/servprov
 --test-output

@@ -6,6 +6,10 @@ __MIDL___MIDL_itf_mfreadwrite_0000_0001_0002
 __MIDL___MIDL_itf_mfreadwrite_0000_0005_0001
 --file
 um-mfreadwrite.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/mfreadwrite
 --test-output

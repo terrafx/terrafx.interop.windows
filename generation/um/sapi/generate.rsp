@@ -7,6 +7,10 @@ SPRULETRANS_TEXTBUFFER
 SPRULETRANS_WILDCARD
 --file
 um-sapi.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/sapi
 --test-output

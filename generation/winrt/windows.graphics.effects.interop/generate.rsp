@@ -2,9 +2,17 @@
 @../../remap.rsp
 --file
 winrt-windows.graphics.effects.interop.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
-../../../sources/Interop/Windows/winrt/windows.graphics.effects.interop
+../../../../sources/Interop/Windows/WinRT/winrt/windows.graphics.effects.interop
 --test-output
-../../../tests/Interop/Windows/winrt/windows.graphics.effects.interop
+../../../../tests/Interop/Windows/WinRT/winrt/windows.graphics.effects.interop
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/winrt/windows.graphics.effects.interop.h

@@ -64,6 +64,10 @@ _SP_TROUBLESHOOTER_PARAMS_W
 _SP_UNREMOVEDEVICE_PARAMS
 --file
 um-SetupAPI.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/SetupAPI
 --test-output

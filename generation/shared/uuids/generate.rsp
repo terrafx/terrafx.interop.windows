@@ -21,6 +21,10 @@ MEDIASUBTYPE_HASALPHA9
 MEDIASUBTYPE_D3D_DX9_RT
 --file
 shared-uuids.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/uuids
 --test-output

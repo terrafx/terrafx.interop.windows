@@ -2,6 +2,10 @@
 @../../remap.rsp
 --file
 other-d3d12downlevel.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/other/D3D12Downlevel
 --test-output

@@ -7,6 +7,10 @@ D3D_SET_OBJECT_NAME_N_W
 D3D_SET_OBJECT_NAME_W
 --file
 um-d3dcommon.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/d3dcommon
 --test-output

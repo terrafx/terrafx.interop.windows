@@ -4,6 +4,10 @@
 SpatialAudioHrtfActivationParams
 --file
 um-SpatialAudioHrtf.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/SpatialAudioHrtf
 --test-output

@@ -13,10 +13,14 @@ HKEY_PERFORMANCE_NLSTEXT
 HKEY_USERS
 --file
 um-winreg.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
-../../../sources/Interop/Windows/um/winreg
+../../../../sources/Interop/Windows/Windows/um/winreg
 --test-output
-../../../tests/Interop/Windows/um/winreg
+../../../../tests/Interop/Windows/Windows/um/winreg
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winreg.h
 --with-librarypath

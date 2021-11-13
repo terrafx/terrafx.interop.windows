@@ -4,6 +4,10 @@
 DXCoreCreateAdapterFactory<T>(T **):HRESULT
 --file
 um-dxcore.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/um/dxcore
 --test-output

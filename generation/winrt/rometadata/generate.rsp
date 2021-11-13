@@ -2,10 +2,18 @@
 @../../remap.rsp
 --file
 winrt-rometadata.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
 --output
-../../../sources/Interop/Windows/winrt/rometadata
+../../../../sources/Interop/Windows/WinRT/winrt/rometadata
 --test-output
-../../../tests/Interop/Windows/winrt/rometadata
+../../../../tests/Interop/Windows/WinRT/winrt/rometadata
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/winrt/rometadata.h
 --with-librarypath
