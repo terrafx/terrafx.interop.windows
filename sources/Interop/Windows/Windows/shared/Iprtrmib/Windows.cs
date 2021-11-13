@@ -10,39 +10,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define IPRTRMGR_PID 10000")]
         public const int IPRTRMGR_PID = 10000;
 
-        [NativeTypeName("#define IF_NUMBER 0")]
-        public const int IF_NUMBER = 0;
-
-        [NativeTypeName("#define IF_TABLE (IF_NUMBER          + 1)")]
-        public const int IF_TABLE = (0 + 1);
-
-        [NativeTypeName("#define IF_ROW (IF_TABLE           + 1)")]
-        public const int IF_ROW = ((0 + 1) + 1);
-
-        [NativeTypeName("#define IP_STATS (IF_ROW             + 1)")]
-        public const int IP_STATS = (((0 + 1) + 1) + 1);
-
-        [NativeTypeName("#define IP_ADDRTABLE (IP_STATS           + 1)")]
-        public const int IP_ADDRTABLE = ((((0 + 1) + 1) + 1) + 1);
-
-        [NativeTypeName("#define IP_ADDRROW (IP_ADDRTABLE       + 1)")]
-        public const int IP_ADDRROW = (((((0 + 1) + 1) + 1) + 1) + 1);
-
-        [NativeTypeName("#define IP_FORWARDNUMBER (IP_ADDRROW         + 1)")]
-        public const int IP_FORWARDNUMBER = ((((((0 + 1) + 1) + 1) + 1) + 1) + 1);
-
-        [NativeTypeName("#define IP_FORWARDTABLE (IP_FORWARDNUMBER   + 1)")]
-        public const int IP_FORWARDTABLE = (((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1);
-
-        [NativeTypeName("#define IP_FORWARDROW (IP_FORWARDTABLE    + 1)")]
-        public const int IP_FORWARDROW = ((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
-
-        [NativeTypeName("#define IP_NETTABLE (IP_FORWARDROW      + 1)")]
-        public const int IP_NETTABLE = (((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
-
-        [NativeTypeName("#define IP_NETROW (IP_NETTABLE        + 1)")]
-        public const int IP_NETROW = ((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
-
         [NativeTypeName("#define ICMP_STATS (IP_NETROW          + 1)")]
         public const int ICMP_STATS = (((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
 
@@ -84,9 +51,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define MCAST_GLOBAL (MCAST_IF_ENTRY     + 1)")]
         public const int MCAST_GLOBAL = ((((((((((((((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
-
-        [NativeTypeName("#define IF_STATUS (MCAST_GLOBAL       + 1)")]
-        public const int IF_STATUS = (((((((((((((((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
 
         [NativeTypeName("#define MCAST_BOUNDARY (IF_STATUS          + 1)")]
         public const int MCAST_BOUNDARY = ((((((((((((((((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);

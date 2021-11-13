@@ -5,14 +5,8 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static partial class WinError
+    public static partial class MF
     {
-        [NativeTypeName("#define FACILITY_MF 0xD")]
-        public const int FACILITY_MF = 0xD;
-
-        [NativeTypeName("#define FACILITY_MF_WIN32 0x7")]
-        public const int FACILITY_MF_WIN32 = 0x7;
-
         [NativeTypeName("#define MF_E_PLATFORM_NOT_INITIALIZED _HRESULT_TYPEDEF_(0xC00D36B0L)")]
         public const int MF_E_PLATFORM_NOT_INITIALIZED = unchecked((int)(0xC00D36B0));
 

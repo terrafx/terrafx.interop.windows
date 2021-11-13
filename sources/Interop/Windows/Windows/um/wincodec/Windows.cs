@@ -3575,9 +3575,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define GUID_WICPixelFormatUndefined GUID_WICPixelFormatDontCare")]
         public static ref readonly Guid GUID_WICPixelFormatUndefined => ref GUID_WICPixelFormatDontCare;
 
-        [NativeTypeName("#define FACILITY_WINCODEC_ERR 0x898")]
-        public const int FACILITY_WINCODEC_ERR = 0x898;
-
         [NativeTypeName("#define WINCODEC_ERR_BASE 0x2000")]
         public const int WINCODEC_ERR_BASE = 0x2000;
 

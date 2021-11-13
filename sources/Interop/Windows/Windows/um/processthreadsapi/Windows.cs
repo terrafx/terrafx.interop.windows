@@ -331,9 +331,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_REPLACE_VALUE 0x00000001")]
         public const int PROC_THREAD_ATTRIBUTE_REPLACE_VALUE = 0x00000001;
 
-        [NativeTypeName("#define PROCESS_AFFINITY_ENABLE_AUTO_UPDATE 0x00000001UL")]
-        public const uint PROCESS_AFFINITY_ENABLE_AUTO_UPDATE = 0x00000001U;
-
         [NativeTypeName("#define THREAD_POWER_THROTTLING_CURRENT_VERSION 1")]
         public const int THREAD_POWER_THROTTLING_CURRENT_VERSION = 1;
 
@@ -351,20 +348,5 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define PME_FAILFAST_ON_COMMIT_FAIL_ENABLE 0x1")]
         public const int PME_FAILFAST_ON_COMMIT_FAIL_ENABLE = 0x1;
-
-        [NativeTypeName("#define PROCESS_POWER_THROTTLING_CURRENT_VERSION 1")]
-        public const int PROCESS_POWER_THROTTLING_CURRENT_VERSION = 1;
-
-        [NativeTypeName("#define PROCESS_POWER_THROTTLING_EXECUTION_SPEED 0x1")]
-        public const int PROCESS_POWER_THROTTLING_EXECUTION_SPEED = 0x1;
-
-        [NativeTypeName("#define PROCESS_POWER_THROTTLING_VALID_FLAGS (PROCESS_POWER_THROTTLING_EXECUTION_SPEED)")]
-        public const int PROCESS_POWER_THROTTLING_VALID_FLAGS = (0x1);
-
-        [NativeTypeName("#define PROCESS_LEAP_SECOND_INFO_FLAG_ENABLE_SIXTY_SECOND 0x1")]
-        public const int PROCESS_LEAP_SECOND_INFO_FLAG_ENABLE_SIXTY_SECOND = 0x1;
-
-        [NativeTypeName("#define PROCESS_LEAP_SECOND_INFO_VALID_FLAGS (PROCESS_LEAP_SECOND_INFO_FLAG_ENABLE_SIXTY_SECOND)")]
-        public const int PROCESS_LEAP_SECOND_INFO_VALID_FLAGS = (0x1);
     }
 }

@@ -15,12 +15,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define IMAPI2FS_BOOT_ENTRY_COUNT_MAX 32")]
         public const int IMAPI2FS_BOOT_ENTRY_COUNT_MAX = 32;
 
-        [NativeTypeName("#define DISPID_DFILESYSTEMIMAGEEVENTS_UPDATE 0x100")]
-        public const int DISPID_DFILESYSTEMIMAGEEVENTS_UPDATE = 0x100;
-
-        [NativeTypeName("#define DISPID_DFILESYSTEMIMAGEIMPORTEVENTS_UPDATEIMPORT 0x101")]
-        public const int DISPID_DFILESYSTEMIMAGEIMPORTEVENTS_UPDATEIMPORT = 0x101;
-
         [NativeTypeName("#define IMAPI2FS_MajorVersion 1")]
         public const int IMAPI2FS_MajorVersion = 1;
 

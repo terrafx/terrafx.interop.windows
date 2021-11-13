@@ -136,17 +136,5 @@ namespace TerraFX.Interop.Windows
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
-
-        [NativeTypeName("#define DISPID_EVENT_ON_STATE_CHANGED ( 5 )")]
-        public const int DISPID_EVENT_ON_STATE_CHANGED = (5);
-
-        [NativeTypeName("#define DISPID_EVENT_ON_TERMINATION ( 6 )")]
-        public const int DISPID_EVENT_ON_TERMINATION = (6);
-
-        [NativeTypeName("#define DISPID_EVENT_ON_CONTEXT_DATA ( 7 )")]
-        public const int DISPID_EVENT_ON_CONTEXT_DATA = (7);
-
-        [NativeTypeName("#define DISPID_EVENT_ON_SEND_ERROR ( 8 )")]
-        public const int DISPID_EVENT_ON_SEND_ERROR = (8);
     }
 }

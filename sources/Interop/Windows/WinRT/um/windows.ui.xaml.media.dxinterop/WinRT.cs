@@ -12,9 +12,6 @@ namespace TerraFX.Interop.WinRT
 {
     public static partial class WinRT
     {
-        [NativeTypeName("#define E_SURFACE_CONTENTS_LOST 0x802b0020")]
-        public const uint E_SURFACE_CONTENTS_LOST = 0x802b0020;
-
         public static ref readonly Guid IID_ISurfaceImageSourceNative
         {
             get

@@ -33,9 +33,6 @@ namespace TerraFX.Interop.Windows
         [DllImport("url", ExactSpelling = true)]
         public static extern BOOL InetIsOffline([NativeTypeName("DWORD")] uint dwFlags);
 
-        [NativeTypeName("#define E_FLAGS MAKE_SCODE(SEVERITY_ERROR, FACILITY_ITF, 0x1000)")]
-        public const int E_FLAGS = unchecked((int)(((uint)(1) << 31) | ((uint)(4) << 16) | ((uint)(0x1000))));
-
         [NativeTypeName("#define IS_E_EXEC_FAILED MAKE_SCODE(SEVERITY_ERROR, FACILITY_ITF, 0x2002)")]
         public const int IS_E_EXEC_FAILED = unchecked((int)(((uint)(1) << 31) | ((uint)(4) << 16) | ((uint)(0x2002))));
 

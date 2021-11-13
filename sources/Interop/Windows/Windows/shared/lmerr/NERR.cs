@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static partial class WinError
+    public static partial class NERR
     {
         [NativeTypeName("#define NERR_Success 0")]
         public const int NERR_Success = 0;
@@ -1005,8 +1005,5 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define NERR_CannotUnjoinAadDomain (NERR_BASE + 627)")]
         public const int NERR_CannotUnjoinAadDomain = (2100 + 627);
-
-        [NativeTypeName("#define MAX_NERR (NERR_BASE+899)")]
-        public const int MAX_NERR = (2100 + 899);
     }
 }

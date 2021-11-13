@@ -1299,18 +1299,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define SID_SNavigationPane IID_INameSpaceTreeControl")]
         public static ref readonly Guid SID_SNavigationPane => ref IID_INameSpaceTreeControl;
 
-        [NativeTypeName("#define E_PREVIEWHANDLER_DRM_FAIL _HRESULT_TYPEDEF_(0x86420001L)")]
-        public const int E_PREVIEWHANDLER_DRM_FAIL = unchecked((int)(0x86420001));
-
-        [NativeTypeName("#define E_PREVIEWHANDLER_NOAUTH _HRESULT_TYPEDEF_(0x86420002L)")]
-        public const int E_PREVIEWHANDLER_NOAUTH = unchecked((int)(0x86420002));
-
-        [NativeTypeName("#define E_PREVIEWHANDLER_NOTFOUND _HRESULT_TYPEDEF_(0x86420003L)")]
-        public const int E_PREVIEWHANDLER_NOTFOUND = unchecked((int)(0x86420003));
-
-        [NativeTypeName("#define E_PREVIEWHANDLER_CORRUPT _HRESULT_TYPEDEF_(0x86420004L)")]
-        public const int E_PREVIEWHANDLER_CORRUPT = unchecked((int)(0x86420004));
-
         [NativeTypeName("#define SID_ExplorerPaneVisibility IID_IExplorerPaneVisibility")]
         public static ref readonly Guid SID_ExplorerPaneVisibility => ref IID_IExplorerPaneVisibility;
 

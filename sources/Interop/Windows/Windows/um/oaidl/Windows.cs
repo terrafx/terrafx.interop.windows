@@ -99,30 +99,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define IMPLTYPEFLAG_FDEFAULTVTABLE ( 0x8 )")]
         public const int IMPLTYPEFLAG_FDEFAULTVTABLE = (0x8);
 
-        [NativeTypeName("#define DISPID_UNKNOWN ( -1 )")]
-        public const int DISPID_UNKNOWN = (-1);
-
-        [NativeTypeName("#define DISPID_VALUE ( 0 )")]
-        public const int DISPID_VALUE = (0);
-
-        [NativeTypeName("#define DISPID_PROPERTYPUT ( -3 )")]
-        public const int DISPID_PROPERTYPUT = (-3);
-
-        [NativeTypeName("#define DISPID_NEWENUM ( -4 )")]
-        public const int DISPID_NEWENUM = (-4);
-
-        [NativeTypeName("#define DISPID_EVALUATE ( -5 )")]
-        public const int DISPID_EVALUATE = (-5);
-
-        [NativeTypeName("#define DISPID_CONSTRUCTOR ( -6 )")]
-        public const int DISPID_CONSTRUCTOR = (-6);
-
-        [NativeTypeName("#define DISPID_DESTRUCTOR ( -7 )")]
-        public const int DISPID_DESTRUCTOR = (-7);
-
-        [NativeTypeName("#define DISPID_COLLECT ( -8 )")]
-        public const int DISPID_COLLECT = (-8);
-
         public static ref readonly Guid IID_ICreateTypeInfo
         {
             get

@@ -13,9 +13,6 @@ namespace TerraFX.Interop.DirectX
 {
     public static partial class DirectX
     {
-        [NativeTypeName("#define FACILITY_XAPO 0x897")]
-        public const int FACILITY_XAPO = 0x897;
-
         [NativeTypeName("#define XAPO_E_FORMAT_UNSUPPORTED MAKE_HRESULT(SEVERITY_ERROR, FACILITY_XAPO, 0x01)")]
         public const int XAPO_E_FORMAT_UNSUPPORTED = unchecked((int)(((uint)(1) << 31) | ((uint)(0x897) << 16) | ((uint)(0x01))));
 

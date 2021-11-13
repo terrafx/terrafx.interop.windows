@@ -9,7 +9,6 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.EndpointFormFactor;
-using static TerraFX.Interop.Windows.WinError;
 
 namespace TerraFX.Interop.Windows
 {
@@ -534,12 +533,6 @@ namespace TerraFX.Interop.Windows
         [SupportedOSPlatform("windows8.0")]
         [DllImport("mmdevapi", ExactSpelling = true)]
         public static extern HRESULT ActivateAudioInterfaceAsync([NativeTypeName("LPCWSTR")] ushort* deviceInterfacePath, [NativeTypeName("const IID &")] Guid* riid, PROPVARIANT* activationParams, IActivateAudioInterfaceCompletionHandler* completionHandler, IActivateAudioInterfaceAsyncOperation** activationOperation);
-
-        [NativeTypeName("#define E_NOTFOUND HRESULT_FROM_WIN32(ERROR_NOT_FOUND)")]
-        public static HRESULT E_NOTFOUND => HRESULT_FROM_WIN32(1168);
-
-        [NativeTypeName("#define E_UNSUPPORTED_TYPE HRESULT_FROM_WIN32(ERROR_UNSUPPORTED_TYPE)")]
-        public static HRESULT E_UNSUPPORTED_TYPE => HRESULT_FROM_WIN32(1630);
 
         [NativeTypeName("#define DEVICE_STATE_ACTIVE 0x00000001")]
         public const int DEVICE_STATE_ACTIVE = 0x00000001;

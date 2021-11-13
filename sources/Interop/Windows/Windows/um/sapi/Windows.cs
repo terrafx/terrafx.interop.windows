@@ -12,7 +12,7 @@ using static TerraFX.Interop.Windows.SPPHRASERNG;
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class Windows
+    public static partial class Windows
     {
         [NativeTypeName("const float")]
         public const float Speech_Default_Weight = (1);
@@ -179,26 +179,8 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define SPREG_SAFE_USER_TOKENS L\"HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Speech\\\\UserTokens\"")]
         public const string SPREG_SAFE_USER_TOKENS = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\UserTokens";
 
-        [NativeTypeName("#define SP_LOW_CONFIDENCE ( -1 )")]
-        public const int SP_LOW_CONFIDENCE = (-1);
-
-        [NativeTypeName("#define SP_NORMAL_CONFIDENCE ( 0 )")]
-        public const int SP_NORMAL_CONFIDENCE = (0);
-
-        [NativeTypeName("#define SP_HIGH_CONFIDENCE ( +1 )")]
-        public const int SP_HIGH_CONFIDENCE = (+1);
-
         [NativeTypeName("#define DEFAULT_WEIGHT ( 1 )")]
         public const int DEFAULT_WEIGHT = (1);
-
-        [NativeTypeName("#define SP_MAX_WORD_LENGTH ( 128 )")]
-        public const int SP_MAX_WORD_LENGTH = (128);
-
-        [NativeTypeName("#define SP_MAX_PRON_LENGTH ( 384 )")]
-        public const int SP_MAX_PRON_LENGTH = (384);
-
-        [NativeTypeName("#define SP_EMULATE_RESULT ( 0x40000000 )")]
-        public const int SP_EMULATE_RESULT = (0x40000000);
 
         [NativeTypeName("#define SPFEI_FLAGCHECK ( (1ui64 << SPEI_RESERVED1) | (1ui64 << SPEI_RESERVED2) )")]
         public const ulong SPFEI_FLAGCHECK = ((1UL << (int)(SPEI_RESERVED1)) | (1UL << (int)(SPEI_RESERVED2)));
@@ -212,29 +194,11 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define SPFEI_ALL_EVENTS 0xEFFFFFFFFFFFFFFFui64")]
         public const ulong SPFEI_ALL_EVENTS = 0xEFFFFFFFFFFFFFFFUL;
 
-        [NativeTypeName("#define SP_SPPHRASESIZE_500 sizeof(SPPHRASE_50)")]
-        public static uint SP_SPPHRASESIZE_500 => unchecked((uint)((uint)(sizeof(SPPHRASE_50))));
-
-        [NativeTypeName("#define SP_SPPHRASESIZE_530 sizeof(SPPHRASE_53)")]
-        public static uint SP_SPPHRASESIZE_530 => unchecked((uint)((uint)(sizeof(SPPHRASE_53))));
-
-        [NativeTypeName("#define SP_GETWHOLEPHRASE SPPR_ALL_ELEMENTS")]
-        public const SPPHRASERNG SP_GETWHOLEPHRASE = SPPR_ALL_ELEMENTS;
-
         [NativeTypeName("#define SPRR_ALL_ELEMENTS SPPR_ALL_ELEMENTS")]
         public const SPPHRASERNG SPRR_ALL_ELEMENTS = SPPR_ALL_ELEMENTS;
 
-        [NativeTypeName("#define SP_STREAMPOS_ASAP ( 0 )")]
-        public const int SP_STREAMPOS_ASAP = (0);
-
-        [NativeTypeName("#define SP_STREAMPOS_REALTIME ( -1 )")]
-        public const int SP_STREAMPOS_REALTIME = (-1);
-
         [NativeTypeName("#define SPRP_NORMAL 0")]
         public const int SPRP_NORMAL = 0;
-
-        [NativeTypeName("#define SP_MAX_LANGIDS ( 20 )")]
-        public const int SP_MAX_LANGIDS = (20);
 
         public static ref readonly Guid IID_ISpNotifySource
         {

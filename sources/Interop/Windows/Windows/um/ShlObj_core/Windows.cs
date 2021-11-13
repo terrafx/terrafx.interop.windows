@@ -1406,15 +1406,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define PCS_PATHTOOLONG 0x00000008")]
         public const int PCS_PATHTOOLONG = 0x00000008;
 
-        [NativeTypeName("#define MM_ADDSEPARATOR 0x00000001L")]
-        public const int MM_ADDSEPARATOR = 0x00000001;
-
-        [NativeTypeName("#define MM_SUBMENUSHAVEIDS 0x00000002L")]
-        public const int MM_SUBMENUSHAVEIDS = 0x00000002;
-
-        [NativeTypeName("#define MM_DONTREMOVESEPS 0x00000004L")]
-        public const int MM_DONTREMOVESEPS = 0x00000004;
-
         [NativeTypeName("#define SHOP_PRINTERNAME 0x00000001")]
         public const int SHOP_PRINTERNAME = 0x00000001;
 

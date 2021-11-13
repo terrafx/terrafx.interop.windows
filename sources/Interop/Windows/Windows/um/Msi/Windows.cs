@@ -877,8 +877,5 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define MsiBeginTransaction MsiBeginTransactionW")]
         public static delegate*<ushort*, uint, MSIHANDLE*, HANDLE*, uint> MsiBeginTransaction => &MsiBeginTransactionW;
-
-        [NativeTypeName("#define ERROR_ROLLBACK_DISABLED 1653L")]
-        public const int ERROR_ROLLBACK_DISABLED = 1653;
     }
 }

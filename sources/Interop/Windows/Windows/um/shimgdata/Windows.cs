@@ -27,9 +27,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define SHIMGDEC_LOADFULL 0x00000002")]
         public const int SHIMGDEC_LOADFULL = 0x00000002;
 
-        [NativeTypeName("#define E_NOTVALIDFORANIMATEDIMAGE MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x01)")]
-        public const int E_NOTVALIDFORANIMATEDIMAGE = unchecked((int)(((uint)(1) << 31) | ((uint)(4) << 16) | ((uint)(0x01))));
-
         public static ref readonly Guid IID_IShellImageDataFactory
         {
             get

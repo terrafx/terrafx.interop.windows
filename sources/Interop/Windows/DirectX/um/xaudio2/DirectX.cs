@@ -155,9 +155,6 @@ namespace TerraFX.Interop.DirectX
         [NativeTypeName("#define XAUDIO2_QUANTUM_MS (1000.0f * XAUDIO2_QUANTUM_NUMERATOR / XAUDIO2_QUANTUM_DENOMINATOR)")]
         public const float XAUDIO2_QUANTUM_MS = (1000.0f * 1 / 100);
 
-        [NativeTypeName("#define FACILITY_XAUDIO2 0x896")]
-        public const int FACILITY_XAUDIO2 = 0x896;
-
         [NativeTypeName("#define XAUDIO2_E_INVALID_CALL ((HRESULT)0x88960001)")]
         public const int XAUDIO2_E_INVALID_CALL = unchecked((int)(0x88960001));
 

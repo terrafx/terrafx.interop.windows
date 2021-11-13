@@ -451,9 +451,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define CRED_TI_VALID_FLAGS 0xF07F")]
         public const int CRED_TI_VALID_FLAGS = 0xF07F;
 
-        [NativeTypeName("#define CERT_HASH_LENGTH 20")]
-        public const int CERT_HASH_LENGTH = 20;
-
         [NativeTypeName("#define CRED_PACK_PROTECTED_CREDENTIALS 0x1")]
         public const int CRED_PACK_PROTECTED_CREDENTIALS = 0x1;
 

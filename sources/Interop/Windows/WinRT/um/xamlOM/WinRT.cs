@@ -18,9 +18,6 @@ namespace TerraFX.Interop.WinRT
         [DllImport("windows.ui.xaml.dll", ExactSpelling = true)]
         public static extern HRESULT InitializeXamlDiagnosticsEx([NativeTypeName("LPCWSTR")] ushort* endPointName, [NativeTypeName("DWORD")] uint pid, [NativeTypeName("LPCWSTR")] ushort* wszDllXamlDiagnostics, [NativeTypeName("LPCWSTR")] ushort* wszTAPDllName, [NativeTypeName("CLSID")] Guid tapClsid, [NativeTypeName("LPCWSTR")] ushort* wszInitializationData);
 
-        [NativeTypeName("#define E_UNKNOWNTYPE MAKE_HRESULT(SEVERITY_ERROR, FACILITY_XAML, 40L)")]
-        public const int E_UNKNOWNTYPE = unchecked((int)(((uint)(1) << 31) | ((uint)(43) << 16) | ((uint)(40))));
-
         public static ref readonly Guid IID_IVisualTreeServiceCallback
         {
             get
