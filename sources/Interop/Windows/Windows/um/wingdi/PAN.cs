@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class PAN
+    public static partial class PAN
     {
         [NativeTypeName("#define PAN_FAMILYTYPE_INDEX 0")]
         public const int PAN_FAMILYTYPE_INDEX = 0;

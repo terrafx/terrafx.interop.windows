@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class TPM
+    public static partial class TPM
     {
         [NativeTypeName("#define TPM_WNF_INFO_CLEAR_SUCCESSFUL 0x00000001")]
         public const int TPM_WNF_INFO_CLEAR_SUCCESSFUL = 0x00000001;

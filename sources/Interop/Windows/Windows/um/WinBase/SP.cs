@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class SP
+    public static partial class SP
     {
         [NativeTypeName("#define SP_SERIALCOMM ((DWORD)0x00000001)")]
         public const uint SP_SERIALCOMM = ((uint)(0x00000001));

@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class LANG
+    public static partial class LANG
     {
         [NativeTypeName("#define LANG_NEUTRAL 0x00")]
         public const int LANG_NEUTRAL = 0x00;

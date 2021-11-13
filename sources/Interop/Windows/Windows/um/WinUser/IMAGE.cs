@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class IMAGE
+    public static partial class IMAGE
     {
         [NativeTypeName("#define IMAGE_BITMAP 0")]
         public const int IMAGE_BITMAP = 0;

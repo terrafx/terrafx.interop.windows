@@ -38,31 +38,6 @@ namespace TerraFX.Interop.Windows
         }
 
         [NativeTypeName("const IID")]
-        public static ref readonly Guid IID_IRendezvousSession
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xDD, 0xB1, 0xA4, 0x9B,
-                    0x0C, 0x8B,
-                    0xB7, 0x48,
-                    0x9E,
-                    0x7C,
-                    0x2F,
-                    0x25,
-                    0x85,
-                    0x7C,
-                    0x8D,
-                    0xF5
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        [NativeTypeName("const IID")]
         public static ref readonly Guid DIID_DRendezvousSessionEvents
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -80,56 +55,6 @@ namespace TerraFX.Interop.Windows
                     0x06,
                     0xEC,
                     0xA6
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        [NativeTypeName("const IID")]
-        public static ref readonly Guid IID_IRendezvousApplication
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x0B, 0x07, 0x4D, 0x4F,
-                    0x75, 0xA2,
-                    0xFB, 0x49,
-                    0xB1,
-                    0x0D,
-                    0x8E,
-                    0xC2,
-                    0x63,
-                    0x87,
-                    0xB5,
-                    0x0D
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        [NativeTypeName("const CLSID")]
-        public static ref readonly Guid CLSID_RendezvousApplication
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x9A, 0x01, 0x7E, 0x0B,
-                    0xDE, 0xB5,
-                    0xFA, 0x47,
-                    0x89,
-                    0x66,
-                    0x90,
-                    0x82,
-                    0xF8,
-                    0x2F,
-                    0xB1,
-                    0x92
                 };
 
                 Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class SP
+    public static partial class SP
     {
         [NativeTypeName("#define SP_MAX_MACHINENAME_LENGTH (MAX_PATH + 3)")]
         public const int SP_MAX_MACHINENAME_LENGTH = (260 + 3);

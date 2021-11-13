@@ -4,8 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows
@@ -288,51 +286,5 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define SFVM_SETPOINTS 0x00000017")]
         public const int SFVM_SETPOINTS = 0x00000017;
-
-        public static ref readonly Guid IID_IDeskBarClient
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x75, 0xE1, 0x0F, 0xEB,
-                    0x3A, 0x1A,
-                    0xD0, 0x11,
-                    0x89,
-                    0xB3,
-                    0x00,
-                    0xA0,
-                    0xC9,
-                    0x0A,
-                    0x90,
-                    0xAC
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IInitializeObject
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x16, 0xAD, 0x22, 0x46,
-                    0x23, 0xFF,
-                    0xD0, 0x11,
-                    0x8D,
-                    0x34,
-                    0x00,
-                    0xA0,
-                    0xC9,
-                    0x0F,
-                    0x27,
-                    0x19
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
     }
 }

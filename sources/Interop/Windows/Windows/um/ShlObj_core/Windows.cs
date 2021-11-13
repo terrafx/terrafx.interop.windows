@@ -4,8 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.SHARD;
 
@@ -1930,28 +1928,5 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define SHCreateFileExtractIcon SHCreateFileExtractIconW")]
         public static delegate*<ushort*, uint, Guid*, void**, HRESULT> SHCreateFileExtractIcon => &SHCreateFileExtractIconW;
-
-        public static ref readonly Guid IID_IShellFolderView
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xC0, 0x78, 0xA3, 0x37,
-                    0x2D, 0xF8,
-                    0xCE, 0x11,
-                    0xAE,
-                    0x65,
-                    0x08,
-                    0x00,
-                    0x2B,
-                    0x2E,
-                    0x12,
-                    0x62
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
     }
 }

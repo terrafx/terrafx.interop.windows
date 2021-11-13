@@ -7,7 +7,7 @@ using static TerraFX.Interop.Windows.SECURITY_IMPERSONATION_LEVEL;
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class SECURITY
+    public static partial class SECURITY
     {
         [NativeTypeName("#define SECURITY_ANONYMOUS ( SecurityAnonymous      << 16 )")]
         public const int SECURITY_ANONYMOUS = ((int)(SecurityAnonymous) << 16);

@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class ERROR
+    public static partial class ERROR
     {
         [NativeTypeName("#define ERROR_SEVERITY_SUCCESS 0x00000000")]
         public const int ERROR_SEVERITY_SUCCESS = 0x00000000;

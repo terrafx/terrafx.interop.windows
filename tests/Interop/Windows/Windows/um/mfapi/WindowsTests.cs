@@ -1642,12 +1642,5 @@ namespace TerraFX.Interop.Windows.UnitTests
         {
             Assert.That(MFMediaType_Metadata, Is.EqualTo(new Guid(0x2c8fa20c, 0x82bb, 0x4782, 0x90, 0xa0, 0x98, 0xa2, 0xa5, 0xbd, 0x8e, 0xf8)));
         }
-
-        /// <summary>Validates that the value of the <see cref="CLSID_MFSourceResolver" /> property is correct.</summary>
-        [Test]
-        public static void CLSID_MFSourceResolverTest()
-        {
-            Assert.That(CLSID_MFSourceResolver, Is.EqualTo(new Guid(0x90eab60f, 0xe43a, 0x4188, 0xbc, 0xc4, 0xe4, 0x7f, 0xdf, 0x04, 0x86, 0x8c)));
-        }
     }
 }

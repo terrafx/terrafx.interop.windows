@@ -6,7 +6,6 @@
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.DirectX.D3D_ROOT_SIGNATURE_VERSION;
 using static TerraFX.Interop.Windows.Windows;
-using static TerraFX.Interop.Windows.WinError;
 
 namespace TerraFX.Interop.DirectX
 {

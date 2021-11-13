@@ -85,8 +85,7 @@ namespace TerraFX.Interop.DirectX
 
         public static HRESULT D3D12ReflectLibrary(void* pSrcData, nuint SrcDataSize, ID3D12LibraryReflection** ppReflector)
         {
-            var iid = IID_ID3D12LibraryReflection;
-            return D3DReflectLibrary(pSrcData, SrcDataSize, &iid, (void**)ppReflector);
+            return D3DReflectLibrary(pSrcData, SrcDataSize, __uuidof<ID3D12LibraryReflection>(), (void**)ppReflector);
         }
 
         public static HRESULT D3D_SET_OBJECT_NAME_N_A(ID3D12Object* pObject, uint Chars, sbyte* pName)

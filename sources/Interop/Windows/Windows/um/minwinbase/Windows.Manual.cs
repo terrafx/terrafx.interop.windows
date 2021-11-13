@@ -3,7 +3,7 @@
 // Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using static TerraFX.Interop.Windows.WinError;
+using static TerraFX.Interop.Windows.STATUS;
 
 namespace TerraFX.Interop.Windows
 {

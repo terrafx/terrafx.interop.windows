@@ -3,11 +3,6 @@
 // Ported from um/PropIdlBase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-
 namespace TerraFX.Interop.Windows
 {
     public static partial class Windows
@@ -74,97 +69,5 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define PROPSETHDR_OSVERSION_UNKNOWN 0xFFFFFFFF")]
         public const uint PROPSETHDR_OSVERSION_UNKNOWN = 0xFFFFFFFF;
-
-        public static ref readonly Guid IID_IPropertyStorage
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x38, 0x01, 0x00, 0x00,
-                    0x00, 0x00,
-                    0x00, 0x00,
-                    0xC0,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x46
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IPropertySetStorage
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x3A, 0x01, 0x00, 0x00,
-                    0x00, 0x00,
-                    0x00, 0x00,
-                    0xC0,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x46
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IEnumSTATPROPSTG
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x39, 0x01, 0x00, 0x00,
-                    0x00, 0x00,
-                    0x00, 0x00,
-                    0xC0,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x46
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IEnumSTATPROPSETSTG
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x3B, 0x01, 0x00, 0x00,
-                    0x00, 0x00,
-                    0x00, 0x00,
-                    0xC0,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x46
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
     }
 }

@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class LVM
+    public static partial class LVM
     {
         [NativeTypeName("#define LVM_FIRST 0x1000")]
         public const int LVM_FIRST = 0x1000;

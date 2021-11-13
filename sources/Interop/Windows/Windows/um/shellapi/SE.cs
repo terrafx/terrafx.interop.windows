@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class SE
+    public static partial class SE
     {
         [NativeTypeName("#define SE_ERR_FNF 2")]
         public const int SE_ERR_FNF = 2;

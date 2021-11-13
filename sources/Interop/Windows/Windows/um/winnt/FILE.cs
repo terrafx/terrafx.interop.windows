@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class FILE
+    public static partial class FILE
     {
         [NativeTypeName("#define FILE_READ_DATA ( 0x0001 )")]
         public const int FILE_READ_DATA = (0x0001);

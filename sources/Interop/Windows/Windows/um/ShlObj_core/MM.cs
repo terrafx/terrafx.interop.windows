@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class MM
+    public static partial class MM
     {
         [NativeTypeName("#define MM_ADDSEPARATOR 0x00000001L")]
         public const int MM_ADDSEPARATOR = 0x00000001;

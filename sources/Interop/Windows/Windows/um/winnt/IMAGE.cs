@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class IMAGE
+    public static partial class IMAGE
     {
         [NativeTypeName("#define IMAGE_DOS_SIGNATURE 0x5A4D")]
         public const int IMAGE_DOS_SIGNATURE = 0x5A4D;

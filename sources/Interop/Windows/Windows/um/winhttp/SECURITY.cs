@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class SECURITY
+    public static partial class SECURITY
     {
         [NativeTypeName("#define SECURITY_FLAG_IGNORE_UNKNOWN_CA 0x00000100")]
         public const int SECURITY_FLAG_IGNORE_UNKNOWN_CA = 0x00000100;

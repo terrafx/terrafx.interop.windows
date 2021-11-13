@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class WM
+    public static partial class WM
     {
         [NativeTypeName("#define WM_NULL 0x0000")]
         public const int WM_NULL = 0x0000;

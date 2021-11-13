@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class FILE
+    public static partial class FILE
     {
         [NativeTypeName("#define FILE_COMPRESSION_NONE 0")]
         public const int FILE_COMPRESSION_NONE = 0;

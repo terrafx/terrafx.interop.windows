@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 using TerraFX.Interop.DirectX;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.Windows.Windows;
-using static TerraFX.Interop.Windows.WinError;
 
 namespace TerraFX.Interop.WinRT
 {
@@ -25,8 +24,7 @@ namespace TerraFX.Interop.WinRT
         {
             IDirect3DDxgiInterfaceAccess* dxgiInterfaceAccess;
 
-            var dxgi_iid = IID_IDirect3DDxgiInterfaceAccess;
-            HRESULT hr = @object->QueryInterface(&dxgi_iid, (void**) &dxgiInterfaceAccess);
+            HRESULT hr = @object->QueryInterface(__uuidof<IDirect3DDxgiInterfaceAccess>(), (void**) &dxgiInterfaceAccess);
 
             if (SUCCEEDED(hr))
             {

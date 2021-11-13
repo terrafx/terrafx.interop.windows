@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class ERROR
+    public static partial class ERROR
     {
         [NativeTypeName("#define ERROR_HISTORY_DIRECTORY_ENTRY_DEFAULT_COUNT 8")]
         public const int ERROR_HISTORY_DIRECTORY_ENTRY_DEFAULT_COUNT = 8;

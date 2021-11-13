@@ -4,7 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
-using static TerraFX.Interop.Windows.WinError;
+using static TerraFX.Interop.Windows.FACILITY;
 
 namespace TerraFX.Interop.Windows
 {

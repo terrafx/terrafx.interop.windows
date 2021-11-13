@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class FILE
+    public static partial class FILE
     {
         [NativeTypeName("#define FILE_DEVICE_BEEP 0x00000001")]
         public const int FILE_DEVICE_BEEP = 0x00000001;

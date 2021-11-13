@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class E
+    public static partial class E
     {
         [NativeTypeName("#define E_PREVIEWHANDLER_DRM_FAIL _HRESULT_TYPEDEF_(0x86420001L)")]
         public const int E_PREVIEWHANDLER_DRM_FAIL = unchecked((int)(0x86420001));

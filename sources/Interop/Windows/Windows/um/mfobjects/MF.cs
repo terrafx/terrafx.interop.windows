@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class MF
+    public static partial class MF
     {
         [NativeTypeName("const IID")]
         public static ref readonly Guid MF_BYTESTREAM_ORIGIN_NAME

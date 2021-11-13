@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class FILE
+    public static partial class FILE
     {
         [NativeTypeName("#define FILE_MAP_WRITE SECTION_MAP_WRITE")]
         public const int FILE_MAP_WRITE = 0x0002;

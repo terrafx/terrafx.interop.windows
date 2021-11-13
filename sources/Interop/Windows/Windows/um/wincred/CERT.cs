@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class CERT
+    public static partial class CERT
     {
         [NativeTypeName("#define CERT_HASH_LENGTH 20")]
         public const int CERT_HASH_LENGTH = 20;

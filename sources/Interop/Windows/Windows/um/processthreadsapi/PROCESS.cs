@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class PROCESS
+    public static partial class PROCESS
     {
         [NativeTypeName("#define PROCESS_AFFINITY_ENABLE_AUTO_UPDATE 0x00000001UL")]
         public const uint PROCESS_AFFINITY_ENABLE_AUTO_UPDATE = 0x00000001U;

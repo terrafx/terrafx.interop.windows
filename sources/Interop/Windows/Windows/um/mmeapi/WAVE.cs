@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class WAVE
+    public static partial class WAVE
     {
         [NativeTypeName("#define WAVE_MAPPER ((UINT)-1)")]
         public const uint WAVE_MAPPER = unchecked((uint)(-1));

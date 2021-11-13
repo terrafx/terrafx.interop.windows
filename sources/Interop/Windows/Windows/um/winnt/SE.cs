@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class SE
+    public static partial class SE
     {
         [NativeTypeName("#define SE_GROUP_MANDATORY (0x00000001L)")]
         public const int SE_GROUP_MANDATORY = (0x00000001);

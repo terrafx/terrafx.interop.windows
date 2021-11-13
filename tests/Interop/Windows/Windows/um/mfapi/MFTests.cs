@@ -5,13 +5,12 @@
 
 using NUnit.Framework;
 using System;
-using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.Windows;
+using static TerraFX.Interop.Windows.MF;
 
 namespace TerraFX.Interop.Windows.UnitTests
 {
     /// <summary>Provides validation of the <see cref="MF" /> class.</summary>
-    public static unsafe partial class MFTests
+    public static partial class MFTests
     {
         /// <summary>Validates that the value of the <see cref="MF_EVENT_SESSIONCAPS" /> property is correct.</summary>
         [Test]

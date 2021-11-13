@@ -115,9 +115,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             psoDesc.RTVFormats[0] = DXGI_FORMAT_R8G8B8A8_UNORM;
 
             ID3D12PipelineState* pipelineState;
-
-            var iid = IID_ID3D12PipelineState;
-            ThrowIfFailed(D3DDevice->CreateGraphicsPipelineState(&psoDesc, &iid, (void**)&pipelineState));
+            ThrowIfFailed(D3DDevice->CreateGraphicsPipelineState(&psoDesc, __uuidof<ID3D12PipelineState>(), (void**)&pipelineState));
 
             return pipelineState;
         }
@@ -134,9 +132,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             ThrowIfFailed(D3D12SerializeRootSignature(&rootSignatureDesc, D3D_ROOT_SIGNATURE_VERSION_1, signature.GetAddressOf(), error.GetAddressOf()));
 
             ID3D12RootSignature* rootSignature;
-
-            var iid = IID_ID3D12RootSignature;
-            ThrowIfFailed(D3DDevice->CreateRootSignature(nodeMask: 0, signature.Get()->GetBufferPointer(), signature.Get()->GetBufferSize(), &iid, (void**)&rootSignature));
+            ThrowIfFailed(D3DDevice->CreateRootSignature(nodeMask: 0, signature.Get()->GetBufferPointer(), signature.Get()->GetBufferSize(), __uuidof<ID3D12RootSignature>(), (void**)&rootSignature));
 
             return rootSignature;
         }
@@ -171,14 +167,13 @@ namespace TerraFX.Samples.DirectX.D3D12
             var heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
             var bufferDesc = D3D12_RESOURCE_DESC.Buffer(vertexBufferSize);
 
-            var iid = IID_ID3D12Resource;
             ThrowIfFailed(D3DDevice->CreateCommittedResource(
                 &heapProperties,
                 D3D12_HEAP_FLAG_NONE,
                 &bufferDesc,
                 D3D12_RESOURCE_STATE_GENERIC_READ,
                 pOptimizedClearValue: null,
-                &iid,
+                __uuidof<ID3D12Resource>(),
                 (void**)&vertexBuffer
             ));
 

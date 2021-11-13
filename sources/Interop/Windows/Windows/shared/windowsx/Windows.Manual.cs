@@ -3,6 +3,10 @@
 // Ported from shared/windowsx.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using static TerraFX.Interop.Windows.MF;
+using static TerraFX.Interop.Windows.VK;
+using static TerraFX.Interop.Windows.WM;
+
 namespace TerraFX.Interop.Windows
 {
     public static unsafe partial class Windows

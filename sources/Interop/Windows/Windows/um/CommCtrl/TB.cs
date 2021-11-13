@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class TB
+    public static partial class TB
     {
         [NativeTypeName("#define TB_ENABLEBUTTON (WM_USER + 1)")]
         public const int TB_ENABLEBUTTON = (0x0400 + 1);

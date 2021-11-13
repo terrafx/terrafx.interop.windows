@@ -3,9 +3,9 @@
 // Ported from um/Xinput.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class VK
+    public static partial class VK
     {
         [NativeTypeName("#define VK_PAD_A 0x5800")]
         public const int VK_PAD_A = 0x5800;

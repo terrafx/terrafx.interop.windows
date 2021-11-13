@@ -7,7 +7,7 @@ using static TerraFX.Interop.Windows.SPPHRASERNG;
 
 namespace TerraFX.Interop.Windows
 {
-    public static partial class SP
+    public static unsafe partial class SP
     {
         [NativeTypeName("#define SP_LOW_CONFIDENCE ( -1 )")]
         public const int SP_LOW_CONFIDENCE = (-1);

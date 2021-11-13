@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class ERROR
+    public static partial class ERROR
     {
         [NativeTypeName("#define ERROR_WINHTTP_OUT_OF_HANDLES (WINHTTP_ERROR_BASE + 1)")]
         public const int ERROR_WINHTTP_OUT_OF_HANDLES = (12000 + 1);

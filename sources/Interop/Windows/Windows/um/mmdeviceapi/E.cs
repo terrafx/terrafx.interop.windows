@@ -7,7 +7,7 @@ using static TerraFX.Interop.Windows.Windows;
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class E
+    public static partial class E
     {
         [NativeTypeName("#define E_NOTFOUND HRESULT_FROM_WIN32(ERROR_NOT_FOUND)")]
         public static HRESULT E_NOTFOUND => HRESULT_FROM_WIN32(1168);

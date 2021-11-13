@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class SECURITY
+    public static partial class SECURITY
     {
         [NativeTypeName("#define SECURITY_IE_STATE_GREEN 0x00000000")]
         public const int SECURITY_IE_STATE_GREEN = 0x00000000;

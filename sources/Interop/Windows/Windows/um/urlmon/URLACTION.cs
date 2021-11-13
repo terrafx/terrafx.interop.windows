@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class URLACTION
+    public static partial class URLACTION
     {
         [NativeTypeName("#define URLACTION_MIN 0x00001000")]
         public const int URLACTION_MIN = 0x00001000;

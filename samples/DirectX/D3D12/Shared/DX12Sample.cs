@@ -153,9 +153,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             resourceDesc.Flags |= D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL;
 
             var clearValue = new D3D12_CLEAR_VALUE(DepthBufferFormat, 1.0f, 0);
-
-            var iid = IID_ID3D12Resource;
-            ThrowIfFailed(D3DDevice->CreateCommittedResource(&heapProperties, D3D12_HEAP_FLAG_NONE, &resourceDesc, D3D12_RESOURCE_STATE_DEPTH_WRITE, &clearValue, &iid, (void**)&depthStencil));
+            ThrowIfFailed(D3DDevice->CreateCommittedResource(&heapProperties, D3D12_HEAP_FLAG_NONE, &resourceDesc, D3D12_RESOURCE_STATE_DEPTH_WRITE, &clearValue, __uuidof<ID3D12Resource>(), (void**)&depthStencil));
 
             var dsvDesc = new D3D12_DEPTH_STENCIL_VIEW_DESC {
                 Format = DepthBufferFormat,
@@ -179,9 +177,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 };
 
                 ID3D12DescriptorHeap* dsvHeap;
-
-                var iid = IID_ID3D12DescriptorHeap;
-                ThrowIfFailed(D3DDevice->CreateDescriptorHeap(&dsvHeapDesc, &iid, (void**)&dsvHeap));
+                ThrowIfFailed(D3DDevice->CreateDescriptorHeap(&dsvHeapDesc, __uuidof<ID3D12DescriptorHeap>(), (void**)&dsvHeap));
 
                 return dsvHeap;
             }
@@ -194,9 +190,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 };
 
                 ID3D12DescriptorHeap* rtvHeap;
-
-                var iid = IID_ID3D12DescriptorHeap;
-                ThrowIfFailed(D3DDevice->CreateDescriptorHeap(&rtvHeapDesc, &iid, (void**)&rtvHeap));
+                ThrowIfFailed(D3DDevice->CreateDescriptorHeap(&rtvHeapDesc, __uuidof<ID3D12DescriptorHeap>(), (void**)&rtvHeap));
 
                 rtvDescriptorSize = D3DDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_RTV);
                 return rtvHeap;
@@ -233,10 +227,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             ID3D12CommandAllocator* CreateCommandAllocator()
             {
                 ID3D12CommandAllocator* commandAllocator;
-
-                var iid = IID_ID3D12CommandAllocator;
-                ThrowIfFailed(D3DDevice->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_DIRECT, &iid, (void**)&commandAllocator));
-
+                ThrowIfFailed(D3DDevice->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_DIRECT, __uuidof<ID3D12CommandAllocator>(), (void**)&commandAllocator));
                 return commandAllocator;
             }
 
@@ -245,9 +236,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 var queueDesc = new D3D12_COMMAND_QUEUE_DESC();
 
                 ID3D12CommandQueue* commandQueue;
-
-                var iid = IID_ID3D12CommandQueue;
-                ThrowIfFailed(D3DDevice->CreateCommandQueue(&queueDesc, &iid, (void**)&commandQueue));
+                ThrowIfFailed(D3DDevice->CreateCommandQueue(&queueDesc, __uuidof<ID3D12CommandQueue>(), (void**)&commandQueue));
 
                 return commandQueue;
             }
@@ -255,10 +244,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             ID3D12Device* CreateD3DDevice()
             {
                 ID3D12Device* d3dDevice;
-
-                var iid = IID_ID3D12Device;
-                ThrowIfFailed(D3D12CreateDevice((IUnknown*)_dxgiAdapter, D3D_FEATURE_LEVEL_11_0, &iid, (void**)&d3dDevice));
-
+                ThrowIfFailed(D3D12CreateDevice((IUnknown*)_dxgiAdapter, D3D_FEATURE_LEVEL_11_0, __uuidof<ID3D12Device>(), (void**)&d3dDevice));
                 return d3dDevice;
             }
 
@@ -267,9 +253,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 var dxgiFactoryFlags = TryEnableDebugLayer() ? DXGI_CREATE_FACTORY_DEBUG : 0u;
 
                 IDXGIFactory4* dxgiFactory;
-
-                var iid = IID_IDXGIFactory4;
-                ThrowIfFailed(CreateDXGIFactory2(dxgiFactoryFlags, &iid, (void**)&dxgiFactory));
+                ThrowIfFailed(CreateDXGIFactory2(dxgiFactoryFlags, __uuidof<IDXGIFactory4>(), (void**)&dxgiFactory));
 
                 return dxgiFactory;
             }
@@ -277,10 +261,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             ID3D12Fence* CreateFence()
             {
                 ID3D12Fence* fence;
-
-                var iid = IID_ID3D12Fence;
-                ThrowIfFailed(D3DDevice->CreateFence(InitialValue: 0, D3D12_FENCE_FLAG_NONE, &iid, (void**)&fence));
-
+                ThrowIfFailed(D3DDevice->CreateFence(InitialValue: 0, D3D12_FENCE_FLAG_NONE, __uuidof<ID3D12Fence>(), (void**)&fence));
                 return fence;
             }
 
@@ -307,13 +288,12 @@ namespace TerraFX.Samples.DirectX.D3D12
             ID3D12GraphicsCommandList*[] CreateGraphicsCommandLists()
             {
                 var graphicsCommandLists = new ID3D12GraphicsCommandList*[FrameCount];
+                var iid = __uuidof<ID3D12GraphicsCommandList>();
 
                 for (var i = 0u; i < FrameCount; i++)
                 {
                     ID3D12GraphicsCommandList* graphicsCommandList;
-
-                    var iid = IID_ID3D12GraphicsCommandList;
-                    ThrowIfFailed(D3DDevice->CreateCommandList(nodeMask: 0, D3D12_COMMAND_LIST_TYPE_DIRECT, _commandAllocators[i], PipelineState, &iid, (void**)&graphicsCommandList));
+                    ThrowIfFailed(D3DDevice->CreateCommandList(nodeMask: 0, D3D12_COMMAND_LIST_TYPE_DIRECT, _commandAllocators[i], PipelineState, iid, (void**)&graphicsCommandList));
 
                     ThrowIfFailed(graphicsCommandList->Close());
                     graphicsCommandLists[i] = graphicsCommandList;
@@ -327,10 +307,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 if (UseWarpDevice)
                 {
                     IDXGIAdapter1* adapter;
-
-                    var iid = IID_IDXGIAdapter;
-                    ThrowIfFailed(_dxgiFactory->EnumWarpAdapter(&iid, (void**)&adapter));
-
+                    ThrowIfFailed(_dxgiFactory->EnumWarpAdapter(__uuidof<IDXGIAdapter>(), (void**)&adapter));
                     return adapter;
                 }
                 else
@@ -346,9 +323,8 @@ namespace TerraFX.Samples.DirectX.D3D12
                 // NOTE: Enabling the debug layer after device creation will invalidate the active device.
 
                 using ComPtr<ID3D12Debug> debugController = null;
-                var iid = IID_ID3D12Debug;
 
-                if (D3D12GetDebugInterface(&iid, (void**)&debugController).SUCCEEDED)
+                if (D3D12GetDebugInterface(__uuidof<ID3D12Debug>(), (void**)&debugController).SUCCEEDED)
                 {
                     debugController.Get()->EnableDebugLayer();
                     return true;
@@ -384,12 +360,12 @@ namespace TerraFX.Samples.DirectX.D3D12
             ID3D12Resource*[] CreateRenderTargets()
             {
                 var renderTargets = new ID3D12Resource*[FrameCount];
-                var iid = IID_ID3D12Resource;
+                var iid = __uuidof<ID3D12Resource>();
 
                 for (var i = 0u; i < FrameCount; i++)
                 {
                     ID3D12Resource* renderTarget;
-                    ThrowIfFailed(SwapChain->GetBuffer(i, &iid, (void**)&renderTarget));
+                    ThrowIfFailed(SwapChain->GetBuffer(i, iid, (void**)&renderTarget));
                     renderTargets[unchecked((int)i)] = renderTarget;
                 }
 
@@ -462,9 +438,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 ));
 
                 IDXGISwapChain3* swapChain3;
-
-                var iid = IID_IDXGISwapChain3;
-                ThrowIfFailed(swapChain.Get()->QueryInterface(&iid, (void**)&swapChain3));
+                ThrowIfFailed(swapChain.Get()->QueryInterface(__uuidof<IDXGISwapChain3>(), (void**)&swapChain3));
 
                 return swapChain3;
             }
@@ -718,8 +692,7 @@ namespace TerraFX.Samples.DirectX.D3D12
 
         protected override unsafe bool SupportsRequiredDirect3DVersion(IDXGIAdapter1* adapter)
         {
-            var iid = IID_ID3D12Device;
-            return D3D12CreateDevice((IUnknown*)adapter, D3D_FEATURE_LEVEL_11_0, &iid, null).SUCCEEDED;
+            return D3D12CreateDevice((IUnknown*)adapter, D3D_FEATURE_LEVEL_11_0, __uuidof<ID3D12Device>(), null).SUCCEEDED;
         }
 
         private void ExecuteGraphicsCommandList()

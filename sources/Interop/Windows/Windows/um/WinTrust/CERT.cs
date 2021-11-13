@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class CERT
+    public static partial class CERT
     {
         [NativeTypeName("#define CERT_CONFIDENCE_SIG 0x10000000")]
         public const int CERT_CONFIDENCE_SIG = 0x10000000;

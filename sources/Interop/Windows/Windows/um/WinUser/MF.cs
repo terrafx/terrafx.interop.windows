@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class MF
+    public static partial class MF
     {
         [NativeTypeName("#define MF_INSERT 0x00000000L")]
         public const int MF_INSERT = 0x00000000;

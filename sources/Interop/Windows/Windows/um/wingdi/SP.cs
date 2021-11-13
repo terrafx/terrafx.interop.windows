@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class SP
+    public static partial class SP
     {
         [NativeTypeName("#define SP_NOTREPORTED 0x4000")]
         public const int SP_NOTREPORTED = 0x4000;

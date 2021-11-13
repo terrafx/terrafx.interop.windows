@@ -7,7 +7,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class FSCTL
+    public static partial class FSCTL
     {
         [NativeTypeName("#define FSCTL_REQUEST_OPLOCK_LEVEL_1 CTL_CODE(FILE_DEVICE_FILE_SYSTEM,  0, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
         public const int FSCTL_REQUEST_OPLOCK_LEVEL_1 = (((0x00000009) << 16) | ((0) << 14) | ((0) << 2) | (0));

@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class WINHTTP
+    public static partial class WINHTTP
     {
         [NativeTypeName("#define WINHTTP_FLAG_ASYNC 0x10000000")]
         public const int WINHTTP_FLAG_ASYNC = 0x10000000;

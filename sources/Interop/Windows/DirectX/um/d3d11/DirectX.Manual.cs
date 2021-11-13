@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.DirectX.D3D11_FILTER_TYPE;
 using static TerraFX.Interop.DirectX.D3D11_FILTER_REDUCTION_TYPE;
-using static TerraFX.Interop.Windows.WinError;
+using static TerraFX.Interop.Windows.Windows;
 
 namespace TerraFX.Interop.DirectX
 {

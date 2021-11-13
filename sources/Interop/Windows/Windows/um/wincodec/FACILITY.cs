@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class FACILITY
+    public static partial class FACILITY
     {
         [NativeTypeName("#define FACILITY_WINCODEC_ERR 0x898")]
         public const int FACILITY_WINCODEC_ERR = 0x898;

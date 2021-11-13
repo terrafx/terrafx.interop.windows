@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class STATUS
+    public static partial class STATUS
     {
         [NativeTypeName("#define STATUS_WAIT_0 ((DWORD   )0x00000000L)")]
         public const uint STATUS_WAIT_0 = ((uint)(0x00000000));

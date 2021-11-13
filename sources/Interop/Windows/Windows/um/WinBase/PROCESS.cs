@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class PROCESS
+    public static partial class PROCESS
     {
         [NativeTypeName("#define PROCESS_MODE_BACKGROUND_BEGIN 0x00100000")]
         public const int PROCESS_MODE_BACKGROUND_BEGIN = 0x00100000;

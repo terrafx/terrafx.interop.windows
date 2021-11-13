@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class IP
+    public static partial class IP
     {
         [NativeTypeName("#define IP_OPTIONS 1")]
         public const int IP_OPTIONS = 1;

@@ -6353,31 +6353,6 @@ namespace TerraFX.Interop.Windows
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern void MFHeapFree(void* pv);
 
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid CLSID_MFSourceResolver
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x0F, 0xB6, 0xEA, 0x90,
-                    0x3A, 0xE4,
-                    0x88, 0x41,
-                    0xBC,
-                    0xC4,
-                    0xE4,
-                    0x7F,
-                    0xDF,
-                    0x04,
-                    0x86,
-                    0x8C
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("LONGLONG")]
         public static extern long MFllMulDiv([NativeTypeName("LONGLONG")] long a, [NativeTypeName("LONGLONG")] long b, [NativeTypeName("LONGLONG")] long c, [NativeTypeName("LONGLONG")] long d);

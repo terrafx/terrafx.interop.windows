@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class TPM
+    public static partial class TPM
     {
         [NativeTypeName("#define TPM_LEFTBUTTON 0x0000L")]
         public const int TPM_LEFTBUTTON = 0x0000;

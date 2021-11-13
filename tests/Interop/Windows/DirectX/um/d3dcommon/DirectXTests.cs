@@ -12,13 +12,6 @@ namespace TerraFX.Interop.DirectX.UnitTests
     /// <summary>Provides validation of the <see cref="DirectX" /> class.</summary>
     public static partial class DirectXTests
     {
-        /// <summary>Validates that the value of the <see cref="IID_ID3D10Blob" /> property is correct.</summary>
-        [Test]
-        public static void IID_ID3D10BlobTest()
-        {
-            Assert.That(IID_ID3D10Blob, Is.EqualTo(new Guid(0x8ba5fb08, 0x5195, 0x40e2, 0xac, 0x58, 0xd, 0x98, 0x9c, 0x3a, 0x1, 0x2)));
-        }
-
         /// <summary>Validates that the value of the <see cref="WKPDID_D3DDebugObjectName" /> property is correct.</summary>
         [Test]
         public static void WKPDID_D3DDebugObjectNameTest()

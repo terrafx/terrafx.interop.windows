@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class PRODUCT
+    public static partial class PRODUCT
     {
         [NativeTypeName("#define PRODUCT_UNDEFINED 0x00000000")]
         public const int PRODUCT_UNDEFINED = 0x00000000;

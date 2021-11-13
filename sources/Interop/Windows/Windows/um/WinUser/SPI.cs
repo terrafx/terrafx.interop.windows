@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class SPI
+    public static partial class SPI
     {
         [NativeTypeName("#define SPI_GETBEEP 0x0001")]
         public const int SPI_GETBEEP = 0x0001;

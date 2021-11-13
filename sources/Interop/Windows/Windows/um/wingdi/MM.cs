@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class MM
+    public static partial class MM
     {
         [NativeTypeName("#define MM_TEXT 1")]
         public const int MM_TEXT = 1;

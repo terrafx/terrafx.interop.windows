@@ -7,7 +7,7 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.WinRT.WinRT;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT.UnitTests
 {

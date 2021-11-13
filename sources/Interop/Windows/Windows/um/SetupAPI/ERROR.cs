@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class ERROR
+    public static partial class ERROR
     {
         [NativeTypeName("#define ERROR_EXPECTED_SECTION_NAME (APPLICATION_ERROR_MASK|ERROR_SEVERITY_ERROR|0)")]
         public const uint ERROR_EXPECTED_SECTION_NAME = (0x20000000 | 0xC0000000 | 0);

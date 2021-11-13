@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class PROCESS
+    public static partial class PROCESS
     {
         [NativeTypeName("#define PROCESS_TRUST_LABEL_SECURITY_INFORMATION (0x00000080L)")]
         public const int PROCESS_TRUST_LABEL_SECURITY_INFORMATION = (0x00000080);

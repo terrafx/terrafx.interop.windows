@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class SM
+    public static partial class SM
     {
         [NativeTypeName("#define SM_CXSCREEN 0")]
         public const int SM_CXSCREEN = 0;

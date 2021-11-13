@@ -3,8 +3,6 @@
 // Ported from um/windows.ui.xaml.media.dxinterop.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Interop.WinRT;
-
 namespace TerraFX.Interop.Windows
 {
     public static partial class E

@@ -54,28 +54,5 @@ namespace TerraFX.Interop.WinRT
                 return ref Unsafe.As<byte, DXGI_RGBA>(ref MemoryMarshal.GetReference(data));
             }
         }
-
-        public static ref readonly Guid IID_IPdfRendererNative
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x91, 0xCD, 0x9D, 0x7D,
-                    0x77, 0xD2,
-                    0x47, 0x49,
-                    0x85,
-                    0x27,
-                    0x07,
-                    0xA0,
-                    0xDA,
-                    0xED,
-                    0xA9,
-                    0x4A
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
     }
 }

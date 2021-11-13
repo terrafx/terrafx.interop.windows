@@ -7,7 +7,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class IOCTL
+    public static partial class IOCTL
     {
         [NativeTypeName("#define IOCTL_STORAGE_BASE FILE_DEVICE_MASS_STORAGE")]
         public const int IOCTL_STORAGE_BASE = 0x0000002d;

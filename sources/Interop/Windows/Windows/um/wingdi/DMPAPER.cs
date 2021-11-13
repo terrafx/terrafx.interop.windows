@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class DMPAPER
+    public static partial class DMPAPER
     {
         [NativeTypeName("#define DMPAPER_FIRST DMPAPER_LETTER")]
         public const int DMPAPER_FIRST = 1;

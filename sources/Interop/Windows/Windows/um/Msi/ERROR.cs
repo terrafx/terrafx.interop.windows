@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class ERROR
+    public static partial class ERROR
     {
         [NativeTypeName("#define ERROR_ROLLBACK_DISABLED 1653L")]
         public const int ERROR_ROLLBACK_DISABLED = 1653;
