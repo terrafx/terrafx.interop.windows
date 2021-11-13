@@ -6653,12 +6653,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define MEMORY_PARTITION_ALL_ACCESS (STANDARD_RIGHTS_REQUIRED |      \\\r\n                                     SYNCHRONIZE |                   \\\r\n                                     MEMORY_PARTITION_QUERY_ACCESS | \\\r\n                                     MEMORY_PARTITION_MODIFY_ACCESS)")]
         public const int MEMORY_PARTITION_ALL_ACCESS = ((0x000F0000) | (0x00100000) | 0x0001 | 0x0002);
 
-        [NativeTypeName("#define EVENT_MODIFY_STATE 0x0002")]
-        public const int EVENT_MODIFY_STATE = 0x0002;
-
-        [NativeTypeName("#define EVENT_ALL_ACCESS (STANDARD_RIGHTS_REQUIRED|SYNCHRONIZE|0x3)")]
-        public const int EVENT_ALL_ACCESS = ((0x000F0000) | (0x00100000) | 0x3);
-
         [NativeTypeName("#define MUTANT_QUERY_STATE 0x0001")]
         public const int MUTANT_QUERY_STATE = 0x0001;
 
@@ -7303,39 +7297,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define MEM_DEDICATED_ATTRIBUTE_NOT_SPECIFIED ((DWORD64) -1)")]
         public const ulong MEM_DEDICATED_ATTRIBUTE_NOT_SPECIFIED = unchecked((ulong)(-1));
-
-        [NativeTypeName("#define SEC_PARTITION_OWNER_HANDLE 0x00040000")]
-        public const int SEC_PARTITION_OWNER_HANDLE = 0x00040000;
-
-        [NativeTypeName("#define SEC_64K_PAGES 0x00080000")]
-        public const int SEC_64K_PAGES = 0x00080000;
-
-        [NativeTypeName("#define SEC_FILE 0x00800000")]
-        public const int SEC_FILE = 0x00800000;
-
-        [NativeTypeName("#define SEC_IMAGE 0x01000000")]
-        public const int SEC_IMAGE = 0x01000000;
-
-        [NativeTypeName("#define SEC_PROTECTED_IMAGE 0x02000000")]
-        public const int SEC_PROTECTED_IMAGE = 0x02000000;
-
-        [NativeTypeName("#define SEC_RESERVE 0x04000000")]
-        public const int SEC_RESERVE = 0x04000000;
-
-        [NativeTypeName("#define SEC_COMMIT 0x08000000")]
-        public const int SEC_COMMIT = 0x08000000;
-
-        [NativeTypeName("#define SEC_NOCACHE 0x10000000")]
-        public const int SEC_NOCACHE = 0x10000000;
-
-        [NativeTypeName("#define SEC_WRITECOMBINE 0x40000000")]
-        public const int SEC_WRITECOMBINE = 0x40000000;
-
-        [NativeTypeName("#define SEC_LARGE_PAGES 0x80000000")]
-        public const uint SEC_LARGE_PAGES = 0x80000000;
-
-        [NativeTypeName("#define SEC_IMAGE_NO_EXECUTE (SEC_IMAGE | SEC_NOCACHE)")]
-        public const int SEC_IMAGE_NO_EXECUTE = (0x01000000 | 0x10000000);
 
         [NativeTypeName("#define MEM_PRIVATE 0x00020000")]
         public const int MEM_PRIVATE = 0x00020000;

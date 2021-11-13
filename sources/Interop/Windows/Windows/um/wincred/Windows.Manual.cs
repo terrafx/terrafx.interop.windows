@@ -5,6 +5,7 @@
 
 using static TerraFX.Interop.Windows.ERROR;
 using static TerraFX.Interop.Windows.NERR;
+using static TerraFX.Interop.Windows.SEC;
 using static TerraFX.Interop.Windows.STATUS;
 
 namespace TerraFX.Interop.Windows

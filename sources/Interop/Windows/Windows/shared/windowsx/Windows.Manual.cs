@@ -6,6 +6,7 @@
 using static TerraFX.Interop.Windows.MF;
 using static TerraFX.Interop.Windows.VK;
 using static TerraFX.Interop.Windows.WM;
+using static TerraFX.Interop.Windows.WS;
 
 namespace TerraFX.Interop.Windows
 {

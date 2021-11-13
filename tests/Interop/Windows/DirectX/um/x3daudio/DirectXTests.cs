@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
+using System;
 using static TerraFX.Interop.DirectX.DirectX;
 
 namespace TerraFX.Interop.DirectX.UnitTests
