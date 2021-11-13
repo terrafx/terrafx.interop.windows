@@ -9,6 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.EndpointFormFactor;
+using static TerraFX.Interop.Windows.Windows;
 
 namespace TerraFX.Interop.Windows
 {

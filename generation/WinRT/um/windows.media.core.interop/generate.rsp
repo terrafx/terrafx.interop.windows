@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-windows.media.core.interop.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/um/windows.media.core.interop
+--test-output
+../../../../tests/Interop/Windows/WinRT/um/windows.media.core.interop
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/windows.media.core.interop.h

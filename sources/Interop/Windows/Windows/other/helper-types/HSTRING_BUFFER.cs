@@ -1,8 +1,9 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
 using System;
+using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.WinRT
 {
     public unsafe partial struct HSTRING_BUFFER : IComparable, IComparable<HSTRING_BUFFER>, IEquatable<HSTRING_BUFFER>, IFormattable
     {
