@@ -1,0 +1,19 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-audioclientactivationparams.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/audioclientactivationparams
+--test-output
+../../../../tests/Interop/Windows/Windows/um/audioclientactivationparams
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/audioclientactivationparams.h
+--with-attribute
+AUDIOCLIENT_ACTIVATION_PARAMS=SupportedOSPlatform("windows10.0.19043.0")
+AUDIOCLIENT_ACTIVATION_TYPE=SupportedOSPlatform("windows10.0.19043.0")
+AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS=SupportedOSPlatform("windows10.0.19043.0")
+PROCESS_LOOPBACK_MODE=SupportedOSPlatform("windows10.0.19043.0")

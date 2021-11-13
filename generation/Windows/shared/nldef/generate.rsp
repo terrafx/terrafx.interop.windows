@@ -1,0 +1,22 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ANY_SIZE
+MAKE_ROUTE_PROTOCOL
+--file
+shared-nldef.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/shared/nldef
+--test-output
+../../../../tests/Interop/Windows/Windows/shared/nldef
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/nldef.h
+--with-attribute
+NL_NETWORK_CONNECTIVITY_COST_HINT=SupportedOSPlatform("windows10.0.19041.0")
+NL_NETWORK_CONNECTIVITY_LEVEL_HINT=SupportedOSPlatform("windows10.0.19041.0")
+NL_BANDWIDTH_INFORMATION=SupportedOSPlatform("windows8.0")
+NL_NETWORK_CONNECTIVITY_HINT=SupportedOSPlatform("windows10.0.19041.0")

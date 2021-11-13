@@ -1,0 +1,44 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+SslGenerateKeyPair(PSSL_CREDENTIAL_CERTIFICATE, PSTR, PSTR, DWORD):BOOL
+SslGenerateRandomBits(PUCHAR, LONG):void
+SslGetDefaultIssuers(PBYTE, DWORD *):BOOL
+SslGetExtensions(const BYTE *, DWORD, SCH_EXTENSION_DATA *, BYTE, DWORD *, SchGetExtensionsOptions):SECURITY_STATUS
+SslGetMaximumKeySize(DWORD):DWORD
+--file
+um-schannel.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/schannel
+--test-output
+../../../../tests/Interop/Windows/Windows/um/schannel
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/schannel.h
+--with-attribute
+CRYPTO_SETTINGS=SupportedOSPlatform("windows10.0.17763.0")
+eTlsAlgorithmUsage=SupportedOSPlatform("windows10.0.17763.0")
+SCHANNEL_CRED=SupportedOSPlatform("windows8.1")
+SchGetExtensionsOptions=Flags
+SCH_CREDENTIALS=SupportedOSPlatform("windows10.0.17763.0")
+SecPkgContext_EarlyStart=SupportedOSPlatform("windows10.0")
+SecPkgContext_EarlyStartA=SupportedOSPlatform("windows10.0")
+SecPkgContext_EarlyStartW=SupportedOSPlatform("windows10.0")
+SecPkgContext_KeyingMaterial=SupportedOSPlatform("windows10.0")
+SecPkgContext_KeyingMaterialA=SupportedOSPlatform("windows10.0")
+SecPkgContext_KeyingMaterialInfo=SupportedOSPlatform("windows10.0")
+SecPkgContext_KeyingMaterialInfoA=SupportedOSPlatform("windows10.0")
+SecPkgContext_KeyingMaterialInfoW=SupportedOSPlatform("windows10.0")
+SecPkgContext_KeyingMaterialW=SupportedOSPlatform("windows10.0")
+SslGetServerIdentity=SupportedOSPlatform("windows8.0")
+TLS_PARAMETERS=SupportedOSPlatform("windows10.0.17763.0")
+--with-librarypath
+SslCrackCertificate=schannel
+SslEmptyCache=schannel
+SslEmptyCacheA=schannel
+SslEmptyCacheW=schannel
+SslFreeCertificate=schannel
+SslGetServerIdentity=schannel

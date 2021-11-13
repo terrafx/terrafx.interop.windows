@@ -1,0 +1,21 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+STATUS_SEVERITY
+STATUS_SEVERITY_ERROR
+STATUS_SEVERITY_INFORMATIONAL
+STATUS_SEVERITY_SUCCESS
+STATUS_SEVERITY_WARNING
+_HRESULT_TYPEDEF_
+--file
+um-Mferror.h
+--methodClassName
+WinError
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/Mferror
+--test-output
+../../../../tests/Interop/Windows/Windows/um/Mferror
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/Mferror.h

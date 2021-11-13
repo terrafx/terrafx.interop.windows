@@ -1,0 +1,16 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-imapi.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/imapi
+--test-output
+../../../../tests/Interop/Windows/Windows/um/imapi
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/imapi.h
+--with-attribue
+MEDIA_FLAGS=Flags

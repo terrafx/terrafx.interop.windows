@@ -1,0 +1,19 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+HID_BUFFER_CTL_CODE
+HID_CTL_CODE
+HID_IN_CTL_CODE
+HID_OUT_CTL_CODE
+--file
+shared-hidclass.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/shared/hidclass
+--test-output
+../../../../tests/Interop/Windows/Windows/shared/hidclass
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/hidclass.h

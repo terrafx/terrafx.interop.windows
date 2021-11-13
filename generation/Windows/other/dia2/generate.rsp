@@ -1,0 +1,19 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+__MIDL___MIDL_itf_dia2_0000_0000_0001
+__MIDL___MIDL_itf_dia2_0000_0035_0001
+--include-directory
+C:/Program Files/Microsoft Visual Studio/2022/Preview/DIA SDK/include
+--file
+other-dia2.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/other/dia2
+--test-output
+../../../../tests/Interop/Windows/Windows/other/dia2
+--traverse
+C:/Program Files/Microsoft Visual Studio/2022/Preview/DIA SDK/include/dia2.h

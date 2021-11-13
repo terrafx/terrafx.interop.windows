@@ -1,13 +1,14 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
 using System.Numerics;
-using TerraFX.Interop;
-using static TerraFX.Interop.D3D_PRIMITIVE_TOPOLOGY;
-using static TerraFX.Interop.D3D11_BIND_FLAG;
-using static TerraFX.Interop.D3D11_INPUT_CLASSIFICATION;
-using static TerraFX.Interop.D3D11_USAGE;
-using static TerraFX.Interop.DXGI_FORMAT;
-using static TerraFX.Interop.Windows;
+using TerraFX.Interop.DirectX;
+using TerraFX.Interop.Windows;
+using static TerraFX.Interop.DirectX.D3D_PRIMITIVE_TOPOLOGY;
+using static TerraFX.Interop.DirectX.D3D11_BIND_FLAG;
+using static TerraFX.Interop.DirectX.D3D11_INPUT_CLASSIFICATION;
+using static TerraFX.Interop.DirectX.D3D11_USAGE;
+using static TerraFX.Interop.DirectX.DirectX;
+using static TerraFX.Interop.DirectX.DXGI_FORMAT;
 using static TerraFX.Samples.DirectX.DXSampleHelper;
 
 namespace TerraFX.Samples.DirectX.D3D11

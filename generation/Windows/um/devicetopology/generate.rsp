@@ -1,0 +1,17 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+DeviceTopology
+E_NOTFOUND
+--file
+um-devicetopology.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/devicetopology
+--test-output
+../../../../tests/Interop/Windows/Windows/um/devicetopology
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/devicetopology.h

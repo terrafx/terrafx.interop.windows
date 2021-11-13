@@ -1,0 +1,25 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-objidl.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/objidl
+--test-output
+../../../../tests/Interop/Windows/Windows/um/objidl
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/objidl.h
+--with-attribute
+ActivationType=SupportedOSPlatform("windows8.1")
+CO_MARSHALING_CONTEXT_ATTRIBUTES=SupportedOSPlatform("windows8.0")
+GLOBALOPT_PROPERTIES=SupportedOSPlatform("windows8.0")
+GLOBALOPT_UNMARSHALING_POLICY_VALUES=SupportedOSPlatform("windows8.0")
+IAgileObject=SupportedOSPlatform("windows8.0")
+IAgileReference=SupportedOSPlatform("windows8.1")
+IApartmentShutdown=SupportedOSPlatform("windows8.0")
+IFastRundown=SupportedOSPlatform("windows8.0")
+IMarshalingStream=SupportedOSPlatform("windows8.0")
+INoMarshal=SupportedOSPlatform("windows8.0")

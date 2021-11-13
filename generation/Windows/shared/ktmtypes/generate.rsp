@@ -1,0 +1,19 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+shared-ktmtypes.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/shared/ktmtypes
+--test-output
+../../../../tests/Interop/Windows/Windows/shared/ktmtypes
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/ktmtypes.h
+--with-type
+ENLISTMENT_OBJECT_NAME_LENGTH_IN_BYTES=uint
+RESOURCE_MANAGER_OBJECT_NAME_LENGTH_IN_BYTES=uint
+TRANSACTIONMANAGER_OBJECT_NAME_LENGTH_IN_BYTES=uint
+TRANSACTION_OBJECT_NAME_LENGTH_IN_BYTES=uint

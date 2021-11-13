@@ -1,0 +1,19 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+SpatialAudioHrtfActivationParams
+--file
+um-SpatialAudioHrtf.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/SpatialAudioHrtf
+--test-output
+../../../../tests/Interop/Windows/Windows/um/SpatialAudioHrtf
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/SpatialAudioHrtf.h
+--with-attribute
+ISpatialAudioObjectForHrtf=SupportedOSPlatform("windows10.0.15063.0")
+ISpatialAudioObjectRenderStreamForHrtf=SupportedOSPlatform("windows10.0.15063.0")
