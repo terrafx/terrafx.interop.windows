@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static partial class Windows
+    public static partial class WinError
     {
         [NativeTypeName("#define NERR_Success 0")]
         public const int NERR_Success = 0;

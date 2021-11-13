@@ -10,7 +10,7 @@ _HRESULT_TYPEDEF_
 --file
 um-Mferror.h
 --methodClassName
-Windows
+WinError
 --namespace
 TerraFX.Interop.Windows
 --output

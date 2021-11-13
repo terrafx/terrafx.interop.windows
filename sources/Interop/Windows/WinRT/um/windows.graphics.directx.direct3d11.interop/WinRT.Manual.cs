@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using TerraFX.Interop.DirectX;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.Windows.Windows;
+using static TerraFX.Interop.Windows.WinError;
 
 namespace TerraFX.Interop.WinRT
 {

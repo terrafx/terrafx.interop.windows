@@ -5,6 +5,7 @@
 
 using System.Runtime.Versioning;
 using TerraFX.Interop.DirectX;
+using TerraFX.Interop.WinRT;
 
 namespace TerraFX.Interop.WinRT
 {

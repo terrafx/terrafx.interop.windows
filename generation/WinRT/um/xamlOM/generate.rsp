@@ -6,13 +6,13 @@ InitializeXamlDiagnostic
 --file
 um-xamlOM.h
 --methodClassName
-Windows
+WinRT
 --namespace
-TerraFX.Interop.Windows
+TerraFX.Interop.WinRT
 --output
-../../../../sources/Interop/Windows/Windows/um/xamlOM
+../../../../sources/Interop/Windows/WinRT/um/xamlOM
 --test-output
-../../../../tests/Interop/Windows/Windows/um/xamlOM
+../../../../tests/Interop/Windows/WinRT/um/xamlOM
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/xamlOM.h
 --with-attribute

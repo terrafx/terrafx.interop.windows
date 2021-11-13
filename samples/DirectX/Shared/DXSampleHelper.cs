@@ -10,7 +10,6 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.DirectX;
 using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.Windows;
 
 namespace TerraFX.Samples.DirectX
 {
@@ -18,7 +17,7 @@ namespace TerraFX.Samples.DirectX
     {
         public static void ThrowIfFailed(HRESULT hr, [CallerArgumentExpression("hr")] string methodName = "")
         {
-            if (FAILED(hr))
+            if (hr.FAILED)
             {
                 throw new ExternalException($"'{methodName}' failed with an error code of '{hr}'", hr);
             }

@@ -281,7 +281,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 HighestVersion = D3D_ROOT_SIGNATURE_VERSION_1_1
             };
 
-            if (FAILED(D3DDevice->CheckFeatureSupport(D3D12_FEATURE_ROOT_SIGNATURE, &featureData, (uint)sizeof(D3D12_FEATURE))))
+            if (D3DDevice->CheckFeatureSupport(D3D12_FEATURE_ROOT_SIGNATURE, &featureData, (uint)sizeof(D3D12_FEATURE)).FAILED)
             {
                 featureData.HighestVersion = D3D_ROOT_SIGNATURE_VERSION_1_0;
             }

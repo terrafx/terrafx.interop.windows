@@ -71,7 +71,7 @@ __NTSTATUS_FROM_WIN32
 --file
 shared-ntstatus.h
 --methodClassName
-Windows
+WinError
 --namespace
 TerraFX.Interop.Windows
 --output

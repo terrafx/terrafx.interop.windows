@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using static TerraFX.Interop.Windows.Windows;
+using static TerraFX.Interop.Windows.WinError;
 
 namespace TerraFX.Interop.Windows
 {

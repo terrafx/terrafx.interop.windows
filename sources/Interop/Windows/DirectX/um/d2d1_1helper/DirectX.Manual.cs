@@ -22,7 +22,7 @@ using static TerraFX.Interop.DirectX.D2D1_PRINT_FONT_SUBSET_MODE;
 using static TerraFX.Interop.DirectX.D2D1_STROKE_TRANSFORM_TYPE;
 using static TerraFX.Interop.DirectX.D2D1_TEXT_ANTIALIAS_MODE;
 using static TerraFX.Interop.DirectX.D2D1_UNIT_MODE;
-using static TerraFX.Interop.Windows.Windows;
+using static TerraFX.Interop.Windows.WinError;
 
 namespace TerraFX.Interop.DirectX
 {

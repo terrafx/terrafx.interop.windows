@@ -5,7 +5,7 @@
 
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.DirectX.D3D10_FILTER_TYPE;
-using static TerraFX.Interop.Windows.Windows;
+using static TerraFX.Interop.Windows.WinError;
 
 namespace TerraFX.Interop.DirectX
 {

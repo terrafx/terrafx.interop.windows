@@ -1,6 +1,6 @@
 --with-namespace
 AUDIO_STREAM_CATEGORY=TerraFX.Interop.Windows
-BitmapDescription=TerraFX.Interop.Windows
+BitmapDescription=TerraFX.Interop.WinRT
 BOOL=TerraFX.Interop.Windows
 D2D1_PIXEL_FORMAT=TerraFX.Interop.DirectX
 D3D12_RESOURCE_DESC=TerraFX.Interop.DirectX
@@ -12,7 +12,7 @@ DXGI_JPEG_QUANTIZATION_TABLE=TerraFX.Interop.DirectX
 DXGI_RGBA=TerraFX.Interop.DirectX
 HANDLE=TerraFX.Interop.Windows
 HRESULT=TerraFX.Interop.Windows
-HRESULT_FROM_WIN32=TerraFX.Interop.Windows;Windows
+HRESULT_FROM_WIN32=TerraFX.Interop.Windows;WinError
 HSTRING=TerraFX.Interop.WinRT
 HSTRING_BUFFER=TerraFX.Interop.WinRT
 HWND=TerraFX.Interop.Windows
@@ -36,5 +36,6 @@ NativeInheritanceAttribute=TerraFX.Interop
 NativeTypeNameAttribute=TerraFX.Interop
 POINT=TerraFX.Interop.Windows
 RECT=TerraFX.Interop.Windows
+SAFEARRAY=TerraFX.Interop.Windows
 VtblIndexAttribute=TerraFX.Interop
 WAVEFORMATEX=TerraFX.Interop.Windows

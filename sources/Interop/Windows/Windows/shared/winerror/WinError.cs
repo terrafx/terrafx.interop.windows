@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static partial class Windows
+    public static partial class WinError
     {
         public static HRESULT HRESULT_FROM_WIN32([NativeTypeName("unsigned long")] uint x)
         {

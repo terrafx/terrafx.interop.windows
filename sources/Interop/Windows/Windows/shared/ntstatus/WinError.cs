@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static partial class Windows
+    public static partial class WinError
     {
         [NativeTypeName("#define FACILITY_DEBUGGER 0x1")]
         public const int FACILITY_DEBUGGER = 0x1;

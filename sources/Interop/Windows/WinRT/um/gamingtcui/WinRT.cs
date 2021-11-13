@@ -8,7 +8,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT
 {
-    public static unsafe partial class Windows
+    public static unsafe partial class WinRT
     {
         [DllImport("gamingtcui", ExactSpelling = true)]
         public static extern HRESULT ShowGameInviteUI(HSTRING serviceConfigurationId, HSTRING sessionTemplateName, HSTRING sessionId, HSTRING invitationDisplayText, [NativeTypeName("GameUICompletionRoutine")] delegate* unmanaged<HRESULT, void*, void> completionRoutine, void* context);

@@ -348,7 +348,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 using ComPtr<ID3D12Debug> debugController = null;
                 var iid = IID_ID3D12Debug;
 
-                if (SUCCEEDED(D3D12GetDebugInterface(&iid, (void**)&debugController)))
+                if (D3D12GetDebugInterface(&iid, (void**)&debugController).SUCCEEDED)
                 {
                     debugController.Get()->EnableDebugLayer();
                     return true;
@@ -719,7 +719,7 @@ namespace TerraFX.Samples.DirectX.D3D12
         protected override unsafe bool SupportsRequiredDirect3DVersion(IDXGIAdapter1* adapter)
         {
             var iid = IID_ID3D12Device;
-            return SUCCEEDED(D3D12CreateDevice((IUnknown*)adapter, D3D_FEATURE_LEVEL_11_0, &iid, null));
+            return D3D12CreateDevice((IUnknown*)adapter, D3D_FEATURE_LEVEL_11_0, &iid, null).SUCCEEDED;
         }
 
         private void ExecuteGraphicsCommandList()
