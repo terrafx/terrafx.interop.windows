@@ -1,0 +1,17 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-inkrenderer.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/inkrenderer
+--test-output
+../../../../tests/Interop/Windows/Windows/um/inkrenderer
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/inkrenderer.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/inkrenderer_i.c
+--with-attribute
+IInkD2DRenderer=SupportedOSPlatform("windows10.0")

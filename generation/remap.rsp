@@ -1,6 +1,6 @@
-@../../remap-guids.rsp
-@../../remap-handles.rsp
-@../../remap-members.rsp
-@../../remap-nints.rsp
-@../../remap-transparent.rsp
-@../../remap-types.rsp
+@../../../remap-guids.rsp
+@../../../remap-handles.rsp
+@../../../remap-members.rsp
+@../../../remap-nints.rsp
+@../../../remap-transparent.rsp
+@../../../remap-types.rsp

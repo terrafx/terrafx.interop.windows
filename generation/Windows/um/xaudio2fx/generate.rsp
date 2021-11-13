@@ -1,0 +1,23 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+DEFAULT
+ReverbConvertI3DL2ToNative(const XAUDIO2FX_REVERB_I3DL2_PARAMETERS *, XAUDIO2FX_REVERB_PARAMETERS *, BOOL):void
+XAudio2CreateReverb(IUnknown **, UINT32):HRESULT
+XAudio2CreateVolumeMeter(IUnknown **, UINT32):HRESULT
+--file
+um-xaudio2fx.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/xaudio2fx
+--test-output
+../../../../tests/Interop/Windows/Windows/um/xaudio2fx
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/xaudio2fx.h
+--with-librarypath
+CreateAudioReverb=xaudio2_9
+CreateAudioVolumeMeter=xaudio2_9
+XAudio2CreateReverb=xaudio2_9

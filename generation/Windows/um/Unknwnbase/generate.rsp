@@ -1,0 +1,20 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+IUnknown.QueryInterface<Q>(Q **):HRESULT
+--file
+um-Unknwnbase.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/Unknwnbase
+--test-output
+../../../../tests/Interop/Windows/Windows/um/Unknwnbase
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/Unknwnbase.h
+--with-librarypath
+IUnknown_AddRef_Proxy=rpcrt4
+IUnknown_QueryInterface_Proxy=rpcrt4
+IUnknown_Release_Proxy=rpcrt4

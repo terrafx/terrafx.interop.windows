@@ -1,0 +1,131 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from um/shdeprecated.h in the Windows SDK for Windows 10.0.20348.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using System;
+using System.Runtime.CompilerServices;
+
+namespace TerraFX.Interop.Windows
+{
+    [NativeTypeName("struct CIE4ConnectionPoint : IConnectionPoint")]
+    [NativeInheritance("IConnectionPoint")]
+    public unsafe partial struct CIE4ConnectionPoint : CIE4ConnectionPoint.Interface
+    {
+        public void** lpVtbl;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(0)]
+        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        {
+            return ((delegate* unmanaged<CIE4ConnectionPoint*, Guid*, void**, int>)(lpVtbl[0]))((CIE4ConnectionPoint*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(1)]
+        [return: NativeTypeName("ULONG")]
+        public uint AddRef()
+        {
+            return ((delegate* unmanaged<CIE4ConnectionPoint*, uint>)(lpVtbl[1]))((CIE4ConnectionPoint*)Unsafe.AsPointer(ref this));
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(2)]
+        [return: NativeTypeName("ULONG")]
+        public uint Release()
+        {
+            return ((delegate* unmanaged<CIE4ConnectionPoint*, uint>)(lpVtbl[2]))((CIE4ConnectionPoint*)Unsafe.AsPointer(ref this));
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(3)]
+        public HRESULT GetConnectionInterface([NativeTypeName("IID *")] Guid* pIID)
+        {
+            return ((delegate* unmanaged<CIE4ConnectionPoint*, Guid*, int>)(lpVtbl[3]))((CIE4ConnectionPoint*)Unsafe.AsPointer(ref this), pIID);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(4)]
+        public HRESULT GetConnectionPointContainer(IConnectionPointContainer** ppCPC)
+        {
+            return ((delegate* unmanaged<CIE4ConnectionPoint*, IConnectionPointContainer**, int>)(lpVtbl[4]))((CIE4ConnectionPoint*)Unsafe.AsPointer(ref this), ppCPC);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(5)]
+        public HRESULT Advise(IUnknown* pUnkSink, [NativeTypeName("DWORD *")] uint* pdwCookie)
+        {
+            return ((delegate* unmanaged<CIE4ConnectionPoint*, IUnknown*, uint*, int>)(lpVtbl[5]))((CIE4ConnectionPoint*)Unsafe.AsPointer(ref this), pUnkSink, pdwCookie);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(6)]
+        public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie)
+        {
+            return ((delegate* unmanaged<CIE4ConnectionPoint*, uint, int>)(lpVtbl[6]))((CIE4ConnectionPoint*)Unsafe.AsPointer(ref this), dwCookie);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(7)]
+        public HRESULT EnumConnections(IEnumConnections** ppEnum)
+        {
+            return ((delegate* unmanaged<CIE4ConnectionPoint*, IEnumConnections**, int>)(lpVtbl[7]))((CIE4ConnectionPoint*)Unsafe.AsPointer(ref this), ppEnum);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(8)]
+        public HRESULT DoInvokeIE4(BOOL* pf, void** ppv, [NativeTypeName("DISPID")] int dispid, DISPPARAMS* pdispparams)
+        {
+            return ((delegate* unmanaged<CIE4ConnectionPoint*, BOOL*, void**, int, DISPPARAMS*, int>)(lpVtbl[8]))((CIE4ConnectionPoint*)Unsafe.AsPointer(ref this), pf, ppv, dispid, pdispparams);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [VtblIndex(9)]
+        public HRESULT DoInvokePIDLIE4([NativeTypeName("DISPID")] int dispid, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, BOOL fCanCancel)
+        {
+            return ((delegate* unmanaged<CIE4ConnectionPoint*, int, ITEMIDLIST*, BOOL, int>)(lpVtbl[9]))((CIE4ConnectionPoint*)Unsafe.AsPointer(ref this), dispid, pidl, fCanCancel);
+        }
+
+        public interface Interface : IConnectionPoint.Interface
+        {
+            [VtblIndex(8)]
+            HRESULT DoInvokeIE4(BOOL* pf, void** ppv, [NativeTypeName("DISPID")] int dispid, DISPPARAMS* pdispparams);
+
+            [VtblIndex(9)]
+            HRESULT DoInvokePIDLIE4([NativeTypeName("DISPID")] int dispid, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, BOOL fCanCancel);
+        }
+
+        public partial struct Vtbl
+        {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+            public delegate* unmanaged<CIE4ConnectionPoint*, Guid*, void**, int> QueryInterface;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<CIE4ConnectionPoint*, uint> AddRef;
+
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
+            public delegate* unmanaged<CIE4ConnectionPoint*, uint> Release;
+
+            [NativeTypeName("HRESULT (IID *) __attribute__((stdcall))")]
+            public delegate* unmanaged<CIE4ConnectionPoint*, Guid*, int> GetConnectionInterface;
+
+            [NativeTypeName("HRESULT (IConnectionPointContainer **) __attribute__((stdcall))")]
+            public delegate* unmanaged<CIE4ConnectionPoint*, IConnectionPointContainer**, int> GetConnectionPointContainer;
+
+            [NativeTypeName("HRESULT (IUnknown *, DWORD *) __attribute__((stdcall))")]
+            public delegate* unmanaged<CIE4ConnectionPoint*, IUnknown*, uint*, int> Advise;
+
+            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+            public delegate* unmanaged<CIE4ConnectionPoint*, uint, int> Unadvise;
+
+            [NativeTypeName("HRESULT (IEnumConnections **) __attribute__((stdcall))")]
+            public delegate* unmanaged<CIE4ConnectionPoint*, IEnumConnections**, int> EnumConnections;
+
+            [NativeTypeName("HRESULT (BOOL *, void **, DISPID, DISPPARAMS *)")]
+            public delegate* unmanaged<CIE4ConnectionPoint*, BOOL*, void**, int, DISPPARAMS*, int> DoInvokeIE4;
+
+            [NativeTypeName("HRESULT (DISPID, LPCITEMIDLIST, BOOL)")]
+            public delegate* unmanaged<CIE4ConnectionPoint*, int, ITEMIDLIST*, BOOL, int> DoInvokePIDLIE4;
+        }
+    }
+}

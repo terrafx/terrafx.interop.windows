@@ -3,19 +3,19 @@
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using TerraFX.Interop;
-using static TerraFX.Interop.D3D_FEATURE_LEVEL;
-using static TerraFX.Interop.D3D12_CLEAR_FLAGS;
-using static TerraFX.Interop.D3D12_COMMAND_LIST_TYPE;
-using static TerraFX.Interop.D3D12_DESCRIPTOR_HEAP_TYPE;
-using static TerraFX.Interop.D3D12_DSV_DIMENSION;
-using static TerraFX.Interop.D3D12_FENCE_FLAGS;
-using static TerraFX.Interop.D3D12_HEAP_FLAGS;
-using static TerraFX.Interop.D3D12_HEAP_TYPE;
-using static TerraFX.Interop.D3D12_RESOURCE_FLAGS;
-using static TerraFX.Interop.D3D12_RESOURCE_STATES;
-using static TerraFX.Interop.DXGI_SWAP_EFFECT;
-using static TerraFX.Interop.Windows;
+using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.D3D_FEATURE_LEVEL;
+using static TerraFX.Interop.Windows.D3D12_CLEAR_FLAGS;
+using static TerraFX.Interop.Windows.D3D12_COMMAND_LIST_TYPE;
+using static TerraFX.Interop.Windows.D3D12_DESCRIPTOR_HEAP_TYPE;
+using static TerraFX.Interop.Windows.D3D12_DSV_DIMENSION;
+using static TerraFX.Interop.Windows.D3D12_FENCE_FLAGS;
+using static TerraFX.Interop.Windows.D3D12_HEAP_FLAGS;
+using static TerraFX.Interop.Windows.D3D12_HEAP_TYPE;
+using static TerraFX.Interop.Windows.D3D12_RESOURCE_FLAGS;
+using static TerraFX.Interop.Windows.D3D12_RESOURCE_STATES;
+using static TerraFX.Interop.Windows.DXGI_SWAP_EFFECT;
+using static TerraFX.Interop.Windows.Windows;
 using static TerraFX.Samples.DirectX.DXSampleHelper;
 
 namespace TerraFX.Samples.DirectX.D3D12

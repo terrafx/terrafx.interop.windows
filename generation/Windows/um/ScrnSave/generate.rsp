@@ -1,0 +1,23 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+DefScreenSaverProc
+RegisterDialogClasses
+ScreenSaverChangePassword
+ScreenSaverConfigureDialog
+ScreenSaverProc
+ScreenSaverProcW
+--file
+um-ScrnSave.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/ScrnSave
+--test-output
+../../../../tests/Interop/Windows/Windows/um/ScrnSave
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ScrnSave.h
+--with-setlasterror
+RegisterDialogClasses

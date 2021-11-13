@@ -1,0 +1,21 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-windows.graphics.directx.direct3d11.interop.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/windows.graphics.directx.direct3d11.interop
+--test-output
+../../../../tests/Interop/Windows/Windows/um/windows.graphics.directx.direct3d11.interop
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/windows.graphics.directx.direct3d11.interop.h
+--with-librarypath
+CreateDirect3D11DeviceFromDXGIDevice=d3d11
+CreateDirect3D11SurfaceFromDXGISurface=d3d11
+interop::CreateDirect3DDevice=d3d11
+interop::CreateDirect3DSurface=d3d11
+interop::GetDXGIInterface=d3d11
+interop::GetDXGIInterfaceFromObject=d3d11

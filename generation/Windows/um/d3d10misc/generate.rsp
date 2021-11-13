@@ -1,0 +1,18 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-d3d10misc.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/d3d10misc
+--test-output
+../../../../tests/Interop/Windows/Windows/um/d3d10misc
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d3d10misc.h
+--with-librarypath
+D3D10CreateBlob=d3d10
+D3D10CreateDevice=d3d10
+D3D10CreateDeviceAndSwapChain=d3d10

@@ -1,0 +1,27 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-mfsharingengine.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/mfsharingengine
+--test-output
+../../../../tests/Interop/Windows/Windows/um/mfsharingengine
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mfsharingengine.h
+--with-attribute
+DEVICE_INFO=SupportedOSPlatform("windows8.0")
+IMFImageSharingEngine=SupportedOSPlatform("windows8.0")
+IMFImageSharingEngineClassFactory=SupportedOSPlatform("windows8.0")
+IMFMediaSharingEngine=SupportedOSPlatform("windows8.0")
+IMFMediaSharingEngineClassFactory=SupportedOSPlatform("windows8.0")
+IMFSharingEngineClassFactory=SupportedOSPlatform("windows8.0")
+IPlayToControl=SupportedOSPlatform("windows8.0")
+IPlayToControlWithCapabilities=SupportedOSPlatform("windows8.1")
+IPlayToSourceClassFactory=SupportedOSPlatform("windows8.0")
+MF_SHARING_ENGINE_EVENT=SupportedOSPlatform("windows8.0")
+PLAYTO_SOURCE_CREATEFLAGS=Flags
+PLAYTO_SOURCE_CREATEFLAGS=SupportedOSPlatform("windows8.0")

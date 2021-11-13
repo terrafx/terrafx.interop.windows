@@ -1,0 +1,17 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+HSTRING_HEADER
+--file
+winrt-hstring.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/winrt/hstring
+--test-output
+../../../../tests/Interop/Windows/Windows/winrt/hstring
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/winrt/hstring.h
+

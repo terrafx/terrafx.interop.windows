@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-Print3DManagerInterop.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/Print3DManagerInterop
+--test-output
+../../../../tests/Interop/Windows/Windows/um/Print3DManagerInterop
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/Print3DManagerInterop.h

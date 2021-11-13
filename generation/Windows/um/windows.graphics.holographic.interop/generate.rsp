@@ -1,0 +1,19 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-windows.graphics.holographic.interop.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/windows.graphics.holographic.interop
+--test-output
+../../../../tests/Interop/Windows/Windows/um/windows.graphics.holographic.interop
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/windows.graphics.holographic.interop.h
+--with-attribute
+IHolographicCameraInterop=SupportedOSPlatform("windows10.0.19041.0")
+IHolographicCameraRenderingParametersInterop=SupportedOSPlatform("windows10.0.19041.0")
+IHolographicQuadLayerInterop=SupportedOSPlatform("windows10.0.19041.0")
+IHolographicQuadLayerUpdateParametersInterop=SupportedOSPlatform("windows10.0.19041.0")

@@ -1,0 +1,20 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-InkPresenterDesktop.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/InkPresenterDesktop
+--test-output
+../../../../tests/Interop/Windows/Windows/um/InkPresenterDesktop
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/InkPresenterDesktop.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/InkPresenterDesktop_i.c
+--with-attribute
+IInkCommitRequestHandler=SupportedOSPlatform("windows10.0")
+IInkDesktopHost=SupportedOSPlatform("windows10.0")
+IInkHostWorkItem=SupportedOSPlatform("windows10.0")
+IInkPresenterDesktop=SupportedOSPlatform("windows10.0")

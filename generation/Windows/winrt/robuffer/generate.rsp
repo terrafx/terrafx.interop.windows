@@ -1,0 +1,16 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+winrt-robuffer.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/winrt/robuffer
+--test-output
+../../../../tests/Interop/Windows/Windows/winrt/robuffer
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/winrt/robuffer.h
+--with-librarypath
+RoGetBufferMarshaler=wintypes

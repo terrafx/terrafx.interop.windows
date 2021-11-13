@@ -1,0 +1,19 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-d3d11on12.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/d3d11on12
+--test-output
+../../../../tests/Interop/Windows/Windows/um/d3d11on12
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d3d11on12.h
+--with-attribute
+ID3D11On12Device1=SupportedOSPlatform("windows10.0.18362.0")
+ID3D11On12Device2=SupportedOSPlatform("windows10.0.19041.0")
+--with-librarypath
+D3D11On12CreateDevice=d3d11

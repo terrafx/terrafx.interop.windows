@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-imapi2fs.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/imapi2fs
+--test-output
+../../../../tests/Interop/Windows/Windows/um/imapi2fs
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/imapi2fs.h

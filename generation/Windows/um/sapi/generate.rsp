@@ -1,0 +1,22 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+SPFEI
+SPRULETRANS_DICTATION
+SPRULETRANS_TEXTBUFFER
+SPRULETRANS_WILDCARD
+--file
+um-sapi.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/sapi
+--test-output
+../../../../tests/Interop/Windows/Windows/um/sapi
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/sapi.h
+--with-type
+SP_SPPHRASESIZE_500=uint
+SP_SPPHRASESIZE_530=uint

@@ -1,0 +1,25 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+shared-dxgi1_6.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/shared/dxgi1_6
+--test-output
+../../../../tests/Interop/Windows/Windows/shared/dxgi1_6
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/dxgi1_6.h
+--with-attribute
+DXGIDeclareAdapterRemovalSupport=SupportedOSPlatform("windows10.0.17134.0")
+IDXGIFactory6=SupportedOSPlatform("windows10.0.17134.0")
+IDXGIFactory7=SupportedOSPlatform("windows10.0.17763.0")
+IDXGIOutput6=SupportedOSPlatform("windows10.0")
+DXGI_ADAPTER_FLAG3=Flags
+DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS=Flags
+--with-librarypath
+DXGIDeclareAdapterRemovalSupport=dxgi
+--with-type
+DXGI_ADAPTER_FLAG3=uint

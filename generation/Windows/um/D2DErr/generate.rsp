@@ -1,0 +1,17 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+MAKE_D2DHR
+MAKE_D2DHR_ERR
+--file
+um-D2DErr.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/D2DErr
+--test-output
+../../../../tests/Interop/Windows/Windows/um/D2DErr
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/D2DErr.h

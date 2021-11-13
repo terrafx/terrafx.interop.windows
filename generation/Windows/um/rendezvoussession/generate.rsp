@@ -1,0 +1,17 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-rendezvoussession.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/rendezvoussession
+--test-output
+../../../../tests/Interop/Windows/Windows/um/rendezvoussession
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/rendezvoussession.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/rendezvoussession_i.c
+--with-attribute
+RENDEZVOUS_SESSION_FLAGS=Flags

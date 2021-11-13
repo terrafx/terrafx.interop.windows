@@ -3,9 +3,9 @@
 using System;
 using System.Numerics;
 using System.Windows.Forms;
-using TerraFX.Interop;
+using TerraFX.Interop.Windows;
 using TerraFX.Samples.DirectX;
-using static TerraFX.Interop.DXGI_FORMAT;
+using static TerraFX.Interop.Windows.DXGI_FORMAT;
 
 namespace TerraFX.Samples.WinForms
 {

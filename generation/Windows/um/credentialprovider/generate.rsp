@@ -1,0 +1,23 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-credentialprovider.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/credentialprovider
+--test-output
+../../../../tests/Interop/Windows/Windows/um/credentialprovider
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/credentialprovider.h
+--with-attribute
+CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS=SupportedOSPlatform("windows8.0")
+CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS=SupportedOSPlatform("windows8.0")
+ICredentialProviderCredential2=SupportedOSPlatform("windows8.0")
+ICredentialProviderCredentialEvents2=SupportedOSPlatform("windows8.0")
+ICredentialProviderCredentialWithFieldOptions=SupportedOSPlatform("windows8.0")
+ICredentialProviderSetUserArray=SupportedOSPlatform("windows8.0")
+ICredentialProviderUser=SupportedOSPlatform("windows8.0")
+ICredentialProviderUserArray=SupportedOSPlatform("windows8.0")

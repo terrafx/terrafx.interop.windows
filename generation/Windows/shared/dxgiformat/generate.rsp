@@ -1,0 +1,16 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+shared-dxgiformat.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/shared/dxgiformat
+--test-output
+../../../../tests/Interop/Windows/Windows/shared/dxgiformat
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/dxgiformat.h
+--with-type
+DXGI_FORMAT=uint
