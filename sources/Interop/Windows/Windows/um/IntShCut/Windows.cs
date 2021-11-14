@@ -30,15 +30,6 @@ namespace TerraFX.Interop.Windows
         [DllImport("url", ExactSpelling = true)]
         public static extern BOOL InetIsOffline([NativeTypeName("DWORD")] uint dwFlags);
 
-        [NativeTypeName("#define IS_E_EXEC_FAILED MAKE_SCODE(SEVERITY_ERROR, FACILITY_ITF, 0x2002)")]
-        public const int IS_E_EXEC_FAILED = unchecked((int)(((uint)(1) << 31) | ((uint)(4) << 16) | ((uint)(0x2002))));
-
-        [NativeTypeName("#define URL_E_INVALID_SYNTAX MAKE_SCODE(SEVERITY_ERROR, FACILITY_ITF, 0x1001)")]
-        public const int URL_E_INVALID_SYNTAX = unchecked((int)(((uint)(1) << 31) | ((uint)(4) << 16) | ((uint)(0x1001))));
-
-        [NativeTypeName("#define URL_E_UNREGISTERED_PROTOCOL MAKE_SCODE(SEVERITY_ERROR, FACILITY_ITF, 0x1002)")]
-        public const int URL_E_UNREGISTERED_PROTOCOL = unchecked((int)(((uint)(1) << 31) | ((uint)(4) << 16) | ((uint)(0x1002))));
-
         [NativeTypeName("#define TranslateURL TranslateURLW")]
         public static delegate*<ushort*, uint, ushort**, HRESULT> TranslateURL => &TranslateURLW;
 

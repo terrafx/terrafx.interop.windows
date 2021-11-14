@@ -85,9 +85,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define MOUSE_HWHEELED 0x0008")]
         public const int MOUSE_HWHEELED = 0x0008;
 
-        [NativeTypeName("#define KEY_EVENT 0x0001")]
-        public const int KEY_EVENT = 0x0001;
-
         [NativeTypeName("#define MOUSE_EVENT 0x0002")]
         public const int MOUSE_EVENT = 0x0002;
 

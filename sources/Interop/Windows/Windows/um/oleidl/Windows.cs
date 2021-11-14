@@ -34,9 +34,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define UPDFCACHE_ALLBUTNODATACACHE ( ( UPDFCACHE_ALL & ( DWORD  )~UPDFCACHE_NODATACACHE )  )")]
         public const uint UPDFCACHE_ALLBUTNODATACACHE = unchecked((((uint)(~(0x80000000))) & (uint)(~(0x1))));
 
-        [NativeTypeName("#define MK_ALT ( 0x20 )")]
-        public const int MK_ALT = (0x20);
-
         [NativeTypeName("#define DROPEFFECT_NONE ( 0 )")]
         public const int DROPEFFECT_NONE = (0);
 

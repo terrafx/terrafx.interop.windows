@@ -36,33 +36,5 @@ namespace TerraFX.Interop.DirectX
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
-
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid DXGI_DEBUG_D3D12
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x8C, 0xA9, 0x59, 0xCF,
-                    0x50, 0xA9,
-                    0x26, 0x43,
-                    0x91,
-                    0xEF,
-                    0x9B,
-                    0xBA,
-                    0xA1,
-                    0x7B,
-                    0xFD,
-                    0x95
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        [NativeTypeName("#define D3D12_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT 1024")]
-        public const int D3D12_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT = 1024;
     }
 }

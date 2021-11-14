@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.PROC_THREAD_ATTRIBUTE_NUM;
 
 namespace TerraFX.Interop.Windows
 {
@@ -1563,60 +1562,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define CALLBACK_STREAM_SWITCH 0x00000001")]
         public const int CALLBACK_STREAM_SWITCH = 0x00000001;
 
-        [NativeTypeName("#define COPY_FILE_FAIL_IF_EXISTS 0x00000001")]
-        public const int COPY_FILE_FAIL_IF_EXISTS = 0x00000001;
-
-        [NativeTypeName("#define COPY_FILE_RESTARTABLE 0x00000002")]
-        public const int COPY_FILE_RESTARTABLE = 0x00000002;
-
-        [NativeTypeName("#define COPY_FILE_OPEN_SOURCE_FOR_WRITE 0x00000004")]
-        public const int COPY_FILE_OPEN_SOURCE_FOR_WRITE = 0x00000004;
-
-        [NativeTypeName("#define COPY_FILE_ALLOW_DECRYPTED_DESTINATION 0x00000008")]
-        public const int COPY_FILE_ALLOW_DECRYPTED_DESTINATION = 0x00000008;
-
-        [NativeTypeName("#define COPY_FILE_COPY_SYMLINK 0x00000800")]
-        public const int COPY_FILE_COPY_SYMLINK = 0x00000800;
-
-        [NativeTypeName("#define COPY_FILE_NO_BUFFERING 0x00001000")]
-        public const int COPY_FILE_NO_BUFFERING = 0x00001000;
-
-        [NativeTypeName("#define COPY_FILE_REQUEST_SECURITY_PRIVILEGES 0x00002000")]
-        public const int COPY_FILE_REQUEST_SECURITY_PRIVILEGES = 0x00002000;
-
-        [NativeTypeName("#define COPY_FILE_RESUME_FROM_PAUSE 0x00004000")]
-        public const int COPY_FILE_RESUME_FROM_PAUSE = 0x00004000;
-
-        [NativeTypeName("#define COPY_FILE_NO_OFFLOAD 0x00040000")]
-        public const int COPY_FILE_NO_OFFLOAD = 0x00040000;
-
-        [NativeTypeName("#define COPY_FILE_IGNORE_EDP_BLOCK 0x00400000")]
-        public const int COPY_FILE_IGNORE_EDP_BLOCK = 0x00400000;
-
-        [NativeTypeName("#define COPY_FILE_IGNORE_SOURCE_ENCRYPTION 0x00800000")]
-        public const int COPY_FILE_IGNORE_SOURCE_ENCRYPTION = 0x00800000;
-
-        [NativeTypeName("#define COPY_FILE_DONT_REQUEST_DEST_WRITE_DAC 0x02000000")]
-        public const int COPY_FILE_DONT_REQUEST_DEST_WRITE_DAC = 0x02000000;
-
-        [NativeTypeName("#define COPY_FILE_REQUEST_COMPRESSED_TRAFFIC 0x10000000")]
-        public const int COPY_FILE_REQUEST_COMPRESSED_TRAFFIC = 0x10000000;
-
-        [NativeTypeName("#define COPY_FILE_OPEN_AND_COPY_REPARSE_POINT 0x00200000")]
-        public const int COPY_FILE_OPEN_AND_COPY_REPARSE_POINT = 0x00200000;
-
-        [NativeTypeName("#define COPY_FILE_DIRECTORY 0x00000080")]
-        public const int COPY_FILE_DIRECTORY = 0x00000080;
-
-        [NativeTypeName("#define COPY_FILE_SKIP_ALTERNATE_STREAMS 0x00008000")]
-        public const int COPY_FILE_SKIP_ALTERNATE_STREAMS = 0x00008000;
-
-        [NativeTypeName("#define COPY_FILE_DISABLE_PRE_ALLOCATION 0x04000000")]
-        public const int COPY_FILE_DISABLE_PRE_ALLOCATION = 0x04000000;
-
-        [NativeTypeName("#define COPY_FILE_ENABLE_LOW_FREE_SPACE_MODE 0x08000000")]
-        public const int COPY_FILE_ENABLE_LOW_FREE_SPACE_MODE = 0x08000000;
-
         [NativeTypeName("#define REPLACEFILE_WRITE_THROUGH 0x00000001")]
         public const int REPLACEFILE_WRITE_THROUGH = 0x00000001;
 
@@ -1626,182 +1571,11 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define REPLACEFILE_IGNORE_ACL_ERRORS 0x00000004")]
         public const int REPLACEFILE_IGNORE_ACL_ERRORS = 0x00000004;
 
-        [NativeTypeName("#define PIPE_ACCESS_INBOUND 0x00000001")]
-        public const int PIPE_ACCESS_INBOUND = 0x00000001;
-
-        [NativeTypeName("#define PIPE_ACCESS_OUTBOUND 0x00000002")]
-        public const int PIPE_ACCESS_OUTBOUND = 0x00000002;
-
-        [NativeTypeName("#define PIPE_ACCESS_DUPLEX 0x00000003")]
-        public const int PIPE_ACCESS_DUPLEX = 0x00000003;
-
-        [NativeTypeName("#define PIPE_CLIENT_END 0x00000000")]
-        public const int PIPE_CLIENT_END = 0x00000000;
-
-        [NativeTypeName("#define PIPE_SERVER_END 0x00000001")]
-        public const int PIPE_SERVER_END = 0x00000001;
-
-        [NativeTypeName("#define PIPE_WAIT 0x00000000")]
-        public const int PIPE_WAIT = 0x00000000;
-
-        [NativeTypeName("#define PIPE_NOWAIT 0x00000001")]
-        public const int PIPE_NOWAIT = 0x00000001;
-
-        [NativeTypeName("#define PIPE_READMODE_BYTE 0x00000000")]
-        public const int PIPE_READMODE_BYTE = 0x00000000;
-
-        [NativeTypeName("#define PIPE_READMODE_MESSAGE 0x00000002")]
-        public const int PIPE_READMODE_MESSAGE = 0x00000002;
-
-        [NativeTypeName("#define PIPE_TYPE_BYTE 0x00000000")]
-        public const int PIPE_TYPE_BYTE = 0x00000000;
-
-        [NativeTypeName("#define PIPE_TYPE_MESSAGE 0x00000004")]
-        public const int PIPE_TYPE_MESSAGE = 0x00000004;
-
-        [NativeTypeName("#define PIPE_ACCEPT_REMOTE_CLIENTS 0x00000000")]
-        public const int PIPE_ACCEPT_REMOTE_CLIENTS = 0x00000000;
-
-        [NativeTypeName("#define PIPE_REJECT_REMOTE_CLIENTS 0x00000008")]
-        public const int PIPE_REJECT_REMOTE_CLIENTS = 0x00000008;
-
-        [NativeTypeName("#define PIPE_UNLIMITED_INSTANCES 255")]
-        public const int PIPE_UNLIMITED_INSTANCES = 255;
-
         [NativeTypeName("#define FAIL_FAST_GENERATE_EXCEPTION_ADDRESS 0x1")]
         public const int FAIL_FAST_GENERATE_EXCEPTION_ADDRESS = 0x1;
 
         [NativeTypeName("#define FAIL_FAST_NO_HARD_ERROR_DLG 0x2")]
         public const int FAIL_FAST_NO_HARD_ERROR_DLG = 0x2;
-
-        [NativeTypeName("#define PST_UNSPECIFIED ((DWORD)0x00000000)")]
-        public const uint PST_UNSPECIFIED = ((uint)(0x00000000));
-
-        [NativeTypeName("#define PST_RS232 ((DWORD)0x00000001)")]
-        public const uint PST_RS232 = ((uint)(0x00000001));
-
-        [NativeTypeName("#define PST_PARALLELPORT ((DWORD)0x00000002)")]
-        public const uint PST_PARALLELPORT = ((uint)(0x00000002));
-
-        [NativeTypeName("#define PST_RS422 ((DWORD)0x00000003)")]
-        public const uint PST_RS422 = ((uint)(0x00000003));
-
-        [NativeTypeName("#define PST_RS423 ((DWORD)0x00000004)")]
-        public const uint PST_RS423 = ((uint)(0x00000004));
-
-        [NativeTypeName("#define PST_RS449 ((DWORD)0x00000005)")]
-        public const uint PST_RS449 = ((uint)(0x00000005));
-
-        [NativeTypeName("#define PST_MODEM ((DWORD)0x00000006)")]
-        public const uint PST_MODEM = ((uint)(0x00000006));
-
-        [NativeTypeName("#define PST_FAX ((DWORD)0x00000021)")]
-        public const uint PST_FAX = ((uint)(0x00000021));
-
-        [NativeTypeName("#define PST_SCANNER ((DWORD)0x00000022)")]
-        public const uint PST_SCANNER = ((uint)(0x00000022));
-
-        [NativeTypeName("#define PST_NETWORK_BRIDGE ((DWORD)0x00000100)")]
-        public const uint PST_NETWORK_BRIDGE = ((uint)(0x00000100));
-
-        [NativeTypeName("#define PST_LAT ((DWORD)0x00000101)")]
-        public const uint PST_LAT = ((uint)(0x00000101));
-
-        [NativeTypeName("#define PST_TCPIP_TELNET ((DWORD)0x00000102)")]
-        public const uint PST_TCPIP_TELNET = ((uint)(0x00000102));
-
-        [NativeTypeName("#define PST_X25 ((DWORD)0x00000103)")]
-        public const uint PST_X25 = ((uint)(0x00000103));
-
-        [NativeTypeName("#define PCF_DTRDSR ((DWORD)0x0001)")]
-        public const uint PCF_DTRDSR = ((uint)(0x0001));
-
-        [NativeTypeName("#define PCF_RTSCTS ((DWORD)0x0002)")]
-        public const uint PCF_RTSCTS = ((uint)(0x0002));
-
-        [NativeTypeName("#define PCF_RLSD ((DWORD)0x0004)")]
-        public const uint PCF_RLSD = ((uint)(0x0004));
-
-        [NativeTypeName("#define PCF_PARITY_CHECK ((DWORD)0x0008)")]
-        public const uint PCF_PARITY_CHECK = ((uint)(0x0008));
-
-        [NativeTypeName("#define PCF_XONXOFF ((DWORD)0x0010)")]
-        public const uint PCF_XONXOFF = ((uint)(0x0010));
-
-        [NativeTypeName("#define PCF_SETXCHAR ((DWORD)0x0020)")]
-        public const uint PCF_SETXCHAR = ((uint)(0x0020));
-
-        [NativeTypeName("#define PCF_TOTALTIMEOUTS ((DWORD)0x0040)")]
-        public const uint PCF_TOTALTIMEOUTS = ((uint)(0x0040));
-
-        [NativeTypeName("#define PCF_INTTIMEOUTS ((DWORD)0x0080)")]
-        public const uint PCF_INTTIMEOUTS = ((uint)(0x0080));
-
-        [NativeTypeName("#define PCF_SPECIALCHARS ((DWORD)0x0100)")]
-        public const uint PCF_SPECIALCHARS = ((uint)(0x0100));
-
-        [NativeTypeName("#define PCF_16BITMODE ((DWORD)0x0200)")]
-        public const uint PCF_16BITMODE = ((uint)(0x0200));
-
-        [NativeTypeName("#define BAUD_075 ((DWORD)0x00000001)")]
-        public const uint BAUD_075 = ((uint)(0x00000001));
-
-        [NativeTypeName("#define BAUD_110 ((DWORD)0x00000002)")]
-        public const uint BAUD_110 = ((uint)(0x00000002));
-
-        [NativeTypeName("#define BAUD_134_5 ((DWORD)0x00000004)")]
-        public const uint BAUD_134_5 = ((uint)(0x00000004));
-
-        [NativeTypeName("#define BAUD_150 ((DWORD)0x00000008)")]
-        public const uint BAUD_150 = ((uint)(0x00000008));
-
-        [NativeTypeName("#define BAUD_300 ((DWORD)0x00000010)")]
-        public const uint BAUD_300 = ((uint)(0x00000010));
-
-        [NativeTypeName("#define BAUD_600 ((DWORD)0x00000020)")]
-        public const uint BAUD_600 = ((uint)(0x00000020));
-
-        [NativeTypeName("#define BAUD_1200 ((DWORD)0x00000040)")]
-        public const uint BAUD_1200 = ((uint)(0x00000040));
-
-        [NativeTypeName("#define BAUD_1800 ((DWORD)0x00000080)")]
-        public const uint BAUD_1800 = ((uint)(0x00000080));
-
-        [NativeTypeName("#define BAUD_2400 ((DWORD)0x00000100)")]
-        public const uint BAUD_2400 = ((uint)(0x00000100));
-
-        [NativeTypeName("#define BAUD_4800 ((DWORD)0x00000200)")]
-        public const uint BAUD_4800 = ((uint)(0x00000200));
-
-        [NativeTypeName("#define BAUD_7200 ((DWORD)0x00000400)")]
-        public const uint BAUD_7200 = ((uint)(0x00000400));
-
-        [NativeTypeName("#define BAUD_9600 ((DWORD)0x00000800)")]
-        public const uint BAUD_9600 = ((uint)(0x00000800));
-
-        [NativeTypeName("#define BAUD_14400 ((DWORD)0x00001000)")]
-        public const uint BAUD_14400 = ((uint)(0x00001000));
-
-        [NativeTypeName("#define BAUD_19200 ((DWORD)0x00002000)")]
-        public const uint BAUD_19200 = ((uint)(0x00002000));
-
-        [NativeTypeName("#define BAUD_38400 ((DWORD)0x00004000)")]
-        public const uint BAUD_38400 = ((uint)(0x00004000));
-
-        [NativeTypeName("#define BAUD_56K ((DWORD)0x00008000)")]
-        public const uint BAUD_56K = ((uint)(0x00008000));
-
-        [NativeTypeName("#define BAUD_128K ((DWORD)0x00010000)")]
-        public const uint BAUD_128K = ((uint)(0x00010000));
-
-        [NativeTypeName("#define BAUD_115200 ((DWORD)0x00020000)")]
-        public const uint BAUD_115200 = ((uint)(0x00020000));
-
-        [NativeTypeName("#define BAUD_57600 ((DWORD)0x00040000)")]
-        public const uint BAUD_57600 = ((uint)(0x00040000));
-
-        [NativeTypeName("#define BAUD_USER ((DWORD)0x10000000)")]
-        public const uint BAUD_USER = ((uint)(0x10000000));
 
         [NativeTypeName("#define DATABITS_5 ((WORD)0x0001)")]
         public const ushort DATABITS_5 = ((ushort)(0x0001));
@@ -1869,59 +1643,11 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define RTS_CONTROL_TOGGLE 0x03")]
         public const int RTS_CONTROL_TOGGLE = 0x03;
 
-        [NativeTypeName("#define GMEM_FIXED 0x0000")]
-        public const int GMEM_FIXED = 0x0000;
-
-        [NativeTypeName("#define GMEM_MOVEABLE 0x0002")]
-        public const int GMEM_MOVEABLE = 0x0002;
-
-        [NativeTypeName("#define GMEM_NOCOMPACT 0x0010")]
-        public const int GMEM_NOCOMPACT = 0x0010;
-
-        [NativeTypeName("#define GMEM_NODISCARD 0x0020")]
-        public const int GMEM_NODISCARD = 0x0020;
-
-        [NativeTypeName("#define GMEM_ZEROINIT 0x0040")]
-        public const int GMEM_ZEROINIT = 0x0040;
-
-        [NativeTypeName("#define GMEM_MODIFY 0x0080")]
-        public const int GMEM_MODIFY = 0x0080;
-
-        [NativeTypeName("#define GMEM_DISCARDABLE 0x0100")]
-        public const int GMEM_DISCARDABLE = 0x0100;
-
-        [NativeTypeName("#define GMEM_NOT_BANKED 0x1000")]
-        public const int GMEM_NOT_BANKED = 0x1000;
-
-        [NativeTypeName("#define GMEM_SHARE 0x2000")]
-        public const int GMEM_SHARE = 0x2000;
-
-        [NativeTypeName("#define GMEM_DDESHARE 0x2000")]
-        public const int GMEM_DDESHARE = 0x2000;
-
-        [NativeTypeName("#define GMEM_NOTIFY 0x4000")]
-        public const int GMEM_NOTIFY = 0x4000;
-
-        [NativeTypeName("#define GMEM_LOWER GMEM_NOT_BANKED")]
-        public const int GMEM_LOWER = 0x1000;
-
-        [NativeTypeName("#define GMEM_VALID_FLAGS 0x7F72")]
-        public const int GMEM_VALID_FLAGS = 0x7F72;
-
-        [NativeTypeName("#define GMEM_INVALID_HANDLE 0x8000")]
-        public const int GMEM_INVALID_HANDLE = 0x8000;
-
         [NativeTypeName("#define GHND (GMEM_MOVEABLE | GMEM_ZEROINIT)")]
         public const int GHND = (0x0002 | 0x0040);
 
         [NativeTypeName("#define GPTR (GMEM_FIXED | GMEM_ZEROINIT)")]
         public const int GPTR = (0x0000 | 0x0040);
-
-        [NativeTypeName("#define GMEM_DISCARDED 0x4000")]
-        public const int GMEM_DISCARDED = 0x4000;
-
-        [NativeTypeName("#define GMEM_LOCKCOUNT 0x00FF")]
-        public const int GMEM_LOCKCOUNT = 0x00FF;
 
         [NativeTypeName("#define DEBUG_PROCESS 0x00000001")]
         public const int DEBUG_PROCESS = 0x00000001;
@@ -1929,14 +1655,8 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define DEBUG_ONLY_THIS_PROCESS 0x00000002")]
         public const int DEBUG_ONLY_THIS_PROCESS = 0x00000002;
 
-        [NativeTypeName("#define CREATE_SUSPENDED 0x00000004")]
-        public const int CREATE_SUSPENDED = 0x00000004;
-
         [NativeTypeName("#define DETACHED_PROCESS 0x00000008")]
         public const int DETACHED_PROCESS = 0x00000008;
-
-        [NativeTypeName("#define CREATE_NEW_CONSOLE 0x00000010")]
-        public const int CREATE_NEW_CONSOLE = 0x00000010;
 
         [NativeTypeName("#define NORMAL_PRIORITY_CLASS 0x00000020")]
         public const int NORMAL_PRIORITY_CLASS = 0x00000020;
@@ -1950,21 +1670,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define REALTIME_PRIORITY_CLASS 0x00000100")]
         public const int REALTIME_PRIORITY_CLASS = 0x00000100;
 
-        [NativeTypeName("#define CREATE_NEW_PROCESS_GROUP 0x00000200")]
-        public const int CREATE_NEW_PROCESS_GROUP = 0x00000200;
-
-        [NativeTypeName("#define CREATE_UNICODE_ENVIRONMENT 0x00000400")]
-        public const int CREATE_UNICODE_ENVIRONMENT = 0x00000400;
-
-        [NativeTypeName("#define CREATE_SEPARATE_WOW_VDM 0x00000800")]
-        public const int CREATE_SEPARATE_WOW_VDM = 0x00000800;
-
-        [NativeTypeName("#define CREATE_SHARED_WOW_VDM 0x00001000")]
-        public const int CREATE_SHARED_WOW_VDM = 0x00001000;
-
-        [NativeTypeName("#define CREATE_FORCEDOS 0x00002000")]
-        public const int CREATE_FORCEDOS = 0x00002000;
-
         [NativeTypeName("#define BELOW_NORMAL_PRIORITY_CLASS 0x00004000")]
         public const int BELOW_NORMAL_PRIORITY_CLASS = 0x00004000;
 
@@ -1977,26 +1682,8 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define INHERIT_CALLER_PRIORITY 0x00020000")]
         public const int INHERIT_CALLER_PRIORITY = 0x00020000;
 
-        [NativeTypeName("#define CREATE_PROTECTED_PROCESS 0x00040000")]
-        public const int CREATE_PROTECTED_PROCESS = 0x00040000;
-
         [NativeTypeName("#define EXTENDED_STARTUPINFO_PRESENT 0x00080000")]
         public const int EXTENDED_STARTUPINFO_PRESENT = 0x00080000;
-
-        [NativeTypeName("#define CREATE_SECURE_PROCESS 0x00400000")]
-        public const int CREATE_SECURE_PROCESS = 0x00400000;
-
-        [NativeTypeName("#define CREATE_BREAKAWAY_FROM_JOB 0x01000000")]
-        public const int CREATE_BREAKAWAY_FROM_JOB = 0x01000000;
-
-        [NativeTypeName("#define CREATE_PRESERVE_CODE_AUTHZ_LEVEL 0x02000000")]
-        public const int CREATE_PRESERVE_CODE_AUTHZ_LEVEL = 0x02000000;
-
-        [NativeTypeName("#define CREATE_DEFAULT_ERROR_MODE 0x04000000")]
-        public const int CREATE_DEFAULT_ERROR_MODE = 0x04000000;
-
-        [NativeTypeName("#define CREATE_NO_WINDOW 0x08000000")]
-        public const int CREATE_NO_WINDOW = 0x08000000;
 
         [NativeTypeName("#define PROFILE_USER 0x10000000")]
         public const int PROFILE_USER = 0x10000000;
@@ -2007,41 +1694,8 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define PROFILE_SERVER 0x40000000")]
         public const int PROFILE_SERVER = 0x40000000;
 
-        [NativeTypeName("#define CREATE_IGNORE_SYSTEM_DEFAULT 0x80000000")]
-        public const uint CREATE_IGNORE_SYSTEM_DEFAULT = 0x80000000;
-
         [NativeTypeName("#define STACK_SIZE_PARAM_IS_A_RESERVATION 0x00010000")]
         public const int STACK_SIZE_PARAM_IS_A_RESERVATION = 0x00010000;
-
-        [NativeTypeName("#define THREAD_PRIORITY_LOWEST THREAD_BASE_PRIORITY_MIN")]
-        public const int THREAD_PRIORITY_LOWEST = (-2);
-
-        [NativeTypeName("#define THREAD_PRIORITY_BELOW_NORMAL (THREAD_PRIORITY_LOWEST+1)")]
-        public const int THREAD_PRIORITY_BELOW_NORMAL = ((-2) + 1);
-
-        [NativeTypeName("#define THREAD_PRIORITY_NORMAL 0")]
-        public const int THREAD_PRIORITY_NORMAL = 0;
-
-        [NativeTypeName("#define THREAD_PRIORITY_HIGHEST THREAD_BASE_PRIORITY_MAX")]
-        public const int THREAD_PRIORITY_HIGHEST = 2;
-
-        [NativeTypeName("#define THREAD_PRIORITY_ABOVE_NORMAL (THREAD_PRIORITY_HIGHEST-1)")]
-        public const int THREAD_PRIORITY_ABOVE_NORMAL = (2 - 1);
-
-        [NativeTypeName("#define THREAD_PRIORITY_ERROR_RETURN (MAXLONG)")]
-        public const int THREAD_PRIORITY_ERROR_RETURN = (0x7fffffff);
-
-        [NativeTypeName("#define THREAD_PRIORITY_TIME_CRITICAL THREAD_BASE_PRIORITY_LOWRT")]
-        public const int THREAD_PRIORITY_TIME_CRITICAL = 15;
-
-        [NativeTypeName("#define THREAD_PRIORITY_IDLE THREAD_BASE_PRIORITY_IDLE")]
-        public const int THREAD_PRIORITY_IDLE = (-15);
-
-        [NativeTypeName("#define THREAD_MODE_BACKGROUND_BEGIN 0x00010000")]
-        public const int THREAD_MODE_BACKGROUND_BEGIN = 0x00010000;
-
-        [NativeTypeName("#define THREAD_MODE_BACKGROUND_END 0x00020000")]
-        public const int THREAD_MODE_BACKGROUND_END = 0x00020000;
 
         [NativeTypeName("#define VOLUME_NAME_DOS 0x0")]
         public const int VOLUME_NAME_DOS = 0x0;
@@ -2076,15 +1730,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define DRIVE_RAMDISK 6")]
         public const int DRIVE_RAMDISK = 6;
 
-        [NativeTypeName("#define STD_INPUT_HANDLE ((DWORD)-10)")]
-        public const uint STD_INPUT_HANDLE = unchecked((uint)(-10));
-
-        [NativeTypeName("#define STD_OUTPUT_HANDLE ((DWORD)-11)")]
-        public const uint STD_OUTPUT_HANDLE = unchecked((uint)(-11));
-
-        [NativeTypeName("#define STD_ERROR_HANDLE ((DWORD)-12)")]
-        public const uint STD_ERROR_HANDLE = unchecked((uint)(-12));
-
         [NativeTypeName("#define NOPARITY 0")]
         public const int NOPARITY = 0;
 
@@ -2115,84 +1760,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define INFINITE 0xFFFFFFFF")]
         public const uint INFINITE = 0xFFFFFFFF;
 
-        [NativeTypeName("#define CBR_110 110")]
-        public const int CBR_110 = 110;
-
-        [NativeTypeName("#define CBR_300 300")]
-        public const int CBR_300 = 300;
-
-        [NativeTypeName("#define CBR_600 600")]
-        public const int CBR_600 = 600;
-
-        [NativeTypeName("#define CBR_1200 1200")]
-        public const int CBR_1200 = 1200;
-
-        [NativeTypeName("#define CBR_2400 2400")]
-        public const int CBR_2400 = 2400;
-
-        [NativeTypeName("#define CBR_4800 4800")]
-        public const int CBR_4800 = 4800;
-
-        [NativeTypeName("#define CBR_9600 9600")]
-        public const int CBR_9600 = 9600;
-
-        [NativeTypeName("#define CBR_14400 14400")]
-        public const int CBR_14400 = 14400;
-
-        [NativeTypeName("#define CBR_19200 19200")]
-        public const int CBR_19200 = 19200;
-
-        [NativeTypeName("#define CBR_38400 38400")]
-        public const int CBR_38400 = 38400;
-
-        [NativeTypeName("#define CBR_56000 56000")]
-        public const int CBR_56000 = 56000;
-
-        [NativeTypeName("#define CBR_57600 57600")]
-        public const int CBR_57600 = 57600;
-
-        [NativeTypeName("#define CBR_115200 115200")]
-        public const int CBR_115200 = 115200;
-
-        [NativeTypeName("#define CBR_128000 128000")]
-        public const int CBR_128000 = 128000;
-
-        [NativeTypeName("#define CBR_256000 256000")]
-        public const int CBR_256000 = 256000;
-
-        [NativeTypeName("#define CE_RXOVER 0x0001")]
-        public const int CE_RXOVER = 0x0001;
-
-        [NativeTypeName("#define CE_OVERRUN 0x0002")]
-        public const int CE_OVERRUN = 0x0002;
-
-        [NativeTypeName("#define CE_RXPARITY 0x0004")]
-        public const int CE_RXPARITY = 0x0004;
-
-        [NativeTypeName("#define CE_FRAME 0x0008")]
-        public const int CE_FRAME = 0x0008;
-
-        [NativeTypeName("#define CE_BREAK 0x0010")]
-        public const int CE_BREAK = 0x0010;
-
-        [NativeTypeName("#define CE_TXFULL 0x0100")]
-        public const int CE_TXFULL = 0x0100;
-
-        [NativeTypeName("#define CE_PTO 0x0200")]
-        public const int CE_PTO = 0x0200;
-
-        [NativeTypeName("#define CE_IOE 0x0400")]
-        public const int CE_IOE = 0x0400;
-
-        [NativeTypeName("#define CE_DNS 0x0800")]
-        public const int CE_DNS = 0x0800;
-
-        [NativeTypeName("#define CE_OOP 0x1000")]
-        public const int CE_OOP = 0x1000;
-
-        [NativeTypeName("#define CE_MODE 0x8000")]
-        public const int CE_MODE = 0x8000;
-
         [NativeTypeName("#define IE_BADID (-1)")]
         public const int IE_BADID = (-1);
 
@@ -2216,45 +1783,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define IE_BAUDRATE (-12)")]
         public const int IE_BAUDRATE = (-12);
-
-        [NativeTypeName("#define EV_RXCHAR 0x0001")]
-        public const int EV_RXCHAR = 0x0001;
-
-        [NativeTypeName("#define EV_RXFLAG 0x0002")]
-        public const int EV_RXFLAG = 0x0002;
-
-        [NativeTypeName("#define EV_TXEMPTY 0x0004")]
-        public const int EV_TXEMPTY = 0x0004;
-
-        [NativeTypeName("#define EV_CTS 0x0008")]
-        public const int EV_CTS = 0x0008;
-
-        [NativeTypeName("#define EV_DSR 0x0010")]
-        public const int EV_DSR = 0x0010;
-
-        [NativeTypeName("#define EV_RLSD 0x0020")]
-        public const int EV_RLSD = 0x0020;
-
-        [NativeTypeName("#define EV_BREAK 0x0040")]
-        public const int EV_BREAK = 0x0040;
-
-        [NativeTypeName("#define EV_ERR 0x0080")]
-        public const int EV_ERR = 0x0080;
-
-        [NativeTypeName("#define EV_RING 0x0100")]
-        public const int EV_RING = 0x0100;
-
-        [NativeTypeName("#define EV_PERR 0x0200")]
-        public const int EV_PERR = 0x0200;
-
-        [NativeTypeName("#define EV_RX80FULL 0x0400")]
-        public const int EV_RX80FULL = 0x0400;
-
-        [NativeTypeName("#define EV_EVENT1 0x0800")]
-        public const int EV_EVENT1 = 0x0800;
-
-        [NativeTypeName("#define EV_EVENT2 0x1000")]
-        public const int EV_EVENT2 = 0x1000;
 
         [NativeTypeName("#define SETXOFF 1")]
         public const int SETXOFF = 1;
@@ -2298,108 +1826,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define LPTx 0x80")]
         public const int LPTx = 0x80;
 
-        [NativeTypeName("#define MS_CTS_ON ((DWORD)0x0010)")]
-        public const uint MS_CTS_ON = ((uint)(0x0010));
-
-        [NativeTypeName("#define MS_DSR_ON ((DWORD)0x0020)")]
-        public const uint MS_DSR_ON = ((uint)(0x0020));
-
-        [NativeTypeName("#define MS_RING_ON ((DWORD)0x0040)")]
-        public const uint MS_RING_ON = ((uint)(0x0040));
-
-        [NativeTypeName("#define MS_RLSD_ON ((DWORD)0x0080)")]
-        public const uint MS_RLSD_ON = ((uint)(0x0080));
-
-        [NativeTypeName("#define S_QUEUEEMPTY 0")]
-        public const int S_QUEUEEMPTY = 0;
-
-        [NativeTypeName("#define S_THRESHOLD 1")]
-        public const int S_THRESHOLD = 1;
-
-        [NativeTypeName("#define S_ALLTHRESHOLD 2")]
-        public const int S_ALLTHRESHOLD = 2;
-
-        [NativeTypeName("#define S_NORMAL 0")]
-        public const int S_NORMAL = 0;
-
-        [NativeTypeName("#define S_LEGATO 1")]
-        public const int S_LEGATO = 1;
-
-        [NativeTypeName("#define S_STACCATO 2")]
-        public const int S_STACCATO = 2;
-
-        [NativeTypeName("#define S_PERIOD512 0")]
-        public const int S_PERIOD512 = 0;
-
-        [NativeTypeName("#define S_PERIOD1024 1")]
-        public const int S_PERIOD1024 = 1;
-
-        [NativeTypeName("#define S_PERIOD2048 2")]
-        public const int S_PERIOD2048 = 2;
-
-        [NativeTypeName("#define S_PERIODVOICE 3")]
-        public const int S_PERIODVOICE = 3;
-
-        [NativeTypeName("#define S_WHITE512 4")]
-        public const int S_WHITE512 = 4;
-
-        [NativeTypeName("#define S_WHITE1024 5")]
-        public const int S_WHITE1024 = 5;
-
-        [NativeTypeName("#define S_WHITE2048 6")]
-        public const int S_WHITE2048 = 6;
-
-        [NativeTypeName("#define S_WHITEVOICE 7")]
-        public const int S_WHITEVOICE = 7;
-
-        [NativeTypeName("#define S_SERDVNA (-1)")]
-        public const int S_SERDVNA = (-1);
-
-        [NativeTypeName("#define S_SEROFM (-2)")]
-        public const int S_SEROFM = (-2);
-
-        [NativeTypeName("#define S_SERMACT (-3)")]
-        public const int S_SERMACT = (-3);
-
-        [NativeTypeName("#define S_SERQFUL (-4)")]
-        public const int S_SERQFUL = (-4);
-
-        [NativeTypeName("#define S_SERBDNT (-5)")]
-        public const int S_SERBDNT = (-5);
-
-        [NativeTypeName("#define S_SERDLN (-6)")]
-        public const int S_SERDLN = (-6);
-
-        [NativeTypeName("#define S_SERDCC (-7)")]
-        public const int S_SERDCC = (-7);
-
-        [NativeTypeName("#define S_SERDTP (-8)")]
-        public const int S_SERDTP = (-8);
-
-        [NativeTypeName("#define S_SERDVL (-9)")]
-        public const int S_SERDVL = (-9);
-
-        [NativeTypeName("#define S_SERDMD (-10)")]
-        public const int S_SERDMD = (-10);
-
-        [NativeTypeName("#define S_SERDSH (-11)")]
-        public const int S_SERDSH = (-11);
-
-        [NativeTypeName("#define S_SERDPT (-12)")]
-        public const int S_SERDPT = (-12);
-
-        [NativeTypeName("#define S_SERDFQ (-13)")]
-        public const int S_SERDFQ = (-13);
-
-        [NativeTypeName("#define S_SERDDR (-14)")]
-        public const int S_SERDDR = (-14);
-
-        [NativeTypeName("#define S_SERDSR (-15)")]
-        public const int S_SERDSR = (-15);
-
-        [NativeTypeName("#define S_SERDST (-16)")]
-        public const int S_SERDST = (-16);
-
         [NativeTypeName("#define NMPWAIT_WAIT_FOREVER 0xffffffff")]
         public const uint NMPWAIT_WAIT_FOREVER = 0xffffffff;
 
@@ -2409,75 +1835,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define NMPWAIT_USE_DEFAULT_WAIT 0x00000000")]
         public const int NMPWAIT_USE_DEFAULT_WAIT = 0x00000000;
 
-        [NativeTypeName("#define FS_CASE_IS_PRESERVED FILE_CASE_PRESERVED_NAMES")]
-        public const int FS_CASE_IS_PRESERVED = 0x00000002;
-
-        [NativeTypeName("#define FS_CASE_SENSITIVE FILE_CASE_SENSITIVE_SEARCH")]
-        public const int FS_CASE_SENSITIVE = 0x00000001;
-
-        [NativeTypeName("#define FS_UNICODE_STORED_ON_DISK FILE_UNICODE_ON_DISK")]
-        public const int FS_UNICODE_STORED_ON_DISK = 0x00000004;
-
-        [NativeTypeName("#define FS_PERSISTENT_ACLS FILE_PERSISTENT_ACLS")]
-        public const int FS_PERSISTENT_ACLS = 0x00000008;
-
-        [NativeTypeName("#define FS_VOL_IS_COMPRESSED FILE_VOLUME_IS_COMPRESSED")]
-        public const int FS_VOL_IS_COMPRESSED = 0x00008000;
-
-        [NativeTypeName("#define FS_FILE_COMPRESSION FILE_FILE_COMPRESSION")]
-        public const int FS_FILE_COMPRESSION = 0x00000010;
-
-        [NativeTypeName("#define FS_FILE_ENCRYPTION FILE_SUPPORTS_ENCRYPTION")]
-        public const int FS_FILE_ENCRYPTION = 0x00020000;
-
-        [NativeTypeName("#define OF_READ 0x00000000")]
-        public const int OF_READ = 0x00000000;
-
-        [NativeTypeName("#define OF_WRITE 0x00000001")]
-        public const int OF_WRITE = 0x00000001;
-
-        [NativeTypeName("#define OF_READWRITE 0x00000002")]
-        public const int OF_READWRITE = 0x00000002;
-
-        [NativeTypeName("#define OF_SHARE_COMPAT 0x00000000")]
-        public const int OF_SHARE_COMPAT = 0x00000000;
-
-        [NativeTypeName("#define OF_SHARE_EXCLUSIVE 0x00000010")]
-        public const int OF_SHARE_EXCLUSIVE = 0x00000010;
-
-        [NativeTypeName("#define OF_SHARE_DENY_WRITE 0x00000020")]
-        public const int OF_SHARE_DENY_WRITE = 0x00000020;
-
-        [NativeTypeName("#define OF_SHARE_DENY_READ 0x00000030")]
-        public const int OF_SHARE_DENY_READ = 0x00000030;
-
-        [NativeTypeName("#define OF_SHARE_DENY_NONE 0x00000040")]
-        public const int OF_SHARE_DENY_NONE = 0x00000040;
-
-        [NativeTypeName("#define OF_PARSE 0x00000100")]
-        public const int OF_PARSE = 0x00000100;
-
-        [NativeTypeName("#define OF_DELETE 0x00000200")]
-        public const int OF_DELETE = 0x00000200;
-
-        [NativeTypeName("#define OF_VERIFY 0x00000400")]
-        public const int OF_VERIFY = 0x00000400;
-
-        [NativeTypeName("#define OF_CANCEL 0x00000800")]
-        public const int OF_CANCEL = 0x00000800;
-
-        [NativeTypeName("#define OF_CREATE 0x00001000")]
-        public const int OF_CREATE = 0x00001000;
-
-        [NativeTypeName("#define OF_PROMPT 0x00002000")]
-        public const int OF_PROMPT = 0x00002000;
-
-        [NativeTypeName("#define OF_EXIST 0x00004000")]
-        public const int OF_EXIST = 0x00004000;
-
-        [NativeTypeName("#define OF_REOPEN 0x00008000")]
-        public const int OF_REOPEN = 0x00008000;
-
         [NativeTypeName("#define OFS_MAXPATHNAME 128")]
         public const int OFS_MAXPATHNAME = 128;
 
@@ -2486,27 +1843,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define INVALID_ATOM ((ATOM)0)")]
         public const ushort INVALID_ATOM = ((ushort)(0));
-
-        [NativeTypeName("#define SCS_32BIT_BINARY 0")]
-        public const int SCS_32BIT_BINARY = 0;
-
-        [NativeTypeName("#define SCS_DOS_BINARY 1")]
-        public const int SCS_DOS_BINARY = 1;
-
-        [NativeTypeName("#define SCS_WOW_BINARY 2")]
-        public const int SCS_WOW_BINARY = 2;
-
-        [NativeTypeName("#define SCS_PIF_BINARY 3")]
-        public const int SCS_PIF_BINARY = 3;
-
-        [NativeTypeName("#define SCS_POSIX_BINARY 4")]
-        public const int SCS_POSIX_BINARY = 4;
-
-        [NativeTypeName("#define SCS_OS216_BINARY 5")]
-        public const int SCS_OS216_BINARY = 5;
-
-        [NativeTypeName("#define SCS_64BIT_BINARY 6")]
-        public const int SCS_64BIT_BINARY = 6;
 
         [NativeTypeName("#define GetBinaryType GetBinaryTypeW")]
         public static delegate*<ushort*, uint*, BOOL> GetBinaryType => &GetBinaryTypeW;
@@ -2547,41 +1883,8 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define HINSTANCE_ERROR 32")]
         public const int HINSTANCE_ERROR = 32;
 
-        [NativeTypeName("#define GET_TAPE_MEDIA_INFORMATION 0")]
-        public const int GET_TAPE_MEDIA_INFORMATION = 0;
-
-        [NativeTypeName("#define GET_TAPE_DRIVE_INFORMATION 1")]
-        public const int GET_TAPE_DRIVE_INFORMATION = 1;
-
-        [NativeTypeName("#define SET_TAPE_MEDIA_INFORMATION 0")]
-        public const int SET_TAPE_MEDIA_INFORMATION = 0;
-
-        [NativeTypeName("#define SET_TAPE_DRIVE_INFORMATION 1")]
-        public const int SET_TAPE_DRIVE_INFORMATION = 1;
-
-        [NativeTypeName("#define FORMAT_MESSAGE_ALLOCATE_BUFFER 0x00000100")]
-        public const int FORMAT_MESSAGE_ALLOCATE_BUFFER = 0x00000100;
-
         [NativeTypeName("#define FormatMessage FormatMessageW")]
         public static delegate*<uint, void*, uint, uint, ushort*, uint, sbyte**, uint> FormatMessage => &FormatMessageW;
-
-        [NativeTypeName("#define FORMAT_MESSAGE_IGNORE_INSERTS 0x00000200")]
-        public const int FORMAT_MESSAGE_IGNORE_INSERTS = 0x00000200;
-
-        [NativeTypeName("#define FORMAT_MESSAGE_FROM_STRING 0x00000400")]
-        public const int FORMAT_MESSAGE_FROM_STRING = 0x00000400;
-
-        [NativeTypeName("#define FORMAT_MESSAGE_FROM_HMODULE 0x00000800")]
-        public const int FORMAT_MESSAGE_FROM_HMODULE = 0x00000800;
-
-        [NativeTypeName("#define FORMAT_MESSAGE_FROM_SYSTEM 0x00001000")]
-        public const int FORMAT_MESSAGE_FROM_SYSTEM = 0x00001000;
-
-        [NativeTypeName("#define FORMAT_MESSAGE_ARGUMENT_ARRAY 0x00002000")]
-        public const int FORMAT_MESSAGE_ARGUMENT_ARRAY = 0x00002000;
-
-        [NativeTypeName("#define FORMAT_MESSAGE_MAX_WIDTH_MASK 0x000000FF")]
-        public const int FORMAT_MESSAGE_MAX_WIDTH_MASK = 0x000000FF;
 
         [NativeTypeName("#define CreateMailslot CreateMailslotW")]
         public static delegate*<ushort*, uint, uint, SECURITY_ATTRIBUTES*, HANDLE> CreateMailslot => &CreateMailslotW;
@@ -2597,12 +1900,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define EFS_USE_RECOVERY_KEYS (0x1)")]
         public const int EFS_USE_RECOVERY_KEYS = (0x1);
-
-        [NativeTypeName("#define CREATE_FOR_IMPORT (1)")]
-        public const int CREATE_FOR_IMPORT = (1);
-
-        [NativeTypeName("#define CREATE_FOR_DIR (2)")]
-        public const int CREATE_FOR_DIR = (2);
 
         [NativeTypeName("#define OVERWRITE_HIDDEN (4)")]
         public const int OVERWRITE_HIDDEN = (4);
@@ -2634,212 +1931,8 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define lstrlen lstrlenW")]
         public static delegate*<ushort*, int> lstrlen => &lstrlenW;
 
-        [NativeTypeName("#define BACKUP_INVALID 0x00000000")]
-        public const int BACKUP_INVALID = 0x00000000;
-
-        [NativeTypeName("#define BACKUP_DATA 0x00000001")]
-        public const int BACKUP_DATA = 0x00000001;
-
-        [NativeTypeName("#define BACKUP_EA_DATA 0x00000002")]
-        public const int BACKUP_EA_DATA = 0x00000002;
-
-        [NativeTypeName("#define BACKUP_SECURITY_DATA 0x00000003")]
-        public const int BACKUP_SECURITY_DATA = 0x00000003;
-
-        [NativeTypeName("#define BACKUP_ALTERNATE_DATA 0x00000004")]
-        public const int BACKUP_ALTERNATE_DATA = 0x00000004;
-
-        [NativeTypeName("#define BACKUP_LINK 0x00000005")]
-        public const int BACKUP_LINK = 0x00000005;
-
-        [NativeTypeName("#define BACKUP_PROPERTY_DATA 0x00000006")]
-        public const int BACKUP_PROPERTY_DATA = 0x00000006;
-
-        [NativeTypeName("#define BACKUP_OBJECT_ID 0x00000007")]
-        public const int BACKUP_OBJECT_ID = 0x00000007;
-
-        [NativeTypeName("#define BACKUP_REPARSE_DATA 0x00000008")]
-        public const int BACKUP_REPARSE_DATA = 0x00000008;
-
-        [NativeTypeName("#define BACKUP_SPARSE_BLOCK 0x00000009")]
-        public const int BACKUP_SPARSE_BLOCK = 0x00000009;
-
-        [NativeTypeName("#define BACKUP_TXFS_DATA 0x0000000a")]
-        public const int BACKUP_TXFS_DATA = 0x0000000a;
-
-        [NativeTypeName("#define BACKUP_GHOSTED_FILE_EXTENTS 0x0000000b")]
-        public const int BACKUP_GHOSTED_FILE_EXTENTS = 0x0000000b;
-
-        [NativeTypeName("#define STREAM_NORMAL_ATTRIBUTE 0x00000000")]
-        public const int STREAM_NORMAL_ATTRIBUTE = 0x00000000;
-
-        [NativeTypeName("#define STREAM_MODIFIED_WHEN_READ 0x00000001")]
-        public const int STREAM_MODIFIED_WHEN_READ = 0x00000001;
-
-        [NativeTypeName("#define STREAM_CONTAINS_SECURITY 0x00000002")]
-        public const int STREAM_CONTAINS_SECURITY = 0x00000002;
-
-        [NativeTypeName("#define STREAM_CONTAINS_PROPERTIES 0x00000004")]
-        public const int STREAM_CONTAINS_PROPERTIES = 0x00000004;
-
-        [NativeTypeName("#define STREAM_SPARSE_ATTRIBUTE 0x00000008")]
-        public const int STREAM_SPARSE_ATTRIBUTE = 0x00000008;
-
-        [NativeTypeName("#define STREAM_CONTAINS_GHOSTED_FILE_EXTENTS 0x00000010")]
-        public const int STREAM_CONTAINS_GHOSTED_FILE_EXTENTS = 0x00000010;
-
-        [NativeTypeName("#define STARTF_USESHOWWINDOW 0x00000001")]
-        public const int STARTF_USESHOWWINDOW = 0x00000001;
-
-        [NativeTypeName("#define STARTF_USESIZE 0x00000002")]
-        public const int STARTF_USESIZE = 0x00000002;
-
-        [NativeTypeName("#define STARTF_USEPOSITION 0x00000004")]
-        public const int STARTF_USEPOSITION = 0x00000004;
-
-        [NativeTypeName("#define STARTF_USECOUNTCHARS 0x00000008")]
-        public const int STARTF_USECOUNTCHARS = 0x00000008;
-
-        [NativeTypeName("#define STARTF_USEFILLATTRIBUTE 0x00000010")]
-        public const int STARTF_USEFILLATTRIBUTE = 0x00000010;
-
-        [NativeTypeName("#define STARTF_RUNFULLSCREEN 0x00000020")]
-        public const int STARTF_RUNFULLSCREEN = 0x00000020;
-
-        [NativeTypeName("#define STARTF_FORCEONFEEDBACK 0x00000040")]
-        public const int STARTF_FORCEONFEEDBACK = 0x00000040;
-
-        [NativeTypeName("#define STARTF_FORCEOFFFEEDBACK 0x00000080")]
-        public const int STARTF_FORCEOFFFEEDBACK = 0x00000080;
-
-        [NativeTypeName("#define STARTF_USESTDHANDLES 0x00000100")]
-        public const int STARTF_USESTDHANDLES = 0x00000100;
-
-        [NativeTypeName("#define STARTF_USEHOTKEY 0x00000200")]
-        public const int STARTF_USEHOTKEY = 0x00000200;
-
-        [NativeTypeName("#define STARTF_TITLEISLINKNAME 0x00000800")]
-        public const int STARTF_TITLEISLINKNAME = 0x00000800;
-
-        [NativeTypeName("#define STARTF_TITLEISAPPID 0x00001000")]
-        public const int STARTF_TITLEISAPPID = 0x00001000;
-
-        [NativeTypeName("#define STARTF_PREVENTPINNING 0x00002000")]
-        public const int STARTF_PREVENTPINNING = 0x00002000;
-
-        [NativeTypeName("#define STARTF_UNTRUSTEDSOURCE 0x00008000")]
-        public const int STARTF_UNTRUSTEDSOURCE = 0x00008000;
-
-        [NativeTypeName("#define STARTF_HOLOGRAPHIC 0x00040000")]
-        public const int STARTF_HOLOGRAPHIC = 0x00040000;
-
-        [NativeTypeName("#define SHUTDOWN_NORETRY 0x00000001")]
-        public const int SHUTDOWN_NORETRY = 0x00000001;
-
-        [NativeTypeName("#define PROTECTION_LEVEL_WINTCB_LIGHT 0x00000000")]
-        public const int PROTECTION_LEVEL_WINTCB_LIGHT = 0x00000000;
-
-        [NativeTypeName("#define PROTECTION_LEVEL_WINDOWS 0x00000001")]
-        public const int PROTECTION_LEVEL_WINDOWS = 0x00000001;
-
-        [NativeTypeName("#define PROTECTION_LEVEL_WINDOWS_LIGHT 0x00000002")]
-        public const int PROTECTION_LEVEL_WINDOWS_LIGHT = 0x00000002;
-
-        [NativeTypeName("#define PROTECTION_LEVEL_ANTIMALWARE_LIGHT 0x00000003")]
-        public const int PROTECTION_LEVEL_ANTIMALWARE_LIGHT = 0x00000003;
-
-        [NativeTypeName("#define PROTECTION_LEVEL_LSA_LIGHT 0x00000004")]
-        public const int PROTECTION_LEVEL_LSA_LIGHT = 0x00000004;
-
-        [NativeTypeName("#define PROTECTION_LEVEL_WINTCB 0x00000005")]
-        public const int PROTECTION_LEVEL_WINTCB = 0x00000005;
-
-        [NativeTypeName("#define PROTECTION_LEVEL_CODEGEN_LIGHT 0x00000006")]
-        public const int PROTECTION_LEVEL_CODEGEN_LIGHT = 0x00000006;
-
-        [NativeTypeName("#define PROTECTION_LEVEL_AUTHENTICODE 0x00000007")]
-        public const int PROTECTION_LEVEL_AUTHENTICODE = 0x00000007;
-
-        [NativeTypeName("#define PROTECTION_LEVEL_PPL_APP 0x00000008")]
-        public const int PROTECTION_LEVEL_PPL_APP = 0x00000008;
-
-        [NativeTypeName("#define PROTECTION_LEVEL_SAME 0xFFFFFFFF")]
-        public const uint PROTECTION_LEVEL_SAME = 0xFFFFFFFF;
-
-        [NativeTypeName("#define PROTECTION_LEVEL_NONE 0xFFFFFFFE")]
-        public const uint PROTECTION_LEVEL_NONE = 0xFFFFFFFE;
-
         [NativeTypeName("#define QueryFullProcessImageName QueryFullProcessImageNameW")]
         public static delegate*<HANDLE, uint, ushort*, uint*, BOOL> QueryFullProcessImageName => &QueryFullProcessImageNameW;
-
-        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_NUMBER 0x0000FFFF")]
-        public const int PROC_THREAD_ATTRIBUTE_NUMBER = 0x0000FFFF;
-
-        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_THREAD 0x00010000")]
-        public const int PROC_THREAD_ATTRIBUTE_THREAD = 0x00010000;
-
-        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_INPUT 0x00020000")]
-        public const int PROC_THREAD_ATTRIBUTE_INPUT = 0x00020000;
-
-        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_ADDITIVE 0x00040000")]
-        public const int PROC_THREAD_ATTRIBUTE_ADDITIVE = 0x00040000;
-
-        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_PARENT_PROCESS ProcThreadAttributeValue (ProcThreadAttributeParentProcess, FALSE, TRUE, FALSE)")]
-        public const int PROC_THREAD_ATTRIBUTE_PARENT_PROCESS = (((int)(ProcThreadAttributeParentProcess) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
-
-        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_HANDLE_LIST ProcThreadAttributeValue (ProcThreadAttributeHandleList, FALSE, TRUE, FALSE)")]
-        public const int PROC_THREAD_ATTRIBUTE_HANDLE_LIST = (((int)(ProcThreadAttributeHandleList) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
-
-        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_GROUP_AFFINITY ProcThreadAttributeValue (ProcThreadAttributeGroupAffinity, TRUE, TRUE, FALSE)")]
-        public const int PROC_THREAD_ATTRIBUTE_GROUP_AFFINITY = (((int)(ProcThreadAttributeGroupAffinity) & 0x0000FFFF) | ((1 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
-
-        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_PREFERRED_NODE ProcThreadAttributeValue (ProcThreadAttributePreferredNode, FALSE, TRUE, FALSE)")]
-        public const int PROC_THREAD_ATTRIBUTE_PREFERRED_NODE = (((int)(ProcThreadAttributePreferredNode) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
-
-        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_IDEAL_PROCESSOR ProcThreadAttributeValue (ProcThreadAttributeIdealProcessor, TRUE, TRUE, FALSE)")]
-        public const int PROC_THREAD_ATTRIBUTE_IDEAL_PROCESSOR = (((int)(ProcThreadAttributeIdealProcessor) & 0x0000FFFF) | ((1 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
-
-        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_UMS_THREAD ProcThreadAttributeValue (ProcThreadAttributeUmsThread, TRUE, TRUE, FALSE)")]
-        public const int PROC_THREAD_ATTRIBUTE_UMS_THREAD = (((int)(ProcThreadAttributeUmsThread) & 0x0000FFFF) | ((1 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
-
-        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_MITIGATION_POLICY ProcThreadAttributeValue (ProcThreadAttributeMitigationPolicy, FALSE, TRUE, FALSE)")]
-        public const int PROC_THREAD_ATTRIBUTE_MITIGATION_POLICY = (((int)(ProcThreadAttributeMitigationPolicy) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
-
-        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_SECURITY_CAPABILITIES ProcThreadAttributeValue (ProcThreadAttributeSecurityCapabilities, FALSE, TRUE, FALSE)")]
-        public const int PROC_THREAD_ATTRIBUTE_SECURITY_CAPABILITIES = (((int)(ProcThreadAttributeSecurityCapabilities) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
-
-        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_PROTECTION_LEVEL ProcThreadAttributeValue (ProcThreadAttributeProtectionLevel, FALSE, TRUE, FALSE)")]
-        public const int PROC_THREAD_ATTRIBUTE_PROTECTION_LEVEL = (((int)(ProcThreadAttributeProtectionLevel) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
-
-        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_PSEUDOCONSOLE ProcThreadAttributeValue (ProcThreadAttributePseudoConsole, FALSE, TRUE, FALSE)")]
-        public const int PROC_THREAD_ATTRIBUTE_PSEUDOCONSOLE = (((int)(ProcThreadAttributePseudoConsole) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
-
-        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_MACHINE_TYPE ProcThreadAttributeValue (ProcThreadAttributeMachineType, FALSE, TRUE, FALSE)")]
-        public const int PROC_THREAD_ATTRIBUTE_MACHINE_TYPE = (((int)(ProcThreadAttributeMachineType) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
-
-        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_ENABLE_OPTIONAL_XSTATE_FEATURES ProcThreadAttributeValue (ProcThreadAttributeEnableOptionalXStateFeatures, TRUE, TRUE, FALSE)")]
-        public const int PROC_THREAD_ATTRIBUTE_ENABLE_OPTIONAL_XSTATE_FEATURES = (((int)(ProcThreadAttributeEnableOptionalXStateFeatures) & 0x0000FFFF) | ((1 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
-
-        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_JOB_LIST ProcThreadAttributeValue (ProcThreadAttributeJobList, FALSE, TRUE, FALSE)")]
-        public const int PROC_THREAD_ATTRIBUTE_JOB_LIST = (((int)(ProcThreadAttributeJobList) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
-
-        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_CHILD_PROCESS_POLICY ProcThreadAttributeValue (ProcThreadAttributeChildProcessPolicy, FALSE, TRUE, FALSE)")]
-        public const int PROC_THREAD_ATTRIBUTE_CHILD_PROCESS_POLICY = (((int)(ProcThreadAttributeChildProcessPolicy) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
-
-        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_ALL_APPLICATION_PACKAGES_POLICY ProcThreadAttributeValue (ProcThreadAttributeAllApplicationPackagesPolicy, FALSE, TRUE, FALSE)")]
-        public const int PROC_THREAD_ATTRIBUTE_ALL_APPLICATION_PACKAGES_POLICY = (((int)(ProcThreadAttributeAllApplicationPackagesPolicy) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
-
-        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_WIN32K_FILTER ProcThreadAttributeValue (ProcThreadAttributeWin32kFilter, FALSE, TRUE, FALSE)")]
-        public const int PROC_THREAD_ATTRIBUTE_WIN32K_FILTER = (((int)(ProcThreadAttributeWin32kFilter) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
-
-        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_DESKTOP_APP_POLICY ProcThreadAttributeValue (ProcThreadAttributeDesktopAppPolicy, FALSE, TRUE, FALSE)")]
-        public const int PROC_THREAD_ATTRIBUTE_DESKTOP_APP_POLICY = (((int)(ProcThreadAttributeDesktopAppPolicy) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
-
-        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_MITIGATION_AUDIT_POLICY ProcThreadAttributeValue (ProcThreadAttributeMitigationAuditPolicy, FALSE, TRUE, FALSE)")]
-        public const int PROC_THREAD_ATTRIBUTE_MITIGATION_AUDIT_POLICY = (((int)(ProcThreadAttributeMitigationAuditPolicy) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
-
-        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_COMPONENT_FILTER ProcThreadAttributeValue (ProcThreadAttributeComponentFilter, FALSE, TRUE, FALSE)")]
-        public const int PROC_THREAD_ATTRIBUTE_COMPONENT_FILTER = (((int)(ProcThreadAttributeComponentFilter) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
 
         [NativeTypeName("#define GetFirmwareEnvironmentVariable GetFirmwareEnvironmentVariableW")]
         public static delegate*<ushort*, ushort*, void*, uint, uint> GetFirmwareEnvironmentVariable => &GetFirmwareEnvironmentVariableW;
@@ -2932,33 +2025,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define WritePrivateProfileStruct WritePrivateProfileStructW")]
         public static delegate*<ushort*, ushort*, void*, uint, ushort*, BOOL> WritePrivateProfileStruct => &WritePrivateProfileStructW;
-
-        [NativeTypeName("#define GET_SYSTEM_WOW64_DIRECTORY_NAME_A_A \"GetSystemWow64DirectoryA\"")]
-        public static ReadOnlySpan<byte> GET_SYSTEM_WOW64_DIRECTORY_NAME_A_A => new byte[] { 0x47, 0x65, 0x74, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6D, 0x57, 0x6F, 0x77, 0x36, 0x34, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x6F, 0x72, 0x79, 0x41, 0x00 };
-
-        [NativeTypeName("#define GET_SYSTEM_WOW64_DIRECTORY_NAME_A_W L\"GetSystemWow64DirectoryA\"")]
-        public const string GET_SYSTEM_WOW64_DIRECTORY_NAME_A_W = "GetSystemWow64DirectoryA";
-
-        [NativeTypeName("#define GET_SYSTEM_WOW64_DIRECTORY_NAME_A_T TEXT(\"GetSystemWow64DirectoryA\")")]
-        public const string GET_SYSTEM_WOW64_DIRECTORY_NAME_A_T = "GetSystemWow64DirectoryA";
-
-        [NativeTypeName("#define GET_SYSTEM_WOW64_DIRECTORY_NAME_W_A \"GetSystemWow64DirectoryW\"")]
-        public static ReadOnlySpan<byte> GET_SYSTEM_WOW64_DIRECTORY_NAME_W_A => new byte[] { 0x47, 0x65, 0x74, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6D, 0x57, 0x6F, 0x77, 0x36, 0x34, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x6F, 0x72, 0x79, 0x57, 0x00 };
-
-        [NativeTypeName("#define GET_SYSTEM_WOW64_DIRECTORY_NAME_W_W L\"GetSystemWow64DirectoryW\"")]
-        public const string GET_SYSTEM_WOW64_DIRECTORY_NAME_W_W = "GetSystemWow64DirectoryW";
-
-        [NativeTypeName("#define GET_SYSTEM_WOW64_DIRECTORY_NAME_W_T TEXT(\"GetSystemWow64DirectoryW\")")]
-        public const string GET_SYSTEM_WOW64_DIRECTORY_NAME_W_T = "GetSystemWow64DirectoryW";
-
-        [NativeTypeName("#define GET_SYSTEM_WOW64_DIRECTORY_NAME_T_A GET_SYSTEM_WOW64_DIRECTORY_NAME_W_A")]
-        public static ReadOnlySpan<byte> GET_SYSTEM_WOW64_DIRECTORY_NAME_T_A => new byte[] { 0x47, 0x65, 0x74, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6D, 0x57, 0x6F, 0x77, 0x36, 0x34, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x6F, 0x72, 0x79, 0x57, 0x00 };
-
-        [NativeTypeName("#define GET_SYSTEM_WOW64_DIRECTORY_NAME_T_W GET_SYSTEM_WOW64_DIRECTORY_NAME_W_W")]
-        public const string GET_SYSTEM_WOW64_DIRECTORY_NAME_T_W = "GetSystemWow64DirectoryW";
-
-        [NativeTypeName("#define GET_SYSTEM_WOW64_DIRECTORY_NAME_T_T GET_SYSTEM_WOW64_DIRECTORY_NAME_W_T")]
-        public const string GET_SYSTEM_WOW64_DIRECTORY_NAME_T_T = "GetSystemWow64DirectoryW";
 
         [NativeTypeName("#define SetDllDirectory SetDllDirectoryW")]
         public static delegate*<ushort*, BOOL> SetDllDirectory => &SetDllDirectoryW;
@@ -3110,9 +2176,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define ReportEvent ReportEventW")]
         public static delegate*<HANDLE, ushort, ushort, uint, void*, ushort, uint, ushort**, void*, BOOL> ReportEvent => &ReportEventW;
 
-        [NativeTypeName("#define EVENTLOG_FULL_INFO 0")]
-        public const int EVENTLOG_FULL_INFO = 0;
-
         [NativeTypeName("#define OPERATION_API_VERSION 1")]
         public const int OPERATION_API_VERSION = 1;
 
@@ -3167,42 +2230,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define GetUserName GetUserNameW")]
         public static delegate*<ushort*, uint*, BOOL> GetUserName => &GetUserNameW;
 
-        [NativeTypeName("#define LOGON32_LOGON_INTERACTIVE 2")]
-        public const int LOGON32_LOGON_INTERACTIVE = 2;
-
-        [NativeTypeName("#define LOGON32_LOGON_NETWORK 3")]
-        public const int LOGON32_LOGON_NETWORK = 3;
-
-        [NativeTypeName("#define LOGON32_LOGON_BATCH 4")]
-        public const int LOGON32_LOGON_BATCH = 4;
-
-        [NativeTypeName("#define LOGON32_LOGON_SERVICE 5")]
-        public const int LOGON32_LOGON_SERVICE = 5;
-
-        [NativeTypeName("#define LOGON32_LOGON_UNLOCK 7")]
-        public const int LOGON32_LOGON_UNLOCK = 7;
-
-        [NativeTypeName("#define LOGON32_LOGON_NETWORK_CLEARTEXT 8")]
-        public const int LOGON32_LOGON_NETWORK_CLEARTEXT = 8;
-
-        [NativeTypeName("#define LOGON32_LOGON_NEW_CREDENTIALS 9")]
-        public const int LOGON32_LOGON_NEW_CREDENTIALS = 9;
-
-        [NativeTypeName("#define LOGON32_PROVIDER_DEFAULT 0")]
-        public const int LOGON32_PROVIDER_DEFAULT = 0;
-
-        [NativeTypeName("#define LOGON32_PROVIDER_WINNT35 1")]
-        public const int LOGON32_PROVIDER_WINNT35 = 1;
-
-        [NativeTypeName("#define LOGON32_PROVIDER_WINNT40 2")]
-        public const int LOGON32_PROVIDER_WINNT40 = 2;
-
-        [NativeTypeName("#define LOGON32_PROVIDER_WINNT50 3")]
-        public const int LOGON32_PROVIDER_WINNT50 = 3;
-
-        [NativeTypeName("#define LOGON32_PROVIDER_VIRTUAL 4")]
-        public const int LOGON32_PROVIDER_VIRTUAL = 4;
-
         [NativeTypeName("#define LogonUser LogonUserW")]
         public static delegate*<ushort*, ushort*, ushort*, uint, uint, HANDLE*, BOOL> LogonUser => &LogonUserW;
 
@@ -3251,18 +2278,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define VerifyVersionInfo VerifyVersionInfoW")]
         public static delegate*<OSVERSIONINFOEXW*, uint, ulong, BOOL> VerifyVersionInfo => &VerifyVersionInfoW;
 
-        [NativeTypeName("#define TC_NORMAL 0")]
-        public const int TC_NORMAL = 0;
-
-        [NativeTypeName("#define TC_HARDERR 1")]
-        public const int TC_HARDERR = 1;
-
-        [NativeTypeName("#define TC_GP_TRAP 2")]
-        public const int TC_GP_TRAP = 2;
-
-        [NativeTypeName("#define TC_SIGNAL 3")]
-        public const int TC_SIGNAL = 3;
-
         [NativeTypeName("#define AC_LINE_OFFLINE 0x00")]
         public const int AC_LINE_OFFLINE = 0x00;
 
@@ -3274,33 +2289,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define AC_LINE_UNKNOWN 0xFF")]
         public const int AC_LINE_UNKNOWN = 0xFF;
-
-        [NativeTypeName("#define BATTERY_FLAG_HIGH 0x01")]
-        public const int BATTERY_FLAG_HIGH = 0x01;
-
-        [NativeTypeName("#define BATTERY_FLAG_LOW 0x02")]
-        public const int BATTERY_FLAG_LOW = 0x02;
-
-        [NativeTypeName("#define BATTERY_FLAG_CRITICAL 0x04")]
-        public const int BATTERY_FLAG_CRITICAL = 0x04;
-
-        [NativeTypeName("#define BATTERY_FLAG_CHARGING 0x08")]
-        public const int BATTERY_FLAG_CHARGING = 0x08;
-
-        [NativeTypeName("#define BATTERY_FLAG_NO_BATTERY 0x80")]
-        public const int BATTERY_FLAG_NO_BATTERY = 0x80;
-
-        [NativeTypeName("#define BATTERY_FLAG_UNKNOWN 0xFF")]
-        public const int BATTERY_FLAG_UNKNOWN = 0xFF;
-
-        [NativeTypeName("#define BATTERY_PERCENTAGE_UNKNOWN 0xFF")]
-        public const int BATTERY_PERCENTAGE_UNKNOWN = 0xFF;
-
-        [NativeTypeName("#define SYSTEM_STATUS_FLAG_POWER_SAVING_ON 0x01")]
-        public const int SYSTEM_STATUS_FLAG_POWER_SAVING_ON = 0x01;
-
-        [NativeTypeName("#define BATTERY_LIFE_UNKNOWN 0xFFFFFFFF")]
-        public const uint BATTERY_LIFE_UNKNOWN = 0xFFFFFFFF;
 
         [NativeTypeName("#define CreateJobObject CreateJobObjectW")]
         public static delegate*<SECURITY_ATTRIBUTES*, ushort*, HANDLE> CreateJobObject => &CreateJobObjectW;
@@ -3359,21 +2347,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define FindActCtxSectionString FindActCtxSectionStringW")]
         public static delegate*<uint, Guid*, uint, ushort*, ACTCTX_SECTION_KEYED_DATA*, BOOL> FindActCtxSectionString => &FindActCtxSectionStringW;
 
-        [NativeTypeName("#define ACTIVATION_CONTEXT_BASIC_INFORMATION_DEFINED 1")]
-        public const int ACTIVATION_CONTEXT_BASIC_INFORMATION_DEFINED = 1;
-
-        [NativeTypeName("#define QUERY_ACTCTX_FLAG_USE_ACTIVE_ACTCTX (0x00000004)")]
-        public const int QUERY_ACTCTX_FLAG_USE_ACTIVE_ACTCTX = (0x00000004);
-
-        [NativeTypeName("#define QUERY_ACTCTX_FLAG_ACTCTX_IS_HMODULE (0x00000008)")]
-        public const int QUERY_ACTCTX_FLAG_ACTCTX_IS_HMODULE = (0x00000008);
-
-        [NativeTypeName("#define QUERY_ACTCTX_FLAG_ACTCTX_IS_ADDRESS (0x00000010)")]
-        public const int QUERY_ACTCTX_FLAG_ACTCTX_IS_ADDRESS = (0x00000010);
-
-        [NativeTypeName("#define QUERY_ACTCTX_FLAG_NO_ADDREF (0x80000000)")]
-        public const uint QUERY_ACTCTX_FLAG_NO_ADDREF = (0x80000000);
-
         [NativeTypeName("#define RESTART_MAX_CMD_LINE 1024")]
         public const int RESTART_MAX_CMD_LINE = 1024;
 
@@ -3403,39 +2376,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define REMOTE_PROTOCOL_INFO_FLAG_PERSISTENT_HANDLE 0x00000004")]
         public const int REMOTE_PROTOCOL_INFO_FLAG_PERSISTENT_HANDLE = 0x00000004;
-
-        [NativeTypeName("#define RPI_FLAG_SMB2_SHARECAP_TIMEWARP 0x00000002")]
-        public const int RPI_FLAG_SMB2_SHARECAP_TIMEWARP = 0x00000002;
-
-        [NativeTypeName("#define RPI_FLAG_SMB2_SHARECAP_DFS 0x00000008")]
-        public const int RPI_FLAG_SMB2_SHARECAP_DFS = 0x00000008;
-
-        [NativeTypeName("#define RPI_FLAG_SMB2_SHARECAP_CONTINUOUS_AVAILABILITY 0x00000010")]
-        public const int RPI_FLAG_SMB2_SHARECAP_CONTINUOUS_AVAILABILITY = 0x00000010;
-
-        [NativeTypeName("#define RPI_FLAG_SMB2_SHARECAP_SCALEOUT 0x00000020")]
-        public const int RPI_FLAG_SMB2_SHARECAP_SCALEOUT = 0x00000020;
-
-        [NativeTypeName("#define RPI_FLAG_SMB2_SHARECAP_CLUSTER 0x00000040")]
-        public const int RPI_FLAG_SMB2_SHARECAP_CLUSTER = 0x00000040;
-
-        [NativeTypeName("#define RPI_SMB2_FLAG_SERVERCAP_DFS 0x00000001")]
-        public const int RPI_SMB2_FLAG_SERVERCAP_DFS = 0x00000001;
-
-        [NativeTypeName("#define RPI_SMB2_FLAG_SERVERCAP_LEASING 0x00000002")]
-        public const int RPI_SMB2_FLAG_SERVERCAP_LEASING = 0x00000002;
-
-        [NativeTypeName("#define RPI_SMB2_FLAG_SERVERCAP_LARGEMTU 0x00000004")]
-        public const int RPI_SMB2_FLAG_SERVERCAP_LARGEMTU = 0x00000004;
-
-        [NativeTypeName("#define RPI_SMB2_FLAG_SERVERCAP_MULTICHANNEL 0x00000008")]
-        public const int RPI_SMB2_FLAG_SERVERCAP_MULTICHANNEL = 0x00000008;
-
-        [NativeTypeName("#define RPI_SMB2_FLAG_SERVERCAP_PERSISTENT_HANDLES 0x00000010")]
-        public const int RPI_SMB2_FLAG_SERVERCAP_PERSISTENT_HANDLES = 0x00000010;
-
-        [NativeTypeName("#define RPI_SMB2_FLAG_SERVERCAP_DIRECTORY_LEASING 0x00000020")]
-        public const int RPI_SMB2_FLAG_SERVERCAP_DIRECTORY_LEASING = 0x00000020;
 
         [NativeTypeName("#define SYMBOLIC_LINK_FLAG_DIRECTORY (0x1)")]
         public const int SYMBOLIC_LINK_FLAG_DIRECTORY = (0x1);

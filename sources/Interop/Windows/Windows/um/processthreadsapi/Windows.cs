@@ -328,18 +328,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define CreateProcessAsUser CreateProcessAsUserW")]
         public static delegate*<HANDLE, ushort*, ushort*, SECURITY_ATTRIBUTES*, SECURITY_ATTRIBUTES*, BOOL, uint, void*, ushort*, STARTUPINFOW*, PROCESS_INFORMATION*, BOOL> CreateProcessAsUser => &CreateProcessAsUserW;
 
-        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_REPLACE_VALUE 0x00000001")]
-        public const int PROC_THREAD_ATTRIBUTE_REPLACE_VALUE = 0x00000001;
-
-        [NativeTypeName("#define THREAD_POWER_THROTTLING_CURRENT_VERSION 1")]
-        public const int THREAD_POWER_THROTTLING_CURRENT_VERSION = 1;
-
-        [NativeTypeName("#define THREAD_POWER_THROTTLING_EXECUTION_SPEED 0x1")]
-        public const int THREAD_POWER_THROTTLING_EXECUTION_SPEED = 0x1;
-
-        [NativeTypeName("#define THREAD_POWER_THROTTLING_VALID_FLAGS (THREAD_POWER_THROTTLING_EXECUTION_SPEED)")]
-        public const int THREAD_POWER_THROTTLING_VALID_FLAGS = (0x1);
-
         [NativeTypeName("#define PME_CURRENT_VERSION 1")]
         public const int PME_CURRENT_VERSION = 1;
 

@@ -10,34 +10,16 @@ namespace TerraFX.Interop.DirectX
 {
     public static unsafe partial class DirectX
     {
-        public const ulong D2D1_INVALID_TAG = ulong.MaxValue;
-
-        public const uint D2D1_INTERPOLATION_MODE_DEFINITION_NEAREST_NEIGHBOR = 0;
-
-        public const uint D2D1_INTERPOLATION_MODE_DEFINITION_LINEAR = 1;
-
-        public const uint D2D1_INTERPOLATION_MODE_DEFINITION_CUBIC = 2;
-
-        public const uint D2D1_INTERPOLATION_MODE_DEFINITION_MULTI_SAMPLE_LINEAR = 3;
-
-        public const uint D2D1_INTERPOLATION_MODE_DEFINITION_ANISOTROPIC = 4;
-
-        public const uint D2D1_INTERPOLATION_MODE_DEFINITION_HIGH_QUALITY_CUBIC = 5;
-
-        public const uint D2D1_INTERPOLATION_MODE_DEFINITION_FANT = 6;
-
-        public const uint D2D1_INTERPOLATION_MODE_DEFINITION_MIPMAP_LINEAR = 7;
-
-        public static HRESULT D2D1CreateFactory<Factory>(D2D1_FACTORY_TYPE factoryType, void** factory)
-            where Factory : unmanaged, IUnknown.Interface
+        public static HRESULT D2D1CreateFactory<TFactory>(D2D1_FACTORY_TYPE factoryType, void** factory)
+            where TFactory : unmanaged, IUnknown.Interface
         {
-            return D2D1CreateFactory(factoryType, __uuidof<Factory>(), null, factory);
+            return D2D1CreateFactory(factoryType, __uuidof<TFactory>(), null, factory);
         }
 
-        public static HRESULT D2D1CreateFactory<Factory>(D2D1_FACTORY_TYPE factoryType, [NativeTypeName("const D2D1_FACTORY_OPTIONS *")] D2D1_FACTORY_OPTIONS* pFactoryOptions, void** factory)
-            where Factory : unmanaged, IUnknown.Interface
+        public static HRESULT D2D1CreateFactory<TFactory>(D2D1_FACTORY_TYPE factoryType, [NativeTypeName("const D2D1_FACTORY_OPTIONS *")] D2D1_FACTORY_OPTIONS* pFactoryOptions, void** factory)
+            where TFactory : unmanaged, IUnknown.Interface
         {
-            return D2D1CreateFactory(factoryType, __uuidof<Factory>(), pFactoryOptions, factory);
+            return D2D1CreateFactory(factoryType, __uuidof<TFactory>(), pFactoryOptions, factory);
         }
     }
 }

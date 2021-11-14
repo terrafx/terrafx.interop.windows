@@ -235,45 +235,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define ExtractIcon ExtractIconW")]
         public static delegate*<HINSTANCE, ushort*, uint, HICON> ExtractIcon => &ExtractIconW;
 
-        [NativeTypeName("#define ABM_NEW 0x00000000")]
-        public const int ABM_NEW = 0x00000000;
-
-        [NativeTypeName("#define ABM_REMOVE 0x00000001")]
-        public const int ABM_REMOVE = 0x00000001;
-
-        [NativeTypeName("#define ABM_QUERYPOS 0x00000002")]
-        public const int ABM_QUERYPOS = 0x00000002;
-
-        [NativeTypeName("#define ABM_SETPOS 0x00000003")]
-        public const int ABM_SETPOS = 0x00000003;
-
-        [NativeTypeName("#define ABM_GETSTATE 0x00000004")]
-        public const int ABM_GETSTATE = 0x00000004;
-
-        [NativeTypeName("#define ABM_GETTASKBARPOS 0x00000005")]
-        public const int ABM_GETTASKBARPOS = 0x00000005;
-
-        [NativeTypeName("#define ABM_ACTIVATE 0x00000006")]
-        public const int ABM_ACTIVATE = 0x00000006;
-
-        [NativeTypeName("#define ABM_GETAUTOHIDEBAR 0x00000007")]
-        public const int ABM_GETAUTOHIDEBAR = 0x00000007;
-
-        [NativeTypeName("#define ABM_SETAUTOHIDEBAR 0x00000008")]
-        public const int ABM_SETAUTOHIDEBAR = 0x00000008;
-
-        [NativeTypeName("#define ABM_WINDOWPOSCHANGED 0x0000009")]
-        public const int ABM_WINDOWPOSCHANGED = 0x0000009;
-
-        [NativeTypeName("#define ABM_SETSTATE 0x0000000a")]
-        public const int ABM_SETSTATE = 0x0000000a;
-
-        [NativeTypeName("#define ABM_GETAUTOHIDEBAREX 0x0000000b")]
-        public const int ABM_GETAUTOHIDEBAREX = 0x0000000b;
-
-        [NativeTypeName("#define ABM_SETAUTOHIDEBAREX 0x0000000c")]
-        public const int ABM_SETAUTOHIDEBAREX = 0x0000000c;
-
         [NativeTypeName("#define ABN_STATECHANGE 0x0000000")]
         public const int ABN_STATECHANGE = 0x0000000;
 
@@ -322,57 +283,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define FO_RENAME 0x0004")]
         public const int FO_RENAME = 0x0004;
 
-        [NativeTypeName("#define FOF_MULTIDESTFILES 0x0001")]
-        public const int FOF_MULTIDESTFILES = 0x0001;
-
-        [NativeTypeName("#define FOF_CONFIRMMOUSE 0x0002")]
-        public const int FOF_CONFIRMMOUSE = 0x0002;
-
-        [NativeTypeName("#define FOF_SILENT 0x0004")]
-        public const int FOF_SILENT = 0x0004;
-
-        [NativeTypeName("#define FOF_RENAMEONCOLLISION 0x0008")]
-        public const int FOF_RENAMEONCOLLISION = 0x0008;
-
-        [NativeTypeName("#define FOF_NOCONFIRMATION 0x0010")]
-        public const int FOF_NOCONFIRMATION = 0x0010;
-
-        [NativeTypeName("#define FOF_WANTMAPPINGHANDLE 0x0020")]
-        public const int FOF_WANTMAPPINGHANDLE = 0x0020;
-
-        [NativeTypeName("#define FOF_ALLOWUNDO 0x0040")]
-        public const int FOF_ALLOWUNDO = 0x0040;
-
-        [NativeTypeName("#define FOF_FILESONLY 0x0080")]
-        public const int FOF_FILESONLY = 0x0080;
-
-        [NativeTypeName("#define FOF_SIMPLEPROGRESS 0x0100")]
-        public const int FOF_SIMPLEPROGRESS = 0x0100;
-
-        [NativeTypeName("#define FOF_NOCONFIRMMKDIR 0x0200")]
-        public const int FOF_NOCONFIRMMKDIR = 0x0200;
-
-        [NativeTypeName("#define FOF_NOERRORUI 0x0400")]
-        public const int FOF_NOERRORUI = 0x0400;
-
-        [NativeTypeName("#define FOF_NOCOPYSECURITYATTRIBS 0x0800")]
-        public const int FOF_NOCOPYSECURITYATTRIBS = 0x0800;
-
-        [NativeTypeName("#define FOF_NORECURSION 0x1000")]
-        public const int FOF_NORECURSION = 0x1000;
-
-        [NativeTypeName("#define FOF_NO_CONNECTED_ELEMENTS 0x2000")]
-        public const int FOF_NO_CONNECTED_ELEMENTS = 0x2000;
-
-        [NativeTypeName("#define FOF_WANTNUKEWARNING 0x4000")]
-        public const int FOF_WANTNUKEWARNING = 0x4000;
-
-        [NativeTypeName("#define FOF_NORECURSEREPARSE 0x8000")]
-        public const int FOF_NORECURSEREPARSE = 0x8000;
-
-        [NativeTypeName("#define FOF_NO_UI (FOF_SILENT | FOF_NOCONFIRMATION | FOF_NOERRORUI | FOF_NOCONFIRMMKDIR)")]
-        public const int FOF_NO_UI = (0x0004 | 0x0010 | 0x0400 | 0x0200);
-
         [NativeTypeName("#define PO_DELETE 0x0013")]
         public const int PO_DELETE = 0x0013;
 
@@ -387,69 +297,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define SHFileOperation SHFileOperationW")]
         public static delegate*<void*, int> SHFileOperation => &SHFileOperationW;
-
-        [NativeTypeName("#define SEE_MASK_DEFAULT 0x00000000")]
-        public const int SEE_MASK_DEFAULT = 0x00000000;
-
-        [NativeTypeName("#define SEE_MASK_CLASSNAME 0x00000001")]
-        public const int SEE_MASK_CLASSNAME = 0x00000001;
-
-        [NativeTypeName("#define SEE_MASK_CLASSKEY 0x00000003")]
-        public const int SEE_MASK_CLASSKEY = 0x00000003;
-
-        [NativeTypeName("#define SEE_MASK_IDLIST 0x00000004")]
-        public const int SEE_MASK_IDLIST = 0x00000004;
-
-        [NativeTypeName("#define SEE_MASK_INVOKEIDLIST 0x0000000c")]
-        public const int SEE_MASK_INVOKEIDLIST = 0x0000000c;
-
-        [NativeTypeName("#define SEE_MASK_HOTKEY 0x00000020")]
-        public const int SEE_MASK_HOTKEY = 0x00000020;
-
-        [NativeTypeName("#define SEE_MASK_NOCLOSEPROCESS 0x00000040")]
-        public const int SEE_MASK_NOCLOSEPROCESS = 0x00000040;
-
-        [NativeTypeName("#define SEE_MASK_CONNECTNETDRV 0x00000080")]
-        public const int SEE_MASK_CONNECTNETDRV = 0x00000080;
-
-        [NativeTypeName("#define SEE_MASK_NOASYNC 0x00000100")]
-        public const int SEE_MASK_NOASYNC = 0x00000100;
-
-        [NativeTypeName("#define SEE_MASK_FLAG_DDEWAIT SEE_MASK_NOASYNC")]
-        public const int SEE_MASK_FLAG_DDEWAIT = 0x00000100;
-
-        [NativeTypeName("#define SEE_MASK_DOENVSUBST 0x00000200")]
-        public const int SEE_MASK_DOENVSUBST = 0x00000200;
-
-        [NativeTypeName("#define SEE_MASK_FLAG_NO_UI 0x00000400")]
-        public const int SEE_MASK_FLAG_NO_UI = 0x00000400;
-
-        [NativeTypeName("#define SEE_MASK_UNICODE 0x00004000")]
-        public const int SEE_MASK_UNICODE = 0x00004000;
-
-        [NativeTypeName("#define SEE_MASK_NO_CONSOLE 0x00008000")]
-        public const int SEE_MASK_NO_CONSOLE = 0x00008000;
-
-        [NativeTypeName("#define SEE_MASK_ASYNCOK 0x00100000")]
-        public const int SEE_MASK_ASYNCOK = 0x00100000;
-
-        [NativeTypeName("#define SEE_MASK_HMONITOR 0x00200000")]
-        public const int SEE_MASK_HMONITOR = 0x00200000;
-
-        [NativeTypeName("#define SEE_MASK_NOZONECHECKS 0x00800000")]
-        public const int SEE_MASK_NOZONECHECKS = 0x00800000;
-
-        [NativeTypeName("#define SEE_MASK_NOQUERYCLASSSTORE 0x01000000")]
-        public const int SEE_MASK_NOQUERYCLASSSTORE = 0x01000000;
-
-        [NativeTypeName("#define SEE_MASK_WAITFORINPUTIDLE 0x02000000")]
-        public const int SEE_MASK_WAITFORINPUTIDLE = 0x02000000;
-
-        [NativeTypeName("#define SEE_MASK_FLAG_LOG_USAGE 0x04000000")]
-        public const int SEE_MASK_FLAG_LOG_USAGE = 0x04000000;
-
-        [NativeTypeName("#define SEE_MASK_FLAG_HINST_IS_SITE 0x08000000")]
-        public const int SEE_MASK_FLAG_HINST_IS_SITE = 0x08000000;
 
         [NativeTypeName("#define ShellExecuteEx ShellExecuteExW")]
         public static delegate*<void*, BOOL> ShellExecuteEx => &ShellExecuteExW;
@@ -547,89 +394,8 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define NIS_SHAREDICON 0x00000002")]
         public const int NIS_SHAREDICON = 0x00000002;
 
-        [NativeTypeName("#define NIIF_NONE 0x00000000")]
-        public const int NIIF_NONE = 0x00000000;
-
-        [NativeTypeName("#define NIIF_INFO 0x00000001")]
-        public const int NIIF_INFO = 0x00000001;
-
-        [NativeTypeName("#define NIIF_WARNING 0x00000002")]
-        public const int NIIF_WARNING = 0x00000002;
-
-        [NativeTypeName("#define NIIF_ERROR 0x00000003")]
-        public const int NIIF_ERROR = 0x00000003;
-
-        [NativeTypeName("#define NIIF_USER 0x00000004")]
-        public const int NIIF_USER = 0x00000004;
-
-        [NativeTypeName("#define NIIF_ICON_MASK 0x0000000F")]
-        public const int NIIF_ICON_MASK = 0x0000000F;
-
-        [NativeTypeName("#define NIIF_NOSOUND 0x00000010")]
-        public const int NIIF_NOSOUND = 0x00000010;
-
-        [NativeTypeName("#define NIIF_LARGE_ICON 0x00000020")]
-        public const int NIIF_LARGE_ICON = 0x00000020;
-
-        [NativeTypeName("#define NIIF_RESPECT_QUIET_TIME 0x00000080")]
-        public const int NIIF_RESPECT_QUIET_TIME = 0x00000080;
-
         [NativeTypeName("#define Shell_NotifyIcon Shell_NotifyIconW")]
         public static delegate*<uint, void*, BOOL> Shell_NotifyIcon => &Shell_NotifyIconW;
-
-        [NativeTypeName("#define SHGFI_ICON 0x000000100")]
-        public const int SHGFI_ICON = 0x000000100;
-
-        [NativeTypeName("#define SHGFI_DISPLAYNAME 0x000000200")]
-        public const int SHGFI_DISPLAYNAME = 0x000000200;
-
-        [NativeTypeName("#define SHGFI_TYPENAME 0x000000400")]
-        public const int SHGFI_TYPENAME = 0x000000400;
-
-        [NativeTypeName("#define SHGFI_ATTRIBUTES 0x000000800")]
-        public const int SHGFI_ATTRIBUTES = 0x000000800;
-
-        [NativeTypeName("#define SHGFI_ICONLOCATION 0x000001000")]
-        public const int SHGFI_ICONLOCATION = 0x000001000;
-
-        [NativeTypeName("#define SHGFI_EXETYPE 0x000002000")]
-        public const int SHGFI_EXETYPE = 0x000002000;
-
-        [NativeTypeName("#define SHGFI_SYSICONINDEX 0x000004000")]
-        public const int SHGFI_SYSICONINDEX = 0x000004000;
-
-        [NativeTypeName("#define SHGFI_LINKOVERLAY 0x000008000")]
-        public const int SHGFI_LINKOVERLAY = 0x000008000;
-
-        [NativeTypeName("#define SHGFI_SELECTED 0x000010000")]
-        public const int SHGFI_SELECTED = 0x000010000;
-
-        [NativeTypeName("#define SHGFI_ATTR_SPECIFIED 0x000020000")]
-        public const int SHGFI_ATTR_SPECIFIED = 0x000020000;
-
-        [NativeTypeName("#define SHGFI_LARGEICON 0x000000000")]
-        public const int SHGFI_LARGEICON = 0x000000000;
-
-        [NativeTypeName("#define SHGFI_SMALLICON 0x000000001")]
-        public const int SHGFI_SMALLICON = 0x000000001;
-
-        [NativeTypeName("#define SHGFI_OPENICON 0x000000002")]
-        public const int SHGFI_OPENICON = 0x000000002;
-
-        [NativeTypeName("#define SHGFI_SHELLICONSIZE 0x000000004")]
-        public const int SHGFI_SHELLICONSIZE = 0x000000004;
-
-        [NativeTypeName("#define SHGFI_PIDL 0x000000008")]
-        public const int SHGFI_PIDL = 0x000000008;
-
-        [NativeTypeName("#define SHGFI_USEFILEATTRIBUTES 0x000000010")]
-        public const int SHGFI_USEFILEATTRIBUTES = 0x000000010;
-
-        [NativeTypeName("#define SHGFI_ADDOVERLAYS 0x000000020")]
-        public const int SHGFI_ADDOVERLAYS = 0x000000020;
-
-        [NativeTypeName("#define SHGFI_OVERLAYINDEX 0x000000040")]
-        public const int SHGFI_OVERLAYINDEX = 0x000000040;
 
         [NativeTypeName("#define SHGetFileInfo SHGetFileInfoW")]
         public static delegate*<ushort*, uint, void*, uint, uint, nuint> SHGetFileInfo => &SHGetFileInfoW;
@@ -759,9 +525,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define SHIL_LAST SHIL_JUMBO")]
         public const int SHIL_LAST = 4;
-
-        [NativeTypeName("#define WC_NETADDRESS L\"msctls_netaddress\"")]
-        public const string WC_NETADDRESS = "msctls_netaddress";
 
         [NativeTypeName("#define NCM_GETADDRESS (WM_USER+1)")]
         public const int NCM_GETADDRESS = (0x0400 + 1);

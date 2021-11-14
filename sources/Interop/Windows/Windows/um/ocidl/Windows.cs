@@ -3,9 +3,6 @@
 // Ported from um/ocidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using static TerraFX.Interop.Windows.IID;
-
 namespace TerraFX.Interop.Windows
 {
     public static partial class Windows
@@ -24,8 +21,5 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define TIFLAGS_EXTENDDISPATCHONLY 0x00000001")]
         public const int TIFLAGS_EXTENDDISPATCHONLY = 0x00000001;
-
-        [NativeTypeName("#define SID_SOleUndoManager IID_IOleUndoManager")]
-        public static ref readonly Guid SID_SOleUndoManager => ref IID_IOleUndoManager;
     }
 }

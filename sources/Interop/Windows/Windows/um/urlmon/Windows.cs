@@ -6,10 +6,8 @@
 using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.BINDF;
-using static TerraFX.Interop.Windows.IID;
 using static TerraFX.Interop.Windows.PARSEACTION;
 using static TerraFX.Interop.Windows.PI_FLAGS;
-using static TerraFX.Interop.Windows.Uri_PROPERTY;
 
 namespace TerraFX.Interop.Windows
 {
@@ -265,23 +263,8 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define PI_DOCFILECLSIDLOOKUP PI_CLSIDLOOKUP")]
         public const PI_FLAGS PI_DOCFILECLSIDLOOKUP = PI_CLSIDLOOKUP;
 
-        [NativeTypeName("#define SZ_URLCONTEXT OLESTR(\"URL Context\")")]
-        public const string SZ_URLCONTEXT = "URL Context";
-
-        [NativeTypeName("#define SZ_ASYNC_CALLEE OLESTR(\"AsyncCallee\")")]
-        public const string SZ_ASYNC_CALLEE = "AsyncCallee";
-
         [NativeTypeName("#define MKSYS_URLMONIKER 6")]
         public const int MKSYS_URLMONIKER = 6;
-
-        [NativeTypeName("#define URL_MK_LEGACY 0")]
-        public const int URL_MK_LEGACY = 0;
-
-        [NativeTypeName("#define URL_MK_UNIFORM 1")]
-        public const int URL_MK_UNIFORM = 1;
-
-        [NativeTypeName("#define URL_MK_NO_CANONICALIZE 2")]
-        public const int URL_MK_NO_CANONICALIZE = 2;
 
         [NativeTypeName("#define FIEF_FLAG_FORCE_JITUI 0x1")]
         public const int FIEF_FLAG_FORCE_JITUI = 0x1;
@@ -337,173 +320,11 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define URLMON_OPTION_USE_BROWSERAPPSDOCUMENTS 0x10000010")]
         public const int URLMON_OPTION_USE_BROWSERAPPSDOCUMENTS = 0x10000010;
 
-        [NativeTypeName("#define CF_NULL 0")]
-        public const int CF_NULL = 0;
-
-        [NativeTypeName("#define MK_S_ASYNCHRONOUS _HRESULT_TYPEDEF_(0x000401E8L)")]
-        public const int MK_S_ASYNCHRONOUS = ((int)(0x000401E8));
-
-        [NativeTypeName("#define S_ASYNCHRONOUS MK_S_ASYNCHRONOUS")]
-        public const int S_ASYNCHRONOUS = ((int)(0x000401E8));
-
-        [NativeTypeName("#define Uri_HAS_ABSOLUTE_URI (1 << Uri_PROPERTY_ABSOLUTE_URI)")]
-        public const int Uri_HAS_ABSOLUTE_URI = (1 << (int)(Uri_PROPERTY_ABSOLUTE_URI));
-
-        [NativeTypeName("#define Uri_HAS_AUTHORITY (1 << Uri_PROPERTY_AUTHORITY)")]
-        public const int Uri_HAS_AUTHORITY = (1 << (int)(Uri_PROPERTY_AUTHORITY));
-
-        [NativeTypeName("#define Uri_HAS_DISPLAY_URI (1 << Uri_PROPERTY_DISPLAY_URI)")]
-        public const int Uri_HAS_DISPLAY_URI = (1 << (int)(Uri_PROPERTY_DISPLAY_URI));
-
-        [NativeTypeName("#define Uri_HAS_DOMAIN (1 << Uri_PROPERTY_DOMAIN)")]
-        public const int Uri_HAS_DOMAIN = (1 << (int)(Uri_PROPERTY_DOMAIN));
-
-        [NativeTypeName("#define Uri_HAS_EXTENSION (1 << Uri_PROPERTY_EXTENSION)")]
-        public const int Uri_HAS_EXTENSION = (1 << (int)(Uri_PROPERTY_EXTENSION));
-
-        [NativeTypeName("#define Uri_HAS_FRAGMENT (1 << Uri_PROPERTY_FRAGMENT)")]
-        public const int Uri_HAS_FRAGMENT = (1 << (int)(Uri_PROPERTY_FRAGMENT));
-
-        [NativeTypeName("#define Uri_HAS_HOST (1 << Uri_PROPERTY_HOST)")]
-        public const int Uri_HAS_HOST = (1 << (int)(Uri_PROPERTY_HOST));
-
-        [NativeTypeName("#define Uri_HAS_PASSWORD (1 << Uri_PROPERTY_PASSWORD)")]
-        public const int Uri_HAS_PASSWORD = (1 << (int)(Uri_PROPERTY_PASSWORD));
-
-        [NativeTypeName("#define Uri_HAS_PATH (1 << Uri_PROPERTY_PATH)")]
-        public const int Uri_HAS_PATH = (1 << (int)(Uri_PROPERTY_PATH));
-
-        [NativeTypeName("#define Uri_HAS_QUERY (1 << Uri_PROPERTY_QUERY)")]
-        public const int Uri_HAS_QUERY = (1 << (int)(Uri_PROPERTY_QUERY));
-
-        [NativeTypeName("#define Uri_HAS_RAW_URI (1 << Uri_PROPERTY_RAW_URI)")]
-        public const int Uri_HAS_RAW_URI = (1 << (int)(Uri_PROPERTY_RAW_URI));
-
-        [NativeTypeName("#define Uri_HAS_SCHEME_NAME (1 << Uri_PROPERTY_SCHEME_NAME)")]
-        public const int Uri_HAS_SCHEME_NAME = (1 << (int)(Uri_PROPERTY_SCHEME_NAME));
-
-        [NativeTypeName("#define Uri_HAS_USER_NAME (1 << Uri_PROPERTY_USER_NAME)")]
-        public const int Uri_HAS_USER_NAME = (1 << (int)(Uri_PROPERTY_USER_NAME));
-
-        [NativeTypeName("#define Uri_HAS_PATH_AND_QUERY (1 << Uri_PROPERTY_PATH_AND_QUERY)")]
-        public const int Uri_HAS_PATH_AND_QUERY = (1 << (int)(Uri_PROPERTY_PATH_AND_QUERY));
-
-        [NativeTypeName("#define Uri_HAS_USER_INFO (1 << Uri_PROPERTY_USER_INFO)")]
-        public const int Uri_HAS_USER_INFO = (1 << (int)(Uri_PROPERTY_USER_INFO));
-
-        [NativeTypeName("#define Uri_HAS_HOST_TYPE (1 << Uri_PROPERTY_HOST_TYPE)")]
-        public const int Uri_HAS_HOST_TYPE = (1 << (int)(Uri_PROPERTY_HOST_TYPE));
-
-        [NativeTypeName("#define Uri_HAS_PORT (1 << Uri_PROPERTY_PORT)")]
-        public const int Uri_HAS_PORT = (1 << (int)(Uri_PROPERTY_PORT));
-
-        [NativeTypeName("#define Uri_HAS_SCHEME (1 << Uri_PROPERTY_SCHEME)")]
-        public const int Uri_HAS_SCHEME = (1 << (int)(Uri_PROPERTY_SCHEME));
-
-        [NativeTypeName("#define Uri_HAS_ZONE (1 << Uri_PROPERTY_ZONE)")]
-        public const int Uri_HAS_ZONE = (1 << (int)(Uri_PROPERTY_ZONE));
-
-        [NativeTypeName("#define Uri_CREATE_ALLOW_RELATIVE 0x00000001")]
-        public const int Uri_CREATE_ALLOW_RELATIVE = 0x00000001;
-
-        [NativeTypeName("#define Uri_CREATE_ALLOW_IMPLICIT_WILDCARD_SCHEME 0x00000002")]
-        public const int Uri_CREATE_ALLOW_IMPLICIT_WILDCARD_SCHEME = 0x00000002;
-
-        [NativeTypeName("#define Uri_CREATE_ALLOW_IMPLICIT_FILE_SCHEME 0x00000004")]
-        public const int Uri_CREATE_ALLOW_IMPLICIT_FILE_SCHEME = 0x00000004;
-
-        [NativeTypeName("#define Uri_CREATE_NOFRAG 0x00000008")]
-        public const int Uri_CREATE_NOFRAG = 0x00000008;
-
-        [NativeTypeName("#define Uri_CREATE_NO_CANONICALIZE 0x00000010")]
-        public const int Uri_CREATE_NO_CANONICALIZE = 0x00000010;
-
-        [NativeTypeName("#define Uri_CREATE_CANONICALIZE 0x00000100")]
-        public const int Uri_CREATE_CANONICALIZE = 0x00000100;
-
-        [NativeTypeName("#define Uri_CREATE_FILE_USE_DOS_PATH 0x00000020")]
-        public const int Uri_CREATE_FILE_USE_DOS_PATH = 0x00000020;
-
-        [NativeTypeName("#define Uri_CREATE_DECODE_EXTRA_INFO 0x00000040")]
-        public const int Uri_CREATE_DECODE_EXTRA_INFO = 0x00000040;
-
-        [NativeTypeName("#define Uri_CREATE_NO_DECODE_EXTRA_INFO 0x00000080")]
-        public const int Uri_CREATE_NO_DECODE_EXTRA_INFO = 0x00000080;
-
-        [NativeTypeName("#define Uri_CREATE_CRACK_UNKNOWN_SCHEMES 0x00000200")]
-        public const int Uri_CREATE_CRACK_UNKNOWN_SCHEMES = 0x00000200;
-
-        [NativeTypeName("#define Uri_CREATE_NO_CRACK_UNKNOWN_SCHEMES 0x00000400")]
-        public const int Uri_CREATE_NO_CRACK_UNKNOWN_SCHEMES = 0x00000400;
-
-        [NativeTypeName("#define Uri_CREATE_PRE_PROCESS_HTML_URI 0x00000800")]
-        public const int Uri_CREATE_PRE_PROCESS_HTML_URI = 0x00000800;
-
-        [NativeTypeName("#define Uri_CREATE_NO_PRE_PROCESS_HTML_URI 0x00001000")]
-        public const int Uri_CREATE_NO_PRE_PROCESS_HTML_URI = 0x00001000;
-
-        [NativeTypeName("#define Uri_CREATE_IE_SETTINGS 0x00002000")]
-        public const int Uri_CREATE_IE_SETTINGS = 0x00002000;
-
-        [NativeTypeName("#define Uri_CREATE_NO_IE_SETTINGS 0x00004000")]
-        public const int Uri_CREATE_NO_IE_SETTINGS = 0x00004000;
-
-        [NativeTypeName("#define Uri_CREATE_NO_ENCODE_FORBIDDEN_CHARACTERS 0x00008000")]
-        public const int Uri_CREATE_NO_ENCODE_FORBIDDEN_CHARACTERS = 0x00008000;
-
-        [NativeTypeName("#define Uri_CREATE_NORMALIZE_INTL_CHARACTERS 0x00010000")]
-        public const int Uri_CREATE_NORMALIZE_INTL_CHARACTERS = 0x00010000;
-
-        [NativeTypeName("#define Uri_CREATE_CANONICALIZE_ABSOLUTE 0x00020000")]
-        public const int Uri_CREATE_CANONICALIZE_ABSOLUTE = 0x00020000;
-
-        [NativeTypeName("#define Uri_DISPLAY_NO_FRAGMENT 0x00000001")]
-        public const int Uri_DISPLAY_NO_FRAGMENT = 0x00000001;
-
-        [NativeTypeName("#define Uri_PUNYCODE_IDN_HOST 0x00000002")]
-        public const int Uri_PUNYCODE_IDN_HOST = 0x00000002;
-
-        [NativeTypeName("#define Uri_DISPLAY_IDN_HOST 0x00000004")]
-        public const int Uri_DISPLAY_IDN_HOST = 0x00000004;
-
-        [NativeTypeName("#define Uri_DISPLAY_NO_PUNYCODE 0x00000008")]
-        public const int Uri_DISPLAY_NO_PUNYCODE = 0x00000008;
-
-        [NativeTypeName("#define Uri_ENCODING_USER_INFO_AND_PATH_IS_PERCENT_ENCODED_UTF8 0x00000001")]
-        public const int Uri_ENCODING_USER_INFO_AND_PATH_IS_PERCENT_ENCODED_UTF8 = 0x00000001;
-
-        [NativeTypeName("#define Uri_ENCODING_USER_INFO_AND_PATH_IS_CP 0x00000002")]
-        public const int Uri_ENCODING_USER_INFO_AND_PATH_IS_CP = 0x00000002;
-
-        [NativeTypeName("#define Uri_ENCODING_HOST_IS_IDN 0x00000004")]
-        public const int Uri_ENCODING_HOST_IS_IDN = 0x00000004;
-
-        [NativeTypeName("#define Uri_ENCODING_HOST_IS_PERCENT_ENCODED_UTF8 0x00000008")]
-        public const int Uri_ENCODING_HOST_IS_PERCENT_ENCODED_UTF8 = 0x00000008;
-
-        [NativeTypeName("#define Uri_ENCODING_HOST_IS_PERCENT_ENCODED_CP 0x00000010")]
-        public const int Uri_ENCODING_HOST_IS_PERCENT_ENCODED_CP = 0x00000010;
-
-        [NativeTypeName("#define Uri_ENCODING_QUERY_AND_FRAGMENT_IS_PERCENT_ENCODED_UTF8 0x00000020")]
-        public const int Uri_ENCODING_QUERY_AND_FRAGMENT_IS_PERCENT_ENCODED_UTF8 = 0x00000020;
-
-        [NativeTypeName("#define Uri_ENCODING_QUERY_AND_FRAGMENT_IS_CP 0x00000040")]
-        public const int Uri_ENCODING_QUERY_AND_FRAGMENT_IS_CP = 0x00000040;
-
-        [NativeTypeName("#define Uri_ENCODING_RFC (Uri_ENCODING_USER_INFO_AND_PATH_IS_PERCENT_ENCODED_UTF8 | Uri_ENCODING_HOST_IS_PERCENT_ENCODED_UTF8 | Uri_ENCODING_QUERY_AND_FRAGMENT_IS_PERCENT_ENCODED_UTF8)")]
-        public const int Uri_ENCODING_RFC = (0x00000001 | 0x00000008 | 0x00000020);
-
         [NativeTypeName("#define UriBuilder_USE_ORIGINAL_FLAGS 0x00000001")]
         public const int UriBuilder_USE_ORIGINAL_FLAGS = 0x00000001;
 
         [NativeTypeName("#define WININETINFO_OPTION_LOCK_HANDLE 65534")]
         public const int WININETINFO_OPTION_LOCK_HANDLE = 65534;
-
-        [NativeTypeName("#define SID_IBindHost IID_IBindHost")]
-        public static ref readonly Guid SID_IBindHost => ref IID_IBindHost;
-
-        [NativeTypeName("#define SID_SBindHost IID_IBindHost")]
-        public static ref readonly Guid SID_SBindHost => ref IID_IBindHost;
 
         [NativeTypeName("#define URLOSTRM_USECACHEDCOPY_ONLY 0x1")]
         public const int URLOSTRM_USECACHEDCOPY_ONLY = 0x1;
@@ -535,54 +356,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define PARSE_DECODE PARSE_DECODE_IS_ESCAPE")]
         public const PARSEACTION PARSE_DECODE = PARSE_DECODE_IS_ESCAPE;
 
-        [NativeTypeName("#define SET_FEATURE_ON_THREAD 0x00000001")]
-        public const int SET_FEATURE_ON_THREAD = 0x00000001;
-
-        [NativeTypeName("#define SET_FEATURE_ON_PROCESS 0x00000002")]
-        public const int SET_FEATURE_ON_PROCESS = 0x00000002;
-
-        [NativeTypeName("#define SET_FEATURE_IN_REGISTRY 0x00000004")]
-        public const int SET_FEATURE_IN_REGISTRY = 0x00000004;
-
-        [NativeTypeName("#define SET_FEATURE_ON_THREAD_LOCALMACHINE 0x00000008")]
-        public const int SET_FEATURE_ON_THREAD_LOCALMACHINE = 0x00000008;
-
-        [NativeTypeName("#define SET_FEATURE_ON_THREAD_INTRANET 0x00000010")]
-        public const int SET_FEATURE_ON_THREAD_INTRANET = 0x00000010;
-
-        [NativeTypeName("#define SET_FEATURE_ON_THREAD_TRUSTED 0x00000020")]
-        public const int SET_FEATURE_ON_THREAD_TRUSTED = 0x00000020;
-
-        [NativeTypeName("#define SET_FEATURE_ON_THREAD_INTERNET 0x00000040")]
-        public const int SET_FEATURE_ON_THREAD_INTERNET = 0x00000040;
-
-        [NativeTypeName("#define SET_FEATURE_ON_THREAD_RESTRICTED 0x00000080")]
-        public const int SET_FEATURE_ON_THREAD_RESTRICTED = 0x00000080;
-
-        [NativeTypeName("#define GET_FEATURE_FROM_THREAD 0x00000001")]
-        public const int GET_FEATURE_FROM_THREAD = 0x00000001;
-
-        [NativeTypeName("#define GET_FEATURE_FROM_PROCESS 0x00000002")]
-        public const int GET_FEATURE_FROM_PROCESS = 0x00000002;
-
-        [NativeTypeName("#define GET_FEATURE_FROM_REGISTRY 0x00000004")]
-        public const int GET_FEATURE_FROM_REGISTRY = 0x00000004;
-
-        [NativeTypeName("#define GET_FEATURE_FROM_THREAD_LOCALMACHINE 0x00000008")]
-        public const int GET_FEATURE_FROM_THREAD_LOCALMACHINE = 0x00000008;
-
-        [NativeTypeName("#define GET_FEATURE_FROM_THREAD_INTRANET 0x00000010")]
-        public const int GET_FEATURE_FROM_THREAD_INTRANET = 0x00000010;
-
-        [NativeTypeName("#define GET_FEATURE_FROM_THREAD_TRUSTED 0x00000020")]
-        public const int GET_FEATURE_FROM_THREAD_TRUSTED = 0x00000020;
-
-        [NativeTypeName("#define GET_FEATURE_FROM_THREAD_INTERNET 0x00000040")]
-        public const int GET_FEATURE_FROM_THREAD_INTERNET = 0x00000040;
-
-        [NativeTypeName("#define GET_FEATURE_FROM_THREAD_RESTRICTED 0x00000080")]
-        public const int GET_FEATURE_FROM_THREAD_RESTRICTED = 0x00000080;
-
         [NativeTypeName("#define OInetParseUrl CoInternetParseUrl")]
         public static delegate*<ushort*, PARSEACTION, uint, ushort*, uint, uint*, uint, HRESULT> OInetParseUrl => &CoInternetParseUrl;
 
@@ -606,126 +379,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define PROTOCOLFLAG_NO_PICS_CHECK 0x00000001")]
         public const int PROTOCOLFLAG_NO_PICS_CHECK = 0x00000001;
-
-        [NativeTypeName("#define SID_SInternetSecurityManager IID_IInternetSecurityManager")]
-        public static ref readonly Guid SID_SInternetSecurityManager => ref IID_IInternetSecurityManager;
-
-        [NativeTypeName("#define SID_SInternetSecurityManagerEx IID_IInternetSecurityManagerEx")]
-        public static ref readonly Guid SID_SInternetSecurityManagerEx => ref IID_IInternetSecurityManagerEx;
-
-        [NativeTypeName("#define SID_SInternetSecurityManagerEx2 IID_IInternetSecurityManagerEx2")]
-        public static ref readonly Guid SID_SInternetSecurityManagerEx2 => ref IID_IInternetSecurityManagerEx2;
-
-        [NativeTypeName("#define SID_SInternetHostSecurityManager IID_IInternetHostSecurityManager")]
-        public static ref readonly Guid SID_SInternetHostSecurityManager => ref IID_IInternetHostSecurityManager;
-
-        [NativeTypeName("#define MUTZ_NOSAVEDFILECHECK 0x00000001")]
-        public const int MUTZ_NOSAVEDFILECHECK = 0x00000001;
-
-        [NativeTypeName("#define MUTZ_ISFILE 0x00000002")]
-        public const int MUTZ_ISFILE = 0x00000002;
-
-        [NativeTypeName("#define MUTZ_ACCEPT_WILDCARD_SCHEME 0x00000080")]
-        public const int MUTZ_ACCEPT_WILDCARD_SCHEME = 0x00000080;
-
-        [NativeTypeName("#define MUTZ_ENFORCERESTRICTED 0x00000100")]
-        public const int MUTZ_ENFORCERESTRICTED = 0x00000100;
-
-        [NativeTypeName("#define MUTZ_RESERVED 0x00000200")]
-        public const int MUTZ_RESERVED = 0x00000200;
-
-        [NativeTypeName("#define MUTZ_REQUIRESAVEDFILECHECK 0x00000400")]
-        public const int MUTZ_REQUIRESAVEDFILECHECK = 0x00000400;
-
-        [NativeTypeName("#define MUTZ_DONT_UNESCAPE 0x00000800")]
-        public const int MUTZ_DONT_UNESCAPE = 0x00000800;
-
-        [NativeTypeName("#define MUTZ_DONT_USE_CACHE 0x00001000")]
-        public const int MUTZ_DONT_USE_CACHE = 0x00001000;
-
-        [NativeTypeName("#define MUTZ_FORCE_INTRANET_FLAGS 0x00002000")]
-        public const int MUTZ_FORCE_INTRANET_FLAGS = 0x00002000;
-
-        [NativeTypeName("#define MUTZ_IGNORE_ZONE_MAPPINGS 0x00004000")]
-        public const int MUTZ_IGNORE_ZONE_MAPPINGS = 0x00004000;
-
-        [NativeTypeName("#define URLPOLICY_ACTIVEX_CHECK_LIST 0x00010000")]
-        public const int URLPOLICY_ACTIVEX_CHECK_LIST = 0x00010000;
-
-        [NativeTypeName("#define URLPOLICY_CREDENTIALS_SILENT_LOGON_OK 0x00000000")]
-        public const int URLPOLICY_CREDENTIALS_SILENT_LOGON_OK = 0x00000000;
-
-        [NativeTypeName("#define URLPOLICY_CREDENTIALS_MUST_PROMPT_USER 0x00010000")]
-        public const int URLPOLICY_CREDENTIALS_MUST_PROMPT_USER = 0x00010000;
-
-        [NativeTypeName("#define URLPOLICY_CREDENTIALS_CONDITIONAL_PROMPT 0x00020000")]
-        public const int URLPOLICY_CREDENTIALS_CONDITIONAL_PROMPT = 0x00020000;
-
-        [NativeTypeName("#define URLPOLICY_CREDENTIALS_ANONYMOUS_ONLY 0x00030000")]
-        public const int URLPOLICY_CREDENTIALS_ANONYMOUS_ONLY = 0x00030000;
-
-        [NativeTypeName("#define URLPOLICY_AUTHENTICATE_CLEARTEXT_OK 0x00000000")]
-        public const int URLPOLICY_AUTHENTICATE_CLEARTEXT_OK = 0x00000000;
-
-        [NativeTypeName("#define URLPOLICY_AUTHENTICATE_CHALLENGE_RESPONSE 0x00010000")]
-        public const int URLPOLICY_AUTHENTICATE_CHALLENGE_RESPONSE = 0x00010000;
-
-        [NativeTypeName("#define URLPOLICY_AUTHENTICATE_MUTUAL_ONLY 0x00030000")]
-        public const int URLPOLICY_AUTHENTICATE_MUTUAL_ONLY = 0x00030000;
-
-        [NativeTypeName("#define URLPOLICY_JAVA_PROHIBIT 0x00000000")]
-        public const int URLPOLICY_JAVA_PROHIBIT = 0x00000000;
-
-        [NativeTypeName("#define URLPOLICY_JAVA_HIGH 0x00010000")]
-        public const int URLPOLICY_JAVA_HIGH = 0x00010000;
-
-        [NativeTypeName("#define URLPOLICY_JAVA_MEDIUM 0x00020000")]
-        public const int URLPOLICY_JAVA_MEDIUM = 0x00020000;
-
-        [NativeTypeName("#define URLPOLICY_JAVA_LOW 0x00030000")]
-        public const int URLPOLICY_JAVA_LOW = 0x00030000;
-
-        [NativeTypeName("#define URLPOLICY_JAVA_CUSTOM 0x00800000")]
-        public const int URLPOLICY_JAVA_CUSTOM = 0x00800000;
-
-        [NativeTypeName("#define URLPOLICY_CHANNEL_SOFTDIST_PROHIBIT 0x00010000")]
-        public const int URLPOLICY_CHANNEL_SOFTDIST_PROHIBIT = 0x00010000;
-
-        [NativeTypeName("#define URLPOLICY_CHANNEL_SOFTDIST_PRECACHE 0x00020000")]
-        public const int URLPOLICY_CHANNEL_SOFTDIST_PRECACHE = 0x00020000;
-
-        [NativeTypeName("#define URLPOLICY_CHANNEL_SOFTDIST_AUTOINSTALL 0x00030000")]
-        public const int URLPOLICY_CHANNEL_SOFTDIST_AUTOINSTALL = 0x00030000;
-
-        [NativeTypeName("#define URLPOLICY_BEHAVIOR_CHECK_LIST 0x00010000")]
-        public const int URLPOLICY_BEHAVIOR_CHECK_LIST = 0x00010000;
-
-        [NativeTypeName("#define URLPOLICY_ALLOW 0x00")]
-        public const int URLPOLICY_ALLOW = 0x00;
-
-        [NativeTypeName("#define URLPOLICY_QUERY 0x01")]
-        public const int URLPOLICY_QUERY = 0x01;
-
-        [NativeTypeName("#define URLPOLICY_DISALLOW 0x03")]
-        public const int URLPOLICY_DISALLOW = 0x03;
-
-        [NativeTypeName("#define URLPOLICY_NOTIFY_ON_ALLOW 0x10")]
-        public const int URLPOLICY_NOTIFY_ON_ALLOW = 0x10;
-
-        [NativeTypeName("#define URLPOLICY_NOTIFY_ON_DISALLOW 0x20")]
-        public const int URLPOLICY_NOTIFY_ON_DISALLOW = 0x20;
-
-        [NativeTypeName("#define URLPOLICY_LOG_ON_ALLOW 0x40")]
-        public const int URLPOLICY_LOG_ON_ALLOW = 0x40;
-
-        [NativeTypeName("#define URLPOLICY_LOG_ON_DISALLOW 0x80")]
-        public const int URLPOLICY_LOG_ON_DISALLOW = 0x80;
-
-        [NativeTypeName("#define URLPOLICY_MASK_PERMISSIONS 0x0f")]
-        public const int URLPOLICY_MASK_PERMISSIONS = 0x0f;
-
-        [NativeTypeName("#define URLPOLICY_DONTCHECKDLGBOX 0x100")]
-        public const int URLPOLICY_DONTCHECKDLGBOX = 0x100;
 
         [NativeTypeName("#define URLZONE_ESC_FLAG 0x100")]
         public const int URLZONE_ESC_FLAG = 0x100;

@@ -4,8 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
 using System;
+using static TerraFX.Interop.DirectX.D3D12;
 using static TerraFX.Interop.DirectX.D3D12_RESOURCE_DIMENSION;
-using static TerraFX.Interop.DirectX.DirectX;
 
 namespace TerraFX.Interop.DirectX
 {

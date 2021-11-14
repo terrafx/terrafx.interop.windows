@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.DirectX.DWRITE;
 using static TerraFX.Interop.Windows.FACILITY;
 using static TerraFX.Interop.Windows.Windows;
 

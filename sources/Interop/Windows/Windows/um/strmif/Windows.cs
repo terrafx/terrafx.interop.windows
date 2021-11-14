@@ -36,18 +36,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define CHARS_IN_GUID 39")]
         public const int CHARS_IN_GUID = 39;
 
-        [NativeTypeName("#define AM_GBF_PREVFRAMESKIPPED 1")]
-        public const int AM_GBF_PREVFRAMESKIPPED = 1;
-
-        [NativeTypeName("#define AM_GBF_NOTASYNCPOINT 2")]
-        public const int AM_GBF_NOTASYNCPOINT = 2;
-
-        [NativeTypeName("#define AM_GBF_NOWAIT 4")]
-        public const int AM_GBF_NOWAIT = 4;
-
-        [NativeTypeName("#define AM_GBF_NODDSURFACELOCK 8")]
-        public const int AM_GBF_NODDSURFACELOCK = 8;
-
         [NativeTypeName("#define ADVISE_ALL ( ( ( ( ADVISE_CLIPPING | ADVISE_PALETTE )  | ADVISE_COLORKEY )  | ADVISE_POSITION )  )")]
         public const int ADVISE_ALL = (((((int)(ADVISE_CLIPPING) | (int)(ADVISE_PALETTE)) | (int)(ADVISE_COLORKEY)) | (int)(ADVISE_POSITION)));
 
@@ -93,35 +81,11 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define SUBSTREAM_FILTER_VAL_NONE 0x10000000")]
         public const int SUBSTREAM_FILTER_VAL_NONE = 0x10000000;
 
-        [NativeTypeName("#define AM_GETDECODERCAP_QUERY_VMR_SUPPORT 0x00000001")]
-        public const int AM_GETDECODERCAP_QUERY_VMR_SUPPORT = 0x00000001;
-
         [NativeTypeName("#define VMR_NOTSUPPORTED 0x00000000")]
         public const int VMR_NOTSUPPORTED = 0x00000000;
 
         [NativeTypeName("#define VMR_SUPPORTED 0x00000001")]
         public const int VMR_SUPPORTED = 0x00000001;
-
-        [NativeTypeName("#define AM_QUERY_DECODER_VMR_SUPPORT 0x00000001")]
-        public const int AM_QUERY_DECODER_VMR_SUPPORT = 0x00000001;
-
-        [NativeTypeName("#define AM_QUERY_DECODER_DXVA_1_SUPPORT 0x00000002")]
-        public const int AM_QUERY_DECODER_DXVA_1_SUPPORT = 0x00000002;
-
-        [NativeTypeName("#define AM_QUERY_DECODER_DVD_SUPPORT 0x00000003")]
-        public const int AM_QUERY_DECODER_DVD_SUPPORT = 0x00000003;
-
-        [NativeTypeName("#define AM_QUERY_DECODER_ATSC_SD_SUPPORT 0x00000004")]
-        public const int AM_QUERY_DECODER_ATSC_SD_SUPPORT = 0x00000004;
-
-        [NativeTypeName("#define AM_QUERY_DECODER_ATSC_HD_SUPPORT 0x00000005")]
-        public const int AM_QUERY_DECODER_ATSC_HD_SUPPORT = 0x00000005;
-
-        [NativeTypeName("#define AM_GETDECODERCAP_QUERY_VMR9_SUPPORT 0x00000006")]
-        public const int AM_GETDECODERCAP_QUERY_VMR9_SUPPORT = 0x00000006;
-
-        [NativeTypeName("#define AM_GETDECODERCAP_QUERY_EVR_SUPPORT 0x00000007")]
-        public const int AM_GETDECODERCAP_QUERY_EVR_SUPPORT = 0x00000007;
 
         [NativeTypeName("#define DECODER_CAP_NOTSUPPORTED 0x00000000")]
         public const int DECODER_CAP_NOTSUPPORTED = 0x00000000;
@@ -143,35 +107,5 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define VMRBITMAP_SRCRECT 0x00000010")]
         public const int VMRBITMAP_SRCRECT = 0x00000010;
-
-        [NativeTypeName("#define DVD_TITLE_MENU 0x000")]
-        public const int DVD_TITLE_MENU = 0x000;
-
-        [NativeTypeName("#define DVD_STREAM_DATA_CURRENT 0x800")]
-        public const int DVD_STREAM_DATA_CURRENT = 0x800;
-
-        [NativeTypeName("#define DVD_STREAM_DATA_VMGM 0x400")]
-        public const int DVD_STREAM_DATA_VMGM = 0x400;
-
-        [NativeTypeName("#define DVD_STREAM_DATA_VTSM 0x401")]
-        public const int DVD_STREAM_DATA_VTSM = 0x401;
-
-        [NativeTypeName("#define DVD_DEFAULT_AUDIO_STREAM 0x0f")]
-        public const int DVD_DEFAULT_AUDIO_STREAM = 0x0f;
-
-        [NativeTypeName("#define DVD_AUDIO_CAPS_AC3 0x00000001")]
-        public const int DVD_AUDIO_CAPS_AC3 = 0x00000001;
-
-        [NativeTypeName("#define DVD_AUDIO_CAPS_MPEG2 0x00000002")]
-        public const int DVD_AUDIO_CAPS_MPEG2 = 0x00000002;
-
-        [NativeTypeName("#define DVD_AUDIO_CAPS_LPCM 0x00000004")]
-        public const int DVD_AUDIO_CAPS_LPCM = 0x00000004;
-
-        [NativeTypeName("#define DVD_AUDIO_CAPS_DTS 0x00000008")]
-        public const int DVD_AUDIO_CAPS_DTS = 0x00000008;
-
-        [NativeTypeName("#define DVD_AUDIO_CAPS_SDDS 0x00000010")]
-        public const int DVD_AUDIO_CAPS_SDDS = 0x00000010;
     }
 }

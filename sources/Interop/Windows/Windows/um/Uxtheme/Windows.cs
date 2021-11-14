@@ -280,42 +280,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define DTBG_VALIDBITS (DTBG_CLIPRECT | \\\r\n                                 DTBG_DRAWSOLID | \\\r\n                                 DTBG_OMITBORDER | \\\r\n                                 DTBG_OMITCONTENT | \\\r\n                                 DTBG_COMPUTINGREGION | \\\r\n                                 DTBG_MIRRORDC | \\\r\n                                 DTBG_NOMIRROR)")]
         public const int DTBG_VALIDBITS = (0x00000001 | 0x00000002 | 0x00000004 | 0x00000008 | 0x00000010 | 0x00000020 | 0x00000040);
 
-        [NativeTypeName("#define DTT_GRAYED 0x00000001")]
-        public const int DTT_GRAYED = 0x00000001;
-
-        [NativeTypeName("#define DTT_FLAGS2VALIDBITS (DTT_GRAYED)")]
-        public const int DTT_FLAGS2VALIDBITS = (0x00000001);
-
-        [NativeTypeName("#define HTTB_BACKGROUNDSEG 0x00000000")]
-        public const int HTTB_BACKGROUNDSEG = 0x00000000;
-
-        [NativeTypeName("#define HTTB_FIXEDBORDER 0x00000002")]
-        public const int HTTB_FIXEDBORDER = 0x00000002;
-
-        [NativeTypeName("#define HTTB_CAPTION 0x00000004")]
-        public const int HTTB_CAPTION = 0x00000004;
-
-        [NativeTypeName("#define HTTB_RESIZINGBORDER_LEFT 0x00000010")]
-        public const int HTTB_RESIZINGBORDER_LEFT = 0x00000010;
-
-        [NativeTypeName("#define HTTB_RESIZINGBORDER_TOP 0x00000020")]
-        public const int HTTB_RESIZINGBORDER_TOP = 0x00000020;
-
-        [NativeTypeName("#define HTTB_RESIZINGBORDER_RIGHT 0x00000040")]
-        public const int HTTB_RESIZINGBORDER_RIGHT = 0x00000040;
-
-        [NativeTypeName("#define HTTB_RESIZINGBORDER_BOTTOM 0x00000080")]
-        public const int HTTB_RESIZINGBORDER_BOTTOM = 0x00000080;
-
-        [NativeTypeName("#define HTTB_RESIZINGBORDER (HTTB_RESIZINGBORDER_LEFT | \\\r\n                                     HTTB_RESIZINGBORDER_TOP | \\\r\n                                     HTTB_RESIZINGBORDER_RIGHT | \\\r\n                                     HTTB_RESIZINGBORDER_BOTTOM)")]
-        public const int HTTB_RESIZINGBORDER = (0x00000010 | 0x00000020 | 0x00000040 | 0x00000080);
-
-        [NativeTypeName("#define HTTB_SIZINGTEMPLATE 0x00000100")]
-        public const int HTTB_SIZINGTEMPLATE = 0x00000100;
-
-        [NativeTypeName("#define HTTB_SYSTEMSIZINGMARGINS 0x00000200")]
-        public const int HTTB_SYSTEMSIZINGMARGINS = 0x00000200;
-
         [NativeTypeName("#define ETDT_DISABLE 0x00000001")]
         public const int ETDT_DISABLE = 0x00000001;
 
@@ -349,18 +313,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define STAP_VALIDBITS (STAP_ALLOW_NONCLIENT | \\\r\n                                 STAP_ALLOW_CONTROLS | \\\r\n                                 STAP_ALLOW_WEBCONTENT)")]
         public const uint STAP_VALIDBITS = ((1U << 0) | (1U << 1) | (1U << 2));
 
-        [NativeTypeName("#define SZ_THDOCPROP_DISPLAYNAME L\"DisplayName\"")]
-        public const string SZ_THDOCPROP_DISPLAYNAME = "DisplayName";
-
-        [NativeTypeName("#define SZ_THDOCPROP_CANONICALNAME L\"ThemeName\"")]
-        public const string SZ_THDOCPROP_CANONICALNAME = "ThemeName";
-
-        [NativeTypeName("#define SZ_THDOCPROP_TOOLTIP L\"ToolTip\"")]
-        public const string SZ_THDOCPROP_TOOLTIP = "ToolTip";
-
-        [NativeTypeName("#define SZ_THDOCPROP_AUTHOR L\"author\"")]
-        public const string SZ_THDOCPROP_AUTHOR = "author";
-
         [NativeTypeName("#define GBF_DIRECT 0x00000001")]
         public const int GBF_DIRECT = 0x00000001;
 
@@ -393,51 +345,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define WTNCA_VALIDBITS (WTNCA_NODRAWCAPTION | \\\r\n                                   WTNCA_NODRAWICON | \\\r\n                                   WTNCA_NOSYSMENU | \\\r\n                                   WTNCA_NOMIRRORHELP)")]
         public const int WTNCA_VALIDBITS = (0x00000001 | 0x00000002 | 0x00000004 | 0x00000008);
-
-        [NativeTypeName("#define DTT_TEXTCOLOR (1UL << 0)")]
-        public const uint DTT_TEXTCOLOR = (1U << 0);
-
-        [NativeTypeName("#define DTT_BORDERCOLOR (1UL << 1)")]
-        public const uint DTT_BORDERCOLOR = (1U << 1);
-
-        [NativeTypeName("#define DTT_SHADOWCOLOR (1UL << 2)")]
-        public const uint DTT_SHADOWCOLOR = (1U << 2);
-
-        [NativeTypeName("#define DTT_SHADOWTYPE (1UL << 3)")]
-        public const uint DTT_SHADOWTYPE = (1U << 3);
-
-        [NativeTypeName("#define DTT_SHADOWOFFSET (1UL << 4)")]
-        public const uint DTT_SHADOWOFFSET = (1U << 4);
-
-        [NativeTypeName("#define DTT_BORDERSIZE (1UL << 5)")]
-        public const uint DTT_BORDERSIZE = (1U << 5);
-
-        [NativeTypeName("#define DTT_FONTPROP (1UL << 6)")]
-        public const uint DTT_FONTPROP = (1U << 6);
-
-        [NativeTypeName("#define DTT_COLORPROP (1UL << 7)")]
-        public const uint DTT_COLORPROP = (1U << 7);
-
-        [NativeTypeName("#define DTT_STATEID (1UL << 8)")]
-        public const uint DTT_STATEID = (1U << 8);
-
-        [NativeTypeName("#define DTT_CALCRECT (1UL << 9)")]
-        public const uint DTT_CALCRECT = (1U << 9);
-
-        [NativeTypeName("#define DTT_APPLYOVERLAY (1UL << 10)")]
-        public const uint DTT_APPLYOVERLAY = (1U << 10);
-
-        [NativeTypeName("#define DTT_GLOWSIZE (1UL << 11)")]
-        public const uint DTT_GLOWSIZE = (1U << 11);
-
-        [NativeTypeName("#define DTT_CALLBACK (1UL << 12)")]
-        public const uint DTT_CALLBACK = (1U << 12);
-
-        [NativeTypeName("#define DTT_COMPOSITED (1UL << 13)")]
-        public const uint DTT_COMPOSITED = (1U << 13);
-
-        [NativeTypeName("#define DTT_VALIDBITS (DTT_TEXTCOLOR | \\\r\n                             DTT_BORDERCOLOR | \\\r\n                             DTT_SHADOWCOLOR | \\\r\n                             DTT_SHADOWTYPE | \\\r\n                             DTT_SHADOWOFFSET | \\\r\n                             DTT_BORDERSIZE | \\\r\n                             DTT_FONTPROP | \\\r\n                             DTT_COLORPROP | \\\r\n                             DTT_STATEID | \\\r\n                             DTT_CALCRECT | \\\r\n                             DTT_APPLYOVERLAY | \\\r\n                             DTT_GLOWSIZE | \\\r\n                             DTT_COMPOSITED)")]
-        public const uint DTT_VALIDBITS = ((1U << 0) | (1U << 1) | (1U << 2) | (1U << 3) | (1U << 4) | (1U << 5) | (1U << 6) | (1U << 7) | (1U << 8) | (1U << 9) | (1U << 10) | (1U << 11) | (1U << 13));
 
         [NativeTypeName("#define BPBF_COMPOSITED BPBF_TOPDOWNDIB")]
         public const BP_BUFFERFORMAT BPBF_COMPOSITED = BPBF_TOPDOWNDIB;
