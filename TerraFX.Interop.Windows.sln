@@ -2655,6 +2655,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinRT", "WinRT", "{944E3E5F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "um", "um", "{9A1EBCF6-6BB6-4C09-81ED-133E888126EC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DbgHelp", "DbgHelp", "{93A8BE7A-75F7-4D42-B553-EDBE0A93909E}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\um\DbgHelp\generate.rsp = generation\Windows\um\DbgHelp\generate.rsp
+		generation\Windows\um\DbgHelp\header.txt = generation\Windows\um\DbgHelp\header.txt
+		generation\Windows\um\DbgHelp\um-DbgHelp.h = generation\Windows\um\DbgHelp\um-DbgHelp.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "timezoneapi", "timezoneapi", "{E861DAD6-1605-417F-9850-2CB8BDFFA53A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\um\timezoneapi\generate.rsp = generation\Windows\um\timezoneapi\generate.rsp
+		generation\Windows\um\timezoneapi\header.txt = generation\Windows\um\timezoneapi\header.txt
+		generation\Windows\um\timezoneapi\um-timezoneapi.h = generation\Windows\um\timezoneapi\um-timezoneapi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "verrsrc", "verrsrc", "{73647067-4ED1-478A-BD13-8E9DB203BAC9}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\um\verrsrc\generate.rsp = generation\Windows\um\verrsrc\generate.rsp
+		generation\Windows\um\verrsrc\header.txt = generation\Windows\um\verrsrc\header.txt
+		generation\Windows\um\verrsrc\um-verrsrc.h = generation\Windows\um\verrsrc\um-verrsrc.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3066,6 +3087,9 @@ Global
 		{849C4129-3383-468E-9CFA-B709015C0BE2} = {93FF551D-EF97-4703-810F-13299940A464}
 		{944E3E5F-1AE0-4323-A485-8F68B814CA75} = {D9638FEE-50A4-44FF-B1F6-72E59548490B}
 		{9A1EBCF6-6BB6-4C09-81ED-133E888126EC} = {944E3E5F-1AE0-4323-A485-8F68B814CA75}
+		{93A8BE7A-75F7-4D42-B553-EDBE0A93909E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{E861DAD6-1605-417F-9850-2CB8BDFFA53A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{73647067-4ED1-478A-BD13-8E9DB203BAC9} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
