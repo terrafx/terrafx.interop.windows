@@ -102,11 +102,5 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define NIIF_FUNCTION_NUMBER_UNKNOWN ((ULONG)(-1))")]
         public const uint NIIF_FUNCTION_NUMBER_UNKNOWN = unchecked((uint)(-1));
-
-        [NativeTypeName("#define IF_MAX_STRING_SIZE 256")]
-        public const int IF_MAX_STRING_SIZE = 256;
-
-        [NativeTypeName("#define IF_MAX_PHYS_ADDRESS_LENGTH 32")]
-        public const int IF_MAX_PHYS_ADDRESS_LENGTH = 32;
     }
 }

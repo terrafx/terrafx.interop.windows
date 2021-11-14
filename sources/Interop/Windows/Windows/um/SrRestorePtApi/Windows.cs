@@ -43,9 +43,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define END_NESTED_SYSTEM_CHANGE_NORP END_NESTED_SYSTEM_CHANGE")]
         public const int END_NESTED_SYSTEM_CHANGE_NORP = 103;
 
-        [NativeTypeName("#define MAX_EVENT 104")]
-        public const int MAX_EVENT = 104;
-
         [NativeTypeName("#define MIN_RPT 0")]
         public const int MIN_RPT = 0;
 
@@ -105,15 +102,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define CRITICAL_UPDATE 18")]
         public const int CRITICAL_UPDATE = 18;
-
-        [NativeTypeName("#define MAX_RPT 18")]
-        public const int MAX_RPT = 18;
-
-        [NativeTypeName("#define MAX_DESC 64")]
-        public const int MAX_DESC = 64;
-
-        [NativeTypeName("#define MAX_DESC_W 256")]
-        public const int MAX_DESC_W = 256;
 
         [NativeTypeName("#define SRSetRestorePoint SRSetRestorePointW")]
         public static delegate*<RESTOREPOINTINFOW*, STATEMGRSTATUS*, BOOL> SRSetRestorePoint => &SRSetRestorePointW;

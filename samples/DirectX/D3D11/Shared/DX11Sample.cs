@@ -71,10 +71,7 @@ namespace TerraFX.Samples.DirectX.D3D11
             IDXGIFactory1* CreateDxgiFactory()
             {
                 IDXGIFactory1* dxgiFactory;
-
-                var iid = IID_IDXGIFactory1;
-                ThrowIfFailed(CreateDXGIFactory1(&iid, (void**)&dxgiFactory));
-
+                ThrowIfFailed(CreateDXGIFactory1(__uuidof<IDXGIFactory1>(), (void**)&dxgiFactory));
                 return dxgiFactory;
             }
 
@@ -91,9 +88,7 @@ namespace TerraFX.Samples.DirectX.D3D11
             ID3D11RenderTargetView* CreateRenderTargetView()
             {
                 using ComPtr<ID3D11Resource> backBuffer = null;
-
-                var iid = IID_ID3D11Texture2D;
-                ThrowIfFailed(SwapChain->GetBuffer(0, &iid, (void**)backBuffer.GetAddressOf()));
+                ThrowIfFailed(SwapChain->GetBuffer(0, __uuidof<ID3D11Texture2D>(), (void**)backBuffer.GetAddressOf()));
 
                 ID3D11RenderTargetView* renderTargetView;
                 ThrowIfFailed(D3DDevice->CreateRenderTargetView(backBuffer.Get(), null, &renderTargetView));

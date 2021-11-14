@@ -97,12 +97,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define DEVPROP_TYPE_STRING_INDIRECT 0x00000019")]
         public const int DEVPROP_TYPE_STRING_INDIRECT = 0x00000019;
 
-        [NativeTypeName("#define MAX_DEVPROP_TYPE 0x00000019")]
-        public const int MAX_DEVPROP_TYPE = 0x00000019;
-
-        [NativeTypeName("#define MAX_DEVPROP_TYPEMOD 0x00002000")]
-        public const int MAX_DEVPROP_TYPEMOD = 0x00002000;
-
         [NativeTypeName("#define DEVPROP_MASK_TYPE 0x00000FFF")]
         public const int DEVPROP_MASK_TYPE = 0x00000FFF;
 

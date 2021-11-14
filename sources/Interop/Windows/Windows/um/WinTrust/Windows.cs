@@ -374,24 +374,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define SGNR_TYPE_TIMESTAMP 0x00000010")]
         public const int SGNR_TYPE_TIMESTAMP = 0x00000010;
 
-        [NativeTypeName("#define CERT_CONFIDENCE_SIG 0x10000000")]
-        public const int CERT_CONFIDENCE_SIG = 0x10000000;
-
-        [NativeTypeName("#define CERT_CONFIDENCE_TIME 0x01000000")]
-        public const int CERT_CONFIDENCE_TIME = 0x01000000;
-
-        [NativeTypeName("#define CERT_CONFIDENCE_TIMENEST 0x00100000")]
-        public const int CERT_CONFIDENCE_TIMENEST = 0x00100000;
-
-        [NativeTypeName("#define CERT_CONFIDENCE_AUTHIDEXT 0x00010000")]
-        public const int CERT_CONFIDENCE_AUTHIDEXT = 0x00010000;
-
-        [NativeTypeName("#define CERT_CONFIDENCE_HYGIENE 0x00001000")]
-        public const int CERT_CONFIDENCE_HYGIENE = 0x00001000;
-
-        [NativeTypeName("#define CERT_CONFIDENCE_HIGHEST 0x11111000")]
-        public const int CERT_CONFIDENCE_HIGHEST = 0x11111000;
-
         [NativeTypeName("#define WT_CURRENT_VERSION 0x00000200")]
         public const int WT_CURRENT_VERSION = 0x00000200;
 

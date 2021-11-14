@@ -7,12 +7,6 @@ namespace TerraFX.Interop.Windows
 {
     public static partial class Windows
     {
-        [NativeTypeName("#define WM_CPL_LAUNCH (WM_USER+1000)")]
-        public const int WM_CPL_LAUNCH = (0x0400 + 1000);
-
-        [NativeTypeName("#define WM_CPL_LAUNCHED (WM_USER+1001)")]
-        public const int WM_CPL_LAUNCHED = (0x0400 + 1001);
-
         [NativeTypeName("#define CPL_DYNAMIC_RES 0")]
         public const int CPL_DYNAMIC_RES = 0;
 

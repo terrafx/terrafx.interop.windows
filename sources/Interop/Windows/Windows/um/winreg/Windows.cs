@@ -412,23 +412,11 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define RRF_ZEROONFAILURE 0x20000000")]
         public const int RRF_ZEROONFAILURE = 0x20000000;
 
-        [NativeTypeName("#define REG_PROCESS_APPKEY 0x00000001")]
-        public const int REG_PROCESS_APPKEY = 0x00000001;
-
-        [NativeTypeName("#define REG_USE_CURRENT_SECURITY_CONTEXT 0x00000002")]
-        public const int REG_USE_CURRENT_SECURITY_CONTEXT = 0x00000002;
-
         [NativeTypeName("#define PROVIDER_KEEPS_VALUE_LENGTH 0x1")]
         public const int PROVIDER_KEEPS_VALUE_LENGTH = 0x1;
 
         [NativeTypeName("#define WIN31_CLASS NULL")]
         public const int WIN31_CLASS = 0;
-
-        [NativeTypeName("#define REG_MUI_STRING_TRUNCATE 0x00000001")]
-        public const int REG_MUI_STRING_TRUNCATE = 0x00000001;
-
-        [NativeTypeName("#define REG_SECURE_CONNECTION 1")]
-        public const int REG_SECURE_CONNECTION = 1;
 
         [NativeTypeName("#define RegConnectRegistry RegConnectRegistryW")]
         public static delegate*<ushort*, HKEY, HKEY*, int> RegConnectRegistry => &RegConnectRegistryW;
@@ -561,9 +549,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define REASON_PLANNED_FLAG SHTDN_REASON_FLAG_PLANNED")]
         public const uint REASON_PLANNED_FLAG = 0x80000000;
-
-        [NativeTypeName("#define MAX_SHUTDOWN_TIMEOUT (10*365*24*60*60)")]
-        public const int MAX_SHUTDOWN_TIMEOUT = (10 * 365 * 24 * 60 * 60);
 
         [NativeTypeName("#define InitiateSystemShutdownEx InitiateSystemShutdownExW")]
         public static delegate*<ushort*, ushort*, uint, BOOL, BOOL, uint, BOOL> InitiateSystemShutdownEx => &InitiateSystemShutdownExW;

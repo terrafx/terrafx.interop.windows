@@ -4,9 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows
 {
@@ -99,9 +98,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define SID_SHlinkFrame IID_IHlinkFrame")]
         public static ref readonly Guid SID_SHlinkFrame => ref IID_IHlinkFrame;
 
-        [NativeTypeName("#define IID_IHlinkSource IID_IHlinkTarget")]
-        public static ref readonly Guid IID_IHlinkSource => ref IID_IHlinkTarget;
-
         [NativeTypeName("#define HLINK_E_FIRST (OLE_E_LAST+1)")]
         public const int HLINK_E_FIRST = unchecked(((int)(0x800400FF)) + 1);
 
@@ -110,169 +106,5 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define HLINK_S_DONTHIDE (HLINK_S_FIRST)")]
         public const int HLINK_S_DONTHIDE = ((((int)(0x000400FF)) + 1));
-
-        [NativeTypeName("#define CFSTR_HYPERLINK (TEXT(\"Hyperlink\"))")]
-        public const string CFSTR_HYPERLINK = ("Hyperlink");
-
-        public static ref readonly Guid IID_IHlink
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xC3, 0xC9, 0xEA, 0x79,
-                    0xF9, 0xBA,
-                    0xCE, 0x11,
-                    0x8C,
-                    0x82,
-                    0x00,
-                    0xAA,
-                    0x00,
-                    0x4B,
-                    0xA9,
-                    0x0B
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IHlinkSite
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xC2, 0xC9, 0xEA, 0x79,
-                    0xF9, 0xBA,
-                    0xCE, 0x11,
-                    0x8C,
-                    0x82,
-                    0x00,
-                    0xAA,
-                    0x00,
-                    0x4B,
-                    0xA9,
-                    0x0B
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IHlinkTarget
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xC4, 0xC9, 0xEA, 0x79,
-                    0xF9, 0xBA,
-                    0xCE, 0x11,
-                    0x8C,
-                    0x82,
-                    0x00,
-                    0xAA,
-                    0x00,
-                    0x4B,
-                    0xA9,
-                    0x0B
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IHlinkFrame
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xC5, 0xC9, 0xEA, 0x79,
-                    0xF9, 0xBA,
-                    0xCE, 0x11,
-                    0x8C,
-                    0x82,
-                    0x00,
-                    0xAA,
-                    0x00,
-                    0x4B,
-                    0xA9,
-                    0x0B
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IEnumHLITEM
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xC6, 0xC9, 0xEA, 0x79,
-                    0xF9, 0xBA,
-                    0xCE, 0x11,
-                    0x8C,
-                    0x82,
-                    0x00,
-                    0xAA,
-                    0x00,
-                    0x4B,
-                    0xA9,
-                    0x0B
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IHlinkBrowseContext
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xC7, 0xC9, 0xEA, 0x79,
-                    0xF9, 0xBA,
-                    0xCE, 0x11,
-                    0x8C,
-                    0x82,
-                    0x00,
-                    0xAA,
-                    0x00,
-                    0x4B,
-                    0xA9,
-                    0x0B
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        public static ref readonly Guid IID_IExtensionServices
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xCB, 0xC9, 0xEA, 0x79,
-                    0xF9, 0xBA,
-                    0xCE, 0x11,
-                    0x8C,
-                    0x82,
-                    0x00,
-                    0xAA,
-                    0x00,
-                    0x4B,
-                    0xA9,
-                    0x0B
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
     }
 }

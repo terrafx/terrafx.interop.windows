@@ -4,8 +4,8 @@ namespace TerraFX.Interop.Windows
 {
     public partial struct HRESULT
     {
-        public bool FAILED => WinError.FAILED(Value);
+        public bool FAILED => Windows.FAILED(Value);
 
-        public bool SUCCEEDED => WinError.SUCCEEDED(Value);
+        public bool SUCCEEDED => Windows.SUCCEEDED(Value);
     }
 }

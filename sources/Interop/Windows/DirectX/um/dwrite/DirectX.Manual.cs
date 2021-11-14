@@ -4,7 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.WinError;
+using static TerraFX.Interop.Windows.FACILITY;
+using static TerraFX.Interop.Windows.Windows;
 
 namespace TerraFX.Interop.DirectX
 {

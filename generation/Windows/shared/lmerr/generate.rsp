@@ -3,7 +3,7 @@
 --file
 shared-lmerr.h
 --methodClassName
-WinError
+Windows
 --namespace
 TerraFX.Interop.Windows
 --output

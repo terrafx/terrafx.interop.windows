@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.Intrinsics.Arm;
 using System.Runtime.Intrinsics.X86;
+using static TerraFX.Interop.Windows.IMAGE;
 
 namespace TerraFX.Interop.Windows
 {

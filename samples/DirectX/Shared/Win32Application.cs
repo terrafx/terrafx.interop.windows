@@ -11,6 +11,8 @@ using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.DirectX.DXGI_FORMAT;
 using static TerraFX.Interop.Windows.Windows;
+using static TerraFX.Interop.Windows.WM;
+using static TerraFX.Interop.Windows.WS;
 
 namespace TerraFX.Samples.DirectX
 {

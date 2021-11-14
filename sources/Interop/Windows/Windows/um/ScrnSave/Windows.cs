@@ -49,9 +49,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define idsDefKeyword 1010")]
         public const int idsDefKeyword = 1010;
 
-        [NativeTypeName("#define WS_GT (WS_GROUP | WS_TABSTOP)")]
-        public const int WS_GT = (0x00020000 | 0x00010000);
-
         [NativeTypeName("#define MAXFILELEN 13")]
         public const int MAXFILELEN = 13;
 

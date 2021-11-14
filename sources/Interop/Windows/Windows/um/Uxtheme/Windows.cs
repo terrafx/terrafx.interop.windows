@@ -247,12 +247,6 @@ namespace TerraFX.Interop.Windows
         [DllImport("uxtheme", ExactSpelling = true)]
         public static extern HRESULT GetThemeTransitionDuration(HTHEME hTheme, int iPartId, int iStateIdFrom, int iStateIdTo, int iPropId, [NativeTypeName("DWORD *")] uint* pdwDuration);
 
-        [NativeTypeName("#define MAX_THEMECOLOR 64")]
-        public const int MAX_THEMECOLOR = 64;
-
-        [NativeTypeName("#define MAX_THEMESIZE 64")]
-        public const int MAX_THEMESIZE = 64;
-
         [NativeTypeName("#define OTD_FORCE_RECT_SIZING 0x00000001")]
         public const int OTD_FORCE_RECT_SIZING = 0x00000001;
 
@@ -321,9 +315,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define HTTB_SYSTEMSIZINGMARGINS 0x00000200")]
         public const int HTTB_SYSTEMSIZINGMARGINS = 0x00000200;
-
-        [NativeTypeName("#define MAX_INTLIST_COUNT 402")]
-        public const int MAX_INTLIST_COUNT = 402;
 
         [NativeTypeName("#define ETDT_DISABLE 0x00000001")]
         public const int ETDT_DISABLE = 0x00000001;

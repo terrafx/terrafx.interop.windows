@@ -114,9 +114,6 @@ namespace TerraFX.Interop.WinRT
         [DllImport("combase", ExactSpelling = true)]
         public static extern BOOL IsErrorPropagationEnabled();
 
-        [NativeTypeName("#define MAX_ERROR_MESSAGE_CHARS 512")]
-        public const int MAX_ERROR_MESSAGE_CHARS = 512;
-
         [NativeTypeName("#define EXCEPTION_RO_ORIGINATEERROR ((DWORD)((0x1 << 30) | (FACILITY_WINDOWS << 16) | 0x201))")]
         public const uint EXCEPTION_RO_ORIGINATEERROR = ((uint)((0x1 << 30) | (8 << 16) | 0x201));
 

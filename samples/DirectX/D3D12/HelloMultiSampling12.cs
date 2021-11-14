@@ -15,6 +15,7 @@ using static TerraFX.Interop.DirectX.D3D12_RESOURCE_FLAGS;
 using static TerraFX.Interop.DirectX.D3D12_RESOURCE_STATES;
 using static TerraFX.Interop.DirectX.DirectX;
 using static TerraFX.Samples.DirectX.DXSampleHelper;
+using static TerraFX.Interop.Windows.Windows;
 
 namespace TerraFX.Samples.DirectX.D3D12
 {
@@ -74,9 +75,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             resourceDesc.Flags |= D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL;
 
             var clearValue = new D3D12_CLEAR_VALUE(DepthBufferFormat, 1.0f, 0);
-
-            var iid = IID_ID3D12Resource;
-            ThrowIfFailed(D3DDevice->CreateCommittedResource(&heapProperties, D3D12_HEAP_FLAG_NONE, &resourceDesc, D3D12_RESOURCE_STATE_DEPTH_WRITE, &clearValue, &iid, (void**)&depthStencil));
+            ThrowIfFailed(D3DDevice->CreateCommittedResource(&heapProperties, D3D12_HEAP_FLAG_NONE, &resourceDesc, D3D12_RESOURCE_STATE_DEPTH_WRITE, &clearValue, __uuidof<ID3D12Resource>(), (void**)&depthStencil));
 
             var dsvDesc = new D3D12_DEPTH_STENCIL_VIEW_DESC {
                 Format = DepthBufferFormat,
@@ -123,12 +122,12 @@ namespace TerraFX.Samples.DirectX.D3D12
                 var clearColor = BackgroundColor;
                 var clearValue = new D3D12_CLEAR_VALUE(BackBufferFormat, (float*)&clearColor);
 
-                var iid = IID_ID3D12Resource;
+                var iid = __uuidof<ID3D12Resource>();
 
                 for (var i = 0u; i < FrameCount; i++)
                 {
                     ID3D12Resource* msaaRenderTarget;
-                    ThrowIfFailed(D3DDevice->CreateCommittedResource(&heapProperties, D3D12_HEAP_FLAG_NONE, &desc, D3D12_RESOURCE_STATE_RENDER_TARGET, &clearValue, &iid, (void**)&msaaRenderTarget));
+                    ThrowIfFailed(D3DDevice->CreateCommittedResource(&heapProperties, D3D12_HEAP_FLAG_NONE, &desc, D3D12_RESOURCE_STATE_RENDER_TARGET, &clearValue, iid, (void**)&msaaRenderTarget));
                     msaaRenderTargets[i] = msaaRenderTarget;
                 }
 

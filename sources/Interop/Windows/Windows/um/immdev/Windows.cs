@@ -116,12 +116,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define NI_CONTEXTUPDATED 0x0003")]
         public const int NI_CONTEXTUPDATED = 0x0003;
 
-        [NativeTypeName("#define IME_SYSINFO_WINLOGON 0x0001")]
-        public const int IME_SYSINFO_WINLOGON = 0x0001;
-
-        [NativeTypeName("#define IME_SYSINFO_WOW16 0x0002")]
-        public const int IME_SYSINFO_WOW16 = 0x0002;
-
         [NativeTypeName("#define GCS_COMP (GCS_COMPSTR|GCS_COMPATTR|GCS_COMPCLAUSE)")]
         public const int GCS_COMP = (0x0008 | 0x0010 | 0x0020);
 
@@ -152,34 +146,10 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define INIT_SOFTKBDPOS 0x00000020")]
         public const int INIT_SOFTKBDPOS = 0x00000020;
 
-        [NativeTypeName("#define IME_PROP_END_UNLOAD 0x00000001")]
-        public const int IME_PROP_END_UNLOAD = 0x00000001;
-
-        [NativeTypeName("#define IME_PROP_KBD_CHAR_FIRST 0x00000002")]
-        public const int IME_PROP_KBD_CHAR_FIRST = 0x00000002;
-
-        [NativeTypeName("#define IME_PROP_IGNORE_UPKEYS 0x00000004")]
-        public const int IME_PROP_IGNORE_UPKEYS = 0x00000004;
-
-        [NativeTypeName("#define IME_PROP_NEED_ALTKEY 0x00000008")]
-        public const int IME_PROP_NEED_ALTKEY = 0x00000008;
-
-        [NativeTypeName("#define IME_PROP_NO_KEYS_ON_CLOSE 0x00000010")]
-        public const int IME_PROP_NO_KEYS_ON_CLOSE = 0x00000010;
-
-        [NativeTypeName("#define IME_PROP_ACCEPT_WIDE_VKEY 0x00000020")]
-        public const int IME_PROP_ACCEPT_WIDE_VKEY = 0x00000020;
-
         [NativeTypeName("#define UI_CAP_SOFTKBD 0x00010000")]
         public const int UI_CAP_SOFTKBD = 0x00010000;
 
         [NativeTypeName("#define IMN_SOFTKBDDESTROYED 0x0011")]
         public const int IMN_SOFTKBDDESTROYED = 0x0011;
-
-        [NativeTypeName("#define IME_UI_CLASS_NAME_SIZE 16")]
-        public const int IME_UI_CLASS_NAME_SIZE = 16;
-
-        [NativeTypeName("#define IME_ESC_STRING_BUFFER_SIZE 80")]
-        public const int IME_ESC_STRING_BUFFER_SIZE = 80;
     }
 }

@@ -11,8 +11,8 @@ using TerraFX.Interop.Windows;
 using static TerraFX.Interop.DirectX.D3D_ROOT_SIGNATURE_VERSION;
 using static TerraFX.Interop.DirectX.D3D12_RESOURCE_DIMENSION;
 using static TerraFX.Interop.DirectX.D3D12_ROOT_PARAMETER_TYPE;
+using static TerraFX.Interop.Windows.E;
 using static TerraFX.Interop.Windows.Windows;
-using static TerraFX.Interop.Windows.WinError;
 
 namespace TerraFX.Interop.DirectX
 {
@@ -85,9 +85,8 @@ namespace TerraFX.Interop.DirectX
             ulong RequiredSize = 0;
 
             ID3D12Device* pDevice = null;
-            var iid = IID_ID3D12Device;
+            _ = pDestinationResource->GetDevice(__uuidof<ID3D12Device>(), (void**)&pDevice);
 
-            _ = pDestinationResource->GetDevice(&iid, (void**)&pDevice);
             pDevice->GetCopyableFootprints(&Desc, FirstSubresource, NumSubresources, 0, null, null, null, &RequiredSize);
             _ = pDevice->Release();
 
@@ -170,9 +169,8 @@ namespace TerraFX.Interop.DirectX
             var Desc = pDestinationResource->GetDesc();
 
             ID3D12Device* pDevice = null;
-            var iid = IID_ID3D12Device;
+            _ = pDestinationResource->GetDevice(__uuidof<ID3D12Device>(), (void**)&pDevice);
 
-            _ = pDestinationResource->GetDevice(&iid, (void**)&pDevice);
             pDevice->GetCopyableFootprints(&Desc, FirstSubresource, NumSubresources, IntermediateOffset, pLayouts, pNumRows, pRowSizesInBytes, &RequiredSize);
             _ = pDevice->Release();
 
@@ -205,9 +203,8 @@ namespace TerraFX.Interop.DirectX
             var Desc = pDestinationResource->GetDesc();
 
             ID3D12Device* pDevice = null;
-            var iid = IID_ID3D12Device;
+            _ = pDestinationResource->GetDevice(__uuidof<ID3D12Device>(), (void**)&pDevice);
 
-            _ = pDestinationResource->GetDevice(&iid, (void**)&pDevice);
             pDevice->GetCopyableFootprints(&Desc, FirstSubresource, NumSubresources, IntermediateOffset, pLayouts, pNumRows, pRowSizesInBytes, &RequiredSize);
             _ = pDevice->Release();
 
@@ -226,9 +223,8 @@ namespace TerraFX.Interop.DirectX
             var Desc = pDestinationResource->GetDesc();
 
             ID3D12Device* pDevice = null;
-            var iid = IID_ID3D12Device;
+            _ = pDestinationResource->GetDevice(__uuidof<ID3D12Device>(), (void**)&pDevice);
 
-            _ = pDestinationResource->GetDevice(&iid, (void**)&pDevice);
             pDevice->GetCopyableFootprints(&Desc, FirstSubresource, NumSubresources, IntermediateOffset, Layouts, NumRows, RowSizesInBytes, &RequiredSize);
             _ = pDevice->Release();
 
@@ -245,9 +241,8 @@ namespace TerraFX.Interop.DirectX
             var Desc = pDestinationResource->GetDesc();
 
             ID3D12Device* pDevice = null;
-            var iid = IID_ID3D12Device;
+            _ = pDestinationResource->GetDevice(__uuidof<ID3D12Device>(), (void**)&pDevice);
 
-            _ = pDestinationResource->GetDevice(&iid, (void**)&pDevice);
             pDevice->GetCopyableFootprints(&Desc, FirstSubresource, NumSubresources, IntermediateOffset, Layouts, NumRows, RowSizesInBytes, &RequiredSize);
             _ = pDevice->Release();
 

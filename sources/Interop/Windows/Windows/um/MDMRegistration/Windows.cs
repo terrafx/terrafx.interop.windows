@@ -5,7 +5,6 @@
 
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using static TerraFX.Interop.Windows.WinError;
 
 namespace TerraFX.Interop.Windows
 {
@@ -66,9 +65,6 @@ namespace TerraFX.Interop.Windows
         [SupportedOSPlatform("windows8.1")]
         [DllImport("mdmregistration", ExactSpelling = true)]
         public static extern HRESULT DiscoverManagementServiceEx([NativeTypeName("LPCWSTR")] ushort* pszUPN, [NativeTypeName("LPCWSTR")] ushort* pszDiscoveryServiceCandidate, [NativeTypeName("PMANAGEMENT_SERVICE_INFO *")] MANAGEMENT_SERVICE_INFO** ppMgmtInfo);
-
-        [NativeTypeName("#define E_DATATYPE_MISMATCH HRESULT_FROM_WIN32(ERROR_DATATYPE_MISMATCH)")]
-        public static HRESULT E_DATATYPE_MISMATCH => HRESULT_FROM_WIN32(1629);
 
         [NativeTypeName("#define MDM_REGISTRATION_FACILITY_CODE 25")]
         public const int MDM_REGISTRATION_FACILITY_CODE = 25;

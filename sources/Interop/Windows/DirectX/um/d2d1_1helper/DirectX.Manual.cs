@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.DirectX.D2D1_ANTIALIAS_MODE;
@@ -22,7 +23,8 @@ using static TerraFX.Interop.DirectX.D2D1_PRINT_FONT_SUBSET_MODE;
 using static TerraFX.Interop.DirectX.D2D1_STROKE_TRANSFORM_TYPE;
 using static TerraFX.Interop.DirectX.D2D1_TEXT_ANTIALIAS_MODE;
 using static TerraFX.Interop.DirectX.D2D1_UNIT_MODE;
-using static TerraFX.Interop.Windows.WinError;
+using static TerraFX.Interop.Windows.CLSID;
+using static TerraFX.Interop.Windows.Windows;
 
 namespace TerraFX.Interop.DirectX
 {
@@ -265,8 +267,7 @@ namespace TerraFX.Interop.DirectX
                 return hr;
             }
 
-            Guid effectId = CLSID_D2D1DpiCompensation;
-            hr = deviceContext->CreateEffect(&effectId, &dpiCompensationEffect);
+            hr = deviceContext->CreateEffect((Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_D2D1DpiCompensation)), &dpiCompensationEffect);
 
             if (SUCCEEDED(hr))
             {

@@ -84,8 +84,5 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define SIZE_MASKS (iMASK_COLORS * sizeof(DWORD))")]
         public const uint SIZE_MASKS = (3 * 4);
-
-        [NativeTypeName("#define MAX_SIZE_MPEG1_SEQUENCE_INFO 140")]
-        public const int MAX_SIZE_MPEG1_SEQUENCE_INFO = 140;
     }
 }

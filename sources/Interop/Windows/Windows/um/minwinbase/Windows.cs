@@ -22,24 +22,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define LOCKFILE_EXCLUSIVE_LOCK 0x00000002")]
         public const int LOCKFILE_EXCLUSIVE_LOCK = 0x00000002;
 
-        [NativeTypeName("#define PROCESS_HEAP_REGION 0x0001")]
-        public const int PROCESS_HEAP_REGION = 0x0001;
-
-        [NativeTypeName("#define PROCESS_HEAP_UNCOMMITTED_RANGE 0x0002")]
-        public const int PROCESS_HEAP_UNCOMMITTED_RANGE = 0x0002;
-
-        [NativeTypeName("#define PROCESS_HEAP_ENTRY_BUSY 0x0004")]
-        public const int PROCESS_HEAP_ENTRY_BUSY = 0x0004;
-
-        [NativeTypeName("#define PROCESS_HEAP_SEG_ALLOC 0x0008")]
-        public const int PROCESS_HEAP_SEG_ALLOC = 0x0008;
-
-        [NativeTypeName("#define PROCESS_HEAP_ENTRY_MOVEABLE 0x0010")]
-        public const int PROCESS_HEAP_ENTRY_MOVEABLE = 0x0010;
-
-        [NativeTypeName("#define PROCESS_HEAP_ENTRY_DDESHARE 0x0020")]
-        public const int PROCESS_HEAP_ENTRY_DDESHARE = 0x0020;
-
         [NativeTypeName("#define EXCEPTION_DEBUG_EVENT 1")]
         public const int EXCEPTION_DEBUG_EVENT = 1;
 
