@@ -1,0 +1,17 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-d3d10_1.h
+--methodClassName
+DirectX
+--namespace
+TerraFX.Interop.DirectX
+--output
+../../../../sources/Interop/Windows/DirectX/um/d3d10_1
+--test-output
+../../../../tests/Interop/Windows/DirectX/um/d3d10_1
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d3d10_1.h
+--with-librarypath
+D3D10CreateDevice1=d3d10_1
+D3D10CreateDeviceAndSwapChain1=d3d10_1

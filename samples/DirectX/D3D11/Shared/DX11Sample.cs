@@ -2,11 +2,13 @@
 
 using System;
 using System.Drawing;
-using TerraFX.Interop;
-using static TerraFX.Interop.D3D_DRIVER_TYPE;
-using static TerraFX.Interop.D3D_FEATURE_LEVEL;
-using static TerraFX.Interop.DXGI_SWAP_EFFECT;
-using static TerraFX.Interop.Windows;
+using TerraFX.Interop.DirectX;
+using TerraFX.Interop.Windows;
+using static TerraFX.Interop.DirectX.D3D_DRIVER_TYPE;
+using static TerraFX.Interop.DirectX.D3D_FEATURE_LEVEL;
+using static TerraFX.Interop.DirectX.DirectX;
+using static TerraFX.Interop.DirectX.DXGI_SWAP_EFFECT;
+using static TerraFX.Interop.Windows.Windows;
 using static TerraFX.Samples.DirectX.DXSampleHelper;
 
 namespace TerraFX.Samples.DirectX.D3D11
@@ -69,10 +71,7 @@ namespace TerraFX.Samples.DirectX.D3D11
             IDXGIFactory1* CreateDxgiFactory()
             {
                 IDXGIFactory1* dxgiFactory;
-
-                var iid = IID_IDXGIFactory1;
-                ThrowIfFailed(CreateDXGIFactory1(&iid, (void**)&dxgiFactory));
-
+                ThrowIfFailed(CreateDXGIFactory1(__uuidof<IDXGIFactory1>(), (void**)&dxgiFactory));
                 return dxgiFactory;
             }
 
@@ -89,9 +88,7 @@ namespace TerraFX.Samples.DirectX.D3D11
             ID3D11RenderTargetView* CreateRenderTargetView()
             {
                 using ComPtr<ID3D11Resource> backBuffer = null;
-
-                var iid = IID_ID3D11Texture2D;
-                ThrowIfFailed(SwapChain->GetBuffer(0, &iid, (void**)backBuffer.GetAddressOf()));
+                ThrowIfFailed(SwapChain->GetBuffer(0, __uuidof<ID3D11Texture2D>(), (void**)backBuffer.GetAddressOf()));
 
                 ID3D11RenderTargetView* renderTargetView;
                 ThrowIfFailed(D3DDevice->CreateRenderTargetView(backBuffer.Get(), null, &renderTargetView));
@@ -318,7 +315,7 @@ namespace TerraFX.Samples.DirectX.D3D11
         protected override unsafe bool SupportsRequiredDirect3DVersion(IDXGIAdapter1* adapter)
         {
             var featureLevel = D3D_FEATURE_LEVEL_11_0;
-            return SUCCEEDED(D3D11CreateDevice((IDXGIAdapter*)adapter, D3D_DRIVER_TYPE_HARDWARE, Software: HMODULE.NULL, Flags: 0, &featureLevel, FeatureLevels: 1, D3D11_SDK_VERSION, ppDevice: null, pFeatureLevel: null, ppImmediateContext: null));
+            return D3D11CreateDevice((IDXGIAdapter*)adapter, D3D_DRIVER_TYPE_HARDWARE, Software: HMODULE.NULL, Flags: 0, &featureLevel, FeatureLevels: 1, D3D11_SDK_VERSION, ppDevice: null, pFeatureLevel: null, ppImmediateContext: null).SUCCEEDED;
         }
     }
 }

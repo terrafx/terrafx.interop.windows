@@ -2,7 +2,7 @@
 
 using System;
 using System.Linq;
-using static TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.Windows;
 
 namespace TerraFX.Samples.DirectX
 {

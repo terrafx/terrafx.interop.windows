@@ -1,0 +1,16 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-inputpaneinterop.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/um/inputpaneinterop
+--test-output
+../../../../tests/Interop/Windows/WinRT/um/inputpaneinterop
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/inputpaneinterop.h
+--with-attribute
+IInputPaneInterop=SupportedOSPlatform("windows10.0.14393.0")

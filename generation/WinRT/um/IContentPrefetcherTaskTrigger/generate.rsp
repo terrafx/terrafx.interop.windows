@@ -1,0 +1,16 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-IContentPrefetcherTaskTrigger.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/um/IContentPrefetcherTaskTrigger
+--test-output
+../../../../tests/Interop/Windows/WinRT/um/IContentPrefetcherTaskTrigger
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/IContentPrefetcherTaskTrigger.h
+--with-attribute
+IContentPrefetcherTaskTrigger=SupportedOSPlatform("windows8.1")

@@ -1,0 +1,18 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+LIBID_IMAPILib2
+--file
+um-imapi2.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/imapi2
+--test-output
+../../../../tests/Interop/Windows/Windows/um/imapi2
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/imapi2.h
+--with-attribute
+IMAPI_FORMAT2_DATA_MEDIA_STATE=Flags

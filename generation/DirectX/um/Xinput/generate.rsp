@@ -1,0 +1,26 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-Xinput.h
+--methodClassName
+DirectX
+--namespace
+TerraFX.Interop.DirectX
+--output
+../../../../sources/Interop/Windows/DirectX/um/Xinput
+--test-output
+../../../../tests/Interop/Windows/DirectX/um/Xinput
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/Xinput.h
+--with-librarypath
+XInputEnable=xinput1_4
+XInputGetAudioDeviceIds=xinput1_4
+XInputGetBatteryInformation=xinput1_4
+XInputGetKeystroke=xinput1_4
+--with-librarypath
+XInputGetCapabilities=xinput1_4
+XInputSetState=xinput1_4
+--with-librarypath
+XInputGetDSoundAudioDeviceGuids=xinput9_1_0
+--with-librarypath
+XInputGetState=xinput1_4

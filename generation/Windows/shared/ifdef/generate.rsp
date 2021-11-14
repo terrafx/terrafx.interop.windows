@@ -1,0 +1,17 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+NET_IS_UNSPECIFIED_NETWORK_GUID
+NET_SET_UNSPECIFIED_NETWORK_GUID
+--file
+shared-ifdef.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/shared/ifdef
+--test-output
+../../../../tests/Interop/Windows/Windows/shared/ifdef
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/ifdef.h

@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-Windows.Graphics.Capture.Interop.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/um/Windows.Graphics.Capture.Interop
+--test-output
+../../../../tests/Interop/Windows/WinRT/um/Windows.Graphics.Capture.Interop
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/Windows.Graphics.Capture.Interop.h

@@ -1,0 +1,26 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+DEFINE_GUID
+DEFINE_OLEGUID
+IsEqualCLSID
+IsEqualFMTID
+IsEqualGUID(const GUID &, const GUID &):int
+IsEqualIID
+operator==(const GUID &, const GUID &):bool
+operator!=(const GUID &, const GUID &):bool
+_GUID
+--file
+shared-guiddef.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/shared/guiddef
+--test-output
+../../../../tests/Interop/Windows/Windows/shared/guiddef
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/guiddef.h
+--with-librarypath
+IsEqualGUID=ole32

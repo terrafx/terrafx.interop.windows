@@ -1,0 +1,18 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+winrt-shcore.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/shcore
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/shcore
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/winrt/shcore.h
+--with-librarypath
+CreateRandomAccessStreamOnFile=shcore
+CreateRandomAccessStreamOverStream=shcore
+CreateStreamOverRandomAccessStream=shcore

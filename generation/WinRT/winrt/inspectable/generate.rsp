@@ -1,0 +1,26 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+IID_INS_ARGS
+IID_INS_ARGS_Helper<T>(T **):void **
+--file
+winrt-inspectable.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/inspectable
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/inspectable
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/winrt/inspectable.h
+--with-librarypath
+HSTRING_UserFree=combase
+HSTRING_UserFree64=combase
+HSTRING_UserMarshal=combase
+HSTRING_UserMarshal64=combase
+HSTRING_UserSize=combase
+HSTRING_UserSize64=combase
+HSTRING_UserUnmarshal=combase
+HSTRING_UserUnmarshal64=combase

@@ -1,0 +1,24 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+PdfRenderParams(const D2D_RECT_F &, UINT32, UINT32, const D2D_COLOR_F &, BOOLEAN):PDF_RENDER_PARAMS
+--file
+um-windows.data.pdf.interop.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/um/windows.data.pdf.interop
+--test-output
+../../../../tests/Interop/Windows/WinRT/um/windows.data.pdf.interop
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/windows.data.pdf.interop.h
+--with-attribute
+IPdfRendererNative=SupportedOSPlatform("windows8.1")
+PdfCreateRenderer=SupportedOSPlatform("windows8.1")
+PdfRenderParams=SupportedOSPlatform("windows8.1")
+PDF_RENDER_PARAMS=SupportedOSPlatform("windows8.1")
+--with-librarypath
+PdfCreateRenderer=windows.data.pdf.dll
+PdfRenderParams=windows.data.pdf.dll

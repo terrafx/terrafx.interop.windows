@@ -8,9 +8,11 @@ using System.Drawing;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop;
-using static TerraFX.Interop.DXGI_FORMAT;
-using static TerraFX.Interop.Windows;
+using TerraFX.Interop.Windows;
+using static TerraFX.Interop.DirectX.DXGI_FORMAT;
+using static TerraFX.Interop.Windows.Windows;
+using static TerraFX.Interop.Windows.WM;
+using static TerraFX.Interop.Windows.WS;
 
 namespace TerraFX.Samples.DirectX
 {

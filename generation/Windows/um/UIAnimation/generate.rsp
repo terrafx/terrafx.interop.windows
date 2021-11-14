@@ -1,0 +1,16 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-UIAnimation.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/UIAnimation
+--test-output
+../../../../tests/Interop/Windows/Windows/um/UIAnimation
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/UIAnimation.h
+--with-attribute
+UI_ANIMATION_DEPENDENCIES=Flags

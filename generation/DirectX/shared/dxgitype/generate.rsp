@@ -1,0 +1,17 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+MAKE_DXGI_HRESULT
+MAKE_DXGI_STATUS
+--file
+shared-dxgitype.h
+--methodClassName
+DirectX
+--namespace
+TerraFX.Interop.DirectX
+--output
+../../../../sources/Interop/Windows/DirectX/shared/dxgitype
+--test-output
+../../../../tests/Interop/Windows/DirectX/shared/dxgitype
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/dxgitype.h

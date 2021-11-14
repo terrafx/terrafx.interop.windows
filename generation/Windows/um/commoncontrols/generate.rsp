@@ -1,0 +1,16 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-commoncontrols.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/commoncontrols
+--test-output
+../../../../tests/Interop/Windows/Windows/um/commoncontrols
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/commoncontrols.h
+--with-librarypath
+ImageList_CoCreateInstance=comctl32

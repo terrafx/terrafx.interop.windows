@@ -6,28 +6,30 @@
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.Versioning;
-using TerraFX.Interop;
-using static TerraFX.Interop.D3D_ROOT_SIGNATURE_VERSION;
-using static TerraFX.Interop.D3D12_COMPARISON_FUNC;
-using static TerraFX.Interop.D3D12_DESCRIPTOR_HEAP_FLAGS;
-using static TerraFX.Interop.D3D12_DESCRIPTOR_HEAP_TYPE;
-using static TerraFX.Interop.D3D12_DESCRIPTOR_RANGE_FLAGS;
-using static TerraFX.Interop.D3D12_DESCRIPTOR_RANGE_TYPE;
-using static TerraFX.Interop.D3D12_FEATURE;
-using static TerraFX.Interop.D3D12_HEAP_FLAGS;
-using static TerraFX.Interop.D3D12_HEAP_TYPE;
-using static TerraFX.Interop.D3D12_INPUT_CLASSIFICATION;
-using static TerraFX.Interop.D3D12_PRIMITIVE_TOPOLOGY_TYPE;
-using static TerraFX.Interop.D3D12_RESOURCE_DIMENSION;
-using static TerraFX.Interop.D3D12_RESOURCE_FLAGS;
-using static TerraFX.Interop.D3D12_RESOURCE_STATES;
-using static TerraFX.Interop.D3D12_ROOT_SIGNATURE_FLAGS;
-using static TerraFX.Interop.D3D12_SHADER_VISIBILITY;
-using static TerraFX.Interop.D3D12_SRV_DIMENSION;
-using static TerraFX.Interop.D3D12_STATIC_BORDER_COLOR;
-using static TerraFX.Interop.D3D12_TEXTURE_ADDRESS_MODE;
-using static TerraFX.Interop.DXGI_FORMAT;
-using static TerraFX.Interop.Windows;
+using TerraFX.Interop.DirectX;
+using TerraFX.Interop.Windows;
+using static TerraFX.Interop.DirectX.D3D_ROOT_SIGNATURE_VERSION;
+using static TerraFX.Interop.DirectX.D3D12_COMPARISON_FUNC;
+using static TerraFX.Interop.DirectX.D3D12_DESCRIPTOR_HEAP_FLAGS;
+using static TerraFX.Interop.DirectX.D3D12_DESCRIPTOR_HEAP_TYPE;
+using static TerraFX.Interop.DirectX.D3D12_DESCRIPTOR_RANGE_FLAGS;
+using static TerraFX.Interop.DirectX.D3D12_DESCRIPTOR_RANGE_TYPE;
+using static TerraFX.Interop.DirectX.D3D12_FEATURE;
+using static TerraFX.Interop.DirectX.D3D12_HEAP_FLAGS;
+using static TerraFX.Interop.DirectX.D3D12_HEAP_TYPE;
+using static TerraFX.Interop.DirectX.D3D12_INPUT_CLASSIFICATION;
+using static TerraFX.Interop.DirectX.D3D12_PRIMITIVE_TOPOLOGY_TYPE;
+using static TerraFX.Interop.DirectX.D3D12_RESOURCE_DIMENSION;
+using static TerraFX.Interop.DirectX.D3D12_RESOURCE_FLAGS;
+using static TerraFX.Interop.DirectX.D3D12_RESOURCE_STATES;
+using static TerraFX.Interop.DirectX.D3D12_ROOT_SIGNATURE_FLAGS;
+using static TerraFX.Interop.DirectX.D3D12_SHADER_VISIBILITY;
+using static TerraFX.Interop.DirectX.D3D12_SRV_DIMENSION;
+using static TerraFX.Interop.DirectX.D3D12_STATIC_BORDER_COLOR;
+using static TerraFX.Interop.DirectX.D3D12_TEXTURE_ADDRESS_MODE;
+using static TerraFX.Interop.DirectX.DirectX;
+using static TerraFX.Interop.DirectX.DXGI_FORMAT;
+using static TerraFX.Interop.Windows.Windows;
 using static TerraFX.Samples.DirectX.DXSampleHelper;
 
 namespace TerraFX.Samples.DirectX.D3D12
@@ -71,16 +73,16 @@ namespace TerraFX.Samples.DirectX.D3D12
                 };
 
                 ID3D12Resource* texture;
+                var iid = __uuidof<ID3D12Resource>();
 
                 var heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_DEFAULT);
-                var iid = IID_ID3D12Resource;
                 ThrowIfFailed(D3DDevice->CreateCommittedResource(
                     &heapProperties,
                     D3D12_HEAP_FLAG_NONE,
                     &textureDesc,
                     D3D12_RESOURCE_STATE_COPY_DEST,
                     pOptimizedClearValue: null,
-                    &iid,
+                    iid,
                     (void**)&texture
                 ));
 
@@ -95,7 +97,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     &bufferDesc,
                     D3D12_RESOURCE_STATE_GENERIC_READ,
                     pOptimizedClearValue: null,
-                    &iid,
+                    iid,
                     (void**)textureUploadHeap.GetAddressOf()
                 ));
 
@@ -182,9 +184,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 };
 
                 ID3D12DescriptorHeap* srvHeap;
-
-                var iid = IID_ID3D12DescriptorHeap;
-                ThrowIfFailed(D3DDevice->CreateDescriptorHeap(&srvHeapDesc, &iid, (void**)&srvHeap));
+                ThrowIfFailed(D3DDevice->CreateDescriptorHeap(&srvHeapDesc, __uuidof<ID3D12DescriptorHeap>(), (void**)&srvHeap));
 
                 return srvHeap;
             }
@@ -262,9 +262,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             psoDesc.RTVFormats[0] = DXGI_FORMAT_R8G8B8A8_UNORM;
 
             ID3D12PipelineState* pipelineState;
-
-            var iid = IID_ID3D12PipelineState;
-            ThrowIfFailed(D3DDevice->CreateGraphicsPipelineState(&psoDesc, &iid, (void**)&pipelineState));
+            ThrowIfFailed(D3DDevice->CreateGraphicsPipelineState(&psoDesc, __uuidof<ID3D12PipelineState>(), (void**)&pipelineState));
 
             return pipelineState;
         }
@@ -279,7 +277,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 HighestVersion = D3D_ROOT_SIGNATURE_VERSION_1_1
             };
 
-            if (FAILED(D3DDevice->CheckFeatureSupport(D3D12_FEATURE_ROOT_SIGNATURE, &featureData, (uint)sizeof(D3D12_FEATURE))))
+            if (D3DDevice->CheckFeatureSupport(D3D12_FEATURE_ROOT_SIGNATURE, &featureData, (uint)sizeof(D3D12_FEATURE)).FAILED)
             {
                 featureData.HighestVersion = D3D_ROOT_SIGNATURE_VERSION_1_0;
             }
@@ -315,9 +313,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 &rootSignatureDesc, featureData.HighestVersion, signature.GetAddressOf(), error.GetAddressOf()));
 
             ID3D12RootSignature* rootSignature;
-
-            var iid = IID_ID3D12RootSignature;
-            ThrowIfFailed(D3DDevice->CreateRootSignature(0, signature.Get()->GetBufferPointer(), signature.Get()->GetBufferSize(), &iid, (void**)&rootSignature));
+            ThrowIfFailed(D3DDevice->CreateRootSignature(0, signature.Get()->GetBufferPointer(), signature.Get()->GetBufferSize(), __uuidof<ID3D12RootSignature>(), (void**)&rootSignature));
 
             return rootSignature;
         }
@@ -352,14 +348,13 @@ namespace TerraFX.Samples.DirectX.D3D12
             var heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
             var bufferDesc = D3D12_RESOURCE_DESC.Buffer(vertexBufferSize);
 
-            var iid = IID_ID3D12Resource;
             ThrowIfFailed(D3DDevice->CreateCommittedResource(
                 &heapProperties,
                 D3D12_HEAP_FLAG_NONE,
                 &bufferDesc,
                 D3D12_RESOURCE_STATE_GENERIC_READ,
                 pOptimizedClearValue: null,
-                &iid,
+                __uuidof<ID3D12Resource>(),
                 (void**)&vertexBuffer
             ));
 

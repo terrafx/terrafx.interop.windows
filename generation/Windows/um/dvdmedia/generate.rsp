@@ -1,0 +1,18 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+MPEG1_SEQUENCE_INFO
+MPEG2_SEQUENCE_INFO
+SIZE_MPEG2VIDEOINFO
+--file
+um-dvdmedia.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/dvdmedia
+--test-output
+../../../../tests/Interop/Windows/Windows/um/dvdmedia
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/dvdmedia.h

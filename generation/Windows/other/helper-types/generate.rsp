@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--config
+generate-helper-types
+--file
+other-helper-types.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/other/helper-types
+--test-output
+../../../../tests/Interop/Windows/Windows/other/helper-types

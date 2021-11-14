@@ -1,0 +1,16 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+other-mssign32.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/other/mssign32
+--test-output
+../../../../tests/Interop/Windows/Windows/other/mssign32
+--traverse
+.\mssign32.h
+--with-librarypath
+*=mssign32

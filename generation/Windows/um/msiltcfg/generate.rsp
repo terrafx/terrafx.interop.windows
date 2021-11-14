@@ -1,0 +1,16 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-msiltcfg.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/msiltcfg
+--test-output
+../../../../tests/Interop/Windows/Windows/um/msiltcfg
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/msiltcfg.h
+--with-librarypath
+*=msiltcfg

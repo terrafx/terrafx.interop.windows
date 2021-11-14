@@ -1,0 +1,20 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+shared-dcomptypes.h
+--methodClassName
+DirectX
+--namespace
+TerraFX.Interop.DirectX
+--output
+../../../../sources/Interop/Windows/DirectX/shared/dcomptypes
+--test-output
+../../../../tests/Interop/Windows/DirectX/shared/dcomptypes
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/dcomptypes.h
+--with-attribute
+DCOMPOSITION_BACKFACE_VISIBILITY=SupportedOSPlatform("windows8.1")
+DCOMPOSITION_BITMAP_INTERPOLATION_MODE=SupportedOSPlatform("windows8.0")
+DCOMPOSITION_BORDER_MODE=SupportedOSPlatform("windows8.0")
+DCOMPOSITION_COMPOSITE_MODE=SupportedOSPlatform("windows8.0")
+DCOMPOSITION_FRAME_STATISTICS=SupportedOSPlatform("windows8.0")

@@ -1,0 +1,16 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-ShlDisp.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/ShlDisp
+--test-output
+../../../../tests/Interop/Windows/Windows/um/ShlDisp
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ShlDisp.h
+--with-attribute
+IDataObjectAsyncCapability=SupportedOSPlatform("windows8.0")

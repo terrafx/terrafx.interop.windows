@@ -1,0 +1,18 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+winrt-CoreWindow.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/CoreWindow
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/CoreWindow
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/winrt/CoreWindow.h
+--with-librarypath
+CreateControlInput=windows.ui.dll
+--with-librarypath
+CreateControlInputEx=windows.ui.dll

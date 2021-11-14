@@ -1,0 +1,17 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-Windows.Devices.Display.Core.Interop.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/um/Windows.Devices.Display.Core.Interop
+--test-output
+../../../../tests/Interop/Windows/WinRT/um/Windows.Devices.Display.Core.Interop
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/Windows.Devices.Display.Core.Interop.h
+--with-librarypath
+interop::Int64FromLuid=d3d12
+interop::LuidFromInt64=d3d12

@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-DXProgrammableCapture.h
+--methodClassName
+DirectX
+--namespace
+TerraFX.Interop.DirectX
+--output
+../../../../sources/Interop/Windows/DirectX/um/DXProgrammableCapture
+--test-output
+../../../../tests/Interop/Windows/DirectX/um/DXProgrammableCapture
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/DXProgrammableCapture.h

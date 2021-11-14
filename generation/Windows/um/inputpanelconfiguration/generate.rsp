@@ -1,0 +1,17 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-inputpanelconfiguration.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/inputpanelconfiguration
+--test-output
+../../../../tests/Interop/Windows/Windows/um/inputpanelconfiguration
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/inputpanelconfiguration.h
+--with-attribute
+IInputPanelConfiguration=SupportedOSPlatform("windows8.0")
+IInputPanelInvocationConfiguration=SupportedOSPlatform("windows8.0")

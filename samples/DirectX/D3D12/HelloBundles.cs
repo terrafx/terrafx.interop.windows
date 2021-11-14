@@ -4,11 +4,11 @@
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
 using System.Runtime.Versioning;
-using TerraFX.Interop;
-using static TerraFX.Interop.D3D_PRIMITIVE_TOPOLOGY;
-using static TerraFX.Interop.D3D12_COMMAND_LIST_TYPE;
-using static TerraFX.Interop.Windows;
+using TerraFX.Interop.DirectX;
+using static TerraFX.Interop.DirectX.D3D_PRIMITIVE_TOPOLOGY;
+using static TerraFX.Interop.DirectX.D3D12_COMMAND_LIST_TYPE;
 using static TerraFX.Samples.DirectX.DXSampleHelper;
+using static TerraFX.Interop.Windows.Windows;
 
 namespace TerraFX.Samples.DirectX.D3D12
 {
@@ -33,9 +33,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             ID3D12GraphicsCommandList* CreateBundle()
             {
                 ID3D12GraphicsCommandList* bundle;
-
-                var iid = IID_ID3D12GraphicsCommandList;
-                ThrowIfFailed(D3DDevice->CreateCommandList(nodeMask: 0, D3D12_COMMAND_LIST_TYPE_BUNDLE, _bundleAllocator, PipelineState, &iid, (void**)&bundle));
+                ThrowIfFailed(D3DDevice->CreateCommandList(nodeMask: 0, D3D12_COMMAND_LIST_TYPE_BUNDLE, _bundleAllocator, PipelineState, __uuidof<ID3D12GraphicsCommandList>(), (void**)&bundle));
 
                 bundle->SetGraphicsRootSignature(RootSignature);
                 bundle->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
@@ -54,10 +52,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             ID3D12CommandAllocator* CreateBundleAllocator()
             {
                 ID3D12CommandAllocator* bundleAllocator;
-
-                var iid = IID_ID3D12CommandAllocator;
-                ThrowIfFailed(D3DDevice->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_BUNDLE, &iid, (void**)&bundleAllocator));
-
+                ThrowIfFailed(D3DDevice->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_BUNDLE, __uuidof<ID3D12CommandAllocator>(), (void**)&bundleAllocator));
                 return bundleAllocator;
             }
         }
