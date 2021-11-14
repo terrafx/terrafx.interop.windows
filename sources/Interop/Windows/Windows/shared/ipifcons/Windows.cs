@@ -12,9 +12,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define MIN_IF_TYPE 1")]
         public const int MIN_IF_TYPE = 1;
 
-        [NativeTypeName("#define MAX_IF_TYPE 281")]
-        public const int MAX_IF_TYPE = 281;
-
         [NativeTypeName("#define MIB_IF_TYPE_OTHER 1")]
         public const int MIB_IF_TYPE_OTHER = 1;
 

@@ -13,9 +13,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define MAXERRORLENGTH 256")]
         public const int MAXERRORLENGTH = 256;
 
-        [NativeTypeName("#define MAX_JOYSTICKOEMVXDNAME 260")]
-        public const int MAX_JOYSTICKOEMVXDNAME = 260;
-
         [NativeTypeName("#define TIME_MS 0x0001")]
         public const int TIME_MS = 0x0001;
 

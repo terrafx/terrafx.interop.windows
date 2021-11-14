@@ -3158,9 +3158,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define SetDefaultCommConfig SetDefaultCommConfigW")]
         public static delegate*<ushort*, COMMCONFIG*, uint, BOOL> SetDefaultCommConfig => &SetDefaultCommConfigW;
 
-        [NativeTypeName("#define MAX_COMPUTERNAME_LENGTH 15")]
-        public const int MAX_COMPUTERNAME_LENGTH = 15;
-
         [NativeTypeName("#define GetComputerName GetComputerNameW")]
         public static delegate*<ushort*, uint*, BOOL> GetComputerName => &GetComputerNameW;
 
@@ -3232,9 +3229,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define HW_PROFILE_GUIDLEN 39")]
         public const int HW_PROFILE_GUIDLEN = 39;
-
-        [NativeTypeName("#define MAX_PROFILE_LEN 80")]
-        public const int MAX_PROFILE_LEN = 80;
 
         [NativeTypeName("#define DOCKINFO_UNDOCKED (0x1)")]
         public const int DOCKINFO_UNDOCKED = (0x1);
@@ -3400,15 +3394,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define RECOVERY_MAX_PING_INTERVAL (5 * 60 * 1000)")]
         public const int RECOVERY_MAX_PING_INTERVAL = (5 * 60 * 1000);
-
-        [NativeTypeName("#define STORAGE_INFO_FLAGS_ALIGNED_DEVICE 0x00000001")]
-        public const int STORAGE_INFO_FLAGS_ALIGNED_DEVICE = 0x00000001;
-
-        [NativeTypeName("#define STORAGE_INFO_FLAGS_PARTITION_ALIGNED_ON_DEVICE 0x00000002")]
-        public const int STORAGE_INFO_FLAGS_PARTITION_ALIGNED_ON_DEVICE = 0x00000002;
-
-        [NativeTypeName("#define STORAGE_INFO_OFFSET_UNKNOWN (0xffffffff)")]
-        public const uint STORAGE_INFO_OFFSET_UNKNOWN = (0xffffffff);
 
         [NativeTypeName("#define REMOTE_PROTOCOL_INFO_FLAG_LOOPBACK 0x00000001")]
         public const int REMOTE_PROTOCOL_INFO_FLAG_LOOPBACK = 0x00000001;

@@ -66,8 +66,5 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define DD_DEFDRAGMINDIST ( 2 )")]
         public const int DD_DEFDRAGMINDIST = (2);
-
-        [NativeTypeName("#define CFSTR_ENTERPRISE_ID (TEXT(\"EnterpriseDataProtectionId\"))")]
-        public const string CFSTR_ENTERPRISE_ID = ("EnterpriseDataProtectionId");
     }
 }

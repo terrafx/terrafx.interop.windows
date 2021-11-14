@@ -93,11 +93,5 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define NUMBER_OF_EXPORTED_VARIABLES (TCP6_STATS + 1)")]
         public const int NUMBER_OF_EXPORTED_VARIABLES = (((((((((((((((((((((((((((((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
-
-        [NativeTypeName("#define MAX_SCOPE_NAME_LEN 255")]
-        public const int MAX_SCOPE_NAME_LEN = 255;
-
-        [NativeTypeName("#define MAX_MIB_OFFSET 8")]
-        public const int MAX_MIB_OFFSET = 8;
     }
 }

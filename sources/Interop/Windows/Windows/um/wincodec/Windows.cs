@@ -2780,15 +2780,6 @@ namespace TerraFX.Interop.Windows
         [DllImport("windowscodecs", ExactSpelling = true)]
         public static extern HRESULT WICMapSchemaToName([NativeTypeName("const GUID &")] Guid* guidMetadataFormat, [NativeTypeName("LPWSTR")] ushort* pwzSchema, uint cchName, [NativeTypeName("WCHAR *")] ushort* wzName, uint* pcchActual);
 
-        [NativeTypeName("#define WINCODEC_SDK_VERSION1 0x0236")]
-        public const int WINCODEC_SDK_VERSION1 = 0x0236;
-
-        [NativeTypeName("#define WINCODEC_SDK_VERSION2 0x0237")]
-        public const int WINCODEC_SDK_VERSION2 = 0x0237;
-
-        [NativeTypeName("#define WINCODEC_SDK_VERSION WINCODEC_SDK_VERSION2")]
-        public const int WINCODEC_SDK_VERSION = 0x0237;
-
         [NativeTypeName("#define WIC_JPEG_MAX_COMPONENT_COUNT ( 4 )")]
         public const int WIC_JPEG_MAX_COMPONENT_COUNT = (4);
 
@@ -2824,30 +2815,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define GUID_WICPixelFormatUndefined GUID_WICPixelFormatDontCare")]
         public static ref readonly Guid GUID_WICPixelFormatUndefined => ref GUID_WICPixelFormatDontCare;
-
-        [NativeTypeName("#define WINCODEC_ERR_BASE 0x2000")]
-        public const int WINCODEC_ERR_BASE = 0x2000;
-
-        [NativeTypeName("#define WINCODEC_ERR_GENERIC_ERROR E_FAIL")]
-        public const int WINCODEC_ERR_GENERIC_ERROR = unchecked((int)(0x80004005));
-
-        [NativeTypeName("#define WINCODEC_ERR_INVALIDPARAMETER E_INVALIDARG")]
-        public const int WINCODEC_ERR_INVALIDPARAMETER = unchecked((int)(0x80070057));
-
-        [NativeTypeName("#define WINCODEC_ERR_OUTOFMEMORY E_OUTOFMEMORY")]
-        public const int WINCODEC_ERR_OUTOFMEMORY = unchecked((int)(0x8007000E));
-
-        [NativeTypeName("#define WINCODEC_ERR_NOTIMPLEMENTED E_NOTIMPL")]
-        public const int WINCODEC_ERR_NOTIMPLEMENTED = unchecked((int)(0x80004001));
-
-        [NativeTypeName("#define WINCODEC_ERR_ABORTED E_ABORT")]
-        public const int WINCODEC_ERR_ABORTED = unchecked((int)(0x80004004));
-
-        [NativeTypeName("#define WINCODEC_ERR_ACCESSDENIED E_ACCESSDENIED")]
-        public const int WINCODEC_ERR_ACCESSDENIED = unchecked((int)(0x80070005));
-
-        [NativeTypeName("#define WINCODEC_ERR_VALUEOVERFLOW INTSAFE_E_ARITHMETIC_OVERFLOW")]
-        public const int WINCODEC_ERR_VALUEOVERFLOW = unchecked((int)(0x80070216));
 
         [NativeTypeName("#define WICRawChangeNotification_ExposureCompensation 0x00000001")]
         public const int WICRawChangeNotification_ExposureCompensation = 0x00000001;

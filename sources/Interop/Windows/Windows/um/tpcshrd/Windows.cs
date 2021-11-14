@@ -42,11 +42,5 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define TABLET_ENABLE_MULTITOUCHDATA 0x01000000")]
         public const int TABLET_ENABLE_MULTITOUCHDATA = 0x01000000;
-
-        [NativeTypeName("#define MAX_PACKET_PROPERTY_COUNT 32")]
-        public const int MAX_PACKET_PROPERTY_COUNT = 32;
-
-        [NativeTypeName("#define MAX_PACKET_BUTTON_COUNT 32")]
-        public const int MAX_PACKET_BUTTON_COUNT = 32;
     }
 }

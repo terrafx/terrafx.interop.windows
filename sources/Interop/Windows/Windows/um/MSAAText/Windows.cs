@@ -36,14 +36,5 @@ namespace TerraFX.Interop.Windows
                 return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
-
-        [NativeTypeName("#define TS_STRF_START ( 0 )")]
-        public const int TS_STRF_START = (0);
-
-        [NativeTypeName("#define TS_STRF_MID ( 1 )")]
-        public const int TS_STRF_MID = (1);
-
-        [NativeTypeName("#define TS_STRF_END ( 2 )")]
-        public const int TS_STRF_END = (2);
     }
 }

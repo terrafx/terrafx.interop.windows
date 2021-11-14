@@ -49,14 +49,8 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define SYNCMGRITEM_ITEMFLAGMASK 0x007F")]
         public const int SYNCMGRITEM_ITEMFLAGMASK = 0x007F;
 
-        [NativeTypeName("#define MAX_SYNCMGRITEMNAME ( 128 )")]
-        public const int MAX_SYNCMGRITEMNAME = (128);
-
         [NativeTypeName("#define SYNCMGRHANDLERFLAG_MASK 0x000f")]
         public const int SYNCMGRHANDLERFLAG_MASK = 0x000f;
-
-        [NativeTypeName("#define MAX_SYNCMGRHANDLERNAME ( 32 )")]
-        public const int MAX_SYNCMGRHANDLERNAME = (32);
 
         [NativeTypeName("#define SYNCMGRREGISTERFLAGS_MASK 0x07")]
         public const int SYNCMGRREGISTERFLAGS_MASK = 0x07;

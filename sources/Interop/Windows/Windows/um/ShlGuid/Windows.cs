@@ -3613,54 +3613,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define SID_SProgressUI CLSID_ProgressDialog")]
         public static ref readonly Guid SID_SProgressUI => ref CLSID_ProgressDialog;
 
-        [NativeTypeName("#define PID_FINDDATA 0")]
-        public const int PID_FINDDATA = 0;
-
-        [NativeTypeName("#define PID_NETRESOURCE 1")]
-        public const int PID_NETRESOURCE = 1;
-
-        [NativeTypeName("#define PID_DESCRIPTIONID 2")]
-        public const int PID_DESCRIPTIONID = 2;
-
-        [NativeTypeName("#define PID_WHICHFOLDER 3")]
-        public const int PID_WHICHFOLDER = 3;
-
-        [NativeTypeName("#define PID_NETWORKLOCATION 4")]
-        public const int PID_NETWORKLOCATION = 4;
-
-        [NativeTypeName("#define PID_COMPUTERNAME 5")]
-        public const int PID_COMPUTERNAME = 5;
-
-        [NativeTypeName("#define PID_DISPLACED_FROM 2")]
-        public const int PID_DISPLACED_FROM = 2;
-
-        [NativeTypeName("#define PID_DISPLACED_DATE 3")]
-        public const int PID_DISPLACED_DATE = 3;
-
-        [NativeTypeName("#define PID_SYNC_COPY_IN 2")]
-        public const int PID_SYNC_COPY_IN = 2;
-
-        [NativeTypeName("#define PID_MISC_STATUS 2")]
-        public const int PID_MISC_STATUS = 2;
-
-        [NativeTypeName("#define PID_MISC_ACCESSCOUNT 3")]
-        public const int PID_MISC_ACCESSCOUNT = 3;
-
-        [NativeTypeName("#define PID_MISC_OWNER 4")]
-        public const int PID_MISC_OWNER = 4;
-
-        [NativeTypeName("#define PID_HTMLINFOTIPFILE 5")]
-        public const int PID_HTMLINFOTIPFILE = 5;
-
-        [NativeTypeName("#define PID_MISC_PICS 6")]
-        public const int PID_MISC_PICS = 6;
-
-        [NativeTypeName("#define PID_DISPLAY_PROPERTIES 0")]
-        public const int PID_DISPLAY_PROPERTIES = 0;
-
-        [NativeTypeName("#define PID_INTROTEXT 1")]
-        public const int PID_INTROTEXT = 1;
-
         [NativeTypeName("#define PIDSI_ARTIST 2")]
         public const int PIDSI_ARTIST = 2;
 
@@ -3756,29 +3708,5 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define PIDASI_COMPRESSION 0x0000000A")]
         public const int PIDASI_COMPRESSION = 0x0000000A;
-
-        [NativeTypeName("#define PID_CONTROLPANEL_CATEGORY 2")]
-        public const int PID_CONTROLPANEL_CATEGORY = 2;
-
-        [NativeTypeName("#define PID_VOLUME_FREE 2")]
-        public const int PID_VOLUME_FREE = 2;
-
-        [NativeTypeName("#define PID_VOLUME_CAPACITY 3")]
-        public const int PID_VOLUME_CAPACITY = 3;
-
-        [NativeTypeName("#define PID_VOLUME_FILESYSTEM 4")]
-        public const int PID_VOLUME_FILESYSTEM = 4;
-
-        [NativeTypeName("#define PID_SHARE_CSC_STATUS 2")]
-        public const int PID_SHARE_CSC_STATUS = 2;
-
-        [NativeTypeName("#define PID_LINK_TARGET 2")]
-        public const int PID_LINK_TARGET = 2;
-
-        [NativeTypeName("#define PID_LINK_TARGET_TYPE 3")]
-        public const int PID_LINK_TARGET_TYPE = 3;
-
-        [NativeTypeName("#define PID_QUERY_RANK 2")]
-        public const int PID_QUERY_RANK = 2;
     }
 }

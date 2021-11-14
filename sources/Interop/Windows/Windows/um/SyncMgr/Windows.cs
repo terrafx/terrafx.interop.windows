@@ -22,14 +22,5 @@ namespace TerraFX.Interop.Windows
             CoTaskMemFree(pcci->pszLocationFull);
             Unsafe.InitBlockUnaligned((pcci), 0, ((uint)(sizeof(CONFIRM_CONFLICT_ITEM))));
         }
-
-        [NativeTypeName("#define MAX_SYNCMGR_ID ( 64 )")]
-        public const int MAX_SYNCMGR_ID = (64);
-
-        [NativeTypeName("#define MAX_SYNCMGR_PROGRESSTEXT ( 260 )")]
-        public const int MAX_SYNCMGR_PROGRESSTEXT = (260);
-
-        [NativeTypeName("#define MAX_SYNCMGR_NAME ( 128 )")]
-        public const int MAX_SYNCMGR_NAME = (128);
     }
 }

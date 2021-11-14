@@ -509,12 +509,6 @@ namespace TerraFX.Interop.Windows
         [DllImport("msi", ExactSpelling = true)]
         public static extern uint MsiJoinTransaction(MSIHANDLE hTransactionHandle, [NativeTypeName("DWORD")] uint dwTransactionAttributes, HANDLE* phChangeOfOwnerEvent);
 
-        [NativeTypeName("#define MAX_GUID_CHARS 38")]
-        public const int MAX_GUID_CHARS = 38;
-
-        [NativeTypeName("#define MAX_FEATURE_CHARS 38")]
-        public const int MAX_FEATURE_CHARS = 38;
-
         [NativeTypeName("#define INSTALLPROPERTY_PACKAGENAME __TEXT(\"PackageName\")")]
         public const string INSTALLPROPERTY_PACKAGENAME = "PackageName";
 

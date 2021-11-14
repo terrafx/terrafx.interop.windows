@@ -106,8 +106,5 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define HLINK_S_DONTHIDE (HLINK_S_FIRST)")]
         public const int HLINK_S_DONTHIDE = ((((int)(0x000400FF)) + 1));
-
-        [NativeTypeName("#define CFSTR_HYPERLINK (TEXT(\"Hyperlink\"))")]
-        public const string CFSTR_HYPERLINK = ("Hyperlink");
     }
 }

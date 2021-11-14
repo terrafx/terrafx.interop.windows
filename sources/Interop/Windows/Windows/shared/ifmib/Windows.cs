@@ -15,8 +15,5 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define MAXLEN_IFDESCR 256")]
         public const int MAXLEN_IFDESCR = 256;
-
-        [NativeTypeName("#define MAX_INTERFACE_NAME_LEN 256")]
-        public const int MAX_INTERFACE_NAME_LEN = 256;
     }
 }

@@ -2089,174 +2089,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define TTI_ERROR_LARGE 6")]
         public const int TTI_ERROR_LARGE = 6;
 
-        [NativeTypeName("#define TTM_ACTIVATE (WM_USER + 1)")]
-        public const int TTM_ACTIVATE = (0x0400 + 1);
-
-        [NativeTypeName("#define TTM_SETDELAYTIME (WM_USER + 3)")]
-        public const int TTM_SETDELAYTIME = (0x0400 + 3);
-
-        [NativeTypeName("#define TTM_ADDTOOLA (WM_USER + 4)")]
-        public const int TTM_ADDTOOLA = (0x0400 + 4);
-
-        [NativeTypeName("#define TTM_ADDTOOLW (WM_USER + 50)")]
-        public const int TTM_ADDTOOLW = (0x0400 + 50);
-
-        [NativeTypeName("#define TTM_DELTOOLA (WM_USER + 5)")]
-        public const int TTM_DELTOOLA = (0x0400 + 5);
-
-        [NativeTypeName("#define TTM_DELTOOLW (WM_USER + 51)")]
-        public const int TTM_DELTOOLW = (0x0400 + 51);
-
-        [NativeTypeName("#define TTM_NEWTOOLRECTA (WM_USER + 6)")]
-        public const int TTM_NEWTOOLRECTA = (0x0400 + 6);
-
-        [NativeTypeName("#define TTM_NEWTOOLRECTW (WM_USER + 52)")]
-        public const int TTM_NEWTOOLRECTW = (0x0400 + 52);
-
-        [NativeTypeName("#define TTM_RELAYEVENT (WM_USER + 7)")]
-        public const int TTM_RELAYEVENT = (0x0400 + 7);
-
-        [NativeTypeName("#define TTM_GETTOOLINFOA (WM_USER + 8)")]
-        public const int TTM_GETTOOLINFOA = (0x0400 + 8);
-
-        [NativeTypeName("#define TTM_GETTOOLINFOW (WM_USER + 53)")]
-        public const int TTM_GETTOOLINFOW = (0x0400 + 53);
-
-        [NativeTypeName("#define TTM_SETTOOLINFOA (WM_USER + 9)")]
-        public const int TTM_SETTOOLINFOA = (0x0400 + 9);
-
-        [NativeTypeName("#define TTM_SETTOOLINFOW (WM_USER + 54)")]
-        public const int TTM_SETTOOLINFOW = (0x0400 + 54);
-
-        [NativeTypeName("#define TTM_HITTESTA (WM_USER +10)")]
-        public const int TTM_HITTESTA = (0x0400 + 10);
-
-        [NativeTypeName("#define TTM_HITTESTW (WM_USER +55)")]
-        public const int TTM_HITTESTW = (0x0400 + 55);
-
-        [NativeTypeName("#define TTM_GETTEXTA (WM_USER +11)")]
-        public const int TTM_GETTEXTA = (0x0400 + 11);
-
-        [NativeTypeName("#define TTM_GETTEXTW (WM_USER +56)")]
-        public const int TTM_GETTEXTW = (0x0400 + 56);
-
-        [NativeTypeName("#define TTM_UPDATETIPTEXTA (WM_USER +12)")]
-        public const int TTM_UPDATETIPTEXTA = (0x0400 + 12);
-
-        [NativeTypeName("#define TTM_UPDATETIPTEXTW (WM_USER +57)")]
-        public const int TTM_UPDATETIPTEXTW = (0x0400 + 57);
-
-        [NativeTypeName("#define TTM_GETTOOLCOUNT (WM_USER +13)")]
-        public const int TTM_GETTOOLCOUNT = (0x0400 + 13);
-
-        [NativeTypeName("#define TTM_ENUMTOOLSA (WM_USER +14)")]
-        public const int TTM_ENUMTOOLSA = (0x0400 + 14);
-
-        [NativeTypeName("#define TTM_ENUMTOOLSW (WM_USER +58)")]
-        public const int TTM_ENUMTOOLSW = (0x0400 + 58);
-
-        [NativeTypeName("#define TTM_GETCURRENTTOOLA (WM_USER + 15)")]
-        public const int TTM_GETCURRENTTOOLA = (0x0400 + 15);
-
-        [NativeTypeName("#define TTM_GETCURRENTTOOLW (WM_USER + 59)")]
-        public const int TTM_GETCURRENTTOOLW = (0x0400 + 59);
-
-        [NativeTypeName("#define TTM_WINDOWFROMPOINT (WM_USER + 16)")]
-        public const int TTM_WINDOWFROMPOINT = (0x0400 + 16);
-
-        [NativeTypeName("#define TTM_TRACKACTIVATE (WM_USER + 17)")]
-        public const int TTM_TRACKACTIVATE = (0x0400 + 17);
-
-        [NativeTypeName("#define TTM_TRACKPOSITION (WM_USER + 18)")]
-        public const int TTM_TRACKPOSITION = (0x0400 + 18);
-
-        [NativeTypeName("#define TTM_SETTIPBKCOLOR (WM_USER + 19)")]
-        public const int TTM_SETTIPBKCOLOR = (0x0400 + 19);
-
-        [NativeTypeName("#define TTM_SETTIPTEXTCOLOR (WM_USER + 20)")]
-        public const int TTM_SETTIPTEXTCOLOR = (0x0400 + 20);
-
-        [NativeTypeName("#define TTM_GETDELAYTIME (WM_USER + 21)")]
-        public const int TTM_GETDELAYTIME = (0x0400 + 21);
-
-        [NativeTypeName("#define TTM_GETTIPBKCOLOR (WM_USER + 22)")]
-        public const int TTM_GETTIPBKCOLOR = (0x0400 + 22);
-
-        [NativeTypeName("#define TTM_GETTIPTEXTCOLOR (WM_USER + 23)")]
-        public const int TTM_GETTIPTEXTCOLOR = (0x0400 + 23);
-
-        [NativeTypeName("#define TTM_SETMAXTIPWIDTH (WM_USER + 24)")]
-        public const int TTM_SETMAXTIPWIDTH = (0x0400 + 24);
-
-        [NativeTypeName("#define TTM_GETMAXTIPWIDTH (WM_USER + 25)")]
-        public const int TTM_GETMAXTIPWIDTH = (0x0400 + 25);
-
-        [NativeTypeName("#define TTM_SETMARGIN (WM_USER + 26)")]
-        public const int TTM_SETMARGIN = (0x0400 + 26);
-
-        [NativeTypeName("#define TTM_GETMARGIN (WM_USER + 27)")]
-        public const int TTM_GETMARGIN = (0x0400 + 27);
-
-        [NativeTypeName("#define TTM_POP (WM_USER + 28)")]
-        public const int TTM_POP = (0x0400 + 28);
-
-        [NativeTypeName("#define TTM_UPDATE (WM_USER + 29)")]
-        public const int TTM_UPDATE = (0x0400 + 29);
-
-        [NativeTypeName("#define TTM_GETBUBBLESIZE (WM_USER + 30)")]
-        public const int TTM_GETBUBBLESIZE = (0x0400 + 30);
-
-        [NativeTypeName("#define TTM_ADJUSTRECT (WM_USER + 31)")]
-        public const int TTM_ADJUSTRECT = (0x0400 + 31);
-
-        [NativeTypeName("#define TTM_SETTITLEA (WM_USER + 32)")]
-        public const int TTM_SETTITLEA = (0x0400 + 32);
-
-        [NativeTypeName("#define TTM_SETTITLEW (WM_USER + 33)")]
-        public const int TTM_SETTITLEW = (0x0400 + 33);
-
-        [NativeTypeName("#define TTM_POPUP (WM_USER + 34)")]
-        public const int TTM_POPUP = (0x0400 + 34);
-
-        [NativeTypeName("#define TTM_GETTITLE (WM_USER + 35)")]
-        public const int TTM_GETTITLE = (0x0400 + 35);
-
-        [NativeTypeName("#define TTM_ADDTOOL TTM_ADDTOOLW")]
-        public const int TTM_ADDTOOL = (0x0400 + 50);
-
-        [NativeTypeName("#define TTM_DELTOOL TTM_DELTOOLW")]
-        public const int TTM_DELTOOL = (0x0400 + 51);
-
-        [NativeTypeName("#define TTM_NEWTOOLRECT TTM_NEWTOOLRECTW")]
-        public const int TTM_NEWTOOLRECT = (0x0400 + 52);
-
-        [NativeTypeName("#define TTM_GETTOOLINFO TTM_GETTOOLINFOW")]
-        public const int TTM_GETTOOLINFO = (0x0400 + 53);
-
-        [NativeTypeName("#define TTM_SETTOOLINFO TTM_SETTOOLINFOW")]
-        public const int TTM_SETTOOLINFO = (0x0400 + 54);
-
-        [NativeTypeName("#define TTM_HITTEST TTM_HITTESTW")]
-        public const int TTM_HITTEST = (0x0400 + 55);
-
-        [NativeTypeName("#define TTM_GETTEXT TTM_GETTEXTW")]
-        public const int TTM_GETTEXT = (0x0400 + 56);
-
-        [NativeTypeName("#define TTM_UPDATETIPTEXT TTM_UPDATETIPTEXTW")]
-        public const int TTM_UPDATETIPTEXT = (0x0400 + 57);
-
-        [NativeTypeName("#define TTM_ENUMTOOLS TTM_ENUMTOOLSW")]
-        public const int TTM_ENUMTOOLS = (0x0400 + 58);
-
-        [NativeTypeName("#define TTM_GETCURRENTTOOL TTM_GETCURRENTTOOLW")]
-        public const int TTM_GETCURRENTTOOL = (0x0400 + 59);
-
-        [NativeTypeName("#define TTM_SETTITLE TTM_SETTITLEW")]
-        public const int TTM_SETTITLE = (0x0400 + 33);
-
-        [NativeTypeName("#define TTM_SETWINDOWTHEME CCM_SETWINDOWTHEME")]
-        public const int TTM_SETWINDOWTHEME = (0x2000 + 0xb);
-
         [NativeTypeName("#define TTN_GETDISPINFOA (TTN_FIRST - 0)")]
         public const uint TTN_GETDISPINFOA = unchecked((0U - 520U) - 0);
 
@@ -2308,84 +2140,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define STATUSCLASSNAME STATUSCLASSNAMEW")]
         public const string STATUSCLASSNAME = "msctls_statusbar32";
 
-        [NativeTypeName("#define SB_SETTEXTA (WM_USER+1)")]
-        public const int SB_SETTEXTA = (0x0400 + 1);
-
-        [NativeTypeName("#define SB_SETTEXTW (WM_USER+11)")]
-        public const int SB_SETTEXTW = (0x0400 + 11);
-
-        [NativeTypeName("#define SB_GETTEXTA (WM_USER+2)")]
-        public const int SB_GETTEXTA = (0x0400 + 2);
-
-        [NativeTypeName("#define SB_GETTEXTW (WM_USER+13)")]
-        public const int SB_GETTEXTW = (0x0400 + 13);
-
-        [NativeTypeName("#define SB_GETTEXTLENGTHA (WM_USER+3)")]
-        public const int SB_GETTEXTLENGTHA = (0x0400 + 3);
-
-        [NativeTypeName("#define SB_GETTEXTLENGTHW (WM_USER+12)")]
-        public const int SB_GETTEXTLENGTHW = (0x0400 + 12);
-
-        [NativeTypeName("#define SB_GETTEXT SB_GETTEXTW")]
-        public const int SB_GETTEXT = (0x0400 + 13);
-
-        [NativeTypeName("#define SB_SETTEXT SB_SETTEXTW")]
-        public const int SB_SETTEXT = (0x0400 + 11);
-
-        [NativeTypeName("#define SB_GETTEXTLENGTH SB_GETTEXTLENGTHW")]
-        public const int SB_GETTEXTLENGTH = (0x0400 + 12);
-
-        [NativeTypeName("#define SB_SETTIPTEXT SB_SETTIPTEXTW")]
-        public const int SB_SETTIPTEXT = (0x0400 + 17);
-
-        [NativeTypeName("#define SB_GETTIPTEXT SB_GETTIPTEXTW")]
-        public const int SB_GETTIPTEXT = (0x0400 + 19);
-
-        [NativeTypeName("#define SB_SETPARTS (WM_USER+4)")]
-        public const int SB_SETPARTS = (0x0400 + 4);
-
-        [NativeTypeName("#define SB_GETPARTS (WM_USER+6)")]
-        public const int SB_GETPARTS = (0x0400 + 6);
-
-        [NativeTypeName("#define SB_GETBORDERS (WM_USER+7)")]
-        public const int SB_GETBORDERS = (0x0400 + 7);
-
-        [NativeTypeName("#define SB_SETMINHEIGHT (WM_USER+8)")]
-        public const int SB_SETMINHEIGHT = (0x0400 + 8);
-
-        [NativeTypeName("#define SB_SIMPLE (WM_USER+9)")]
-        public const int SB_SIMPLE = (0x0400 + 9);
-
-        [NativeTypeName("#define SB_GETRECT (WM_USER+10)")]
-        public const int SB_GETRECT = (0x0400 + 10);
-
-        [NativeTypeName("#define SB_ISSIMPLE (WM_USER+14)")]
-        public const int SB_ISSIMPLE = (0x0400 + 14);
-
-        [NativeTypeName("#define SB_SETICON (WM_USER+15)")]
-        public const int SB_SETICON = (0x0400 + 15);
-
-        [NativeTypeName("#define SB_SETTIPTEXTA (WM_USER+16)")]
-        public const int SB_SETTIPTEXTA = (0x0400 + 16);
-
-        [NativeTypeName("#define SB_SETTIPTEXTW (WM_USER+17)")]
-        public const int SB_SETTIPTEXTW = (0x0400 + 17);
-
-        [NativeTypeName("#define SB_GETTIPTEXTA (WM_USER+18)")]
-        public const int SB_GETTIPTEXTA = (0x0400 + 18);
-
-        [NativeTypeName("#define SB_GETTIPTEXTW (WM_USER+19)")]
-        public const int SB_GETTIPTEXTW = (0x0400 + 19);
-
-        [NativeTypeName("#define SB_GETICON (WM_USER+20)")]
-        public const int SB_GETICON = (0x0400 + 20);
-
-        [NativeTypeName("#define SB_SETUNICODEFORMAT CCM_SETUNICODEFORMAT")]
-        public const int SB_SETUNICODEFORMAT = (0x2000 + 5);
-
-        [NativeTypeName("#define SB_GETUNICODEFORMAT CCM_GETUNICODEFORMAT")]
-        public const int SB_GETUNICODEFORMAT = (0x2000 + 6);
-
         [NativeTypeName("#define SBT_OWNERDRAW 0x1000")]
         public const int SBT_OWNERDRAW = 0x1000;
 
@@ -2401,14 +2155,8 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define SBT_NOTABPARSING 0x0800")]
         public const int SBT_NOTABPARSING = 0x0800;
 
-        [NativeTypeName("#define SB_SETBKCOLOR CCM_SETBKCOLOR")]
-        public const int SB_SETBKCOLOR = (0x2000 + 1);
-
         [NativeTypeName("#define SBN_SIMPLEMODECHANGE (SBN_FIRST - 0)")]
         public const uint SBN_SIMPLEMODECHANGE = unchecked((0U - 880U) - 0);
-
-        [NativeTypeName("#define SB_SIMPLEID 0x00ff")]
-        public const int SB_SIMPLEID = 0x00ff;
 
         [NativeTypeName("#define MINSYSCOMMAND SC_SIZE")]
         public const int MINSYSCOMMAND = 0xF000;
@@ -2421,57 +2169,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define TRACKBAR_CLASS TRACKBAR_CLASSW")]
         public const string TRACKBAR_CLASS = "msctls_trackbar32";
-
-        [NativeTypeName("#define TBS_AUTOTICKS 0x0001")]
-        public const int TBS_AUTOTICKS = 0x0001;
-
-        [NativeTypeName("#define TBS_VERT 0x0002")]
-        public const int TBS_VERT = 0x0002;
-
-        [NativeTypeName("#define TBS_HORZ 0x0000")]
-        public const int TBS_HORZ = 0x0000;
-
-        [NativeTypeName("#define TBS_TOP 0x0004")]
-        public const int TBS_TOP = 0x0004;
-
-        [NativeTypeName("#define TBS_BOTTOM 0x0000")]
-        public const int TBS_BOTTOM = 0x0000;
-
-        [NativeTypeName("#define TBS_LEFT 0x0004")]
-        public const int TBS_LEFT = 0x0004;
-
-        [NativeTypeName("#define TBS_RIGHT 0x0000")]
-        public const int TBS_RIGHT = 0x0000;
-
-        [NativeTypeName("#define TBS_BOTH 0x0008")]
-        public const int TBS_BOTH = 0x0008;
-
-        [NativeTypeName("#define TBS_NOTICKS 0x0010")]
-        public const int TBS_NOTICKS = 0x0010;
-
-        [NativeTypeName("#define TBS_ENABLESELRANGE 0x0020")]
-        public const int TBS_ENABLESELRANGE = 0x0020;
-
-        [NativeTypeName("#define TBS_FIXEDLENGTH 0x0040")]
-        public const int TBS_FIXEDLENGTH = 0x0040;
-
-        [NativeTypeName("#define TBS_NOTHUMB 0x0080")]
-        public const int TBS_NOTHUMB = 0x0080;
-
-        [NativeTypeName("#define TBS_TOOLTIPS 0x0100")]
-        public const int TBS_TOOLTIPS = 0x0100;
-
-        [NativeTypeName("#define TBS_REVERSED 0x0200")]
-        public const int TBS_REVERSED = 0x0200;
-
-        [NativeTypeName("#define TBS_DOWNISLEFT 0x0400")]
-        public const int TBS_DOWNISLEFT = 0x0400;
-
-        [NativeTypeName("#define TBS_NOTIFYBEFOREMOVE 0x0800")]
-        public const int TBS_NOTIFYBEFOREMOVE = 0x0800;
-
-        [NativeTypeName("#define TBS_TRANSPARENTBKGND 0x1000")]
-        public const int TBS_TRANSPARENTBKGND = 0x1000;
 
         [NativeTypeName("#define TBM_GETPOS (WM_USER)")]
         public const int TBM_GETPOS = (0x0400);
@@ -2893,9 +2590,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define INVALID_LINK_INDEX (-1)")]
         public const int INVALID_LINK_INDEX = (-1);
 
-        [NativeTypeName("#define MAX_LINKID_TEXT 48")]
-        public const int MAX_LINKID_TEXT = 48;
-
         [NativeTypeName("#define L_MAX_URL_LENGTH (2048 + 32 + sizeof(\"://\"))")]
         public const uint L_MAX_URL_LENGTH = (2048 + 32 + 4);
 
@@ -2970,72 +2664,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define WC_LISTVIEW WC_LISTVIEWW")]
         public const string WC_LISTVIEW = "SysListView32";
-
-        [NativeTypeName("#define LVS_ICON 0x0000")]
-        public const int LVS_ICON = 0x0000;
-
-        [NativeTypeName("#define LVS_REPORT 0x0001")]
-        public const int LVS_REPORT = 0x0001;
-
-        [NativeTypeName("#define LVS_SMALLICON 0x0002")]
-        public const int LVS_SMALLICON = 0x0002;
-
-        [NativeTypeName("#define LVS_LIST 0x0003")]
-        public const int LVS_LIST = 0x0003;
-
-        [NativeTypeName("#define LVS_TYPEMASK 0x0003")]
-        public const int LVS_TYPEMASK = 0x0003;
-
-        [NativeTypeName("#define LVS_SINGLESEL 0x0004")]
-        public const int LVS_SINGLESEL = 0x0004;
-
-        [NativeTypeName("#define LVS_SHOWSELALWAYS 0x0008")]
-        public const int LVS_SHOWSELALWAYS = 0x0008;
-
-        [NativeTypeName("#define LVS_SORTASCENDING 0x0010")]
-        public const int LVS_SORTASCENDING = 0x0010;
-
-        [NativeTypeName("#define LVS_SORTDESCENDING 0x0020")]
-        public const int LVS_SORTDESCENDING = 0x0020;
-
-        [NativeTypeName("#define LVS_SHAREIMAGELISTS 0x0040")]
-        public const int LVS_SHAREIMAGELISTS = 0x0040;
-
-        [NativeTypeName("#define LVS_NOLABELWRAP 0x0080")]
-        public const int LVS_NOLABELWRAP = 0x0080;
-
-        [NativeTypeName("#define LVS_AUTOARRANGE 0x0100")]
-        public const int LVS_AUTOARRANGE = 0x0100;
-
-        [NativeTypeName("#define LVS_EDITLABELS 0x0200")]
-        public const int LVS_EDITLABELS = 0x0200;
-
-        [NativeTypeName("#define LVS_OWNERDATA 0x1000")]
-        public const int LVS_OWNERDATA = 0x1000;
-
-        [NativeTypeName("#define LVS_NOSCROLL 0x2000")]
-        public const int LVS_NOSCROLL = 0x2000;
-
-        [NativeTypeName("#define LVS_TYPESTYLEMASK 0xfc00")]
-        public const int LVS_TYPESTYLEMASK = 0xfc00;
-
-        [NativeTypeName("#define LVS_ALIGNTOP 0x0000")]
-        public const int LVS_ALIGNTOP = 0x0000;
-
-        [NativeTypeName("#define LVS_ALIGNLEFT 0x0800")]
-        public const int LVS_ALIGNLEFT = 0x0800;
-
-        [NativeTypeName("#define LVS_ALIGNMASK 0x0c00")]
-        public const int LVS_ALIGNMASK = 0x0c00;
-
-        [NativeTypeName("#define LVS_OWNERDRAWFIXED 0x0400")]
-        public const int LVS_OWNERDRAWFIXED = 0x0400;
-
-        [NativeTypeName("#define LVS_NOCOLUMNHEADER 0x4000")]
-        public const int LVS_NOCOLUMNHEADER = 0x4000;
-
-        [NativeTypeName("#define LVS_NOSORTHEADER 0x8000")]
-        public const int LVS_NOSORTHEADER = 0x8000;
 
         [NativeTypeName("#define LVSIL_NORMAL 0")]
         public const int LVSIL_NORMAL = 0;
@@ -3354,96 +2982,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define LVSICF_NOSCROLL 0x00000002")]
         public const int LVSICF_NOSCROLL = 0x00000002;
-
-        [NativeTypeName("#define LVS_EX_GRIDLINES 0x00000001")]
-        public const int LVS_EX_GRIDLINES = 0x00000001;
-
-        [NativeTypeName("#define LVS_EX_SUBITEMIMAGES 0x00000002")]
-        public const int LVS_EX_SUBITEMIMAGES = 0x00000002;
-
-        [NativeTypeName("#define LVS_EX_CHECKBOXES 0x00000004")]
-        public const int LVS_EX_CHECKBOXES = 0x00000004;
-
-        [NativeTypeName("#define LVS_EX_TRACKSELECT 0x00000008")]
-        public const int LVS_EX_TRACKSELECT = 0x00000008;
-
-        [NativeTypeName("#define LVS_EX_HEADERDRAGDROP 0x00000010")]
-        public const int LVS_EX_HEADERDRAGDROP = 0x00000010;
-
-        [NativeTypeName("#define LVS_EX_FULLROWSELECT 0x00000020")]
-        public const int LVS_EX_FULLROWSELECT = 0x00000020;
-
-        [NativeTypeName("#define LVS_EX_ONECLICKACTIVATE 0x00000040")]
-        public const int LVS_EX_ONECLICKACTIVATE = 0x00000040;
-
-        [NativeTypeName("#define LVS_EX_TWOCLICKACTIVATE 0x00000080")]
-        public const int LVS_EX_TWOCLICKACTIVATE = 0x00000080;
-
-        [NativeTypeName("#define LVS_EX_FLATSB 0x00000100")]
-        public const int LVS_EX_FLATSB = 0x00000100;
-
-        [NativeTypeName("#define LVS_EX_REGIONAL 0x00000200")]
-        public const int LVS_EX_REGIONAL = 0x00000200;
-
-        [NativeTypeName("#define LVS_EX_INFOTIP 0x00000400")]
-        public const int LVS_EX_INFOTIP = 0x00000400;
-
-        [NativeTypeName("#define LVS_EX_UNDERLINEHOT 0x00000800")]
-        public const int LVS_EX_UNDERLINEHOT = 0x00000800;
-
-        [NativeTypeName("#define LVS_EX_UNDERLINECOLD 0x00001000")]
-        public const int LVS_EX_UNDERLINECOLD = 0x00001000;
-
-        [NativeTypeName("#define LVS_EX_MULTIWORKAREAS 0x00002000")]
-        public const int LVS_EX_MULTIWORKAREAS = 0x00002000;
-
-        [NativeTypeName("#define LVS_EX_LABELTIP 0x00004000")]
-        public const int LVS_EX_LABELTIP = 0x00004000;
-
-        [NativeTypeName("#define LVS_EX_BORDERSELECT 0x00008000")]
-        public const int LVS_EX_BORDERSELECT = 0x00008000;
-
-        [NativeTypeName("#define LVS_EX_DOUBLEBUFFER 0x00010000")]
-        public const int LVS_EX_DOUBLEBUFFER = 0x00010000;
-
-        [NativeTypeName("#define LVS_EX_HIDELABELS 0x00020000")]
-        public const int LVS_EX_HIDELABELS = 0x00020000;
-
-        [NativeTypeName("#define LVS_EX_SINGLEROW 0x00040000")]
-        public const int LVS_EX_SINGLEROW = 0x00040000;
-
-        [NativeTypeName("#define LVS_EX_SNAPTOGRID 0x00080000")]
-        public const int LVS_EX_SNAPTOGRID = 0x00080000;
-
-        [NativeTypeName("#define LVS_EX_SIMPLESELECT 0x00100000")]
-        public const int LVS_EX_SIMPLESELECT = 0x00100000;
-
-        [NativeTypeName("#define LVS_EX_JUSTIFYCOLUMNS 0x00200000")]
-        public const int LVS_EX_JUSTIFYCOLUMNS = 0x00200000;
-
-        [NativeTypeName("#define LVS_EX_TRANSPARENTBKGND 0x00400000")]
-        public const int LVS_EX_TRANSPARENTBKGND = 0x00400000;
-
-        [NativeTypeName("#define LVS_EX_TRANSPARENTSHADOWTEXT 0x00800000")]
-        public const int LVS_EX_TRANSPARENTSHADOWTEXT = 0x00800000;
-
-        [NativeTypeName("#define LVS_EX_AUTOAUTOARRANGE 0x01000000")]
-        public const int LVS_EX_AUTOAUTOARRANGE = 0x01000000;
-
-        [NativeTypeName("#define LVS_EX_HEADERINALLVIEWS 0x02000000")]
-        public const int LVS_EX_HEADERINALLVIEWS = 0x02000000;
-
-        [NativeTypeName("#define LVS_EX_AUTOCHECKSELECT 0x08000000")]
-        public const int LVS_EX_AUTOCHECKSELECT = 0x08000000;
-
-        [NativeTypeName("#define LVS_EX_AUTOSIZECOLUMNS 0x10000000")]
-        public const int LVS_EX_AUTOSIZECOLUMNS = 0x10000000;
-
-        [NativeTypeName("#define LVS_EX_COLUMNSNAPPOINTS 0x40000000")]
-        public const int LVS_EX_COLUMNSNAPPOINTS = 0x40000000;
-
-        [NativeTypeName("#define LVS_EX_COLUMNOVERFLOW 0x80000000")]
-        public const uint LVS_EX_COLUMNOVERFLOW = 0x80000000;
 
         [NativeTypeName("#define LV_MAX_WORKAREAS 16")]
         public const int LV_MAX_WORKAREAS = 16;
@@ -3979,21 +3517,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define I_CHILDRENAUTO (-2)")]
         public const int I_CHILDRENAUTO = (-2);
 
-        [NativeTypeName("#define TVM_INSERTITEMA (TV_FIRST + 0)")]
-        public const int TVM_INSERTITEMA = (0x1100 + 0);
-
-        [NativeTypeName("#define TVM_INSERTITEMW (TV_FIRST + 50)")]
-        public const int TVM_INSERTITEMW = (0x1100 + 50);
-
-        [NativeTypeName("#define TVM_INSERTITEM TVM_INSERTITEMW")]
-        public const int TVM_INSERTITEM = (0x1100 + 50);
-
-        [NativeTypeName("#define TVM_DELETEITEM (TV_FIRST + 1)")]
-        public const int TVM_DELETEITEM = (0x1100 + 1);
-
-        [NativeTypeName("#define TVM_EXPAND (TV_FIRST + 2)")]
-        public const int TVM_EXPAND = (0x1100 + 2);
-
         [NativeTypeName("#define TVE_COLLAPSE 0x0001")]
         public const int TVE_COLLAPSE = 0x0001;
 
@@ -4009,32 +3532,11 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define TVE_COLLAPSERESET 0x8000")]
         public const int TVE_COLLAPSERESET = 0x8000;
 
-        [NativeTypeName("#define TVM_GETITEMRECT (TV_FIRST + 4)")]
-        public const int TVM_GETITEMRECT = (0x1100 + 4);
-
-        [NativeTypeName("#define TVM_GETCOUNT (TV_FIRST + 5)")]
-        public const int TVM_GETCOUNT = (0x1100 + 5);
-
-        [NativeTypeName("#define TVM_GETINDENT (TV_FIRST + 6)")]
-        public const int TVM_GETINDENT = (0x1100 + 6);
-
-        [NativeTypeName("#define TVM_SETINDENT (TV_FIRST + 7)")]
-        public const int TVM_SETINDENT = (0x1100 + 7);
-
-        [NativeTypeName("#define TVM_GETIMAGELIST (TV_FIRST + 8)")]
-        public const int TVM_GETIMAGELIST = (0x1100 + 8);
-
         [NativeTypeName("#define TVSIL_NORMAL 0")]
         public const int TVSIL_NORMAL = 0;
 
         [NativeTypeName("#define TVSIL_STATE 2")]
         public const int TVSIL_STATE = 2;
-
-        [NativeTypeName("#define TVM_SETIMAGELIST (TV_FIRST + 9)")]
-        public const int TVM_SETIMAGELIST = (0x1100 + 9);
-
-        [NativeTypeName("#define TVM_GETNEXTITEM (TV_FIRST + 10)")]
-        public const int TVM_GETNEXTITEM = (0x1100 + 10);
 
         [NativeTypeName("#define TVGN_ROOT 0x0000")]
         public const int TVGN_ROOT = 0x0000;
@@ -4075,45 +3577,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define TVSI_NOSINGLEEXPAND 0x8000")]
         public const int TVSI_NOSINGLEEXPAND = 0x8000;
 
-        [NativeTypeName("#define TVM_SELECTITEM (TV_FIRST + 11)")]
-        public const int TVM_SELECTITEM = (0x1100 + 11);
-
-        [NativeTypeName("#define TVM_GETITEMA (TV_FIRST + 12)")]
-        public const int TVM_GETITEMA = (0x1100 + 12);
-
-        [NativeTypeName("#define TVM_GETITEMW (TV_FIRST + 62)")]
-        public const int TVM_GETITEMW = (0x1100 + 62);
-
-        [NativeTypeName("#define TVM_GETITEM TVM_GETITEMW")]
-        public const int TVM_GETITEM = (0x1100 + 62);
-
-        [NativeTypeName("#define TVM_SETITEMA (TV_FIRST + 13)")]
-        public const int TVM_SETITEMA = (0x1100 + 13);
-
-        [NativeTypeName("#define TVM_SETITEMW (TV_FIRST + 63)")]
-        public const int TVM_SETITEMW = (0x1100 + 63);
-
-        [NativeTypeName("#define TVM_SETITEM TVM_SETITEMW")]
-        public const int TVM_SETITEM = (0x1100 + 63);
-
-        [NativeTypeName("#define TVM_EDITLABELA (TV_FIRST + 14)")]
-        public const int TVM_EDITLABELA = (0x1100 + 14);
-
-        [NativeTypeName("#define TVM_EDITLABELW (TV_FIRST + 65)")]
-        public const int TVM_EDITLABELW = (0x1100 + 65);
-
-        [NativeTypeName("#define TVM_EDITLABEL TVM_EDITLABELW")]
-        public const int TVM_EDITLABEL = (0x1100 + 65);
-
-        [NativeTypeName("#define TVM_GETEDITCONTROL (TV_FIRST + 15)")]
-        public const int TVM_GETEDITCONTROL = (0x1100 + 15);
-
-        [NativeTypeName("#define TVM_GETVISIBLECOUNT (TV_FIRST + 16)")]
-        public const int TVM_GETVISIBLECOUNT = (0x1100 + 16);
-
-        [NativeTypeName("#define TVM_HITTEST (TV_FIRST + 17)")]
-        public const int TVM_HITTEST = (0x1100 + 17);
-
         [NativeTypeName("#define TVHT_NOWHERE 0x0001")]
         public const int TVHT_NOWHERE = 0x0001;
 
@@ -4150,119 +3613,11 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define TVHT_TOLEFT 0x0800")]
         public const int TVHT_TOLEFT = 0x0800;
 
-        [NativeTypeName("#define TVM_CREATEDRAGIMAGE (TV_FIRST + 18)")]
-        public const int TVM_CREATEDRAGIMAGE = (0x1100 + 18);
-
-        [NativeTypeName("#define TVM_SORTCHILDREN (TV_FIRST + 19)")]
-        public const int TVM_SORTCHILDREN = (0x1100 + 19);
-
-        [NativeTypeName("#define TVM_ENSUREVISIBLE (TV_FIRST + 20)")]
-        public const int TVM_ENSUREVISIBLE = (0x1100 + 20);
-
-        [NativeTypeName("#define TVM_SORTCHILDRENCB (TV_FIRST + 21)")]
-        public const int TVM_SORTCHILDRENCB = (0x1100 + 21);
-
-        [NativeTypeName("#define TVM_ENDEDITLABELNOW (TV_FIRST + 22)")]
-        public const int TVM_ENDEDITLABELNOW = (0x1100 + 22);
-
-        [NativeTypeName("#define TVM_GETISEARCHSTRINGA (TV_FIRST + 23)")]
-        public const int TVM_GETISEARCHSTRINGA = (0x1100 + 23);
-
-        [NativeTypeName("#define TVM_GETISEARCHSTRINGW (TV_FIRST + 64)")]
-        public const int TVM_GETISEARCHSTRINGW = (0x1100 + 64);
-
-        [NativeTypeName("#define TVM_GETISEARCHSTRING TVM_GETISEARCHSTRINGW")]
-        public const int TVM_GETISEARCHSTRING = (0x1100 + 64);
-
-        [NativeTypeName("#define TVM_SETTOOLTIPS (TV_FIRST + 24)")]
-        public const int TVM_SETTOOLTIPS = (0x1100 + 24);
-
-        [NativeTypeName("#define TVM_GETTOOLTIPS (TV_FIRST + 25)")]
-        public const int TVM_GETTOOLTIPS = (0x1100 + 25);
-
-        [NativeTypeName("#define TVM_SETINSERTMARK (TV_FIRST + 26)")]
-        public const int TVM_SETINSERTMARK = (0x1100 + 26);
-
-        [NativeTypeName("#define TVM_SETUNICODEFORMAT CCM_SETUNICODEFORMAT")]
-        public const int TVM_SETUNICODEFORMAT = (0x2000 + 5);
-
-        [NativeTypeName("#define TVM_GETUNICODEFORMAT CCM_GETUNICODEFORMAT")]
-        public const int TVM_GETUNICODEFORMAT = (0x2000 + 6);
-
-        [NativeTypeName("#define TVM_SETITEMHEIGHT (TV_FIRST + 27)")]
-        public const int TVM_SETITEMHEIGHT = (0x1100 + 27);
-
-        [NativeTypeName("#define TVM_GETITEMHEIGHT (TV_FIRST + 28)")]
-        public const int TVM_GETITEMHEIGHT = (0x1100 + 28);
-
-        [NativeTypeName("#define TVM_SETBKCOLOR (TV_FIRST + 29)")]
-        public const int TVM_SETBKCOLOR = (0x1100 + 29);
-
-        [NativeTypeName("#define TVM_SETTEXTCOLOR (TV_FIRST + 30)")]
-        public const int TVM_SETTEXTCOLOR = (0x1100 + 30);
-
-        [NativeTypeName("#define TVM_GETBKCOLOR (TV_FIRST + 31)")]
-        public const int TVM_GETBKCOLOR = (0x1100 + 31);
-
-        [NativeTypeName("#define TVM_GETTEXTCOLOR (TV_FIRST + 32)")]
-        public const int TVM_GETTEXTCOLOR = (0x1100 + 32);
-
-        [NativeTypeName("#define TVM_SETSCROLLTIME (TV_FIRST + 33)")]
-        public const int TVM_SETSCROLLTIME = (0x1100 + 33);
-
-        [NativeTypeName("#define TVM_GETSCROLLTIME (TV_FIRST + 34)")]
-        public const int TVM_GETSCROLLTIME = (0x1100 + 34);
-
-        [NativeTypeName("#define TVM_SETINSERTMARKCOLOR (TV_FIRST + 37)")]
-        public const int TVM_SETINSERTMARKCOLOR = (0x1100 + 37);
-
-        [NativeTypeName("#define TVM_GETINSERTMARKCOLOR (TV_FIRST + 38)")]
-        public const int TVM_GETINSERTMARKCOLOR = (0x1100 + 38);
-
-        [NativeTypeName("#define TVM_SETBORDER (TV_FIRST + 35)")]
-        public const int TVM_SETBORDER = (0x1100 + 35);
-
         [NativeTypeName("#define TVSBF_XBORDER 0x00000001")]
         public const int TVSBF_XBORDER = 0x00000001;
 
         [NativeTypeName("#define TVSBF_YBORDER 0x00000002")]
         public const int TVSBF_YBORDER = 0x00000002;
-
-        [NativeTypeName("#define TVM_GETITEMSTATE (TV_FIRST + 39)")]
-        public const int TVM_GETITEMSTATE = (0x1100 + 39);
-
-        [NativeTypeName("#define TVM_SETLINECOLOR (TV_FIRST + 40)")]
-        public const int TVM_SETLINECOLOR = (0x1100 + 40);
-
-        [NativeTypeName("#define TVM_GETLINECOLOR (TV_FIRST + 41)")]
-        public const int TVM_GETLINECOLOR = (0x1100 + 41);
-
-        [NativeTypeName("#define TVM_MAPACCIDTOHTREEITEM (TV_FIRST + 42)")]
-        public const int TVM_MAPACCIDTOHTREEITEM = (0x1100 + 42);
-
-        [NativeTypeName("#define TVM_MAPHTREEITEMTOACCID (TV_FIRST + 43)")]
-        public const int TVM_MAPHTREEITEMTOACCID = (0x1100 + 43);
-
-        [NativeTypeName("#define TVM_SETEXTENDEDSTYLE (TV_FIRST + 44)")]
-        public const int TVM_SETEXTENDEDSTYLE = (0x1100 + 44);
-
-        [NativeTypeName("#define TVM_GETEXTENDEDSTYLE (TV_FIRST + 45)")]
-        public const int TVM_GETEXTENDEDSTYLE = (0x1100 + 45);
-
-        [NativeTypeName("#define TVM_SETAUTOSCROLLINFO (TV_FIRST + 59)")]
-        public const int TVM_SETAUTOSCROLLINFO = (0x1100 + 59);
-
-        [NativeTypeName("#define TVM_SETHOT (TV_FIRST + 58)")]
-        public const int TVM_SETHOT = (0x1100 + 58);
-
-        [NativeTypeName("#define TVM_GETSELECTEDCOUNT (TV_FIRST + 70)")]
-        public const int TVM_GETSELECTEDCOUNT = (0x1100 + 70);
-
-        [NativeTypeName("#define TVM_SHOWINFOTIP (TV_FIRST + 71)")]
-        public const int TVM_SHOWINFOTIP = (0x1100 + 71);
-
-        [NativeTypeName("#define TVM_GETITEMPARTRECT (TV_FIRST + 72)")]
-        public const int TVM_GETITEMPARTRECT = (0x1100 + 72);
 
         [NativeTypeName("#define TVN_SELCHANGINGA (TVN_FIRST-1)")]
         public const uint TVN_SELCHANGINGA = unchecked((0U - 400U) - 1);
@@ -5604,75 +4959,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define ES_EX_ZOOMABLE 0x0010L")]
         public const int ES_EX_ZOOMABLE = 0x0010;
-
-        [NativeTypeName("#define EM_SETCUEBANNER (ECM_FIRST + 1)")]
-        public const int EM_SETCUEBANNER = (0x1500 + 1);
-
-        [NativeTypeName("#define EM_GETCUEBANNER (ECM_FIRST + 2)")]
-        public const int EM_GETCUEBANNER = (0x1500 + 2);
-
-        [NativeTypeName("#define EM_SHOWBALLOONTIP (ECM_FIRST + 3)")]
-        public const int EM_SHOWBALLOONTIP = (0x1500 + 3);
-
-        [NativeTypeName("#define EM_HIDEBALLOONTIP (ECM_FIRST + 4)")]
-        public const int EM_HIDEBALLOONTIP = (0x1500 + 4);
-
-        [NativeTypeName("#define EM_SETHILITE (ECM_FIRST + 5)")]
-        public const int EM_SETHILITE = (0x1500 + 5);
-
-        [NativeTypeName("#define EM_GETHILITE (ECM_FIRST + 6)")]
-        public const int EM_GETHILITE = (0x1500 + 6);
-
-        [NativeTypeName("#define EM_NOSETFOCUS (ECM_FIRST + 7)")]
-        public const int EM_NOSETFOCUS = (0x1500 + 7);
-
-        [NativeTypeName("#define EM_TAKEFOCUS (ECM_FIRST + 8)")]
-        public const int EM_TAKEFOCUS = (0x1500 + 8);
-
-        [NativeTypeName("#define EM_SETEXTENDEDSTYLE (ECM_FIRST + 10)")]
-        public const int EM_SETEXTENDEDSTYLE = (0x1500 + 10);
-
-        [NativeTypeName("#define EM_GETEXTENDEDSTYLE (ECM_FIRST + 11)")]
-        public const int EM_GETEXTENDEDSTYLE = (0x1500 + 11);
-
-        [NativeTypeName("#define EM_SETENDOFLINE (ECM_FIRST + 12)")]
-        public const int EM_SETENDOFLINE = (0x1500 + 12);
-
-        [NativeTypeName("#define EM_GETENDOFLINE (ECM_FIRST + 13)")]
-        public const int EM_GETENDOFLINE = (0x1500 + 13);
-
-        [NativeTypeName("#define EM_ENABLESEARCHWEB (ECM_FIRST + 14)")]
-        public const int EM_ENABLESEARCHWEB = (0x1500 + 14);
-
-        [NativeTypeName("#define EM_SEARCHWEB (ECM_FIRST + 15)")]
-        public const int EM_SEARCHWEB = (0x1500 + 15);
-
-        [NativeTypeName("#define EM_SETCARETINDEX (ECM_FIRST + 17)")]
-        public const int EM_SETCARETINDEX = (0x1500 + 17);
-
-        [NativeTypeName("#define EM_GETCARETINDEX (ECM_FIRST + 18)")]
-        public const int EM_GETCARETINDEX = (0x1500 + 18);
-
-        [NativeTypeName("#define EM_GETZOOM (WM_USER + 224)")]
-        public const int EM_GETZOOM = (0x0400 + 224);
-
-        [NativeTypeName("#define EM_SETZOOM (WM_USER + 225)")]
-        public const int EM_SETZOOM = (0x0400 + 225);
-
-        [NativeTypeName("#define EM_FILELINEFROMCHAR (ECM_FIRST + 19)")]
-        public const int EM_FILELINEFROMCHAR = (0x1500 + 19);
-
-        [NativeTypeName("#define EM_FILELINEINDEX (ECM_FIRST + 20)")]
-        public const int EM_FILELINEINDEX = (0x1500 + 20);
-
-        [NativeTypeName("#define EM_FILELINELENGTH (ECM_FIRST + 21)")]
-        public const int EM_FILELINELENGTH = (0x1500 + 21);
-
-        [NativeTypeName("#define EM_GETFILELINE (ECM_FIRST + 22)")]
-        public const int EM_GETFILELINE = (0x1500 + 22);
-
-        [NativeTypeName("#define EM_GETFILELINECOUNT (ECM_FIRST + 23)")]
-        public const int EM_GETFILELINECOUNT = (0x1500 + 23);
 
         [NativeTypeName("#define EN_SEARCHWEB (EN_FIRST - 0)")]
         public const uint EN_SEARCHWEB = unchecked((0U - 1520U) - 0);

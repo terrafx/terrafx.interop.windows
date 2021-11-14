@@ -245,9 +245,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define PROTECTION_LEVEL_DEFAULT ((UINT)-1)")]
         public const uint PROTECTION_LEVEL_DEFAULT = unchecked((uint)(-1));
 
-        [NativeTypeName("#define INET_ADDRSTRLEN 22")]
-        public const int INET_ADDRSTRLEN = 22;
-
         [NativeTypeName("#define INET6_ADDRSTRLEN 65")]
         public const int INET6_ADDRSTRLEN = 65;
 

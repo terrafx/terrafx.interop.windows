@@ -829,9 +829,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define STR_GPS_NO_OPLOCK L\"GPS_NO_OPLOCK\"")]
         public const string STR_GPS_NO_OPLOCK = "GPS_NO_OPLOCK";
 
-        [NativeTypeName("#define DI_GETDRAGIMAGE TEXT(\"ShellGetDragImage\")")]
-        public const string DI_GETDRAGIMAGE = "ShellGetDragImage";
-
         [NativeTypeName("#define ARCONTENT_AUTORUNINF 0x00000002")]
         public const int ARCONTENT_AUTORUNINF = 0x00000002;
 

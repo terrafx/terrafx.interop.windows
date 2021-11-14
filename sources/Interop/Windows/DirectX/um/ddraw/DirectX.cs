@@ -86,9 +86,6 @@ namespace TerraFX.Interop.DirectX
         [NativeTypeName("#define DD_ROP_SPACE (256/32)")]
         public const int DD_ROP_SPACE = (256 / 32);
 
-        [NativeTypeName("#define MAX_DDDEVICEID_STRING 512")]
-        public const int MAX_DDDEVICEID_STRING = 512;
-
         [NativeTypeName("#define DDGDI_GETHOSTIDENTIFIER 0x00000001L")]
         public const int DDGDI_GETHOSTIDENTIFIER = 0x00000001;
 

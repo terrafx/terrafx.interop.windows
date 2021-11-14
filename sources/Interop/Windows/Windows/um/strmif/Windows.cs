@@ -36,12 +36,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define CHARS_IN_GUID 39")]
         public const int CHARS_IN_GUID = 39;
 
-        [NativeTypeName("#define MAX_PIN_NAME 128")]
-        public const int MAX_PIN_NAME = 128;
-
-        [NativeTypeName("#define MAX_FILTER_NAME 128")]
-        public const int MAX_FILTER_NAME = 128;
-
         [NativeTypeName("#define AM_GBF_PREVFRAMESKIPPED 1")]
         public const int AM_GBF_PREVFRAMESKIPPED = 1;
 

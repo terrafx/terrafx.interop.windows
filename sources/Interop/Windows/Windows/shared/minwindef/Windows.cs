@@ -10,9 +10,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define STRICT 1")]
         public const int STRICT = 1;
 
-        [NativeTypeName("#define MAX_PATH 260")]
-        public const int MAX_PATH = 260;
-
         [NativeTypeName("#define FALSE 0")]
         public const int FALSE = 0;
 

@@ -57,9 +57,6 @@ namespace TerraFX.Interop.Windows
         [DllImport("kernel32", EntryPoint = "Module32Next", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL Module32NextA(HANDLE hSnapshot, [NativeTypeName("LPMODULEENTRY32")] MODULEENTRY32* lpme);
 
-        [NativeTypeName("#define MAX_MODULE_NAME32 255")]
-        public const int MAX_MODULE_NAME32 = 255;
-
         [NativeTypeName("#define TH32CS_SNAPHEAPLIST 0x00000001")]
         public const int TH32CS_SNAPHEAPLIST = 0x00000001;
 

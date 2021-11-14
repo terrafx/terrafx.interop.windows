@@ -7,38 +7,11 @@ namespace TerraFX.Interop.Windows
 {
     public static partial class Windows
     {
-        [NativeTypeName("#define MAX_ADAPTER_DESCRIPTION_LENGTH 128")]
-        public const int MAX_ADAPTER_DESCRIPTION_LENGTH = 128;
-
-        [NativeTypeName("#define MAX_ADAPTER_NAME_LENGTH 256")]
-        public const int MAX_ADAPTER_NAME_LENGTH = 256;
-
-        [NativeTypeName("#define MAX_ADAPTER_ADDRESS_LENGTH 8")]
-        public const int MAX_ADAPTER_ADDRESS_LENGTH = 8;
-
         [NativeTypeName("#define DEFAULT_MINIMUM_ENTITIES 32")]
         public const int DEFAULT_MINIMUM_ENTITIES = 32;
 
-        [NativeTypeName("#define MAX_HOSTNAME_LEN 128")]
-        public const int MAX_HOSTNAME_LEN = 128;
-
-        [NativeTypeName("#define MAX_DOMAIN_NAME_LEN 128")]
-        public const int MAX_DOMAIN_NAME_LEN = 128;
-
-        [NativeTypeName("#define MAX_SCOPE_ID_LEN 256")]
-        public const int MAX_SCOPE_ID_LEN = 256;
-
-        [NativeTypeName("#define MAX_DHCPV6_DUID_LENGTH 130")]
-        public const int MAX_DHCPV6_DUID_LENGTH = 130;
-
-        [NativeTypeName("#define MAX_DNS_SUFFIX_STRING_LENGTH 256")]
-        public const int MAX_DNS_SUFFIX_STRING_LENGTH = 256;
-
         [NativeTypeName("#define BROADCAST_NODETYPE 1")]
         public const int BROADCAST_NODETYPE = 1;
-
-        [NativeTypeName("#define PEER_TO_PEER_NODETYPE 2")]
-        public const int PEER_TO_PEER_NODETYPE = 2;
 
         [NativeTypeName("#define MIXED_NODETYPE 4")]
         public const int MIXED_NODETYPE = 4;
