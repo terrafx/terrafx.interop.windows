@@ -7,9 +7,6 @@ namespace TerraFX.Interop.Windows
 {
     public static partial class DEVICE
     {
-        [NativeTypeName("#define DEVICE_FONTTYPE 0x0002")]
-        public const int DEVICE_FONTTYPE = 0x0002;
-
         [NativeTypeName("#define DEVICE_DEFAULT_FONT 14")]
         public const int DEVICE_DEFAULT_FONT = 14;
     }

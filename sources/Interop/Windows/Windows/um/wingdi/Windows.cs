@@ -1883,6 +1883,9 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define RASTER_FONTTYPE 0x0001")]
         public const int RASTER_FONTTYPE = 0x0001;
 
+        [NativeTypeName("#define DEVICE_FONTTYPE 0x0002")]
+        public const int DEVICE_FONTTYPE = 0x0002;
+
         [NativeTypeName("#define TRUETYPE_FONTTYPE 0x0004")]
         public const int TRUETYPE_FONTTYPE = 0x0004;
 
