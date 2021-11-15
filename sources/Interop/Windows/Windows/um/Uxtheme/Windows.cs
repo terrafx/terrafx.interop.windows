@@ -348,14 +348,5 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define BPBF_COMPOSITED BPBF_TOPDOWNDIB")]
         public const BP_BUFFERFORMAT BPBF_COMPOSITED = BPBF_TOPDOWNDIB;
-
-        [NativeTypeName("#define BPPF_ERASE 0x0001")]
-        public const int BPPF_ERASE = 0x0001;
-
-        [NativeTypeName("#define BPPF_NOCLIP 0x0002")]
-        public const int BPPF_NOCLIP = 0x0002;
-
-        [NativeTypeName("#define BPPF_NONCLIENT 0x0004")]
-        public const int BPPF_NONCLIENT = 0x0004;
     }
 }

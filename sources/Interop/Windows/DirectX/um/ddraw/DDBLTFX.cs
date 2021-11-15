@@ -252,5 +252,32 @@ namespace TerraFX.Interop.DirectX
             [NativeTypeName("LPDIRECTDRAWSURFACE")]
             public IDirectDrawSurface* lpDDSPattern;
         }
+
+        [NativeTypeName("#define DDBLTFX_ARITHSTRETCHY 0x00000001l")]
+        public const int DDBLTFX_ARITHSTRETCHY = 0x00000001;
+
+        [NativeTypeName("#define DDBLTFX_MIRRORLEFTRIGHT 0x00000002l")]
+        public const int DDBLTFX_MIRRORLEFTRIGHT = 0x00000002;
+
+        [NativeTypeName("#define DDBLTFX_MIRRORUPDOWN 0x00000004l")]
+        public const int DDBLTFX_MIRRORUPDOWN = 0x00000004;
+
+        [NativeTypeName("#define DDBLTFX_NOTEARING 0x00000008l")]
+        public const int DDBLTFX_NOTEARING = 0x00000008;
+
+        [NativeTypeName("#define DDBLTFX_ROTATE180 0x00000010l")]
+        public const int DDBLTFX_ROTATE180 = 0x00000010;
+
+        [NativeTypeName("#define DDBLTFX_ROTATE270 0x00000020l")]
+        public const int DDBLTFX_ROTATE270 = 0x00000020;
+
+        [NativeTypeName("#define DDBLTFX_ROTATE90 0x00000040l")]
+        public const int DDBLTFX_ROTATE90 = 0x00000040;
+
+        [NativeTypeName("#define DDBLTFX_ZBUFFERRANGE 0x00000080l")]
+        public const int DDBLTFX_ZBUFFERRANGE = 0x00000080;
+
+        [NativeTypeName("#define DDBLTFX_ZBUFFERBASEDEST 0x00000100l")]
+        public const int DDBLTFX_ZBUFFERBASEDEST = 0x00000100;
     }
 }

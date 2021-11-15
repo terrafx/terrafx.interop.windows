@@ -170,12 +170,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define PSWIZB_RESTORE 1")]
         public const int PSWIZB_RESTORE = 1;
 
-        [NativeTypeName("#define ID_PSRESTARTWINDOWS 0x2")]
-        public const int ID_PSRESTARTWINDOWS = 0x2;
-
-        [NativeTypeName("#define ID_PSREBOOTSYSTEM (ID_PSRESTARTWINDOWS | 0x1)")]
-        public const int ID_PSREBOOTSYSTEM = (0x2 | 0x1);
-
         [NativeTypeName("#define WIZ_CXDLG 276")]
         public const int WIZ_CXDLG = 276;
 

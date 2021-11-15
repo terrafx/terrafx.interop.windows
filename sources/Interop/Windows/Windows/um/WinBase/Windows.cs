@@ -1529,21 +1529,6 @@ namespace TerraFX.Interop.Windows
         [return: NativeTypeName("DWORD")]
         public static extern uint RaiseCustomSystemEventTrigger([NativeTypeName("PCUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG")] CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG* CustomSystemEventTriggerConfig);
 
-        [NativeTypeName("#define WAIT_FAILED ((DWORD)0xFFFFFFFF)")]
-        public const uint WAIT_FAILED = ((uint)(0xFFFFFFFF));
-
-        [NativeTypeName("#define WAIT_OBJECT_0 ((STATUS_WAIT_0 ) + 0 )")]
-        public const uint WAIT_OBJECT_0 = ((((uint)(0x00000000))) + 0);
-
-        [NativeTypeName("#define WAIT_ABANDONED ((STATUS_ABANDONED_WAIT_0 ) + 0 )")]
-        public const uint WAIT_ABANDONED = ((((uint)(0x00000080))) + 0);
-
-        [NativeTypeName("#define WAIT_ABANDONED_0 ((STATUS_ABANDONED_WAIT_0 ) + 0 )")]
-        public const uint WAIT_ABANDONED_0 = ((((uint)(0x00000080))) + 0);
-
-        [NativeTypeName("#define WAIT_IO_COMPLETION STATUS_USER_APC")]
-        public const uint WAIT_IO_COMPLETION = ((uint)(0x000000C0));
-
         [NativeTypeName("#define PROGRESS_CONTINUE 0")]
         public const int PROGRESS_CONTINUE = 0;
 
@@ -1873,12 +1858,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define SetFileShortName SetFileShortNameW")]
         public static delegate*<HANDLE, ushort*, BOOL> SetFileShortName => &SetFileShortNameW;
-
-        [NativeTypeName("#define HANDLE_FLAG_INHERIT 0x00000001")]
-        public const int HANDLE_FLAG_INHERIT = 0x00000001;
-
-        [NativeTypeName("#define HANDLE_FLAG_PROTECT_FROM_CLOSE 0x00000002")]
-        public const int HANDLE_FLAG_PROTECT_FROM_CLOSE = 0x00000002;
 
         [NativeTypeName("#define HINSTANCE_ERROR 32")]
         public const int HINSTANCE_ERROR = 32;

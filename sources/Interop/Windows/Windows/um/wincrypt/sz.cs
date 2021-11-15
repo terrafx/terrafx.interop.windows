@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop.Windows
 {
-    public static partial class sz
+    public static partial class SZ
     {
         [NativeTypeName("#define sz_CERT_STORE_PROV_MEMORY \"Memory\"")]
         public static ReadOnlySpan<byte> sz_CERT_STORE_PROV_MEMORY => new byte[] { 0x4D, 0x65, 0x6D, 0x6F, 0x72, 0x79, 0x00 };

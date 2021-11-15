@@ -7,12 +7,6 @@ namespace TerraFX.Interop.Windows
 {
     public static partial class Windows
     {
-        [NativeTypeName("#define ROTFLAGS_REGISTRATIONKEEPSALIVE 0x1")]
-        public const int ROTFLAGS_REGISTRATIONKEEPSALIVE = 0x1;
-
-        [NativeTypeName("#define ROTFLAGS_ALLOWANYCLIENT 0x2")]
-        public const int ROTFLAGS_ALLOWANYCLIENT = 0x2;
-
         [NativeTypeName("#define ROT_COMPARE_MAX 2048")]
         public const int ROT_COMPARE_MAX = 2048;
 

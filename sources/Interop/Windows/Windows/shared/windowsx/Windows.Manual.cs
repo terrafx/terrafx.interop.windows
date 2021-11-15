@@ -5,13 +5,15 @@
 
 using static TerraFX.Interop.Windows.CB;
 using static TerraFX.Interop.Windows.EM;
+using static TerraFX.Interop.Windows.GWL;
+using static TerraFX.Interop.Windows.GWLP;
 using static TerraFX.Interop.Windows.LB;
 using static TerraFX.Interop.Windows.MF;
-using static TerraFX.Interop.Windows.VK;
 using static TerraFX.Interop.Windows.SB;
 using static TerraFX.Interop.Windows.SW;
 using static TerraFX.Interop.Windows.WM;
 using static TerraFX.Interop.Windows.WS;
+using static TerraFX.Interop.Windows.VK;
 
 namespace TerraFX.Interop.Windows
 {

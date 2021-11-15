@@ -1,8 +1,13 @@
 --with-type
+DDBLTFX=struct
 DDSCAPS=struct
 DDSCAPS2=struct
 EMR=struct
+FXEcho=struct
 FXEQ=struct
+FXMasteringLimiter=struct
+FXReverb=struct
+HANDLE=struct
 INPUT=struct
 SID=struct
 WS_HTTP_HEADER_MAPPING=struct

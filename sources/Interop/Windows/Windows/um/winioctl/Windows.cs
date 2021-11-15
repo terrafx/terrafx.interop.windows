@@ -441,9 +441,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define ATAPI_ID_CMD 0xA1")]
         public const int ATAPI_ID_CMD = 0xA1;
 
-        [NativeTypeName("#define ID_CMD 0xEC")]
-        public const int ID_CMD = 0xEC;
-
         [NativeTypeName("#define IDENTIFY_BUFFER_SIZE 512")]
         public const int IDENTIFY_BUFFER_SIZE = 512;
 

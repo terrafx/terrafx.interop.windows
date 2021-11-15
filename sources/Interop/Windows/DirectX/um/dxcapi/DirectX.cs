@@ -16,29 +16,5 @@ namespace TerraFX.Interop.DirectX
 
         [DllImport("dxcompiler", ExactSpelling = true)]
         public static extern HRESULT DxcCreateInstance2(IMalloc* pMalloc, [NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv);
-
-        [NativeTypeName("const UINT32")]
-        public const uint DxcValidatorFlags_Default = 0;
-
-        [NativeTypeName("const UINT32")]
-        public const uint DxcValidatorFlags_InPlaceEdit = 1;
-
-        [NativeTypeName("const UINT32")]
-        public const uint DxcValidatorFlags_RootSignatureOnly = 2;
-
-        [NativeTypeName("const UINT32")]
-        public const uint DxcValidatorFlags_ModuleOnly = 4;
-
-        [NativeTypeName("const UINT32")]
-        public const uint DxcValidatorFlags_ValidMask = 0x7;
-
-        [NativeTypeName("const UINT32")]
-        public const uint DxcVersionInfoFlags_None = 0;
-
-        [NativeTypeName("const UINT32")]
-        public const uint DxcVersionInfoFlags_Debug = 1;
-
-        [NativeTypeName("const UINT32")]
-        public const uint DxcVersionInfoFlags_Internal = 2;
     }
 }

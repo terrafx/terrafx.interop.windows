@@ -3,7 +3,6 @@
 // Ported from um/xaudio2.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
@@ -13,15 +12,6 @@ namespace TerraFX.Interop.DirectX
     {
         [DllImport("xaudio2_9", ExactSpelling = true)]
         public static extern HRESULT XAudio2CreateWithVersionInfo(IXAudio2** ppXAudio2, [NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("XAUDIO2_PROCESSOR")] uint XAudio2Processor = 0x00000001, [NativeTypeName("DWORD")] uint ntddiVersion = 0x0A00000A);
-
-        [NativeTypeName("#define XAUDIO2D_DLL_A \"xaudio2_9d.dll\"")]
-        public static ReadOnlySpan<byte> XAUDIO2D_DLL_A => new byte[] { 0x78, 0x61, 0x75, 0x64, 0x69, 0x6F, 0x32, 0x5F, 0x39, 0x64, 0x2E, 0x64, 0x6C, 0x6C, 0x00 };
-
-        [NativeTypeName("#define XAUDIO2D_DLL_W L\"xaudio2_9d.dll\"")]
-        public const string XAUDIO2D_DLL_W = "xaudio2_9d.dll";
-
-        [NativeTypeName("#define XAUDIO2D_DLL XAUDIO2D_DLL_W")]
-        public const string XAUDIO2D_DLL = "xaudio2_9d.dll";
 
         [NativeTypeName("#define Processor1 0x00000001")]
         public const int Processor1 = 0x00000001;

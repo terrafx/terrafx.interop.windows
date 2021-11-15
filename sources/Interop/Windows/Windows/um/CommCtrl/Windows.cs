@@ -1792,18 +1792,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define BCN_DROPDOWN (BCN_FIRST + 0x0002)")]
         public const uint BCN_DROPDOWN = unchecked((0U - 1250U) + 0x0002);
 
-        [NativeTypeName("#define TD_WARNING_ICON MAKEINTRESOURCEW(-1)")]
-        public static ushort* TD_WARNING_ICON => unchecked((ushort*)((nuint)((ushort)(-1))));
-
-        [NativeTypeName("#define TD_ERROR_ICON MAKEINTRESOURCEW(-2)")]
-        public static ushort* TD_ERROR_ICON => unchecked((ushort*)((nuint)((ushort)(-2))));
-
-        [NativeTypeName("#define TD_INFORMATION_ICON MAKEINTRESOURCEW(-3)")]
-        public static ushort* TD_INFORMATION_ICON => unchecked((ushort*)((nuint)((ushort)(-3))));
-
-        [NativeTypeName("#define TD_SHIELD_ICON MAKEINTRESOURCEW(-4)")]
-        public static ushort* TD_SHIELD_ICON => unchecked((ushort*)((nuint)((ushort)(-4))));
-
         [NativeTypeName("#define FSB_FLAT_MODE 2")]
         public const int FSB_FLAT_MODE = 2;
 

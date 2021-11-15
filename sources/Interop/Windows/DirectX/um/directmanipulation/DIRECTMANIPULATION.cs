@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.DirectX
 {
-    public static partial class DirectX
+    public static partial class DIRECTMANIPULATION
     {
         [NativeTypeName("#define DIRECTMANIPULATION_KEYBOARDFOCUS ( 0xfffffffe )")]
         public const uint DIRECTMANIPULATION_KEYBOARDFOCUS = (0xfffffffe);

@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.DirectX
 {
-    public static partial class DirectX
+    public static partial class XAPOBASE
     {
         [NativeTypeName("#define XAPOBASE_DEFAULT_FORMAT_TAG WAVE_FORMAT_IEEE_FLOAT")]
         public const int XAPOBASE_DEFAULT_FORMAT_TAG = 0x0003;
