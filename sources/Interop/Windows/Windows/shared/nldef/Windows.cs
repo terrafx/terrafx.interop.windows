@@ -26,8 +26,5 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define NL_MAX_METRIC_COMPONENT ((((ULONG) 1) << 31) - 1)")]
         public const uint NL_MAX_METRIC_COMPONENT = ((((uint)(1)) << 31) - 1);
-
-        [NativeTypeName("#define NET_IF_CURRENT_SESSION ((ULONG)-1)")]
-        public const uint NET_IF_CURRENT_SESSION = unchecked((uint)(-1));
     }
 }

@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows
 {
@@ -94,9 +93,6 @@ namespace TerraFX.Interop.Windows
 
         [DllImport("hlink", ExactSpelling = true)]
         public static extern HRESULT HlinkTranslateURL([NativeTypeName("LPCWSTR")] ushort* pwzURL, [NativeTypeName("DWORD")] uint grfFlags, [NativeTypeName("LPWSTR *")] ushort** ppwzTranslatedURL);
-
-        [NativeTypeName("#define SID_SHlinkFrame IID_IHlinkFrame")]
-        public static ref readonly Guid SID_SHlinkFrame => ref IID_IHlinkFrame;
 
         [NativeTypeName("#define HLINK_E_FIRST (OLE_E_LAST+1)")]
         public const int HLINK_E_FIRST = unchecked(((int)(0x800400FF)) + 1);

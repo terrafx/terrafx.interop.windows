@@ -48,23 +48,5 @@ namespace TerraFX.Interop.DirectX
 
         [DllImport("d3d10", ExactSpelling = true)]
         public static extern HRESULT D3D10DisassembleEffect(ID3D10Effect* pEffect, BOOL EnableColorCode, [NativeTypeName("ID3D10Blob **")] ID3DBlob** ppDisassembly);
-
-        [NativeTypeName("#define D3D10_EFFECT_COMPILE_CHILD_EFFECT (1 << 0)")]
-        public const int D3D10_EFFECT_COMPILE_CHILD_EFFECT = (1 << 0);
-
-        [NativeTypeName("#define D3D10_EFFECT_COMPILE_ALLOW_SLOW_OPS (1 << 1)")]
-        public const int D3D10_EFFECT_COMPILE_ALLOW_SLOW_OPS = (1 << 1);
-
-        [NativeTypeName("#define D3D10_EFFECT_SINGLE_THREADED (1 << 3)")]
-        public const int D3D10_EFFECT_SINGLE_THREADED = (1 << 3);
-
-        [NativeTypeName("#define D3D10_EFFECT_VARIABLE_POOLED (1 << 0)")]
-        public const int D3D10_EFFECT_VARIABLE_POOLED = (1 << 0);
-
-        [NativeTypeName("#define D3D10_EFFECT_VARIABLE_ANNOTATION (1 << 1)")]
-        public const int D3D10_EFFECT_VARIABLE_ANNOTATION = (1 << 1);
-
-        [NativeTypeName("#define D3D10_EFFECT_VARIABLE_EXPLICIT_BIND_POINT (1 << 2)")]
-        public const int D3D10_EFFECT_VARIABLE_EXPLICIT_BIND_POINT = (1 << 2);
     }
 }

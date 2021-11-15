@@ -489,53 +489,8 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define waveInGetErrorText waveInGetErrorTextW")]
         public static delegate*<uint, ushort*, uint, uint> waveInGetErrorText => &waveInGetErrorTextW;
 
-        [NativeTypeName("#define MIDIERR_UNPREPARED (MIDIERR_BASE + 0)")]
-        public const int MIDIERR_UNPREPARED = (64 + 0);
-
-        [NativeTypeName("#define MIDIERR_STILLPLAYING (MIDIERR_BASE + 1)")]
-        public const int MIDIERR_STILLPLAYING = (64 + 1);
-
-        [NativeTypeName("#define MIDIERR_NOMAP (MIDIERR_BASE + 2)")]
-        public const int MIDIERR_NOMAP = (64 + 2);
-
-        [NativeTypeName("#define MIDIERR_NOTREADY (MIDIERR_BASE + 3)")]
-        public const int MIDIERR_NOTREADY = (64 + 3);
-
-        [NativeTypeName("#define MIDIERR_NODEVICE (MIDIERR_BASE + 4)")]
-        public const int MIDIERR_NODEVICE = (64 + 4);
-
-        [NativeTypeName("#define MIDIERR_INVALIDSETUP (MIDIERR_BASE + 5)")]
-        public const int MIDIERR_INVALIDSETUP = (64 + 5);
-
-        [NativeTypeName("#define MIDIERR_BADOPENMODE (MIDIERR_BASE + 6)")]
-        public const int MIDIERR_BADOPENMODE = (64 + 6);
-
-        [NativeTypeName("#define MIDIERR_DONT_CONTINUE (MIDIERR_BASE + 7)")]
-        public const int MIDIERR_DONT_CONTINUE = (64 + 7);
-
-        [NativeTypeName("#define MIDIERR_LASTERROR (MIDIERR_BASE + 7)")]
-        public const int MIDIERR_LASTERROR = (64 + 7);
-
         [NativeTypeName("#define MIDIPATCHSIZE 128")]
         public const int MIDIPATCHSIZE = 128;
-
-        [NativeTypeName("#define MIM_OPEN MM_MIM_OPEN")]
-        public const int MIM_OPEN = 0x3C1;
-
-        [NativeTypeName("#define MIM_CLOSE MM_MIM_CLOSE")]
-        public const int MIM_CLOSE = 0x3C2;
-
-        [NativeTypeName("#define MIM_DATA MM_MIM_DATA")]
-        public const int MIM_DATA = 0x3C3;
-
-        [NativeTypeName("#define MIM_LONGDATA MM_MIM_LONGDATA")]
-        public const int MIM_LONGDATA = 0x3C4;
-
-        [NativeTypeName("#define MIM_ERROR MM_MIM_ERROR")]
-        public const int MIM_ERROR = 0x3C5;
-
-        [NativeTypeName("#define MIM_LONGERROR MM_MIM_LONGERROR")]
-        public const int MIM_LONGERROR = 0x3C6;
 
         [NativeTypeName("#define MOM_OPEN MM_MOM_OPEN")]
         public const int MOM_OPEN = 0x3C7;
@@ -545,9 +500,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define MOM_DONE MM_MOM_DONE")]
         public const int MOM_DONE = 0x3C9;
-
-        [NativeTypeName("#define MIM_MOREDATA MM_MIM_MOREDATA")]
-        public const int MIM_MOREDATA = 0x3CC;
 
         [NativeTypeName("#define MOM_POSITIONCB MM_MOM_POSITIONCB")]
         public const int MOM_POSITIONCB = 0x3CA;
@@ -572,27 +524,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define MIDI_UNCACHE 4")]
         public const int MIDI_UNCACHE = 4;
-
-        [NativeTypeName("#define MOD_MIDIPORT 1")]
-        public const int MOD_MIDIPORT = 1;
-
-        [NativeTypeName("#define MOD_SYNTH 2")]
-        public const int MOD_SYNTH = 2;
-
-        [NativeTypeName("#define MOD_SQSYNTH 3")]
-        public const int MOD_SQSYNTH = 3;
-
-        [NativeTypeName("#define MOD_FMSYNTH 4")]
-        public const int MOD_FMSYNTH = 4;
-
-        [NativeTypeName("#define MOD_MAPPER 5")]
-        public const int MOD_MAPPER = 5;
-
-        [NativeTypeName("#define MOD_WAVETABLE 6")]
-        public const int MOD_WAVETABLE = 6;
-
-        [NativeTypeName("#define MOD_SWSYNTH 7")]
-        public const int MOD_SWSYNTH = 7;
 
         [NativeTypeName("#define MIDICAPS_VOLUME 0x0001")]
         public const int MIDICAPS_VOLUME = 0x0001;
@@ -690,12 +621,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define auxGetDevCaps auxGetDevCapsW")]
         public static delegate*<nuint, AUXCAPSW*, uint, uint> auxGetDevCaps => &auxGetDevCapsW;
 
-        [NativeTypeName("#define MIXER_SHORT_NAME_CHARS 16")]
-        public const int MIXER_SHORT_NAME_CHARS = 16;
-
-        [NativeTypeName("#define MIXER_LONG_NAME_CHARS 64")]
-        public const int MIXER_LONG_NAME_CHARS = 64;
-
         [NativeTypeName("#define MIXERR_INVALLINE (MIXERR_BASE + 0)")]
         public const int MIXERR_INVALLINE = (1024 + 0);
 
@@ -708,199 +633,16 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define MIXERR_LASTERROR (MIXERR_BASE + 2)")]
         public const int MIXERR_LASTERROR = (1024 + 2);
 
-        [NativeTypeName("#define MIXER_OBJECTF_HANDLE 0x80000000L")]
-        public const uint MIXER_OBJECTF_HANDLE = 0x80000000;
-
-        [NativeTypeName("#define MIXER_OBJECTF_MIXER 0x00000000L")]
-        public const int MIXER_OBJECTF_MIXER = 0x00000000;
-
-        [NativeTypeName("#define MIXER_OBJECTF_HMIXER (MIXER_OBJECTF_HANDLE|MIXER_OBJECTF_MIXER)")]
-        public const uint MIXER_OBJECTF_HMIXER = (0x80000000 | 0x00000000);
-
-        [NativeTypeName("#define MIXER_OBJECTF_WAVEOUT 0x10000000L")]
-        public const int MIXER_OBJECTF_WAVEOUT = 0x10000000;
-
-        [NativeTypeName("#define MIXER_OBJECTF_HWAVEOUT (MIXER_OBJECTF_HANDLE|MIXER_OBJECTF_WAVEOUT)")]
-        public const uint MIXER_OBJECTF_HWAVEOUT = (0x80000000 | 0x10000000);
-
-        [NativeTypeName("#define MIXER_OBJECTF_WAVEIN 0x20000000L")]
-        public const int MIXER_OBJECTF_WAVEIN = 0x20000000;
-
-        [NativeTypeName("#define MIXER_OBJECTF_HWAVEIN (MIXER_OBJECTF_HANDLE|MIXER_OBJECTF_WAVEIN)")]
-        public const uint MIXER_OBJECTF_HWAVEIN = (0x80000000 | 0x20000000);
-
-        [NativeTypeName("#define MIXER_OBJECTF_MIDIOUT 0x30000000L")]
-        public const int MIXER_OBJECTF_MIDIOUT = 0x30000000;
-
-        [NativeTypeName("#define MIXER_OBJECTF_HMIDIOUT (MIXER_OBJECTF_HANDLE|MIXER_OBJECTF_MIDIOUT)")]
-        public const uint MIXER_OBJECTF_HMIDIOUT = (0x80000000 | 0x30000000);
-
-        [NativeTypeName("#define MIXER_OBJECTF_MIDIIN 0x40000000L")]
-        public const int MIXER_OBJECTF_MIDIIN = 0x40000000;
-
-        [NativeTypeName("#define MIXER_OBJECTF_HMIDIIN (MIXER_OBJECTF_HANDLE|MIXER_OBJECTF_MIDIIN)")]
-        public const uint MIXER_OBJECTF_HMIDIIN = (0x80000000 | 0x40000000);
-
-        [NativeTypeName("#define MIXER_OBJECTF_AUX 0x50000000L")]
-        public const int MIXER_OBJECTF_AUX = 0x50000000;
-
         [NativeTypeName("#define mixerGetDevCaps mixerGetDevCapsW")]
         public static delegate*<nuint, MIXERCAPSW*, uint, uint> mixerGetDevCaps => &mixerGetDevCapsW;
-
-        [NativeTypeName("#define MIXERLINE_LINEF_ACTIVE 0x00000001L")]
-        public const int MIXERLINE_LINEF_ACTIVE = 0x00000001;
-
-        [NativeTypeName("#define MIXERLINE_LINEF_DISCONNECTED 0x00008000L")]
-        public const int MIXERLINE_LINEF_DISCONNECTED = 0x00008000;
-
-        [NativeTypeName("#define MIXERLINE_LINEF_SOURCE 0x80000000L")]
-        public const uint MIXERLINE_LINEF_SOURCE = 0x80000000;
-
-        [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_DST_FIRST 0x00000000L")]
-        public const int MIXERLINE_COMPONENTTYPE_DST_FIRST = 0x00000000;
-
-        [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_DST_UNDEFINED (MIXERLINE_COMPONENTTYPE_DST_FIRST + 0)")]
-        public const int MIXERLINE_COMPONENTTYPE_DST_UNDEFINED = (0x00000000 + 0);
-
-        [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_DST_DIGITAL (MIXERLINE_COMPONENTTYPE_DST_FIRST + 1)")]
-        public const int MIXERLINE_COMPONENTTYPE_DST_DIGITAL = (0x00000000 + 1);
-
-        [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_DST_LINE (MIXERLINE_COMPONENTTYPE_DST_FIRST + 2)")]
-        public const int MIXERLINE_COMPONENTTYPE_DST_LINE = (0x00000000 + 2);
-
-        [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_DST_MONITOR (MIXERLINE_COMPONENTTYPE_DST_FIRST + 3)")]
-        public const int MIXERLINE_COMPONENTTYPE_DST_MONITOR = (0x00000000 + 3);
-
-        [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_DST_SPEAKERS (MIXERLINE_COMPONENTTYPE_DST_FIRST + 4)")]
-        public const int MIXERLINE_COMPONENTTYPE_DST_SPEAKERS = (0x00000000 + 4);
-
-        [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_DST_HEADPHONES (MIXERLINE_COMPONENTTYPE_DST_FIRST + 5)")]
-        public const int MIXERLINE_COMPONENTTYPE_DST_HEADPHONES = (0x00000000 + 5);
-
-        [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_DST_TELEPHONE (MIXERLINE_COMPONENTTYPE_DST_FIRST + 6)")]
-        public const int MIXERLINE_COMPONENTTYPE_DST_TELEPHONE = (0x00000000 + 6);
-
-        [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_DST_WAVEIN (MIXERLINE_COMPONENTTYPE_DST_FIRST + 7)")]
-        public const int MIXERLINE_COMPONENTTYPE_DST_WAVEIN = (0x00000000 + 7);
-
-        [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_DST_VOICEIN (MIXERLINE_COMPONENTTYPE_DST_FIRST + 8)")]
-        public const int MIXERLINE_COMPONENTTYPE_DST_VOICEIN = (0x00000000 + 8);
-
-        [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_DST_LAST (MIXERLINE_COMPONENTTYPE_DST_FIRST + 8)")]
-        public const int MIXERLINE_COMPONENTTYPE_DST_LAST = (0x00000000 + 8);
-
-        [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_FIRST 0x00001000L")]
-        public const int MIXERLINE_COMPONENTTYPE_SRC_FIRST = 0x00001000;
-
-        [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_UNDEFINED (MIXERLINE_COMPONENTTYPE_SRC_FIRST + 0)")]
-        public const int MIXERLINE_COMPONENTTYPE_SRC_UNDEFINED = (0x00001000 + 0);
-
-        [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_DIGITAL (MIXERLINE_COMPONENTTYPE_SRC_FIRST + 1)")]
-        public const int MIXERLINE_COMPONENTTYPE_SRC_DIGITAL = (0x00001000 + 1);
-
-        [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_LINE (MIXERLINE_COMPONENTTYPE_SRC_FIRST + 2)")]
-        public const int MIXERLINE_COMPONENTTYPE_SRC_LINE = (0x00001000 + 2);
-
-        [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_MICROPHONE (MIXERLINE_COMPONENTTYPE_SRC_FIRST + 3)")]
-        public const int MIXERLINE_COMPONENTTYPE_SRC_MICROPHONE = (0x00001000 + 3);
-
-        [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_SYNTHESIZER (MIXERLINE_COMPONENTTYPE_SRC_FIRST + 4)")]
-        public const int MIXERLINE_COMPONENTTYPE_SRC_SYNTHESIZER = (0x00001000 + 4);
-
-        [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_COMPACTDISC (MIXERLINE_COMPONENTTYPE_SRC_FIRST + 5)")]
-        public const int MIXERLINE_COMPONENTTYPE_SRC_COMPACTDISC = (0x00001000 + 5);
-
-        [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_TELEPHONE (MIXERLINE_COMPONENTTYPE_SRC_FIRST + 6)")]
-        public const int MIXERLINE_COMPONENTTYPE_SRC_TELEPHONE = (0x00001000 + 6);
-
-        [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_PCSPEAKER (MIXERLINE_COMPONENTTYPE_SRC_FIRST + 7)")]
-        public const int MIXERLINE_COMPONENTTYPE_SRC_PCSPEAKER = (0x00001000 + 7);
-
-        [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_WAVEOUT (MIXERLINE_COMPONENTTYPE_SRC_FIRST + 8)")]
-        public const int MIXERLINE_COMPONENTTYPE_SRC_WAVEOUT = (0x00001000 + 8);
-
-        [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_AUXILIARY (MIXERLINE_COMPONENTTYPE_SRC_FIRST + 9)")]
-        public const int MIXERLINE_COMPONENTTYPE_SRC_AUXILIARY = (0x00001000 + 9);
-
-        [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_ANALOG (MIXERLINE_COMPONENTTYPE_SRC_FIRST + 10)")]
-        public const int MIXERLINE_COMPONENTTYPE_SRC_ANALOG = (0x00001000 + 10);
-
-        [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_LAST (MIXERLINE_COMPONENTTYPE_SRC_FIRST + 10)")]
-        public const int MIXERLINE_COMPONENTTYPE_SRC_LAST = (0x00001000 + 10);
-
-        [NativeTypeName("#define MIXERLINE_TARGETTYPE_UNDEFINED 0")]
-        public const int MIXERLINE_TARGETTYPE_UNDEFINED = 0;
-
-        [NativeTypeName("#define MIXERLINE_TARGETTYPE_WAVEOUT 1")]
-        public const int MIXERLINE_TARGETTYPE_WAVEOUT = 1;
-
-        [NativeTypeName("#define MIXERLINE_TARGETTYPE_WAVEIN 2")]
-        public const int MIXERLINE_TARGETTYPE_WAVEIN = 2;
-
-        [NativeTypeName("#define MIXERLINE_TARGETTYPE_MIDIOUT 3")]
-        public const int MIXERLINE_TARGETTYPE_MIDIOUT = 3;
-
-        [NativeTypeName("#define MIXERLINE_TARGETTYPE_MIDIIN 4")]
-        public const int MIXERLINE_TARGETTYPE_MIDIIN = 4;
-
-        [NativeTypeName("#define MIXERLINE_TARGETTYPE_AUX 5")]
-        public const int MIXERLINE_TARGETTYPE_AUX = 5;
 
         [NativeTypeName("#define mixerGetLineInfo mixerGetLineInfoW")]
         public static delegate*<HMIXEROBJ, MIXERLINEW*, uint, uint> mixerGetLineInfo => &mixerGetLineInfoW;
 
-        [NativeTypeName("#define MIXER_GETLINEINFOF_DESTINATION 0x00000000L")]
-        public const int MIXER_GETLINEINFOF_DESTINATION = 0x00000000;
-
-        [NativeTypeName("#define MIXER_GETLINEINFOF_SOURCE 0x00000001L")]
-        public const int MIXER_GETLINEINFOF_SOURCE = 0x00000001;
-
-        [NativeTypeName("#define MIXER_GETLINEINFOF_LINEID 0x00000002L")]
-        public const int MIXER_GETLINEINFOF_LINEID = 0x00000002;
-
-        [NativeTypeName("#define MIXER_GETLINEINFOF_COMPONENTTYPE 0x00000003L")]
-        public const int MIXER_GETLINEINFOF_COMPONENTTYPE = 0x00000003;
-
-        [NativeTypeName("#define MIXER_GETLINEINFOF_TARGETTYPE 0x00000004L")]
-        public const int MIXER_GETLINEINFOF_TARGETTYPE = 0x00000004;
-
-        [NativeTypeName("#define MIXER_GETLINEINFOF_QUERYMASK 0x0000000FL")]
-        public const int MIXER_GETLINEINFOF_QUERYMASK = 0x0000000F;
-
         [NativeTypeName("#define mixerGetLineControls mixerGetLineControlsW")]
         public static delegate*<HMIXEROBJ, MIXERLINECONTROLSW*, uint, uint> mixerGetLineControls => &mixerGetLineControlsW;
 
-        [NativeTypeName("#define MIXER_GETLINECONTROLSF_ALL 0x00000000L")]
-        public const int MIXER_GETLINECONTROLSF_ALL = 0x00000000;
-
-        [NativeTypeName("#define MIXER_GETLINECONTROLSF_ONEBYID 0x00000001L")]
-        public const int MIXER_GETLINECONTROLSF_ONEBYID = 0x00000001;
-
-        [NativeTypeName("#define MIXER_GETLINECONTROLSF_ONEBYTYPE 0x00000002L")]
-        public const int MIXER_GETLINECONTROLSF_ONEBYTYPE = 0x00000002;
-
-        [NativeTypeName("#define MIXER_GETLINECONTROLSF_QUERYMASK 0x0000000FL")]
-        public const int MIXER_GETLINECONTROLSF_QUERYMASK = 0x0000000F;
-
         [NativeTypeName("#define mixerGetControlDetails mixerGetControlDetailsW")]
         public static delegate*<HMIXEROBJ, MIXERCONTROLDETAILS*, uint, uint> mixerGetControlDetails => &mixerGetControlDetailsW;
-
-        [NativeTypeName("#define MIXER_GETCONTROLDETAILSF_VALUE 0x00000000L")]
-        public const int MIXER_GETCONTROLDETAILSF_VALUE = 0x00000000;
-
-        [NativeTypeName("#define MIXER_GETCONTROLDETAILSF_LISTTEXT 0x00000001L")]
-        public const int MIXER_GETCONTROLDETAILSF_LISTTEXT = 0x00000001;
-
-        [NativeTypeName("#define MIXER_GETCONTROLDETAILSF_QUERYMASK 0x0000000FL")]
-        public const int MIXER_GETCONTROLDETAILSF_QUERYMASK = 0x0000000F;
-
-        [NativeTypeName("#define MIXER_SETCONTROLDETAILSF_VALUE 0x00000000L")]
-        public const int MIXER_SETCONTROLDETAILSF_VALUE = 0x00000000;
-
-        [NativeTypeName("#define MIXER_SETCONTROLDETAILSF_CUSTOM 0x00000001L")]
-        public const int MIXER_SETCONTROLDETAILSF_CUSTOM = 0x00000001;
-
-        [NativeTypeName("#define MIXER_SETCONTROLDETAILSF_QUERYMASK 0x0000000FL")]
-        public const int MIXER_SETCONTROLDETAILSF_QUERYMASK = 0x0000000F;
     }
 }

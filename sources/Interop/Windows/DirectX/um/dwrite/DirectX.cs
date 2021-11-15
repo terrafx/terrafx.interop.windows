@@ -13,11 +13,5 @@ namespace TerraFX.Interop.DirectX
     {
         [DllImport("dwrite", ExactSpelling = true)]
         public static extern HRESULT DWriteCreateFactory(DWRITE_FACTORY_TYPE factoryType, [NativeTypeName("const IID &")] Guid* iid, IUnknown** factory);
-
-        [NativeTypeName("#define DWRITE_ALPHA_MAX 255")]
-        public const int DWRITE_ALPHA_MAX = 255;
-
-        [NativeTypeName("#define DWRITE_ERR_BASE 0x5000")]
-        public const int DWRITE_ERR_BASE = 0x5000;
     }
 }

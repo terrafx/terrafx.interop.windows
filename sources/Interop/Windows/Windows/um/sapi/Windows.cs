@@ -35,42 +35,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define _SAPI_VER 0x054")]
         public const int _SAPI_VER = 0x054;
 
-        [NativeTypeName("#define SPDUI_EngineProperties L\"EngineProperties\"")]
-        public const string SPDUI_EngineProperties = "EngineProperties";
-
-        [NativeTypeName("#define SPDUI_AddRemoveWord L\"AddRemoveWord\"")]
-        public const string SPDUI_AddRemoveWord = "AddRemoveWord";
-
-        [NativeTypeName("#define SPDUI_UserTraining L\"UserTraining\"")]
-        public const string SPDUI_UserTraining = "UserTraining";
-
-        [NativeTypeName("#define SPDUI_MicTraining L\"MicTraining\"")]
-        public const string SPDUI_MicTraining = "MicTraining";
-
-        [NativeTypeName("#define SPDUI_RecoProfileProperties L\"RecoProfileProperties\"")]
-        public const string SPDUI_RecoProfileProperties = "RecoProfileProperties";
-
-        [NativeTypeName("#define SPDUI_AudioProperties L\"AudioProperties\"")]
-        public const string SPDUI_AudioProperties = "AudioProperties";
-
-        [NativeTypeName("#define SPDUI_AudioVolume L\"AudioVolume\"")]
-        public const string SPDUI_AudioVolume = "AudioVolume";
-
-        [NativeTypeName("#define SPDUI_UserEnrollment L\"UserEnrollment\"")]
-        public const string SPDUI_UserEnrollment = "UserEnrollment";
-
-        [NativeTypeName("#define SPDUI_ShareData L\"ShareData\"")]
-        public const string SPDUI_ShareData = "ShareData";
-
-        [NativeTypeName("#define SPDUI_Tutorial L\"Tutorial\"")]
-        public const string SPDUI_Tutorial = "Tutorial";
-
-        [NativeTypeName("#define SPREG_USER_ROOT L\"HKEY_CURRENT_USER\\\\SOFTWARE\\\\Microsoft\\\\Speech\"")]
-        public const string SPREG_USER_ROOT = "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Speech";
-
-        [NativeTypeName("#define SPREG_LOCAL_MACHINE_ROOT L\"HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Speech\"")]
-        public const string SPREG_LOCAL_MACHINE_ROOT = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech";
-
         [NativeTypeName("#define SPCAT_AUDIOOUT L\"HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Speech\\\\AudioOutput\"")]
         public const string SPCAT_AUDIOOUT = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AudioOutput";
 
@@ -134,36 +98,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define SPVOICECATEGORY_TTSRATE L\"DefaultTTSRate\"")]
         public const string SPVOICECATEGORY_TTSRATE = "DefaultTTSRate";
 
-        [NativeTypeName("#define SPPROP_RESOURCE_USAGE L\"ResourceUsage\"")]
-        public const string SPPROP_RESOURCE_USAGE = "ResourceUsage";
-
-        [NativeTypeName("#define SPPROP_HIGH_CONFIDENCE_THRESHOLD L\"HighConfidenceThreshold\"")]
-        public const string SPPROP_HIGH_CONFIDENCE_THRESHOLD = "HighConfidenceThreshold";
-
-        [NativeTypeName("#define SPPROP_NORMAL_CONFIDENCE_THRESHOLD L\"NormalConfidenceThreshold\"")]
-        public const string SPPROP_NORMAL_CONFIDENCE_THRESHOLD = "NormalConfidenceThreshold";
-
-        [NativeTypeName("#define SPPROP_LOW_CONFIDENCE_THRESHOLD L\"LowConfidenceThreshold\"")]
-        public const string SPPROP_LOW_CONFIDENCE_THRESHOLD = "LowConfidenceThreshold";
-
-        [NativeTypeName("#define SPPROP_RESPONSE_SPEED L\"ResponseSpeed\"")]
-        public const string SPPROP_RESPONSE_SPEED = "ResponseSpeed";
-
-        [NativeTypeName("#define SPPROP_COMPLEX_RESPONSE_SPEED L\"ComplexResponseSpeed\"")]
-        public const string SPPROP_COMPLEX_RESPONSE_SPEED = "ComplexResponseSpeed";
-
-        [NativeTypeName("#define SPPROP_ADAPTATION_ON L\"AdaptationOn\"")]
-        public const string SPPROP_ADAPTATION_ON = "AdaptationOn";
-
-        [NativeTypeName("#define SPPROP_PERSISTED_BACKGROUND_ADAPTATION L\"PersistedBackgroundAdaptation\"")]
-        public const string SPPROP_PERSISTED_BACKGROUND_ADAPTATION = "PersistedBackgroundAdaptation";
-
-        [NativeTypeName("#define SPPROP_PERSISTED_LANGUAGE_MODEL_ADAPTATION L\"PersistedLanguageModelAdaptation\"")]
-        public const string SPPROP_PERSISTED_LANGUAGE_MODEL_ADAPTATION = "PersistedLanguageModelAdaptation";
-
-        [NativeTypeName("#define SPPROP_UX_IS_LISTENING L\"UXIsListening\"")]
-        public const string SPPROP_UX_IS_LISTENING = "UXIsListening";
-
         [NativeTypeName("#define SPTOPIC_SPELLING L\"Spelling\"")]
         public const string SPTOPIC_SPELLING = "Spelling";
 
@@ -175,12 +109,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define SPINFDICTATION L\"*+\"")]
         public const string SPINFDICTATION = "*+";
-
-        [NativeTypeName("#define SPREG_SAFE_USER_TOKENS L\"HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Speech\\\\UserTokens\"")]
-        public const string SPREG_SAFE_USER_TOKENS = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\UserTokens";
-
-        [NativeTypeName("#define DEFAULT_WEIGHT ( 1 )")]
-        public const int DEFAULT_WEIGHT = (1);
 
         [NativeTypeName("#define SPFEI_FLAGCHECK ( (1ui64 << SPEI_RESERVED1) | (1ui64 << SPEI_RESERVED2) )")]
         public const ulong SPFEI_FLAGCHECK = ((1UL << (int)(SPEI_RESERVED1)) | (1UL << (int)(SPEI_RESERVED2)));

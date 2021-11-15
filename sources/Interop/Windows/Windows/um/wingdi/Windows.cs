@@ -1118,57 +1118,6 @@ namespace TerraFX.Interop.Windows
         [return: NativeTypeName("DWORD")]
         public static extern uint wglSwapMultipleBuffers(uint param0, [NativeTypeName("const WGLSWAP *")] WGLSWAP* param1);
 
-        [NativeTypeName("#define R2_BLACK 1")]
-        public const int R2_BLACK = 1;
-
-        [NativeTypeName("#define R2_NOTMERGEPEN 2")]
-        public const int R2_NOTMERGEPEN = 2;
-
-        [NativeTypeName("#define R2_MASKNOTPEN 3")]
-        public const int R2_MASKNOTPEN = 3;
-
-        [NativeTypeName("#define R2_NOTCOPYPEN 4")]
-        public const int R2_NOTCOPYPEN = 4;
-
-        [NativeTypeName("#define R2_MASKPENNOT 5")]
-        public const int R2_MASKPENNOT = 5;
-
-        [NativeTypeName("#define R2_NOT 6")]
-        public const int R2_NOT = 6;
-
-        [NativeTypeName("#define R2_XORPEN 7")]
-        public const int R2_XORPEN = 7;
-
-        [NativeTypeName("#define R2_NOTMASKPEN 8")]
-        public const int R2_NOTMASKPEN = 8;
-
-        [NativeTypeName("#define R2_MASKPEN 9")]
-        public const int R2_MASKPEN = 9;
-
-        [NativeTypeName("#define R2_NOTXORPEN 10")]
-        public const int R2_NOTXORPEN = 10;
-
-        [NativeTypeName("#define R2_NOP 11")]
-        public const int R2_NOP = 11;
-
-        [NativeTypeName("#define R2_MERGENOTPEN 12")]
-        public const int R2_MERGENOTPEN = 12;
-
-        [NativeTypeName("#define R2_COPYPEN 13")]
-        public const int R2_COPYPEN = 13;
-
-        [NativeTypeName("#define R2_MERGEPENNOT 14")]
-        public const int R2_MERGEPENNOT = 14;
-
-        [NativeTypeName("#define R2_MERGEPEN 15")]
-        public const int R2_MERGEPEN = 15;
-
-        [NativeTypeName("#define R2_WHITE 16")]
-        public const int R2_WHITE = 16;
-
-        [NativeTypeName("#define R2_LAST 16")]
-        public const int R2_LAST = 16;
-
         [NativeTypeName("#define SRCCOPY (DWORD)0x00CC0020")]
         public const uint SRCCOPY = (uint)(0x00CC0020);
 
@@ -1309,36 +1258,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define LAYOUT_BITMAPORIENTATIONPRESERVED 0x00000008")]
         public const int LAYOUT_BITMAPORIENTATIONPRESERVED = 0x00000008;
-
-        [NativeTypeName("#define TA_NOUPDATECP 0")]
-        public const int TA_NOUPDATECP = 0;
-
-        [NativeTypeName("#define TA_UPDATECP 1")]
-        public const int TA_UPDATECP = 1;
-
-        [NativeTypeName("#define TA_LEFT 0")]
-        public const int TA_LEFT = 0;
-
-        [NativeTypeName("#define TA_RIGHT 2")]
-        public const int TA_RIGHT = 2;
-
-        [NativeTypeName("#define TA_CENTER 6")]
-        public const int TA_CENTER = 6;
-
-        [NativeTypeName("#define TA_TOP 0")]
-        public const int TA_TOP = 0;
-
-        [NativeTypeName("#define TA_BOTTOM 8")]
-        public const int TA_BOTTOM = 8;
-
-        [NativeTypeName("#define TA_BASELINE 24")]
-        public const int TA_BASELINE = 24;
-
-        [NativeTypeName("#define TA_RTLREADING 256")]
-        public const int TA_RTLREADING = 256;
-
-        [NativeTypeName("#define TA_MASK (TA_BASELINE+TA_CENTER+TA_UPDATECP+TA_RTLREADING)")]
-        public const int TA_MASK = (24 + 6 + 1 + 256);
 
         [NativeTypeName("#define VTA_BASELINE TA_BASELINE")]
         public const int VTA_BASELINE = 24;
@@ -1595,32 +1514,8 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define SAVE_CTM 4101")]
         public const int SAVE_CTM = 4101;
 
-        [NativeTypeName("#define SET_ARC_DIRECTION 4102")]
-        public const int SET_ARC_DIRECTION = 4102;
-
-        [NativeTypeName("#define SET_BACKGROUND_COLOR 4103")]
-        public const int SET_BACKGROUND_COLOR = 4103;
-
-        [NativeTypeName("#define SET_POLY_MODE 4104")]
-        public const int SET_POLY_MODE = 4104;
-
-        [NativeTypeName("#define SET_SCREEN_ANGLE 4105")]
-        public const int SET_SCREEN_ANGLE = 4105;
-
-        [NativeTypeName("#define SET_SPREAD 4106")]
-        public const int SET_SPREAD = 4106;
-
         [NativeTypeName("#define TRANSFORM_CTM 4107")]
         public const int TRANSFORM_CTM = 4107;
-
-        [NativeTypeName("#define SET_CLIP_BOX 4108")]
-        public const int SET_CLIP_BOX = 4108;
-
-        [NativeTypeName("#define SET_BOUNDS 4109")]
-        public const int SET_BOUNDS = 4109;
-
-        [NativeTypeName("#define SET_MIRROR_MODE 4110")]
-        public const int SET_MIRROR_MODE = 4110;
 
         [NativeTypeName("#define OPENCHANNEL 4110")]
         public const int OPENCHANNEL = 4110;
@@ -1649,9 +1544,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define CHECKPNGFORMAT 4120")]
         public const int CHECKPNGFORMAT = 4120;
 
-        [NativeTypeName("#define GET_PS_FEATURESETTING 4121")]
-        public const int GET_PS_FEATURESETTING = 4121;
-
         [NativeTypeName("#define GDIPLUS_TS_QUERYVER 4122")]
         public const int GDIPLUS_TS_QUERYVER = 4122;
 
@@ -1672,102 +1564,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define PSIDENT_PSCENTRIC 1")]
         public const int PSIDENT_PSCENTRIC = 1;
-
-        [NativeTypeName("#define PSINJECT_BEGINSTREAM 1")]
-        public const int PSINJECT_BEGINSTREAM = 1;
-
-        [NativeTypeName("#define PSINJECT_PSADOBE 2")]
-        public const int PSINJECT_PSADOBE = 2;
-
-        [NativeTypeName("#define PSINJECT_PAGESATEND 3")]
-        public const int PSINJECT_PAGESATEND = 3;
-
-        [NativeTypeName("#define PSINJECT_PAGES 4")]
-        public const int PSINJECT_PAGES = 4;
-
-        [NativeTypeName("#define PSINJECT_DOCNEEDEDRES 5")]
-        public const int PSINJECT_DOCNEEDEDRES = 5;
-
-        [NativeTypeName("#define PSINJECT_DOCSUPPLIEDRES 6")]
-        public const int PSINJECT_DOCSUPPLIEDRES = 6;
-
-        [NativeTypeName("#define PSINJECT_PAGEORDER 7")]
-        public const int PSINJECT_PAGEORDER = 7;
-
-        [NativeTypeName("#define PSINJECT_ORIENTATION 8")]
-        public const int PSINJECT_ORIENTATION = 8;
-
-        [NativeTypeName("#define PSINJECT_BOUNDINGBOX 9")]
-        public const int PSINJECT_BOUNDINGBOX = 9;
-
-        [NativeTypeName("#define PSINJECT_DOCUMENTPROCESSCOLORS 10")]
-        public const int PSINJECT_DOCUMENTPROCESSCOLORS = 10;
-
-        [NativeTypeName("#define PSINJECT_COMMENTS 11")]
-        public const int PSINJECT_COMMENTS = 11;
-
-        [NativeTypeName("#define PSINJECT_BEGINDEFAULTS 12")]
-        public const int PSINJECT_BEGINDEFAULTS = 12;
-
-        [NativeTypeName("#define PSINJECT_ENDDEFAULTS 13")]
-        public const int PSINJECT_ENDDEFAULTS = 13;
-
-        [NativeTypeName("#define PSINJECT_BEGINPROLOG 14")]
-        public const int PSINJECT_BEGINPROLOG = 14;
-
-        [NativeTypeName("#define PSINJECT_ENDPROLOG 15")]
-        public const int PSINJECT_ENDPROLOG = 15;
-
-        [NativeTypeName("#define PSINJECT_BEGINSETUP 16")]
-        public const int PSINJECT_BEGINSETUP = 16;
-
-        [NativeTypeName("#define PSINJECT_ENDSETUP 17")]
-        public const int PSINJECT_ENDSETUP = 17;
-
-        [NativeTypeName("#define PSINJECT_TRAILER 18")]
-        public const int PSINJECT_TRAILER = 18;
-
-        [NativeTypeName("#define PSINJECT_EOF 19")]
-        public const int PSINJECT_EOF = 19;
-
-        [NativeTypeName("#define PSINJECT_ENDSTREAM 20")]
-        public const int PSINJECT_ENDSTREAM = 20;
-
-        [NativeTypeName("#define PSINJECT_DOCUMENTPROCESSCOLORSATEND 21")]
-        public const int PSINJECT_DOCUMENTPROCESSCOLORSATEND = 21;
-
-        [NativeTypeName("#define PSINJECT_PAGENUMBER 100")]
-        public const int PSINJECT_PAGENUMBER = 100;
-
-        [NativeTypeName("#define PSINJECT_BEGINPAGESETUP 101")]
-        public const int PSINJECT_BEGINPAGESETUP = 101;
-
-        [NativeTypeName("#define PSINJECT_ENDPAGESETUP 102")]
-        public const int PSINJECT_ENDPAGESETUP = 102;
-
-        [NativeTypeName("#define PSINJECT_PAGETRAILER 103")]
-        public const int PSINJECT_PAGETRAILER = 103;
-
-        [NativeTypeName("#define PSINJECT_PLATECOLOR 104")]
-        public const int PSINJECT_PLATECOLOR = 104;
-
-        [NativeTypeName("#define PSINJECT_SHOWPAGE 105")]
-        public const int PSINJECT_SHOWPAGE = 105;
-
-        [NativeTypeName("#define PSINJECT_PAGEBBOX 106")]
-        public const int PSINJECT_PAGEBBOX = 106;
-
-        [NativeTypeName("#define PSINJECT_ENDPAGECOMMENTS 107")]
-        public const int PSINJECT_ENDPAGECOMMENTS = 107;
-
-        [NativeTypeName("#define PSINJECT_VMSAVE 200")]
-        public const int PSINJECT_VMSAVE = 200;
-
-        [NativeTypeName("#define PSINJECT_VMRESTORE 201")]
-        public const int PSINJECT_VMRESTORE = 201;
-
-        [NativeTypeName("#define PSINJECT_DLFONT 0xdddddddd")]
-        public const uint PSINJECT_DLFONT = 0xdddddddd;
 
         [NativeTypeName("#define FEATURESETTING_NUP 0")]
         public const int FEATURESETTING_NUP = 0;
@@ -1823,48 +1619,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define PR_JOBSTATUS 0x0000")]
         public const int PR_JOBSTATUS = 0x0000;
 
-        [NativeTypeName("#define OBJ_PEN 1")]
-        public const int OBJ_PEN = 1;
-
-        [NativeTypeName("#define OBJ_BRUSH 2")]
-        public const int OBJ_BRUSH = 2;
-
-        [NativeTypeName("#define OBJ_DC 3")]
-        public const int OBJ_DC = 3;
-
-        [NativeTypeName("#define OBJ_METADC 4")]
-        public const int OBJ_METADC = 4;
-
-        [NativeTypeName("#define OBJ_PAL 5")]
-        public const int OBJ_PAL = 5;
-
-        [NativeTypeName("#define OBJ_FONT 6")]
-        public const int OBJ_FONT = 6;
-
-        [NativeTypeName("#define OBJ_BITMAP 7")]
-        public const int OBJ_BITMAP = 7;
-
-        [NativeTypeName("#define OBJ_REGION 8")]
-        public const int OBJ_REGION = 8;
-
-        [NativeTypeName("#define OBJ_METAFILE 9")]
-        public const int OBJ_METAFILE = 9;
-
-        [NativeTypeName("#define OBJ_MEMDC 10")]
-        public const int OBJ_MEMDC = 10;
-
-        [NativeTypeName("#define OBJ_EXTPEN 11")]
-        public const int OBJ_EXTPEN = 11;
-
-        [NativeTypeName("#define OBJ_ENHMETADC 12")]
-        public const int OBJ_ENHMETADC = 12;
-
-        [NativeTypeName("#define OBJ_ENHMETAFILE 13")]
-        public const int OBJ_ENHMETAFILE = 13;
-
-        [NativeTypeName("#define OBJ_COLORSPACE 14")]
-        public const int OBJ_COLORSPACE = 14;
-
         [NativeTypeName("#define GDI_OBJ_LAST OBJ_COLORSPACE")]
         public const int GDI_OBJ_LAST = 14;
 
@@ -1882,15 +1636,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define MWT_MAX MWT_RIGHTMULTIPLY")]
         public const int MWT_MAX = 3;
-
-        [NativeTypeName("#define CS_ENABLE 0x00000001L")]
-        public const int CS_ENABLE = 0x00000001;
-
-        [NativeTypeName("#define CS_DISABLE 0x00000002L")]
-        public const int CS_DISABLE = 0x00000002;
-
-        [NativeTypeName("#define CS_DELETE_TRANSFORM 0x00000003L")]
-        public const int CS_DELETE_TRANSFORM = 0x00000003;
 
         [NativeTypeName("#define LCS_SIGNATURE 'PSOC'")]
         public const int LCS_SIGNATURE = 0x50534F43;
@@ -1915,33 +1660,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define LCS_GM_ABS_COLORIMETRIC 0x00000008L")]
         public const int LCS_GM_ABS_COLORIMETRIC = 0x00000008;
-
-        [NativeTypeName("#define CM_OUT_OF_GAMUT 255")]
-        public const int CM_OUT_OF_GAMUT = 255;
-
-        [NativeTypeName("#define CM_IN_GAMUT 0")]
-        public const int CM_IN_GAMUT = 0;
-
-        [NativeTypeName("#define ICM_ADDPROFILE 1")]
-        public const int ICM_ADDPROFILE = 1;
-
-        [NativeTypeName("#define ICM_DELETEPROFILE 2")]
-        public const int ICM_DELETEPROFILE = 2;
-
-        [NativeTypeName("#define ICM_QUERYPROFILE 3")]
-        public const int ICM_QUERYPROFILE = 3;
-
-        [NativeTypeName("#define ICM_SETDEFAULTPROFILE 4")]
-        public const int ICM_SETDEFAULTPROFILE = 4;
-
-        [NativeTypeName("#define ICM_REGISTERICMATCHER 5")]
-        public const int ICM_REGISTERICMATCHER = 5;
-
-        [NativeTypeName("#define ICM_UNREGISTERICMATCHER 6")]
-        public const int ICM_UNREGISTERICMATCHER = 6;
-
-        [NativeTypeName("#define ICM_QUERYMATCH 7")]
-        public const int ICM_QUERYMATCH = 7;
 
         [NativeTypeName("#define PROFILE_LINKED 'LINK'")]
         public const int PROFILE_LINKED = 0x4C494E4B;
@@ -2024,39 +1742,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define LF_FULLFACESIZE 64")]
         public const int LF_FULLFACESIZE = 64;
 
-        [NativeTypeName("#define OUT_DEFAULT_PRECIS 0")]
-        public const int OUT_DEFAULT_PRECIS = 0;
-
-        [NativeTypeName("#define OUT_STRING_PRECIS 1")]
-        public const int OUT_STRING_PRECIS = 1;
-
-        [NativeTypeName("#define OUT_CHARACTER_PRECIS 2")]
-        public const int OUT_CHARACTER_PRECIS = 2;
-
-        [NativeTypeName("#define OUT_STROKE_PRECIS 3")]
-        public const int OUT_STROKE_PRECIS = 3;
-
-        [NativeTypeName("#define OUT_TT_PRECIS 4")]
-        public const int OUT_TT_PRECIS = 4;
-
-        [NativeTypeName("#define OUT_DEVICE_PRECIS 5")]
-        public const int OUT_DEVICE_PRECIS = 5;
-
-        [NativeTypeName("#define OUT_RASTER_PRECIS 6")]
-        public const int OUT_RASTER_PRECIS = 6;
-
-        [NativeTypeName("#define OUT_TT_ONLY_PRECIS 7")]
-        public const int OUT_TT_ONLY_PRECIS = 7;
-
-        [NativeTypeName("#define OUT_OUTLINE_PRECIS 8")]
-        public const int OUT_OUTLINE_PRECIS = 8;
-
-        [NativeTypeName("#define OUT_SCREEN_OUTLINE_PRECIS 9")]
-        public const int OUT_SCREEN_OUTLINE_PRECIS = 9;
-
-        [NativeTypeName("#define OUT_PS_ONLY_PRECIS 10")]
-        public const int OUT_PS_ONLY_PRECIS = 10;
-
         [NativeTypeName("#define CLIP_DEFAULT_PRECIS 0")]
         public const int CLIP_DEFAULT_PRECIS = 0;
 
@@ -2081,9 +1766,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define CLIP_EMBEDDED (8<<4)")]
         public const int CLIP_EMBEDDED = (8 << 4);
 
-        [NativeTypeName("#define DEFAULT_QUALITY 0")]
-        public const int DEFAULT_QUALITY = 0;
-
         [NativeTypeName("#define DRAFT_QUALITY 1")]
         public const int DRAFT_QUALITY = 1;
 
@@ -2102,9 +1784,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define CLEARTYPE_NATURAL_QUALITY 6")]
         public const int CLEARTYPE_NATURAL_QUALITY = 6;
 
-        [NativeTypeName("#define DEFAULT_PITCH 0")]
-        public const int DEFAULT_PITCH = 0;
-
         [NativeTypeName("#define FIXED_PITCH 1")]
         public const int FIXED_PITCH = 1;
 
@@ -2116,9 +1795,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define ANSI_CHARSET 0")]
         public const int ANSI_CHARSET = 0;
-
-        [NativeTypeName("#define DEFAULT_CHARSET 1")]
-        public const int DEFAULT_CHARSET = 1;
 
         [NativeTypeName("#define SYMBOL_CHARSET 2")]
         public const int SYMBOL_CHARSET = 2;
@@ -2174,54 +1850,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define BALTIC_CHARSET 186")]
         public const int BALTIC_CHARSET = 186;
 
-        [NativeTypeName("#define FS_LATIN1 0x00000001L")]
-        public const int FS_LATIN1 = 0x00000001;
-
-        [NativeTypeName("#define FS_LATIN2 0x00000002L")]
-        public const int FS_LATIN2 = 0x00000002;
-
-        [NativeTypeName("#define FS_CYRILLIC 0x00000004L")]
-        public const int FS_CYRILLIC = 0x00000004;
-
-        [NativeTypeName("#define FS_GREEK 0x00000008L")]
-        public const int FS_GREEK = 0x00000008;
-
-        [NativeTypeName("#define FS_TURKISH 0x00000010L")]
-        public const int FS_TURKISH = 0x00000010;
-
-        [NativeTypeName("#define FS_HEBREW 0x00000020L")]
-        public const int FS_HEBREW = 0x00000020;
-
-        [NativeTypeName("#define FS_ARABIC 0x00000040L")]
-        public const int FS_ARABIC = 0x00000040;
-
-        [NativeTypeName("#define FS_BALTIC 0x00000080L")]
-        public const int FS_BALTIC = 0x00000080;
-
-        [NativeTypeName("#define FS_VIETNAMESE 0x00000100L")]
-        public const int FS_VIETNAMESE = 0x00000100;
-
-        [NativeTypeName("#define FS_THAI 0x00010000L")]
-        public const int FS_THAI = 0x00010000;
-
-        [NativeTypeName("#define FS_JISJAPAN 0x00020000L")]
-        public const int FS_JISJAPAN = 0x00020000;
-
-        [NativeTypeName("#define FS_CHINESESIMP 0x00040000L")]
-        public const int FS_CHINESESIMP = 0x00040000;
-
-        [NativeTypeName("#define FS_WANSUNG 0x00080000L")]
-        public const int FS_WANSUNG = 0x00080000;
-
-        [NativeTypeName("#define FS_CHINESETRAD 0x00100000L")]
-        public const int FS_CHINESETRAD = 0x00100000;
-
-        [NativeTypeName("#define FS_JOHAB 0x00200000L")]
-        public const int FS_JOHAB = 0x00200000;
-
-        [NativeTypeName("#define FS_SYMBOL 0x80000000L")]
-        public const uint FS_SYMBOL = 0x80000000;
-
         [NativeTypeName("#define FF_DONTCARE (0<<4)")]
         public const int FF_DONTCARE = (0 << 4);
 
@@ -2240,51 +1868,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define FF_DECORATIVE (5<<4)")]
         public const int FF_DECORATIVE = (5 << 4);
 
-        [NativeTypeName("#define FW_DONTCARE 0")]
-        public const int FW_DONTCARE = 0;
-
-        [NativeTypeName("#define FW_THIN 100")]
-        public const int FW_THIN = 100;
-
-        [NativeTypeName("#define FW_EXTRALIGHT 200")]
-        public const int FW_EXTRALIGHT = 200;
-
-        [NativeTypeName("#define FW_LIGHT 300")]
-        public const int FW_LIGHT = 300;
-
-        [NativeTypeName("#define FW_NORMAL 400")]
-        public const int FW_NORMAL = 400;
-
-        [NativeTypeName("#define FW_MEDIUM 500")]
-        public const int FW_MEDIUM = 500;
-
-        [NativeTypeName("#define FW_SEMIBOLD 600")]
-        public const int FW_SEMIBOLD = 600;
-
-        [NativeTypeName("#define FW_BOLD 700")]
-        public const int FW_BOLD = 700;
-
-        [NativeTypeName("#define FW_EXTRABOLD 800")]
-        public const int FW_EXTRABOLD = 800;
-
-        [NativeTypeName("#define FW_HEAVY 900")]
-        public const int FW_HEAVY = 900;
-
-        [NativeTypeName("#define FW_ULTRALIGHT FW_EXTRALIGHT")]
-        public const int FW_ULTRALIGHT = 200;
-
-        [NativeTypeName("#define FW_REGULAR FW_NORMAL")]
-        public const int FW_REGULAR = 400;
-
-        [NativeTypeName("#define FW_DEMIBOLD FW_SEMIBOLD")]
-        public const int FW_DEMIBOLD = 600;
-
-        [NativeTypeName("#define FW_ULTRABOLD FW_EXTRABOLD")]
-        public const int FW_ULTRABOLD = 800;
-
-        [NativeTypeName("#define FW_BLACK FW_HEAVY")]
-        public const int FW_BLACK = 900;
-
         [NativeTypeName("#define PANOSE_COUNT 10")]
         public const int PANOSE_COUNT = 10;
 
@@ -2300,20 +1883,8 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define RASTER_FONTTYPE 0x0001")]
         public const int RASTER_FONTTYPE = 0x0001;
 
-        [NativeTypeName("#define DEVICE_FONTTYPE 0x0002")]
-        public const int DEVICE_FONTTYPE = 0x0002;
-
         [NativeTypeName("#define TRUETYPE_FONTTYPE 0x0004")]
         public const int TRUETYPE_FONTTYPE = 0x0004;
-
-        [NativeTypeName("#define PC_RESERVED 0x01")]
-        public const int PC_RESERVED = 0x01;
-
-        [NativeTypeName("#define PC_EXPLICIT 0x02")]
-        public const int PC_EXPLICIT = 0x02;
-
-        [NativeTypeName("#define PC_NOCOLLAPSE 0x04")]
-        public const int PC_NOCOLLAPSE = 0x04;
 
         [NativeTypeName("#define TRANSPARENT 1")]
         public const int TRANSPARENT = 1;
@@ -2390,65 +1961,11 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define ANSI_VAR_FONT 12")]
         public const int ANSI_VAR_FONT = 12;
 
-        [NativeTypeName("#define SYSTEM_FONT 13")]
-        public const int SYSTEM_FONT = 13;
-
-        [NativeTypeName("#define DEVICE_DEFAULT_FONT 14")]
-        public const int DEVICE_DEFAULT_FONT = 14;
-
-        [NativeTypeName("#define DEFAULT_PALETTE 15")]
-        public const int DEFAULT_PALETTE = 15;
-
-        [NativeTypeName("#define SYSTEM_FIXED_FONT 16")]
-        public const int SYSTEM_FIXED_FONT = 16;
-
-        [NativeTypeName("#define DEFAULT_GUI_FONT 17")]
-        public const int DEFAULT_GUI_FONT = 17;
-
-        [NativeTypeName("#define DC_BRUSH 18")]
-        public const int DC_BRUSH = 18;
-
-        [NativeTypeName("#define DC_PEN 19")]
-        public const int DC_PEN = 19;
-
         [NativeTypeName("#define STOCK_LAST 19")]
         public const int STOCK_LAST = 19;
 
         [NativeTypeName("#define CLR_INVALID 0xFFFFFFFF")]
         public const uint CLR_INVALID = 0xFFFFFFFF;
-
-        [NativeTypeName("#define BS_SOLID 0")]
-        public const int BS_SOLID = 0;
-
-        [NativeTypeName("#define BS_NULL 1")]
-        public const int BS_NULL = 1;
-
-        [NativeTypeName("#define BS_HOLLOW BS_NULL")]
-        public const int BS_HOLLOW = 1;
-
-        [NativeTypeName("#define BS_HATCHED 2")]
-        public const int BS_HATCHED = 2;
-
-        [NativeTypeName("#define BS_PATTERN 3")]
-        public const int BS_PATTERN = 3;
-
-        [NativeTypeName("#define BS_INDEXED 4")]
-        public const int BS_INDEXED = 4;
-
-        [NativeTypeName("#define BS_DIBPATTERN 5")]
-        public const int BS_DIBPATTERN = 5;
-
-        [NativeTypeName("#define BS_DIBPATTERNPT 6")]
-        public const int BS_DIBPATTERNPT = 6;
-
-        [NativeTypeName("#define BS_PATTERN8X8 7")]
-        public const int BS_PATTERN8X8 = 7;
-
-        [NativeTypeName("#define BS_DIBPATTERN8X8 8")]
-        public const int BS_DIBPATTERN8X8 = 8;
-
-        [NativeTypeName("#define BS_MONOPATTERN 9")]
-        public const int BS_MONOPATTERN = 9;
 
         [NativeTypeName("#define HS_HORIZONTAL 0")]
         public const int HS_HORIZONTAL = 0;
@@ -2470,69 +1987,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define HS_API_MAX 12")]
         public const int HS_API_MAX = 12;
-
-        [NativeTypeName("#define PS_SOLID 0")]
-        public const int PS_SOLID = 0;
-
-        [NativeTypeName("#define PS_DASH 1")]
-        public const int PS_DASH = 1;
-
-        [NativeTypeName("#define PS_DOT 2")]
-        public const int PS_DOT = 2;
-
-        [NativeTypeName("#define PS_DASHDOT 3")]
-        public const int PS_DASHDOT = 3;
-
-        [NativeTypeName("#define PS_DASHDOTDOT 4")]
-        public const int PS_DASHDOTDOT = 4;
-
-        [NativeTypeName("#define PS_NULL 5")]
-        public const int PS_NULL = 5;
-
-        [NativeTypeName("#define PS_INSIDEFRAME 6")]
-        public const int PS_INSIDEFRAME = 6;
-
-        [NativeTypeName("#define PS_USERSTYLE 7")]
-        public const int PS_USERSTYLE = 7;
-
-        [NativeTypeName("#define PS_ALTERNATE 8")]
-        public const int PS_ALTERNATE = 8;
-
-        [NativeTypeName("#define PS_STYLE_MASK 0x0000000F")]
-        public const int PS_STYLE_MASK = 0x0000000F;
-
-        [NativeTypeName("#define PS_ENDCAP_ROUND 0x00000000")]
-        public const int PS_ENDCAP_ROUND = 0x00000000;
-
-        [NativeTypeName("#define PS_ENDCAP_SQUARE 0x00000100")]
-        public const int PS_ENDCAP_SQUARE = 0x00000100;
-
-        [NativeTypeName("#define PS_ENDCAP_FLAT 0x00000200")]
-        public const int PS_ENDCAP_FLAT = 0x00000200;
-
-        [NativeTypeName("#define PS_ENDCAP_MASK 0x00000F00")]
-        public const int PS_ENDCAP_MASK = 0x00000F00;
-
-        [NativeTypeName("#define PS_JOIN_ROUND 0x00000000")]
-        public const int PS_JOIN_ROUND = 0x00000000;
-
-        [NativeTypeName("#define PS_JOIN_BEVEL 0x00001000")]
-        public const int PS_JOIN_BEVEL = 0x00001000;
-
-        [NativeTypeName("#define PS_JOIN_MITER 0x00002000")]
-        public const int PS_JOIN_MITER = 0x00002000;
-
-        [NativeTypeName("#define PS_JOIN_MASK 0x0000F000")]
-        public const int PS_JOIN_MASK = 0x0000F000;
-
-        [NativeTypeName("#define PS_COSMETIC 0x00000000")]
-        public const int PS_COSMETIC = 0x00000000;
-
-        [NativeTypeName("#define PS_GEOMETRIC 0x00010000")]
-        public const int PS_GEOMETRIC = 0x00010000;
-
-        [NativeTypeName("#define PS_TYPE_MASK 0x000F0000")]
-        public const int PS_TYPE_MASK = 0x000F0000;
 
         [NativeTypeName("#define AD_COUNTERCLOCKWISE 1")]
         public const int AD_COUNTERCLOCKWISE = 1;
@@ -2660,57 +2114,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define COLORMGMTCAPS 121")]
         public const int COLORMGMTCAPS = 121;
 
-        [NativeTypeName("#define DT_PLOTTER 0")]
-        public const int DT_PLOTTER = 0;
-
-        [NativeTypeName("#define DT_RASDISPLAY 1")]
-        public const int DT_RASDISPLAY = 1;
-
-        [NativeTypeName("#define DT_RASPRINTER 2")]
-        public const int DT_RASPRINTER = 2;
-
-        [NativeTypeName("#define DT_RASCAMERA 3")]
-        public const int DT_RASCAMERA = 3;
-
-        [NativeTypeName("#define DT_CHARSTREAM 4")]
-        public const int DT_CHARSTREAM = 4;
-
-        [NativeTypeName("#define DT_METAFILE 5")]
-        public const int DT_METAFILE = 5;
-
-        [NativeTypeName("#define DT_DISPFILE 6")]
-        public const int DT_DISPFILE = 6;
-
-        [NativeTypeName("#define CC_NONE 0")]
-        public const int CC_NONE = 0;
-
-        [NativeTypeName("#define CC_CIRCLES 1")]
-        public const int CC_CIRCLES = 1;
-
-        [NativeTypeName("#define CC_PIE 2")]
-        public const int CC_PIE = 2;
-
-        [NativeTypeName("#define CC_CHORD 4")]
-        public const int CC_CHORD = 4;
-
-        [NativeTypeName("#define CC_ELLIPSES 8")]
-        public const int CC_ELLIPSES = 8;
-
-        [NativeTypeName("#define CC_WIDE 16")]
-        public const int CC_WIDE = 16;
-
-        [NativeTypeName("#define CC_STYLED 32")]
-        public const int CC_STYLED = 32;
-
-        [NativeTypeName("#define CC_WIDESTYLED 64")]
-        public const int CC_WIDESTYLED = 64;
-
-        [NativeTypeName("#define CC_INTERIORS 128")]
-        public const int CC_INTERIORS = 128;
-
-        [NativeTypeName("#define CC_ROUNDRECT 256")]
-        public const int CC_ROUNDRECT = 256;
-
         [NativeTypeName("#define LC_NONE 0")]
         public const int LC_NONE = 0;
 
@@ -2735,42 +2138,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define LC_INTERIORS 128")]
         public const int LC_INTERIORS = 128;
 
-        [NativeTypeName("#define PC_NONE 0")]
-        public const int PC_NONE = 0;
-
-        [NativeTypeName("#define PC_POLYGON 1")]
-        public const int PC_POLYGON = 1;
-
-        [NativeTypeName("#define PC_RECTANGLE 2")]
-        public const int PC_RECTANGLE = 2;
-
-        [NativeTypeName("#define PC_WINDPOLYGON 4")]
-        public const int PC_WINDPOLYGON = 4;
-
-        [NativeTypeName("#define PC_TRAPEZOID 4")]
-        public const int PC_TRAPEZOID = 4;
-
-        [NativeTypeName("#define PC_SCANLINE 8")]
-        public const int PC_SCANLINE = 8;
-
-        [NativeTypeName("#define PC_WIDE 16")]
-        public const int PC_WIDE = 16;
-
-        [NativeTypeName("#define PC_STYLED 32")]
-        public const int PC_STYLED = 32;
-
-        [NativeTypeName("#define PC_WIDESTYLED 64")]
-        public const int PC_WIDESTYLED = 64;
-
-        [NativeTypeName("#define PC_INTERIORS 128")]
-        public const int PC_INTERIORS = 128;
-
-        [NativeTypeName("#define PC_POLYPOLYGON 256")]
-        public const int PC_POLYPOLYGON = 256;
-
-        [NativeTypeName("#define PC_PATHS 512")]
-        public const int PC_PATHS = 512;
-
         [NativeTypeName("#define CP_NONE 0")]
         public const int CP_NONE = 0;
 
@@ -2779,117 +2146,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define CP_REGION 2")]
         public const int CP_REGION = 2;
-
-        [NativeTypeName("#define TC_OP_CHARACTER 0x00000001")]
-        public const int TC_OP_CHARACTER = 0x00000001;
-
-        [NativeTypeName("#define TC_OP_STROKE 0x00000002")]
-        public const int TC_OP_STROKE = 0x00000002;
-
-        [NativeTypeName("#define TC_CP_STROKE 0x00000004")]
-        public const int TC_CP_STROKE = 0x00000004;
-
-        [NativeTypeName("#define TC_CR_90 0x00000008")]
-        public const int TC_CR_90 = 0x00000008;
-
-        [NativeTypeName("#define TC_CR_ANY 0x00000010")]
-        public const int TC_CR_ANY = 0x00000010;
-
-        [NativeTypeName("#define TC_SF_X_YINDEP 0x00000020")]
-        public const int TC_SF_X_YINDEP = 0x00000020;
-
-        [NativeTypeName("#define TC_SA_DOUBLE 0x00000040")]
-        public const int TC_SA_DOUBLE = 0x00000040;
-
-        [NativeTypeName("#define TC_SA_INTEGER 0x00000080")]
-        public const int TC_SA_INTEGER = 0x00000080;
-
-        [NativeTypeName("#define TC_SA_CONTIN 0x00000100")]
-        public const int TC_SA_CONTIN = 0x00000100;
-
-        [NativeTypeName("#define TC_EA_DOUBLE 0x00000200")]
-        public const int TC_EA_DOUBLE = 0x00000200;
-
-        [NativeTypeName("#define TC_IA_ABLE 0x00000400")]
-        public const int TC_IA_ABLE = 0x00000400;
-
-        [NativeTypeName("#define TC_UA_ABLE 0x00000800")]
-        public const int TC_UA_ABLE = 0x00000800;
-
-        [NativeTypeName("#define TC_SO_ABLE 0x00001000")]
-        public const int TC_SO_ABLE = 0x00001000;
-
-        [NativeTypeName("#define TC_RA_ABLE 0x00002000")]
-        public const int TC_RA_ABLE = 0x00002000;
-
-        [NativeTypeName("#define TC_VA_ABLE 0x00004000")]
-        public const int TC_VA_ABLE = 0x00004000;
-
-        [NativeTypeName("#define TC_RESERVED 0x00008000")]
-        public const int TC_RESERVED = 0x00008000;
-
-        [NativeTypeName("#define TC_SCROLLBLT 0x00010000")]
-        public const int TC_SCROLLBLT = 0x00010000;
-
-        [NativeTypeName("#define RC_BITBLT 1")]
-        public const int RC_BITBLT = 1;
-
-        [NativeTypeName("#define RC_BANDING 2")]
-        public const int RC_BANDING = 2;
-
-        [NativeTypeName("#define RC_SCALING 4")]
-        public const int RC_SCALING = 4;
-
-        [NativeTypeName("#define RC_BITMAP64 8")]
-        public const int RC_BITMAP64 = 8;
-
-        [NativeTypeName("#define RC_GDI20_OUTPUT 0x0010")]
-        public const int RC_GDI20_OUTPUT = 0x0010;
-
-        [NativeTypeName("#define RC_GDI20_STATE 0x0020")]
-        public const int RC_GDI20_STATE = 0x0020;
-
-        [NativeTypeName("#define RC_SAVEBITMAP 0x0040")]
-        public const int RC_SAVEBITMAP = 0x0040;
-
-        [NativeTypeName("#define RC_DI_BITMAP 0x0080")]
-        public const int RC_DI_BITMAP = 0x0080;
-
-        [NativeTypeName("#define RC_PALETTE 0x0100")]
-        public const int RC_PALETTE = 0x0100;
-
-        [NativeTypeName("#define RC_DIBTODEV 0x0200")]
-        public const int RC_DIBTODEV = 0x0200;
-
-        [NativeTypeName("#define RC_BIGFONT 0x0400")]
-        public const int RC_BIGFONT = 0x0400;
-
-        [NativeTypeName("#define RC_STRETCHBLT 0x0800")]
-        public const int RC_STRETCHBLT = 0x0800;
-
-        [NativeTypeName("#define RC_FLOODFILL 0x1000")]
-        public const int RC_FLOODFILL = 0x1000;
-
-        [NativeTypeName("#define RC_STRETCHDIB 0x2000")]
-        public const int RC_STRETCHDIB = 0x2000;
-
-        [NativeTypeName("#define RC_OP_DX_OUTPUT 0x4000")]
-        public const int RC_OP_DX_OUTPUT = 0x4000;
-
-        [NativeTypeName("#define RC_DEVBITS 0x8000")]
-        public const int RC_DEVBITS = 0x8000;
-
-        [NativeTypeName("#define CM_NONE 0x00000000")]
-        public const int CM_NONE = 0x00000000;
-
-        [NativeTypeName("#define CM_DEVICE_ICM 0x00000001")]
-        public const int CM_DEVICE_ICM = 0x00000001;
-
-        [NativeTypeName("#define CM_GAMMA_RAMP 0x00000002")]
-        public const int CM_GAMMA_RAMP = 0x00000002;
-
-        [NativeTypeName("#define CM_CMYK_COLOR 0x00000004")]
-        public const int CM_CMYK_COLOR = 0x00000004;
 
         [NativeTypeName("#define DIB_RGB_COLORS 0")]
         public const int DIB_RGB_COLORS = 0;
@@ -2924,155 +2180,11 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define CCHFORMNAME 32")]
         public const int CCHFORMNAME = 32;
 
-        [NativeTypeName("#define DM_SPECVERSION 0x0401")]
-        public const int DM_SPECVERSION = 0x0401;
-
-        [NativeTypeName("#define DM_ORIENTATION 0x00000001L")]
-        public const int DM_ORIENTATION = 0x00000001;
-
-        [NativeTypeName("#define DM_PAPERSIZE 0x00000002L")]
-        public const int DM_PAPERSIZE = 0x00000002;
-
-        [NativeTypeName("#define DM_PAPERLENGTH 0x00000004L")]
-        public const int DM_PAPERLENGTH = 0x00000004;
-
-        [NativeTypeName("#define DM_PAPERWIDTH 0x00000008L")]
-        public const int DM_PAPERWIDTH = 0x00000008;
-
-        [NativeTypeName("#define DM_SCALE 0x00000010L")]
-        public const int DM_SCALE = 0x00000010;
-
-        [NativeTypeName("#define DM_POSITION 0x00000020L")]
-        public const int DM_POSITION = 0x00000020;
-
-        [NativeTypeName("#define DM_NUP 0x00000040L")]
-        public const int DM_NUP = 0x00000040;
-
-        [NativeTypeName("#define DM_DISPLAYORIENTATION 0x00000080L")]
-        public const int DM_DISPLAYORIENTATION = 0x00000080;
-
-        [NativeTypeName("#define DM_COPIES 0x00000100L")]
-        public const int DM_COPIES = 0x00000100;
-
-        [NativeTypeName("#define DM_DEFAULTSOURCE 0x00000200L")]
-        public const int DM_DEFAULTSOURCE = 0x00000200;
-
-        [NativeTypeName("#define DM_PRINTQUALITY 0x00000400L")]
-        public const int DM_PRINTQUALITY = 0x00000400;
-
-        [NativeTypeName("#define DM_COLOR 0x00000800L")]
-        public const int DM_COLOR = 0x00000800;
-
-        [NativeTypeName("#define DM_DUPLEX 0x00001000L")]
-        public const int DM_DUPLEX = 0x00001000;
-
-        [NativeTypeName("#define DM_YRESOLUTION 0x00002000L")]
-        public const int DM_YRESOLUTION = 0x00002000;
-
-        [NativeTypeName("#define DM_TTOPTION 0x00004000L")]
-        public const int DM_TTOPTION = 0x00004000;
-
-        [NativeTypeName("#define DM_COLLATE 0x00008000L")]
-        public const int DM_COLLATE = 0x00008000;
-
-        [NativeTypeName("#define DM_FORMNAME 0x00010000L")]
-        public const int DM_FORMNAME = 0x00010000;
-
-        [NativeTypeName("#define DM_LOGPIXELS 0x00020000L")]
-        public const int DM_LOGPIXELS = 0x00020000;
-
-        [NativeTypeName("#define DM_BITSPERPEL 0x00040000L")]
-        public const int DM_BITSPERPEL = 0x00040000;
-
-        [NativeTypeName("#define DM_PELSWIDTH 0x00080000L")]
-        public const int DM_PELSWIDTH = 0x00080000;
-
-        [NativeTypeName("#define DM_PELSHEIGHT 0x00100000L")]
-        public const int DM_PELSHEIGHT = 0x00100000;
-
-        [NativeTypeName("#define DM_DISPLAYFLAGS 0x00200000L")]
-        public const int DM_DISPLAYFLAGS = 0x00200000;
-
-        [NativeTypeName("#define DM_DISPLAYFREQUENCY 0x00400000L")]
-        public const int DM_DISPLAYFREQUENCY = 0x00400000;
-
-        [NativeTypeName("#define DM_ICMMETHOD 0x00800000L")]
-        public const int DM_ICMMETHOD = 0x00800000;
-
-        [NativeTypeName("#define DM_ICMINTENT 0x01000000L")]
-        public const int DM_ICMINTENT = 0x01000000;
-
-        [NativeTypeName("#define DM_MEDIATYPE 0x02000000L")]
-        public const int DM_MEDIATYPE = 0x02000000;
-
-        [NativeTypeName("#define DM_DITHERTYPE 0x04000000L")]
-        public const int DM_DITHERTYPE = 0x04000000;
-
-        [NativeTypeName("#define DM_PANNINGWIDTH 0x08000000L")]
-        public const int DM_PANNINGWIDTH = 0x08000000;
-
-        [NativeTypeName("#define DM_PANNINGHEIGHT 0x10000000L")]
-        public const int DM_PANNINGHEIGHT = 0x10000000;
-
-        [NativeTypeName("#define DM_DISPLAYFIXEDOUTPUT 0x20000000L")]
-        public const int DM_DISPLAYFIXEDOUTPUT = 0x20000000;
-
         [NativeTypeName("#define DMORIENT_PORTRAIT 1")]
         public const int DMORIENT_PORTRAIT = 1;
 
         [NativeTypeName("#define DMORIENT_LANDSCAPE 2")]
         public const int DMORIENT_LANDSCAPE = 2;
-
-        [NativeTypeName("#define DMBIN_FIRST DMBIN_UPPER")]
-        public const int DMBIN_FIRST = 1;
-
-        [NativeTypeName("#define DMBIN_UPPER 1")]
-        public const int DMBIN_UPPER = 1;
-
-        [NativeTypeName("#define DMBIN_ONLYONE 1")]
-        public const int DMBIN_ONLYONE = 1;
-
-        [NativeTypeName("#define DMBIN_LOWER 2")]
-        public const int DMBIN_LOWER = 2;
-
-        [NativeTypeName("#define DMBIN_MIDDLE 3")]
-        public const int DMBIN_MIDDLE = 3;
-
-        [NativeTypeName("#define DMBIN_MANUAL 4")]
-        public const int DMBIN_MANUAL = 4;
-
-        [NativeTypeName("#define DMBIN_ENVELOPE 5")]
-        public const int DMBIN_ENVELOPE = 5;
-
-        [NativeTypeName("#define DMBIN_ENVMANUAL 6")]
-        public const int DMBIN_ENVMANUAL = 6;
-
-        [NativeTypeName("#define DMBIN_AUTO 7")]
-        public const int DMBIN_AUTO = 7;
-
-        [NativeTypeName("#define DMBIN_TRACTOR 8")]
-        public const int DMBIN_TRACTOR = 8;
-
-        [NativeTypeName("#define DMBIN_SMALLFMT 9")]
-        public const int DMBIN_SMALLFMT = 9;
-
-        [NativeTypeName("#define DMBIN_LARGEFMT 10")]
-        public const int DMBIN_LARGEFMT = 10;
-
-        [NativeTypeName("#define DMBIN_LARGECAPACITY 11")]
-        public const int DMBIN_LARGECAPACITY = 11;
-
-        [NativeTypeName("#define DMBIN_CASSETTE 14")]
-        public const int DMBIN_CASSETTE = 14;
-
-        [NativeTypeName("#define DMBIN_FORMSOURCE 15")]
-        public const int DMBIN_FORMSOURCE = 15;
-
-        [NativeTypeName("#define DMBIN_LAST DMBIN_FORMSOURCE")]
-        public const int DMBIN_LAST = 15;
-
-        [NativeTypeName("#define DMBIN_USER 256")]
-        public const int DMBIN_USER = 256;
 
         [NativeTypeName("#define DMRES_DRAFT (-1)")]
         public const int DMRES_DRAFT = (-1);
@@ -3140,9 +2252,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define DMDFO_CENTER 2")]
         public const int DMDFO_CENTER = 2;
 
-        [NativeTypeName("#define DM_INTERLACED 0x00000002")]
-        public const int DM_INTERLACED = 0x00000002;
-
         [NativeTypeName("#define DMDISPLAYFLAGS_TEXTMODE 0x00000004")]
         public const int DMDISPLAYFLAGS_TEXTMODE = 0x00000004;
 
@@ -3194,135 +2303,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define DMMEDIA_USER 256")]
         public const int DMMEDIA_USER = 256;
 
-        [NativeTypeName("#define DMDITHER_NONE 1")]
-        public const int DMDITHER_NONE = 1;
-
-        [NativeTypeName("#define DMDITHER_COARSE 2")]
-        public const int DMDITHER_COARSE = 2;
-
-        [NativeTypeName("#define DMDITHER_FINE 3")]
-        public const int DMDITHER_FINE = 3;
-
-        [NativeTypeName("#define DMDITHER_LINEART 4")]
-        public const int DMDITHER_LINEART = 4;
-
-        [NativeTypeName("#define DMDITHER_ERRORDIFFUSION 5")]
-        public const int DMDITHER_ERRORDIFFUSION = 5;
-
-        [NativeTypeName("#define DMDITHER_RESERVED6 6")]
-        public const int DMDITHER_RESERVED6 = 6;
-
-        [NativeTypeName("#define DMDITHER_RESERVED7 7")]
-        public const int DMDITHER_RESERVED7 = 7;
-
-        [NativeTypeName("#define DMDITHER_RESERVED8 8")]
-        public const int DMDITHER_RESERVED8 = 8;
-
-        [NativeTypeName("#define DMDITHER_RESERVED9 9")]
-        public const int DMDITHER_RESERVED9 = 9;
-
-        [NativeTypeName("#define DMDITHER_GRAYSCALE 10")]
-        public const int DMDITHER_GRAYSCALE = 10;
-
-        [NativeTypeName("#define DMDITHER_USER 256")]
-        public const int DMDITHER_USER = 256;
-
-        [NativeTypeName("#define DISPLAY_DEVICE_ATTACHED_TO_DESKTOP 0x00000001")]
-        public const int DISPLAY_DEVICE_ATTACHED_TO_DESKTOP = 0x00000001;
-
-        [NativeTypeName("#define DISPLAY_DEVICE_MULTI_DRIVER 0x00000002")]
-        public const int DISPLAY_DEVICE_MULTI_DRIVER = 0x00000002;
-
-        [NativeTypeName("#define DISPLAY_DEVICE_PRIMARY_DEVICE 0x00000004")]
-        public const int DISPLAY_DEVICE_PRIMARY_DEVICE = 0x00000004;
-
-        [NativeTypeName("#define DISPLAY_DEVICE_MIRRORING_DRIVER 0x00000008")]
-        public const int DISPLAY_DEVICE_MIRRORING_DRIVER = 0x00000008;
-
-        [NativeTypeName("#define DISPLAY_DEVICE_VGA_COMPATIBLE 0x00000010")]
-        public const int DISPLAY_DEVICE_VGA_COMPATIBLE = 0x00000010;
-
-        [NativeTypeName("#define DISPLAY_DEVICE_REMOVABLE 0x00000020")]
-        public const int DISPLAY_DEVICE_REMOVABLE = 0x00000020;
-
-        [NativeTypeName("#define DISPLAY_DEVICE_ACC_DRIVER 0x00000040")]
-        public const int DISPLAY_DEVICE_ACC_DRIVER = 0x00000040;
-
-        [NativeTypeName("#define DISPLAY_DEVICE_MODESPRUNED 0x08000000")]
-        public const int DISPLAY_DEVICE_MODESPRUNED = 0x08000000;
-
-        [NativeTypeName("#define DISPLAY_DEVICE_RDPUDD 0x01000000")]
-        public const int DISPLAY_DEVICE_RDPUDD = 0x01000000;
-
-        [NativeTypeName("#define DISPLAY_DEVICE_REMOTE 0x04000000")]
-        public const int DISPLAY_DEVICE_REMOTE = 0x04000000;
-
-        [NativeTypeName("#define DISPLAY_DEVICE_DISCONNECT 0x02000000")]
-        public const int DISPLAY_DEVICE_DISCONNECT = 0x02000000;
-
-        [NativeTypeName("#define DISPLAY_DEVICE_TS_COMPATIBLE 0x00200000")]
-        public const int DISPLAY_DEVICE_TS_COMPATIBLE = 0x00200000;
-
-        [NativeTypeName("#define DISPLAY_DEVICE_UNSAFE_MODES_ON 0x00080000")]
-        public const int DISPLAY_DEVICE_UNSAFE_MODES_ON = 0x00080000;
-
-        [NativeTypeName("#define DISPLAY_DEVICE_ACTIVE 0x00000001")]
-        public const int DISPLAY_DEVICE_ACTIVE = 0x00000001;
-
-        [NativeTypeName("#define DISPLAY_DEVICE_ATTACHED 0x00000002")]
-        public const int DISPLAY_DEVICE_ATTACHED = 0x00000002;
-
-        [NativeTypeName("#define DISPLAYCONFIG_MAXPATH 1024")]
-        public const int DISPLAYCONFIG_MAXPATH = 1024;
-
-        [NativeTypeName("#define DISPLAYCONFIG_PATH_MODE_IDX_INVALID 0xffffffff")]
-        public const uint DISPLAYCONFIG_PATH_MODE_IDX_INVALID = 0xffffffff;
-
-        [NativeTypeName("#define DISPLAYCONFIG_PATH_TARGET_MODE_IDX_INVALID 0xffff")]
-        public const int DISPLAYCONFIG_PATH_TARGET_MODE_IDX_INVALID = 0xffff;
-
-        [NativeTypeName("#define DISPLAYCONFIG_PATH_DESKTOP_IMAGE_IDX_INVALID 0xffff")]
-        public const int DISPLAYCONFIG_PATH_DESKTOP_IMAGE_IDX_INVALID = 0xffff;
-
-        [NativeTypeName("#define DISPLAYCONFIG_PATH_SOURCE_MODE_IDX_INVALID 0xffff")]
-        public const int DISPLAYCONFIG_PATH_SOURCE_MODE_IDX_INVALID = 0xffff;
-
-        [NativeTypeName("#define DISPLAYCONFIG_PATH_CLONE_GROUP_INVALID 0xffff")]
-        public const int DISPLAYCONFIG_PATH_CLONE_GROUP_INVALID = 0xffff;
-
-        [NativeTypeName("#define DISPLAYCONFIG_SOURCE_IN_USE 0x00000001")]
-        public const int DISPLAYCONFIG_SOURCE_IN_USE = 0x00000001;
-
-        [NativeTypeName("#define DISPLAYCONFIG_TARGET_IN_USE 0x00000001")]
-        public const int DISPLAYCONFIG_TARGET_IN_USE = 0x00000001;
-
-        [NativeTypeName("#define DISPLAYCONFIG_TARGET_FORCIBLE 0x00000002")]
-        public const int DISPLAYCONFIG_TARGET_FORCIBLE = 0x00000002;
-
-        [NativeTypeName("#define DISPLAYCONFIG_TARGET_FORCED_AVAILABILITY_BOOT 0x00000004")]
-        public const int DISPLAYCONFIG_TARGET_FORCED_AVAILABILITY_BOOT = 0x00000004;
-
-        [NativeTypeName("#define DISPLAYCONFIG_TARGET_FORCED_AVAILABILITY_PATH 0x00000008")]
-        public const int DISPLAYCONFIG_TARGET_FORCED_AVAILABILITY_PATH = 0x00000008;
-
-        [NativeTypeName("#define DISPLAYCONFIG_TARGET_FORCED_AVAILABILITY_SYSTEM 0x00000010")]
-        public const int DISPLAYCONFIG_TARGET_FORCED_AVAILABILITY_SYSTEM = 0x00000010;
-
-        [NativeTypeName("#define DISPLAYCONFIG_TARGET_IS_HMD 0x00000020")]
-        public const int DISPLAYCONFIG_TARGET_IS_HMD = 0x00000020;
-
-        [NativeTypeName("#define DISPLAYCONFIG_PATH_ACTIVE 0x00000001")]
-        public const int DISPLAYCONFIG_PATH_ACTIVE = 0x00000001;
-
-        [NativeTypeName("#define DISPLAYCONFIG_PATH_PREFERRED_UNSCALED 0x00000004")]
-        public const int DISPLAYCONFIG_PATH_PREFERRED_UNSCALED = 0x00000004;
-
-        [NativeTypeName("#define DISPLAYCONFIG_PATH_SUPPORT_VIRTUAL_MODE 0x00000008")]
-        public const int DISPLAYCONFIG_PATH_SUPPORT_VIRTUAL_MODE = 0x00000008;
-
-        [NativeTypeName("#define DISPLAYCONFIG_PATH_VALID_FLAGS 0x0000000D")]
-        public const int DISPLAYCONFIG_PATH_VALID_FLAGS = 0x0000000D;
-
         [NativeTypeName("#define QDC_ALL_PATHS 0x00000001")]
         public const int QDC_ALL_PATHS = 0x00000001;
 
@@ -3337,54 +2317,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define QDC_INCLUDE_HMD 0x00000020")]
         public const int QDC_INCLUDE_HMD = 0x00000020;
-
-        [NativeTypeName("#define SDC_TOPOLOGY_INTERNAL 0x00000001")]
-        public const int SDC_TOPOLOGY_INTERNAL = 0x00000001;
-
-        [NativeTypeName("#define SDC_TOPOLOGY_CLONE 0x00000002")]
-        public const int SDC_TOPOLOGY_CLONE = 0x00000002;
-
-        [NativeTypeName("#define SDC_TOPOLOGY_EXTEND 0x00000004")]
-        public const int SDC_TOPOLOGY_EXTEND = 0x00000004;
-
-        [NativeTypeName("#define SDC_TOPOLOGY_EXTERNAL 0x00000008")]
-        public const int SDC_TOPOLOGY_EXTERNAL = 0x00000008;
-
-        [NativeTypeName("#define SDC_TOPOLOGY_SUPPLIED 0x00000010")]
-        public const int SDC_TOPOLOGY_SUPPLIED = 0x00000010;
-
-        [NativeTypeName("#define SDC_USE_DATABASE_CURRENT (SDC_TOPOLOGY_INTERNAL | SDC_TOPOLOGY_CLONE | SDC_TOPOLOGY_EXTEND | SDC_TOPOLOGY_EXTERNAL)")]
-        public const int SDC_USE_DATABASE_CURRENT = (0x00000001 | 0x00000002 | 0x00000004 | 0x00000008);
-
-        [NativeTypeName("#define SDC_USE_SUPPLIED_DISPLAY_CONFIG 0x00000020")]
-        public const int SDC_USE_SUPPLIED_DISPLAY_CONFIG = 0x00000020;
-
-        [NativeTypeName("#define SDC_VALIDATE 0x00000040")]
-        public const int SDC_VALIDATE = 0x00000040;
-
-        [NativeTypeName("#define SDC_APPLY 0x00000080")]
-        public const int SDC_APPLY = 0x00000080;
-
-        [NativeTypeName("#define SDC_NO_OPTIMIZATION 0x00000100")]
-        public const int SDC_NO_OPTIMIZATION = 0x00000100;
-
-        [NativeTypeName("#define SDC_SAVE_TO_DATABASE 0x00000200")]
-        public const int SDC_SAVE_TO_DATABASE = 0x00000200;
-
-        [NativeTypeName("#define SDC_ALLOW_CHANGES 0x00000400")]
-        public const int SDC_ALLOW_CHANGES = 0x00000400;
-
-        [NativeTypeName("#define SDC_PATH_PERSIST_IF_REQUIRED 0x00000800")]
-        public const int SDC_PATH_PERSIST_IF_REQUIRED = 0x00000800;
-
-        [NativeTypeName("#define SDC_FORCE_MODE_ENUMERATION 0x00001000")]
-        public const int SDC_FORCE_MODE_ENUMERATION = 0x00001000;
-
-        [NativeTypeName("#define SDC_ALLOW_PATH_ORDER_CHANGES 0x00002000")]
-        public const int SDC_ALLOW_PATH_ORDER_CHANGES = 0x00002000;
-
-        [NativeTypeName("#define SDC_VIRTUAL_MODE_AWARE 0x00008000")]
-        public const int SDC_VIRTUAL_MODE_AWARE = 0x00008000;
 
         [NativeTypeName("#define RDH_RECTANGLES 1")]
         public const int RDH_RECTANGLES = 1;
@@ -3431,104 +2363,11 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define TT_PRIM_CSPLINE 3")]
         public const int TT_PRIM_CSPLINE = 3;
 
-        [NativeTypeName("#define GCP_DBCS 0x0001")]
-        public const int GCP_DBCS = 0x0001;
-
-        [NativeTypeName("#define GCP_REORDER 0x0002")]
-        public const int GCP_REORDER = 0x0002;
-
-        [NativeTypeName("#define GCP_USEKERNING 0x0008")]
-        public const int GCP_USEKERNING = 0x0008;
-
-        [NativeTypeName("#define GCP_GLYPHSHAPE 0x0010")]
-        public const int GCP_GLYPHSHAPE = 0x0010;
-
-        [NativeTypeName("#define GCP_LIGATE 0x0020")]
-        public const int GCP_LIGATE = 0x0020;
-
-        [NativeTypeName("#define GCP_DIACRITIC 0x0100")]
-        public const int GCP_DIACRITIC = 0x0100;
-
-        [NativeTypeName("#define GCP_KASHIDA 0x0400")]
-        public const int GCP_KASHIDA = 0x0400;
-
-        [NativeTypeName("#define GCP_ERROR 0x8000")]
-        public const int GCP_ERROR = 0x8000;
-
         [NativeTypeName("#define FLI_MASK 0x103B")]
         public const int FLI_MASK = 0x103B;
 
-        [NativeTypeName("#define GCP_JUSTIFY 0x00010000L")]
-        public const int GCP_JUSTIFY = 0x00010000;
-
         [NativeTypeName("#define FLI_GLYPHS 0x00040000L")]
         public const int FLI_GLYPHS = 0x00040000;
-
-        [NativeTypeName("#define GCP_CLASSIN 0x00080000L")]
-        public const int GCP_CLASSIN = 0x00080000;
-
-        [NativeTypeName("#define GCP_MAXEXTENT 0x00100000L")]
-        public const int GCP_MAXEXTENT = 0x00100000;
-
-        [NativeTypeName("#define GCP_JUSTIFYIN 0x00200000L")]
-        public const int GCP_JUSTIFYIN = 0x00200000;
-
-        [NativeTypeName("#define GCP_DISPLAYZWG 0x00400000L")]
-        public const int GCP_DISPLAYZWG = 0x00400000;
-
-        [NativeTypeName("#define GCP_SYMSWAPOFF 0x00800000L")]
-        public const int GCP_SYMSWAPOFF = 0x00800000;
-
-        [NativeTypeName("#define GCP_NUMERICOVERRIDE 0x01000000L")]
-        public const int GCP_NUMERICOVERRIDE = 0x01000000;
-
-        [NativeTypeName("#define GCP_NEUTRALOVERRIDE 0x02000000L")]
-        public const int GCP_NEUTRALOVERRIDE = 0x02000000;
-
-        [NativeTypeName("#define GCP_NUMERICSLATIN 0x04000000L")]
-        public const int GCP_NUMERICSLATIN = 0x04000000;
-
-        [NativeTypeName("#define GCP_NUMERICSLOCAL 0x08000000L")]
-        public const int GCP_NUMERICSLOCAL = 0x08000000;
-
-        [NativeTypeName("#define GCPCLASS_LATIN 1")]
-        public const int GCPCLASS_LATIN = 1;
-
-        [NativeTypeName("#define GCPCLASS_HEBREW 2")]
-        public const int GCPCLASS_HEBREW = 2;
-
-        [NativeTypeName("#define GCPCLASS_ARABIC 2")]
-        public const int GCPCLASS_ARABIC = 2;
-
-        [NativeTypeName("#define GCPCLASS_NEUTRAL 3")]
-        public const int GCPCLASS_NEUTRAL = 3;
-
-        [NativeTypeName("#define GCPCLASS_LOCALNUMBER 4")]
-        public const int GCPCLASS_LOCALNUMBER = 4;
-
-        [NativeTypeName("#define GCPCLASS_LATINNUMBER 5")]
-        public const int GCPCLASS_LATINNUMBER = 5;
-
-        [NativeTypeName("#define GCPCLASS_LATINNUMERICTERMINATOR 6")]
-        public const int GCPCLASS_LATINNUMERICTERMINATOR = 6;
-
-        [NativeTypeName("#define GCPCLASS_LATINNUMERICSEPARATOR 7")]
-        public const int GCPCLASS_LATINNUMERICSEPARATOR = 7;
-
-        [NativeTypeName("#define GCPCLASS_NUMERICSEPARATOR 8")]
-        public const int GCPCLASS_NUMERICSEPARATOR = 8;
-
-        [NativeTypeName("#define GCPCLASS_PREBOUNDLTR 0x80")]
-        public const int GCPCLASS_PREBOUNDLTR = 0x80;
-
-        [NativeTypeName("#define GCPCLASS_PREBOUNDRTL 0x40")]
-        public const int GCPCLASS_PREBOUNDRTL = 0x40;
-
-        [NativeTypeName("#define GCPCLASS_POSTBOUNDLTR 0x20")]
-        public const int GCPCLASS_POSTBOUNDLTR = 0x20;
-
-        [NativeTypeName("#define GCPCLASS_POSTBOUNDRTL 0x10")]
-        public const int GCPCLASS_POSTBOUNDRTL = 0x10;
 
         [NativeTypeName("#define GCPGLYPH_LINKBEFORE 0x8000")]
         public const int GCPGLYPH_LINKBEFORE = 0x8000;
@@ -3541,78 +2380,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define TT_ENABLED 0x0002")]
         public const int TT_ENABLED = 0x0002;
-
-        [NativeTypeName("#define PFD_TYPE_RGBA 0")]
-        public const int PFD_TYPE_RGBA = 0;
-
-        [NativeTypeName("#define PFD_TYPE_COLORINDEX 1")]
-        public const int PFD_TYPE_COLORINDEX = 1;
-
-        [NativeTypeName("#define PFD_MAIN_PLANE 0")]
-        public const int PFD_MAIN_PLANE = 0;
-
-        [NativeTypeName("#define PFD_OVERLAY_PLANE 1")]
-        public const int PFD_OVERLAY_PLANE = 1;
-
-        [NativeTypeName("#define PFD_UNDERLAY_PLANE (-1)")]
-        public const int PFD_UNDERLAY_PLANE = (-1);
-
-        [NativeTypeName("#define PFD_DOUBLEBUFFER 0x00000001")]
-        public const int PFD_DOUBLEBUFFER = 0x00000001;
-
-        [NativeTypeName("#define PFD_STEREO 0x00000002")]
-        public const int PFD_STEREO = 0x00000002;
-
-        [NativeTypeName("#define PFD_DRAW_TO_WINDOW 0x00000004")]
-        public const int PFD_DRAW_TO_WINDOW = 0x00000004;
-
-        [NativeTypeName("#define PFD_DRAW_TO_BITMAP 0x00000008")]
-        public const int PFD_DRAW_TO_BITMAP = 0x00000008;
-
-        [NativeTypeName("#define PFD_SUPPORT_GDI 0x00000010")]
-        public const int PFD_SUPPORT_GDI = 0x00000010;
-
-        [NativeTypeName("#define PFD_SUPPORT_OPENGL 0x00000020")]
-        public const int PFD_SUPPORT_OPENGL = 0x00000020;
-
-        [NativeTypeName("#define PFD_GENERIC_FORMAT 0x00000040")]
-        public const int PFD_GENERIC_FORMAT = 0x00000040;
-
-        [NativeTypeName("#define PFD_NEED_PALETTE 0x00000080")]
-        public const int PFD_NEED_PALETTE = 0x00000080;
-
-        [NativeTypeName("#define PFD_NEED_SYSTEM_PALETTE 0x00000100")]
-        public const int PFD_NEED_SYSTEM_PALETTE = 0x00000100;
-
-        [NativeTypeName("#define PFD_SWAP_EXCHANGE 0x00000200")]
-        public const int PFD_SWAP_EXCHANGE = 0x00000200;
-
-        [NativeTypeName("#define PFD_SWAP_COPY 0x00000400")]
-        public const int PFD_SWAP_COPY = 0x00000400;
-
-        [NativeTypeName("#define PFD_SWAP_LAYER_BUFFERS 0x00000800")]
-        public const int PFD_SWAP_LAYER_BUFFERS = 0x00000800;
-
-        [NativeTypeName("#define PFD_GENERIC_ACCELERATED 0x00001000")]
-        public const int PFD_GENERIC_ACCELERATED = 0x00001000;
-
-        [NativeTypeName("#define PFD_SUPPORT_DIRECTDRAW 0x00002000")]
-        public const int PFD_SUPPORT_DIRECTDRAW = 0x00002000;
-
-        [NativeTypeName("#define PFD_DIRECT3D_ACCELERATED 0x00004000")]
-        public const int PFD_DIRECT3D_ACCELERATED = 0x00004000;
-
-        [NativeTypeName("#define PFD_SUPPORT_COMPOSITION 0x00008000")]
-        public const int PFD_SUPPORT_COMPOSITION = 0x00008000;
-
-        [NativeTypeName("#define PFD_DEPTH_DONTCARE 0x20000000")]
-        public const int PFD_DEPTH_DONTCARE = 0x20000000;
-
-        [NativeTypeName("#define PFD_DOUBLEBUFFER_DONTCARE 0x40000000")]
-        public const int PFD_DOUBLEBUFFER_DONTCARE = 0x40000000;
-
-        [NativeTypeName("#define PFD_STEREO_DONTCARE 0x80000000")]
-        public const uint PFD_STEREO_DONTCARE = 0x80000000;
 
         [NativeTypeName("#define AddFontResource AddFontResourceW")]
         public static delegate*<ushort*, int> AddFontResource => &AddFontResourceW;
@@ -3638,111 +2405,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define CreateScalableFontResource CreateScalableFontResourceW")]
         public static delegate*<uint, ushort*, ushort*, ushort*, BOOL> CreateScalableFontResource => &CreateScalableFontResourceW;
 
-        [NativeTypeName("#define DM_UPDATE 1")]
-        public const int DM_UPDATE = 1;
-
-        [NativeTypeName("#define DM_COPY 2")]
-        public const int DM_COPY = 2;
-
-        [NativeTypeName("#define DM_PROMPT 4")]
-        public const int DM_PROMPT = 4;
-
-        [NativeTypeName("#define DM_MODIFY 8")]
-        public const int DM_MODIFY = 8;
-
-        [NativeTypeName("#define DM_IN_BUFFER DM_MODIFY")]
-        public const int DM_IN_BUFFER = 8;
-
-        [NativeTypeName("#define DM_IN_PROMPT DM_PROMPT")]
-        public const int DM_IN_PROMPT = 4;
-
-        [NativeTypeName("#define DM_OUT_BUFFER DM_COPY")]
-        public const int DM_OUT_BUFFER = 2;
-
-        [NativeTypeName("#define DM_OUT_DEFAULT DM_UPDATE")]
-        public const int DM_OUT_DEFAULT = 1;
-
-        [NativeTypeName("#define DC_FIELDS 1")]
-        public const int DC_FIELDS = 1;
-
-        [NativeTypeName("#define DC_PAPERS 2")]
-        public const int DC_PAPERS = 2;
-
-        [NativeTypeName("#define DC_PAPERSIZE 3")]
-        public const int DC_PAPERSIZE = 3;
-
-        [NativeTypeName("#define DC_MINEXTENT 4")]
-        public const int DC_MINEXTENT = 4;
-
-        [NativeTypeName("#define DC_MAXEXTENT 5")]
-        public const int DC_MAXEXTENT = 5;
-
-        [NativeTypeName("#define DC_BINS 6")]
-        public const int DC_BINS = 6;
-
-        [NativeTypeName("#define DC_DUPLEX 7")]
-        public const int DC_DUPLEX = 7;
-
-        [NativeTypeName("#define DC_SIZE 8")]
-        public const int DC_SIZE = 8;
-
-        [NativeTypeName("#define DC_EXTRA 9")]
-        public const int DC_EXTRA = 9;
-
-        [NativeTypeName("#define DC_VERSION 10")]
-        public const int DC_VERSION = 10;
-
-        [NativeTypeName("#define DC_DRIVER 11")]
-        public const int DC_DRIVER = 11;
-
-        [NativeTypeName("#define DC_BINNAMES 12")]
-        public const int DC_BINNAMES = 12;
-
-        [NativeTypeName("#define DC_ENUMRESOLUTIONS 13")]
-        public const int DC_ENUMRESOLUTIONS = 13;
-
-        [NativeTypeName("#define DC_FILEDEPENDENCIES 14")]
-        public const int DC_FILEDEPENDENCIES = 14;
-
-        [NativeTypeName("#define DC_TRUETYPE 15")]
-        public const int DC_TRUETYPE = 15;
-
-        [NativeTypeName("#define DC_PAPERNAMES 16")]
-        public const int DC_PAPERNAMES = 16;
-
-        [NativeTypeName("#define DC_ORIENTATION 17")]
-        public const int DC_ORIENTATION = 17;
-
-        [NativeTypeName("#define DC_COPIES 18")]
-        public const int DC_COPIES = 18;
-
-        [NativeTypeName("#define DC_BINADJUST 19")]
-        public const int DC_BINADJUST = 19;
-
-        [NativeTypeName("#define DC_EMF_COMPLIANT 20")]
-        public const int DC_EMF_COMPLIANT = 20;
-
-        [NativeTypeName("#define DC_DATATYPE_PRODUCED 21")]
-        public const int DC_DATATYPE_PRODUCED = 21;
-
-        [NativeTypeName("#define DC_COLLATE 22")]
-        public const int DC_COLLATE = 22;
-
-        [NativeTypeName("#define DC_MANUFACTURER 23")]
-        public const int DC_MANUFACTURER = 23;
-
-        [NativeTypeName("#define DC_MODEL 24")]
-        public const int DC_MODEL = 24;
-
-        [NativeTypeName("#define DC_PERSONALITY 25")]
-        public const int DC_PERSONALITY = 25;
-
-        [NativeTypeName("#define DC_PRINTRATE 26")]
-        public const int DC_PRINTRATE = 26;
-
-        [NativeTypeName("#define DC_PRINTRATEUNIT 27")]
-        public const int DC_PRINTRATEUNIT = 27;
-
         [NativeTypeName("#define PRINTRATEUNIT_PPM 1")]
         public const int PRINTRATEUNIT_PPM = 1;
 
@@ -3754,30 +2416,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define PRINTRATEUNIT_IPM 4")]
         public const int PRINTRATEUNIT_IPM = 4;
-
-        [NativeTypeName("#define DC_PRINTERMEM 28")]
-        public const int DC_PRINTERMEM = 28;
-
-        [NativeTypeName("#define DC_MEDIAREADY 29")]
-        public const int DC_MEDIAREADY = 29;
-
-        [NativeTypeName("#define DC_STAPLE 30")]
-        public const int DC_STAPLE = 30;
-
-        [NativeTypeName("#define DC_PRINTRATEPPM 31")]
-        public const int DC_PRINTRATEPPM = 31;
-
-        [NativeTypeName("#define DC_COLORDEVICE 32")]
-        public const int DC_COLORDEVICE = 32;
-
-        [NativeTypeName("#define DC_NUP 33")]
-        public const int DC_NUP = 33;
-
-        [NativeTypeName("#define DC_MEDIATYPENAMES 34")]
-        public const int DC_MEDIATYPENAMES = 34;
-
-        [NativeTypeName("#define DC_MEDIATYPES 35")]
-        public const int DC_MEDIATYPES = 35;
 
         [NativeTypeName("#define DCTT_BITMAP 0x0000001L")]
         public const int DCTT_BITMAP = 0x0000001;
@@ -3941,48 +2579,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define CA_LOG_FILTER 0x0002")]
         public const int CA_LOG_FILTER = 0x0002;
 
-        [NativeTypeName("#define ILLUMINANT_DEVICE_DEFAULT 0")]
-        public const int ILLUMINANT_DEVICE_DEFAULT = 0;
-
-        [NativeTypeName("#define ILLUMINANT_A 1")]
-        public const int ILLUMINANT_A = 1;
-
-        [NativeTypeName("#define ILLUMINANT_B 2")]
-        public const int ILLUMINANT_B = 2;
-
-        [NativeTypeName("#define ILLUMINANT_C 3")]
-        public const int ILLUMINANT_C = 3;
-
-        [NativeTypeName("#define ILLUMINANT_D50 4")]
-        public const int ILLUMINANT_D50 = 4;
-
-        [NativeTypeName("#define ILLUMINANT_D55 5")]
-        public const int ILLUMINANT_D55 = 5;
-
-        [NativeTypeName("#define ILLUMINANT_D65 6")]
-        public const int ILLUMINANT_D65 = 6;
-
-        [NativeTypeName("#define ILLUMINANT_D75 7")]
-        public const int ILLUMINANT_D75 = 7;
-
-        [NativeTypeName("#define ILLUMINANT_F2 8")]
-        public const int ILLUMINANT_F2 = 8;
-
-        [NativeTypeName("#define ILLUMINANT_MAX_INDEX ILLUMINANT_F2")]
-        public const int ILLUMINANT_MAX_INDEX = 8;
-
-        [NativeTypeName("#define ILLUMINANT_TUNGSTEN ILLUMINANT_A")]
-        public const int ILLUMINANT_TUNGSTEN = 1;
-
-        [NativeTypeName("#define ILLUMINANT_DAYLIGHT ILLUMINANT_C")]
-        public const int ILLUMINANT_DAYLIGHT = 3;
-
-        [NativeTypeName("#define ILLUMINANT_FLUORESCENT ILLUMINANT_F2")]
-        public const int ILLUMINANT_FLUORESCENT = 8;
-
-        [NativeTypeName("#define ILLUMINANT_NTSC ILLUMINANT_C")]
-        public const int ILLUMINANT_NTSC = 3;
-
         [NativeTypeName("#define RGB_GAMMA_MIN (WORD)02500")]
         public const ushort RGB_GAMMA_MIN = (ushort)(02500);
 
@@ -4000,12 +2596,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define REFERENCE_BLACK_MAX (WORD)4000")]
         public const ushort REFERENCE_BLACK_MAX = (ushort)(4000);
-
-        [NativeTypeName("#define COLOR_ADJ_MIN (SHORT)-100")]
-        public const short COLOR_ADJ_MIN = (short)(-100);
-
-        [NativeTypeName("#define COLOR_ADJ_MAX (SHORT)100")]
-        public const short COLOR_ADJ_MAX = (short)(100);
 
         [NativeTypeName("#define StartDoc StartDocW")]
         public static delegate*<HDC, DOCINFOW*, int> StartDoc => &StartDocW;
@@ -4031,18 +2621,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define GetKerningPairs GetKerningPairsW")]
         public static delegate*<HDC, uint, KERNINGPAIR*, uint> GetKerningPairs => &GetKerningPairsW;
 
-        [NativeTypeName("#define ICM_OFF 1")]
-        public const int ICM_OFF = 1;
-
-        [NativeTypeName("#define ICM_ON 2")]
-        public const int ICM_ON = 2;
-
-        [NativeTypeName("#define ICM_QUERY 3")]
-        public const int ICM_QUERY = 3;
-
-        [NativeTypeName("#define ICM_DONE_OUTSIDEDC 4")]
-        public const int ICM_DONE_OUTSIDEDC = 4;
-
         [NativeTypeName("#define GetLogColorSpace GetLogColorSpaceW")]
         public static delegate*<HCOLORSPACE, LOGCOLORSPACEW*, uint, BOOL> GetLogColorSpace => &GetLogColorSpaceW;
 
@@ -4066,375 +2644,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define ENHMETA_STOCK_OBJECT 0x80000000")]
         public const uint ENHMETA_STOCK_OBJECT = 0x80000000;
-
-        [NativeTypeName("#define EMR_HEADER 1")]
-        public const int EMR_HEADER = 1;
-
-        [NativeTypeName("#define EMR_POLYBEZIER 2")]
-        public const int EMR_POLYBEZIER = 2;
-
-        [NativeTypeName("#define EMR_POLYGON 3")]
-        public const int EMR_POLYGON = 3;
-
-        [NativeTypeName("#define EMR_POLYLINE 4")]
-        public const int EMR_POLYLINE = 4;
-
-        [NativeTypeName("#define EMR_POLYBEZIERTO 5")]
-        public const int EMR_POLYBEZIERTO = 5;
-
-        [NativeTypeName("#define EMR_POLYLINETO 6")]
-        public const int EMR_POLYLINETO = 6;
-
-        [NativeTypeName("#define EMR_POLYPOLYLINE 7")]
-        public const int EMR_POLYPOLYLINE = 7;
-
-        [NativeTypeName("#define EMR_POLYPOLYGON 8")]
-        public const int EMR_POLYPOLYGON = 8;
-
-        [NativeTypeName("#define EMR_SETWINDOWEXTEX 9")]
-        public const int EMR_SETWINDOWEXTEX = 9;
-
-        [NativeTypeName("#define EMR_SETWINDOWORGEX 10")]
-        public const int EMR_SETWINDOWORGEX = 10;
-
-        [NativeTypeName("#define EMR_SETVIEWPORTEXTEX 11")]
-        public const int EMR_SETVIEWPORTEXTEX = 11;
-
-        [NativeTypeName("#define EMR_SETVIEWPORTORGEX 12")]
-        public const int EMR_SETVIEWPORTORGEX = 12;
-
-        [NativeTypeName("#define EMR_SETBRUSHORGEX 13")]
-        public const int EMR_SETBRUSHORGEX = 13;
-
-        [NativeTypeName("#define EMR_EOF 14")]
-        public const int EMR_EOF = 14;
-
-        [NativeTypeName("#define EMR_SETPIXELV 15")]
-        public const int EMR_SETPIXELV = 15;
-
-        [NativeTypeName("#define EMR_SETMAPPERFLAGS 16")]
-        public const int EMR_SETMAPPERFLAGS = 16;
-
-        [NativeTypeName("#define EMR_SETMAPMODE 17")]
-        public const int EMR_SETMAPMODE = 17;
-
-        [NativeTypeName("#define EMR_SETBKMODE 18")]
-        public const int EMR_SETBKMODE = 18;
-
-        [NativeTypeName("#define EMR_SETPOLYFILLMODE 19")]
-        public const int EMR_SETPOLYFILLMODE = 19;
-
-        [NativeTypeName("#define EMR_SETROP2 20")]
-        public const int EMR_SETROP2 = 20;
-
-        [NativeTypeName("#define EMR_SETSTRETCHBLTMODE 21")]
-        public const int EMR_SETSTRETCHBLTMODE = 21;
-
-        [NativeTypeName("#define EMR_SETTEXTALIGN 22")]
-        public const int EMR_SETTEXTALIGN = 22;
-
-        [NativeTypeName("#define EMR_SETCOLORADJUSTMENT 23")]
-        public const int EMR_SETCOLORADJUSTMENT = 23;
-
-        [NativeTypeName("#define EMR_SETTEXTCOLOR 24")]
-        public const int EMR_SETTEXTCOLOR = 24;
-
-        [NativeTypeName("#define EMR_SETBKCOLOR 25")]
-        public const int EMR_SETBKCOLOR = 25;
-
-        [NativeTypeName("#define EMR_OFFSETCLIPRGN 26")]
-        public const int EMR_OFFSETCLIPRGN = 26;
-
-        [NativeTypeName("#define EMR_MOVETOEX 27")]
-        public const int EMR_MOVETOEX = 27;
-
-        [NativeTypeName("#define EMR_SETMETARGN 28")]
-        public const int EMR_SETMETARGN = 28;
-
-        [NativeTypeName("#define EMR_EXCLUDECLIPRECT 29")]
-        public const int EMR_EXCLUDECLIPRECT = 29;
-
-        [NativeTypeName("#define EMR_INTERSECTCLIPRECT 30")]
-        public const int EMR_INTERSECTCLIPRECT = 30;
-
-        [NativeTypeName("#define EMR_SCALEVIEWPORTEXTEX 31")]
-        public const int EMR_SCALEVIEWPORTEXTEX = 31;
-
-        [NativeTypeName("#define EMR_SCALEWINDOWEXTEX 32")]
-        public const int EMR_SCALEWINDOWEXTEX = 32;
-
-        [NativeTypeName("#define EMR_SAVEDC 33")]
-        public const int EMR_SAVEDC = 33;
-
-        [NativeTypeName("#define EMR_RESTOREDC 34")]
-        public const int EMR_RESTOREDC = 34;
-
-        [NativeTypeName("#define EMR_SETWORLDTRANSFORM 35")]
-        public const int EMR_SETWORLDTRANSFORM = 35;
-
-        [NativeTypeName("#define EMR_MODIFYWORLDTRANSFORM 36")]
-        public const int EMR_MODIFYWORLDTRANSFORM = 36;
-
-        [NativeTypeName("#define EMR_SELECTOBJECT 37")]
-        public const int EMR_SELECTOBJECT = 37;
-
-        [NativeTypeName("#define EMR_CREATEPEN 38")]
-        public const int EMR_CREATEPEN = 38;
-
-        [NativeTypeName("#define EMR_CREATEBRUSHINDIRECT 39")]
-        public const int EMR_CREATEBRUSHINDIRECT = 39;
-
-        [NativeTypeName("#define EMR_DELETEOBJECT 40")]
-        public const int EMR_DELETEOBJECT = 40;
-
-        [NativeTypeName("#define EMR_ANGLEARC 41")]
-        public const int EMR_ANGLEARC = 41;
-
-        [NativeTypeName("#define EMR_ELLIPSE 42")]
-        public const int EMR_ELLIPSE = 42;
-
-        [NativeTypeName("#define EMR_RECTANGLE 43")]
-        public const int EMR_RECTANGLE = 43;
-
-        [NativeTypeName("#define EMR_ROUNDRECT 44")]
-        public const int EMR_ROUNDRECT = 44;
-
-        [NativeTypeName("#define EMR_ARC 45")]
-        public const int EMR_ARC = 45;
-
-        [NativeTypeName("#define EMR_CHORD 46")]
-        public const int EMR_CHORD = 46;
-
-        [NativeTypeName("#define EMR_PIE 47")]
-        public const int EMR_PIE = 47;
-
-        [NativeTypeName("#define EMR_SELECTPALETTE 48")]
-        public const int EMR_SELECTPALETTE = 48;
-
-        [NativeTypeName("#define EMR_CREATEPALETTE 49")]
-        public const int EMR_CREATEPALETTE = 49;
-
-        [NativeTypeName("#define EMR_SETPALETTEENTRIES 50")]
-        public const int EMR_SETPALETTEENTRIES = 50;
-
-        [NativeTypeName("#define EMR_RESIZEPALETTE 51")]
-        public const int EMR_RESIZEPALETTE = 51;
-
-        [NativeTypeName("#define EMR_REALIZEPALETTE 52")]
-        public const int EMR_REALIZEPALETTE = 52;
-
-        [NativeTypeName("#define EMR_EXTFLOODFILL 53")]
-        public const int EMR_EXTFLOODFILL = 53;
-
-        [NativeTypeName("#define EMR_LINETO 54")]
-        public const int EMR_LINETO = 54;
-
-        [NativeTypeName("#define EMR_ARCTO 55")]
-        public const int EMR_ARCTO = 55;
-
-        [NativeTypeName("#define EMR_POLYDRAW 56")]
-        public const int EMR_POLYDRAW = 56;
-
-        [NativeTypeName("#define EMR_SETARCDIRECTION 57")]
-        public const int EMR_SETARCDIRECTION = 57;
-
-        [NativeTypeName("#define EMR_SETMITERLIMIT 58")]
-        public const int EMR_SETMITERLIMIT = 58;
-
-        [NativeTypeName("#define EMR_BEGINPATH 59")]
-        public const int EMR_BEGINPATH = 59;
-
-        [NativeTypeName("#define EMR_ENDPATH 60")]
-        public const int EMR_ENDPATH = 60;
-
-        [NativeTypeName("#define EMR_CLOSEFIGURE 61")]
-        public const int EMR_CLOSEFIGURE = 61;
-
-        [NativeTypeName("#define EMR_FILLPATH 62")]
-        public const int EMR_FILLPATH = 62;
-
-        [NativeTypeName("#define EMR_STROKEANDFILLPATH 63")]
-        public const int EMR_STROKEANDFILLPATH = 63;
-
-        [NativeTypeName("#define EMR_STROKEPATH 64")]
-        public const int EMR_STROKEPATH = 64;
-
-        [NativeTypeName("#define EMR_FLATTENPATH 65")]
-        public const int EMR_FLATTENPATH = 65;
-
-        [NativeTypeName("#define EMR_WIDENPATH 66")]
-        public const int EMR_WIDENPATH = 66;
-
-        [NativeTypeName("#define EMR_SELECTCLIPPATH 67")]
-        public const int EMR_SELECTCLIPPATH = 67;
-
-        [NativeTypeName("#define EMR_ABORTPATH 68")]
-        public const int EMR_ABORTPATH = 68;
-
-        [NativeTypeName("#define EMR_GDICOMMENT 70")]
-        public const int EMR_GDICOMMENT = 70;
-
-        [NativeTypeName("#define EMR_FILLRGN 71")]
-        public const int EMR_FILLRGN = 71;
-
-        [NativeTypeName("#define EMR_FRAMERGN 72")]
-        public const int EMR_FRAMERGN = 72;
-
-        [NativeTypeName("#define EMR_INVERTRGN 73")]
-        public const int EMR_INVERTRGN = 73;
-
-        [NativeTypeName("#define EMR_PAINTRGN 74")]
-        public const int EMR_PAINTRGN = 74;
-
-        [NativeTypeName("#define EMR_EXTSELECTCLIPRGN 75")]
-        public const int EMR_EXTSELECTCLIPRGN = 75;
-
-        [NativeTypeName("#define EMR_BITBLT 76")]
-        public const int EMR_BITBLT = 76;
-
-        [NativeTypeName("#define EMR_STRETCHBLT 77")]
-        public const int EMR_STRETCHBLT = 77;
-
-        [NativeTypeName("#define EMR_MASKBLT 78")]
-        public const int EMR_MASKBLT = 78;
-
-        [NativeTypeName("#define EMR_PLGBLT 79")]
-        public const int EMR_PLGBLT = 79;
-
-        [NativeTypeName("#define EMR_SETDIBITSTODEVICE 80")]
-        public const int EMR_SETDIBITSTODEVICE = 80;
-
-        [NativeTypeName("#define EMR_STRETCHDIBITS 81")]
-        public const int EMR_STRETCHDIBITS = 81;
-
-        [NativeTypeName("#define EMR_EXTCREATEFONTINDIRECTW 82")]
-        public const int EMR_EXTCREATEFONTINDIRECTW = 82;
-
-        [NativeTypeName("#define EMR_EXTTEXTOUTA 83")]
-        public const int EMR_EXTTEXTOUTA = 83;
-
-        [NativeTypeName("#define EMR_EXTTEXTOUTW 84")]
-        public const int EMR_EXTTEXTOUTW = 84;
-
-        [NativeTypeName("#define EMR_POLYBEZIER16 85")]
-        public const int EMR_POLYBEZIER16 = 85;
-
-        [NativeTypeName("#define EMR_POLYGON16 86")]
-        public const int EMR_POLYGON16 = 86;
-
-        [NativeTypeName("#define EMR_POLYLINE16 87")]
-        public const int EMR_POLYLINE16 = 87;
-
-        [NativeTypeName("#define EMR_POLYBEZIERTO16 88")]
-        public const int EMR_POLYBEZIERTO16 = 88;
-
-        [NativeTypeName("#define EMR_POLYLINETO16 89")]
-        public const int EMR_POLYLINETO16 = 89;
-
-        [NativeTypeName("#define EMR_POLYPOLYLINE16 90")]
-        public const int EMR_POLYPOLYLINE16 = 90;
-
-        [NativeTypeName("#define EMR_POLYPOLYGON16 91")]
-        public const int EMR_POLYPOLYGON16 = 91;
-
-        [NativeTypeName("#define EMR_POLYDRAW16 92")]
-        public const int EMR_POLYDRAW16 = 92;
-
-        [NativeTypeName("#define EMR_CREATEMONOBRUSH 93")]
-        public const int EMR_CREATEMONOBRUSH = 93;
-
-        [NativeTypeName("#define EMR_CREATEDIBPATTERNBRUSHPT 94")]
-        public const int EMR_CREATEDIBPATTERNBRUSHPT = 94;
-
-        [NativeTypeName("#define EMR_EXTCREATEPEN 95")]
-        public const int EMR_EXTCREATEPEN = 95;
-
-        [NativeTypeName("#define EMR_POLYTEXTOUTA 96")]
-        public const int EMR_POLYTEXTOUTA = 96;
-
-        [NativeTypeName("#define EMR_POLYTEXTOUTW 97")]
-        public const int EMR_POLYTEXTOUTW = 97;
-
-        [NativeTypeName("#define EMR_SETICMMODE 98")]
-        public const int EMR_SETICMMODE = 98;
-
-        [NativeTypeName("#define EMR_CREATECOLORSPACE 99")]
-        public const int EMR_CREATECOLORSPACE = 99;
-
-        [NativeTypeName("#define EMR_SETCOLORSPACE 100")]
-        public const int EMR_SETCOLORSPACE = 100;
-
-        [NativeTypeName("#define EMR_DELETECOLORSPACE 101")]
-        public const int EMR_DELETECOLORSPACE = 101;
-
-        [NativeTypeName("#define EMR_GLSRECORD 102")]
-        public const int EMR_GLSRECORD = 102;
-
-        [NativeTypeName("#define EMR_GLSBOUNDEDRECORD 103")]
-        public const int EMR_GLSBOUNDEDRECORD = 103;
-
-        [NativeTypeName("#define EMR_PIXELFORMAT 104")]
-        public const int EMR_PIXELFORMAT = 104;
-
-        [NativeTypeName("#define EMR_RESERVED_105 105")]
-        public const int EMR_RESERVED_105 = 105;
-
-        [NativeTypeName("#define EMR_RESERVED_106 106")]
-        public const int EMR_RESERVED_106 = 106;
-
-        [NativeTypeName("#define EMR_RESERVED_107 107")]
-        public const int EMR_RESERVED_107 = 107;
-
-        [NativeTypeName("#define EMR_RESERVED_108 108")]
-        public const int EMR_RESERVED_108 = 108;
-
-        [NativeTypeName("#define EMR_RESERVED_109 109")]
-        public const int EMR_RESERVED_109 = 109;
-
-        [NativeTypeName("#define EMR_RESERVED_110 110")]
-        public const int EMR_RESERVED_110 = 110;
-
-        [NativeTypeName("#define EMR_COLORCORRECTPALETTE 111")]
-        public const int EMR_COLORCORRECTPALETTE = 111;
-
-        [NativeTypeName("#define EMR_SETICMPROFILEA 112")]
-        public const int EMR_SETICMPROFILEA = 112;
-
-        [NativeTypeName("#define EMR_SETICMPROFILEW 113")]
-        public const int EMR_SETICMPROFILEW = 113;
-
-        [NativeTypeName("#define EMR_ALPHABLEND 114")]
-        public const int EMR_ALPHABLEND = 114;
-
-        [NativeTypeName("#define EMR_SETLAYOUT 115")]
-        public const int EMR_SETLAYOUT = 115;
-
-        [NativeTypeName("#define EMR_TRANSPARENTBLT 116")]
-        public const int EMR_TRANSPARENTBLT = 116;
-
-        [NativeTypeName("#define EMR_RESERVED_117 117")]
-        public const int EMR_RESERVED_117 = 117;
-
-        [NativeTypeName("#define EMR_GRADIENTFILL 118")]
-        public const int EMR_GRADIENTFILL = 118;
-
-        [NativeTypeName("#define EMR_RESERVED_119 119")]
-        public const int EMR_RESERVED_119 = 119;
-
-        [NativeTypeName("#define EMR_RESERVED_120 120")]
-        public const int EMR_RESERVED_120 = 120;
-
-        [NativeTypeName("#define EMR_COLORMATCHTOTARGETW 121")]
-        public const int EMR_COLORMATCHTOTARGETW = 121;
-
-        [NativeTypeName("#define EMR_CREATECOLORSPACEW 122")]
-        public const int EMR_CREATECOLORSPACEW = 122;
-
-        [NativeTypeName("#define EMR_MIN 1")]
-        public const int EMR_MIN = 1;
-
-        [NativeTypeName("#define EMR_MAX 122")]
-        public const int EMR_MAX = 122;
 
         [NativeTypeName("#define SETICMPROFILE_EMBEDED 0x00000001")]
         public const int SETICMPROFILE_EMBEDED = 0x00000001;
@@ -4472,145 +2681,7 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define wglUseFontBitmaps wglUseFontBitmapsW")]
         public static delegate*<HDC, uint, uint, uint, BOOL> wglUseFontBitmaps => &wglUseFontBitmapsW;
 
-        [NativeTypeName("#define WGL_FONT_LINES 0")]
-        public const int WGL_FONT_LINES = 0;
-
-        [NativeTypeName("#define WGL_FONT_POLYGONS 1")]
-        public const int WGL_FONT_POLYGONS = 1;
-
         [NativeTypeName("#define wglUseFontOutlines wglUseFontOutlinesW")]
         public static delegate*<HDC, uint, uint, uint, float, float, int, GLYPHMETRICSFLOAT*, BOOL> wglUseFontOutlines => &wglUseFontOutlinesW;
-
-        [NativeTypeName("#define LPD_DOUBLEBUFFER 0x00000001")]
-        public const int LPD_DOUBLEBUFFER = 0x00000001;
-
-        [NativeTypeName("#define LPD_STEREO 0x00000002")]
-        public const int LPD_STEREO = 0x00000002;
-
-        [NativeTypeName("#define LPD_SUPPORT_GDI 0x00000010")]
-        public const int LPD_SUPPORT_GDI = 0x00000010;
-
-        [NativeTypeName("#define LPD_SUPPORT_OPENGL 0x00000020")]
-        public const int LPD_SUPPORT_OPENGL = 0x00000020;
-
-        [NativeTypeName("#define LPD_SHARE_DEPTH 0x00000040")]
-        public const int LPD_SHARE_DEPTH = 0x00000040;
-
-        [NativeTypeName("#define LPD_SHARE_STENCIL 0x00000080")]
-        public const int LPD_SHARE_STENCIL = 0x00000080;
-
-        [NativeTypeName("#define LPD_SHARE_ACCUM 0x00000100")]
-        public const int LPD_SHARE_ACCUM = 0x00000100;
-
-        [NativeTypeName("#define LPD_SWAP_EXCHANGE 0x00000200")]
-        public const int LPD_SWAP_EXCHANGE = 0x00000200;
-
-        [NativeTypeName("#define LPD_SWAP_COPY 0x00000400")]
-        public const int LPD_SWAP_COPY = 0x00000400;
-
-        [NativeTypeName("#define LPD_TRANSPARENT 0x00001000")]
-        public const int LPD_TRANSPARENT = 0x00001000;
-
-        [NativeTypeName("#define LPD_TYPE_RGBA 0")]
-        public const int LPD_TYPE_RGBA = 0;
-
-        [NativeTypeName("#define LPD_TYPE_COLORINDEX 1")]
-        public const int LPD_TYPE_COLORINDEX = 1;
-
-        [NativeTypeName("#define WGL_SWAP_MAIN_PLANE 0x00000001")]
-        public const int WGL_SWAP_MAIN_PLANE = 0x00000001;
-
-        [NativeTypeName("#define WGL_SWAP_OVERLAY1 0x00000002")]
-        public const int WGL_SWAP_OVERLAY1 = 0x00000002;
-
-        [NativeTypeName("#define WGL_SWAP_OVERLAY2 0x00000004")]
-        public const int WGL_SWAP_OVERLAY2 = 0x00000004;
-
-        [NativeTypeName("#define WGL_SWAP_OVERLAY3 0x00000008")]
-        public const int WGL_SWAP_OVERLAY3 = 0x00000008;
-
-        [NativeTypeName("#define WGL_SWAP_OVERLAY4 0x00000010")]
-        public const int WGL_SWAP_OVERLAY4 = 0x00000010;
-
-        [NativeTypeName("#define WGL_SWAP_OVERLAY5 0x00000020")]
-        public const int WGL_SWAP_OVERLAY5 = 0x00000020;
-
-        [NativeTypeName("#define WGL_SWAP_OVERLAY6 0x00000040")]
-        public const int WGL_SWAP_OVERLAY6 = 0x00000040;
-
-        [NativeTypeName("#define WGL_SWAP_OVERLAY7 0x00000080")]
-        public const int WGL_SWAP_OVERLAY7 = 0x00000080;
-
-        [NativeTypeName("#define WGL_SWAP_OVERLAY8 0x00000100")]
-        public const int WGL_SWAP_OVERLAY8 = 0x00000100;
-
-        [NativeTypeName("#define WGL_SWAP_OVERLAY9 0x00000200")]
-        public const int WGL_SWAP_OVERLAY9 = 0x00000200;
-
-        [NativeTypeName("#define WGL_SWAP_OVERLAY10 0x00000400")]
-        public const int WGL_SWAP_OVERLAY10 = 0x00000400;
-
-        [NativeTypeName("#define WGL_SWAP_OVERLAY11 0x00000800")]
-        public const int WGL_SWAP_OVERLAY11 = 0x00000800;
-
-        [NativeTypeName("#define WGL_SWAP_OVERLAY12 0x00001000")]
-        public const int WGL_SWAP_OVERLAY12 = 0x00001000;
-
-        [NativeTypeName("#define WGL_SWAP_OVERLAY13 0x00002000")]
-        public const int WGL_SWAP_OVERLAY13 = 0x00002000;
-
-        [NativeTypeName("#define WGL_SWAP_OVERLAY14 0x00004000")]
-        public const int WGL_SWAP_OVERLAY14 = 0x00004000;
-
-        [NativeTypeName("#define WGL_SWAP_OVERLAY15 0x00008000")]
-        public const int WGL_SWAP_OVERLAY15 = 0x00008000;
-
-        [NativeTypeName("#define WGL_SWAP_UNDERLAY1 0x00010000")]
-        public const int WGL_SWAP_UNDERLAY1 = 0x00010000;
-
-        [NativeTypeName("#define WGL_SWAP_UNDERLAY2 0x00020000")]
-        public const int WGL_SWAP_UNDERLAY2 = 0x00020000;
-
-        [NativeTypeName("#define WGL_SWAP_UNDERLAY3 0x00040000")]
-        public const int WGL_SWAP_UNDERLAY3 = 0x00040000;
-
-        [NativeTypeName("#define WGL_SWAP_UNDERLAY4 0x00080000")]
-        public const int WGL_SWAP_UNDERLAY4 = 0x00080000;
-
-        [NativeTypeName("#define WGL_SWAP_UNDERLAY5 0x00100000")]
-        public const int WGL_SWAP_UNDERLAY5 = 0x00100000;
-
-        [NativeTypeName("#define WGL_SWAP_UNDERLAY6 0x00200000")]
-        public const int WGL_SWAP_UNDERLAY6 = 0x00200000;
-
-        [NativeTypeName("#define WGL_SWAP_UNDERLAY7 0x00400000")]
-        public const int WGL_SWAP_UNDERLAY7 = 0x00400000;
-
-        [NativeTypeName("#define WGL_SWAP_UNDERLAY8 0x00800000")]
-        public const int WGL_SWAP_UNDERLAY8 = 0x00800000;
-
-        [NativeTypeName("#define WGL_SWAP_UNDERLAY9 0x01000000")]
-        public const int WGL_SWAP_UNDERLAY9 = 0x01000000;
-
-        [NativeTypeName("#define WGL_SWAP_UNDERLAY10 0x02000000")]
-        public const int WGL_SWAP_UNDERLAY10 = 0x02000000;
-
-        [NativeTypeName("#define WGL_SWAP_UNDERLAY11 0x04000000")]
-        public const int WGL_SWAP_UNDERLAY11 = 0x04000000;
-
-        [NativeTypeName("#define WGL_SWAP_UNDERLAY12 0x08000000")]
-        public const int WGL_SWAP_UNDERLAY12 = 0x08000000;
-
-        [NativeTypeName("#define WGL_SWAP_UNDERLAY13 0x10000000")]
-        public const int WGL_SWAP_UNDERLAY13 = 0x10000000;
-
-        [NativeTypeName("#define WGL_SWAP_UNDERLAY14 0x20000000")]
-        public const int WGL_SWAP_UNDERLAY14 = 0x20000000;
-
-        [NativeTypeName("#define WGL_SWAP_UNDERLAY15 0x40000000")]
-        public const int WGL_SWAP_UNDERLAY15 = 0x40000000;
-
-        [NativeTypeName("#define WGL_SWAPMULTIPLE_MAX 16")]
-        public const int WGL_SWAPMULTIPLE_MAX = 16;
     }
 }

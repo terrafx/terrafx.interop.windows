@@ -10,15 +10,6 @@ namespace TerraFX.Interop.Windows
 {
     public static unsafe partial class Windows
     {
-        public const int SFBID_PIDLCHANGED = 0;
-
-        public const int DBCID_EMPTY = 0;
-        public const int DBCID_ONDRAG = 1;
-        public const int DBCID_CLSIDOFBAR = 2;
-        public const int DBCID_RESIZE = 3;
-        public const int DBCID_GETBAR = 4;
-        public const int DBCID_UPDATESIZE = 5;
-
         [DllImport("shell32", ExactSpelling = true)]
         public static extern void SHChangeNotifyRegisterThread(SCNRT_STATUS status);
 
@@ -33,9 +24,6 @@ namespace TerraFX.Interop.Windows
 
         [DllImport("shell32", ExactSpelling = true)]
         public static extern HPSXA SHCreatePropSheetExtArray(HKEY hKey, [NativeTypeName("PCWSTR")] ushort* pszSubKey, uint max_iface);
-
-        public const int BMICON_LARGE = 0;
-        public const int BMICON_SMALL = 1;
 
         [DllImport("shell32", ExactSpelling = true)]
         public static extern BOOL SHOpenPropSheetW([NativeTypeName("LPCWSTR")] ushort* pszCaption, [NativeTypeName("HKEY []")] HKEY* ahkeys, uint ckeys, [NativeTypeName("const CLSID *")] Guid* pclsidDefault, IDataObject* pdtobj, IShellBrowser* psb, [NativeTypeName("LPCWSTR")] ushort* pStartPage);
@@ -52,21 +40,6 @@ namespace TerraFX.Interop.Windows
 
         [DllImport("mydocs", ExactSpelling = true)]
         public static extern void PerUserInit();
-
-        [NativeTypeName("#define FCIDM_TOOLBAR (FCIDM_BROWSERFIRST + 0)")]
-        public const int FCIDM_TOOLBAR = (0xa000 + 0);
-
-        [NativeTypeName("#define FCIDM_STATUS (FCIDM_BROWSERFIRST + 1)")]
-        public const int FCIDM_STATUS = (0xa000 + 1);
-
-        [NativeTypeName("#define IDC_OFFLINE_HAND 103")]
-        public const int IDC_OFFLINE_HAND = 103;
-
-        [NativeTypeName("#define IDC_PANTOOL_HAND_OPEN 104")]
-        public const int IDC_PANTOOL_HAND_OPEN = 104;
-
-        [NativeTypeName("#define IDC_PANTOOL_HAND_CLOSED 105")]
-        public const int IDC_PANTOOL_HAND_CLOSED = 105;
 
         [NativeTypeName("#define PANE_NONE ((DWORD)-1)")]
         public const uint PANE_NONE = unchecked((uint)(-1));
@@ -110,51 +83,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define DWFAF_AUTOHIDE 0x0010")]
         public const int DWFAF_AUTOHIDE = 0x0010;
 
-        [NativeTypeName("#define ISFB_MASK_STATE 0x00000001")]
-        public const int ISFB_MASK_STATE = 0x00000001;
-
-        [NativeTypeName("#define ISFB_MASK_BKCOLOR 0x00000002")]
-        public const int ISFB_MASK_BKCOLOR = 0x00000002;
-
-        [NativeTypeName("#define ISFB_MASK_VIEWMODE 0x00000004")]
-        public const int ISFB_MASK_VIEWMODE = 0x00000004;
-
-        [NativeTypeName("#define ISFB_MASK_SHELLFOLDER 0x00000008")]
-        public const int ISFB_MASK_SHELLFOLDER = 0x00000008;
-
-        [NativeTypeName("#define ISFB_MASK_IDLIST 0x00000010")]
-        public const int ISFB_MASK_IDLIST = 0x00000010;
-
-        [NativeTypeName("#define ISFB_MASK_COLORS 0x00000020")]
-        public const int ISFB_MASK_COLORS = 0x00000020;
-
-        [NativeTypeName("#define ISFB_STATE_DEFAULT 0x00000000")]
-        public const int ISFB_STATE_DEFAULT = 0x00000000;
-
-        [NativeTypeName("#define ISFB_STATE_DEBOSSED 0x00000001")]
-        public const int ISFB_STATE_DEBOSSED = 0x00000001;
-
-        [NativeTypeName("#define ISFB_STATE_ALLOWRENAME 0x00000002")]
-        public const int ISFB_STATE_ALLOWRENAME = 0x00000002;
-
-        [NativeTypeName("#define ISFB_STATE_NOSHOWTEXT 0x00000004")]
-        public const int ISFB_STATE_NOSHOWTEXT = 0x00000004;
-
-        [NativeTypeName("#define ISFB_STATE_CHANNELBAR 0x00000010")]
-        public const int ISFB_STATE_CHANNELBAR = 0x00000010;
-
-        [NativeTypeName("#define ISFB_STATE_QLINKSMODE 0x00000020")]
-        public const int ISFB_STATE_QLINKSMODE = 0x00000020;
-
-        [NativeTypeName("#define ISFB_STATE_FULLOPEN 0x00000040")]
-        public const int ISFB_STATE_FULLOPEN = 0x00000040;
-
-        [NativeTypeName("#define ISFB_STATE_NONAMESORT 0x00000080")]
-        public const int ISFB_STATE_NONAMESORT = 0x00000080;
-
-        [NativeTypeName("#define ISFB_STATE_BTNMINSIZE 0x00000100")]
-        public const int ISFB_STATE_BTNMINSIZE = 0x00000100;
-
         [NativeTypeName("#define ISFBVIEWMODE_SMALLICONS 0x0001")]
         public const int ISFBVIEWMODE_SMALLICONS = 0x0001;
 
@@ -188,30 +116,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define SSM_UPDATE 0x0004")]
         public const int SSM_UPDATE = 0x0004;
 
-        [NativeTypeName("#define SCHEME_DISPLAY 0x0001")]
-        public const int SCHEME_DISPLAY = 0x0001;
-
-        [NativeTypeName("#define SCHEME_EDIT 0x0002")]
-        public const int SCHEME_EDIT = 0x0002;
-
-        [NativeTypeName("#define SCHEME_LOCAL 0x0004")]
-        public const int SCHEME_LOCAL = 0x0004;
-
-        [NativeTypeName("#define SCHEME_GLOBAL 0x0008")]
-        public const int SCHEME_GLOBAL = 0x0008;
-
-        [NativeTypeName("#define SCHEME_REFRESH 0x0010")]
-        public const int SCHEME_REFRESH = 0x0010;
-
-        [NativeTypeName("#define SCHEME_UPDATE 0x0020")]
-        public const int SCHEME_UPDATE = 0x0020;
-
-        [NativeTypeName("#define SCHEME_DONOTUSE 0x0040")]
-        public const int SCHEME_DONOTUSE = 0x0040;
-
-        [NativeTypeName("#define SCHEME_CREATE 0x0080")]
-        public const int SCHEME_CREATE = 0x0080;
-
         [NativeTypeName("#define GADOF_DIRTY 0x00000001")]
         public const int GADOF_DIRTY = 0x00000001;
 
@@ -239,52 +143,7 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define CLOSEPROPS_DISCARD 0x0001")]
         public const int CLOSEPROPS_DISCARD = 0x0001;
 
-        [NativeTypeName("#define TBIF_APPEND 0")]
-        public const int TBIF_APPEND = 0;
-
-        [NativeTypeName("#define TBIF_PREPEND 1")]
-        public const int TBIF_PREPEND = 1;
-
-        [NativeTypeName("#define TBIF_REPLACE 2")]
-        public const int TBIF_REPLACE = 2;
-
-        [NativeTypeName("#define TBIF_DEFAULT 0x00000000")]
-        public const int TBIF_DEFAULT = 0x00000000;
-
-        [NativeTypeName("#define TBIF_INTERNETBAR 0x00010000")]
-        public const int TBIF_INTERNETBAR = 0x00010000;
-
-        [NativeTypeName("#define TBIF_STANDARDTOOLBAR 0x00020000")]
-        public const int TBIF_STANDARDTOOLBAR = 0x00020000;
-
-        [NativeTypeName("#define TBIF_NOTOOLBAR 0x00030000")]
-        public const int TBIF_NOTOOLBAR = 0x00030000;
-
         [NativeTypeName("#define SHOpenPropSheet SHOpenPropSheetW")]
         public static delegate*<ushort*, HKEY*, uint, Guid*, IDataObject*, IShellBrowser*, ushort*, BOOL> SHOpenPropSheet => &SHOpenPropSheetW;
-
-        [NativeTypeName("#define SFVM_REARRANGE 0x00000001")]
-        public const int SFVM_REARRANGE = 0x00000001;
-
-        [NativeTypeName("#define SFVM_ADDOBJECT 0x00000003")]
-        public const int SFVM_ADDOBJECT = 0x00000003;
-
-        [NativeTypeName("#define SFVM_REMOVEOBJECT 0x00000006")]
-        public const int SFVM_REMOVEOBJECT = 0x00000006;
-
-        [NativeTypeName("#define SFVM_UPDATEOBJECT 0x00000007")]
-        public const int SFVM_UPDATEOBJECT = 0x00000007;
-
-        [NativeTypeName("#define SFVM_GETSELECTEDOBJECTS 0x00000009")]
-        public const int SFVM_GETSELECTEDOBJECTS = 0x00000009;
-
-        [NativeTypeName("#define SFVM_SETITEMPOS 0x0000000e")]
-        public const int SFVM_SETITEMPOS = 0x0000000e;
-
-        [NativeTypeName("#define SFVM_SETCLIPBOARD 0x00000010")]
-        public const int SFVM_SETCLIPBOARD = 0x00000010;
-
-        [NativeTypeName("#define SFVM_SETPOINTS 0x00000017")]
-        public const int SFVM_SETPOINTS = 0x00000017;
     }
 }

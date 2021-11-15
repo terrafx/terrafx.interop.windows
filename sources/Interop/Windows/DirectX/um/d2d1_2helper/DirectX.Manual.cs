@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.Versioning;
+using static TerraFX.Interop.DirectX.D2D1;
 
 namespace TerraFX.Interop.DirectX
 {

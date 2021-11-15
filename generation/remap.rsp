@@ -4,5 +4,6 @@
 @../../../remap-members.rsp
 @../../../remap-namespaces.rsp
 @../../../remap-nints.rsp
+@../../../remap-structs.rsp
 @../../../remap-transparent.rsp
 @../../../remap-types.rsp

@@ -53,26 +53,5 @@ namespace TerraFX.Interop.Windows
 
         [DllImport("wecapi", ExactSpelling = true)]
         public static extern BOOL EcClose(EC_HANDLE Object);
-
-        [NativeTypeName("#define EC_VARIANT_TYPE_MASK 0x7f")]
-        public const int EC_VARIANT_TYPE_MASK = 0x7f;
-
-        [NativeTypeName("#define EC_VARIANT_TYPE_ARRAY 128")]
-        public const int EC_VARIANT_TYPE_ARRAY = 128;
-
-        [NativeTypeName("#define EC_READ_ACCESS 1")]
-        public const int EC_READ_ACCESS = 1;
-
-        [NativeTypeName("#define EC_WRITE_ACCESS 2")]
-        public const int EC_WRITE_ACCESS = 2;
-
-        [NativeTypeName("#define EC_OPEN_ALWAYS 0")]
-        public const int EC_OPEN_ALWAYS = 0;
-
-        [NativeTypeName("#define EC_CREATE_NEW 1")]
-        public const int EC_CREATE_NEW = 1;
-
-        [NativeTypeName("#define EC_OPEN_EXISTING 2")]
-        public const int EC_OPEN_EXISTING = 2;
     }
 }

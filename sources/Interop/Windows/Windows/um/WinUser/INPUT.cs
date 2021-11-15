@@ -55,5 +55,14 @@ namespace TerraFX.Interop.Windows
             [FieldOffset(0)]
             public HARDWAREINPUT hi;
         }
+
+        [NativeTypeName("#define INPUT_MOUSE 0")]
+        public const int INPUT_MOUSE = 0;
+
+        [NativeTypeName("#define INPUT_KEYBOARD 1")]
+        public const int INPUT_KEYBOARD = 1;
+
+        [NativeTypeName("#define INPUT_HARDWARE 2")]
+        public const int INPUT_HARDWARE = 2;
     }
 }

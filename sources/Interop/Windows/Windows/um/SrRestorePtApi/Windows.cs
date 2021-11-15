@@ -52,9 +52,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define APPLICATION_UNINSTALL 1")]
         public const int APPLICATION_UNINSTALL = 1;
 
-        [NativeTypeName("#define DESKTOP_SETTING 2")]
-        public const int DESKTOP_SETTING = 2;
-
         [NativeTypeName("#define ACCESSIBILITY_SETTING 3")]
         public const int ACCESSIBILITY_SETTING = 3;
 
@@ -76,9 +73,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define WINDOWS_BOOT 9")]
         public const int WINDOWS_BOOT = 9;
 
-        [NativeTypeName("#define DEVICE_DRIVER_INSTALL 10")]
-        public const int DEVICE_DRIVER_INSTALL = 10;
-
         [NativeTypeName("#define FIRSTRUN 11")]
         public const int FIRSTRUN = 11;
 
@@ -87,9 +81,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define CANCELLED_OPERATION 13")]
         public const int CANCELLED_OPERATION = 13;
-
-        [NativeTypeName("#define BACKUP_RECOVERY 14")]
-        public const int BACKUP_RECOVERY = 14;
 
         [NativeTypeName("#define BACKUP 15")]
         public const int BACKUP = 15;

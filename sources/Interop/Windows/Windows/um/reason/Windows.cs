@@ -19,9 +19,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define UDIRTYUI (SHTDN_REASON_FLAG_DIRTY_UI)")]
         public const int UDIRTYUI = (0x08000000);
 
-        [NativeTypeName("#define SHUTDOWN_TYPE_LEN 32")]
-        public const int SHUTDOWN_TYPE_LEN = 32;
-
         [NativeTypeName("#define POLICY_SHOWREASONUI_NEVER 0")]
         public const int POLICY_SHOWREASONUI_NEVER = 0;
 

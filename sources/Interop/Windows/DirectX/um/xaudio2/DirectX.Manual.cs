@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.DirectX.XAUDIO2;
 
 namespace TerraFX.Interop.DirectX
 {

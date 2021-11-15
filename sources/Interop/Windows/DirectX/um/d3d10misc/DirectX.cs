@@ -3,9 +3,6 @@
 // Ported from um/d3d10misc.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
@@ -13,31 +10,6 @@ namespace TerraFX.Interop.DirectX
 {
     public static unsafe partial class DirectX
     {
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid GUID_DeviceType
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x4D, 0xFB, 0x22, 0xD7,
-                    0x68, 0x7A,
-                    0x7A, 0x43,
-                    0xB2,
-                    0x0C,
-                    0x58,
-                    0x04,
-                    0xEE,
-                    0x24,
-                    0x94,
-                    0xA6
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
         [DllImport("d3d10", ExactSpelling = true)]
         public static extern HRESULT D3D10CreateDevice(IDXGIAdapter* pAdapter, D3D10_DRIVER_TYPE DriverType, HMODULE Software, uint Flags, uint SDKVersion, ID3D10Device** ppDevice);
 

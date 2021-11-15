@@ -6,26 +6,14 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.EWX;
+using static TerraFX.Interop.Windows.POINTER;
+using static TerraFX.Interop.Windows.RIDEV;
 
 namespace TerraFX.Interop.Windows
 {
     public static unsafe partial class Windows
     {
-        public static int CONSOLE_APPLICATION_16BIT
-        {
-            get
-            {
-                if (sizeof(nint) == 4)
-                {
-                    return 0x0001;
-                }
-                else
-                {
-                    return 0x0000;
-                }
-            }
-        }
-
         public static int GUI_16BITTASK
         {
             get
@@ -40,137 +28,6 @@ namespace TerraFX.Interop.Windows
                 }
             }
         }
-
-        public const int WH_HARDWARE = 8;
-
-        public const int OBM_CLOSE = 32754;
-
-        public const int OBM_UPARROW = 32753;
-
-        public const int OBM_DNARROW = 32752;
-
-        public const int OBM_RGARROW = 32751;
-
-        public const int OBM_LFARROW = 32750;
-
-        public const int OBM_REDUCE = 32749;
-
-        public const int OBM_ZOOM = 32748;
-
-        public const int OBM_RESTORE = 32747;
-
-        public const int OBM_REDUCED = 32746;
-
-        public const int OBM_ZOOMD = 32745;
-
-        public const int OBM_RESTORED = 32744;
-
-        public const int OBM_UPARROWD = 32743;
-
-        public const int OBM_DNARROWD = 32742;
-
-        public const int OBM_RGARROWD = 32741;
-
-        public const int OBM_LFARROWD = 32740;
-
-        public const int OBM_MNARROW = 32739;
-
-        public const int OBM_COMBO = 32738;
-
-        public const int OBM_UPARROWI = 32737;
-
-        public const int OBM_DNARROWI = 32736;
-
-        public const int OBM_RGARROWI = 32735;
-
-        public const int OBM_LFARROWI = 32734;
-
-        public const int OBM_OLD_CLOSE = 32767;
-
-        public const int OBM_SIZE = 32766;
-
-        public const int OBM_OLD_UPARROW = 32765;
-
-        public const int OBM_OLD_DNARROW = 32764;
-
-        public const int OBM_OLD_RGARROW = 32763;
-
-        public const int OBM_OLD_LFARROW = 32762;
-
-        public const int OBM_BTSIZE = 32761;
-
-        public const int OBM_CHECK = 32760;
-
-        public const int OBM_CHECKBOXES = 32759;
-
-        public const int OBM_BTNCORNERS = 32758;
-
-        public const int OBM_OLD_REDUCE = 32757;
-
-        public const int OBM_OLD_ZOOM = 32756;
-
-        public const int OBM_OLD_RESTORE = 32755;
-
-        public const int OCR_NORMAL = 32512;
-
-        public const int OCR_IBEAM = 32513;
-
-        public const int OCR_WAIT = 32514;
-
-        public const int OCR_CROSS = 32515;
-
-        public const int OCR_UP = 32516;
-
-        [Obsolete("use OCR_SIZEALL")]
-        public const int OCR_SIZE = 32640;
-
-        [Obsolete("use OCR_NORMAL")]
-        public const int OCR_ICON = 32641;
-
-        public const int OCR_SIZENWSE = 32642;
-
-        public const int OCR_SIZENESW = 32643;
-
-        public const int OCR_SIZEWE = 32644;
-
-        public const int OCR_SIZENS = 32645;
-
-        public const int OCR_SIZEALL = 32646;
-
-        [Obsolete("use OIC_WINLOGO")]
-        public const int OCR_ICOCUR = 32647;
-
-        public const int OCR_NO = 32648;
-
-        public const int OCR_HAND = 32649;
-
-        public const int OCR_APPSTARTING = 32650;
-
-        public const int OIC_SAMPLE = 32512;
-
-        public const int OIC_HAND = 32513;
-
-        public const int OIC_QUES = 32514;
-
-        public const int OIC_BANG = 32515;
-
-        public const int OIC_NOTE = 32516;
-
-        public const int OIC_WINLOGO = 32517;
-
-        public const int OIC_WARNING = OIC_BANG;
-
-        public const int OIC_ERROR = OIC_HAND;
-
-        public const int OIC_INFORMATION = OIC_NOTE;
-
-        public const int OIC_SHIELD = 32518;
-
-        public const int DS_USEPIXELS = 0x8000;
-
-        public const int LB_MULTIPLEADDSTRING = 0x01B1;
-
-        public const int CB_MULTIPLEADDSTRING = 0x0163;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IS_INTRESOURCE([NativeTypeName("ULONG_PTR")] nuint _r)
@@ -516,60 +373,6 @@ namespace TerraFX.Interop.Windows
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double GID_ROTATE_ANGLE_FROM_ARGUMENT(double _arg_) => (_arg_ / 65535.0 * 4.0 * 3.14159265) - (2.0 * 3.14159265);
-
-        [NativeTypeName("#define HWND_BROADCAST ((HWND)0xffff)")]
-        public static HWND HWND_BROADCAST => ((HWND)(0xffff));
-
-        [NativeTypeName("#define HWND_MESSAGE ((HWND)-3)")]
-        public static HWND HWND_MESSAGE => ((HWND)(-3));
-
-        [NativeTypeName("#define HWND_DESKTOP ((HWND)0)")]
-        public static HWND HWND_DESKTOP => ((HWND)(0));
-
-        [NativeTypeName("#define HWND_TOP ((HWND)0)")]
-        public static HWND HWND_TOP => ((HWND)(0));
-
-        [NativeTypeName("#define HWND_BOTTOM ((HWND)1)")]
-        public static HWND HWND_BOTTOM => ((HWND)(1));
-
-        [NativeTypeName("#define HWND_TOPMOST ((HWND)-1)")]
-        public static HWND HWND_TOPMOST => ((HWND)(-1));
-
-        [NativeTypeName("#define HWND_NOTOPMOST ((HWND)-2)")]
-        public static HWND HWND_NOTOPMOST => ((HWND)(-2));
-
-        [NativeTypeName("#define HBMMENU_CALLBACK ((HBITMAP) -1)")]
-        public static HBITMAP HBMMENU_CALLBACK => ((HBITMAP)(-1));
-
-        [NativeTypeName("#define HBMMENU_SYSTEM ((HBITMAP)  1)")]
-        public static HBITMAP HBMMENU_SYSTEM => ((HBITMAP)(1));
-
-        [NativeTypeName("#define HBMMENU_MBAR_RESTORE ((HBITMAP)  2)")]
-        public static HBITMAP HBMMENU_MBAR_RESTORE => ((HBITMAP)(2));
-
-        [NativeTypeName("#define HBMMENU_MBAR_MINIMIZE ((HBITMAP)  3)")]
-        public static HBITMAP HBMMENU_MBAR_MINIMIZE => ((HBITMAP)(3));
-
-        [NativeTypeName("#define HBMMENU_MBAR_CLOSE ((HBITMAP)  5)")]
-        public static HBITMAP HBMMENU_MBAR_CLOSE => ((HBITMAP)(5));
-
-        [NativeTypeName("#define HBMMENU_MBAR_CLOSE_D ((HBITMAP)  6)")]
-        public static HBITMAP HBMMENU_MBAR_CLOSE_D => ((HBITMAP)(6));
-
-        [NativeTypeName("#define HBMMENU_MBAR_MINIMIZE_D ((HBITMAP)  7)")]
-        public static HBITMAP HBMMENU_MBAR_MINIMIZE_D => ((HBITMAP)(7));
-
-        [NativeTypeName("#define HBMMENU_POPUP_CLOSE ((HBITMAP)  8)")]
-        public static HBITMAP HBMMENU_POPUP_CLOSE => ((HBITMAP)(8));
-
-        [NativeTypeName("#define HBMMENU_POPUP_RESTORE ((HBITMAP)  9)")]
-        public static HBITMAP HBMMENU_POPUP_RESTORE => ((HBITMAP)(9));
-
-        [NativeTypeName("#define HBMMENU_POPUP_MAXIMIZE ((HBITMAP) 10)")]
-        public static HBITMAP HBMMENU_POPUP_MAXIMIZE => ((HBITMAP)(10));
-
-        [NativeTypeName("#define HBMMENU_POPUP_MINIMIZE ((HBITMAP) 11)")]
-        public static HBITMAP HBMMENU_POPUP_MINIMIZE => ((HBITMAP)(11));
 
         [NativeTypeName("#define GR_GLOBAL ((HANDLE)-2)")]
         public static HANDLE GR_GLOBAL => ((HANDLE)(-2));

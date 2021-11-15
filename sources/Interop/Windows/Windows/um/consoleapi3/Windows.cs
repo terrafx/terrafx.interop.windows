@@ -120,35 +120,8 @@ namespace TerraFX.Interop.Windows
         [return: NativeTypeName("DWORD")]
         public static extern uint GetConsoleProcessList([NativeTypeName("LPDWORD")] uint* lpdwProcessList, [NativeTypeName("DWORD")] uint dwProcessCount);
 
-        [NativeTypeName("#define CONSOLE_NO_SELECTION 0x0000")]
-        public const int CONSOLE_NO_SELECTION = 0x0000;
-
-        [NativeTypeName("#define CONSOLE_SELECTION_IN_PROGRESS 0x0001")]
-        public const int CONSOLE_SELECTION_IN_PROGRESS = 0x0001;
-
-        [NativeTypeName("#define CONSOLE_SELECTION_NOT_EMPTY 0x0002")]
-        public const int CONSOLE_SELECTION_NOT_EMPTY = 0x0002;
-
-        [NativeTypeName("#define CONSOLE_MOUSE_SELECTION 0x0004")]
-        public const int CONSOLE_MOUSE_SELECTION = 0x0004;
-
-        [NativeTypeName("#define CONSOLE_MOUSE_DOWN 0x0008")]
-        public const int CONSOLE_MOUSE_DOWN = 0x0008;
-
         [NativeTypeName("#define HISTORY_NO_DUP_FLAG 0x1")]
         public const int HISTORY_NO_DUP_FLAG = 0x1;
-
-        [NativeTypeName("#define CONSOLE_FULLSCREEN 1")]
-        public const int CONSOLE_FULLSCREEN = 1;
-
-        [NativeTypeName("#define CONSOLE_FULLSCREEN_HARDWARE 2")]
-        public const int CONSOLE_FULLSCREEN_HARDWARE = 2;
-
-        [NativeTypeName("#define CONSOLE_FULLSCREEN_MODE 1")]
-        public const int CONSOLE_FULLSCREEN_MODE = 1;
-
-        [NativeTypeName("#define CONSOLE_WINDOWED_MODE 2")]
-        public const int CONSOLE_WINDOWED_MODE = 2;
 
         [NativeTypeName("#define AddConsoleAlias AddConsoleAliasW")]
         public static delegate*<ushort*, ushort*, ushort*, BOOL> AddConsoleAlias => &AddConsoleAliasW;

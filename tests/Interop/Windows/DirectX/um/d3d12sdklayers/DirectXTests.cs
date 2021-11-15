@@ -18,12 +18,5 @@ namespace TerraFX.Interop.DirectX.UnitTests
         {
             Assert.That(WKPDID_D3DAutoDebugObjectNameW, Is.EqualTo(new Guid(0xd4902e36, 0x757a, 0x4942, 0x95, 0x94, 0xb6, 0x76, 0x9a, 0xfa, 0x43, 0xcd)));
         }
-
-        /// <summary>Validates that the value of the <see cref="DXGI_DEBUG_D3D12" /> property is correct.</summary>
-        [Test]
-        public static void DXGI_DEBUG_D3D12Test()
-        {
-            Assert.That(DXGI_DEBUG_D3D12, Is.EqualTo(new Guid(0xcf59a98c, 0xa950, 0x4326, 0x91, 0xef, 0x9b, 0xba, 0xa1, 0x7b, 0xfd, 0x95)));
-        }
     }
 }

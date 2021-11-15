@@ -2255,71 +2255,8 @@ namespace TerraFX.Interop.Windows
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SetProcessRestrictionExemption(BOOL fEnableExemption);
 
-        [NativeTypeName("#define RT_CURSOR MAKEINTRESOURCE(1)")]
-        public static ushort* RT_CURSOR => ((ushort*)((nuint)((ushort)(1))));
-
-        [NativeTypeName("#define RT_BITMAP MAKEINTRESOURCE(2)")]
-        public static ushort* RT_BITMAP => ((ushort*)((nuint)((ushort)(2))));
-
-        [NativeTypeName("#define RT_ICON MAKEINTRESOURCE(3)")]
-        public static ushort* RT_ICON => ((ushort*)((nuint)((ushort)(3))));
-
-        [NativeTypeName("#define RT_MENU MAKEINTRESOURCE(4)")]
-        public static ushort* RT_MENU => ((ushort*)((nuint)((ushort)(4))));
-
-        [NativeTypeName("#define RT_DIALOG MAKEINTRESOURCE(5)")]
-        public static ushort* RT_DIALOG => ((ushort*)((nuint)((ushort)(5))));
-
-        [NativeTypeName("#define RT_STRING MAKEINTRESOURCE(6)")]
-        public static ushort* RT_STRING => ((ushort*)((nuint)((ushort)(6))));
-
-        [NativeTypeName("#define RT_FONTDIR MAKEINTRESOURCE(7)")]
-        public static ushort* RT_FONTDIR => ((ushort*)((nuint)((ushort)(7))));
-
-        [NativeTypeName("#define RT_FONT MAKEINTRESOURCE(8)")]
-        public static ushort* RT_FONT => ((ushort*)((nuint)((ushort)(8))));
-
-        [NativeTypeName("#define RT_ACCELERATOR MAKEINTRESOURCE(9)")]
-        public static ushort* RT_ACCELERATOR => ((ushort*)((nuint)((ushort)(9))));
-
-        [NativeTypeName("#define RT_RCDATA MAKEINTRESOURCE(10)")]
-        public static ushort* RT_RCDATA => ((ushort*)((nuint)((ushort)(10))));
-
-        [NativeTypeName("#define RT_MESSAGETABLE MAKEINTRESOURCE(11)")]
-        public static ushort* RT_MESSAGETABLE => ((ushort*)((nuint)((ushort)(11))));
-
         [NativeTypeName("#define DIFFERENCE 11")]
         public const int DIFFERENCE = 11;
-
-        [NativeTypeName("#define RT_GROUP_CURSOR MAKEINTRESOURCE((ULONG_PTR)(RT_CURSOR) + DIFFERENCE)")]
-        public static ushort* RT_GROUP_CURSOR => ((ushort*)((nuint)((ushort)((nuint)(((ushort*)((nuint)((ushort)(1))))) + 11))));
-
-        [NativeTypeName("#define RT_GROUP_ICON MAKEINTRESOURCE((ULONG_PTR)(RT_ICON) + DIFFERENCE)")]
-        public static ushort* RT_GROUP_ICON => ((ushort*)((nuint)((ushort)((nuint)(((ushort*)((nuint)((ushort)(3))))) + 11))));
-
-        [NativeTypeName("#define RT_VERSION MAKEINTRESOURCE(16)")]
-        public static ushort* RT_VERSION => ((ushort*)((nuint)((ushort)(16))));
-
-        [NativeTypeName("#define RT_DLGINCLUDE MAKEINTRESOURCE(17)")]
-        public static ushort* RT_DLGINCLUDE => ((ushort*)((nuint)((ushort)(17))));
-
-        [NativeTypeName("#define RT_PLUGPLAY MAKEINTRESOURCE(19)")]
-        public static ushort* RT_PLUGPLAY => ((ushort*)((nuint)((ushort)(19))));
-
-        [NativeTypeName("#define RT_VXD MAKEINTRESOURCE(20)")]
-        public static ushort* RT_VXD => ((ushort*)((nuint)((ushort)(20))));
-
-        [NativeTypeName("#define RT_ANICURSOR MAKEINTRESOURCE(21)")]
-        public static ushort* RT_ANICURSOR => ((ushort*)((nuint)((ushort)(21))));
-
-        [NativeTypeName("#define RT_ANIICON MAKEINTRESOURCE(22)")]
-        public static ushort* RT_ANIICON => ((ushort*)((nuint)((ushort)(22))));
-
-        [NativeTypeName("#define RT_HTML MAKEINTRESOURCE(23)")]
-        public static ushort* RT_HTML => ((ushort*)((nuint)((ushort)(23))));
-
-        [NativeTypeName("#define RT_MANIFEST MAKEINTRESOURCE(24)")]
-        public static ushort* RT_MANIFEST => ((ushort*)((nuint)((ushort)(24))));
 
         [NativeTypeName("#define CREATEPROCESS_MANIFEST_RESOURCE_ID MAKEINTRESOURCE( 1)")]
         public static ushort* CREATEPROCESS_MANIFEST_RESOURCE_ID => ((ushort*)((nuint)((ushort)(1))));
@@ -2339,9 +2276,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define MINIMUM_RESERVED_MANIFEST_RESOURCE_ID MAKEINTRESOURCE( 1 /*inclusive*/)")]
         public static ushort* MINIMUM_RESERVED_MANIFEST_RESOURCE_ID => ((ushort*)((nuint)((ushort)(1))));
 
-        [NativeTypeName("#define MAXIMUM_RESERVED_MANIFEST_RESOURCE_ID MAKEINTRESOURCE(16 /*inclusive*/)")]
-        public static ushort* MAXIMUM_RESERVED_MANIFEST_RESOURCE_ID => ((ushort*)((nuint)((ushort)(16))));
-
         [NativeTypeName("#define wvsprintf wvsprintfW")]
         public static delegate*<ushort*, ushort*, sbyte*, int> wvsprintf => &wvsprintfW;
 
@@ -2350,51 +2284,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define SETWALLPAPER_DEFAULT ((LPWSTR)-1)")]
         public static ushort* SETWALLPAPER_DEFAULT => unchecked((ushort*)(-1));
-
-        [NativeTypeName("#define SW_HIDE 0")]
-        public const int SW_HIDE = 0;
-
-        [NativeTypeName("#define SW_SHOWNORMAL 1")]
-        public const int SW_SHOWNORMAL = 1;
-
-        [NativeTypeName("#define SW_NORMAL 1")]
-        public const int SW_NORMAL = 1;
-
-        [NativeTypeName("#define SW_SHOWMINIMIZED 2")]
-        public const int SW_SHOWMINIMIZED = 2;
-
-        [NativeTypeName("#define SW_SHOWMAXIMIZED 3")]
-        public const int SW_SHOWMAXIMIZED = 3;
-
-        [NativeTypeName("#define SW_MAXIMIZE 3")]
-        public const int SW_MAXIMIZE = 3;
-
-        [NativeTypeName("#define SW_SHOWNOACTIVATE 4")]
-        public const int SW_SHOWNOACTIVATE = 4;
-
-        [NativeTypeName("#define SW_SHOW 5")]
-        public const int SW_SHOW = 5;
-
-        [NativeTypeName("#define SW_MINIMIZE 6")]
-        public const int SW_MINIMIZE = 6;
-
-        [NativeTypeName("#define SW_SHOWMINNOACTIVE 7")]
-        public const int SW_SHOWMINNOACTIVE = 7;
-
-        [NativeTypeName("#define SW_SHOWNA 8")]
-        public const int SW_SHOWNA = 8;
-
-        [NativeTypeName("#define SW_RESTORE 9")]
-        public const int SW_RESTORE = 9;
-
-        [NativeTypeName("#define SW_SHOWDEFAULT 10")]
-        public const int SW_SHOWDEFAULT = 10;
-
-        [NativeTypeName("#define SW_FORCEMINIMIZE 11")]
-        public const int SW_FORCEMINIMIZE = 11;
-
-        [NativeTypeName("#define SW_MAX 11")]
-        public const int SW_MAX = 11;
 
         [NativeTypeName("#define HIDE_WINDOW 0")]
         public const int HIDE_WINDOW = 0;
@@ -2410,18 +2299,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define SHOW_OPENNOACTIVATE 4")]
         public const int SHOW_OPENNOACTIVATE = 4;
-
-        [NativeTypeName("#define SW_PARENTCLOSING 1")]
-        public const int SW_PARENTCLOSING = 1;
-
-        [NativeTypeName("#define SW_OTHERZOOM 2")]
-        public const int SW_OTHERZOOM = 2;
-
-        [NativeTypeName("#define SW_PARENTOPENING 3")]
-        public const int SW_PARENTOPENING = 3;
-
-        [NativeTypeName("#define SW_OTHERUNZOOM 4")]
-        public const int SW_OTHERUNZOOM = 4;
 
         [NativeTypeName("#define AW_HOR_POSITIVE 0x00000001")]
         public const int AW_HOR_POSITIVE = 0x00000001;
@@ -2468,63 +2345,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define KF_UP 0x8000")]
         public const int KF_UP = 0x8000;
 
-        [NativeTypeName("#define WH_MIN (-1)")]
-        public const int WH_MIN = (-1);
-
-        [NativeTypeName("#define WH_MSGFILTER (-1)")]
-        public const int WH_MSGFILTER = (-1);
-
-        [NativeTypeName("#define WH_JOURNALRECORD 0")]
-        public const int WH_JOURNALRECORD = 0;
-
-        [NativeTypeName("#define WH_JOURNALPLAYBACK 1")]
-        public const int WH_JOURNALPLAYBACK = 1;
-
-        [NativeTypeName("#define WH_KEYBOARD 2")]
-        public const int WH_KEYBOARD = 2;
-
-        [NativeTypeName("#define WH_GETMESSAGE 3")]
-        public const int WH_GETMESSAGE = 3;
-
-        [NativeTypeName("#define WH_CALLWNDPROC 4")]
-        public const int WH_CALLWNDPROC = 4;
-
-        [NativeTypeName("#define WH_CBT 5")]
-        public const int WH_CBT = 5;
-
-        [NativeTypeName("#define WH_SYSMSGFILTER 6")]
-        public const int WH_SYSMSGFILTER = 6;
-
-        [NativeTypeName("#define WH_MOUSE 7")]
-        public const int WH_MOUSE = 7;
-
-        [NativeTypeName("#define WH_DEBUG 9")]
-        public const int WH_DEBUG = 9;
-
-        [NativeTypeName("#define WH_SHELL 10")]
-        public const int WH_SHELL = 10;
-
-        [NativeTypeName("#define WH_FOREGROUNDIDLE 11")]
-        public const int WH_FOREGROUNDIDLE = 11;
-
-        [NativeTypeName("#define WH_CALLWNDPROCRET 12")]
-        public const int WH_CALLWNDPROCRET = 12;
-
-        [NativeTypeName("#define WH_KEYBOARD_LL 13")]
-        public const int WH_KEYBOARD_LL = 13;
-
-        [NativeTypeName("#define WH_MOUSE_LL 14")]
-        public const int WH_MOUSE_LL = 14;
-
-        [NativeTypeName("#define WH_MAX 14")]
-        public const int WH_MAX = 14;
-
-        [NativeTypeName("#define WH_MINHOOK WH_MIN")]
-        public const int WH_MINHOOK = (-1);
-
-        [NativeTypeName("#define WH_MAXHOOK WH_MAX")]
-        public const int WH_MAXHOOK = 14;
-
         [NativeTypeName("#define HC_ACTION 0")]
         public const int HC_ACTION = 0;
 
@@ -2545,144 +2365,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define HC_SYSMODALOFF 5")]
         public const int HC_SYSMODALOFF = 5;
-
-        [NativeTypeName("#define HCBT_MOVESIZE 0")]
-        public const int HCBT_MOVESIZE = 0;
-
-        [NativeTypeName("#define HCBT_MINMAX 1")]
-        public const int HCBT_MINMAX = 1;
-
-        [NativeTypeName("#define HCBT_QS 2")]
-        public const int HCBT_QS = 2;
-
-        [NativeTypeName("#define HCBT_CREATEWND 3")]
-        public const int HCBT_CREATEWND = 3;
-
-        [NativeTypeName("#define HCBT_DESTROYWND 4")]
-        public const int HCBT_DESTROYWND = 4;
-
-        [NativeTypeName("#define HCBT_ACTIVATE 5")]
-        public const int HCBT_ACTIVATE = 5;
-
-        [NativeTypeName("#define HCBT_CLICKSKIPPED 6")]
-        public const int HCBT_CLICKSKIPPED = 6;
-
-        [NativeTypeName("#define HCBT_KEYSKIPPED 7")]
-        public const int HCBT_KEYSKIPPED = 7;
-
-        [NativeTypeName("#define HCBT_SYSCOMMAND 8")]
-        public const int HCBT_SYSCOMMAND = 8;
-
-        [NativeTypeName("#define HCBT_SETFOCUS 9")]
-        public const int HCBT_SETFOCUS = 9;
-
-        [NativeTypeName("#define WTS_CONSOLE_CONNECT 0x1")]
-        public const int WTS_CONSOLE_CONNECT = 0x1;
-
-        [NativeTypeName("#define WTS_CONSOLE_DISCONNECT 0x2")]
-        public const int WTS_CONSOLE_DISCONNECT = 0x2;
-
-        [NativeTypeName("#define WTS_REMOTE_CONNECT 0x3")]
-        public const int WTS_REMOTE_CONNECT = 0x3;
-
-        [NativeTypeName("#define WTS_REMOTE_DISCONNECT 0x4")]
-        public const int WTS_REMOTE_DISCONNECT = 0x4;
-
-        [NativeTypeName("#define WTS_SESSION_LOGON 0x5")]
-        public const int WTS_SESSION_LOGON = 0x5;
-
-        [NativeTypeName("#define WTS_SESSION_LOGOFF 0x6")]
-        public const int WTS_SESSION_LOGOFF = 0x6;
-
-        [NativeTypeName("#define WTS_SESSION_LOCK 0x7")]
-        public const int WTS_SESSION_LOCK = 0x7;
-
-        [NativeTypeName("#define WTS_SESSION_UNLOCK 0x8")]
-        public const int WTS_SESSION_UNLOCK = 0x8;
-
-        [NativeTypeName("#define WTS_SESSION_REMOTE_CONTROL 0x9")]
-        public const int WTS_SESSION_REMOTE_CONTROL = 0x9;
-
-        [NativeTypeName("#define WTS_SESSION_CREATE 0xa")]
-        public const int WTS_SESSION_CREATE = 0xa;
-
-        [NativeTypeName("#define WTS_SESSION_TERMINATE 0xb")]
-        public const int WTS_SESSION_TERMINATE = 0xb;
-
-        [NativeTypeName("#define MSGF_DIALOGBOX 0")]
-        public const int MSGF_DIALOGBOX = 0;
-
-        [NativeTypeName("#define MSGF_MESSAGEBOX 1")]
-        public const int MSGF_MESSAGEBOX = 1;
-
-        [NativeTypeName("#define MSGF_MENU 2")]
-        public const int MSGF_MENU = 2;
-
-        [NativeTypeName("#define MSGF_SCROLLBAR 5")]
-        public const int MSGF_SCROLLBAR = 5;
-
-        [NativeTypeName("#define MSGF_NEXTWINDOW 6")]
-        public const int MSGF_NEXTWINDOW = 6;
-
-        [NativeTypeName("#define MSGF_MAX 8")]
-        public const int MSGF_MAX = 8;
-
-        [NativeTypeName("#define MSGF_USER 4096")]
-        public const int MSGF_USER = 4096;
-
-        [NativeTypeName("#define HSHELL_WINDOWCREATED 1")]
-        public const int HSHELL_WINDOWCREATED = 1;
-
-        [NativeTypeName("#define HSHELL_WINDOWDESTROYED 2")]
-        public const int HSHELL_WINDOWDESTROYED = 2;
-
-        [NativeTypeName("#define HSHELL_ACTIVATESHELLWINDOW 3")]
-        public const int HSHELL_ACTIVATESHELLWINDOW = 3;
-
-        [NativeTypeName("#define HSHELL_WINDOWACTIVATED 4")]
-        public const int HSHELL_WINDOWACTIVATED = 4;
-
-        [NativeTypeName("#define HSHELL_GETMINRECT 5")]
-        public const int HSHELL_GETMINRECT = 5;
-
-        [NativeTypeName("#define HSHELL_REDRAW 6")]
-        public const int HSHELL_REDRAW = 6;
-
-        [NativeTypeName("#define HSHELL_TASKMAN 7")]
-        public const int HSHELL_TASKMAN = 7;
-
-        [NativeTypeName("#define HSHELL_LANGUAGE 8")]
-        public const int HSHELL_LANGUAGE = 8;
-
-        [NativeTypeName("#define HSHELL_SYSMENU 9")]
-        public const int HSHELL_SYSMENU = 9;
-
-        [NativeTypeName("#define HSHELL_ENDTASK 10")]
-        public const int HSHELL_ENDTASK = 10;
-
-        [NativeTypeName("#define HSHELL_ACCESSIBILITYSTATE 11")]
-        public const int HSHELL_ACCESSIBILITYSTATE = 11;
-
-        [NativeTypeName("#define HSHELL_APPCOMMAND 12")]
-        public const int HSHELL_APPCOMMAND = 12;
-
-        [NativeTypeName("#define HSHELL_WINDOWREPLACED 13")]
-        public const int HSHELL_WINDOWREPLACED = 13;
-
-        [NativeTypeName("#define HSHELL_WINDOWREPLACING 14")]
-        public const int HSHELL_WINDOWREPLACING = 14;
-
-        [NativeTypeName("#define HSHELL_MONITORCHANGED 16")]
-        public const int HSHELL_MONITORCHANGED = 16;
-
-        [NativeTypeName("#define HSHELL_HIGHBIT 0x8000")]
-        public const int HSHELL_HIGHBIT = 0x8000;
-
-        [NativeTypeName("#define HSHELL_FLASH (HSHELL_REDRAW|HSHELL_HIGHBIT)")]
-        public const int HSHELL_FLASH = (6 | 0x8000);
-
-        [NativeTypeName("#define HSHELL_RUDEAPPACTIVATED (HSHELL_WINDOWACTIVATED|HSHELL_HIGHBIT)")]
-        public const int HSHELL_RUDEAPPACTIVATED = (4 | 0x8000);
 
         [NativeTypeName("#define FAPPCOMMAND_MOUSE 0x8000")]
         public const int FAPPCOMMAND_MOUSE = 0x8000;
@@ -2771,33 +2453,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define GMMP_USE_HIGH_RESOLUTION_POINTS 2")]
         public const int GMMP_USE_HIGH_RESOLUTION_POINTS = 2;
 
-        [NativeTypeName("#define DESKTOP_READOBJECTS 0x0001L")]
-        public const int DESKTOP_READOBJECTS = 0x0001;
-
-        [NativeTypeName("#define DESKTOP_CREATEWINDOW 0x0002L")]
-        public const int DESKTOP_CREATEWINDOW = 0x0002;
-
-        [NativeTypeName("#define DESKTOP_CREATEMENU 0x0004L")]
-        public const int DESKTOP_CREATEMENU = 0x0004;
-
-        [NativeTypeName("#define DESKTOP_HOOKCONTROL 0x0008L")]
-        public const int DESKTOP_HOOKCONTROL = 0x0008;
-
-        [NativeTypeName("#define DESKTOP_JOURNALRECORD 0x0010L")]
-        public const int DESKTOP_JOURNALRECORD = 0x0010;
-
-        [NativeTypeName("#define DESKTOP_JOURNALPLAYBACK 0x0020L")]
-        public const int DESKTOP_JOURNALPLAYBACK = 0x0020;
-
-        [NativeTypeName("#define DESKTOP_ENUMERATE 0x0040L")]
-        public const int DESKTOP_ENUMERATE = 0x0040;
-
-        [NativeTypeName("#define DESKTOP_WRITEOBJECTS 0x0080L")]
-        public const int DESKTOP_WRITEOBJECTS = 0x0080;
-
-        [NativeTypeName("#define DESKTOP_SWITCHDESKTOP 0x0100L")]
-        public const int DESKTOP_SWITCHDESKTOP = 0x0100;
-
         [NativeTypeName("#define DF_ALLOWOTHERACCOUNTHOOK 0x0001L")]
         public const int DF_ALLOWOTHERACCOUNTHOOK = 0x0001;
 
@@ -2812,36 +2467,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define EnumDesktops EnumDesktopsW")]
         public static delegate*<HWINSTA, delegate* unmanaged<ushort*, LPARAM, BOOL>, LPARAM, BOOL> EnumDesktops => &EnumDesktopsW;
-
-        [NativeTypeName("#define WINSTA_ENUMDESKTOPS 0x0001L")]
-        public const int WINSTA_ENUMDESKTOPS = 0x0001;
-
-        [NativeTypeName("#define WINSTA_READATTRIBUTES 0x0002L")]
-        public const int WINSTA_READATTRIBUTES = 0x0002;
-
-        [NativeTypeName("#define WINSTA_ACCESSCLIPBOARD 0x0004L")]
-        public const int WINSTA_ACCESSCLIPBOARD = 0x0004;
-
-        [NativeTypeName("#define WINSTA_CREATEDESKTOP 0x0008L")]
-        public const int WINSTA_CREATEDESKTOP = 0x0008;
-
-        [NativeTypeName("#define WINSTA_WRITEATTRIBUTES 0x0010L")]
-        public const int WINSTA_WRITEATTRIBUTES = 0x0010;
-
-        [NativeTypeName("#define WINSTA_ACCESSGLOBALATOMS 0x0020L")]
-        public const int WINSTA_ACCESSGLOBALATOMS = 0x0020;
-
-        [NativeTypeName("#define WINSTA_EXITWINDOWS 0x0040L")]
-        public const int WINSTA_EXITWINDOWS = 0x0040;
-
-        [NativeTypeName("#define WINSTA_ENUMERATE 0x0100L")]
-        public const int WINSTA_ENUMERATE = 0x0100;
-
-        [NativeTypeName("#define WINSTA_READSCREEN 0x0200L")]
-        public const int WINSTA_READSCREEN = 0x0200;
-
-        [NativeTypeName("#define WINSTA_ALL_ACCESS (WINSTA_ENUMDESKTOPS  | WINSTA_READATTRIBUTES  | WINSTA_ACCESSCLIPBOARD | \\\r\n                                     WINSTA_CREATEDESKTOP | WINSTA_WRITEATTRIBUTES | WINSTA_ACCESSGLOBALATOMS | \\\r\n                                     WINSTA_EXITWINDOWS   | WINSTA_ENUMERATE       | WINSTA_READSCREEN)")]
-        public const int WINSTA_ALL_ACCESS = (0x0001 | 0x0002 | 0x0004 | 0x0008 | 0x0010 | 0x0020 | 0x0040 | 0x0100 | 0x0200);
 
         [NativeTypeName("#define CWF_CREATE_ONLY 0x00000001")]
         public const int CWF_CREATE_ONLY = 0x00000001;
@@ -2921,38 +2546,8 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define GWLP_ID (-12)")]
         public const int GWLP_ID = (-12);
 
-        [NativeTypeName("#define GCL_MENUNAME (-8)")]
-        public const int GCL_MENUNAME = (-8);
-
-        [NativeTypeName("#define GCL_HBRBACKGROUND (-10)")]
-        public const int GCL_HBRBACKGROUND = (-10);
-
-        [NativeTypeName("#define GCL_HCURSOR (-12)")]
-        public const int GCL_HCURSOR = (-12);
-
-        [NativeTypeName("#define GCL_HICON (-14)")]
-        public const int GCL_HICON = (-14);
-
-        [NativeTypeName("#define GCL_HMODULE (-16)")]
-        public const int GCL_HMODULE = (-16);
-
-        [NativeTypeName("#define GCL_CBWNDEXTRA (-18)")]
-        public const int GCL_CBWNDEXTRA = (-18);
-
-        [NativeTypeName("#define GCL_CBCLSEXTRA (-20)")]
-        public const int GCL_CBCLSEXTRA = (-20);
-
-        [NativeTypeName("#define GCL_WNDPROC (-24)")]
-        public const int GCL_WNDPROC = (-24);
-
-        [NativeTypeName("#define GCL_STYLE (-26)")]
-        public const int GCL_STYLE = (-26);
-
         [NativeTypeName("#define GCW_ATOM (-32)")]
         public const int GCW_ATOM = (-32);
-
-        [NativeTypeName("#define GCL_HICONSM (-34)")]
-        public const int GCL_HICONSM = (-34);
 
         [NativeTypeName("#define GCLP_MENUNAME (-8)")]
         public const int GCLP_MENUNAME = (-8);
@@ -3047,53 +2642,8 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define XBUTTON2 0x0002")]
         public const int XBUTTON2 = 0x0002;
 
-        [NativeTypeName("#define PBT_APMQUERYSUSPEND 0x0000")]
-        public const int PBT_APMQUERYSUSPEND = 0x0000;
-
-        [NativeTypeName("#define PBT_APMQUERYSTANDBY 0x0001")]
-        public const int PBT_APMQUERYSTANDBY = 0x0001;
-
-        [NativeTypeName("#define PBT_APMQUERYSUSPENDFAILED 0x0002")]
-        public const int PBT_APMQUERYSUSPENDFAILED = 0x0002;
-
-        [NativeTypeName("#define PBT_APMQUERYSTANDBYFAILED 0x0003")]
-        public const int PBT_APMQUERYSTANDBYFAILED = 0x0003;
-
-        [NativeTypeName("#define PBT_APMSUSPEND 0x0004")]
-        public const int PBT_APMSUSPEND = 0x0004;
-
-        [NativeTypeName("#define PBT_APMSTANDBY 0x0005")]
-        public const int PBT_APMSTANDBY = 0x0005;
-
-        [NativeTypeName("#define PBT_APMRESUMECRITICAL 0x0006")]
-        public const int PBT_APMRESUMECRITICAL = 0x0006;
-
-        [NativeTypeName("#define PBT_APMRESUMESUSPEND 0x0007")]
-        public const int PBT_APMRESUMESUSPEND = 0x0007;
-
-        [NativeTypeName("#define PBT_APMRESUMESTANDBY 0x0008")]
-        public const int PBT_APMRESUMESTANDBY = 0x0008;
-
         [NativeTypeName("#define PBTF_APMRESUMEFROMFAILURE 0x00000001")]
         public const int PBTF_APMRESUMEFROMFAILURE = 0x00000001;
-
-        [NativeTypeName("#define PBT_APMBATTERYLOW 0x0009")]
-        public const int PBT_APMBATTERYLOW = 0x0009;
-
-        [NativeTypeName("#define PBT_APMPOWERSTATUSCHANGE 0x000A")]
-        public const int PBT_APMPOWERSTATUSCHANGE = 0x000A;
-
-        [NativeTypeName("#define PBT_APMOEMEVENT 0x000B")]
-        public const int PBT_APMOEMEVENT = 0x000B;
-
-        [NativeTypeName("#define PBT_APMRESUMEAUTOMATIC 0x0012")]
-        public const int PBT_APMRESUMEAUTOMATIC = 0x0012;
-
-        [NativeTypeName("#define PBT_POWERSETTINGCHANGE 0x8013")]
-        public const int PBT_POWERSETTINGCHANGE = 0x8013;
-
-        [NativeTypeName("#define DM_POINTERHITTEST 0x0250")]
-        public const int DM_POINTERHITTEST = 0x0250;
 
         [NativeTypeName("#define WMSZ_LEFT 1")]
         public const int WMSZ_LEFT = 1;
@@ -3299,27 +2849,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define WVR_VALIDRECTS 0x0400")]
         public const int WVR_VALIDRECTS = 0x0400;
 
-        [NativeTypeName("#define MK_LBUTTON 0x0001")]
-        public const int MK_LBUTTON = 0x0001;
-
-        [NativeTypeName("#define MK_RBUTTON 0x0002")]
-        public const int MK_RBUTTON = 0x0002;
-
-        [NativeTypeName("#define MK_SHIFT 0x0004")]
-        public const int MK_SHIFT = 0x0004;
-
-        [NativeTypeName("#define MK_CONTROL 0x0008")]
-        public const int MK_CONTROL = 0x0008;
-
-        [NativeTypeName("#define MK_MBUTTON 0x0010")]
-        public const int MK_MBUTTON = 0x0010;
-
-        [NativeTypeName("#define MK_XBUTTON1 0x0020")]
-        public const int MK_XBUTTON1 = 0x0020;
-
-        [NativeTypeName("#define MK_XBUTTON2 0x0040")]
-        public const int MK_XBUTTON2 = 0x0040;
-
         [NativeTypeName("#define TME_HOVER 0x00000001")]
         public const int TME_HOVER = 0x00000001;
 
@@ -3337,63 +2866,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define HOVER_DEFAULT 0xFFFFFFFF")]
         public const uint HOVER_DEFAULT = 0xFFFFFFFF;
-
-        [NativeTypeName("#define CS_VREDRAW 0x0001")]
-        public const int CS_VREDRAW = 0x0001;
-
-        [NativeTypeName("#define CS_HREDRAW 0x0002")]
-        public const int CS_HREDRAW = 0x0002;
-
-        [NativeTypeName("#define CS_DBLCLKS 0x0008")]
-        public const int CS_DBLCLKS = 0x0008;
-
-        [NativeTypeName("#define CS_OWNDC 0x0020")]
-        public const int CS_OWNDC = 0x0020;
-
-        [NativeTypeName("#define CS_CLASSDC 0x0040")]
-        public const int CS_CLASSDC = 0x0040;
-
-        [NativeTypeName("#define CS_PARENTDC 0x0080")]
-        public const int CS_PARENTDC = 0x0080;
-
-        [NativeTypeName("#define CS_NOCLOSE 0x0200")]
-        public const int CS_NOCLOSE = 0x0200;
-
-        [NativeTypeName("#define CS_SAVEBITS 0x0800")]
-        public const int CS_SAVEBITS = 0x0800;
-
-        [NativeTypeName("#define CS_BYTEALIGNCLIENT 0x1000")]
-        public const int CS_BYTEALIGNCLIENT = 0x1000;
-
-        [NativeTypeName("#define CS_BYTEALIGNWINDOW 0x2000")]
-        public const int CS_BYTEALIGNWINDOW = 0x2000;
-
-        [NativeTypeName("#define CS_GLOBALCLASS 0x4000")]
-        public const int CS_GLOBALCLASS = 0x4000;
-
-        [NativeTypeName("#define CS_IME 0x00010000")]
-        public const int CS_IME = 0x00010000;
-
-        [NativeTypeName("#define CS_DROPSHADOW 0x00020000")]
-        public const int CS_DROPSHADOW = 0x00020000;
-
-        [NativeTypeName("#define PRF_CHECKVISIBLE 0x00000001L")]
-        public const int PRF_CHECKVISIBLE = 0x00000001;
-
-        [NativeTypeName("#define PRF_NONCLIENT 0x00000002L")]
-        public const int PRF_NONCLIENT = 0x00000002;
-
-        [NativeTypeName("#define PRF_CLIENT 0x00000004L")]
-        public const int PRF_CLIENT = 0x00000004;
-
-        [NativeTypeName("#define PRF_ERASEBKGND 0x00000008L")]
-        public const int PRF_ERASEBKGND = 0x00000008;
-
-        [NativeTypeName("#define PRF_CHILDREN 0x00000010L")]
-        public const int PRF_CHILDREN = 0x00000010;
-
-        [NativeTypeName("#define PRF_OWNED 0x00000020L")]
-        public const int PRF_OWNED = 0x00000020;
 
         [NativeTypeName("#define BDR_RAISEDOUTER 0x0001")]
         public const int BDR_RAISEDOUTER = 0x0001;
@@ -3431,63 +2903,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define EDGE_BUMP (BDR_RAISEDOUTER | BDR_SUNKENINNER)")]
         public const int EDGE_BUMP = (0x0001 | 0x0008);
 
-        [NativeTypeName("#define BF_LEFT 0x0001")]
-        public const int BF_LEFT = 0x0001;
-
-        [NativeTypeName("#define BF_TOP 0x0002")]
-        public const int BF_TOP = 0x0002;
-
-        [NativeTypeName("#define BF_RIGHT 0x0004")]
-        public const int BF_RIGHT = 0x0004;
-
-        [NativeTypeName("#define BF_BOTTOM 0x0008")]
-        public const int BF_BOTTOM = 0x0008;
-
-        [NativeTypeName("#define BF_TOPLEFT (BF_TOP | BF_LEFT)")]
-        public const int BF_TOPLEFT = (0x0002 | 0x0001);
-
-        [NativeTypeName("#define BF_TOPRIGHT (BF_TOP | BF_RIGHT)")]
-        public const int BF_TOPRIGHT = (0x0002 | 0x0004);
-
-        [NativeTypeName("#define BF_BOTTOMLEFT (BF_BOTTOM | BF_LEFT)")]
-        public const int BF_BOTTOMLEFT = (0x0008 | 0x0001);
-
-        [NativeTypeName("#define BF_BOTTOMRIGHT (BF_BOTTOM | BF_RIGHT)")]
-        public const int BF_BOTTOMRIGHT = (0x0008 | 0x0004);
-
-        [NativeTypeName("#define BF_RECT (BF_LEFT | BF_TOP | BF_RIGHT | BF_BOTTOM)")]
-        public const int BF_RECT = (0x0001 | 0x0002 | 0x0004 | 0x0008);
-
-        [NativeTypeName("#define BF_DIAGONAL 0x0010")]
-        public const int BF_DIAGONAL = 0x0010;
-
-        [NativeTypeName("#define BF_DIAGONAL_ENDTOPRIGHT (BF_DIAGONAL | BF_TOP | BF_RIGHT)")]
-        public const int BF_DIAGONAL_ENDTOPRIGHT = (0x0010 | 0x0002 | 0x0004);
-
-        [NativeTypeName("#define BF_DIAGONAL_ENDTOPLEFT (BF_DIAGONAL | BF_TOP | BF_LEFT)")]
-        public const int BF_DIAGONAL_ENDTOPLEFT = (0x0010 | 0x0002 | 0x0001);
-
-        [NativeTypeName("#define BF_DIAGONAL_ENDBOTTOMLEFT (BF_DIAGONAL | BF_BOTTOM | BF_LEFT)")]
-        public const int BF_DIAGONAL_ENDBOTTOMLEFT = (0x0010 | 0x0008 | 0x0001);
-
-        [NativeTypeName("#define BF_DIAGONAL_ENDBOTTOMRIGHT (BF_DIAGONAL | BF_BOTTOM | BF_RIGHT)")]
-        public const int BF_DIAGONAL_ENDBOTTOMRIGHT = (0x0010 | 0x0008 | 0x0004);
-
-        [NativeTypeName("#define BF_MIDDLE 0x0800")]
-        public const int BF_MIDDLE = 0x0800;
-
-        [NativeTypeName("#define BF_SOFT 0x1000")]
-        public const int BF_SOFT = 0x1000;
-
-        [NativeTypeName("#define BF_ADJUST 0x2000")]
-        public const int BF_ADJUST = 0x2000;
-
-        [NativeTypeName("#define BF_FLAT 0x4000")]
-        public const int BF_FLAT = 0x4000;
-
-        [NativeTypeName("#define BF_MONO 0x8000")]
-        public const int BF_MONO = 0x8000;
-
         [NativeTypeName("#define DFC_CAPTION 1")]
         public const int DFC_CAPTION = 1;
 
@@ -3503,203 +2918,11 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define DFC_POPUPMENU 5")]
         public const int DFC_POPUPMENU = 5;
 
-        [NativeTypeName("#define DFCS_CAPTIONCLOSE 0x0000")]
-        public const int DFCS_CAPTIONCLOSE = 0x0000;
-
-        [NativeTypeName("#define DFCS_CAPTIONMIN 0x0001")]
-        public const int DFCS_CAPTIONMIN = 0x0001;
-
-        [NativeTypeName("#define DFCS_CAPTIONMAX 0x0002")]
-        public const int DFCS_CAPTIONMAX = 0x0002;
-
-        [NativeTypeName("#define DFCS_CAPTIONRESTORE 0x0003")]
-        public const int DFCS_CAPTIONRESTORE = 0x0003;
-
-        [NativeTypeName("#define DFCS_CAPTIONHELP 0x0004")]
-        public const int DFCS_CAPTIONHELP = 0x0004;
-
-        [NativeTypeName("#define DFCS_MENUARROW 0x0000")]
-        public const int DFCS_MENUARROW = 0x0000;
-
-        [NativeTypeName("#define DFCS_MENUCHECK 0x0001")]
-        public const int DFCS_MENUCHECK = 0x0001;
-
-        [NativeTypeName("#define DFCS_MENUBULLET 0x0002")]
-        public const int DFCS_MENUBULLET = 0x0002;
-
-        [NativeTypeName("#define DFCS_MENUARROWRIGHT 0x0004")]
-        public const int DFCS_MENUARROWRIGHT = 0x0004;
-
-        [NativeTypeName("#define DFCS_SCROLLUP 0x0000")]
-        public const int DFCS_SCROLLUP = 0x0000;
-
-        [NativeTypeName("#define DFCS_SCROLLDOWN 0x0001")]
-        public const int DFCS_SCROLLDOWN = 0x0001;
-
-        [NativeTypeName("#define DFCS_SCROLLLEFT 0x0002")]
-        public const int DFCS_SCROLLLEFT = 0x0002;
-
-        [NativeTypeName("#define DFCS_SCROLLRIGHT 0x0003")]
-        public const int DFCS_SCROLLRIGHT = 0x0003;
-
-        [NativeTypeName("#define DFCS_SCROLLCOMBOBOX 0x0005")]
-        public const int DFCS_SCROLLCOMBOBOX = 0x0005;
-
-        [NativeTypeName("#define DFCS_SCROLLSIZEGRIP 0x0008")]
-        public const int DFCS_SCROLLSIZEGRIP = 0x0008;
-
-        [NativeTypeName("#define DFCS_SCROLLSIZEGRIPRIGHT 0x0010")]
-        public const int DFCS_SCROLLSIZEGRIPRIGHT = 0x0010;
-
-        [NativeTypeName("#define DFCS_BUTTONCHECK 0x0000")]
-        public const int DFCS_BUTTONCHECK = 0x0000;
-
-        [NativeTypeName("#define DFCS_BUTTONRADIOIMAGE 0x0001")]
-        public const int DFCS_BUTTONRADIOIMAGE = 0x0001;
-
-        [NativeTypeName("#define DFCS_BUTTONRADIOMASK 0x0002")]
-        public const int DFCS_BUTTONRADIOMASK = 0x0002;
-
-        [NativeTypeName("#define DFCS_BUTTONRADIO 0x0004")]
-        public const int DFCS_BUTTONRADIO = 0x0004;
-
-        [NativeTypeName("#define DFCS_BUTTON3STATE 0x0008")]
-        public const int DFCS_BUTTON3STATE = 0x0008;
-
-        [NativeTypeName("#define DFCS_BUTTONPUSH 0x0010")]
-        public const int DFCS_BUTTONPUSH = 0x0010;
-
-        [NativeTypeName("#define DFCS_INACTIVE 0x0100")]
-        public const int DFCS_INACTIVE = 0x0100;
-
-        [NativeTypeName("#define DFCS_PUSHED 0x0200")]
-        public const int DFCS_PUSHED = 0x0200;
-
-        [NativeTypeName("#define DFCS_CHECKED 0x0400")]
-        public const int DFCS_CHECKED = 0x0400;
-
-        [NativeTypeName("#define DFCS_TRANSPARENT 0x0800")]
-        public const int DFCS_TRANSPARENT = 0x0800;
-
-        [NativeTypeName("#define DFCS_HOT 0x1000")]
-        public const int DFCS_HOT = 0x1000;
-
-        [NativeTypeName("#define DFCS_ADJUSTRECT 0x2000")]
-        public const int DFCS_ADJUSTRECT = 0x2000;
-
-        [NativeTypeName("#define DFCS_FLAT 0x4000")]
-        public const int DFCS_FLAT = 0x4000;
-
-        [NativeTypeName("#define DFCS_MONO 0x8000")]
-        public const int DFCS_MONO = 0x8000;
-
-        [NativeTypeName("#define DC_ACTIVE 0x0001")]
-        public const int DC_ACTIVE = 0x0001;
-
-        [NativeTypeName("#define DC_SMALLCAP 0x0002")]
-        public const int DC_SMALLCAP = 0x0002;
-
-        [NativeTypeName("#define DC_ICON 0x0004")]
-        public const int DC_ICON = 0x0004;
-
-        [NativeTypeName("#define DC_TEXT 0x0008")]
-        public const int DC_TEXT = 0x0008;
-
-        [NativeTypeName("#define DC_INBUTTON 0x0010")]
-        public const int DC_INBUTTON = 0x0010;
-
-        [NativeTypeName("#define DC_GRADIENT 0x0020")]
-        public const int DC_GRADIENT = 0x0020;
-
-        [NativeTypeName("#define DC_BUTTONS 0x1000")]
-        public const int DC_BUTTONS = 0x1000;
-
         [NativeTypeName("#define IDANI_OPEN 1")]
         public const int IDANI_OPEN = 1;
 
         [NativeTypeName("#define IDANI_CAPTION 3")]
         public const int IDANI_CAPTION = 3;
-
-        [NativeTypeName("#define CF_TEXT 1")]
-        public const int CF_TEXT = 1;
-
-        [NativeTypeName("#define CF_BITMAP 2")]
-        public const int CF_BITMAP = 2;
-
-        [NativeTypeName("#define CF_METAFILEPICT 3")]
-        public const int CF_METAFILEPICT = 3;
-
-        [NativeTypeName("#define CF_SYLK 4")]
-        public const int CF_SYLK = 4;
-
-        [NativeTypeName("#define CF_DIF 5")]
-        public const int CF_DIF = 5;
-
-        [NativeTypeName("#define CF_TIFF 6")]
-        public const int CF_TIFF = 6;
-
-        [NativeTypeName("#define CF_OEMTEXT 7")]
-        public const int CF_OEMTEXT = 7;
-
-        [NativeTypeName("#define CF_DIB 8")]
-        public const int CF_DIB = 8;
-
-        [NativeTypeName("#define CF_PALETTE 9")]
-        public const int CF_PALETTE = 9;
-
-        [NativeTypeName("#define CF_PENDATA 10")]
-        public const int CF_PENDATA = 10;
-
-        [NativeTypeName("#define CF_RIFF 11")]
-        public const int CF_RIFF = 11;
-
-        [NativeTypeName("#define CF_WAVE 12")]
-        public const int CF_WAVE = 12;
-
-        [NativeTypeName("#define CF_UNICODETEXT 13")]
-        public const int CF_UNICODETEXT = 13;
-
-        [NativeTypeName("#define CF_ENHMETAFILE 14")]
-        public const int CF_ENHMETAFILE = 14;
-
-        [NativeTypeName("#define CF_HDROP 15")]
-        public const int CF_HDROP = 15;
-
-        [NativeTypeName("#define CF_LOCALE 16")]
-        public const int CF_LOCALE = 16;
-
-        [NativeTypeName("#define CF_DIBV5 17")]
-        public const int CF_DIBV5 = 17;
-
-        [NativeTypeName("#define CF_MAX 18")]
-        public const int CF_MAX = 18;
-
-        [NativeTypeName("#define CF_OWNERDISPLAY 0x0080")]
-        public const int CF_OWNERDISPLAY = 0x0080;
-
-        [NativeTypeName("#define CF_DSPTEXT 0x0081")]
-        public const int CF_DSPTEXT = 0x0081;
-
-        [NativeTypeName("#define CF_DSPBITMAP 0x0082")]
-        public const int CF_DSPBITMAP = 0x0082;
-
-        [NativeTypeName("#define CF_DSPMETAFILEPICT 0x0083")]
-        public const int CF_DSPMETAFILEPICT = 0x0083;
-
-        [NativeTypeName("#define CF_DSPENHMETAFILE 0x008E")]
-        public const int CF_DSPENHMETAFILE = 0x008E;
-
-        [NativeTypeName("#define CF_PRIVATEFIRST 0x0200")]
-        public const int CF_PRIVATEFIRST = 0x0200;
-
-        [NativeTypeName("#define CF_PRIVATELAST 0x02FF")]
-        public const int CF_PRIVATELAST = 0x02FF;
-
-        [NativeTypeName("#define CF_GDIOBJFIRST 0x0300")]
-        public const int CF_GDIOBJFIRST = 0x0300;
-
-        [NativeTypeName("#define CF_GDIOBJLAST 0x03FF")]
-        public const int CF_GDIOBJLAST = 0x03FF;
 
         [NativeTypeName("#define FVIRTKEY TRUE")]
         public const int FVIRTKEY = 1;
@@ -3749,39 +2972,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define ODA_FOCUS 0x0004")]
         public const int ODA_FOCUS = 0x0004;
 
-        [NativeTypeName("#define ODS_SELECTED 0x0001")]
-        public const int ODS_SELECTED = 0x0001;
-
-        [NativeTypeName("#define ODS_GRAYED 0x0002")]
-        public const int ODS_GRAYED = 0x0002;
-
-        [NativeTypeName("#define ODS_DISABLED 0x0004")]
-        public const int ODS_DISABLED = 0x0004;
-
-        [NativeTypeName("#define ODS_CHECKED 0x0008")]
-        public const int ODS_CHECKED = 0x0008;
-
-        [NativeTypeName("#define ODS_FOCUS 0x0010")]
-        public const int ODS_FOCUS = 0x0010;
-
-        [NativeTypeName("#define ODS_DEFAULT 0x0020")]
-        public const int ODS_DEFAULT = 0x0020;
-
-        [NativeTypeName("#define ODS_COMBOBOXEDIT 0x1000")]
-        public const int ODS_COMBOBOXEDIT = 0x1000;
-
-        [NativeTypeName("#define ODS_HOTLIGHT 0x0040")]
-        public const int ODS_HOTLIGHT = 0x0040;
-
-        [NativeTypeName("#define ODS_INACTIVE 0x0080")]
-        public const int ODS_INACTIVE = 0x0080;
-
-        [NativeTypeName("#define ODS_NOACCEL 0x0100")]
-        public const int ODS_NOACCEL = 0x0100;
-
-        [NativeTypeName("#define ODS_NOFOCUSRECT 0x0200")]
-        public const int ODS_NOFOCUSRECT = 0x0200;
-
         [NativeTypeName("#define GetMessage GetMessageW")]
         public static delegate*<MSG*, HWND, uint, uint, BOOL> GetMessage => &GetMessageW;
 
@@ -3812,21 +3002,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define PM_QS_SENDMESSAGE (QS_SENDMESSAGE << 16)")]
         public const int PM_QS_SENDMESSAGE = (0x0040 << 16);
 
-        [NativeTypeName("#define MOD_ALT 0x0001")]
-        public const int MOD_ALT = 0x0001;
-
-        [NativeTypeName("#define MOD_CONTROL 0x0002")]
-        public const int MOD_CONTROL = 0x0002;
-
-        [NativeTypeName("#define MOD_SHIFT 0x0004")]
-        public const int MOD_SHIFT = 0x0004;
-
-        [NativeTypeName("#define MOD_WIN 0x0008")]
-        public const int MOD_WIN = 0x0008;
-
-        [NativeTypeName("#define MOD_NOREPEAT 0x4000")]
-        public const int MOD_NOREPEAT = 0x4000;
-
         [NativeTypeName("#define IDHOT_SNAPWINDOW (-1)")]
         public const int IDHOT_SNAPWINDOW = (-1);
 
@@ -3841,42 +3016,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define ENDSESSION_LOGOFF 0x80000000")]
         public const uint ENDSESSION_LOGOFF = 0x80000000;
-
-        [NativeTypeName("#define EWX_LOGOFF 0x00000000")]
-        public const int EWX_LOGOFF = 0x00000000;
-
-        [NativeTypeName("#define EWX_SHUTDOWN 0x00000001")]
-        public const int EWX_SHUTDOWN = 0x00000001;
-
-        [NativeTypeName("#define EWX_REBOOT 0x00000002")]
-        public const int EWX_REBOOT = 0x00000002;
-
-        [NativeTypeName("#define EWX_FORCE 0x00000004")]
-        public const int EWX_FORCE = 0x00000004;
-
-        [NativeTypeName("#define EWX_POWEROFF 0x00000008")]
-        public const int EWX_POWEROFF = 0x00000008;
-
-        [NativeTypeName("#define EWX_FORCEIFHUNG 0x00000010")]
-        public const int EWX_FORCEIFHUNG = 0x00000010;
-
-        [NativeTypeName("#define EWX_QUICKRESOLVE 0x00000020")]
-        public const int EWX_QUICKRESOLVE = 0x00000020;
-
-        [NativeTypeName("#define EWX_RESTARTAPPS 0x00000040")]
-        public const int EWX_RESTARTAPPS = 0x00000040;
-
-        [NativeTypeName("#define EWX_HYBRID_SHUTDOWN 0x00400000")]
-        public const int EWX_HYBRID_SHUTDOWN = 0x00400000;
-
-        [NativeTypeName("#define EWX_BOOTOPTIONS 0x01000000")]
-        public const int EWX_BOOTOPTIONS = 0x01000000;
-
-        [NativeTypeName("#define EWX_ARSO 0x04000000")]
-        public const int EWX_ARSO = 0x04000000;
-
-        [NativeTypeName("#define EWX_CHECK_SAFE_FOR_SERVER 0x08000000")]
-        public const int EWX_CHECK_SAFE_FOR_SERVER = 0x08000000;
 
         [NativeTypeName("#define SendMessage SendMessageW")]
         public static delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> SendMessage => &SendMessageW;
@@ -3914,50 +3053,8 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define BSM_ALLDESKTOPS 0x00000010")]
         public const int BSM_ALLDESKTOPS = 0x00000010;
 
-        [NativeTypeName("#define BSF_QUERY 0x00000001")]
-        public const int BSF_QUERY = 0x00000001;
-
-        [NativeTypeName("#define BSF_IGNORECURRENTTASK 0x00000002")]
-        public const int BSF_IGNORECURRENTTASK = 0x00000002;
-
-        [NativeTypeName("#define BSF_FLUSHDISK 0x00000004")]
-        public const int BSF_FLUSHDISK = 0x00000004;
-
-        [NativeTypeName("#define BSF_NOHANG 0x00000008")]
-        public const int BSF_NOHANG = 0x00000008;
-
-        [NativeTypeName("#define BSF_POSTMESSAGE 0x00000010")]
-        public const int BSF_POSTMESSAGE = 0x00000010;
-
-        [NativeTypeName("#define BSF_FORCEIFHUNG 0x00000020")]
-        public const int BSF_FORCEIFHUNG = 0x00000020;
-
-        [NativeTypeName("#define BSF_NOTIMEOUTIFNOTHUNG 0x00000040")]
-        public const int BSF_NOTIMEOUTIFNOTHUNG = 0x00000040;
-
-        [NativeTypeName("#define BSF_ALLOWSFW 0x00000080")]
-        public const int BSF_ALLOWSFW = 0x00000080;
-
-        [NativeTypeName("#define BSF_SENDNOTIFYMESSAGE 0x00000100")]
-        public const int BSF_SENDNOTIFYMESSAGE = 0x00000100;
-
-        [NativeTypeName("#define BSF_RETURNHDESK 0x00000200")]
-        public const int BSF_RETURNHDESK = 0x00000200;
-
-        [NativeTypeName("#define BSF_LUID 0x00000400")]
-        public const int BSF_LUID = 0x00000400;
-
         [NativeTypeName("#define BROADCAST_QUERY_DENY 0x424D5144")]
         public const int BROADCAST_QUERY_DENY = 0x424D5144;
-
-        [NativeTypeName("#define DEVICE_NOTIFY_WINDOW_HANDLE 0x00000000")]
-        public const int DEVICE_NOTIFY_WINDOW_HANDLE = 0x00000000;
-
-        [NativeTypeName("#define DEVICE_NOTIFY_SERVICE_HANDLE 0x00000001")]
-        public const int DEVICE_NOTIFY_SERVICE_HANDLE = 0x00000001;
-
-        [NativeTypeName("#define DEVICE_NOTIFY_ALL_INTERFACE_CLASSES 0x00000004")]
-        public const int DEVICE_NOTIFY_ALL_INTERFACE_CLASSES = 0x00000004;
 
         [NativeTypeName("#define RegisterDeviceNotification RegisterDeviceNotificationW")]
         public static delegate*<HANDLE, void*, uint, HDEVNOTIFY> RegisterDeviceNotification => &RegisterDeviceNotificationW;
@@ -4060,51 +3157,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define WDA_EXCLUDEFROMCAPTURE 0x00000011")]
         public const int WDA_EXCLUDEFROMCAPTURE = 0x00000011;
-
-        [NativeTypeName("#define SWP_NOSIZE 0x0001")]
-        public const int SWP_NOSIZE = 0x0001;
-
-        [NativeTypeName("#define SWP_NOMOVE 0x0002")]
-        public const int SWP_NOMOVE = 0x0002;
-
-        [NativeTypeName("#define SWP_NOZORDER 0x0004")]
-        public const int SWP_NOZORDER = 0x0004;
-
-        [NativeTypeName("#define SWP_NOREDRAW 0x0008")]
-        public const int SWP_NOREDRAW = 0x0008;
-
-        [NativeTypeName("#define SWP_NOACTIVATE 0x0010")]
-        public const int SWP_NOACTIVATE = 0x0010;
-
-        [NativeTypeName("#define SWP_FRAMECHANGED 0x0020")]
-        public const int SWP_FRAMECHANGED = 0x0020;
-
-        [NativeTypeName("#define SWP_SHOWWINDOW 0x0040")]
-        public const int SWP_SHOWWINDOW = 0x0040;
-
-        [NativeTypeName("#define SWP_HIDEWINDOW 0x0080")]
-        public const int SWP_HIDEWINDOW = 0x0080;
-
-        [NativeTypeName("#define SWP_NOCOPYBITS 0x0100")]
-        public const int SWP_NOCOPYBITS = 0x0100;
-
-        [NativeTypeName("#define SWP_NOOWNERZORDER 0x0200")]
-        public const int SWP_NOOWNERZORDER = 0x0200;
-
-        [NativeTypeName("#define SWP_NOSENDCHANGING 0x0400")]
-        public const int SWP_NOSENDCHANGING = 0x0400;
-
-        [NativeTypeName("#define SWP_DRAWFRAME SWP_FRAMECHANGED")]
-        public const int SWP_DRAWFRAME = 0x0020;
-
-        [NativeTypeName("#define SWP_NOREPOSITION SWP_NOOWNERZORDER")]
-        public const int SWP_NOREPOSITION = 0x0200;
-
-        [NativeTypeName("#define SWP_DEFERERASE 0x2000")]
-        public const int SWP_DEFERERASE = 0x2000;
-
-        [NativeTypeName("#define SWP_ASYNCWINDOWPOS 0x4000")]
-        public const int SWP_ASYNCWINDOWPOS = 0x4000;
 
         [NativeTypeName("#define CreateDialogParam CreateDialogParamW")]
         public static delegate*<HINSTANCE, ushort*, HWND, delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint>, LPARAM, HWND> CreateDialogParam => &CreateDialogParamW;
@@ -4235,57 +3287,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define KEYEVENTF_SCANCODE 0x0008")]
         public const int KEYEVENTF_SCANCODE = 0x0008;
 
-        [NativeTypeName("#define MOUSEEVENTF_MOVE 0x0001")]
-        public const int MOUSEEVENTF_MOVE = 0x0001;
-
-        [NativeTypeName("#define MOUSEEVENTF_LEFTDOWN 0x0002")]
-        public const int MOUSEEVENTF_LEFTDOWN = 0x0002;
-
-        [NativeTypeName("#define MOUSEEVENTF_LEFTUP 0x0004")]
-        public const int MOUSEEVENTF_LEFTUP = 0x0004;
-
-        [NativeTypeName("#define MOUSEEVENTF_RIGHTDOWN 0x0008")]
-        public const int MOUSEEVENTF_RIGHTDOWN = 0x0008;
-
-        [NativeTypeName("#define MOUSEEVENTF_RIGHTUP 0x0010")]
-        public const int MOUSEEVENTF_RIGHTUP = 0x0010;
-
-        [NativeTypeName("#define MOUSEEVENTF_MIDDLEDOWN 0x0020")]
-        public const int MOUSEEVENTF_MIDDLEDOWN = 0x0020;
-
-        [NativeTypeName("#define MOUSEEVENTF_MIDDLEUP 0x0040")]
-        public const int MOUSEEVENTF_MIDDLEUP = 0x0040;
-
-        [NativeTypeName("#define MOUSEEVENTF_XDOWN 0x0080")]
-        public const int MOUSEEVENTF_XDOWN = 0x0080;
-
-        [NativeTypeName("#define MOUSEEVENTF_XUP 0x0100")]
-        public const int MOUSEEVENTF_XUP = 0x0100;
-
-        [NativeTypeName("#define MOUSEEVENTF_WHEEL 0x0800")]
-        public const int MOUSEEVENTF_WHEEL = 0x0800;
-
-        [NativeTypeName("#define MOUSEEVENTF_HWHEEL 0x01000")]
-        public const int MOUSEEVENTF_HWHEEL = 0x01000;
-
-        [NativeTypeName("#define MOUSEEVENTF_MOVE_NOCOALESCE 0x2000")]
-        public const int MOUSEEVENTF_MOVE_NOCOALESCE = 0x2000;
-
-        [NativeTypeName("#define MOUSEEVENTF_VIRTUALDESK 0x4000")]
-        public const int MOUSEEVENTF_VIRTUALDESK = 0x4000;
-
-        [NativeTypeName("#define MOUSEEVENTF_ABSOLUTE 0x8000")]
-        public const int MOUSEEVENTF_ABSOLUTE = 0x8000;
-
-        [NativeTypeName("#define INPUT_MOUSE 0")]
-        public const int INPUT_MOUSE = 0;
-
-        [NativeTypeName("#define INPUT_KEYBOARD 1")]
-        public const int INPUT_KEYBOARD = 1;
-
-        [NativeTypeName("#define INPUT_HARDWARE 2")]
-        public const int INPUT_HARDWARE = 2;
-
         [NativeTypeName("#define TOUCHEVENTF_MOVE 0x0001")]
         public const int TOUCHEVENTF_MOVE = 0x0001;
 
@@ -4325,84 +3326,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define TWF_WANTPALM (0x00000002)")]
         public const int TWF_WANTPALM = (0x00000002);
 
-        [NativeTypeName("#define POINTER_FLAG_NONE 0x00000000")]
-        public const int POINTER_FLAG_NONE = 0x00000000;
-
-        [NativeTypeName("#define POINTER_FLAG_NEW 0x00000001")]
-        public const int POINTER_FLAG_NEW = 0x00000001;
-
-        [NativeTypeName("#define POINTER_FLAG_INRANGE 0x00000002")]
-        public const int POINTER_FLAG_INRANGE = 0x00000002;
-
-        [NativeTypeName("#define POINTER_FLAG_INCONTACT 0x00000004")]
-        public const int POINTER_FLAG_INCONTACT = 0x00000004;
-
-        [NativeTypeName("#define POINTER_FLAG_FIRSTBUTTON 0x00000010")]
-        public const int POINTER_FLAG_FIRSTBUTTON = 0x00000010;
-
-        [NativeTypeName("#define POINTER_FLAG_SECONDBUTTON 0x00000020")]
-        public const int POINTER_FLAG_SECONDBUTTON = 0x00000020;
-
-        [NativeTypeName("#define POINTER_FLAG_THIRDBUTTON 0x00000040")]
-        public const int POINTER_FLAG_THIRDBUTTON = 0x00000040;
-
-        [NativeTypeName("#define POINTER_FLAG_FOURTHBUTTON 0x00000080")]
-        public const int POINTER_FLAG_FOURTHBUTTON = 0x00000080;
-
-        [NativeTypeName("#define POINTER_FLAG_FIFTHBUTTON 0x00000100")]
-        public const int POINTER_FLAG_FIFTHBUTTON = 0x00000100;
-
-        [NativeTypeName("#define POINTER_FLAG_PRIMARY 0x00002000")]
-        public const int POINTER_FLAG_PRIMARY = 0x00002000;
-
-        [NativeTypeName("#define POINTER_FLAG_CONFIDENCE 0x00004000")]
-        public const int POINTER_FLAG_CONFIDENCE = 0x00004000;
-
-        [NativeTypeName("#define POINTER_FLAG_CANCELED 0x00008000")]
-        public const int POINTER_FLAG_CANCELED = 0x00008000;
-
-        [NativeTypeName("#define POINTER_FLAG_DOWN 0x00010000")]
-        public const int POINTER_FLAG_DOWN = 0x00010000;
-
-        [NativeTypeName("#define POINTER_FLAG_UPDATE 0x00020000")]
-        public const int POINTER_FLAG_UPDATE = 0x00020000;
-
-        [NativeTypeName("#define POINTER_FLAG_UP 0x00040000")]
-        public const int POINTER_FLAG_UP = 0x00040000;
-
-        [NativeTypeName("#define POINTER_FLAG_WHEEL 0x00080000")]
-        public const int POINTER_FLAG_WHEEL = 0x00080000;
-
-        [NativeTypeName("#define POINTER_FLAG_HWHEEL 0x00100000")]
-        public const int POINTER_FLAG_HWHEEL = 0x00100000;
-
-        [NativeTypeName("#define POINTER_FLAG_CAPTURECHANGED 0x00200000")]
-        public const int POINTER_FLAG_CAPTURECHANGED = 0x00200000;
-
-        [NativeTypeName("#define POINTER_FLAG_HASTRANSFORM 0x00400000")]
-        public const int POINTER_FLAG_HASTRANSFORM = 0x00400000;
-
-        [NativeTypeName("#define POINTER_MOD_SHIFT (0x0004)")]
-        public const int POINTER_MOD_SHIFT = (0x0004);
-
-        [NativeTypeName("#define POINTER_MOD_CTRL (0x0008)")]
-        public const int POINTER_MOD_CTRL = (0x0008);
-
-        [NativeTypeName("#define TOUCH_FLAG_NONE 0x00000000")]
-        public const int TOUCH_FLAG_NONE = 0x00000000;
-
-        [NativeTypeName("#define TOUCH_MASK_NONE 0x00000000")]
-        public const int TOUCH_MASK_NONE = 0x00000000;
-
-        [NativeTypeName("#define TOUCH_MASK_CONTACTAREA 0x00000001")]
-        public const int TOUCH_MASK_CONTACTAREA = 0x00000001;
-
-        [NativeTypeName("#define TOUCH_MASK_ORIENTATION 0x00000002")]
-        public const int TOUCH_MASK_ORIENTATION = 0x00000002;
-
-        [NativeTypeName("#define TOUCH_MASK_PRESSURE 0x00000004")]
-        public const int TOUCH_MASK_PRESSURE = 0x00000004;
-
         [NativeTypeName("#define PEN_FLAG_NONE 0x00000000")]
         public const int PEN_FLAG_NONE = 0x00000000;
 
@@ -4430,68 +3353,11 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define PEN_MASK_TILT_Y 0x00000008")]
         public const int PEN_MASK_TILT_Y = 0x00000008;
 
-        [NativeTypeName("#define POINTER_MESSAGE_FLAG_NEW 0x00000001")]
-        public const int POINTER_MESSAGE_FLAG_NEW = 0x00000001;
-
-        [NativeTypeName("#define POINTER_MESSAGE_FLAG_INRANGE 0x00000002")]
-        public const int POINTER_MESSAGE_FLAG_INRANGE = 0x00000002;
-
-        [NativeTypeName("#define POINTER_MESSAGE_FLAG_INCONTACT 0x00000004")]
-        public const int POINTER_MESSAGE_FLAG_INCONTACT = 0x00000004;
-
-        [NativeTypeName("#define POINTER_MESSAGE_FLAG_FIRSTBUTTON 0x00000010")]
-        public const int POINTER_MESSAGE_FLAG_FIRSTBUTTON = 0x00000010;
-
-        [NativeTypeName("#define POINTER_MESSAGE_FLAG_SECONDBUTTON 0x00000020")]
-        public const int POINTER_MESSAGE_FLAG_SECONDBUTTON = 0x00000020;
-
-        [NativeTypeName("#define POINTER_MESSAGE_FLAG_THIRDBUTTON 0x00000040")]
-        public const int POINTER_MESSAGE_FLAG_THIRDBUTTON = 0x00000040;
-
-        [NativeTypeName("#define POINTER_MESSAGE_FLAG_FOURTHBUTTON 0x00000080")]
-        public const int POINTER_MESSAGE_FLAG_FOURTHBUTTON = 0x00000080;
-
-        [NativeTypeName("#define POINTER_MESSAGE_FLAG_FIFTHBUTTON 0x00000100")]
-        public const int POINTER_MESSAGE_FLAG_FIFTHBUTTON = 0x00000100;
-
-        [NativeTypeName("#define POINTER_MESSAGE_FLAG_PRIMARY 0x00002000")]
-        public const int POINTER_MESSAGE_FLAG_PRIMARY = 0x00002000;
-
-        [NativeTypeName("#define POINTER_MESSAGE_FLAG_CONFIDENCE 0x00004000")]
-        public const int POINTER_MESSAGE_FLAG_CONFIDENCE = 0x00004000;
-
-        [NativeTypeName("#define POINTER_MESSAGE_FLAG_CANCELED 0x00008000")]
-        public const int POINTER_MESSAGE_FLAG_CANCELED = 0x00008000;
-
         [NativeTypeName("#define PA_ACTIVATE MA_ACTIVATE")]
         public const int PA_ACTIVATE = 1;
 
         [NativeTypeName("#define PA_NOACTIVATE MA_NOACTIVATE")]
         public const int PA_NOACTIVATE = 3;
-
-        [NativeTypeName("#define TOUCH_FEEDBACK_DEFAULT 0x1")]
-        public const int TOUCH_FEEDBACK_DEFAULT = 0x1;
-
-        [NativeTypeName("#define TOUCH_FEEDBACK_INDIRECT 0x2")]
-        public const int TOUCH_FEEDBACK_INDIRECT = 0x2;
-
-        [NativeTypeName("#define TOUCH_FEEDBACK_NONE 0x3")]
-        public const int TOUCH_FEEDBACK_NONE = 0x3;
-
-        [NativeTypeName("#define TOUCH_HIT_TESTING_DEFAULT 0x0")]
-        public const int TOUCH_HIT_TESTING_DEFAULT = 0x0;
-
-        [NativeTypeName("#define TOUCH_HIT_TESTING_CLIENT 0x1")]
-        public const int TOUCH_HIT_TESTING_CLIENT = 0x1;
-
-        [NativeTypeName("#define TOUCH_HIT_TESTING_NONE 0x2")]
-        public const int TOUCH_HIT_TESTING_NONE = 0x2;
-
-        [NativeTypeName("#define TOUCH_HIT_TESTING_PROXIMITY_CLOSEST 0x0")]
-        public const int TOUCH_HIT_TESTING_PROXIMITY_CLOSEST = 0x0;
-
-        [NativeTypeName("#define TOUCH_HIT_TESTING_PROXIMITY_FARTHEST 0xFFF")]
-        public const int TOUCH_HIT_TESTING_PROXIMITY_FARTHEST = 0xFFF;
 
         [NativeTypeName("#define GWFS_INCLUDE_ANCESTORS 0x00000001")]
         public const int GWFS_INCLUDE_ANCESTORS = 0x00000001;
@@ -4525,54 +3391,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define MWMO_INPUTAVAILABLE 0x0004")]
         public const int MWMO_INPUTAVAILABLE = 0x0004;
-
-        [NativeTypeName("#define QS_KEY 0x0001")]
-        public const int QS_KEY = 0x0001;
-
-        [NativeTypeName("#define QS_MOUSEMOVE 0x0002")]
-        public const int QS_MOUSEMOVE = 0x0002;
-
-        [NativeTypeName("#define QS_MOUSEBUTTON 0x0004")]
-        public const int QS_MOUSEBUTTON = 0x0004;
-
-        [NativeTypeName("#define QS_POSTMESSAGE 0x0008")]
-        public const int QS_POSTMESSAGE = 0x0008;
-
-        [NativeTypeName("#define QS_TIMER 0x0010")]
-        public const int QS_TIMER = 0x0010;
-
-        [NativeTypeName("#define QS_PAINT 0x0020")]
-        public const int QS_PAINT = 0x0020;
-
-        [NativeTypeName("#define QS_SENDMESSAGE 0x0040")]
-        public const int QS_SENDMESSAGE = 0x0040;
-
-        [NativeTypeName("#define QS_HOTKEY 0x0080")]
-        public const int QS_HOTKEY = 0x0080;
-
-        [NativeTypeName("#define QS_ALLPOSTMESSAGE 0x0100")]
-        public const int QS_ALLPOSTMESSAGE = 0x0100;
-
-        [NativeTypeName("#define QS_RAWINPUT 0x0400")]
-        public const int QS_RAWINPUT = 0x0400;
-
-        [NativeTypeName("#define QS_TOUCH 0x0800")]
-        public const int QS_TOUCH = 0x0800;
-
-        [NativeTypeName("#define QS_POINTER 0x1000")]
-        public const int QS_POINTER = 0x1000;
-
-        [NativeTypeName("#define QS_MOUSE (QS_MOUSEMOVE     | \\\r\n                            QS_MOUSEBUTTON)")]
-        public const int QS_MOUSE = (0x0002 | 0x0004);
-
-        [NativeTypeName("#define QS_INPUT (QS_MOUSE         | \\\r\n                            QS_KEY           | \\\r\n                            QS_RAWINPUT      | \\\r\n                            QS_TOUCH         | \\\r\n                            QS_POINTER)")]
-        public const int QS_INPUT = ((0x0002 | 0x0004) | 0x0001 | 0x0400 | 0x0800 | 0x1000);
-
-        [NativeTypeName("#define QS_ALLEVENTS (QS_INPUT         | \\\r\n                            QS_POSTMESSAGE   | \\\r\n                            QS_TIMER         | \\\r\n                            QS_PAINT         | \\\r\n                            QS_HOTKEY)")]
-        public const int QS_ALLEVENTS = (((0x0002 | 0x0004) | 0x0001 | 0x0400 | 0x0800 | 0x1000) | 0x0008 | 0x0010 | 0x0020 | 0x0080);
-
-        [NativeTypeName("#define QS_ALLINPUT (QS_INPUT         | \\\r\n                            QS_POSTMESSAGE   | \\\r\n                            QS_TIMER         | \\\r\n                            QS_PAINT         | \\\r\n                            QS_HOTKEY        | \\\r\n                            QS_SENDMESSAGE)")]
-        public const int QS_ALLINPUT = (((0x0002 | 0x0004) | 0x0001 | 0x0400 | 0x0800 | 0x1000) | 0x0008 | 0x0010 | 0x0020 | 0x0080 | 0x0040);
 
         [NativeTypeName("#define USER_TIMER_MAXIMUM 0x7FFFFFFF")]
         public const int USER_TIMER_MAXIMUM = 0x7FFFFFFF;
@@ -4658,24 +3476,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define MNS_CHECKORBMP 0x04000000")]
         public const int MNS_CHECKORBMP = 0x04000000;
 
-        [NativeTypeName("#define MIM_MAXHEIGHT 0x00000001")]
-        public const int MIM_MAXHEIGHT = 0x00000001;
-
-        [NativeTypeName("#define MIM_BACKGROUND 0x00000002")]
-        public const int MIM_BACKGROUND = 0x00000002;
-
-        [NativeTypeName("#define MIM_HELPID 0x00000004")]
-        public const int MIM_HELPID = 0x00000004;
-
-        [NativeTypeName("#define MIM_MENUDATA 0x00000008")]
-        public const int MIM_MENUDATA = 0x00000008;
-
-        [NativeTypeName("#define MIM_STYLE 0x00000010")]
-        public const int MIM_STYLE = 0x00000010;
-
-        [NativeTypeName("#define MIM_APPLYTOSUBMENUS 0x80000000")]
-        public const uint MIM_APPLYTOSUBMENUS = 0x80000000;
-
         [NativeTypeName("#define MND_CONTINUE 0")]
         public const int MND_CONTINUE = 0;
 
@@ -4760,78 +3560,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define DO_PRINTFILE 0x544E5250L")]
         public const int DO_PRINTFILE = 0x544E5250;
 
-        [NativeTypeName("#define DT_TOP 0x00000000")]
-        public const int DT_TOP = 0x00000000;
-
-        [NativeTypeName("#define DT_LEFT 0x00000000")]
-        public const int DT_LEFT = 0x00000000;
-
-        [NativeTypeName("#define DT_CENTER 0x00000001")]
-        public const int DT_CENTER = 0x00000001;
-
-        [NativeTypeName("#define DT_RIGHT 0x00000002")]
-        public const int DT_RIGHT = 0x00000002;
-
-        [NativeTypeName("#define DT_VCENTER 0x00000004")]
-        public const int DT_VCENTER = 0x00000004;
-
-        [NativeTypeName("#define DT_BOTTOM 0x00000008")]
-        public const int DT_BOTTOM = 0x00000008;
-
-        [NativeTypeName("#define DT_WORDBREAK 0x00000010")]
-        public const int DT_WORDBREAK = 0x00000010;
-
-        [NativeTypeName("#define DT_SINGLELINE 0x00000020")]
-        public const int DT_SINGLELINE = 0x00000020;
-
-        [NativeTypeName("#define DT_EXPANDTABS 0x00000040")]
-        public const int DT_EXPANDTABS = 0x00000040;
-
-        [NativeTypeName("#define DT_TABSTOP 0x00000080")]
-        public const int DT_TABSTOP = 0x00000080;
-
-        [NativeTypeName("#define DT_NOCLIP 0x00000100")]
-        public const int DT_NOCLIP = 0x00000100;
-
-        [NativeTypeName("#define DT_EXTERNALLEADING 0x00000200")]
-        public const int DT_EXTERNALLEADING = 0x00000200;
-
-        [NativeTypeName("#define DT_CALCRECT 0x00000400")]
-        public const int DT_CALCRECT = 0x00000400;
-
-        [NativeTypeName("#define DT_NOPREFIX 0x00000800")]
-        public const int DT_NOPREFIX = 0x00000800;
-
-        [NativeTypeName("#define DT_INTERNAL 0x00001000")]
-        public const int DT_INTERNAL = 0x00001000;
-
-        [NativeTypeName("#define DT_EDITCONTROL 0x00002000")]
-        public const int DT_EDITCONTROL = 0x00002000;
-
-        [NativeTypeName("#define DT_PATH_ELLIPSIS 0x00004000")]
-        public const int DT_PATH_ELLIPSIS = 0x00004000;
-
-        [NativeTypeName("#define DT_END_ELLIPSIS 0x00008000")]
-        public const int DT_END_ELLIPSIS = 0x00008000;
-
-        [NativeTypeName("#define DT_MODIFYSTRING 0x00010000")]
-        public const int DT_MODIFYSTRING = 0x00010000;
-
-        [NativeTypeName("#define DT_RTLREADING 0x00020000")]
-        public const int DT_RTLREADING = 0x00020000;
-
-        [NativeTypeName("#define DT_WORD_ELLIPSIS 0x00040000")]
-        public const int DT_WORD_ELLIPSIS = 0x00040000;
-
-        [NativeTypeName("#define DT_NOFULLWIDTHCHARBREAK 0x00080000")]
-        public const int DT_NOFULLWIDTHCHARBREAK = 0x00080000;
-
-        [NativeTypeName("#define DT_HIDEPREFIX 0x00100000")]
-        public const int DT_HIDEPREFIX = 0x00100000;
-
-        [NativeTypeName("#define DT_PREFIXONLY 0x00200000")]
-        public const int DT_PREFIXONLY = 0x00200000;
-
         [NativeTypeName("#define DrawText DrawTextW")]
         public static delegate*<HDC, ushort*, int, RECT*, uint, int> DrawText => &DrawTextW;
 
@@ -4895,90 +3623,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define LSFW_UNLOCK 2")]
         public const int LSFW_UNLOCK = 2;
 
-        [NativeTypeName("#define DCX_WINDOW 0x00000001L")]
-        public const int DCX_WINDOW = 0x00000001;
-
-        [NativeTypeName("#define DCX_CACHE 0x00000002L")]
-        public const int DCX_CACHE = 0x00000002;
-
-        [NativeTypeName("#define DCX_NORESETATTRS 0x00000004L")]
-        public const int DCX_NORESETATTRS = 0x00000004;
-
-        [NativeTypeName("#define DCX_CLIPCHILDREN 0x00000008L")]
-        public const int DCX_CLIPCHILDREN = 0x00000008;
-
-        [NativeTypeName("#define DCX_CLIPSIBLINGS 0x00000010L")]
-        public const int DCX_CLIPSIBLINGS = 0x00000010;
-
-        [NativeTypeName("#define DCX_PARENTCLIP 0x00000020L")]
-        public const int DCX_PARENTCLIP = 0x00000020;
-
-        [NativeTypeName("#define DCX_EXCLUDERGN 0x00000040L")]
-        public const int DCX_EXCLUDERGN = 0x00000040;
-
-        [NativeTypeName("#define DCX_INTERSECTRGN 0x00000080L")]
-        public const int DCX_INTERSECTRGN = 0x00000080;
-
-        [NativeTypeName("#define DCX_EXCLUDEUPDATE 0x00000100L")]
-        public const int DCX_EXCLUDEUPDATE = 0x00000100;
-
-        [NativeTypeName("#define DCX_INTERSECTUPDATE 0x00000200L")]
-        public const int DCX_INTERSECTUPDATE = 0x00000200;
-
-        [NativeTypeName("#define DCX_LOCKWINDOWUPDATE 0x00000400L")]
-        public const int DCX_LOCKWINDOWUPDATE = 0x00000400;
-
-        [NativeTypeName("#define DCX_VALIDATE 0x00200000L")]
-        public const int DCX_VALIDATE = 0x00200000;
-
-        [NativeTypeName("#define RDW_INVALIDATE 0x0001")]
-        public const int RDW_INVALIDATE = 0x0001;
-
-        [NativeTypeName("#define RDW_INTERNALPAINT 0x0002")]
-        public const int RDW_INTERNALPAINT = 0x0002;
-
-        [NativeTypeName("#define RDW_ERASE 0x0004")]
-        public const int RDW_ERASE = 0x0004;
-
-        [NativeTypeName("#define RDW_VALIDATE 0x0008")]
-        public const int RDW_VALIDATE = 0x0008;
-
-        [NativeTypeName("#define RDW_NOINTERNALPAINT 0x0010")]
-        public const int RDW_NOINTERNALPAINT = 0x0010;
-
-        [NativeTypeName("#define RDW_NOERASE 0x0020")]
-        public const int RDW_NOERASE = 0x0020;
-
-        [NativeTypeName("#define RDW_NOCHILDREN 0x0040")]
-        public const int RDW_NOCHILDREN = 0x0040;
-
-        [NativeTypeName("#define RDW_ALLCHILDREN 0x0080")]
-        public const int RDW_ALLCHILDREN = 0x0080;
-
-        [NativeTypeName("#define RDW_UPDATENOW 0x0100")]
-        public const int RDW_UPDATENOW = 0x0100;
-
-        [NativeTypeName("#define RDW_ERASENOW 0x0200")]
-        public const int RDW_ERASENOW = 0x0200;
-
-        [NativeTypeName("#define RDW_FRAME 0x0400")]
-        public const int RDW_FRAME = 0x0400;
-
-        [NativeTypeName("#define RDW_NOFRAME 0x0800")]
-        public const int RDW_NOFRAME = 0x0800;
-
-        [NativeTypeName("#define SW_SCROLLCHILDREN 0x0001")]
-        public const int SW_SCROLLCHILDREN = 0x0001;
-
-        [NativeTypeName("#define SW_INVALIDATE 0x0002")]
-        public const int SW_INVALIDATE = 0x0002;
-
-        [NativeTypeName("#define SW_ERASE 0x0004")]
-        public const int SW_ERASE = 0x0004;
-
-        [NativeTypeName("#define SW_SMOOTHSCROLL 0x0010")]
-        public const int SW_SMOOTHSCROLL = 0x0010;
-
         [NativeTypeName("#define ESB_ENABLE_BOTH 0x0000")]
         public const int ESB_ENABLE_BOTH = 0x0000;
 
@@ -5033,117 +3677,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define HELPINFO_MENUITEM 0x0002")]
         public const int HELPINFO_MENUITEM = 0x0002;
 
-        [NativeTypeName("#define MB_OK 0x00000000L")]
-        public const int MB_OK = 0x00000000;
-
-        [NativeTypeName("#define MB_OKCANCEL 0x00000001L")]
-        public const int MB_OKCANCEL = 0x00000001;
-
-        [NativeTypeName("#define MB_ABORTRETRYIGNORE 0x00000002L")]
-        public const int MB_ABORTRETRYIGNORE = 0x00000002;
-
-        [NativeTypeName("#define MB_YESNOCANCEL 0x00000003L")]
-        public const int MB_YESNOCANCEL = 0x00000003;
-
-        [NativeTypeName("#define MB_YESNO 0x00000004L")]
-        public const int MB_YESNO = 0x00000004;
-
-        [NativeTypeName("#define MB_RETRYCANCEL 0x00000005L")]
-        public const int MB_RETRYCANCEL = 0x00000005;
-
-        [NativeTypeName("#define MB_CANCELTRYCONTINUE 0x00000006L")]
-        public const int MB_CANCELTRYCONTINUE = 0x00000006;
-
-        [NativeTypeName("#define MB_ICONHAND 0x00000010L")]
-        public const int MB_ICONHAND = 0x00000010;
-
-        [NativeTypeName("#define MB_ICONQUESTION 0x00000020L")]
-        public const int MB_ICONQUESTION = 0x00000020;
-
-        [NativeTypeName("#define MB_ICONEXCLAMATION 0x00000030L")]
-        public const int MB_ICONEXCLAMATION = 0x00000030;
-
-        [NativeTypeName("#define MB_ICONASTERISK 0x00000040L")]
-        public const int MB_ICONASTERISK = 0x00000040;
-
-        [NativeTypeName("#define MB_USERICON 0x00000080L")]
-        public const int MB_USERICON = 0x00000080;
-
-        [NativeTypeName("#define MB_ICONWARNING MB_ICONEXCLAMATION")]
-        public const int MB_ICONWARNING = 0x00000030;
-
-        [NativeTypeName("#define MB_ICONERROR MB_ICONHAND")]
-        public const int MB_ICONERROR = 0x00000010;
-
-        [NativeTypeName("#define MB_ICONINFORMATION MB_ICONASTERISK")]
-        public const int MB_ICONINFORMATION = 0x00000040;
-
-        [NativeTypeName("#define MB_ICONSTOP MB_ICONHAND")]
-        public const int MB_ICONSTOP = 0x00000010;
-
-        [NativeTypeName("#define MB_DEFBUTTON1 0x00000000L")]
-        public const int MB_DEFBUTTON1 = 0x00000000;
-
-        [NativeTypeName("#define MB_DEFBUTTON2 0x00000100L")]
-        public const int MB_DEFBUTTON2 = 0x00000100;
-
-        [NativeTypeName("#define MB_DEFBUTTON3 0x00000200L")]
-        public const int MB_DEFBUTTON3 = 0x00000200;
-
-        [NativeTypeName("#define MB_DEFBUTTON4 0x00000300L")]
-        public const int MB_DEFBUTTON4 = 0x00000300;
-
-        [NativeTypeName("#define MB_APPLMODAL 0x00000000L")]
-        public const int MB_APPLMODAL = 0x00000000;
-
-        [NativeTypeName("#define MB_SYSTEMMODAL 0x00001000L")]
-        public const int MB_SYSTEMMODAL = 0x00001000;
-
-        [NativeTypeName("#define MB_TASKMODAL 0x00002000L")]
-        public const int MB_TASKMODAL = 0x00002000;
-
-        [NativeTypeName("#define MB_HELP 0x00004000L")]
-        public const int MB_HELP = 0x00004000;
-
-        [NativeTypeName("#define MB_NOFOCUS 0x00008000L")]
-        public const int MB_NOFOCUS = 0x00008000;
-
-        [NativeTypeName("#define MB_SETFOREGROUND 0x00010000L")]
-        public const int MB_SETFOREGROUND = 0x00010000;
-
-        [NativeTypeName("#define MB_DEFAULT_DESKTOP_ONLY 0x00020000L")]
-        public const int MB_DEFAULT_DESKTOP_ONLY = 0x00020000;
-
-        [NativeTypeName("#define MB_TOPMOST 0x00040000L")]
-        public const int MB_TOPMOST = 0x00040000;
-
-        [NativeTypeName("#define MB_RIGHT 0x00080000L")]
-        public const int MB_RIGHT = 0x00080000;
-
-        [NativeTypeName("#define MB_RTLREADING 0x00100000L")]
-        public const int MB_RTLREADING = 0x00100000;
-
-        [NativeTypeName("#define MB_SERVICE_NOTIFICATION 0x00200000L")]
-        public const int MB_SERVICE_NOTIFICATION = 0x00200000;
-
-        [NativeTypeName("#define MB_SERVICE_NOTIFICATION_NT3X 0x00040000L")]
-        public const int MB_SERVICE_NOTIFICATION_NT3X = 0x00040000;
-
-        [NativeTypeName("#define MB_TYPEMASK 0x0000000FL")]
-        public const int MB_TYPEMASK = 0x0000000F;
-
-        [NativeTypeName("#define MB_ICONMASK 0x000000F0L")]
-        public const int MB_ICONMASK = 0x000000F0;
-
-        [NativeTypeName("#define MB_DEFMASK 0x00000F00L")]
-        public const int MB_DEFMASK = 0x00000F00;
-
-        [NativeTypeName("#define MB_MODEMASK 0x00003000L")]
-        public const int MB_MODEMASK = 0x00003000;
-
-        [NativeTypeName("#define MB_MISCMASK 0x0000C000L")]
-        public const int MB_MISCMASK = 0x0000C000;
-
         [NativeTypeName("#define MessageBox MessageBoxW")]
         public static delegate*<HWND, ushort*, ushort*, uint, int> MessageBox => &MessageBoxW;
 
@@ -5188,114 +3721,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define CTLCOLOR_MAX 7")]
         public const int CTLCOLOR_MAX = 7;
-
-        [NativeTypeName("#define COLOR_SCROLLBAR 0")]
-        public const int COLOR_SCROLLBAR = 0;
-
-        [NativeTypeName("#define COLOR_BACKGROUND 1")]
-        public const int COLOR_BACKGROUND = 1;
-
-        [NativeTypeName("#define COLOR_ACTIVECAPTION 2")]
-        public const int COLOR_ACTIVECAPTION = 2;
-
-        [NativeTypeName("#define COLOR_INACTIVECAPTION 3")]
-        public const int COLOR_INACTIVECAPTION = 3;
-
-        [NativeTypeName("#define COLOR_MENU 4")]
-        public const int COLOR_MENU = 4;
-
-        [NativeTypeName("#define COLOR_WINDOW 5")]
-        public const int COLOR_WINDOW = 5;
-
-        [NativeTypeName("#define COLOR_WINDOWFRAME 6")]
-        public const int COLOR_WINDOWFRAME = 6;
-
-        [NativeTypeName("#define COLOR_MENUTEXT 7")]
-        public const int COLOR_MENUTEXT = 7;
-
-        [NativeTypeName("#define COLOR_WINDOWTEXT 8")]
-        public const int COLOR_WINDOWTEXT = 8;
-
-        [NativeTypeName("#define COLOR_CAPTIONTEXT 9")]
-        public const int COLOR_CAPTIONTEXT = 9;
-
-        [NativeTypeName("#define COLOR_ACTIVEBORDER 10")]
-        public const int COLOR_ACTIVEBORDER = 10;
-
-        [NativeTypeName("#define COLOR_INACTIVEBORDER 11")]
-        public const int COLOR_INACTIVEBORDER = 11;
-
-        [NativeTypeName("#define COLOR_APPWORKSPACE 12")]
-        public const int COLOR_APPWORKSPACE = 12;
-
-        [NativeTypeName("#define COLOR_HIGHLIGHT 13")]
-        public const int COLOR_HIGHLIGHT = 13;
-
-        [NativeTypeName("#define COLOR_HIGHLIGHTTEXT 14")]
-        public const int COLOR_HIGHLIGHTTEXT = 14;
-
-        [NativeTypeName("#define COLOR_BTNFACE 15")]
-        public const int COLOR_BTNFACE = 15;
-
-        [NativeTypeName("#define COLOR_BTNSHADOW 16")]
-        public const int COLOR_BTNSHADOW = 16;
-
-        [NativeTypeName("#define COLOR_GRAYTEXT 17")]
-        public const int COLOR_GRAYTEXT = 17;
-
-        [NativeTypeName("#define COLOR_BTNTEXT 18")]
-        public const int COLOR_BTNTEXT = 18;
-
-        [NativeTypeName("#define COLOR_INACTIVECAPTIONTEXT 19")]
-        public const int COLOR_INACTIVECAPTIONTEXT = 19;
-
-        [NativeTypeName("#define COLOR_BTNHIGHLIGHT 20")]
-        public const int COLOR_BTNHIGHLIGHT = 20;
-
-        [NativeTypeName("#define COLOR_3DDKSHADOW 21")]
-        public const int COLOR_3DDKSHADOW = 21;
-
-        [NativeTypeName("#define COLOR_3DLIGHT 22")]
-        public const int COLOR_3DLIGHT = 22;
-
-        [NativeTypeName("#define COLOR_INFOTEXT 23")]
-        public const int COLOR_INFOTEXT = 23;
-
-        [NativeTypeName("#define COLOR_INFOBK 24")]
-        public const int COLOR_INFOBK = 24;
-
-        [NativeTypeName("#define COLOR_HOTLIGHT 26")]
-        public const int COLOR_HOTLIGHT = 26;
-
-        [NativeTypeName("#define COLOR_GRADIENTACTIVECAPTION 27")]
-        public const int COLOR_GRADIENTACTIVECAPTION = 27;
-
-        [NativeTypeName("#define COLOR_GRADIENTINACTIVECAPTION 28")]
-        public const int COLOR_GRADIENTINACTIVECAPTION = 28;
-
-        [NativeTypeName("#define COLOR_MENUHILIGHT 29")]
-        public const int COLOR_MENUHILIGHT = 29;
-
-        [NativeTypeName("#define COLOR_MENUBAR 30")]
-        public const int COLOR_MENUBAR = 30;
-
-        [NativeTypeName("#define COLOR_DESKTOP COLOR_BACKGROUND")]
-        public const int COLOR_DESKTOP = 1;
-
-        [NativeTypeName("#define COLOR_3DFACE COLOR_BTNFACE")]
-        public const int COLOR_3DFACE = 15;
-
-        [NativeTypeName("#define COLOR_3DSHADOW COLOR_BTNSHADOW")]
-        public const int COLOR_3DSHADOW = 16;
-
-        [NativeTypeName("#define COLOR_3DHIGHLIGHT COLOR_BTNHIGHLIGHT")]
-        public const int COLOR_3DHIGHLIGHT = 20;
-
-        [NativeTypeName("#define COLOR_3DHILIGHT COLOR_BTNHIGHLIGHT")]
-        public const int COLOR_3DHILIGHT = 20;
-
-        [NativeTypeName("#define COLOR_BTNHILIGHT COLOR_BTNHIGHLIGHT")]
-        public const int COLOR_BTNHILIGHT = 20;
 
         [NativeTypeName("#define GetWindowLong GetWindowLongW")]
         public static delegate*<HWND, int, int> GetWindowLong => &GetWindowLongW;
@@ -5348,33 +3773,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define SetWindowsHookEx SetWindowsHookExW")]
         public static delegate*<int, delegate* unmanaged<int, WPARAM, LPARAM, LRESULT>, HINSTANCE, uint, HHOOK> SetWindowsHookEx => &SetWindowsHookExW;
 
-        [NativeTypeName("#define MFT_STRING MF_STRING")]
-        public const int MFT_STRING = 0x00000000;
-
-        [NativeTypeName("#define MFT_BITMAP MF_BITMAP")]
-        public const int MFT_BITMAP = 0x00000004;
-
-        [NativeTypeName("#define MFT_MENUBARBREAK MF_MENUBARBREAK")]
-        public const int MFT_MENUBARBREAK = 0x00000020;
-
-        [NativeTypeName("#define MFT_MENUBREAK MF_MENUBREAK")]
-        public const int MFT_MENUBREAK = 0x00000040;
-
-        [NativeTypeName("#define MFT_OWNERDRAW MF_OWNERDRAW")]
-        public const int MFT_OWNERDRAW = 0x00000100;
-
-        [NativeTypeName("#define MFT_RADIOCHECK 0x00000200L")]
-        public const int MFT_RADIOCHECK = 0x00000200;
-
-        [NativeTypeName("#define MFT_SEPARATOR MF_SEPARATOR")]
-        public const int MFT_SEPARATOR = 0x00000800;
-
-        [NativeTypeName("#define MFT_RIGHTORDER 0x00002000L")]
-        public const int MFT_RIGHTORDER = 0x00002000;
-
-        [NativeTypeName("#define MFT_RIGHTJUSTIFY MF_RIGHTJUSTIFY")]
-        public const int MFT_RIGHTJUSTIFY = 0x00004000;
-
         [NativeTypeName("#define MFS_GRAYED 0x00000003L")]
         public const int MFS_GRAYED = 0x00000003;
 
@@ -5399,74 +3797,8 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define MFS_DEFAULT MF_DEFAULT")]
         public const int MFS_DEFAULT = 0x00001000;
 
-        [NativeTypeName("#define SC_SIZE 0xF000")]
-        public const int SC_SIZE = 0xF000;
-
-        [NativeTypeName("#define SC_MOVE 0xF010")]
-        public const int SC_MOVE = 0xF010;
-
-        [NativeTypeName("#define SC_MINIMIZE 0xF020")]
-        public const int SC_MINIMIZE = 0xF020;
-
-        [NativeTypeName("#define SC_MAXIMIZE 0xF030")]
-        public const int SC_MAXIMIZE = 0xF030;
-
-        [NativeTypeName("#define SC_NEXTWINDOW 0xF040")]
-        public const int SC_NEXTWINDOW = 0xF040;
-
-        [NativeTypeName("#define SC_PREVWINDOW 0xF050")]
-        public const int SC_PREVWINDOW = 0xF050;
-
-        [NativeTypeName("#define SC_CLOSE 0xF060")]
-        public const int SC_CLOSE = 0xF060;
-
-        [NativeTypeName("#define SC_VSCROLL 0xF070")]
-        public const int SC_VSCROLL = 0xF070;
-
-        [NativeTypeName("#define SC_HSCROLL 0xF080")]
-        public const int SC_HSCROLL = 0xF080;
-
-        [NativeTypeName("#define SC_MOUSEMENU 0xF090")]
-        public const int SC_MOUSEMENU = 0xF090;
-
-        [NativeTypeName("#define SC_KEYMENU 0xF100")]
-        public const int SC_KEYMENU = 0xF100;
-
-        [NativeTypeName("#define SC_ARRANGE 0xF110")]
-        public const int SC_ARRANGE = 0xF110;
-
-        [NativeTypeName("#define SC_RESTORE 0xF120")]
-        public const int SC_RESTORE = 0xF120;
-
-        [NativeTypeName("#define SC_TASKLIST 0xF130")]
-        public const int SC_TASKLIST = 0xF130;
-
-        [NativeTypeName("#define SC_SCREENSAVE 0xF140")]
-        public const int SC_SCREENSAVE = 0xF140;
-
-        [NativeTypeName("#define SC_HOTKEY 0xF150")]
-        public const int SC_HOTKEY = 0xF150;
-
-        [NativeTypeName("#define SC_DEFAULT 0xF160")]
-        public const int SC_DEFAULT = 0xF160;
-
-        [NativeTypeName("#define SC_MONITORPOWER 0xF170")]
-        public const int SC_MONITORPOWER = 0xF170;
-
-        [NativeTypeName("#define SC_CONTEXTHELP 0xF180")]
-        public const int SC_CONTEXTHELP = 0xF180;
-
-        [NativeTypeName("#define SC_SEPARATOR 0xF00F")]
-        public const int SC_SEPARATOR = 0xF00F;
-
         [NativeTypeName("#define SCF_ISSECURE 0x00000001")]
         public const int SCF_ISSECURE = 0x00000001;
-
-        [NativeTypeName("#define SC_ICON SC_MINIMIZE")]
-        public const int SC_ICON = 0xF020;
-
-        [NativeTypeName("#define SC_ZOOM SC_MAXIMIZE")]
-        public const int SC_ZOOM = 0xF030;
 
         [NativeTypeName("#define LoadBitmap LoadBitmapW")]
         public static delegate*<HINSTANCE, ushort*, HBITMAP> LoadBitmap => &LoadBitmapW;
@@ -5477,104 +3809,11 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define LoadCursorFromFile LoadCursorFromFileW")]
         public static delegate*<ushort*, HCURSOR> LoadCursorFromFile => &LoadCursorFromFileW;
 
-        [NativeTypeName("#define IDC_ARROW MAKEINTRESOURCE(32512)")]
-        public static ushort* IDC_ARROW => ((ushort*)((nuint)((ushort)(32512))));
-
-        [NativeTypeName("#define IDC_IBEAM MAKEINTRESOURCE(32513)")]
-        public static ushort* IDC_IBEAM => ((ushort*)((nuint)((ushort)(32513))));
-
-        [NativeTypeName("#define IDC_WAIT MAKEINTRESOURCE(32514)")]
-        public static ushort* IDC_WAIT => ((ushort*)((nuint)((ushort)(32514))));
-
-        [NativeTypeName("#define IDC_CROSS MAKEINTRESOURCE(32515)")]
-        public static ushort* IDC_CROSS => ((ushort*)((nuint)((ushort)(32515))));
-
-        [NativeTypeName("#define IDC_UPARROW MAKEINTRESOURCE(32516)")]
-        public static ushort* IDC_UPARROW => ((ushort*)((nuint)((ushort)(32516))));
-
-        [NativeTypeName("#define IDC_SIZE MAKEINTRESOURCE(32640)")]
-        public static ushort* IDC_SIZE => ((ushort*)((nuint)((ushort)(32640))));
-
-        [NativeTypeName("#define IDC_ICON MAKEINTRESOURCE(32641)")]
-        public static ushort* IDC_ICON => ((ushort*)((nuint)((ushort)(32641))));
-
-        [NativeTypeName("#define IDC_SIZENWSE MAKEINTRESOURCE(32642)")]
-        public static ushort* IDC_SIZENWSE => ((ushort*)((nuint)((ushort)(32642))));
-
-        [NativeTypeName("#define IDC_SIZENESW MAKEINTRESOURCE(32643)")]
-        public static ushort* IDC_SIZENESW => ((ushort*)((nuint)((ushort)(32643))));
-
-        [NativeTypeName("#define IDC_SIZEWE MAKEINTRESOURCE(32644)")]
-        public static ushort* IDC_SIZEWE => ((ushort*)((nuint)((ushort)(32644))));
-
-        [NativeTypeName("#define IDC_SIZENS MAKEINTRESOURCE(32645)")]
-        public static ushort* IDC_SIZENS => ((ushort*)((nuint)((ushort)(32645))));
-
-        [NativeTypeName("#define IDC_SIZEALL MAKEINTRESOURCE(32646)")]
-        public static ushort* IDC_SIZEALL => ((ushort*)((nuint)((ushort)(32646))));
-
-        [NativeTypeName("#define IDC_NO MAKEINTRESOURCE(32648)")]
-        public static ushort* IDC_NO => ((ushort*)((nuint)((ushort)(32648))));
-
-        [NativeTypeName("#define IDC_HAND MAKEINTRESOURCE(32649)")]
-        public static ushort* IDC_HAND => ((ushort*)((nuint)((ushort)(32649))));
-
-        [NativeTypeName("#define IDC_APPSTARTING MAKEINTRESOURCE(32650)")]
-        public static ushort* IDC_APPSTARTING => ((ushort*)((nuint)((ushort)(32650))));
-
-        [NativeTypeName("#define IDC_HELP MAKEINTRESOURCE(32651)")]
-        public static ushort* IDC_HELP => ((ushort*)((nuint)((ushort)(32651))));
-
-        [NativeTypeName("#define IDC_PIN MAKEINTRESOURCE(32671)")]
-        public static ushort* IDC_PIN => ((ushort*)((nuint)((ushort)(32671))));
-
-        [NativeTypeName("#define IDC_PERSON MAKEINTRESOURCE(32672)")]
-        public static ushort* IDC_PERSON => ((ushort*)((nuint)((ushort)(32672))));
-
         [NativeTypeName("#define LoadIcon LoadIconW")]
         public static delegate*<HINSTANCE, ushort*, HICON> LoadIcon => &LoadIconW;
 
         [NativeTypeName("#define PrivateExtractIcons PrivateExtractIconsW")]
         public static delegate*<ushort*, int, int, int, HICON*, uint*, uint, uint, uint> PrivateExtractIcons => &PrivateExtractIconsW;
-
-        [NativeTypeName("#define LR_DEFAULTCOLOR 0x00000000")]
-        public const int LR_DEFAULTCOLOR = 0x00000000;
-
-        [NativeTypeName("#define LR_MONOCHROME 0x00000001")]
-        public const int LR_MONOCHROME = 0x00000001;
-
-        [NativeTypeName("#define LR_COLOR 0x00000002")]
-        public const int LR_COLOR = 0x00000002;
-
-        [NativeTypeName("#define LR_COPYRETURNORG 0x00000004")]
-        public const int LR_COPYRETURNORG = 0x00000004;
-
-        [NativeTypeName("#define LR_COPYDELETEORG 0x00000008")]
-        public const int LR_COPYDELETEORG = 0x00000008;
-
-        [NativeTypeName("#define LR_LOADFROMFILE 0x00000010")]
-        public const int LR_LOADFROMFILE = 0x00000010;
-
-        [NativeTypeName("#define LR_LOADTRANSPARENT 0x00000020")]
-        public const int LR_LOADTRANSPARENT = 0x00000020;
-
-        [NativeTypeName("#define LR_DEFAULTSIZE 0x00000040")]
-        public const int LR_DEFAULTSIZE = 0x00000040;
-
-        [NativeTypeName("#define LR_VGACOLOR 0x00000080")]
-        public const int LR_VGACOLOR = 0x00000080;
-
-        [NativeTypeName("#define LR_LOADMAP3DCOLORS 0x00001000")]
-        public const int LR_LOADMAP3DCOLORS = 0x00001000;
-
-        [NativeTypeName("#define LR_CREATEDIBSECTION 0x00002000")]
-        public const int LR_CREATEDIBSECTION = 0x00002000;
-
-        [NativeTypeName("#define LR_COPYFROMRESOURCE 0x00004000")]
-        public const int LR_COPYFROMRESOURCE = 0x00004000;
-
-        [NativeTypeName("#define LR_SHARED 0x00008000")]
-        public const int LR_SHARED = 0x00008000;
 
         [NativeTypeName("#define LoadImage LoadImageW")]
         public static delegate*<HINSTANCE, ushort*, uint, int, int, uint, HANDLE> LoadImage => &LoadImageW;
@@ -5590,36 +3829,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define ORD_LANGDRIVER 1")]
         public const int ORD_LANGDRIVER = 1;
-
-        [NativeTypeName("#define IDI_APPLICATION MAKEINTRESOURCE(32512)")]
-        public static ushort* IDI_APPLICATION => ((ushort*)((nuint)((ushort)(32512))));
-
-        [NativeTypeName("#define IDI_HAND MAKEINTRESOURCE(32513)")]
-        public static ushort* IDI_HAND => ((ushort*)((nuint)((ushort)(32513))));
-
-        [NativeTypeName("#define IDI_QUESTION MAKEINTRESOURCE(32514)")]
-        public static ushort* IDI_QUESTION => ((ushort*)((nuint)((ushort)(32514))));
-
-        [NativeTypeName("#define IDI_EXCLAMATION MAKEINTRESOURCE(32515)")]
-        public static ushort* IDI_EXCLAMATION => ((ushort*)((nuint)((ushort)(32515))));
-
-        [NativeTypeName("#define IDI_ASTERISK MAKEINTRESOURCE(32516)")]
-        public static ushort* IDI_ASTERISK => ((ushort*)((nuint)((ushort)(32516))));
-
-        [NativeTypeName("#define IDI_WINLOGO MAKEINTRESOURCE(32517)")]
-        public static ushort* IDI_WINLOGO => ((ushort*)((nuint)((ushort)(32517))));
-
-        [NativeTypeName("#define IDI_SHIELD MAKEINTRESOURCE(32518)")]
-        public static ushort* IDI_SHIELD => ((ushort*)((nuint)((ushort)(32518))));
-
-        [NativeTypeName("#define IDI_WARNING IDI_EXCLAMATION")]
-        public static ushort* IDI_WARNING => ((ushort*)((nuint)((ushort)(32515))));
-
-        [NativeTypeName("#define IDI_ERROR IDI_HAND")]
-        public static ushort* IDI_ERROR => ((ushort*)((nuint)((ushort)(32513))));
-
-        [NativeTypeName("#define IDI_INFORMATION IDI_ASTERISK")]
-        public static ushort* IDI_INFORMATION => ((ushort*)((nuint)((ushort)(32516))));
 
         [NativeTypeName("#define IDOK 1")]
         public const int IDOK = 1;
@@ -5657,93 +3866,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define IDTIMEOUT 32000")]
         public const int IDTIMEOUT = 32000;
 
-        [NativeTypeName("#define ES_LEFT 0x0000L")]
-        public const int ES_LEFT = 0x0000;
-
-        [NativeTypeName("#define ES_CENTER 0x0001L")]
-        public const int ES_CENTER = 0x0001;
-
-        [NativeTypeName("#define ES_RIGHT 0x0002L")]
-        public const int ES_RIGHT = 0x0002;
-
-        [NativeTypeName("#define ES_MULTILINE 0x0004L")]
-        public const int ES_MULTILINE = 0x0004;
-
-        [NativeTypeName("#define ES_UPPERCASE 0x0008L")]
-        public const int ES_UPPERCASE = 0x0008;
-
-        [NativeTypeName("#define ES_LOWERCASE 0x0010L")]
-        public const int ES_LOWERCASE = 0x0010;
-
-        [NativeTypeName("#define ES_PASSWORD 0x0020L")]
-        public const int ES_PASSWORD = 0x0020;
-
-        [NativeTypeName("#define ES_AUTOVSCROLL 0x0040L")]
-        public const int ES_AUTOVSCROLL = 0x0040;
-
-        [NativeTypeName("#define ES_AUTOHSCROLL 0x0080L")]
-        public const int ES_AUTOHSCROLL = 0x0080;
-
-        [NativeTypeName("#define ES_NOHIDESEL 0x0100L")]
-        public const int ES_NOHIDESEL = 0x0100;
-
-        [NativeTypeName("#define ES_OEMCONVERT 0x0400L")]
-        public const int ES_OEMCONVERT = 0x0400;
-
-        [NativeTypeName("#define ES_READONLY 0x0800L")]
-        public const int ES_READONLY = 0x0800;
-
-        [NativeTypeName("#define ES_WANTRETURN 0x1000L")]
-        public const int ES_WANTRETURN = 0x1000;
-
-        [NativeTypeName("#define ES_NUMBER 0x2000L")]
-        public const int ES_NUMBER = 0x2000;
-
-        [NativeTypeName("#define EN_SETFOCUS 0x0100")]
-        public const int EN_SETFOCUS = 0x0100;
-
-        [NativeTypeName("#define EN_KILLFOCUS 0x0200")]
-        public const int EN_KILLFOCUS = 0x0200;
-
-        [NativeTypeName("#define EN_CHANGE 0x0300")]
-        public const int EN_CHANGE = 0x0300;
-
-        [NativeTypeName("#define EN_UPDATE 0x0400")]
-        public const int EN_UPDATE = 0x0400;
-
-        [NativeTypeName("#define EN_ERRSPACE 0x0500")]
-        public const int EN_ERRSPACE = 0x0500;
-
-        [NativeTypeName("#define EN_MAXTEXT 0x0501")]
-        public const int EN_MAXTEXT = 0x0501;
-
-        [NativeTypeName("#define EN_HSCROLL 0x0601")]
-        public const int EN_HSCROLL = 0x0601;
-
-        [NativeTypeName("#define EN_VSCROLL 0x0602")]
-        public const int EN_VSCROLL = 0x0602;
-
-        [NativeTypeName("#define EN_ALIGN_LTR_EC 0x0700")]
-        public const int EN_ALIGN_LTR_EC = 0x0700;
-
-        [NativeTypeName("#define EN_ALIGN_RTL_EC 0x0701")]
-        public const int EN_ALIGN_RTL_EC = 0x0701;
-
-        [NativeTypeName("#define EN_BEFORE_PASTE 0x0800")]
-        public const int EN_BEFORE_PASTE = 0x0800;
-
-        [NativeTypeName("#define EN_AFTER_PASTE 0x0801")]
-        public const int EN_AFTER_PASTE = 0x0801;
-
-        [NativeTypeName("#define EC_LEFTMARGIN 0x0001")]
-        public const int EC_LEFTMARGIN = 0x0001;
-
-        [NativeTypeName("#define EC_RIGHTMARGIN 0x0002")]
-        public const int EC_RIGHTMARGIN = 0x0002;
-
-        [NativeTypeName("#define EC_USEFONTINFO 0xffff")]
-        public const int EC_USEFONTINFO = 0xffff;
-
         [NativeTypeName("#define EMSIS_COMPOSITIONSTRING 0x0001")]
         public const int EMSIS_COMPOSITIONSTRING = 0x0001;
 
@@ -5764,123 +3886,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define WB_ISDELIMITER 2")]
         public const int WB_ISDELIMITER = 2;
-
-        [NativeTypeName("#define BS_PUSHBUTTON 0x00000000L")]
-        public const int BS_PUSHBUTTON = 0x00000000;
-
-        [NativeTypeName("#define BS_DEFPUSHBUTTON 0x00000001L")]
-        public const int BS_DEFPUSHBUTTON = 0x00000001;
-
-        [NativeTypeName("#define BS_CHECKBOX 0x00000002L")]
-        public const int BS_CHECKBOX = 0x00000002;
-
-        [NativeTypeName("#define BS_AUTOCHECKBOX 0x00000003L")]
-        public const int BS_AUTOCHECKBOX = 0x00000003;
-
-        [NativeTypeName("#define BS_RADIOBUTTON 0x00000004L")]
-        public const int BS_RADIOBUTTON = 0x00000004;
-
-        [NativeTypeName("#define BS_3STATE 0x00000005L")]
-        public const int BS_3STATE = 0x00000005;
-
-        [NativeTypeName("#define BS_AUTO3STATE 0x00000006L")]
-        public const int BS_AUTO3STATE = 0x00000006;
-
-        [NativeTypeName("#define BS_GROUPBOX 0x00000007L")]
-        public const int BS_GROUPBOX = 0x00000007;
-
-        [NativeTypeName("#define BS_USERBUTTON 0x00000008L")]
-        public const int BS_USERBUTTON = 0x00000008;
-
-        [NativeTypeName("#define BS_AUTORADIOBUTTON 0x00000009L")]
-        public const int BS_AUTORADIOBUTTON = 0x00000009;
-
-        [NativeTypeName("#define BS_PUSHBOX 0x0000000AL")]
-        public const int BS_PUSHBOX = 0x0000000A;
-
-        [NativeTypeName("#define BS_OWNERDRAW 0x0000000BL")]
-        public const int BS_OWNERDRAW = 0x0000000B;
-
-        [NativeTypeName("#define BS_TYPEMASK 0x0000000FL")]
-        public const int BS_TYPEMASK = 0x0000000F;
-
-        [NativeTypeName("#define BS_LEFTTEXT 0x00000020L")]
-        public const int BS_LEFTTEXT = 0x00000020;
-
-        [NativeTypeName("#define BS_TEXT 0x00000000L")]
-        public const int BS_TEXT = 0x00000000;
-
-        [NativeTypeName("#define BS_ICON 0x00000040L")]
-        public const int BS_ICON = 0x00000040;
-
-        [NativeTypeName("#define BS_BITMAP 0x00000080L")]
-        public const int BS_BITMAP = 0x00000080;
-
-        [NativeTypeName("#define BS_LEFT 0x00000100L")]
-        public const int BS_LEFT = 0x00000100;
-
-        [NativeTypeName("#define BS_RIGHT 0x00000200L")]
-        public const int BS_RIGHT = 0x00000200;
-
-        [NativeTypeName("#define BS_CENTER 0x00000300L")]
-        public const int BS_CENTER = 0x00000300;
-
-        [NativeTypeName("#define BS_TOP 0x00000400L")]
-        public const int BS_TOP = 0x00000400;
-
-        [NativeTypeName("#define BS_BOTTOM 0x00000800L")]
-        public const int BS_BOTTOM = 0x00000800;
-
-        [NativeTypeName("#define BS_VCENTER 0x00000C00L")]
-        public const int BS_VCENTER = 0x00000C00;
-
-        [NativeTypeName("#define BS_PUSHLIKE 0x00001000L")]
-        public const int BS_PUSHLIKE = 0x00001000;
-
-        [NativeTypeName("#define BS_MULTILINE 0x00002000L")]
-        public const int BS_MULTILINE = 0x00002000;
-
-        [NativeTypeName("#define BS_NOTIFY 0x00004000L")]
-        public const int BS_NOTIFY = 0x00004000;
-
-        [NativeTypeName("#define BS_FLAT 0x00008000L")]
-        public const int BS_FLAT = 0x00008000;
-
-        [NativeTypeName("#define BS_RIGHTBUTTON BS_LEFTTEXT")]
-        public const int BS_RIGHTBUTTON = 0x00000020;
-
-        [NativeTypeName("#define BN_CLICKED 0")]
-        public const int BN_CLICKED = 0;
-
-        [NativeTypeName("#define BN_PAINT 1")]
-        public const int BN_PAINT = 1;
-
-        [NativeTypeName("#define BN_HILITE 2")]
-        public const int BN_HILITE = 2;
-
-        [NativeTypeName("#define BN_UNHILITE 3")]
-        public const int BN_UNHILITE = 3;
-
-        [NativeTypeName("#define BN_DISABLE 4")]
-        public const int BN_DISABLE = 4;
-
-        [NativeTypeName("#define BN_DOUBLECLICKED 5")]
-        public const int BN_DOUBLECLICKED = 5;
-
-        [NativeTypeName("#define BN_PUSHED BN_HILITE")]
-        public const int BN_PUSHED = 2;
-
-        [NativeTypeName("#define BN_UNPUSHED BN_UNHILITE")]
-        public const int BN_UNPUSHED = 3;
-
-        [NativeTypeName("#define BN_DBLCLK BN_DOUBLECLICKED")]
-        public const int BN_DBLCLK = 5;
-
-        [NativeTypeName("#define BN_SETFOCUS 6")]
-        public const int BN_SETFOCUS = 6;
-
-        [NativeTypeName("#define BN_KILLFOCUS 7")]
-        public const int BN_KILLFOCUS = 7;
 
         [NativeTypeName("#define BM_GETCHECK 0x00F0")]
         public const int BM_GETCHECK = 0x00F0;
@@ -5924,102 +3929,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define BST_FOCUS 0x0008")]
         public const int BST_FOCUS = 0x0008;
 
-        [NativeTypeName("#define SS_LEFT 0x00000000L")]
-        public const int SS_LEFT = 0x00000000;
-
-        [NativeTypeName("#define SS_CENTER 0x00000001L")]
-        public const int SS_CENTER = 0x00000001;
-
-        [NativeTypeName("#define SS_RIGHT 0x00000002L")]
-        public const int SS_RIGHT = 0x00000002;
-
-        [NativeTypeName("#define SS_ICON 0x00000003L")]
-        public const int SS_ICON = 0x00000003;
-
-        [NativeTypeName("#define SS_BLACKRECT 0x00000004L")]
-        public const int SS_BLACKRECT = 0x00000004;
-
-        [NativeTypeName("#define SS_GRAYRECT 0x00000005L")]
-        public const int SS_GRAYRECT = 0x00000005;
-
-        [NativeTypeName("#define SS_WHITERECT 0x00000006L")]
-        public const int SS_WHITERECT = 0x00000006;
-
-        [NativeTypeName("#define SS_BLACKFRAME 0x00000007L")]
-        public const int SS_BLACKFRAME = 0x00000007;
-
-        [NativeTypeName("#define SS_GRAYFRAME 0x00000008L")]
-        public const int SS_GRAYFRAME = 0x00000008;
-
-        [NativeTypeName("#define SS_WHITEFRAME 0x00000009L")]
-        public const int SS_WHITEFRAME = 0x00000009;
-
-        [NativeTypeName("#define SS_USERITEM 0x0000000AL")]
-        public const int SS_USERITEM = 0x0000000A;
-
-        [NativeTypeName("#define SS_SIMPLE 0x0000000BL")]
-        public const int SS_SIMPLE = 0x0000000B;
-
-        [NativeTypeName("#define SS_LEFTNOWORDWRAP 0x0000000CL")]
-        public const int SS_LEFTNOWORDWRAP = 0x0000000C;
-
-        [NativeTypeName("#define SS_OWNERDRAW 0x0000000DL")]
-        public const int SS_OWNERDRAW = 0x0000000D;
-
-        [NativeTypeName("#define SS_BITMAP 0x0000000EL")]
-        public const int SS_BITMAP = 0x0000000E;
-
-        [NativeTypeName("#define SS_ENHMETAFILE 0x0000000FL")]
-        public const int SS_ENHMETAFILE = 0x0000000F;
-
-        [NativeTypeName("#define SS_ETCHEDHORZ 0x00000010L")]
-        public const int SS_ETCHEDHORZ = 0x00000010;
-
-        [NativeTypeName("#define SS_ETCHEDVERT 0x00000011L")]
-        public const int SS_ETCHEDVERT = 0x00000011;
-
-        [NativeTypeName("#define SS_ETCHEDFRAME 0x00000012L")]
-        public const int SS_ETCHEDFRAME = 0x00000012;
-
-        [NativeTypeName("#define SS_TYPEMASK 0x0000001FL")]
-        public const int SS_TYPEMASK = 0x0000001F;
-
-        [NativeTypeName("#define SS_REALSIZECONTROL 0x00000040L")]
-        public const int SS_REALSIZECONTROL = 0x00000040;
-
-        [NativeTypeName("#define SS_NOPREFIX 0x00000080L")]
-        public const int SS_NOPREFIX = 0x00000080;
-
-        [NativeTypeName("#define SS_NOTIFY 0x00000100L")]
-        public const int SS_NOTIFY = 0x00000100;
-
-        [NativeTypeName("#define SS_CENTERIMAGE 0x00000200L")]
-        public const int SS_CENTERIMAGE = 0x00000200;
-
-        [NativeTypeName("#define SS_RIGHTJUST 0x00000400L")]
-        public const int SS_RIGHTJUST = 0x00000400;
-
-        [NativeTypeName("#define SS_REALSIZEIMAGE 0x00000800L")]
-        public const int SS_REALSIZEIMAGE = 0x00000800;
-
-        [NativeTypeName("#define SS_SUNKEN 0x00001000L")]
-        public const int SS_SUNKEN = 0x00001000;
-
-        [NativeTypeName("#define SS_EDITCONTROL 0x00002000L")]
-        public const int SS_EDITCONTROL = 0x00002000;
-
-        [NativeTypeName("#define SS_ENDELLIPSIS 0x00004000L")]
-        public const int SS_ENDELLIPSIS = 0x00004000;
-
-        [NativeTypeName("#define SS_PATHELLIPSIS 0x00008000L")]
-        public const int SS_PATHELLIPSIS = 0x00008000;
-
-        [NativeTypeName("#define SS_WORDELLIPSIS 0x0000C000L")]
-        public const int SS_WORDELLIPSIS = 0x0000C000;
-
-        [NativeTypeName("#define SS_ELLIPSISMASK 0x0000C000L")]
-        public const int SS_ELLIPSISMASK = 0x0000C000;
-
         [NativeTypeName("#define STM_SETICON 0x0170")]
         public const int STM_SETICON = 0x0170;
 
@@ -6046,9 +3955,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define STM_MSGMAX 0x0174")]
         public const int STM_MSGMAX = 0x0174;
-
-        [NativeTypeName("#define WC_DIALOG (MAKEINTATOM(0x8002))")]
-        public static ushort* WC_DIALOG => ((ushort*)((nuint)((ushort)(0x8002))));
 
         [NativeTypeName("#define DWL_MSGRESULT 0")]
         public const int DWL_MSGRESULT = 0;
@@ -6110,108 +4016,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define DlgDirSelectComboBoxEx DlgDirSelectComboBoxExW")]
         public static delegate*<HWND, ushort*, int, int, BOOL> DlgDirSelectComboBoxEx => &DlgDirSelectComboBoxExW;
 
-        [NativeTypeName("#define DS_ABSALIGN 0x01L")]
-        public const int DS_ABSALIGN = 0x01;
-
-        [NativeTypeName("#define DS_SYSMODAL 0x02L")]
-        public const int DS_SYSMODAL = 0x02;
-
-        [NativeTypeName("#define DS_LOCALEDIT 0x20L")]
-        public const int DS_LOCALEDIT = 0x20;
-
-        [NativeTypeName("#define DS_SETFONT 0x40L")]
-        public const int DS_SETFONT = 0x40;
-
-        [NativeTypeName("#define DS_MODALFRAME 0x80L")]
-        public const int DS_MODALFRAME = 0x80;
-
-        [NativeTypeName("#define DS_NOIDLEMSG 0x100L")]
-        public const int DS_NOIDLEMSG = 0x100;
-
-        [NativeTypeName("#define DS_SETFOREGROUND 0x200L")]
-        public const int DS_SETFOREGROUND = 0x200;
-
-        [NativeTypeName("#define DS_3DLOOK 0x0004L")]
-        public const int DS_3DLOOK = 0x0004;
-
-        [NativeTypeName("#define DS_FIXEDSYS 0x0008L")]
-        public const int DS_FIXEDSYS = 0x0008;
-
-        [NativeTypeName("#define DS_NOFAILCREATE 0x0010L")]
-        public const int DS_NOFAILCREATE = 0x0010;
-
-        [NativeTypeName("#define DS_CONTROL 0x0400L")]
-        public const int DS_CONTROL = 0x0400;
-
-        [NativeTypeName("#define DS_CENTER 0x0800L")]
-        public const int DS_CENTER = 0x0800;
-
-        [NativeTypeName("#define DS_CENTERMOUSE 0x1000L")]
-        public const int DS_CENTERMOUSE = 0x1000;
-
-        [NativeTypeName("#define DS_CONTEXTHELP 0x2000L")]
-        public const int DS_CONTEXTHELP = 0x2000;
-
-        [NativeTypeName("#define DS_SHELLFONT (DS_SETFONT | DS_FIXEDSYS)")]
-        public const int DS_SHELLFONT = (0x40 | 0x0008);
-
-        [NativeTypeName("#define DM_GETDEFID (WM_USER+0)")]
-        public const int DM_GETDEFID = (0x0400 + 0);
-
-        [NativeTypeName("#define DM_SETDEFID (WM_USER+1)")]
-        public const int DM_SETDEFID = (0x0400 + 1);
-
-        [NativeTypeName("#define DM_REPOSITION (WM_USER+2)")]
-        public const int DM_REPOSITION = (0x0400 + 2);
-
-        [NativeTypeName("#define DC_HASDEFID 0x534B")]
-        public const int DC_HASDEFID = 0x534B;
-
-        [NativeTypeName("#define DLGC_WANTARROWS 0x0001")]
-        public const int DLGC_WANTARROWS = 0x0001;
-
-        [NativeTypeName("#define DLGC_WANTTAB 0x0002")]
-        public const int DLGC_WANTTAB = 0x0002;
-
-        [NativeTypeName("#define DLGC_WANTALLKEYS 0x0004")]
-        public const int DLGC_WANTALLKEYS = 0x0004;
-
-        [NativeTypeName("#define DLGC_WANTMESSAGE 0x0004")]
-        public const int DLGC_WANTMESSAGE = 0x0004;
-
-        [NativeTypeName("#define DLGC_HASSETSEL 0x0008")]
-        public const int DLGC_HASSETSEL = 0x0008;
-
-        [NativeTypeName("#define DLGC_DEFPUSHBUTTON 0x0010")]
-        public const int DLGC_DEFPUSHBUTTON = 0x0010;
-
-        [NativeTypeName("#define DLGC_UNDEFPUSHBUTTON 0x0020")]
-        public const int DLGC_UNDEFPUSHBUTTON = 0x0020;
-
-        [NativeTypeName("#define DLGC_RADIOBUTTON 0x0040")]
-        public const int DLGC_RADIOBUTTON = 0x0040;
-
-        [NativeTypeName("#define DLGC_WANTCHARS 0x0080")]
-        public const int DLGC_WANTCHARS = 0x0080;
-
-        [NativeTypeName("#define DLGC_STATIC 0x0100")]
-        public const int DLGC_STATIC = 0x0100;
-
-        [NativeTypeName("#define DLGC_BUTTON 0x2000")]
-        public const int DLGC_BUTTON = 0x2000;
-
-        [NativeTypeName("#define LB_CTLCODE 0L")]
-        public const int LB_CTLCODE = 0;
-
-        [NativeTypeName("#define LB_OKAY 0")]
-        public const int LB_OKAY = 0;
-
-        [NativeTypeName("#define LB_ERR (-1)")]
-        public const int LB_ERR = (-1);
-
-        [NativeTypeName("#define LB_ERRSPACE (-2)")]
-        public const int LB_ERRSPACE = (-2);
-
         [NativeTypeName("#define LBN_ERRSPACE (-2)")]
         public const int LBN_ERRSPACE = (-2);
 
@@ -6229,402 +4033,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define LBN_KILLFOCUS 5")]
         public const int LBN_KILLFOCUS = 5;
-
-        [NativeTypeName("#define LB_ADDSTRING 0x0180")]
-        public const int LB_ADDSTRING = 0x0180;
-
-        [NativeTypeName("#define LB_INSERTSTRING 0x0181")]
-        public const int LB_INSERTSTRING = 0x0181;
-
-        [NativeTypeName("#define LB_DELETESTRING 0x0182")]
-        public const int LB_DELETESTRING = 0x0182;
-
-        [NativeTypeName("#define LB_SELITEMRANGEEX 0x0183")]
-        public const int LB_SELITEMRANGEEX = 0x0183;
-
-        [NativeTypeName("#define LB_RESETCONTENT 0x0184")]
-        public const int LB_RESETCONTENT = 0x0184;
-
-        [NativeTypeName("#define LB_SETSEL 0x0185")]
-        public const int LB_SETSEL = 0x0185;
-
-        [NativeTypeName("#define LB_SETCURSEL 0x0186")]
-        public const int LB_SETCURSEL = 0x0186;
-
-        [NativeTypeName("#define LB_GETSEL 0x0187")]
-        public const int LB_GETSEL = 0x0187;
-
-        [NativeTypeName("#define LB_GETCURSEL 0x0188")]
-        public const int LB_GETCURSEL = 0x0188;
-
-        [NativeTypeName("#define LB_GETTEXT 0x0189")]
-        public const int LB_GETTEXT = 0x0189;
-
-        [NativeTypeName("#define LB_GETTEXTLEN 0x018A")]
-        public const int LB_GETTEXTLEN = 0x018A;
-
-        [NativeTypeName("#define LB_GETCOUNT 0x018B")]
-        public const int LB_GETCOUNT = 0x018B;
-
-        [NativeTypeName("#define LB_SELECTSTRING 0x018C")]
-        public const int LB_SELECTSTRING = 0x018C;
-
-        [NativeTypeName("#define LB_DIR 0x018D")]
-        public const int LB_DIR = 0x018D;
-
-        [NativeTypeName("#define LB_GETTOPINDEX 0x018E")]
-        public const int LB_GETTOPINDEX = 0x018E;
-
-        [NativeTypeName("#define LB_FINDSTRING 0x018F")]
-        public const int LB_FINDSTRING = 0x018F;
-
-        [NativeTypeName("#define LB_GETSELCOUNT 0x0190")]
-        public const int LB_GETSELCOUNT = 0x0190;
-
-        [NativeTypeName("#define LB_GETSELITEMS 0x0191")]
-        public const int LB_GETSELITEMS = 0x0191;
-
-        [NativeTypeName("#define LB_SETTABSTOPS 0x0192")]
-        public const int LB_SETTABSTOPS = 0x0192;
-
-        [NativeTypeName("#define LB_GETHORIZONTALEXTENT 0x0193")]
-        public const int LB_GETHORIZONTALEXTENT = 0x0193;
-
-        [NativeTypeName("#define LB_SETHORIZONTALEXTENT 0x0194")]
-        public const int LB_SETHORIZONTALEXTENT = 0x0194;
-
-        [NativeTypeName("#define LB_SETCOLUMNWIDTH 0x0195")]
-        public const int LB_SETCOLUMNWIDTH = 0x0195;
-
-        [NativeTypeName("#define LB_ADDFILE 0x0196")]
-        public const int LB_ADDFILE = 0x0196;
-
-        [NativeTypeName("#define LB_SETTOPINDEX 0x0197")]
-        public const int LB_SETTOPINDEX = 0x0197;
-
-        [NativeTypeName("#define LB_GETITEMRECT 0x0198")]
-        public const int LB_GETITEMRECT = 0x0198;
-
-        [NativeTypeName("#define LB_GETITEMDATA 0x0199")]
-        public const int LB_GETITEMDATA = 0x0199;
-
-        [NativeTypeName("#define LB_SETITEMDATA 0x019A")]
-        public const int LB_SETITEMDATA = 0x019A;
-
-        [NativeTypeName("#define LB_SELITEMRANGE 0x019B")]
-        public const int LB_SELITEMRANGE = 0x019B;
-
-        [NativeTypeName("#define LB_SETANCHORINDEX 0x019C")]
-        public const int LB_SETANCHORINDEX = 0x019C;
-
-        [NativeTypeName("#define LB_GETANCHORINDEX 0x019D")]
-        public const int LB_GETANCHORINDEX = 0x019D;
-
-        [NativeTypeName("#define LB_SETCARETINDEX 0x019E")]
-        public const int LB_SETCARETINDEX = 0x019E;
-
-        [NativeTypeName("#define LB_GETCARETINDEX 0x019F")]
-        public const int LB_GETCARETINDEX = 0x019F;
-
-        [NativeTypeName("#define LB_SETITEMHEIGHT 0x01A0")]
-        public const int LB_SETITEMHEIGHT = 0x01A0;
-
-        [NativeTypeName("#define LB_GETITEMHEIGHT 0x01A1")]
-        public const int LB_GETITEMHEIGHT = 0x01A1;
-
-        [NativeTypeName("#define LB_FINDSTRINGEXACT 0x01A2")]
-        public const int LB_FINDSTRINGEXACT = 0x01A2;
-
-        [NativeTypeName("#define LB_SETLOCALE 0x01A5")]
-        public const int LB_SETLOCALE = 0x01A5;
-
-        [NativeTypeName("#define LB_GETLOCALE 0x01A6")]
-        public const int LB_GETLOCALE = 0x01A6;
-
-        [NativeTypeName("#define LB_SETCOUNT 0x01A7")]
-        public const int LB_SETCOUNT = 0x01A7;
-
-        [NativeTypeName("#define LB_INITSTORAGE 0x01A8")]
-        public const int LB_INITSTORAGE = 0x01A8;
-
-        [NativeTypeName("#define LB_ITEMFROMPOINT 0x01A9")]
-        public const int LB_ITEMFROMPOINT = 0x01A9;
-
-        [NativeTypeName("#define LB_GETLISTBOXINFO 0x01B2")]
-        public const int LB_GETLISTBOXINFO = 0x01B2;
-
-        [NativeTypeName("#define LB_MSGMAX 0x01B3")]
-        public const int LB_MSGMAX = 0x01B3;
-
-        [NativeTypeName("#define LBS_NOTIFY 0x0001L")]
-        public const int LBS_NOTIFY = 0x0001;
-
-        [NativeTypeName("#define LBS_SORT 0x0002L")]
-        public const int LBS_SORT = 0x0002;
-
-        [NativeTypeName("#define LBS_NOREDRAW 0x0004L")]
-        public const int LBS_NOREDRAW = 0x0004;
-
-        [NativeTypeName("#define LBS_MULTIPLESEL 0x0008L")]
-        public const int LBS_MULTIPLESEL = 0x0008;
-
-        [NativeTypeName("#define LBS_OWNERDRAWFIXED 0x0010L")]
-        public const int LBS_OWNERDRAWFIXED = 0x0010;
-
-        [NativeTypeName("#define LBS_OWNERDRAWVARIABLE 0x0020L")]
-        public const int LBS_OWNERDRAWVARIABLE = 0x0020;
-
-        [NativeTypeName("#define LBS_HASSTRINGS 0x0040L")]
-        public const int LBS_HASSTRINGS = 0x0040;
-
-        [NativeTypeName("#define LBS_USETABSTOPS 0x0080L")]
-        public const int LBS_USETABSTOPS = 0x0080;
-
-        [NativeTypeName("#define LBS_NOINTEGRALHEIGHT 0x0100L")]
-        public const int LBS_NOINTEGRALHEIGHT = 0x0100;
-
-        [NativeTypeName("#define LBS_MULTICOLUMN 0x0200L")]
-        public const int LBS_MULTICOLUMN = 0x0200;
-
-        [NativeTypeName("#define LBS_WANTKEYBOARDINPUT 0x0400L")]
-        public const int LBS_WANTKEYBOARDINPUT = 0x0400;
-
-        [NativeTypeName("#define LBS_EXTENDEDSEL 0x0800L")]
-        public const int LBS_EXTENDEDSEL = 0x0800;
-
-        [NativeTypeName("#define LBS_DISABLENOSCROLL 0x1000L")]
-        public const int LBS_DISABLENOSCROLL = 0x1000;
-
-        [NativeTypeName("#define LBS_NODATA 0x2000L")]
-        public const int LBS_NODATA = 0x2000;
-
-        [NativeTypeName("#define LBS_NOSEL 0x4000L")]
-        public const int LBS_NOSEL = 0x4000;
-
-        [NativeTypeName("#define LBS_COMBOBOX 0x8000L")]
-        public const int LBS_COMBOBOX = 0x8000;
-
-        [NativeTypeName("#define LBS_STANDARD (LBS_NOTIFY | LBS_SORT | WS_VSCROLL | WS_BORDER)")]
-        public const int LBS_STANDARD = (0x0001 | 0x0002 | 0x00200000 | 0x00800000);
-
-        [NativeTypeName("#define CB_OKAY 0")]
-        public const int CB_OKAY = 0;
-
-        [NativeTypeName("#define CB_ERR (-1)")]
-        public const int CB_ERR = (-1);
-
-        [NativeTypeName("#define CB_ERRSPACE (-2)")]
-        public const int CB_ERRSPACE = (-2);
-
-        [NativeTypeName("#define CBN_ERRSPACE (-1)")]
-        public const int CBN_ERRSPACE = (-1);
-
-        [NativeTypeName("#define CBN_SELCHANGE 1")]
-        public const int CBN_SELCHANGE = 1;
-
-        [NativeTypeName("#define CBN_DBLCLK 2")]
-        public const int CBN_DBLCLK = 2;
-
-        [NativeTypeName("#define CBN_SETFOCUS 3")]
-        public const int CBN_SETFOCUS = 3;
-
-        [NativeTypeName("#define CBN_KILLFOCUS 4")]
-        public const int CBN_KILLFOCUS = 4;
-
-        [NativeTypeName("#define CBN_EDITCHANGE 5")]
-        public const int CBN_EDITCHANGE = 5;
-
-        [NativeTypeName("#define CBN_EDITUPDATE 6")]
-        public const int CBN_EDITUPDATE = 6;
-
-        [NativeTypeName("#define CBN_DROPDOWN 7")]
-        public const int CBN_DROPDOWN = 7;
-
-        [NativeTypeName("#define CBN_CLOSEUP 8")]
-        public const int CBN_CLOSEUP = 8;
-
-        [NativeTypeName("#define CBN_SELENDOK 9")]
-        public const int CBN_SELENDOK = 9;
-
-        [NativeTypeName("#define CBN_SELENDCANCEL 10")]
-        public const int CBN_SELENDCANCEL = 10;
-
-        [NativeTypeName("#define CBS_SIMPLE 0x0001L")]
-        public const int CBS_SIMPLE = 0x0001;
-
-        [NativeTypeName("#define CBS_DROPDOWN 0x0002L")]
-        public const int CBS_DROPDOWN = 0x0002;
-
-        [NativeTypeName("#define CBS_DROPDOWNLIST 0x0003L")]
-        public const int CBS_DROPDOWNLIST = 0x0003;
-
-        [NativeTypeName("#define CBS_OWNERDRAWFIXED 0x0010L")]
-        public const int CBS_OWNERDRAWFIXED = 0x0010;
-
-        [NativeTypeName("#define CBS_OWNERDRAWVARIABLE 0x0020L")]
-        public const int CBS_OWNERDRAWVARIABLE = 0x0020;
-
-        [NativeTypeName("#define CBS_AUTOHSCROLL 0x0040L")]
-        public const int CBS_AUTOHSCROLL = 0x0040;
-
-        [NativeTypeName("#define CBS_OEMCONVERT 0x0080L")]
-        public const int CBS_OEMCONVERT = 0x0080;
-
-        [NativeTypeName("#define CBS_SORT 0x0100L")]
-        public const int CBS_SORT = 0x0100;
-
-        [NativeTypeName("#define CBS_HASSTRINGS 0x0200L")]
-        public const int CBS_HASSTRINGS = 0x0200;
-
-        [NativeTypeName("#define CBS_NOINTEGRALHEIGHT 0x0400L")]
-        public const int CBS_NOINTEGRALHEIGHT = 0x0400;
-
-        [NativeTypeName("#define CBS_DISABLENOSCROLL 0x0800L")]
-        public const int CBS_DISABLENOSCROLL = 0x0800;
-
-        [NativeTypeName("#define CBS_UPPERCASE 0x2000L")]
-        public const int CBS_UPPERCASE = 0x2000;
-
-        [NativeTypeName("#define CBS_LOWERCASE 0x4000L")]
-        public const int CBS_LOWERCASE = 0x4000;
-
-        [NativeTypeName("#define CB_GETEDITSEL 0x0140")]
-        public const int CB_GETEDITSEL = 0x0140;
-
-        [NativeTypeName("#define CB_LIMITTEXT 0x0141")]
-        public const int CB_LIMITTEXT = 0x0141;
-
-        [NativeTypeName("#define CB_SETEDITSEL 0x0142")]
-        public const int CB_SETEDITSEL = 0x0142;
-
-        [NativeTypeName("#define CB_ADDSTRING 0x0143")]
-        public const int CB_ADDSTRING = 0x0143;
-
-        [NativeTypeName("#define CB_DELETESTRING 0x0144")]
-        public const int CB_DELETESTRING = 0x0144;
-
-        [NativeTypeName("#define CB_DIR 0x0145")]
-        public const int CB_DIR = 0x0145;
-
-        [NativeTypeName("#define CB_GETCOUNT 0x0146")]
-        public const int CB_GETCOUNT = 0x0146;
-
-        [NativeTypeName("#define CB_GETCURSEL 0x0147")]
-        public const int CB_GETCURSEL = 0x0147;
-
-        [NativeTypeName("#define CB_GETLBTEXT 0x0148")]
-        public const int CB_GETLBTEXT = 0x0148;
-
-        [NativeTypeName("#define CB_GETLBTEXTLEN 0x0149")]
-        public const int CB_GETLBTEXTLEN = 0x0149;
-
-        [NativeTypeName("#define CB_INSERTSTRING 0x014A")]
-        public const int CB_INSERTSTRING = 0x014A;
-
-        [NativeTypeName("#define CB_RESETCONTENT 0x014B")]
-        public const int CB_RESETCONTENT = 0x014B;
-
-        [NativeTypeName("#define CB_FINDSTRING 0x014C")]
-        public const int CB_FINDSTRING = 0x014C;
-
-        [NativeTypeName("#define CB_SELECTSTRING 0x014D")]
-        public const int CB_SELECTSTRING = 0x014D;
-
-        [NativeTypeName("#define CB_SETCURSEL 0x014E")]
-        public const int CB_SETCURSEL = 0x014E;
-
-        [NativeTypeName("#define CB_SHOWDROPDOWN 0x014F")]
-        public const int CB_SHOWDROPDOWN = 0x014F;
-
-        [NativeTypeName("#define CB_GETITEMDATA 0x0150")]
-        public const int CB_GETITEMDATA = 0x0150;
-
-        [NativeTypeName("#define CB_SETITEMDATA 0x0151")]
-        public const int CB_SETITEMDATA = 0x0151;
-
-        [NativeTypeName("#define CB_GETDROPPEDCONTROLRECT 0x0152")]
-        public const int CB_GETDROPPEDCONTROLRECT = 0x0152;
-
-        [NativeTypeName("#define CB_SETITEMHEIGHT 0x0153")]
-        public const int CB_SETITEMHEIGHT = 0x0153;
-
-        [NativeTypeName("#define CB_GETITEMHEIGHT 0x0154")]
-        public const int CB_GETITEMHEIGHT = 0x0154;
-
-        [NativeTypeName("#define CB_SETEXTENDEDUI 0x0155")]
-        public const int CB_SETEXTENDEDUI = 0x0155;
-
-        [NativeTypeName("#define CB_GETEXTENDEDUI 0x0156")]
-        public const int CB_GETEXTENDEDUI = 0x0156;
-
-        [NativeTypeName("#define CB_GETDROPPEDSTATE 0x0157")]
-        public const int CB_GETDROPPEDSTATE = 0x0157;
-
-        [NativeTypeName("#define CB_FINDSTRINGEXACT 0x0158")]
-        public const int CB_FINDSTRINGEXACT = 0x0158;
-
-        [NativeTypeName("#define CB_SETLOCALE 0x0159")]
-        public const int CB_SETLOCALE = 0x0159;
-
-        [NativeTypeName("#define CB_GETLOCALE 0x015A")]
-        public const int CB_GETLOCALE = 0x015A;
-
-        [NativeTypeName("#define CB_GETTOPINDEX 0x015b")]
-        public const int CB_GETTOPINDEX = 0x015b;
-
-        [NativeTypeName("#define CB_SETTOPINDEX 0x015c")]
-        public const int CB_SETTOPINDEX = 0x015c;
-
-        [NativeTypeName("#define CB_GETHORIZONTALEXTENT 0x015d")]
-        public const int CB_GETHORIZONTALEXTENT = 0x015d;
-
-        [NativeTypeName("#define CB_SETHORIZONTALEXTENT 0x015e")]
-        public const int CB_SETHORIZONTALEXTENT = 0x015e;
-
-        [NativeTypeName("#define CB_GETDROPPEDWIDTH 0x015f")]
-        public const int CB_GETDROPPEDWIDTH = 0x015f;
-
-        [NativeTypeName("#define CB_SETDROPPEDWIDTH 0x0160")]
-        public const int CB_SETDROPPEDWIDTH = 0x0160;
-
-        [NativeTypeName("#define CB_INITSTORAGE 0x0161")]
-        public const int CB_INITSTORAGE = 0x0161;
-
-        [NativeTypeName("#define CB_GETCOMBOBOXINFO 0x0164")]
-        public const int CB_GETCOMBOBOXINFO = 0x0164;
-
-        [NativeTypeName("#define CB_MSGMAX 0x0165")]
-        public const int CB_MSGMAX = 0x0165;
-
-        [NativeTypeName("#define SBS_HORZ 0x0000L")]
-        public const int SBS_HORZ = 0x0000;
-
-        [NativeTypeName("#define SBS_VERT 0x0001L")]
-        public const int SBS_VERT = 0x0001;
-
-        [NativeTypeName("#define SBS_TOPALIGN 0x0002L")]
-        public const int SBS_TOPALIGN = 0x0002;
-
-        [NativeTypeName("#define SBS_LEFTALIGN 0x0002L")]
-        public const int SBS_LEFTALIGN = 0x0002;
-
-        [NativeTypeName("#define SBS_BOTTOMALIGN 0x0004L")]
-        public const int SBS_BOTTOMALIGN = 0x0004;
-
-        [NativeTypeName("#define SBS_RIGHTALIGN 0x0004L")]
-        public const int SBS_RIGHTALIGN = 0x0004;
-
-        [NativeTypeName("#define SBS_SIZEBOXTOPLEFTALIGN 0x0002L")]
-        public const int SBS_SIZEBOXTOPLEFTALIGN = 0x0002;
-
-        [NativeTypeName("#define SBS_SIZEBOXBOTTOMRIGHTALIGN 0x0004L")]
-        public const int SBS_SIZEBOXBOTTOMRIGHTALIGN = 0x0004;
-
-        [NativeTypeName("#define SBS_SIZEBOX 0x0008L")]
-        public const int SBS_SIZEBOX = 0x0008;
-
-        [NativeTypeName("#define SBS_SIZEGRIP 0x0010L")]
-        public const int SBS_SIZEGRIP = 0x0010;
 
         [NativeTypeName("#define SBM_SETPOS 0x00E0")]
         public const int SBM_SETPOS = 0x00E0;
@@ -6694,69 +4102,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define CreateMDIWindow CreateMDIWindowW")]
         public static delegate*<ushort*, ushort*, uint, int, int, int, int, HWND, HINSTANCE, LPARAM, HWND> CreateMDIWindow => &CreateMDIWindowW;
-
-        [NativeTypeName("#define HELP_CONTEXT 0x0001L")]
-        public const int HELP_CONTEXT = 0x0001;
-
-        [NativeTypeName("#define HELP_QUIT 0x0002L")]
-        public const int HELP_QUIT = 0x0002;
-
-        [NativeTypeName("#define HELP_INDEX 0x0003L")]
-        public const int HELP_INDEX = 0x0003;
-
-        [NativeTypeName("#define HELP_CONTENTS 0x0003L")]
-        public const int HELP_CONTENTS = 0x0003;
-
-        [NativeTypeName("#define HELP_HELPONHELP 0x0004L")]
-        public const int HELP_HELPONHELP = 0x0004;
-
-        [NativeTypeName("#define HELP_SETINDEX 0x0005L")]
-        public const int HELP_SETINDEX = 0x0005;
-
-        [NativeTypeName("#define HELP_SETCONTENTS 0x0005L")]
-        public const int HELP_SETCONTENTS = 0x0005;
-
-        [NativeTypeName("#define HELP_CONTEXTPOPUP 0x0008L")]
-        public const int HELP_CONTEXTPOPUP = 0x0008;
-
-        [NativeTypeName("#define HELP_FORCEFILE 0x0009L")]
-        public const int HELP_FORCEFILE = 0x0009;
-
-        [NativeTypeName("#define HELP_KEY 0x0101L")]
-        public const int HELP_KEY = 0x0101;
-
-        [NativeTypeName("#define HELP_COMMAND 0x0102L")]
-        public const int HELP_COMMAND = 0x0102;
-
-        [NativeTypeName("#define HELP_PARTIALKEY 0x0105L")]
-        public const int HELP_PARTIALKEY = 0x0105;
-
-        [NativeTypeName("#define HELP_MULTIKEY 0x0201L")]
-        public const int HELP_MULTIKEY = 0x0201;
-
-        [NativeTypeName("#define HELP_SETWINPOS 0x0203L")]
-        public const int HELP_SETWINPOS = 0x0203;
-
-        [NativeTypeName("#define HELP_CONTEXTMENU 0x000a")]
-        public const int HELP_CONTEXTMENU = 0x000a;
-
-        [NativeTypeName("#define HELP_FINDER 0x000b")]
-        public const int HELP_FINDER = 0x000b;
-
-        [NativeTypeName("#define HELP_WM_HELP 0x000c")]
-        public const int HELP_WM_HELP = 0x000c;
-
-        [NativeTypeName("#define HELP_SETPOPUP_POS 0x000d")]
-        public const int HELP_SETPOPUP_POS = 0x000d;
-
-        [NativeTypeName("#define HELP_TCARD 0x8000")]
-        public const int HELP_TCARD = 0x8000;
-
-        [NativeTypeName("#define HELP_TCARD_DATA 0x0010")]
-        public const int HELP_TCARD_DATA = 0x0010;
-
-        [NativeTypeName("#define HELP_TCARD_OTHER_CALLER 0x0011")]
-        public const int HELP_TCARD_OTHER_CALLER = 0x0011;
 
         [NativeTypeName("#define IDH_NO_HELP 28440")]
         public const int IDH_NO_HELP = 28440;
@@ -6911,42 +4256,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define METRICS_USEDEFAULT -1")]
         public const int METRICS_USEDEFAULT = -1;
 
-        [NativeTypeName("#define ARW_BOTTOMLEFT 0x0000L")]
-        public const int ARW_BOTTOMLEFT = 0x0000;
-
-        [NativeTypeName("#define ARW_BOTTOMRIGHT 0x0001L")]
-        public const int ARW_BOTTOMRIGHT = 0x0001;
-
-        [NativeTypeName("#define ARW_TOPLEFT 0x0002L")]
-        public const int ARW_TOPLEFT = 0x0002;
-
-        [NativeTypeName("#define ARW_TOPRIGHT 0x0003L")]
-        public const int ARW_TOPRIGHT = 0x0003;
-
-        [NativeTypeName("#define ARW_STARTMASK 0x0003L")]
-        public const int ARW_STARTMASK = 0x0003;
-
-        [NativeTypeName("#define ARW_STARTRIGHT 0x0001L")]
-        public const int ARW_STARTRIGHT = 0x0001;
-
-        [NativeTypeName("#define ARW_STARTTOP 0x0002L")]
-        public const int ARW_STARTTOP = 0x0002;
-
-        [NativeTypeName("#define ARW_LEFT 0x0000L")]
-        public const int ARW_LEFT = 0x0000;
-
-        [NativeTypeName("#define ARW_RIGHT 0x0000L")]
-        public const int ARW_RIGHT = 0x0000;
-
-        [NativeTypeName("#define ARW_UP 0x0004L")]
-        public const int ARW_UP = 0x0004;
-
-        [NativeTypeName("#define ARW_DOWN 0x0004L")]
-        public const int ARW_DOWN = 0x0004;
-
-        [NativeTypeName("#define ARW_HIDE 0x0008L")]
-        public const int ARW_HIDE = 0x0008;
-
         [NativeTypeName("#define SERKF_SERIALKEYSON 0x00000001")]
         public const int SERKF_SERIALKEYSON = 0x00000001;
 
@@ -6955,93 +4264,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define SERKF_INDICATOR 0x00000004")]
         public const int SERKF_INDICATOR = 0x00000004;
-
-        [NativeTypeName("#define HCF_HIGHCONTRASTON 0x00000001")]
-        public const int HCF_HIGHCONTRASTON = 0x00000001;
-
-        [NativeTypeName("#define HCF_AVAILABLE 0x00000002")]
-        public const int HCF_AVAILABLE = 0x00000002;
-
-        [NativeTypeName("#define HCF_HOTKEYACTIVE 0x00000004")]
-        public const int HCF_HOTKEYACTIVE = 0x00000004;
-
-        [NativeTypeName("#define HCF_CONFIRMHOTKEY 0x00000008")]
-        public const int HCF_CONFIRMHOTKEY = 0x00000008;
-
-        [NativeTypeName("#define HCF_HOTKEYSOUND 0x00000010")]
-        public const int HCF_HOTKEYSOUND = 0x00000010;
-
-        [NativeTypeName("#define HCF_INDICATOR 0x00000020")]
-        public const int HCF_INDICATOR = 0x00000020;
-
-        [NativeTypeName("#define HCF_HOTKEYAVAILABLE 0x00000040")]
-        public const int HCF_HOTKEYAVAILABLE = 0x00000040;
-
-        [NativeTypeName("#define HCF_LOGONDESKTOP 0x00000100")]
-        public const int HCF_LOGONDESKTOP = 0x00000100;
-
-        [NativeTypeName("#define HCF_DEFAULTDESKTOP 0x00000200")]
-        public const int HCF_DEFAULTDESKTOP = 0x00000200;
-
-        [NativeTypeName("#define HCF_OPTION_NOTHEMECHANGE 0x00001000")]
-        public const int HCF_OPTION_NOTHEMECHANGE = 0x00001000;
-
-        [NativeTypeName("#define CDS_UPDATEREGISTRY 0x00000001")]
-        public const int CDS_UPDATEREGISTRY = 0x00000001;
-
-        [NativeTypeName("#define CDS_TEST 0x00000002")]
-        public const int CDS_TEST = 0x00000002;
-
-        [NativeTypeName("#define CDS_FULLSCREEN 0x00000004")]
-        public const int CDS_FULLSCREEN = 0x00000004;
-
-        [NativeTypeName("#define CDS_GLOBAL 0x00000008")]
-        public const int CDS_GLOBAL = 0x00000008;
-
-        [NativeTypeName("#define CDS_SET_PRIMARY 0x00000010")]
-        public const int CDS_SET_PRIMARY = 0x00000010;
-
-        [NativeTypeName("#define CDS_VIDEOPARAMETERS 0x00000020")]
-        public const int CDS_VIDEOPARAMETERS = 0x00000020;
-
-        [NativeTypeName("#define CDS_ENABLE_UNSAFE_MODES 0x00000100")]
-        public const int CDS_ENABLE_UNSAFE_MODES = 0x00000100;
-
-        [NativeTypeName("#define CDS_DISABLE_UNSAFE_MODES 0x00000200")]
-        public const int CDS_DISABLE_UNSAFE_MODES = 0x00000200;
-
-        [NativeTypeName("#define CDS_RESET 0x40000000")]
-        public const int CDS_RESET = 0x40000000;
-
-        [NativeTypeName("#define CDS_RESET_EX 0x20000000")]
-        public const int CDS_RESET_EX = 0x20000000;
-
-        [NativeTypeName("#define CDS_NORESET 0x10000000")]
-        public const int CDS_NORESET = 0x10000000;
-
-        [NativeTypeName("#define DISP_CHANGE_SUCCESSFUL 0")]
-        public const int DISP_CHANGE_SUCCESSFUL = 0;
-
-        [NativeTypeName("#define DISP_CHANGE_RESTART 1")]
-        public const int DISP_CHANGE_RESTART = 1;
-
-        [NativeTypeName("#define DISP_CHANGE_FAILED -1")]
-        public const int DISP_CHANGE_FAILED = -1;
-
-        [NativeTypeName("#define DISP_CHANGE_BADMODE -2")]
-        public const int DISP_CHANGE_BADMODE = -2;
-
-        [NativeTypeName("#define DISP_CHANGE_NOTUPDATED -3")]
-        public const int DISP_CHANGE_NOTUPDATED = -3;
-
-        [NativeTypeName("#define DISP_CHANGE_BADFLAGS -4")]
-        public const int DISP_CHANGE_BADFLAGS = -4;
-
-        [NativeTypeName("#define DISP_CHANGE_BADPARAM -5")]
-        public const int DISP_CHANGE_BADPARAM = -5;
-
-        [NativeTypeName("#define DISP_CHANGE_BADDUALVIEW -6")]
-        public const int DISP_CHANGE_BADDUALVIEW = -6;
 
         [NativeTypeName("#define ChangeDisplaySettings ChangeDisplaySettingsW")]
         public static delegate*<DEVMODEW*, uint, int> ChangeDisplaySettings => &ChangeDisplaySettingsW;
@@ -7097,120 +4319,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define FKF_CLICKON 0x00000040")]
         public const int FKF_CLICKON = 0x00000040;
 
-        [NativeTypeName("#define SKF_STICKYKEYSON 0x00000001")]
-        public const int SKF_STICKYKEYSON = 0x00000001;
-
-        [NativeTypeName("#define SKF_AVAILABLE 0x00000002")]
-        public const int SKF_AVAILABLE = 0x00000002;
-
-        [NativeTypeName("#define SKF_HOTKEYACTIVE 0x00000004")]
-        public const int SKF_HOTKEYACTIVE = 0x00000004;
-
-        [NativeTypeName("#define SKF_CONFIRMHOTKEY 0x00000008")]
-        public const int SKF_CONFIRMHOTKEY = 0x00000008;
-
-        [NativeTypeName("#define SKF_HOTKEYSOUND 0x00000010")]
-        public const int SKF_HOTKEYSOUND = 0x00000010;
-
-        [NativeTypeName("#define SKF_INDICATOR 0x00000020")]
-        public const int SKF_INDICATOR = 0x00000020;
-
-        [NativeTypeName("#define SKF_AUDIBLEFEEDBACK 0x00000040")]
-        public const int SKF_AUDIBLEFEEDBACK = 0x00000040;
-
-        [NativeTypeName("#define SKF_TRISTATE 0x00000080")]
-        public const int SKF_TRISTATE = 0x00000080;
-
-        [NativeTypeName("#define SKF_TWOKEYSOFF 0x00000100")]
-        public const int SKF_TWOKEYSOFF = 0x00000100;
-
-        [NativeTypeName("#define SKF_LALTLATCHED 0x10000000")]
-        public const int SKF_LALTLATCHED = 0x10000000;
-
-        [NativeTypeName("#define SKF_LCTLLATCHED 0x04000000")]
-        public const int SKF_LCTLLATCHED = 0x04000000;
-
-        [NativeTypeName("#define SKF_LSHIFTLATCHED 0x01000000")]
-        public const int SKF_LSHIFTLATCHED = 0x01000000;
-
-        [NativeTypeName("#define SKF_RALTLATCHED 0x20000000")]
-        public const int SKF_RALTLATCHED = 0x20000000;
-
-        [NativeTypeName("#define SKF_RCTLLATCHED 0x08000000")]
-        public const int SKF_RCTLLATCHED = 0x08000000;
-
-        [NativeTypeName("#define SKF_RSHIFTLATCHED 0x02000000")]
-        public const int SKF_RSHIFTLATCHED = 0x02000000;
-
-        [NativeTypeName("#define SKF_LWINLATCHED 0x40000000")]
-        public const int SKF_LWINLATCHED = 0x40000000;
-
-        [NativeTypeName("#define SKF_RWINLATCHED 0x80000000")]
-        public const uint SKF_RWINLATCHED = 0x80000000;
-
-        [NativeTypeName("#define SKF_LALTLOCKED 0x00100000")]
-        public const int SKF_LALTLOCKED = 0x00100000;
-
-        [NativeTypeName("#define SKF_LCTLLOCKED 0x00040000")]
-        public const int SKF_LCTLLOCKED = 0x00040000;
-
-        [NativeTypeName("#define SKF_LSHIFTLOCKED 0x00010000")]
-        public const int SKF_LSHIFTLOCKED = 0x00010000;
-
-        [NativeTypeName("#define SKF_RALTLOCKED 0x00200000")]
-        public const int SKF_RALTLOCKED = 0x00200000;
-
-        [NativeTypeName("#define SKF_RCTLLOCKED 0x00080000")]
-        public const int SKF_RCTLLOCKED = 0x00080000;
-
-        [NativeTypeName("#define SKF_RSHIFTLOCKED 0x00020000")]
-        public const int SKF_RSHIFTLOCKED = 0x00020000;
-
-        [NativeTypeName("#define SKF_LWINLOCKED 0x00400000")]
-        public const int SKF_LWINLOCKED = 0x00400000;
-
-        [NativeTypeName("#define SKF_RWINLOCKED 0x00800000")]
-        public const int SKF_RWINLOCKED = 0x00800000;
-
-        [NativeTypeName("#define MKF_MOUSEKEYSON 0x00000001")]
-        public const int MKF_MOUSEKEYSON = 0x00000001;
-
-        [NativeTypeName("#define MKF_AVAILABLE 0x00000002")]
-        public const int MKF_AVAILABLE = 0x00000002;
-
-        [NativeTypeName("#define MKF_HOTKEYACTIVE 0x00000004")]
-        public const int MKF_HOTKEYACTIVE = 0x00000004;
-
-        [NativeTypeName("#define MKF_CONFIRMHOTKEY 0x00000008")]
-        public const int MKF_CONFIRMHOTKEY = 0x00000008;
-
-        [NativeTypeName("#define MKF_HOTKEYSOUND 0x00000010")]
-        public const int MKF_HOTKEYSOUND = 0x00000010;
-
-        [NativeTypeName("#define MKF_INDICATOR 0x00000020")]
-        public const int MKF_INDICATOR = 0x00000020;
-
-        [NativeTypeName("#define MKF_MODIFIERS 0x00000040")]
-        public const int MKF_MODIFIERS = 0x00000040;
-
-        [NativeTypeName("#define MKF_REPLACENUMBERS 0x00000080")]
-        public const int MKF_REPLACENUMBERS = 0x00000080;
-
-        [NativeTypeName("#define MKF_LEFTBUTTONSEL 0x10000000")]
-        public const int MKF_LEFTBUTTONSEL = 0x10000000;
-
-        [NativeTypeName("#define MKF_RIGHTBUTTONSEL 0x20000000")]
-        public const int MKF_RIGHTBUTTONSEL = 0x20000000;
-
-        [NativeTypeName("#define MKF_LEFTBUTTONDOWN 0x01000000")]
-        public const int MKF_LEFTBUTTONDOWN = 0x01000000;
-
-        [NativeTypeName("#define MKF_RIGHTBUTTONDOWN 0x02000000")]
-        public const int MKF_RIGHTBUTTONDOWN = 0x02000000;
-
-        [NativeTypeName("#define MKF_MOUSEMODE 0x80000000")]
-        public const uint MKF_MOUSEMODE = 0x80000000;
-
         [NativeTypeName("#define ATF_TIMEOUTON 0x00000001")]
         public const int ATF_TIMEOUTON = 0x00000001;
 
@@ -7249,15 +4357,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define SSWF_CUSTOM 4")]
         public const int SSWF_CUSTOM = 4;
-
-        [NativeTypeName("#define SSF_SOUNDSENTRYON 0x00000001")]
-        public const int SSF_SOUNDSENTRYON = 0x00000001;
-
-        [NativeTypeName("#define SSF_AVAILABLE 0x00000002")]
-        public const int SSF_AVAILABLE = 0x00000002;
-
-        [NativeTypeName("#define SSF_INDICATOR 0x00000004")]
-        public const int SSF_INDICATOR = 0x00000004;
 
         [NativeTypeName("#define TKF_TOGGLEKEYSON 0x00000001")]
         public const int TKF_TOGGLEKEYSON = 0x00000001;
@@ -7322,102 +4421,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define INDEXID_CONTAINER 0")]
         public const int INDEXID_CONTAINER = 0;
 
-        [NativeTypeName("#define OBJID_WINDOW ((LONG)0x00000000)")]
-        public const int OBJID_WINDOW = ((int)(0x00000000));
-
-        [NativeTypeName("#define OBJID_SYSMENU ((LONG)0xFFFFFFFF)")]
-        public const int OBJID_SYSMENU = unchecked((int)(0xFFFFFFFF));
-
-        [NativeTypeName("#define OBJID_TITLEBAR ((LONG)0xFFFFFFFE)")]
-        public const int OBJID_TITLEBAR = unchecked((int)(0xFFFFFFFE));
-
-        [NativeTypeName("#define OBJID_MENU ((LONG)0xFFFFFFFD)")]
-        public const int OBJID_MENU = unchecked((int)(0xFFFFFFFD));
-
-        [NativeTypeName("#define OBJID_CLIENT ((LONG)0xFFFFFFFC)")]
-        public const int OBJID_CLIENT = unchecked((int)(0xFFFFFFFC));
-
-        [NativeTypeName("#define OBJID_VSCROLL ((LONG)0xFFFFFFFB)")]
-        public const int OBJID_VSCROLL = unchecked((int)(0xFFFFFFFB));
-
-        [NativeTypeName("#define OBJID_HSCROLL ((LONG)0xFFFFFFFA)")]
-        public const int OBJID_HSCROLL = unchecked((int)(0xFFFFFFFA));
-
-        [NativeTypeName("#define OBJID_SIZEGRIP ((LONG)0xFFFFFFF9)")]
-        public const int OBJID_SIZEGRIP = unchecked((int)(0xFFFFFFF9));
-
-        [NativeTypeName("#define OBJID_CARET ((LONG)0xFFFFFFF8)")]
-        public const int OBJID_CARET = unchecked((int)(0xFFFFFFF8));
-
-        [NativeTypeName("#define OBJID_CURSOR ((LONG)0xFFFFFFF7)")]
-        public const int OBJID_CURSOR = unchecked((int)(0xFFFFFFF7));
-
-        [NativeTypeName("#define OBJID_ALERT ((LONG)0xFFFFFFF6)")]
-        public const int OBJID_ALERT = unchecked((int)(0xFFFFFFF6));
-
-        [NativeTypeName("#define OBJID_SOUND ((LONG)0xFFFFFFF5)")]
-        public const int OBJID_SOUND = unchecked((int)(0xFFFFFFF5));
-
-        [NativeTypeName("#define OBJID_QUERYCLASSNAMEIDX ((LONG)0xFFFFFFF4)")]
-        public const int OBJID_QUERYCLASSNAMEIDX = unchecked((int)(0xFFFFFFF4));
-
-        [NativeTypeName("#define OBJID_NATIVEOM ((LONG)0xFFFFFFF0)")]
-        public const int OBJID_NATIVEOM = unchecked((int)(0xFFFFFFF0));
-
-        [NativeTypeName("#define CONSOLE_CARET_SELECTION 0x0001")]
-        public const int CONSOLE_CARET_SELECTION = 0x0001;
-
-        [NativeTypeName("#define CONSOLE_CARET_VISIBLE 0x0002")]
-        public const int CONSOLE_CARET_VISIBLE = 0x0002;
-
-        [NativeTypeName("#define SOUND_SYSTEM_STARTUP 1")]
-        public const int SOUND_SYSTEM_STARTUP = 1;
-
-        [NativeTypeName("#define SOUND_SYSTEM_SHUTDOWN 2")]
-        public const int SOUND_SYSTEM_SHUTDOWN = 2;
-
-        [NativeTypeName("#define SOUND_SYSTEM_BEEP 3")]
-        public const int SOUND_SYSTEM_BEEP = 3;
-
-        [NativeTypeName("#define SOUND_SYSTEM_ERROR 4")]
-        public const int SOUND_SYSTEM_ERROR = 4;
-
-        [NativeTypeName("#define SOUND_SYSTEM_QUESTION 5")]
-        public const int SOUND_SYSTEM_QUESTION = 5;
-
-        [NativeTypeName("#define SOUND_SYSTEM_WARNING 6")]
-        public const int SOUND_SYSTEM_WARNING = 6;
-
-        [NativeTypeName("#define SOUND_SYSTEM_INFORMATION 7")]
-        public const int SOUND_SYSTEM_INFORMATION = 7;
-
-        [NativeTypeName("#define SOUND_SYSTEM_MAXIMIZE 8")]
-        public const int SOUND_SYSTEM_MAXIMIZE = 8;
-
-        [NativeTypeName("#define SOUND_SYSTEM_MINIMIZE 9")]
-        public const int SOUND_SYSTEM_MINIMIZE = 9;
-
-        [NativeTypeName("#define SOUND_SYSTEM_RESTOREUP 10")]
-        public const int SOUND_SYSTEM_RESTOREUP = 10;
-
-        [NativeTypeName("#define SOUND_SYSTEM_RESTOREDOWN 11")]
-        public const int SOUND_SYSTEM_RESTOREDOWN = 11;
-
-        [NativeTypeName("#define SOUND_SYSTEM_APPSTART 12")]
-        public const int SOUND_SYSTEM_APPSTART = 12;
-
-        [NativeTypeName("#define SOUND_SYSTEM_FAULT 13")]
-        public const int SOUND_SYSTEM_FAULT = 13;
-
-        [NativeTypeName("#define SOUND_SYSTEM_APPEND 14")]
-        public const int SOUND_SYSTEM_APPEND = 14;
-
-        [NativeTypeName("#define SOUND_SYSTEM_MENUCOMMAND 15")]
-        public const int SOUND_SYSTEM_MENUCOMMAND = 15;
-
-        [NativeTypeName("#define SOUND_SYSTEM_MENUPOPUP 16")]
-        public const int SOUND_SYSTEM_MENUPOPUP = 16;
-
         [NativeTypeName("#define CSOUND_SYSTEM 16")]
         public const int CSOUND_SYSTEM = 16;
 
@@ -7459,102 +4462,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define GetWindowModuleFileName GetWindowModuleFileNameW")]
         public static delegate*<HWND, ushort*, uint, uint> GetWindowModuleFileName => &GetWindowModuleFileNameW;
-
-        [NativeTypeName("#define STATE_SYSTEM_UNAVAILABLE 0x00000001")]
-        public const int STATE_SYSTEM_UNAVAILABLE = 0x00000001;
-
-        [NativeTypeName("#define STATE_SYSTEM_SELECTED 0x00000002")]
-        public const int STATE_SYSTEM_SELECTED = 0x00000002;
-
-        [NativeTypeName("#define STATE_SYSTEM_FOCUSED 0x00000004")]
-        public const int STATE_SYSTEM_FOCUSED = 0x00000004;
-
-        [NativeTypeName("#define STATE_SYSTEM_PRESSED 0x00000008")]
-        public const int STATE_SYSTEM_PRESSED = 0x00000008;
-
-        [NativeTypeName("#define STATE_SYSTEM_CHECKED 0x00000010")]
-        public const int STATE_SYSTEM_CHECKED = 0x00000010;
-
-        [NativeTypeName("#define STATE_SYSTEM_MIXED 0x00000020")]
-        public const int STATE_SYSTEM_MIXED = 0x00000020;
-
-        [NativeTypeName("#define STATE_SYSTEM_INDETERMINATE STATE_SYSTEM_MIXED")]
-        public const int STATE_SYSTEM_INDETERMINATE = 0x00000020;
-
-        [NativeTypeName("#define STATE_SYSTEM_READONLY 0x00000040")]
-        public const int STATE_SYSTEM_READONLY = 0x00000040;
-
-        [NativeTypeName("#define STATE_SYSTEM_HOTTRACKED 0x00000080")]
-        public const int STATE_SYSTEM_HOTTRACKED = 0x00000080;
-
-        [NativeTypeName("#define STATE_SYSTEM_DEFAULT 0x00000100")]
-        public const int STATE_SYSTEM_DEFAULT = 0x00000100;
-
-        [NativeTypeName("#define STATE_SYSTEM_EXPANDED 0x00000200")]
-        public const int STATE_SYSTEM_EXPANDED = 0x00000200;
-
-        [NativeTypeName("#define STATE_SYSTEM_COLLAPSED 0x00000400")]
-        public const int STATE_SYSTEM_COLLAPSED = 0x00000400;
-
-        [NativeTypeName("#define STATE_SYSTEM_BUSY 0x00000800")]
-        public const int STATE_SYSTEM_BUSY = 0x00000800;
-
-        [NativeTypeName("#define STATE_SYSTEM_FLOATING 0x00001000")]
-        public const int STATE_SYSTEM_FLOATING = 0x00001000;
-
-        [NativeTypeName("#define STATE_SYSTEM_MARQUEED 0x00002000")]
-        public const int STATE_SYSTEM_MARQUEED = 0x00002000;
-
-        [NativeTypeName("#define STATE_SYSTEM_ANIMATED 0x00004000")]
-        public const int STATE_SYSTEM_ANIMATED = 0x00004000;
-
-        [NativeTypeName("#define STATE_SYSTEM_INVISIBLE 0x00008000")]
-        public const int STATE_SYSTEM_INVISIBLE = 0x00008000;
-
-        [NativeTypeName("#define STATE_SYSTEM_OFFSCREEN 0x00010000")]
-        public const int STATE_SYSTEM_OFFSCREEN = 0x00010000;
-
-        [NativeTypeName("#define STATE_SYSTEM_SIZEABLE 0x00020000")]
-        public const int STATE_SYSTEM_SIZEABLE = 0x00020000;
-
-        [NativeTypeName("#define STATE_SYSTEM_MOVEABLE 0x00040000")]
-        public const int STATE_SYSTEM_MOVEABLE = 0x00040000;
-
-        [NativeTypeName("#define STATE_SYSTEM_SELFVOICING 0x00080000")]
-        public const int STATE_SYSTEM_SELFVOICING = 0x00080000;
-
-        [NativeTypeName("#define STATE_SYSTEM_FOCUSABLE 0x00100000")]
-        public const int STATE_SYSTEM_FOCUSABLE = 0x00100000;
-
-        [NativeTypeName("#define STATE_SYSTEM_SELECTABLE 0x00200000")]
-        public const int STATE_SYSTEM_SELECTABLE = 0x00200000;
-
-        [NativeTypeName("#define STATE_SYSTEM_LINKED 0x00400000")]
-        public const int STATE_SYSTEM_LINKED = 0x00400000;
-
-        [NativeTypeName("#define STATE_SYSTEM_TRAVERSED 0x00800000")]
-        public const int STATE_SYSTEM_TRAVERSED = 0x00800000;
-
-        [NativeTypeName("#define STATE_SYSTEM_MULTISELECTABLE 0x01000000")]
-        public const int STATE_SYSTEM_MULTISELECTABLE = 0x01000000;
-
-        [NativeTypeName("#define STATE_SYSTEM_EXTSELECTABLE 0x02000000")]
-        public const int STATE_SYSTEM_EXTSELECTABLE = 0x02000000;
-
-        [NativeTypeName("#define STATE_SYSTEM_ALERT_LOW 0x04000000")]
-        public const int STATE_SYSTEM_ALERT_LOW = 0x04000000;
-
-        [NativeTypeName("#define STATE_SYSTEM_ALERT_MEDIUM 0x08000000")]
-        public const int STATE_SYSTEM_ALERT_MEDIUM = 0x08000000;
-
-        [NativeTypeName("#define STATE_SYSTEM_ALERT_HIGH 0x10000000")]
-        public const int STATE_SYSTEM_ALERT_HIGH = 0x10000000;
-
-        [NativeTypeName("#define STATE_SYSTEM_PROTECTED 0x20000000")]
-        public const int STATE_SYSTEM_PROTECTED = 0x20000000;
-
-        [NativeTypeName("#define STATE_SYSTEM_VALID 0x3FFFFFFF")]
-        public const int STATE_SYSTEM_VALID = 0x3FFFFFFF;
 
         [NativeTypeName("#define CCHILDREN_TITLEBAR 5")]
         public const int CCHILDREN_TITLEBAR = 5;
@@ -7601,60 +4508,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define RIM_TYPEMAX 2")]
         public const int RIM_TYPEMAX = 2;
 
-        [NativeTypeName("#define RI_MOUSE_LEFT_BUTTON_DOWN 0x0001")]
-        public const int RI_MOUSE_LEFT_BUTTON_DOWN = 0x0001;
-
-        [NativeTypeName("#define RI_MOUSE_LEFT_BUTTON_UP 0x0002")]
-        public const int RI_MOUSE_LEFT_BUTTON_UP = 0x0002;
-
-        [NativeTypeName("#define RI_MOUSE_RIGHT_BUTTON_DOWN 0x0004")]
-        public const int RI_MOUSE_RIGHT_BUTTON_DOWN = 0x0004;
-
-        [NativeTypeName("#define RI_MOUSE_RIGHT_BUTTON_UP 0x0008")]
-        public const int RI_MOUSE_RIGHT_BUTTON_UP = 0x0008;
-
-        [NativeTypeName("#define RI_MOUSE_MIDDLE_BUTTON_DOWN 0x0010")]
-        public const int RI_MOUSE_MIDDLE_BUTTON_DOWN = 0x0010;
-
-        [NativeTypeName("#define RI_MOUSE_MIDDLE_BUTTON_UP 0x0020")]
-        public const int RI_MOUSE_MIDDLE_BUTTON_UP = 0x0020;
-
-        [NativeTypeName("#define RI_MOUSE_BUTTON_1_DOWN RI_MOUSE_LEFT_BUTTON_DOWN")]
-        public const int RI_MOUSE_BUTTON_1_DOWN = 0x0001;
-
-        [NativeTypeName("#define RI_MOUSE_BUTTON_1_UP RI_MOUSE_LEFT_BUTTON_UP")]
-        public const int RI_MOUSE_BUTTON_1_UP = 0x0002;
-
-        [NativeTypeName("#define RI_MOUSE_BUTTON_2_DOWN RI_MOUSE_RIGHT_BUTTON_DOWN")]
-        public const int RI_MOUSE_BUTTON_2_DOWN = 0x0004;
-
-        [NativeTypeName("#define RI_MOUSE_BUTTON_2_UP RI_MOUSE_RIGHT_BUTTON_UP")]
-        public const int RI_MOUSE_BUTTON_2_UP = 0x0008;
-
-        [NativeTypeName("#define RI_MOUSE_BUTTON_3_DOWN RI_MOUSE_MIDDLE_BUTTON_DOWN")]
-        public const int RI_MOUSE_BUTTON_3_DOWN = 0x0010;
-
-        [NativeTypeName("#define RI_MOUSE_BUTTON_3_UP RI_MOUSE_MIDDLE_BUTTON_UP")]
-        public const int RI_MOUSE_BUTTON_3_UP = 0x0020;
-
-        [NativeTypeName("#define RI_MOUSE_BUTTON_4_DOWN 0x0040")]
-        public const int RI_MOUSE_BUTTON_4_DOWN = 0x0040;
-
-        [NativeTypeName("#define RI_MOUSE_BUTTON_4_UP 0x0080")]
-        public const int RI_MOUSE_BUTTON_4_UP = 0x0080;
-
-        [NativeTypeName("#define RI_MOUSE_BUTTON_5_DOWN 0x0100")]
-        public const int RI_MOUSE_BUTTON_5_DOWN = 0x0100;
-
-        [NativeTypeName("#define RI_MOUSE_BUTTON_5_UP 0x0200")]
-        public const int RI_MOUSE_BUTTON_5_UP = 0x0200;
-
-        [NativeTypeName("#define RI_MOUSE_WHEEL 0x0400")]
-        public const int RI_MOUSE_WHEEL = 0x0400;
-
-        [NativeTypeName("#define RI_MOUSE_HWHEEL 0x0800")]
-        public const int RI_MOUSE_HWHEEL = 0x0800;
-
         [NativeTypeName("#define MOUSE_MOVE_RELATIVE 0")]
         public const int MOUSE_MOVE_RELATIVE = 0;
 
@@ -7672,24 +4525,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define KEYBOARD_OVERRUN_MAKE_CODE 0xFF")]
         public const int KEYBOARD_OVERRUN_MAKE_CODE = 0xFF;
-
-        [NativeTypeName("#define RI_KEY_MAKE 0")]
-        public const int RI_KEY_MAKE = 0;
-
-        [NativeTypeName("#define RI_KEY_BREAK 1")]
-        public const int RI_KEY_BREAK = 1;
-
-        [NativeTypeName("#define RI_KEY_E0 2")]
-        public const int RI_KEY_E0 = 2;
-
-        [NativeTypeName("#define RI_KEY_E1 4")]
-        public const int RI_KEY_E1 = 4;
-
-        [NativeTypeName("#define RI_KEY_TERMSRV_SET_LED 8")]
-        public const int RI_KEY_TERMSRV_SET_LED = 8;
-
-        [NativeTypeName("#define RI_KEY_TERMSRV_SHADOW 0x10")]
-        public const int RI_KEY_TERMSRV_SHADOW = 0x10;
 
         [NativeTypeName("#define RID_INPUT 0x10000003")]
         public const int RID_INPUT = 0x10000003;
@@ -7709,83 +4544,11 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define GetRawInputDeviceInfo GetRawInputDeviceInfoW")]
         public static delegate*<HANDLE, uint, void*, uint*, uint> GetRawInputDeviceInfo => &GetRawInputDeviceInfoW;
 
-        [NativeTypeName("#define RIDEV_REMOVE 0x00000001")]
-        public const int RIDEV_REMOVE = 0x00000001;
-
-        [NativeTypeName("#define RIDEV_EXCLUDE 0x00000010")]
-        public const int RIDEV_EXCLUDE = 0x00000010;
-
-        [NativeTypeName("#define RIDEV_PAGEONLY 0x00000020")]
-        public const int RIDEV_PAGEONLY = 0x00000020;
-
-        [NativeTypeName("#define RIDEV_NOLEGACY 0x00000030")]
-        public const int RIDEV_NOLEGACY = 0x00000030;
-
-        [NativeTypeName("#define RIDEV_INPUTSINK 0x00000100")]
-        public const int RIDEV_INPUTSINK = 0x00000100;
-
-        [NativeTypeName("#define RIDEV_CAPTUREMOUSE 0x00000200")]
-        public const int RIDEV_CAPTUREMOUSE = 0x00000200;
-
-        [NativeTypeName("#define RIDEV_NOHOTKEYS 0x00000200")]
-        public const int RIDEV_NOHOTKEYS = 0x00000200;
-
-        [NativeTypeName("#define RIDEV_APPKEYS 0x00000400")]
-        public const int RIDEV_APPKEYS = 0x00000400;
-
-        [NativeTypeName("#define RIDEV_EXINPUTSINK 0x00001000")]
-        public const int RIDEV_EXINPUTSINK = 0x00001000;
-
-        [NativeTypeName("#define RIDEV_DEVNOTIFY 0x00002000")]
-        public const int RIDEV_DEVNOTIFY = 0x00002000;
-
-        [NativeTypeName("#define RIDEV_EXMODEMASK 0x000000F0")]
-        public const int RIDEV_EXMODEMASK = 0x000000F0;
-
         [NativeTypeName("#define GIDC_ARRIVAL 1")]
         public const int GIDC_ARRIVAL = 1;
 
         [NativeTypeName("#define GIDC_REMOVAL 2")]
         public const int GIDC_REMOVAL = 2;
-
-        [NativeTypeName("#define POINTER_DEVICE_PRODUCT_STRING_MAX 520")]
-        public const int POINTER_DEVICE_PRODUCT_STRING_MAX = 520;
-
-        [NativeTypeName("#define PDC_ARRIVAL 0x001")]
-        public const int PDC_ARRIVAL = 0x001;
-
-        [NativeTypeName("#define PDC_REMOVAL 0x002")]
-        public const int PDC_REMOVAL = 0x002;
-
-        [NativeTypeName("#define PDC_ORIENTATION_0 0x004")]
-        public const int PDC_ORIENTATION_0 = 0x004;
-
-        [NativeTypeName("#define PDC_ORIENTATION_90 0x008")]
-        public const int PDC_ORIENTATION_90 = 0x008;
-
-        [NativeTypeName("#define PDC_ORIENTATION_180 0x010")]
-        public const int PDC_ORIENTATION_180 = 0x010;
-
-        [NativeTypeName("#define PDC_ORIENTATION_270 0x020")]
-        public const int PDC_ORIENTATION_270 = 0x020;
-
-        [NativeTypeName("#define PDC_MODE_DEFAULT 0x040")]
-        public const int PDC_MODE_DEFAULT = 0x040;
-
-        [NativeTypeName("#define PDC_MODE_CENTERED 0x080")]
-        public const int PDC_MODE_CENTERED = 0x080;
-
-        [NativeTypeName("#define PDC_MAPPING_CHANGE 0x100")]
-        public const int PDC_MAPPING_CHANGE = 0x100;
-
-        [NativeTypeName("#define PDC_RESOLUTION 0x200")]
-        public const int PDC_RESOLUTION = 0x200;
-
-        [NativeTypeName("#define PDC_ORIGIN 0x400")]
-        public const int PDC_ORIGIN = 0x400;
-
-        [NativeTypeName("#define PDC_MODE_ASPECTRATIOPRESERVED 0x800")]
-        public const int PDC_MODE_ASPECTRATIOPRESERVED = 0x800;
 
         [NativeTypeName("#define MSGFLT_ADD 1")]
         public const int MSGFLT_ADD = 1;

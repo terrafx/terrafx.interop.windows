@@ -4,8 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSCTX;
 using static TerraFX.Interop.Windows.SIGDN;
 
@@ -15,22 +13,15 @@ namespace TerraFX.Interop.Windows
     {
         public static HRESULT SHCreateLibrary([NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
-            fixed (Guid* rclsid = &CLSID_ShellLibrary)
-            {
-                return CoCreateInstance(rclsid, null, (uint)(CLSCTX_INPROC_SERVER), riid, ppv);
-            }
+            return CoCreateInstance(__uuidof<ShellLibrary>(), null, (uint)(CLSCTX_INPROC_SERVER), riid, ppv);
         }
 
         public static HRESULT SHLoadLibraryFromItem(IShellItem* psiLibrary, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             *ppv = null;
-            IShellLibrary* plib;
-            HRESULT hr;
 
-            fixed (Guid* rclsid = &CLSID_ShellLibrary)
-            {
-                hr = CoCreateInstance(rclsid, null, (uint)(CLSCTX_INPROC_SERVER), __uuidof<IShellLibrary>(), (void**)(&plib));
-            }
+            IShellLibrary* plib;
+            var hr = CoCreateInstance(__uuidof<ShellLibrary>(), null, (uint)(CLSCTX_INPROC_SERVER), __uuidof<IShellLibrary>(), (void**)(&plib));
 
             if ((((int)(hr)) >= 0))
             {
@@ -49,13 +40,9 @@ namespace TerraFX.Interop.Windows
         public static HRESULT SHLoadLibraryFromKnownFolder([NativeTypeName("const KNOWNFOLDERID &")] Guid* kfidLibrary, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
         {
             *ppv = null;
-            IShellLibrary* plib;
-            HRESULT hr;
 
-            fixed (Guid* rclsid = &CLSID_ShellLibrary)
-            {
-                hr = CoCreateInstance(rclsid, null, (uint)(CLSCTX_INPROC_SERVER), __uuidof<IShellLibrary>(), (void**)(&plib));
-            }
+            IShellLibrary* plib;
+            var hr = CoCreateInstance(__uuidof<ShellLibrary>(), null, (uint)(CLSCTX_INPROC_SERVER), __uuidof<IShellLibrary>(), (void**)(&plib));
 
             if ((((int)(hr)) >= 0))
             {
@@ -165,29 +152,6 @@ namespace TerraFX.Interop.Windows
                 {
                     _ = RemovePropW(hwndSource, (ushort*)(lpString));
                 }
-            }
-        }
-
-        public static ref readonly Guid CLSID_ShellLibrary
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x1D, 0x21, 0xB3, 0xD9,
-                    0x7F, 0xE5,
-                    0x26, 0x44,
-                    0xAA,
-                    0xEF,
-                    0x30,
-                    0xA8,
-                    0x06,
-                    0xAD,
-                    0xD3,
-                    0x97
-                };
-
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
             }
         }
     }

@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.Windows
 {
-    public static unsafe partial class Windows
+    public unsafe partial struct HKEY
     {
         [NativeTypeName("#define HKEY_CLASSES_ROOT (( HKEY ) (ULONG_PTR)((LONG)0x80000000) )")]
         public static HKEY HKEY_CLASSES_ROOT => unchecked((HKEY)((nuint)((int)(0x80000000))));
