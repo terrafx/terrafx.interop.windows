@@ -2510,42 +2510,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define SetUserObjectInformation SetUserObjectInformationW")]
         public static delegate*<HANDLE, int, void*, uint, BOOL> SetUserObjectInformation => &SetUserObjectInformationW;
 
-        [NativeTypeName("#define GWL_WNDPROC (-4)")]
-        public const int GWL_WNDPROC = (-4);
-
-        [NativeTypeName("#define GWL_HINSTANCE (-6)")]
-        public const int GWL_HINSTANCE = (-6);
-
-        [NativeTypeName("#define GWL_HWNDPARENT (-8)")]
-        public const int GWL_HWNDPARENT = (-8);
-
-        [NativeTypeName("#define GWL_STYLE (-16)")]
-        public const int GWL_STYLE = (-16);
-
-        [NativeTypeName("#define GWL_EXSTYLE (-20)")]
-        public const int GWL_EXSTYLE = (-20);
-
-        [NativeTypeName("#define GWL_USERDATA (-21)")]
-        public const int GWL_USERDATA = (-21);
-
-        [NativeTypeName("#define GWL_ID (-12)")]
-        public const int GWL_ID = (-12);
-
-        [NativeTypeName("#define GWLP_WNDPROC (-4)")]
-        public const int GWLP_WNDPROC = (-4);
-
-        [NativeTypeName("#define GWLP_HINSTANCE (-6)")]
-        public const int GWLP_HINSTANCE = (-6);
-
-        [NativeTypeName("#define GWLP_HWNDPARENT (-8)")]
-        public const int GWLP_HWNDPARENT = (-8);
-
-        [NativeTypeName("#define GWLP_USERDATA (-21)")]
-        public const int GWLP_USERDATA = (-21);
-
-        [NativeTypeName("#define GWLP_ID (-12)")]
-        public const int GWLP_ID = (-12);
-
         [NativeTypeName("#define GCW_ATOM (-32)")]
         public const int GCW_ATOM = (-32);
 
@@ -2644,30 +2608,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define PBTF_APMRESUMEFROMFAILURE 0x00000001")]
         public const int PBTF_APMRESUMEFROMFAILURE = 0x00000001;
-
-        [NativeTypeName("#define WMSZ_LEFT 1")]
-        public const int WMSZ_LEFT = 1;
-
-        [NativeTypeName("#define WMSZ_RIGHT 2")]
-        public const int WMSZ_RIGHT = 2;
-
-        [NativeTypeName("#define WMSZ_TOP 3")]
-        public const int WMSZ_TOP = 3;
-
-        [NativeTypeName("#define WMSZ_TOPLEFT 4")]
-        public const int WMSZ_TOPLEFT = 4;
-
-        [NativeTypeName("#define WMSZ_TOPRIGHT 5")]
-        public const int WMSZ_TOPRIGHT = 5;
-
-        [NativeTypeName("#define WMSZ_BOTTOM 6")]
-        public const int WMSZ_BOTTOM = 6;
-
-        [NativeTypeName("#define WMSZ_BOTTOMLEFT 7")]
-        public const int WMSZ_BOTTOMLEFT = 7;
-
-        [NativeTypeName("#define WMSZ_BOTTOMRIGHT 8")]
-        public const int WMSZ_BOTTOMRIGHT = 8;
 
         [NativeTypeName("#define HTERROR (-2)")]
         public const int HTERROR = (-2);
@@ -2771,18 +2711,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define SMTO_ERRORONEXIT 0x0020")]
         public const int SMTO_ERRORONEXIT = 0x0020;
 
-        [NativeTypeName("#define MA_ACTIVATE 1")]
-        public const int MA_ACTIVATE = 1;
-
-        [NativeTypeName("#define MA_ACTIVATEANDEAT 2")]
-        public const int MA_ACTIVATEANDEAT = 2;
-
-        [NativeTypeName("#define MA_NOACTIVATE 3")]
-        public const int MA_NOACTIVATE = 3;
-
-        [NativeTypeName("#define MA_NOACTIVATEANDEAT 4")]
-        public const int MA_NOACTIVATEANDEAT = 4;
-
         [NativeTypeName("#define ICON_SMALL 0")]
         public const int ICON_SMALL = 0;
 
@@ -2824,45 +2752,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define SIZEZOOMHIDE SIZE_MAXHIDE")]
         public const int SIZEZOOMHIDE = 4;
-
-        [NativeTypeName("#define WVR_ALIGNTOP 0x0010")]
-        public const int WVR_ALIGNTOP = 0x0010;
-
-        [NativeTypeName("#define WVR_ALIGNLEFT 0x0020")]
-        public const int WVR_ALIGNLEFT = 0x0020;
-
-        [NativeTypeName("#define WVR_ALIGNBOTTOM 0x0040")]
-        public const int WVR_ALIGNBOTTOM = 0x0040;
-
-        [NativeTypeName("#define WVR_ALIGNRIGHT 0x0080")]
-        public const int WVR_ALIGNRIGHT = 0x0080;
-
-        [NativeTypeName("#define WVR_HREDRAW 0x0100")]
-        public const int WVR_HREDRAW = 0x0100;
-
-        [NativeTypeName("#define WVR_VREDRAW 0x0200")]
-        public const int WVR_VREDRAW = 0x0200;
-
-        [NativeTypeName("#define WVR_REDRAW (WVR_HREDRAW | \\\r\n                            WVR_VREDRAW)")]
-        public const int WVR_REDRAW = (0x0100 | 0x0200);
-
-        [NativeTypeName("#define WVR_VALIDRECTS 0x0400")]
-        public const int WVR_VALIDRECTS = 0x0400;
-
-        [NativeTypeName("#define TME_HOVER 0x00000001")]
-        public const int TME_HOVER = 0x00000001;
-
-        [NativeTypeName("#define TME_LEAVE 0x00000002")]
-        public const int TME_LEAVE = 0x00000002;
-
-        [NativeTypeName("#define TME_NONCLIENT 0x00000010")]
-        public const int TME_NONCLIENT = 0x00000010;
-
-        [NativeTypeName("#define TME_QUERY 0x40000000")]
-        public const int TME_QUERY = 0x40000000;
-
-        [NativeTypeName("#define TME_CANCEL 0x80000000")]
-        public const uint TME_CANCEL = 0x80000000;
 
         [NativeTypeName("#define HOVER_DEFAULT 0xFFFFFFFF")]
         public const uint HOVER_DEFAULT = 0xFFFFFFFF;
@@ -2981,27 +2870,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define PeekMessage PeekMessageW")]
         public static delegate*<MSG*, HWND, uint, uint, uint, BOOL> PeekMessage => &PeekMessageW;
 
-        [NativeTypeName("#define PM_NOREMOVE 0x0000")]
-        public const int PM_NOREMOVE = 0x0000;
-
-        [NativeTypeName("#define PM_REMOVE 0x0001")]
-        public const int PM_REMOVE = 0x0001;
-
-        [NativeTypeName("#define PM_NOYIELD 0x0002")]
-        public const int PM_NOYIELD = 0x0002;
-
-        [NativeTypeName("#define PM_QS_INPUT (QS_INPUT << 16)")]
-        public const int PM_QS_INPUT = (((0x0002 | 0x0004) | 0x0001 | 0x0400 | 0x0800 | 0x1000) << 16);
-
-        [NativeTypeName("#define PM_QS_POSTMESSAGE ((QS_POSTMESSAGE | QS_HOTKEY | QS_TIMER) << 16)")]
-        public const int PM_QS_POSTMESSAGE = ((0x0008 | 0x0080 | 0x0010) << 16);
-
-        [NativeTypeName("#define PM_QS_PAINT (QS_PAINT << 16)")]
-        public const int PM_QS_PAINT = (0x0020 << 16);
-
-        [NativeTypeName("#define PM_QS_SENDMESSAGE (QS_SENDMESSAGE << 16)")]
-        public const int PM_QS_SENDMESSAGE = (0x0040 << 16);
-
         [NativeTypeName("#define IDHOT_SNAPWINDOW (-1)")]
         public const int IDHOT_SNAPWINDOW = (-1);
 
@@ -3112,12 +2980,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define PW_RENDERFULLCONTENT 0x00000002")]
         public const int PW_RENDERFULLCONTENT = 0x00000002;
-
-        [NativeTypeName("#define LWA_COLORKEY 0x00000001")]
-        public const int LWA_COLORKEY = 0x00000001;
-
-        [NativeTypeName("#define LWA_ALPHA 0x00000002")]
-        public const int LWA_ALPHA = 0x00000002;
 
         [NativeTypeName("#define ULW_COLORKEY 0x00000001")]
         public const int ULW_COLORKEY = 0x00000001;
@@ -3353,12 +3215,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define PEN_MASK_TILT_Y 0x00000008")]
         public const int PEN_MASK_TILT_Y = 0x00000008;
 
-        [NativeTypeName("#define PA_ACTIVATE MA_ACTIVATE")]
-        public const int PA_ACTIVATE = 1;
-
-        [NativeTypeName("#define PA_NOACTIVATE MA_NOACTIVATE")]
-        public const int PA_NOACTIVATE = 3;
-
         [NativeTypeName("#define GWFS_INCLUDE_ANCESTORS 0x00000001")]
         public const int GWFS_INCLUDE_ANCESTORS = 0x00000001;
 
@@ -3382,15 +3238,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define MAPVK_VK_TO_VSC_EX (4)")]
         public const int MAPVK_VK_TO_VSC_EX = (4);
-
-        [NativeTypeName("#define MWMO_WAITALL 0x0001")]
-        public const int MWMO_WAITALL = 0x0001;
-
-        [NativeTypeName("#define MWMO_ALERTABLE 0x0002")]
-        public const int MWMO_ALERTABLE = 0x0002;
-
-        [NativeTypeName("#define MWMO_INPUTAVAILABLE 0x0004")]
-        public const int MWMO_INPUTAVAILABLE = 0x0004;
 
         [NativeTypeName("#define USER_TIMER_MAXIMUM 0x7FFFFFFF")]
         public const int USER_TIMER_MAXIMUM = 0x7FFFFFFF;
@@ -4124,18 +3971,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define WinHelp WinHelpW")]
         public static delegate*<HWND, ushort*, uint, nuint, BOOL> WinHelp => &WinHelpW;
 
-        [NativeTypeName("#define GR_GDIOBJECTS 0")]
-        public const int GR_GDIOBJECTS = 0;
-
-        [NativeTypeName("#define GR_USEROBJECTS 1")]
-        public const int GR_USEROBJECTS = 1;
-
-        [NativeTypeName("#define GR_GDIOBJECTS_PEAK 2")]
-        public const int GR_GDIOBJECTS_PEAK = 2;
-
-        [NativeTypeName("#define GR_USEROBJECTS_PEAK 4")]
-        public const int GR_USEROBJECTS_PEAK = 4;
-
         [NativeTypeName("#define TOUCHPREDICTIONPARAMETERS_DEFAULT_LATENCY 8")]
         public const int TOUCHPREDICTIONPARAMETERS_DEFAULT_LATENCY = 8;
 
@@ -4271,12 +4106,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define ChangeDisplaySettingsEx ChangeDisplaySettingsExW")]
         public static delegate*<ushort*, DEVMODEW*, HWND, uint, void*, int> ChangeDisplaySettingsEx => &ChangeDisplaySettingsExW;
 
-        [NativeTypeName("#define ENUM_CURRENT_SETTINGS ((DWORD)-1)")]
-        public const uint ENUM_CURRENT_SETTINGS = unchecked((uint)(-1));
-
-        [NativeTypeName("#define ENUM_REGISTRY_SETTINGS ((DWORD)-2)")]
-        public const uint ENUM_REGISTRY_SETTINGS = unchecked((uint)(-2));
-
         [NativeTypeName("#define EnumDisplaySettings EnumDisplaySettingsW")]
         public static delegate*<ushort*, uint, DEVMODEW*, BOOL> EnumDisplaySettings => &EnumDisplaySettingsW;
 
@@ -4385,15 +4214,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define SLE_WARNING 0x00000003")]
         public const int SLE_WARNING = 0x00000003;
 
-        [NativeTypeName("#define MONITOR_DEFAULTTONULL 0x00000000")]
-        public const int MONITOR_DEFAULTTONULL = 0x00000000;
-
-        [NativeTypeName("#define MONITOR_DEFAULTTOPRIMARY 0x00000001")]
-        public const int MONITOR_DEFAULTTOPRIMARY = 0x00000001;
-
-        [NativeTypeName("#define MONITOR_DEFAULTTONEAREST 0x00000002")]
-        public const int MONITOR_DEFAULTTONEAREST = 0x00000002;
-
         [NativeTypeName("#define MONITORINFOF_PRIMARY 0x00000001")]
         public const int MONITORINFOF_PRIMARY = 0x00000001;
 
@@ -4474,15 +4294,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define CURSOR_SUPPRESSED 0x00000002")]
         public const int CURSOR_SUPPRESSED = 0x00000002;
-
-        [NativeTypeName("#define GA_PARENT 1")]
-        public const int GA_PARENT = 1;
-
-        [NativeTypeName("#define GA_ROOT 2")]
-        public const int GA_ROOT = 2;
-
-        [NativeTypeName("#define GA_ROOTOWNER 3")]
-        public const int GA_ROOTOWNER = 3;
 
         [NativeTypeName("#define RealGetWindowClass RealGetWindowClassW")]
         public static delegate*<HWND, ushort*, uint, uint> RealGetWindowClass => &RealGetWindowClassW;
@@ -4585,30 +4396,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define GF_END 0x00000004")]
         public const int GF_END = 0x00000004;
-
-        [NativeTypeName("#define GID_BEGIN 1")]
-        public const int GID_BEGIN = 1;
-
-        [NativeTypeName("#define GID_END 2")]
-        public const int GID_END = 2;
-
-        [NativeTypeName("#define GID_ZOOM 3")]
-        public const int GID_ZOOM = 3;
-
-        [NativeTypeName("#define GID_PAN 4")]
-        public const int GID_PAN = 4;
-
-        [NativeTypeName("#define GID_ROTATE 5")]
-        public const int GID_ROTATE = 5;
-
-        [NativeTypeName("#define GID_TWOFINGERTAP 6")]
-        public const int GID_TWOFINGERTAP = 6;
-
-        [NativeTypeName("#define GID_PRESSANDTAP 7")]
-        public const int GID_PRESSANDTAP = 7;
-
-        [NativeTypeName("#define GID_ROLLOVER GID_PRESSANDTAP")]
-        public const int GID_ROLLOVER = 7;
 
         [NativeTypeName("#define GC_ALLGESTURES 0x00000001")]
         public const int GC_ALLGESTURES = 0x00000001;

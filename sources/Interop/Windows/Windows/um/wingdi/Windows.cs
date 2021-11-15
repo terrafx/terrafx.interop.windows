@@ -1667,24 +1667,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define PROFILE_EMBEDDED 'MBED'")]
         public const int PROFILE_EMBEDDED = 0x4D424544;
 
-        [NativeTypeName("#define BI_RGB 0L")]
-        public const int BI_RGB = 0;
-
-        [NativeTypeName("#define BI_RLE8 1L")]
-        public const int BI_RLE8 = 1;
-
-        [NativeTypeName("#define BI_RLE4 2L")]
-        public const int BI_RLE4 = 2;
-
-        [NativeTypeName("#define BI_BITFIELDS 3L")]
-        public const int BI_BITFIELDS = 3;
-
-        [NativeTypeName("#define BI_JPEG 4L")]
-        public const int BI_JPEG = 4;
-
-        [NativeTypeName("#define BI_PNG 5L")]
-        public const int BI_PNG = 5;
-
         [NativeTypeName("#define TCI_SRCCHARSET 1")]
         public const int TCI_SRCCHARSET = 1;
 

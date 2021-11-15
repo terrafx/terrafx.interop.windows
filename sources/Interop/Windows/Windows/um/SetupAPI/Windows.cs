@@ -1634,24 +1634,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define SetupDiGetDriverInfoDetail SetupDiGetDriverInfoDetailW")]
         public static delegate*<HDEVINFO, void*, void*, void*, uint, uint*, BOOL> SetupDiGetDriverInfoDetail => &SetupDiGetDriverInfoDetailW;
 
-        [NativeTypeName("#define DIGCF_DEFAULT 0x00000001")]
-        public const int DIGCF_DEFAULT = 0x00000001;
-
-        [NativeTypeName("#define DIGCF_PRESENT 0x00000002")]
-        public const int DIGCF_PRESENT = 0x00000002;
-
-        [NativeTypeName("#define DIGCF_ALLCLASSES 0x00000004")]
-        public const int DIGCF_ALLCLASSES = 0x00000004;
-
-        [NativeTypeName("#define DIGCF_PROFILE 0x00000008")]
-        public const int DIGCF_PROFILE = 0x00000008;
-
-        [NativeTypeName("#define DIGCF_DEVICEINTERFACE 0x00000010")]
-        public const int DIGCF_DEVICEINTERFACE = 0x00000010;
-
-        [NativeTypeName("#define DIGCF_INTERFACEDEVICE DIGCF_DEVICEINTERFACE")]
-        public const int DIGCF_INTERFACEDEVICE = 0x00000010;
-
         [NativeTypeName("#define SetupDiGetClassDevs SetupDiGetClassDevsW")]
         public static delegate*<Guid*, ushort*, HWND, uint, HDEVINFO> SetupDiGetClassDevs => &SetupDiGetClassDevsW;
 

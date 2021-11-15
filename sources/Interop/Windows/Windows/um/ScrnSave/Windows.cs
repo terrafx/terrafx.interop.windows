@@ -10,9 +10,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define IDS_DESCRIPTION 1")]
         public const int IDS_DESCRIPTION = 1;
 
-        [NativeTypeName("#define ID_APP 100")]
-        public const int ID_APP = 100;
-
         [NativeTypeName("#define DLG_SCRNSAVECONFIGURE 2003")]
         public const int DLG_SCRNSAVECONFIGURE = 2003;
 

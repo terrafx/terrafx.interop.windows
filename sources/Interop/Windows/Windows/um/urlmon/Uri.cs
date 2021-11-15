@@ -7,7 +7,7 @@ using static TerraFX.Interop.Windows.Uri_PROPERTY;
 
 namespace TerraFX.Interop.Windows
 {
-    public static partial class Uri
+    public static partial class URI
     {
         [NativeTypeName("#define Uri_HAS_ABSOLUTE_URI (1 << Uri_PROPERTY_ABSOLUTE_URI)")]
         public const int Uri_HAS_ABSOLUTE_URI = (1 << (int)(Uri_PROPERTY_ABSOLUTE_URI));

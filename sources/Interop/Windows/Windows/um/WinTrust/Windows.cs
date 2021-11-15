@@ -65,21 +65,6 @@ namespace TerraFX.Interop.Windows
         [DllImport("wintrust", ExactSpelling = true)]
         public static extern void WintrustSetDefaultIncludePEPageHashes(BOOL fIncludePEPageHashes);
 
-        [NativeTypeName("#define WINTRUST_CONFIG_REGPATH L\"Software\\\\Microsoft\\\\Cryptography\\\\Wintrust\\\\Config\"")]
-        public const string WINTRUST_CONFIG_REGPATH = "Software\\Microsoft\\Cryptography\\Wintrust\\Config";
-
-        [NativeTypeName("#define WINTRUST_MAX_HEADER_BYTES_TO_MAP_VALUE_NAME L\"MaxHeaderBytesToMap\"")]
-        public const string WINTRUST_MAX_HEADER_BYTES_TO_MAP_VALUE_NAME = "MaxHeaderBytesToMap";
-
-        [NativeTypeName("#define WINTRUST_MAX_HEADER_BYTES_TO_MAP_DEFAULT 0x00A00000")]
-        public const int WINTRUST_MAX_HEADER_BYTES_TO_MAP_DEFAULT = 0x00A00000;
-
-        [NativeTypeName("#define WINTRUST_MAX_HASH_BYTES_TO_MAP_VALUE_NAME L\"MaxHashBytesToMap\"")]
-        public const string WINTRUST_MAX_HASH_BYTES_TO_MAP_VALUE_NAME = "MaxHashBytesToMap";
-
-        [NativeTypeName("#define WINTRUST_MAX_HASH_BYTES_TO_MAP_DEFAULT 0x00100000")]
-        public const int WINTRUST_MAX_HASH_BYTES_TO_MAP_DEFAULT = 0x00100000;
-
         [NativeTypeName("#define WTCI_DONT_OPEN_STORES 0x00000001")]
         public const int WTCI_DONT_OPEN_STORES = 0x00000001;
 

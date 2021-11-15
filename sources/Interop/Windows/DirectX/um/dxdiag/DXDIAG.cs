@@ -7,7 +7,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX
 {
-    public static partial class DirectX
+    public static partial class DXDIAG
     {
         [NativeTypeName("#define DXDIAG_DX9_SDK_VERSION 111")]
         public const int DXDIAG_DX9_SDK_VERSION = 111;

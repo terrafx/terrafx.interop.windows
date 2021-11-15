@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows
 {
-    public static partial class Windows
+    public static partial class ID
     {
         [NativeTypeName("const GUID")]
         public static ref readonly Guid ID_DOCUMENTPACKAGETARGET_MSXPS

@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.Versioning;
+using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX
 {

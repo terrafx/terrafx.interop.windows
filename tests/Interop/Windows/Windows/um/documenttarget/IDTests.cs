@@ -5,12 +5,12 @@
 
 using NUnit.Framework;
 using System;
-using static TerraFX.Interop.Windows.Windows;
+using static TerraFX.Interop.Windows.ID;
 
 namespace TerraFX.Interop.Windows.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="Windows" /> class.</summary>
-    public static partial class WindowsTests
+    /// <summary>Provides validation of the <see cref="ID" /> class.</summary>
+    public static partial class IDTests
     {
         /// <summary>Validates that the value of the <see cref="ID_DOCUMENTPACKAGETARGET_MSXPS" /> property is correct.</summary>
         [Test]

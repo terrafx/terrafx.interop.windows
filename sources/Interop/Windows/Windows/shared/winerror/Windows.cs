@@ -15,9 +15,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define NO_ERROR 0L")]
         public const int NO_ERROR = 0;
 
-        [NativeTypeName("#define WAIT_TIMEOUT 258L")]
-        public const int WAIT_TIMEOUT = 258;
-
         [NativeTypeName("#define EPT_S_INVALID_ENTRY 1751L")]
         public const int EPT_S_INVALID_ENTRY = 1751;
 
@@ -381,18 +378,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define INPLACE_S_LAST 0x000401AFL")]
         public const int INPLACE_S_LAST = 0x000401AF;
 
-        [NativeTypeName("#define ENUM_E_FIRST 0x800401B0L")]
-        public const uint ENUM_E_FIRST = 0x800401B0;
-
-        [NativeTypeName("#define ENUM_E_LAST 0x800401BFL")]
-        public const uint ENUM_E_LAST = 0x800401BF;
-
-        [NativeTypeName("#define ENUM_S_FIRST 0x000401B0L")]
-        public const int ENUM_S_FIRST = 0x000401B0;
-
-        [NativeTypeName("#define ENUM_S_LAST 0x000401BFL")]
-        public const int ENUM_S_LAST = 0x000401BF;
-
         [NativeTypeName("#define CLIPBRD_E_FIRST 0x800401D0L")]
         public const uint CLIPBRD_E_FIRST = 0x800401D0;
 
@@ -551,15 +536,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define DWMERR_CATASTROPHIC_FAILURE _HRESULT_TYPEDEF_(0x88980702L)")]
         public const int DWMERR_CATASTROPHIC_FAILURE = unchecked((int)(0x88980702));
-
-        [NativeTypeName("#define DCOMPOSITION_ERROR_WINDOW_ALREADY_COMPOSED _HRESULT_TYPEDEF_(0x88980800L)")]
-        public const int DCOMPOSITION_ERROR_WINDOW_ALREADY_COMPOSED = unchecked((int)(0x88980800));
-
-        [NativeTypeName("#define DCOMPOSITION_ERROR_SURFACE_BEING_RENDERED _HRESULT_TYPEDEF_(0x88980801L)")]
-        public const int DCOMPOSITION_ERROR_SURFACE_BEING_RENDERED = unchecked((int)(0x88980801));
-
-        [NativeTypeName("#define DCOMPOSITION_ERROR_SURFACE_NOT_BEING_RENDERED _HRESULT_TYPEDEF_(0x88980802L)")]
-        public const int DCOMPOSITION_ERROR_SURFACE_NOT_BEING_RENDERED = unchecked((int)(0x88980802));
 
         [NativeTypeName("#define FA_E_MAX_PERSISTED_ITEMS_REACHED _HRESULT_TYPEDEF_(0x80270220L)")]
         public const int FA_E_MAX_PERSISTED_ITEMS_REACHED = unchecked((int)(0x80270220));

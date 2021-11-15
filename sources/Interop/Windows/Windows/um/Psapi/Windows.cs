@@ -102,18 +102,6 @@ namespace TerraFX.Interop.Windows
         [return: NativeTypeName("DWORD")]
         public static extern uint K32GetProcessImageFileNameW(HANDLE hProcess, [NativeTypeName("LPWSTR")] ushort* lpImageFileName, [NativeTypeName("DWORD")] uint nSize);
 
-        [NativeTypeName("#define LIST_MODULES_DEFAULT 0x0")]
-        public const int LIST_MODULES_DEFAULT = 0x0;
-
-        [NativeTypeName("#define LIST_MODULES_32BIT 0x01")]
-        public const int LIST_MODULES_32BIT = 0x01;
-
-        [NativeTypeName("#define LIST_MODULES_64BIT 0x02")]
-        public const int LIST_MODULES_64BIT = 0x02;
-
-        [NativeTypeName("#define LIST_MODULES_ALL (LIST_MODULES_32BIT | LIST_MODULES_64BIT)")]
-        public const int LIST_MODULES_ALL = (0x01 | 0x02);
-
         [NativeTypeName("#define PSAPI_VERSION 2")]
         public const int PSAPI_VERSION = 2;
 

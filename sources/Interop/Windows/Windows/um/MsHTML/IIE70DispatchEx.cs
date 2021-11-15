@@ -12,7 +12,7 @@ namespace TerraFX.Interop.Windows
     [Guid("3051046B-98B5-11CF-BB82-00AA00BDCE0B")]
     [NativeTypeName("struct IIE70DispatchEx : IDispatchEx")]
     [NativeInheritance("IDispatchEx")]
-    public unsafe partial struct IIE70DispatchEx
+    public unsafe partial struct IIE70DispatchEx : IIE70DispatchEx.Interface
     {
         public void** lpVtbl;
 
@@ -121,6 +121,10 @@ namespace TerraFX.Interop.Windows
         public HRESULT GetNameSpaceParent(IUnknown** ppunk)
         {
             return ((delegate* unmanaged<IIE70DispatchEx*, IUnknown**, int>)(lpVtbl[14]))((IIE70DispatchEx*)Unsafe.AsPointer(ref this), ppunk);
+        }
+
+        public interface Interface : IDispatchEx.Interface
+        {
         }
 
         public partial struct Vtbl
