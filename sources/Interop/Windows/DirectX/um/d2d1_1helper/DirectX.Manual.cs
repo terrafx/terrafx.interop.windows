@@ -24,6 +24,7 @@ using static TerraFX.Interop.DirectX.D2D1_STROKE_TRANSFORM_TYPE;
 using static TerraFX.Interop.DirectX.D2D1_TEXT_ANTIALIAS_MODE;
 using static TerraFX.Interop.DirectX.D2D1_UNIT_MODE;
 using static TerraFX.Interop.Windows.CLSID;
+using static TerraFX.Interop.Windows.S;
 using static TerraFX.Interop.Windows.Windows;
 
 namespace TerraFX.Interop.DirectX

@@ -54,39 +54,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define MSSIP_FLAGS_MULTI_HASH 0x00040000")]
         public const int MSSIP_FLAGS_MULTI_HASH = 0x00040000;
 
-        [NativeTypeName("#define SPC_INC_PE_RESOURCES_FLAG 0x80")]
-        public const int SPC_INC_PE_RESOURCES_FLAG = 0x80;
-
-        [NativeTypeName("#define SPC_INC_PE_DEBUG_INFO_FLAG 0x40")]
-        public const int SPC_INC_PE_DEBUG_INFO_FLAG = 0x40;
-
-        [NativeTypeName("#define SPC_INC_PE_IMPORT_ADDR_TABLE_FLAG 0x20")]
-        public const int SPC_INC_PE_IMPORT_ADDR_TABLE_FLAG = 0x20;
-
-        [NativeTypeName("#define SPC_EXC_PE_PAGE_HASHES_FLAG 0x10")]
-        public const int SPC_EXC_PE_PAGE_HASHES_FLAG = 0x10;
-
-        [NativeTypeName("#define SPC_INC_PE_PAGE_HASHES_FLAG 0x100")]
-        public const int SPC_INC_PE_PAGE_HASHES_FLAG = 0x100;
-
-        [NativeTypeName("#define SPC_DIGEST_GENERATE_FLAG 0x200")]
-        public const int SPC_DIGEST_GENERATE_FLAG = 0x200;
-
-        [NativeTypeName("#define SPC_DIGEST_SIGN_FLAG 0x400")]
-        public const int SPC_DIGEST_SIGN_FLAG = 0x400;
-
-        [NativeTypeName("#define SPC_DIGEST_SIGN_EX_FLAG 0x4000")]
-        public const int SPC_DIGEST_SIGN_EX_FLAG = 0x4000;
-
-        [NativeTypeName("#define SPC_RELAXED_PE_MARKER_CHECK 0x800")]
-        public const int SPC_RELAXED_PE_MARKER_CHECK = 0x800;
-
-        [NativeTypeName("#define SPC_MARKER_CHECK_SKIP_SIP_INDIRECT_DATA_FLAG 0x00000001")]
-        public const int SPC_MARKER_CHECK_SKIP_SIP_INDIRECT_DATA_FLAG = 0x00000001;
-
-        [NativeTypeName("#define SPC_MARKER_CHECK_CURRENTLY_SUPPORTED_FLAGS SPC_MARKER_CHECK_SKIP_SIP_INDIRECT_DATA_FLAG")]
-        public const int SPC_MARKER_CHECK_CURRENTLY_SUPPORTED_FLAGS = 0x00000001;
-
         [NativeTypeName("#define MSSIP_ADDINFO_NONE 0")]
         public const int MSSIP_ADDINFO_NONE = 0;
 

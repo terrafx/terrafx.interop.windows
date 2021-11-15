@@ -9,20 +9,5 @@ namespace TerraFX.Interop.DirectX
     {
         [NativeTypeName("#define _FACDXGI 0x87a")]
         public const int _FACDXGI = 0x87a;
-
-        [NativeTypeName("#define DXGI_CPU_ACCESS_NONE ( 0 )")]
-        public const int DXGI_CPU_ACCESS_NONE = (0);
-
-        [NativeTypeName("#define DXGI_CPU_ACCESS_DYNAMIC ( 1 )")]
-        public const int DXGI_CPU_ACCESS_DYNAMIC = (1);
-
-        [NativeTypeName("#define DXGI_CPU_ACCESS_READ_WRITE ( 2 )")]
-        public const int DXGI_CPU_ACCESS_READ_WRITE = (2);
-
-        [NativeTypeName("#define DXGI_CPU_ACCESS_SCRATCH ( 3 )")]
-        public const int DXGI_CPU_ACCESS_SCRATCH = (3);
-
-        [NativeTypeName("#define DXGI_CPU_ACCESS_FIELD 15")]
-        public const int DXGI_CPU_ACCESS_FIELD = 15;
     }
 }

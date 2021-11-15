@@ -11,6 +11,5 @@ namespace TerraFX.Interop.DirectX
         {
             return (('T' << 24) | ('X' << 16) | ((_Major) << 8) | (_Minor));
         }
-
     }
 }

@@ -9,8 +9,5 @@ namespace TerraFX.Interop.Windows
     {
         [NativeTypeName("#define TCPIP_OWNING_MODULE_SIZE 16")]
         public const int TCPIP_OWNING_MODULE_SIZE = 16;
-
-        [NativeTypeName("#define MIB_TCP_MAXCONN_DYNAMIC ((ULONG)-1)")]
-        public const uint MIB_TCP_MAXCONN_DYNAMIC = unchecked((uint)(-1));
     }
 }

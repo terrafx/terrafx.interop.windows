@@ -13,31 +13,6 @@ namespace TerraFX.Interop.Windows
     public static partial class Windows
     {
         [NativeTypeName("const IID")]
-        public static ref readonly Guid LIBID_RendezvousSessionLib
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xA4, 0x56, 0xD8, 0xEF,
-                    0x85, 0x5A,
-                    0x1B, 0x4A,
-                    0xAD,
-                    0xD5,
-                    0x2E,
-                    0xAD,
-                    0xAC,
-                    0xE6,
-                    0xF6,
-                    0xA2
-                };
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
-        }
-
-        [NativeTypeName("const IID")]
         public static ref readonly Guid DIID_DRendezvousSessionEvents
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]

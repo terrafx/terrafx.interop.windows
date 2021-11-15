@@ -187,27 +187,6 @@ namespace TerraFX.Interop.Windows
         [return: NativeTypeName("DWORD")]
         public static extern uint WinHttpWebSocketQueryCloseStatus(HINTERNET hWebSocket, ushort* pusStatus, [NativeTypeName("PVOID")] void* pvReason, [NativeTypeName("DWORD")] uint dwReasonLength, [NativeTypeName("DWORD *")] uint* pdwReasonLengthConsumed);
 
-        [NativeTypeName("#define INTERNET_DEFAULT_PORT 0")]
-        public const int INTERNET_DEFAULT_PORT = 0;
-
-        [NativeTypeName("#define INTERNET_DEFAULT_HTTP_PORT 80")]
-        public const int INTERNET_DEFAULT_HTTP_PORT = 80;
-
-        [NativeTypeName("#define INTERNET_DEFAULT_HTTPS_PORT 443")]
-        public const int INTERNET_DEFAULT_HTTPS_PORT = 443;
-
-        [NativeTypeName("#define INTERNET_SCHEME_HTTP (1)")]
-        public const int INTERNET_SCHEME_HTTP = (1);
-
-        [NativeTypeName("#define INTERNET_SCHEME_HTTPS (2)")]
-        public const int INTERNET_SCHEME_HTTPS = (2);
-
-        [NativeTypeName("#define INTERNET_SCHEME_FTP (3)")]
-        public const int INTERNET_SCHEME_FTP = (3);
-
-        [NativeTypeName("#define INTERNET_SCHEME_SOCKS (4)")]
-        public const int INTERNET_SCHEME_SOCKS = (4);
-
         [NativeTypeName("#define NETWORKING_KEY_BUFSIZE 128")]
         public const int NETWORKING_KEY_BUFSIZE = 128;
 

@@ -10,57 +10,8 @@ namespace TerraFX.Interop.Windows
 {
     public static unsafe partial class Windows
     {
-        public const int WS_HTTP_HEADER_MAPPING_COMMA_SEPARATOR = 0x1;
-        public const int WS_HTTP_HEADER_MAPPING_SEMICOLON_SEPARATOR = 0x2;
-        public const int WS_HTTP_HEADER_MAPPING_QUOTED_VALUE = 0x4;
-
-        public const int WS_HTTP_RESPONSE_MAPPING_STATUS_CODE = 0x1;
-        public const int WS_HTTP_RESPONSE_MAPPING_STATUS_TEXT = 0x2;
-
-        public const int WS_HTTP_REQUEST_MAPPING_VERB = 0x2;
-
-        public const int WS_MATCH_URL_DNS_HOST = 0x1;
-        public const int WS_MATCH_URL_DNS_FULLY_QUALIFIED_HOST = 0x2;
-        public const int WS_MATCH_URL_NETBIOS_HOST = 0x4;
-        public const int WS_MATCH_URL_LOCAL_HOST = 0x8;
-        public const int WS_MATCH_URL_HOST_ADDRESSES = 0x10;
-        public const int WS_MATCH_URL_THIS_HOST = (WS_MATCH_URL_DNS_HOST | WS_MATCH_URL_DNS_FULLY_QUALIFIED_HOST | WS_MATCH_URL_NETBIOS_HOST | WS_MATCH_URL_LOCAL_HOST | WS_MATCH_URL_HOST_ADDRESSES);
-        public const int WS_MATCH_URL_PORT = 0x20;
-        public const int WS_MATCH_URL_EXACT_PATH = 0x40;
-        public const int WS_MATCH_URL_PREFIX_PATH = 0x80;
-        public const int WS_MATCH_URL_NO_QUERY = 0x100;
-
         public const int WS_MUST_UNDERSTAND_HEADER_ATTRIBUTE = 0x1;
         public const int WS_RELAY_HEADER_ATTRIBUTE = 0x2;
-
-        public const int WS_HTTP_HEADER_AUTH_SCHEME_NONE = 0x1;
-        public const int WS_HTTP_HEADER_AUTH_SCHEME_BASIC = 0x2;
-        public const int WS_HTTP_HEADER_AUTH_SCHEME_DIGEST = 0x4;
-        public const int WS_HTTP_HEADER_AUTH_SCHEME_NTLM = 0x8;
-        public const int WS_HTTP_HEADER_AUTH_SCHEME_NEGOTIATE = 0x10;
-        public const int WS_HTTP_HEADER_AUTH_SCHEME_PASSPORT = 0x20;
-
-        public const int WS_CERT_FAILURE_CN_MISMATCH = 0x1;
-        public const int WS_CERT_FAILURE_INVALID_DATE = 0x2;
-        public const int WS_CERT_FAILURE_UNTRUSTED_ROOT = 0x4;
-        public const int WS_CERT_FAILURE_WRONG_USAGE = 0x8;
-        public const int WS_CERT_FAILURE_REVOCATION_OFFLINE = 0x10;
-
-        public const int WS_STRUCT_ABSTRACT = 0x1;
-        public const int WS_STRUCT_IGNORE_TRAILING_ELEMENT_CONTENT = 0x2;
-        public const int WS_STRUCT_IGNORE_UNHANDLED_ATTRIBUTES = 0x4;
-
-        public const int WS_FIELD_POINTER = 0x1;
-        public const int WS_FIELD_OPTIONAL = 0x2;
-        public const int WS_FIELD_NILLABLE = 0x4;
-        public const int WS_FIELD_NILLABLE_ITEM = 0x8;
-        public const int WS_FIELD_OTHER_NAMESPACE = 0x10;
-
-        public const int WS_SERVICE_OPERATION_MESSAGE_NILLABLE_ELEMENT = 0x1;
-
-        public const int WS_URL_FLAGS_ALLOW_HOST_WILDCARDS = 0x1;
-        public const int WS_URL_FLAGS_NO_PATH_COLLAPSE = 0x2;
-        public const int WS_URL_FLAGS_ZERO_TERMINATE = 0x4;
 
         [DllImport("webservices", ExactSpelling = true)]
         public static extern HRESULT WsStartReaderCanonicalization(IntPtr reader, [NativeTypeName("WS_WRITE_CALLBACK")] delegate* unmanaged<void*, WS_BYTES*, uint, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> writeCallback, void* writeCallbackState, [NativeTypeName("const WS_XML_CANONICALIZATION_PROPERTY *")] WS_XML_CANONICALIZATION_PROPERTY* properties, [NativeTypeName("ULONG")] uint propertyCount, IntPtr error);

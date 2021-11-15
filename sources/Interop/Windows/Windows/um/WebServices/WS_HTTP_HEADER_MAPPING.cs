@@ -7,6 +7,10 @@ namespace TerraFX.Interop.Windows
 {
     public partial struct WS_HTTP_HEADER_MAPPING
     {
+        public const int WS_HTTP_HEADER_MAPPING_COMMA_SEPARATOR = 0x1;
+        public const int WS_HTTP_HEADER_MAPPING_SEMICOLON_SEPARATOR = 0x2;
+        public const int WS_HTTP_HEADER_MAPPING_QUOTED_VALUE = 0x4;
+
         public WS_XML_STRING headerName;
 
         [NativeTypeName("ULONG")]

@@ -15,5 +15,17 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("DWORD [1]")]
         public fixed uint SubAuthority[1];
+
+        [NativeTypeName("#define SID_REVISION (1)")]
+        public const int SID_REVISION = (1);
+
+        [NativeTypeName("#define SID_MAX_SUB_AUTHORITIES (15)")]
+        public const int SID_MAX_SUB_AUTHORITIES = (15);
+
+        [NativeTypeName("#define SID_RECOMMENDED_SUB_AUTHORITIES (1)")]
+        public const int SID_RECOMMENDED_SUB_AUTHORITIES = (1);
+
+        [NativeTypeName("#define SID_HASH_SIZE 32")]
+        public const int SID_HASH_SIZE = 32;
     }
 }

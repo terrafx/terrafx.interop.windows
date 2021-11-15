@@ -4,9 +4,11 @@ using System;
 using System.Drawing;
 using TerraFX.Interop.DirectX;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.DirectX.D3D11;
 using static TerraFX.Interop.DirectX.D3D_DRIVER_TYPE;
 using static TerraFX.Interop.DirectX.D3D_FEATURE_LEVEL;
 using static TerraFX.Interop.DirectX.DirectX;
+using static TerraFX.Interop.DirectX.DXGI;
 using static TerraFX.Interop.DirectX.DXGI_SWAP_EFFECT;
 using static TerraFX.Interop.Windows.Windows;
 using static TerraFX.Samples.DirectX.DXSampleHelper;
@@ -114,8 +116,8 @@ namespace TerraFX.Samples.DirectX.D3D11
                 TopLeftY = 0,
                 Width = Size.Width,
                 Height = Size.Height,
-                MinDepth = D3D12_MIN_DEPTH,
-                MaxDepth = D3D12_MAX_DEPTH
+                MinDepth = D3D11_MIN_DEPTH,
+                MaxDepth = D3D11_MAX_DEPTH
             };
 
             _scissorRect = new RECT {

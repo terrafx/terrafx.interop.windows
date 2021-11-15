@@ -208,18 +208,6 @@ namespace TerraFX.Interop.Windows
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern HANDLE CreateWaitableTimerW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpTimerAttributes, BOOL bManualReset, [NativeTypeName("LPCWSTR")] ushort* lpTimerName);
 
-        [NativeTypeName("#define INIT_ONCE_CHECK_ONLY RTL_RUN_ONCE_CHECK_ONLY")]
-        public const uint INIT_ONCE_CHECK_ONLY = 0x00000001U;
-
-        [NativeTypeName("#define INIT_ONCE_ASYNC RTL_RUN_ONCE_ASYNC")]
-        public const uint INIT_ONCE_ASYNC = 0x00000002U;
-
-        [NativeTypeName("#define INIT_ONCE_INIT_FAILED RTL_RUN_ONCE_INIT_FAILED")]
-        public const uint INIT_ONCE_INIT_FAILED = 0x00000004U;
-
-        [NativeTypeName("#define INIT_ONCE_CTX_RESERVED_BITS RTL_RUN_ONCE_CTX_RESERVED_BITS")]
-        public const int INIT_ONCE_CTX_RESERVED_BITS = 2;
-
         [NativeTypeName("#define CONDITION_VARIABLE_LOCKMODE_SHARED RTL_CONDITION_VARIABLE_LOCKMODE_SHARED")]
         public const int CONDITION_VARIABLE_LOCKMODE_SHARED = 0x1;
 
@@ -247,29 +235,14 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define OpenWaitableTimer OpenWaitableTimerW")]
         public static delegate*<uint, BOOL, ushort*, HANDLE> OpenWaitableTimer => &OpenWaitableTimerW;
 
-        [NativeTypeName("#define CREATE_MUTEX_INITIAL_OWNER 0x00000001")]
-        public const int CREATE_MUTEX_INITIAL_OWNER = 0x00000001;
-
         [NativeTypeName("#define CreateMutexEx CreateMutexExW")]
         public static delegate*<SECURITY_ATTRIBUTES*, ushort*, uint, uint, HANDLE> CreateMutexEx => &CreateMutexExW;
-
-        [NativeTypeName("#define CREATE_EVENT_MANUAL_RESET 0x00000001")]
-        public const int CREATE_EVENT_MANUAL_RESET = 0x00000001;
-
-        [NativeTypeName("#define CREATE_EVENT_INITIAL_SET 0x00000002")]
-        public const int CREATE_EVENT_INITIAL_SET = 0x00000002;
 
         [NativeTypeName("#define CreateEventEx CreateEventExW")]
         public static delegate*<SECURITY_ATTRIBUTES*, ushort*, uint, uint, HANDLE> CreateEventEx => &CreateEventExW;
 
         [NativeTypeName("#define CreateSemaphoreEx CreateSemaphoreExW")]
         public static delegate*<SECURITY_ATTRIBUTES*, int, int, ushort*, uint, uint, HANDLE> CreateSemaphoreEx => &CreateSemaphoreExW;
-
-        [NativeTypeName("#define CREATE_WAITABLE_TIMER_MANUAL_RESET 0x00000001")]
-        public const int CREATE_WAITABLE_TIMER_MANUAL_RESET = 0x00000001;
-
-        [NativeTypeName("#define CREATE_WAITABLE_TIMER_HIGH_RESOLUTION 0x00000002")]
-        public const int CREATE_WAITABLE_TIMER_HIGH_RESOLUTION = 0x00000002;
 
         [NativeTypeName("#define CreateWaitableTimerEx CreateWaitableTimerExW")]
         public static delegate*<SECURITY_ATTRIBUTES*, ushort*, uint, uint, HANDLE> CreateWaitableTimerEx => &CreateWaitableTimerExW;

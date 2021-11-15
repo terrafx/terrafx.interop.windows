@@ -13,15 +13,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define ICMP_STATS (IP_NETROW          + 1)")]
         public const int ICMP_STATS = (((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
 
-        [NativeTypeName("#define TCP_STATS (ICMP_STATS         + 1)")]
-        public const int TCP_STATS = ((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
-
-        [NativeTypeName("#define TCP_TABLE (TCP_STATS          + 1)")]
-        public const int TCP_TABLE = (((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
-
-        [NativeTypeName("#define TCP_ROW (TCP_TABLE          + 1)")]
-        public const int TCP_ROW = ((((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
-
         [NativeTypeName("#define UDP_STATS (TCP_ROW            + 1)")]
         public const int UDP_STATS = (((((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
 
@@ -31,12 +22,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define UDP_ROW (UDP_TABLE          + 1)")]
         public const int UDP_ROW = (((((((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
 
-        [NativeTypeName("#define MCAST_MFE (UDP_ROW            + 1)")]
-        public const int MCAST_MFE = ((((((((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
-
-        [NativeTypeName("#define MCAST_MFE_STATS (MCAST_MFE          + 1)")]
-        public const int MCAST_MFE_STATS = (((((((((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
-
         [NativeTypeName("#define BEST_IF (MCAST_MFE_STATS    + 1)")]
         public const int BEST_IF = ((((((((((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
 
@@ -45,18 +30,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define PROXY_ARP (BEST_ROUTE         + 1)")]
         public const int PROXY_ARP = ((((((((((((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
-
-        [NativeTypeName("#define MCAST_IF_ENTRY (PROXY_ARP          + 1)")]
-        public const int MCAST_IF_ENTRY = (((((((((((((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
-
-        [NativeTypeName("#define MCAST_GLOBAL (MCAST_IF_ENTRY     + 1)")]
-        public const int MCAST_GLOBAL = ((((((((((((((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
-
-        [NativeTypeName("#define MCAST_BOUNDARY (IF_STATUS          + 1)")]
-        public const int MCAST_BOUNDARY = ((((((((((((((((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
-
-        [NativeTypeName("#define MCAST_SCOPE (MCAST_BOUNDARY     + 1)")]
-        public const int MCAST_SCOPE = (((((((((((((((((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
 
         [NativeTypeName("#define DEST_MATCHING (MCAST_SCOPE        + 1)")]
         public const int DEST_MATCHING = ((((((((((((((((((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
@@ -78,9 +51,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define ROUTE_STATE (ROUTE_SHORTER      + 1)")]
         public const int ROUTE_STATE = ((((((((((((((((((((((((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
-
-        [NativeTypeName("#define MCAST_MFE_STATS_EX (ROUTE_STATE        + 1)")]
-        public const int MCAST_MFE_STATS_EX = (((((((((((((((((((((((((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
 
         [NativeTypeName("#define IP6_STATS (MCAST_MFE_STATS_EX + 1)")]
         public const int IP6_STATS = ((((((((((((((((((((((((((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);

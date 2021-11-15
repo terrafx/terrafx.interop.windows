@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.ISHCUTCMDID;
 using static TerraFX.Interop.Windows.SHARD;
 
 namespace TerraFX.Interop.Windows
@@ -85,10 +86,6 @@ namespace TerraFX.Interop.Windows
         [DllImport("shell32", ExactSpelling = true)]
         [return: NativeTypeName("LPITEMIDLIST")]
         public static extern ITEMIDLIST* ILAppendID([NativeTypeName("LPITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCSHITEMID")] SHITEMID* pmkid, BOOL fAppend);
-
-        public const int GPFIDL_DEFAULT = 0x0000;
-        public const int GPFIDL_ALTNAME = 0x0001;
-        public const int GPFIDL_UNCPRINTER = 0x0002;
 
         [DllImport("shell32", ExactSpelling = true)]
         public static extern BOOL SHGetPathFromIDListEx([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint cchPath, [NativeTypeName("GPFIDL_FLAGS")] int uOpts);
@@ -176,11 +173,6 @@ namespace TerraFX.Interop.Windows
 
         [DllImport("shell32", ExactSpelling = true)]
         public static extern HRESULT SHLoadInProc([NativeTypeName("const IID &")] Guid* rclsid);
-
-        public const int ISHCUTCMDID_DOWNLOADICON = 0;
-        public const int ISHCUTCMDID_INTSHORTCUTCREATE = 1;
-        public const int ISHCUTCMDID_COMMITHISTORY = 2;
-        public const int ISHCUTCMDID_SETUSERAWURL = 3;
 
         [DllImport("shell32", ExactSpelling = true)]
         public static extern HRESULT SHGetDesktopFolder(IShellFolder** ppshf);
@@ -471,45 +463,6 @@ namespace TerraFX.Interop.Windows
         [DllImport("shell32", ExactSpelling = true)]
         public static extern HRESULT StgMakeUniqueName(IStorage* pstgParent, [NativeTypeName("PCWSTR")] ushort* pszFileSpec, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
-        [NativeTypeName("#define GIL_OPENICON 0x0001")]
-        public const int GIL_OPENICON = 0x0001;
-
-        [NativeTypeName("#define GIL_FORSHELL 0x0002")]
-        public const int GIL_FORSHELL = 0x0002;
-
-        [NativeTypeName("#define GIL_ASYNC 0x0020")]
-        public const int GIL_ASYNC = 0x0020;
-
-        [NativeTypeName("#define GIL_DEFAULTICON 0x0040")]
-        public const int GIL_DEFAULTICON = 0x0040;
-
-        [NativeTypeName("#define GIL_FORSHORTCUT 0x0080")]
-        public const int GIL_FORSHORTCUT = 0x0080;
-
-        [NativeTypeName("#define GIL_CHECKSHIELD 0x0200")]
-        public const int GIL_CHECKSHIELD = 0x0200;
-
-        [NativeTypeName("#define GIL_SIMULATEDOC 0x0001")]
-        public const int GIL_SIMULATEDOC = 0x0001;
-
-        [NativeTypeName("#define GIL_PERINSTANCE 0x0002")]
-        public const int GIL_PERINSTANCE = 0x0002;
-
-        [NativeTypeName("#define GIL_PERCLASS 0x0004")]
-        public const int GIL_PERCLASS = 0x0004;
-
-        [NativeTypeName("#define GIL_NOTFILENAME 0x0008")]
-        public const int GIL_NOTFILENAME = 0x0008;
-
-        [NativeTypeName("#define GIL_DONTCACHE 0x0010")]
-        public const int GIL_DONTCACHE = 0x0010;
-
-        [NativeTypeName("#define GIL_SHIELD 0x0200")]
-        public const int GIL_SHIELD = 0x0200;
-
-        [NativeTypeName("#define GIL_FORCENOSHIELD 0x0400")]
-        public const int GIL_FORCENOSHIELD = 0x0400;
-
         [NativeTypeName("#define SIOM_OVERLAYINDEX 0x1")]
         public const int SIOM_OVERLAYINDEX = 0x1;
 
@@ -569,54 +522,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define EXP_PROPERTYSTORAGE_SIG 0xA0000009")]
         public const uint EXP_PROPERTYSTORAGE_SIG = 0xA0000009;
-
-        [NativeTypeName("#define FCIDM_SHVIEWFIRST 0x0000")]
-        public const int FCIDM_SHVIEWFIRST = 0x0000;
-
-        [NativeTypeName("#define FCIDM_SHVIEWLAST 0x7fff")]
-        public const int FCIDM_SHVIEWLAST = 0x7fff;
-
-        [NativeTypeName("#define FCIDM_BROWSERFIRST 0xa000")]
-        public const int FCIDM_BROWSERFIRST = 0xa000;
-
-        [NativeTypeName("#define FCIDM_BROWSERLAST 0xbf00")]
-        public const int FCIDM_BROWSERLAST = 0xbf00;
-
-        [NativeTypeName("#define FCIDM_GLOBALFIRST 0x8000")]
-        public const int FCIDM_GLOBALFIRST = 0x8000;
-
-        [NativeTypeName("#define FCIDM_GLOBALLAST 0x9fff")]
-        public const int FCIDM_GLOBALLAST = 0x9fff;
-
-        [NativeTypeName("#define FCIDM_MENU_FILE (FCIDM_GLOBALFIRST+0x0000)")]
-        public const int FCIDM_MENU_FILE = (0x8000 + 0x0000);
-
-        [NativeTypeName("#define FCIDM_MENU_EDIT (FCIDM_GLOBALFIRST+0x0040)")]
-        public const int FCIDM_MENU_EDIT = (0x8000 + 0x0040);
-
-        [NativeTypeName("#define FCIDM_MENU_VIEW (FCIDM_GLOBALFIRST+0x0080)")]
-        public const int FCIDM_MENU_VIEW = (0x8000 + 0x0080);
-
-        [NativeTypeName("#define FCIDM_MENU_VIEW_SEP_OPTIONS (FCIDM_GLOBALFIRST+0x0081)")]
-        public const int FCIDM_MENU_VIEW_SEP_OPTIONS = (0x8000 + 0x0081);
-
-        [NativeTypeName("#define FCIDM_MENU_TOOLS (FCIDM_GLOBALFIRST+0x00c0)")]
-        public const int FCIDM_MENU_TOOLS = (0x8000 + 0x00c0);
-
-        [NativeTypeName("#define FCIDM_MENU_TOOLS_SEP_GOTO (FCIDM_GLOBALFIRST+0x00c1)")]
-        public const int FCIDM_MENU_TOOLS_SEP_GOTO = (0x8000 + 0x00c1);
-
-        [NativeTypeName("#define FCIDM_MENU_HELP (FCIDM_GLOBALFIRST+0x0100)")]
-        public const int FCIDM_MENU_HELP = (0x8000 + 0x0100);
-
-        [NativeTypeName("#define FCIDM_MENU_FIND (FCIDM_GLOBALFIRST+0x0140)")]
-        public const int FCIDM_MENU_FIND = (0x8000 + 0x0140);
-
-        [NativeTypeName("#define FCIDM_MENU_EXPLORE (FCIDM_GLOBALFIRST+0x0150)")]
-        public const int FCIDM_MENU_EXPLORE = (0x8000 + 0x0150);
-
-        [NativeTypeName("#define FCIDM_MENU_FAVORITES (FCIDM_GLOBALFIRST+0x0170)")]
-        public const int FCIDM_MENU_FAVORITES = (0x8000 + 0x0170);
 
         [NativeTypeName("#define ILCreateFromPath ILCreateFromPathW")]
         public static delegate*<ushort*, ITEMIDLIST*> ILCreateFromPath => &ILCreateFromPathW;
@@ -684,113 +589,11 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define FCSM_FLAGS 0x00000040")]
         public const int FCSM_FLAGS = 0x00000040;
 
-        [NativeTypeName("#define BIF_RETURNONLYFSDIRS 0x00000001")]
-        public const int BIF_RETURNONLYFSDIRS = 0x00000001;
-
-        [NativeTypeName("#define BIF_DONTGOBELOWDOMAIN 0x00000002")]
-        public const int BIF_DONTGOBELOWDOMAIN = 0x00000002;
-
-        [NativeTypeName("#define BIF_STATUSTEXT 0x00000004")]
-        public const int BIF_STATUSTEXT = 0x00000004;
-
-        [NativeTypeName("#define BIF_RETURNFSANCESTORS 0x00000008")]
-        public const int BIF_RETURNFSANCESTORS = 0x00000008;
-
-        [NativeTypeName("#define BIF_EDITBOX 0x00000010")]
-        public const int BIF_EDITBOX = 0x00000010;
-
-        [NativeTypeName("#define BIF_VALIDATE 0x00000020")]
-        public const int BIF_VALIDATE = 0x00000020;
-
-        [NativeTypeName("#define BIF_NEWDIALOGSTYLE 0x00000040")]
-        public const int BIF_NEWDIALOGSTYLE = 0x00000040;
-
-        [NativeTypeName("#define BIF_USENEWUI (BIF_NEWDIALOGSTYLE | BIF_EDITBOX)")]
-        public const int BIF_USENEWUI = (0x00000040 | 0x00000010);
-
-        [NativeTypeName("#define BIF_BROWSEINCLUDEURLS 0x00000080")]
-        public const int BIF_BROWSEINCLUDEURLS = 0x00000080;
-
-        [NativeTypeName("#define BIF_UAHINT 0x00000100")]
-        public const int BIF_UAHINT = 0x00000100;
-
-        [NativeTypeName("#define BIF_NONEWFOLDERBUTTON 0x00000200")]
-        public const int BIF_NONEWFOLDERBUTTON = 0x00000200;
-
-        [NativeTypeName("#define BIF_NOTRANSLATETARGETS 0x00000400")]
-        public const int BIF_NOTRANSLATETARGETS = 0x00000400;
-
-        [NativeTypeName("#define BIF_BROWSEFORCOMPUTER 0x00001000")]
-        public const int BIF_BROWSEFORCOMPUTER = 0x00001000;
-
-        [NativeTypeName("#define BIF_BROWSEFORPRINTER 0x00002000")]
-        public const int BIF_BROWSEFORPRINTER = 0x00002000;
-
-        [NativeTypeName("#define BIF_BROWSEINCLUDEFILES 0x00004000")]
-        public const int BIF_BROWSEINCLUDEFILES = 0x00004000;
-
-        [NativeTypeName("#define BIF_SHAREABLE 0x00008000")]
-        public const int BIF_SHAREABLE = 0x00008000;
-
-        [NativeTypeName("#define BIF_BROWSEFILEJUNCTIONS 0x00010000")]
-        public const int BIF_BROWSEFILEJUNCTIONS = 0x00010000;
-
-        [NativeTypeName("#define BFFM_INITIALIZED 1")]
-        public const int BFFM_INITIALIZED = 1;
-
-        [NativeTypeName("#define BFFM_SELCHANGED 2")]
-        public const int BFFM_SELCHANGED = 2;
-
-        [NativeTypeName("#define BFFM_VALIDATEFAILEDA 3")]
-        public const int BFFM_VALIDATEFAILEDA = 3;
-
-        [NativeTypeName("#define BFFM_VALIDATEFAILEDW 4")]
-        public const int BFFM_VALIDATEFAILEDW = 4;
-
-        [NativeTypeName("#define BFFM_IUNKNOWN 5")]
-        public const int BFFM_IUNKNOWN = 5;
-
-        [NativeTypeName("#define BFFM_SETSTATUSTEXTA (WM_USER + 100)")]
-        public const int BFFM_SETSTATUSTEXTA = (0x0400 + 100);
-
-        [NativeTypeName("#define BFFM_ENABLEOK (WM_USER + 101)")]
-        public const int BFFM_ENABLEOK = (0x0400 + 101);
-
-        [NativeTypeName("#define BFFM_SETSELECTIONA (WM_USER + 102)")]
-        public const int BFFM_SETSELECTIONA = (0x0400 + 102);
-
-        [NativeTypeName("#define BFFM_SETSELECTIONW (WM_USER + 103)")]
-        public const int BFFM_SETSELECTIONW = (0x0400 + 103);
-
-        [NativeTypeName("#define BFFM_SETSTATUSTEXTW (WM_USER + 104)")]
-        public const int BFFM_SETSTATUSTEXTW = (0x0400 + 104);
-
-        [NativeTypeName("#define BFFM_SETOKTEXT (WM_USER + 105)")]
-        public const int BFFM_SETOKTEXT = (0x0400 + 105);
-
-        [NativeTypeName("#define BFFM_SETEXPANDED (WM_USER + 106)")]
-        public const int BFFM_SETEXPANDED = (0x0400 + 106);
-
         [NativeTypeName("#define SHBrowseForFolder SHBrowseForFolderW")]
         public static delegate*<BROWSEINFOW*, ITEMIDLIST*> SHBrowseForFolder => &SHBrowseForFolderW;
 
-        [NativeTypeName("#define BFFM_SETSTATUSTEXT BFFM_SETSTATUSTEXTW")]
-        public const int BFFM_SETSTATUSTEXT = (0x0400 + 104);
-
-        [NativeTypeName("#define BFFM_SETSELECTION BFFM_SETSELECTIONW")]
-        public const int BFFM_SETSELECTION = (0x0400 + 103);
-
-        [NativeTypeName("#define BFFM_VALIDATEFAILED BFFM_VALIDATEFAILEDW")]
-        public const int BFFM_VALIDATEFAILED = 4;
-
         [NativeTypeName("#define CMDID_INTSHORTCUTCREATE ISHCUTCMDID_INTSHORTCUTCREATE")]
         public const int CMDID_INTSHORTCUTCREATE = ISHCUTCMDID_INTSHORTCUTCREATE;
-
-        [NativeTypeName("#define STR_PARSE_WITH_PROPERTIES L\"ParseWithProperties\"")]
-        public const string STR_PARSE_WITH_PROPERTIES = "ParseWithProperties";
-
-        [NativeTypeName("#define STR_PARSE_PARTIAL_IDLIST L\"ParseOriginalItem\"")]
-        public const string STR_PARSE_PARTIAL_IDLIST = "ParseOriginalItem";
 
         [NativeTypeName("#define PROGDLG_NORMAL 0x00000000")]
         public const int PROGDLG_NORMAL = 0x00000000;
@@ -846,81 +649,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define SHCNRF_NewDelivery 0x8000")]
         public const int SHCNRF_NewDelivery = 0x8000;
 
-        [NativeTypeName("#define SHCNE_RENAMEITEM 0x00000001L")]
-        public const int SHCNE_RENAMEITEM = 0x00000001;
-
-        [NativeTypeName("#define SHCNE_CREATE 0x00000002L")]
-        public const int SHCNE_CREATE = 0x00000002;
-
-        [NativeTypeName("#define SHCNE_DELETE 0x00000004L")]
-        public const int SHCNE_DELETE = 0x00000004;
-
-        [NativeTypeName("#define SHCNE_MKDIR 0x00000008L")]
-        public const int SHCNE_MKDIR = 0x00000008;
-
-        [NativeTypeName("#define SHCNE_RMDIR 0x00000010L")]
-        public const int SHCNE_RMDIR = 0x00000010;
-
-        [NativeTypeName("#define SHCNE_MEDIAINSERTED 0x00000020L")]
-        public const int SHCNE_MEDIAINSERTED = 0x00000020;
-
-        [NativeTypeName("#define SHCNE_MEDIAREMOVED 0x00000040L")]
-        public const int SHCNE_MEDIAREMOVED = 0x00000040;
-
-        [NativeTypeName("#define SHCNE_DRIVEREMOVED 0x00000080L")]
-        public const int SHCNE_DRIVEREMOVED = 0x00000080;
-
-        [NativeTypeName("#define SHCNE_DRIVEADD 0x00000100L")]
-        public const int SHCNE_DRIVEADD = 0x00000100;
-
-        [NativeTypeName("#define SHCNE_NETSHARE 0x00000200L")]
-        public const int SHCNE_NETSHARE = 0x00000200;
-
-        [NativeTypeName("#define SHCNE_NETUNSHARE 0x00000400L")]
-        public const int SHCNE_NETUNSHARE = 0x00000400;
-
-        [NativeTypeName("#define SHCNE_ATTRIBUTES 0x00000800L")]
-        public const int SHCNE_ATTRIBUTES = 0x00000800;
-
-        [NativeTypeName("#define SHCNE_UPDATEDIR 0x00001000L")]
-        public const int SHCNE_UPDATEDIR = 0x00001000;
-
-        [NativeTypeName("#define SHCNE_UPDATEITEM 0x00002000L")]
-        public const int SHCNE_UPDATEITEM = 0x00002000;
-
-        [NativeTypeName("#define SHCNE_SERVERDISCONNECT 0x00004000L")]
-        public const int SHCNE_SERVERDISCONNECT = 0x00004000;
-
-        [NativeTypeName("#define SHCNE_UPDATEIMAGE 0x00008000L")]
-        public const int SHCNE_UPDATEIMAGE = 0x00008000;
-
-        [NativeTypeName("#define SHCNE_DRIVEADDGUI 0x00010000L")]
-        public const int SHCNE_DRIVEADDGUI = 0x00010000;
-
-        [NativeTypeName("#define SHCNE_RENAMEFOLDER 0x00020000L")]
-        public const int SHCNE_RENAMEFOLDER = 0x00020000;
-
-        [NativeTypeName("#define SHCNE_FREESPACE 0x00040000L")]
-        public const int SHCNE_FREESPACE = 0x00040000;
-
-        [NativeTypeName("#define SHCNE_EXTENDED_EVENT 0x04000000L")]
-        public const int SHCNE_EXTENDED_EVENT = 0x04000000;
-
-        [NativeTypeName("#define SHCNE_ASSOCCHANGED 0x08000000L")]
-        public const int SHCNE_ASSOCCHANGED = 0x08000000;
-
-        [NativeTypeName("#define SHCNE_DISKEVENTS 0x0002381FL")]
-        public const int SHCNE_DISKEVENTS = 0x0002381F;
-
-        [NativeTypeName("#define SHCNE_GLOBALEVENTS 0x0C0581E0L")]
-        public const int SHCNE_GLOBALEVENTS = 0x0C0581E0;
-
-        [NativeTypeName("#define SHCNE_ALLEVENTS 0x7FFFFFFFL")]
-        public const int SHCNE_ALLEVENTS = 0x7FFFFFFF;
-
-        [NativeTypeName("#define SHCNE_INTERRUPT 0x80000000L")]
-        public const uint SHCNE_INTERRUPT = 0x80000000;
-
         [NativeTypeName("#define SHCNEE_ORDERCHANGED 2L")]
         public const int SHCNEE_ORDERCHANGED = 2;
 
@@ -929,42 +657,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define SHCNEE_MSI_UNINSTALL 5L")]
         public const int SHCNEE_MSI_UNINSTALL = 5;
-
-        [NativeTypeName("#define SHCNF_IDLIST 0x0000")]
-        public const int SHCNF_IDLIST = 0x0000;
-
-        [NativeTypeName("#define SHCNF_PATHA 0x0001")]
-        public const int SHCNF_PATHA = 0x0001;
-
-        [NativeTypeName("#define SHCNF_PRINTERA 0x0002")]
-        public const int SHCNF_PRINTERA = 0x0002;
-
-        [NativeTypeName("#define SHCNF_DWORD 0x0003")]
-        public const int SHCNF_DWORD = 0x0003;
-
-        [NativeTypeName("#define SHCNF_PATHW 0x0005")]
-        public const int SHCNF_PATHW = 0x0005;
-
-        [NativeTypeName("#define SHCNF_PRINTERW 0x0006")]
-        public const int SHCNF_PRINTERW = 0x0006;
-
-        [NativeTypeName("#define SHCNF_TYPE 0x00FF")]
-        public const int SHCNF_TYPE = 0x00FF;
-
-        [NativeTypeName("#define SHCNF_FLUSH 0x1000")]
-        public const int SHCNF_FLUSH = 0x1000;
-
-        [NativeTypeName("#define SHCNF_FLUSHNOWAIT 0x3000")]
-        public const int SHCNF_FLUSHNOWAIT = 0x3000;
-
-        [NativeTypeName("#define SHCNF_NOTIFYRECURSIVE 0x10000")]
-        public const int SHCNF_NOTIFYRECURSIVE = 0x10000;
-
-        [NativeTypeName("#define SHCNF_PATH SHCNF_PATHW")]
-        public const int SHCNF_PATH = 0x0005;
-
-        [NativeTypeName("#define SHCNF_PRINTER SHCNF_PRINTERW")]
-        public const int SHCNF_PRINTER = 0x0006;
 
         [NativeTypeName("#define QITIPF_DEFAULT 0x00000000")]
         public const int QITIPF_DEFAULT = 0x00000000;
@@ -1005,89 +697,8 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define SHGDFIL_DESCRIPTIONID 3")]
         public const int SHGDFIL_DESCRIPTIONID = 3;
 
-        [NativeTypeName("#define SHDID_ROOT_REGITEM 1")]
-        public const int SHDID_ROOT_REGITEM = 1;
-
-        [NativeTypeName("#define SHDID_FS_FILE 2")]
-        public const int SHDID_FS_FILE = 2;
-
-        [NativeTypeName("#define SHDID_FS_DIRECTORY 3")]
-        public const int SHDID_FS_DIRECTORY = 3;
-
-        [NativeTypeName("#define SHDID_FS_OTHER 4")]
-        public const int SHDID_FS_OTHER = 4;
-
-        [NativeTypeName("#define SHDID_COMPUTER_DRIVE35 5")]
-        public const int SHDID_COMPUTER_DRIVE35 = 5;
-
-        [NativeTypeName("#define SHDID_COMPUTER_DRIVE525 6")]
-        public const int SHDID_COMPUTER_DRIVE525 = 6;
-
-        [NativeTypeName("#define SHDID_COMPUTER_REMOVABLE 7")]
-        public const int SHDID_COMPUTER_REMOVABLE = 7;
-
-        [NativeTypeName("#define SHDID_COMPUTER_FIXED 8")]
-        public const int SHDID_COMPUTER_FIXED = 8;
-
-        [NativeTypeName("#define SHDID_COMPUTER_NETDRIVE 9")]
-        public const int SHDID_COMPUTER_NETDRIVE = 9;
-
-        [NativeTypeName("#define SHDID_COMPUTER_CDROM 10")]
-        public const int SHDID_COMPUTER_CDROM = 10;
-
-        [NativeTypeName("#define SHDID_COMPUTER_RAMDISK 11")]
-        public const int SHDID_COMPUTER_RAMDISK = 11;
-
-        [NativeTypeName("#define SHDID_COMPUTER_OTHER 12")]
-        public const int SHDID_COMPUTER_OTHER = 12;
-
-        [NativeTypeName("#define SHDID_NET_DOMAIN 13")]
-        public const int SHDID_NET_DOMAIN = 13;
-
-        [NativeTypeName("#define SHDID_NET_SERVER 14")]
-        public const int SHDID_NET_SERVER = 14;
-
-        [NativeTypeName("#define SHDID_NET_SHARE 15")]
-        public const int SHDID_NET_SHARE = 15;
-
-        [NativeTypeName("#define SHDID_NET_RESTOFNET 16")]
-        public const int SHDID_NET_RESTOFNET = 16;
-
-        [NativeTypeName("#define SHDID_NET_OTHER 17")]
-        public const int SHDID_NET_OTHER = 17;
-
-        [NativeTypeName("#define SHDID_COMPUTER_IMAGING 18")]
-        public const int SHDID_COMPUTER_IMAGING = 18;
-
-        [NativeTypeName("#define SHDID_COMPUTER_AUDIO 19")]
-        public const int SHDID_COMPUTER_AUDIO = 19;
-
-        [NativeTypeName("#define SHDID_COMPUTER_SHAREDDOCS 20")]
-        public const int SHDID_COMPUTER_SHAREDDOCS = 20;
-
-        [NativeTypeName("#define SHDID_MOBILE_DEVICE 21")]
-        public const int SHDID_MOBILE_DEVICE = 21;
-
-        [NativeTypeName("#define SHDID_REMOTE_DESKTOP_DRIVE 22")]
-        public const int SHDID_REMOTE_DESKTOP_DRIVE = 22;
-
         [NativeTypeName("#define SHGetDataFromIDList SHGetDataFromIDListW")]
         public static delegate*<IShellFolder*, ITEMIDLIST*, int, void*, int, HRESULT> SHGetDataFromIDList => &SHGetDataFromIDListW;
-
-        [NativeTypeName("#define PRF_VERIFYEXISTS 0x0001")]
-        public const int PRF_VERIFYEXISTS = 0x0001;
-
-        [NativeTypeName("#define PRF_TRYPROGRAMEXTENSIONS (0x0002 | PRF_VERIFYEXISTS)")]
-        public const int PRF_TRYPROGRAMEXTENSIONS = (0x0002 | 0x0001);
-
-        [NativeTypeName("#define PRF_FIRSTDIRDEF 0x0004")]
-        public const int PRF_FIRSTDIRDEF = 0x0004;
-
-        [NativeTypeName("#define PRF_DONTFINDLNK 0x0008")]
-        public const int PRF_DONTFINDLNK = 0x0008;
-
-        [NativeTypeName("#define PRF_REQUIREABSOLUTE 0x0010")]
-        public const int PRF_REQUIREABSOLUTE = 0x0010;
 
         [NativeTypeName("#define NUM_POINTS 3")]
         public const int NUM_POINTS = 3;
@@ -1191,93 +802,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define QCMINFO_PLACE_AFTER 1")]
         public const int QCMINFO_PLACE_AFTER = 1;
 
-        [NativeTypeName("#define SFVM_MERGEMENU 1")]
-        public const int SFVM_MERGEMENU = 1;
-
-        [NativeTypeName("#define SFVM_INVOKECOMMAND 2")]
-        public const int SFVM_INVOKECOMMAND = 2;
-
-        [NativeTypeName("#define SFVM_GETHELPTEXT 3")]
-        public const int SFVM_GETHELPTEXT = 3;
-
-        [NativeTypeName("#define SFVM_GETTOOLTIPTEXT 4")]
-        public const int SFVM_GETTOOLTIPTEXT = 4;
-
-        [NativeTypeName("#define SFVM_GETBUTTONINFO 5")]
-        public const int SFVM_GETBUTTONINFO = 5;
-
-        [NativeTypeName("#define SFVM_GETBUTTONS 6")]
-        public const int SFVM_GETBUTTONS = 6;
-
-        [NativeTypeName("#define SFVM_INITMENUPOPUP 7")]
-        public const int SFVM_INITMENUPOPUP = 7;
-
-        [NativeTypeName("#define SFVM_FSNOTIFY 14")]
-        public const int SFVM_FSNOTIFY = 14;
-
-        [NativeTypeName("#define SFVM_WINDOWCREATED 15")]
-        public const int SFVM_WINDOWCREATED = 15;
-
-        [NativeTypeName("#define SFVM_GETDETAILSOF 23")]
-        public const int SFVM_GETDETAILSOF = 23;
-
-        [NativeTypeName("#define SFVM_COLUMNCLICK 24")]
-        public const int SFVM_COLUMNCLICK = 24;
-
-        [NativeTypeName("#define SFVM_QUERYFSNOTIFY 25")]
-        public const int SFVM_QUERYFSNOTIFY = 25;
-
-        [NativeTypeName("#define SFVM_DEFITEMCOUNT 26")]
-        public const int SFVM_DEFITEMCOUNT = 26;
-
-        [NativeTypeName("#define SFVM_DEFVIEWMODE 27")]
-        public const int SFVM_DEFVIEWMODE = 27;
-
-        [NativeTypeName("#define SFVM_UNMERGEMENU 28")]
-        public const int SFVM_UNMERGEMENU = 28;
-
-        [NativeTypeName("#define SFVM_UPDATESTATUSBAR 31")]
-        public const int SFVM_UPDATESTATUSBAR = 31;
-
-        [NativeTypeName("#define SFVM_BACKGROUNDENUM 32")]
-        public const int SFVM_BACKGROUNDENUM = 32;
-
-        [NativeTypeName("#define SFVM_DIDDRAGDROP 36")]
-        public const int SFVM_DIDDRAGDROP = 36;
-
-        [NativeTypeName("#define SFVM_SETISFV 39")]
-        public const int SFVM_SETISFV = 39;
-
-        [NativeTypeName("#define SFVM_THISIDLIST 41")]
-        public const int SFVM_THISIDLIST = 41;
-
-        [NativeTypeName("#define SFVM_ADDPROPERTYPAGES 47")]
-        public const int SFVM_ADDPROPERTYPAGES = 47;
-
-        [NativeTypeName("#define SFVM_BACKGROUNDENUMDONE 48")]
-        public const int SFVM_BACKGROUNDENUMDONE = 48;
-
-        [NativeTypeName("#define SFVM_GETNOTIFY 49")]
-        public const int SFVM_GETNOTIFY = 49;
-
-        [NativeTypeName("#define SFVM_GETSORTDEFAULTS 53")]
-        public const int SFVM_GETSORTDEFAULTS = 53;
-
-        [NativeTypeName("#define SFVM_SIZE 57")]
-        public const int SFVM_SIZE = 57;
-
-        [NativeTypeName("#define SFVM_GETZONE 58")]
-        public const int SFVM_GETZONE = 58;
-
-        [NativeTypeName("#define SFVM_GETPANE 59")]
-        public const int SFVM_GETPANE = 59;
-
-        [NativeTypeName("#define SFVM_GETHELPTOPIC 63")]
-        public const int SFVM_GETHELPTOPIC = 63;
-
-        [NativeTypeName("#define SFVM_GETANIMATION 68")]
-        public const int SFVM_GETANIMATION = 68;
-
         [NativeTypeName("#define SFVSOC_INVALIDATE_ALL 0x00000001")]
         public const int SFVSOC_INVALIDATE_ALL = 0x00000001;
 
@@ -1292,93 +816,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define SFVS_SELECT_INVERT 0x2")]
         public const int SFVS_SELECT_INVERT = 0x2;
-
-        [NativeTypeName("#define DFM_MERGECONTEXTMENU 1")]
-        public const int DFM_MERGECONTEXTMENU = 1;
-
-        [NativeTypeName("#define DFM_INVOKECOMMAND 2")]
-        public const int DFM_INVOKECOMMAND = 2;
-
-        [NativeTypeName("#define DFM_GETHELPTEXT 5")]
-        public const int DFM_GETHELPTEXT = 5;
-
-        [NativeTypeName("#define DFM_WM_MEASUREITEM 6")]
-        public const int DFM_WM_MEASUREITEM = 6;
-
-        [NativeTypeName("#define DFM_WM_DRAWITEM 7")]
-        public const int DFM_WM_DRAWITEM = 7;
-
-        [NativeTypeName("#define DFM_WM_INITMENUPOPUP 8")]
-        public const int DFM_WM_INITMENUPOPUP = 8;
-
-        [NativeTypeName("#define DFM_VALIDATECMD 9")]
-        public const int DFM_VALIDATECMD = 9;
-
-        [NativeTypeName("#define DFM_MERGECONTEXTMENU_TOP 10")]
-        public const int DFM_MERGECONTEXTMENU_TOP = 10;
-
-        [NativeTypeName("#define DFM_GETHELPTEXTW 11")]
-        public const int DFM_GETHELPTEXTW = 11;
-
-        [NativeTypeName("#define DFM_INVOKECOMMANDEX 12")]
-        public const int DFM_INVOKECOMMANDEX = 12;
-
-        [NativeTypeName("#define DFM_MAPCOMMANDNAME 13")]
-        public const int DFM_MAPCOMMANDNAME = 13;
-
-        [NativeTypeName("#define DFM_GETDEFSTATICID 14")]
-        public const int DFM_GETDEFSTATICID = 14;
-
-        [NativeTypeName("#define DFM_GETVERBW 15")]
-        public const int DFM_GETVERBW = 15;
-
-        [NativeTypeName("#define DFM_GETVERBA 16")]
-        public const int DFM_GETVERBA = 16;
-
-        [NativeTypeName("#define DFM_MERGECONTEXTMENU_BOTTOM 17")]
-        public const int DFM_MERGECONTEXTMENU_BOTTOM = 17;
-
-        [NativeTypeName("#define DFM_MODIFYQCMFLAGS 18")]
-        public const int DFM_MODIFYQCMFLAGS = 18;
-
-        [NativeTypeName("#define DFM_CMD_DELETE ((UINT)-1)")]
-        public const uint DFM_CMD_DELETE = unchecked((uint)(-1));
-
-        [NativeTypeName("#define DFM_CMD_MOVE ((UINT)-2)")]
-        public const uint DFM_CMD_MOVE = unchecked((uint)(-2));
-
-        [NativeTypeName("#define DFM_CMD_COPY ((UINT)-3)")]
-        public const uint DFM_CMD_COPY = unchecked((uint)(-3));
-
-        [NativeTypeName("#define DFM_CMD_LINK ((UINT)-4)")]
-        public const uint DFM_CMD_LINK = unchecked((uint)(-4));
-
-        [NativeTypeName("#define DFM_CMD_PROPERTIES ((UINT)-5)")]
-        public const uint DFM_CMD_PROPERTIES = unchecked((uint)(-5));
-
-        [NativeTypeName("#define DFM_CMD_NEWFOLDER ((UINT)-6)")]
-        public const uint DFM_CMD_NEWFOLDER = unchecked((uint)(-6));
-
-        [NativeTypeName("#define DFM_CMD_PASTE ((UINT)-7)")]
-        public const uint DFM_CMD_PASTE = unchecked((uint)(-7));
-
-        [NativeTypeName("#define DFM_CMD_VIEWLIST ((UINT)-8)")]
-        public const uint DFM_CMD_VIEWLIST = unchecked((uint)(-8));
-
-        [NativeTypeName("#define DFM_CMD_VIEWDETAILS ((UINT)-9)")]
-        public const uint DFM_CMD_VIEWDETAILS = unchecked((uint)(-9));
-
-        [NativeTypeName("#define DFM_CMD_PASTELINK ((UINT)-10)")]
-        public const uint DFM_CMD_PASTELINK = unchecked((uint)(-10));
-
-        [NativeTypeName("#define DFM_CMD_PASTESPECIAL ((UINT)-11)")]
-        public const uint DFM_CMD_PASTESPECIAL = unchecked((uint)(-11));
-
-        [NativeTypeName("#define DFM_CMD_MODALPROP ((UINT)-12)")]
-        public const uint DFM_CMD_MODALPROP = unchecked((uint)(-12));
-
-        [NativeTypeName("#define DFM_CMD_RENAME ((UINT)-13)")]
-        public const uint DFM_CMD_RENAME = unchecked((uint)(-13));
 
         [NativeTypeName("#define PIDISF_RECENTLYCHANGED 0x00000001")]
         public const int PIDISF_RECENTLYCHANGED = 0x00000001;
@@ -1430,87 +867,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define SHELLSTATE_SIZE_WIN2K sizeof(SHELLSTATE)")]
         public const uint SHELLSTATE_SIZE_WIN2K = 32;
-
-        [NativeTypeName("#define SSF_SHOWALLOBJECTS 0x00000001")]
-        public const int SSF_SHOWALLOBJECTS = 0x00000001;
-
-        [NativeTypeName("#define SSF_SHOWEXTENSIONS 0x00000002")]
-        public const int SSF_SHOWEXTENSIONS = 0x00000002;
-
-        [NativeTypeName("#define SSF_HIDDENFILEEXTS 0x00000004")]
-        public const int SSF_HIDDENFILEEXTS = 0x00000004;
-
-        [NativeTypeName("#define SSF_SERVERADMINUI 0x00000004")]
-        public const int SSF_SERVERADMINUI = 0x00000004;
-
-        [NativeTypeName("#define SSF_SHOWCOMPCOLOR 0x00000008")]
-        public const int SSF_SHOWCOMPCOLOR = 0x00000008;
-
-        [NativeTypeName("#define SSF_SORTCOLUMNS 0x00000010")]
-        public const int SSF_SORTCOLUMNS = 0x00000010;
-
-        [NativeTypeName("#define SSF_SHOWSYSFILES 0x00000020")]
-        public const int SSF_SHOWSYSFILES = 0x00000020;
-
-        [NativeTypeName("#define SSF_DOUBLECLICKINWEBVIEW 0x00000080")]
-        public const int SSF_DOUBLECLICKINWEBVIEW = 0x00000080;
-
-        [NativeTypeName("#define SSF_SHOWATTRIBCOL 0x00000100")]
-        public const int SSF_SHOWATTRIBCOL = 0x00000100;
-
-        [NativeTypeName("#define SSF_DESKTOPHTML 0x00000200")]
-        public const int SSF_DESKTOPHTML = 0x00000200;
-
-        [NativeTypeName("#define SSF_WIN95CLASSIC 0x00000400")]
-        public const int SSF_WIN95CLASSIC = 0x00000400;
-
-        [NativeTypeName("#define SSF_DONTPRETTYPATH 0x00000800")]
-        public const int SSF_DONTPRETTYPATH = 0x00000800;
-
-        [NativeTypeName("#define SSF_SHOWINFOTIP 0x00002000")]
-        public const int SSF_SHOWINFOTIP = 0x00002000;
-
-        [NativeTypeName("#define SSF_MAPNETDRVBUTTON 0x00001000")]
-        public const int SSF_MAPNETDRVBUTTON = 0x00001000;
-
-        [NativeTypeName("#define SSF_NOCONFIRMRECYCLE 0x00008000")]
-        public const int SSF_NOCONFIRMRECYCLE = 0x00008000;
-
-        [NativeTypeName("#define SSF_HIDEICONS 0x00004000")]
-        public const int SSF_HIDEICONS = 0x00004000;
-
-        [NativeTypeName("#define SSF_FILTER 0x00010000")]
-        public const int SSF_FILTER = 0x00010000;
-
-        [NativeTypeName("#define SSF_WEBVIEW 0x00020000")]
-        public const int SSF_WEBVIEW = 0x00020000;
-
-        [NativeTypeName("#define SSF_SHOWSUPERHIDDEN 0x00040000")]
-        public const int SSF_SHOWSUPERHIDDEN = 0x00040000;
-
-        [NativeTypeName("#define SSF_SEPPROCESS 0x00080000")]
-        public const int SSF_SEPPROCESS = 0x00080000;
-
-        [NativeTypeName("#define SSF_NONETCRAWLING 0x00100000")]
-        public const int SSF_NONETCRAWLING = 0x00100000;
-
-        [NativeTypeName("#define SSF_STARTPANELON 0x00200000")]
-        public const int SSF_STARTPANELON = 0x00200000;
-
-        [NativeTypeName("#define SSF_SHOWSTARTPAGE 0x00400000")]
-        public const int SSF_SHOWSTARTPAGE = 0x00400000;
-
-        [NativeTypeName("#define SSF_AUTOCHECKSELECT 0x00800000")]
-        public const int SSF_AUTOCHECKSELECT = 0x00800000;
-
-        [NativeTypeName("#define SSF_ICONSONLY 0x01000000")]
-        public const int SSF_ICONSONLY = 0x01000000;
-
-        [NativeTypeName("#define SSF_SHOWTYPEOVERLAY 0x02000000")]
-        public const int SSF_SHOWTYPEOVERLAY = 0x02000000;
-
-        [NativeTypeName("#define SSF_SHOWSTATUSBAR 0x04000000")]
-        public const int SSF_SHOWSTATUSBAR = 0x04000000;
 
         [NativeTypeName("#define SHPPFW_NONE 0x00000000")]
         public const int SHPPFW_NONE = 0x00000000;

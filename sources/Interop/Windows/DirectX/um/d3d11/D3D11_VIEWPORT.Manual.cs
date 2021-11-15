@@ -5,7 +5,7 @@
 
 using System;
 using static TerraFX.Interop.DirectX.D3D11_RTV_DIMENSION;
-using static TerraFX.Interop.DirectX.DirectX;
+using static TerraFX.Interop.DirectX.D3D11;
 
 namespace TerraFX.Interop.DirectX
 {

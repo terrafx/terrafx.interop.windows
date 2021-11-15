@@ -326,12 +326,6 @@ namespace TerraFX.Interop.Windows
         [return: NativeTypeName("DWORD")]
         public static extern uint GetTempPath2A([NativeTypeName("DWORD")] uint BufferLength, [NativeTypeName("LPSTR")] sbyte* Buffer);
 
-        [NativeTypeName("#define CREATE_NEW 1")]
-        public const int CREATE_NEW = 1;
-
-        [NativeTypeName("#define CREATE_ALWAYS 2")]
-        public const int CREATE_ALWAYS = 2;
-
         [NativeTypeName("#define OPEN_EXISTING 3")]
         public const int OPEN_EXISTING = 3;
 

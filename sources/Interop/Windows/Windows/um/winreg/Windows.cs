@@ -367,51 +367,6 @@ namespace TerraFX.Interop.Windows
         [return: NativeTypeName("LSTATUS")]
         public static extern int RegSaveKeyExW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpFile, [NativeTypeName("const LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes, [NativeTypeName("DWORD")] uint Flags);
 
-        [NativeTypeName("#define RRF_RT_REG_NONE 0x00000001")]
-        public const int RRF_RT_REG_NONE = 0x00000001;
-
-        [NativeTypeName("#define RRF_RT_REG_SZ 0x00000002")]
-        public const int RRF_RT_REG_SZ = 0x00000002;
-
-        [NativeTypeName("#define RRF_RT_REG_EXPAND_SZ 0x00000004")]
-        public const int RRF_RT_REG_EXPAND_SZ = 0x00000004;
-
-        [NativeTypeName("#define RRF_RT_REG_BINARY 0x00000008")]
-        public const int RRF_RT_REG_BINARY = 0x00000008;
-
-        [NativeTypeName("#define RRF_RT_REG_DWORD 0x00000010")]
-        public const int RRF_RT_REG_DWORD = 0x00000010;
-
-        [NativeTypeName("#define RRF_RT_REG_MULTI_SZ 0x00000020")]
-        public const int RRF_RT_REG_MULTI_SZ = 0x00000020;
-
-        [NativeTypeName("#define RRF_RT_REG_QWORD 0x00000040")]
-        public const int RRF_RT_REG_QWORD = 0x00000040;
-
-        [NativeTypeName("#define RRF_RT_DWORD (RRF_RT_REG_BINARY | RRF_RT_REG_DWORD)")]
-        public const int RRF_RT_DWORD = (0x00000008 | 0x00000010);
-
-        [NativeTypeName("#define RRF_RT_QWORD (RRF_RT_REG_BINARY | RRF_RT_REG_QWORD)")]
-        public const int RRF_RT_QWORD = (0x00000008 | 0x00000040);
-
-        [NativeTypeName("#define RRF_RT_ANY 0x0000ffff")]
-        public const int RRF_RT_ANY = 0x0000ffff;
-
-        [NativeTypeName("#define RRF_SUBKEY_WOW6464KEY 0x00010000")]
-        public const int RRF_SUBKEY_WOW6464KEY = 0x00010000;
-
-        [NativeTypeName("#define RRF_SUBKEY_WOW6432KEY 0x00020000")]
-        public const int RRF_SUBKEY_WOW6432KEY = 0x00020000;
-
-        [NativeTypeName("#define RRF_WOW64_MASK 0x00030000")]
-        public const int RRF_WOW64_MASK = 0x00030000;
-
-        [NativeTypeName("#define RRF_NOEXPAND 0x10000000")]
-        public const int RRF_NOEXPAND = 0x10000000;
-
-        [NativeTypeName("#define RRF_ZEROONFAILURE 0x20000000")]
-        public const int RRF_ZEROONFAILURE = 0x20000000;
-
         [NativeTypeName("#define PROVIDER_KEEPS_VALUE_LENGTH 0x1")]
         public const int PROVIDER_KEEPS_VALUE_LENGTH = 0x1;
 
@@ -552,54 +507,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define InitiateSystemShutdownEx InitiateSystemShutdownExW")]
         public static delegate*<ushort*, ushort*, uint, BOOL, BOOL, uint, BOOL> InitiateSystemShutdownEx => &InitiateSystemShutdownExW;
-
-        [NativeTypeName("#define SHUTDOWN_FORCE_OTHERS 0x00000001")]
-        public const int SHUTDOWN_FORCE_OTHERS = 0x00000001;
-
-        [NativeTypeName("#define SHUTDOWN_FORCE_SELF 0x00000002")]
-        public const int SHUTDOWN_FORCE_SELF = 0x00000002;
-
-        [NativeTypeName("#define SHUTDOWN_RESTART 0x00000004")]
-        public const int SHUTDOWN_RESTART = 0x00000004;
-
-        [NativeTypeName("#define SHUTDOWN_POWEROFF 0x00000008")]
-        public const int SHUTDOWN_POWEROFF = 0x00000008;
-
-        [NativeTypeName("#define SHUTDOWN_NOREBOOT 0x00000010")]
-        public const int SHUTDOWN_NOREBOOT = 0x00000010;
-
-        [NativeTypeName("#define SHUTDOWN_GRACE_OVERRIDE 0x00000020")]
-        public const int SHUTDOWN_GRACE_OVERRIDE = 0x00000020;
-
-        [NativeTypeName("#define SHUTDOWN_INSTALL_UPDATES 0x00000040")]
-        public const int SHUTDOWN_INSTALL_UPDATES = 0x00000040;
-
-        [NativeTypeName("#define SHUTDOWN_RESTARTAPPS 0x00000080")]
-        public const int SHUTDOWN_RESTARTAPPS = 0x00000080;
-
-        [NativeTypeName("#define SHUTDOWN_SKIP_SVC_PRESHUTDOWN 0x00000100")]
-        public const int SHUTDOWN_SKIP_SVC_PRESHUTDOWN = 0x00000100;
-
-        [NativeTypeName("#define SHUTDOWN_HYBRID 0x00000200")]
-        public const int SHUTDOWN_HYBRID = 0x00000200;
-
-        [NativeTypeName("#define SHUTDOWN_RESTART_BOOTOPTIONS 0x00000400")]
-        public const int SHUTDOWN_RESTART_BOOTOPTIONS = 0x00000400;
-
-        [NativeTypeName("#define SHUTDOWN_SOFT_REBOOT 0x00000800")]
-        public const int SHUTDOWN_SOFT_REBOOT = 0x00000800;
-
-        [NativeTypeName("#define SHUTDOWN_MOBILE_UI 0x00001000")]
-        public const int SHUTDOWN_MOBILE_UI = 0x00001000;
-
-        [NativeTypeName("#define SHUTDOWN_ARSO 0x00002000")]
-        public const int SHUTDOWN_ARSO = 0x00002000;
-
-        [NativeTypeName("#define SHUTDOWN_CHECK_SAFE_FOR_SERVER 0x00004000")]
-        public const int SHUTDOWN_CHECK_SAFE_FOR_SERVER = 0x00004000;
-
-        [NativeTypeName("#define SHUTDOWN_VAIL_CONTAINER 0x00008000")]
-        public const int SHUTDOWN_VAIL_CONTAINER = 0x00008000;
 
         [NativeTypeName("#define InitiateShutdown InitiateShutdownW")]
         public static delegate*<ushort*, ushort*, uint, uint, uint, uint> InitiateShutdown => &InitiateShutdownW;

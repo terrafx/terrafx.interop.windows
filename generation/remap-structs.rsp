@@ -1,0 +1,8 @@
+--with-type
+DDSCAPS=struct
+DDSCAPS2=struct
+EMR=struct
+FXEQ=struct
+INPUT=struct
+SID=struct
+WS_HTTP_HEADER_MAPPING=struct

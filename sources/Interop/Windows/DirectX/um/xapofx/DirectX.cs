@@ -14,48 +14,6 @@ namespace TerraFX.Interop.DirectX
         [DllImport("xaudio2_9", ExactSpelling = true)]
         public static extern HRESULT CreateFX([NativeTypeName("const IID &")] Guid* clsid, IUnknown** pEffect, [NativeTypeName("const void *")] void* pInitDat = null, [NativeTypeName("UINT32")] uint InitDataByteSize = 0);
 
-        [NativeTypeName("#define FXEQ_MIN_FRAMERATE 22000")]
-        public const int FXEQ_MIN_FRAMERATE = 22000;
-
-        [NativeTypeName("#define FXEQ_MAX_FRAMERATE 48000")]
-        public const int FXEQ_MAX_FRAMERATE = 48000;
-
-        [NativeTypeName("#define FXEQ_MIN_FREQUENCY_CENTER 20.0f")]
-        public const float FXEQ_MIN_FREQUENCY_CENTER = 20.0f;
-
-        [NativeTypeName("#define FXEQ_MAX_FREQUENCY_CENTER 20000.0f")]
-        public const float FXEQ_MAX_FREQUENCY_CENTER = 20000.0f;
-
-        [NativeTypeName("#define FXEQ_DEFAULT_FREQUENCY_CENTER_0 100.0f")]
-        public const float FXEQ_DEFAULT_FREQUENCY_CENTER_0 = 100.0f;
-
-        [NativeTypeName("#define FXEQ_DEFAULT_FREQUENCY_CENTER_1 800.0f")]
-        public const float FXEQ_DEFAULT_FREQUENCY_CENTER_1 = 800.0f;
-
-        [NativeTypeName("#define FXEQ_DEFAULT_FREQUENCY_CENTER_2 2000.0f")]
-        public const float FXEQ_DEFAULT_FREQUENCY_CENTER_2 = 2000.0f;
-
-        [NativeTypeName("#define FXEQ_DEFAULT_FREQUENCY_CENTER_3 10000.0f")]
-        public const float FXEQ_DEFAULT_FREQUENCY_CENTER_3 = 10000.0f;
-
-        [NativeTypeName("#define FXEQ_MIN_GAIN 0.126f")]
-        public const float FXEQ_MIN_GAIN = 0.126f;
-
-        [NativeTypeName("#define FXEQ_MAX_GAIN 7.94f")]
-        public const float FXEQ_MAX_GAIN = 7.94f;
-
-        [NativeTypeName("#define FXEQ_DEFAULT_GAIN 1.0f")]
-        public const float FXEQ_DEFAULT_GAIN = 1.0f;
-
-        [NativeTypeName("#define FXEQ_MIN_BANDWIDTH 0.1f")]
-        public const float FXEQ_MIN_BANDWIDTH = 0.1f;
-
-        [NativeTypeName("#define FXEQ_MAX_BANDWIDTH 2.0f")]
-        public const float FXEQ_MAX_BANDWIDTH = 2.0f;
-
-        [NativeTypeName("#define FXEQ_DEFAULT_BANDWIDTH 1.0f")]
-        public const float FXEQ_DEFAULT_BANDWIDTH = 1.0f;
-
         [NativeTypeName("#define FXMASTERINGLIMITER_MIN_RELEASE 1")]
         public const int FXMASTERINGLIMITER_MIN_RELEASE = 1;
 

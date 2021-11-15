@@ -985,26 +985,6 @@ namespace TerraFX.Interop.Windows
         [DllImport("shlwapi", ExactSpelling = true)]
         public static extern BOOL SHRegGetBoolUSValueW([NativeTypeName("LPCWSTR")] ushort* pszSubKey, [NativeTypeName("LPCWSTR")] ushort* pszValue, BOOL fIgnoreHKCU, BOOL fDefault);
 
-        public const int ASSOCF_NONE = 0x00000000;
-        public const int ASSOCF_INIT_NOREMAPCLSID = 0x00000001;
-        public const int ASSOCF_INIT_BYEXENAME = 0x00000002;
-        public const int ASSOCF_OPEN_BYEXENAME = 0x00000002;
-        public const int ASSOCF_INIT_DEFAULTTOSTAR = 0x00000004;
-        public const int ASSOCF_INIT_DEFAULTTOFOLDER = 0x00000008;
-        public const int ASSOCF_NOUSERSETTINGS = 0x00000010;
-        public const int ASSOCF_NOTRUNCATE = 0x00000020;
-        public const int ASSOCF_VERIFY = 0x00000040;
-        public const int ASSOCF_REMAPRUNDLL = 0x00000080;
-        public const int ASSOCF_NOFIXUPS = 0x00000100;
-        public const int ASSOCF_IGNOREBASECLASS = 0x00000200;
-        public const int ASSOCF_INIT_IGNOREUNKNOWN = 0x00000400;
-        public const int ASSOCF_INIT_FIXED_PROGID = 0x00000800;
-        public const int ASSOCF_IS_PROTOCOL = 0x00001000;
-        public const int ASSOCF_INIT_FOR_FILE = 0x00002000;
-        public const int ASSOCF_IS_FULL_URI = 0x00004000;
-        public const int ASSOCF_PER_MACHINE_ONLY = 0x00008000;
-        public const int ASSOCF_APP_TO_APP = 0x00010000;
-
         [DllImport("shlwapi", ExactSpelling = true)]
         public static extern HRESULT AssocCreate([NativeTypeName("CLSID")] Guid clsid, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
@@ -1196,22 +1176,6 @@ namespace TerraFX.Interop.Windows
         [DllImport("shlwapi", ExactSpelling = true)]
         public static extern BOOL SHSkipJunction(IBindCtx* pbc, [NativeTypeName("const CLSID *")] Guid* pclsid);
 
-        public const int CTF_INSIST = 0x00000001;
-        public const int CTF_THREAD_REF = 0x00000002;
-        public const int CTF_PROCESS_REF = 0x00000004;
-        public const int CTF_COINIT_STA = 0x00000008;
-        public const int CTF_COINIT = 0x00000008;
-        public const int CTF_FREELIBANDEXIT = 0x00000010;
-        public const int CTF_REF_COUNTED = 0x00000020;
-        public const int CTF_WAIT_ALLOWCOM = 0x00000040;
-        public const int CTF_UNUSED = 0x00000080;
-        public const int CTF_INHERITWOW64 = 0x00000100;
-        public const int CTF_WAIT_NO_REENTRANCY = 0x00000200;
-        public const int CTF_KEYBOARD_LOCALE = 0x00000400;
-        public const int CTF_OLEINITIALIZE = 0x00000800;
-        public const int CTF_COINIT_MTA = 0x00001000;
-        public const int CTF_NOADDREFLIB = 0x00002000;
-
         [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SHCreateThread([NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> pfnThreadProc, void* pData, [NativeTypeName("SHCT_FLAGS")] uint flags, [NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> pfnCallback);
 
@@ -1360,24 +1324,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define StrCmpNIC StrCmpNICW")]
         public static delegate*<ushort*, ushort*, int, int> StrCmpNIC => &StrCmpNICW;
-
-        [NativeTypeName("#define SZ_CONTENTTYPE_HTMLA \"text/html\"")]
-        public static ReadOnlySpan<byte> SZ_CONTENTTYPE_HTMLA => new byte[] { 0x74, 0x65, 0x78, 0x74, 0x2F, 0x68, 0x74, 0x6D, 0x6C, 0x00 };
-
-        [NativeTypeName("#define SZ_CONTENTTYPE_HTMLW L\"text/html\"")]
-        public const string SZ_CONTENTTYPE_HTMLW = "text/html";
-
-        [NativeTypeName("#define SZ_CONTENTTYPE_CDFA \"application/x-cdf\"")]
-        public static ReadOnlySpan<byte> SZ_CONTENTTYPE_CDFA => new byte[] { 0x61, 0x70, 0x70, 0x6C, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6F, 0x6E, 0x2F, 0x78, 0x2D, 0x63, 0x64, 0x66, 0x00 };
-
-        [NativeTypeName("#define SZ_CONTENTTYPE_CDFW L\"application/x-cdf\"")]
-        public const string SZ_CONTENTTYPE_CDFW = "application/x-cdf";
-
-        [NativeTypeName("#define SZ_CONTENTTYPE_HTML SZ_CONTENTTYPE_HTMLW")]
-        public const string SZ_CONTENTTYPE_HTML = "text/html";
-
-        [NativeTypeName("#define SZ_CONTENTTYPE_CDF SZ_CONTENTTYPE_CDFW")]
-        public const string SZ_CONTENTTYPE_CDF = "application/x-cdf";
 
         [NativeTypeName("#define StrCatA lstrcatA")]
         public static delegate*<sbyte*, sbyte*, sbyte*> StrCatA => &lstrcatA;
@@ -1613,90 +1559,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define PathUnquoteSpaces PathUnquoteSpacesW")]
         public static delegate*<ushort*, BOOL> PathUnquoteSpaces => &PathUnquoteSpacesW;
 
-        [NativeTypeName("#define URL_UNESCAPE 0x10000000")]
-        public const int URL_UNESCAPE = 0x10000000;
-
-        [NativeTypeName("#define URL_ESCAPE_UNSAFE 0x20000000")]
-        public const int URL_ESCAPE_UNSAFE = 0x20000000;
-
-        [NativeTypeName("#define URL_PLUGGABLE_PROTOCOL 0x40000000")]
-        public const int URL_PLUGGABLE_PROTOCOL = 0x40000000;
-
-        [NativeTypeName("#define URL_WININET_COMPATIBILITY 0x80000000")]
-        public const uint URL_WININET_COMPATIBILITY = 0x80000000;
-
-        [NativeTypeName("#define URL_DONT_ESCAPE_EXTRA_INFO 0x02000000")]
-        public const int URL_DONT_ESCAPE_EXTRA_INFO = 0x02000000;
-
-        [NativeTypeName("#define URL_DONT_UNESCAPE_EXTRA_INFO URL_DONT_ESCAPE_EXTRA_INFO")]
-        public const int URL_DONT_UNESCAPE_EXTRA_INFO = 0x02000000;
-
-        [NativeTypeName("#define URL_BROWSER_MODE URL_DONT_ESCAPE_EXTRA_INFO")]
-        public const int URL_BROWSER_MODE = 0x02000000;
-
-        [NativeTypeName("#define URL_ESCAPE_SPACES_ONLY 0x04000000")]
-        public const int URL_ESCAPE_SPACES_ONLY = 0x04000000;
-
-        [NativeTypeName("#define URL_DONT_SIMPLIFY 0x08000000")]
-        public const int URL_DONT_SIMPLIFY = 0x08000000;
-
-        [NativeTypeName("#define URL_NO_META URL_DONT_SIMPLIFY")]
-        public const int URL_NO_META = 0x08000000;
-
-        [NativeTypeName("#define URL_UNESCAPE_INPLACE 0x00100000")]
-        public const int URL_UNESCAPE_INPLACE = 0x00100000;
-
-        [NativeTypeName("#define URL_CONVERT_IF_DOSPATH 0x00200000")]
-        public const int URL_CONVERT_IF_DOSPATH = 0x00200000;
-
-        [NativeTypeName("#define URL_UNESCAPE_HIGH_ANSI_ONLY 0x00400000")]
-        public const int URL_UNESCAPE_HIGH_ANSI_ONLY = 0x00400000;
-
-        [NativeTypeName("#define URL_INTERNAL_PATH 0x00800000")]
-        public const int URL_INTERNAL_PATH = 0x00800000;
-
-        [NativeTypeName("#define URL_FILE_USE_PATHURL 0x00010000")]
-        public const int URL_FILE_USE_PATHURL = 0x00010000;
-
-        [NativeTypeName("#define URL_DONT_UNESCAPE 0x00020000")]
-        public const int URL_DONT_UNESCAPE = 0x00020000;
-
-        [NativeTypeName("#define URL_ESCAPE_AS_UTF8 0x00040000")]
-        public const int URL_ESCAPE_AS_UTF8 = 0x00040000;
-
-        [NativeTypeName("#define URL_UNESCAPE_AS_UTF8 URL_ESCAPE_AS_UTF8")]
-        public const int URL_UNESCAPE_AS_UTF8 = 0x00040000;
-
-        [NativeTypeName("#define URL_ESCAPE_ASCII_URI_COMPONENT 0x00080000")]
-        public const int URL_ESCAPE_ASCII_URI_COMPONENT = 0x00080000;
-
-        [NativeTypeName("#define URL_ESCAPE_URI_COMPONENT (URL_ESCAPE_ASCII_URI_COMPONENT | URL_ESCAPE_AS_UTF8)")]
-        public const int URL_ESCAPE_URI_COMPONENT = (0x00080000 | 0x00040000);
-
-        [NativeTypeName("#define URL_UNESCAPE_URI_COMPONENT URL_UNESCAPE_AS_UTF8")]
-        public const int URL_UNESCAPE_URI_COMPONENT = 0x00040000;
-
-        [NativeTypeName("#define URL_ESCAPE_PERCENT 0x00001000")]
-        public const int URL_ESCAPE_PERCENT = 0x00001000;
-
-        [NativeTypeName("#define URL_ESCAPE_SEGMENT_ONLY 0x00002000")]
-        public const int URL_ESCAPE_SEGMENT_ONLY = 0x00002000;
-
-        [NativeTypeName("#define URL_PARTFLAG_KEEPSCHEME 0x00000001")]
-        public const int URL_PARTFLAG_KEEPSCHEME = 0x00000001;
-
-        [NativeTypeName("#define URL_APPLY_DEFAULT 0x00000001")]
-        public const int URL_APPLY_DEFAULT = 0x00000001;
-
-        [NativeTypeName("#define URL_APPLY_GUESSSCHEME 0x00000002")]
-        public const int URL_APPLY_GUESSSCHEME = 0x00000002;
-
-        [NativeTypeName("#define URL_APPLY_GUESSFILE 0x00000004")]
-        public const int URL_APPLY_GUESSFILE = 0x00000004;
-
-        [NativeTypeName("#define URL_APPLY_FORCEAPPLY 0x00000008")]
-        public const int URL_APPLY_FORCEAPPLY = 0x00000008;
-
         [NativeTypeName("#define UrlCompare UrlCompareW")]
         public static delegate*<ushort*, ushort*, BOOL, int> UrlCompare => &UrlCompareW;
 
@@ -1756,57 +1618,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define SHSetValue SHSetValueW")]
         public static delegate*<HKEY, ushort*, ushort*, uint, void*, uint, int> SHSetValue => &SHSetValueW;
-
-        [NativeTypeName("#define SRRF_RT_REG_NONE 0x00000001")]
-        public const int SRRF_RT_REG_NONE = 0x00000001;
-
-        [NativeTypeName("#define SRRF_RT_REG_SZ 0x00000002")]
-        public const int SRRF_RT_REG_SZ = 0x00000002;
-
-        [NativeTypeName("#define SRRF_RT_REG_EXPAND_SZ 0x00000004")]
-        public const int SRRF_RT_REG_EXPAND_SZ = 0x00000004;
-
-        [NativeTypeName("#define SRRF_RT_REG_BINARY 0x00000008")]
-        public const int SRRF_RT_REG_BINARY = 0x00000008;
-
-        [NativeTypeName("#define SRRF_RT_REG_DWORD 0x00000010")]
-        public const int SRRF_RT_REG_DWORD = 0x00000010;
-
-        [NativeTypeName("#define SRRF_RT_REG_MULTI_SZ 0x00000020")]
-        public const int SRRF_RT_REG_MULTI_SZ = 0x00000020;
-
-        [NativeTypeName("#define SRRF_RT_REG_QWORD 0x00000040")]
-        public const int SRRF_RT_REG_QWORD = 0x00000040;
-
-        [NativeTypeName("#define SRRF_RT_DWORD (SRRF_RT_REG_BINARY | SRRF_RT_REG_DWORD)")]
-        public const int SRRF_RT_DWORD = (0x00000008 | 0x00000010);
-
-        [NativeTypeName("#define SRRF_RT_QWORD (SRRF_RT_REG_BINARY | SRRF_RT_REG_QWORD)")]
-        public const int SRRF_RT_QWORD = (0x00000008 | 0x00000040);
-
-        [NativeTypeName("#define SRRF_RT_ANY 0x0000ffff")]
-        public const int SRRF_RT_ANY = 0x0000ffff;
-
-        [NativeTypeName("#define SRRF_RM_ANY 0x00000000")]
-        public const int SRRF_RM_ANY = 0x00000000;
-
-        [NativeTypeName("#define SRRF_RM_NORMAL 0x00010000")]
-        public const int SRRF_RM_NORMAL = 0x00010000;
-
-        [NativeTypeName("#define SRRF_RM_SAFE 0x00020000")]
-        public const int SRRF_RM_SAFE = 0x00020000;
-
-        [NativeTypeName("#define SRRF_RM_SAFENETWORK 0x00040000")]
-        public const int SRRF_RM_SAFENETWORK = 0x00040000;
-
-        [NativeTypeName("#define SRRF_NOEXPAND 0x10000000")]
-        public const int SRRF_NOEXPAND = 0x10000000;
-
-        [NativeTypeName("#define SRRF_ZEROONFAILURE 0x20000000")]
-        public const int SRRF_ZEROONFAILURE = 0x20000000;
-
-        [NativeTypeName("#define SRRF_NOVIRT 0x40000000")]
-        public const int SRRF_NOVIRT = 0x40000000;
 
         [NativeTypeName("#define SHRegGetValue SHRegGetValueW")]
         public static delegate*<HKEY, ushort*, ushort*, int, uint*, void*, uint*, int> SHRegGetValue => &SHRegGetValueW;
@@ -1907,39 +1718,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define GetAcceptLanguages GetAcceptLanguagesW")]
         public static delegate*<ushort*, uint*, HRESULT> GetAcceptLanguages => &GetAcceptLanguagesW;
 
-        [NativeTypeName("#define SHGVSPB_PERUSER 0x00000001")]
-        public const int SHGVSPB_PERUSER = 0x00000001;
-
-        [NativeTypeName("#define SHGVSPB_ALLUSERS 0x00000002")]
-        public const int SHGVSPB_ALLUSERS = 0x00000002;
-
-        [NativeTypeName("#define SHGVSPB_PERFOLDER 0x00000004")]
-        public const int SHGVSPB_PERFOLDER = 0x00000004;
-
-        [NativeTypeName("#define SHGVSPB_ALLFOLDERS 0x00000008")]
-        public const int SHGVSPB_ALLFOLDERS = 0x00000008;
-
-        [NativeTypeName("#define SHGVSPB_INHERIT 0x00000010")]
-        public const int SHGVSPB_INHERIT = 0x00000010;
-
-        [NativeTypeName("#define SHGVSPB_ROAM 0x00000020")]
-        public const int SHGVSPB_ROAM = 0x00000020;
-
-        [NativeTypeName("#define SHGVSPB_NOAUTODEFAULTS 0x80000000")]
-        public const uint SHGVSPB_NOAUTODEFAULTS = 0x80000000;
-
-        [NativeTypeName("#define SHGVSPB_FOLDER (SHGVSPB_PERUSER | SHGVSPB_PERFOLDER)")]
-        public const int SHGVSPB_FOLDER = (0x00000001 | 0x00000004);
-
-        [NativeTypeName("#define SHGVSPB_FOLDERNODEFAULTS (SHGVSPB_PERUSER | SHGVSPB_PERFOLDER | SHGVSPB_NOAUTODEFAULTS)")]
-        public const uint SHGVSPB_FOLDERNODEFAULTS = (0x00000001 | 0x00000004 | 0x80000000);
-
-        [NativeTypeName("#define SHGVSPB_USERDEFAULTS (SHGVSPB_PERUSER | SHGVSPB_ALLFOLDERS)")]
-        public const int SHGVSPB_USERDEFAULTS = (0x00000001 | 0x00000008);
-
-        [NativeTypeName("#define SHGVSPB_GLOBALDEFAULTS (SHGVSPB_ALLUSERS | SHGVSPB_ALLFOLDERS)")]
-        public const int SHGVSPB_GLOBALDEFAULTS = (0x00000002 | 0x00000008);
-
         [NativeTypeName("#define FDTF_SHORTTIME 0x00000001")]
         public const int FDTF_SHORTTIME = 0x00000001;
 
@@ -1979,114 +1757,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define SHStripMneumonic SHStripMneumonicW")]
         public static delegate*<ushort*, ushort> SHStripMneumonic => &SHStripMneumonicW;
 
-        [NativeTypeName("#define OS_WINDOWS 0")]
-        public const int OS_WINDOWS = 0;
-
-        [NativeTypeName("#define OS_NT 1")]
-        public const int OS_NT = 1;
-
-        [NativeTypeName("#define OS_WIN95ORGREATER 2")]
-        public const int OS_WIN95ORGREATER = 2;
-
-        [NativeTypeName("#define OS_NT4ORGREATER 3")]
-        public const int OS_NT4ORGREATER = 3;
-
-        [NativeTypeName("#define OS_WIN98ORGREATER 5")]
-        public const int OS_WIN98ORGREATER = 5;
-
-        [NativeTypeName("#define OS_WIN98_GOLD 6")]
-        public const int OS_WIN98_GOLD = 6;
-
-        [NativeTypeName("#define OS_WIN2000ORGREATER 7")]
-        public const int OS_WIN2000ORGREATER = 7;
-
-        [NativeTypeName("#define OS_WIN2000PRO 8")]
-        public const int OS_WIN2000PRO = 8;
-
-        [NativeTypeName("#define OS_WIN2000SERVER 9")]
-        public const int OS_WIN2000SERVER = 9;
-
-        [NativeTypeName("#define OS_WIN2000ADVSERVER 10")]
-        public const int OS_WIN2000ADVSERVER = 10;
-
-        [NativeTypeName("#define OS_WIN2000DATACENTER 11")]
-        public const int OS_WIN2000DATACENTER = 11;
-
-        [NativeTypeName("#define OS_WIN2000TERMINAL 12")]
-        public const int OS_WIN2000TERMINAL = 12;
-
-        [NativeTypeName("#define OS_EMBEDDED 13")]
-        public const int OS_EMBEDDED = 13;
-
-        [NativeTypeName("#define OS_TERMINALCLIENT 14")]
-        public const int OS_TERMINALCLIENT = 14;
-
-        [NativeTypeName("#define OS_TERMINALREMOTEADMIN 15")]
-        public const int OS_TERMINALREMOTEADMIN = 15;
-
-        [NativeTypeName("#define OS_WIN95_GOLD 16")]
-        public const int OS_WIN95_GOLD = 16;
-
-        [NativeTypeName("#define OS_MEORGREATER 17")]
-        public const int OS_MEORGREATER = 17;
-
-        [NativeTypeName("#define OS_XPORGREATER 18")]
-        public const int OS_XPORGREATER = 18;
-
-        [NativeTypeName("#define OS_HOME 19")]
-        public const int OS_HOME = 19;
-
-        [NativeTypeName("#define OS_PROFESSIONAL 20")]
-        public const int OS_PROFESSIONAL = 20;
-
-        [NativeTypeName("#define OS_DATACENTER 21")]
-        public const int OS_DATACENTER = 21;
-
-        [NativeTypeName("#define OS_ADVSERVER 22")]
-        public const int OS_ADVSERVER = 22;
-
-        [NativeTypeName("#define OS_SERVER 23")]
-        public const int OS_SERVER = 23;
-
-        [NativeTypeName("#define OS_TERMINALSERVER 24")]
-        public const int OS_TERMINALSERVER = 24;
-
-        [NativeTypeName("#define OS_PERSONALTERMINALSERVER 25")]
-        public const int OS_PERSONALTERMINALSERVER = 25;
-
-        [NativeTypeName("#define OS_FASTUSERSWITCHING 26")]
-        public const int OS_FASTUSERSWITCHING = 26;
-
-        [NativeTypeName("#define OS_WELCOMELOGONUI 27")]
-        public const int OS_WELCOMELOGONUI = 27;
-
-        [NativeTypeName("#define OS_DOMAINMEMBER 28")]
-        public const int OS_DOMAINMEMBER = 28;
-
-        [NativeTypeName("#define OS_ANYSERVER 29")]
-        public const int OS_ANYSERVER = 29;
-
-        [NativeTypeName("#define OS_WOW6432 30")]
-        public const int OS_WOW6432 = 30;
-
-        [NativeTypeName("#define OS_WEBSERVER 31")]
-        public const int OS_WEBSERVER = 31;
-
-        [NativeTypeName("#define OS_SMALLBUSINESSSERVER 32")]
-        public const int OS_SMALLBUSINESSSERVER = 32;
-
-        [NativeTypeName("#define OS_TABLETPC 33")]
-        public const int OS_TABLETPC = 33;
-
-        [NativeTypeName("#define OS_SERVERADMINUI 34")]
-        public const int OS_SERVERADMINUI = 34;
-
-        [NativeTypeName("#define OS_MEDIACENTER 35")]
-        public const int OS_MEDIACENTER = 35;
-
-        [NativeTypeName("#define OS_APPLIANCE 36")]
-        public const int OS_APPLIANCE = 36;
-
         [NativeTypeName("#define PLATFORM_UNKNOWN 0")]
         public const int PLATFORM_UNKNOWN = 0;
 
@@ -2101,45 +1771,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define ILMM_IE4 0")]
         public const int ILMM_IE4 = 0;
-
-        [NativeTypeName("#define SHACF_DEFAULT 0x00000000")]
-        public const int SHACF_DEFAULT = 0x00000000;
-
-        [NativeTypeName("#define SHACF_FILESYSTEM 0x00000001")]
-        public const int SHACF_FILESYSTEM = 0x00000001;
-
-        [NativeTypeName("#define SHACF_URLALL (SHACF_URLHISTORY | SHACF_URLMRU)")]
-        public const int SHACF_URLALL = (0x00000002 | 0x00000004);
-
-        [NativeTypeName("#define SHACF_URLHISTORY 0x00000002")]
-        public const int SHACF_URLHISTORY = 0x00000002;
-
-        [NativeTypeName("#define SHACF_URLMRU 0x00000004")]
-        public const int SHACF_URLMRU = 0x00000004;
-
-        [NativeTypeName("#define SHACF_USETAB 0x00000008")]
-        public const int SHACF_USETAB = 0x00000008;
-
-        [NativeTypeName("#define SHACF_FILESYS_ONLY 0x00000010")]
-        public const int SHACF_FILESYS_ONLY = 0x00000010;
-
-        [NativeTypeName("#define SHACF_FILESYS_DIRS 0x00000020")]
-        public const int SHACF_FILESYS_DIRS = 0x00000020;
-
-        [NativeTypeName("#define SHACF_VIRTUAL_NAMESPACE 0x00000040")]
-        public const int SHACF_VIRTUAL_NAMESPACE = 0x00000040;
-
-        [NativeTypeName("#define SHACF_AUTOSUGGEST_FORCE_ON 0x10000000")]
-        public const int SHACF_AUTOSUGGEST_FORCE_ON = 0x10000000;
-
-        [NativeTypeName("#define SHACF_AUTOSUGGEST_FORCE_OFF 0x20000000")]
-        public const int SHACF_AUTOSUGGEST_FORCE_OFF = 0x20000000;
-
-        [NativeTypeName("#define SHACF_AUTOAPPEND_FORCE_ON 0x40000000")]
-        public const int SHACF_AUTOAPPEND_FORCE_ON = 0x40000000;
-
-        [NativeTypeName("#define SHACF_AUTOAPPEND_FORCE_OFF 0x80000000")]
-        public const uint SHACF_AUTOAPPEND_FORCE_OFF = 0x80000000;
 
         [NativeTypeName("#define DLLVER_PLATFORM_WINDOWS 0x00000001")]
         public const int DLLVER_PLATFORM_WINDOWS = 0x00000001;

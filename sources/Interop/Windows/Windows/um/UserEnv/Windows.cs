@@ -202,24 +202,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define GPC_BLOCK_POLICY 0x00000001")]
         public const int GPC_BLOCK_POLICY = 0x00000001;
 
-        [NativeTypeName("#define GPO_FLAG_DISABLE 0x00000001")]
-        public const int GPO_FLAG_DISABLE = 0x00000001;
-
-        [NativeTypeName("#define GPO_FLAG_FORCE 0x00000002")]
-        public const int GPO_FLAG_FORCE = 0x00000002;
-
-        [NativeTypeName("#define GPO_LIST_FLAG_MACHINE 0x00000001")]
-        public const int GPO_LIST_FLAG_MACHINE = 0x00000001;
-
-        [NativeTypeName("#define GPO_LIST_FLAG_SITEONLY 0x00000002")]
-        public const int GPO_LIST_FLAG_SITEONLY = 0x00000002;
-
-        [NativeTypeName("#define GPO_LIST_FLAG_NO_WMIFILTERS 0x00000004")]
-        public const int GPO_LIST_FLAG_NO_WMIFILTERS = 0x00000004;
-
-        [NativeTypeName("#define GPO_LIST_FLAG_NO_SECURITYFILTERS 0x00000008")]
-        public const int GPO_LIST_FLAG_NO_SECURITYFILTERS = 0x00000008;
-
         [NativeTypeName("#define GetGPOList GetGPOListW")]
         public static delegate*<HANDLE, ushort*, ushort*, ushort*, uint, GROUP_POLICY_OBJECTW**, BOOL> GetGPOList => &GetGPOListW;
 
@@ -228,105 +210,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define GetAppliedGPOList GetAppliedGPOListW")]
         public static delegate*<uint, ushort*, void*, Guid*, GROUP_POLICY_OBJECTW**, uint> GetAppliedGPOList => &GetAppliedGPOListW;
-
-        [NativeTypeName("#define GP_DLLNAME TEXT(\"DllName\")")]
-        public const string GP_DLLNAME = "DllName";
-
-        [NativeTypeName("#define GP_ENABLEASYNCHRONOUSPROCESSING TEXT(\"EnableAsynchronousProcessing\")")]
-        public const string GP_ENABLEASYNCHRONOUSPROCESSING = "EnableAsynchronousProcessing";
-
-        [NativeTypeName("#define GP_MAXNOGPOLISTCHANGESINTERVAL TEXT(\"MaxNoGPOListChangesInterval\")")]
-        public const string GP_MAXNOGPOLISTCHANGESINTERVAL = "MaxNoGPOListChangesInterval";
-
-        [NativeTypeName("#define GP_NOBACKGROUNDPOLICY TEXT(\"NoBackgroundPolicy\")")]
-        public const string GP_NOBACKGROUNDPOLICY = "NoBackgroundPolicy";
-
-        [NativeTypeName("#define GP_NOGPOLISTCHANGES TEXT(\"NoGPOListChanges\")")]
-        public const string GP_NOGPOLISTCHANGES = "NoGPOListChanges";
-
-        [NativeTypeName("#define GP_NOMACHINEPOLICY TEXT(\"NoMachinePolicy\")")]
-        public const string GP_NOMACHINEPOLICY = "NoMachinePolicy";
-
-        [NativeTypeName("#define GP_NOSLOWLINK TEXT(\"NoSlowLink\")")]
-        public const string GP_NOSLOWLINK = "NoSlowLink";
-
-        [NativeTypeName("#define GP_NOTIFYLINKTRANSITION TEXT(\"NotifyLinkTransition\")")]
-        public const string GP_NOTIFYLINKTRANSITION = "NotifyLinkTransition";
-
-        [NativeTypeName("#define GP_NOUSERPOLICY TEXT(\"NoUserPolicy\")")]
-        public const string GP_NOUSERPOLICY = "NoUserPolicy";
-
-        [NativeTypeName("#define GP_PERUSERLOCALSETTINGS TEXT(\"PerUserLocalSettings\")")]
-        public const string GP_PERUSERLOCALSETTINGS = "PerUserLocalSettings";
-
-        [NativeTypeName("#define GP_PROCESSGROUPPOLICY TEXT(\"ProcessGroupPolicy\")")]
-        public const string GP_PROCESSGROUPPOLICY = "ProcessGroupPolicy";
-
-        [NativeTypeName("#define GP_REQUIRESSUCCESSFULREGISTRY TEXT(\"RequiresSuccessfulRegistry\")")]
-        public const string GP_REQUIRESSUCCESSFULREGISTRY = "RequiresSuccessfulRegistry";
-
-        [NativeTypeName("#define GPO_INFO_FLAG_MACHINE 0x00000001")]
-        public const int GPO_INFO_FLAG_MACHINE = 0x00000001;
-
-        [NativeTypeName("#define GPO_INFO_FLAG_BACKGROUND 0x00000010")]
-        public const int GPO_INFO_FLAG_BACKGROUND = 0x00000010;
-
-        [NativeTypeName("#define GPO_INFO_FLAG_SLOWLINK 0x00000020")]
-        public const int GPO_INFO_FLAG_SLOWLINK = 0x00000020;
-
-        [NativeTypeName("#define GPO_INFO_FLAG_VERBOSE 0x00000040")]
-        public const int GPO_INFO_FLAG_VERBOSE = 0x00000040;
-
-        [NativeTypeName("#define GPO_INFO_FLAG_NOCHANGES 0x00000080")]
-        public const int GPO_INFO_FLAG_NOCHANGES = 0x00000080;
-
-        [NativeTypeName("#define GPO_INFO_FLAG_LINKTRANSITION 0x00000100")]
-        public const int GPO_INFO_FLAG_LINKTRANSITION = 0x00000100;
-
-        [NativeTypeName("#define GPO_INFO_FLAG_LOGRSOP_TRANSITION 0x00000200")]
-        public const int GPO_INFO_FLAG_LOGRSOP_TRANSITION = 0x00000200;
-
-        [NativeTypeName("#define GPO_INFO_FLAG_FORCED_REFRESH 0x00000400")]
-        public const int GPO_INFO_FLAG_FORCED_REFRESH = 0x00000400;
-
-        [NativeTypeName("#define GPO_INFO_FLAG_SAFEMODE_BOOT 0x00000800")]
-        public const int GPO_INFO_FLAG_SAFEMODE_BOOT = 0x00000800;
-
-        [NativeTypeName("#define GPO_INFO_FLAG_ASYNC_FOREGROUND 0x00001000")]
-        public const int GPO_INFO_FLAG_ASYNC_FOREGROUND = 0x00001000;
-
-        [NativeTypeName("#define FLAG_NO_GPO_FILTER 0x80000000")]
-        public const uint FLAG_NO_GPO_FILTER = 0x80000000;
-
-        [NativeTypeName("#define FLAG_NO_CSE_INVOKE 0x40000000")]
-        public const int FLAG_NO_CSE_INVOKE = 0x40000000;
-
-        [NativeTypeName("#define FLAG_ASSUME_SLOW_LINK 0x20000000")]
-        public const int FLAG_ASSUME_SLOW_LINK = 0x20000000;
-
-        [NativeTypeName("#define FLAG_LOOPBACK_MERGE 0x10000000")]
-        public const int FLAG_LOOPBACK_MERGE = 0x10000000;
-
-        [NativeTypeName("#define FLAG_LOOPBACK_REPLACE 0x08000000")]
-        public const int FLAG_LOOPBACK_REPLACE = 0x08000000;
-
-        [NativeTypeName("#define FLAG_ASSUME_USER_WQLFILTER_TRUE 0x04000000")]
-        public const int FLAG_ASSUME_USER_WQLFILTER_TRUE = 0x04000000;
-
-        [NativeTypeName("#define FLAG_ASSUME_COMP_WQLFILTER_TRUE 0x02000000")]
-        public const int FLAG_ASSUME_COMP_WQLFILTER_TRUE = 0x02000000;
-
-        [NativeTypeName("#define FLAG_PLANNING_MODE 0x01000000")]
-        public const int FLAG_PLANNING_MODE = 0x01000000;
-
-        [NativeTypeName("#define FLAG_NO_USER 0x00000001")]
-        public const int FLAG_NO_USER = 0x00000001;
-
-        [NativeTypeName("#define FLAG_NO_COMPUTER 0x00000002")]
-        public const int FLAG_NO_COMPUTER = 0x00000002;
-
-        [NativeTypeName("#define FLAG_FORCE_CREATENAMESPACE 0x00000004")]
-        public const int FLAG_FORCE_CREATENAMESPACE = 0x00000004;
 
         [NativeTypeName("#define RSOP_USER_ACCESS_DENIED 0x00000001")]
         public const int RSOP_USER_ACCESS_DENIED = 0x00000001;

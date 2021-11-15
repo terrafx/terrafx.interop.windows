@@ -30,8 +30,5 @@ namespace TerraFX.Interop.DirectX
         {
             return D2D1CreateFactory(factoryType, riid, null, factory);
         }
-
-        [NativeTypeName("#define D2D1_DEFAULT_FLATTENING_TOLERANCE (0.25f)")]
-        public const float D2D1_DEFAULT_FLATTENING_TOLERANCE = (0.25f);
     }
 }

@@ -277,63 +277,6 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define ImmGetImeMenuItems ImmGetImeMenuItemsW")]
         public static delegate*<HIMC, uint, uint, IMEMENUITEMINFOW*, IMEMENUITEMINFOW*, uint, uint> ImmGetImeMenuItems => &ImmGetImeMenuItemsW;
 
-        [NativeTypeName("#define IMC_GETCANDIDATEPOS 0x0007")]
-        public const int IMC_GETCANDIDATEPOS = 0x0007;
-
-        [NativeTypeName("#define IMC_SETCANDIDATEPOS 0x0008")]
-        public const int IMC_SETCANDIDATEPOS = 0x0008;
-
-        [NativeTypeName("#define IMC_GETCOMPOSITIONFONT 0x0009")]
-        public const int IMC_GETCOMPOSITIONFONT = 0x0009;
-
-        [NativeTypeName("#define IMC_SETCOMPOSITIONFONT 0x000A")]
-        public const int IMC_SETCOMPOSITIONFONT = 0x000A;
-
-        [NativeTypeName("#define IMC_GETCOMPOSITIONWINDOW 0x000B")]
-        public const int IMC_GETCOMPOSITIONWINDOW = 0x000B;
-
-        [NativeTypeName("#define IMC_SETCOMPOSITIONWINDOW 0x000C")]
-        public const int IMC_SETCOMPOSITIONWINDOW = 0x000C;
-
-        [NativeTypeName("#define IMC_GETSTATUSWINDOWPOS 0x000F")]
-        public const int IMC_GETSTATUSWINDOWPOS = 0x000F;
-
-        [NativeTypeName("#define IMC_SETSTATUSWINDOWPOS 0x0010")]
-        public const int IMC_SETSTATUSWINDOWPOS = 0x0010;
-
-        [NativeTypeName("#define IMC_CLOSESTATUSWINDOW 0x0021")]
-        public const int IMC_CLOSESTATUSWINDOW = 0x0021;
-
-        [NativeTypeName("#define IMC_OPENSTATUSWINDOW 0x0022")]
-        public const int IMC_OPENSTATUSWINDOW = 0x0022;
-
-        [NativeTypeName("#define NI_OPENCANDIDATE 0x0010")]
-        public const int NI_OPENCANDIDATE = 0x0010;
-
-        [NativeTypeName("#define NI_CLOSECANDIDATE 0x0011")]
-        public const int NI_CLOSECANDIDATE = 0x0011;
-
-        [NativeTypeName("#define NI_SELECTCANDIDATESTR 0x0012")]
-        public const int NI_SELECTCANDIDATESTR = 0x0012;
-
-        [NativeTypeName("#define NI_CHANGECANDIDATELIST 0x0013")]
-        public const int NI_CHANGECANDIDATELIST = 0x0013;
-
-        [NativeTypeName("#define NI_FINALIZECONVERSIONRESULT 0x0014")]
-        public const int NI_FINALIZECONVERSIONRESULT = 0x0014;
-
-        [NativeTypeName("#define NI_COMPOSITIONSTR 0x0015")]
-        public const int NI_COMPOSITIONSTR = 0x0015;
-
-        [NativeTypeName("#define NI_SETCANDIDATE_PAGESTART 0x0016")]
-        public const int NI_SETCANDIDATE_PAGESTART = 0x0016;
-
-        [NativeTypeName("#define NI_SETCANDIDATE_PAGESIZE 0x0017")]
-        public const int NI_SETCANDIDATE_PAGESIZE = 0x0017;
-
-        [NativeTypeName("#define NI_IMEMENUSELECTED 0x0018")]
-        public const int NI_IMEMENUSELECTED = 0x0018;
-
         [NativeTypeName("#define ISC_SHOWUICANDIDATEWINDOW 0x00000001")]
         public const int ISC_SHOWUICANDIDATEWINDOW = 0x00000001;
 
@@ -361,83 +304,11 @@ namespace TerraFX.Interop.Windows
         [NativeTypeName("#define CPS_CANCEL 0x0004")]
         public const int CPS_CANCEL = 0x0004;
 
-        [NativeTypeName("#define MOD_LEFT 0x8000")]
-        public const int MOD_LEFT = 0x8000;
-
-        [NativeTypeName("#define MOD_RIGHT 0x4000")]
-        public const int MOD_RIGHT = 0x4000;
-
-        [NativeTypeName("#define MOD_ON_KEYUP 0x0800")]
-        public const int MOD_ON_KEYUP = 0x0800;
-
-        [NativeTypeName("#define MOD_IGNORE_ALL_MODIFIER 0x0400")]
-        public const int MOD_IGNORE_ALL_MODIFIER = 0x0400;
-
-        [NativeTypeName("#define GCS_COMPREADSTR 0x0001")]
-        public const int GCS_COMPREADSTR = 0x0001;
-
-        [NativeTypeName("#define GCS_COMPREADATTR 0x0002")]
-        public const int GCS_COMPREADATTR = 0x0002;
-
-        [NativeTypeName("#define GCS_COMPREADCLAUSE 0x0004")]
-        public const int GCS_COMPREADCLAUSE = 0x0004;
-
-        [NativeTypeName("#define GCS_COMPSTR 0x0008")]
-        public const int GCS_COMPSTR = 0x0008;
-
-        [NativeTypeName("#define GCS_COMPATTR 0x0010")]
-        public const int GCS_COMPATTR = 0x0010;
-
-        [NativeTypeName("#define GCS_COMPCLAUSE 0x0020")]
-        public const int GCS_COMPCLAUSE = 0x0020;
-
-        [NativeTypeName("#define GCS_CURSORPOS 0x0080")]
-        public const int GCS_CURSORPOS = 0x0080;
-
-        [NativeTypeName("#define GCS_DELTASTART 0x0100")]
-        public const int GCS_DELTASTART = 0x0100;
-
-        [NativeTypeName("#define GCS_RESULTREADSTR 0x0200")]
-        public const int GCS_RESULTREADSTR = 0x0200;
-
-        [NativeTypeName("#define GCS_RESULTREADCLAUSE 0x0400")]
-        public const int GCS_RESULTREADCLAUSE = 0x0400;
-
-        [NativeTypeName("#define GCS_RESULTSTR 0x0800")]
-        public const int GCS_RESULTSTR = 0x0800;
-
-        [NativeTypeName("#define GCS_RESULTCLAUSE 0x1000")]
-        public const int GCS_RESULTCLAUSE = 0x1000;
-
-        [NativeTypeName("#define CS_INSERTCHAR 0x2000")]
-        public const int CS_INSERTCHAR = 0x2000;
-
-        [NativeTypeName("#define CS_NOMOVECARET 0x4000")]
-        public const int CS_NOMOVECARET = 0x4000;
-
         [NativeTypeName("#define IMEVER_0310 0x0003000A")]
         public const int IMEVER_0310 = 0x0003000A;
 
         [NativeTypeName("#define IMEVER_0400 0x00040000")]
         public const int IMEVER_0400 = 0x00040000;
-
-        [NativeTypeName("#define UI_CAP_2700 0x00000001")]
-        public const int UI_CAP_2700 = 0x00000001;
-
-        [NativeTypeName("#define UI_CAP_ROT90 0x00000002")]
-        public const int UI_CAP_ROT90 = 0x00000002;
-
-        [NativeTypeName("#define UI_CAP_ROTANY 0x00000004")]
-        public const int UI_CAP_ROTANY = 0x00000004;
-
-        [NativeTypeName("#define SCS_CAP_COMPSTR 0x00000001")]
-        public const int SCS_CAP_COMPSTR = 0x00000001;
-
-        [NativeTypeName("#define SCS_CAP_MAKEREAD 0x00000002")]
-        public const int SCS_CAP_MAKEREAD = 0x00000002;
-
-        [NativeTypeName("#define SCS_CAP_SETRECONVERTSTRING 0x00000004")]
-        public const int SCS_CAP_SETRECONVERTSTRING = 0x00000004;
 
         [NativeTypeName("#define SELECT_CAP_CONVERSION 0x00000001")]
         public const int SELECT_CAP_CONVERSION = 0x00000001;
@@ -456,69 +327,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define GGL_PRIVATE 0x00000004")]
         public const int GGL_PRIVATE = 0x00000004;
-
-        [NativeTypeName("#define GL_LEVEL_NOGUIDELINE 0x00000000")]
-        public const int GL_LEVEL_NOGUIDELINE = 0x00000000;
-
-        [NativeTypeName("#define GL_LEVEL_FATAL 0x00000001")]
-        public const int GL_LEVEL_FATAL = 0x00000001;
-
-        [NativeTypeName("#define GL_LEVEL_ERROR 0x00000002")]
-        public const int GL_LEVEL_ERROR = 0x00000002;
-
-        [NativeTypeName("#define GL_LEVEL_WARNING 0x00000003")]
-        public const int GL_LEVEL_WARNING = 0x00000003;
-
-        [NativeTypeName("#define GL_LEVEL_INFORMATION 0x00000004")]
-        public const int GL_LEVEL_INFORMATION = 0x00000004;
-
-        [NativeTypeName("#define GL_ID_UNKNOWN 0x00000000")]
-        public const int GL_ID_UNKNOWN = 0x00000000;
-
-        [NativeTypeName("#define GL_ID_NOMODULE 0x00000001")]
-        public const int GL_ID_NOMODULE = 0x00000001;
-
-        [NativeTypeName("#define GL_ID_NODICTIONARY 0x00000010")]
-        public const int GL_ID_NODICTIONARY = 0x00000010;
-
-        [NativeTypeName("#define GL_ID_CANNOTSAVE 0x00000011")]
-        public const int GL_ID_CANNOTSAVE = 0x00000011;
-
-        [NativeTypeName("#define GL_ID_NOCONVERT 0x00000020")]
-        public const int GL_ID_NOCONVERT = 0x00000020;
-
-        [NativeTypeName("#define GL_ID_TYPINGERROR 0x00000021")]
-        public const int GL_ID_TYPINGERROR = 0x00000021;
-
-        [NativeTypeName("#define GL_ID_TOOMANYSTROKE 0x00000022")]
-        public const int GL_ID_TOOMANYSTROKE = 0x00000022;
-
-        [NativeTypeName("#define GL_ID_READINGCONFLICT 0x00000023")]
-        public const int GL_ID_READINGCONFLICT = 0x00000023;
-
-        [NativeTypeName("#define GL_ID_INPUTREADING 0x00000024")]
-        public const int GL_ID_INPUTREADING = 0x00000024;
-
-        [NativeTypeName("#define GL_ID_INPUTRADICAL 0x00000025")]
-        public const int GL_ID_INPUTRADICAL = 0x00000025;
-
-        [NativeTypeName("#define GL_ID_INPUTCODE 0x00000026")]
-        public const int GL_ID_INPUTCODE = 0x00000026;
-
-        [NativeTypeName("#define GL_ID_INPUTSYMBOL 0x00000027")]
-        public const int GL_ID_INPUTSYMBOL = 0x00000027;
-
-        [NativeTypeName("#define GL_ID_CHOOSECANDIDATE 0x00000028")]
-        public const int GL_ID_CHOOSECANDIDATE = 0x00000028;
-
-        [NativeTypeName("#define GL_ID_REVERSECONVERSION 0x00000029")]
-        public const int GL_ID_REVERSECONVERSION = 0x00000029;
-
-        [NativeTypeName("#define GL_ID_PRIVATE_FIRST 0x00008000")]
-        public const int GL_ID_PRIVATE_FIRST = 0x00008000;
-
-        [NativeTypeName("#define GL_ID_PRIVATE_LAST 0x0000FFFF")]
-        public const int GL_ID_PRIVATE_LAST = 0x0000FFFF;
 
         [NativeTypeName("#define IGP_GETIMEVERSION (DWORD)(-4)")]
         public const uint IGP_GETIMEVERSION = unchecked((uint)(-4));
@@ -540,21 +348,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define IGP_SELECT 0x00000018")]
         public const int IGP_SELECT = 0x00000018;
-
-        [NativeTypeName("#define SCS_SETSTR (GCS_COMPREADSTR|GCS_COMPSTR)")]
-        public const int SCS_SETSTR = (0x0001 | 0x0008);
-
-        [NativeTypeName("#define SCS_CHANGEATTR (GCS_COMPREADATTR|GCS_COMPATTR)")]
-        public const int SCS_CHANGEATTR = (0x0002 | 0x0010);
-
-        [NativeTypeName("#define SCS_CHANGECLAUSE (GCS_COMPREADCLAUSE|GCS_COMPCLAUSE)")]
-        public const int SCS_CHANGECLAUSE = (0x0004 | 0x0020);
-
-        [NativeTypeName("#define SCS_SETRECONVERTSTRING 0x00010000")]
-        public const int SCS_SETRECONVERTSTRING = 0x00010000;
-
-        [NativeTypeName("#define SCS_QUERYRECONVERTSTRING 0x00020000")]
-        public const int SCS_QUERYRECONVERTSTRING = 0x00020000;
 
         [NativeTypeName("#define ATTR_INPUT 0x00")]
         public const int ATTR_INPUT = 0x00;
@@ -591,57 +384,6 @@ namespace TerraFX.Interop.Windows
 
         [NativeTypeName("#define CFS_EXCLUDE 0x0080")]
         public const int CFS_EXCLUDE = 0x0080;
-
-        [NativeTypeName("#define GCL_CONVERSION 0x0001")]
-        public const int GCL_CONVERSION = 0x0001;
-
-        [NativeTypeName("#define GCL_REVERSECONVERSION 0x0002")]
-        public const int GCL_REVERSECONVERSION = 0x0002;
-
-        [NativeTypeName("#define GCL_REVERSE_LENGTH 0x0003")]
-        public const int GCL_REVERSE_LENGTH = 0x0003;
-
-        [NativeTypeName("#define IMN_CLOSESTATUSWINDOW 0x0001")]
-        public const int IMN_CLOSESTATUSWINDOW = 0x0001;
-
-        [NativeTypeName("#define IMN_OPENSTATUSWINDOW 0x0002")]
-        public const int IMN_OPENSTATUSWINDOW = 0x0002;
-
-        [NativeTypeName("#define IMN_CHANGECANDIDATE 0x0003")]
-        public const int IMN_CHANGECANDIDATE = 0x0003;
-
-        [NativeTypeName("#define IMN_CLOSECANDIDATE 0x0004")]
-        public const int IMN_CLOSECANDIDATE = 0x0004;
-
-        [NativeTypeName("#define IMN_OPENCANDIDATE 0x0005")]
-        public const int IMN_OPENCANDIDATE = 0x0005;
-
-        [NativeTypeName("#define IMN_SETCONVERSIONMODE 0x0006")]
-        public const int IMN_SETCONVERSIONMODE = 0x0006;
-
-        [NativeTypeName("#define IMN_SETSENTENCEMODE 0x0007")]
-        public const int IMN_SETSENTENCEMODE = 0x0007;
-
-        [NativeTypeName("#define IMN_SETOPENSTATUS 0x0008")]
-        public const int IMN_SETOPENSTATUS = 0x0008;
-
-        [NativeTypeName("#define IMN_SETCANDIDATEPOS 0x0009")]
-        public const int IMN_SETCANDIDATEPOS = 0x0009;
-
-        [NativeTypeName("#define IMN_SETCOMPOSITIONFONT 0x000A")]
-        public const int IMN_SETCOMPOSITIONFONT = 0x000A;
-
-        [NativeTypeName("#define IMN_SETCOMPOSITIONWINDOW 0x000B")]
-        public const int IMN_SETCOMPOSITIONWINDOW = 0x000B;
-
-        [NativeTypeName("#define IMN_SETSTATUSWINDOWPOS 0x000C")]
-        public const int IMN_SETSTATUSWINDOWPOS = 0x000C;
-
-        [NativeTypeName("#define IMN_GUIDELINE 0x000D")]
-        public const int IMN_GUIDELINE = 0x000D;
-
-        [NativeTypeName("#define IMN_PRIVATE 0x000E")]
-        public const int IMN_PRIVATE = 0x000E;
 
         [NativeTypeName("#define IMR_COMPOSITIONWINDOW 0x0001")]
         public const int IMR_COMPOSITIONWINDOW = 0x0001;

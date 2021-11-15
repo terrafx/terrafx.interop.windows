@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.DirectX.D3D12;
 using static TerraFX.Interop.DirectX.D3D12_FILTER_REDUCTION_TYPE;
 using static TerraFX.Interop.DirectX.D3D12_FILTER_TYPE;
 using static TerraFX.Interop.Windows.Windows;
@@ -88,26 +89,30 @@ namespace TerraFX.Interop.DirectX
             return D3DReflectLibrary(pSrcData, SrcDataSize, __uuidof<ID3D12LibraryReflection>(), (void**)ppReflector);
         }
 
-        public static HRESULT D3D_SET_OBJECT_NAME_N_A(ID3D12Object* pObject, uint Chars, sbyte* pName)
+        public static HRESULT D3D12_SET_OBJECT_NAME_N_A<TD3D12Object>(TD3D12Object* pObject, uint Chars, sbyte* pName)
+            where TD3D12Object : unmanaged, ID3D12Object.Interface
         {
             var guid = WKPDID_D3DDebugObjectName;
             return pObject->SetPrivateData(&guid, Chars, pName);
         }
 
-        public static HRESULT D3D_SET_OBJECT_NAME_A(ID3D12Object* pObject, sbyte* pName)
+        public static HRESULT D3D12_SET_OBJECT_NAME_A<TD3D12Object>(TD3D12Object* pObject, sbyte* pName)
+            where TD3D12Object : unmanaged, ID3D12Object.Interface
         {
-            return D3D_SET_OBJECT_NAME_N_A(pObject, (uint)lstrlenA(pName), pName);
+            return D3D12_SET_OBJECT_NAME_N_A(pObject, (uint)lstrlenA(pName), pName);
         }
 
-        public static HRESULT D3D_SET_OBJECT_NAME_N_W(ID3D12Object* pObject, uint Chars, ushort* pName)
+        public static HRESULT D3D12_SET_OBJECT_NAME_N_W<TD3D12Object>(TD3D12Object* pObject, uint Chars, ushort* pName)
+            where TD3D12Object : unmanaged, ID3D12Object.Interface
         {
             var guid = WKPDID_D3DDebugObjectNameW;
             return pObject->SetPrivateData(&guid, Chars * 2, pName);
         }
 
-        public static HRESULT D3D_SET_OBJECT_NAME_W(ID3D12Object* pObject, ushort* pName)
+        public static HRESULT D3D12_SET_OBJECT_NAME_W<TD3D12Object>(TD3D12Object* pObject, ushort* pName)
+            where TD3D12Object : unmanaged, ID3D12Object.Interface
         {
-            return D3D_SET_OBJECT_NAME_N_W(pObject, (uint)lstrlenW(pName), pName);
+            return D3D12_SET_OBJECT_NAME_N_W(pObject, (uint)lstrlenW(pName), pName);
         }
     }
 }
