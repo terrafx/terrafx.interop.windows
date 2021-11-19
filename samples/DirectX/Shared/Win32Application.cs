@@ -44,12 +44,10 @@ namespace TerraFX.Samples.DirectX
             fixed (char* lpWindowName = sample.Name)
             {
                 // Initialize the window class.
-                var lpfnWndProc = (delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint>)&WindowProc;
-
                 var windowClass = new WNDCLASSEXW {
                     cbSize = (uint)sizeof(WNDCLASSEXW),
                     style = CS_HREDRAW | CS_VREDRAW,
-                    lpfnWndProc = (delegate* unmanaged<HWND, uint, WPARAM, LPARAM, LRESULT>)lpfnWndProc,
+                    lpfnWndProc = &WindowProc,
                     hInstance = hInstance,
                     hCursor = LoadCursorW(HINSTANCE.NULL, (ushort*)IDC_ARROW),
                     lpszClassName = (ushort*)lpszClassName
@@ -134,7 +132,7 @@ namespace TerraFX.Samples.DirectX
 
         // Main message handler for the sample
         [UnmanagedCallersOnly]
-        private static nint WindowProc(HWND hWnd, uint message, WPARAM wParam, LPARAM lParam)
+        private static LRESULT WindowProc(HWND hWnd, uint message, WPARAM wParam, LPARAM lParam)
         {
             var handle = GetWindowLongPtrW(hWnd, GWLP_USERDATA);
             var pSample = (handle != 0) ? (DXSample?)GCHandle.FromIntPtr(handle).Target : null;
