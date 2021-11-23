@@ -16,9 +16,11 @@ namespace TerraFX.Interop.Windows
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL TzSpecificLocalTimeToSystemTime([NativeTypeName("const TIME_ZONE_INFORMATION *")] TIME_ZONE_INFORMATION* lpTimeZoneInformation, [NativeTypeName("const SYSTEMTIME *")] SYSTEMTIME* lpLocalTime, [NativeTypeName("LPSYSTEMTIME")] SYSTEMTIME* lpUniversalTime);
 
+        [SuppressGCTransition]
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL FileTimeToSystemTime([NativeTypeName("const FILETIME *")] FILETIME* lpFileTime, [NativeTypeName("LPSYSTEMTIME")] SYSTEMTIME* lpSystemTime);
 
+        [SuppressGCTransition]
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern BOOL SystemTimeToFileTime([NativeTypeName("const SYSTEMTIME *")] SYSTEMTIME* lpSystemTime, [NativeTypeName("LPFILETIME")] FILETIME* lpFileTime);
 

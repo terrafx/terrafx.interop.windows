@@ -161,6 +161,7 @@ GetPointerTouchInfo=SupportedOSPlatform("windows8.0")
 GetPointerTouchInfoHistory=SupportedOSPlatform("windows8.0")
 GetPointerType=SupportedOSPlatform("windows8.0")
 GetRawPointerDeviceData=SupportedOSPlatform("windows8.0")
+GetSysColor=SuppressGCTransition
 GetSystemDpiForProcess=SupportedOSPlatform("windows10.0.17134.0")
 GetSystemMetricsForDpi=SupportedOSPlatform("windows10.0.14393.0")
 GetThreadDpiAwarenessContext=SupportedOSPlatform("windows10.0.14393.0")
