@@ -12,6 +12,9 @@ TerraFX.Interop.Windows
 ../../../../tests/Interop/Windows/Windows/um/profileapi
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/profileapi.h
+--with-attribute
+QueryPerformanceCounter=SuppressGCTransition
+QueryPerformanceFrequency=SuppressGCTransition
 --with-librarypath
 QueryPerformanceCounter=kernel32
 QueryPerformanceFrequency=kernel32

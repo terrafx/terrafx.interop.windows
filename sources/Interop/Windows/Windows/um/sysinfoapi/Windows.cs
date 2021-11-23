@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void GetSystemInfo([NativeTypeName("LPSYSTEM_INFO")] SYSTEM_INFO* lpSystemInfo);
 
+        [SuppressGCTransition]
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern void GetSystemTime([NativeTypeName("LPSYSTEMTIME")] SYSTEMTIME* lpSystemTime);
 

@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern BOOL SetEnvironmentStringsW([NativeTypeName("LPWCH")] ushort* NewEnvironment);
 
+        [SuppressGCTransition]
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern HANDLE GetStdHandle([NativeTypeName("DWORD")] uint nStdHandle);
 

@@ -49,6 +49,7 @@ namespace TerraFX.Interop.Windows
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern HANDLE GetCurrentThread();
 
+        [SuppressGCTransition]
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetCurrentThreadId();

@@ -1549,6 +1549,7 @@ namespace TerraFX.Interop.Windows
         [DllImport("user32", ExactSpelling = true)]
         public static extern HWND ChildWindowFromPointEx(HWND hwnd, POINT pt, uint flags);
 
+        [SuppressGCTransition]
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetSysColor(int nIndex);

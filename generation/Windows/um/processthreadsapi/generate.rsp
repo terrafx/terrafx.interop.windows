@@ -21,6 +21,7 @@ APP_MEMORY_INFORMATION=SupportedOSPlatform("windows10.0.10586.0")
 GetCurrentProcessToken=SupportedOSPlatform("windows8.0")
 GetCurrentThreadEffectiveToken=SupportedOSPlatform("windows8.0")
 GetCurrentThreadStackLimits=SupportedOSPlatform("windows8.0")
+GetCurrentThreadId=SuppressGCTransition
 GetCurrentThreadToken=SupportedOSPlatform("windows8.0")
 GetMachineTypeAttributes=SupportedOSPlatform("windows10.0.22000.0")
 GetProcessDefaultCpuSets=SupportedOSPlatform("windows10.0")
