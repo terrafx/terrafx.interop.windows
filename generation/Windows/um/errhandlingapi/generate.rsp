@@ -1,5 +1,7 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--exclude
+TerminateProcessOnMemoryExhaustion
 --file
 um-errhandlingapi.h
 --methodClassName
@@ -18,6 +20,7 @@ SetLastError=SuppressGCTransition
 SetThreadErrorMode=SuppressGCTransition
 --with-librarypath
 AddVectoredContinueHandler=kernel32
+AddVectoredExceptionHandler=kernel32
 FatalAppExit=kernel32
 FatalAppExitA=kernel32
 FatalAppExitW=kernel32

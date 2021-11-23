@@ -35,7 +35,7 @@ namespace TerraFX.Interop.Windows
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern uint SetErrorMode(uint uMode);
 
-        [DllImport("", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("PVOID")]
         public static extern void* AddVectoredExceptionHandler([NativeTypeName("ULONG")] uint First, [NativeTypeName("PVECTORED_EXCEPTION_HANDLER")] delegate* unmanaged<EXCEPTION_POINTERS*, int> Handler);
 
@@ -67,9 +67,6 @@ namespace TerraFX.Interop.Windows
         [SuppressGCTransition]
         [DllImport("kernel32", ExactSpelling = true)]
         public static extern BOOL SetThreadErrorMode([NativeTypeName("DWORD")] uint dwNewMode, [NativeTypeName("LPDWORD")] uint* lpOldMode);
-
-        [DllImport("", ExactSpelling = true)]
-        public static extern void TerminateProcessOnMemoryExhaustion([NativeTypeName("SIZE_T")] nuint FailedAllocationSize);
 
         [NativeTypeName("#define FatalAppExit FatalAppExitW")]
         public static delegate*<uint, ushort*, void> FatalAppExit => &FatalAppExitW;
