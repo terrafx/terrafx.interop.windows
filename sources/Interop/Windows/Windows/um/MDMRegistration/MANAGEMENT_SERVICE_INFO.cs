@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.1")]
-    public unsafe partial struct MANAGEMENT_SERVICE_INFO
-    {
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszMDMServiceUri;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszAuthenticationUri;
-    }
+[SupportedOSPlatform("windows8.1")]
+public unsafe partial struct MANAGEMENT_SERVICE_INFO
+{
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszMDMServiceUri;
+
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszAuthenticationUri;
 }

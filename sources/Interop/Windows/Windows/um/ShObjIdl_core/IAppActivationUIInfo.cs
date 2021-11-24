@@ -7,116 +7,115 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("ABAD189D-9FA3-4278-B3CA-8CA448A88DCB")]
+[NativeTypeName("struct IAppActivationUIInfo : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IAppActivationUIInfo : IAppActivationUIInfo.Interface
 {
-    [Guid("ABAD189D-9FA3-4278-B3CA-8CA448A88DCB")]
-    [NativeTypeName("struct IAppActivationUIInfo : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppActivationUIInfo : IAppActivationUIInfo.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IAppActivationUIInfo*, Guid*, void**, int>)(lpVtbl[0]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IAppActivationUIInfo*, Guid*, void**, int>)(lpVtbl[0]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IAppActivationUIInfo*, uint>)(lpVtbl[1]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IAppActivationUIInfo*, uint>)(lpVtbl[1]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IAppActivationUIInfo*, uint>)(lpVtbl[2]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IAppActivationUIInfo*, uint>)(lpVtbl[2]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetMonitor(HMONITOR* value)
+    {
+        return ((delegate* unmanaged<IAppActivationUIInfo*, HMONITOR*, int>)(lpVtbl[3]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetInvokePoint(POINT* value)
+    {
+        return ((delegate* unmanaged<IAppActivationUIInfo*, POINT*, int>)(lpVtbl[4]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetShowCommand(int* value)
+    {
+        return ((delegate* unmanaged<IAppActivationUIInfo*, int*, int>)(lpVtbl[5]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetShowUI(BOOL* value)
+    {
+        return ((delegate* unmanaged<IAppActivationUIInfo*, BOOL*, int>)(lpVtbl[6]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT GetKeyState([NativeTypeName("DWORD *")] uint* value)
+    {
+        return ((delegate* unmanaged<IAppActivationUIInfo*, uint*, int>)(lpVtbl[7]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetMonitor(HMONITOR* value)
-        {
-            return ((delegate* unmanaged<IAppActivationUIInfo*, HMONITOR*, int>)(lpVtbl[3]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
-        }
+        HRESULT GetMonitor(HMONITOR* value);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetInvokePoint(POINT* value)
-        {
-            return ((delegate* unmanaged<IAppActivationUIInfo*, POINT*, int>)(lpVtbl[4]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
-        }
+        HRESULT GetInvokePoint(POINT* value);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetShowCommand(int* value)
-        {
-            return ((delegate* unmanaged<IAppActivationUIInfo*, int*, int>)(lpVtbl[5]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
-        }
+        HRESULT GetShowCommand(int* value);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetShowUI(BOOL* value)
-        {
-            return ((delegate* unmanaged<IAppActivationUIInfo*, BOOL*, int>)(lpVtbl[6]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
-        }
+        HRESULT GetShowUI(BOOL* value);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetKeyState([NativeTypeName("DWORD *")] uint* value)
-        {
-            return ((delegate* unmanaged<IAppActivationUIInfo*, uint*, int>)(lpVtbl[7]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
-        }
+        HRESULT GetKeyState([NativeTypeName("DWORD *")] uint* value);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetMonitor(HMONITOR* value);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppActivationUIInfo*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetInvokePoint(POINT* value);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppActivationUIInfo*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT GetShowCommand(int* value);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppActivationUIInfo*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT GetShowUI(BOOL* value);
+        [NativeTypeName("HRESULT (HMONITOR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppActivationUIInfo*, HMONITOR*, int> GetMonitor;
 
-            [VtblIndex(7)]
-            HRESULT GetKeyState([NativeTypeName("DWORD *")] uint* value);
-        }
+        [NativeTypeName("HRESULT (POINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppActivationUIInfo*, POINT*, int> GetInvokePoint;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppActivationUIInfo*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppActivationUIInfo*, int*, int> GetShowCommand;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppActivationUIInfo*, uint> AddRef;
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppActivationUIInfo*, BOOL*, int> GetShowUI;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppActivationUIInfo*, uint> Release;
-
-            [NativeTypeName("HRESULT (HMONITOR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppActivationUIInfo*, HMONITOR*, int> GetMonitor;
-
-            [NativeTypeName("HRESULT (POINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppActivationUIInfo*, POINT*, int> GetInvokePoint;
-
-            [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppActivationUIInfo*, int*, int> GetShowCommand;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppActivationUIInfo*, BOOL*, int> GetShowUI;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppActivationUIInfo*, uint*, int> GetKeyState;
-        }
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppActivationUIInfo*, uint*, int> GetKeyState;
     }
 }

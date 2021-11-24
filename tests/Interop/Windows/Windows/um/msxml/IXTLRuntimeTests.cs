@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IXTLRuntime" /> struct.</summary>
+public static unsafe partial class IXTLRuntimeTests
 {
-    /// <summary>Provides validation of the <see cref="IXTLRuntime" /> struct.</summary>
-    public static unsafe partial class IXTLRuntimeTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IXTLRuntime" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IXTLRuntime" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IXTLRuntime).GUID, Is.EqualTo(IID_IXTLRuntime));
-        }
+        Assert.That(typeof(IXTLRuntime).GUID, Is.EqualTo(IID_IXTLRuntime));
+    }
 
-        /// <summary>Validates that the <see cref="IXTLRuntime" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IXTLRuntime>(), Is.EqualTo(sizeof(IXTLRuntime)));
-        }
+    /// <summary>Validates that the <see cref="IXTLRuntime" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IXTLRuntime>(), Is.EqualTo(sizeof(IXTLRuntime)));
+    }
 
-        /// <summary>Validates that the <see cref="IXTLRuntime" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IXTLRuntime).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IXTLRuntime" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IXTLRuntime).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IXTLRuntime" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IXTLRuntime" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IXTLRuntime), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IXTLRuntime), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IXTLRuntime), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IXTLRuntime), Is.EqualTo(4));
         }
     }
 }

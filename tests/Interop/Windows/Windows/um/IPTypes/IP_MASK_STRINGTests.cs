@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IP_MASK_STRING" /> struct.</summary>
+public static unsafe partial class IP_MASK_STRINGTests
 {
-    /// <summary>Provides validation of the <see cref="IP_MASK_STRING" /> struct.</summary>
-    public static unsafe partial class IP_MASK_STRINGTests
+    /// <summary>Validates that the <see cref="IP_MASK_STRING" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IP_MASK_STRING" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IP_MASK_STRING>(), Is.EqualTo(sizeof(IP_MASK_STRING)));
-        }
+        Assert.That(Marshal.SizeOf<IP_MASK_STRING>(), Is.EqualTo(sizeof(IP_MASK_STRING)));
+    }
 
-        /// <summary>Validates that the <see cref="IP_MASK_STRING" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IP_MASK_STRING).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IP_MASK_STRING" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IP_MASK_STRING).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IP_MASK_STRING" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(IP_MASK_STRING), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="IP_MASK_STRING" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(IP_MASK_STRING), Is.EqualTo(16));
     }
 }

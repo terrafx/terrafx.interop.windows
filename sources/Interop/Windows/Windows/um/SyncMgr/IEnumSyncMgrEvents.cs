@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("C81A1D4E-8CF7-4683-80E0-BCAE88D677B6")]
+[NativeTypeName("struct IEnumSyncMgrEvents : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IEnumSyncMgrEvents : IEnumSyncMgrEvents.Interface
 {
-    [Guid("C81A1D4E-8CF7-4683-80E0-BCAE88D677B6")]
-    [NativeTypeName("struct IEnumSyncMgrEvents : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumSyncMgrEvents : IEnumSyncMgrEvents.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IEnumSyncMgrEvents*, Guid*, void**, int>)(lpVtbl[0]))((IEnumSyncMgrEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IEnumSyncMgrEvents*, Guid*, void**, int>)(lpVtbl[0]))((IEnumSyncMgrEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IEnumSyncMgrEvents*, uint>)(lpVtbl[1]))((IEnumSyncMgrEvents*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IEnumSyncMgrEvents*, uint>)(lpVtbl[1]))((IEnumSyncMgrEvents*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IEnumSyncMgrEvents*, uint>)(lpVtbl[2]))((IEnumSyncMgrEvents*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IEnumSyncMgrEvents*, uint>)(lpVtbl[2]))((IEnumSyncMgrEvents*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Next([NativeTypeName("ULONG")] uint celt, ISyncMgrEvent** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
+    {
+        return ((delegate* unmanaged<IEnumSyncMgrEvents*, uint, ISyncMgrEvent**, uint*, int>)(lpVtbl[3]))((IEnumSyncMgrEvents*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
+    {
+        return ((delegate* unmanaged<IEnumSyncMgrEvents*, uint, int>)(lpVtbl[4]))((IEnumSyncMgrEvents*)Unsafe.AsPointer(ref this), celt);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Reset()
+    {
+        return ((delegate* unmanaged<IEnumSyncMgrEvents*, int>)(lpVtbl[5]))((IEnumSyncMgrEvents*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Clone(IEnumSyncMgrEvents** ppenum)
+    {
+        return ((delegate* unmanaged<IEnumSyncMgrEvents*, IEnumSyncMgrEvents**, int>)(lpVtbl[6]))((IEnumSyncMgrEvents*)Unsafe.AsPointer(ref this), ppenum);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Next([NativeTypeName("ULONG")] uint celt, ISyncMgrEvent** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
-        {
-            return ((delegate* unmanaged<IEnumSyncMgrEvents*, uint, ISyncMgrEvent**, uint*, int>)(lpVtbl[3]))((IEnumSyncMgrEvents*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
-        }
+        HRESULT Next([NativeTypeName("ULONG")] uint celt, ISyncMgrEvent** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
-        {
-            return ((delegate* unmanaged<IEnumSyncMgrEvents*, uint, int>)(lpVtbl[4]))((IEnumSyncMgrEvents*)Unsafe.AsPointer(ref this), celt);
-        }
+        HRESULT Skip([NativeTypeName("ULONG")] uint celt);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT Reset()
-        {
-            return ((delegate* unmanaged<IEnumSyncMgrEvents*, int>)(lpVtbl[5]))((IEnumSyncMgrEvents*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Reset();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Clone(IEnumSyncMgrEvents** ppenum)
-        {
-            return ((delegate* unmanaged<IEnumSyncMgrEvents*, IEnumSyncMgrEvents**, int>)(lpVtbl[6]))((IEnumSyncMgrEvents*)Unsafe.AsPointer(ref this), ppenum);
-        }
+        HRESULT Clone(IEnumSyncMgrEvents** ppenum);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Next([NativeTypeName("ULONG")] uint celt, ISyncMgrEvent** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumSyncMgrEvents*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT Skip([NativeTypeName("ULONG")] uint celt);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumSyncMgrEvents*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT Reset();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumSyncMgrEvents*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT Clone(IEnumSyncMgrEvents** ppenum);
-        }
+        [NativeTypeName("HRESULT (ULONG, ISyncMgrEvent **, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumSyncMgrEvents*, uint, ISyncMgrEvent**, uint*, int> Next;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumSyncMgrEvents*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumSyncMgrEvents*, uint, int> Skip;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumSyncMgrEvents*, uint> AddRef;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumSyncMgrEvents*, int> Reset;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumSyncMgrEvents*, uint> Release;
-
-            [NativeTypeName("HRESULT (ULONG, ISyncMgrEvent **, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumSyncMgrEvents*, uint, ISyncMgrEvent**, uint*, int> Next;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumSyncMgrEvents*, uint, int> Skip;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumSyncMgrEvents*, int> Reset;
-
-            [NativeTypeName("HRESULT (IEnumSyncMgrEvents **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumSyncMgrEvents*, IEnumSyncMgrEvents**, int> Clone;
-        }
+        [NativeTypeName("HRESULT (IEnumSyncMgrEvents **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumSyncMgrEvents*, IEnumSyncMgrEvents**, int> Clone;
     }
 }

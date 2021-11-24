@@ -3,12 +3,11 @@
 // Ported from um/mfmediaengine.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MF_MEDIAKEYS_REQUIREMENT
 {
-    public enum MF_MEDIAKEYS_REQUIREMENT
-    {
-        MF_MEDIAKEYS_REQUIREMENT_REQUIRED = 1,
-        MF_MEDIAKEYS_REQUIREMENT_OPTIONAL = 2,
-        MF_MEDIAKEYS_REQUIREMENT_NOT_ALLOWED = 3,
-    }
+    MF_MEDIAKEYS_REQUIREMENT_REQUIRED = 1,
+    MF_MEDIAKEYS_REQUIREMENT_OPTIONAL = 2,
+    MF_MEDIAKEYS_REQUIREMENT_NOT_ALLOWED = 3,
 }

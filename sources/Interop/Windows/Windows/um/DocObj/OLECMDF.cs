@@ -3,15 +3,14 @@
 // Ported from um/DocObj.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum OLECMDF
 {
-    public enum OLECMDF
-    {
-        OLECMDF_SUPPORTED = 0x1,
-        OLECMDF_ENABLED = 0x2,
-        OLECMDF_LATCHED = 0x4,
-        OLECMDF_NINCHED = 0x8,
-        OLECMDF_INVISIBLE = 0x10,
-        OLECMDF_DEFHIDEONCTXTMENU = 0x20,
-    }
+    OLECMDF_SUPPORTED = 0x1,
+    OLECMDF_ENABLED = 0x2,
+    OLECMDF_LATCHED = 0x4,
+    OLECMDF_NINCHED = 0x8,
+    OLECMDF_INVISIBLE = 0x10,
+    OLECMDF_DEFHIDEONCTXTMENU = 0x20,
 }

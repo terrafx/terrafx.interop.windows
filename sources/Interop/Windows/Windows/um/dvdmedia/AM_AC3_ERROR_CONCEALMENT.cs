@@ -3,12 +3,11 @@
 // Ported from um/dvdmedia.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct AM_AC3_ERROR_CONCEALMENT
-    {
-        public BOOL fRepeatPreviousBlock;
+namespace TerraFX.Interop.Windows;
 
-        public BOOL fErrorInCurrentBlock;
-    }
+public partial struct AM_AC3_ERROR_CONCEALMENT
+{
+    public BOOL fRepeatPreviousBlock;
+
+    public BOOL fErrorInCurrentBlock;
 }

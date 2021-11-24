@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="BROWSEINFOA" /> struct.</summary>
+public static unsafe partial class BROWSEINFOATests
 {
-    /// <summary>Provides validation of the <see cref="BROWSEINFOA" /> struct.</summary>
-    public static unsafe partial class BROWSEINFOATests
+    /// <summary>Validates that the <see cref="BROWSEINFOA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="BROWSEINFOA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<BROWSEINFOA>(), Is.EqualTo(sizeof(BROWSEINFOA)));
-        }
+        Assert.That(Marshal.SizeOf<BROWSEINFOA>(), Is.EqualTo(sizeof(BROWSEINFOA)));
+    }
 
-        /// <summary>Validates that the <see cref="BROWSEINFOA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(BROWSEINFOA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="BROWSEINFOA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(BROWSEINFOA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="BROWSEINFOA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="BROWSEINFOA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(BROWSEINFOA), Is.EqualTo(64));
-            }
-            else
-            {
-                Assert.That(sizeof(BROWSEINFOA), Is.EqualTo(32));
-            }
+            Assert.That(sizeof(BROWSEINFOA), Is.EqualTo(64));
+        }
+        else
+        {
+            Assert.That(sizeof(BROWSEINFOA), Is.EqualTo(32));
         }
     }
 }

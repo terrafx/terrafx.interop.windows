@@ -5,10 +5,9 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TRANSACTIONMANAGER_LOG_INFORMATION
 {
-    public partial struct TRANSACTIONMANAGER_LOG_INFORMATION
-    {
-        public Guid LogIdentity;
-    }
+    public Guid LogIdentity;
 }

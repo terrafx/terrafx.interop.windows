@@ -3,18 +3,17 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum WS_ENCODING
 {
-    public enum WS_ENCODING
-    {
-        WS_ENCODING_XML_BINARY_1 = 0,
-        WS_ENCODING_XML_BINARY_SESSION_1 = 1,
-        WS_ENCODING_XML_MTOM_UTF8 = 2,
-        WS_ENCODING_XML_MTOM_UTF16BE = 3,
-        WS_ENCODING_XML_MTOM_UTF16LE = 4,
-        WS_ENCODING_XML_UTF8 = 5,
-        WS_ENCODING_XML_UTF16BE = 6,
-        WS_ENCODING_XML_UTF16LE = 7,
-        WS_ENCODING_RAW = 8,
-    }
+    WS_ENCODING_XML_BINARY_1 = 0,
+    WS_ENCODING_XML_BINARY_SESSION_1 = 1,
+    WS_ENCODING_XML_MTOM_UTF8 = 2,
+    WS_ENCODING_XML_MTOM_UTF16BE = 3,
+    WS_ENCODING_XML_MTOM_UTF16LE = 4,
+    WS_ENCODING_XML_UTF8 = 5,
+    WS_ENCODING_XML_UTF16BE = 6,
+    WS_ENCODING_XML_UTF16LE = 7,
+    WS_ENCODING_RAW = 8,
 }

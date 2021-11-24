@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SAFEARRAYUNION" /> struct.</summary>
+public static unsafe partial class SAFEARRAYUNIONTests
 {
-    /// <summary>Provides validation of the <see cref="SAFEARRAYUNION" /> struct.</summary>
-    public static unsafe partial class SAFEARRAYUNIONTests
+    /// <summary>Validates that the <see cref="SAFEARRAYUNION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SAFEARRAYUNION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SAFEARRAYUNION>(), Is.EqualTo(sizeof(SAFEARRAYUNION)));
-        }
+        Assert.That(Marshal.SizeOf<SAFEARRAYUNION>(), Is.EqualTo(sizeof(SAFEARRAYUNION)));
+    }
 
-        /// <summary>Validates that the <see cref="SAFEARRAYUNION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SAFEARRAYUNION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SAFEARRAYUNION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SAFEARRAYUNION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SAFEARRAYUNION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SAFEARRAYUNION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SAFEARRAYUNION), Is.EqualTo(40));
-            }
-            else
-            {
-                Assert.That(sizeof(SAFEARRAYUNION), Is.EqualTo(28));
-            }
+            Assert.That(sizeof(SAFEARRAYUNION), Is.EqualTo(40));
+        }
+        else
+        {
+            Assert.That(sizeof(SAFEARRAYUNION), Is.EqualTo(28));
         }
     }
 }

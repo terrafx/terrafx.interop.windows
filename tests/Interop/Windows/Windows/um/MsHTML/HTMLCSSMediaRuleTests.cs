@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLCSSMediaRule" /> struct.</summary>
+public static unsafe partial class HTMLCSSMediaRuleTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLCSSMediaRule" /> struct.</summary>
-    public static unsafe partial class HTMLCSSMediaRuleTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLCSSMediaRule" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLCSSMediaRule" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLCSSMediaRule).GUID, Is.EqualTo(IID_HTMLCSSMediaRule));
-        }
+        Assert.That(typeof(HTMLCSSMediaRule).GUID, Is.EqualTo(IID_HTMLCSSMediaRule));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLCSSMediaRule" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLCSSMediaRule>(), Is.EqualTo(sizeof(HTMLCSSMediaRule)));
-        }
+    /// <summary>Validates that the <see cref="HTMLCSSMediaRule" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLCSSMediaRule>(), Is.EqualTo(sizeof(HTMLCSSMediaRule)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLCSSMediaRule" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLCSSMediaRule).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLCSSMediaRule" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLCSSMediaRule).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLCSSMediaRule" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HTMLCSSMediaRule), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="HTMLCSSMediaRule" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HTMLCSSMediaRule), Is.EqualTo(1));
     }
 }

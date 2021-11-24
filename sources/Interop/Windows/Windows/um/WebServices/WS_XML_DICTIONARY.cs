@@ -5,17 +5,16 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_XML_DICTIONARY
 {
-    public unsafe partial struct WS_XML_DICTIONARY
-    {
-        public Guid guid;
+    public Guid guid;
 
-        public WS_XML_STRING* strings;
+    public WS_XML_STRING* strings;
 
-        [NativeTypeName("ULONG")]
-        public uint stringCount;
+    [NativeTypeName("ULONG")]
+    public uint stringCount;
 
-        public BOOL isConst;
-    }
+    public BOOL isConst;
 }

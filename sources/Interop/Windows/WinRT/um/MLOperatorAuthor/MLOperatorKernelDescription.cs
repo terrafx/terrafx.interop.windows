@@ -3,36 +3,35 @@
 // Ported from um/MLOperatorAuthor.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+public unsafe partial struct MLOperatorKernelDescription
 {
-    public unsafe partial struct MLOperatorKernelDescription
-    {
-        [NativeTypeName("const char *")]
-        public sbyte* domain;
+    [NativeTypeName("const char *")]
+    public sbyte* domain;
 
-        [NativeTypeName("const char *")]
-        public sbyte* name;
+    [NativeTypeName("const char *")]
+    public sbyte* name;
 
-        [NativeTypeName("int32_t")]
-        public int minimumOperatorSetVersion;
+    [NativeTypeName("int32_t")]
+    public int minimumOperatorSetVersion;
 
-        public MLOperatorExecutionType executionType;
+    public MLOperatorExecutionType executionType;
 
-        [NativeTypeName("const MLOperatorEdgeTypeConstraint *")]
-        public MLOperatorEdgeTypeConstraint* typeConstraints;
+    [NativeTypeName("const MLOperatorEdgeTypeConstraint *")]
+    public MLOperatorEdgeTypeConstraint* typeConstraints;
 
-        [NativeTypeName("uint32_t")]
-        public uint typeConstraintCount;
+    [NativeTypeName("uint32_t")]
+    public uint typeConstraintCount;
 
-        [NativeTypeName("const MLOperatorAttributeNameValue *")]
-        public MLOperatorAttributeNameValue* defaultAttributes;
+    [NativeTypeName("const MLOperatorAttributeNameValue *")]
+    public MLOperatorAttributeNameValue* defaultAttributes;
 
-        [NativeTypeName("uint32_t")]
-        public uint defaultAttributeCount;
+    [NativeTypeName("uint32_t")]
+    public uint defaultAttributeCount;
 
-        public MLOperatorKernelOptions options;
+    public MLOperatorKernelOptions options;
 
-        [NativeTypeName("uint32_t")]
-        public uint executionOptions;
-    }
+    [NativeTypeName("uint32_t")]
+    public uint executionOptions;
 }

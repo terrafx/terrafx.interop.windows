@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLDocumentCompatibleInfo" /> struct.</summary>
+public static unsafe partial class HTMLDocumentCompatibleInfoTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLDocumentCompatibleInfo" /> struct.</summary>
-    public static unsafe partial class HTMLDocumentCompatibleInfoTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLDocumentCompatibleInfo" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLDocumentCompatibleInfo" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLDocumentCompatibleInfo).GUID, Is.EqualTo(IID_HTMLDocumentCompatibleInfo));
-        }
+        Assert.That(typeof(HTMLDocumentCompatibleInfo).GUID, Is.EqualTo(IID_HTMLDocumentCompatibleInfo));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLDocumentCompatibleInfo" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLDocumentCompatibleInfo>(), Is.EqualTo(sizeof(HTMLDocumentCompatibleInfo)));
-        }
+    /// <summary>Validates that the <see cref="HTMLDocumentCompatibleInfo" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLDocumentCompatibleInfo>(), Is.EqualTo(sizeof(HTMLDocumentCompatibleInfo)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLDocumentCompatibleInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLDocumentCompatibleInfo).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLDocumentCompatibleInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLDocumentCompatibleInfo).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLDocumentCompatibleInfo" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HTMLDocumentCompatibleInfo), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="HTMLDocumentCompatibleInfo" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HTMLDocumentCompatibleInfo), Is.EqualTo(1));
     }
 }

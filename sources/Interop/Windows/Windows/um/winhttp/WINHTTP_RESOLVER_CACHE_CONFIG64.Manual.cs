@@ -3,25 +3,24 @@
 // Ported from um/winhttp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct WINHTTP_RESOLVER_CACHE_CONFIG64
 {
-    public partial struct WINHTTP_RESOLVER_CACHE_CONFIG64
-    {
-        [NativeTypeName("ULONG")]
-        public uint ulMaxResolverCacheEntries;
+    [NativeTypeName("ULONG")]
+    public uint ulMaxResolverCacheEntries;
 
-        [NativeTypeName("ULONG")]
-        public uint ulMaxCacheEntryAge;
+    [NativeTypeName("ULONG")]
+    public uint ulMaxCacheEntryAge;
 
-        [NativeTypeName("ULONG")]
-        public uint ulMinCacheEntryTtl;
+    [NativeTypeName("ULONG")]
+    public uint ulMinCacheEntryTtl;
 
-        public WINHTTP_SECURE_DNS_SETTING SecureDnsSetting;
+    public WINHTTP_SECURE_DNS_SETTING SecureDnsSetting;
 
-        [NativeTypeName("ULONGLONG")]
-        public ulong ullConnResolutionWaitTime;
+    [NativeTypeName("ULONGLONG")]
+    public ulong ullConnResolutionWaitTime;
 
-        [NativeTypeName("ULONGLONG")]
-        public ulong ullFlags;
-    }
+    [NativeTypeName("ULONGLONG")]
+    public ulong ullFlags;
 }

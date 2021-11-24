@@ -8,208 +8,207 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+[Guid("E2CD3A4B-AF25-4D3D-9110-DA0E6F8EE877")]
+[NativeTypeName("struct IMFSourceBuffer : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IMFSourceBuffer : IMFSourceBuffer.Interface
 {
-    [SupportedOSPlatform("windows8.1")]
-    [Guid("E2CD3A4B-AF25-4D3D-9110-DA0E6F8EE877")]
-    [NativeTypeName("struct IMFSourceBuffer : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSourceBuffer : IMFSourceBuffer.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMFSourceBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMFSourceBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMFSourceBuffer*, uint>)(lpVtbl[1]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMFSourceBuffer*, uint>)(lpVtbl[1]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMFSourceBuffer*, uint>)(lpVtbl[2]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMFSourceBuffer*, uint>)(lpVtbl[2]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public BOOL GetUpdating()
+    {
+        return ((delegate* unmanaged<IMFSourceBuffer*, int>)(lpVtbl[3]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetBuffered(IMFMediaTimeRange** ppBuffered)
+    {
+        return ((delegate* unmanaged<IMFSourceBuffer*, IMFMediaTimeRange**, int>)(lpVtbl[4]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), ppBuffered);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public double GetTimeStampOffset()
+    {
+        return ((delegate* unmanaged<IMFSourceBuffer*, double>)(lpVtbl[5]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT SetTimeStampOffset(double offset)
+    {
+        return ((delegate* unmanaged<IMFSourceBuffer*, double, int>)(lpVtbl[6]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), offset);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public double GetAppendWindowStart()
+    {
+        return ((delegate* unmanaged<IMFSourceBuffer*, double>)(lpVtbl[7]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT SetAppendWindowStart(double time)
+    {
+        return ((delegate* unmanaged<IMFSourceBuffer*, double, int>)(lpVtbl[8]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), time);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public double GetAppendWindowEnd()
+    {
+        return ((delegate* unmanaged<IMFSourceBuffer*, double>)(lpVtbl[9]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT SetAppendWindowEnd(double time)
+    {
+        return ((delegate* unmanaged<IMFSourceBuffer*, double, int>)(lpVtbl[10]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), time);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT Append([NativeTypeName("const BYTE *")] byte* pData, [NativeTypeName("DWORD")] uint len)
+    {
+        return ((delegate* unmanaged<IMFSourceBuffer*, byte*, uint, int>)(lpVtbl[11]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), pData, len);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT AppendByteStream(IMFByteStream* pStream, [NativeTypeName("DWORDLONG *")] ulong* pMaxLen)
+    {
+        return ((delegate* unmanaged<IMFSourceBuffer*, IMFByteStream*, ulong*, int>)(lpVtbl[12]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), pStream, pMaxLen);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT Abort()
+    {
+        return ((delegate* unmanaged<IMFSourceBuffer*, int>)(lpVtbl[13]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT Remove(double start, double end)
+    {
+        return ((delegate* unmanaged<IMFSourceBuffer*, double, double, int>)(lpVtbl[14]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), start, end);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public BOOL GetUpdating()
-        {
-            return ((delegate* unmanaged<IMFSourceBuffer*, int>)(lpVtbl[3]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
-        }
+        BOOL GetUpdating();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetBuffered(IMFMediaTimeRange** ppBuffered)
-        {
-            return ((delegate* unmanaged<IMFSourceBuffer*, IMFMediaTimeRange**, int>)(lpVtbl[4]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), ppBuffered);
-        }
+        HRESULT GetBuffered(IMFMediaTimeRange** ppBuffered);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public double GetTimeStampOffset()
-        {
-            return ((delegate* unmanaged<IMFSourceBuffer*, double>)(lpVtbl[5]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
-        }
+        double GetTimeStampOffset();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT SetTimeStampOffset(double offset)
-        {
-            return ((delegate* unmanaged<IMFSourceBuffer*, double, int>)(lpVtbl[6]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), offset);
-        }
+        HRESULT SetTimeStampOffset(double offset);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public double GetAppendWindowStart()
-        {
-            return ((delegate* unmanaged<IMFSourceBuffer*, double>)(lpVtbl[7]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
-        }
+        double GetAppendWindowStart();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT SetAppendWindowStart(double time)
-        {
-            return ((delegate* unmanaged<IMFSourceBuffer*, double, int>)(lpVtbl[8]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), time);
-        }
+        HRESULT SetAppendWindowStart(double time);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public double GetAppendWindowEnd()
-        {
-            return ((delegate* unmanaged<IMFSourceBuffer*, double>)(lpVtbl[9]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
-        }
+        double GetAppendWindowEnd();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT SetAppendWindowEnd(double time)
-        {
-            return ((delegate* unmanaged<IMFSourceBuffer*, double, int>)(lpVtbl[10]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), time);
-        }
+        HRESULT SetAppendWindowEnd(double time);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT Append([NativeTypeName("const BYTE *")] byte* pData, [NativeTypeName("DWORD")] uint len)
-        {
-            return ((delegate* unmanaged<IMFSourceBuffer*, byte*, uint, int>)(lpVtbl[11]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), pData, len);
-        }
+        HRESULT Append([NativeTypeName("const BYTE *")] byte* pData, [NativeTypeName("DWORD")] uint len);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT AppendByteStream(IMFByteStream* pStream, [NativeTypeName("DWORDLONG *")] ulong* pMaxLen)
-        {
-            return ((delegate* unmanaged<IMFSourceBuffer*, IMFByteStream*, ulong*, int>)(lpVtbl[12]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), pStream, pMaxLen);
-        }
+        HRESULT AppendByteStream(IMFByteStream* pStream, [NativeTypeName("DWORDLONG *")] ulong* pMaxLen);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT Abort()
-        {
-            return ((delegate* unmanaged<IMFSourceBuffer*, int>)(lpVtbl[13]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Abort();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT Remove(double start, double end)
-        {
-            return ((delegate* unmanaged<IMFSourceBuffer*, double, double, int>)(lpVtbl[14]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), start, end);
-        }
+        HRESULT Remove(double start, double end);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            BOOL GetUpdating();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSourceBuffer*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetBuffered(IMFMediaTimeRange** ppBuffered);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSourceBuffer*, uint> AddRef;
 
-            [VtblIndex(5)]
-            double GetTimeStampOffset();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSourceBuffer*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT SetTimeStampOffset(double offset);
+        [NativeTypeName("BOOL () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSourceBuffer*, int> GetUpdating;
 
-            [VtblIndex(7)]
-            double GetAppendWindowStart();
+        [NativeTypeName("HRESULT (IMFMediaTimeRange **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSourceBuffer*, IMFMediaTimeRange**, int> GetBuffered;
 
-            [VtblIndex(8)]
-            HRESULT SetAppendWindowStart(double time);
+        [NativeTypeName("double () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSourceBuffer*, double> GetTimeStampOffset;
 
-            [VtblIndex(9)]
-            double GetAppendWindowEnd();
+        [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSourceBuffer*, double, int> SetTimeStampOffset;
 
-            [VtblIndex(10)]
-            HRESULT SetAppendWindowEnd(double time);
+        [NativeTypeName("double () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSourceBuffer*, double> GetAppendWindowStart;
 
-            [VtblIndex(11)]
-            HRESULT Append([NativeTypeName("const BYTE *")] byte* pData, [NativeTypeName("DWORD")] uint len);
+        [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSourceBuffer*, double, int> SetAppendWindowStart;
 
-            [VtblIndex(12)]
-            HRESULT AppendByteStream(IMFByteStream* pStream, [NativeTypeName("DWORDLONG *")] ulong* pMaxLen);
+        [NativeTypeName("double () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSourceBuffer*, double> GetAppendWindowEnd;
 
-            [VtblIndex(13)]
-            HRESULT Abort();
+        [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSourceBuffer*, double, int> SetAppendWindowEnd;
 
-            [VtblIndex(14)]
-            HRESULT Remove(double start, double end);
-        }
+        [NativeTypeName("HRESULT (const BYTE *, DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSourceBuffer*, byte*, uint, int> Append;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSourceBuffer*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (IMFByteStream *, DWORDLONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSourceBuffer*, IMFByteStream*, ulong*, int> AppendByteStream;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSourceBuffer*, uint> AddRef;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSourceBuffer*, int> Abort;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSourceBuffer*, uint> Release;
-
-            [NativeTypeName("BOOL () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSourceBuffer*, int> GetUpdating;
-
-            [NativeTypeName("HRESULT (IMFMediaTimeRange **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSourceBuffer*, IMFMediaTimeRange**, int> GetBuffered;
-
-            [NativeTypeName("double () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSourceBuffer*, double> GetTimeStampOffset;
-
-            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSourceBuffer*, double, int> SetTimeStampOffset;
-
-            [NativeTypeName("double () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSourceBuffer*, double> GetAppendWindowStart;
-
-            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSourceBuffer*, double, int> SetAppendWindowStart;
-
-            [NativeTypeName("double () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSourceBuffer*, double> GetAppendWindowEnd;
-
-            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSourceBuffer*, double, int> SetAppendWindowEnd;
-
-            [NativeTypeName("HRESULT (const BYTE *, DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSourceBuffer*, byte*, uint, int> Append;
-
-            [NativeTypeName("HRESULT (IMFByteStream *, DWORDLONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSourceBuffer*, IMFByteStream*, ulong*, int> AppendByteStream;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSourceBuffer*, int> Abort;
-
-            [NativeTypeName("HRESULT (double, double) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSourceBuffer*, double, double, int> Remove;
-        }
+        [NativeTypeName("HRESULT (double, double) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSourceBuffer*, double, double, int> Remove;
     }
 }

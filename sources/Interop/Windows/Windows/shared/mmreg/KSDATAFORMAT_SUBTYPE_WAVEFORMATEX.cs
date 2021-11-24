@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("00000000-0000-0010-8000-00AA00389B71")]
+public partial struct KSDATAFORMAT_SUBTYPE_WAVEFORMATEX
 {
-    [Guid("00000000-0000-0010-8000-00AA00389B71")]
-    public partial struct KSDATAFORMAT_SUBTYPE_WAVEFORMATEX
-    {
-    }
 }

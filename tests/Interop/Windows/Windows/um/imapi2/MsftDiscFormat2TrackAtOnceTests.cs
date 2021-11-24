@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MsftDiscFormat2TrackAtOnce" /> struct.</summary>
+public static unsafe partial class MsftDiscFormat2TrackAtOnceTests
 {
-    /// <summary>Provides validation of the <see cref="MsftDiscFormat2TrackAtOnce" /> struct.</summary>
-    public static unsafe partial class MsftDiscFormat2TrackAtOnceTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="MsftDiscFormat2TrackAtOnce" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="MsftDiscFormat2TrackAtOnce" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(MsftDiscFormat2TrackAtOnce).GUID, Is.EqualTo(CLSID_MsftDiscFormat2TrackAtOnce));
-        }
+        Assert.That(typeof(MsftDiscFormat2TrackAtOnce).GUID, Is.EqualTo(CLSID_MsftDiscFormat2TrackAtOnce));
+    }
 
-        /// <summary>Validates that the <see cref="MsftDiscFormat2TrackAtOnce" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MsftDiscFormat2TrackAtOnce>(), Is.EqualTo(sizeof(MsftDiscFormat2TrackAtOnce)));
-        }
+    /// <summary>Validates that the <see cref="MsftDiscFormat2TrackAtOnce" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<MsftDiscFormat2TrackAtOnce>(), Is.EqualTo(sizeof(MsftDiscFormat2TrackAtOnce)));
+    }
 
-        /// <summary>Validates that the <see cref="MsftDiscFormat2TrackAtOnce" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MsftDiscFormat2TrackAtOnce).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MsftDiscFormat2TrackAtOnce" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MsftDiscFormat2TrackAtOnce).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MsftDiscFormat2TrackAtOnce" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MsftDiscFormat2TrackAtOnce), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="MsftDiscFormat2TrackAtOnce" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MsftDiscFormat2TrackAtOnce), Is.EqualTo(1));
     }
 }

@@ -5,144 +5,143 @@
 
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct AM_COLCON
 {
-    public partial struct AM_COLCON
+    public byte _bitfield1;
+
+    [NativeTypeName("UCHAR : 4")]
+    public byte emph1col
     {
-        public byte _bitfield1;
-
-        [NativeTypeName("UCHAR : 4")]
-        public byte emph1col
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)(_bitfield1 & 0xFu);
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield1 = (byte)((_bitfield1 & ~0xFu) | (value & 0xFu));
-            }
+            return (byte)(_bitfield1 & 0xFu);
         }
 
-        [NativeTypeName("UCHAR : 4")]
-        public byte emph2col
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)((_bitfield1 >> 4) & 0xFu);
-            }
+            _bitfield1 = (byte)((_bitfield1 & ~0xFu) | (value & 0xFu));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield1 = (byte)((_bitfield1 & ~(0xFu << 4)) | ((value & 0xFu) << 4));
-            }
+    [NativeTypeName("UCHAR : 4")]
+    public byte emph2col
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)((_bitfield1 >> 4) & 0xFu);
         }
 
-        public byte _bitfield2;
-
-        [NativeTypeName("UCHAR : 4")]
-        public byte backcol
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)(_bitfield2 & 0xFu);
-            }
+            _bitfield1 = (byte)((_bitfield1 & ~(0xFu << 4)) | ((value & 0xFu) << 4));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield2 = (byte)((_bitfield2 & ~0xFu) | (value & 0xFu));
-            }
+    public byte _bitfield2;
+
+    [NativeTypeName("UCHAR : 4")]
+    public byte backcol
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)(_bitfield2 & 0xFu);
         }
 
-        [NativeTypeName("UCHAR : 4")]
-        public byte patcol
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)((_bitfield2 >> 4) & 0xFu);
-            }
+            _bitfield2 = (byte)((_bitfield2 & ~0xFu) | (value & 0xFu));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield2 = (byte)((_bitfield2 & ~(0xFu << 4)) | ((value & 0xFu) << 4));
-            }
+    [NativeTypeName("UCHAR : 4")]
+    public byte patcol
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)((_bitfield2 >> 4) & 0xFu);
         }
 
-        public byte _bitfield3;
-
-        [NativeTypeName("UCHAR : 4")]
-        public byte emph1con
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)(_bitfield3 & 0xFu);
-            }
+            _bitfield2 = (byte)((_bitfield2 & ~(0xFu << 4)) | ((value & 0xFu) << 4));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield3 = (byte)((_bitfield3 & ~0xFu) | (value & 0xFu));
-            }
+    public byte _bitfield3;
+
+    [NativeTypeName("UCHAR : 4")]
+    public byte emph1con
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)(_bitfield3 & 0xFu);
         }
 
-        [NativeTypeName("UCHAR : 4")]
-        public byte emph2con
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)((_bitfield3 >> 4) & 0xFu);
-            }
+            _bitfield3 = (byte)((_bitfield3 & ~0xFu) | (value & 0xFu));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield3 = (byte)((_bitfield3 & ~(0xFu << 4)) | ((value & 0xFu) << 4));
-            }
+    [NativeTypeName("UCHAR : 4")]
+    public byte emph2con
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)((_bitfield3 >> 4) & 0xFu);
         }
 
-        public byte _bitfield4;
-
-        [NativeTypeName("UCHAR : 4")]
-        public byte backcon
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)(_bitfield4 & 0xFu);
-            }
+            _bitfield3 = (byte)((_bitfield3 & ~(0xFu << 4)) | ((value & 0xFu) << 4));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield4 = (byte)((_bitfield4 & ~0xFu) | (value & 0xFu));
-            }
+    public byte _bitfield4;
+
+    [NativeTypeName("UCHAR : 4")]
+    public byte backcon
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)(_bitfield4 & 0xFu);
         }
 
-        [NativeTypeName("UCHAR : 4")]
-        public byte patcon
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)((_bitfield4 >> 4) & 0xFu);
-            }
+            _bitfield4 = (byte)((_bitfield4 & ~0xFu) | (value & 0xFu));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield4 = (byte)((_bitfield4 & ~(0xFu << 4)) | ((value & 0xFu) << 4));
-            }
+    [NativeTypeName("UCHAR : 4")]
+    public byte patcon
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)((_bitfield4 >> 4) & 0xFu);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield4 = (byte)((_bitfield4 & ~(0xFu << 4)) | ((value & 0xFu) << 4));
         }
     }
 }

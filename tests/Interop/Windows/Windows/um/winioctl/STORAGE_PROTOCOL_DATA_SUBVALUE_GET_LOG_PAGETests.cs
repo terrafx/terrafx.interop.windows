@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE" /> struct.</summary>
+public static unsafe partial class STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGETests
 {
-    /// <summary>Provides validation of the <see cref="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE" /> struct.</summary>
-    public static unsafe partial class STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGETests
+    /// <summary>Validates that the <see cref="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE>(), Is.EqualTo(sizeof(STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE)));
-        }
+        Assert.That(Marshal.SizeOf<STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE>(), Is.EqualTo(sizeof(STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE)));
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutExplicitTest()
-        {
-            Assert.That(typeof(STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE).IsExplicitLayout, Is.True);
-        }
+    /// <summary>Validates that the <see cref="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutExplicitTest()
+    {
+        Assert.That(typeof(STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE).IsExplicitLayout, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE), Is.EqualTo(4));
     }
 }

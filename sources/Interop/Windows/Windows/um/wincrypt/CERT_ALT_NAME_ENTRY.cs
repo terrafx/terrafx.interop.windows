@@ -6,108 +6,107 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CERT_ALT_NAME_ENTRY
 {
-    public unsafe partial struct CERT_ALT_NAME_ENTRY
+    [NativeTypeName("DWORD")]
+    public uint dwAltNameChoice;
+
+    [NativeTypeName("_CERT_ALT_NAME_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:3957:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public ref CERT_OTHER_NAME* pOtherName
     {
-        [NativeTypeName("DWORD")]
-        public uint dwAltNameChoice;
-
-        [NativeTypeName("_CERT_ALT_NAME_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:3957:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public ref CERT_OTHER_NAME* pOtherName
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pOtherName;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pOtherName;
         }
+    }
 
-        public ref ushort* pwszRfc822Name
+    public ref ushort* pwszRfc822Name
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pwszRfc822Name;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pwszRfc822Name;
         }
+    }
 
-        public ref ushort* pwszDNSName
+    public ref ushort* pwszDNSName
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pwszDNSName;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pwszDNSName;
         }
+    }
 
-        public ref CRYPT_DATA_BLOB DirectoryName
+    public ref CRYPT_DATA_BLOB DirectoryName
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.DirectoryName, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.DirectoryName, 1));
         }
+    }
 
-        public ref ushort* pwszURL
+    public ref ushort* pwszURL
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pwszURL;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pwszURL;
         }
+    }
 
-        public ref CRYPT_DATA_BLOB IPAddress
+    public ref CRYPT_DATA_BLOB IPAddress
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.IPAddress, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.IPAddress, 1));
         }
+    }
 
-        public ref sbyte* pszRegisteredID
+    public ref sbyte* pszRegisteredID
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pszRegisteredID;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pszRegisteredID;
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("PCERT_OTHER_NAME")]
-            public CERT_OTHER_NAME* pOtherName;
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("PCERT_OTHER_NAME")]
+        public CERT_OTHER_NAME* pOtherName;
 
-            [FieldOffset(0)]
-            [NativeTypeName("LPWSTR")]
-            public ushort* pwszRfc822Name;
+        [FieldOffset(0)]
+        [NativeTypeName("LPWSTR")]
+        public ushort* pwszRfc822Name;
 
-            [FieldOffset(0)]
-            [NativeTypeName("LPWSTR")]
-            public ushort* pwszDNSName;
+        [FieldOffset(0)]
+        [NativeTypeName("LPWSTR")]
+        public ushort* pwszDNSName;
 
-            [FieldOffset(0)]
-            [NativeTypeName("CERT_NAME_BLOB")]
-            public CRYPT_DATA_BLOB DirectoryName;
+        [FieldOffset(0)]
+        [NativeTypeName("CERT_NAME_BLOB")]
+        public CRYPT_DATA_BLOB DirectoryName;
 
-            [FieldOffset(0)]
-            [NativeTypeName("LPWSTR")]
-            public ushort* pwszURL;
+        [FieldOffset(0)]
+        [NativeTypeName("LPWSTR")]
+        public ushort* pwszURL;
 
-            [FieldOffset(0)]
-            public CRYPT_DATA_BLOB IPAddress;
+        [FieldOffset(0)]
+        public CRYPT_DATA_BLOB IPAddress;
 
-            [FieldOffset(0)]
-            [NativeTypeName("LPSTR")]
-            public sbyte* pszRegisteredID;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("LPSTR")]
+        public sbyte* pszRegisteredID;
     }
 }

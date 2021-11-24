@@ -3,23 +3,22 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct STORAGE_HOTPLUG_INFO
 {
-    public partial struct STORAGE_HOTPLUG_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte MediaRemovable;
+    [NativeTypeName("BOOLEAN")]
+    public byte MediaRemovable;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte MediaHotplug;
+    [NativeTypeName("BOOLEAN")]
+    public byte MediaHotplug;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte DeviceHotplug;
+    [NativeTypeName("BOOLEAN")]
+    public byte DeviceHotplug;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte WriteCacheEnableOverride;
-    }
+    [NativeTypeName("BOOLEAN")]
+    public byte WriteCacheEnableOverride;
 }

@@ -3,10 +3,9 @@
 // Ported from um/mediaobj.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum _DMO_QUALITY_STATUS_FLAGS
 {
-    public enum _DMO_QUALITY_STATUS_FLAGS
-    {
-        DMO_QUALITY_STATUS_ENABLED = 0x1,
-    }
+    DMO_QUALITY_STATUS_ENABLED = 0x1,
 }

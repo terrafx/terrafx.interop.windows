@@ -3,19 +3,18 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct CSV_NAMESPACE_INFO
 {
-    public partial struct CSV_NAMESPACE_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint DeviceNumber;
+    [NativeTypeName("DWORD")]
+    public uint DeviceNumber;
 
-        public LARGE_INTEGER StartingOffset;
+    public LARGE_INTEGER StartingOffset;
 
-        [NativeTypeName("DWORD")]
-        public uint SectorSize;
-    }
+    [NativeTypeName("DWORD")]
+    public uint SectorSize;
 }

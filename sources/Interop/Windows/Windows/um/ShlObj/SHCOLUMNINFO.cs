@@ -5,29 +5,28 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SHCOLUMNINFO
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SHCOLUMNINFO
-    {
-        [NativeTypeName("SHCOLUMNID")]
-        public PROPERTYKEY scid;
+    [NativeTypeName("SHCOLUMNID")]
+    public PROPERTYKEY scid;
 
-        [NativeTypeName("VARTYPE")]
-        public ushort vt;
+    [NativeTypeName("VARTYPE")]
+    public ushort vt;
 
-        [NativeTypeName("DWORD")]
-        public uint fmt;
+    [NativeTypeName("DWORD")]
+    public uint fmt;
 
-        public uint cChars;
+    public uint cChars;
 
-        [NativeTypeName("DWORD")]
-        public uint csFlags;
+    [NativeTypeName("DWORD")]
+    public uint csFlags;
 
-        [NativeTypeName("WCHAR [80]")]
-        public fixed ushort wszTitle[80];
+    [NativeTypeName("WCHAR [80]")]
+    public fixed ushort wszTitle[80];
 
-        [NativeTypeName("WCHAR [128]")]
-        public fixed ushort wszDescription[128];
-    }
+    [NativeTypeName("WCHAR [128]")]
+    public fixed ushort wszDescription[128];
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PARTITION_INFORMATION_GPT" /> struct.</summary>
+public static unsafe partial class PARTITION_INFORMATION_GPTTests
 {
-    /// <summary>Provides validation of the <see cref="PARTITION_INFORMATION_GPT" /> struct.</summary>
-    public static unsafe partial class PARTITION_INFORMATION_GPTTests
+    /// <summary>Validates that the <see cref="PARTITION_INFORMATION_GPT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PARTITION_INFORMATION_GPT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PARTITION_INFORMATION_GPT>(), Is.EqualTo(sizeof(PARTITION_INFORMATION_GPT)));
-        }
+        Assert.That(Marshal.SizeOf<PARTITION_INFORMATION_GPT>(), Is.EqualTo(sizeof(PARTITION_INFORMATION_GPT)));
+    }
 
-        /// <summary>Validates that the <see cref="PARTITION_INFORMATION_GPT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PARTITION_INFORMATION_GPT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PARTITION_INFORMATION_GPT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PARTITION_INFORMATION_GPT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PARTITION_INFORMATION_GPT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(PARTITION_INFORMATION_GPT), Is.EqualTo(112));
-        }
+    /// <summary>Validates that the <see cref="PARTITION_INFORMATION_GPT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(PARTITION_INFORMATION_GPT), Is.EqualTo(112));
     }
 }

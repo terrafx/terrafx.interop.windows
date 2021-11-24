@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct PACKET_PROPERTY
-    {
-        public Guid guid;
+namespace TerraFX.Interop.Windows;
 
-        public PROPERTY_METRICS PropertyMetrics;
-    }
+public partial struct PACKET_PROPERTY
+{
+    public Guid guid;
+
+    public PROPERTY_METRICS PropertyMetrics;
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TRANSACTION_NOTIFICATION_TM_ONLINE_ARGUMENT" /> struct.</summary>
+public static unsafe partial class TRANSACTION_NOTIFICATION_TM_ONLINE_ARGUMENTTests
 {
-    /// <summary>Provides validation of the <see cref="TRANSACTION_NOTIFICATION_TM_ONLINE_ARGUMENT" /> struct.</summary>
-    public static unsafe partial class TRANSACTION_NOTIFICATION_TM_ONLINE_ARGUMENTTests
+    /// <summary>Validates that the <see cref="TRANSACTION_NOTIFICATION_TM_ONLINE_ARGUMENT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TRANSACTION_NOTIFICATION_TM_ONLINE_ARGUMENT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TRANSACTION_NOTIFICATION_TM_ONLINE_ARGUMENT>(), Is.EqualTo(sizeof(TRANSACTION_NOTIFICATION_TM_ONLINE_ARGUMENT)));
-        }
+        Assert.That(Marshal.SizeOf<TRANSACTION_NOTIFICATION_TM_ONLINE_ARGUMENT>(), Is.EqualTo(sizeof(TRANSACTION_NOTIFICATION_TM_ONLINE_ARGUMENT)));
+    }
 
-        /// <summary>Validates that the <see cref="TRANSACTION_NOTIFICATION_TM_ONLINE_ARGUMENT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TRANSACTION_NOTIFICATION_TM_ONLINE_ARGUMENT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TRANSACTION_NOTIFICATION_TM_ONLINE_ARGUMENT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TRANSACTION_NOTIFICATION_TM_ONLINE_ARGUMENT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TRANSACTION_NOTIFICATION_TM_ONLINE_ARGUMENT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(TRANSACTION_NOTIFICATION_TM_ONLINE_ARGUMENT), Is.EqualTo(20));
-        }
+    /// <summary>Validates that the <see cref="TRANSACTION_NOTIFICATION_TM_ONLINE_ARGUMENT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(TRANSACTION_NOTIFICATION_TM_ONLINE_ARGUMENT), Is.EqualTo(20));
     }
 }

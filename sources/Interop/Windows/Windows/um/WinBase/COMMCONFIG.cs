@@ -3,31 +3,30 @@
 // Ported from um/WinBase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct COMMCONFIG
 {
-    public unsafe partial struct COMMCONFIG
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwSize;
+    [NativeTypeName("DWORD")]
+    public uint dwSize;
 
-        [NativeTypeName("WORD")]
-        public ushort wVersion;
+    [NativeTypeName("WORD")]
+    public ushort wVersion;
 
-        [NativeTypeName("WORD")]
-        public ushort wReserved;
+    [NativeTypeName("WORD")]
+    public ushort wReserved;
 
-        public DCB dcb;
+    public DCB dcb;
 
-        [NativeTypeName("DWORD")]
-        public uint dwProviderSubType;
+    [NativeTypeName("DWORD")]
+    public uint dwProviderSubType;
 
-        [NativeTypeName("DWORD")]
-        public uint dwProviderOffset;
+    [NativeTypeName("DWORD")]
+    public uint dwProviderOffset;
 
-        [NativeTypeName("DWORD")]
-        public uint dwProviderSize;
+    [NativeTypeName("DWORD")]
+    public uint dwProviderSize;
 
-        [NativeTypeName("WCHAR [1]")]
-        public fixed ushort wcProviderData[1];
-    }
+    [NativeTypeName("WCHAR [1]")]
+    public fixed ushort wcProviderData[1];
 }

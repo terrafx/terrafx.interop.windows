@@ -3,23 +3,22 @@
 // Ported from um/Xinput.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct XINPUT_GAMEPAD
 {
-    public partial struct XINPUT_GAMEPAD
-    {
-        [NativeTypeName("WORD")]
-        public ushort wButtons;
+    [NativeTypeName("WORD")]
+    public ushort wButtons;
 
-        public byte bLeftTrigger;
+    public byte bLeftTrigger;
 
-        public byte bRightTrigger;
+    public byte bRightTrigger;
 
-        public short sThumbLX;
+    public short sThumbLX;
 
-        public short sThumbLY;
+    public short sThumbLY;
 
-        public short sThumbRX;
+    public short sThumbRX;
 
-        public short sThumbRY;
-    }
+    public short sThumbRY;
 }

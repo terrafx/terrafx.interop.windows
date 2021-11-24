@@ -7,142 +7,141 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("B196B289-BAB4-101A-B69C-00AA00341D07")]
+[NativeTypeName("struct IOleControlSite : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IOleControlSite : IOleControlSite.Interface
 {
-    [Guid("B196B289-BAB4-101A-B69C-00AA00341D07")]
-    [NativeTypeName("struct IOleControlSite : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IOleControlSite : IOleControlSite.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IOleControlSite*, Guid*, void**, int>)(lpVtbl[0]))((IOleControlSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IOleControlSite*, Guid*, void**, int>)(lpVtbl[0]))((IOleControlSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IOleControlSite*, uint>)(lpVtbl[1]))((IOleControlSite*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IOleControlSite*, uint>)(lpVtbl[1]))((IOleControlSite*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IOleControlSite*, uint>)(lpVtbl[2]))((IOleControlSite*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IOleControlSite*, uint>)(lpVtbl[2]))((IOleControlSite*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT OnControlInfoChanged()
+    {
+        return ((delegate* unmanaged<IOleControlSite*, int>)(lpVtbl[3]))((IOleControlSite*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT LockInPlaceActive(BOOL fLock)
+    {
+        return ((delegate* unmanaged<IOleControlSite*, BOOL, int>)(lpVtbl[4]))((IOleControlSite*)Unsafe.AsPointer(ref this), fLock);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetExtendedControl(IDispatch** ppDisp)
+    {
+        return ((delegate* unmanaged<IOleControlSite*, IDispatch**, int>)(lpVtbl[5]))((IOleControlSite*)Unsafe.AsPointer(ref this), ppDisp);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT TransformCoords(POINTL* pPtlHimetric, POINTF* pPtfContainer, [NativeTypeName("DWORD")] uint dwFlags)
+    {
+        return ((delegate* unmanaged<IOleControlSite*, POINTL*, POINTF*, uint, int>)(lpVtbl[6]))((IOleControlSite*)Unsafe.AsPointer(ref this), pPtlHimetric, pPtfContainer, dwFlags);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT TranslateAccelerator(MSG* pMsg, [NativeTypeName("DWORD")] uint grfModifiers)
+    {
+        return ((delegate* unmanaged<IOleControlSite*, MSG*, uint, int>)(lpVtbl[7]))((IOleControlSite*)Unsafe.AsPointer(ref this), pMsg, grfModifiers);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT OnFocus(BOOL fGotFocus)
+    {
+        return ((delegate* unmanaged<IOleControlSite*, BOOL, int>)(lpVtbl[8]))((IOleControlSite*)Unsafe.AsPointer(ref this), fGotFocus);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT ShowPropertyFrame()
+    {
+        return ((delegate* unmanaged<IOleControlSite*, int>)(lpVtbl[9]))((IOleControlSite*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT OnControlInfoChanged()
-        {
-            return ((delegate* unmanaged<IOleControlSite*, int>)(lpVtbl[3]))((IOleControlSite*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT OnControlInfoChanged();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT LockInPlaceActive(BOOL fLock)
-        {
-            return ((delegate* unmanaged<IOleControlSite*, BOOL, int>)(lpVtbl[4]))((IOleControlSite*)Unsafe.AsPointer(ref this), fLock);
-        }
+        HRESULT LockInPlaceActive(BOOL fLock);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetExtendedControl(IDispatch** ppDisp)
-        {
-            return ((delegate* unmanaged<IOleControlSite*, IDispatch**, int>)(lpVtbl[5]))((IOleControlSite*)Unsafe.AsPointer(ref this), ppDisp);
-        }
+        HRESULT GetExtendedControl(IDispatch** ppDisp);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT TransformCoords(POINTL* pPtlHimetric, POINTF* pPtfContainer, [NativeTypeName("DWORD")] uint dwFlags)
-        {
-            return ((delegate* unmanaged<IOleControlSite*, POINTL*, POINTF*, uint, int>)(lpVtbl[6]))((IOleControlSite*)Unsafe.AsPointer(ref this), pPtlHimetric, pPtfContainer, dwFlags);
-        }
+        HRESULT TransformCoords(POINTL* pPtlHimetric, POINTF* pPtfContainer, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT TranslateAccelerator(MSG* pMsg, [NativeTypeName("DWORD")] uint grfModifiers)
-        {
-            return ((delegate* unmanaged<IOleControlSite*, MSG*, uint, int>)(lpVtbl[7]))((IOleControlSite*)Unsafe.AsPointer(ref this), pMsg, grfModifiers);
-        }
+        HRESULT TranslateAccelerator(MSG* pMsg, [NativeTypeName("DWORD")] uint grfModifiers);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT OnFocus(BOOL fGotFocus)
-        {
-            return ((delegate* unmanaged<IOleControlSite*, BOOL, int>)(lpVtbl[8]))((IOleControlSite*)Unsafe.AsPointer(ref this), fGotFocus);
-        }
+        HRESULT OnFocus(BOOL fGotFocus);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT ShowPropertyFrame()
-        {
-            return ((delegate* unmanaged<IOleControlSite*, int>)(lpVtbl[9]))((IOleControlSite*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT ShowPropertyFrame();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT OnControlInfoChanged();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOleControlSite*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT LockInPlaceActive(BOOL fLock);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IOleControlSite*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT GetExtendedControl(IDispatch** ppDisp);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IOleControlSite*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT TransformCoords(POINTL* pPtlHimetric, POINTF* pPtfContainer, [NativeTypeName("DWORD")] uint dwFlags);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IOleControlSite*, int> OnControlInfoChanged;
 
-            [VtblIndex(7)]
-            HRESULT TranslateAccelerator(MSG* pMsg, [NativeTypeName("DWORD")] uint grfModifiers);
+        [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOleControlSite*, BOOL, int> LockInPlaceActive;
 
-            [VtblIndex(8)]
-            HRESULT OnFocus(BOOL fGotFocus);
+        [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOleControlSite*, IDispatch**, int> GetExtendedControl;
 
-            [VtblIndex(9)]
-            HRESULT ShowPropertyFrame();
-        }
+        [NativeTypeName("HRESULT (POINTL *, POINTF *, DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOleControlSite*, POINTL*, POINTF*, uint, int> TransformCoords;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOleControlSite*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (MSG *, DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOleControlSite*, MSG*, uint, int> TranslateAccelerator;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IOleControlSite*, uint> AddRef;
+        [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOleControlSite*, BOOL, int> OnFocus;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IOleControlSite*, uint> Release;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IOleControlSite*, int> OnControlInfoChanged;
-
-            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOleControlSite*, BOOL, int> LockInPlaceActive;
-
-            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOleControlSite*, IDispatch**, int> GetExtendedControl;
-
-            [NativeTypeName("HRESULT (POINTL *, POINTF *, DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOleControlSite*, POINTL*, POINTF*, uint, int> TransformCoords;
-
-            [NativeTypeName("HRESULT (MSG *, DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOleControlSite*, MSG*, uint, int> TranslateAccelerator;
-
-            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOleControlSite*, BOOL, int> OnFocus;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IOleControlSite*, int> ShowPropertyFrame;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IOleControlSite*, int> ShowPropertyFrame;
     }
 }

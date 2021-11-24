@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("F0C0F8DD-CF38-44E1-BB0F-68CF0D551C78")]
+[NativeTypeName("struct IEnumTfContextViews : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IEnumTfContextViews : IEnumTfContextViews.Interface
 {
-    [Guid("F0C0F8DD-CF38-44E1-BB0F-68CF0D551C78")]
-    [NativeTypeName("struct IEnumTfContextViews : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumTfContextViews : IEnumTfContextViews.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IEnumTfContextViews*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfContextViews*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IEnumTfContextViews*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfContextViews*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IEnumTfContextViews*, uint>)(lpVtbl[1]))((IEnumTfContextViews*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IEnumTfContextViews*, uint>)(lpVtbl[1]))((IEnumTfContextViews*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IEnumTfContextViews*, uint>)(lpVtbl[2]))((IEnumTfContextViews*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IEnumTfContextViews*, uint>)(lpVtbl[2]))((IEnumTfContextViews*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Clone(IEnumTfContextViews** ppEnum)
+    {
+        return ((delegate* unmanaged<IEnumTfContextViews*, IEnumTfContextViews**, int>)(lpVtbl[3]))((IEnumTfContextViews*)Unsafe.AsPointer(ref this), ppEnum);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfContextView** rgViews, [NativeTypeName("ULONG *")] uint* pcFetched)
+    {
+        return ((delegate* unmanaged<IEnumTfContextViews*, uint, ITfContextView**, uint*, int>)(lpVtbl[4]))((IEnumTfContextViews*)Unsafe.AsPointer(ref this), ulCount, rgViews, pcFetched);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Reset()
+    {
+        return ((delegate* unmanaged<IEnumTfContextViews*, int>)(lpVtbl[5]))((IEnumTfContextViews*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
+    {
+        return ((delegate* unmanaged<IEnumTfContextViews*, uint, int>)(lpVtbl[6]))((IEnumTfContextViews*)Unsafe.AsPointer(ref this), ulCount);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Clone(IEnumTfContextViews** ppEnum)
-        {
-            return ((delegate* unmanaged<IEnumTfContextViews*, IEnumTfContextViews**, int>)(lpVtbl[3]))((IEnumTfContextViews*)Unsafe.AsPointer(ref this), ppEnum);
-        }
+        HRESULT Clone(IEnumTfContextViews** ppEnum);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfContextView** rgViews, [NativeTypeName("ULONG *")] uint* pcFetched)
-        {
-            return ((delegate* unmanaged<IEnumTfContextViews*, uint, ITfContextView**, uint*, int>)(lpVtbl[4]))((IEnumTfContextViews*)Unsafe.AsPointer(ref this), ulCount, rgViews, pcFetched);
-        }
+        HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfContextView** rgViews, [NativeTypeName("ULONG *")] uint* pcFetched);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT Reset()
-        {
-            return ((delegate* unmanaged<IEnumTfContextViews*, int>)(lpVtbl[5]))((IEnumTfContextViews*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Reset();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
-        {
-            return ((delegate* unmanaged<IEnumTfContextViews*, uint, int>)(lpVtbl[6]))((IEnumTfContextViews*)Unsafe.AsPointer(ref this), ulCount);
-        }
+        HRESULT Skip([NativeTypeName("ULONG")] uint ulCount);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Clone(IEnumTfContextViews** ppEnum);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumTfContextViews*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfContextView** rgViews, [NativeTypeName("ULONG *")] uint* pcFetched);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumTfContextViews*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT Reset();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumTfContextViews*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT Skip([NativeTypeName("ULONG")] uint ulCount);
-        }
+        [NativeTypeName("HRESULT (IEnumTfContextViews **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumTfContextViews*, IEnumTfContextViews**, int> Clone;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumTfContextViews*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (ULONG, ITfContextView **, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumTfContextViews*, uint, ITfContextView**, uint*, int> Next;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumTfContextViews*, uint> AddRef;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumTfContextViews*, int> Reset;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumTfContextViews*, uint> Release;
-
-            [NativeTypeName("HRESULT (IEnumTfContextViews **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumTfContextViews*, IEnumTfContextViews**, int> Clone;
-
-            [NativeTypeName("HRESULT (ULONG, ITfContextView **, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumTfContextViews*, uint, ITfContextView**, uint*, int> Next;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumTfContextViews*, int> Reset;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumTfContextViews*, uint, int> Skip;
-        }
+        [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumTfContextViews*, uint, int> Skip;
     }
 }

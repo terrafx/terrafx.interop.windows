@@ -3,14 +3,13 @@
 // Ported from shared/windef.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class Windows
-    {
-        [NativeTypeName("#define HFILE_ERROR ((HFILE)-1)")]
-        public const int HFILE_ERROR = ((int)(-1));
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("#define APP_LOCAL_DEVICE_ID_SIZE 32")]
-        public const int APP_LOCAL_DEVICE_ID_SIZE = 32;
-    }
+public static partial class Windows
+{
+    [NativeTypeName("#define HFILE_ERROR ((HFILE)-1)")]
+    public const int HFILE_ERROR = ((int)(-1));
+
+    [NativeTypeName("#define APP_LOCAL_DEVICE_ID_SIZE 32")]
+    public const int APP_LOCAL_DEVICE_ID_SIZE = 32;
 }

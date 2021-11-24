@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SCRUB_PARITY_EXTENT_DATA" /> struct.</summary>
+public static unsafe partial class SCRUB_PARITY_EXTENT_DATATests
 {
-    /// <summary>Provides validation of the <see cref="SCRUB_PARITY_EXTENT_DATA" /> struct.</summary>
-    public static unsafe partial class SCRUB_PARITY_EXTENT_DATATests
+    /// <summary>Validates that the <see cref="SCRUB_PARITY_EXTENT_DATA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SCRUB_PARITY_EXTENT_DATA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SCRUB_PARITY_EXTENT_DATA>(), Is.EqualTo(sizeof(SCRUB_PARITY_EXTENT_DATA)));
-        }
+        Assert.That(Marshal.SizeOf<SCRUB_PARITY_EXTENT_DATA>(), Is.EqualTo(sizeof(SCRUB_PARITY_EXTENT_DATA)));
+    }
 
-        /// <summary>Validates that the <see cref="SCRUB_PARITY_EXTENT_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SCRUB_PARITY_EXTENT_DATA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SCRUB_PARITY_EXTENT_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SCRUB_PARITY_EXTENT_DATA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SCRUB_PARITY_EXTENT_DATA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SCRUB_PARITY_EXTENT_DATA), Is.EqualTo(24));
-        }
+    /// <summary>Validates that the <see cref="SCRUB_PARITY_EXTENT_DATA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SCRUB_PARITY_EXTENT_DATA), Is.EqualTo(24));
     }
 }

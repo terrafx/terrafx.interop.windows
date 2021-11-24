@@ -8,32 +8,31 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct WCM_PROFILE_INFO_LIST
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct WCM_PROFILE_INFO_LIST
+    [NativeTypeName("DWORD")]
+    public uint dwNumberOfItems;
+
+    [NativeTypeName("WCM_PROFILE_INFO [1]")]
+    public _ProfileInfo_e__FixedBuffer ProfileInfo;
+
+    public partial struct _ProfileInfo_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint dwNumberOfItems;
+        public WCM_PROFILE_INFO e0;
 
-        [NativeTypeName("WCM_PROFILE_INFO [1]")]
-        public _ProfileInfo_e__FixedBuffer ProfileInfo;
-
-        public partial struct _ProfileInfo_e__FixedBuffer
+        public ref WCM_PROFILE_INFO this[int index]
         {
-            public WCM_PROFILE_INFO e0;
-
-            public ref WCM_PROFILE_INFO this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<WCM_PROFILE_INFO> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<WCM_PROFILE_INFO> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

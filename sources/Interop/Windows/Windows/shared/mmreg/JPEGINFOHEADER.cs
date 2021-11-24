@@ -5,27 +5,26 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct JPEGINFOHEADER
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct JPEGINFOHEADER
-    {
-        [NativeTypeName("DWORD")]
-        public uint JPEGSize;
+    [NativeTypeName("DWORD")]
+    public uint JPEGSize;
 
-        [NativeTypeName("DWORD")]
-        public uint JPEGProcess;
+    [NativeTypeName("DWORD")]
+    public uint JPEGProcess;
 
-        [NativeTypeName("DWORD")]
-        public uint JPEGColorSpaceID;
+    [NativeTypeName("DWORD")]
+    public uint JPEGColorSpaceID;
 
-        [NativeTypeName("DWORD")]
-        public uint JPEGBitsPerSample;
+    [NativeTypeName("DWORD")]
+    public uint JPEGBitsPerSample;
 
-        [NativeTypeName("DWORD")]
-        public uint JPEGHSubSampling;
+    [NativeTypeName("DWORD")]
+    public uint JPEGHSubSampling;
 
-        [NativeTypeName("DWORD")]
-        public uint JPEGVSubSampling;
-    }
+    [NativeTypeName("DWORD")]
+    public uint JPEGVSubSampling;
 }

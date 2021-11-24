@@ -3,14 +3,13 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct CHARSETINFO
 {
-    public partial struct CHARSETINFO
-    {
-        public uint ciCharset;
+    public uint ciCharset;
 
-        public uint ciACP;
+    public uint ciACP;
 
-        public FONTSIGNATURE fs;
-    }
+    public FONTSIGNATURE fs;
 }

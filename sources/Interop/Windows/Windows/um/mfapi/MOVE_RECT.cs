@@ -3,12 +3,11 @@
 // Ported from um/mfapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct MOVE_RECT
-    {
-        public POINT SourcePoint;
+namespace TerraFX.Interop.Windows;
 
-        public RECT DestRect;
-    }
+public partial struct MOVE_RECT
+{
+    public POINT SourcePoint;
+
+    public RECT DestRect;
 }

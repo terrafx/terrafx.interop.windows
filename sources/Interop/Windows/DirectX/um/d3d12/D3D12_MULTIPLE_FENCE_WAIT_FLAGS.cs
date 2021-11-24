@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum D3D12_MULTIPLE_FENCE_WAIT_FLAGS
 {
-    [Flags]
-    public enum D3D12_MULTIPLE_FENCE_WAIT_FLAGS
-    {
-        D3D12_MULTIPLE_FENCE_WAIT_FLAG_NONE = 0,
-        D3D12_MULTIPLE_FENCE_WAIT_FLAG_ANY = 0x1,
-        D3D12_MULTIPLE_FENCE_WAIT_FLAG_ALL = 0,
-    }
+    D3D12_MULTIPLE_FENCE_WAIT_FLAG_NONE = 0,
+    D3D12_MULTIPLE_FENCE_WAIT_FLAG_ANY = 0x1,
+    D3D12_MULTIPLE_FENCE_WAIT_FLAG_ALL = 0,
 }

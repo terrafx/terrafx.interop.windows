@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NMCOMBOBOXEXW" /> struct.</summary>
+public static unsafe partial class NMCOMBOBOXEXWTests
 {
-    /// <summary>Provides validation of the <see cref="NMCOMBOBOXEXW" /> struct.</summary>
-    public static unsafe partial class NMCOMBOBOXEXWTests
+    /// <summary>Validates that the <see cref="NMCOMBOBOXEXW" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NMCOMBOBOXEXW" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NMCOMBOBOXEXW>(), Is.EqualTo(sizeof(NMCOMBOBOXEXW)));
-        }
+        Assert.That(Marshal.SizeOf<NMCOMBOBOXEXW>(), Is.EqualTo(sizeof(NMCOMBOBOXEXW)));
+    }
 
-        /// <summary>Validates that the <see cref="NMCOMBOBOXEXW" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NMCOMBOBOXEXW).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NMCOMBOBOXEXW" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NMCOMBOBOXEXW).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NMCOMBOBOXEXW" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="NMCOMBOBOXEXW" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(NMCOMBOBOXEXW), Is.EqualTo(80));
-            }
-            else
-            {
-                Assert.That(sizeof(NMCOMBOBOXEXW), Is.EqualTo(48));
-            }
+            Assert.That(sizeof(NMCOMBOBOXEXW), Is.EqualTo(80));
+        }
+        else
+        {
+            Assert.That(sizeof(NMCOMBOBOXEXW), Is.EqualTo(48));
         }
     }
 }

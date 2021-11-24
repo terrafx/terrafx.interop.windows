@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SCH_EXTENSION_DATA" /> struct.</summary>
+public static unsafe partial class SCH_EXTENSION_DATATests
 {
-    /// <summary>Provides validation of the <see cref="SCH_EXTENSION_DATA" /> struct.</summary>
-    public static unsafe partial class SCH_EXTENSION_DATATests
+    /// <summary>Validates that the <see cref="SCH_EXTENSION_DATA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SCH_EXTENSION_DATA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SCH_EXTENSION_DATA>(), Is.EqualTo(sizeof(SCH_EXTENSION_DATA)));
-        }
+        Assert.That(Marshal.SizeOf<SCH_EXTENSION_DATA>(), Is.EqualTo(sizeof(SCH_EXTENSION_DATA)));
+    }
 
-        /// <summary>Validates that the <see cref="SCH_EXTENSION_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SCH_EXTENSION_DATA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SCH_EXTENSION_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SCH_EXTENSION_DATA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SCH_EXTENSION_DATA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SCH_EXTENSION_DATA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SCH_EXTENSION_DATA), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(SCH_EXTENSION_DATA), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(SCH_EXTENSION_DATA), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(SCH_EXTENSION_DATA), Is.EqualTo(12));
         }
     }
 }

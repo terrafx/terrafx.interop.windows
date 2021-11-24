@@ -3,16 +3,15 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct ACCEL
 {
-    public partial struct ACCEL
-    {
-        public byte fVirt;
+    public byte fVirt;
 
-        [NativeTypeName("WORD")]
-        public ushort key;
+    [NativeTypeName("WORD")]
+    public ushort key;
 
-        [NativeTypeName("WORD")]
-        public ushort cmd;
-    }
+    [NativeTypeName("WORD")]
+    public ushort cmd;
 }

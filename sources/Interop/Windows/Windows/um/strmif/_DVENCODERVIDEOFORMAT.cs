@@ -3,11 +3,10 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum _DVENCODERVIDEOFORMAT
 {
-    public enum _DVENCODERVIDEOFORMAT
-    {
-        DVENCODERVIDEOFORMAT_NTSC = 2000,
-        DVENCODERVIDEOFORMAT_PAL = 2001,
-    }
+    DVENCODERVIDEOFORMAT_NTSC = 2000,
+    DVENCODERVIDEOFORMAT_PAL = 2001,
 }

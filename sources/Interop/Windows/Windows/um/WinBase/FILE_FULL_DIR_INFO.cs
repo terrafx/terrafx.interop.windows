@@ -5,39 +5,38 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct FILE_FULL_DIR_INFO
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct FILE_FULL_DIR_INFO
-    {
-        [NativeTypeName("ULONG")]
-        public uint NextEntryOffset;
+    [NativeTypeName("ULONG")]
+    public uint NextEntryOffset;
 
-        [NativeTypeName("ULONG")]
-        public uint FileIndex;
+    [NativeTypeName("ULONG")]
+    public uint FileIndex;
 
-        public LARGE_INTEGER CreationTime;
+    public LARGE_INTEGER CreationTime;
 
-        public LARGE_INTEGER LastAccessTime;
+    public LARGE_INTEGER LastAccessTime;
 
-        public LARGE_INTEGER LastWriteTime;
+    public LARGE_INTEGER LastWriteTime;
 
-        public LARGE_INTEGER ChangeTime;
+    public LARGE_INTEGER ChangeTime;
 
-        public LARGE_INTEGER EndOfFile;
+    public LARGE_INTEGER EndOfFile;
 
-        public LARGE_INTEGER AllocationSize;
+    public LARGE_INTEGER AllocationSize;
 
-        [NativeTypeName("ULONG")]
-        public uint FileAttributes;
+    [NativeTypeName("ULONG")]
+    public uint FileAttributes;
 
-        [NativeTypeName("ULONG")]
-        public uint FileNameLength;
+    [NativeTypeName("ULONG")]
+    public uint FileNameLength;
 
-        [NativeTypeName("ULONG")]
-        public uint EaSize;
+    [NativeTypeName("ULONG")]
+    public uint EaSize;
 
-        [NativeTypeName("WCHAR [1]")]
-        public fixed ushort FileName[1];
-    }
+    [NativeTypeName("WCHAR [1]")]
+    public fixed ushort FileName[1];
 }

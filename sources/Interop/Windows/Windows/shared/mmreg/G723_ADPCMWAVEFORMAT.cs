@@ -5,17 +5,16 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct G723_ADPCMWAVEFORMAT
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct G723_ADPCMWAVEFORMAT
-    {
-        public WAVEFORMATEX wfx;
+    public WAVEFORMATEX wfx;
 
-        [NativeTypeName("WORD")]
-        public ushort cbExtraSize;
+    [NativeTypeName("WORD")]
+    public ushort cbExtraSize;
 
-        [NativeTypeName("WORD")]
-        public ushort nAuxBlockSize;
-    }
+    [NativeTypeName("WORD")]
+    public ushort nAuxBlockSize;
 }

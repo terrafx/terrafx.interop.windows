@@ -8,32 +8,31 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public partial struct MFCameraExtrinsics
 {
-    [SupportedOSPlatform("windows10.0")]
-    public partial struct MFCameraExtrinsics
+    [NativeTypeName("UINT32")]
+    public uint TransformCount;
+
+    [NativeTypeName("MFCameraExtrinsic_CalibratedTransform [1]")]
+    public _CalibratedTransforms_e__FixedBuffer CalibratedTransforms;
+
+    public partial struct _CalibratedTransforms_e__FixedBuffer
     {
-        [NativeTypeName("UINT32")]
-        public uint TransformCount;
+        public MFCameraExtrinsic_CalibratedTransform e0;
 
-        [NativeTypeName("MFCameraExtrinsic_CalibratedTransform [1]")]
-        public _CalibratedTransforms_e__FixedBuffer CalibratedTransforms;
-
-        public partial struct _CalibratedTransforms_e__FixedBuffer
+        public ref MFCameraExtrinsic_CalibratedTransform this[int index]
         {
-            public MFCameraExtrinsic_CalibratedTransform e0;
-
-            public ref MFCameraExtrinsic_CalibratedTransform this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<MFCameraExtrinsic_CalibratedTransform> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<MFCameraExtrinsic_CalibratedTransform> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

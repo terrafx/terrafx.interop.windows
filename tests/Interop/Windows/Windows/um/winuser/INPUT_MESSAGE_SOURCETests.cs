@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="INPUT_MESSAGE_SOURCE" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class INPUT_MESSAGE_SOURCETests
 {
-    /// <summary>Provides validation of the <see cref="INPUT_MESSAGE_SOURCE" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class INPUT_MESSAGE_SOURCETests
+    /// <summary>Validates that the <see cref="INPUT_MESSAGE_SOURCE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="INPUT_MESSAGE_SOURCE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<INPUT_MESSAGE_SOURCE>(), Is.EqualTo(sizeof(INPUT_MESSAGE_SOURCE)));
-        }
+        Assert.That(Marshal.SizeOf<INPUT_MESSAGE_SOURCE>(), Is.EqualTo(sizeof(INPUT_MESSAGE_SOURCE)));
+    }
 
-        /// <summary>Validates that the <see cref="INPUT_MESSAGE_SOURCE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(INPUT_MESSAGE_SOURCE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="INPUT_MESSAGE_SOURCE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(INPUT_MESSAGE_SOURCE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="INPUT_MESSAGE_SOURCE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(INPUT_MESSAGE_SOURCE), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="INPUT_MESSAGE_SOURCE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(INPUT_MESSAGE_SOURCE), Is.EqualTo(8));
     }
 }

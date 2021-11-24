@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CEventObj" /> struct.</summary>
+public static unsafe partial class CEventObjTests
 {
-    /// <summary>Provides validation of the <see cref="CEventObj" /> struct.</summary>
-    public static unsafe partial class CEventObjTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CEventObj" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CEventObj" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(CEventObj).GUID, Is.EqualTo(IID_CEventObj));
-        }
+        Assert.That(typeof(CEventObj).GUID, Is.EqualTo(IID_CEventObj));
+    }
 
-        /// <summary>Validates that the <see cref="CEventObj" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CEventObj>(), Is.EqualTo(sizeof(CEventObj)));
-        }
+    /// <summary>Validates that the <see cref="CEventObj" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<CEventObj>(), Is.EqualTo(sizeof(CEventObj)));
+    }
 
-        /// <summary>Validates that the <see cref="CEventObj" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CEventObj).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CEventObj" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CEventObj).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CEventObj" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CEventObj), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="CEventObj" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CEventObj), Is.EqualTo(1));
     }
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="D3D11_SUBRESOURCE_DATA" /> struct.</summary>
+public static unsafe partial class D3D11_SUBRESOURCE_DATATests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_SUBRESOURCE_DATA" /> struct.</summary>
-    public static unsafe partial class D3D11_SUBRESOURCE_DATATests
+    /// <summary>Validates that the <see cref="D3D11_SUBRESOURCE_DATA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="D3D11_SUBRESOURCE_DATA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<D3D11_SUBRESOURCE_DATA>(), Is.EqualTo(sizeof(D3D11_SUBRESOURCE_DATA)));
-        }
+        Assert.That(Marshal.SizeOf<D3D11_SUBRESOURCE_DATA>(), Is.EqualTo(sizeof(D3D11_SUBRESOURCE_DATA)));
+    }
 
-        /// <summary>Validates that the <see cref="D3D11_SUBRESOURCE_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(D3D11_SUBRESOURCE_DATA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="D3D11_SUBRESOURCE_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(D3D11_SUBRESOURCE_DATA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="D3D11_SUBRESOURCE_DATA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="D3D11_SUBRESOURCE_DATA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(D3D11_SUBRESOURCE_DATA), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(D3D11_SUBRESOURCE_DATA), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(D3D11_SUBRESOURCE_DATA), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(D3D11_SUBRESOURCE_DATA), Is.EqualTo(12));
         }
     }
 }

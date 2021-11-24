@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WS_HEAP_PROPERTIES" /> struct.</summary>
+public static unsafe partial class WS_HEAP_PROPERTIESTests
 {
-    /// <summary>Provides validation of the <see cref="WS_HEAP_PROPERTIES" /> struct.</summary>
-    public static unsafe partial class WS_HEAP_PROPERTIESTests
+    /// <summary>Validates that the <see cref="WS_HEAP_PROPERTIES" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WS_HEAP_PROPERTIES" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WS_HEAP_PROPERTIES>(), Is.EqualTo(sizeof(WS_HEAP_PROPERTIES)));
-        }
+        Assert.That(Marshal.SizeOf<WS_HEAP_PROPERTIES>(), Is.EqualTo(sizeof(WS_HEAP_PROPERTIES)));
+    }
 
-        /// <summary>Validates that the <see cref="WS_HEAP_PROPERTIES" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WS_HEAP_PROPERTIES).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WS_HEAP_PROPERTIES" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WS_HEAP_PROPERTIES).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WS_HEAP_PROPERTIES" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="WS_HEAP_PROPERTIES" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(WS_HEAP_PROPERTIES), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(WS_HEAP_PROPERTIES), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(WS_HEAP_PROPERTIES), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(WS_HEAP_PROPERTIES), Is.EqualTo(8));
         }
     }
 }

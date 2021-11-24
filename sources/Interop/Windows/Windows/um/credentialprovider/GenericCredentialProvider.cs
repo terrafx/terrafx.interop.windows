@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("25CBB996-92ED-457E-B28C-4774084BD562")]
+public partial struct GenericCredentialProvider
 {
-    [Guid("25CBB996-92ED-457E-B28C-4774084BD562")]
-    public partial struct GenericCredentialProvider
-    {
-    }
 }

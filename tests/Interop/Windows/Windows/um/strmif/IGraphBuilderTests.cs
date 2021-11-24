@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IGraphBuilder" /> struct.</summary>
+public static unsafe partial class IGraphBuilderTests
 {
-    /// <summary>Provides validation of the <see cref="IGraphBuilder" /> struct.</summary>
-    public static unsafe partial class IGraphBuilderTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IGraphBuilder" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IGraphBuilder" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IGraphBuilder).GUID, Is.EqualTo(IID_IGraphBuilder));
-        }
+        Assert.That(typeof(IGraphBuilder).GUID, Is.EqualTo(IID_IGraphBuilder));
+    }
 
-        /// <summary>Validates that the <see cref="IGraphBuilder" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IGraphBuilder>(), Is.EqualTo(sizeof(IGraphBuilder)));
-        }
+    /// <summary>Validates that the <see cref="IGraphBuilder" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IGraphBuilder>(), Is.EqualTo(sizeof(IGraphBuilder)));
+    }
 
-        /// <summary>Validates that the <see cref="IGraphBuilder" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IGraphBuilder).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IGraphBuilder" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IGraphBuilder).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IGraphBuilder" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IGraphBuilder" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IGraphBuilder), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IGraphBuilder), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IGraphBuilder), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IGraphBuilder), Is.EqualTo(4));
         }
     }
 }

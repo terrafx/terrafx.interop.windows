@@ -3,25 +3,24 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct AM_DVD_RENDERSTATUS
 {
-    public partial struct AM_DVD_RENDERSTATUS
-    {
-        public HRESULT hrVPEStatus;
+    public HRESULT hrVPEStatus;
 
-        public BOOL bDvdVolInvalid;
+    public BOOL bDvdVolInvalid;
 
-        public BOOL bDvdVolUnknown;
+    public BOOL bDvdVolUnknown;
 
-        public BOOL bNoLine21In;
+    public BOOL bNoLine21In;
 
-        public BOOL bNoLine21Out;
+    public BOOL bNoLine21Out;
 
-        public int iNumStreams;
+    public int iNumStreams;
 
-        public int iNumStreamsFailed;
+    public int iNumStreamsFailed;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFailedStreamsFlag;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwFailedStreamsFlag;
 }

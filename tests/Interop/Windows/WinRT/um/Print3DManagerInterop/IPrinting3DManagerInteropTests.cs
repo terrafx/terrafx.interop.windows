@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IPrinting3DManagerInterop" /> struct.</summary>
+public static unsafe partial class IPrinting3DManagerInteropTests
 {
-    /// <summary>Provides validation of the <see cref="IPrinting3DManagerInterop" /> struct.</summary>
-    public static unsafe partial class IPrinting3DManagerInteropTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPrinting3DManagerInterop" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPrinting3DManagerInterop" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IPrinting3DManagerInterop).GUID, Is.EqualTo(IID_IPrinting3DManagerInterop));
-        }
+        Assert.That(typeof(IPrinting3DManagerInterop).GUID, Is.EqualTo(IID_IPrinting3DManagerInterop));
+    }
 
-        /// <summary>Validates that the <see cref="IPrinting3DManagerInterop" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IPrinting3DManagerInterop>(), Is.EqualTo(sizeof(IPrinting3DManagerInterop)));
-        }
+    /// <summary>Validates that the <see cref="IPrinting3DManagerInterop" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IPrinting3DManagerInterop>(), Is.EqualTo(sizeof(IPrinting3DManagerInterop)));
+    }
 
-        /// <summary>Validates that the <see cref="IPrinting3DManagerInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IPrinting3DManagerInterop).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IPrinting3DManagerInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IPrinting3DManagerInterop).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IPrinting3DManagerInterop" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IPrinting3DManagerInterop" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IPrinting3DManagerInterop), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IPrinting3DManagerInterop), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IPrinting3DManagerInterop), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IPrinting3DManagerInterop), Is.EqualTo(4));
         }
     }
 }

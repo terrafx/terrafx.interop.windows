@@ -5,10 +5,9 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D1_FEATURE_DATA_DOUBLES
 {
-    public partial struct D2D1_FEATURE_DATA_DOUBLES
-    {
-        public BOOL doublePrecisionFloatShaderOps;
-    }
+    public BOOL doublePrecisionFloatShaderOps;
 }

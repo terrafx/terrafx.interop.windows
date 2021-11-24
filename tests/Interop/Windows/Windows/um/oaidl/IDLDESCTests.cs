@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDLDESC" /> struct.</summary>
+public static unsafe partial class IDLDESCTests
 {
-    /// <summary>Provides validation of the <see cref="IDLDESC" /> struct.</summary>
-    public static unsafe partial class IDLDESCTests
+    /// <summary>Validates that the <see cref="IDLDESC" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IDLDESC" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDLDESC>(), Is.EqualTo(sizeof(IDLDESC)));
-        }
+        Assert.That(Marshal.SizeOf<IDLDESC>(), Is.EqualTo(sizeof(IDLDESC)));
+    }
 
-        /// <summary>Validates that the <see cref="IDLDESC" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDLDESC).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDLDESC" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDLDESC).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDLDESC" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDLDESC" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDLDESC), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(IDLDESC), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(IDLDESC), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(IDLDESC), Is.EqualTo(8));
         }
     }
 }

@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDirectManipulationManager" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class IDirectManipulationManagerTests
 {
-    /// <summary>Provides validation of the <see cref="IDirectManipulationManager" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class IDirectManipulationManagerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDirectManipulationManager" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDirectManipulationManager" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDirectManipulationManager).GUID, Is.EqualTo(IID_IDirectManipulationManager));
-        }
+        Assert.That(typeof(IDirectManipulationManager).GUID, Is.EqualTo(IID_IDirectManipulationManager));
+    }
 
-        /// <summary>Validates that the <see cref="IDirectManipulationManager" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDirectManipulationManager>(), Is.EqualTo(sizeof(IDirectManipulationManager)));
-        }
+    /// <summary>Validates that the <see cref="IDirectManipulationManager" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDirectManipulationManager>(), Is.EqualTo(sizeof(IDirectManipulationManager)));
+    }
 
-        /// <summary>Validates that the <see cref="IDirectManipulationManager" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDirectManipulationManager).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDirectManipulationManager" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDirectManipulationManager).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDirectManipulationManager" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDirectManipulationManager" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDirectManipulationManager), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDirectManipulationManager), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDirectManipulationManager), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDirectManipulationManager), Is.EqualTo(4));
         }
     }
 }

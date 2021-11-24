@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum eAVEncVideoContentType
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum eAVEncVideoContentType
-    {
-        eAVEncVideoContentType_Unknown = 0,
-        eAVEncVideoContentType_FixedCameraAngle = 1,
-    }
+    eAVEncVideoContentType_Unknown = 0,
+    eAVEncVideoContentType_FixedCameraAngle = 1,
 }

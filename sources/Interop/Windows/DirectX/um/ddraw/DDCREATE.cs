@@ -3,14 +3,13 @@
 // Ported from um/ddraw.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
-{
-    public static partial class DDCREATE
-    {
-        [NativeTypeName("#define DDCREATE_HARDWAREONLY 0x00000001l")]
-        public const int DDCREATE_HARDWAREONLY = 0x00000001;
+namespace TerraFX.Interop.DirectX;
 
-        [NativeTypeName("#define DDCREATE_EMULATIONONLY 0x00000002l")]
-        public const int DDCREATE_EMULATIONONLY = 0x00000002;
-    }
+public static partial class DDCREATE
+{
+    [NativeTypeName("#define DDCREATE_HARDWAREONLY 0x00000001l")]
+    public const int DDCREATE_HARDWAREONLY = 0x00000001;
+
+    [NativeTypeName("#define DDCREATE_EMULATIONONLY 0x00000002l")]
+    public const int DDCREATE_EMULATIONONLY = 0x00000002;
 }

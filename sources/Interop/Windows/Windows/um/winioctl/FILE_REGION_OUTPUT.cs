@@ -7,40 +7,39 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct FILE_REGION_OUTPUT
 {
-    public partial struct FILE_REGION_OUTPUT
+    [NativeTypeName("DWORD")]
+    public uint Flags;
+
+    [NativeTypeName("DWORD")]
+    public uint TotalRegionEntryCount;
+
+    [NativeTypeName("DWORD")]
+    public uint RegionEntryCount;
+
+    [NativeTypeName("DWORD")]
+    public uint Reserved;
+
+    [NativeTypeName("FILE_REGION_INFO [1]")]
+    public _Region_e__FixedBuffer Region;
+
+    public partial struct _Region_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+        public FILE_REGION_INFO e0;
 
-        [NativeTypeName("DWORD")]
-        public uint TotalRegionEntryCount;
-
-        [NativeTypeName("DWORD")]
-        public uint RegionEntryCount;
-
-        [NativeTypeName("DWORD")]
-        public uint Reserved;
-
-        [NativeTypeName("FILE_REGION_INFO [1]")]
-        public _Region_e__FixedBuffer Region;
-
-        public partial struct _Region_e__FixedBuffer
+        public ref FILE_REGION_INFO this[int index]
         {
-            public FILE_REGION_INFO e0;
-
-            public ref FILE_REGION_INFO this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<FILE_REGION_INFO> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<FILE_REGION_INFO> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

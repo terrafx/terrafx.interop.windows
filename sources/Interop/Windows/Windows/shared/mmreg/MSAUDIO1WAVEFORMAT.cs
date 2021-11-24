@@ -5,17 +5,16 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct MSAUDIO1WAVEFORMAT
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct MSAUDIO1WAVEFORMAT
-    {
-        public WAVEFORMATEX wfx;
+    public WAVEFORMATEX wfx;
 
-        [NativeTypeName("WORD")]
-        public ushort wSamplesPerBlock;
+    [NativeTypeName("WORD")]
+    public ushort wSamplesPerBlock;
 
-        [NativeTypeName("WORD")]
-        public ushort wEncodeOptions;
-    }
+    [NativeTypeName("WORD")]
+    public ushort wEncodeOptions;
 }

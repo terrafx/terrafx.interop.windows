@@ -5,37 +5,36 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_RENDER_PASS_RENDER_TARGET_DESC : IEquatable<D3D12_RENDER_PASS_RENDER_TARGET_DESC>
 {
-    public partial struct D3D12_RENDER_PASS_RENDER_TARGET_DESC : IEquatable<D3D12_RENDER_PASS_RENDER_TARGET_DESC>
+    public static bool operator ==([NativeTypeName("const D3D12_RENDER_PASS_RENDER_TARGET_DESC &")] in D3D12_RENDER_PASS_RENDER_TARGET_DESC a, [NativeTypeName("const D3D12_RENDER_PASS_RENDER_TARGET_DESC &")] in D3D12_RENDER_PASS_RENDER_TARGET_DESC b)
     {
-        public static bool operator ==([NativeTypeName("const D3D12_RENDER_PASS_RENDER_TARGET_DESC &")] in D3D12_RENDER_PASS_RENDER_TARGET_DESC a, [NativeTypeName("const D3D12_RENDER_PASS_RENDER_TARGET_DESC &")] in D3D12_RENDER_PASS_RENDER_TARGET_DESC b)
+        if (a.cpuDescriptor.ptr != b.cpuDescriptor.ptr)
         {
-            if (a.cpuDescriptor.ptr != b.cpuDescriptor.ptr)
-            {
-                return false;
-            }
-
-            if (!(a.BeginningAccess == b.BeginningAccess))
-            {
-                return false;
-            }
-
-            if (!(a.EndingAccess == b.EndingAccess))
-            {
-                return false;
-            }
-
-            return true;
+            return false;
         }
 
-        public static bool operator !=([NativeTypeName("const D3D12_RENDER_PASS_RENDER_TARGET_DESC &")] in D3D12_RENDER_PASS_RENDER_TARGET_DESC a, [NativeTypeName("const D3D12_RENDER_PASS_RENDER_TARGET_DESC &")] in D3D12_RENDER_PASS_RENDER_TARGET_DESC b)
-            => !(a == b);
+        if (!(a.BeginningAccess == b.BeginningAccess))
+        {
+            return false;
+        }
 
-        public override bool Equals(object? obj) => (obj is D3D12_RENDER_PASS_RENDER_TARGET_DESC other) && Equals(other);
+        if (!(a.EndingAccess == b.EndingAccess))
+        {
+            return false;
+        }
 
-        public bool Equals(D3D12_RENDER_PASS_RENDER_TARGET_DESC other) => this == other;
-
-        public override int GetHashCode() => HashCode.Combine(cpuDescriptor, BeginningAccess, EndingAccess);
+        return true;
     }
+
+    public static bool operator !=([NativeTypeName("const D3D12_RENDER_PASS_RENDER_TARGET_DESC &")] in D3D12_RENDER_PASS_RENDER_TARGET_DESC a, [NativeTypeName("const D3D12_RENDER_PASS_RENDER_TARGET_DESC &")] in D3D12_RENDER_PASS_RENDER_TARGET_DESC b)
+        => !(a == b);
+
+    public override bool Equals(object? obj) => (obj is D3D12_RENDER_PASS_RENDER_TARGET_DESC other) && Equals(other);
+
+    public bool Equals(D3D12_RENDER_PASS_RENDER_TARGET_DESC other) => this == other;
+
+    public override int GetHashCode() => HashCode.Combine(cpuDescriptor, BeginningAccess, EndingAccess);
 }

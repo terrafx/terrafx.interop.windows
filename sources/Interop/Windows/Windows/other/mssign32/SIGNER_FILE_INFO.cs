@@ -3,16 +3,15 @@
 // Ported from https://docs.microsoft.com/en-us/windows/win32/appxpkg/how-to-programmatically-sign-a-package
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SIGNER_FILE_INFO
 {
-    public unsafe partial struct SIGNER_FILE_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pwszFileName;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pwszFileName;
 
-        public HANDLE hFile;
-    }
+    public HANDLE hFile;
 }

@@ -6,112 +6,111 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[NativeTypeName("struct tagMFASYNCRESULT : IMFAsyncResult")]
+[NativeInheritance("IMFAsyncResult")]
+public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface
 {
-    [NativeTypeName("struct tagMFASYNCRESULT : IMFAsyncResult")]
-    [NativeInheritance("IMFAsyncResult")]
-    public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface
+    public void** lpVtbl;
+
+    public OVERLAPPED overlapped;
+
+    public IMFAsyncCallback* pCallback;
+
+    public HRESULT hrStatusResult;
+
+    [NativeTypeName("DWORD")]
+    public uint dwBytesTransferred;
+
+    public HANDLE hEvent;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<MFASYNCRESULT*, Guid*, void**, int>)(lpVtbl[0]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        public OVERLAPPED overlapped;
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<MFASYNCRESULT*, uint>)(lpVtbl[1]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this));
+    }
 
-        public IMFAsyncCallback* pCallback;
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<MFASYNCRESULT*, uint>)(lpVtbl[2]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this));
+    }
 
-        public HRESULT hrStatusResult;
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetState(IUnknown** ppunkState)
+    {
+        return ((delegate* unmanaged<MFASYNCRESULT*, IUnknown**, int>)(lpVtbl[3]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), ppunkState);
+    }
 
-        [NativeTypeName("DWORD")]
-        public uint dwBytesTransferred;
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetStatus()
+    {
+        return ((delegate* unmanaged<MFASYNCRESULT*, int>)(lpVtbl[4]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this));
+    }
 
-        public HANDLE hEvent;
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT SetStatus(HRESULT hrStatus)
+    {
+        return ((delegate* unmanaged<MFASYNCRESULT*, HRESULT, int>)(lpVtbl[5]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), hrStatus);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<MFASYNCRESULT*, Guid*, void**, int>)(lpVtbl[0]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetObject(IUnknown** ppObject)
+    {
+        return ((delegate* unmanaged<MFASYNCRESULT*, IUnknown**, int>)(lpVtbl[6]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), ppObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<MFASYNCRESULT*, uint>)(lpVtbl[1]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public IUnknown* GetStateNoAddRef()
+    {
+        return ((delegate* unmanaged<MFASYNCRESULT*, IUnknown*>)(lpVtbl[7]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<MFASYNCRESULT*, uint>)(lpVtbl[2]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this));
-        }
+    public interface Interface : IMFAsyncResult.Interface
+    {
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetState(IUnknown** ppunkState)
-        {
-            return ((delegate* unmanaged<MFASYNCRESULT*, IUnknown**, int>)(lpVtbl[3]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), ppunkState);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<MFASYNCRESULT*, Guid*, void**, int> QueryInterface;
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT GetStatus()
-        {
-            return ((delegate* unmanaged<MFASYNCRESULT*, int>)(lpVtbl[4]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this));
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<MFASYNCRESULT*, uint> AddRef;
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT SetStatus(HRESULT hrStatus)
-        {
-            return ((delegate* unmanaged<MFASYNCRESULT*, HRESULT, int>)(lpVtbl[5]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), hrStatus);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<MFASYNCRESULT*, uint> Release;
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(6)]
-        public HRESULT GetObject(IUnknown** ppObject)
-        {
-            return ((delegate* unmanaged<MFASYNCRESULT*, IUnknown**, int>)(lpVtbl[6]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), ppObject);
-        }
+        [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+        public delegate* unmanaged<MFASYNCRESULT*, IUnknown**, int> GetState;
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(7)]
-        public IUnknown* GetStateNoAddRef()
-        {
-            return ((delegate* unmanaged<MFASYNCRESULT*, IUnknown*>)(lpVtbl[7]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this));
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<MFASYNCRESULT*, int> GetStatus;
 
-        public interface Interface : IMFAsyncResult.Interface
-        {
-        }
+        [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
+        public delegate* unmanaged<MFASYNCRESULT*, HRESULT, int> SetStatus;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<MFASYNCRESULT*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+        public delegate* unmanaged<MFASYNCRESULT*, IUnknown**, int> GetObject;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<MFASYNCRESULT*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<MFASYNCRESULT*, uint> Release;
-
-            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-            public delegate* unmanaged<MFASYNCRESULT*, IUnknown**, int> GetState;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<MFASYNCRESULT*, int> GetStatus;
-
-            [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
-            public delegate* unmanaged<MFASYNCRESULT*, HRESULT, int> SetStatus;
-
-            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-            public delegate* unmanaged<MFASYNCRESULT*, IUnknown**, int> GetObject;
-
-            [NativeTypeName("IUnknown *() __attribute__((stdcall))")]
-            public delegate* unmanaged<MFASYNCRESULT*, IUnknown*> GetStateNoAddRef;
-        }
+        [NativeTypeName("IUnknown *() __attribute__((stdcall))")]
+        public delegate* unmanaged<MFASYNCRESULT*, IUnknown*> GetStateNoAddRef;
     }
 }

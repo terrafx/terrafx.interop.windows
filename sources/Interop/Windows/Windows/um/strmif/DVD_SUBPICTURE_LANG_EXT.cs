@@ -3,20 +3,19 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum DVD_SUBPICTURE_LANG_EXT
 {
-    public enum DVD_SUBPICTURE_LANG_EXT
-    {
-        DVD_SP_EXT_NotSpecified = 0,
-        DVD_SP_EXT_Caption_Normal = 1,
-        DVD_SP_EXT_Caption_Big = 2,
-        DVD_SP_EXT_Caption_Children = 3,
-        DVD_SP_EXT_CC_Normal = 5,
-        DVD_SP_EXT_CC_Big = 6,
-        DVD_SP_EXT_CC_Children = 7,
-        DVD_SP_EXT_Forced = 9,
-        DVD_SP_EXT_DirectorComments_Normal = 13,
-        DVD_SP_EXT_DirectorComments_Big = 14,
-        DVD_SP_EXT_DirectorComments_Children = 15,
-    }
+    DVD_SP_EXT_NotSpecified = 0,
+    DVD_SP_EXT_Caption_Normal = 1,
+    DVD_SP_EXT_Caption_Big = 2,
+    DVD_SP_EXT_Caption_Children = 3,
+    DVD_SP_EXT_CC_Normal = 5,
+    DVD_SP_EXT_CC_Big = 6,
+    DVD_SP_EXT_CC_Children = 7,
+    DVD_SP_EXT_Forced = 9,
+    DVD_SP_EXT_DirectorComments_Normal = 13,
+    DVD_SP_EXT_DirectorComments_Big = 14,
+    DVD_SP_EXT_DirectorComments_Children = 15,
 }

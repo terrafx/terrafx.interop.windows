@@ -3,14 +3,13 @@
 // Ported from shared/hidpi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct USAGE_AND_PAGE
-    {
-        [NativeTypeName("USAGE")]
-        public ushort Usage;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("USAGE")]
-        public ushort UsagePage;
-    }
+public partial struct USAGE_AND_PAGE
+{
+    [NativeTypeName("USAGE")]
+    public ushort Usage;
+
+    [NativeTypeName("USAGE")]
+    public ushort UsagePage;
 }

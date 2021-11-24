@@ -3,17 +3,16 @@
 // Ported from um/IPTypes.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct IP_PER_ADAPTER_INFO_W2KSP1
 {
-    public unsafe partial struct IP_PER_ADAPTER_INFO_W2KSP1
-    {
-        public uint AutoconfigEnabled;
+    public uint AutoconfigEnabled;
 
-        public uint AutoconfigActive;
+    public uint AutoconfigActive;
 
-        [NativeTypeName("PIP_ADDR_STRING")]
-        public IP_ADDR_STRING* CurrentDnsServer;
+    [NativeTypeName("PIP_ADDR_STRING")]
+    public IP_ADDR_STRING* CurrentDnsServer;
 
-        public IP_ADDR_STRING DnsServerList;
-    }
+    public IP_ADDR_STRING DnsServerList;
 }

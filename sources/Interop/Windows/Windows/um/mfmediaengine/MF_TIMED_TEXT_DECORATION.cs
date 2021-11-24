@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public enum MF_TIMED_TEXT_DECORATION
 {
-    [SupportedOSPlatform("windows10.0")]
-    public enum MF_TIMED_TEXT_DECORATION
-    {
-        MF_TIMED_TEXT_DECORATION_NONE = 0,
-        MF_TIMED_TEXT_DECORATION_UNDERLINE = 1,
-        MF_TIMED_TEXT_DECORATION_LINE_THROUGH = 2,
-        MF_TIMED_TEXT_DECORATION_OVERLINE = 4,
-    }
+    MF_TIMED_TEXT_DECORATION_NONE = 0,
+    MF_TIMED_TEXT_DECORATION_UNDERLINE = 1,
+    MF_TIMED_TEXT_DECORATION_LINE_THROUGH = 2,
+    MF_TIMED_TEXT_DECORATION_OVERLINE = 4,
 }

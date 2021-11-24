@@ -3,14 +3,13 @@
 // Ported from cvconst.h in the Debug Interface Access SDK
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MemoryTypeEnum
 {
-    public enum MemoryTypeEnum
-    {
-        MemTypeCode,
-        MemTypeData,
-        MemTypeStack,
-        MemTypeCodeOnHeap,
-        MemTypeAny = -1,
-    }
+    MemTypeCode,
+    MemTypeData,
+    MemTypeStack,
+    MemTypeCodeOnHeap,
+    MemTypeAny = -1,
 }

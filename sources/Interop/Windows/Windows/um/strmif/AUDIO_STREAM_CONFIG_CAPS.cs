@@ -5,37 +5,36 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct AUDIO_STREAM_CONFIG_CAPS
 {
-    public partial struct AUDIO_STREAM_CONFIG_CAPS
-    {
-        public Guid guid;
+    public Guid guid;
 
-        [NativeTypeName("ULONG")]
-        public uint MinimumChannels;
+    [NativeTypeName("ULONG")]
+    public uint MinimumChannels;
 
-        [NativeTypeName("ULONG")]
-        public uint MaximumChannels;
+    [NativeTypeName("ULONG")]
+    public uint MaximumChannels;
 
-        [NativeTypeName("ULONG")]
-        public uint ChannelsGranularity;
+    [NativeTypeName("ULONG")]
+    public uint ChannelsGranularity;
 
-        [NativeTypeName("ULONG")]
-        public uint MinimumBitsPerSample;
+    [NativeTypeName("ULONG")]
+    public uint MinimumBitsPerSample;
 
-        [NativeTypeName("ULONG")]
-        public uint MaximumBitsPerSample;
+    [NativeTypeName("ULONG")]
+    public uint MaximumBitsPerSample;
 
-        [NativeTypeName("ULONG")]
-        public uint BitsPerSampleGranularity;
+    [NativeTypeName("ULONG")]
+    public uint BitsPerSampleGranularity;
 
-        [NativeTypeName("ULONG")]
-        public uint MinimumSampleFrequency;
+    [NativeTypeName("ULONG")]
+    public uint MinimumSampleFrequency;
 
-        [NativeTypeName("ULONG")]
-        public uint MaximumSampleFrequency;
+    [NativeTypeName("ULONG")]
+    public uint MaximumSampleFrequency;
 
-        [NativeTypeName("ULONG")]
-        public uint SampleFrequencyGranularity;
-    }
+    [NativeTypeName("ULONG")]
+    public uint SampleFrequencyGranularity;
 }

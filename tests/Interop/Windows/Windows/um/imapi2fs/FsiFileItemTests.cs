@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="FsiFileItem" /> struct.</summary>
+public static unsafe partial class FsiFileItemTests
 {
-    /// <summary>Provides validation of the <see cref="FsiFileItem" /> struct.</summary>
-    public static unsafe partial class FsiFileItemTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="FsiFileItem" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="FsiFileItem" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(FsiFileItem).GUID, Is.EqualTo(CLSID_FsiFileItem));
-        }
+        Assert.That(typeof(FsiFileItem).GUID, Is.EqualTo(CLSID_FsiFileItem));
+    }
 
-        /// <summary>Validates that the <see cref="FsiFileItem" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<FsiFileItem>(), Is.EqualTo(sizeof(FsiFileItem)));
-        }
+    /// <summary>Validates that the <see cref="FsiFileItem" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<FsiFileItem>(), Is.EqualTo(sizeof(FsiFileItem)));
+    }
 
-        /// <summary>Validates that the <see cref="FsiFileItem" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(FsiFileItem).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="FsiFileItem" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(FsiFileItem).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="FsiFileItem" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(FsiFileItem), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="FsiFileItem" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(FsiFileItem), Is.EqualTo(1));
     }
 }

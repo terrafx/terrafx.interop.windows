@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SP_DEVICE_INTERFACE_DETAIL_DATA64_A" /> struct.</summary>
+public static unsafe partial class SP_DEVICE_INTERFACE_DETAIL_DATA64_ATests
 {
-    /// <summary>Provides validation of the <see cref="SP_DEVICE_INTERFACE_DETAIL_DATA64_A" /> struct.</summary>
-    public static unsafe partial class SP_DEVICE_INTERFACE_DETAIL_DATA64_ATests
+    /// <summary>Validates that the <see cref="SP_DEVICE_INTERFACE_DETAIL_DATA64_A" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SP_DEVICE_INTERFACE_DETAIL_DATA64_A" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SP_DEVICE_INTERFACE_DETAIL_DATA64_A>(), Is.EqualTo(sizeof(SP_DEVICE_INTERFACE_DETAIL_DATA64_A)));
-        }
+        Assert.That(Marshal.SizeOf<SP_DEVICE_INTERFACE_DETAIL_DATA64_A>(), Is.EqualTo(sizeof(SP_DEVICE_INTERFACE_DETAIL_DATA64_A)));
+    }
 
-        /// <summary>Validates that the <see cref="SP_DEVICE_INTERFACE_DETAIL_DATA64_A" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SP_DEVICE_INTERFACE_DETAIL_DATA64_A).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SP_DEVICE_INTERFACE_DETAIL_DATA64_A" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SP_DEVICE_INTERFACE_DETAIL_DATA64_A).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SP_DEVICE_INTERFACE_DETAIL_DATA64_A" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SP_DEVICE_INTERFACE_DETAIL_DATA64_A), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="SP_DEVICE_INTERFACE_DETAIL_DATA64_A" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SP_DEVICE_INTERFACE_DETAIL_DATA64_A), Is.EqualTo(8));
     }
 }

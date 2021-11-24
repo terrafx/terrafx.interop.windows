@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public enum STORAGE_PROTOCOL_NVME_DATA_TYPE
 {
-    [SupportedOSPlatform("windows10.0")]
-    public enum STORAGE_PROTOCOL_NVME_DATA_TYPE
-    {
-        NVMeDataTypeUnknown = 0,
-        NVMeDataTypeIdentify,
-        NVMeDataTypeLogPage,
-        NVMeDataTypeFeature,
-    }
+    NVMeDataTypeUnknown = 0,
+    NVMeDataTypeIdentify,
+    NVMeDataTypeLogPage,
+    NVMeDataTypeFeature,
 }

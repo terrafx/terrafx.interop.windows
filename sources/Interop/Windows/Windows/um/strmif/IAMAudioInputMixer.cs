@@ -7,259 +7,258 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("54C39221-8380-11D0-B3F0-00AA003761C5")]
+[NativeTypeName("struct IAMAudioInputMixer : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface
 {
-    [Guid("54C39221-8380-11D0-B3F0-00AA003761C5")]
-    [NativeTypeName("struct IAMAudioInputMixer : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IAMAudioInputMixer*, Guid*, void**, int>)(lpVtbl[0]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, Guid*, void**, int>)(lpVtbl[0]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IAMAudioInputMixer*, uint>)(lpVtbl[1]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, uint>)(lpVtbl[1]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IAMAudioInputMixer*, uint>)(lpVtbl[2]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, uint>)(lpVtbl[2]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT put_Enable(BOOL fEnable)
+    {
+        return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL, int>)(lpVtbl[3]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), fEnable);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT get_Enable(BOOL* pfEnable)
+    {
+        return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL*, int>)(lpVtbl[4]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pfEnable);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT put_Mono(BOOL fMono)
+    {
+        return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL, int>)(lpVtbl[5]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), fMono);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT get_Mono(BOOL* pfMono)
+    {
+        return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL*, int>)(lpVtbl[6]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pfMono);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT put_MixLevel(double Level)
+    {
+        return ((delegate* unmanaged<IAMAudioInputMixer*, double, int>)(lpVtbl[7]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), Level);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT get_MixLevel(double* pLevel)
+    {
+        return ((delegate* unmanaged<IAMAudioInputMixer*, double*, int>)(lpVtbl[8]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pLevel);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT put_Pan(double Pan)
+    {
+        return ((delegate* unmanaged<IAMAudioInputMixer*, double, int>)(lpVtbl[9]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), Pan);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT get_Pan(double* pPan)
+    {
+        return ((delegate* unmanaged<IAMAudioInputMixer*, double*, int>)(lpVtbl[10]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pPan);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT put_Loudness(BOOL fLoudness)
+    {
+        return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL, int>)(lpVtbl[11]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), fLoudness);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT get_Loudness(BOOL* pfLoudness)
+    {
+        return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL*, int>)(lpVtbl[12]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pfLoudness);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT put_Treble(double Treble)
+    {
+        return ((delegate* unmanaged<IAMAudioInputMixer*, double, int>)(lpVtbl[13]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), Treble);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT get_Treble(double* pTreble)
+    {
+        return ((delegate* unmanaged<IAMAudioInputMixer*, double*, int>)(lpVtbl[14]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pTreble);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT get_TrebleRange(double* pRange)
+    {
+        return ((delegate* unmanaged<IAMAudioInputMixer*, double*, int>)(lpVtbl[15]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pRange);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT put_Bass(double Bass)
+    {
+        return ((delegate* unmanaged<IAMAudioInputMixer*, double, int>)(lpVtbl[16]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), Bass);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT get_Bass(double* pBass)
+    {
+        return ((delegate* unmanaged<IAMAudioInputMixer*, double*, int>)(lpVtbl[17]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pBass);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT get_BassRange(double* pRange)
+    {
+        return ((delegate* unmanaged<IAMAudioInputMixer*, double*, int>)(lpVtbl[18]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pRange);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT put_Enable(BOOL fEnable)
-        {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL, int>)(lpVtbl[3]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), fEnable);
-        }
+        HRESULT put_Enable(BOOL fEnable);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT get_Enable(BOOL* pfEnable)
-        {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL*, int>)(lpVtbl[4]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pfEnable);
-        }
+        HRESULT get_Enable(BOOL* pfEnable);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT put_Mono(BOOL fMono)
-        {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL, int>)(lpVtbl[5]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), fMono);
-        }
+        HRESULT put_Mono(BOOL fMono);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT get_Mono(BOOL* pfMono)
-        {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL*, int>)(lpVtbl[6]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pfMono);
-        }
+        HRESULT get_Mono(BOOL* pfMono);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT put_MixLevel(double Level)
-        {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, double, int>)(lpVtbl[7]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), Level);
-        }
+        HRESULT put_MixLevel(double Level);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT get_MixLevel(double* pLevel)
-        {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, double*, int>)(lpVtbl[8]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pLevel);
-        }
+        HRESULT get_MixLevel(double* pLevel);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT put_Pan(double Pan)
-        {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, double, int>)(lpVtbl[9]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), Pan);
-        }
+        HRESULT put_Pan(double Pan);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT get_Pan(double* pPan)
-        {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, double*, int>)(lpVtbl[10]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pPan);
-        }
+        HRESULT get_Pan(double* pPan);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT put_Loudness(BOOL fLoudness)
-        {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL, int>)(lpVtbl[11]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), fLoudness);
-        }
+        HRESULT put_Loudness(BOOL fLoudness);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT get_Loudness(BOOL* pfLoudness)
-        {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL*, int>)(lpVtbl[12]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pfLoudness);
-        }
+        HRESULT get_Loudness(BOOL* pfLoudness);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT put_Treble(double Treble)
-        {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, double, int>)(lpVtbl[13]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), Treble);
-        }
+        HRESULT put_Treble(double Treble);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT get_Treble(double* pTreble)
-        {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, double*, int>)(lpVtbl[14]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pTreble);
-        }
+        HRESULT get_Treble(double* pTreble);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT get_TrebleRange(double* pRange)
-        {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, double*, int>)(lpVtbl[15]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pRange);
-        }
+        HRESULT get_TrebleRange(double* pRange);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT put_Bass(double Bass)
-        {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, double, int>)(lpVtbl[16]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), Bass);
-        }
+        HRESULT put_Bass(double Bass);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT get_Bass(double* pBass)
-        {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, double*, int>)(lpVtbl[17]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pBass);
-        }
+        HRESULT get_Bass(double* pBass);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT get_BassRange(double* pRange)
-        {
-            return ((delegate* unmanaged<IAMAudioInputMixer*, double*, int>)(lpVtbl[18]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pRange);
-        }
+        HRESULT get_BassRange(double* pRange);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT put_Enable(BOOL fEnable);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMAudioInputMixer*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT get_Enable(BOOL* pfEnable);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMAudioInputMixer*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT put_Mono(BOOL fMono);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMAudioInputMixer*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT get_Mono(BOOL* pfMono);
+        [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMAudioInputMixer*, BOOL, int> put_Enable;
 
-            [VtblIndex(7)]
-            HRESULT put_MixLevel(double Level);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMAudioInputMixer*, BOOL*, int> get_Enable;
 
-            [VtblIndex(8)]
-            HRESULT get_MixLevel(double* pLevel);
+        [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMAudioInputMixer*, BOOL, int> put_Mono;
 
-            [VtblIndex(9)]
-            HRESULT put_Pan(double Pan);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMAudioInputMixer*, BOOL*, int> get_Mono;
 
-            [VtblIndex(10)]
-            HRESULT get_Pan(double* pPan);
+        [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMAudioInputMixer*, double, int> put_MixLevel;
 
-            [VtblIndex(11)]
-            HRESULT put_Loudness(BOOL fLoudness);
+        [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMAudioInputMixer*, double*, int> get_MixLevel;
 
-            [VtblIndex(12)]
-            HRESULT get_Loudness(BOOL* pfLoudness);
+        [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMAudioInputMixer*, double, int> put_Pan;
 
-            [VtblIndex(13)]
-            HRESULT put_Treble(double Treble);
+        [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMAudioInputMixer*, double*, int> get_Pan;
 
-            [VtblIndex(14)]
-            HRESULT get_Treble(double* pTreble);
+        [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMAudioInputMixer*, BOOL, int> put_Loudness;
 
-            [VtblIndex(15)]
-            HRESULT get_TrebleRange(double* pRange);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMAudioInputMixer*, BOOL*, int> get_Loudness;
 
-            [VtblIndex(16)]
-            HRESULT put_Bass(double Bass);
+        [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMAudioInputMixer*, double, int> put_Treble;
 
-            [VtblIndex(17)]
-            HRESULT get_Bass(double* pBass);
+        [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMAudioInputMixer*, double*, int> get_Treble;
 
-            [VtblIndex(18)]
-            HRESULT get_BassRange(double* pRange);
-        }
+        [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMAudioInputMixer*, double*, int> get_TrebleRange;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMAudioInputMixer*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMAudioInputMixer*, double, int> put_Bass;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMAudioInputMixer*, uint> AddRef;
+        [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMAudioInputMixer*, double*, int> get_Bass;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMAudioInputMixer*, uint> Release;
-
-            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMAudioInputMixer*, BOOL, int> put_Enable;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMAudioInputMixer*, BOOL*, int> get_Enable;
-
-            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMAudioInputMixer*, BOOL, int> put_Mono;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMAudioInputMixer*, BOOL*, int> get_Mono;
-
-            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMAudioInputMixer*, double, int> put_MixLevel;
-
-            [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMAudioInputMixer*, double*, int> get_MixLevel;
-
-            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMAudioInputMixer*, double, int> put_Pan;
-
-            [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMAudioInputMixer*, double*, int> get_Pan;
-
-            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMAudioInputMixer*, BOOL, int> put_Loudness;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMAudioInputMixer*, BOOL*, int> get_Loudness;
-
-            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMAudioInputMixer*, double, int> put_Treble;
-
-            [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMAudioInputMixer*, double*, int> get_Treble;
-
-            [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMAudioInputMixer*, double*, int> get_TrebleRange;
-
-            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMAudioInputMixer*, double, int> put_Bass;
-
-            [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMAudioInputMixer*, double*, int> get_Bass;
-
-            [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMAudioInputMixer*, double*, int> get_BassRange;
-        }
+        [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMAudioInputMixer*, double*, int> get_BassRange;
     }
 }

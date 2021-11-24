@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMAGE_COR20_HEADER" /> struct.</summary>
+public static unsafe partial class IMAGE_COR20_HEADERTests
 {
-    /// <summary>Provides validation of the <see cref="IMAGE_COR20_HEADER" /> struct.</summary>
-    public static unsafe partial class IMAGE_COR20_HEADERTests
+    /// <summary>Validates that the <see cref="IMAGE_COR20_HEADER" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IMAGE_COR20_HEADER" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMAGE_COR20_HEADER>(), Is.EqualTo(sizeof(IMAGE_COR20_HEADER)));
-        }
+        Assert.That(Marshal.SizeOf<IMAGE_COR20_HEADER>(), Is.EqualTo(sizeof(IMAGE_COR20_HEADER)));
+    }
 
-        /// <summary>Validates that the <see cref="IMAGE_COR20_HEADER" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMAGE_COR20_HEADER).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMAGE_COR20_HEADER" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMAGE_COR20_HEADER).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMAGE_COR20_HEADER" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(IMAGE_COR20_HEADER), Is.EqualTo(72));
-        }
+    /// <summary>Validates that the <see cref="IMAGE_COR20_HEADER" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(IMAGE_COR20_HEADER), Is.EqualTo(72));
     }
 }

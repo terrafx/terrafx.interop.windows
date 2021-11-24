@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IWICComponentFactory" /> struct.</summary>
+public static unsafe partial class IWICComponentFactoryTests
 {
-    /// <summary>Provides validation of the <see cref="IWICComponentFactory" /> struct.</summary>
-    public static unsafe partial class IWICComponentFactoryTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICComponentFactory" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICComponentFactory" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IWICComponentFactory).GUID, Is.EqualTo(IID_IWICComponentFactory));
-        }
+        Assert.That(typeof(IWICComponentFactory).GUID, Is.EqualTo(IID_IWICComponentFactory));
+    }
 
-        /// <summary>Validates that the <see cref="IWICComponentFactory" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IWICComponentFactory>(), Is.EqualTo(sizeof(IWICComponentFactory)));
-        }
+    /// <summary>Validates that the <see cref="IWICComponentFactory" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IWICComponentFactory>(), Is.EqualTo(sizeof(IWICComponentFactory)));
+    }
 
-        /// <summary>Validates that the <see cref="IWICComponentFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IWICComponentFactory).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IWICComponentFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IWICComponentFactory).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IWICComponentFactory" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IWICComponentFactory" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IWICComponentFactory), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IWICComponentFactory), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IWICComponentFactory), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IWICComponentFactory), Is.EqualTo(4));
         }
     }
 }

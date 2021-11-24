@@ -7,129 +7,128 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("56A8689D-0AD4-11CE-B03A-0020AF0BA770")]
+[NativeTypeName("struct IMemInputPin : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IMemInputPin : IMemInputPin.Interface
 {
-    [Guid("56A8689D-0AD4-11CE-B03A-0020AF0BA770")]
-    [NativeTypeName("struct IMemInputPin : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMemInputPin : IMemInputPin.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMemInputPin*, Guid*, void**, int>)(lpVtbl[0]))((IMemInputPin*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMemInputPin*, Guid*, void**, int>)(lpVtbl[0]))((IMemInputPin*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMemInputPin*, uint>)(lpVtbl[1]))((IMemInputPin*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMemInputPin*, uint>)(lpVtbl[1]))((IMemInputPin*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMemInputPin*, uint>)(lpVtbl[2]))((IMemInputPin*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMemInputPin*, uint>)(lpVtbl[2]))((IMemInputPin*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetAllocator(IMemAllocator** ppAllocator)
+    {
+        return ((delegate* unmanaged<IMemInputPin*, IMemAllocator**, int>)(lpVtbl[3]))((IMemInputPin*)Unsafe.AsPointer(ref this), ppAllocator);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT NotifyAllocator(IMemAllocator* pAllocator, BOOL bReadOnly)
+    {
+        return ((delegate* unmanaged<IMemInputPin*, IMemAllocator*, BOOL, int>)(lpVtbl[4]))((IMemInputPin*)Unsafe.AsPointer(ref this), pAllocator, bReadOnly);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetAllocatorRequirements(ALLOCATOR_PROPERTIES* pProps)
+    {
+        return ((delegate* unmanaged<IMemInputPin*, ALLOCATOR_PROPERTIES*, int>)(lpVtbl[5]))((IMemInputPin*)Unsafe.AsPointer(ref this), pProps);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Receive(IMediaSample* pSample)
+    {
+        return ((delegate* unmanaged<IMemInputPin*, IMediaSample*, int>)(lpVtbl[6]))((IMemInputPin*)Unsafe.AsPointer(ref this), pSample);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT ReceiveMultiple(IMediaSample** pSamples, [NativeTypeName("long")] int nSamples, [NativeTypeName("long *")] int* nSamplesProcessed)
+    {
+        return ((delegate* unmanaged<IMemInputPin*, IMediaSample**, int, int*, int>)(lpVtbl[7]))((IMemInputPin*)Unsafe.AsPointer(ref this), pSamples, nSamples, nSamplesProcessed);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT ReceiveCanBlock()
+    {
+        return ((delegate* unmanaged<IMemInputPin*, int>)(lpVtbl[8]))((IMemInputPin*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetAllocator(IMemAllocator** ppAllocator)
-        {
-            return ((delegate* unmanaged<IMemInputPin*, IMemAllocator**, int>)(lpVtbl[3]))((IMemInputPin*)Unsafe.AsPointer(ref this), ppAllocator);
-        }
+        HRESULT GetAllocator(IMemAllocator** ppAllocator);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT NotifyAllocator(IMemAllocator* pAllocator, BOOL bReadOnly)
-        {
-            return ((delegate* unmanaged<IMemInputPin*, IMemAllocator*, BOOL, int>)(lpVtbl[4]))((IMemInputPin*)Unsafe.AsPointer(ref this), pAllocator, bReadOnly);
-        }
+        HRESULT NotifyAllocator(IMemAllocator* pAllocator, BOOL bReadOnly);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetAllocatorRequirements(ALLOCATOR_PROPERTIES* pProps)
-        {
-            return ((delegate* unmanaged<IMemInputPin*, ALLOCATOR_PROPERTIES*, int>)(lpVtbl[5]))((IMemInputPin*)Unsafe.AsPointer(ref this), pProps);
-        }
+        HRESULT GetAllocatorRequirements(ALLOCATOR_PROPERTIES* pProps);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Receive(IMediaSample* pSample)
-        {
-            return ((delegate* unmanaged<IMemInputPin*, IMediaSample*, int>)(lpVtbl[6]))((IMemInputPin*)Unsafe.AsPointer(ref this), pSample);
-        }
+        HRESULT Receive(IMediaSample* pSample);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT ReceiveMultiple(IMediaSample** pSamples, [NativeTypeName("long")] int nSamples, [NativeTypeName("long *")] int* nSamplesProcessed)
-        {
-            return ((delegate* unmanaged<IMemInputPin*, IMediaSample**, int, int*, int>)(lpVtbl[7]))((IMemInputPin*)Unsafe.AsPointer(ref this), pSamples, nSamples, nSamplesProcessed);
-        }
+        HRESULT ReceiveMultiple(IMediaSample** pSamples, [NativeTypeName("long")] int nSamples, [NativeTypeName("long *")] int* nSamplesProcessed);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT ReceiveCanBlock()
-        {
-            return ((delegate* unmanaged<IMemInputPin*, int>)(lpVtbl[8]))((IMemInputPin*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT ReceiveCanBlock();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetAllocator(IMemAllocator** ppAllocator);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMemInputPin*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT NotifyAllocator(IMemAllocator* pAllocator, BOOL bReadOnly);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMemInputPin*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT GetAllocatorRequirements(ALLOCATOR_PROPERTIES* pProps);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMemInputPin*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT Receive(IMediaSample* pSample);
+        [NativeTypeName("HRESULT (IMemAllocator **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMemInputPin*, IMemAllocator**, int> GetAllocator;
 
-            [VtblIndex(7)]
-            HRESULT ReceiveMultiple(IMediaSample** pSamples, [NativeTypeName("long")] int nSamples, [NativeTypeName("long *")] int* nSamplesProcessed);
+        [NativeTypeName("HRESULT (IMemAllocator *, BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMemInputPin*, IMemAllocator*, BOOL, int> NotifyAllocator;
 
-            [VtblIndex(8)]
-            HRESULT ReceiveCanBlock();
-        }
+        [NativeTypeName("HRESULT (ALLOCATOR_PROPERTIES *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMemInputPin*, ALLOCATOR_PROPERTIES*, int> GetAllocatorRequirements;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMemInputPin*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (IMediaSample *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMemInputPin*, IMediaSample*, int> Receive;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMemInputPin*, uint> AddRef;
+        [NativeTypeName("HRESULT (IMediaSample **, long, long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMemInputPin*, IMediaSample**, int, int*, int> ReceiveMultiple;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMemInputPin*, uint> Release;
-
-            [NativeTypeName("HRESULT (IMemAllocator **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMemInputPin*, IMemAllocator**, int> GetAllocator;
-
-            [NativeTypeName("HRESULT (IMemAllocator *, BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMemInputPin*, IMemAllocator*, BOOL, int> NotifyAllocator;
-
-            [NativeTypeName("HRESULT (ALLOCATOR_PROPERTIES *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMemInputPin*, ALLOCATOR_PROPERTIES*, int> GetAllocatorRequirements;
-
-            [NativeTypeName("HRESULT (IMediaSample *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMemInputPin*, IMediaSample*, int> Receive;
-
-            [NativeTypeName("HRESULT (IMediaSample **, long, long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMemInputPin*, IMediaSample**, int, int*, int> ReceiveMultiple;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMemInputPin*, int> ReceiveCanBlock;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMemInputPin*, int> ReceiveCanBlock;
     }
 }

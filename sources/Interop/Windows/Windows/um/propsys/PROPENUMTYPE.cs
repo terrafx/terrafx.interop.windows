@@ -3,13 +3,12 @@
 // Ported from um/propsys.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum PROPENUMTYPE
 {
-    public enum PROPENUMTYPE
-    {
-        PET_DISCRETEVALUE = 0,
-        PET_RANGEDVALUE = 1,
-        PET_DEFAULTVALUE = 2,
-        PET_ENDRANGE = 3,
-    }
+    PET_DISCRETEVALUE = 0,
+    PET_RANGEDVALUE = 1,
+    PET_DEFAULTVALUE = 2,
+    PET_ENDRANGE = 3,
 }

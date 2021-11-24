@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[Flags]
+[NativeTypeName("uint32_t")]
+public enum MLOperatorKernelOptions : uint
 {
-    [Flags]
-    [NativeTypeName("uint32_t")]
-    public enum MLOperatorKernelOptions : uint
-    {
-        None = 0,
-        AllowDynamicInputShapes = 1,
-    }
+    None = 0,
+    AllowDynamicInputShapes = 1,
 }

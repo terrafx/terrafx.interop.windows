@@ -6,38 +6,37 @@
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct PropertyChainValue
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct PropertyChainValue
-    {
-        [NativeTypeName("unsigned int")]
-        public uint Index;
+    [NativeTypeName("unsigned int")]
+    public uint Index;
 
-        [NativeTypeName("BSTR")]
-        public ushort* Type;
+    [NativeTypeName("BSTR")]
+    public ushort* Type;
 
-        [NativeTypeName("BSTR")]
-        public ushort* DeclaringType;
+    [NativeTypeName("BSTR")]
+    public ushort* DeclaringType;
 
-        [NativeTypeName("BSTR")]
-        public ushort* ValueType;
+    [NativeTypeName("BSTR")]
+    public ushort* ValueType;
 
-        [NativeTypeName("BSTR")]
-        public ushort* ItemType;
+    [NativeTypeName("BSTR")]
+    public ushort* ItemType;
 
-        [NativeTypeName("BSTR")]
-        public ushort* Value;
+    [NativeTypeName("BSTR")]
+    public ushort* Value;
 
-        public BOOL Overridden;
+    public BOOL Overridden;
 
-        [NativeTypeName("long long")]
-        public long MetadataBits;
+    [NativeTypeName("long long")]
+    public long MetadataBits;
 
-        [NativeTypeName("BSTR")]
-        public ushort* PropertyName;
+    [NativeTypeName("BSTR")]
+    public ushort* PropertyName;
 
-        [NativeTypeName("unsigned int")]
-        public uint PropertyChainIndex;
-    }
+    [NativeTypeName("unsigned int")]
+    public uint PropertyChainIndex;
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMultisessionRandomWrite" /> struct.</summary>
+public static unsafe partial class IMultisessionRandomWriteTests
 {
-    /// <summary>Provides validation of the <see cref="IMultisessionRandomWrite" /> struct.</summary>
-    public static unsafe partial class IMultisessionRandomWriteTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMultisessionRandomWrite" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMultisessionRandomWrite" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMultisessionRandomWrite).GUID, Is.EqualTo(IID_IMultisessionRandomWrite));
-        }
+        Assert.That(typeof(IMultisessionRandomWrite).GUID, Is.EqualTo(IID_IMultisessionRandomWrite));
+    }
 
-        /// <summary>Validates that the <see cref="IMultisessionRandomWrite" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMultisessionRandomWrite>(), Is.EqualTo(sizeof(IMultisessionRandomWrite)));
-        }
+    /// <summary>Validates that the <see cref="IMultisessionRandomWrite" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMultisessionRandomWrite>(), Is.EqualTo(sizeof(IMultisessionRandomWrite)));
+    }
 
-        /// <summary>Validates that the <see cref="IMultisessionRandomWrite" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMultisessionRandomWrite).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMultisessionRandomWrite" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMultisessionRandomWrite).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMultisessionRandomWrite" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMultisessionRandomWrite" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMultisessionRandomWrite), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMultisessionRandomWrite), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMultisessionRandomWrite), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMultisessionRandomWrite), Is.EqualTo(4));
         }
     }
 }

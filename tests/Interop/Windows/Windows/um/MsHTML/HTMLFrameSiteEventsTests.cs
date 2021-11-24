@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLFrameSiteEvents" /> struct.</summary>
+public static unsafe partial class HTMLFrameSiteEventsTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLFrameSiteEvents" /> struct.</summary>
-    public static unsafe partial class HTMLFrameSiteEventsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLFrameSiteEvents" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLFrameSiteEvents" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLFrameSiteEvents).GUID, Is.EqualTo(IID_HTMLFrameSiteEvents));
-        }
+        Assert.That(typeof(HTMLFrameSiteEvents).GUID, Is.EqualTo(IID_HTMLFrameSiteEvents));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLFrameSiteEvents" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLFrameSiteEvents>(), Is.EqualTo(sizeof(HTMLFrameSiteEvents)));
-        }
+    /// <summary>Validates that the <see cref="HTMLFrameSiteEvents" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLFrameSiteEvents>(), Is.EqualTo(sizeof(HTMLFrameSiteEvents)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLFrameSiteEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLFrameSiteEvents).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLFrameSiteEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLFrameSiteEvents).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLFrameSiteEvents" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="HTMLFrameSiteEvents" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(HTMLFrameSiteEvents), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(HTMLFrameSiteEvents), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(HTMLFrameSiteEvents), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(HTMLFrameSiteEvents), Is.EqualTo(4));
         }
     }
 }

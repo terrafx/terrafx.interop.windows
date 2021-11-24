@@ -5,24 +5,23 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DXGI_OUTDUPL_FRAME_INFO
 {
-    public partial struct DXGI_OUTDUPL_FRAME_INFO
-    {
-        public LARGE_INTEGER LastPresentTime;
+    public LARGE_INTEGER LastPresentTime;
 
-        public LARGE_INTEGER LastMouseUpdateTime;
+    public LARGE_INTEGER LastMouseUpdateTime;
 
-        public uint AccumulatedFrames;
+    public uint AccumulatedFrames;
 
-        public BOOL RectsCoalesced;
+    public BOOL RectsCoalesced;
 
-        public BOOL ProtectedContentMaskedOut;
+    public BOOL ProtectedContentMaskedOut;
 
-        public DXGI_OUTDUPL_POINTER_POSITION PointerPosition;
+    public DXGI_OUTDUPL_POINTER_POSITION PointerPosition;
 
-        public uint TotalMetadataBufferSize;
+    public uint TotalMetadataBufferSize;
 
-        public uint PointerShapeBufferSize;
-    }
+    public uint PointerShapeBufferSize;
 }

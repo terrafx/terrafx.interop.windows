@@ -3,14 +3,13 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum styleTextJustifyTrim
 {
-    public enum styleTextJustifyTrim
-    {
-        styleTextJustifyTrimNotSet = 0,
-        styleTextJustifyTrimNone = 1,
-        styleTextJustifyTrimPunctuation = 2,
-        styleTextJustifyTrimPunctAndKana = 3,
-        styleTextJustifyTrim_Max = 2147483647,
-    }
+    styleTextJustifyTrimNotSet = 0,
+    styleTextJustifyTrimNone = 1,
+    styleTextJustifyTrimPunctuation = 2,
+    styleTextJustifyTrimPunctAndKana = 3,
+    styleTextJustifyTrim_Max = 2147483647,
 }

@@ -3,13 +3,12 @@
 // Ported from um/oleidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum OLERENDER
 {
-    public enum OLERENDER
-    {
-        OLERENDER_NONE = 0,
-        OLERENDER_DRAW = 1,
-        OLERENDER_FORMAT = 2,
-        OLERENDER_ASIS = 3,
-    }
+    OLERENDER_NONE = 0,
+    OLERENDER_DRAW = 1,
+    OLERENDER_FORMAT = 2,
+    OLERENDER_ASIS = 3,
 }

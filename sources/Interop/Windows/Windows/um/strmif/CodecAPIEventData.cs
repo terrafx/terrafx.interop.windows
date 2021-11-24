@@ -5,16 +5,15 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CodecAPIEventData
 {
-    public unsafe partial struct CodecAPIEventData
-    {
-        public Guid guid;
+    public Guid guid;
 
-        [NativeTypeName("DWORD")]
-        public uint dataLength;
+    [NativeTypeName("DWORD")]
+    public uint dataLength;
 
-        [NativeTypeName("DWORD [3]")]
-        public fixed uint reserved[3];
-    }
+    [NativeTypeName("DWORD [3]")]
+    public fixed uint reserved[3];
 }

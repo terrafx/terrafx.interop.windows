@@ -5,17 +5,16 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum DWM_SHOWCONTACT
 {
-    [Flags]
-    public enum DWM_SHOWCONTACT
-    {
-        DWMSC_DOWN = 0x00000001,
-        DWMSC_UP = 0x00000002,
-        DWMSC_DRAG = 0x00000004,
-        DWMSC_HOLD = 0x00000008,
-        DWMSC_PENBARREL = 0x00000010,
-        DWMSC_NONE = 0x00000000,
-        DWMSC_ALL = unchecked((int)(0xFFFFFFFF)),
-    }
+    DWMSC_DOWN = 0x00000001,
+    DWMSC_UP = 0x00000002,
+    DWMSC_DRAG = 0x00000004,
+    DWMSC_HOLD = 0x00000008,
+    DWMSC_PENBARREL = 0x00000010,
+    DWMSC_NONE = 0x00000000,
+    DWMSC_ALL = unchecked((int)(0xFFFFFFFF)),
 }

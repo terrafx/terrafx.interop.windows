@@ -5,29 +5,28 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct MFT_REGISTRATION_INFO
 {
-    public unsafe partial struct MFT_REGISTRATION_INFO
-    {
-        [NativeTypeName("CLSID")]
-        public Guid clsid;
+    [NativeTypeName("CLSID")]
+    public Guid clsid;
 
-        public Guid guidCategory;
+    public Guid guidCategory;
 
-        [NativeTypeName("UINT32")]
-        public uint uiFlags;
+    [NativeTypeName("UINT32")]
+    public uint uiFlags;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pszName;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pszName;
 
-        [NativeTypeName("DWORD")]
-        public uint cInTypes;
+    [NativeTypeName("DWORD")]
+    public uint cInTypes;
 
-        public MFT_REGISTER_TYPE_INFO* pInTypes;
+    public MFT_REGISTER_TYPE_INFO* pInTypes;
 
-        [NativeTypeName("DWORD")]
-        public uint cOutTypes;
+    [NativeTypeName("DWORD")]
+    public uint cOutTypes;
 
-        public MFT_REGISTER_TYPE_INFO* pOutTypes;
-    }
+    public MFT_REGISTER_TYPE_INFO* pOutTypes;
 }

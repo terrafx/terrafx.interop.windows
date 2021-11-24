@@ -6,27 +6,26 @@
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct D3D11_TRACE_STEP
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct D3D11_TRACE_STEP
-    {
-        public uint ID;
+    public uint ID;
 
-        public BOOL InstructionActive;
+    public BOOL InstructionActive;
 
-        [NativeTypeName("UINT8")]
-        public byte NumRegistersWritten;
+    [NativeTypeName("UINT8")]
+    public byte NumRegistersWritten;
 
-        [NativeTypeName("UINT8")]
-        public byte NumRegistersRead;
+    [NativeTypeName("UINT8")]
+    public byte NumRegistersRead;
 
-        [NativeTypeName("D3D11_TRACE_MISC_OPERATIONS_MASK")]
-        public ushort MiscOperations;
+    [NativeTypeName("D3D11_TRACE_MISC_OPERATIONS_MASK")]
+    public ushort MiscOperations;
 
-        public uint OpcodeType;
+    public uint OpcodeType;
 
-        [NativeTypeName("UINT64")]
-        public ulong CurrentGlobalCycle;
-    }
+    [NativeTypeName("UINT64")]
+    public ulong CurrentGlobalCycle;
 }

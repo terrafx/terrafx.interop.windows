@@ -5,56 +5,55 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct STORAGE_OPERATIONAL_REASON
 {
-    public partial struct STORAGE_OPERATIONAL_REASON
+    [NativeTypeName("DWORD")]
+    public uint Version;
+
+    [NativeTypeName("DWORD")]
+    public uint Size;
+
+    public STORAGE_OPERATIONAL_STATUS_REASON Reason;
+
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2727:5)")]
+    public _RawBytes_e__Union RawBytes;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _RawBytes_e__Union
     {
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2732:9)")]
+        public _ScsiSenseKey_e__Struct ScsiSenseKey;
+
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2742:9)")]
+        public _NVDIMM_N_e__Struct NVDIMM_N;
+
+        [FieldOffset(0)]
         [NativeTypeName("DWORD")]
-        public uint Version;
+        public uint AsUlong;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
-
-        public STORAGE_OPERATIONAL_STATUS_REASON Reason;
-
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2727:5)")]
-        public _RawBytes_e__Union RawBytes;
-
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _RawBytes_e__Union
+        public partial struct _ScsiSenseKey_e__Struct
         {
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2732:9)")]
-            public _ScsiSenseKey_e__Struct ScsiSenseKey;
+            public byte SenseKey;
 
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2742:9)")]
-            public _NVDIMM_N_e__Struct NVDIMM_N;
+            public byte ASC;
 
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint AsUlong;
+            public byte ASCQ;
 
-            public partial struct _ScsiSenseKey_e__Struct
-            {
-                public byte SenseKey;
+            public byte Reserved;
+        }
 
-                public byte ASC;
+        public unsafe partial struct _NVDIMM_N_e__Struct
+        {
+            public byte CriticalHealth;
 
-                public byte ASCQ;
+            [NativeTypeName("BYTE [2]")]
+            public fixed byte ModuleHealth[2];
 
-                public byte Reserved;
-            }
-
-            public unsafe partial struct _NVDIMM_N_e__Struct
-            {
-                public byte CriticalHealth;
-
-                [NativeTypeName("BYTE [2]")]
-                public fixed byte ModuleHealth[2];
-
-                public byte ErrorThresholdStatus;
-            }
+            public byte ErrorThresholdStatus;
         }
     }
 }

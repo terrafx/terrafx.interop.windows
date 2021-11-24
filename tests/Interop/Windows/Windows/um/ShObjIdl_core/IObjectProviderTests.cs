@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IObjectProvider" /> struct.</summary>
+public static unsafe partial class IObjectProviderTests
 {
-    /// <summary>Provides validation of the <see cref="IObjectProvider" /> struct.</summary>
-    public static unsafe partial class IObjectProviderTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IObjectProvider" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IObjectProvider" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IObjectProvider).GUID, Is.EqualTo(IID_IObjectProvider));
-        }
+        Assert.That(typeof(IObjectProvider).GUID, Is.EqualTo(IID_IObjectProvider));
+    }
 
-        /// <summary>Validates that the <see cref="IObjectProvider" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IObjectProvider>(), Is.EqualTo(sizeof(IObjectProvider)));
-        }
+    /// <summary>Validates that the <see cref="IObjectProvider" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IObjectProvider>(), Is.EqualTo(sizeof(IObjectProvider)));
+    }
 
-        /// <summary>Validates that the <see cref="IObjectProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IObjectProvider).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IObjectProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IObjectProvider).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IObjectProvider" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IObjectProvider" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IObjectProvider), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IObjectProvider), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IObjectProvider), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IObjectProvider), Is.EqualTo(4));
         }
     }
 }

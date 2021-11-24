@@ -7,29 +7,28 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct ENCRYPTED_LM_OWF_PASSWORD
 {
-    public partial struct ENCRYPTED_LM_OWF_PASSWORD
+    [NativeTypeName("CYPHER_BLOCK [2]")]
+    public _data_e__FixedBuffer data;
+
+    public partial struct _data_e__FixedBuffer
     {
-        [NativeTypeName("CYPHER_BLOCK [2]")]
-        public _data_e__FixedBuffer data;
+        public CYPHER_BLOCK e0;
+        public CYPHER_BLOCK e1;
 
-        public partial struct _data_e__FixedBuffer
+        public ref CYPHER_BLOCK this[int index]
         {
-            public CYPHER_BLOCK e0;
-            public CYPHER_BLOCK e1;
-
-            public ref CYPHER_BLOCK this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan()[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<CYPHER_BLOCK> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
+            get
+            {
+                return ref AsSpan()[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<CYPHER_BLOCK> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
     }
 }

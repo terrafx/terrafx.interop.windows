@@ -7,77 +7,76 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("1449D9AB-13CF-4687-AA3E-8D8B18574396")]
+[NativeTypeName("struct ITfSystemLangBarItemSink : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ITfSystemLangBarItemSink : ITfSystemLangBarItemSink.Interface
 {
-    [Guid("1449D9AB-13CF-4687-AA3E-8D8B18574396")]
-    [NativeTypeName("struct ITfSystemLangBarItemSink : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfSystemLangBarItemSink : ITfSystemLangBarItemSink.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ITfSystemLangBarItemSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ITfSystemLangBarItemSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ITfSystemLangBarItemSink*, uint>)(lpVtbl[1]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ITfSystemLangBarItemSink*, uint>)(lpVtbl[1]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ITfSystemLangBarItemSink*, uint>)(lpVtbl[2]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ITfSystemLangBarItemSink*, uint>)(lpVtbl[2]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT InitMenu(ITfMenu* pMenu)
+    {
+        return ((delegate* unmanaged<ITfSystemLangBarItemSink*, ITfMenu*, int>)(lpVtbl[3]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this), pMenu);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT OnMenuSelect(uint wID)
+    {
+        return ((delegate* unmanaged<ITfSystemLangBarItemSink*, uint, int>)(lpVtbl[4]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this), wID);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT InitMenu(ITfMenu* pMenu)
-        {
-            return ((delegate* unmanaged<ITfSystemLangBarItemSink*, ITfMenu*, int>)(lpVtbl[3]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this), pMenu);
-        }
+        HRESULT InitMenu(ITfMenu* pMenu);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT OnMenuSelect(uint wID)
-        {
-            return ((delegate* unmanaged<ITfSystemLangBarItemSink*, uint, int>)(lpVtbl[4]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this), wID);
-        }
+        HRESULT OnMenuSelect(uint wID);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT InitMenu(ITfMenu* pMenu);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfSystemLangBarItemSink*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT OnMenuSelect(uint wID);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfSystemLangBarItemSink*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfSystemLangBarItemSink*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfSystemLangBarItemSink*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfSystemLangBarItemSink*, uint> AddRef;
+        [NativeTypeName("HRESULT (ITfMenu *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfSystemLangBarItemSink*, ITfMenu*, int> InitMenu;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfSystemLangBarItemSink*, uint> Release;
-
-            [NativeTypeName("HRESULT (ITfMenu *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfSystemLangBarItemSink*, ITfMenu*, int> InitMenu;
-
-            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfSystemLangBarItemSink*, uint, int> OnMenuSelect;
-        }
+        [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfSystemLangBarItemSink*, uint, int> OnMenuSelect;
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CRYPT_TIMESTAMP_ACCURACY" /> struct.</summary>
+public static unsafe partial class CRYPT_TIMESTAMP_ACCURACYTests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_TIMESTAMP_ACCURACY" /> struct.</summary>
-    public static unsafe partial class CRYPT_TIMESTAMP_ACCURACYTests
+    /// <summary>Validates that the <see cref="CRYPT_TIMESTAMP_ACCURACY" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CRYPT_TIMESTAMP_ACCURACY" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CRYPT_TIMESTAMP_ACCURACY>(), Is.EqualTo(sizeof(CRYPT_TIMESTAMP_ACCURACY)));
-        }
+        Assert.That(Marshal.SizeOf<CRYPT_TIMESTAMP_ACCURACY>(), Is.EqualTo(sizeof(CRYPT_TIMESTAMP_ACCURACY)));
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_TIMESTAMP_ACCURACY" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CRYPT_TIMESTAMP_ACCURACY).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CRYPT_TIMESTAMP_ACCURACY" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CRYPT_TIMESTAMP_ACCURACY).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_TIMESTAMP_ACCURACY" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CRYPT_TIMESTAMP_ACCURACY), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="CRYPT_TIMESTAMP_ACCURACY" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CRYPT_TIMESTAMP_ACCURACY), Is.EqualTo(12));
     }
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Guid("34E211B6-3650-4F75-8334-FA359598E1C5")]
+public partial struct DirectManipulationViewport
 {
-    [Guid("34E211B6-3650-4F75-8334-FA359598E1C5")]
-    public partial struct DirectManipulationViewport
-    {
-    }
 }

@@ -3,17 +3,16 @@
 // Ported from um/schannel.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SCH_CRED_PUBLIC_CERTCHAIN
 {
-    public unsafe partial struct SCH_CRED_PUBLIC_CERTCHAIN
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwType;
+    [NativeTypeName("DWORD")]
+    public uint dwType;
 
-        [NativeTypeName("DWORD")]
-        public uint cbCertChain;
+    [NativeTypeName("DWORD")]
+    public uint cbCertChain;
 
-        [NativeTypeName("PBYTE")]
-        public byte* pCertChain;
-    }
+    [NativeTypeName("PBYTE")]
+    public byte* pCertChain;
 }

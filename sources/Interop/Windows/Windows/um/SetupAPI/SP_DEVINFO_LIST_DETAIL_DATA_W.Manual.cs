@@ -6,91 +6,90 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Explicit)]
+public unsafe partial struct SP_DEVINFO_LIST_DETAIL_DATA_W
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct SP_DEVINFO_LIST_DETAIL_DATA_W
+    public static uint SizeOf
     {
-        public static uint SizeOf
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return (uint)(sizeof(SP_DEVINFO_LIST_DETAIL_DATA32_W));
-                }
-                else
-                {
-                    return (uint)(sizeof(SP_DEVINFO_LIST_DETAIL_DATA64_W));
-                }
+                return (uint)(sizeof(SP_DEVINFO_LIST_DETAIL_DATA32_W));
+            }
+            else
+            {
+                return (uint)(sizeof(SP_DEVINFO_LIST_DETAIL_DATA64_W));
             }
         }
+    }
 
-        [FieldOffset(0)]
-        public SP_DEVINFO_LIST_DETAIL_DATA32_W _value32;
+    [FieldOffset(0)]
+    public SP_DEVINFO_LIST_DETAIL_DATA32_W _value32;
 
-        [FieldOffset(0)]
-        public SP_DEVINFO_LIST_DETAIL_DATA64_W _value64;
+    [FieldOffset(0)]
+    public SP_DEVINFO_LIST_DETAIL_DATA64_W _value64;
 
-        [NativeTypeName("DWORD")]
-        public ref uint cbSize
+    [NativeTypeName("DWORD")]
+    public ref uint cbSize
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cbSize, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cbSize, 1));
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cbSize, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cbSize, 1));
             }
         }
+    }
 
-        public ref Guid ClassGuid
+    public ref Guid ClassGuid
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.ClassGuid, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.ClassGuid, 1));
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.ClassGuid, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.ClassGuid, 1));
             }
         }
+    }
 
-        public ref HANDLE RemoteMachineHandle
+    public ref HANDLE RemoteMachineHandle
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.RemoteMachineHandle, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.RemoteMachineHandle, 1));
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.RemoteMachineHandle, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.RemoteMachineHandle, 1));
             }
         }
+    }
 
-        [NativeTypeName("WCHAR [263]")]
-        public Span<ushort> RemoteMachineName
+    [NativeTypeName("WCHAR [263]")]
+    public Span<ushort> RemoteMachineName
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return MemoryMarshal.CreateSpan(ref _value32.RemoteMachineName[0], 1);
-                }
-                else
-                {
-                    return MemoryMarshal.CreateSpan(ref _value64.RemoteMachineName[0], 1);
-                }
+                return MemoryMarshal.CreateSpan(ref _value32.RemoteMachineName[0], 1);
+            }
+            else
+            {
+                return MemoryMarshal.CreateSpan(ref _value64.RemoteMachineName[0], 1);
             }
         }
     }

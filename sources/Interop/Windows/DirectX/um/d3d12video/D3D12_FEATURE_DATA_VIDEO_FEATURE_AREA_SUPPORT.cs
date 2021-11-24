@@ -5,16 +5,15 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_FEATURE_DATA_VIDEO_FEATURE_AREA_SUPPORT
 {
-    public partial struct D3D12_FEATURE_DATA_VIDEO_FEATURE_AREA_SUPPORT
-    {
-        public uint NodeIndex;
+    public uint NodeIndex;
 
-        public BOOL VideoDecodeSupport;
+    public BOOL VideoDecodeSupport;
 
-        public BOOL VideoProcessSupport;
+    public BOOL VideoProcessSupport;
 
-        public BOOL VideoEncodeSupport;
-    }
+    public BOOL VideoEncodeSupport;
 }

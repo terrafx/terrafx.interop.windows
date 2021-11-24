@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("49BD2028-1523-11D1-AD79-00C04FD8FDFF")]
+public partial struct UnsecuredApartment
 {
-    [Guid("49BD2028-1523-11D1-AD79-00C04FD8FDFF")]
-    public partial struct UnsecuredApartment
-    {
-    }
 }

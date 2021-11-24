@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="AudioClient3ActivationParams" /> struct.</summary>
+public static unsafe partial class AudioClient3ActivationParamsTests
 {
-    /// <summary>Provides validation of the <see cref="AudioClient3ActivationParams" /> struct.</summary>
-    public static unsafe partial class AudioClient3ActivationParamsTests
+    /// <summary>Validates that the <see cref="AudioClient3ActivationParams" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="AudioClient3ActivationParams" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<AudioClient3ActivationParams>(), Is.EqualTo(sizeof(AudioClient3ActivationParams)));
-        }
+        Assert.That(Marshal.SizeOf<AudioClient3ActivationParams>(), Is.EqualTo(sizeof(AudioClient3ActivationParams)));
+    }
 
-        /// <summary>Validates that the <see cref="AudioClient3ActivationParams" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(AudioClient3ActivationParams).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="AudioClient3ActivationParams" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(AudioClient3ActivationParams).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="AudioClient3ActivationParams" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(AudioClient3ActivationParams), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="AudioClient3ActivationParams" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(AudioClient3ActivationParams), Is.EqualTo(16));
     }
 }

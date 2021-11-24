@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum APPX_PACKAGE_ARCHITECTURE
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum APPX_PACKAGE_ARCHITECTURE
-    {
-        APPX_PACKAGE_ARCHITECTURE_X86 = 0,
-        APPX_PACKAGE_ARCHITECTURE_ARM = 5,
-        APPX_PACKAGE_ARCHITECTURE_X64 = 9,
-        APPX_PACKAGE_ARCHITECTURE_NEUTRAL = 11,
-        APPX_PACKAGE_ARCHITECTURE_ARM64 = 12,
-    }
+    APPX_PACKAGE_ARCHITECTURE_X86 = 0,
+    APPX_PACKAGE_ARCHITECTURE_ARM = 5,
+    APPX_PACKAGE_ARCHITECTURE_X64 = 9,
+    APPX_PACKAGE_ARCHITECTURE_NEUTRAL = 11,
+    APPX_PACKAGE_ARCHITECTURE_ARM64 = 12,
 }

@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="USN_RECORD_COMMON_HEADER" /> struct.</summary>
+[SupportedOSPlatform("windows8.1")]
+public static unsafe partial class USN_RECORD_COMMON_HEADERTests
 {
-    /// <summary>Provides validation of the <see cref="USN_RECORD_COMMON_HEADER" /> struct.</summary>
-    [SupportedOSPlatform("windows8.1")]
-    public static unsafe partial class USN_RECORD_COMMON_HEADERTests
+    /// <summary>Validates that the <see cref="USN_RECORD_COMMON_HEADER" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="USN_RECORD_COMMON_HEADER" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<USN_RECORD_COMMON_HEADER>(), Is.EqualTo(sizeof(USN_RECORD_COMMON_HEADER)));
-        }
+        Assert.That(Marshal.SizeOf<USN_RECORD_COMMON_HEADER>(), Is.EqualTo(sizeof(USN_RECORD_COMMON_HEADER)));
+    }
 
-        /// <summary>Validates that the <see cref="USN_RECORD_COMMON_HEADER" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(USN_RECORD_COMMON_HEADER).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="USN_RECORD_COMMON_HEADER" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(USN_RECORD_COMMON_HEADER).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="USN_RECORD_COMMON_HEADER" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(USN_RECORD_COMMON_HEADER), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="USN_RECORD_COMMON_HEADER" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(USN_RECORD_COMMON_HEADER), Is.EqualTo(8));
     }
 }

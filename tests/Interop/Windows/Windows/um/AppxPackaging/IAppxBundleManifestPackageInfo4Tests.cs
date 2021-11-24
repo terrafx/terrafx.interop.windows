@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IAppxBundleManifestPackageInfo4" /> struct.</summary>
+public static unsafe partial class IAppxBundleManifestPackageInfo4Tests
 {
-    /// <summary>Provides validation of the <see cref="IAppxBundleManifestPackageInfo4" /> struct.</summary>
-    public static unsafe partial class IAppxBundleManifestPackageInfo4Tests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppxBundleManifestPackageInfo4" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppxBundleManifestPackageInfo4" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAppxBundleManifestPackageInfo4).GUID, Is.EqualTo(IID_IAppxBundleManifestPackageInfo4));
-        }
+        Assert.That(typeof(IAppxBundleManifestPackageInfo4).GUID, Is.EqualTo(IID_IAppxBundleManifestPackageInfo4));
+    }
 
-        /// <summary>Validates that the <see cref="IAppxBundleManifestPackageInfo4" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IAppxBundleManifestPackageInfo4>(), Is.EqualTo(sizeof(IAppxBundleManifestPackageInfo4)));
-        }
+    /// <summary>Validates that the <see cref="IAppxBundleManifestPackageInfo4" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IAppxBundleManifestPackageInfo4>(), Is.EqualTo(sizeof(IAppxBundleManifestPackageInfo4)));
+    }
 
-        /// <summary>Validates that the <see cref="IAppxBundleManifestPackageInfo4" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IAppxBundleManifestPackageInfo4).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IAppxBundleManifestPackageInfo4" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IAppxBundleManifestPackageInfo4).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IAppxBundleManifestPackageInfo4" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IAppxBundleManifestPackageInfo4" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IAppxBundleManifestPackageInfo4), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IAppxBundleManifestPackageInfo4), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IAppxBundleManifestPackageInfo4), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IAppxBundleManifestPackageInfo4), Is.EqualTo(4));
         }
     }
 }

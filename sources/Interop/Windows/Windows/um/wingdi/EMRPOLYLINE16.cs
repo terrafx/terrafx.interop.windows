@@ -7,35 +7,34 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct EMRPOLYLINE16
 {
-    public partial struct EMRPOLYLINE16
+    public EMR emr;
+
+    public RECTL rclBounds;
+
+    [NativeTypeName("DWORD")]
+    public uint cpts;
+
+    [NativeTypeName("POINTS [1]")]
+    public _apts_e__FixedBuffer apts;
+
+    public partial struct _apts_e__FixedBuffer
     {
-        public EMR emr;
+        public POINTS e0;
 
-        public RECTL rclBounds;
-
-        [NativeTypeName("DWORD")]
-        public uint cpts;
-
-        [NativeTypeName("POINTS [1]")]
-        public _apts_e__FixedBuffer apts;
-
-        public partial struct _apts_e__FixedBuffer
+        public ref POINTS this[int index]
         {
-            public POINTS e0;
-
-            public ref POINTS this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<POINTS> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<POINTS> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

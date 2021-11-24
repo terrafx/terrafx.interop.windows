@@ -6,18 +6,17 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct NOTIFYICONIDENTIFIER32
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct NOTIFYICONIDENTIFIER32
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public HWND hWnd;
+    public HWND hWnd;
 
-        public uint uID;
+    public uint uID;
 
-        public Guid guidItem;
-    }
+    public Guid guidItem;
 }

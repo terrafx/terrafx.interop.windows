@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMAGEHLP_SYMBOL64_PACKAGE" /> struct.</summary>
+public static unsafe partial class IMAGEHLP_SYMBOL64_PACKAGETests
 {
-    /// <summary>Provides validation of the <see cref="IMAGEHLP_SYMBOL64_PACKAGE" /> struct.</summary>
-    public static unsafe partial class IMAGEHLP_SYMBOL64_PACKAGETests
+    /// <summary>Validates that the <see cref="IMAGEHLP_SYMBOL64_PACKAGE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IMAGEHLP_SYMBOL64_PACKAGE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMAGEHLP_SYMBOL64_PACKAGE>(), Is.EqualTo(sizeof(IMAGEHLP_SYMBOL64_PACKAGE)));
-        }
+        Assert.That(Marshal.SizeOf<IMAGEHLP_SYMBOL64_PACKAGE>(), Is.EqualTo(sizeof(IMAGEHLP_SYMBOL64_PACKAGE)));
+    }
 
-        /// <summary>Validates that the <see cref="IMAGEHLP_SYMBOL64_PACKAGE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMAGEHLP_SYMBOL64_PACKAGE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMAGEHLP_SYMBOL64_PACKAGE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMAGEHLP_SYMBOL64_PACKAGE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMAGEHLP_SYMBOL64_PACKAGE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(IMAGEHLP_SYMBOL64_PACKAGE), Is.EqualTo(2040));
-        }
+    /// <summary>Validates that the <see cref="IMAGEHLP_SYMBOL64_PACKAGE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(IMAGEHLP_SYMBOL64_PACKAGE), Is.EqualTo(2040));
     }
 }

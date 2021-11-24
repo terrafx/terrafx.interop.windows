@@ -7,90 +7,89 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("36537F36-27A4-4788-88C0-733819575017")]
+[NativeTypeName("struct IAppxManifestTargetDeviceFamiliesEnumerator : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IAppxManifestTargetDeviceFamiliesEnumerator : IAppxManifestTargetDeviceFamiliesEnumerator.Interface
 {
-    [Guid("36537F36-27A4-4788-88C0-733819575017")]
-    [NativeTypeName("struct IAppxManifestTargetDeviceFamiliesEnumerator : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestTargetDeviceFamiliesEnumerator : IAppxManifestTargetDeviceFamiliesEnumerator.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestTargetDeviceFamiliesEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestTargetDeviceFamiliesEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, uint>)(lpVtbl[1]))((IAppxManifestTargetDeviceFamiliesEnumerator*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, uint>)(lpVtbl[1]))((IAppxManifestTargetDeviceFamiliesEnumerator*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, uint>)(lpVtbl[2]))((IAppxManifestTargetDeviceFamiliesEnumerator*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, uint>)(lpVtbl[2]))((IAppxManifestTargetDeviceFamiliesEnumerator*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetCurrent(IAppxManifestTargetDeviceFamily** targetDeviceFamily)
+    {
+        return ((delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, IAppxManifestTargetDeviceFamily**, int>)(lpVtbl[3]))((IAppxManifestTargetDeviceFamiliesEnumerator*)Unsafe.AsPointer(ref this), targetDeviceFamily);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetHasCurrent(BOOL* hasCurrent)
+    {
+        return ((delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxManifestTargetDeviceFamiliesEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT MoveNext(BOOL* hasNext)
+    {
+        return ((delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxManifestTargetDeviceFamiliesEnumerator*)Unsafe.AsPointer(ref this), hasNext);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetCurrent(IAppxManifestTargetDeviceFamily** targetDeviceFamily)
-        {
-            return ((delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, IAppxManifestTargetDeviceFamily**, int>)(lpVtbl[3]))((IAppxManifestTargetDeviceFamiliesEnumerator*)Unsafe.AsPointer(ref this), targetDeviceFamily);
-        }
+        HRESULT GetCurrent(IAppxManifestTargetDeviceFamily** targetDeviceFamily);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetHasCurrent(BOOL* hasCurrent)
-        {
-            return ((delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxManifestTargetDeviceFamiliesEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
-        }
+        HRESULT GetHasCurrent(BOOL* hasCurrent);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT MoveNext(BOOL* hasNext)
-        {
-            return ((delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxManifestTargetDeviceFamiliesEnumerator*)Unsafe.AsPointer(ref this), hasNext);
-        }
+        HRESULT MoveNext(BOOL* hasNext);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetCurrent(IAppxManifestTargetDeviceFamily** targetDeviceFamily);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetHasCurrent(BOOL* hasCurrent);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT MoveNext(BOOL* hasNext);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (IAppxManifestTargetDeviceFamily **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, IAppxManifestTargetDeviceFamily**, int> GetCurrent;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, uint> AddRef;
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, BOOL*, int> GetHasCurrent;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, uint> Release;
-
-            [NativeTypeName("HRESULT (IAppxManifestTargetDeviceFamily **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, IAppxManifestTargetDeviceFamily**, int> GetCurrent;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, BOOL*, int> GetHasCurrent;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, BOOL*, int> MoveNext;
-        }
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, BOOL*, int> MoveNext;
     }
 }

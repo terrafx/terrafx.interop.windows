@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDisplayPointer" /> struct.</summary>
+public static unsafe partial class IDisplayPointerTests
 {
-    /// <summary>Provides validation of the <see cref="IDisplayPointer" /> struct.</summary>
-    public static unsafe partial class IDisplayPointerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDisplayPointer" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDisplayPointer" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDisplayPointer).GUID, Is.EqualTo(IID_IDisplayPointer));
-        }
+        Assert.That(typeof(IDisplayPointer).GUID, Is.EqualTo(IID_IDisplayPointer));
+    }
 
-        /// <summary>Validates that the <see cref="IDisplayPointer" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDisplayPointer>(), Is.EqualTo(sizeof(IDisplayPointer)));
-        }
+    /// <summary>Validates that the <see cref="IDisplayPointer" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDisplayPointer>(), Is.EqualTo(sizeof(IDisplayPointer)));
+    }
 
-        /// <summary>Validates that the <see cref="IDisplayPointer" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDisplayPointer).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDisplayPointer" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDisplayPointer).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDisplayPointer" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDisplayPointer" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDisplayPointer), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDisplayPointer), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDisplayPointer), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDisplayPointer), Is.EqualTo(4));
         }
     }
 }

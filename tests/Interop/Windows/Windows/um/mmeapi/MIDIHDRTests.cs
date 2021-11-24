@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MIDIHDR" /> struct.</summary>
+public static unsafe partial class MIDIHDRTests
 {
-    /// <summary>Provides validation of the <see cref="MIDIHDR" /> struct.</summary>
-    public static unsafe partial class MIDIHDRTests
+    /// <summary>Validates that the <see cref="MIDIHDR" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MIDIHDR" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MIDIHDR>(), Is.EqualTo(sizeof(MIDIHDR)));
-        }
+        Assert.That(Marshal.SizeOf<MIDIHDR>(), Is.EqualTo(sizeof(MIDIHDR)));
+    }
 
-        /// <summary>Validates that the <see cref="MIDIHDR" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MIDIHDR).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MIDIHDR" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MIDIHDR).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MIDIHDR" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="MIDIHDR" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(MIDIHDR), Is.EqualTo(112));
-            }
-            else
-            {
-                Assert.That(sizeof(MIDIHDR), Is.EqualTo(64));
-            }
+            Assert.That(sizeof(MIDIHDR), Is.EqualTo(112));
+        }
+        else
+        {
+            Assert.That(sizeof(MIDIHDR), Is.EqualTo(64));
         }
     }
 }

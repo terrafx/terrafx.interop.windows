@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("D669D001-183C-42E3-A3CA-2F4586D2396C")]
+public partial struct CODECAPI_AVEncWMVProduceDummyFrames
 {
-    [Guid("D669D001-183C-42E3-A3CA-2F4586D2396C")]
-    public partial struct CODECAPI_AVEncWMVProduceDummyFrames
-    {
-    }
 }

@@ -5,25 +5,24 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct D3D11_VIDEO_PROCESSOR_CONTENT_DESC
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct D3D11_VIDEO_PROCESSOR_CONTENT_DESC
-    {
-        public D3D11_VIDEO_FRAME_FORMAT InputFrameFormat;
+    public D3D11_VIDEO_FRAME_FORMAT InputFrameFormat;
 
-        public DXGI_RATIONAL InputFrameRate;
+    public DXGI_RATIONAL InputFrameRate;
 
-        public uint InputWidth;
+    public uint InputWidth;
 
-        public uint InputHeight;
+    public uint InputHeight;
 
-        public DXGI_RATIONAL OutputFrameRate;
+    public DXGI_RATIONAL OutputFrameRate;
 
-        public uint OutputWidth;
+    public uint OutputWidth;
 
-        public uint OutputHeight;
+    public uint OutputHeight;
 
-        public D3D11_VIDEO_USAGE Usage;
-    }
+    public D3D11_VIDEO_USAGE Usage;
 }

@@ -3,33 +3,32 @@
 // Ported from um/WinBase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct ACTCTXA
 {
-    public unsafe partial struct ACTCTXA
-    {
-        [NativeTypeName("ULONG")]
-        public uint cbSize;
+    [NativeTypeName("ULONG")]
+    public uint cbSize;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* lpSource;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* lpSource;
 
-        public ushort wProcessorArchitecture;
+    public ushort wProcessorArchitecture;
 
-        [NativeTypeName("LANGID")]
-        public ushort wLangId;
+    [NativeTypeName("LANGID")]
+    public ushort wLangId;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* lpAssemblyDirectory;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* lpAssemblyDirectory;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* lpResourceName;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* lpResourceName;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* lpApplicationName;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* lpApplicationName;
 
-        public HMODULE hModule;
-    }
+    public HMODULE hModule;
 }

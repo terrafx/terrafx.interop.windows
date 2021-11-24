@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct WCM_BILLING_CYCLE_INFO
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct WCM_BILLING_CYCLE_INFO
-    {
-        public FILETIME StartDate;
+    public FILETIME StartDate;
 
-        public WCM_TIME_INTERVAL Duration;
+    public WCM_TIME_INTERVAL Duration;
 
-        public BOOL Reset;
-    }
+    public BOOL Reset;
 }

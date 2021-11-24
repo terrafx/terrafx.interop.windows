@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SE_IMPERSONATION_STATE" /> struct.</summary>
+public static unsafe partial class SE_IMPERSONATION_STATETests
 {
-    /// <summary>Provides validation of the <see cref="SE_IMPERSONATION_STATE" /> struct.</summary>
-    public static unsafe partial class SE_IMPERSONATION_STATETests
+    /// <summary>Validates that the <see cref="SE_IMPERSONATION_STATE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SE_IMPERSONATION_STATE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SE_IMPERSONATION_STATE>(), Is.EqualTo(sizeof(SE_IMPERSONATION_STATE)));
-        }
+        Assert.That(Marshal.SizeOf<SE_IMPERSONATION_STATE>(), Is.EqualTo(sizeof(SE_IMPERSONATION_STATE)));
+    }
 
-        /// <summary>Validates that the <see cref="SE_IMPERSONATION_STATE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SE_IMPERSONATION_STATE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SE_IMPERSONATION_STATE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SE_IMPERSONATION_STATE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SE_IMPERSONATION_STATE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SE_IMPERSONATION_STATE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SE_IMPERSONATION_STATE), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(SE_IMPERSONATION_STATE), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(SE_IMPERSONATION_STATE), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(SE_IMPERSONATION_STATE), Is.EqualTo(12));
         }
     }
 }

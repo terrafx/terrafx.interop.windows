@@ -5,26 +5,25 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct userCLIPFORMAT
 {
-    public partial struct userCLIPFORMAT
+    [NativeTypeName("LONG")]
+    public int fContext;
+
+    [NativeTypeName("union __MIDL_IWinTypes_0001")]
+    public _u_e__Union u;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _u_e__Union
     {
-        [NativeTypeName("LONG")]
-        public int fContext;
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint dwValue;
 
-        [NativeTypeName("union __MIDL_IWinTypes_0001")]
-        public _u_e__Union u;
-
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _u_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint dwValue;
-
-            [FieldOffset(0)]
-            [NativeTypeName("wchar_t *")]
-            public ushort* pwszName;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("wchar_t *")]
+        public ushort* pwszName;
     }
 }

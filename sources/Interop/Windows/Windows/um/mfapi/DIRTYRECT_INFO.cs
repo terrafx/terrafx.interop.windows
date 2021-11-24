@@ -7,32 +7,31 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct DIRTYRECT_INFO
 {
-    public partial struct DIRTYRECT_INFO
+    public uint FrameNumber;
+
+    public uint NumDirtyRects;
+
+    [NativeTypeName("RECT [1]")]
+    public _DirtyRects_e__FixedBuffer DirtyRects;
+
+    public partial struct _DirtyRects_e__FixedBuffer
     {
-        public uint FrameNumber;
+        public RECT e0;
 
-        public uint NumDirtyRects;
-
-        [NativeTypeName("RECT [1]")]
-        public _DirtyRects_e__FixedBuffer DirtyRects;
-
-        public partial struct _DirtyRects_e__FixedBuffer
+        public ref RECT this[int index]
         {
-            public RECT e0;
-
-            public ref RECT this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<RECT> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<RECT> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

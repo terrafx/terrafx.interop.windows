@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SVGPathSegLinetoHorizontalAbs" /> struct.</summary>
+public static unsafe partial class SVGPathSegLinetoHorizontalAbsTests
 {
-    /// <summary>Provides validation of the <see cref="SVGPathSegLinetoHorizontalAbs" /> struct.</summary>
-    public static unsafe partial class SVGPathSegLinetoHorizontalAbsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGPathSegLinetoHorizontalAbs" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGPathSegLinetoHorizontalAbs" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SVGPathSegLinetoHorizontalAbs).GUID, Is.EqualTo(IID_SVGPathSegLinetoHorizontalAbs));
-        }
+        Assert.That(typeof(SVGPathSegLinetoHorizontalAbs).GUID, Is.EqualTo(IID_SVGPathSegLinetoHorizontalAbs));
+    }
 
-        /// <summary>Validates that the <see cref="SVGPathSegLinetoHorizontalAbs" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SVGPathSegLinetoHorizontalAbs>(), Is.EqualTo(sizeof(SVGPathSegLinetoHorizontalAbs)));
-        }
+    /// <summary>Validates that the <see cref="SVGPathSegLinetoHorizontalAbs" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SVGPathSegLinetoHorizontalAbs>(), Is.EqualTo(sizeof(SVGPathSegLinetoHorizontalAbs)));
+    }
 
-        /// <summary>Validates that the <see cref="SVGPathSegLinetoHorizontalAbs" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SVGPathSegLinetoHorizontalAbs).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SVGPathSegLinetoHorizontalAbs" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SVGPathSegLinetoHorizontalAbs).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SVGPathSegLinetoHorizontalAbs" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SVGPathSegLinetoHorizontalAbs), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SVGPathSegLinetoHorizontalAbs" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SVGPathSegLinetoHorizontalAbs), Is.EqualTo(1));
     }
 }

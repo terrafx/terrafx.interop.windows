@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IElementBehaviorSiteCategory" /> struct.</summary>
+public static unsafe partial class IElementBehaviorSiteCategoryTests
 {
-    /// <summary>Provides validation of the <see cref="IElementBehaviorSiteCategory" /> struct.</summary>
-    public static unsafe partial class IElementBehaviorSiteCategoryTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IElementBehaviorSiteCategory" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IElementBehaviorSiteCategory" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IElementBehaviorSiteCategory).GUID, Is.EqualTo(IID_IElementBehaviorSiteCategory));
-        }
+        Assert.That(typeof(IElementBehaviorSiteCategory).GUID, Is.EqualTo(IID_IElementBehaviorSiteCategory));
+    }
 
-        /// <summary>Validates that the <see cref="IElementBehaviorSiteCategory" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IElementBehaviorSiteCategory>(), Is.EqualTo(sizeof(IElementBehaviorSiteCategory)));
-        }
+    /// <summary>Validates that the <see cref="IElementBehaviorSiteCategory" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IElementBehaviorSiteCategory>(), Is.EqualTo(sizeof(IElementBehaviorSiteCategory)));
+    }
 
-        /// <summary>Validates that the <see cref="IElementBehaviorSiteCategory" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IElementBehaviorSiteCategory).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IElementBehaviorSiteCategory" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IElementBehaviorSiteCategory).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IElementBehaviorSiteCategory" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IElementBehaviorSiteCategory" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IElementBehaviorSiteCategory), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IElementBehaviorSiteCategory), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IElementBehaviorSiteCategory), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IElementBehaviorSiteCategory), Is.EqualTo(4));
         }
     }
 }

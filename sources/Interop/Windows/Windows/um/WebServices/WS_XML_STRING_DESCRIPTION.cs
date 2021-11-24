@@ -3,14 +3,13 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct WS_XML_STRING_DESCRIPTION
-    {
-        [NativeTypeName("ULONG")]
-        public uint minByteCount;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("ULONG")]
-        public uint maxByteCount;
-    }
+public partial struct WS_XML_STRING_DESCRIPTION
+{
+    [NativeTypeName("ULONG")]
+    public uint minByteCount;
+
+    [NativeTypeName("ULONG")]
+    public uint maxByteCount;
 }

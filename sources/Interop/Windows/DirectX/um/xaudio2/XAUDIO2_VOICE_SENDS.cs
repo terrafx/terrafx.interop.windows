@@ -5,14 +5,13 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct XAUDIO2_VOICE_SENDS
-    {
-        [NativeTypeName("UINT32")]
-        public uint SendCount;
+namespace TerraFX.Interop.DirectX;
 
-        public XAUDIO2_SEND_DESCRIPTOR* pSends;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct XAUDIO2_VOICE_SENDS
+{
+    [NativeTypeName("UINT32")]
+    public uint SendCount;
+
+    public XAUDIO2_SEND_DESCRIPTOR* pSends;
 }

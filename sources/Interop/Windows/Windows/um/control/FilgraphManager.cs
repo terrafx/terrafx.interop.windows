@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("E436EBB3-524F-11CE-9F53-0020AF0BA770")]
+public partial struct FilgraphManager
 {
-    [Guid("E436EBB3-524F-11CE-9F53-0020AF0BA770")]
-    public partial struct FilgraphManager
-    {
-    }
 }

@@ -3,11 +3,10 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SYSTEMMAXIMIZESTATES
 {
-    public enum SYSTEMMAXIMIZESTATES
-    {
-        MSYSMX_NORMAL = 1,
-        MSYSMX_DISABLED = 2,
-    }
+    MSYSMX_NORMAL = 1,
+    MSYSMX_DISABLED = 2,
 }

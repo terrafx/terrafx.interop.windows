@@ -3,11 +3,10 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum WS_RECEIVE_OPTION
 {
-    public enum WS_RECEIVE_OPTION
-    {
-        WS_RECEIVE_REQUIRED_MESSAGE = 1,
-        WS_RECEIVE_OPTIONAL_MESSAGE = 2,
-    }
+    WS_RECEIVE_REQUIRED_MESSAGE = 1,
+    WS_RECEIVE_OPTIONAL_MESSAGE = 2,
 }

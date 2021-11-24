@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CODECAPI_AVEncVideoHeaderHours" /> struct.</summary>
+public static unsafe partial class CODECAPI_AVEncVideoHeaderHoursTests
 {
-    /// <summary>Provides validation of the <see cref="CODECAPI_AVEncVideoHeaderHours" /> struct.</summary>
-    public static unsafe partial class CODECAPI_AVEncVideoHeaderHoursTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncVideoHeaderHours" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncVideoHeaderHours" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncVideoHeaderHours).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoHeaderHours));
-        }
+        Assert.That(typeof(CODECAPI_AVEncVideoHeaderHours).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoHeaderHours));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoHeaderHours" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoHeaderHours>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoHeaderHours)));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoHeaderHours" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoHeaderHours>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoHeaderHours)));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoHeaderHours" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncVideoHeaderHours).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoHeaderHours" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CODECAPI_AVEncVideoHeaderHours).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoHeaderHours" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CODECAPI_AVEncVideoHeaderHours), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoHeaderHours" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CODECAPI_AVEncVideoHeaderHours), Is.EqualTo(1));
     }
 }

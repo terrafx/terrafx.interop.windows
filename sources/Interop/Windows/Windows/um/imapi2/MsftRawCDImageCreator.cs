@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("25983561-9D65-49CE-B335-40630D901227")]
+public partial struct MsftRawCDImageCreator
 {
-    [Guid("25983561-9D65-49CE-B335-40630D901227")]
-    public partial struct MsftRawCDImageCreator
-    {
-    }
 }

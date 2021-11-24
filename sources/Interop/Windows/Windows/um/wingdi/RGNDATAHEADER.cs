@@ -3,22 +3,21 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct RGNDATAHEADER
 {
-    public partial struct RGNDATAHEADER
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwSize;
+    [NativeTypeName("DWORD")]
+    public uint dwSize;
 
-        [NativeTypeName("DWORD")]
-        public uint iType;
+    [NativeTypeName("DWORD")]
+    public uint iType;
 
-        [NativeTypeName("DWORD")]
-        public uint nCount;
+    [NativeTypeName("DWORD")]
+    public uint nCount;
 
-        [NativeTypeName("DWORD")]
-        public uint nRgnSize;
+    [NativeTypeName("DWORD")]
+    public uint nRgnSize;
 
-        public RECT rcBound;
-    }
+    public RECT rcBound;
 }

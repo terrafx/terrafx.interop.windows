@@ -8,64 +8,63 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[Guid("1ADAA23A-EB67-41F3-AAD8-5D984E9BACD4")]
+[NativeTypeName("struct ILearningModelOperatorProviderNative : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ILearningModelOperatorProviderNative : ILearningModelOperatorProviderNative.Interface
 {
-    [Guid("1ADAA23A-EB67-41F3-AAD8-5D984E9BACD4")]
-    [NativeTypeName("struct ILearningModelOperatorProviderNative : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ILearningModelOperatorProviderNative : ILearningModelOperatorProviderNative.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ILearningModelOperatorProviderNative*, Guid*, void**, int>)(lpVtbl[0]))((ILearningModelOperatorProviderNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ILearningModelOperatorProviderNative*, Guid*, void**, int>)(lpVtbl[0]))((ILearningModelOperatorProviderNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ILearningModelOperatorProviderNative*, uint>)(lpVtbl[1]))((ILearningModelOperatorProviderNative*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ILearningModelOperatorProviderNative*, uint>)(lpVtbl[1]))((ILearningModelOperatorProviderNative*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ILearningModelOperatorProviderNative*, uint>)(lpVtbl[2]))((ILearningModelOperatorProviderNative*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ILearningModelOperatorProviderNative*, uint>)(lpVtbl[2]))((ILearningModelOperatorProviderNative*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetRegistry(IMLOperatorRegistry** ppOperatorRegistry)
+    {
+        return ((delegate* unmanaged<ILearningModelOperatorProviderNative*, IMLOperatorRegistry**, int>)(lpVtbl[3]))((ILearningModelOperatorProviderNative*)Unsafe.AsPointer(ref this), ppOperatorRegistry);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetRegistry(IMLOperatorRegistry** ppOperatorRegistry)
-        {
-            return ((delegate* unmanaged<ILearningModelOperatorProviderNative*, IMLOperatorRegistry**, int>)(lpVtbl[3]))((ILearningModelOperatorProviderNative*)Unsafe.AsPointer(ref this), ppOperatorRegistry);
-        }
+        HRESULT GetRegistry(IMLOperatorRegistry** ppOperatorRegistry);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetRegistry(IMLOperatorRegistry** ppOperatorRegistry);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ILearningModelOperatorProviderNative*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ILearningModelOperatorProviderNative*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ILearningModelOperatorProviderNative*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ILearningModelOperatorProviderNative*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ILearningModelOperatorProviderNative*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ILearningModelOperatorProviderNative*, uint> Release;
-
-            [NativeTypeName("HRESULT (IMLOperatorRegistry **) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ILearningModelOperatorProviderNative*, IMLOperatorRegistry**, int> GetRegistry;
-        }
+        [NativeTypeName("HRESULT (IMLOperatorRegistry **) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ILearningModelOperatorProviderNative*, IMLOperatorRegistry**, int> GetRegistry;
     }
 }

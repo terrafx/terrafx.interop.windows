@@ -7,273 +7,272 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3051052C-98B5-11CF-BB82-00AA00BDCE0B")]
+[NativeTypeName("struct ISVGPatternElement : IDispatch")]
+[NativeInheritance("IDispatch")]
+public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
 {
-    [Guid("3051052C-98B5-11CF-BB82-00AA00BDCE0B")]
-    [NativeTypeName("struct ISVGPatternElement : IDispatch")]
-    [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ISVGPatternElement*, Guid*, void**, int>)(lpVtbl[0]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ISVGPatternElement*, Guid*, void**, int>)(lpVtbl[0]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ISVGPatternElement*, uint>)(lpVtbl[1]))((ISVGPatternElement*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ISVGPatternElement*, uint>)(lpVtbl[1]))((ISVGPatternElement*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ISVGPatternElement*, uint>)(lpVtbl[2]))((ISVGPatternElement*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ISVGPatternElement*, uint>)(lpVtbl[2]))((ISVGPatternElement*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetTypeInfoCount(uint* pctinfo)
+    {
+        return ((delegate* unmanaged<ISVGPatternElement*, uint*, int>)(lpVtbl[3]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), pctinfo);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetTypeInfoCount(uint* pctinfo)
-        {
-            return ((delegate* unmanaged<ISVGPatternElement*, uint*, int>)(lpVtbl[3]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), pctinfo);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
+    {
+        return ((delegate* unmanaged<ISVGPatternElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
-        {
-            return ((delegate* unmanaged<ISVGPatternElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    {
+        return ((delegate* unmanaged<ISVGPatternElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
-        {
-            return ((delegate* unmanaged<ISVGPatternElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
+    {
+        return ((delegate* unmanaged<ISVGPatternElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(6)]
-        public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
-        {
-            return ((delegate* unmanaged<ISVGPatternElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT putref_patternUnits(ISVGAnimatedEnumeration* v)
+    {
+        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration*, int>)(lpVtbl[7]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT get_patternUnits(ISVGAnimatedEnumeration** p)
+    {
+        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration**, int>)(lpVtbl[8]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT putref_patternContentUnits(ISVGAnimatedEnumeration* v)
+    {
+        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration*, int>)(lpVtbl[9]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT get_patternContentUnits(ISVGAnimatedEnumeration** p)
+    {
+        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration**, int>)(lpVtbl[10]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT putref_patternTransform(ISVGAnimatedTransformList* v)
+    {
+        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedTransformList*, int>)(lpVtbl[11]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT get_patternTransform(ISVGAnimatedTransformList** p)
+    {
+        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedTransformList**, int>)(lpVtbl[12]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT putref_x(ISVGAnimatedLength* v)
+    {
+        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int>)(lpVtbl[13]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT get_x(ISVGAnimatedLength** p)
+    {
+        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int>)(lpVtbl[14]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT putref_y(ISVGAnimatedLength* v)
+    {
+        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int>)(lpVtbl[15]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT get_y(ISVGAnimatedLength** p)
+    {
+        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int>)(lpVtbl[16]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT putref_width(ISVGAnimatedLength* v)
+    {
+        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int>)(lpVtbl[17]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT get_width(ISVGAnimatedLength** p)
+    {
+        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int>)(lpVtbl[18]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
+    public HRESULT putref_height(ISVGAnimatedLength* v)
+    {
+        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int>)(lpVtbl[19]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(20)]
+    public HRESULT get_height(ISVGAnimatedLength** p)
+    {
+        return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int>)(lpVtbl[20]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    public interface Interface : IDispatch.Interface
+    {
         [VtblIndex(7)]
-        public HRESULT putref_patternUnits(ISVGAnimatedEnumeration* v)
-        {
-            return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration*, int>)(lpVtbl[7]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT putref_patternUnits(ISVGAnimatedEnumeration* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT get_patternUnits(ISVGAnimatedEnumeration** p)
-        {
-            return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration**, int>)(lpVtbl[8]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_patternUnits(ISVGAnimatedEnumeration** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT putref_patternContentUnits(ISVGAnimatedEnumeration* v)
-        {
-            return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration*, int>)(lpVtbl[9]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT putref_patternContentUnits(ISVGAnimatedEnumeration* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT get_patternContentUnits(ISVGAnimatedEnumeration** p)
-        {
-            return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration**, int>)(lpVtbl[10]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_patternContentUnits(ISVGAnimatedEnumeration** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT putref_patternTransform(ISVGAnimatedTransformList* v)
-        {
-            return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedTransformList*, int>)(lpVtbl[11]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT putref_patternTransform(ISVGAnimatedTransformList* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT get_patternTransform(ISVGAnimatedTransformList** p)
-        {
-            return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedTransformList**, int>)(lpVtbl[12]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_patternTransform(ISVGAnimatedTransformList** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT putref_x(ISVGAnimatedLength* v)
-        {
-            return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int>)(lpVtbl[13]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT putref_x(ISVGAnimatedLength* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT get_x(ISVGAnimatedLength** p)
-        {
-            return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int>)(lpVtbl[14]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_x(ISVGAnimatedLength** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT putref_y(ISVGAnimatedLength* v)
-        {
-            return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int>)(lpVtbl[15]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT putref_y(ISVGAnimatedLength* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT get_y(ISVGAnimatedLength** p)
-        {
-            return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int>)(lpVtbl[16]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_y(ISVGAnimatedLength** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT putref_width(ISVGAnimatedLength* v)
-        {
-            return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int>)(lpVtbl[17]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT putref_width(ISVGAnimatedLength* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT get_width(ISVGAnimatedLength** p)
-        {
-            return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int>)(lpVtbl[18]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_width(ISVGAnimatedLength** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT putref_height(ISVGAnimatedLength* v)
-        {
-            return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int>)(lpVtbl[19]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT putref_height(ISVGAnimatedLength* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT get_height(ISVGAnimatedLength** p)
-        {
-            return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int>)(lpVtbl[20]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_height(ISVGAnimatedLength** p);
+    }
 
-        public interface Interface : IDispatch.Interface
-        {
-            [VtblIndex(7)]
-            HRESULT putref_patternUnits(ISVGAnimatedEnumeration* v);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGPatternElement*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(8)]
-            HRESULT get_patternUnits(ISVGAnimatedEnumeration** p);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGPatternElement*, uint> AddRef;
 
-            [VtblIndex(9)]
-            HRESULT putref_patternContentUnits(ISVGAnimatedEnumeration* v);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGPatternElement*, uint> Release;
 
-            [VtblIndex(10)]
-            HRESULT get_patternContentUnits(ISVGAnimatedEnumeration** p);
+        [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGPatternElement*, uint*, int> GetTypeInfoCount;
 
-            [VtblIndex(11)]
-            HRESULT putref_patternTransform(ISVGAnimatedTransformList* v);
+        [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGPatternElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
-            [VtblIndex(12)]
-            HRESULT get_patternTransform(ISVGAnimatedTransformList** p);
+        [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGPatternElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
-            [VtblIndex(13)]
-            HRESULT putref_x(ISVGAnimatedLength* v);
+        [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGPatternElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
-            [VtblIndex(14)]
-            HRESULT get_x(ISVGAnimatedLength** p);
+        [NativeTypeName("HRESULT (ISVGAnimatedEnumeration *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration*, int> putref_patternUnits;
 
-            [VtblIndex(15)]
-            HRESULT putref_y(ISVGAnimatedLength* v);
+        [NativeTypeName("HRESULT (ISVGAnimatedEnumeration **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration**, int> get_patternUnits;
 
-            [VtblIndex(16)]
-            HRESULT get_y(ISVGAnimatedLength** p);
+        [NativeTypeName("HRESULT (ISVGAnimatedEnumeration *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration*, int> putref_patternContentUnits;
 
-            [VtblIndex(17)]
-            HRESULT putref_width(ISVGAnimatedLength* v);
+        [NativeTypeName("HRESULT (ISVGAnimatedEnumeration **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration**, int> get_patternContentUnits;
 
-            [VtblIndex(18)]
-            HRESULT get_width(ISVGAnimatedLength** p);
+        [NativeTypeName("HRESULT (ISVGAnimatedTransformList *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedTransformList*, int> putref_patternTransform;
 
-            [VtblIndex(19)]
-            HRESULT putref_height(ISVGAnimatedLength* v);
+        [NativeTypeName("HRESULT (ISVGAnimatedTransformList **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedTransformList**, int> get_patternTransform;
 
-            [VtblIndex(20)]
-            HRESULT get_height(ISVGAnimatedLength** p);
-        }
+        [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int> putref_x;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGPatternElement*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int> get_x;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGPatternElement*, uint> AddRef;
+        [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int> putref_y;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGPatternElement*, uint> Release;
+        [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int> get_y;
 
-            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGPatternElement*, uint*, int> GetTypeInfoCount;
+        [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int> putref_width;
 
-            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGPatternElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int> get_width;
 
-            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGPatternElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int> putref_height;
 
-            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGPatternElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
-
-            [NativeTypeName("HRESULT (ISVGAnimatedEnumeration *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration*, int> putref_patternUnits;
-
-            [NativeTypeName("HRESULT (ISVGAnimatedEnumeration **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration**, int> get_patternUnits;
-
-            [NativeTypeName("HRESULT (ISVGAnimatedEnumeration *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration*, int> putref_patternContentUnits;
-
-            [NativeTypeName("HRESULT (ISVGAnimatedEnumeration **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration**, int> get_patternContentUnits;
-
-            [NativeTypeName("HRESULT (ISVGAnimatedTransformList *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedTransformList*, int> putref_patternTransform;
-
-            [NativeTypeName("HRESULT (ISVGAnimatedTransformList **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedTransformList**, int> get_patternTransform;
-
-            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int> putref_x;
-
-            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int> get_x;
-
-            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int> putref_y;
-
-            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int> get_y;
-
-            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int> putref_width;
-
-            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int> get_width;
-
-            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int> putref_height;
-
-            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int> get_height;
-        }
+        [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int> get_height;
     }
 }

@@ -5,11 +5,10 @@
 
 using TerraFX.Interop.WinRT;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class E
 {
-    public static partial class E
-    {
-        [NativeTypeName("#define E_SURFACE_CONTENTS_LOST 0x802b0020")]
-        public const uint E_SURFACE_CONTENTS_LOST = 0x802b0020;
-    }
+    [NativeTypeName("#define E_SURFACE_CONTENTS_LOST 0x802b0020")]
+    public const uint E_SURFACE_CONTENTS_LOST = 0x802b0020;
 }

@@ -3,14 +3,13 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum _AM_PUSHSOURCE_FLAGS
 {
-    public enum _AM_PUSHSOURCE_FLAGS
-    {
-        AM_PUSHSOURCECAPS_INTERNAL_RM = 0x1,
-        AM_PUSHSOURCECAPS_NOT_LIVE = 0x2,
-        AM_PUSHSOURCECAPS_PRIVATE_CLOCK = 0x4,
-        AM_PUSHSOURCEREQS_USE_STREAM_CLOCK = 0x10000,
-        AM_PUSHSOURCEREQS_USE_CLOCK_CHAIN = 0x20000,
-    }
+    AM_PUSHSOURCECAPS_INTERNAL_RM = 0x1,
+    AM_PUSHSOURCECAPS_NOT_LIVE = 0x2,
+    AM_PUSHSOURCECAPS_PRIVATE_CLOCK = 0x4,
+    AM_PUSHSOURCEREQS_USE_STREAM_CLOCK = 0x10000,
+    AM_PUSHSOURCEREQS_USE_CLOCK_CHAIN = 0x20000,
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("9F493441-744A-410C-AE2B-9A22F7C7731F")]
+public partial struct XblIdpAuthTokenResult
 {
-    [Guid("9F493441-744A-410C-AE2B-9A22F7C7731F")]
-    public partial struct XblIdpAuthTokenResult
-    {
-    }
 }

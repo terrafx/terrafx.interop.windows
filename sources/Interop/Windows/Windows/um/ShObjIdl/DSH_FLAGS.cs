@@ -5,11 +5,10 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum DSH_FLAGS
 {
-    [Flags]
-    public enum DSH_FLAGS
-    {
-        DSH_ALLOWDROPDESCRIPTIONTEXT = 0x1,
-    }
+    DSH_ALLOWDROPDESCRIPTIONTEXT = 0x1,
 }

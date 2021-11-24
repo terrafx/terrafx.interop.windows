@@ -3,13 +3,12 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum STORAGE_IDENTIFIER_CODE_SET
 {
-    public enum STORAGE_IDENTIFIER_CODE_SET
-    {
-        StorageIdCodeSetReserved = 0,
-        StorageIdCodeSetBinary = 1,
-        StorageIdCodeSetAscii = 2,
-        StorageIdCodeSetUtf8 = 3,
-    }
+    StorageIdCodeSetReserved = 0,
+    StorageIdCodeSetBinary = 1,
+    StorageIdCodeSetAscii = 2,
+    StorageIdCodeSetUtf8 = 3,
 }

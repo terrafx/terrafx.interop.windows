@@ -7,16 +7,15 @@ using NUnit.Framework;
 using System;
 using static TerraFX.Interop.Windows.SID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SID" /> struct.</summary>
+public static unsafe partial class SIDTests
 {
-    /// <summary>Provides validation of the <see cref="SID" /> struct.</summary>
-    public static unsafe partial class SIDTests
+    /// <summary>Validates that the value of the <see cref="SID_SCommandBarState" /> property is correct.</summary>
+    [Test]
+    public static void SID_SCommandBarStateTest()
     {
-        /// <summary>Validates that the value of the <see cref="SID_SCommandBarState" /> property is correct.</summary>
-        [Test]
-        public static void SID_SCommandBarStateTest()
-        {
-            Assert.That(SID_SCommandBarState, Is.EqualTo(new Guid(0xB99EAA5C, 0x3850, 0x4400, 0xBC, 0x33, 0x2C, 0xE5, 0x34, 0x04, 0x8B, 0xF8)));
-        }
+        Assert.That(SID_SCommandBarState, Is.EqualTo(new Guid(0xB99EAA5C, 0x3850, 0x4400, 0xBC, 0x33, 0x2C, 0xE5, 0x34, 0x04, 0x8B, 0xF8)));
     }
 }

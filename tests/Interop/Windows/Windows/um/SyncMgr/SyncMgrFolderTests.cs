@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SyncMgrFolder" /> struct.</summary>
+public static unsafe partial class SyncMgrFolderTests
 {
-    /// <summary>Provides validation of the <see cref="SyncMgrFolder" /> struct.</summary>
-    public static unsafe partial class SyncMgrFolderTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SyncMgrFolder" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SyncMgrFolder" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SyncMgrFolder).GUID, Is.EqualTo(IID_SyncMgrFolder));
-        }
+        Assert.That(typeof(SyncMgrFolder).GUID, Is.EqualTo(IID_SyncMgrFolder));
+    }
 
-        /// <summary>Validates that the <see cref="SyncMgrFolder" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SyncMgrFolder>(), Is.EqualTo(sizeof(SyncMgrFolder)));
-        }
+    /// <summary>Validates that the <see cref="SyncMgrFolder" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SyncMgrFolder>(), Is.EqualTo(sizeof(SyncMgrFolder)));
+    }
 
-        /// <summary>Validates that the <see cref="SyncMgrFolder" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SyncMgrFolder).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SyncMgrFolder" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SyncMgrFolder).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SyncMgrFolder" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SyncMgrFolder), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SyncMgrFolder" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SyncMgrFolder), Is.EqualTo(1));
     }
 }

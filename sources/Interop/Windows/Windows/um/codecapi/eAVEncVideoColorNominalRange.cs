@@ -3,13 +3,12 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum eAVEncVideoColorNominalRange
 {
-    public enum eAVEncVideoColorNominalRange
-    {
-        eAVEncVideoColorNominalRange_SameAsSource = 0,
-        eAVEncVideoColorNominalRange_0_255 = 1,
-        eAVEncVideoColorNominalRange_16_235 = 2,
-        eAVEncVideoColorNominalRange_48_208 = 3,
-    }
+    eAVEncVideoColorNominalRange_SameAsSource = 0,
+    eAVEncVideoColorNominalRange_0_255 = 1,
+    eAVEncVideoColorNominalRange_16_235 = 2,
+    eAVEncVideoColorNominalRange_48_208 = 3,
 }

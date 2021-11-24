@@ -3,16 +3,15 @@
 // Ported from um/d3d12video.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D12_VIDEO_DECODE_COMPRESSED_BITSTREAM
 {
-    public unsafe partial struct D3D12_VIDEO_DECODE_COMPRESSED_BITSTREAM
-    {
-        public ID3D12Resource* pBuffer;
+    public ID3D12Resource* pBuffer;
 
-        [NativeTypeName("UINT64")]
-        public ulong Offset;
+    [NativeTypeName("UINT64")]
+    public ulong Offset;
 
-        [NativeTypeName("UINT64")]
-        public ulong Size;
-    }
+    [NativeTypeName("UINT64")]
+    public ulong Size;
 }

@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="InternetExplorerMedium" /> struct.</summary>
+public static unsafe partial class InternetExplorerMediumTests
 {
-    /// <summary>Provides validation of the <see cref="InternetExplorerMedium" /> struct.</summary>
-    public static unsafe partial class InternetExplorerMediumTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="InternetExplorerMedium" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="InternetExplorerMedium" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(InternetExplorerMedium).GUID, Is.EqualTo(IID_InternetExplorerMedium));
-        }
+        Assert.That(typeof(InternetExplorerMedium).GUID, Is.EqualTo(IID_InternetExplorerMedium));
+    }
 
-        /// <summary>Validates that the <see cref="InternetExplorerMedium" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<InternetExplorerMedium>(), Is.EqualTo(sizeof(InternetExplorerMedium)));
-        }
+    /// <summary>Validates that the <see cref="InternetExplorerMedium" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<InternetExplorerMedium>(), Is.EqualTo(sizeof(InternetExplorerMedium)));
+    }
 
-        /// <summary>Validates that the <see cref="InternetExplorerMedium" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(InternetExplorerMedium).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="InternetExplorerMedium" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(InternetExplorerMedium).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="InternetExplorerMedium" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(InternetExplorerMedium), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="InternetExplorerMedium" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(InternetExplorerMedium), Is.EqualTo(1));
     }
 }

@@ -3,17 +3,16 @@
 // Ported from um/IPExport.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class MAX
 {
-    public static partial class MAX
-    {
-        [NativeTypeName("#define MAX_ADAPTER_NAME 128")]
-        public const int MAX_ADAPTER_NAME = 128;
+    [NativeTypeName("#define MAX_ADAPTER_NAME 128")]
+    public const int MAX_ADAPTER_NAME = 128;
 
-        [NativeTypeName("#define MAX_IP_STATUS IP_GENERAL_FAILURE")]
-        public const int MAX_IP_STATUS = (11000 + 50);
+    [NativeTypeName("#define MAX_IP_STATUS IP_GENERAL_FAILURE")]
+    public const int MAX_IP_STATUS = (11000 + 50);
 
-        [NativeTypeName("#define MAX_OPT_SIZE 40")]
-        public const int MAX_OPT_SIZE = 40;
-    }
+    [NativeTypeName("#define MAX_OPT_SIZE 40")]
+    public const int MAX_OPT_SIZE = 40;
 }

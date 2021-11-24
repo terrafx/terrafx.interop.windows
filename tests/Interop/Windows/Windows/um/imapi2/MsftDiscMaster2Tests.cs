@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MsftDiscMaster2" /> struct.</summary>
+public static unsafe partial class MsftDiscMaster2Tests
 {
-    /// <summary>Provides validation of the <see cref="MsftDiscMaster2" /> struct.</summary>
-    public static unsafe partial class MsftDiscMaster2Tests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="MsftDiscMaster2" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="MsftDiscMaster2" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(MsftDiscMaster2).GUID, Is.EqualTo(IID_MsftDiscMaster2));
-        }
+        Assert.That(typeof(MsftDiscMaster2).GUID, Is.EqualTo(IID_MsftDiscMaster2));
+    }
 
-        /// <summary>Validates that the <see cref="MsftDiscMaster2" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MsftDiscMaster2>(), Is.EqualTo(sizeof(MsftDiscMaster2)));
-        }
+    /// <summary>Validates that the <see cref="MsftDiscMaster2" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<MsftDiscMaster2>(), Is.EqualTo(sizeof(MsftDiscMaster2)));
+    }
 
-        /// <summary>Validates that the <see cref="MsftDiscMaster2" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MsftDiscMaster2).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MsftDiscMaster2" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MsftDiscMaster2).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MsftDiscMaster2" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MsftDiscMaster2), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="MsftDiscMaster2" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MsftDiscMaster2), Is.EqualTo(1));
     }
 }

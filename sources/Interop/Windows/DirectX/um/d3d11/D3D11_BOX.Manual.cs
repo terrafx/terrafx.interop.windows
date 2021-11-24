@@ -5,37 +5,36 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D11_BOX : IEquatable<D3D11_BOX>
 {
-    public partial struct D3D11_BOX : IEquatable<D3D11_BOX>
+    public D3D11_BOX(int Left, int Top, int Front, int Right, int Bottom, int Back)
     {
-        public D3D11_BOX(int Left, int Top, int Front, int Right, int Bottom, int Back)
-        {
-            left = (uint)Left;
-            top = (uint)Top;
-            front = (uint)Front;
-            right = (uint)Right;
-            bottom = (uint)Bottom;
-            back = (uint)Back;
-        }
-
-        public static bool operator ==(D3D11_BOX l, D3D11_BOX r)
-        {
-            return (l.left == r.left)
-                && (l.top == r.top)
-                && (l.front == r.front)
-                && (l.right == r.right)
-                && (l.bottom == r.bottom)
-                && (l.back == r.back);
-        }
-
-        public static bool operator !=(D3D11_BOX l, D3D11_BOX r)
-            => !(l == r);
-
-        public override bool Equals(object? obj) => (obj is D3D11_BOX other) && Equals(other);
-
-        public bool Equals(D3D11_BOX other) => this == other;
-
-        public override int GetHashCode() => HashCode.Combine(left, top, front, right, bottom, back);
+        left = (uint)Left;
+        top = (uint)Top;
+        front = (uint)Front;
+        right = (uint)Right;
+        bottom = (uint)Bottom;
+        back = (uint)Back;
     }
+
+    public static bool operator ==(D3D11_BOX l, D3D11_BOX r)
+    {
+        return (l.left == r.left)
+            && (l.top == r.top)
+            && (l.front == r.front)
+            && (l.right == r.right)
+            && (l.bottom == r.bottom)
+            && (l.back == r.back);
+    }
+
+    public static bool operator !=(D3D11_BOX l, D3D11_BOX r)
+        => !(l == r);
+
+    public override bool Equals(object? obj) => (obj is D3D11_BOX other) && Equals(other);
+
+    public bool Equals(D3D11_BOX other) => this == other;
+
+    public override int GetHashCode() => HashCode.Combine(left, top, front, right, bottom, back);
 }

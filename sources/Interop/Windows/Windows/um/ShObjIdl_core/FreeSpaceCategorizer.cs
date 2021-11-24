@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("B5607793-24AC-44C7-82E2-831726AA6CB7")]
+public partial struct FreeSpaceCategorizer
 {
-    [Guid("B5607793-24AC-44C7-82E2-831726AA6CB7")]
-    public partial struct FreeSpaceCategorizer
-    {
-    }
 }

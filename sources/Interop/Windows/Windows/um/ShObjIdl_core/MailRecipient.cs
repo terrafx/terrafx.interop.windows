@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("9E56BE60-C50F-11CF-9A2C-00A0C90A90CE")]
+public partial struct MailRecipient
 {
-    [Guid("9E56BE60-C50F-11CF-9A2C-00A0C90A90CE")]
-    public partial struct MailRecipient
-    {
-    }
 }

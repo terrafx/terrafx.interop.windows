@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum D3D11_COPY_FLAGS
 {
-    [Flags]
-    public enum D3D11_COPY_FLAGS
-    {
-        D3D11_COPY_NO_OVERWRITE = 0x1,
-        D3D11_COPY_DISCARD = 0x2,
-    }
+    D3D11_COPY_NO_OVERWRITE = 0x1,
+    D3D11_COPY_DISCARD = 0x2,
 }

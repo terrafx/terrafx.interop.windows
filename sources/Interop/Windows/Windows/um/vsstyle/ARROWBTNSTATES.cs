@@ -3,29 +3,28 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum ARROWBTNSTATES
 {
-    public enum ARROWBTNSTATES
-    {
-        ABS_UPNORMAL = 1,
-        ABS_UPHOT = 2,
-        ABS_UPPRESSED = 3,
-        ABS_UPDISABLED = 4,
-        ABS_DOWNNORMAL = 5,
-        ABS_DOWNHOT = 6,
-        ABS_DOWNPRESSED = 7,
-        ABS_DOWNDISABLED = 8,
-        ABS_LEFTNORMAL = 9,
-        ABS_LEFTHOT = 10,
-        ABS_LEFTPRESSED = 11,
-        ABS_LEFTDISABLED = 12,
-        ABS_RIGHTNORMAL = 13,
-        ABS_RIGHTHOT = 14,
-        ABS_RIGHTPRESSED = 15,
-        ABS_RIGHTDISABLED = 16,
-        ABS_UPHOVER = 17,
-        ABS_DOWNHOVER = 18,
-        ABS_LEFTHOVER = 19,
-        ABS_RIGHTHOVER = 20,
-    }
+    ABS_UPNORMAL = 1,
+    ABS_UPHOT = 2,
+    ABS_UPPRESSED = 3,
+    ABS_UPDISABLED = 4,
+    ABS_DOWNNORMAL = 5,
+    ABS_DOWNHOT = 6,
+    ABS_DOWNPRESSED = 7,
+    ABS_DOWNDISABLED = 8,
+    ABS_LEFTNORMAL = 9,
+    ABS_LEFTHOT = 10,
+    ABS_LEFTPRESSED = 11,
+    ABS_LEFTDISABLED = 12,
+    ABS_RIGHTNORMAL = 13,
+    ABS_RIGHTHOT = 14,
+    ABS_RIGHTPRESSED = 15,
+    ABS_RIGHTDISABLED = 16,
+    ABS_UPHOVER = 17,
+    ABS_DOWNHOVER = 18,
+    ABS_LEFTHOVER = 19,
+    ABS_RIGHTHOVER = 20,
 }

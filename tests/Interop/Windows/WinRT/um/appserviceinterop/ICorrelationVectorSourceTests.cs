@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ICorrelationVectorSource" /> struct.</summary>
+public static unsafe partial class ICorrelationVectorSourceTests
 {
-    /// <summary>Provides validation of the <see cref="ICorrelationVectorSource" /> struct.</summary>
-    public static unsafe partial class ICorrelationVectorSourceTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ICorrelationVectorSource" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ICorrelationVectorSource" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ICorrelationVectorSource).GUID, Is.EqualTo(IID_ICorrelationVectorSource));
-        }
+        Assert.That(typeof(ICorrelationVectorSource).GUID, Is.EqualTo(IID_ICorrelationVectorSource));
+    }
 
-        /// <summary>Validates that the <see cref="ICorrelationVectorSource" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ICorrelationVectorSource>(), Is.EqualTo(sizeof(ICorrelationVectorSource)));
-        }
+    /// <summary>Validates that the <see cref="ICorrelationVectorSource" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ICorrelationVectorSource>(), Is.EqualTo(sizeof(ICorrelationVectorSource)));
+    }
 
-        /// <summary>Validates that the <see cref="ICorrelationVectorSource" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ICorrelationVectorSource).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ICorrelationVectorSource" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ICorrelationVectorSource).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ICorrelationVectorSource" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ICorrelationVectorSource" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ICorrelationVectorSource), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ICorrelationVectorSource), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ICorrelationVectorSource), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ICorrelationVectorSource), Is.EqualTo(4));
         }
     }
 }

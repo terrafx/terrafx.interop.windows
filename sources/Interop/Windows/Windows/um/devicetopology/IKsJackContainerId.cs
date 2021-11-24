@@ -7,64 +7,63 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("C99AF463-D629-4EC4-8C00-E54D68154248")]
+[NativeTypeName("struct IKsJackContainerId : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IKsJackContainerId : IKsJackContainerId.Interface
 {
-    [Guid("C99AF463-D629-4EC4-8C00-E54D68154248")]
-    [NativeTypeName("struct IKsJackContainerId : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IKsJackContainerId : IKsJackContainerId.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IKsJackContainerId*, Guid*, void**, int>)(lpVtbl[0]))((IKsJackContainerId*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IKsJackContainerId*, Guid*, void**, int>)(lpVtbl[0]))((IKsJackContainerId*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IKsJackContainerId*, uint>)(lpVtbl[1]))((IKsJackContainerId*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IKsJackContainerId*, uint>)(lpVtbl[1]))((IKsJackContainerId*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IKsJackContainerId*, uint>)(lpVtbl[2]))((IKsJackContainerId*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IKsJackContainerId*, uint>)(lpVtbl[2]))((IKsJackContainerId*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetJackContainerId(Guid* pJackContainerId)
+    {
+        return ((delegate* unmanaged<IKsJackContainerId*, Guid*, int>)(lpVtbl[3]))((IKsJackContainerId*)Unsafe.AsPointer(ref this), pJackContainerId);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetJackContainerId(Guid* pJackContainerId)
-        {
-            return ((delegate* unmanaged<IKsJackContainerId*, Guid*, int>)(lpVtbl[3]))((IKsJackContainerId*)Unsafe.AsPointer(ref this), pJackContainerId);
-        }
+        HRESULT GetJackContainerId(Guid* pJackContainerId);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetJackContainerId(Guid* pJackContainerId);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IKsJackContainerId*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IKsJackContainerId*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IKsJackContainerId*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IKsJackContainerId*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IKsJackContainerId*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IKsJackContainerId*, uint> Release;
-
-            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IKsJackContainerId*, Guid*, int> GetJackContainerId;
-        }
+        [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IKsJackContainerId*, Guid*, int> GetJackContainerId;
     }
 }

@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum POINTER_DEVICE_CURSOR_TYPE
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum POINTER_DEVICE_CURSOR_TYPE
-    {
-        POINTER_DEVICE_CURSOR_TYPE_UNKNOWN = 0x00000000,
-        POINTER_DEVICE_CURSOR_TYPE_TIP = 0x00000001,
-        POINTER_DEVICE_CURSOR_TYPE_ERASER = 0x00000002,
-        POINTER_DEVICE_CURSOR_TYPE_MAX = unchecked((int)(0xFFFFFFFF)),
-    }
+    POINTER_DEVICE_CURSOR_TYPE_UNKNOWN = 0x00000000,
+    POINTER_DEVICE_CURSOR_TYPE_TIP = 0x00000001,
+    POINTER_DEVICE_CURSOR_TYPE_ERASER = 0x00000002,
+    POINTER_DEVICE_CURSOR_TYPE_MAX = unchecked((int)(0xFFFFFFFF)),
 }

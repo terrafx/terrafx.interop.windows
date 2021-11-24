@@ -7,90 +7,89 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("8EFE6F27-0CE0-4988-B32D-738EB63DB3B7")]
+[NativeTypeName("struct IAppxManifestReader7 : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IAppxManifestReader7 : IAppxManifestReader7.Interface
 {
-    [Guid("8EFE6F27-0CE0-4988-B32D-738EB63DB3B7")]
-    [NativeTypeName("struct IAppxManifestReader7 : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestReader7 : IAppxManifestReader7.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IAppxManifestReader7*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestReader7*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IAppxManifestReader7*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestReader7*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IAppxManifestReader7*, uint>)(lpVtbl[1]))((IAppxManifestReader7*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IAppxManifestReader7*, uint>)(lpVtbl[1]))((IAppxManifestReader7*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IAppxManifestReader7*, uint>)(lpVtbl[2]))((IAppxManifestReader7*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IAppxManifestReader7*, uint>)(lpVtbl[2]))((IAppxManifestReader7*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetDriverDependencies(IAppxManifestDriverDependenciesEnumerator** driverDependencies)
+    {
+        return ((delegate* unmanaged<IAppxManifestReader7*, IAppxManifestDriverDependenciesEnumerator**, int>)(lpVtbl[3]))((IAppxManifestReader7*)Unsafe.AsPointer(ref this), driverDependencies);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetOSPackageDependencies(IAppxManifestOSPackageDependenciesEnumerator** osPackageDependencies)
+    {
+        return ((delegate* unmanaged<IAppxManifestReader7*, IAppxManifestOSPackageDependenciesEnumerator**, int>)(lpVtbl[4]))((IAppxManifestReader7*)Unsafe.AsPointer(ref this), osPackageDependencies);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetHostRuntimeDependencies(IAppxManifestHostRuntimeDependenciesEnumerator** hostRuntimeDependencies)
+    {
+        return ((delegate* unmanaged<IAppxManifestReader7*, IAppxManifestHostRuntimeDependenciesEnumerator**, int>)(lpVtbl[5]))((IAppxManifestReader7*)Unsafe.AsPointer(ref this), hostRuntimeDependencies);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetDriverDependencies(IAppxManifestDriverDependenciesEnumerator** driverDependencies)
-        {
-            return ((delegate* unmanaged<IAppxManifestReader7*, IAppxManifestDriverDependenciesEnumerator**, int>)(lpVtbl[3]))((IAppxManifestReader7*)Unsafe.AsPointer(ref this), driverDependencies);
-        }
+        HRESULT GetDriverDependencies(IAppxManifestDriverDependenciesEnumerator** driverDependencies);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetOSPackageDependencies(IAppxManifestOSPackageDependenciesEnumerator** osPackageDependencies)
-        {
-            return ((delegate* unmanaged<IAppxManifestReader7*, IAppxManifestOSPackageDependenciesEnumerator**, int>)(lpVtbl[4]))((IAppxManifestReader7*)Unsafe.AsPointer(ref this), osPackageDependencies);
-        }
+        HRESULT GetOSPackageDependencies(IAppxManifestOSPackageDependenciesEnumerator** osPackageDependencies);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetHostRuntimeDependencies(IAppxManifestHostRuntimeDependenciesEnumerator** hostRuntimeDependencies)
-        {
-            return ((delegate* unmanaged<IAppxManifestReader7*, IAppxManifestHostRuntimeDependenciesEnumerator**, int>)(lpVtbl[5]))((IAppxManifestReader7*)Unsafe.AsPointer(ref this), hostRuntimeDependencies);
-        }
+        HRESULT GetHostRuntimeDependencies(IAppxManifestHostRuntimeDependenciesEnumerator** hostRuntimeDependencies);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetDriverDependencies(IAppxManifestDriverDependenciesEnumerator** driverDependencies);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestReader7*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetOSPackageDependencies(IAppxManifestOSPackageDependenciesEnumerator** osPackageDependencies);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestReader7*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT GetHostRuntimeDependencies(IAppxManifestHostRuntimeDependenciesEnumerator** hostRuntimeDependencies);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestReader7*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestReader7*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (IAppxManifestDriverDependenciesEnumerator **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestReader7*, IAppxManifestDriverDependenciesEnumerator**, int> GetDriverDependencies;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestReader7*, uint> AddRef;
+        [NativeTypeName("HRESULT (IAppxManifestOSPackageDependenciesEnumerator **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestReader7*, IAppxManifestOSPackageDependenciesEnumerator**, int> GetOSPackageDependencies;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestReader7*, uint> Release;
-
-            [NativeTypeName("HRESULT (IAppxManifestDriverDependenciesEnumerator **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestReader7*, IAppxManifestDriverDependenciesEnumerator**, int> GetDriverDependencies;
-
-            [NativeTypeName("HRESULT (IAppxManifestOSPackageDependenciesEnumerator **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestReader7*, IAppxManifestOSPackageDependenciesEnumerator**, int> GetOSPackageDependencies;
-
-            [NativeTypeName("HRESULT (IAppxManifestHostRuntimeDependenciesEnumerator **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestReader7*, IAppxManifestHostRuntimeDependenciesEnumerator**, int> GetHostRuntimeDependencies;
-        }
+        [NativeTypeName("HRESULT (IAppxManifestHostRuntimeDependenciesEnumerator **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestReader7*, IAppxManifestHostRuntimeDependenciesEnumerator**, int> GetHostRuntimeDependencies;
     }
 }

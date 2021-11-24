@@ -3,17 +3,16 @@
 // Ported from um/SpatialAudioMetadata.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class Windows
 {
-    public static partial class Windows
-    {
-        [NativeTypeName("#define SPATIAL_AUDIO_STANDARD_COMMANDS_START 200")]
-        public const int SPATIAL_AUDIO_STANDARD_COMMANDS_START = 200;
+    [NativeTypeName("#define SPATIAL_AUDIO_STANDARD_COMMANDS_START 200")]
+    public const int SPATIAL_AUDIO_STANDARD_COMMANDS_START = 200;
 
-        [NativeTypeName("#define SPATIAL_AUDIO_POSITION (SPATIAL_AUDIO_STANDARD_COMMANDS_START)")]
-        public const int SPATIAL_AUDIO_POSITION = (200);
+    [NativeTypeName("#define SPATIAL_AUDIO_POSITION (SPATIAL_AUDIO_STANDARD_COMMANDS_START)")]
+    public const int SPATIAL_AUDIO_POSITION = (200);
 
-        [NativeTypeName("#define SPATIAL_AUDIO_POSITION_BYTE_COUNT (sizeof(float) * 3)")]
-        public const uint SPATIAL_AUDIO_POSITION_BYTE_COUNT = (4 * 3);
-    }
+    [NativeTypeName("#define SPATIAL_AUDIO_POSITION_BYTE_COUNT (sizeof(float) * 3)")]
+    public const uint SPATIAL_AUDIO_POSITION_BYTE_COUNT = (4 * 3);
 }

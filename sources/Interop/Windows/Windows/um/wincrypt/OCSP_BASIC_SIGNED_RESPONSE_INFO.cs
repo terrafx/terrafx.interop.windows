@@ -3,13 +3,12 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct OCSP_BASIC_SIGNED_RESPONSE_INFO
-    {
-        [NativeTypeName("CRYPT_DER_BLOB")]
-        public CRYPT_DATA_BLOB ToBeSigned;
+namespace TerraFX.Interop.Windows;
 
-        public OCSP_SIGNATURE_INFO SignatureInfo;
-    }
+public partial struct OCSP_BASIC_SIGNED_RESPONSE_INFO
+{
+    [NativeTypeName("CRYPT_DER_BLOB")]
+    public CRYPT_DATA_BLOB ToBeSigned;
+
+    public OCSP_SIGNATURE_INFO SignatureInfo;
 }

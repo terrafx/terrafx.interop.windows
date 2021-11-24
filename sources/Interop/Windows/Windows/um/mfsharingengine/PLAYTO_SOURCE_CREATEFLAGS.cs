@@ -6,16 +6,15 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+[SupportedOSPlatform("windows8.0")]
+public enum PLAYTO_SOURCE_CREATEFLAGS
 {
-    [Flags]
-    [SupportedOSPlatform("windows8.0")]
-    public enum PLAYTO_SOURCE_CREATEFLAGS
-    {
-        PLAYTO_SOURCE_NONE = 0,
-        PLAYTO_SOURCE_IMAGE = 0x1,
-        PLAYTO_SOURCE_AUDIO = 0x2,
-        PLAYTO_SOURCE_VIDEO = 0x4,
-        PLAYTO_SOURCE_PROTECTED = 0x8,
-    }
+    PLAYTO_SOURCE_NONE = 0,
+    PLAYTO_SOURCE_IMAGE = 0x1,
+    PLAYTO_SOURCE_AUDIO = 0x2,
+    PLAYTO_SOURCE_VIDEO = 0x4,
+    PLAYTO_SOURCE_PROTECTED = 0x8,
 }

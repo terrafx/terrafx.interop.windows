@@ -3,17 +3,16 @@
 // Ported from um/ddpbackup.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct DEDUP_CONTAINER_EXTENT
 {
-    public partial struct DEDUP_CONTAINER_EXTENT
-    {
-        [NativeTypeName("ULONG")]
-        public uint ContainerIndex;
+    [NativeTypeName("ULONG")]
+    public uint ContainerIndex;
 
-        [NativeTypeName("long long")]
-        public long StartOffset;
+    [NativeTypeName("long long")]
+    public long StartOffset;
 
-        [NativeTypeName("long long")]
-        public long Length;
-    }
+    [NativeTypeName("long long")]
+    public long Length;
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CRYPT_PKCS8_EXPORT_PARAMS" /> struct.</summary>
+public static unsafe partial class CRYPT_PKCS8_EXPORT_PARAMSTests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_PKCS8_EXPORT_PARAMS" /> struct.</summary>
-    public static unsafe partial class CRYPT_PKCS8_EXPORT_PARAMSTests
+    /// <summary>Validates that the <see cref="CRYPT_PKCS8_EXPORT_PARAMS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CRYPT_PKCS8_EXPORT_PARAMS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CRYPT_PKCS8_EXPORT_PARAMS>(), Is.EqualTo(sizeof(CRYPT_PKCS8_EXPORT_PARAMS)));
-        }
+        Assert.That(Marshal.SizeOf<CRYPT_PKCS8_EXPORT_PARAMS>(), Is.EqualTo(sizeof(CRYPT_PKCS8_EXPORT_PARAMS)));
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_PKCS8_EXPORT_PARAMS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CRYPT_PKCS8_EXPORT_PARAMS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CRYPT_PKCS8_EXPORT_PARAMS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CRYPT_PKCS8_EXPORT_PARAMS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_PKCS8_EXPORT_PARAMS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CRYPT_PKCS8_EXPORT_PARAMS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CRYPT_PKCS8_EXPORT_PARAMS), Is.EqualTo(40));
-            }
-            else
-            {
-                Assert.That(sizeof(CRYPT_PKCS8_EXPORT_PARAMS), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(CRYPT_PKCS8_EXPORT_PARAMS), Is.EqualTo(40));
+        }
+        else
+        {
+            Assert.That(sizeof(CRYPT_PKCS8_EXPORT_PARAMS), Is.EqualTo(20));
         }
     }
 }

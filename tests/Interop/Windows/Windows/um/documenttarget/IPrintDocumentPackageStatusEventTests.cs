@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IPrintDocumentPackageStatusEvent" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class IPrintDocumentPackageStatusEventTests
 {
-    /// <summary>Provides validation of the <see cref="IPrintDocumentPackageStatusEvent" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class IPrintDocumentPackageStatusEventTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPrintDocumentPackageStatusEvent" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPrintDocumentPackageStatusEvent" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IPrintDocumentPackageStatusEvent).GUID, Is.EqualTo(IID_IPrintDocumentPackageStatusEvent));
-        }
+        Assert.That(typeof(IPrintDocumentPackageStatusEvent).GUID, Is.EqualTo(IID_IPrintDocumentPackageStatusEvent));
+    }
 
-        /// <summary>Validates that the <see cref="IPrintDocumentPackageStatusEvent" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IPrintDocumentPackageStatusEvent>(), Is.EqualTo(sizeof(IPrintDocumentPackageStatusEvent)));
-        }
+    /// <summary>Validates that the <see cref="IPrintDocumentPackageStatusEvent" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IPrintDocumentPackageStatusEvent>(), Is.EqualTo(sizeof(IPrintDocumentPackageStatusEvent)));
+    }
 
-        /// <summary>Validates that the <see cref="IPrintDocumentPackageStatusEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IPrintDocumentPackageStatusEvent).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IPrintDocumentPackageStatusEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IPrintDocumentPackageStatusEvent).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IPrintDocumentPackageStatusEvent" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IPrintDocumentPackageStatusEvent" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IPrintDocumentPackageStatusEvent), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IPrintDocumentPackageStatusEvent), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IPrintDocumentPackageStatusEvent), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IPrintDocumentPackageStatusEvent), Is.EqualTo(4));
         }
     }
 }

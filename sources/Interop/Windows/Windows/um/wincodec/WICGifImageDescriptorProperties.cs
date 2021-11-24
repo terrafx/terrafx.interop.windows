@@ -3,18 +3,17 @@
 // Ported from um/wincodec.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum WICGifImageDescriptorProperties : uint
 {
-    public enum WICGifImageDescriptorProperties : uint
-    {
-        WICGifImageDescriptorLeft = 0x1,
-        WICGifImageDescriptorTop = 0x2,
-        WICGifImageDescriptorWidth = 0x3,
-        WICGifImageDescriptorHeight = 0x4,
-        WICGifImageDescriptorLocalColorTableFlag = 0x5,
-        WICGifImageDescriptorInterlaceFlag = 0x6,
-        WICGifImageDescriptorSortFlag = 0x7,
-        WICGifImageDescriptorLocalColorTableSize = 0x8,
-        WICGifImageDescriptorProperties_FORCE_DWORD = 0x7fffffff,
-    }
+    WICGifImageDescriptorLeft = 0x1,
+    WICGifImageDescriptorTop = 0x2,
+    WICGifImageDescriptorWidth = 0x3,
+    WICGifImageDescriptorHeight = 0x4,
+    WICGifImageDescriptorLocalColorTableFlag = 0x5,
+    WICGifImageDescriptorInterlaceFlag = 0x6,
+    WICGifImageDescriptorSortFlag = 0x7,
+    WICGifImageDescriptorLocalColorTableSize = 0x8,
+    WICGifImageDescriptorProperties_FORCE_DWORD = 0x7fffffff,
 }

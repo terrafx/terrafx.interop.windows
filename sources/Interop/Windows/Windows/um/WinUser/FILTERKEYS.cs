@@ -3,25 +3,24 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct FILTERKEYS
 {
-    public partial struct FILTERKEYS
-    {
-        public uint cbSize;
+    public uint cbSize;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        [NativeTypeName("DWORD")]
-        public uint iWaitMSec;
+    [NativeTypeName("DWORD")]
+    public uint iWaitMSec;
 
-        [NativeTypeName("DWORD")]
-        public uint iDelayMSec;
+    [NativeTypeName("DWORD")]
+    public uint iDelayMSec;
 
-        [NativeTypeName("DWORD")]
-        public uint iRepeatMSec;
+    [NativeTypeName("DWORD")]
+    public uint iRepeatMSec;
 
-        [NativeTypeName("DWORD")]
-        public uint iBounceMSec;
-    }
+    [NativeTypeName("DWORD")]
+    public uint iBounceMSec;
 }

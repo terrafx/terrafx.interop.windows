@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="FileSaveDialog" /> struct.</summary>
+public static unsafe partial class FileSaveDialogTests
 {
-    /// <summary>Provides validation of the <see cref="FileSaveDialog" /> struct.</summary>
-    public static unsafe partial class FileSaveDialogTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="FileSaveDialog" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="FileSaveDialog" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(FileSaveDialog).GUID, Is.EqualTo(IID_FileSaveDialog));
-        }
+        Assert.That(typeof(FileSaveDialog).GUID, Is.EqualTo(IID_FileSaveDialog));
+    }
 
-        /// <summary>Validates that the <see cref="FileSaveDialog" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<FileSaveDialog>(), Is.EqualTo(sizeof(FileSaveDialog)));
-        }
+    /// <summary>Validates that the <see cref="FileSaveDialog" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<FileSaveDialog>(), Is.EqualTo(sizeof(FileSaveDialog)));
+    }
 
-        /// <summary>Validates that the <see cref="FileSaveDialog" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(FileSaveDialog).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="FileSaveDialog" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(FileSaveDialog).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="FileSaveDialog" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(FileSaveDialog), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="FileSaveDialog" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(FileSaveDialog), Is.EqualTo(1));
     }
 }

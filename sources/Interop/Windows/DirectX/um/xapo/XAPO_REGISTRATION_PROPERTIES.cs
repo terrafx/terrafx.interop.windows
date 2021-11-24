@@ -6,39 +6,38 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct XAPO_REGISTRATION_PROPERTIES
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct XAPO_REGISTRATION_PROPERTIES
-    {
-        [NativeTypeName("CLSID")]
-        public Guid clsid;
+    [NativeTypeName("CLSID")]
+    public Guid clsid;
 
-        [NativeTypeName("WCHAR [256]")]
-        public fixed ushort FriendlyName[256];
+    [NativeTypeName("WCHAR [256]")]
+    public fixed ushort FriendlyName[256];
 
-        [NativeTypeName("WCHAR [256]")]
-        public fixed ushort CopyrightInfo[256];
+    [NativeTypeName("WCHAR [256]")]
+    public fixed ushort CopyrightInfo[256];
 
-        [NativeTypeName("UINT32")]
-        public uint MajorVersion;
+    [NativeTypeName("UINT32")]
+    public uint MajorVersion;
 
-        [NativeTypeName("UINT32")]
-        public uint MinorVersion;
+    [NativeTypeName("UINT32")]
+    public uint MinorVersion;
 
-        [NativeTypeName("UINT32")]
-        public uint Flags;
+    [NativeTypeName("UINT32")]
+    public uint Flags;
 
-        [NativeTypeName("UINT32")]
-        public uint MinInputBufferCount;
+    [NativeTypeName("UINT32")]
+    public uint MinInputBufferCount;
 
-        [NativeTypeName("UINT32")]
-        public uint MaxInputBufferCount;
+    [NativeTypeName("UINT32")]
+    public uint MaxInputBufferCount;
 
-        [NativeTypeName("UINT32")]
-        public uint MinOutputBufferCount;
+    [NativeTypeName("UINT32")]
+    public uint MinOutputBufferCount;
 
-        [NativeTypeName("UINT32")]
-        public uint MaxOutputBufferCount;
-    }
+    [NativeTypeName("UINT32")]
+    public uint MaxOutputBufferCount;
 }

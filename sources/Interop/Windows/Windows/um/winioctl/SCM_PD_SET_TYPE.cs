@@ -3,12 +3,11 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SCM_PD_SET_TYPE
 {
-    public enum SCM_PD_SET_TYPE
-    {
-        ScmPhysicalDeviceSet_Descriptor = 0,
-        ScmPhysicalDeviceSet_IsSupported,
-        ScmPhysicalDeviceSet_Max,
-    }
+    ScmPhysicalDeviceSet_Descriptor = 0,
+    ScmPhysicalDeviceSet_IsSupported,
+    ScmPhysicalDeviceSet_Max,
 }

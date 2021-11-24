@@ -3,17 +3,16 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct AXISINFOA
 {
-    public unsafe partial struct AXISINFOA
-    {
-        [NativeTypeName("LONG")]
-        public int axMinValue;
+    [NativeTypeName("LONG")]
+    public int axMinValue;
 
-        [NativeTypeName("LONG")]
-        public int axMaxValue;
+    [NativeTypeName("LONG")]
+    public int axMaxValue;
 
-        [NativeTypeName("BYTE [16]")]
-        public fixed byte axAxisName[16];
-    }
+    [NativeTypeName("BYTE [16]")]
+    public fixed byte axAxisName[16];
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TOKEN_MANDATORY_POLICY" /> struct.</summary>
+public static unsafe partial class TOKEN_MANDATORY_POLICYTests
 {
-    /// <summary>Provides validation of the <see cref="TOKEN_MANDATORY_POLICY" /> struct.</summary>
-    public static unsafe partial class TOKEN_MANDATORY_POLICYTests
+    /// <summary>Validates that the <see cref="TOKEN_MANDATORY_POLICY" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TOKEN_MANDATORY_POLICY" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TOKEN_MANDATORY_POLICY>(), Is.EqualTo(sizeof(TOKEN_MANDATORY_POLICY)));
-        }
+        Assert.That(Marshal.SizeOf<TOKEN_MANDATORY_POLICY>(), Is.EqualTo(sizeof(TOKEN_MANDATORY_POLICY)));
+    }
 
-        /// <summary>Validates that the <see cref="TOKEN_MANDATORY_POLICY" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TOKEN_MANDATORY_POLICY).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TOKEN_MANDATORY_POLICY" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TOKEN_MANDATORY_POLICY).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TOKEN_MANDATORY_POLICY" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(TOKEN_MANDATORY_POLICY), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="TOKEN_MANDATORY_POLICY" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(TOKEN_MANDATORY_POLICY), Is.EqualTo(4));
     }
 }

@@ -7,116 +7,115 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("70528852-2F26-4AEA-8C96-215150578932")]
+[NativeTypeName("struct ITfDisplayAttributeInfo : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ITfDisplayAttributeInfo : ITfDisplayAttributeInfo.Interface
 {
-    [Guid("70528852-2F26-4AEA-8C96-215150578932")]
-    [NativeTypeName("struct ITfDisplayAttributeInfo : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfDisplayAttributeInfo : ITfDisplayAttributeInfo.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ITfDisplayAttributeInfo*, Guid*, void**, int>)(lpVtbl[0]))((ITfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ITfDisplayAttributeInfo*, Guid*, void**, int>)(lpVtbl[0]))((ITfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ITfDisplayAttributeInfo*, uint>)(lpVtbl[1]))((ITfDisplayAttributeInfo*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ITfDisplayAttributeInfo*, uint>)(lpVtbl[1]))((ITfDisplayAttributeInfo*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ITfDisplayAttributeInfo*, uint>)(lpVtbl[2]))((ITfDisplayAttributeInfo*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ITfDisplayAttributeInfo*, uint>)(lpVtbl[2]))((ITfDisplayAttributeInfo*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetGUID(Guid* pguid)
+    {
+        return ((delegate* unmanaged<ITfDisplayAttributeInfo*, Guid*, int>)(lpVtbl[3]))((ITfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), pguid);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDesc)
+    {
+        return ((delegate* unmanaged<ITfDisplayAttributeInfo*, ushort**, int>)(lpVtbl[4]))((ITfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), pbstrDesc);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetAttributeInfo(TF_DISPLAYATTRIBUTE* pda)
+    {
+        return ((delegate* unmanaged<ITfDisplayAttributeInfo*, TF_DISPLAYATTRIBUTE*, int>)(lpVtbl[5]))((ITfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), pda);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT SetAttributeInfo([NativeTypeName("const TF_DISPLAYATTRIBUTE *")] TF_DISPLAYATTRIBUTE* pda)
+    {
+        return ((delegate* unmanaged<ITfDisplayAttributeInfo*, TF_DISPLAYATTRIBUTE*, int>)(lpVtbl[6]))((ITfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), pda);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT Reset()
+    {
+        return ((delegate* unmanaged<ITfDisplayAttributeInfo*, int>)(lpVtbl[7]))((ITfDisplayAttributeInfo*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetGUID(Guid* pguid)
-        {
-            return ((delegate* unmanaged<ITfDisplayAttributeInfo*, Guid*, int>)(lpVtbl[3]))((ITfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), pguid);
-        }
+        HRESULT GetGUID(Guid* pguid);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDesc)
-        {
-            return ((delegate* unmanaged<ITfDisplayAttributeInfo*, ushort**, int>)(lpVtbl[4]))((ITfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), pbstrDesc);
-        }
+        HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDesc);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetAttributeInfo(TF_DISPLAYATTRIBUTE* pda)
-        {
-            return ((delegate* unmanaged<ITfDisplayAttributeInfo*, TF_DISPLAYATTRIBUTE*, int>)(lpVtbl[5]))((ITfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), pda);
-        }
+        HRESULT GetAttributeInfo(TF_DISPLAYATTRIBUTE* pda);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT SetAttributeInfo([NativeTypeName("const TF_DISPLAYATTRIBUTE *")] TF_DISPLAYATTRIBUTE* pda)
-        {
-            return ((delegate* unmanaged<ITfDisplayAttributeInfo*, TF_DISPLAYATTRIBUTE*, int>)(lpVtbl[6]))((ITfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), pda);
-        }
+        HRESULT SetAttributeInfo([NativeTypeName("const TF_DISPLAYATTRIBUTE *")] TF_DISPLAYATTRIBUTE* pda);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT Reset()
-        {
-            return ((delegate* unmanaged<ITfDisplayAttributeInfo*, int>)(lpVtbl[7]))((ITfDisplayAttributeInfo*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Reset();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetGUID(Guid* pguid);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfDisplayAttributeInfo*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDesc);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfDisplayAttributeInfo*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT GetAttributeInfo(TF_DISPLAYATTRIBUTE* pda);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfDisplayAttributeInfo*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT SetAttributeInfo([NativeTypeName("const TF_DISPLAYATTRIBUTE *")] TF_DISPLAYATTRIBUTE* pda);
+        [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfDisplayAttributeInfo*, Guid*, int> GetGUID;
 
-            [VtblIndex(7)]
-            HRESULT Reset();
-        }
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfDisplayAttributeInfo*, ushort**, int> GetDescription;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfDisplayAttributeInfo*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (TF_DISPLAYATTRIBUTE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfDisplayAttributeInfo*, TF_DISPLAYATTRIBUTE*, int> GetAttributeInfo;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfDisplayAttributeInfo*, uint> AddRef;
+        [NativeTypeName("HRESULT (const TF_DISPLAYATTRIBUTE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfDisplayAttributeInfo*, TF_DISPLAYATTRIBUTE*, int> SetAttributeInfo;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfDisplayAttributeInfo*, uint> Release;
-
-            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfDisplayAttributeInfo*, Guid*, int> GetGUID;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfDisplayAttributeInfo*, ushort**, int> GetDescription;
-
-            [NativeTypeName("HRESULT (TF_DISPLAYATTRIBUTE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfDisplayAttributeInfo*, TF_DISPLAYATTRIBUTE*, int> GetAttributeInfo;
-
-            [NativeTypeName("HRESULT (const TF_DISPLAYATTRIBUTE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfDisplayAttributeInfo*, TF_DISPLAYATTRIBUTE*, int> SetAttributeInfo;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfDisplayAttributeInfo*, int> Reset;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfDisplayAttributeInfo*, int> Reset;
     }
 }

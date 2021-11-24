@@ -3,35 +3,34 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct MSGBOXPARAMSW
 {
-    public unsafe partial struct MSGBOXPARAMSW
-    {
-        public uint cbSize;
+    public uint cbSize;
 
-        public HWND hwndOwner;
+    public HWND hwndOwner;
 
-        public HINSTANCE hInstance;
+    public HINSTANCE hInstance;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* lpszText;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* lpszText;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* lpszCaption;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* lpszCaption;
 
-        [NativeTypeName("DWORD")]
-        public uint dwStyle;
+    [NativeTypeName("DWORD")]
+    public uint dwStyle;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* lpszIcon;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* lpszIcon;
 
-        [NativeTypeName("DWORD_PTR")]
-        public nuint dwContextHelpId;
+    [NativeTypeName("DWORD_PTR")]
+    public nuint dwContextHelpId;
 
-        [NativeTypeName("MSGBOXCALLBACK")]
-        public delegate* unmanaged<HELPINFO*, void> lpfnMsgBoxCallback;
+    [NativeTypeName("MSGBOXCALLBACK")]
+    public delegate* unmanaged<HELPINFO*, void> lpfnMsgBoxCallback;
 
-        [NativeTypeName("DWORD")]
-        public uint dwLanguageId;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwLanguageId;
 }

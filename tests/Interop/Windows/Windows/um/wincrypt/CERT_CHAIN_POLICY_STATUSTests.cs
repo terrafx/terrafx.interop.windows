@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CERT_CHAIN_POLICY_STATUS" /> struct.</summary>
+public static unsafe partial class CERT_CHAIN_POLICY_STATUSTests
 {
-    /// <summary>Provides validation of the <see cref="CERT_CHAIN_POLICY_STATUS" /> struct.</summary>
-    public static unsafe partial class CERT_CHAIN_POLICY_STATUSTests
+    /// <summary>Validates that the <see cref="CERT_CHAIN_POLICY_STATUS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CERT_CHAIN_POLICY_STATUS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CERT_CHAIN_POLICY_STATUS>(), Is.EqualTo(sizeof(CERT_CHAIN_POLICY_STATUS)));
-        }
+        Assert.That(Marshal.SizeOf<CERT_CHAIN_POLICY_STATUS>(), Is.EqualTo(sizeof(CERT_CHAIN_POLICY_STATUS)));
+    }
 
-        /// <summary>Validates that the <see cref="CERT_CHAIN_POLICY_STATUS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CERT_CHAIN_POLICY_STATUS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CERT_CHAIN_POLICY_STATUS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CERT_CHAIN_POLICY_STATUS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CERT_CHAIN_POLICY_STATUS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CERT_CHAIN_POLICY_STATUS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CERT_CHAIN_POLICY_STATUS), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(CERT_CHAIN_POLICY_STATUS), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(CERT_CHAIN_POLICY_STATUS), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(CERT_CHAIN_POLICY_STATUS), Is.EqualTo(20));
         }
     }
 }

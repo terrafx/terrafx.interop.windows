@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum WTS_CONTEXTFLAGS
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum WTS_CONTEXTFLAGS
-    {
-        WTSCF_DEFAULT = 0,
-        WTSCF_APPSTYLE = 0x1,
-        WTSCF_SQUARE = 0x2,
-        WTSCF_WIDE = 0x4,
-        WTSCF_FAST = 0x8,
-    }
+    WTSCF_DEFAULT = 0,
+    WTSCF_APPSTYLE = 0x1,
+    WTSCF_SQUARE = 0x2,
+    WTSCF_WIDE = 0x4,
+    WTSCF_FAST = 0x8,
 }

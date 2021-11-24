@@ -8,38 +8,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PRJ_NOTIFICATION_MAPPING" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.17763.0")]
+public static unsafe partial class PRJ_NOTIFICATION_MAPPINGTests
 {
-    /// <summary>Provides validation of the <see cref="PRJ_NOTIFICATION_MAPPING" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0.17763.0")]
-    public static unsafe partial class PRJ_NOTIFICATION_MAPPINGTests
+    /// <summary>Validates that the <see cref="PRJ_NOTIFICATION_MAPPING" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PRJ_NOTIFICATION_MAPPING" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PRJ_NOTIFICATION_MAPPING>(), Is.EqualTo(sizeof(PRJ_NOTIFICATION_MAPPING)));
-        }
+        Assert.That(Marshal.SizeOf<PRJ_NOTIFICATION_MAPPING>(), Is.EqualTo(sizeof(PRJ_NOTIFICATION_MAPPING)));
+    }
 
-        /// <summary>Validates that the <see cref="PRJ_NOTIFICATION_MAPPING" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PRJ_NOTIFICATION_MAPPING).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PRJ_NOTIFICATION_MAPPING" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PRJ_NOTIFICATION_MAPPING).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PRJ_NOTIFICATION_MAPPING" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="PRJ_NOTIFICATION_MAPPING" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(PRJ_NOTIFICATION_MAPPING), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(PRJ_NOTIFICATION_MAPPING), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(PRJ_NOTIFICATION_MAPPING), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(PRJ_NOTIFICATION_MAPPING), Is.EqualTo(8));
         }
     }
 }

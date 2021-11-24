@@ -3,46 +3,45 @@
 // Ported from um/ocidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct QACONTAINER
 {
-    public unsafe partial struct QACONTAINER
-    {
-        [NativeTypeName("ULONG")]
-        public uint cbSize;
+    [NativeTypeName("ULONG")]
+    public uint cbSize;
 
-        public IOleClientSite* pClientSite;
+    public IOleClientSite* pClientSite;
 
-        public IAdviseSinkEx* pAdviseSink;
+    public IAdviseSinkEx* pAdviseSink;
 
-        public IPropertyNotifySink* pPropertyNotifySink;
+    public IPropertyNotifySink* pPropertyNotifySink;
 
-        public IUnknown* pUnkEventSink;
+    public IUnknown* pUnkEventSink;
 
-        [NativeTypeName("DWORD")]
-        public uint dwAmbientFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwAmbientFlags;
 
-        [NativeTypeName("OLE_COLOR")]
-        public uint colorFore;
+    [NativeTypeName("OLE_COLOR")]
+    public uint colorFore;
 
-        [NativeTypeName("OLE_COLOR")]
-        public uint colorBack;
+    [NativeTypeName("OLE_COLOR")]
+    public uint colorBack;
 
-        public IFont* pFont;
+    public IFont* pFont;
 
-        public IOleUndoManager* pUndoMgr;
+    public IOleUndoManager* pUndoMgr;
 
-        [NativeTypeName("DWORD")]
-        public uint dwAppearance;
+    [NativeTypeName("DWORD")]
+    public uint dwAppearance;
 
-        [NativeTypeName("LONG")]
-        public int lcid;
+    [NativeTypeName("LONG")]
+    public int lcid;
 
-        public HPALETTE hpal;
+    public HPALETTE hpal;
 
-        public IBindHost* pBindHost;
+    public IBindHost* pBindHost;
 
-        public IOleControlSite* pOleControlSite;
+    public IOleControlSite* pOleControlSite;
 
-        public IServiceProvider* pServiceProvider;
-    }
+    public IServiceProvider* pServiceProvider;
 }

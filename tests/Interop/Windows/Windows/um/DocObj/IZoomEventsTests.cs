@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IZoomEvents" /> struct.</summary>
+public static unsafe partial class IZoomEventsTests
 {
-    /// <summary>Provides validation of the <see cref="IZoomEvents" /> struct.</summary>
-    public static unsafe partial class IZoomEventsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IZoomEvents" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IZoomEvents" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IZoomEvents).GUID, Is.EqualTo(IID_IZoomEvents));
-        }
+        Assert.That(typeof(IZoomEvents).GUID, Is.EqualTo(IID_IZoomEvents));
+    }
 
-        /// <summary>Validates that the <see cref="IZoomEvents" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IZoomEvents>(), Is.EqualTo(sizeof(IZoomEvents)));
-        }
+    /// <summary>Validates that the <see cref="IZoomEvents" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IZoomEvents>(), Is.EqualTo(sizeof(IZoomEvents)));
+    }
 
-        /// <summary>Validates that the <see cref="IZoomEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IZoomEvents).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IZoomEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IZoomEvents).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IZoomEvents" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IZoomEvents" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IZoomEvents), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IZoomEvents), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IZoomEvents), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IZoomEvents), Is.EqualTo(4));
         }
     }
 }

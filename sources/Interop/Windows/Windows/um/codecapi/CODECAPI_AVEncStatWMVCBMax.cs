@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("E976BEF8-00FE-44B4-B625-8F238BC03499")]
+public partial struct CODECAPI_AVEncStatWMVCBMax
 {
-    [Guid("E976BEF8-00FE-44B4-B625-8F238BC03499")]
-    public partial struct CODECAPI_AVEncStatWMVCBMax
-    {
-    }
 }

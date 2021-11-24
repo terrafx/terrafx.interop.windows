@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP" /> struct.</summary>
+public static unsafe partial class DEVICEDUMP_STORAGESTACK_PUBLIC_DUMPTests
 {
-    /// <summary>Provides validation of the <see cref="DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP" /> struct.</summary>
-    public static unsafe partial class DEVICEDUMP_STORAGESTACK_PUBLIC_DUMPTests
+    /// <summary>Validates that the <see cref="DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP>(), Is.EqualTo(sizeof(DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP)));
-        }
+        Assert.That(Marshal.SizeOf<DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP>(), Is.EqualTo(sizeof(DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP)));
+    }
 
-        /// <summary>Validates that the <see cref="DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP), Is.EqualTo(96));
-        }
+    /// <summary>Validates that the <see cref="DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP), Is.EqualTo(96));
     }
 }

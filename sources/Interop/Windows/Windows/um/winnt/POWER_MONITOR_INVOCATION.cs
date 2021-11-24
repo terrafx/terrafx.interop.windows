@@ -3,13 +3,12 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct POWER_MONITOR_INVOCATION
-    {
-        [NativeTypeName("BOOLEAN")]
-        public byte Console;
+namespace TerraFX.Interop.Windows;
 
-        public POWER_MONITOR_REQUEST_REASON RequestReason;
-    }
+public partial struct POWER_MONITOR_INVOCATION
+{
+    [NativeTypeName("BOOLEAN")]
+    public byte Console;
+
+    public POWER_MONITOR_REQUEST_REASON RequestReason;
 }

@@ -3,19 +3,18 @@
 // Ported from um/objidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MKSYS
 {
-    public enum MKSYS
-    {
-        MKSYS_NONE = 0,
-        MKSYS_GENERICCOMPOSITE = 1,
-        MKSYS_FILEMONIKER = 2,
-        MKSYS_ANTIMONIKER = 3,
-        MKSYS_ITEMMONIKER = 4,
-        MKSYS_POINTERMONIKER = 5,
-        MKSYS_CLASSMONIKER = 7,
-        MKSYS_OBJREFMONIKER = 8,
-        MKSYS_SESSIONMONIKER = 9,
-        MKSYS_LUAMONIKER = 10,
-    }
+    MKSYS_NONE = 0,
+    MKSYS_GENERICCOMPOSITE = 1,
+    MKSYS_FILEMONIKER = 2,
+    MKSYS_ANTIMONIKER = 3,
+    MKSYS_ITEMMONIKER = 4,
+    MKSYS_POINTERMONIKER = 5,
+    MKSYS_CLASSMONIKER = 7,
+    MKSYS_OBJREFMONIKER = 8,
+    MKSYS_SESSIONMONIKER = 9,
+    MKSYS_LUAMONIKER = 10,
 }

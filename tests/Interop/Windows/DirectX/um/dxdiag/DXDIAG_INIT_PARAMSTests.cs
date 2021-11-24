@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DXDIAG_INIT_PARAMS" /> struct.</summary>
+public static unsafe partial class DXDIAG_INIT_PARAMSTests
 {
-    /// <summary>Provides validation of the <see cref="DXDIAG_INIT_PARAMS" /> struct.</summary>
-    public static unsafe partial class DXDIAG_INIT_PARAMSTests
+    /// <summary>Validates that the <see cref="DXDIAG_INIT_PARAMS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DXDIAG_INIT_PARAMS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DXDIAG_INIT_PARAMS>(), Is.EqualTo(sizeof(DXDIAG_INIT_PARAMS)));
-        }
+        Assert.That(Marshal.SizeOf<DXDIAG_INIT_PARAMS>(), Is.EqualTo(sizeof(DXDIAG_INIT_PARAMS)));
+    }
 
-        /// <summary>Validates that the <see cref="DXDIAG_INIT_PARAMS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DXDIAG_INIT_PARAMS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DXDIAG_INIT_PARAMS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DXDIAG_INIT_PARAMS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DXDIAG_INIT_PARAMS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DXDIAG_INIT_PARAMS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DXDIAG_INIT_PARAMS), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(DXDIAG_INIT_PARAMS), Is.EqualTo(16));
-            }
+            Assert.That(sizeof(DXDIAG_INIT_PARAMS), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(DXDIAG_INIT_PARAMS), Is.EqualTo(16));
         }
     }
 }

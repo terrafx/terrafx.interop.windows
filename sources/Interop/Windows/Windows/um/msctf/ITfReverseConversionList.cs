@@ -7,77 +7,76 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("151D69F0-86F4-4674-B721-56911E797F47")]
+[NativeTypeName("struct ITfReverseConversionList : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ITfReverseConversionList : ITfReverseConversionList.Interface
 {
-    [Guid("151D69F0-86F4-4674-B721-56911E797F47")]
-    [NativeTypeName("struct ITfReverseConversionList : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfReverseConversionList : ITfReverseConversionList.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ITfReverseConversionList*, Guid*, void**, int>)(lpVtbl[0]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ITfReverseConversionList*, Guid*, void**, int>)(lpVtbl[0]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ITfReverseConversionList*, uint>)(lpVtbl[1]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ITfReverseConversionList*, uint>)(lpVtbl[1]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ITfReverseConversionList*, uint>)(lpVtbl[2]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ITfReverseConversionList*, uint>)(lpVtbl[2]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetLength(uint* puIndex)
+    {
+        return ((delegate* unmanaged<ITfReverseConversionList*, uint*, int>)(lpVtbl[3]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this), puIndex);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetString(uint uIndex, [NativeTypeName("BSTR *")] ushort** pbstr)
+    {
+        return ((delegate* unmanaged<ITfReverseConversionList*, uint, ushort**, int>)(lpVtbl[4]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this), uIndex, pbstr);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetLength(uint* puIndex)
-        {
-            return ((delegate* unmanaged<ITfReverseConversionList*, uint*, int>)(lpVtbl[3]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this), puIndex);
-        }
+        HRESULT GetLength(uint* puIndex);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetString(uint uIndex, [NativeTypeName("BSTR *")] ushort** pbstr)
-        {
-            return ((delegate* unmanaged<ITfReverseConversionList*, uint, ushort**, int>)(lpVtbl[4]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this), uIndex, pbstr);
-        }
+        HRESULT GetString(uint uIndex, [NativeTypeName("BSTR *")] ushort** pbstr);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetLength(uint* puIndex);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfReverseConversionList*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetString(uint uIndex, [NativeTypeName("BSTR *")] ushort** pbstr);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfReverseConversionList*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfReverseConversionList*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfReverseConversionList*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfReverseConversionList*, uint> AddRef;
+        [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfReverseConversionList*, uint*, int> GetLength;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfReverseConversionList*, uint> Release;
-
-            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfReverseConversionList*, uint*, int> GetLength;
-
-            [NativeTypeName("HRESULT (UINT, BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfReverseConversionList*, uint, ushort**, int> GetString;
-        }
+        [NativeTypeName("HRESULT (UINT, BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfReverseConversionList*, uint, ushort**, int> GetString;
     }
 }

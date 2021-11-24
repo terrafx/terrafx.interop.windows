@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct D3D11_OMAC
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct D3D11_OMAC
-    {
-        [NativeTypeName("BYTE [16]")]
-        public fixed byte Omac[16];
-    }
+    [NativeTypeName("BYTE [16]")]
+    public fixed byte Omac[16];
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("D862212A-2015-45DD-9A32-1B3AA88205A0")]
+public partial struct CODECAPI_AVEncMP12MuxTargetPacketizer
 {
-    [Guid("D862212A-2015-45DD-9A32-1B3AA88205A0")]
-    public partial struct CODECAPI_AVEncMP12MuxTargetPacketizer
-    {
-    }
 }

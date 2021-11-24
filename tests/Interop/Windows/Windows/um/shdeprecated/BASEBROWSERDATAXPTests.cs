@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="BASEBROWSERDATAXP" /> struct.</summary>
+public static unsafe partial class BASEBROWSERDATAXPTests
 {
-    /// <summary>Provides validation of the <see cref="BASEBROWSERDATAXP" /> struct.</summary>
-    public static unsafe partial class BASEBROWSERDATAXPTests
+    /// <summary>Validates that the <see cref="BASEBROWSERDATAXP" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="BASEBROWSERDATAXP" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<BASEBROWSERDATAXP>(), Is.EqualTo(sizeof(BASEBROWSERDATAXP)));
-        }
+        Assert.That(Marshal.SizeOf<BASEBROWSERDATAXP>(), Is.EqualTo(sizeof(BASEBROWSERDATAXP)));
+    }
 
-        /// <summary>Validates that the <see cref="BASEBROWSERDATAXP" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(BASEBROWSERDATAXP).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="BASEBROWSERDATAXP" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(BASEBROWSERDATAXP).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="BASEBROWSERDATAXP" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="BASEBROWSERDATAXP" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(BASEBROWSERDATAXP), Is.EqualTo(208));
-            }
-            else
-            {
-                Assert.That(sizeof(BASEBROWSERDATAXP), Is.EqualTo(128));
-            }
+            Assert.That(sizeof(BASEBROWSERDATAXP), Is.EqualTo(208));
+        }
+        else
+        {
+            Assert.That(sizeof(BASEBROWSERDATAXP), Is.EqualTo(128));
         }
     }
 }

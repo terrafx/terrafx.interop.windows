@@ -5,20 +5,19 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SP_PROPSHEETPAGE_REQUEST32
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SP_PROPSHEETPAGE_REQUEST32
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("DWORD")]
-        public uint PageRequested;
+    [NativeTypeName("DWORD")]
+    public uint PageRequested;
 
-        public HDEVINFO DeviceInfoSet;
+    public HDEVINFO DeviceInfoSet;
 
-        [NativeTypeName("PSP_DEVINFO_DATA")]
-        public SP_DEVINFO_DATA32* DeviceInfoData;
-    }
+    [NativeTypeName("PSP_DEVINFO_DATA")]
+    public SP_DEVINFO_DATA32* DeviceInfoData;
 }

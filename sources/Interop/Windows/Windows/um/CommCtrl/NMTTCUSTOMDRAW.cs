@@ -3,12 +3,11 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct NMTTCUSTOMDRAW
-    {
-        public NMCUSTOMDRAW nmcd;
+namespace TerraFX.Interop.Windows;
 
-        public uint uDrawFlags;
-    }
+public partial struct NMTTCUSTOMDRAW
+{
+    public NMCUSTOMDRAW nmcd;
+
+    public uint uDrawFlags;
 }

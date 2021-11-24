@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IAudioPeakMeter" /> struct.</summary>
+public static unsafe partial class IAudioPeakMeterTests
 {
-    /// <summary>Provides validation of the <see cref="IAudioPeakMeter" /> struct.</summary>
-    public static unsafe partial class IAudioPeakMeterTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAudioPeakMeter" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAudioPeakMeter" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAudioPeakMeter).GUID, Is.EqualTo(IID_IAudioPeakMeter));
-        }
+        Assert.That(typeof(IAudioPeakMeter).GUID, Is.EqualTo(IID_IAudioPeakMeter));
+    }
 
-        /// <summary>Validates that the <see cref="IAudioPeakMeter" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IAudioPeakMeter>(), Is.EqualTo(sizeof(IAudioPeakMeter)));
-        }
+    /// <summary>Validates that the <see cref="IAudioPeakMeter" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IAudioPeakMeter>(), Is.EqualTo(sizeof(IAudioPeakMeter)));
+    }
 
-        /// <summary>Validates that the <see cref="IAudioPeakMeter" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IAudioPeakMeter).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IAudioPeakMeter" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IAudioPeakMeter).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IAudioPeakMeter" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IAudioPeakMeter" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IAudioPeakMeter), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IAudioPeakMeter), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IAudioPeakMeter), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IAudioPeakMeter), Is.EqualTo(4));
         }
     }
 }

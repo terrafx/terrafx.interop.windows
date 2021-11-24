@@ -7,123 +7,122 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3ACF075F-71DB-4AFA-81F0-3FC4FDF2A5B8")]
+[NativeTypeName("struct IFileSystemBindData2 : IFileSystemBindData")]
+[NativeInheritance("IFileSystemBindData")]
+public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interface
 {
-    [Guid("3ACF075F-71DB-4AFA-81F0-3FC4FDF2A5B8")]
-    [NativeTypeName("struct IFileSystemBindData2 : IFileSystemBindData")]
-    [NativeInheritance("IFileSystemBindData")]
-    public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IFileSystemBindData2*, Guid*, void**, int>)(lpVtbl[0]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IFileSystemBindData2*, Guid*, void**, int>)(lpVtbl[0]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IFileSystemBindData2*, uint>)(lpVtbl[1]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IFileSystemBindData2*, uint>)(lpVtbl[1]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IFileSystemBindData2*, uint>)(lpVtbl[2]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IFileSystemBindData2*, uint>)(lpVtbl[2]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT SetFindData([NativeTypeName("const WIN32_FIND_DATAW *")] WIN32_FIND_DATAW* pfd)
+    {
+        return ((delegate* unmanaged<IFileSystemBindData2*, WIN32_FIND_DATAW*, int>)(lpVtbl[3]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), pfd);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT SetFindData([NativeTypeName("const WIN32_FIND_DATAW *")] WIN32_FIND_DATAW* pfd)
-        {
-            return ((delegate* unmanaged<IFileSystemBindData2*, WIN32_FIND_DATAW*, int>)(lpVtbl[3]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), pfd);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetFindData(WIN32_FIND_DATAW* pfd)
+    {
+        return ((delegate* unmanaged<IFileSystemBindData2*, WIN32_FIND_DATAW*, int>)(lpVtbl[4]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), pfd);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT GetFindData(WIN32_FIND_DATAW* pfd)
-        {
-            return ((delegate* unmanaged<IFileSystemBindData2*, WIN32_FIND_DATAW*, int>)(lpVtbl[4]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), pfd);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT SetFileID(LARGE_INTEGER liFileID)
+    {
+        return ((delegate* unmanaged<IFileSystemBindData2*, LARGE_INTEGER, int>)(lpVtbl[5]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), liFileID);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetFileID(LARGE_INTEGER* pliFileID)
+    {
+        return ((delegate* unmanaged<IFileSystemBindData2*, LARGE_INTEGER*, int>)(lpVtbl[6]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), pliFileID);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT SetJunctionCLSID([NativeTypeName("const IID &")] Guid* clsid)
+    {
+        return ((delegate* unmanaged<IFileSystemBindData2*, Guid*, int>)(lpVtbl[7]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), clsid);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT GetJunctionCLSID([NativeTypeName("CLSID *")] Guid* pclsid)
+    {
+        return ((delegate* unmanaged<IFileSystemBindData2*, Guid*, int>)(lpVtbl[8]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), pclsid);
+    }
+
+    public interface Interface : IFileSystemBindData.Interface
+    {
         [VtblIndex(5)]
-        public HRESULT SetFileID(LARGE_INTEGER liFileID)
-        {
-            return ((delegate* unmanaged<IFileSystemBindData2*, LARGE_INTEGER, int>)(lpVtbl[5]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), liFileID);
-        }
+        HRESULT SetFileID(LARGE_INTEGER liFileID);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetFileID(LARGE_INTEGER* pliFileID)
-        {
-            return ((delegate* unmanaged<IFileSystemBindData2*, LARGE_INTEGER*, int>)(lpVtbl[6]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), pliFileID);
-        }
+        HRESULT GetFileID(LARGE_INTEGER* pliFileID);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT SetJunctionCLSID([NativeTypeName("const IID &")] Guid* clsid)
-        {
-            return ((delegate* unmanaged<IFileSystemBindData2*, Guid*, int>)(lpVtbl[7]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), clsid);
-        }
+        HRESULT SetJunctionCLSID([NativeTypeName("const IID &")] Guid* clsid);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT GetJunctionCLSID([NativeTypeName("CLSID *")] Guid* pclsid)
-        {
-            return ((delegate* unmanaged<IFileSystemBindData2*, Guid*, int>)(lpVtbl[8]))((IFileSystemBindData2*)Unsafe.AsPointer(ref this), pclsid);
-        }
+        HRESULT GetJunctionCLSID([NativeTypeName("CLSID *")] Guid* pclsid);
+    }
 
-        public interface Interface : IFileSystemBindData.Interface
-        {
-            [VtblIndex(5)]
-            HRESULT SetFileID(LARGE_INTEGER liFileID);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileSystemBindData2*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(6)]
-            HRESULT GetFileID(LARGE_INTEGER* pliFileID);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileSystemBindData2*, uint> AddRef;
 
-            [VtblIndex(7)]
-            HRESULT SetJunctionCLSID([NativeTypeName("const IID &")] Guid* clsid);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileSystemBindData2*, uint> Release;
 
-            [VtblIndex(8)]
-            HRESULT GetJunctionCLSID([NativeTypeName("CLSID *")] Guid* pclsid);
-        }
+        [NativeTypeName("HRESULT (const WIN32_FIND_DATAW *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileSystemBindData2*, WIN32_FIND_DATAW*, int> SetFindData;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileSystemBindData2*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (WIN32_FIND_DATAW *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileSystemBindData2*, WIN32_FIND_DATAW*, int> GetFindData;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileSystemBindData2*, uint> AddRef;
+        [NativeTypeName("HRESULT (LARGE_INTEGER) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileSystemBindData2*, LARGE_INTEGER, int> SetFileID;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileSystemBindData2*, uint> Release;
+        [NativeTypeName("HRESULT (LARGE_INTEGER *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileSystemBindData2*, LARGE_INTEGER*, int> GetFileID;
 
-            [NativeTypeName("HRESULT (const WIN32_FIND_DATAW *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileSystemBindData2*, WIN32_FIND_DATAW*, int> SetFindData;
+        [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileSystemBindData2*, Guid*, int> SetJunctionCLSID;
 
-            [NativeTypeName("HRESULT (WIN32_FIND_DATAW *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileSystemBindData2*, WIN32_FIND_DATAW*, int> GetFindData;
-
-            [NativeTypeName("HRESULT (LARGE_INTEGER) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileSystemBindData2*, LARGE_INTEGER, int> SetFileID;
-
-            [NativeTypeName("HRESULT (LARGE_INTEGER *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileSystemBindData2*, LARGE_INTEGER*, int> GetFileID;
-
-            [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileSystemBindData2*, Guid*, int> SetJunctionCLSID;
-
-            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileSystemBindData2*, Guid*, int> GetJunctionCLSID;
-        }
+        [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileSystemBindData2*, Guid*, int> GetJunctionCLSID;
     }
 }

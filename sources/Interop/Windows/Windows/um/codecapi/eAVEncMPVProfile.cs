@@ -3,14 +3,13 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum eAVEncMPVProfile
 {
-    public enum eAVEncMPVProfile
-    {
-        eAVEncMPVProfile_unknown = 0,
-        eAVEncMPVProfile_Simple = 1,
-        eAVEncMPVProfile_Main = 2,
-        eAVEncMPVProfile_High = 3,
-        eAVEncMPVProfile_422 = 4,
-    }
+    eAVEncMPVProfile_unknown = 0,
+    eAVEncMPVProfile_Simple = 1,
+    eAVEncMPVProfile_Main = 2,
+    eAVEncMPVProfile_High = 3,
+    eAVEncMPVProfile_422 = 4,
 }

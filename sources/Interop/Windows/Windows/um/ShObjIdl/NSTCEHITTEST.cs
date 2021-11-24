@@ -3,18 +3,17 @@
 // Ported from um/ShObjIdl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum NSTCEHITTEST
 {
-    public enum NSTCEHITTEST
-    {
-        NSTCEHT_NOWHERE = 0x1,
-        NSTCEHT_ONITEMICON = 0x2,
-        NSTCEHT_ONITEMLABEL = 0x4,
-        NSTCEHT_ONITEMINDENT = 0x8,
-        NSTCEHT_ONITEMBUTTON = 0x10,
-        NSTCEHT_ONITEMRIGHT = 0x20,
-        NSTCEHT_ONITEMSTATEICON = 0x40,
-        NSTCEHT_ONITEM = 0x46,
-        NSTCEHT_ONITEMTABBUTTON = 0x1000,
-    }
+    NSTCEHT_NOWHERE = 0x1,
+    NSTCEHT_ONITEMICON = 0x2,
+    NSTCEHT_ONITEMLABEL = 0x4,
+    NSTCEHT_ONITEMINDENT = 0x8,
+    NSTCEHT_ONITEMBUTTON = 0x10,
+    NSTCEHT_ONITEMRIGHT = 0x20,
+    NSTCEHT_ONITEMSTATEICON = 0x40,
+    NSTCEHT_ONITEM = 0x46,
+    NSTCEHT_ONITEMTABBUTTON = 0x1000,
 }

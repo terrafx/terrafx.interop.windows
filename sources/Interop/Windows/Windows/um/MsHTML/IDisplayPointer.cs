@@ -7,298 +7,297 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3050F69E-98B5-11CF-BB82-00AA00BDCE0B")]
+[NativeTypeName("struct IDisplayPointer : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface
 {
-    [Guid("3050F69E-98B5-11CF-BB82-00AA00BDCE0B")]
-    [NativeTypeName("struct IDisplayPointer : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDisplayPointer*, Guid*, void**, int>)(lpVtbl[0]))((IDisplayPointer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDisplayPointer*, Guid*, void**, int>)(lpVtbl[0]))((IDisplayPointer*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDisplayPointer*, uint>)(lpVtbl[1]))((IDisplayPointer*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDisplayPointer*, uint>)(lpVtbl[1]))((IDisplayPointer*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDisplayPointer*, uint>)(lpVtbl[2]))((IDisplayPointer*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDisplayPointer*, uint>)(lpVtbl[2]))((IDisplayPointer*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT MoveToPoint(POINT ptPoint, COORD_SYSTEM eCoordSystem, IHTMLElement* pElementContext, [NativeTypeName("DWORD")] uint dwHitTestOptions, [NativeTypeName("DWORD *")] uint* pdwHitTestResults)
+    {
+        return ((delegate* unmanaged<IDisplayPointer*, POINT, COORD_SYSTEM, IHTMLElement*, uint, uint*, int>)(lpVtbl[3]))((IDisplayPointer*)Unsafe.AsPointer(ref this), ptPoint, eCoordSystem, pElementContext, dwHitTestOptions, pdwHitTestResults);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT MoveUnit(DISPLAY_MOVEUNIT eMoveUnit, [NativeTypeName("LONG")] int lXPos)
+    {
+        return ((delegate* unmanaged<IDisplayPointer*, DISPLAY_MOVEUNIT, int, int>)(lpVtbl[4]))((IDisplayPointer*)Unsafe.AsPointer(ref this), eMoveUnit, lXPos);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT PositionMarkupPointer(IMarkupPointer* pMarkupPointer)
+    {
+        return ((delegate* unmanaged<IDisplayPointer*, IMarkupPointer*, int>)(lpVtbl[5]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pMarkupPointer);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT MoveToPointer(IDisplayPointer* pDispPointer)
+    {
+        return ((delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, int>)(lpVtbl[6]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pDispPointer);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT SetPointerGravity(POINTER_GRAVITY eGravity)
+    {
+        return ((delegate* unmanaged<IDisplayPointer*, POINTER_GRAVITY, int>)(lpVtbl[7]))((IDisplayPointer*)Unsafe.AsPointer(ref this), eGravity);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT GetPointerGravity(POINTER_GRAVITY* peGravity)
+    {
+        return ((delegate* unmanaged<IDisplayPointer*, POINTER_GRAVITY*, int>)(lpVtbl[8]))((IDisplayPointer*)Unsafe.AsPointer(ref this), peGravity);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT SetDisplayGravity(DISPLAY_GRAVITY eGravity)
+    {
+        return ((delegate* unmanaged<IDisplayPointer*, DISPLAY_GRAVITY, int>)(lpVtbl[9]))((IDisplayPointer*)Unsafe.AsPointer(ref this), eGravity);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT GetDisplayGravity(DISPLAY_GRAVITY* peGravity)
+    {
+        return ((delegate* unmanaged<IDisplayPointer*, DISPLAY_GRAVITY*, int>)(lpVtbl[10]))((IDisplayPointer*)Unsafe.AsPointer(ref this), peGravity);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT IsPositioned(BOOL* pfPositioned)
+    {
+        return ((delegate* unmanaged<IDisplayPointer*, BOOL*, int>)(lpVtbl[11]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pfPositioned);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT Unposition()
+    {
+        return ((delegate* unmanaged<IDisplayPointer*, int>)(lpVtbl[12]))((IDisplayPointer*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT IsEqualTo(IDisplayPointer* pDispPointer, BOOL* pfIsEqual)
+    {
+        return ((delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, BOOL*, int>)(lpVtbl[13]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pDispPointer, pfIsEqual);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT IsLeftOf(IDisplayPointer* pDispPointer, BOOL* pfIsLeftOf)
+    {
+        return ((delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, BOOL*, int>)(lpVtbl[14]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pDispPointer, pfIsLeftOf);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT IsRightOf(IDisplayPointer* pDispPointer, BOOL* pfIsRightOf)
+    {
+        return ((delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, BOOL*, int>)(lpVtbl[15]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pDispPointer, pfIsRightOf);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT IsAtBOL(BOOL* pfBOL)
+    {
+        return ((delegate* unmanaged<IDisplayPointer*, BOOL*, int>)(lpVtbl[16]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pfBOL);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT MoveToMarkupPointer(IMarkupPointer* pPointer, IDisplayPointer* pDispLineContext)
+    {
+        return ((delegate* unmanaged<IDisplayPointer*, IMarkupPointer*, IDisplayPointer*, int>)(lpVtbl[17]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pPointer, pDispLineContext);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT ScrollIntoView()
+    {
+        return ((delegate* unmanaged<IDisplayPointer*, int>)(lpVtbl[18]))((IDisplayPointer*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
+    public HRESULT GetLineInfo(ILineInfo** ppLineInfo)
+    {
+        return ((delegate* unmanaged<IDisplayPointer*, ILineInfo**, int>)(lpVtbl[19]))((IDisplayPointer*)Unsafe.AsPointer(ref this), ppLineInfo);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(20)]
+    public HRESULT GetFlowElement(IHTMLElement** ppLayoutElement)
+    {
+        return ((delegate* unmanaged<IDisplayPointer*, IHTMLElement**, int>)(lpVtbl[20]))((IDisplayPointer*)Unsafe.AsPointer(ref this), ppLayoutElement);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(21)]
+    public HRESULT QueryBreaks([NativeTypeName("DWORD *")] uint* pdwBreaks)
+    {
+        return ((delegate* unmanaged<IDisplayPointer*, uint*, int>)(lpVtbl[21]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pdwBreaks);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT MoveToPoint(POINT ptPoint, COORD_SYSTEM eCoordSystem, IHTMLElement* pElementContext, [NativeTypeName("DWORD")] uint dwHitTestOptions, [NativeTypeName("DWORD *")] uint* pdwHitTestResults)
-        {
-            return ((delegate* unmanaged<IDisplayPointer*, POINT, COORD_SYSTEM, IHTMLElement*, uint, uint*, int>)(lpVtbl[3]))((IDisplayPointer*)Unsafe.AsPointer(ref this), ptPoint, eCoordSystem, pElementContext, dwHitTestOptions, pdwHitTestResults);
-        }
+        HRESULT MoveToPoint(POINT ptPoint, COORD_SYSTEM eCoordSystem, IHTMLElement* pElementContext, [NativeTypeName("DWORD")] uint dwHitTestOptions, [NativeTypeName("DWORD *")] uint* pdwHitTestResults);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT MoveUnit(DISPLAY_MOVEUNIT eMoveUnit, [NativeTypeName("LONG")] int lXPos)
-        {
-            return ((delegate* unmanaged<IDisplayPointer*, DISPLAY_MOVEUNIT, int, int>)(lpVtbl[4]))((IDisplayPointer*)Unsafe.AsPointer(ref this), eMoveUnit, lXPos);
-        }
+        HRESULT MoveUnit(DISPLAY_MOVEUNIT eMoveUnit, [NativeTypeName("LONG")] int lXPos);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT PositionMarkupPointer(IMarkupPointer* pMarkupPointer)
-        {
-            return ((delegate* unmanaged<IDisplayPointer*, IMarkupPointer*, int>)(lpVtbl[5]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pMarkupPointer);
-        }
+        HRESULT PositionMarkupPointer(IMarkupPointer* pMarkupPointer);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT MoveToPointer(IDisplayPointer* pDispPointer)
-        {
-            return ((delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, int>)(lpVtbl[6]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pDispPointer);
-        }
+        HRESULT MoveToPointer(IDisplayPointer* pDispPointer);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT SetPointerGravity(POINTER_GRAVITY eGravity)
-        {
-            return ((delegate* unmanaged<IDisplayPointer*, POINTER_GRAVITY, int>)(lpVtbl[7]))((IDisplayPointer*)Unsafe.AsPointer(ref this), eGravity);
-        }
+        HRESULT SetPointerGravity(POINTER_GRAVITY eGravity);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT GetPointerGravity(POINTER_GRAVITY* peGravity)
-        {
-            return ((delegate* unmanaged<IDisplayPointer*, POINTER_GRAVITY*, int>)(lpVtbl[8]))((IDisplayPointer*)Unsafe.AsPointer(ref this), peGravity);
-        }
+        HRESULT GetPointerGravity(POINTER_GRAVITY* peGravity);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT SetDisplayGravity(DISPLAY_GRAVITY eGravity)
-        {
-            return ((delegate* unmanaged<IDisplayPointer*, DISPLAY_GRAVITY, int>)(lpVtbl[9]))((IDisplayPointer*)Unsafe.AsPointer(ref this), eGravity);
-        }
+        HRESULT SetDisplayGravity(DISPLAY_GRAVITY eGravity);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetDisplayGravity(DISPLAY_GRAVITY* peGravity)
-        {
-            return ((delegate* unmanaged<IDisplayPointer*, DISPLAY_GRAVITY*, int>)(lpVtbl[10]))((IDisplayPointer*)Unsafe.AsPointer(ref this), peGravity);
-        }
+        HRESULT GetDisplayGravity(DISPLAY_GRAVITY* peGravity);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT IsPositioned(BOOL* pfPositioned)
-        {
-            return ((delegate* unmanaged<IDisplayPointer*, BOOL*, int>)(lpVtbl[11]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pfPositioned);
-        }
+        HRESULT IsPositioned(BOOL* pfPositioned);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT Unposition()
-        {
-            return ((delegate* unmanaged<IDisplayPointer*, int>)(lpVtbl[12]))((IDisplayPointer*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Unposition();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT IsEqualTo(IDisplayPointer* pDispPointer, BOOL* pfIsEqual)
-        {
-            return ((delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, BOOL*, int>)(lpVtbl[13]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pDispPointer, pfIsEqual);
-        }
+        HRESULT IsEqualTo(IDisplayPointer* pDispPointer, BOOL* pfIsEqual);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT IsLeftOf(IDisplayPointer* pDispPointer, BOOL* pfIsLeftOf)
-        {
-            return ((delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, BOOL*, int>)(lpVtbl[14]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pDispPointer, pfIsLeftOf);
-        }
+        HRESULT IsLeftOf(IDisplayPointer* pDispPointer, BOOL* pfIsLeftOf);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT IsRightOf(IDisplayPointer* pDispPointer, BOOL* pfIsRightOf)
-        {
-            return ((delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, BOOL*, int>)(lpVtbl[15]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pDispPointer, pfIsRightOf);
-        }
+        HRESULT IsRightOf(IDisplayPointer* pDispPointer, BOOL* pfIsRightOf);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT IsAtBOL(BOOL* pfBOL)
-        {
-            return ((delegate* unmanaged<IDisplayPointer*, BOOL*, int>)(lpVtbl[16]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pfBOL);
-        }
+        HRESULT IsAtBOL(BOOL* pfBOL);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT MoveToMarkupPointer(IMarkupPointer* pPointer, IDisplayPointer* pDispLineContext)
-        {
-            return ((delegate* unmanaged<IDisplayPointer*, IMarkupPointer*, IDisplayPointer*, int>)(lpVtbl[17]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pPointer, pDispLineContext);
-        }
+        HRESULT MoveToMarkupPointer(IMarkupPointer* pPointer, IDisplayPointer* pDispLineContext);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT ScrollIntoView()
-        {
-            return ((delegate* unmanaged<IDisplayPointer*, int>)(lpVtbl[18]))((IDisplayPointer*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT ScrollIntoView();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT GetLineInfo(ILineInfo** ppLineInfo)
-        {
-            return ((delegate* unmanaged<IDisplayPointer*, ILineInfo**, int>)(lpVtbl[19]))((IDisplayPointer*)Unsafe.AsPointer(ref this), ppLineInfo);
-        }
+        HRESULT GetLineInfo(ILineInfo** ppLineInfo);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT GetFlowElement(IHTMLElement** ppLayoutElement)
-        {
-            return ((delegate* unmanaged<IDisplayPointer*, IHTMLElement**, int>)(lpVtbl[20]))((IDisplayPointer*)Unsafe.AsPointer(ref this), ppLayoutElement);
-        }
+        HRESULT GetFlowElement(IHTMLElement** ppLayoutElement);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public HRESULT QueryBreaks([NativeTypeName("DWORD *")] uint* pdwBreaks)
-        {
-            return ((delegate* unmanaged<IDisplayPointer*, uint*, int>)(lpVtbl[21]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pdwBreaks);
-        }
+        HRESULT QueryBreaks([NativeTypeName("DWORD *")] uint* pdwBreaks);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT MoveToPoint(POINT ptPoint, COORD_SYSTEM eCoordSystem, IHTMLElement* pElementContext, [NativeTypeName("DWORD")] uint dwHitTestOptions, [NativeTypeName("DWORD *")] uint* pdwHitTestResults);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPointer*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT MoveUnit(DISPLAY_MOVEUNIT eMoveUnit, [NativeTypeName("LONG")] int lXPos);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPointer*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT PositionMarkupPointer(IMarkupPointer* pMarkupPointer);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPointer*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT MoveToPointer(IDisplayPointer* pDispPointer);
+        [NativeTypeName("HRESULT (POINT, COORD_SYSTEM, IHTMLElement *, DWORD, DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPointer*, POINT, COORD_SYSTEM, IHTMLElement*, uint, uint*, int> MoveToPoint;
 
-            [VtblIndex(7)]
-            HRESULT SetPointerGravity(POINTER_GRAVITY eGravity);
+        [NativeTypeName("HRESULT (DISPLAY_MOVEUNIT, LONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPointer*, DISPLAY_MOVEUNIT, int, int> MoveUnit;
 
-            [VtblIndex(8)]
-            HRESULT GetPointerGravity(POINTER_GRAVITY* peGravity);
+        [NativeTypeName("HRESULT (IMarkupPointer *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPointer*, IMarkupPointer*, int> PositionMarkupPointer;
 
-            [VtblIndex(9)]
-            HRESULT SetDisplayGravity(DISPLAY_GRAVITY eGravity);
+        [NativeTypeName("HRESULT (IDisplayPointer *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, int> MoveToPointer;
 
-            [VtblIndex(10)]
-            HRESULT GetDisplayGravity(DISPLAY_GRAVITY* peGravity);
+        [NativeTypeName("HRESULT (POINTER_GRAVITY) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPointer*, POINTER_GRAVITY, int> SetPointerGravity;
 
-            [VtblIndex(11)]
-            HRESULT IsPositioned(BOOL* pfPositioned);
+        [NativeTypeName("HRESULT (POINTER_GRAVITY *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPointer*, POINTER_GRAVITY*, int> GetPointerGravity;
 
-            [VtblIndex(12)]
-            HRESULT Unposition();
+        [NativeTypeName("HRESULT (DISPLAY_GRAVITY) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPointer*, DISPLAY_GRAVITY, int> SetDisplayGravity;
 
-            [VtblIndex(13)]
-            HRESULT IsEqualTo(IDisplayPointer* pDispPointer, BOOL* pfIsEqual);
+        [NativeTypeName("HRESULT (DISPLAY_GRAVITY *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPointer*, DISPLAY_GRAVITY*, int> GetDisplayGravity;
 
-            [VtblIndex(14)]
-            HRESULT IsLeftOf(IDisplayPointer* pDispPointer, BOOL* pfIsLeftOf);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPointer*, BOOL*, int> IsPositioned;
 
-            [VtblIndex(15)]
-            HRESULT IsRightOf(IDisplayPointer* pDispPointer, BOOL* pfIsRightOf);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPointer*, int> Unposition;
 
-            [VtblIndex(16)]
-            HRESULT IsAtBOL(BOOL* pfBOL);
+        [NativeTypeName("HRESULT (IDisplayPointer *, BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, BOOL*, int> IsEqualTo;
 
-            [VtblIndex(17)]
-            HRESULT MoveToMarkupPointer(IMarkupPointer* pPointer, IDisplayPointer* pDispLineContext);
+        [NativeTypeName("HRESULT (IDisplayPointer *, BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, BOOL*, int> IsLeftOf;
 
-            [VtblIndex(18)]
-            HRESULT ScrollIntoView();
+        [NativeTypeName("HRESULT (IDisplayPointer *, BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, BOOL*, int> IsRightOf;
 
-            [VtblIndex(19)]
-            HRESULT GetLineInfo(ILineInfo** ppLineInfo);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPointer*, BOOL*, int> IsAtBOL;
 
-            [VtblIndex(20)]
-            HRESULT GetFlowElement(IHTMLElement** ppLayoutElement);
+        [NativeTypeName("HRESULT (IMarkupPointer *, IDisplayPointer *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPointer*, IMarkupPointer*, IDisplayPointer*, int> MoveToMarkupPointer;
 
-            [VtblIndex(21)]
-            HRESULT QueryBreaks([NativeTypeName("DWORD *")] uint* pdwBreaks);
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPointer*, int> ScrollIntoView;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPointer*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (ILineInfo **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPointer*, ILineInfo**, int> GetLineInfo;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPointer*, uint> AddRef;
+        [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPointer*, IHTMLElement**, int> GetFlowElement;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPointer*, uint> Release;
-
-            [NativeTypeName("HRESULT (POINT, COORD_SYSTEM, IHTMLElement *, DWORD, DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPointer*, POINT, COORD_SYSTEM, IHTMLElement*, uint, uint*, int> MoveToPoint;
-
-            [NativeTypeName("HRESULT (DISPLAY_MOVEUNIT, LONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPointer*, DISPLAY_MOVEUNIT, int, int> MoveUnit;
-
-            [NativeTypeName("HRESULT (IMarkupPointer *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPointer*, IMarkupPointer*, int> PositionMarkupPointer;
-
-            [NativeTypeName("HRESULT (IDisplayPointer *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, int> MoveToPointer;
-
-            [NativeTypeName("HRESULT (POINTER_GRAVITY) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPointer*, POINTER_GRAVITY, int> SetPointerGravity;
-
-            [NativeTypeName("HRESULT (POINTER_GRAVITY *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPointer*, POINTER_GRAVITY*, int> GetPointerGravity;
-
-            [NativeTypeName("HRESULT (DISPLAY_GRAVITY) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPointer*, DISPLAY_GRAVITY, int> SetDisplayGravity;
-
-            [NativeTypeName("HRESULT (DISPLAY_GRAVITY *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPointer*, DISPLAY_GRAVITY*, int> GetDisplayGravity;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPointer*, BOOL*, int> IsPositioned;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPointer*, int> Unposition;
-
-            [NativeTypeName("HRESULT (IDisplayPointer *, BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, BOOL*, int> IsEqualTo;
-
-            [NativeTypeName("HRESULT (IDisplayPointer *, BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, BOOL*, int> IsLeftOf;
-
-            [NativeTypeName("HRESULT (IDisplayPointer *, BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, BOOL*, int> IsRightOf;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPointer*, BOOL*, int> IsAtBOL;
-
-            [NativeTypeName("HRESULT (IMarkupPointer *, IDisplayPointer *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPointer*, IMarkupPointer*, IDisplayPointer*, int> MoveToMarkupPointer;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPointer*, int> ScrollIntoView;
-
-            [NativeTypeName("HRESULT (ILineInfo **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPointer*, ILineInfo**, int> GetLineInfo;
-
-            [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPointer*, IHTMLElement**, int> GetFlowElement;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPointer*, uint*, int> QueryBreaks;
-        }
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPointer*, uint*, int> QueryBreaks;
     }
 }

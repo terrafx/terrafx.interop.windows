@@ -7,1222 +7,1221 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3050F1FF-98B5-11CF-BB82-00AA00BDCE0B")]
+[NativeTypeName("struct IHTMLElement : IDispatch")]
+[NativeInheritance("IDispatch")]
+public unsafe partial struct IHTMLElement : IHTMLElement.Interface
 {
-    [Guid("3050F1FF-98B5-11CF-BB82-00AA00BDCE0B")]
-    [NativeTypeName("struct IHTMLElement : IDispatch")]
-    [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLElement : IHTMLElement.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IHTMLElement*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IHTMLElement*, uint>)(lpVtbl[1]))((IHTMLElement*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IHTMLElement*, uint>)(lpVtbl[1]))((IHTMLElement*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IHTMLElement*, uint>)(lpVtbl[2]))((IHTMLElement*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IHTMLElement*, uint>)(lpVtbl[2]))((IHTMLElement*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetTypeInfoCount(uint* pctinfo)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, uint*, int>)(lpVtbl[3]))((IHTMLElement*)Unsafe.AsPointer(ref this), pctinfo);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetTypeInfoCount(uint* pctinfo)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, uint*, int>)(lpVtbl[3]))((IHTMLElement*)Unsafe.AsPointer(ref this), pctinfo);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(6)]
-        public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT setAttribute([NativeTypeName("BSTR")] ushort* strAttributeName, VARIANT AttributeValue, [NativeTypeName("LONG")] int lFlags = 1)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort*, VARIANT, int, int>)(lpVtbl[7]))((IHTMLElement*)Unsafe.AsPointer(ref this), strAttributeName, AttributeValue, lFlags);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT getAttribute([NativeTypeName("BSTR")] ushort* strAttributeName, [NativeTypeName("LONG")] int lFlags, VARIANT* AttributeValue)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort*, int, VARIANT*, int>)(lpVtbl[8]))((IHTMLElement*)Unsafe.AsPointer(ref this), strAttributeName, lFlags, AttributeValue);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT removeAttribute([NativeTypeName("BSTR")] ushort* strAttributeName, [NativeTypeName("LONG")] int lFlags, [NativeTypeName("VARIANT_BOOL *")] short* pfSuccess)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort*, int, short*, int>)(lpVtbl[9]))((IHTMLElement*)Unsafe.AsPointer(ref this), strAttributeName, lFlags, pfSuccess);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT put_className([NativeTypeName("BSTR")] ushort* v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort*, int>)(lpVtbl[10]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT get_className([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort**, int>)(lpVtbl[11]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT put_id([NativeTypeName("BSTR")] ushort* v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort*, int>)(lpVtbl[12]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT get_id([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort**, int>)(lpVtbl[13]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT get_tagName([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort**, int>)(lpVtbl[14]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT get_parentElement(IHTMLElement** p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, IHTMLElement**, int>)(lpVtbl[15]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT get_style(IHTMLStyle** p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, IHTMLStyle**, int>)(lpVtbl[16]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT put_onhelp(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[17]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT get_onhelp(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[18]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
+    public HRESULT put_onclick(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[19]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(20)]
+    public HRESULT get_onclick(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[20]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(21)]
+    public HRESULT put_ondblclick(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[21]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(22)]
+    public HRESULT get_ondblclick(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[22]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(23)]
+    public HRESULT put_onkeydown(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[23]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(24)]
+    public HRESULT get_onkeydown(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[24]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(25)]
+    public HRESULT put_onkeyup(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[25]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(26)]
+    public HRESULT get_onkeyup(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[26]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(27)]
+    public HRESULT put_onkeypress(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[27]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(28)]
+    public HRESULT get_onkeypress(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[28]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(29)]
+    public HRESULT put_onmouseout(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[29]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(30)]
+    public HRESULT get_onmouseout(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[30]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(31)]
+    public HRESULT put_onmouseover(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[31]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(32)]
+    public HRESULT get_onmouseover(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[32]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(33)]
+    public HRESULT put_onmousemove(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[33]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(34)]
+    public HRESULT get_onmousemove(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[34]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(35)]
+    public HRESULT put_onmousedown(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[35]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(36)]
+    public HRESULT get_onmousedown(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[36]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(37)]
+    public HRESULT put_onmouseup(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[37]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(38)]
+    public HRESULT get_onmouseup(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[38]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(39)]
+    public HRESULT get_document(IDispatch** p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, IDispatch**, int>)(lpVtbl[39]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(40)]
+    public HRESULT put_title([NativeTypeName("BSTR")] ushort* v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort*, int>)(lpVtbl[40]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(41)]
+    public HRESULT get_title([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort**, int>)(lpVtbl[41]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(42)]
+    public HRESULT put_language([NativeTypeName("BSTR")] ushort* v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort*, int>)(lpVtbl[42]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(43)]
+    public HRESULT get_language([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort**, int>)(lpVtbl[43]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(44)]
+    public HRESULT put_onselectstart(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[44]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(45)]
+    public HRESULT get_onselectstart(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[45]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(46)]
+    public HRESULT scrollIntoView(VARIANT varargStart)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[46]))((IHTMLElement*)Unsafe.AsPointer(ref this), varargStart);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(47)]
+    public HRESULT contains(IHTMLElement* pChild, [NativeTypeName("VARIANT_BOOL *")] short* pfResult)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, IHTMLElement*, short*, int>)(lpVtbl[47]))((IHTMLElement*)Unsafe.AsPointer(ref this), pChild, pfResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(48)]
+    public HRESULT get_sourceIndex([NativeTypeName("long *")] int* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, int*, int>)(lpVtbl[48]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(49)]
+    public HRESULT get_recordNumber(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[49]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(50)]
+    public HRESULT put_lang([NativeTypeName("BSTR")] ushort* v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort*, int>)(lpVtbl[50]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(51)]
+    public HRESULT get_lang([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort**, int>)(lpVtbl[51]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(52)]
+    public HRESULT get_offsetLeft([NativeTypeName("long *")] int* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, int*, int>)(lpVtbl[52]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(53)]
+    public HRESULT get_offsetTop([NativeTypeName("long *")] int* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, int*, int>)(lpVtbl[53]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(54)]
+    public HRESULT get_offsetWidth([NativeTypeName("long *")] int* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, int*, int>)(lpVtbl[54]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(55)]
+    public HRESULT get_offsetHeight([NativeTypeName("long *")] int* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, int*, int>)(lpVtbl[55]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(56)]
+    public HRESULT get_offsetParent(IHTMLElement** p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, IHTMLElement**, int>)(lpVtbl[56]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(57)]
+    public HRESULT put_innerHTML([NativeTypeName("BSTR")] ushort* v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort*, int>)(lpVtbl[57]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(58)]
+    public HRESULT get_innerHTML([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort**, int>)(lpVtbl[58]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(59)]
+    public HRESULT put_innerText([NativeTypeName("BSTR")] ushort* v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort*, int>)(lpVtbl[59]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(60)]
+    public HRESULT get_innerText([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort**, int>)(lpVtbl[60]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(61)]
+    public HRESULT put_outerHTML([NativeTypeName("BSTR")] ushort* v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort*, int>)(lpVtbl[61]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(62)]
+    public HRESULT get_outerHTML([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort**, int>)(lpVtbl[62]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(63)]
+    public HRESULT put_outerText([NativeTypeName("BSTR")] ushort* v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort*, int>)(lpVtbl[63]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(64)]
+    public HRESULT get_outerText([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort**, int>)(lpVtbl[64]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(65)]
+    public HRESULT insertAdjacentHTML([NativeTypeName("BSTR")] ushort* where, [NativeTypeName("BSTR")] ushort* html)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort*, ushort*, int>)(lpVtbl[65]))((IHTMLElement*)Unsafe.AsPointer(ref this), where, html);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(66)]
+    public HRESULT insertAdjacentText([NativeTypeName("BSTR")] ushort* where, [NativeTypeName("BSTR")] ushort* text)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort*, ushort*, int>)(lpVtbl[66]))((IHTMLElement*)Unsafe.AsPointer(ref this), where, text);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(67)]
+    public HRESULT get_parentTextEdit(IHTMLElement** p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, IHTMLElement**, int>)(lpVtbl[67]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(68)]
+    public HRESULT get_isTextEdit([NativeTypeName("VARIANT_BOOL *")] short* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, short*, int>)(lpVtbl[68]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(69)]
+    public HRESULT click()
+    {
+        return ((delegate* unmanaged<IHTMLElement*, int>)(lpVtbl[69]))((IHTMLElement*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(70)]
+    public HRESULT get_filters(IHTMLFiltersCollection** p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, IHTMLFiltersCollection**, int>)(lpVtbl[70]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(71)]
+    public HRESULT put_ondragstart(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[71]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(72)]
+    public HRESULT get_ondragstart(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[72]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(73)]
+    public HRESULT toString([NativeTypeName("BSTR *")] ushort** String)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, ushort**, int>)(lpVtbl[73]))((IHTMLElement*)Unsafe.AsPointer(ref this), String);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(74)]
+    public HRESULT put_onbeforeupdate(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[74]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(75)]
+    public HRESULT get_onbeforeupdate(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[75]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(76)]
+    public HRESULT put_onafterupdate(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[76]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(77)]
+    public HRESULT get_onafterupdate(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[77]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(78)]
+    public HRESULT put_onerrorupdate(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[78]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(79)]
+    public HRESULT get_onerrorupdate(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[79]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(80)]
+    public HRESULT put_onrowexit(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[80]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(81)]
+    public HRESULT get_onrowexit(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[81]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(82)]
+    public HRESULT put_onrowenter(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[82]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(83)]
+    public HRESULT get_onrowenter(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[83]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(84)]
+    public HRESULT put_ondatasetchanged(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[84]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(85)]
+    public HRESULT get_ondatasetchanged(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[85]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(86)]
+    public HRESULT put_ondataavailable(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[86]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(87)]
+    public HRESULT get_ondataavailable(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[87]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(88)]
+    public HRESULT put_ondatasetcomplete(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[88]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(89)]
+    public HRESULT get_ondatasetcomplete(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[89]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(90)]
+    public HRESULT put_onfilterchange(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[90]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(91)]
+    public HRESULT get_onfilterchange(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[91]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(92)]
+    public HRESULT get_children(IDispatch** p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, IDispatch**, int>)(lpVtbl[92]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(93)]
+    public HRESULT get_all(IDispatch** p)
+    {
+        return ((delegate* unmanaged<IHTMLElement*, IDispatch**, int>)(lpVtbl[93]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    public interface Interface : IDispatch.Interface
+    {
         [VtblIndex(7)]
-        public HRESULT setAttribute([NativeTypeName("BSTR")] ushort* strAttributeName, VARIANT AttributeValue, [NativeTypeName("LONG")] int lFlags = 1)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort*, VARIANT, int, int>)(lpVtbl[7]))((IHTMLElement*)Unsafe.AsPointer(ref this), strAttributeName, AttributeValue, lFlags);
-        }
+        HRESULT setAttribute([NativeTypeName("BSTR")] ushort* strAttributeName, VARIANT AttributeValue, [NativeTypeName("LONG")] int lFlags = 1);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT getAttribute([NativeTypeName("BSTR")] ushort* strAttributeName, [NativeTypeName("LONG")] int lFlags, VARIANT* AttributeValue)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort*, int, VARIANT*, int>)(lpVtbl[8]))((IHTMLElement*)Unsafe.AsPointer(ref this), strAttributeName, lFlags, AttributeValue);
-        }
+        HRESULT getAttribute([NativeTypeName("BSTR")] ushort* strAttributeName, [NativeTypeName("LONG")] int lFlags, VARIANT* AttributeValue);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT removeAttribute([NativeTypeName("BSTR")] ushort* strAttributeName, [NativeTypeName("LONG")] int lFlags, [NativeTypeName("VARIANT_BOOL *")] short* pfSuccess)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort*, int, short*, int>)(lpVtbl[9]))((IHTMLElement*)Unsafe.AsPointer(ref this), strAttributeName, lFlags, pfSuccess);
-        }
+        HRESULT removeAttribute([NativeTypeName("BSTR")] ushort* strAttributeName, [NativeTypeName("LONG")] int lFlags, [NativeTypeName("VARIANT_BOOL *")] short* pfSuccess);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT put_className([NativeTypeName("BSTR")] ushort* v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort*, int>)(lpVtbl[10]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_className([NativeTypeName("BSTR")] ushort* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT get_className([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort**, int>)(lpVtbl[11]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_className([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT put_id([NativeTypeName("BSTR")] ushort* v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort*, int>)(lpVtbl[12]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_id([NativeTypeName("BSTR")] ushort* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT get_id([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort**, int>)(lpVtbl[13]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_id([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT get_tagName([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort**, int>)(lpVtbl[14]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_tagName([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT get_parentElement(IHTMLElement** p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, IHTMLElement**, int>)(lpVtbl[15]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_parentElement(IHTMLElement** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT get_style(IHTMLStyle** p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, IHTMLStyle**, int>)(lpVtbl[16]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_style(IHTMLStyle** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT put_onhelp(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[17]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_onhelp(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT get_onhelp(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[18]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_onhelp(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT put_onclick(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[19]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_onclick(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT get_onclick(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[20]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_onclick(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public HRESULT put_ondblclick(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[21]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_ondblclick(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        public HRESULT get_ondblclick(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[22]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_ondblclick(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        public HRESULT put_onkeydown(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[23]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_onkeydown(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT get_onkeydown(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[24]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_onkeydown(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        public HRESULT put_onkeyup(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[25]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_onkeyup(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        public HRESULT get_onkeyup(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[26]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_onkeyup(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        public HRESULT put_onkeypress(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[27]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_onkeypress(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        public HRESULT get_onkeypress(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[28]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_onkeypress(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(29)]
-        public HRESULT put_onmouseout(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[29]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_onmouseout(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
-        public HRESULT get_onmouseout(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[30]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_onmouseout(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        public HRESULT put_onmouseover(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[31]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_onmouseover(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(32)]
-        public HRESULT get_onmouseover(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[32]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_onmouseover(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(33)]
-        public HRESULT put_onmousemove(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[33]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_onmousemove(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(34)]
-        public HRESULT get_onmousemove(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[34]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_onmousemove(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(35)]
-        public HRESULT put_onmousedown(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[35]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_onmousedown(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(36)]
-        public HRESULT get_onmousedown(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[36]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_onmousedown(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(37)]
-        public HRESULT put_onmouseup(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[37]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_onmouseup(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(38)]
-        public HRESULT get_onmouseup(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[38]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_onmouseup(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(39)]
-        public HRESULT get_document(IDispatch** p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, IDispatch**, int>)(lpVtbl[39]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_document(IDispatch** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(40)]
-        public HRESULT put_title([NativeTypeName("BSTR")] ushort* v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort*, int>)(lpVtbl[40]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_title([NativeTypeName("BSTR")] ushort* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(41)]
-        public HRESULT get_title([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort**, int>)(lpVtbl[41]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_title([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(42)]
-        public HRESULT put_language([NativeTypeName("BSTR")] ushort* v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort*, int>)(lpVtbl[42]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_language([NativeTypeName("BSTR")] ushort* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(43)]
-        public HRESULT get_language([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort**, int>)(lpVtbl[43]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_language([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(44)]
-        public HRESULT put_onselectstart(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[44]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_onselectstart(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(45)]
-        public HRESULT get_onselectstart(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[45]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_onselectstart(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(46)]
-        public HRESULT scrollIntoView(VARIANT varargStart)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[46]))((IHTMLElement*)Unsafe.AsPointer(ref this), varargStart);
-        }
+        HRESULT scrollIntoView(VARIANT varargStart);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(47)]
-        public HRESULT contains(IHTMLElement* pChild, [NativeTypeName("VARIANT_BOOL *")] short* pfResult)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, IHTMLElement*, short*, int>)(lpVtbl[47]))((IHTMLElement*)Unsafe.AsPointer(ref this), pChild, pfResult);
-        }
+        HRESULT contains(IHTMLElement* pChild, [NativeTypeName("VARIANT_BOOL *")] short* pfResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(48)]
-        public HRESULT get_sourceIndex([NativeTypeName("long *")] int* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, int*, int>)(lpVtbl[48]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_sourceIndex([NativeTypeName("long *")] int* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(49)]
-        public HRESULT get_recordNumber(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[49]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_recordNumber(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(50)]
-        public HRESULT put_lang([NativeTypeName("BSTR")] ushort* v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort*, int>)(lpVtbl[50]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_lang([NativeTypeName("BSTR")] ushort* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(51)]
-        public HRESULT get_lang([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort**, int>)(lpVtbl[51]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_lang([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(52)]
-        public HRESULT get_offsetLeft([NativeTypeName("long *")] int* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, int*, int>)(lpVtbl[52]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_offsetLeft([NativeTypeName("long *")] int* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(53)]
-        public HRESULT get_offsetTop([NativeTypeName("long *")] int* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, int*, int>)(lpVtbl[53]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_offsetTop([NativeTypeName("long *")] int* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(54)]
-        public HRESULT get_offsetWidth([NativeTypeName("long *")] int* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, int*, int>)(lpVtbl[54]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_offsetWidth([NativeTypeName("long *")] int* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(55)]
-        public HRESULT get_offsetHeight([NativeTypeName("long *")] int* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, int*, int>)(lpVtbl[55]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_offsetHeight([NativeTypeName("long *")] int* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(56)]
-        public HRESULT get_offsetParent(IHTMLElement** p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, IHTMLElement**, int>)(lpVtbl[56]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_offsetParent(IHTMLElement** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(57)]
-        public HRESULT put_innerHTML([NativeTypeName("BSTR")] ushort* v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort*, int>)(lpVtbl[57]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_innerHTML([NativeTypeName("BSTR")] ushort* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(58)]
-        public HRESULT get_innerHTML([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort**, int>)(lpVtbl[58]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_innerHTML([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(59)]
-        public HRESULT put_innerText([NativeTypeName("BSTR")] ushort* v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort*, int>)(lpVtbl[59]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_innerText([NativeTypeName("BSTR")] ushort* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(60)]
-        public HRESULT get_innerText([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort**, int>)(lpVtbl[60]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_innerText([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(61)]
-        public HRESULT put_outerHTML([NativeTypeName("BSTR")] ushort* v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort*, int>)(lpVtbl[61]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_outerHTML([NativeTypeName("BSTR")] ushort* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(62)]
-        public HRESULT get_outerHTML([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort**, int>)(lpVtbl[62]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_outerHTML([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(63)]
-        public HRESULT put_outerText([NativeTypeName("BSTR")] ushort* v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort*, int>)(lpVtbl[63]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_outerText([NativeTypeName("BSTR")] ushort* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(64)]
-        public HRESULT get_outerText([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort**, int>)(lpVtbl[64]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_outerText([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(65)]
-        public HRESULT insertAdjacentHTML([NativeTypeName("BSTR")] ushort* where, [NativeTypeName("BSTR")] ushort* html)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort*, ushort*, int>)(lpVtbl[65]))((IHTMLElement*)Unsafe.AsPointer(ref this), where, html);
-        }
+        HRESULT insertAdjacentHTML([NativeTypeName("BSTR")] ushort* where, [NativeTypeName("BSTR")] ushort* html);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(66)]
-        public HRESULT insertAdjacentText([NativeTypeName("BSTR")] ushort* where, [NativeTypeName("BSTR")] ushort* text)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort*, ushort*, int>)(lpVtbl[66]))((IHTMLElement*)Unsafe.AsPointer(ref this), where, text);
-        }
+        HRESULT insertAdjacentText([NativeTypeName("BSTR")] ushort* where, [NativeTypeName("BSTR")] ushort* text);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(67)]
-        public HRESULT get_parentTextEdit(IHTMLElement** p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, IHTMLElement**, int>)(lpVtbl[67]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_parentTextEdit(IHTMLElement** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(68)]
-        public HRESULT get_isTextEdit([NativeTypeName("VARIANT_BOOL *")] short* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, short*, int>)(lpVtbl[68]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_isTextEdit([NativeTypeName("VARIANT_BOOL *")] short* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(69)]
-        public HRESULT click()
-        {
-            return ((delegate* unmanaged<IHTMLElement*, int>)(lpVtbl[69]))((IHTMLElement*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT click();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(70)]
-        public HRESULT get_filters(IHTMLFiltersCollection** p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, IHTMLFiltersCollection**, int>)(lpVtbl[70]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_filters(IHTMLFiltersCollection** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(71)]
-        public HRESULT put_ondragstart(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[71]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_ondragstart(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(72)]
-        public HRESULT get_ondragstart(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[72]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_ondragstart(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(73)]
-        public HRESULT toString([NativeTypeName("BSTR *")] ushort** String)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, ushort**, int>)(lpVtbl[73]))((IHTMLElement*)Unsafe.AsPointer(ref this), String);
-        }
+        HRESULT toString([NativeTypeName("BSTR *")] ushort** String);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(74)]
-        public HRESULT put_onbeforeupdate(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[74]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_onbeforeupdate(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(75)]
-        public HRESULT get_onbeforeupdate(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[75]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_onbeforeupdate(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(76)]
-        public HRESULT put_onafterupdate(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[76]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_onafterupdate(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(77)]
-        public HRESULT get_onafterupdate(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[77]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_onafterupdate(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(78)]
-        public HRESULT put_onerrorupdate(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[78]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_onerrorupdate(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(79)]
-        public HRESULT get_onerrorupdate(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[79]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_onerrorupdate(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(80)]
-        public HRESULT put_onrowexit(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[80]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_onrowexit(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(81)]
-        public HRESULT get_onrowexit(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[81]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_onrowexit(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(82)]
-        public HRESULT put_onrowenter(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[82]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_onrowenter(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(83)]
-        public HRESULT get_onrowenter(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[83]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_onrowenter(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(84)]
-        public HRESULT put_ondatasetchanged(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[84]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_ondatasetchanged(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(85)]
-        public HRESULT get_ondatasetchanged(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[85]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_ondatasetchanged(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(86)]
-        public HRESULT put_ondataavailable(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[86]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_ondataavailable(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(87)]
-        public HRESULT get_ondataavailable(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[87]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_ondataavailable(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(88)]
-        public HRESULT put_ondatasetcomplete(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[88]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_ondatasetcomplete(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(89)]
-        public HRESULT get_ondatasetcomplete(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[89]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_ondatasetcomplete(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(90)]
-        public HRESULT put_onfilterchange(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT, int>)(lpVtbl[90]))((IHTMLElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_onfilterchange(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(91)]
-        public HRESULT get_onfilterchange(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, VARIANT*, int>)(lpVtbl[91]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_onfilterchange(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(92)]
-        public HRESULT get_children(IDispatch** p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, IDispatch**, int>)(lpVtbl[92]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_children(IDispatch** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(93)]
-        public HRESULT get_all(IDispatch** p)
-        {
-            return ((delegate* unmanaged<IHTMLElement*, IDispatch**, int>)(lpVtbl[93]))((IHTMLElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_all(IDispatch** p);
+    }
 
-        public interface Interface : IDispatch.Interface
-        {
-            [VtblIndex(7)]
-            HRESULT setAttribute([NativeTypeName("BSTR")] ushort* strAttributeName, VARIANT AttributeValue, [NativeTypeName("LONG")] int lFlags = 1);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(8)]
-            HRESULT getAttribute([NativeTypeName("BSTR")] ushort* strAttributeName, [NativeTypeName("LONG")] int lFlags, VARIANT* AttributeValue);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, uint> AddRef;
 
-            [VtblIndex(9)]
-            HRESULT removeAttribute([NativeTypeName("BSTR")] ushort* strAttributeName, [NativeTypeName("LONG")] int lFlags, [NativeTypeName("VARIANT_BOOL *")] short* pfSuccess);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, uint> Release;
 
-            [VtblIndex(10)]
-            HRESULT put_className([NativeTypeName("BSTR")] ushort* v);
+        [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, uint*, int> GetTypeInfoCount;
 
-            [VtblIndex(11)]
-            HRESULT get_className([NativeTypeName("BSTR *")] ushort** p);
+        [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
-            [VtblIndex(12)]
-            HRESULT put_id([NativeTypeName("BSTR")] ushort* v);
+        [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
-            [VtblIndex(13)]
-            HRESULT get_id([NativeTypeName("BSTR *")] ushort** p);
+        [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
-            [VtblIndex(14)]
-            HRESULT get_tagName([NativeTypeName("BSTR *")] ushort** p);
+        [NativeTypeName("HRESULT (BSTR, VARIANT, LONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort*, VARIANT, int, int> setAttribute;
 
-            [VtblIndex(15)]
-            HRESULT get_parentElement(IHTMLElement** p);
+        [NativeTypeName("HRESULT (BSTR, LONG, VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort*, int, VARIANT*, int> getAttribute;
 
-            [VtblIndex(16)]
-            HRESULT get_style(IHTMLStyle** p);
+        [NativeTypeName("HRESULT (BSTR, LONG, VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort*, int, short*, int> removeAttribute;
 
-            [VtblIndex(17)]
-            HRESULT put_onhelp(VARIANT v);
+        [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort*, int> put_className;
 
-            [VtblIndex(18)]
-            HRESULT get_onhelp(VARIANT* p);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort**, int> get_className;
 
-            [VtblIndex(19)]
-            HRESULT put_onclick(VARIANT v);
+        [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort*, int> put_id;
 
-            [VtblIndex(20)]
-            HRESULT get_onclick(VARIANT* p);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort**, int> get_id;
 
-            [VtblIndex(21)]
-            HRESULT put_ondblclick(VARIANT v);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort**, int> get_tagName;
 
-            [VtblIndex(22)]
-            HRESULT get_ondblclick(VARIANT* p);
+        [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, IHTMLElement**, int> get_parentElement;
 
-            [VtblIndex(23)]
-            HRESULT put_onkeydown(VARIANT v);
+        [NativeTypeName("HRESULT (IHTMLStyle **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, IHTMLStyle**, int> get_style;
 
-            [VtblIndex(24)]
-            HRESULT get_onkeydown(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onhelp;
 
-            [VtblIndex(25)]
-            HRESULT put_onkeyup(VARIANT v);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onhelp;
 
-            [VtblIndex(26)]
-            HRESULT get_onkeyup(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onclick;
 
-            [VtblIndex(27)]
-            HRESULT put_onkeypress(VARIANT v);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onclick;
 
-            [VtblIndex(28)]
-            HRESULT get_onkeypress(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_ondblclick;
 
-            [VtblIndex(29)]
-            HRESULT put_onmouseout(VARIANT v);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_ondblclick;
 
-            [VtblIndex(30)]
-            HRESULT get_onmouseout(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onkeydown;
 
-            [VtblIndex(31)]
-            HRESULT put_onmouseover(VARIANT v);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onkeydown;
 
-            [VtblIndex(32)]
-            HRESULT get_onmouseover(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onkeyup;
 
-            [VtblIndex(33)]
-            HRESULT put_onmousemove(VARIANT v);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onkeyup;
 
-            [VtblIndex(34)]
-            HRESULT get_onmousemove(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onkeypress;
 
-            [VtblIndex(35)]
-            HRESULT put_onmousedown(VARIANT v);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onkeypress;
 
-            [VtblIndex(36)]
-            HRESULT get_onmousedown(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onmouseout;
 
-            [VtblIndex(37)]
-            HRESULT put_onmouseup(VARIANT v);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onmouseout;
 
-            [VtblIndex(38)]
-            HRESULT get_onmouseup(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onmouseover;
 
-            [VtblIndex(39)]
-            HRESULT get_document(IDispatch** p);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onmouseover;
 
-            [VtblIndex(40)]
-            HRESULT put_title([NativeTypeName("BSTR")] ushort* v);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onmousemove;
 
-            [VtblIndex(41)]
-            HRESULT get_title([NativeTypeName("BSTR *")] ushort** p);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onmousemove;
 
-            [VtblIndex(42)]
-            HRESULT put_language([NativeTypeName("BSTR")] ushort* v);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onmousedown;
 
-            [VtblIndex(43)]
-            HRESULT get_language([NativeTypeName("BSTR *")] ushort** p);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onmousedown;
 
-            [VtblIndex(44)]
-            HRESULT put_onselectstart(VARIANT v);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onmouseup;
 
-            [VtblIndex(45)]
-            HRESULT get_onselectstart(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onmouseup;
 
-            [VtblIndex(46)]
-            HRESULT scrollIntoView(VARIANT varargStart);
+        [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, IDispatch**, int> get_document;
 
-            [VtblIndex(47)]
-            HRESULT contains(IHTMLElement* pChild, [NativeTypeName("VARIANT_BOOL *")] short* pfResult);
+        [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort*, int> put_title;
 
-            [VtblIndex(48)]
-            HRESULT get_sourceIndex([NativeTypeName("long *")] int* p);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort**, int> get_title;
 
-            [VtblIndex(49)]
-            HRESULT get_recordNumber(VARIANT* p);
+        [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort*, int> put_language;
 
-            [VtblIndex(50)]
-            HRESULT put_lang([NativeTypeName("BSTR")] ushort* v);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort**, int> get_language;
 
-            [VtblIndex(51)]
-            HRESULT get_lang([NativeTypeName("BSTR *")] ushort** p);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onselectstart;
 
-            [VtblIndex(52)]
-            HRESULT get_offsetLeft([NativeTypeName("long *")] int* p);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onselectstart;
 
-            [VtblIndex(53)]
-            HRESULT get_offsetTop([NativeTypeName("long *")] int* p);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT, int> scrollIntoView;
 
-            [VtblIndex(54)]
-            HRESULT get_offsetWidth([NativeTypeName("long *")] int* p);
+        [NativeTypeName("HRESULT (IHTMLElement *, VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, IHTMLElement*, short*, int> contains;
 
-            [VtblIndex(55)]
-            HRESULT get_offsetHeight([NativeTypeName("long *")] int* p);
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, int*, int> get_sourceIndex;
 
-            [VtblIndex(56)]
-            HRESULT get_offsetParent(IHTMLElement** p);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_recordNumber;
 
-            [VtblIndex(57)]
-            HRESULT put_innerHTML([NativeTypeName("BSTR")] ushort* v);
+        [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort*, int> put_lang;
 
-            [VtblIndex(58)]
-            HRESULT get_innerHTML([NativeTypeName("BSTR *")] ushort** p);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort**, int> get_lang;
 
-            [VtblIndex(59)]
-            HRESULT put_innerText([NativeTypeName("BSTR")] ushort* v);
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, int*, int> get_offsetLeft;
 
-            [VtblIndex(60)]
-            HRESULT get_innerText([NativeTypeName("BSTR *")] ushort** p);
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, int*, int> get_offsetTop;
 
-            [VtblIndex(61)]
-            HRESULT put_outerHTML([NativeTypeName("BSTR")] ushort* v);
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, int*, int> get_offsetWidth;
 
-            [VtblIndex(62)]
-            HRESULT get_outerHTML([NativeTypeName("BSTR *")] ushort** p);
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, int*, int> get_offsetHeight;
 
-            [VtblIndex(63)]
-            HRESULT put_outerText([NativeTypeName("BSTR")] ushort* v);
+        [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, IHTMLElement**, int> get_offsetParent;
 
-            [VtblIndex(64)]
-            HRESULT get_outerText([NativeTypeName("BSTR *")] ushort** p);
+        [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort*, int> put_innerHTML;
 
-            [VtblIndex(65)]
-            HRESULT insertAdjacentHTML([NativeTypeName("BSTR")] ushort* where, [NativeTypeName("BSTR")] ushort* html);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort**, int> get_innerHTML;
 
-            [VtblIndex(66)]
-            HRESULT insertAdjacentText([NativeTypeName("BSTR")] ushort* where, [NativeTypeName("BSTR")] ushort* text);
+        [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort*, int> put_innerText;
 
-            [VtblIndex(67)]
-            HRESULT get_parentTextEdit(IHTMLElement** p);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort**, int> get_innerText;
 
-            [VtblIndex(68)]
-            HRESULT get_isTextEdit([NativeTypeName("VARIANT_BOOL *")] short* p);
+        [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort*, int> put_outerHTML;
 
-            [VtblIndex(69)]
-            HRESULT click();
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort**, int> get_outerHTML;
 
-            [VtblIndex(70)]
-            HRESULT get_filters(IHTMLFiltersCollection** p);
+        [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort*, int> put_outerText;
 
-            [VtblIndex(71)]
-            HRESULT put_ondragstart(VARIANT v);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort**, int> get_outerText;
 
-            [VtblIndex(72)]
-            HRESULT get_ondragstart(VARIANT* p);
+        [NativeTypeName("HRESULT (BSTR, BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort*, ushort*, int> insertAdjacentHTML;
 
-            [VtblIndex(73)]
-            HRESULT toString([NativeTypeName("BSTR *")] ushort** String);
+        [NativeTypeName("HRESULT (BSTR, BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort*, ushort*, int> insertAdjacentText;
 
-            [VtblIndex(74)]
-            HRESULT put_onbeforeupdate(VARIANT v);
+        [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, IHTMLElement**, int> get_parentTextEdit;
 
-            [VtblIndex(75)]
-            HRESULT get_onbeforeupdate(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, short*, int> get_isTextEdit;
 
-            [VtblIndex(76)]
-            HRESULT put_onafterupdate(VARIANT v);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, int> click;
 
-            [VtblIndex(77)]
-            HRESULT get_onafterupdate(VARIANT* p);
+        [NativeTypeName("HRESULT (IHTMLFiltersCollection **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, IHTMLFiltersCollection**, int> get_filters;
 
-            [VtblIndex(78)]
-            HRESULT put_onerrorupdate(VARIANT v);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_ondragstart;
 
-            [VtblIndex(79)]
-            HRESULT get_onerrorupdate(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_ondragstart;
 
-            [VtblIndex(80)]
-            HRESULT put_onrowexit(VARIANT v);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, ushort**, int> toString;
 
-            [VtblIndex(81)]
-            HRESULT get_onrowexit(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onbeforeupdate;
 
-            [VtblIndex(82)]
-            HRESULT put_onrowenter(VARIANT v);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onbeforeupdate;
 
-            [VtblIndex(83)]
-            HRESULT get_onrowenter(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onafterupdate;
 
-            [VtblIndex(84)]
-            HRESULT put_ondatasetchanged(VARIANT v);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onafterupdate;
 
-            [VtblIndex(85)]
-            HRESULT get_ondatasetchanged(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onerrorupdate;
 
-            [VtblIndex(86)]
-            HRESULT put_ondataavailable(VARIANT v);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onerrorupdate;
 
-            [VtblIndex(87)]
-            HRESULT get_ondataavailable(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onrowexit;
 
-            [VtblIndex(88)]
-            HRESULT put_ondatasetcomplete(VARIANT v);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onrowexit;
 
-            [VtblIndex(89)]
-            HRESULT get_ondatasetcomplete(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onrowenter;
 
-            [VtblIndex(90)]
-            HRESULT put_onfilterchange(VARIANT v);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onrowenter;
 
-            [VtblIndex(91)]
-            HRESULT get_onfilterchange(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_ondatasetchanged;
 
-            [VtblIndex(92)]
-            HRESULT get_children(IDispatch** p);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_ondatasetchanged;
 
-            [VtblIndex(93)]
-            HRESULT get_all(IDispatch** p);
-        }
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_ondataavailable;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_ondataavailable;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, uint> AddRef;
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_ondatasetcomplete;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, uint> Release;
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_ondatasetcomplete;
 
-            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, uint*, int> GetTypeInfoCount;
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onfilterchange;
 
-            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onfilterchange;
 
-            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, IDispatch**, int> get_children;
 
-            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
-
-            [NativeTypeName("HRESULT (BSTR, VARIANT, LONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort*, VARIANT, int, int> setAttribute;
-
-            [NativeTypeName("HRESULT (BSTR, LONG, VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort*, int, VARIANT*, int> getAttribute;
-
-            [NativeTypeName("HRESULT (BSTR, LONG, VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort*, int, short*, int> removeAttribute;
-
-            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort*, int> put_className;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort**, int> get_className;
-
-            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort*, int> put_id;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort**, int> get_id;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort**, int> get_tagName;
-
-            [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, IHTMLElement**, int> get_parentElement;
-
-            [NativeTypeName("HRESULT (IHTMLStyle **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, IHTMLStyle**, int> get_style;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onhelp;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onhelp;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onclick;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onclick;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_ondblclick;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_ondblclick;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onkeydown;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onkeydown;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onkeyup;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onkeyup;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onkeypress;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onkeypress;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onmouseout;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onmouseout;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onmouseover;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onmouseover;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onmousemove;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onmousemove;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onmousedown;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onmousedown;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onmouseup;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onmouseup;
-
-            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, IDispatch**, int> get_document;
-
-            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort*, int> put_title;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort**, int> get_title;
-
-            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort*, int> put_language;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort**, int> get_language;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onselectstart;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onselectstart;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT, int> scrollIntoView;
-
-            [NativeTypeName("HRESULT (IHTMLElement *, VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, IHTMLElement*, short*, int> contains;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, int*, int> get_sourceIndex;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_recordNumber;
-
-            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort*, int> put_lang;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort**, int> get_lang;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, int*, int> get_offsetLeft;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, int*, int> get_offsetTop;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, int*, int> get_offsetWidth;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, int*, int> get_offsetHeight;
-
-            [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, IHTMLElement**, int> get_offsetParent;
-
-            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort*, int> put_innerHTML;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort**, int> get_innerHTML;
-
-            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort*, int> put_innerText;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort**, int> get_innerText;
-
-            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort*, int> put_outerHTML;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort**, int> get_outerHTML;
-
-            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort*, int> put_outerText;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort**, int> get_outerText;
-
-            [NativeTypeName("HRESULT (BSTR, BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort*, ushort*, int> insertAdjacentHTML;
-
-            [NativeTypeName("HRESULT (BSTR, BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort*, ushort*, int> insertAdjacentText;
-
-            [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, IHTMLElement**, int> get_parentTextEdit;
-
-            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, short*, int> get_isTextEdit;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, int> click;
-
-            [NativeTypeName("HRESULT (IHTMLFiltersCollection **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, IHTMLFiltersCollection**, int> get_filters;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_ondragstart;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_ondragstart;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, ushort**, int> toString;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onbeforeupdate;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onbeforeupdate;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onafterupdate;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onafterupdate;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onerrorupdate;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onerrorupdate;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onrowexit;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onrowexit;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onrowenter;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onrowenter;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_ondatasetchanged;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_ondatasetchanged;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_ondataavailable;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_ondataavailable;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_ondatasetcomplete;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_ondatasetcomplete;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT, int> put_onfilterchange;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, VARIANT*, int> get_onfilterchange;
-
-            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, IDispatch**, int> get_children;
-
-            [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLElement*, IDispatch**, int> get_all;
-        }
+        [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLElement*, IDispatch**, int> get_all;
     }
 }

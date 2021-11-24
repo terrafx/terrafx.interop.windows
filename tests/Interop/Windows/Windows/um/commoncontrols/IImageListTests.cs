@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IImageList" /> struct.</summary>
+public static unsafe partial class IImageListTests
 {
-    /// <summary>Provides validation of the <see cref="IImageList" /> struct.</summary>
-    public static unsafe partial class IImageListTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IImageList" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IImageList" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IImageList).GUID, Is.EqualTo(IID_IImageList));
-        }
+        Assert.That(typeof(IImageList).GUID, Is.EqualTo(IID_IImageList));
+    }
 
-        /// <summary>Validates that the <see cref="IImageList" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IImageList>(), Is.EqualTo(sizeof(IImageList)));
-        }
+    /// <summary>Validates that the <see cref="IImageList" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IImageList>(), Is.EqualTo(sizeof(IImageList)));
+    }
 
-        /// <summary>Validates that the <see cref="IImageList" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IImageList).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IImageList" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IImageList).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IImageList" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IImageList" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IImageList), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IImageList), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IImageList), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IImageList), Is.EqualTo(4));
         }
     }
 }

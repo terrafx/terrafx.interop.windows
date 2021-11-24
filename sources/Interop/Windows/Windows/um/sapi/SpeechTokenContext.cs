@@ -5,14 +5,13 @@
 
 using static TerraFX.Interop.Windows.CLSCTX;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechTokenContext
 {
-    public enum SpeechTokenContext
-    {
-        STCInprocServer = CLSCTX_INPROC_SERVER,
-        STCInprocHandler = CLSCTX_INPROC_HANDLER,
-        STCLocalServer = CLSCTX_LOCAL_SERVER,
-        STCRemoteServer = CLSCTX_REMOTE_SERVER,
-        STCAll = (((CLSCTX_INPROC_SERVER | CLSCTX_INPROC_HANDLER) | CLSCTX_LOCAL_SERVER) | CLSCTX_REMOTE_SERVER),
-    }
+    STCInprocServer = CLSCTX_INPROC_SERVER,
+    STCInprocHandler = CLSCTX_INPROC_HANDLER,
+    STCLocalServer = CLSCTX_LOCAL_SERVER,
+    STCRemoteServer = CLSCTX_REMOTE_SERVER,
+    STCAll = (((CLSCTX_INPROC_SERVER | CLSCTX_INPROC_HANDLER) | CLSCTX_LOCAL_SERVER) | CLSCTX_REMOTE_SERVER),
 }

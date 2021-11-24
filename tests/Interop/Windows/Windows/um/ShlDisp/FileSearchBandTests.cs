@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="FileSearchBand" /> struct.</summary>
+public static unsafe partial class FileSearchBandTests
 {
-    /// <summary>Provides validation of the <see cref="FileSearchBand" /> struct.</summary>
-    public static unsafe partial class FileSearchBandTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="FileSearchBand" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="FileSearchBand" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(FileSearchBand).GUID, Is.EqualTo(IID_FileSearchBand));
-        }
+        Assert.That(typeof(FileSearchBand).GUID, Is.EqualTo(IID_FileSearchBand));
+    }
 
-        /// <summary>Validates that the <see cref="FileSearchBand" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<FileSearchBand>(), Is.EqualTo(sizeof(FileSearchBand)));
-        }
+    /// <summary>Validates that the <see cref="FileSearchBand" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<FileSearchBand>(), Is.EqualTo(sizeof(FileSearchBand)));
+    }
 
-        /// <summary>Validates that the <see cref="FileSearchBand" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(FileSearchBand).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="FileSearchBand" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(FileSearchBand).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="FileSearchBand" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(FileSearchBand), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="FileSearchBand" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(FileSearchBand), Is.EqualTo(1));
     }
 }

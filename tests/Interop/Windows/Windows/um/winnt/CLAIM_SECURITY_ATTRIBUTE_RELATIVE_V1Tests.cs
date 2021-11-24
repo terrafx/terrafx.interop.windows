@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1Tests
 {
-    /// <summary>Provides validation of the <see cref="CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1Tests
+    /// <summary>Validates that the <see cref="CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1>(), Is.EqualTo(sizeof(CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1)));
-        }
+        Assert.That(Marshal.SizeOf<CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1>(), Is.EqualTo(sizeof(CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1)));
+    }
 
-        /// <summary>Validates that the <see cref="CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1), Is.EqualTo(20));
-        }
+    /// <summary>Validates that the <see cref="CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1), Is.EqualTo(20));
     }
 }

@@ -3,13 +3,12 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum DISPID_SpeechLexiconWord
 {
-    public enum DISPID_SpeechLexiconWord
-    {
-        DISPID_SLWLangId = 1,
-        DISPID_SLWType = (DISPID_SLWLangId + 1),
-        DISPID_SLWWord = (DISPID_SLWType + 1),
-        DISPID_SLWPronunciations = (DISPID_SLWWord + 1),
-    }
+    DISPID_SLWLangId = 1,
+    DISPID_SLWType = (DISPID_SLWLangId + 1),
+    DISPID_SLWWord = (DISPID_SLWType + 1),
+    DISPID_SLWPronunciations = (DISPID_SLWWord + 1),
 }

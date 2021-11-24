@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IPV6_ADDRESS_EX" /> struct.</summary>
+public static unsafe partial class IPV6_ADDRESS_EXTests
 {
-    /// <summary>Provides validation of the <see cref="IPV6_ADDRESS_EX" /> struct.</summary>
-    public static unsafe partial class IPV6_ADDRESS_EXTests
+    /// <summary>Validates that the <see cref="IPV6_ADDRESS_EX" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IPV6_ADDRESS_EX" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IPV6_ADDRESS_EX>(), Is.EqualTo(sizeof(IPV6_ADDRESS_EX)));
-        }
+        Assert.That(Marshal.SizeOf<IPV6_ADDRESS_EX>(), Is.EqualTo(sizeof(IPV6_ADDRESS_EX)));
+    }
 
-        /// <summary>Validates that the <see cref="IPV6_ADDRESS_EX" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IPV6_ADDRESS_EX).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IPV6_ADDRESS_EX" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IPV6_ADDRESS_EX).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IPV6_ADDRESS_EX" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(IPV6_ADDRESS_EX), Is.EqualTo(26));
-        }
+    /// <summary>Validates that the <see cref="IPV6_ADDRESS_EX" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(IPV6_ADDRESS_EX), Is.EqualTo(26));
     }
 }

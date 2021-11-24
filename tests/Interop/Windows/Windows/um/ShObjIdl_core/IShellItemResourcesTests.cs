@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IShellItemResources" /> struct.</summary>
+public static unsafe partial class IShellItemResourcesTests
 {
-    /// <summary>Provides validation of the <see cref="IShellItemResources" /> struct.</summary>
-    public static unsafe partial class IShellItemResourcesTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IShellItemResources" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IShellItemResources" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IShellItemResources).GUID, Is.EqualTo(IID_IShellItemResources));
-        }
+        Assert.That(typeof(IShellItemResources).GUID, Is.EqualTo(IID_IShellItemResources));
+    }
 
-        /// <summary>Validates that the <see cref="IShellItemResources" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IShellItemResources>(), Is.EqualTo(sizeof(IShellItemResources)));
-        }
+    /// <summary>Validates that the <see cref="IShellItemResources" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IShellItemResources>(), Is.EqualTo(sizeof(IShellItemResources)));
+    }
 
-        /// <summary>Validates that the <see cref="IShellItemResources" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IShellItemResources).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IShellItemResources" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IShellItemResources).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IShellItemResources" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IShellItemResources" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IShellItemResources), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IShellItemResources), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IShellItemResources), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IShellItemResources), Is.EqualTo(4));
         }
     }
 }

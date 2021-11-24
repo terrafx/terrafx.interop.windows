@@ -7,233 +7,232 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("B388EB14-BE4D-421D-A8A1-6CF7AB057086")]
+[NativeTypeName("struct IDiaLineNumber : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface
 {
-    [Guid("B388EB14-BE4D-421D-A8A1-6CF7AB057086")]
-    [NativeTypeName("struct IDiaLineNumber : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDiaLineNumber*, Guid*, void**, int>)(lpVtbl[0]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDiaLineNumber*, Guid*, void**, int>)(lpVtbl[0]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDiaLineNumber*, uint>)(lpVtbl[1]))((IDiaLineNumber*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDiaLineNumber*, uint>)(lpVtbl[1]))((IDiaLineNumber*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDiaLineNumber*, uint>)(lpVtbl[2]))((IDiaLineNumber*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDiaLineNumber*, uint>)(lpVtbl[2]))((IDiaLineNumber*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT get_compiland(IDiaSymbol** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaLineNumber*, IDiaSymbol**, int>)(lpVtbl[3]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT get_sourceFile(IDiaSourceFile** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaLineNumber*, IDiaSourceFile**, int>)(lpVtbl[4]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT get_lineNumber([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[5]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT get_lineNumberEnd([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[6]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT get_columnNumber([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[7]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT get_columnNumberEnd([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[8]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT get_addressSection([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[9]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT get_addressOffset([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[10]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT get_relativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[11]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaLineNumber*, ulong*, int>)(lpVtbl[12]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT get_length([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[13]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT get_sourceFileId([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[14]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT get_statement(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaLineNumber*, BOOL*, int>)(lpVtbl[15]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT get_compilandId([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[16]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT get_compiland(IDiaSymbol** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaLineNumber*, IDiaSymbol**, int>)(lpVtbl[3]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_compiland(IDiaSymbol** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT get_sourceFile(IDiaSourceFile** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaLineNumber*, IDiaSourceFile**, int>)(lpVtbl[4]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_sourceFile(IDiaSourceFile** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT get_lineNumber([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[5]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_lineNumber([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT get_lineNumberEnd([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[6]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_lineNumberEnd([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT get_columnNumber([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[7]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_columnNumber([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT get_columnNumberEnd([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[8]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_columnNumberEnd([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT get_addressSection([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[9]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_addressSection([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT get_addressOffset([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[10]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_addressOffset([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT get_relativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[11]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_relativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaLineNumber*, ulong*, int>)(lpVtbl[12]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT get_length([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[13]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_length([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT get_sourceFileId([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[14]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_sourceFileId([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT get_statement(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaLineNumber*, BOOL*, int>)(lpVtbl[15]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_statement(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT get_compilandId([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[16]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_compilandId([NativeTypeName("DWORD *")] uint* pRetVal);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT get_compiland(IDiaSymbol** pRetVal);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLineNumber*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT get_sourceFile(IDiaSourceFile** pRetVal);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLineNumber*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT get_lineNumber([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLineNumber*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT get_lineNumberEnd([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLineNumber*, IDiaSymbol**, int> get_compiland;
 
-            [VtblIndex(7)]
-            HRESULT get_columnNumber([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (IDiaSourceFile **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLineNumber*, IDiaSourceFile**, int> get_sourceFile;
 
-            [VtblIndex(8)]
-            HRESULT get_columnNumberEnd([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_lineNumber;
 
-            [VtblIndex(9)]
-            HRESULT get_addressSection([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_lineNumberEnd;
 
-            [VtblIndex(10)]
-            HRESULT get_addressOffset([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_columnNumber;
 
-            [VtblIndex(11)]
-            HRESULT get_relativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_columnNumberEnd;
 
-            [VtblIndex(12)]
-            HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_addressSection;
 
-            [VtblIndex(13)]
-            HRESULT get_length([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_addressOffset;
 
-            [VtblIndex(14)]
-            HRESULT get_sourceFileId([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_relativeVirtualAddress;
 
-            [VtblIndex(15)]
-            HRESULT get_statement(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLineNumber*, ulong*, int> get_virtualAddress;
 
-            [VtblIndex(16)]
-            HRESULT get_compilandId([NativeTypeName("DWORD *")] uint* pRetVal);
-        }
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_length;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLineNumber*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_sourceFileId;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLineNumber*, uint> AddRef;
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLineNumber*, BOOL*, int> get_statement;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLineNumber*, uint> Release;
-
-            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLineNumber*, IDiaSymbol**, int> get_compiland;
-
-            [NativeTypeName("HRESULT (IDiaSourceFile **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLineNumber*, IDiaSourceFile**, int> get_sourceFile;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_lineNumber;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_lineNumberEnd;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_columnNumber;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_columnNumberEnd;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_addressSection;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_addressOffset;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_relativeVirtualAddress;
-
-            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLineNumber*, ulong*, int> get_virtualAddress;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_length;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_sourceFileId;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLineNumber*, BOOL*, int> get_statement;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_compilandId;
-        }
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_compilandId;
     }
 }

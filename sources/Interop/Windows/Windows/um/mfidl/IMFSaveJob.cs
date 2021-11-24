@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("E9931663-80BF-4C6E-98AF-5DCF58747D1F")]
+[NativeTypeName("struct IMFSaveJob : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IMFSaveJob : IMFSaveJob.Interface
 {
-    [Guid("E9931663-80BF-4C6E-98AF-5DCF58747D1F")]
-    [NativeTypeName("struct IMFSaveJob : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSaveJob : IMFSaveJob.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMFSaveJob*, Guid*, void**, int>)(lpVtbl[0]))((IMFSaveJob*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMFSaveJob*, Guid*, void**, int>)(lpVtbl[0]))((IMFSaveJob*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMFSaveJob*, uint>)(lpVtbl[1]))((IMFSaveJob*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMFSaveJob*, uint>)(lpVtbl[1]))((IMFSaveJob*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMFSaveJob*, uint>)(lpVtbl[2]))((IMFSaveJob*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMFSaveJob*, uint>)(lpVtbl[2]))((IMFSaveJob*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT BeginSave(IMFByteStream* pStream, IMFAsyncCallback* pCallback, IUnknown* pState)
+    {
+        return ((delegate* unmanaged<IMFSaveJob*, IMFByteStream*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[3]))((IMFSaveJob*)Unsafe.AsPointer(ref this), pStream, pCallback, pState);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT EndSave(IMFAsyncResult* pResult)
+    {
+        return ((delegate* unmanaged<IMFSaveJob*, IMFAsyncResult*, int>)(lpVtbl[4]))((IMFSaveJob*)Unsafe.AsPointer(ref this), pResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT CancelSave()
+    {
+        return ((delegate* unmanaged<IMFSaveJob*, int>)(lpVtbl[5]))((IMFSaveJob*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetProgress([NativeTypeName("DWORD *")] uint* pdwPercentComplete)
+    {
+        return ((delegate* unmanaged<IMFSaveJob*, uint*, int>)(lpVtbl[6]))((IMFSaveJob*)Unsafe.AsPointer(ref this), pdwPercentComplete);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT BeginSave(IMFByteStream* pStream, IMFAsyncCallback* pCallback, IUnknown* pState)
-        {
-            return ((delegate* unmanaged<IMFSaveJob*, IMFByteStream*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[3]))((IMFSaveJob*)Unsafe.AsPointer(ref this), pStream, pCallback, pState);
-        }
+        HRESULT BeginSave(IMFByteStream* pStream, IMFAsyncCallback* pCallback, IUnknown* pState);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT EndSave(IMFAsyncResult* pResult)
-        {
-            return ((delegate* unmanaged<IMFSaveJob*, IMFAsyncResult*, int>)(lpVtbl[4]))((IMFSaveJob*)Unsafe.AsPointer(ref this), pResult);
-        }
+        HRESULT EndSave(IMFAsyncResult* pResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT CancelSave()
-        {
-            return ((delegate* unmanaged<IMFSaveJob*, int>)(lpVtbl[5]))((IMFSaveJob*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT CancelSave();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetProgress([NativeTypeName("DWORD *")] uint* pdwPercentComplete)
-        {
-            return ((delegate* unmanaged<IMFSaveJob*, uint*, int>)(lpVtbl[6]))((IMFSaveJob*)Unsafe.AsPointer(ref this), pdwPercentComplete);
-        }
+        HRESULT GetProgress([NativeTypeName("DWORD *")] uint* pdwPercentComplete);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT BeginSave(IMFByteStream* pStream, IMFAsyncCallback* pCallback, IUnknown* pState);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSaveJob*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT EndSave(IMFAsyncResult* pResult);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSaveJob*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT CancelSave();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSaveJob*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT GetProgress([NativeTypeName("DWORD *")] uint* pdwPercentComplete);
-        }
+        [NativeTypeName("HRESULT (IMFByteStream *, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSaveJob*, IMFByteStream*, IMFAsyncCallback*, IUnknown*, int> BeginSave;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSaveJob*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (IMFAsyncResult *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSaveJob*, IMFAsyncResult*, int> EndSave;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSaveJob*, uint> AddRef;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSaveJob*, int> CancelSave;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSaveJob*, uint> Release;
-
-            [NativeTypeName("HRESULT (IMFByteStream *, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSaveJob*, IMFByteStream*, IMFAsyncCallback*, IUnknown*, int> BeginSave;
-
-            [NativeTypeName("HRESULT (IMFAsyncResult *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSaveJob*, IMFAsyncResult*, int> EndSave;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSaveJob*, int> CancelSave;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSaveJob*, uint*, int> GetProgress;
-        }
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSaveJob*, uint*, int> GetProgress;
     }
 }

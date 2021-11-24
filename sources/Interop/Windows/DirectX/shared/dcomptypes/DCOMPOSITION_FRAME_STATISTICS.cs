@@ -6,19 +6,18 @@
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct DCOMPOSITION_FRAME_STATISTICS
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct DCOMPOSITION_FRAME_STATISTICS
-    {
-        public LARGE_INTEGER lastFrameTime;
+    public LARGE_INTEGER lastFrameTime;
 
-        public DXGI_RATIONAL currentCompositionRate;
+    public DXGI_RATIONAL currentCompositionRate;
 
-        public LARGE_INTEGER currentTime;
+    public LARGE_INTEGER currentTime;
 
-        public LARGE_INTEGER timeFrequency;
+    public LARGE_INTEGER timeFrequency;
 
-        public LARGE_INTEGER nextEstimatedFrameTime;
-    }
+    public LARGE_INTEGER nextEstimatedFrameTime;
 }

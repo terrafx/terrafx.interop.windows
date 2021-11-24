@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="STORAGE_DEVICE_NUMA_PROPERTY" /> struct.</summary>
+public static unsafe partial class STORAGE_DEVICE_NUMA_PROPERTYTests
 {
-    /// <summary>Provides validation of the <see cref="STORAGE_DEVICE_NUMA_PROPERTY" /> struct.</summary>
-    public static unsafe partial class STORAGE_DEVICE_NUMA_PROPERTYTests
+    /// <summary>Validates that the <see cref="STORAGE_DEVICE_NUMA_PROPERTY" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="STORAGE_DEVICE_NUMA_PROPERTY" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<STORAGE_DEVICE_NUMA_PROPERTY>(), Is.EqualTo(sizeof(STORAGE_DEVICE_NUMA_PROPERTY)));
-        }
+        Assert.That(Marshal.SizeOf<STORAGE_DEVICE_NUMA_PROPERTY>(), Is.EqualTo(sizeof(STORAGE_DEVICE_NUMA_PROPERTY)));
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_DEVICE_NUMA_PROPERTY" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(STORAGE_DEVICE_NUMA_PROPERTY).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="STORAGE_DEVICE_NUMA_PROPERTY" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(STORAGE_DEVICE_NUMA_PROPERTY).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_DEVICE_NUMA_PROPERTY" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(STORAGE_DEVICE_NUMA_PROPERTY), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="STORAGE_DEVICE_NUMA_PROPERTY" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(STORAGE_DEVICE_NUMA_PROPERTY), Is.EqualTo(12));
     }
 }

@@ -5,17 +5,16 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_XML_WRITER_BINARY_ENCODING
 {
-    public unsafe partial struct WS_XML_WRITER_BINARY_ENCODING
-    {
-        public WS_XML_WRITER_ENCODING encoding;
+    public WS_XML_WRITER_ENCODING encoding;
 
-        public WS_XML_DICTIONARY* staticDictionary;
+    public WS_XML_DICTIONARY* staticDictionary;
 
-        [NativeTypeName("WS_DYNAMIC_STRING_CALLBACK")]
-        public delegate* unmanaged<void*, WS_XML_STRING*, BOOL*, uint*, IntPtr, HRESULT> dynamicStringCallback;
+    [NativeTypeName("WS_DYNAMIC_STRING_CALLBACK")]
+    public delegate* unmanaged<void*, WS_XML_STRING*, BOOL*, uint*, IntPtr, HRESULT> dynamicStringCallback;
 
-        public void* dynamicStringCallbackState;
-    }
+    public void* dynamicStringCallbackState;
 }

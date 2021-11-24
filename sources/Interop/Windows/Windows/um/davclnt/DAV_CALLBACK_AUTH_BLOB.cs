@@ -3,17 +3,16 @@
 // Ported from um/davclnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct DAV_CALLBACK_AUTH_BLOB
 {
-    public unsafe partial struct DAV_CALLBACK_AUTH_BLOB
-    {
-        [NativeTypeName("PVOID")]
-        public void* pBuffer;
+    [NativeTypeName("PVOID")]
+    public void* pBuffer;
 
-        [NativeTypeName("ULONG")]
-        public uint ulSize;
+    [NativeTypeName("ULONG")]
+    public uint ulSize;
 
-        [NativeTypeName("ULONG")]
-        public uint ulType;
-    }
+    [NativeTypeName("ULONG")]
+    public uint ulType;
 }

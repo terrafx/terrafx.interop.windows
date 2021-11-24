@@ -6,17 +6,16 @@
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0")]
+public partial struct D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT
 {
-    [SupportedOSPlatform("windows10.0")]
-    public partial struct D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT
-    {
-        public BOOL Enable;
+    public BOOL Enable;
 
-        public uint Width;
+    public uint Width;
 
-        public uint Height;
+    public uint Height;
 
-        public DXGI_FORMAT Format;
-    }
+    public DXGI_FORMAT Format;
 }

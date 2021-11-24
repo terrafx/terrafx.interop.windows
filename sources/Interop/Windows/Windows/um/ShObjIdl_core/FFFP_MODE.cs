@@ -3,11 +3,10 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum FFFP_MODE
 {
-    public enum FFFP_MODE
-    {
-        FFFP_EXACTMATCH = 0,
-        FFFP_NEARESTPARENTMATCH = (FFFP_EXACTMATCH + 1),
-    }
+    FFFP_EXACTMATCH = 0,
+    FFFP_NEARESTPARENTMATCH = (FFFP_EXACTMATCH + 1),
 }

@@ -3,21 +3,20 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SCM_PD_PROPERTY_QUERY
 {
-    public unsafe partial struct SCM_PD_PROPERTY_QUERY
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        public SCM_PD_PROPERTY_ID PropertyId;
+    public SCM_PD_PROPERTY_ID PropertyId;
 
-        public SCM_PD_QUERY_TYPE QueryType;
+    public SCM_PD_QUERY_TYPE QueryType;
 
-        [NativeTypeName("BYTE [1]")]
-        public fixed byte AdditionalParameters[1];
-    }
+    [NativeTypeName("BYTE [1]")]
+    public fixed byte AdditionalParameters[1];
 }

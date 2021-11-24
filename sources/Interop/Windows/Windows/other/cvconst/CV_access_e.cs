@@ -3,12 +3,11 @@
 // Ported from cvconst.h in the Debug Interface Access SDK
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum CV_access_e
 {
-    public enum CV_access_e
-    {
-        CV_private = 1,
-        CV_protected = 2,
-        CV_public = 3,
-    }
+    CV_private = 1,
+    CV_protected = 2,
+    CV_public = 3,
 }

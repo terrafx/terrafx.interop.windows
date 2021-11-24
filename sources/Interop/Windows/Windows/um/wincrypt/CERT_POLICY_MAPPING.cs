@@ -3,14 +3,13 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct CERT_POLICY_MAPPING
-    {
-        [NativeTypeName("LPSTR")]
-        public sbyte* pszIssuerDomainPolicy;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* pszSubjectDomainPolicy;
-    }
+public unsafe partial struct CERT_POLICY_MAPPING
+{
+    [NativeTypeName("LPSTR")]
+    public sbyte* pszIssuerDomainPolicy;
+
+    [NativeTypeName("LPSTR")]
+    public sbyte* pszSubjectDomainPolicy;
 }

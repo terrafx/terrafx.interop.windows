@@ -8,33 +8,32 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class FORMAT
-    {
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid FORMAT_MFVideoFormat
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x2D, 0xAB, 0xD4, 0xAE,
-                    0x26, 0x73,
-                    0xCB, 0x43,
-                    0x94,
-                    0x64,
-                    0xC8,
-                    0x79,
-                    0xCA,
-                    0xB9,
-                    0xC4,
-                    0x3D
-                };
+namespace TerraFX.Interop.Windows;
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+public static partial class FORMAT
+{
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid FORMAT_MFVideoFormat
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x2D, 0xAB, 0xD4, 0xAE,
+                0x26, 0x73,
+                0xCB, 0x43,
+                0x94,
+                0x64,
+                0xC8,
+                0x79,
+                0xCA,
+                0xB9,
+                0xC4,
+                0x3D
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

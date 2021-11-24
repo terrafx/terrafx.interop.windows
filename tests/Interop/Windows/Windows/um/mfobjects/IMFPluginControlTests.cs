@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFPluginControl" /> struct.</summary>
+public static unsafe partial class IMFPluginControlTests
 {
-    /// <summary>Provides validation of the <see cref="IMFPluginControl" /> struct.</summary>
-    public static unsafe partial class IMFPluginControlTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFPluginControl" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFPluginControl" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFPluginControl).GUID, Is.EqualTo(IID_IMFPluginControl));
-        }
+        Assert.That(typeof(IMFPluginControl).GUID, Is.EqualTo(IID_IMFPluginControl));
+    }
 
-        /// <summary>Validates that the <see cref="IMFPluginControl" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFPluginControl>(), Is.EqualTo(sizeof(IMFPluginControl)));
-        }
+    /// <summary>Validates that the <see cref="IMFPluginControl" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFPluginControl>(), Is.EqualTo(sizeof(IMFPluginControl)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFPluginControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFPluginControl).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFPluginControl" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFPluginControl).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFPluginControl" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFPluginControl" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFPluginControl), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFPluginControl), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFPluginControl), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFPluginControl), Is.EqualTo(4));
         }
     }
 }

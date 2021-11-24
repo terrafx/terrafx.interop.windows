@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="STORAGE_IDENTIFIER" /> struct.</summary>
+public static unsafe partial class STORAGE_IDENTIFIERTests
 {
-    /// <summary>Provides validation of the <see cref="STORAGE_IDENTIFIER" /> struct.</summary>
-    public static unsafe partial class STORAGE_IDENTIFIERTests
+    /// <summary>Validates that the <see cref="STORAGE_IDENTIFIER" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="STORAGE_IDENTIFIER" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<STORAGE_IDENTIFIER>(), Is.EqualTo(sizeof(STORAGE_IDENTIFIER)));
-        }
+        Assert.That(Marshal.SizeOf<STORAGE_IDENTIFIER>(), Is.EqualTo(sizeof(STORAGE_IDENTIFIER)));
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_IDENTIFIER" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(STORAGE_IDENTIFIER).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="STORAGE_IDENTIFIER" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(STORAGE_IDENTIFIER).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_IDENTIFIER" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(STORAGE_IDENTIFIER), Is.EqualTo(20));
-        }
+    /// <summary>Validates that the <see cref="STORAGE_IDENTIFIER" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(STORAGE_IDENTIFIER), Is.EqualTo(20));
     }
 }

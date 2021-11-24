@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MFP_PLAY_EVENT" /> struct.</summary>
+public static unsafe partial class MFP_PLAY_EVENTTests
 {
-    /// <summary>Provides validation of the <see cref="MFP_PLAY_EVENT" /> struct.</summary>
-    public static unsafe partial class MFP_PLAY_EVENTTests
+    /// <summary>Validates that the <see cref="MFP_PLAY_EVENT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MFP_PLAY_EVENT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MFP_PLAY_EVENT>(), Is.EqualTo(sizeof(MFP_PLAY_EVENT)));
-        }
+        Assert.That(Marshal.SizeOf<MFP_PLAY_EVENT>(), Is.EqualTo(sizeof(MFP_PLAY_EVENT)));
+    }
 
-        /// <summary>Validates that the <see cref="MFP_PLAY_EVENT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MFP_PLAY_EVENT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MFP_PLAY_EVENT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MFP_PLAY_EVENT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MFP_PLAY_EVENT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="MFP_PLAY_EVENT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(MFP_PLAY_EVENT), Is.EqualTo(40));
-            }
-            else
-            {
-                Assert.That(sizeof(MFP_PLAY_EVENT), Is.EqualTo(24));
-            }
+            Assert.That(sizeof(MFP_PLAY_EVENT), Is.EqualTo(40));
+        }
+        else
+        {
+            Assert.That(sizeof(MFP_PLAY_EVENT), Is.EqualTo(24));
         }
     }
 }

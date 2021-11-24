@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMAGE_ENCLAVE_IMPORT" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.16299.0")]
+public static unsafe partial class IMAGE_ENCLAVE_IMPORTTests
 {
-    /// <summary>Provides validation of the <see cref="IMAGE_ENCLAVE_IMPORT" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0.16299.0")]
-    public static unsafe partial class IMAGE_ENCLAVE_IMPORTTests
+    /// <summary>Validates that the <see cref="IMAGE_ENCLAVE_IMPORT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IMAGE_ENCLAVE_IMPORT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMAGE_ENCLAVE_IMPORT>(), Is.EqualTo(sizeof(IMAGE_ENCLAVE_IMPORT)));
-        }
+        Assert.That(Marshal.SizeOf<IMAGE_ENCLAVE_IMPORT>(), Is.EqualTo(sizeof(IMAGE_ENCLAVE_IMPORT)));
+    }
 
-        /// <summary>Validates that the <see cref="IMAGE_ENCLAVE_IMPORT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMAGE_ENCLAVE_IMPORT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMAGE_ENCLAVE_IMPORT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMAGE_ENCLAVE_IMPORT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMAGE_ENCLAVE_IMPORT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(IMAGE_ENCLAVE_IMPORT), Is.EqualTo(80));
-        }
+    /// <summary>Validates that the <see cref="IMAGE_ENCLAVE_IMPORT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(IMAGE_ENCLAVE_IMPORT), Is.EqualTo(80));
     }
 }

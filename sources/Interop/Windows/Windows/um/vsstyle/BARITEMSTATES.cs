@@ -3,15 +3,14 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum BARITEMSTATES
 {
-    public enum BARITEMSTATES
-    {
-        MBI_NORMAL = 1,
-        MBI_HOT = 2,
-        MBI_PUSHED = 3,
-        MBI_DISABLED = 4,
-        MBI_DISABLEDHOT = 5,
-        MBI_DISABLEDPUSHED = 6,
-    }
+    MBI_NORMAL = 1,
+    MBI_HOT = 2,
+    MBI_PUSHED = 3,
+    MBI_DISABLED = 4,
+    MBI_DISABLEDHOT = 5,
+    MBI_DISABLEDPUSHED = 6,
 }

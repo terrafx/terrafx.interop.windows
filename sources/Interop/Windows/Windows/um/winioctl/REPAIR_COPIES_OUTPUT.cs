@@ -5,17 +5,16 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct REPAIR_COPIES_OUTPUT
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct REPAIR_COPIES_OUTPUT
-    {
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("DWORD")]
-        public uint Status;
+    [NativeTypeName("DWORD")]
+    public uint Status;
 
-        public LARGE_INTEGER ResumeFileOffset;
-    }
+    public LARGE_INTEGER ResumeFileOffset;
 }

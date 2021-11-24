@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public partial struct STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR
 {
-    [SupportedOSPlatform("windows8.1")]
-    public partial struct STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("DWORD")]
-        public uint MediumProductType;
-    }
+    [NativeTypeName("DWORD")]
+    public uint MediumProductType;
 }

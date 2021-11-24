@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISurfaceImageSourceManagerNative" /> struct.</summary>
+[SupportedOSPlatform("windows8.1")]
+public static unsafe partial class ISurfaceImageSourceManagerNativeTests
 {
-    /// <summary>Provides validation of the <see cref="ISurfaceImageSourceManagerNative" /> struct.</summary>
-    [SupportedOSPlatform("windows8.1")]
-    public static unsafe partial class ISurfaceImageSourceManagerNativeTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISurfaceImageSourceManagerNative" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISurfaceImageSourceManagerNative" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISurfaceImageSourceManagerNative).GUID, Is.EqualTo(IID_ISurfaceImageSourceManagerNative));
-        }
+        Assert.That(typeof(ISurfaceImageSourceManagerNative).GUID, Is.EqualTo(IID_ISurfaceImageSourceManagerNative));
+    }
 
-        /// <summary>Validates that the <see cref="ISurfaceImageSourceManagerNative" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISurfaceImageSourceManagerNative>(), Is.EqualTo(sizeof(ISurfaceImageSourceManagerNative)));
-        }
+    /// <summary>Validates that the <see cref="ISurfaceImageSourceManagerNative" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISurfaceImageSourceManagerNative>(), Is.EqualTo(sizeof(ISurfaceImageSourceManagerNative)));
+    }
 
-        /// <summary>Validates that the <see cref="ISurfaceImageSourceManagerNative" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISurfaceImageSourceManagerNative).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISurfaceImageSourceManagerNative" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISurfaceImageSourceManagerNative).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISurfaceImageSourceManagerNative" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISurfaceImageSourceManagerNative" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISurfaceImageSourceManagerNative), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISurfaceImageSourceManagerNative), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISurfaceImageSourceManagerNative), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISurfaceImageSourceManagerNative), Is.EqualTo(4));
         }
     }
 }

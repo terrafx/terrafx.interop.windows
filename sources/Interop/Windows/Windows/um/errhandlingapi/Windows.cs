@@ -5,70 +5,69 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static unsafe partial class Windows
 {
-    public static unsafe partial class Windows
-    {
-        [DllImport("kernel32", ExactSpelling = true)]
-        public static extern void RaiseException([NativeTypeName("DWORD")] uint dwExceptionCode, [NativeTypeName("DWORD")] uint dwExceptionFlags, [NativeTypeName("DWORD")] uint nNumberOfArguments, [NativeTypeName("const ULONG_PTR *")] nuint* lpArguments);
+    [DllImport("kernel32", ExactSpelling = true)]
+    public static extern void RaiseException([NativeTypeName("DWORD")] uint dwExceptionCode, [NativeTypeName("DWORD")] uint dwExceptionFlags, [NativeTypeName("DWORD")] uint nNumberOfArguments, [NativeTypeName("const ULONG_PTR *")] nuint* lpArguments);
 
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("LONG")]
-        public static extern int UnhandledExceptionFilter([NativeTypeName("struct _EXCEPTION_POINTERS *")] EXCEPTION_POINTERS* ExceptionInfo);
+    [DllImport("kernel32", ExactSpelling = true)]
+    [return: NativeTypeName("LONG")]
+    public static extern int UnhandledExceptionFilter([NativeTypeName("struct _EXCEPTION_POINTERS *")] EXCEPTION_POINTERS* ExceptionInfo);
 
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("LPTOP_LEVEL_EXCEPTION_FILTER")]
-        public static extern delegate* unmanaged<EXCEPTION_POINTERS*, int> SetUnhandledExceptionFilter([NativeTypeName("LPTOP_LEVEL_EXCEPTION_FILTER")] delegate* unmanaged<EXCEPTION_POINTERS*, int> lpTopLevelExceptionFilter);
+    [DllImport("kernel32", ExactSpelling = true)]
+    [return: NativeTypeName("LPTOP_LEVEL_EXCEPTION_FILTER")]
+    public static extern delegate* unmanaged<EXCEPTION_POINTERS*, int> SetUnhandledExceptionFilter([NativeTypeName("LPTOP_LEVEL_EXCEPTION_FILTER")] delegate* unmanaged<EXCEPTION_POINTERS*, int> lpTopLevelExceptionFilter);
 
-        [SuppressGCTransition]
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("DWORD")]
-        public static extern uint GetLastError();
+    [SuppressGCTransition]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    public static extern uint GetLastError();
 
-        [SuppressGCTransition]
-        [DllImport("kernel32", ExactSpelling = true)]
-        public static extern void SetLastError([NativeTypeName("DWORD")] uint dwErrCode);
+    [SuppressGCTransition]
+    [DllImport("kernel32", ExactSpelling = true)]
+    public static extern void SetLastError([NativeTypeName("DWORD")] uint dwErrCode);
 
-        [DllImport("kernel32", ExactSpelling = true)]
-        public static extern uint GetErrorMode();
+    [DllImport("kernel32", ExactSpelling = true)]
+    public static extern uint GetErrorMode();
 
-        [DllImport("kernel32", ExactSpelling = true)]
-        public static extern uint SetErrorMode(uint uMode);
+    [DllImport("kernel32", ExactSpelling = true)]
+    public static extern uint SetErrorMode(uint uMode);
 
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("PVOID")]
-        public static extern void* AddVectoredExceptionHandler([NativeTypeName("ULONG")] uint First, [NativeTypeName("PVECTORED_EXCEPTION_HANDLER")] delegate* unmanaged<EXCEPTION_POINTERS*, int> Handler);
+    [DllImport("kernel32", ExactSpelling = true)]
+    [return: NativeTypeName("PVOID")]
+    public static extern void* AddVectoredExceptionHandler([NativeTypeName("ULONG")] uint First, [NativeTypeName("PVECTORED_EXCEPTION_HANDLER")] delegate* unmanaged<EXCEPTION_POINTERS*, int> Handler);
 
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("ULONG")]
-        public static extern uint RemoveVectoredExceptionHandler([NativeTypeName("PVOID")] void* Handle);
+    [DllImport("kernel32", ExactSpelling = true)]
+    [return: NativeTypeName("ULONG")]
+    public static extern uint RemoveVectoredExceptionHandler([NativeTypeName("PVOID")] void* Handle);
 
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("PVOID")]
-        public static extern void* AddVectoredContinueHandler([NativeTypeName("ULONG")] uint First, [NativeTypeName("PVECTORED_EXCEPTION_HANDLER")] delegate* unmanaged<EXCEPTION_POINTERS*, int> Handler);
+    [DllImport("kernel32", ExactSpelling = true)]
+    [return: NativeTypeName("PVOID")]
+    public static extern void* AddVectoredContinueHandler([NativeTypeName("ULONG")] uint First, [NativeTypeName("PVECTORED_EXCEPTION_HANDLER")] delegate* unmanaged<EXCEPTION_POINTERS*, int> Handler);
 
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("ULONG")]
-        public static extern uint RemoveVectoredContinueHandler([NativeTypeName("PVOID")] void* Handle);
+    [DllImport("kernel32", ExactSpelling = true)]
+    [return: NativeTypeName("ULONG")]
+    public static extern uint RemoveVectoredContinueHandler([NativeTypeName("PVOID")] void* Handle);
 
-        [DllImport("kernel32", ExactSpelling = true)]
-        public static extern void RaiseFailFastException([NativeTypeName("PEXCEPTION_RECORD")] EXCEPTION_RECORD* pExceptionRecord, [NativeTypeName("PCONTEXT")] void* pContextRecord, [NativeTypeName("DWORD")] uint dwFlags);
+    [DllImport("kernel32", ExactSpelling = true)]
+    public static extern void RaiseFailFastException([NativeTypeName("PEXCEPTION_RECORD")] EXCEPTION_RECORD* pExceptionRecord, [NativeTypeName("PCONTEXT")] void* pContextRecord, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("kernel32", ExactSpelling = true)]
-        public static extern void FatalAppExitA(uint uAction, [NativeTypeName("LPCSTR")] sbyte* lpMessageText);
+    [DllImport("kernel32", ExactSpelling = true)]
+    public static extern void FatalAppExitA(uint uAction, [NativeTypeName("LPCSTR")] sbyte* lpMessageText);
 
-        [DllImport("kernel32", ExactSpelling = true)]
-        public static extern void FatalAppExitW(uint uAction, [NativeTypeName("LPCWSTR")] ushort* lpMessageText);
+    [DllImport("kernel32", ExactSpelling = true)]
+    public static extern void FatalAppExitW(uint uAction, [NativeTypeName("LPCWSTR")] ushort* lpMessageText);
 
-        [DllImport("kernel32", ExactSpelling = true)]
-        [return: NativeTypeName("DWORD")]
-        public static extern uint GetThreadErrorMode();
+    [DllImport("kernel32", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    public static extern uint GetThreadErrorMode();
 
-        [SuppressGCTransition]
-        [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL SetThreadErrorMode([NativeTypeName("DWORD")] uint dwNewMode, [NativeTypeName("LPDWORD")] uint* lpOldMode);
+    [SuppressGCTransition]
+    [DllImport("kernel32", ExactSpelling = true)]
+    public static extern BOOL SetThreadErrorMode([NativeTypeName("DWORD")] uint dwNewMode, [NativeTypeName("LPDWORD")] uint* lpOldMode);
 
-        [NativeTypeName("#define FatalAppExit FatalAppExitW")]
-        public static delegate*<uint, ushort*, void> FatalAppExit => &FatalAppExitW;
-    }
+    [NativeTypeName("#define FatalAppExit FatalAppExitW")]
+    public static delegate*<uint, ushort*, void> FatalAppExit => &FatalAppExitW;
 }

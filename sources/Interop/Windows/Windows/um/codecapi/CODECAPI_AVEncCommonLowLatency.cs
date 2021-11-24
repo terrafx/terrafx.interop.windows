@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("9D3ECD55-89E8-490A-970A-0C9548D5A56E")]
+public partial struct CODECAPI_AVEncCommonLowLatency
 {
-    [Guid("9D3ECD55-89E8-490A-970A-0C9548D5A56E")]
-    public partial struct CODECAPI_AVEncCommonLowLatency
-    {
-    }
 }

@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="UIAnimationTimer" /> struct.</summary>
+public static unsafe partial class UIAnimationTimerTests
 {
-    /// <summary>Provides validation of the <see cref="UIAnimationTimer" /> struct.</summary>
-    public static unsafe partial class UIAnimationTimerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="UIAnimationTimer" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="UIAnimationTimer" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(UIAnimationTimer).GUID, Is.EqualTo(CLSID_UIAnimationTimer));
-        }
+        Assert.That(typeof(UIAnimationTimer).GUID, Is.EqualTo(CLSID_UIAnimationTimer));
+    }
 
-        /// <summary>Validates that the <see cref="UIAnimationTimer" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<UIAnimationTimer>(), Is.EqualTo(sizeof(UIAnimationTimer)));
-        }
+    /// <summary>Validates that the <see cref="UIAnimationTimer" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<UIAnimationTimer>(), Is.EqualTo(sizeof(UIAnimationTimer)));
+    }
 
-        /// <summary>Validates that the <see cref="UIAnimationTimer" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(UIAnimationTimer).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="UIAnimationTimer" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(UIAnimationTimer).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="UIAnimationTimer" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(UIAnimationTimer), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="UIAnimationTimer" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(UIAnimationTimer), Is.EqualTo(1));
     }
 }

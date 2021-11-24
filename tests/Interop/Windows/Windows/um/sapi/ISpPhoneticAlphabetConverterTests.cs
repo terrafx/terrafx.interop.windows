@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISpPhoneticAlphabetConverter" /> struct.</summary>
+public static unsafe partial class ISpPhoneticAlphabetConverterTests
 {
-    /// <summary>Provides validation of the <see cref="ISpPhoneticAlphabetConverter" /> struct.</summary>
-    public static unsafe partial class ISpPhoneticAlphabetConverterTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpPhoneticAlphabetConverter" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpPhoneticAlphabetConverter" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISpPhoneticAlphabetConverter).GUID, Is.EqualTo(IID_ISpPhoneticAlphabetConverter));
-        }
+        Assert.That(typeof(ISpPhoneticAlphabetConverter).GUID, Is.EqualTo(IID_ISpPhoneticAlphabetConverter));
+    }
 
-        /// <summary>Validates that the <see cref="ISpPhoneticAlphabetConverter" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISpPhoneticAlphabetConverter>(), Is.EqualTo(sizeof(ISpPhoneticAlphabetConverter)));
-        }
+    /// <summary>Validates that the <see cref="ISpPhoneticAlphabetConverter" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISpPhoneticAlphabetConverter>(), Is.EqualTo(sizeof(ISpPhoneticAlphabetConverter)));
+    }
 
-        /// <summary>Validates that the <see cref="ISpPhoneticAlphabetConverter" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISpPhoneticAlphabetConverter).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISpPhoneticAlphabetConverter" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISpPhoneticAlphabetConverter).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISpPhoneticAlphabetConverter" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISpPhoneticAlphabetConverter" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISpPhoneticAlphabetConverter), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISpPhoneticAlphabetConverter), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISpPhoneticAlphabetConverter), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISpPhoneticAlphabetConverter), Is.EqualTo(4));
         }
     }
 }

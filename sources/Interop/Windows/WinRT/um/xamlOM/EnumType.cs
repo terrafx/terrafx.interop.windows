@@ -6,16 +6,15 @@
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct EnumType
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct EnumType
-    {
-        [NativeTypeName("BSTR")]
-        public ushort* Name;
+    [NativeTypeName("BSTR")]
+    public ushort* Name;
 
-        public SAFEARRAY* ValueInts;
+    public SAFEARRAY* ValueInts;
 
-        public SAFEARRAY* ValueStrings;
-    }
+    public SAFEARRAY* ValueStrings;
 }

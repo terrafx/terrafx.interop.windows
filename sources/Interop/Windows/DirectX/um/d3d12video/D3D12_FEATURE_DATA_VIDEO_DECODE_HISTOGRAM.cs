@@ -5,24 +5,23 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_FEATURE_DATA_VIDEO_DECODE_HISTOGRAM
 {
-    public partial struct D3D12_FEATURE_DATA_VIDEO_DECODE_HISTOGRAM
-    {
-        public uint NodeIndex;
+    public uint NodeIndex;
 
-        public Guid DecodeProfile;
+    public Guid DecodeProfile;
 
-        public uint Width;
+    public uint Width;
 
-        public uint Height;
+    public uint Height;
 
-        public DXGI_FORMAT DecodeFormat;
+    public DXGI_FORMAT DecodeFormat;
 
-        public D3D12_VIDEO_DECODE_HISTOGRAM_COMPONENT_FLAGS Components;
+    public D3D12_VIDEO_DECODE_HISTOGRAM_COMPONENT_FLAGS Components;
 
-        public uint BinCount;
+    public uint BinCount;
 
-        public uint CounterBitDepth;
-    }
+    public uint CounterBitDepth;
 }

@@ -3,47 +3,46 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct IMAGE_SEPARATE_DEBUG_HEADER
 {
-    public unsafe partial struct IMAGE_SEPARATE_DEBUG_HEADER
-    {
-        [NativeTypeName("WORD")]
-        public ushort Signature;
+    [NativeTypeName("WORD")]
+    public ushort Signature;
 
-        [NativeTypeName("WORD")]
-        public ushort Flags;
+    [NativeTypeName("WORD")]
+    public ushort Flags;
 
-        [NativeTypeName("WORD")]
-        public ushort Machine;
+    [NativeTypeName("WORD")]
+    public ushort Machine;
 
-        [NativeTypeName("WORD")]
-        public ushort Characteristics;
+    [NativeTypeName("WORD")]
+    public ushort Characteristics;
 
-        [NativeTypeName("DWORD")]
-        public uint TimeDateStamp;
+    [NativeTypeName("DWORD")]
+    public uint TimeDateStamp;
 
-        [NativeTypeName("DWORD")]
-        public uint CheckSum;
+    [NativeTypeName("DWORD")]
+    public uint CheckSum;
 
-        [NativeTypeName("DWORD")]
-        public uint ImageBase;
+    [NativeTypeName("DWORD")]
+    public uint ImageBase;
 
-        [NativeTypeName("DWORD")]
-        public uint SizeOfImage;
+    [NativeTypeName("DWORD")]
+    public uint SizeOfImage;
 
-        [NativeTypeName("DWORD")]
-        public uint NumberOfSections;
+    [NativeTypeName("DWORD")]
+    public uint NumberOfSections;
 
-        [NativeTypeName("DWORD")]
-        public uint ExportedNamesSize;
+    [NativeTypeName("DWORD")]
+    public uint ExportedNamesSize;
 
-        [NativeTypeName("DWORD")]
-        public uint DebugDirectorySize;
+    [NativeTypeName("DWORD")]
+    public uint DebugDirectorySize;
 
-        [NativeTypeName("DWORD")]
-        public uint SectionAlignment;
+    [NativeTypeName("DWORD")]
+    public uint SectionAlignment;
 
-        [NativeTypeName("DWORD [2]")]
-        public fixed uint Reserved[2];
-    }
+    [NativeTypeName("DWORD [2]")]
+    public fixed uint Reserved[2];
 }

@@ -8,38 +8,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SecPkgContext_KeyingMaterial" /> struct.</summary>
+[SupportedOSPlatform("windows10.0")]
+public static unsafe partial class SecPkgContext_KeyingMaterialTests
 {
-    /// <summary>Provides validation of the <see cref="SecPkgContext_KeyingMaterial" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0")]
-    public static unsafe partial class SecPkgContext_KeyingMaterialTests
+    /// <summary>Validates that the <see cref="SecPkgContext_KeyingMaterial" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SecPkgContext_KeyingMaterial" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SecPkgContext_KeyingMaterial>(), Is.EqualTo(sizeof(SecPkgContext_KeyingMaterial)));
-        }
+        Assert.That(Marshal.SizeOf<SecPkgContext_KeyingMaterial>(), Is.EqualTo(sizeof(SecPkgContext_KeyingMaterial)));
+    }
 
-        /// <summary>Validates that the <see cref="SecPkgContext_KeyingMaterial" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SecPkgContext_KeyingMaterial).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SecPkgContext_KeyingMaterial" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SecPkgContext_KeyingMaterial).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SecPkgContext_KeyingMaterial" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SecPkgContext_KeyingMaterial" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SecPkgContext_KeyingMaterial), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(SecPkgContext_KeyingMaterial), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(SecPkgContext_KeyingMaterial), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(SecPkgContext_KeyingMaterial), Is.EqualTo(8));
         }
     }
 }

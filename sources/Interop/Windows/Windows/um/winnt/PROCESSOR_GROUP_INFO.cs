@@ -3,18 +3,17 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct PROCESSOR_GROUP_INFO
 {
-    public unsafe partial struct PROCESSOR_GROUP_INFO
-    {
-        public byte MaximumProcessorCount;
+    public byte MaximumProcessorCount;
 
-        public byte ActiveProcessorCount;
+    public byte ActiveProcessorCount;
 
-        [NativeTypeName("BYTE [38]")]
-        public fixed byte Reserved[38];
+    [NativeTypeName("BYTE [38]")]
+    public fixed byte Reserved[38];
 
-        [NativeTypeName("KAFFINITY")]
-        public nuint ActiveProcessorMask;
-    }
+    [NativeTypeName("KAFFINITY")]
+    public nuint ActiveProcessorMask;
 }

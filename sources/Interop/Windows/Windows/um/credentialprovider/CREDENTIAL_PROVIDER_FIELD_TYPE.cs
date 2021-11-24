@@ -3,19 +3,18 @@
 // Ported from um/credentialprovider.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum CREDENTIAL_PROVIDER_FIELD_TYPE
 {
-    public enum CREDENTIAL_PROVIDER_FIELD_TYPE
-    {
-        CPFT_INVALID = 0,
-        CPFT_LARGE_TEXT = (CPFT_INVALID + 1),
-        CPFT_SMALL_TEXT = (CPFT_LARGE_TEXT + 1),
-        CPFT_COMMAND_LINK = (CPFT_SMALL_TEXT + 1),
-        CPFT_EDIT_TEXT = (CPFT_COMMAND_LINK + 1),
-        CPFT_PASSWORD_TEXT = (CPFT_EDIT_TEXT + 1),
-        CPFT_TILE_IMAGE = (CPFT_PASSWORD_TEXT + 1),
-        CPFT_CHECKBOX = (CPFT_TILE_IMAGE + 1),
-        CPFT_COMBOBOX = (CPFT_CHECKBOX + 1),
-        CPFT_SUBMIT_BUTTON = (CPFT_COMBOBOX + 1),
-    }
+    CPFT_INVALID = 0,
+    CPFT_LARGE_TEXT = (CPFT_INVALID + 1),
+    CPFT_SMALL_TEXT = (CPFT_LARGE_TEXT + 1),
+    CPFT_COMMAND_LINK = (CPFT_SMALL_TEXT + 1),
+    CPFT_EDIT_TEXT = (CPFT_COMMAND_LINK + 1),
+    CPFT_PASSWORD_TEXT = (CPFT_EDIT_TEXT + 1),
+    CPFT_TILE_IMAGE = (CPFT_PASSWORD_TEXT + 1),
+    CPFT_CHECKBOX = (CPFT_TILE_IMAGE + 1),
+    CPFT_COMBOBOX = (CPFT_CHECKBOX + 1),
+    CPFT_SUBMIT_BUTTON = (CPFT_COMBOBOX + 1),
 }

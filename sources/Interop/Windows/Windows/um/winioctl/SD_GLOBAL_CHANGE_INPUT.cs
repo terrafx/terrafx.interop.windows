@@ -6,57 +6,56 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SD_GLOBAL_CHANGE_INPUT
 {
-    public partial struct SD_GLOBAL_CHANGE_INPUT
+    [NativeTypeName("DWORD")]
+    public uint Flags;
+
+    [NativeTypeName("DWORD")]
+    public uint ChangeType;
+
+    [NativeTypeName("_SD_GLOBAL_CHANGE_INPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:14327:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public ref SD_CHANGE_MACHINE_SID_INPUT SdChange
     {
-        [NativeTypeName("DWORD")]
-        public uint Flags;
-
-        [NativeTypeName("DWORD")]
-        public uint ChangeType;
-
-        [NativeTypeName("_SD_GLOBAL_CHANGE_INPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:14327:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public ref SD_CHANGE_MACHINE_SID_INPUT SdChange
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.SdChange, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.SdChange, 1));
         }
+    }
 
-        public ref SD_QUERY_STATS_INPUT SdQueryStats
+    public ref SD_QUERY_STATS_INPUT SdQueryStats
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.SdQueryStats, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.SdQueryStats, 1));
         }
+    }
 
-        public ref SD_ENUM_SDS_INPUT SdEnumSds
+    public ref SD_ENUM_SDS_INPUT SdEnumSds
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.SdEnumSds, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.SdEnumSds, 1));
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            public SD_CHANGE_MACHINE_SID_INPUT SdChange;
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        public SD_CHANGE_MACHINE_SID_INPUT SdChange;
 
-            [FieldOffset(0)]
-            public SD_QUERY_STATS_INPUT SdQueryStats;
+        [FieldOffset(0)]
+        public SD_QUERY_STATS_INPUT SdQueryStats;
 
-            [FieldOffset(0)]
-            public SD_ENUM_SDS_INPUT SdEnumSds;
-        }
+        [FieldOffset(0)]
+        public SD_ENUM_SDS_INPUT SdEnumSds;
     }
 }

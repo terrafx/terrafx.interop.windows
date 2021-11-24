@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("4DF0C730-DF9D-4AE3-9153-AA6B82E9795A")]
+public partial struct KnownFolderManager
 {
-    [Guid("4DF0C730-DF9D-4AE3-9153-AA6B82E9795A")]
-    public partial struct KnownFolderManager
-    {
-    }
 }

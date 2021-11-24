@@ -3,13 +3,12 @@
 // Ported from um/d3d10shader.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public static unsafe partial class DirectX
 {
-    public static unsafe partial class DirectX
+    public static int D3D10_TX_VERSION(int _Major, int _Minor)
     {
-        public static int D3D10_TX_VERSION(int _Major, int _Minor)
-        {
-            return (('T' << 24) | ('X' << 16) | ((_Major) << 8) | (_Minor));
-        }
+        return (('T' << 24) | ('X' << 16) | ((_Major) << 8) | (_Minor));
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PANOSE" /> struct.</summary>
+public static unsafe partial class PANOSETests
 {
-    /// <summary>Provides validation of the <see cref="PANOSE" /> struct.</summary>
-    public static unsafe partial class PANOSETests
+    /// <summary>Validates that the <see cref="PANOSE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PANOSE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PANOSE>(), Is.EqualTo(sizeof(PANOSE)));
-        }
+        Assert.That(Marshal.SizeOf<PANOSE>(), Is.EqualTo(sizeof(PANOSE)));
+    }
 
-        /// <summary>Validates that the <see cref="PANOSE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PANOSE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PANOSE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PANOSE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PANOSE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(PANOSE), Is.EqualTo(10));
-        }
+    /// <summary>Validates that the <see cref="PANOSE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(PANOSE), Is.EqualTo(10));
     }
 }

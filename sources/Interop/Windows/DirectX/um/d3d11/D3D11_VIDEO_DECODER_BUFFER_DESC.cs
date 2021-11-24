@@ -6,37 +6,36 @@
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct D3D11_VIDEO_DECODER_BUFFER_DESC
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct D3D11_VIDEO_DECODER_BUFFER_DESC
-    {
-        public D3D11_VIDEO_DECODER_BUFFER_TYPE BufferType;
+    public D3D11_VIDEO_DECODER_BUFFER_TYPE BufferType;
 
-        public uint BufferIndex;
+    public uint BufferIndex;
 
-        public uint DataOffset;
+    public uint DataOffset;
 
-        public uint DataSize;
+    public uint DataSize;
 
-        public uint FirstMBaddress;
+    public uint FirstMBaddress;
 
-        public uint NumMBsInBuffer;
+    public uint NumMBsInBuffer;
 
-        public uint Width;
+    public uint Width;
 
-        public uint Height;
+    public uint Height;
 
-        public uint Stride;
+    public uint Stride;
 
-        public uint ReservedBits;
+    public uint ReservedBits;
 
-        public void* pIV;
+    public void* pIV;
 
-        public uint IVSize;
+    public uint IVSize;
 
-        public BOOL PartialEncryption;
+    public BOOL PartialEncryption;
 
-        public D3D11_ENCRYPTED_BLOCK_INFO EncryptedBlockInfo;
-    }
+    public D3D11_ENCRYPTED_BLOCK_INFO EncryptedBlockInfo;
 }

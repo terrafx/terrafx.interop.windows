@@ -3,27 +3,26 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct ALTTABINFO
 {
-    public partial struct ALTTABINFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public int cItems;
+    public int cItems;
 
-        public int cColumns;
+    public int cColumns;
 
-        public int cRows;
+    public int cRows;
 
-        public int iColFocus;
+    public int iColFocus;
 
-        public int iRowFocus;
+    public int iRowFocus;
 
-        public int cxItem;
+    public int cxItem;
 
-        public int cyItem;
+    public int cyItem;
 
-        public POINT ptStart;
-    }
+    public POINT ptStart;
 }

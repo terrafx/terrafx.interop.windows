@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("C63382BE-7933-48D0-9AC8-85FB46BE2FDD")]
+public partial struct DefFolderMenu
 {
-    [Guid("C63382BE-7933-48D0-9AC8-85FB46BE2FDD")]
-    public partial struct DefFolderMenu
-    {
-    }
 }

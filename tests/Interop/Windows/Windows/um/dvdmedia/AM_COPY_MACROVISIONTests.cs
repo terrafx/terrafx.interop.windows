@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="AM_COPY_MACROVISION" /> struct.</summary>
+public static unsafe partial class AM_COPY_MACROVISIONTests
 {
-    /// <summary>Provides validation of the <see cref="AM_COPY_MACROVISION" /> struct.</summary>
-    public static unsafe partial class AM_COPY_MACROVISIONTests
+    /// <summary>Validates that the <see cref="AM_COPY_MACROVISION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="AM_COPY_MACROVISION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<AM_COPY_MACROVISION>(), Is.EqualTo(sizeof(AM_COPY_MACROVISION)));
-        }
+        Assert.That(Marshal.SizeOf<AM_COPY_MACROVISION>(), Is.EqualTo(sizeof(AM_COPY_MACROVISION)));
+    }
 
-        /// <summary>Validates that the <see cref="AM_COPY_MACROVISION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(AM_COPY_MACROVISION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="AM_COPY_MACROVISION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(AM_COPY_MACROVISION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="AM_COPY_MACROVISION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(AM_COPY_MACROVISION), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="AM_COPY_MACROVISION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(AM_COPY_MACROVISION), Is.EqualTo(4));
     }
 }

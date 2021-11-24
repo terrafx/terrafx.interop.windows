@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public enum PSS_WALK_INFORMATION_CLASS
 {
-    [SupportedOSPlatform("windows8.1")]
-    public enum PSS_WALK_INFORMATION_CLASS
-    {
-        PSS_WALK_AUXILIARY_PAGES = 0,
-        PSS_WALK_VA_SPACE = 1,
-        PSS_WALK_HANDLES = 2,
-        PSS_WALK_THREADS = 3,
-    }
+    PSS_WALK_AUXILIARY_PAGES = 0,
+    PSS_WALK_VA_SPACE = 1,
+    PSS_WALK_HANDLES = 2,
+    PSS_WALK_THREADS = 3,
 }

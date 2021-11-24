@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SpObjectTokenCategory" /> struct.</summary>
+public static unsafe partial class SpObjectTokenCategoryTests
 {
-    /// <summary>Provides validation of the <see cref="SpObjectTokenCategory" /> struct.</summary>
-    public static unsafe partial class SpObjectTokenCategoryTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SpObjectTokenCategory" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SpObjectTokenCategory" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SpObjectTokenCategory).GUID, Is.EqualTo(CLSID_SpObjectTokenCategory));
-        }
+        Assert.That(typeof(SpObjectTokenCategory).GUID, Is.EqualTo(CLSID_SpObjectTokenCategory));
+    }
 
-        /// <summary>Validates that the <see cref="SpObjectTokenCategory" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SpObjectTokenCategory>(), Is.EqualTo(sizeof(SpObjectTokenCategory)));
-        }
+    /// <summary>Validates that the <see cref="SpObjectTokenCategory" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SpObjectTokenCategory>(), Is.EqualTo(sizeof(SpObjectTokenCategory)));
+    }
 
-        /// <summary>Validates that the <see cref="SpObjectTokenCategory" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SpObjectTokenCategory).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SpObjectTokenCategory" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SpObjectTokenCategory).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SpObjectTokenCategory" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SpObjectTokenCategory), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SpObjectTokenCategory" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SpObjectTokenCategory), Is.EqualTo(1));
     }
 }

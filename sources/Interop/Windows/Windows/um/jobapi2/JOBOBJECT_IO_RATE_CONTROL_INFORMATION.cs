@@ -5,27 +5,26 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct JOBOBJECT_IO_RATE_CONTROL_INFORMATION
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct JOBOBJECT_IO_RATE_CONTROL_INFORMATION
-    {
-        [NativeTypeName("LONG64")]
-        public long MaxIops;
+    [NativeTypeName("LONG64")]
+    public long MaxIops;
 
-        [NativeTypeName("LONG64")]
-        public long MaxBandwidth;
+    [NativeTypeName("LONG64")]
+    public long MaxBandwidth;
 
-        [NativeTypeName("LONG64")]
-        public long ReservationIops;
+    [NativeTypeName("LONG64")]
+    public long ReservationIops;
 
-        [NativeTypeName("PCWSTR")]
-        public ushort* VolumeName;
+    [NativeTypeName("PCWSTR")]
+    public ushort* VolumeName;
 
-        [NativeTypeName("ULONG")]
-        public uint BaseIoSize;
+    [NativeTypeName("ULONG")]
+    public uint BaseIoSize;
 
-        [NativeTypeName("ULONG")]
-        public uint ControlFlags;
-    }
+    [NativeTypeName("ULONG")]
+    public uint ControlFlags;
 }

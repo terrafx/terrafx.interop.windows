@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISVGPathSegArcRel" /> struct.</summary>
+public static unsafe partial class ISVGPathSegArcRelTests
 {
-    /// <summary>Provides validation of the <see cref="ISVGPathSegArcRel" /> struct.</summary>
-    public static unsafe partial class ISVGPathSegArcRelTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISVGPathSegArcRel" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISVGPathSegArcRel" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISVGPathSegArcRel).GUID, Is.EqualTo(IID_ISVGPathSegArcRel));
-        }
+        Assert.That(typeof(ISVGPathSegArcRel).GUID, Is.EqualTo(IID_ISVGPathSegArcRel));
+    }
 
-        /// <summary>Validates that the <see cref="ISVGPathSegArcRel" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISVGPathSegArcRel>(), Is.EqualTo(sizeof(ISVGPathSegArcRel)));
-        }
+    /// <summary>Validates that the <see cref="ISVGPathSegArcRel" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISVGPathSegArcRel>(), Is.EqualTo(sizeof(ISVGPathSegArcRel)));
+    }
 
-        /// <summary>Validates that the <see cref="ISVGPathSegArcRel" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISVGPathSegArcRel).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISVGPathSegArcRel" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISVGPathSegArcRel).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISVGPathSegArcRel" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISVGPathSegArcRel" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISVGPathSegArcRel), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISVGPathSegArcRel), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISVGPathSegArcRel), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISVGPathSegArcRel), Is.EqualTo(4));
         }
     }
 }

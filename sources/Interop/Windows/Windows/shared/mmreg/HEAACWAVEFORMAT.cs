@@ -3,13 +3,12 @@
 // Ported from shared/mmreg.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct HEAACWAVEFORMAT
-    {
-        public HEAACWAVEINFO wfInfo;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("BYTE [1]")]
-        public fixed byte pbAudioSpecificConfig[1];
-    }
+public unsafe partial struct HEAACWAVEFORMAT
+{
+    public HEAACWAVEINFO wfInfo;
+
+    [NativeTypeName("BYTE [1]")]
+    public fixed byte pbAudioSpecificConfig[1];
 }

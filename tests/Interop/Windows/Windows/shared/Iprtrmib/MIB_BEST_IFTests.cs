@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MIB_BEST_IF" /> struct.</summary>
+public static unsafe partial class MIB_BEST_IFTests
 {
-    /// <summary>Provides validation of the <see cref="MIB_BEST_IF" /> struct.</summary>
-    public static unsafe partial class MIB_BEST_IFTests
+    /// <summary>Validates that the <see cref="MIB_BEST_IF" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MIB_BEST_IF" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MIB_BEST_IF>(), Is.EqualTo(sizeof(MIB_BEST_IF)));
-        }
+        Assert.That(Marshal.SizeOf<MIB_BEST_IF>(), Is.EqualTo(sizeof(MIB_BEST_IF)));
+    }
 
-        /// <summary>Validates that the <see cref="MIB_BEST_IF" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MIB_BEST_IF).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MIB_BEST_IF" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MIB_BEST_IF).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MIB_BEST_IF" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MIB_BEST_IF), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="MIB_BEST_IF" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MIB_BEST_IF), Is.EqualTo(8));
     }
 }

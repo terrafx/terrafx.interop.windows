@@ -3,24 +3,23 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_HTTP_MESSAGE_MAPPING
 {
-    public unsafe partial struct WS_HTTP_MESSAGE_MAPPING
-    {
-        [NativeTypeName("ULONG")]
-        public uint requestMappingOptions;
+    [NativeTypeName("ULONG")]
+    public uint requestMappingOptions;
 
-        [NativeTypeName("ULONG")]
-        public uint responseMappingOptions;
+    [NativeTypeName("ULONG")]
+    public uint responseMappingOptions;
 
-        public WS_HTTP_HEADER_MAPPING** requestHeaderMappings;
+    public WS_HTTP_HEADER_MAPPING** requestHeaderMappings;
 
-        [NativeTypeName("ULONG")]
-        public uint requestHeaderMappingCount;
+    [NativeTypeName("ULONG")]
+    public uint requestHeaderMappingCount;
 
-        public WS_HTTP_HEADER_MAPPING** responseHeaderMappings;
+    public WS_HTTP_HEADER_MAPPING** responseHeaderMappings;
 
-        [NativeTypeName("ULONG")]
-        public uint responseHeaderMappingCount;
-    }
+    [NativeTypeName("ULONG")]
+    public uint responseHeaderMappingCount;
 }

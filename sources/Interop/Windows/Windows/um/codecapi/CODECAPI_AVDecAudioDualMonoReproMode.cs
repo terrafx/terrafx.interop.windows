@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("A5106186-CC94-4BC9-8CD9-AA2F61F6807E")]
+public partial struct CODECAPI_AVDecAudioDualMonoReproMode
 {
-    [Guid("A5106186-CC94-4BC9-8CD9-AA2F61F6807E")]
-    public partial struct CODECAPI_AVDecAudioDualMonoReproMode
-    {
-    }
 }

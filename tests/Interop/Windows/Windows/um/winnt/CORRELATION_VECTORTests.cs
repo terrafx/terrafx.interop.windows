@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CORRELATION_VECTOR" /> struct.</summary>
+public static unsafe partial class CORRELATION_VECTORTests
 {
-    /// <summary>Provides validation of the <see cref="CORRELATION_VECTOR" /> struct.</summary>
-    public static unsafe partial class CORRELATION_VECTORTests
+    /// <summary>Validates that the <see cref="CORRELATION_VECTOR" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CORRELATION_VECTOR" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CORRELATION_VECTOR>(), Is.EqualTo(sizeof(CORRELATION_VECTOR)));
-        }
+        Assert.That(Marshal.SizeOf<CORRELATION_VECTOR>(), Is.EqualTo(sizeof(CORRELATION_VECTOR)));
+    }
 
-        /// <summary>Validates that the <see cref="CORRELATION_VECTOR" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CORRELATION_VECTOR).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CORRELATION_VECTOR" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CORRELATION_VECTOR).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CORRELATION_VECTOR" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CORRELATION_VECTOR), Is.EqualTo(130));
-        }
+    /// <summary>Validates that the <see cref="CORRELATION_VECTOR" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CORRELATION_VECTOR), Is.EqualTo(130));
     }
 }

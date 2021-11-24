@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX" /> struct.</summary>
+public static unsafe partial class FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EXTests
 {
-    /// <summary>Provides validation of the <see cref="FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX" /> struct.</summary>
-    public static unsafe partial class FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EXTests
+    /// <summary>Validates that the <see cref="FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX>(), Is.EqualTo(sizeof(FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX)));
-        }
+        Assert.That(Marshal.SizeOf<FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX>(), Is.EqualTo(sizeof(FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX)));
+    }
 
-        /// <summary>Validates that the <see cref="FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX), Is.EqualTo(16));
     }
 }

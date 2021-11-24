@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("8A03567A-63CB-4BA8-BAF6-52119816D1EF")]
+public partial struct MSEnumDiscRecordersObj
 {
-    [Guid("8A03567A-63CB-4BA8-BAF6-52119816D1EF")]
-    public partial struct MSEnumDiscRecordersObj
-    {
-    }
 }

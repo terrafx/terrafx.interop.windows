@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("964829ED-94F9-43B4-B74D-EF40944B69A0")]
+public partial struct CODECAPI_AVEncVideoMaxNumRefFrame
 {
-    [Guid("964829ED-94F9-43B4-B74D-EF40944B69A0")]
-    public partial struct CODECAPI_AVEncVideoMaxNumRefFrame
-    {
-    }
 }

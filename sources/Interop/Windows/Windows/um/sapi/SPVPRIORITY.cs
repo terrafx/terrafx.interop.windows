@@ -3,12 +3,11 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SPVPRIORITY
 {
-    public enum SPVPRIORITY
-    {
-        SPVPRI_NORMAL = 0,
-        SPVPRI_ALERT = (1 << 0),
-        SPVPRI_OVER = (1 << 1),
-    }
+    SPVPRI_NORMAL = 0,
+    SPVPRI_ALERT = (1 << 0),
+    SPVPRI_OVER = (1 << 1),
 }

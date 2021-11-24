@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="LVBKIMAGEA" /> struct.</summary>
+public static unsafe partial class LVBKIMAGEATests
 {
-    /// <summary>Provides validation of the <see cref="LVBKIMAGEA" /> struct.</summary>
-    public static unsafe partial class LVBKIMAGEATests
+    /// <summary>Validates that the <see cref="LVBKIMAGEA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="LVBKIMAGEA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<LVBKIMAGEA>(), Is.EqualTo(sizeof(LVBKIMAGEA)));
-        }
+        Assert.That(Marshal.SizeOf<LVBKIMAGEA>(), Is.EqualTo(sizeof(LVBKIMAGEA)));
+    }
 
-        /// <summary>Validates that the <see cref="LVBKIMAGEA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(LVBKIMAGEA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="LVBKIMAGEA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(LVBKIMAGEA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="LVBKIMAGEA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="LVBKIMAGEA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(LVBKIMAGEA), Is.EqualTo(40));
-            }
-            else
-            {
-                Assert.That(sizeof(LVBKIMAGEA), Is.EqualTo(24));
-            }
+            Assert.That(sizeof(LVBKIMAGEA), Is.EqualTo(40));
+        }
+        else
+        {
+            Assert.That(sizeof(LVBKIMAGEA), Is.EqualTo(24));
         }
     }
 }

@@ -3,10 +3,9 @@
 // Ported from um/DirectML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DML_FEATURE_DATA_FEATURE_LEVELS
 {
-    public partial struct DML_FEATURE_DATA_FEATURE_LEVELS
-    {
-        public DML_FEATURE_LEVEL MaxSupportedFeatureLevel;
-    }
+    public DML_FEATURE_LEVEL MaxSupportedFeatureLevel;
 }

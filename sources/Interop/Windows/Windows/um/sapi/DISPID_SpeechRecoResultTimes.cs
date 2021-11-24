@@ -3,13 +3,12 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum DISPID_SpeechRecoResultTimes
 {
-    public enum DISPID_SpeechRecoResultTimes
-    {
-        DISPID_SRRTStreamTime = 1,
-        DISPID_SRRTLength = (DISPID_SRRTStreamTime + 1),
-        DISPID_SRRTTickCount = (DISPID_SRRTLength + 1),
-        DISPID_SRRTOffsetFromStart = (DISPID_SRRTTickCount + 1),
-    }
+    DISPID_SRRTStreamTime = 1,
+    DISPID_SRRTLength = (DISPID_SRRTStreamTime + 1),
+    DISPID_SRRTTickCount = (DISPID_SRRTLength + 1),
+    DISPID_SRRTOffsetFromStart = (DISPID_SRRTTickCount + 1),
 }

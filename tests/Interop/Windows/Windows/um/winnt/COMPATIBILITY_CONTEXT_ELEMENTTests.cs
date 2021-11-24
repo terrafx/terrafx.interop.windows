@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="COMPATIBILITY_CONTEXT_ELEMENT" /> struct.</summary>
+public static unsafe partial class COMPATIBILITY_CONTEXT_ELEMENTTests
 {
-    /// <summary>Provides validation of the <see cref="COMPATIBILITY_CONTEXT_ELEMENT" /> struct.</summary>
-    public static unsafe partial class COMPATIBILITY_CONTEXT_ELEMENTTests
+    /// <summary>Validates that the <see cref="COMPATIBILITY_CONTEXT_ELEMENT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="COMPATIBILITY_CONTEXT_ELEMENT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<COMPATIBILITY_CONTEXT_ELEMENT>(), Is.EqualTo(sizeof(COMPATIBILITY_CONTEXT_ELEMENT)));
-        }
+        Assert.That(Marshal.SizeOf<COMPATIBILITY_CONTEXT_ELEMENT>(), Is.EqualTo(sizeof(COMPATIBILITY_CONTEXT_ELEMENT)));
+    }
 
-        /// <summary>Validates that the <see cref="COMPATIBILITY_CONTEXT_ELEMENT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(COMPATIBILITY_CONTEXT_ELEMENT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="COMPATIBILITY_CONTEXT_ELEMENT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(COMPATIBILITY_CONTEXT_ELEMENT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="COMPATIBILITY_CONTEXT_ELEMENT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(COMPATIBILITY_CONTEXT_ELEMENT), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="COMPATIBILITY_CONTEXT_ELEMENT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(COMPATIBILITY_CONTEXT_ELEMENT), Is.EqualTo(32));
     }
 }

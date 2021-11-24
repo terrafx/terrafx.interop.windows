@@ -3,42 +3,41 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct LOGFONTA
 {
-    public unsafe partial struct LOGFONTA
-    {
-        [NativeTypeName("LONG")]
-        public int lfHeight;
+    [NativeTypeName("LONG")]
+    public int lfHeight;
 
-        [NativeTypeName("LONG")]
-        public int lfWidth;
+    [NativeTypeName("LONG")]
+    public int lfWidth;
 
-        [NativeTypeName("LONG")]
-        public int lfEscapement;
+    [NativeTypeName("LONG")]
+    public int lfEscapement;
 
-        [NativeTypeName("LONG")]
-        public int lfOrientation;
+    [NativeTypeName("LONG")]
+    public int lfOrientation;
 
-        [NativeTypeName("LONG")]
-        public int lfWeight;
+    [NativeTypeName("LONG")]
+    public int lfWeight;
 
-        public byte lfItalic;
+    public byte lfItalic;
 
-        public byte lfUnderline;
+    public byte lfUnderline;
 
-        public byte lfStrikeOut;
+    public byte lfStrikeOut;
 
-        public byte lfCharSet;
+    public byte lfCharSet;
 
-        public byte lfOutPrecision;
+    public byte lfOutPrecision;
 
-        public byte lfClipPrecision;
+    public byte lfClipPrecision;
 
-        public byte lfQuality;
+    public byte lfQuality;
 
-        public byte lfPitchAndFamily;
+    public byte lfPitchAndFamily;
 
-        [NativeTypeName("CHAR [32]")]
-        public fixed sbyte lfFaceName[32];
-    }
+    [NativeTypeName("CHAR [32]")]
+    public fixed sbyte lfFaceName[32];
 }

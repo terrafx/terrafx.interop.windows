@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HISTOGRAM_BUCKET" /> struct.</summary>
+public static unsafe partial class HISTOGRAM_BUCKETTests
 {
-    /// <summary>Provides validation of the <see cref="HISTOGRAM_BUCKET" /> struct.</summary>
-    public static unsafe partial class HISTOGRAM_BUCKETTests
+    /// <summary>Validates that the <see cref="HISTOGRAM_BUCKET" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="HISTOGRAM_BUCKET" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HISTOGRAM_BUCKET>(), Is.EqualTo(sizeof(HISTOGRAM_BUCKET)));
-        }
+        Assert.That(Marshal.SizeOf<HISTOGRAM_BUCKET>(), Is.EqualTo(sizeof(HISTOGRAM_BUCKET)));
+    }
 
-        /// <summary>Validates that the <see cref="HISTOGRAM_BUCKET" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HISTOGRAM_BUCKET).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HISTOGRAM_BUCKET" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HISTOGRAM_BUCKET).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HISTOGRAM_BUCKET" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HISTOGRAM_BUCKET), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="HISTOGRAM_BUCKET" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HISTOGRAM_BUCKET), Is.EqualTo(8));
     }
 }

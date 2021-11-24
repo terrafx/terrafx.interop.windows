@@ -3,16 +3,15 @@
 // Ported from um/d3d11.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D11_DRAW_INSTANCED_INDIRECT_ARGS
 {
-    public partial struct D3D11_DRAW_INSTANCED_INDIRECT_ARGS
-    {
-        public uint VertexCountPerInstance;
+    public uint VertexCountPerInstance;
 
-        public uint InstanceCount;
+    public uint InstanceCount;
 
-        public uint StartVertexLocation;
+    public uint StartVertexLocation;
 
-        public uint StartInstanceLocation;
-    }
+    public uint StartInstanceLocation;
 }

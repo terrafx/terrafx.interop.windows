@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DWRITE_LINE_BREAKPOINT" /> struct.</summary>
+public static unsafe partial class DWRITE_LINE_BREAKPOINTTests
 {
-    /// <summary>Provides validation of the <see cref="DWRITE_LINE_BREAKPOINT" /> struct.</summary>
-    public static unsafe partial class DWRITE_LINE_BREAKPOINTTests
+    /// <summary>Validates that the <see cref="DWRITE_LINE_BREAKPOINT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DWRITE_LINE_BREAKPOINT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DWRITE_LINE_BREAKPOINT>(), Is.EqualTo(sizeof(DWRITE_LINE_BREAKPOINT)));
-        }
+        Assert.That(Marshal.SizeOf<DWRITE_LINE_BREAKPOINT>(), Is.EqualTo(sizeof(DWRITE_LINE_BREAKPOINT)));
+    }
 
-        /// <summary>Validates that the <see cref="DWRITE_LINE_BREAKPOINT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DWRITE_LINE_BREAKPOINT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DWRITE_LINE_BREAKPOINT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DWRITE_LINE_BREAKPOINT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DWRITE_LINE_BREAKPOINT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DWRITE_LINE_BREAKPOINT), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="DWRITE_LINE_BREAKPOINT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DWRITE_LINE_BREAKPOINT), Is.EqualTo(1));
     }
 }

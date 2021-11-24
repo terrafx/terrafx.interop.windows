@@ -3,29 +3,28 @@
 // Ported from um/immdev.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct IMEINFO
 {
-    public partial struct IMEINFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwPrivateDataSize;
+    [NativeTypeName("DWORD")]
+    public uint dwPrivateDataSize;
 
-        [NativeTypeName("DWORD")]
-        public uint fdwProperty;
+    [NativeTypeName("DWORD")]
+    public uint fdwProperty;
 
-        [NativeTypeName("DWORD")]
-        public uint fdwConversionCaps;
+    [NativeTypeName("DWORD")]
+    public uint fdwConversionCaps;
 
-        [NativeTypeName("DWORD")]
-        public uint fdwSentenceCaps;
+    [NativeTypeName("DWORD")]
+    public uint fdwSentenceCaps;
 
-        [NativeTypeName("DWORD")]
-        public uint fdwUICaps;
+    [NativeTypeName("DWORD")]
+    public uint fdwUICaps;
 
-        [NativeTypeName("DWORD")]
-        public uint fdwSCSCaps;
+    [NativeTypeName("DWORD")]
+    public uint fdwSCSCaps;
 
-        [NativeTypeName("DWORD")]
-        public uint fdwSelectCaps;
-    }
+    [NativeTypeName("DWORD")]
+    public uint fdwSelectCaps;
 }

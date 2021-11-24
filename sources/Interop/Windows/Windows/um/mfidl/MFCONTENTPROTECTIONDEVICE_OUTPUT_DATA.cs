@@ -5,29 +5,28 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA
-    {
-        [NativeTypeName("DWORD")]
-        public uint PrivateDataByteCount;
+    [NativeTypeName("DWORD")]
+    public uint PrivateDataByteCount;
 
-        [NativeTypeName("DWORD")]
-        public uint MaxHWProtectionDataByteCount;
+    [NativeTypeName("DWORD")]
+    public uint MaxHWProtectionDataByteCount;
 
-        [NativeTypeName("DWORD")]
-        public uint HWProtectionDataByteCount;
+    [NativeTypeName("DWORD")]
+    public uint HWProtectionDataByteCount;
 
-        public HRESULT Status;
+    public HRESULT Status;
 
-        [NativeTypeName("LONGLONG")]
-        public long TransportTimeInHundredsOfNanoseconds;
+    [NativeTypeName("LONGLONG")]
+    public long TransportTimeInHundredsOfNanoseconds;
 
-        [NativeTypeName("LONGLONG")]
-        public long ExecutionTimeInHundredsOfNanoseconds;
+    [NativeTypeName("LONGLONG")]
+    public long ExecutionTimeInHundredsOfNanoseconds;
 
-        [NativeTypeName("BYTE [4]")]
-        public fixed byte OutputData[4];
-    }
+    [NativeTypeName("BYTE [4]")]
+    public fixed byte OutputData[4];
 }

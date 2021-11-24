@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE" /> struct.</summary>
+public static unsafe partial class MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTETests
 {
-    /// <summary>Provides validation of the <see cref="MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE" /> struct.</summary>
-    public static unsafe partial class MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTETests
+    /// <summary>Validates that the <see cref="MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE>(), Is.EqualTo(sizeof(MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE)));
-        }
+        Assert.That(Marshal.SizeOf<MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE>(), Is.EqualTo(sizeof(MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE)));
+    }
 
-        /// <summary>Validates that the <see cref="MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE), Is.EqualTo(16));
     }
 }

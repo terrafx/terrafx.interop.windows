@@ -3,18 +3,17 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_ASYNC_STATE
 {
-    public unsafe partial struct WS_ASYNC_STATE
-    {
-        public void* internal0;
+    public void* internal0;
 
-        public void* internal1;
+    public void* internal1;
 
-        public void* internal2;
+    public void* internal2;
 
-        public void* internal3;
+    public void* internal3;
 
-        public void* internal4;
-    }
+    public void* internal4;
 }

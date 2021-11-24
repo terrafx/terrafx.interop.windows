@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IEnumRegisterWordA" /> struct.</summary>
+public static unsafe partial class IEnumRegisterWordATests
 {
-    /// <summary>Provides validation of the <see cref="IEnumRegisterWordA" /> struct.</summary>
-    public static unsafe partial class IEnumRegisterWordATests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IEnumRegisterWordA" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IEnumRegisterWordA" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IEnumRegisterWordA).GUID, Is.EqualTo(IID_IEnumRegisterWordA));
-        }
+        Assert.That(typeof(IEnumRegisterWordA).GUID, Is.EqualTo(IID_IEnumRegisterWordA));
+    }
 
-        /// <summary>Validates that the <see cref="IEnumRegisterWordA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IEnumRegisterWordA>(), Is.EqualTo(sizeof(IEnumRegisterWordA)));
-        }
+    /// <summary>Validates that the <see cref="IEnumRegisterWordA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IEnumRegisterWordA>(), Is.EqualTo(sizeof(IEnumRegisterWordA)));
+    }
 
-        /// <summary>Validates that the <see cref="IEnumRegisterWordA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IEnumRegisterWordA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IEnumRegisterWordA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IEnumRegisterWordA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IEnumRegisterWordA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IEnumRegisterWordA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IEnumRegisterWordA), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IEnumRegisterWordA), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IEnumRegisterWordA), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IEnumRegisterWordA), Is.EqualTo(4));
         }
     }
 }

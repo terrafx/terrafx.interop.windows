@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public enum MEM_EXTENDED_PARAMETER_TYPE
 {
-    [SupportedOSPlatform("windows10.0")]
-    public enum MEM_EXTENDED_PARAMETER_TYPE
-    {
-        MemExtendedParameterInvalidType = 0,
-        MemExtendedParameterAddressRequirements,
-        MemExtendedParameterNumaNode,
-        MemExtendedParameterPartitionHandle,
-        MemExtendedParameterUserPhysicalHandle,
-        MemExtendedParameterAttributeFlags,
-        MemExtendedParameterImageMachine,
-        MemExtendedParameterMax,
-    }
+    MemExtendedParameterInvalidType = 0,
+    MemExtendedParameterAddressRequirements,
+    MemExtendedParameterNumaNode,
+    MemExtendedParameterPartitionHandle,
+    MemExtendedParameterUserPhysicalHandle,
+    MemExtendedParameterAttributeFlags,
+    MemExtendedParameterImageMachine,
+    MemExtendedParameterMax,
 }

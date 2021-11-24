@@ -7,261 +7,260 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("0000002F-0000-0000-C000-000000000046")]
+[NativeTypeName("struct IRecordInfo : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IRecordInfo : IRecordInfo.Interface
 {
-    [Guid("0000002F-0000-0000-C000-000000000046")]
-    [NativeTypeName("struct IRecordInfo : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRecordInfo : IRecordInfo.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IRecordInfo*, Guid*, void**, int>)(lpVtbl[0]))((IRecordInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IRecordInfo*, Guid*, void**, int>)(lpVtbl[0]))((IRecordInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IRecordInfo*, uint>)(lpVtbl[1]))((IRecordInfo*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IRecordInfo*, uint>)(lpVtbl[1]))((IRecordInfo*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IRecordInfo*, uint>)(lpVtbl[2]))((IRecordInfo*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IRecordInfo*, uint>)(lpVtbl[2]))((IRecordInfo*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT RecordInit([NativeTypeName("PVOID")] void* pvNew)
+    {
+        return ((delegate* unmanaged<IRecordInfo*, void*, int>)(lpVtbl[3]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvNew);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT RecordClear([NativeTypeName("PVOID")] void* pvExisting)
+    {
+        return ((delegate* unmanaged<IRecordInfo*, void*, int>)(lpVtbl[4]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvExisting);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT RecordCopy([NativeTypeName("PVOID")] void* pvExisting, [NativeTypeName("PVOID")] void* pvNew)
+    {
+        return ((delegate* unmanaged<IRecordInfo*, void*, void*, int>)(lpVtbl[5]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvExisting, pvNew);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetGuid(Guid* pguid)
+    {
+        return ((delegate* unmanaged<IRecordInfo*, Guid*, int>)(lpVtbl[6]))((IRecordInfo*)Unsafe.AsPointer(ref this), pguid);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT GetName([NativeTypeName("BSTR *")] ushort** pbstrName)
+    {
+        return ((delegate* unmanaged<IRecordInfo*, ushort**, int>)(lpVtbl[7]))((IRecordInfo*)Unsafe.AsPointer(ref this), pbstrName);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT GetSize([NativeTypeName("ULONG *")] uint* pcbSize)
+    {
+        return ((delegate* unmanaged<IRecordInfo*, uint*, int>)(lpVtbl[8]))((IRecordInfo*)Unsafe.AsPointer(ref this), pcbSize);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT GetTypeInfo(ITypeInfo** ppTypeInfo)
+    {
+        return ((delegate* unmanaged<IRecordInfo*, ITypeInfo**, int>)(lpVtbl[9]))((IRecordInfo*)Unsafe.AsPointer(ref this), ppTypeInfo);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT GetField([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField)
+    {
+        return ((delegate* unmanaged<IRecordInfo*, void*, ushort*, VARIANT*, int>)(lpVtbl[10]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvData, szFieldName, pvarField);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT GetFieldNoCopy([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField, [NativeTypeName("PVOID *")] void** ppvDataCArray)
+    {
+        return ((delegate* unmanaged<IRecordInfo*, void*, ushort*, VARIANT*, void**, int>)(lpVtbl[11]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvData, szFieldName, pvarField, ppvDataCArray);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT PutField([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField)
+    {
+        return ((delegate* unmanaged<IRecordInfo*, uint, void*, ushort*, VARIANT*, int>)(lpVtbl[12]))((IRecordInfo*)Unsafe.AsPointer(ref this), wFlags, pvData, szFieldName, pvarField);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT PutFieldNoCopy([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField)
+    {
+        return ((delegate* unmanaged<IRecordInfo*, uint, void*, ushort*, VARIANT*, int>)(lpVtbl[13]))((IRecordInfo*)Unsafe.AsPointer(ref this), wFlags, pvData, szFieldName, pvarField);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT GetFieldNames([NativeTypeName("ULONG *")] uint* pcNames, [NativeTypeName("BSTR *")] ushort** rgBstrNames)
+    {
+        return ((delegate* unmanaged<IRecordInfo*, uint*, ushort**, int>)(lpVtbl[14]))((IRecordInfo*)Unsafe.AsPointer(ref this), pcNames, rgBstrNames);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public BOOL IsMatchingType(IRecordInfo* pRecordInfo)
+    {
+        return ((delegate* unmanaged<IRecordInfo*, IRecordInfo*, int>)(lpVtbl[15]))((IRecordInfo*)Unsafe.AsPointer(ref this), pRecordInfo);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    [return: NativeTypeName("PVOID")]
+    public void* RecordCreate()
+    {
+        return ((delegate* unmanaged<IRecordInfo*, void*>)(lpVtbl[16]))((IRecordInfo*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT RecordCreateCopy([NativeTypeName("PVOID")] void* pvSource, [NativeTypeName("PVOID *")] void** ppvDest)
+    {
+        return ((delegate* unmanaged<IRecordInfo*, void*, void**, int>)(lpVtbl[17]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvSource, ppvDest);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT RecordDestroy([NativeTypeName("PVOID")] void* pvRecord)
+    {
+        return ((delegate* unmanaged<IRecordInfo*, void*, int>)(lpVtbl[18]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvRecord);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT RecordInit([NativeTypeName("PVOID")] void* pvNew)
-        {
-            return ((delegate* unmanaged<IRecordInfo*, void*, int>)(lpVtbl[3]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvNew);
-        }
+        HRESULT RecordInit([NativeTypeName("PVOID")] void* pvNew);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT RecordClear([NativeTypeName("PVOID")] void* pvExisting)
-        {
-            return ((delegate* unmanaged<IRecordInfo*, void*, int>)(lpVtbl[4]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvExisting);
-        }
+        HRESULT RecordClear([NativeTypeName("PVOID")] void* pvExisting);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT RecordCopy([NativeTypeName("PVOID")] void* pvExisting, [NativeTypeName("PVOID")] void* pvNew)
-        {
-            return ((delegate* unmanaged<IRecordInfo*, void*, void*, int>)(lpVtbl[5]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvExisting, pvNew);
-        }
+        HRESULT RecordCopy([NativeTypeName("PVOID")] void* pvExisting, [NativeTypeName("PVOID")] void* pvNew);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetGuid(Guid* pguid)
-        {
-            return ((delegate* unmanaged<IRecordInfo*, Guid*, int>)(lpVtbl[6]))((IRecordInfo*)Unsafe.AsPointer(ref this), pguid);
-        }
+        HRESULT GetGuid(Guid* pguid);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetName([NativeTypeName("BSTR *")] ushort** pbstrName)
-        {
-            return ((delegate* unmanaged<IRecordInfo*, ushort**, int>)(lpVtbl[7]))((IRecordInfo*)Unsafe.AsPointer(ref this), pbstrName);
-        }
+        HRESULT GetName([NativeTypeName("BSTR *")] ushort** pbstrName);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT GetSize([NativeTypeName("ULONG *")] uint* pcbSize)
-        {
-            return ((delegate* unmanaged<IRecordInfo*, uint*, int>)(lpVtbl[8]))((IRecordInfo*)Unsafe.AsPointer(ref this), pcbSize);
-        }
+        HRESULT GetSize([NativeTypeName("ULONG *")] uint* pcbSize);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetTypeInfo(ITypeInfo** ppTypeInfo)
-        {
-            return ((delegate* unmanaged<IRecordInfo*, ITypeInfo**, int>)(lpVtbl[9]))((IRecordInfo*)Unsafe.AsPointer(ref this), ppTypeInfo);
-        }
+        HRESULT GetTypeInfo(ITypeInfo** ppTypeInfo);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetField([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField)
-        {
-            return ((delegate* unmanaged<IRecordInfo*, void*, ushort*, VARIANT*, int>)(lpVtbl[10]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvData, szFieldName, pvarField);
-        }
+        HRESULT GetField([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT GetFieldNoCopy([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField, [NativeTypeName("PVOID *")] void** ppvDataCArray)
-        {
-            return ((delegate* unmanaged<IRecordInfo*, void*, ushort*, VARIANT*, void**, int>)(lpVtbl[11]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvData, szFieldName, pvarField, ppvDataCArray);
-        }
+        HRESULT GetFieldNoCopy([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField, [NativeTypeName("PVOID *")] void** ppvDataCArray);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT PutField([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField)
-        {
-            return ((delegate* unmanaged<IRecordInfo*, uint, void*, ushort*, VARIANT*, int>)(lpVtbl[12]))((IRecordInfo*)Unsafe.AsPointer(ref this), wFlags, pvData, szFieldName, pvarField);
-        }
+        HRESULT PutField([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT PutFieldNoCopy([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField)
-        {
-            return ((delegate* unmanaged<IRecordInfo*, uint, void*, ushort*, VARIANT*, int>)(lpVtbl[13]))((IRecordInfo*)Unsafe.AsPointer(ref this), wFlags, pvData, szFieldName, pvarField);
-        }
+        HRESULT PutFieldNoCopy([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT GetFieldNames([NativeTypeName("ULONG *")] uint* pcNames, [NativeTypeName("BSTR *")] ushort** rgBstrNames)
-        {
-            return ((delegate* unmanaged<IRecordInfo*, uint*, ushort**, int>)(lpVtbl[14]))((IRecordInfo*)Unsafe.AsPointer(ref this), pcNames, rgBstrNames);
-        }
+        HRESULT GetFieldNames([NativeTypeName("ULONG *")] uint* pcNames, [NativeTypeName("BSTR *")] ushort** rgBstrNames);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public BOOL IsMatchingType(IRecordInfo* pRecordInfo)
-        {
-            return ((delegate* unmanaged<IRecordInfo*, IRecordInfo*, int>)(lpVtbl[15]))((IRecordInfo*)Unsafe.AsPointer(ref this), pRecordInfo);
-        }
+        BOOL IsMatchingType(IRecordInfo* pRecordInfo);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
         [return: NativeTypeName("PVOID")]
-        public void* RecordCreate()
-        {
-            return ((delegate* unmanaged<IRecordInfo*, void*>)(lpVtbl[16]))((IRecordInfo*)Unsafe.AsPointer(ref this));
-        }
+        void* RecordCreate();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT RecordCreateCopy([NativeTypeName("PVOID")] void* pvSource, [NativeTypeName("PVOID *")] void** ppvDest)
-        {
-            return ((delegate* unmanaged<IRecordInfo*, void*, void**, int>)(lpVtbl[17]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvSource, ppvDest);
-        }
+        HRESULT RecordCreateCopy([NativeTypeName("PVOID")] void* pvSource, [NativeTypeName("PVOID *")] void** ppvDest);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT RecordDestroy([NativeTypeName("PVOID")] void* pvRecord)
-        {
-            return ((delegate* unmanaged<IRecordInfo*, void*, int>)(lpVtbl[18]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvRecord);
-        }
+        HRESULT RecordDestroy([NativeTypeName("PVOID")] void* pvRecord);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT RecordInit([NativeTypeName("PVOID")] void* pvNew);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRecordInfo*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT RecordClear([NativeTypeName("PVOID")] void* pvExisting);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IRecordInfo*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT RecordCopy([NativeTypeName("PVOID")] void* pvExisting, [NativeTypeName("PVOID")] void* pvNew);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IRecordInfo*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT GetGuid(Guid* pguid);
+        [NativeTypeName("HRESULT (PVOID) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRecordInfo*, void*, int> RecordInit;
 
-            [VtblIndex(7)]
-            HRESULT GetName([NativeTypeName("BSTR *")] ushort** pbstrName);
+        [NativeTypeName("HRESULT (PVOID) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRecordInfo*, void*, int> RecordClear;
 
-            [VtblIndex(8)]
-            HRESULT GetSize([NativeTypeName("ULONG *")] uint* pcbSize);
+        [NativeTypeName("HRESULT (PVOID, PVOID) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRecordInfo*, void*, void*, int> RecordCopy;
 
-            [VtblIndex(9)]
-            HRESULT GetTypeInfo(ITypeInfo** ppTypeInfo);
+        [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRecordInfo*, Guid*, int> GetGuid;
 
-            [VtblIndex(10)]
-            HRESULT GetField([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRecordInfo*, ushort**, int> GetName;
 
-            [VtblIndex(11)]
-            HRESULT GetFieldNoCopy([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField, [NativeTypeName("PVOID *")] void** ppvDataCArray);
+        [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRecordInfo*, uint*, int> GetSize;
 
-            [VtblIndex(12)]
-            HRESULT PutField([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField);
+        [NativeTypeName("HRESULT (ITypeInfo **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRecordInfo*, ITypeInfo**, int> GetTypeInfo;
 
-            [VtblIndex(13)]
-            HRESULT PutFieldNoCopy([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField);
+        [NativeTypeName("HRESULT (PVOID, LPCOLESTR, VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRecordInfo*, void*, ushort*, VARIANT*, int> GetField;
 
-            [VtblIndex(14)]
-            HRESULT GetFieldNames([NativeTypeName("ULONG *")] uint* pcNames, [NativeTypeName("BSTR *")] ushort** rgBstrNames);
+        [NativeTypeName("HRESULT (PVOID, LPCOLESTR, VARIANT *, PVOID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRecordInfo*, void*, ushort*, VARIANT*, void**, int> GetFieldNoCopy;
 
-            [VtblIndex(15)]
-            BOOL IsMatchingType(IRecordInfo* pRecordInfo);
+        [NativeTypeName("HRESULT (ULONG, PVOID, LPCOLESTR, VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRecordInfo*, uint, void*, ushort*, VARIANT*, int> PutField;
 
-            [VtblIndex(16)]
-            [return: NativeTypeName("PVOID")]
-            void* RecordCreate();
+        [NativeTypeName("HRESULT (ULONG, PVOID, LPCOLESTR, VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRecordInfo*, uint, void*, ushort*, VARIANT*, int> PutFieldNoCopy;
 
-            [VtblIndex(17)]
-            HRESULT RecordCreateCopy([NativeTypeName("PVOID")] void* pvSource, [NativeTypeName("PVOID *")] void** ppvDest);
+        [NativeTypeName("HRESULT (ULONG *, BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRecordInfo*, uint*, ushort**, int> GetFieldNames;
 
-            [VtblIndex(18)]
-            HRESULT RecordDestroy([NativeTypeName("PVOID")] void* pvRecord);
-        }
+        [NativeTypeName("BOOL (IRecordInfo *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRecordInfo*, IRecordInfo*, int> IsMatchingType;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRecordInfo*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("PVOID () __attribute__((stdcall))")]
+        public delegate* unmanaged<IRecordInfo*, void*> RecordCreate;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IRecordInfo*, uint> AddRef;
+        [NativeTypeName("HRESULT (PVOID, PVOID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRecordInfo*, void*, void**, int> RecordCreateCopy;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IRecordInfo*, uint> Release;
-
-            [NativeTypeName("HRESULT (PVOID) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRecordInfo*, void*, int> RecordInit;
-
-            [NativeTypeName("HRESULT (PVOID) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRecordInfo*, void*, int> RecordClear;
-
-            [NativeTypeName("HRESULT (PVOID, PVOID) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRecordInfo*, void*, void*, int> RecordCopy;
-
-            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRecordInfo*, Guid*, int> GetGuid;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRecordInfo*, ushort**, int> GetName;
-
-            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRecordInfo*, uint*, int> GetSize;
-
-            [NativeTypeName("HRESULT (ITypeInfo **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRecordInfo*, ITypeInfo**, int> GetTypeInfo;
-
-            [NativeTypeName("HRESULT (PVOID, LPCOLESTR, VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRecordInfo*, void*, ushort*, VARIANT*, int> GetField;
-
-            [NativeTypeName("HRESULT (PVOID, LPCOLESTR, VARIANT *, PVOID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRecordInfo*, void*, ushort*, VARIANT*, void**, int> GetFieldNoCopy;
-
-            [NativeTypeName("HRESULT (ULONG, PVOID, LPCOLESTR, VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRecordInfo*, uint, void*, ushort*, VARIANT*, int> PutField;
-
-            [NativeTypeName("HRESULT (ULONG, PVOID, LPCOLESTR, VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRecordInfo*, uint, void*, ushort*, VARIANT*, int> PutFieldNoCopy;
-
-            [NativeTypeName("HRESULT (ULONG *, BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRecordInfo*, uint*, ushort**, int> GetFieldNames;
-
-            [NativeTypeName("BOOL (IRecordInfo *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRecordInfo*, IRecordInfo*, int> IsMatchingType;
-
-            [NativeTypeName("PVOID () __attribute__((stdcall))")]
-            public delegate* unmanaged<IRecordInfo*, void*> RecordCreate;
-
-            [NativeTypeName("HRESULT (PVOID, PVOID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRecordInfo*, void*, void**, int> RecordCreateCopy;
-
-            [NativeTypeName("HRESULT (PVOID) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRecordInfo*, void*, int> RecordDestroy;
-        }
+        [NativeTypeName("HRESULT (PVOID) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRecordInfo*, void*, int> RecordDestroy;
     }
 }

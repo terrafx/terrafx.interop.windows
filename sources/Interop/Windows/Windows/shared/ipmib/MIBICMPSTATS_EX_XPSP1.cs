@@ -3,17 +3,16 @@
 // Ported from shared/ipmib.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct MIBICMPSTATS_EX_XPSP1
 {
-    public unsafe partial struct MIBICMPSTATS_EX_XPSP1
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwMsgs;
+    [NativeTypeName("DWORD")]
+    public uint dwMsgs;
 
-        [NativeTypeName("DWORD")]
-        public uint dwErrors;
+    [NativeTypeName("DWORD")]
+    public uint dwErrors;
 
-        [NativeTypeName("DWORD [256]")]
-        public fixed uint rgdwTypeCount[256];
-    }
+    [NativeTypeName("DWORD [256]")]
+    public fixed uint rgdwTypeCount[256];
 }

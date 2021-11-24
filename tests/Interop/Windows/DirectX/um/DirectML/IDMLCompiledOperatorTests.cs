@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDMLCompiledOperator" /> struct.</summary>
+public static unsafe partial class IDMLCompiledOperatorTests
 {
-    /// <summary>Provides validation of the <see cref="IDMLCompiledOperator" /> struct.</summary>
-    public static unsafe partial class IDMLCompiledOperatorTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDMLCompiledOperator" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDMLCompiledOperator" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDMLCompiledOperator).GUID, Is.EqualTo(IID_IDMLCompiledOperator));
-        }
+        Assert.That(typeof(IDMLCompiledOperator).GUID, Is.EqualTo(IID_IDMLCompiledOperator));
+    }
 
-        /// <summary>Validates that the <see cref="IDMLCompiledOperator" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDMLCompiledOperator>(), Is.EqualTo(sizeof(IDMLCompiledOperator)));
-        }
+    /// <summary>Validates that the <see cref="IDMLCompiledOperator" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDMLCompiledOperator>(), Is.EqualTo(sizeof(IDMLCompiledOperator)));
+    }
 
-        /// <summary>Validates that the <see cref="IDMLCompiledOperator" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDMLCompiledOperator).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDMLCompiledOperator" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDMLCompiledOperator).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDMLCompiledOperator" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDMLCompiledOperator" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDMLCompiledOperator), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDMLCompiledOperator), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDMLCompiledOperator), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDMLCompiledOperator), Is.EqualTo(4));
         }
     }
 }

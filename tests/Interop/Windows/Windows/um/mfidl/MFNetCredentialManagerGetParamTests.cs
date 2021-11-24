@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MFNetCredentialManagerGetParam" /> struct.</summary>
+public static unsafe partial class MFNetCredentialManagerGetParamTests
 {
-    /// <summary>Provides validation of the <see cref="MFNetCredentialManagerGetParam" /> struct.</summary>
-    public static unsafe partial class MFNetCredentialManagerGetParamTests
+    /// <summary>Validates that the <see cref="MFNetCredentialManagerGetParam" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MFNetCredentialManagerGetParam" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MFNetCredentialManagerGetParam>(), Is.EqualTo(sizeof(MFNetCredentialManagerGetParam)));
-        }
+        Assert.That(Marshal.SizeOf<MFNetCredentialManagerGetParam>(), Is.EqualTo(sizeof(MFNetCredentialManagerGetParam)));
+    }
 
-        /// <summary>Validates that the <see cref="MFNetCredentialManagerGetParam" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MFNetCredentialManagerGetParam).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MFNetCredentialManagerGetParam" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MFNetCredentialManagerGetParam).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MFNetCredentialManagerGetParam" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="MFNetCredentialManagerGetParam" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(MFNetCredentialManagerGetParam), Is.EqualTo(56));
-            }
-            else
-            {
-                Assert.That(sizeof(MFNetCredentialManagerGetParam), Is.EqualTo(32));
-            }
+            Assert.That(sizeof(MFNetCredentialManagerGetParam), Is.EqualTo(56));
+        }
+        else
+        {
+            Assert.That(sizeof(MFNetCredentialManagerGetParam), Is.EqualTo(32));
         }
     }
 }

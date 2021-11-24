@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("550DDA30-0541-11D2-9CA9-0060B0EC3D39")]
+public partial struct XMLDSOControl
 {
-    [Guid("550DDA30-0541-11D2-9CA9-0060B0EC3D39")]
-    public partial struct XMLDSOControl
-    {
-    }
 }

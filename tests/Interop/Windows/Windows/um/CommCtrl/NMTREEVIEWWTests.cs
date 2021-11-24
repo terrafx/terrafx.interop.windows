@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NMTREEVIEWW" /> struct.</summary>
+public static unsafe partial class NMTREEVIEWWTests
 {
-    /// <summary>Provides validation of the <see cref="NMTREEVIEWW" /> struct.</summary>
-    public static unsafe partial class NMTREEVIEWWTests
+    /// <summary>Validates that the <see cref="NMTREEVIEWW" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NMTREEVIEWW" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NMTREEVIEWW>(), Is.EqualTo(sizeof(NMTREEVIEWW)));
-        }
+        Assert.That(Marshal.SizeOf<NMTREEVIEWW>(), Is.EqualTo(sizeof(NMTREEVIEWW)));
+    }
 
-        /// <summary>Validates that the <see cref="NMTREEVIEWW" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NMTREEVIEWW).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NMTREEVIEWW" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NMTREEVIEWW).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NMTREEVIEWW" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="NMTREEVIEWW" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(NMTREEVIEWW), Is.EqualTo(152));
-            }
-            else
-            {
-                Assert.That(sizeof(NMTREEVIEWW), Is.EqualTo(104));
-            }
+            Assert.That(sizeof(NMTREEVIEWW), Is.EqualTo(152));
+        }
+        else
+        {
+            Assert.That(sizeof(NMTREEVIEWW), Is.EqualTo(104));
         }
     }
 }

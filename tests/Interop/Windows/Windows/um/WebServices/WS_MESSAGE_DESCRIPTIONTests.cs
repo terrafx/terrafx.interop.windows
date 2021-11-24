@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WS_MESSAGE_DESCRIPTION" /> struct.</summary>
+public static unsafe partial class WS_MESSAGE_DESCRIPTIONTests
 {
-    /// <summary>Provides validation of the <see cref="WS_MESSAGE_DESCRIPTION" /> struct.</summary>
-    public static unsafe partial class WS_MESSAGE_DESCRIPTIONTests
+    /// <summary>Validates that the <see cref="WS_MESSAGE_DESCRIPTION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WS_MESSAGE_DESCRIPTION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WS_MESSAGE_DESCRIPTION>(), Is.EqualTo(sizeof(WS_MESSAGE_DESCRIPTION)));
-        }
+        Assert.That(Marshal.SizeOf<WS_MESSAGE_DESCRIPTION>(), Is.EqualTo(sizeof(WS_MESSAGE_DESCRIPTION)));
+    }
 
-        /// <summary>Validates that the <see cref="WS_MESSAGE_DESCRIPTION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WS_MESSAGE_DESCRIPTION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WS_MESSAGE_DESCRIPTION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WS_MESSAGE_DESCRIPTION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WS_MESSAGE_DESCRIPTION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="WS_MESSAGE_DESCRIPTION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(WS_MESSAGE_DESCRIPTION), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(WS_MESSAGE_DESCRIPTION), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(WS_MESSAGE_DESCRIPTION), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(WS_MESSAGE_DESCRIPTION), Is.EqualTo(8));
         }
     }
 }

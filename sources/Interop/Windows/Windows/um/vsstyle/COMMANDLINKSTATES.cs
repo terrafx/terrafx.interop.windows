@@ -3,15 +3,14 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum COMMANDLINKSTATES
 {
-    public enum COMMANDLINKSTATES
-    {
-        CMDLS_NORMAL = 1,
-        CMDLS_HOT = 2,
-        CMDLS_PRESSED = 3,
-        CMDLS_DISABLED = 4,
-        CMDLS_DEFAULTED = 5,
-        CMDLS_DEFAULTED_ANIMATING = 6,
-    }
+    CMDLS_NORMAL = 1,
+    CMDLS_HOT = 2,
+    CMDLS_PRESSED = 3,
+    CMDLS_DISABLED = 4,
+    CMDLS_DEFAULTED = 5,
+    CMDLS_DEFAULTED_ANIMATING = 6,
 }

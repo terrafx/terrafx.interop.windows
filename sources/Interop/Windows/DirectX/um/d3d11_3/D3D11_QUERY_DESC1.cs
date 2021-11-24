@@ -3,14 +3,13 @@
 // Ported from um/d3d11_3.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D11_QUERY_DESC1
 {
-    public partial struct D3D11_QUERY_DESC1
-    {
-        public D3D11_QUERY Query;
+    public D3D11_QUERY Query;
 
-        public uint MiscFlags;
+    public uint MiscFlags;
 
-        public D3D11_CONTEXT_TYPE ContextType;
-    }
+    public D3D11_CONTEXT_TYPE ContextType;
 }

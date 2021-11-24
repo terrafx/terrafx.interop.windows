@@ -5,15 +5,14 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum D2D1_VERTEX_OPTIONS : uint
 {
-    [Flags]
-    public enum D2D1_VERTEX_OPTIONS : uint
-    {
-        D2D1_VERTEX_OPTIONS_NONE = 0,
-        D2D1_VERTEX_OPTIONS_DO_NOT_CLEAR = 1,
-        D2D1_VERTEX_OPTIONS_USE_DEPTH_BUFFER = 2,
-        D2D1_VERTEX_OPTIONS_ASSUME_NO_OVERLAP = 4,
-        D2D1_VERTEX_OPTIONS_FORCE_DWORD = 0xffffffff,
-    }
+    D2D1_VERTEX_OPTIONS_NONE = 0,
+    D2D1_VERTEX_OPTIONS_DO_NOT_CLEAR = 1,
+    D2D1_VERTEX_OPTIONS_USE_DEPTH_BUFFER = 2,
+    D2D1_VERTEX_OPTIONS_ASSUME_NO_OVERLAP = 4,
+    D2D1_VERTEX_OPTIONS_FORCE_DWORD = 0xffffffff,
 }

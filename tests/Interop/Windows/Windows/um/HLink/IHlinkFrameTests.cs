@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IHlinkFrame" /> struct.</summary>
+public static unsafe partial class IHlinkFrameTests
 {
-    /// <summary>Provides validation of the <see cref="IHlinkFrame" /> struct.</summary>
-    public static unsafe partial class IHlinkFrameTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHlinkFrame" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHlinkFrame" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IHlinkFrame).GUID, Is.EqualTo(IID_IHlinkFrame));
-        }
+        Assert.That(typeof(IHlinkFrame).GUID, Is.EqualTo(IID_IHlinkFrame));
+    }
 
-        /// <summary>Validates that the <see cref="IHlinkFrame" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IHlinkFrame>(), Is.EqualTo(sizeof(IHlinkFrame)));
-        }
+    /// <summary>Validates that the <see cref="IHlinkFrame" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IHlinkFrame>(), Is.EqualTo(sizeof(IHlinkFrame)));
+    }
 
-        /// <summary>Validates that the <see cref="IHlinkFrame" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IHlinkFrame).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IHlinkFrame" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IHlinkFrame).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IHlinkFrame" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IHlinkFrame" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IHlinkFrame), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IHlinkFrame), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IHlinkFrame), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IHlinkFrame), Is.EqualTo(4));
         }
     }
 }

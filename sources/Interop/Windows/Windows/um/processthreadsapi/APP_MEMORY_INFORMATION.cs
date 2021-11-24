@@ -5,21 +5,20 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.10586.0")]
+public partial struct APP_MEMORY_INFORMATION
 {
-    [SupportedOSPlatform("windows10.0.10586.0")]
-    public partial struct APP_MEMORY_INFORMATION
-    {
-        [NativeTypeName("ULONG64")]
-        public ulong AvailableCommit;
+    [NativeTypeName("ULONG64")]
+    public ulong AvailableCommit;
 
-        [NativeTypeName("ULONG64")]
-        public ulong PrivateCommitUsage;
+    [NativeTypeName("ULONG64")]
+    public ulong PrivateCommitUsage;
 
-        [NativeTypeName("ULONG64")]
-        public ulong PeakPrivateCommitUsage;
+    [NativeTypeName("ULONG64")]
+    public ulong PeakPrivateCommitUsage;
 
-        [NativeTypeName("ULONG64")]
-        public ulong TotalCommitUsage;
-    }
+    [NativeTypeName("ULONG64")]
+    public ulong TotalCommitUsage;
 }

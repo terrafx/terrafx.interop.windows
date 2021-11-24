@@ -8,64 +8,63 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[Guid("11C4B4A0-B467-4EAA-A1A6-B961D8D0ED79")]
+[NativeTypeName("struct IMLOperatorKernel : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IMLOperatorKernel : IMLOperatorKernel.Interface
 {
-    [Guid("11C4B4A0-B467-4EAA-A1A6-B961D8D0ED79")]
-    [NativeTypeName("struct IMLOperatorKernel : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMLOperatorKernel : IMLOperatorKernel.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMLOperatorKernel*, Guid*, void**, int>)(lpVtbl[0]))((IMLOperatorKernel*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMLOperatorKernel*, Guid*, void**, int>)(lpVtbl[0]))((IMLOperatorKernel*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMLOperatorKernel*, uint>)(lpVtbl[1]))((IMLOperatorKernel*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMLOperatorKernel*, uint>)(lpVtbl[1]))((IMLOperatorKernel*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMLOperatorKernel*, uint>)(lpVtbl[2]))((IMLOperatorKernel*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMLOperatorKernel*, uint>)(lpVtbl[2]))((IMLOperatorKernel*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Compute(IMLOperatorKernelContext* context)
+    {
+        return ((delegate* unmanaged<IMLOperatorKernel*, IMLOperatorKernelContext*, int>)(lpVtbl[3]))((IMLOperatorKernel*)Unsafe.AsPointer(ref this), context);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Compute(IMLOperatorKernelContext* context)
-        {
-            return ((delegate* unmanaged<IMLOperatorKernel*, IMLOperatorKernelContext*, int>)(lpVtbl[3]))((IMLOperatorKernel*)Unsafe.AsPointer(ref this), context);
-        }
+        HRESULT Compute(IMLOperatorKernelContext* context);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Compute(IMLOperatorKernelContext* context);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMLOperatorKernel*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMLOperatorKernel*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMLOperatorKernel*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMLOperatorKernel*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMLOperatorKernel*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMLOperatorKernel*, uint> Release;
-
-            [NativeTypeName("HRESULT (IMLOperatorKernelContext *) noexcept __attribute__((stdcall))")]
-            public delegate* unmanaged<IMLOperatorKernel*, IMLOperatorKernelContext*, int> Compute;
-        }
+        [NativeTypeName("HRESULT (IMLOperatorKernelContext *) noexcept __attribute__((stdcall))")]
+        public delegate* unmanaged<IMLOperatorKernel*, IMLOperatorKernelContext*, int> Compute;
     }
 }

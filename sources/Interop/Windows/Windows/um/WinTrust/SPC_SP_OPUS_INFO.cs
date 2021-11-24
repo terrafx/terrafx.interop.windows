@@ -3,17 +3,16 @@
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SPC_SP_OPUS_INFO
 {
-    public unsafe partial struct SPC_SP_OPUS_INFO
-    {
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pwszProgramName;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pwszProgramName;
 
-        [NativeTypeName("struct SPC_LINK_ *")]
-        public SPC_LINK* pMoreInfo;
+    [NativeTypeName("struct SPC_LINK_ *")]
+    public SPC_LINK* pMoreInfo;
 
-        [NativeTypeName("struct SPC_LINK_ *")]
-        public SPC_LINK* pPublisherInfo;
-    }
+    [NativeTypeName("struct SPC_LINK_ *")]
+    public SPC_LINK* pPublisherInfo;
 }

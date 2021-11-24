@@ -5,18 +5,17 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 4)]
+public unsafe partial struct HIDD_CONFIGURATION
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 4)]
-    public unsafe partial struct HIDD_CONFIGURATION
-    {
-        [NativeTypeName("PVOID")]
-        public void* cookie;
+    [NativeTypeName("PVOID")]
+    public void* cookie;
 
-        [NativeTypeName("ULONG")]
-        public uint size;
+    [NativeTypeName("ULONG")]
+    public uint size;
 
-        [NativeTypeName("ULONG")]
-        public uint RingBufferSize;
-    }
+    [NativeTypeName("ULONG")]
+    public uint RingBufferSize;
 }

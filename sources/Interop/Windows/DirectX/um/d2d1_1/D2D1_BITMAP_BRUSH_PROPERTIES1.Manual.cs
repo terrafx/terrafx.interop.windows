@@ -11,29 +11,28 @@ using static TerraFX.Interop.DirectX.D2D1_EXTEND_MODE;
 using static TerraFX.Interop.DirectX.D2D1_INTERPOLATION_MODE;
 using static TerraFX.Interop.DirectX.DirectX;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D1_BITMAP_BRUSH_PROPERTIES1
 {
-    public partial struct D2D1_BITMAP_BRUSH_PROPERTIES1
+    public static ref readonly D2D1_BITMAP_BRUSH_PROPERTIES1 DEFAULT
     {
-        public static ref readonly D2D1_BITMAP_BRUSH_PROPERTIES1 DEFAULT
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x00, 0x00, 0x00, 0x00,
                     0x00, 0x00, 0x00, 0x00,
                     0x01, 0x00, 0x00, 0x00
                 };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<D2D1_BITMAP_BRUSH_PROPERTIES1>());
-                return ref Unsafe.As<byte, D2D1_BITMAP_BRUSH_PROPERTIES1>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<D2D1_BITMAP_BRUSH_PROPERTIES1>());
+            return ref Unsafe.As<byte, D2D1_BITMAP_BRUSH_PROPERTIES1>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public D2D1_BITMAP_BRUSH_PROPERTIES1(D2D1_EXTEND_MODE extendModeX = D2D1_EXTEND_MODE_CLAMP, D2D1_EXTEND_MODE extendModeY = D2D1_EXTEND_MODE_CLAMP, D2D1_INTERPOLATION_MODE interpolationMode = D2D1_INTERPOLATION_MODE_LINEAR)
-        {
-            this = BitmapBrushProperties1(extendModeX, extendModeY, interpolationMode);
-        }
+    public D2D1_BITMAP_BRUSH_PROPERTIES1(D2D1_EXTEND_MODE extendModeX = D2D1_EXTEND_MODE_CLAMP, D2D1_EXTEND_MODE extendModeY = D2D1_EXTEND_MODE_CLAMP, D2D1_INTERPOLATION_MODE interpolationMode = D2D1_INTERPOLATION_MODE_LINEAR)
+    {
+        this = BitmapBrushProperties1(extendModeX, extendModeY, interpolationMode);
     }
 }

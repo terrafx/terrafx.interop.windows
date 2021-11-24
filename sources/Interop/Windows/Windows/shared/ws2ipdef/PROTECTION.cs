@@ -3,20 +3,19 @@
 // Ported from shared/ws2ipdef.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class PROTECTION
 {
-    public static partial class PROTECTION
-    {
-        [NativeTypeName("#define PROTECTION_LEVEL_UNRESTRICTED 10")]
-        public const int PROTECTION_LEVEL_UNRESTRICTED = 10;
+    [NativeTypeName("#define PROTECTION_LEVEL_UNRESTRICTED 10")]
+    public const int PROTECTION_LEVEL_UNRESTRICTED = 10;
 
-        [NativeTypeName("#define PROTECTION_LEVEL_EDGERESTRICTED 20")]
-        public const int PROTECTION_LEVEL_EDGERESTRICTED = 20;
+    [NativeTypeName("#define PROTECTION_LEVEL_EDGERESTRICTED 20")]
+    public const int PROTECTION_LEVEL_EDGERESTRICTED = 20;
 
-        [NativeTypeName("#define PROTECTION_LEVEL_RESTRICTED 30")]
-        public const int PROTECTION_LEVEL_RESTRICTED = 30;
+    [NativeTypeName("#define PROTECTION_LEVEL_RESTRICTED 30")]
+    public const int PROTECTION_LEVEL_RESTRICTED = 30;
 
-        [NativeTypeName("#define PROTECTION_LEVEL_DEFAULT ((UINT)-1)")]
-        public const uint PROTECTION_LEVEL_DEFAULT = unchecked((uint)(-1));
-    }
+    [NativeTypeName("#define PROTECTION_LEVEL_DEFAULT ((UINT)-1)")]
+    public const uint PROTECTION_LEVEL_DEFAULT = unchecked((uint)(-1));
 }

@@ -7,41 +7,40 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP
 {
+    public DEVICEDUMP_STRUCTURE_VERSION Descriptor;
+
+    [NativeTypeName("DWORD")]
+    public uint dwReasonForCollection;
+
+    [NativeTypeName("BYTE [16]")]
+    public fixed byte cDriverName[16];
+
+    [NativeTypeName("DWORD")]
+    public uint uiNumRecords;
+
+    [NativeTypeName("DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD [1]")]
+    public _RecordArray_e__FixedBuffer RecordArray;
+
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP
+    public partial struct _RecordArray_e__FixedBuffer
     {
-        public DEVICEDUMP_STRUCTURE_VERSION Descriptor;
+        public DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD e0;
 
-        [NativeTypeName("DWORD")]
-        public uint dwReasonForCollection;
-
-        [NativeTypeName("BYTE [16]")]
-        public fixed byte cDriverName[16];
-
-        [NativeTypeName("DWORD")]
-        public uint uiNumRecords;
-
-        [NativeTypeName("DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD [1]")]
-        public _RecordArray_e__FixedBuffer RecordArray;
-
-        [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public partial struct _RecordArray_e__FixedBuffer
+        public ref DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD this[int index]
         {
-            public DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD e0;
-
-            public ref DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

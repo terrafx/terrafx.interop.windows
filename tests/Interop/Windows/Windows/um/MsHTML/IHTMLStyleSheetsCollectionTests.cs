@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IHTMLStyleSheetsCollection" /> struct.</summary>
+public static unsafe partial class IHTMLStyleSheetsCollectionTests
 {
-    /// <summary>Provides validation of the <see cref="IHTMLStyleSheetsCollection" /> struct.</summary>
-    public static unsafe partial class IHTMLStyleSheetsCollectionTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHTMLStyleSheetsCollection" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHTMLStyleSheetsCollection" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IHTMLStyleSheetsCollection).GUID, Is.EqualTo(IID_IHTMLStyleSheetsCollection));
-        }
+        Assert.That(typeof(IHTMLStyleSheetsCollection).GUID, Is.EqualTo(IID_IHTMLStyleSheetsCollection));
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLStyleSheetsCollection" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IHTMLStyleSheetsCollection>(), Is.EqualTo(sizeof(IHTMLStyleSheetsCollection)));
-        }
+    /// <summary>Validates that the <see cref="IHTMLStyleSheetsCollection" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IHTMLStyleSheetsCollection>(), Is.EqualTo(sizeof(IHTMLStyleSheetsCollection)));
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLStyleSheetsCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IHTMLStyleSheetsCollection).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IHTMLStyleSheetsCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IHTMLStyleSheetsCollection).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLStyleSheetsCollection" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IHTMLStyleSheetsCollection" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IHTMLStyleSheetsCollection), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IHTMLStyleSheetsCollection), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IHTMLStyleSheetsCollection), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IHTMLStyleSheetsCollection), Is.EqualTo(4));
         }
     }
 }

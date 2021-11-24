@@ -5,20 +5,19 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct APPX_ENCRYPTED_PACKAGE_SETTINGS2
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct APPX_ENCRYPTED_PACKAGE_SETTINGS2
-    {
-        [NativeTypeName("UINT32")]
-        public uint keyLength;
+    [NativeTypeName("UINT32")]
+    public uint keyLength;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* encryptionAlgorithm;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* encryptionAlgorithm;
 
-        public IUri* blockMapHashAlgorithm;
+    public IUri* blockMapHashAlgorithm;
 
-        [NativeTypeName("DWORD")]
-        public uint options;
-    }
+    [NativeTypeName("DWORD")]
+    public uint options;
 }

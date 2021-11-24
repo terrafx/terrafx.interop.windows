@@ -3,14 +3,13 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum styleTextEffect
 {
-    public enum styleTextEffect
-    {
-        styleTextEffectNone = 0,
-        styleTextEffectEmboss = 1,
-        styleTextEffectEngrave = 2,
-        styleTextEffectOutline = 3,
-        styleTextEffect_Max = 2147483647,
-    }
+    styleTextEffectNone = 0,
+    styleTextEffectEmboss = 1,
+    styleTextEffectEngrave = 2,
+    styleTextEffectOutline = 3,
+    styleTextEffect_Max = 2147483647,
 }

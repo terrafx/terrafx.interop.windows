@@ -3,47 +3,46 @@
 // Ported from shared/ipmib.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MIBICMPSTATS
 {
-    public partial struct MIBICMPSTATS
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwMsgs;
+    [NativeTypeName("DWORD")]
+    public uint dwMsgs;
 
-        [NativeTypeName("DWORD")]
-        public uint dwErrors;
+    [NativeTypeName("DWORD")]
+    public uint dwErrors;
 
-        [NativeTypeName("DWORD")]
-        public uint dwDestUnreachs;
+    [NativeTypeName("DWORD")]
+    public uint dwDestUnreachs;
 
-        [NativeTypeName("DWORD")]
-        public uint dwTimeExcds;
+    [NativeTypeName("DWORD")]
+    public uint dwTimeExcds;
 
-        [NativeTypeName("DWORD")]
-        public uint dwParmProbs;
+    [NativeTypeName("DWORD")]
+    public uint dwParmProbs;
 
-        [NativeTypeName("DWORD")]
-        public uint dwSrcQuenchs;
+    [NativeTypeName("DWORD")]
+    public uint dwSrcQuenchs;
 
-        [NativeTypeName("DWORD")]
-        public uint dwRedirects;
+    [NativeTypeName("DWORD")]
+    public uint dwRedirects;
 
-        [NativeTypeName("DWORD")]
-        public uint dwEchos;
+    [NativeTypeName("DWORD")]
+    public uint dwEchos;
 
-        [NativeTypeName("DWORD")]
-        public uint dwEchoReps;
+    [NativeTypeName("DWORD")]
+    public uint dwEchoReps;
 
-        [NativeTypeName("DWORD")]
-        public uint dwTimestamps;
+    [NativeTypeName("DWORD")]
+    public uint dwTimestamps;
 
-        [NativeTypeName("DWORD")]
-        public uint dwTimestampReps;
+    [NativeTypeName("DWORD")]
+    public uint dwTimestampReps;
 
-        [NativeTypeName("DWORD")]
-        public uint dwAddrMasks;
+    [NativeTypeName("DWORD")]
+    public uint dwAddrMasks;
 
-        [NativeTypeName("DWORD")]
-        public uint dwAddrMaskReps;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwAddrMaskReps;
 }

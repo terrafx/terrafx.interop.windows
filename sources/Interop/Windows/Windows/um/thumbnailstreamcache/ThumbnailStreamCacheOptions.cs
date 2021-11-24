@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public enum ThumbnailStreamCacheOptions
 {
-    [SupportedOSPlatform("windows10.0")]
-    public enum ThumbnailStreamCacheOptions
-    {
-        ExtractIfNotCached = 0,
-        ReturnOnlyIfCached = 0x1,
-        ResizeThumbnail = 0x2,
-        AllowSmallerSize = 0x4,
-    }
+    ExtractIfNotCached = 0,
+    ReturnOnlyIfCached = 0x1,
+    ResizeThumbnail = 0x2,
+    AllowSmallerSize = 0x4,
 }

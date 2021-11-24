@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMoniker" /> struct.</summary>
+public static unsafe partial class IMonikerTests
 {
-    /// <summary>Provides validation of the <see cref="IMoniker" /> struct.</summary>
-    public static unsafe partial class IMonikerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMoniker" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMoniker" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMoniker).GUID, Is.EqualTo(IID_IMoniker));
-        }
+        Assert.That(typeof(IMoniker).GUID, Is.EqualTo(IID_IMoniker));
+    }
 
-        /// <summary>Validates that the <see cref="IMoniker" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMoniker>(), Is.EqualTo(sizeof(IMoniker)));
-        }
+    /// <summary>Validates that the <see cref="IMoniker" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMoniker>(), Is.EqualTo(sizeof(IMoniker)));
+    }
 
-        /// <summary>Validates that the <see cref="IMoniker" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMoniker).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMoniker" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMoniker).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMoniker" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMoniker" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMoniker), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMoniker), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMoniker), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMoniker), Is.EqualTo(4));
         }
     }
 }

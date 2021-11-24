@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="D3D12_VIDEO_PROCESS_TRANSFORM" /> struct.</summary>
+public static unsafe partial class D3D12_VIDEO_PROCESS_TRANSFORMTests
 {
-    /// <summary>Provides validation of the <see cref="D3D12_VIDEO_PROCESS_TRANSFORM" /> struct.</summary>
-    public static unsafe partial class D3D12_VIDEO_PROCESS_TRANSFORMTests
+    /// <summary>Validates that the <see cref="D3D12_VIDEO_PROCESS_TRANSFORM" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="D3D12_VIDEO_PROCESS_TRANSFORM" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<D3D12_VIDEO_PROCESS_TRANSFORM>(), Is.EqualTo(sizeof(D3D12_VIDEO_PROCESS_TRANSFORM)));
-        }
+        Assert.That(Marshal.SizeOf<D3D12_VIDEO_PROCESS_TRANSFORM>(), Is.EqualTo(sizeof(D3D12_VIDEO_PROCESS_TRANSFORM)));
+    }
 
-        /// <summary>Validates that the <see cref="D3D12_VIDEO_PROCESS_TRANSFORM" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(D3D12_VIDEO_PROCESS_TRANSFORM).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="D3D12_VIDEO_PROCESS_TRANSFORM" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(D3D12_VIDEO_PROCESS_TRANSFORM).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="D3D12_VIDEO_PROCESS_TRANSFORM" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(D3D12_VIDEO_PROCESS_TRANSFORM), Is.EqualTo(36));
-        }
+    /// <summary>Validates that the <see cref="D3D12_VIDEO_PROCESS_TRANSFORM" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(D3D12_VIDEO_PROCESS_TRANSFORM), Is.EqualTo(36));
     }
 }

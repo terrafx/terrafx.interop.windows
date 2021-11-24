@@ -3,11 +3,10 @@
 // Ported from um/schannel.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class SZ
 {
-    public static partial class SZ
-    {
-        [NativeTypeName("#define SZ_ALG_MAX_SIZE 64")]
-        public const int SZ_ALG_MAX_SIZE = 64;
-    }
+    [NativeTypeName("#define SZ_ALG_MAX_SIZE 64")]
+    public const int SZ_ALG_MAX_SIZE = 64;
 }

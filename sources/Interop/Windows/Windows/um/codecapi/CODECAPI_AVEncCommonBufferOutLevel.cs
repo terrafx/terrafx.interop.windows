@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("CCAE7F49-D0BC-4E3D-A57E-FB5740140069")]
+public partial struct CODECAPI_AVEncCommonBufferOutLevel
 {
-    [Guid("CCAE7F49-D0BC-4E3D-A57E-FB5740140069")]
-    public partial struct CODECAPI_AVEncCommonBufferOutLevel
-    {
-    }
 }

@@ -3,11 +3,10 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum _AM_FILTER_MISC_FLAGS
 {
-    public enum _AM_FILTER_MISC_FLAGS
-    {
-        AM_FILTER_MISC_FLAGS_IS_RENDERER = 0x1,
-        AM_FILTER_MISC_FLAGS_IS_SOURCE = 0x2,
-    }
+    AM_FILTER_MISC_FLAGS_IS_RENDERER = 0x1,
+    AM_FILTER_MISC_FLAGS_IS_SOURCE = 0x2,
 }

@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum MF_CAPTURE_ENGINE_SINK_TYPE
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum MF_CAPTURE_ENGINE_SINK_TYPE
-    {
-        MF_CAPTURE_ENGINE_SINK_TYPE_RECORD = 0,
-        MF_CAPTURE_ENGINE_SINK_TYPE_PREVIEW = 0x1,
-        MF_CAPTURE_ENGINE_SINK_TYPE_PHOTO = 0x2,
-    }
+    MF_CAPTURE_ENGINE_SINK_TYPE_RECORD = 0,
+    MF_CAPTURE_ENGINE_SINK_TYPE_PREVIEW = 0x1,
+    MF_CAPTURE_ENGINE_SINK_TYPE_PHOTO = 0x2,
 }

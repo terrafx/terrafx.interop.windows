@@ -5,20 +5,19 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TF_LANGUAGEPROFILE
 {
-    public partial struct TF_LANGUAGEPROFILE
-    {
-        [NativeTypeName("CLSID")]
-        public Guid clsid;
+    [NativeTypeName("CLSID")]
+    public Guid clsid;
 
-        [NativeTypeName("LANGID")]
-        public ushort langid;
+    [NativeTypeName("LANGID")]
+    public ushort langid;
 
-        public Guid catid;
+    public Guid catid;
 
-        public BOOL fActive;
+    public BOOL fActive;
 
-        public Guid guidProfile;
-    }
+    public Guid guidProfile;
 }

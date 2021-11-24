@@ -6,47 +6,46 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DDSCAPSEX
 {
-    public partial struct DDSCAPSEX
+    [NativeTypeName("DWORD")]
+    public uint dwCaps2;
+
+    [NativeTypeName("DWORD")]
+    public uint dwCaps3;
+
+    [NativeTypeName("_DDSCAPSEX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:356:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public ref uint dwCaps4
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwCaps4, 1));
+        }
+    }
+
+    public ref uint dwVolumeDepth
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwVolumeDepth, 1));
+        }
+    }
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
         [NativeTypeName("DWORD")]
-        public uint dwCaps2;
+        public uint dwCaps4;
 
+        [FieldOffset(0)]
         [NativeTypeName("DWORD")]
-        public uint dwCaps3;
-
-        [NativeTypeName("_DDSCAPSEX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:356:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public ref uint dwCaps4
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwCaps4, 1));
-            }
-        }
-
-        public ref uint dwVolumeDepth
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwVolumeDepth, 1));
-            }
-        }
-
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint dwCaps4;
-
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint dwVolumeDepth;
-        }
+        public uint dwVolumeDepth;
     }
 }

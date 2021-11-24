@@ -3,14 +3,13 @@
 // Ported from um/d3dcompiler.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
-{
-    public unsafe partial struct D3D_SHADER_DATA
-    {
-        [NativeTypeName("LPCVOID")]
-        public void* pBytecode;
+namespace TerraFX.Interop.DirectX;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint BytecodeLength;
-    }
+public unsafe partial struct D3D_SHADER_DATA
+{
+    [NativeTypeName("LPCVOID")]
+    public void* pBytecode;
+
+    [NativeTypeName("SIZE_T")]
+    public nuint BytecodeLength;
 }

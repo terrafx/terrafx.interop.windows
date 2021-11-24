@@ -3,17 +3,16 @@
 // Ported from um/commoncontrols.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct IMAGELISTSTATS
 {
-    public partial struct IMAGELISTSTATS
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public int cAlloc;
+    public int cAlloc;
 
-        public int cUsed;
+    public int cUsed;
 
-        public int cStandby;
-    }
+    public int cStandby;
 }

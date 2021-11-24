@@ -6,42 +6,41 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SIGNER_SIGNATURE_INFO
 {
-    public unsafe partial struct SIGNER_SIGNATURE_INFO
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
+
+    [NativeTypeName("ALG_ID")]
+    public uint algidHash;
+
+    [NativeTypeName("DWORD")]
+    public uint dwAttrChoice;
+
+    [NativeTypeName("_SIGNER_SIGNATURE_INFO::(anonymous union at ./mssign32.h:55:9)")]
+    public _Anonymous_e__Union Anonymous;
+
+    [NativeTypeName("PCRYPT_ATTRIBUTES")]
+    public CRYPT_ATTRIBUTES* psAuthenticated;
+
+    [NativeTypeName("PCRYPT_ATTRIBUTES")]
+    public CRYPT_ATTRIBUTES* psUnauthenticated;
+
+    public ref SIGNER_ATTR_AUTHCODE* pAttrAuthcode
     {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
-
-        [NativeTypeName("ALG_ID")]
-        public uint algidHash;
-
-        [NativeTypeName("DWORD")]
-        public uint dwAttrChoice;
-
-        [NativeTypeName("_SIGNER_SIGNATURE_INFO::(anonymous union at ./mssign32.h:55:9)")]
-        public _Anonymous_e__Union Anonymous;
-
-        [NativeTypeName("PCRYPT_ATTRIBUTES")]
-        public CRYPT_ATTRIBUTES* psAuthenticated;
-
-        [NativeTypeName("PCRYPT_ATTRIBUTES")]
-        public CRYPT_ATTRIBUTES* psUnauthenticated;
-
-        public ref SIGNER_ATTR_AUTHCODE* pAttrAuthcode
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pAttrAuthcode;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pAttrAuthcode;
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            public SIGNER_ATTR_AUTHCODE* pAttrAuthcode;
-        }
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        public SIGNER_ATTR_AUTHCODE* pAttrAuthcode;
     }
 }

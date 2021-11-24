@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("33C86CD6-705F-4BA1-9ADB-67070B837775")]
+public partial struct OnexPlapSmartcardCredentialProvider
 {
-    [Guid("33C86CD6-705F-4BA1-9ADB-67070B837775")]
-    public partial struct OnexPlapSmartcardCredentialProvider
-    {
-    }
 }

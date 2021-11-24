@@ -3,16 +3,15 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct CWPSTRUCT
 {
-    public partial struct CWPSTRUCT
-    {
-        public LPARAM lParam;
+    public LPARAM lParam;
 
-        public WPARAM wParam;
+    public WPARAM wParam;
 
-        public uint message;
+    public uint message;
 
-        public HWND hwnd;
-    }
+    public HWND hwnd;
 }

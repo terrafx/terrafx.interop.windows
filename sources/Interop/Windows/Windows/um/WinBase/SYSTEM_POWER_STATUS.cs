@@ -3,22 +3,21 @@
 // Ported from um/WinBase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SYSTEM_POWER_STATUS
 {
-    public partial struct SYSTEM_POWER_STATUS
-    {
-        public byte ACLineStatus;
+    public byte ACLineStatus;
 
-        public byte BatteryFlag;
+    public byte BatteryFlag;
 
-        public byte BatteryLifePercent;
+    public byte BatteryLifePercent;
 
-        public byte SystemStatusFlag;
+    public byte SystemStatusFlag;
 
-        [NativeTypeName("DWORD")]
-        public uint BatteryLifeTime;
+    [NativeTypeName("DWORD")]
+    public uint BatteryLifeTime;
 
-        [NativeTypeName("DWORD")]
-        public uint BatteryFullLifeTime;
-    }
+    [NativeTypeName("DWORD")]
+    public uint BatteryFullLifeTime;
 }

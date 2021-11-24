@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("4F414126-DFE3-4629-99EE-797978317EAD")]
+public partial struct SpPhoneticAlphabetConverter
 {
-    [Guid("4F414126-DFE3-4629-99EE-797978317EAD")]
-    public partial struct SpPhoneticAlphabetConverter
-    {
-    }
 }

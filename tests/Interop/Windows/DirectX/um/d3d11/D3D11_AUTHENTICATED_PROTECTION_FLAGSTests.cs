@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="D3D11_AUTHENTICATED_PROTECTION_FLAGS" /> struct.</summary>
+public static unsafe partial class D3D11_AUTHENTICATED_PROTECTION_FLAGSTests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_AUTHENTICATED_PROTECTION_FLAGS" /> struct.</summary>
-    public static unsafe partial class D3D11_AUTHENTICATED_PROTECTION_FLAGSTests
+    /// <summary>Validates that the <see cref="D3D11_AUTHENTICATED_PROTECTION_FLAGS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="D3D11_AUTHENTICATED_PROTECTION_FLAGS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<D3D11_AUTHENTICATED_PROTECTION_FLAGS>(), Is.EqualTo(sizeof(D3D11_AUTHENTICATED_PROTECTION_FLAGS)));
-        }
+        Assert.That(Marshal.SizeOf<D3D11_AUTHENTICATED_PROTECTION_FLAGS>(), Is.EqualTo(sizeof(D3D11_AUTHENTICATED_PROTECTION_FLAGS)));
+    }
 
-        /// <summary>Validates that the <see cref="D3D11_AUTHENTICATED_PROTECTION_FLAGS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutExplicitTest()
-        {
-            Assert.That(typeof(D3D11_AUTHENTICATED_PROTECTION_FLAGS).IsExplicitLayout, Is.True);
-        }
+    /// <summary>Validates that the <see cref="D3D11_AUTHENTICATED_PROTECTION_FLAGS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutExplicitTest()
+    {
+        Assert.That(typeof(D3D11_AUTHENTICATED_PROTECTION_FLAGS).IsExplicitLayout, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="D3D11_AUTHENTICATED_PROTECTION_FLAGS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(D3D11_AUTHENTICATED_PROTECTION_FLAGS), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="D3D11_AUTHENTICATED_PROTECTION_FLAGS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(D3D11_AUTHENTICATED_PROTECTION_FLAGS), Is.EqualTo(4));
     }
 }

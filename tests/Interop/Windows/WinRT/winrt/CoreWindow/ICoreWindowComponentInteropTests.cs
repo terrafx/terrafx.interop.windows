@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ICoreWindowComponentInterop" /> struct.</summary>
+public static unsafe partial class ICoreWindowComponentInteropTests
 {
-    /// <summary>Provides validation of the <see cref="ICoreWindowComponentInterop" /> struct.</summary>
-    public static unsafe partial class ICoreWindowComponentInteropTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ICoreWindowComponentInterop" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ICoreWindowComponentInterop" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ICoreWindowComponentInterop).GUID, Is.EqualTo(IID_ICoreWindowComponentInterop));
-        }
+        Assert.That(typeof(ICoreWindowComponentInterop).GUID, Is.EqualTo(IID_ICoreWindowComponentInterop));
+    }
 
-        /// <summary>Validates that the <see cref="ICoreWindowComponentInterop" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ICoreWindowComponentInterop>(), Is.EqualTo(sizeof(ICoreWindowComponentInterop)));
-        }
+    /// <summary>Validates that the <see cref="ICoreWindowComponentInterop" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ICoreWindowComponentInterop>(), Is.EqualTo(sizeof(ICoreWindowComponentInterop)));
+    }
 
-        /// <summary>Validates that the <see cref="ICoreWindowComponentInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ICoreWindowComponentInterop).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ICoreWindowComponentInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ICoreWindowComponentInterop).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ICoreWindowComponentInterop" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ICoreWindowComponentInterop" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ICoreWindowComponentInterop), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ICoreWindowComponentInterop), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ICoreWindowComponentInterop), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ICoreWindowComponentInterop), Is.EqualTo(4));
         }
     }
 }

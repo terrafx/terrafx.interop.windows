@@ -5,13 +5,12 @@
 
 using static TerraFX.Interop.Windows.SPGRAMMARWORDTYPE;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechGrammarWordType
 {
-    public enum SpeechGrammarWordType
-    {
-        SGDisplay = SPWT_DISPLAY,
-        SGLexical = SPWT_LEXICAL,
-        SGPronounciation = SPWT_PRONUNCIATION,
-        SGLexicalNoSpecialChars = SPWT_LEXICAL_NO_SPECIAL_CHARS,
-    }
+    SGDisplay = SPWT_DISPLAY,
+    SGLexical = SPWT_LEXICAL,
+    SGPronounciation = SPWT_PRONUNCIATION,
+    SGLexicalNoSpecialChars = SPWT_LEXICAL_NO_SPECIAL_CHARS,
 }

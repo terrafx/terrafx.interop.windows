@@ -7,31 +7,30 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct IP_INTERFACE_INFO
 {
-    public partial struct IP_INTERFACE_INFO
+    [NativeTypeName("LONG")]
+    public int NumAdapters;
+
+    [NativeTypeName("IP_ADAPTER_INDEX_MAP [1]")]
+    public _Adapter_e__FixedBuffer Adapter;
+
+    public partial struct _Adapter_e__FixedBuffer
     {
-        [NativeTypeName("LONG")]
-        public int NumAdapters;
+        public IP_ADAPTER_INDEX_MAP e0;
 
-        [NativeTypeName("IP_ADAPTER_INDEX_MAP [1]")]
-        public _Adapter_e__FixedBuffer Adapter;
-
-        public partial struct _Adapter_e__FixedBuffer
+        public ref IP_ADAPTER_INDEX_MAP this[int index]
         {
-            public IP_ADAPTER_INDEX_MAP e0;
-
-            public ref IP_ADAPTER_INDEX_MAP this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<IP_ADAPTER_INDEX_MAP> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<IP_ADAPTER_INDEX_MAP> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

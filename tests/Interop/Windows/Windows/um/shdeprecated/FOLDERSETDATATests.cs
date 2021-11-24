@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="FOLDERSETDATA" /> struct.</summary>
+public static unsafe partial class FOLDERSETDATATests
 {
-    /// <summary>Provides validation of the <see cref="FOLDERSETDATA" /> struct.</summary>
-    public static unsafe partial class FOLDERSETDATATests
+    /// <summary>Validates that the <see cref="FOLDERSETDATA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="FOLDERSETDATA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<FOLDERSETDATA>(), Is.EqualTo(sizeof(FOLDERSETDATA)));
-        }
+        Assert.That(Marshal.SizeOf<FOLDERSETDATA>(), Is.EqualTo(sizeof(FOLDERSETDATA)));
+    }
 
-        /// <summary>Validates that the <see cref="FOLDERSETDATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(FOLDERSETDATA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="FOLDERSETDATA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(FOLDERSETDATA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="FOLDERSETDATA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(FOLDERSETDATA), Is.EqualTo(28));
-        }
+    /// <summary>Validates that the <see cref="FOLDERSETDATA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(FOLDERSETDATA), Is.EqualTo(28));
     }
 }

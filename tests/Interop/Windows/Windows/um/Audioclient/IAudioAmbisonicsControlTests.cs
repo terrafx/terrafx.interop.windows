@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IAudioAmbisonicsControl" /> struct.</summary>
+public static unsafe partial class IAudioAmbisonicsControlTests
 {
-    /// <summary>Provides validation of the <see cref="IAudioAmbisonicsControl" /> struct.</summary>
-    public static unsafe partial class IAudioAmbisonicsControlTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAudioAmbisonicsControl" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAudioAmbisonicsControl" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAudioAmbisonicsControl).GUID, Is.EqualTo(IID_IAudioAmbisonicsControl));
-        }
+        Assert.That(typeof(IAudioAmbisonicsControl).GUID, Is.EqualTo(IID_IAudioAmbisonicsControl));
+    }
 
-        /// <summary>Validates that the <see cref="IAudioAmbisonicsControl" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IAudioAmbisonicsControl>(), Is.EqualTo(sizeof(IAudioAmbisonicsControl)));
-        }
+    /// <summary>Validates that the <see cref="IAudioAmbisonicsControl" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IAudioAmbisonicsControl>(), Is.EqualTo(sizeof(IAudioAmbisonicsControl)));
+    }
 
-        /// <summary>Validates that the <see cref="IAudioAmbisonicsControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IAudioAmbisonicsControl).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IAudioAmbisonicsControl" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IAudioAmbisonicsControl).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IAudioAmbisonicsControl" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IAudioAmbisonicsControl" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IAudioAmbisonicsControl), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IAudioAmbisonicsControl), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IAudioAmbisonicsControl), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IAudioAmbisonicsControl), Is.EqualTo(4));
         }
     }
 }

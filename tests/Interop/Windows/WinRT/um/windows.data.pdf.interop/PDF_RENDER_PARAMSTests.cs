@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PDF_RENDER_PARAMS" /> struct.</summary>
+[SupportedOSPlatform("windows8.1")]
+public static unsafe partial class PDF_RENDER_PARAMSTests
 {
-    /// <summary>Provides validation of the <see cref="PDF_RENDER_PARAMS" /> struct.</summary>
-    [SupportedOSPlatform("windows8.1")]
-    public static unsafe partial class PDF_RENDER_PARAMSTests
+    /// <summary>Validates that the <see cref="PDF_RENDER_PARAMS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PDF_RENDER_PARAMS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PDF_RENDER_PARAMS>(), Is.EqualTo(sizeof(PDF_RENDER_PARAMS)));
-        }
+        Assert.That(Marshal.SizeOf<PDF_RENDER_PARAMS>(), Is.EqualTo(sizeof(PDF_RENDER_PARAMS)));
+    }
 
-        /// <summary>Validates that the <see cref="PDF_RENDER_PARAMS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PDF_RENDER_PARAMS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PDF_RENDER_PARAMS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PDF_RENDER_PARAMS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PDF_RENDER_PARAMS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(PDF_RENDER_PARAMS), Is.EqualTo(44));
-        }
+    /// <summary>Validates that the <see cref="PDF_RENDER_PARAMS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(PDF_RENDER_PARAMS), Is.EqualTo(44));
     }
 }

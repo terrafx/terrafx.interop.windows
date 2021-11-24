@@ -5,19 +5,18 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct SHChangeDWORDAsIDList
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct SHChangeDWORDAsIDList
-    {
-        public ushort cb;
+    public ushort cb;
 
-        [NativeTypeName("DWORD")]
-        public uint dwItem1;
+    [NativeTypeName("DWORD")]
+    public uint dwItem1;
 
-        [NativeTypeName("DWORD")]
-        public uint dwItem2;
+    [NativeTypeName("DWORD")]
+    public uint dwItem2;
 
-        public ushort cbZero;
-    }
+    public ushort cbZero;
 }

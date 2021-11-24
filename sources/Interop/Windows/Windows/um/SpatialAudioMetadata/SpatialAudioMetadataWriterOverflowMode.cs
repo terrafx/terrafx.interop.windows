@@ -3,12 +3,11 @@
 // Ported from um/SpatialAudioMetadata.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpatialAudioMetadataWriterOverflowMode
 {
-    public enum SpatialAudioMetadataWriterOverflowMode
-    {
-        SpatialAudioMetadataWriterOverflow_Fail = 0,
-        SpatialAudioMetadataWriterOverflow_MergeWithNew = (SpatialAudioMetadataWriterOverflow_Fail + 1),
-        SpatialAudioMetadataWriterOverflow_MergeWithLast = (SpatialAudioMetadataWriterOverflow_MergeWithNew + 1),
-    }
+    SpatialAudioMetadataWriterOverflow_Fail = 0,
+    SpatialAudioMetadataWriterOverflow_MergeWithNew = (SpatialAudioMetadataWriterOverflow_Fail + 1),
+    SpatialAudioMetadataWriterOverflow_MergeWithLast = (SpatialAudioMetadataWriterOverflow_MergeWithNew + 1),
 }

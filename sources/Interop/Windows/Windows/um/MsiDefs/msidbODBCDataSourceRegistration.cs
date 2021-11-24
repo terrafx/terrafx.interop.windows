@@ -3,11 +3,10 @@
 // Ported from um/MsiDefs.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum msidbODBCDataSourceRegistration
 {
-    public enum msidbODBCDataSourceRegistration
-    {
-        msidbODBCDataSourceRegistrationPerMachine = 0x00000000,
-        msidbODBCDataSourceRegistrationPerUser = 0x00000001,
-    }
+    msidbODBCDataSourceRegistrationPerMachine = 0x00000000,
+    msidbODBCDataSourceRegistrationPerUser = 0x00000001,
 }

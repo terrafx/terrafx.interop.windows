@@ -3,20 +3,19 @@
 // Ported from um/winhttp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WINHTTP_REQUEST_STATS64
 {
-    public unsafe partial struct WINHTTP_REQUEST_STATS64
-    {
-        [NativeTypeName("ULONGLONG")]
-        public ulong ullFlags;
+    [NativeTypeName("ULONGLONG")]
+    public ulong ullFlags;
 
-        [NativeTypeName("ULONG")]
-        public uint ulIndex;
+    [NativeTypeName("ULONG")]
+    public uint ulIndex;
 
-        [NativeTypeName("ULONG")]
-        public uint cStats;
+    [NativeTypeName("ULONG")]
+    public uint cStats;
 
-        [NativeTypeName("ULONGLONG [32]")]
-        public fixed ulong rgullStats[32];
-    }
+    [NativeTypeName("ULONGLONG [32]")]
+    public fixed ulong rgullStats[32];
 }

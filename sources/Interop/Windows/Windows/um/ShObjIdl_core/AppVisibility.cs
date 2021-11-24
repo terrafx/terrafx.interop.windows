@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("7E5FE3D9-985F-4908-91F9-EE19F9FD1514")]
+public partial struct AppVisibility
 {
-    [Guid("7E5FE3D9-985F-4908-91F9-EE19F9FD1514")]
-    public partial struct AppVisibility
-    {
-    }
 }

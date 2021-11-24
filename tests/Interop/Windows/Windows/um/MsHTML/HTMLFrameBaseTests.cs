@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLFrameBase" /> struct.</summary>
+public static unsafe partial class HTMLFrameBaseTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLFrameBase" /> struct.</summary>
-    public static unsafe partial class HTMLFrameBaseTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLFrameBase" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLFrameBase" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLFrameBase).GUID, Is.EqualTo(IID_HTMLFrameBase));
-        }
+        Assert.That(typeof(HTMLFrameBase).GUID, Is.EqualTo(IID_HTMLFrameBase));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLFrameBase" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLFrameBase>(), Is.EqualTo(sizeof(HTMLFrameBase)));
-        }
+    /// <summary>Validates that the <see cref="HTMLFrameBase" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLFrameBase>(), Is.EqualTo(sizeof(HTMLFrameBase)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLFrameBase" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLFrameBase).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLFrameBase" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLFrameBase).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLFrameBase" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HTMLFrameBase), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="HTMLFrameBase" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HTMLFrameBase), Is.EqualTo(1));
     }
 }

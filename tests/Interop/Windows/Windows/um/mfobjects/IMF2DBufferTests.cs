@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMF2DBuffer" /> struct.</summary>
+public static unsafe partial class IMF2DBufferTests
 {
-    /// <summary>Provides validation of the <see cref="IMF2DBuffer" /> struct.</summary>
-    public static unsafe partial class IMF2DBufferTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMF2DBuffer" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMF2DBuffer" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMF2DBuffer).GUID, Is.EqualTo(IID_IMF2DBuffer));
-        }
+        Assert.That(typeof(IMF2DBuffer).GUID, Is.EqualTo(IID_IMF2DBuffer));
+    }
 
-        /// <summary>Validates that the <see cref="IMF2DBuffer" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMF2DBuffer>(), Is.EqualTo(sizeof(IMF2DBuffer)));
-        }
+    /// <summary>Validates that the <see cref="IMF2DBuffer" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMF2DBuffer>(), Is.EqualTo(sizeof(IMF2DBuffer)));
+    }
 
-        /// <summary>Validates that the <see cref="IMF2DBuffer" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMF2DBuffer).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMF2DBuffer" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMF2DBuffer).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMF2DBuffer" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMF2DBuffer" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMF2DBuffer), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMF2DBuffer), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMF2DBuffer), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMF2DBuffer), Is.EqualTo(4));
         }
     }
 }

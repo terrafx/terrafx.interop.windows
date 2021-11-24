@@ -8,90 +8,89 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[Guid("25297D5C-3AD4-4C9C-B5CF-E36A38512330")]
+[NativeTypeName("struct ICompositorInterop : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ICompositorInterop : ICompositorInterop.Interface
 {
-    [Guid("25297D5C-3AD4-4C9C-B5CF-E36A38512330")]
-    [NativeTypeName("struct ICompositorInterop : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICompositorInterop : ICompositorInterop.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ICompositorInterop*, Guid*, void**, int>)(lpVtbl[0]))((ICompositorInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ICompositorInterop*, Guid*, void**, int>)(lpVtbl[0]))((ICompositorInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ICompositorInterop*, uint>)(lpVtbl[1]))((ICompositorInterop*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ICompositorInterop*, uint>)(lpVtbl[1]))((ICompositorInterop*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ICompositorInterop*, uint>)(lpVtbl[2]))((ICompositorInterop*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ICompositorInterop*, uint>)(lpVtbl[2]))((ICompositorInterop*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT CreateCompositionSurfaceForHandle(HANDLE swapChain, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionSurface **")] void** result)
+    {
+        return ((delegate* unmanaged<ICompositorInterop*, HANDLE, void**, int>)(lpVtbl[3]))((ICompositorInterop*)Unsafe.AsPointer(ref this), swapChain, result);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT CreateCompositionSurfaceForSwapChain(IUnknown* swapChain, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionSurface **")] void** result)
+    {
+        return ((delegate* unmanaged<ICompositorInterop*, IUnknown*, void**, int>)(lpVtbl[4]))((ICompositorInterop*)Unsafe.AsPointer(ref this), swapChain, result);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT CreateGraphicsDevice(IUnknown* renderingDevice, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionGraphicsDevice **")] void** result)
+    {
+        return ((delegate* unmanaged<ICompositorInterop*, IUnknown*, void**, int>)(lpVtbl[5]))((ICompositorInterop*)Unsafe.AsPointer(ref this), renderingDevice, result);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT CreateCompositionSurfaceForHandle(HANDLE swapChain, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionSurface **")] void** result)
-        {
-            return ((delegate* unmanaged<ICompositorInterop*, HANDLE, void**, int>)(lpVtbl[3]))((ICompositorInterop*)Unsafe.AsPointer(ref this), swapChain, result);
-        }
+        HRESULT CreateCompositionSurfaceForHandle(HANDLE swapChain, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionSurface **")] void** result);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT CreateCompositionSurfaceForSwapChain(IUnknown* swapChain, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionSurface **")] void** result)
-        {
-            return ((delegate* unmanaged<ICompositorInterop*, IUnknown*, void**, int>)(lpVtbl[4]))((ICompositorInterop*)Unsafe.AsPointer(ref this), swapChain, result);
-        }
+        HRESULT CreateCompositionSurfaceForSwapChain(IUnknown* swapChain, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionSurface **")] void** result);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT CreateGraphicsDevice(IUnknown* renderingDevice, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionGraphicsDevice **")] void** result)
-        {
-            return ((delegate* unmanaged<ICompositorInterop*, IUnknown*, void**, int>)(lpVtbl[5]))((ICompositorInterop*)Unsafe.AsPointer(ref this), renderingDevice, result);
-        }
+        HRESULT CreateGraphicsDevice(IUnknown* renderingDevice, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionGraphicsDevice **")] void** result);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT CreateCompositionSurfaceForHandle(HANDLE swapChain, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionSurface **")] void** result);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICompositorInterop*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT CreateCompositionSurfaceForSwapChain(IUnknown* swapChain, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionSurface **")] void** result);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ICompositorInterop*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT CreateGraphicsDevice(IUnknown* renderingDevice, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionGraphicsDevice **")] void** result);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ICompositorInterop*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICompositorInterop*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (HANDLE, ABI::Windows::UI::Composition::ICompositionSurface **) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICompositorInterop*, HANDLE, void**, int> CreateCompositionSurfaceForHandle;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ICompositorInterop*, uint> AddRef;
+        [NativeTypeName("HRESULT (IUnknown *, ABI::Windows::UI::Composition::ICompositionSurface **) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICompositorInterop*, IUnknown*, void**, int> CreateCompositionSurfaceForSwapChain;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ICompositorInterop*, uint> Release;
-
-            [NativeTypeName("HRESULT (HANDLE, ABI::Windows::UI::Composition::ICompositionSurface **) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICompositorInterop*, HANDLE, void**, int> CreateCompositionSurfaceForHandle;
-
-            [NativeTypeName("HRESULT (IUnknown *, ABI::Windows::UI::Composition::ICompositionSurface **) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICompositorInterop*, IUnknown*, void**, int> CreateCompositionSurfaceForSwapChain;
-
-            [NativeTypeName("HRESULT (IUnknown *, ABI::Windows::UI::Composition::ICompositionGraphicsDevice **) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICompositorInterop*, IUnknown*, void**, int> CreateGraphicsDevice;
-        }
+        [NativeTypeName("HRESULT (IUnknown *, ABI::Windows::UI::Composition::ICompositionGraphicsDevice **) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICompositorInterop*, IUnknown*, void**, int> CreateGraphicsDevice;
     }
 }

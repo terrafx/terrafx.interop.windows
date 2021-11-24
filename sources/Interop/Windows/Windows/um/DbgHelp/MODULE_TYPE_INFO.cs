@@ -3,15 +3,14 @@
 // Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct MODULE_TYPE_INFO
 {
-    public unsafe partial struct MODULE_TYPE_INFO
-    {
-        public ushort dataLength;
+    public ushort dataLength;
 
-        public ushort leaf;
+    public ushort leaf;
 
-        [NativeTypeName("BYTE [1]")]
-        public fixed byte data[1];
-    }
+    [NativeTypeName("BYTE [1]")]
+    public fixed byte data[1];
 }

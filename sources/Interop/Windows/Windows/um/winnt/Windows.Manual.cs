@@ -5,104 +5,103 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static unsafe partial class Windows
 {
-    public static unsafe partial class Windows
+    public static int MEMORY_ALLOCATION_ALIGNMENT
     {
-        public static int MEMORY_ALLOCATION_ALIGNMENT
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return 8;
-                }
-                else
-                {
-                    return 16;
-                }
+                return 8;
+            }
+            else
+            {
+                return 16;
             }
         }
-
-        public static int MAXIMUM_PROC_PER_GROUP
-        {
-            get
-            {
-                if (sizeof(nint) == 4)
-                {
-                    return 32;
-                }
-                else
-                {
-                    return 64;
-                }
-            }
-        }
-
-        [NativeTypeName("#define MAXIMUM_PROCESSORS MAXIMUM_PROC_PER_GROUP")]
-        public static int MAXIMUM_PROCESSORS => MAXIMUM_PROC_PER_GROUP;
-
-        [NativeTypeName("#define MAXIMUM_SUPPORTED_EXTENSION 512")]
-        public const int MAXIMUM_SUPPORTED_EXTENSION = 512;
-
-        [NativeTypeName("#define INITIAL_MXCSR 0x1f80")]
-        public const int INITIAL_MXCSR = 0x1f80;
-
-        [NativeTypeName("#define INITIAL_FPCSR 0x027f")]
-        public const int INITIAL_FPCSR = 0x027f;
-
-        [NativeTypeName("#define RUNTIME_FUNCTION_INDIRECT 0x1")]
-        public const int RUNTIME_FUNCTION_INDIRECT = 0x1;
-
-        [NativeTypeName("#define UNW_FLAG_NHANDLER 0x0")]
-        public const int UNW_FLAG_NHANDLER = 0x0;
-
-        [NativeTypeName("#define UNW_FLAG_EHANDLER 0x1")]
-        public const int UNW_FLAG_EHANDLER = 0x1;
-
-        [NativeTypeName("#define UNW_FLAG_UHANDLER 0x2")]
-        public const int UNW_FLAG_UHANDLER = 0x2;
-
-        [NativeTypeName("#define UNW_FLAG_CHAININFO 0x4")]
-        public const int UNW_FLAG_CHAININFO = 0x4;
-
-        [NativeTypeName("#define UNW_FLAG_NO_EPILOGUE 0x80000000UL")]
-        public const uint UNW_FLAG_NO_EPILOGUE = 0x80000000U;
-
-        [NativeTypeName("#define UNWIND_CHAIN_LIMIT 32")]
-        public const int UNWIND_CHAIN_LIMIT = 32;
-
-        [NativeTypeName("#define OUT_OF_PROCESS_FUNCTION_TABLE_CALLBACK_EXPORT_NAME \"OutOfProcessFunctionTableCallback\"")]
-        public static ReadOnlySpan<byte> OUT_OF_PROCESS_FUNCTION_TABLE_CALLBACK_EXPORT_NAME => new byte[] { 0x4F, 0x75, 0x74, 0x4F, 0x66, 0x50, 0x72, 0x6F, 0x63, 0x65, 0x73, 0x73, 0x46, 0x75, 0x6E, 0x63, 0x74, 0x69, 0x6F, 0x6E, 0x54, 0x61, 0x62, 0x6C, 0x65, 0x43, 0x61, 0x6C, 0x6C, 0x62, 0x61, 0x63, 0x6B, 0x00 };
-
-        [NativeTypeName("#define ARM64_MAX_BREAKPOINTS 8")]
-        public const int ARM64_MAX_BREAKPOINTS = 8;
-
-        [NativeTypeName("#define ARM64_MAX_WATCHPOINTS 2")]
-        public const int ARM64_MAX_WATCHPOINTS = 2;
-
-        [NativeTypeName("#define NONVOL_INT_NUMREG_ARM64 (11)")]
-        public const int NONVOL_INT_NUMREG_ARM64 = (11);
-
-        [NativeTypeName("#define NONVOL_FP_NUMREG_ARM64 (8)")]
-        public const int NONVOL_FP_NUMREG_ARM64 = (8);
-
-        [NativeTypeName("#define NONVOL_INT_SIZE_ARM64 (NONVOL_INT_NUMREG_ARM64 * sizeof(DWORD64))")]
-        public const uint NONVOL_INT_SIZE_ARM64 = ((11) * 8);
-
-        [NativeTypeName("#define NONVOL_FP_SIZE_ARM64 (NONVOL_FP_NUMREG_ARM64 * sizeof(double))")]
-        public const uint NONVOL_FP_SIZE_ARM64 = ((8) * 8);
-
-        [NativeTypeName("#define SIZE_OF_80387_REGISTERS 80")]
-        public const int SIZE_OF_80387_REGISTERS = 80;
-
-        [NativeTypeName("#define MEMORY_CURRENT_PARTITION_HANDLE ((HANDLE) (LONG_PTR) -1)")]
-        public static HANDLE MEMORY_CURRENT_PARTITION_HANDLE => ((HANDLE)((nint)(-1)));
-
-        [NativeTypeName("#define MEMORY_SYSTEM_PARTITION_HANDLE ((HANDLE) (LONG_PTR) -2)")]
-        public static HANDLE MEMORY_SYSTEM_PARTITION_HANDLE => ((HANDLE)((nint)(-2)));
-
-        [NativeTypeName("#define MEMORY_EXISTING_VAD_PARTITION_HANDLE ((HANDLE) (LONG_PTR) -3)")]
-        public static HANDLE MEMORY_EXISTING_VAD_PARTITION_HANDLE => ((HANDLE)((nint)(-3)));
     }
+
+    public static int MAXIMUM_PROC_PER_GROUP
+    {
+        get
+        {
+            if (sizeof(nint) == 4)
+            {
+                return 32;
+            }
+            else
+            {
+                return 64;
+            }
+        }
+    }
+
+    [NativeTypeName("#define MAXIMUM_PROCESSORS MAXIMUM_PROC_PER_GROUP")]
+    public static int MAXIMUM_PROCESSORS => MAXIMUM_PROC_PER_GROUP;
+
+    [NativeTypeName("#define MAXIMUM_SUPPORTED_EXTENSION 512")]
+    public const int MAXIMUM_SUPPORTED_EXTENSION = 512;
+
+    [NativeTypeName("#define INITIAL_MXCSR 0x1f80")]
+    public const int INITIAL_MXCSR = 0x1f80;
+
+    [NativeTypeName("#define INITIAL_FPCSR 0x027f")]
+    public const int INITIAL_FPCSR = 0x027f;
+
+    [NativeTypeName("#define RUNTIME_FUNCTION_INDIRECT 0x1")]
+    public const int RUNTIME_FUNCTION_INDIRECT = 0x1;
+
+    [NativeTypeName("#define UNW_FLAG_NHANDLER 0x0")]
+    public const int UNW_FLAG_NHANDLER = 0x0;
+
+    [NativeTypeName("#define UNW_FLAG_EHANDLER 0x1")]
+    public const int UNW_FLAG_EHANDLER = 0x1;
+
+    [NativeTypeName("#define UNW_FLAG_UHANDLER 0x2")]
+    public const int UNW_FLAG_UHANDLER = 0x2;
+
+    [NativeTypeName("#define UNW_FLAG_CHAININFO 0x4")]
+    public const int UNW_FLAG_CHAININFO = 0x4;
+
+    [NativeTypeName("#define UNW_FLAG_NO_EPILOGUE 0x80000000UL")]
+    public const uint UNW_FLAG_NO_EPILOGUE = 0x80000000U;
+
+    [NativeTypeName("#define UNWIND_CHAIN_LIMIT 32")]
+    public const int UNWIND_CHAIN_LIMIT = 32;
+
+    [NativeTypeName("#define OUT_OF_PROCESS_FUNCTION_TABLE_CALLBACK_EXPORT_NAME \"OutOfProcessFunctionTableCallback\"")]
+    public static ReadOnlySpan<byte> OUT_OF_PROCESS_FUNCTION_TABLE_CALLBACK_EXPORT_NAME => new byte[] { 0x4F, 0x75, 0x74, 0x4F, 0x66, 0x50, 0x72, 0x6F, 0x63, 0x65, 0x73, 0x73, 0x46, 0x75, 0x6E, 0x63, 0x74, 0x69, 0x6F, 0x6E, 0x54, 0x61, 0x62, 0x6C, 0x65, 0x43, 0x61, 0x6C, 0x6C, 0x62, 0x61, 0x63, 0x6B, 0x00 };
+
+    [NativeTypeName("#define ARM64_MAX_BREAKPOINTS 8")]
+    public const int ARM64_MAX_BREAKPOINTS = 8;
+
+    [NativeTypeName("#define ARM64_MAX_WATCHPOINTS 2")]
+    public const int ARM64_MAX_WATCHPOINTS = 2;
+
+    [NativeTypeName("#define NONVOL_INT_NUMREG_ARM64 (11)")]
+    public const int NONVOL_INT_NUMREG_ARM64 = (11);
+
+    [NativeTypeName("#define NONVOL_FP_NUMREG_ARM64 (8)")]
+    public const int NONVOL_FP_NUMREG_ARM64 = (8);
+
+    [NativeTypeName("#define NONVOL_INT_SIZE_ARM64 (NONVOL_INT_NUMREG_ARM64 * sizeof(DWORD64))")]
+    public const uint NONVOL_INT_SIZE_ARM64 = ((11) * 8);
+
+    [NativeTypeName("#define NONVOL_FP_SIZE_ARM64 (NONVOL_FP_NUMREG_ARM64 * sizeof(double))")]
+    public const uint NONVOL_FP_SIZE_ARM64 = ((8) * 8);
+
+    [NativeTypeName("#define SIZE_OF_80387_REGISTERS 80")]
+    public const int SIZE_OF_80387_REGISTERS = 80;
+
+    [NativeTypeName("#define MEMORY_CURRENT_PARTITION_HANDLE ((HANDLE) (LONG_PTR) -1)")]
+    public static HANDLE MEMORY_CURRENT_PARTITION_HANDLE => ((HANDLE)((nint)(-1)));
+
+    [NativeTypeName("#define MEMORY_SYSTEM_PARTITION_HANDLE ((HANDLE) (LONG_PTR) -2)")]
+    public static HANDLE MEMORY_SYSTEM_PARTITION_HANDLE => ((HANDLE)((nint)(-2)));
+
+    [NativeTypeName("#define MEMORY_EXISTING_VAD_PARTITION_HANDLE ((HANDLE) (LONG_PTR) -3)")]
+    public static HANDLE MEMORY_EXISTING_VAD_PARTITION_HANDLE => ((HANDLE)((nint)(-3)));
 }

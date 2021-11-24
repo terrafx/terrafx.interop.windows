@@ -5,33 +5,32 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct STORAGE_DEVICE_RESILIENCY_DESCRIPTOR
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct STORAGE_DEVICE_RESILIENCY_DESCRIPTOR
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("DWORD")]
-        public uint NameOffset;
+    [NativeTypeName("DWORD")]
+    public uint NameOffset;
 
-        [NativeTypeName("DWORD")]
-        public uint NumberOfLogicalCopies;
+    [NativeTypeName("DWORD")]
+    public uint NumberOfLogicalCopies;
 
-        [NativeTypeName("DWORD")]
-        public uint NumberOfPhysicalCopies;
+    [NativeTypeName("DWORD")]
+    public uint NumberOfPhysicalCopies;
 
-        [NativeTypeName("DWORD")]
-        public uint PhysicalDiskRedundancy;
+    [NativeTypeName("DWORD")]
+    public uint PhysicalDiskRedundancy;
 
-        [NativeTypeName("DWORD")]
-        public uint NumberOfColumns;
+    [NativeTypeName("DWORD")]
+    public uint NumberOfColumns;
 
-        [NativeTypeName("DWORD")]
-        public uint Interleave;
-    }
+    [NativeTypeName("DWORD")]
+    public uint Interleave;
 }

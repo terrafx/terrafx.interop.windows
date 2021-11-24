@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="D3D12_FEATURE_DATA_D3D12_OPTIONS4" /> struct.</summary>
+public static unsafe partial class D3D12_FEATURE_DATA_D3D12_OPTIONS4Tests
 {
-    /// <summary>Provides validation of the <see cref="D3D12_FEATURE_DATA_D3D12_OPTIONS4" /> struct.</summary>
-    public static unsafe partial class D3D12_FEATURE_DATA_D3D12_OPTIONS4Tests
+    /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_D3D12_OPTIONS4" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_D3D12_OPTIONS4" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<D3D12_FEATURE_DATA_D3D12_OPTIONS4>(), Is.EqualTo(sizeof(D3D12_FEATURE_DATA_D3D12_OPTIONS4)));
-        }
+        Assert.That(Marshal.SizeOf<D3D12_FEATURE_DATA_D3D12_OPTIONS4>(), Is.EqualTo(sizeof(D3D12_FEATURE_DATA_D3D12_OPTIONS4)));
+    }
 
-        /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_D3D12_OPTIONS4" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(D3D12_FEATURE_DATA_D3D12_OPTIONS4).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_D3D12_OPTIONS4" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(D3D12_FEATURE_DATA_D3D12_OPTIONS4).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_D3D12_OPTIONS4" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(D3D12_FEATURE_DATA_D3D12_OPTIONS4), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_D3D12_OPTIONS4" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(D3D12_FEATURE_DATA_D3D12_OPTIONS4), Is.EqualTo(12));
     }
 }

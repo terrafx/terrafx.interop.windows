@@ -5,23 +5,22 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SP_SELECTDEVICE_PARAMS32_W
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SP_SELECTDEVICE_PARAMS32_W
-    {
-        public SP_CLASSINSTALL_HEADER32 ClassInstallHeader;
+    public SP_CLASSINSTALL_HEADER32 ClassInstallHeader;
 
-        [NativeTypeName("WCHAR [60]")]
-        public fixed ushort Title[60];
+    [NativeTypeName("WCHAR [60]")]
+    public fixed ushort Title[60];
 
-        [NativeTypeName("WCHAR [256]")]
-        public fixed ushort Instructions[256];
+    [NativeTypeName("WCHAR [256]")]
+    public fixed ushort Instructions[256];
 
-        [NativeTypeName("WCHAR [30]")]
-        public fixed ushort ListLabel[30];
+    [NativeTypeName("WCHAR [30]")]
+    public fixed ushort ListLabel[30];
 
-        [NativeTypeName("WCHAR [256]")]
-        public fixed ushort SubTitle[256];
-    }
+    [NativeTypeName("WCHAR [256]")]
+    public fixed ushort SubTitle[256];
 }

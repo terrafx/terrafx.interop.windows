@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("D48A6EC6-6A4A-11CF-94A7-444553540000")]
+public partial struct HTMLWindow2
 {
-    [Guid("D48A6EC6-6A4A-11CF-94A7-444553540000")]
-    public partial struct HTMLWindow2
-    {
-    }
 }

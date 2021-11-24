@@ -8,38 +8,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WIN32_MEMORY_REGION_INFORMATION" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.14393.0")]
+public static unsafe partial class WIN32_MEMORY_REGION_INFORMATIONTests
 {
-    /// <summary>Provides validation of the <see cref="WIN32_MEMORY_REGION_INFORMATION" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0.14393.0")]
-    public static unsafe partial class WIN32_MEMORY_REGION_INFORMATIONTests
+    /// <summary>Validates that the <see cref="WIN32_MEMORY_REGION_INFORMATION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WIN32_MEMORY_REGION_INFORMATION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WIN32_MEMORY_REGION_INFORMATION>(), Is.EqualTo(sizeof(WIN32_MEMORY_REGION_INFORMATION)));
-        }
+        Assert.That(Marshal.SizeOf<WIN32_MEMORY_REGION_INFORMATION>(), Is.EqualTo(sizeof(WIN32_MEMORY_REGION_INFORMATION)));
+    }
 
-        /// <summary>Validates that the <see cref="WIN32_MEMORY_REGION_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WIN32_MEMORY_REGION_INFORMATION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WIN32_MEMORY_REGION_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WIN32_MEMORY_REGION_INFORMATION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WIN32_MEMORY_REGION_INFORMATION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="WIN32_MEMORY_REGION_INFORMATION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(WIN32_MEMORY_REGION_INFORMATION), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(WIN32_MEMORY_REGION_INFORMATION), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(WIN32_MEMORY_REGION_INFORMATION), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(WIN32_MEMORY_REGION_INFORMATION), Is.EqualTo(20));
         }
     }
 }

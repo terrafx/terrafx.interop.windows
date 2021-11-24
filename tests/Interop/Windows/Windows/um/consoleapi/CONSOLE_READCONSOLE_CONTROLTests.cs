@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CONSOLE_READCONSOLE_CONTROL" /> struct.</summary>
+public static unsafe partial class CONSOLE_READCONSOLE_CONTROLTests
 {
-    /// <summary>Provides validation of the <see cref="CONSOLE_READCONSOLE_CONTROL" /> struct.</summary>
-    public static unsafe partial class CONSOLE_READCONSOLE_CONTROLTests
+    /// <summary>Validates that the <see cref="CONSOLE_READCONSOLE_CONTROL" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CONSOLE_READCONSOLE_CONTROL" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CONSOLE_READCONSOLE_CONTROL>(), Is.EqualTo(sizeof(CONSOLE_READCONSOLE_CONTROL)));
-        }
+        Assert.That(Marshal.SizeOf<CONSOLE_READCONSOLE_CONTROL>(), Is.EqualTo(sizeof(CONSOLE_READCONSOLE_CONTROL)));
+    }
 
-        /// <summary>Validates that the <see cref="CONSOLE_READCONSOLE_CONTROL" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CONSOLE_READCONSOLE_CONTROL).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CONSOLE_READCONSOLE_CONTROL" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CONSOLE_READCONSOLE_CONTROL).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CONSOLE_READCONSOLE_CONTROL" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CONSOLE_READCONSOLE_CONTROL), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="CONSOLE_READCONSOLE_CONTROL" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CONSOLE_READCONSOLE_CONTROL), Is.EqualTo(16));
     }
 }

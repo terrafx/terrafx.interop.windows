@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.16299.0")]
+public enum MFSampleEncryptionProtectionScheme
 {
-    [SupportedOSPlatform("windows10.0.16299.0")]
-    public enum MFSampleEncryptionProtectionScheme
-    {
-        MF_SAMPLE_ENCRYPTION_PROTECTION_SCHEME_NONE = 0,
-        MF_SAMPLE_ENCRYPTION_PROTECTION_SCHEME_AES_CTR = 1,
-        MF_SAMPLE_ENCRYPTION_PROTECTION_SCHEME_AES_CBC = 2,
-    }
+    MF_SAMPLE_ENCRYPTION_PROTECTION_SCHEME_NONE = 0,
+    MF_SAMPLE_ENCRYPTION_PROTECTION_SCHEME_AES_CTR = 1,
+    MF_SAMPLE_ENCRYPTION_PROTECTION_SCHEME_AES_CBC = 2,
 }

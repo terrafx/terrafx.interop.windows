@@ -3,16 +3,15 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum OPPROGDLGF
 {
-    public enum OPPROGDLGF
-    {
-        OPPROGDLG_DEFAULT = 0,
-        OPPROGDLG_ENABLEPAUSE = 0x80,
-        OPPROGDLG_ALLOWUNDO = 0x100,
-        OPPROGDLG_DONTDISPLAYSOURCEPATH = 0x200,
-        OPPROGDLG_DONTDISPLAYDESTPATH = 0x400,
-        OPPROGDLG_NOMULTIDAYESTIMATES = 0x800,
-        OPPROGDLG_DONTDISPLAYLOCATIONS = 0x1000,
-    }
+    OPPROGDLG_DEFAULT = 0,
+    OPPROGDLG_ENABLEPAUSE = 0x80,
+    OPPROGDLG_ALLOWUNDO = 0x100,
+    OPPROGDLG_DONTDISPLAYSOURCEPATH = 0x200,
+    OPPROGDLG_DONTDISPLAYDESTPATH = 0x400,
+    OPPROGDLG_NOMULTIDAYESTIMATES = 0x800,
+    OPPROGDLG_DONTDISPLAYLOCATIONS = 0x1000,
 }

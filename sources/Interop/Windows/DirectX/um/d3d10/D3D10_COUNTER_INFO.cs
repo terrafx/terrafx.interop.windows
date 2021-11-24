@@ -3,15 +3,14 @@
 // Ported from um/d3d10.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D10_COUNTER_INFO
 {
-    public partial struct D3D10_COUNTER_INFO
-    {
-        public D3D10_COUNTER LastDeviceDependentCounter;
+    public D3D10_COUNTER LastDeviceDependentCounter;
 
-        public uint NumSimultaneousCounters;
+    public uint NumSimultaneousCounters;
 
-        [NativeTypeName("UINT8")]
-        public byte NumDetectableParallelUnits;
-    }
+    [NativeTypeName("UINT8")]
+    public byte NumDetectableParallelUnits;
 }

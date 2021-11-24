@@ -5,19 +5,18 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct MANIPULATION_TRANSFORM
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct MANIPULATION_TRANSFORM
-    {
-        public float translationX;
+    public float translationX;
 
-        public float translationY;
+    public float translationY;
 
-        public float scale;
+    public float scale;
 
-        public float expansion;
+    public float expansion;
 
-        public float rotation;
-    }
+    public float rotation;
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDiaEnumSymbols" /> struct.</summary>
+public static unsafe partial class IDiaEnumSymbolsTests
 {
-    /// <summary>Provides validation of the <see cref="IDiaEnumSymbols" /> struct.</summary>
-    public static unsafe partial class IDiaEnumSymbolsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDiaEnumSymbols" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDiaEnumSymbols" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDiaEnumSymbols).GUID, Is.EqualTo(IID_IDiaEnumSymbols));
-        }
+        Assert.That(typeof(IDiaEnumSymbols).GUID, Is.EqualTo(IID_IDiaEnumSymbols));
+    }
 
-        /// <summary>Validates that the <see cref="IDiaEnumSymbols" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDiaEnumSymbols>(), Is.EqualTo(sizeof(IDiaEnumSymbols)));
-        }
+    /// <summary>Validates that the <see cref="IDiaEnumSymbols" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDiaEnumSymbols>(), Is.EqualTo(sizeof(IDiaEnumSymbols)));
+    }
 
-        /// <summary>Validates that the <see cref="IDiaEnumSymbols" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDiaEnumSymbols).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDiaEnumSymbols" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDiaEnumSymbols).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDiaEnumSymbols" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDiaEnumSymbols" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDiaEnumSymbols), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDiaEnumSymbols), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDiaEnumSymbols), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDiaEnumSymbols), Is.EqualTo(4));
         }
     }
 }

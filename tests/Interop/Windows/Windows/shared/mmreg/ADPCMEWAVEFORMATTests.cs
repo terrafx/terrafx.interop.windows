@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ADPCMEWAVEFORMAT" /> struct.</summary>
+public static unsafe partial class ADPCMEWAVEFORMATTests
 {
-    /// <summary>Provides validation of the <see cref="ADPCMEWAVEFORMAT" /> struct.</summary>
-    public static unsafe partial class ADPCMEWAVEFORMATTests
+    /// <summary>Validates that the <see cref="ADPCMEWAVEFORMAT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="ADPCMEWAVEFORMAT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ADPCMEWAVEFORMAT>(), Is.EqualTo(sizeof(ADPCMEWAVEFORMAT)));
-        }
+        Assert.That(Marshal.SizeOf<ADPCMEWAVEFORMAT>(), Is.EqualTo(sizeof(ADPCMEWAVEFORMAT)));
+    }
 
-        /// <summary>Validates that the <see cref="ADPCMEWAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ADPCMEWAVEFORMAT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ADPCMEWAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ADPCMEWAVEFORMAT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ADPCMEWAVEFORMAT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(ADPCMEWAVEFORMAT), Is.EqualTo(20));
-        }
+    /// <summary>Validates that the <see cref="ADPCMEWAVEFORMAT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(ADPCMEWAVEFORMAT), Is.EqualTo(20));
     }
 }

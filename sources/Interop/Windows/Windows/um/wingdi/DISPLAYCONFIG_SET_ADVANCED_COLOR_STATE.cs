@@ -6,99 +6,98 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE
 {
-    public partial struct DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE
+    public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
+
+    [NativeTypeName("_DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wingdi.h:3180:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public uint enableAdvancedColor
     {
-        public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
-
-        [NativeTypeName("_DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wingdi.h:3180:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public uint enableAdvancedColor
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.enableAdvancedColor;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.enableAdvancedColor = value;
-            }
+            return Anonymous.Anonymous.enableAdvancedColor;
         }
 
-        public uint reserved
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.reserved;
-            }
+            Anonymous.Anonymous.enableAdvancedColor = value;
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.reserved = value;
-            }
+    public uint reserved
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.reserved;
         }
 
-        public ref uint value
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.value, 1));
-            }
+            Anonymous.Anonymous.reserved = value;
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
+    public ref uint value
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [FieldOffset(0)]
-            [NativeTypeName("_DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wingdi.h:3182:9)")]
-            public _Anonymous_e__Struct Anonymous;
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.value, 1));
+        }
+    }
 
-            [FieldOffset(0)]
-            [NativeTypeName("UINT32")]
-            public uint value;
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("_DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wingdi.h:3182:9)")]
+        public _Anonymous_e__Struct Anonymous;
 
-            public partial struct _Anonymous_e__Struct
+        [FieldOffset(0)]
+        [NativeTypeName("UINT32")]
+        public uint value;
+
+        public partial struct _Anonymous_e__Struct
+        {
+            public uint _bitfield;
+
+            [NativeTypeName("UINT32 : 1")]
+            public uint enableAdvancedColor
             {
-                public uint _bitfield;
-
-                [NativeTypeName("UINT32 : 1")]
-                public uint enableAdvancedColor
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return _bitfield & 0x1u;
-                    }
-
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
-                    }
+                    return _bitfield & 0x1u;
                 }
 
-                [NativeTypeName("UINT32 : 31")]
-                public uint reserved
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 1) & 0x7FFFFFFFu;
-                    }
+                    _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x7FFFFFFFu << 1)) | ((value & 0x7FFFFFFFu) << 1);
-                    }
+            [NativeTypeName("UINT32 : 31")]
+            public uint reserved
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 1) & 0x7FFFFFFFu;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~(0x7FFFFFFFu << 1)) | ((value & 0x7FFFFFFFu) << 1);
                 }
             }
         }

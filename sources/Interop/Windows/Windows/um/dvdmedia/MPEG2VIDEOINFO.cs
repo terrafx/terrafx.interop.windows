@@ -3,28 +3,27 @@
 // Ported from um/dvdmedia.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct MPEG2VIDEOINFO
 {
-    public unsafe partial struct MPEG2VIDEOINFO
-    {
-        public VIDEOINFOHEADER2 hdr;
+    public VIDEOINFOHEADER2 hdr;
 
-        [NativeTypeName("DWORD")]
-        public uint dwStartTimeCode;
+    [NativeTypeName("DWORD")]
+    public uint dwStartTimeCode;
 
-        [NativeTypeName("DWORD")]
-        public uint cbSequenceHeader;
+    [NativeTypeName("DWORD")]
+    public uint cbSequenceHeader;
 
-        [NativeTypeName("DWORD")]
-        public uint dwProfile;
+    [NativeTypeName("DWORD")]
+    public uint dwProfile;
 
-        [NativeTypeName("DWORD")]
-        public uint dwLevel;
+    [NativeTypeName("DWORD")]
+    public uint dwLevel;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        [NativeTypeName("DWORD [1]")]
-        public fixed uint dwSequenceHeader[1];
-    }
+    [NativeTypeName("DWORD [1]")]
+    public fixed uint dwSequenceHeader[1];
 }

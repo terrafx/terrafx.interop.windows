@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="INameSpaceTreeControlCustomDraw" /> struct.</summary>
+public static unsafe partial class INameSpaceTreeControlCustomDrawTests
 {
-    /// <summary>Provides validation of the <see cref="INameSpaceTreeControlCustomDraw" /> struct.</summary>
-    public static unsafe partial class INameSpaceTreeControlCustomDrawTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="INameSpaceTreeControlCustomDraw" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="INameSpaceTreeControlCustomDraw" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(INameSpaceTreeControlCustomDraw).GUID, Is.EqualTo(IID_INameSpaceTreeControlCustomDraw));
-        }
+        Assert.That(typeof(INameSpaceTreeControlCustomDraw).GUID, Is.EqualTo(IID_INameSpaceTreeControlCustomDraw));
+    }
 
-        /// <summary>Validates that the <see cref="INameSpaceTreeControlCustomDraw" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<INameSpaceTreeControlCustomDraw>(), Is.EqualTo(sizeof(INameSpaceTreeControlCustomDraw)));
-        }
+    /// <summary>Validates that the <see cref="INameSpaceTreeControlCustomDraw" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<INameSpaceTreeControlCustomDraw>(), Is.EqualTo(sizeof(INameSpaceTreeControlCustomDraw)));
+    }
 
-        /// <summary>Validates that the <see cref="INameSpaceTreeControlCustomDraw" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(INameSpaceTreeControlCustomDraw).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="INameSpaceTreeControlCustomDraw" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(INameSpaceTreeControlCustomDraw).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="INameSpaceTreeControlCustomDraw" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="INameSpaceTreeControlCustomDraw" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(INameSpaceTreeControlCustomDraw), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(INameSpaceTreeControlCustomDraw), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(INameSpaceTreeControlCustomDraw), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(INameSpaceTreeControlCustomDraw), Is.EqualTo(4));
         }
     }
 }

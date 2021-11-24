@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("2D3468C1-36A7-43B6-AC24-D3F02FD9607A")]
+public partial struct EnumerableObjectCollection
 {
-    [Guid("2D3468C1-36A7-43B6-AC24-D3F02FD9607A")]
-    public partial struct EnumerableObjectCollection
-    {
-    }
 }

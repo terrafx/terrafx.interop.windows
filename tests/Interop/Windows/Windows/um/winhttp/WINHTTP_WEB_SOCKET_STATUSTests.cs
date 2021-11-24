@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WINHTTP_WEB_SOCKET_STATUS" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class WINHTTP_WEB_SOCKET_STATUSTests
 {
-    /// <summary>Provides validation of the <see cref="WINHTTP_WEB_SOCKET_STATUS" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class WINHTTP_WEB_SOCKET_STATUSTests
+    /// <summary>Validates that the <see cref="WINHTTP_WEB_SOCKET_STATUS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WINHTTP_WEB_SOCKET_STATUS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WINHTTP_WEB_SOCKET_STATUS>(), Is.EqualTo(sizeof(WINHTTP_WEB_SOCKET_STATUS)));
-        }
+        Assert.That(Marshal.SizeOf<WINHTTP_WEB_SOCKET_STATUS>(), Is.EqualTo(sizeof(WINHTTP_WEB_SOCKET_STATUS)));
+    }
 
-        /// <summary>Validates that the <see cref="WINHTTP_WEB_SOCKET_STATUS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WINHTTP_WEB_SOCKET_STATUS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WINHTTP_WEB_SOCKET_STATUS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WINHTTP_WEB_SOCKET_STATUS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WINHTTP_WEB_SOCKET_STATUS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(WINHTTP_WEB_SOCKET_STATUS), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="WINHTTP_WEB_SOCKET_STATUS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(WINHTTP_WEB_SOCKET_STATUS), Is.EqualTo(8));
     }
 }

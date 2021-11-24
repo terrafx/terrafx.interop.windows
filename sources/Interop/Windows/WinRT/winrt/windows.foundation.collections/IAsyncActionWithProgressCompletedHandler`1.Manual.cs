@@ -8,38 +8,37 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[Guid("9C029F91-CC84-44FD-AC26-0A6C4E555281")]
+public unsafe partial struct IAsyncActionWithProgressCompletedHandler<TProgress>
+    where TProgress : unmanaged
 {
-    [Guid("9C029F91-CC84-44FD-AC26-0A6C4E555281")]
-    public unsafe partial struct IAsyncActionWithProgressCompletedHandler<TProgress>
-        where TProgress : unmanaged
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IAsyncActionWithProgressCompletedHandler<TProgress>*, Guid*, void**, int>)(lpVtbl[0]))((IAsyncActionWithProgressCompletedHandler<TProgress>*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
-        {
-            return ((delegate* unmanaged<IAsyncActionWithProgressCompletedHandler<TProgress>*, Guid*, void**, int>)(lpVtbl[0]))((IAsyncActionWithProgressCompletedHandler<TProgress>*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IAsyncActionWithProgressCompletedHandler<TProgress>*, uint>)(lpVtbl[1]))((IAsyncActionWithProgressCompletedHandler<TProgress>*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IAsyncActionWithProgressCompletedHandler<TProgress>*, uint>)(lpVtbl[1]))((IAsyncActionWithProgressCompletedHandler<TProgress>*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IAsyncActionWithProgressCompletedHandler<TProgress>*, uint>)(lpVtbl[2]))((IAsyncActionWithProgressCompletedHandler<TProgress>*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IAsyncActionWithProgressCompletedHandler<TProgress>*, uint>)(lpVtbl[2]))((IAsyncActionWithProgressCompletedHandler<TProgress>*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public HRESULT Invoke([NativeTypeName("IAsyncActionWithProgress<TProgress_logical> *")] IAsyncActionWithProgress<TProgress>* asyncInfo, [NativeTypeName("Windows::Foundation::AsyncStatus")] AsyncStatus status)
-        {
-            return ((delegate* unmanaged<IAsyncActionWithProgressCompletedHandler<TProgress>*, IAsyncActionWithProgress<TProgress>*, AsyncStatus, int>)(lpVtbl[3]))((IAsyncActionWithProgressCompletedHandler<TProgress>*)Unsafe.AsPointer(ref this), asyncInfo, status);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public HRESULT Invoke([NativeTypeName("IAsyncActionWithProgress<TProgress_logical> *")] IAsyncActionWithProgress<TProgress>* asyncInfo, [NativeTypeName("Windows::Foundation::AsyncStatus")] AsyncStatus status)
+    {
+        return ((delegate* unmanaged<IAsyncActionWithProgressCompletedHandler<TProgress>*, IAsyncActionWithProgress<TProgress>*, AsyncStatus, int>)(lpVtbl[3]))((IAsyncActionWithProgressCompletedHandler<TProgress>*)Unsafe.AsPointer(ref this), asyncInfo, status);
     }
 }

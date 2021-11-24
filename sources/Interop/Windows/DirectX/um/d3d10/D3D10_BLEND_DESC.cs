@@ -8,52 +8,51 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D10_BLEND_DESC
 {
-    public unsafe partial struct D3D10_BLEND_DESC
+    public BOOL AlphaToCoverageEnable;
+
+    [NativeTypeName("BOOL [8]")]
+    public _BlendEnable_e__FixedBuffer BlendEnable;
+
+    public D3D10_BLEND SrcBlend;
+
+    public D3D10_BLEND DestBlend;
+
+    public D3D10_BLEND_OP BlendOp;
+
+    public D3D10_BLEND SrcBlendAlpha;
+
+    public D3D10_BLEND DestBlendAlpha;
+
+    public D3D10_BLEND_OP BlendOpAlpha;
+
+    [NativeTypeName("UINT8 [8]")]
+    public fixed byte RenderTargetWriteMask[8];
+
+    public partial struct _BlendEnable_e__FixedBuffer
     {
-        public BOOL AlphaToCoverageEnable;
+        public BOOL e0;
+        public BOOL e1;
+        public BOOL e2;
+        public BOOL e3;
+        public BOOL e4;
+        public BOOL e5;
+        public BOOL e6;
+        public BOOL e7;
 
-        [NativeTypeName("BOOL [8]")]
-        public _BlendEnable_e__FixedBuffer BlendEnable;
-
-        public D3D10_BLEND SrcBlend;
-
-        public D3D10_BLEND DestBlend;
-
-        public D3D10_BLEND_OP BlendOp;
-
-        public D3D10_BLEND SrcBlendAlpha;
-
-        public D3D10_BLEND DestBlendAlpha;
-
-        public D3D10_BLEND_OP BlendOpAlpha;
-
-        [NativeTypeName("UINT8 [8]")]
-        public fixed byte RenderTargetWriteMask[8];
-
-        public partial struct _BlendEnable_e__FixedBuffer
+        public ref BOOL this[int index]
         {
-            public BOOL e0;
-            public BOOL e1;
-            public BOOL e2;
-            public BOOL e3;
-            public BOOL e4;
-            public BOOL e5;
-            public BOOL e6;
-            public BOOL e7;
-
-            public ref BOOL this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan()[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<BOOL> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
+            get
+            {
+                return ref AsSpan()[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<BOOL> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
     }
 }

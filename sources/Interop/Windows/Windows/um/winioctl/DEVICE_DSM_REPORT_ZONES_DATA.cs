@@ -7,39 +7,38 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct DEVICE_DSM_REPORT_ZONES_DATA
 {
-    public partial struct DEVICE_DSM_REPORT_ZONES_DATA
+    [NativeTypeName("DWORD")]
+    public uint Size;
+
+    [NativeTypeName("DWORD")]
+    public uint ZoneCount;
+
+    public STORAGE_ZONES_ATTRIBUTES Attributes;
+
+    [NativeTypeName("DWORD")]
+    public uint Reserved0;
+
+    [NativeTypeName("STORAGE_ZONE_DESCRIPTOR [1]")]
+    public _ZoneDescriptors_e__FixedBuffer ZoneDescriptors;
+
+    public partial struct _ZoneDescriptors_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint Size;
+        public STORAGE_ZONE_DESCRIPTOR e0;
 
-        [NativeTypeName("DWORD")]
-        public uint ZoneCount;
-
-        public STORAGE_ZONES_ATTRIBUTES Attributes;
-
-        [NativeTypeName("DWORD")]
-        public uint Reserved0;
-
-        [NativeTypeName("STORAGE_ZONE_DESCRIPTOR [1]")]
-        public _ZoneDescriptors_e__FixedBuffer ZoneDescriptors;
-
-        public partial struct _ZoneDescriptors_e__FixedBuffer
+        public ref STORAGE_ZONE_DESCRIPTOR this[int index]
         {
-            public STORAGE_ZONE_DESCRIPTOR e0;
-
-            public ref STORAGE_ZONE_DESCRIPTOR this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<STORAGE_ZONE_DESCRIPTOR> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<STORAGE_ZONE_DESCRIPTOR> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

@@ -5,19 +5,18 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct DRMWAVEFORMAT
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct DRMWAVEFORMAT
-    {
-        public WAVEFORMATEX wfx;
+    public WAVEFORMATEX wfx;
 
-        [NativeTypeName("WORD")]
-        public ushort wReserved;
+    [NativeTypeName("WORD")]
+    public ushort wReserved;
 
-        [NativeTypeName("ULONG")]
-        public uint ulContentId;
+    [NativeTypeName("ULONG")]
+    public uint ulContentId;
 
-        public WAVEFORMATEX wfxSecure;
-    }
+    public WAVEFORMATEX wfxSecure;
 }

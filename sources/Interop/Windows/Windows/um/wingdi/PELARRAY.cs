@@ -3,22 +3,21 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct PELARRAY
 {
-    public partial struct PELARRAY
-    {
-        [NativeTypeName("LONG")]
-        public int paXCount;
+    [NativeTypeName("LONG")]
+    public int paXCount;
 
-        [NativeTypeName("LONG")]
-        public int paYCount;
+    [NativeTypeName("LONG")]
+    public int paYCount;
 
-        [NativeTypeName("LONG")]
-        public int paXExt;
+    [NativeTypeName("LONG")]
+    public int paXExt;
 
-        [NativeTypeName("LONG")]
-        public int paYExt;
+    [NativeTypeName("LONG")]
+    public int paYExt;
 
-        public byte paRGBs;
-    }
+    public byte paRGBs;
 }

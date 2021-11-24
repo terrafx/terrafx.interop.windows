@@ -5,16 +5,15 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SAFEARR_HAVEIID
 {
-    public unsafe partial struct SAFEARR_HAVEIID
-    {
-        [NativeTypeName("ULONG")]
-        public uint Size;
+    [NativeTypeName("ULONG")]
+    public uint Size;
 
-        public IUnknown** apUnknown;
+    public IUnknown** apUnknown;
 
-        [NativeTypeName("IID")]
-        public Guid iid;
-    }
+    [NativeTypeName("IID")]
+    public Guid iid;
 }

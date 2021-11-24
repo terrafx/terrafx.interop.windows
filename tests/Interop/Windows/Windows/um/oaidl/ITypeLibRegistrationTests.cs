@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ITypeLibRegistration" /> struct.</summary>
+public static unsafe partial class ITypeLibRegistrationTests
 {
-    /// <summary>Provides validation of the <see cref="ITypeLibRegistration" /> struct.</summary>
-    public static unsafe partial class ITypeLibRegistrationTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITypeLibRegistration" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITypeLibRegistration" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ITypeLibRegistration).GUID, Is.EqualTo(IID_ITypeLibRegistration));
-        }
+        Assert.That(typeof(ITypeLibRegistration).GUID, Is.EqualTo(IID_ITypeLibRegistration));
+    }
 
-        /// <summary>Validates that the <see cref="ITypeLibRegistration" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ITypeLibRegistration>(), Is.EqualTo(sizeof(ITypeLibRegistration)));
-        }
+    /// <summary>Validates that the <see cref="ITypeLibRegistration" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ITypeLibRegistration>(), Is.EqualTo(sizeof(ITypeLibRegistration)));
+    }
 
-        /// <summary>Validates that the <see cref="ITypeLibRegistration" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ITypeLibRegistration).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ITypeLibRegistration" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ITypeLibRegistration).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ITypeLibRegistration" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ITypeLibRegistration" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ITypeLibRegistration), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ITypeLibRegistration), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ITypeLibRegistration), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ITypeLibRegistration), Is.EqualTo(4));
         }
     }
 }

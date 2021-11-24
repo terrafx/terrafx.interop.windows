@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="RGNDATA" /> struct.</summary>
+public static unsafe partial class RGNDATATests
 {
-    /// <summary>Provides validation of the <see cref="RGNDATA" /> struct.</summary>
-    public static unsafe partial class RGNDATATests
+    /// <summary>Validates that the <see cref="RGNDATA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="RGNDATA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<RGNDATA>(), Is.EqualTo(sizeof(RGNDATA)));
-        }
+        Assert.That(Marshal.SizeOf<RGNDATA>(), Is.EqualTo(sizeof(RGNDATA)));
+    }
 
-        /// <summary>Validates that the <see cref="RGNDATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(RGNDATA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="RGNDATA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(RGNDATA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="RGNDATA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(RGNDATA), Is.EqualTo(36));
-        }
+    /// <summary>Validates that the <see cref="RGNDATA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(RGNDATA), Is.EqualTo(36));
     }
 }

@@ -3,11 +3,10 @@
 // Ported from um/mfmediaengine.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MF_MSE_OPUS_SUPPORT_TYPE
 {
-    public enum MF_MSE_OPUS_SUPPORT_TYPE
-    {
-        MF_MSE_OPUS_SUPPORT_ON = 0,
-        MF_MSE_OPUS_SUPPORT_OFF = 1,
-    }
+    MF_MSE_OPUS_SUPPORT_ON = 0,
+    MF_MSE_OPUS_SUPPORT_OFF = 1,
 }

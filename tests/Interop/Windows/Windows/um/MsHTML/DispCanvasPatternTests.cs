@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DispCanvasPattern" /> struct.</summary>
+public static unsafe partial class DispCanvasPatternTests
 {
-    /// <summary>Provides validation of the <see cref="DispCanvasPattern" /> struct.</summary>
-    public static unsafe partial class DispCanvasPatternTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispCanvasPattern" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispCanvasPattern" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DispCanvasPattern).GUID, Is.EqualTo(IID_DispCanvasPattern));
-        }
+        Assert.That(typeof(DispCanvasPattern).GUID, Is.EqualTo(IID_DispCanvasPattern));
+    }
 
-        /// <summary>Validates that the <see cref="DispCanvasPattern" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DispCanvasPattern>(), Is.EqualTo(sizeof(DispCanvasPattern)));
-        }
+    /// <summary>Validates that the <see cref="DispCanvasPattern" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DispCanvasPattern>(), Is.EqualTo(sizeof(DispCanvasPattern)));
+    }
 
-        /// <summary>Validates that the <see cref="DispCanvasPattern" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DispCanvasPattern).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DispCanvasPattern" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DispCanvasPattern).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DispCanvasPattern" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DispCanvasPattern" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DispCanvasPattern), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(DispCanvasPattern), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(DispCanvasPattern), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(DispCanvasPattern), Is.EqualTo(4));
         }
     }
 }

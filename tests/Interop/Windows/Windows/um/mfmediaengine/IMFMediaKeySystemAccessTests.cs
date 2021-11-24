@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFMediaKeySystemAccess" /> struct.</summary>
+public static unsafe partial class IMFMediaKeySystemAccessTests
 {
-    /// <summary>Provides validation of the <see cref="IMFMediaKeySystemAccess" /> struct.</summary>
-    public static unsafe partial class IMFMediaKeySystemAccessTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFMediaKeySystemAccess" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFMediaKeySystemAccess" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFMediaKeySystemAccess).GUID, Is.EqualTo(IID_IMFMediaKeySystemAccess));
-        }
+        Assert.That(typeof(IMFMediaKeySystemAccess).GUID, Is.EqualTo(IID_IMFMediaKeySystemAccess));
+    }
 
-        /// <summary>Validates that the <see cref="IMFMediaKeySystemAccess" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFMediaKeySystemAccess>(), Is.EqualTo(sizeof(IMFMediaKeySystemAccess)));
-        }
+    /// <summary>Validates that the <see cref="IMFMediaKeySystemAccess" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFMediaKeySystemAccess>(), Is.EqualTo(sizeof(IMFMediaKeySystemAccess)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFMediaKeySystemAccess" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFMediaKeySystemAccess).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFMediaKeySystemAccess" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFMediaKeySystemAccess).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFMediaKeySystemAccess" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFMediaKeySystemAccess" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFMediaKeySystemAccess), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFMediaKeySystemAccess), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFMediaKeySystemAccess), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFMediaKeySystemAccess), Is.EqualTo(4));
         }
     }
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("D4CA0E2D-6DA7-4B75-A97C-5F306F0EAEDC")]
+public partial struct InMemoryPropertyStoreMarshalByValue
 {
-    [Guid("D4CA0E2D-6DA7-4B75-A97C-5F306F0EAEDC")]
-    public partial struct InMemoryPropertyStoreMarshalByValue
-    {
-    }
 }

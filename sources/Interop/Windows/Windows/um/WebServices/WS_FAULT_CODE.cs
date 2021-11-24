@@ -3,13 +3,12 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct WS_FAULT_CODE
-    {
-        public WS_XML_QNAME value;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("struct _WS_FAULT_CODE *")]
-        public WS_FAULT_CODE* subCode;
-    }
+public unsafe partial struct WS_FAULT_CODE
+{
+    public WS_XML_QNAME value;
+
+    [NativeTypeName("struct _WS_FAULT_CODE *")]
+    public WS_FAULT_CODE* subCode;
 }

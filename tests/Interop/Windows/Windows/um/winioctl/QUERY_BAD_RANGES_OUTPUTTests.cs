@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="QUERY_BAD_RANGES_OUTPUT" /> struct.</summary>
+public static unsafe partial class QUERY_BAD_RANGES_OUTPUTTests
 {
-    /// <summary>Provides validation of the <see cref="QUERY_BAD_RANGES_OUTPUT" /> struct.</summary>
-    public static unsafe partial class QUERY_BAD_RANGES_OUTPUTTests
+    /// <summary>Validates that the <see cref="QUERY_BAD_RANGES_OUTPUT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="QUERY_BAD_RANGES_OUTPUT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<QUERY_BAD_RANGES_OUTPUT>(), Is.EqualTo(sizeof(QUERY_BAD_RANGES_OUTPUT)));
-        }
+        Assert.That(Marshal.SizeOf<QUERY_BAD_RANGES_OUTPUT>(), Is.EqualTo(sizeof(QUERY_BAD_RANGES_OUTPUT)));
+    }
 
-        /// <summary>Validates that the <see cref="QUERY_BAD_RANGES_OUTPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(QUERY_BAD_RANGES_OUTPUT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="QUERY_BAD_RANGES_OUTPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(QUERY_BAD_RANGES_OUTPUT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="QUERY_BAD_RANGES_OUTPUT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(QUERY_BAD_RANGES_OUTPUT), Is.EqualTo(40));
-        }
+    /// <summary>Validates that the <see cref="QUERY_BAD_RANGES_OUTPUT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(QUERY_BAD_RANGES_OUTPUT), Is.EqualTo(40));
     }
 }

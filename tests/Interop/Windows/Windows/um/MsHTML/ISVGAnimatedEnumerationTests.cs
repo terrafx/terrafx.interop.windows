@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISVGAnimatedEnumeration" /> struct.</summary>
+public static unsafe partial class ISVGAnimatedEnumerationTests
 {
-    /// <summary>Provides validation of the <see cref="ISVGAnimatedEnumeration" /> struct.</summary>
-    public static unsafe partial class ISVGAnimatedEnumerationTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISVGAnimatedEnumeration" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISVGAnimatedEnumeration" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISVGAnimatedEnumeration).GUID, Is.EqualTo(IID_ISVGAnimatedEnumeration));
-        }
+        Assert.That(typeof(ISVGAnimatedEnumeration).GUID, Is.EqualTo(IID_ISVGAnimatedEnumeration));
+    }
 
-        /// <summary>Validates that the <see cref="ISVGAnimatedEnumeration" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISVGAnimatedEnumeration>(), Is.EqualTo(sizeof(ISVGAnimatedEnumeration)));
-        }
+    /// <summary>Validates that the <see cref="ISVGAnimatedEnumeration" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISVGAnimatedEnumeration>(), Is.EqualTo(sizeof(ISVGAnimatedEnumeration)));
+    }
 
-        /// <summary>Validates that the <see cref="ISVGAnimatedEnumeration" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISVGAnimatedEnumeration).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISVGAnimatedEnumeration" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISVGAnimatedEnumeration).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISVGAnimatedEnumeration" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISVGAnimatedEnumeration" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISVGAnimatedEnumeration), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISVGAnimatedEnumeration), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISVGAnimatedEnumeration), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISVGAnimatedEnumeration), Is.EqualTo(4));
         }
     }
 }

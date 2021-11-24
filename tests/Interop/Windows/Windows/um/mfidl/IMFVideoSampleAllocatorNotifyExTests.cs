@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFVideoSampleAllocatorNotifyEx" /> struct.</summary>
+[SupportedOSPlatform("windows10.0")]
+public static unsafe partial class IMFVideoSampleAllocatorNotifyExTests
 {
-    /// <summary>Provides validation of the <see cref="IMFVideoSampleAllocatorNotifyEx" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0")]
-    public static unsafe partial class IMFVideoSampleAllocatorNotifyExTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFVideoSampleAllocatorNotifyEx" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFVideoSampleAllocatorNotifyEx" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFVideoSampleAllocatorNotifyEx).GUID, Is.EqualTo(IID_IMFVideoSampleAllocatorNotifyEx));
-        }
+        Assert.That(typeof(IMFVideoSampleAllocatorNotifyEx).GUID, Is.EqualTo(IID_IMFVideoSampleAllocatorNotifyEx));
+    }
 
-        /// <summary>Validates that the <see cref="IMFVideoSampleAllocatorNotifyEx" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFVideoSampleAllocatorNotifyEx>(), Is.EqualTo(sizeof(IMFVideoSampleAllocatorNotifyEx)));
-        }
+    /// <summary>Validates that the <see cref="IMFVideoSampleAllocatorNotifyEx" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFVideoSampleAllocatorNotifyEx>(), Is.EqualTo(sizeof(IMFVideoSampleAllocatorNotifyEx)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFVideoSampleAllocatorNotifyEx" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFVideoSampleAllocatorNotifyEx).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFVideoSampleAllocatorNotifyEx" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFVideoSampleAllocatorNotifyEx).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFVideoSampleAllocatorNotifyEx" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFVideoSampleAllocatorNotifyEx" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFVideoSampleAllocatorNotifyEx), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFVideoSampleAllocatorNotifyEx), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFVideoSampleAllocatorNotifyEx), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFVideoSampleAllocatorNotifyEx), Is.EqualTo(4));
         }
     }
 }

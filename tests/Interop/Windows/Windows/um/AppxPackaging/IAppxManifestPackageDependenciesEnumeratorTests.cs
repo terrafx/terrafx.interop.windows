@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IAppxManifestPackageDependenciesEnumerator" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class IAppxManifestPackageDependenciesEnumeratorTests
 {
-    /// <summary>Provides validation of the <see cref="IAppxManifestPackageDependenciesEnumerator" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class IAppxManifestPackageDependenciesEnumeratorTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppxManifestPackageDependenciesEnumerator" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppxManifestPackageDependenciesEnumerator" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAppxManifestPackageDependenciesEnumerator).GUID, Is.EqualTo(IID_IAppxManifestPackageDependenciesEnumerator));
-        }
+        Assert.That(typeof(IAppxManifestPackageDependenciesEnumerator).GUID, Is.EqualTo(IID_IAppxManifestPackageDependenciesEnumerator));
+    }
 
-        /// <summary>Validates that the <see cref="IAppxManifestPackageDependenciesEnumerator" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IAppxManifestPackageDependenciesEnumerator>(), Is.EqualTo(sizeof(IAppxManifestPackageDependenciesEnumerator)));
-        }
+    /// <summary>Validates that the <see cref="IAppxManifestPackageDependenciesEnumerator" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IAppxManifestPackageDependenciesEnumerator>(), Is.EqualTo(sizeof(IAppxManifestPackageDependenciesEnumerator)));
+    }
 
-        /// <summary>Validates that the <see cref="IAppxManifestPackageDependenciesEnumerator" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IAppxManifestPackageDependenciesEnumerator).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IAppxManifestPackageDependenciesEnumerator" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IAppxManifestPackageDependenciesEnumerator).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IAppxManifestPackageDependenciesEnumerator" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IAppxManifestPackageDependenciesEnumerator" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IAppxManifestPackageDependenciesEnumerator), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IAppxManifestPackageDependenciesEnumerator), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IAppxManifestPackageDependenciesEnumerator), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IAppxManifestPackageDependenciesEnumerator), Is.EqualTo(4));
         }
     }
 }

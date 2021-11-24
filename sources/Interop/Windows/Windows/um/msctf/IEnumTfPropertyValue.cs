@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("8ED8981B-7C10-4D7D-9FB3-AB72E9C75F72")]
+[NativeTypeName("struct IEnumTfPropertyValue : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IEnumTfPropertyValue : IEnumTfPropertyValue.Interface
 {
-    [Guid("8ED8981B-7C10-4D7D-9FB3-AB72E9C75F72")]
-    [NativeTypeName("struct IEnumTfPropertyValue : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumTfPropertyValue : IEnumTfPropertyValue.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IEnumTfPropertyValue*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IEnumTfPropertyValue*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IEnumTfPropertyValue*, uint>)(lpVtbl[1]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IEnumTfPropertyValue*, uint>)(lpVtbl[1]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IEnumTfPropertyValue*, uint>)(lpVtbl[2]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IEnumTfPropertyValue*, uint>)(lpVtbl[2]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Clone(IEnumTfPropertyValue** ppEnum)
+    {
+        return ((delegate* unmanaged<IEnumTfPropertyValue*, IEnumTfPropertyValue**, int>)(lpVtbl[3]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this), ppEnum);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, TF_PROPERTYVAL* rgValues, [NativeTypeName("ULONG *")] uint* pcFetched)
+    {
+        return ((delegate* unmanaged<IEnumTfPropertyValue*, uint, TF_PROPERTYVAL*, uint*, int>)(lpVtbl[4]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this), ulCount, rgValues, pcFetched);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Reset()
+    {
+        return ((delegate* unmanaged<IEnumTfPropertyValue*, int>)(lpVtbl[5]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
+    {
+        return ((delegate* unmanaged<IEnumTfPropertyValue*, uint, int>)(lpVtbl[6]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this), ulCount);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Clone(IEnumTfPropertyValue** ppEnum)
-        {
-            return ((delegate* unmanaged<IEnumTfPropertyValue*, IEnumTfPropertyValue**, int>)(lpVtbl[3]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this), ppEnum);
-        }
+        HRESULT Clone(IEnumTfPropertyValue** ppEnum);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, TF_PROPERTYVAL* rgValues, [NativeTypeName("ULONG *")] uint* pcFetched)
-        {
-            return ((delegate* unmanaged<IEnumTfPropertyValue*, uint, TF_PROPERTYVAL*, uint*, int>)(lpVtbl[4]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this), ulCount, rgValues, pcFetched);
-        }
+        HRESULT Next([NativeTypeName("ULONG")] uint ulCount, TF_PROPERTYVAL* rgValues, [NativeTypeName("ULONG *")] uint* pcFetched);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT Reset()
-        {
-            return ((delegate* unmanaged<IEnumTfPropertyValue*, int>)(lpVtbl[5]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Reset();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
-        {
-            return ((delegate* unmanaged<IEnumTfPropertyValue*, uint, int>)(lpVtbl[6]))((IEnumTfPropertyValue*)Unsafe.AsPointer(ref this), ulCount);
-        }
+        HRESULT Skip([NativeTypeName("ULONG")] uint ulCount);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Clone(IEnumTfPropertyValue** ppEnum);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumTfPropertyValue*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT Next([NativeTypeName("ULONG")] uint ulCount, TF_PROPERTYVAL* rgValues, [NativeTypeName("ULONG *")] uint* pcFetched);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumTfPropertyValue*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT Reset();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumTfPropertyValue*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT Skip([NativeTypeName("ULONG")] uint ulCount);
-        }
+        [NativeTypeName("HRESULT (IEnumTfPropertyValue **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumTfPropertyValue*, IEnumTfPropertyValue**, int> Clone;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumTfPropertyValue*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (ULONG, TF_PROPERTYVAL *, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumTfPropertyValue*, uint, TF_PROPERTYVAL*, uint*, int> Next;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumTfPropertyValue*, uint> AddRef;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumTfPropertyValue*, int> Reset;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumTfPropertyValue*, uint> Release;
-
-            [NativeTypeName("HRESULT (IEnumTfPropertyValue **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumTfPropertyValue*, IEnumTfPropertyValue**, int> Clone;
-
-            [NativeTypeName("HRESULT (ULONG, TF_PROPERTYVAL *, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumTfPropertyValue*, uint, TF_PROPERTYVAL*, uint*, int> Next;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumTfPropertyValue*, int> Reset;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumTfPropertyValue*, uint, int> Skip;
-        }
+        [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumTfPropertyValue*, uint, int> Skip;
     }
 }

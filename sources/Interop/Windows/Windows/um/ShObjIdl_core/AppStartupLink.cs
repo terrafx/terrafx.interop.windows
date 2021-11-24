@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("273EB5E7-88B0-4843-BFEF-E2C81D43AAE5")]
+public partial struct AppStartupLink
 {
-    [Guid("273EB5E7-88B0-4843-BFEF-E2C81D43AAE5")]
-    public partial struct AppStartupLink
-    {
-    }
 }

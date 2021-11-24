@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IFileDialogEvents" /> struct.</summary>
+public static unsafe partial class IFileDialogEventsTests
 {
-    /// <summary>Provides validation of the <see cref="IFileDialogEvents" /> struct.</summary>
-    public static unsafe partial class IFileDialogEventsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IFileDialogEvents" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IFileDialogEvents" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IFileDialogEvents).GUID, Is.EqualTo(IID_IFileDialogEvents));
-        }
+        Assert.That(typeof(IFileDialogEvents).GUID, Is.EqualTo(IID_IFileDialogEvents));
+    }
 
-        /// <summary>Validates that the <see cref="IFileDialogEvents" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IFileDialogEvents>(), Is.EqualTo(sizeof(IFileDialogEvents)));
-        }
+    /// <summary>Validates that the <see cref="IFileDialogEvents" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IFileDialogEvents>(), Is.EqualTo(sizeof(IFileDialogEvents)));
+    }
 
-        /// <summary>Validates that the <see cref="IFileDialogEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IFileDialogEvents).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IFileDialogEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IFileDialogEvents).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IFileDialogEvents" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IFileDialogEvents" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IFileDialogEvents), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IFileDialogEvents), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IFileDialogEvents), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IFileDialogEvents), Is.EqualTo(4));
         }
     }
 }

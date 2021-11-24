@@ -3,27 +3,26 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct EXTLOGPEN32
 {
-    public unsafe partial struct EXTLOGPEN32
-    {
-        [NativeTypeName("DWORD")]
-        public uint elpPenStyle;
+    [NativeTypeName("DWORD")]
+    public uint elpPenStyle;
 
-        [NativeTypeName("DWORD")]
-        public uint elpWidth;
+    [NativeTypeName("DWORD")]
+    public uint elpWidth;
 
-        public uint elpBrushStyle;
+    public uint elpBrushStyle;
 
-        public COLORREF elpColor;
+    public COLORREF elpColor;
 
-        [NativeTypeName("ULONG")]
-        public uint elpHatch;
+    [NativeTypeName("ULONG")]
+    public uint elpHatch;
 
-        [NativeTypeName("DWORD")]
-        public uint elpNumEntries;
+    [NativeTypeName("DWORD")]
+    public uint elpNumEntries;
 
-        [NativeTypeName("DWORD [1]")]
-        public fixed uint elpStyleEntry[1];
-    }
+    [NativeTypeName("DWORD [1]")]
+    public fixed uint elpStyleEntry[1];
 }

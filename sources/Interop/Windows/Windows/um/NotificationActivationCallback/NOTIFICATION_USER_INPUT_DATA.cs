@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct NOTIFICATION_USER_INPUT_DATA
-    {
-        [NativeTypeName("LPCWSTR")]
-        public ushort* Key;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* Value;
-    }
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct NOTIFICATION_USER_INPUT_DATA
+{
+    [NativeTypeName("LPCWSTR")]
+    public ushort* Key;
+
+    [NativeTypeName("LPCWSTR")]
+    public ushort* Value;
 }

@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SVGPathSegCurvetoQuadraticSmoothAbs" /> struct.</summary>
+public static unsafe partial class SVGPathSegCurvetoQuadraticSmoothAbsTests
 {
-    /// <summary>Provides validation of the <see cref="SVGPathSegCurvetoQuadraticSmoothAbs" /> struct.</summary>
-    public static unsafe partial class SVGPathSegCurvetoQuadraticSmoothAbsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGPathSegCurvetoQuadraticSmoothAbs" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGPathSegCurvetoQuadraticSmoothAbs" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SVGPathSegCurvetoQuadraticSmoothAbs).GUID, Is.EqualTo(IID_SVGPathSegCurvetoQuadraticSmoothAbs));
-        }
+        Assert.That(typeof(SVGPathSegCurvetoQuadraticSmoothAbs).GUID, Is.EqualTo(IID_SVGPathSegCurvetoQuadraticSmoothAbs));
+    }
 
-        /// <summary>Validates that the <see cref="SVGPathSegCurvetoQuadraticSmoothAbs" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SVGPathSegCurvetoQuadraticSmoothAbs>(), Is.EqualTo(sizeof(SVGPathSegCurvetoQuadraticSmoothAbs)));
-        }
+    /// <summary>Validates that the <see cref="SVGPathSegCurvetoQuadraticSmoothAbs" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SVGPathSegCurvetoQuadraticSmoothAbs>(), Is.EqualTo(sizeof(SVGPathSegCurvetoQuadraticSmoothAbs)));
+    }
 
-        /// <summary>Validates that the <see cref="SVGPathSegCurvetoQuadraticSmoothAbs" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SVGPathSegCurvetoQuadraticSmoothAbs).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SVGPathSegCurvetoQuadraticSmoothAbs" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SVGPathSegCurvetoQuadraticSmoothAbs).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SVGPathSegCurvetoQuadraticSmoothAbs" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SVGPathSegCurvetoQuadraticSmoothAbs), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SVGPathSegCurvetoQuadraticSmoothAbs" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SVGPathSegCurvetoQuadraticSmoothAbs), Is.EqualTo(1));
     }
 }

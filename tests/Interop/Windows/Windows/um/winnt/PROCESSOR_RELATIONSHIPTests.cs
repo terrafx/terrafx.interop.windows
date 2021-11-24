@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PROCESSOR_RELATIONSHIP" /> struct.</summary>
+public static unsafe partial class PROCESSOR_RELATIONSHIPTests
 {
-    /// <summary>Provides validation of the <see cref="PROCESSOR_RELATIONSHIP" /> struct.</summary>
-    public static unsafe partial class PROCESSOR_RELATIONSHIPTests
+    /// <summary>Validates that the <see cref="PROCESSOR_RELATIONSHIP" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PROCESSOR_RELATIONSHIP" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PROCESSOR_RELATIONSHIP>(), Is.EqualTo(sizeof(PROCESSOR_RELATIONSHIP)));
-        }
+        Assert.That(Marshal.SizeOf<PROCESSOR_RELATIONSHIP>(), Is.EqualTo(sizeof(PROCESSOR_RELATIONSHIP)));
+    }
 
-        /// <summary>Validates that the <see cref="PROCESSOR_RELATIONSHIP" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PROCESSOR_RELATIONSHIP).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PROCESSOR_RELATIONSHIP" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PROCESSOR_RELATIONSHIP).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PROCESSOR_RELATIONSHIP" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="PROCESSOR_RELATIONSHIP" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(PROCESSOR_RELATIONSHIP), Is.EqualTo(40));
-            }
-            else
-            {
-                Assert.That(sizeof(PROCESSOR_RELATIONSHIP), Is.EqualTo(36));
-            }
+            Assert.That(sizeof(PROCESSOR_RELATIONSHIP), Is.EqualTo(40));
+        }
+        else
+        {
+            Assert.That(sizeof(PROCESSOR_RELATIONSHIP), Is.EqualTo(36));
         }
     }
 }

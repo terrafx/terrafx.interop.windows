@@ -7,31 +7,30 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct PSAPI_WORKING_SET_INFORMATION
 {
-    public partial struct PSAPI_WORKING_SET_INFORMATION
+    [NativeTypeName("ULONG_PTR")]
+    public nuint NumberOfEntries;
+
+    [NativeTypeName("PSAPI_WORKING_SET_BLOCK [1]")]
+    public _WorkingSetInfo_e__FixedBuffer WorkingSetInfo;
+
+    public partial struct _WorkingSetInfo_e__FixedBuffer
     {
-        [NativeTypeName("ULONG_PTR")]
-        public nuint NumberOfEntries;
+        public PSAPI_WORKING_SET_BLOCK e0;
 
-        [NativeTypeName("PSAPI_WORKING_SET_BLOCK [1]")]
-        public _WorkingSetInfo_e__FixedBuffer WorkingSetInfo;
-
-        public partial struct _WorkingSetInfo_e__FixedBuffer
+        public ref PSAPI_WORKING_SET_BLOCK this[int index]
         {
-            public PSAPI_WORKING_SET_BLOCK e0;
-
-            public ref PSAPI_WORKING_SET_BLOCK this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<PSAPI_WORKING_SET_BLOCK> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<PSAPI_WORKING_SET_BLOCK> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

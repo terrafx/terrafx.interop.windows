@@ -5,43 +5,42 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct REASON_CONTEXT
 {
-    public partial struct REASON_CONTEXT
+    [NativeTypeName("ULONG")]
+    public uint Version;
+
+    [NativeTypeName("DWORD")]
+    public uint Flags;
+
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/minwinbase.h:268:5)")]
+    public _Reason_e__Union Reason;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Reason_e__Union
     {
-        [NativeTypeName("ULONG")]
-        public uint Version;
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/minwinbase.h:269:9)")]
+        public _Detailed_e__Struct Detailed;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+        [FieldOffset(0)]
+        [NativeTypeName("LPWSTR")]
+        public ushort* SimpleReasonString;
 
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/minwinbase.h:268:5)")]
-        public _Reason_e__Union Reason;
-
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Reason_e__Union
+        public unsafe partial struct _Detailed_e__Struct
         {
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/minwinbase.h:269:9)")]
-            public _Detailed_e__Struct Detailed;
+            public HMODULE LocalizedReasonModule;
 
-            [FieldOffset(0)]
-            [NativeTypeName("LPWSTR")]
-            public ushort* SimpleReasonString;
+            [NativeTypeName("ULONG")]
+            public uint LocalizedReasonId;
 
-            public unsafe partial struct _Detailed_e__Struct
-            {
-                public HMODULE LocalizedReasonModule;
+            [NativeTypeName("ULONG")]
+            public uint ReasonStringCount;
 
-                [NativeTypeName("ULONG")]
-                public uint LocalizedReasonId;
-
-                [NativeTypeName("ULONG")]
-                public uint ReasonStringCount;
-
-                [NativeTypeName("LPWSTR *")]
-                public ushort** ReasonStrings;
-            }
+            [NativeTypeName("LPWSTR *")]
+            public ushort** ReasonStrings;
         }
     }
 }

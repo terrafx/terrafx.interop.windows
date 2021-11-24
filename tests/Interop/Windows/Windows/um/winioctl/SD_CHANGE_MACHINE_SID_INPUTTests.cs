@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SD_CHANGE_MACHINE_SID_INPUT" /> struct.</summary>
+public static unsafe partial class SD_CHANGE_MACHINE_SID_INPUTTests
 {
-    /// <summary>Provides validation of the <see cref="SD_CHANGE_MACHINE_SID_INPUT" /> struct.</summary>
-    public static unsafe partial class SD_CHANGE_MACHINE_SID_INPUTTests
+    /// <summary>Validates that the <see cref="SD_CHANGE_MACHINE_SID_INPUT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SD_CHANGE_MACHINE_SID_INPUT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SD_CHANGE_MACHINE_SID_INPUT>(), Is.EqualTo(sizeof(SD_CHANGE_MACHINE_SID_INPUT)));
-        }
+        Assert.That(Marshal.SizeOf<SD_CHANGE_MACHINE_SID_INPUT>(), Is.EqualTo(sizeof(SD_CHANGE_MACHINE_SID_INPUT)));
+    }
 
-        /// <summary>Validates that the <see cref="SD_CHANGE_MACHINE_SID_INPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SD_CHANGE_MACHINE_SID_INPUT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SD_CHANGE_MACHINE_SID_INPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SD_CHANGE_MACHINE_SID_INPUT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SD_CHANGE_MACHINE_SID_INPUT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SD_CHANGE_MACHINE_SID_INPUT), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="SD_CHANGE_MACHINE_SID_INPUT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SD_CHANGE_MACHINE_SID_INPUT), Is.EqualTo(8));
     }
 }

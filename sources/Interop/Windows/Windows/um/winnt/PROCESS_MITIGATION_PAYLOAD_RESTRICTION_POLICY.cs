@@ -6,438 +6,437 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
 {
-    public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
+    [NativeTypeName("_PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:12857:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public ref uint Flags
     {
-        [NativeTypeName("_PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:12857:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public ref uint Flags
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+        }
+    }
+
+    public uint EnableExportAddressFilter
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.EnableExportAddressFilter;
         }
 
-        public uint EnableExportAddressFilter
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.EnableExportAddressFilter;
-            }
+            Anonymous.Anonymous.EnableExportAddressFilter = value;
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.EnableExportAddressFilter = value;
-            }
+    public uint AuditExportAddressFilter
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.AuditExportAddressFilter;
         }
 
-        public uint AuditExportAddressFilter
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.AuditExportAddressFilter;
-            }
+            Anonymous.Anonymous.AuditExportAddressFilter = value;
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.AuditExportAddressFilter = value;
-            }
+    public uint EnableExportAddressFilterPlus
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.EnableExportAddressFilterPlus;
         }
 
-        public uint EnableExportAddressFilterPlus
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.EnableExportAddressFilterPlus;
-            }
+            Anonymous.Anonymous.EnableExportAddressFilterPlus = value;
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.EnableExportAddressFilterPlus = value;
-            }
+    public uint AuditExportAddressFilterPlus
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.AuditExportAddressFilterPlus;
         }
 
-        public uint AuditExportAddressFilterPlus
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.AuditExportAddressFilterPlus;
-            }
+            Anonymous.Anonymous.AuditExportAddressFilterPlus = value;
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.AuditExportAddressFilterPlus = value;
-            }
+    public uint EnableImportAddressFilter
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.EnableImportAddressFilter;
         }
 
-        public uint EnableImportAddressFilter
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.EnableImportAddressFilter;
-            }
+            Anonymous.Anonymous.EnableImportAddressFilter = value;
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.EnableImportAddressFilter = value;
-            }
+    public uint AuditImportAddressFilter
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.AuditImportAddressFilter;
         }
 
-        public uint AuditImportAddressFilter
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.AuditImportAddressFilter;
-            }
+            Anonymous.Anonymous.AuditImportAddressFilter = value;
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.AuditImportAddressFilter = value;
-            }
+    public uint EnableRopStackPivot
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.EnableRopStackPivot;
         }
 
-        public uint EnableRopStackPivot
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.EnableRopStackPivot;
-            }
+            Anonymous.Anonymous.EnableRopStackPivot = value;
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.EnableRopStackPivot = value;
-            }
+    public uint AuditRopStackPivot
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.AuditRopStackPivot;
         }
 
-        public uint AuditRopStackPivot
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.AuditRopStackPivot;
-            }
+            Anonymous.Anonymous.AuditRopStackPivot = value;
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.AuditRopStackPivot = value;
-            }
+    public uint EnableRopCallerCheck
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.EnableRopCallerCheck;
         }
 
-        public uint EnableRopCallerCheck
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.EnableRopCallerCheck;
-            }
+            Anonymous.Anonymous.EnableRopCallerCheck = value;
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.EnableRopCallerCheck = value;
-            }
+    public uint AuditRopCallerCheck
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.AuditRopCallerCheck;
         }
 
-        public uint AuditRopCallerCheck
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.AuditRopCallerCheck;
-            }
+            Anonymous.Anonymous.AuditRopCallerCheck = value;
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.AuditRopCallerCheck = value;
-            }
+    public uint EnableRopSimExec
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.EnableRopSimExec;
         }
 
-        public uint EnableRopSimExec
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.EnableRopSimExec;
-            }
+            Anonymous.Anonymous.EnableRopSimExec = value;
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.EnableRopSimExec = value;
-            }
+    public uint AuditRopSimExec
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.AuditRopSimExec;
         }
 
-        public uint AuditRopSimExec
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.AuditRopSimExec;
-            }
+            Anonymous.Anonymous.AuditRopSimExec = value;
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.AuditRopSimExec = value;
-            }
+    public uint ReservedFlags
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.ReservedFlags;
         }
 
-        public uint ReservedFlags
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.ReservedFlags;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.ReservedFlags = value;
-            }
+            Anonymous.Anonymous.ReservedFlags = value;
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint Flags;
+
+        [FieldOffset(0)]
+        [NativeTypeName("_PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:12859:9)")]
+        public _Anonymous_e__Struct Anonymous;
+
+        public partial struct _Anonymous_e__Struct
         {
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint Flags;
+            public uint _bitfield;
 
-            [FieldOffset(0)]
-            [NativeTypeName("_PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:12859:9)")]
-            public _Anonymous_e__Struct Anonymous;
-
-            public partial struct _Anonymous_e__Struct
+            [NativeTypeName("DWORD : 1")]
+            public uint EnableExportAddressFilter
             {
-                public uint _bitfield;
-
-                [NativeTypeName("DWORD : 1")]
-                public uint EnableExportAddressFilter
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return _bitfield & 0x1u;
-                    }
-
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
-                    }
+                    return _bitfield & 0x1u;
                 }
 
-                [NativeTypeName("DWORD : 1")]
-                public uint AuditExportAddressFilter
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 1) & 0x1u;
-                    }
+                    _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1);
-                    }
+            [NativeTypeName("DWORD : 1")]
+            public uint AuditExportAddressFilter
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 1) & 0x1u;
                 }
 
-                [NativeTypeName("DWORD : 1")]
-                public uint EnableExportAddressFilterPlus
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 2) & 0x1u;
-                    }
+                    _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2);
-                    }
+            [NativeTypeName("DWORD : 1")]
+            public uint EnableExportAddressFilterPlus
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 2) & 0x1u;
                 }
 
-                [NativeTypeName("DWORD : 1")]
-                public uint AuditExportAddressFilterPlus
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 3) & 0x1u;
-                    }
+                    _bitfield = (_bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 3)) | ((value & 0x1u) << 3);
-                    }
+            [NativeTypeName("DWORD : 1")]
+            public uint AuditExportAddressFilterPlus
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 3) & 0x1u;
                 }
 
-                [NativeTypeName("DWORD : 1")]
-                public uint EnableImportAddressFilter
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 4) & 0x1u;
-                    }
+                    _bitfield = (_bitfield & ~(0x1u << 3)) | ((value & 0x1u) << 3);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 4)) | ((value & 0x1u) << 4);
-                    }
+            [NativeTypeName("DWORD : 1")]
+            public uint EnableImportAddressFilter
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 4) & 0x1u;
                 }
 
-                [NativeTypeName("DWORD : 1")]
-                public uint AuditImportAddressFilter
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 5) & 0x1u;
-                    }
+                    _bitfield = (_bitfield & ~(0x1u << 4)) | ((value & 0x1u) << 4);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 5)) | ((value & 0x1u) << 5);
-                    }
+            [NativeTypeName("DWORD : 1")]
+            public uint AuditImportAddressFilter
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 5) & 0x1u;
                 }
 
-                [NativeTypeName("DWORD : 1")]
-                public uint EnableRopStackPivot
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 6) & 0x1u;
-                    }
+                    _bitfield = (_bitfield & ~(0x1u << 5)) | ((value & 0x1u) << 5);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 6)) | ((value & 0x1u) << 6);
-                    }
+            [NativeTypeName("DWORD : 1")]
+            public uint EnableRopStackPivot
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 6) & 0x1u;
                 }
 
-                [NativeTypeName("DWORD : 1")]
-                public uint AuditRopStackPivot
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 7) & 0x1u;
-                    }
+                    _bitfield = (_bitfield & ~(0x1u << 6)) | ((value & 0x1u) << 6);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 7)) | ((value & 0x1u) << 7);
-                    }
+            [NativeTypeName("DWORD : 1")]
+            public uint AuditRopStackPivot
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 7) & 0x1u;
                 }
 
-                [NativeTypeName("DWORD : 1")]
-                public uint EnableRopCallerCheck
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 8) & 0x1u;
-                    }
+                    _bitfield = (_bitfield & ~(0x1u << 7)) | ((value & 0x1u) << 7);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 8)) | ((value & 0x1u) << 8);
-                    }
+            [NativeTypeName("DWORD : 1")]
+            public uint EnableRopCallerCheck
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 8) & 0x1u;
                 }
 
-                [NativeTypeName("DWORD : 1")]
-                public uint AuditRopCallerCheck
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 9) & 0x1u;
-                    }
+                    _bitfield = (_bitfield & ~(0x1u << 8)) | ((value & 0x1u) << 8);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 9)) | ((value & 0x1u) << 9);
-                    }
+            [NativeTypeName("DWORD : 1")]
+            public uint AuditRopCallerCheck
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 9) & 0x1u;
                 }
 
-                [NativeTypeName("DWORD : 1")]
-                public uint EnableRopSimExec
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 10) & 0x1u;
-                    }
+                    _bitfield = (_bitfield & ~(0x1u << 9)) | ((value & 0x1u) << 9);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 10)) | ((value & 0x1u) << 10);
-                    }
+            [NativeTypeName("DWORD : 1")]
+            public uint EnableRopSimExec
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 10) & 0x1u;
                 }
 
-                [NativeTypeName("DWORD : 1")]
-                public uint AuditRopSimExec
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 11) & 0x1u;
-                    }
+                    _bitfield = (_bitfield & ~(0x1u << 10)) | ((value & 0x1u) << 10);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 11)) | ((value & 0x1u) << 11);
-                    }
+            [NativeTypeName("DWORD : 1")]
+            public uint AuditRopSimExec
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 11) & 0x1u;
                 }
 
-                [NativeTypeName("DWORD : 20")]
-                public uint ReservedFlags
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 12) & 0xFFFFFu;
-                    }
+                    _bitfield = (_bitfield & ~(0x1u << 11)) | ((value & 0x1u) << 11);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0xFFFFFu << 12)) | ((value & 0xFFFFFu) << 12);
-                    }
+            [NativeTypeName("DWORD : 20")]
+            public uint ReservedFlags
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 12) & 0xFFFFFu;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~(0xFFFFFu << 12)) | ((value & 0xFFFFFu) << 12);
                 }
             }
         }

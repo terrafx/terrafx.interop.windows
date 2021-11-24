@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DXGI_HDR_METADATA_HDR10PLUS" /> struct.</summary>
+public static unsafe partial class DXGI_HDR_METADATA_HDR10PLUSTests
 {
-    /// <summary>Provides validation of the <see cref="DXGI_HDR_METADATA_HDR10PLUS" /> struct.</summary>
-    public static unsafe partial class DXGI_HDR_METADATA_HDR10PLUSTests
+    /// <summary>Validates that the <see cref="DXGI_HDR_METADATA_HDR10PLUS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DXGI_HDR_METADATA_HDR10PLUS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DXGI_HDR_METADATA_HDR10PLUS>(), Is.EqualTo(sizeof(DXGI_HDR_METADATA_HDR10PLUS)));
-        }
+        Assert.That(Marshal.SizeOf<DXGI_HDR_METADATA_HDR10PLUS>(), Is.EqualTo(sizeof(DXGI_HDR_METADATA_HDR10PLUS)));
+    }
 
-        /// <summary>Validates that the <see cref="DXGI_HDR_METADATA_HDR10PLUS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DXGI_HDR_METADATA_HDR10PLUS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DXGI_HDR_METADATA_HDR10PLUS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DXGI_HDR_METADATA_HDR10PLUS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DXGI_HDR_METADATA_HDR10PLUS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DXGI_HDR_METADATA_HDR10PLUS), Is.EqualTo(72));
-        }
+    /// <summary>Validates that the <see cref="DXGI_HDR_METADATA_HDR10PLUS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DXGI_HDR_METADATA_HDR10PLUS), Is.EqualTo(72));
     }
 }

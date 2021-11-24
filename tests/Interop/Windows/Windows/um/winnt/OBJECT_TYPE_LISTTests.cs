@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="OBJECT_TYPE_LIST" /> struct.</summary>
+public static unsafe partial class OBJECT_TYPE_LISTTests
 {
-    /// <summary>Provides validation of the <see cref="OBJECT_TYPE_LIST" /> struct.</summary>
-    public static unsafe partial class OBJECT_TYPE_LISTTests
+    /// <summary>Validates that the <see cref="OBJECT_TYPE_LIST" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="OBJECT_TYPE_LIST" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<OBJECT_TYPE_LIST>(), Is.EqualTo(sizeof(OBJECT_TYPE_LIST)));
-        }
+        Assert.That(Marshal.SizeOf<OBJECT_TYPE_LIST>(), Is.EqualTo(sizeof(OBJECT_TYPE_LIST)));
+    }
 
-        /// <summary>Validates that the <see cref="OBJECT_TYPE_LIST" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(OBJECT_TYPE_LIST).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="OBJECT_TYPE_LIST" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(OBJECT_TYPE_LIST).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="OBJECT_TYPE_LIST" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="OBJECT_TYPE_LIST" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(OBJECT_TYPE_LIST), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(OBJECT_TYPE_LIST), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(OBJECT_TYPE_LIST), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(OBJECT_TYPE_LIST), Is.EqualTo(8));
         }
     }
 }

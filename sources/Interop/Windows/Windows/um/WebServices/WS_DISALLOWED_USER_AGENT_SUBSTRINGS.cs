@@ -3,13 +3,12 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct WS_DISALLOWED_USER_AGENT_SUBSTRINGS
-    {
-        [NativeTypeName("ULONG")]
-        public uint subStringCount;
+namespace TerraFX.Interop.Windows;
 
-        public WS_STRING** subStrings;
-    }
+public unsafe partial struct WS_DISALLOWED_USER_AGENT_SUBSTRINGS
+{
+    [NativeTypeName("ULONG")]
+    public uint subStringCount;
+
+    public WS_STRING** subStrings;
 }

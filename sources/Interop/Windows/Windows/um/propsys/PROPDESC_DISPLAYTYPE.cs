@@ -3,14 +3,13 @@
 // Ported from um/propsys.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum PROPDESC_DISPLAYTYPE
 {
-    public enum PROPDESC_DISPLAYTYPE
-    {
-        PDDT_STRING = 0,
-        PDDT_NUMBER = 1,
-        PDDT_BOOLEAN = 2,
-        PDDT_DATETIME = 3,
-        PDDT_ENUMERATED = 4,
-    }
+    PDDT_STRING = 0,
+    PDDT_NUMBER = 1,
+    PDDT_BOOLEAN = 2,
+    PDDT_DATETIME = 3,
+    PDDT_ENUMERATED = 4,
 }

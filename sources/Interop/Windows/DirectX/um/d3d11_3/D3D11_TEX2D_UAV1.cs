@@ -3,12 +3,11 @@
 // Ported from um/d3d11_3.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
-{
-    public partial struct D3D11_TEX2D_UAV1
-    {
-        public uint MipSlice;
+namespace TerraFX.Interop.DirectX;
 
-        public uint PlaneSlice;
-    }
+public partial struct D3D11_TEX2D_UAV1
+{
+    public uint MipSlice;
+
+    public uint PlaneSlice;
 }

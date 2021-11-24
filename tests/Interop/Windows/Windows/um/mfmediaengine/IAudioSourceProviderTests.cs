@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IAudioSourceProvider" /> struct.</summary>
+public static unsafe partial class IAudioSourceProviderTests
 {
-    /// <summary>Provides validation of the <see cref="IAudioSourceProvider" /> struct.</summary>
-    public static unsafe partial class IAudioSourceProviderTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAudioSourceProvider" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAudioSourceProvider" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAudioSourceProvider).GUID, Is.EqualTo(IID_IAudioSourceProvider));
-        }
+        Assert.That(typeof(IAudioSourceProvider).GUID, Is.EqualTo(IID_IAudioSourceProvider));
+    }
 
-        /// <summary>Validates that the <see cref="IAudioSourceProvider" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IAudioSourceProvider>(), Is.EqualTo(sizeof(IAudioSourceProvider)));
-        }
+    /// <summary>Validates that the <see cref="IAudioSourceProvider" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IAudioSourceProvider>(), Is.EqualTo(sizeof(IAudioSourceProvider)));
+    }
 
-        /// <summary>Validates that the <see cref="IAudioSourceProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IAudioSourceProvider).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IAudioSourceProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IAudioSourceProvider).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IAudioSourceProvider" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IAudioSourceProvider" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IAudioSourceProvider), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IAudioSourceProvider), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IAudioSourceProvider), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IAudioSourceProvider), Is.EqualTo(4));
         }
     }
 }

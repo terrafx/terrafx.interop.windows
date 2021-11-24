@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.17763.0")]
+public enum POINTER_FEEDBACK_MODE
 {
-    [SupportedOSPlatform("windows10.0.17763.0")]
-    public enum POINTER_FEEDBACK_MODE
-    {
-        POINTER_FEEDBACK_DEFAULT = 1,
-        POINTER_FEEDBACK_INDIRECT = 2,
-        POINTER_FEEDBACK_NONE = 3,
-    }
+    POINTER_FEEDBACK_DEFAULT = 1,
+    POINTER_FEEDBACK_INDIRECT = 2,
+    POINTER_FEEDBACK_NONE = 3,
 }

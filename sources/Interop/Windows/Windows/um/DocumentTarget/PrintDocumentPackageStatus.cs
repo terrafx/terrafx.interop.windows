@@ -5,25 +5,24 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct PrintDocumentPackageStatus
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct PrintDocumentPackageStatus
-    {
-        [NativeTypeName("UINT32")]
-        public uint JobId;
+    [NativeTypeName("UINT32")]
+    public uint JobId;
 
-        [NativeTypeName("INT32")]
-        public int CurrentDocument;
+    [NativeTypeName("INT32")]
+    public int CurrentDocument;
 
-        [NativeTypeName("INT32")]
-        public int CurrentPage;
+    [NativeTypeName("INT32")]
+    public int CurrentPage;
 
-        [NativeTypeName("INT32")]
-        public int CurrentPageTotal;
+    [NativeTypeName("INT32")]
+    public int CurrentPageTotal;
 
-        public PrintDocumentPackageCompletion Completion;
+    public PrintDocumentPackageCompletion Completion;
 
-        public HRESULT PackageStatus;
-    }
+    public HRESULT PackageStatus;
 }

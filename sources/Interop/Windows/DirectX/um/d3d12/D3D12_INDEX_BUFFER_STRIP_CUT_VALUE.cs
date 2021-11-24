@@ -3,12 +3,11 @@
 // Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum D3D12_INDEX_BUFFER_STRIP_CUT_VALUE
 {
-    public enum D3D12_INDEX_BUFFER_STRIP_CUT_VALUE
-    {
-        D3D12_INDEX_BUFFER_STRIP_CUT_VALUE_DISABLED = 0,
-        D3D12_INDEX_BUFFER_STRIP_CUT_VALUE_0xFFFF = 1,
-        D3D12_INDEX_BUFFER_STRIP_CUT_VALUE_0xFFFFFFFF = 2,
-    }
+    D3D12_INDEX_BUFFER_STRIP_CUT_VALUE_DISABLED = 0,
+    D3D12_INDEX_BUFFER_STRIP_CUT_VALUE_0xFFFF = 1,
+    D3D12_INDEX_BUFFER_STRIP_CUT_VALUE_0xFFFFFFFF = 2,
 }

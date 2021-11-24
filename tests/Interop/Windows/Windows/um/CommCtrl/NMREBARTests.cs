@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NMREBAR" /> struct.</summary>
+public static unsafe partial class NMREBARTests
 {
-    /// <summary>Provides validation of the <see cref="NMREBAR" /> struct.</summary>
-    public static unsafe partial class NMREBARTests
+    /// <summary>Validates that the <see cref="NMREBAR" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NMREBAR" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NMREBAR>(), Is.EqualTo(sizeof(NMREBAR)));
-        }
+        Assert.That(Marshal.SizeOf<NMREBAR>(), Is.EqualTo(sizeof(NMREBAR)));
+    }
 
-        /// <summary>Validates that the <see cref="NMREBAR" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NMREBAR).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NMREBAR" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NMREBAR).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NMREBAR" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="NMREBAR" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(NMREBAR), Is.EqualTo(48));
-            }
-            else
-            {
-                Assert.That(sizeof(NMREBAR), Is.EqualTo(32));
-            }
+            Assert.That(sizeof(NMREBAR), Is.EqualTo(48));
+        }
+        else
+        {
+            Assert.That(sizeof(NMREBAR), Is.EqualTo(32));
         }
     }
 }

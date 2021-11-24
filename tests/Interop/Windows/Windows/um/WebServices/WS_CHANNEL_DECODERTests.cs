@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WS_CHANNEL_DECODER" /> struct.</summary>
+public static unsafe partial class WS_CHANNEL_DECODERTests
 {
-    /// <summary>Provides validation of the <see cref="WS_CHANNEL_DECODER" /> struct.</summary>
-    public static unsafe partial class WS_CHANNEL_DECODERTests
+    /// <summary>Validates that the <see cref="WS_CHANNEL_DECODER" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WS_CHANNEL_DECODER" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WS_CHANNEL_DECODER>(), Is.EqualTo(sizeof(WS_CHANNEL_DECODER)));
-        }
+        Assert.That(Marshal.SizeOf<WS_CHANNEL_DECODER>(), Is.EqualTo(sizeof(WS_CHANNEL_DECODER)));
+    }
 
-        /// <summary>Validates that the <see cref="WS_CHANNEL_DECODER" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WS_CHANNEL_DECODER).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WS_CHANNEL_DECODER" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WS_CHANNEL_DECODER).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WS_CHANNEL_DECODER" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="WS_CHANNEL_DECODER" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(WS_CHANNEL_DECODER), Is.EqualTo(56));
-            }
-            else
-            {
-                Assert.That(sizeof(WS_CHANNEL_DECODER), Is.EqualTo(28));
-            }
+            Assert.That(sizeof(WS_CHANNEL_DECODER), Is.EqualTo(56));
+        }
+        else
+        {
+            Assert.That(sizeof(WS_CHANNEL_DECODER), Is.EqualTo(28));
         }
     }
 }

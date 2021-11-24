@@ -7,181 +7,180 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("00020402-0000-0000-C000-000000000046")]
+[NativeTypeName("struct ITypeLib : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ITypeLib : ITypeLib.Interface
 {
-    [Guid("00020402-0000-0000-C000-000000000046")]
-    [NativeTypeName("struct ITypeLib : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITypeLib : ITypeLib.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ITypeLib*, Guid*, void**, int>)(lpVtbl[0]))((ITypeLib*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ITypeLib*, Guid*, void**, int>)(lpVtbl[0]))((ITypeLib*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ITypeLib*, uint>)(lpVtbl[1]))((ITypeLib*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ITypeLib*, uint>)(lpVtbl[1]))((ITypeLib*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ITypeLib*, uint>)(lpVtbl[2]))((ITypeLib*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ITypeLib*, uint>)(lpVtbl[2]))((ITypeLib*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public uint GetTypeInfoCount()
+    {
+        return ((delegate* unmanaged<ITypeLib*, uint>)(lpVtbl[3]))((ITypeLib*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetTypeInfo(uint index, ITypeInfo** ppTInfo)
+    {
+        return ((delegate* unmanaged<ITypeLib*, uint, ITypeInfo**, int>)(lpVtbl[4]))((ITypeLib*)Unsafe.AsPointer(ref this), index, ppTInfo);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetTypeInfoType(uint index, TYPEKIND* pTKind)
+    {
+        return ((delegate* unmanaged<ITypeLib*, uint, TYPEKIND*, int>)(lpVtbl[5]))((ITypeLib*)Unsafe.AsPointer(ref this), index, pTKind);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetTypeInfoOfGuid([NativeTypeName("const GUID &")] Guid* guid, ITypeInfo** ppTinfo)
+    {
+        return ((delegate* unmanaged<ITypeLib*, Guid*, ITypeInfo**, int>)(lpVtbl[6]))((ITypeLib*)Unsafe.AsPointer(ref this), guid, ppTinfo);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT GetLibAttr(TLIBATTR** ppTLibAttr)
+    {
+        return ((delegate* unmanaged<ITypeLib*, TLIBATTR**, int>)(lpVtbl[7]))((ITypeLib*)Unsafe.AsPointer(ref this), ppTLibAttr);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT GetTypeComp(ITypeComp** ppTComp)
+    {
+        return ((delegate* unmanaged<ITypeLib*, ITypeComp**, int>)(lpVtbl[8]))((ITypeLib*)Unsafe.AsPointer(ref this), ppTComp);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT GetDocumentation(int index, [NativeTypeName("BSTR *")] ushort** pBstrName, [NativeTypeName("BSTR *")] ushort** pBstrDocString, [NativeTypeName("DWORD *")] uint* pdwHelpContext, [NativeTypeName("BSTR *")] ushort** pBstrHelpFile)
+    {
+        return ((delegate* unmanaged<ITypeLib*, int, ushort**, ushort**, uint*, ushort**, int>)(lpVtbl[9]))((ITypeLib*)Unsafe.AsPointer(ref this), index, pBstrName, pBstrDocString, pdwHelpContext, pBstrHelpFile);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT IsName([NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, BOOL* pfName)
+    {
+        return ((delegate* unmanaged<ITypeLib*, ushort*, uint, BOOL*, int>)(lpVtbl[10]))((ITypeLib*)Unsafe.AsPointer(ref this), szNameBuf, lHashVal, pfName);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT FindName([NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, ITypeInfo** ppTInfo, [NativeTypeName("MEMBERID *")] int* rgMemId, ushort* pcFound)
+    {
+        return ((delegate* unmanaged<ITypeLib*, ushort*, uint, ITypeInfo**, int*, ushort*, int>)(lpVtbl[11]))((ITypeLib*)Unsafe.AsPointer(ref this), szNameBuf, lHashVal, ppTInfo, rgMemId, pcFound);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public void ReleaseTLibAttr(TLIBATTR* pTLibAttr)
+    {
+        ((delegate* unmanaged<ITypeLib*, TLIBATTR*, void>)(lpVtbl[12]))((ITypeLib*)Unsafe.AsPointer(ref this), pTLibAttr);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public uint GetTypeInfoCount()
-        {
-            return ((delegate* unmanaged<ITypeLib*, uint>)(lpVtbl[3]))((ITypeLib*)Unsafe.AsPointer(ref this));
-        }
+        uint GetTypeInfoCount();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetTypeInfo(uint index, ITypeInfo** ppTInfo)
-        {
-            return ((delegate* unmanaged<ITypeLib*, uint, ITypeInfo**, int>)(lpVtbl[4]))((ITypeLib*)Unsafe.AsPointer(ref this), index, ppTInfo);
-        }
+        HRESULT GetTypeInfo(uint index, ITypeInfo** ppTInfo);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetTypeInfoType(uint index, TYPEKIND* pTKind)
-        {
-            return ((delegate* unmanaged<ITypeLib*, uint, TYPEKIND*, int>)(lpVtbl[5]))((ITypeLib*)Unsafe.AsPointer(ref this), index, pTKind);
-        }
+        HRESULT GetTypeInfoType(uint index, TYPEKIND* pTKind);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetTypeInfoOfGuid([NativeTypeName("const GUID &")] Guid* guid, ITypeInfo** ppTinfo)
-        {
-            return ((delegate* unmanaged<ITypeLib*, Guid*, ITypeInfo**, int>)(lpVtbl[6]))((ITypeLib*)Unsafe.AsPointer(ref this), guid, ppTinfo);
-        }
+        HRESULT GetTypeInfoOfGuid([NativeTypeName("const GUID &")] Guid* guid, ITypeInfo** ppTinfo);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetLibAttr(TLIBATTR** ppTLibAttr)
-        {
-            return ((delegate* unmanaged<ITypeLib*, TLIBATTR**, int>)(lpVtbl[7]))((ITypeLib*)Unsafe.AsPointer(ref this), ppTLibAttr);
-        }
+        HRESULT GetLibAttr(TLIBATTR** ppTLibAttr);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT GetTypeComp(ITypeComp** ppTComp)
-        {
-            return ((delegate* unmanaged<ITypeLib*, ITypeComp**, int>)(lpVtbl[8]))((ITypeLib*)Unsafe.AsPointer(ref this), ppTComp);
-        }
+        HRESULT GetTypeComp(ITypeComp** ppTComp);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetDocumentation(int index, [NativeTypeName("BSTR *")] ushort** pBstrName, [NativeTypeName("BSTR *")] ushort** pBstrDocString, [NativeTypeName("DWORD *")] uint* pdwHelpContext, [NativeTypeName("BSTR *")] ushort** pBstrHelpFile)
-        {
-            return ((delegate* unmanaged<ITypeLib*, int, ushort**, ushort**, uint*, ushort**, int>)(lpVtbl[9]))((ITypeLib*)Unsafe.AsPointer(ref this), index, pBstrName, pBstrDocString, pdwHelpContext, pBstrHelpFile);
-        }
+        HRESULT GetDocumentation(int index, [NativeTypeName("BSTR *")] ushort** pBstrName, [NativeTypeName("BSTR *")] ushort** pBstrDocString, [NativeTypeName("DWORD *")] uint* pdwHelpContext, [NativeTypeName("BSTR *")] ushort** pBstrHelpFile);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT IsName([NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, BOOL* pfName)
-        {
-            return ((delegate* unmanaged<ITypeLib*, ushort*, uint, BOOL*, int>)(lpVtbl[10]))((ITypeLib*)Unsafe.AsPointer(ref this), szNameBuf, lHashVal, pfName);
-        }
+        HRESULT IsName([NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, BOOL* pfName);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT FindName([NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, ITypeInfo** ppTInfo, [NativeTypeName("MEMBERID *")] int* rgMemId, ushort* pcFound)
-        {
-            return ((delegate* unmanaged<ITypeLib*, ushort*, uint, ITypeInfo**, int*, ushort*, int>)(lpVtbl[11]))((ITypeLib*)Unsafe.AsPointer(ref this), szNameBuf, lHashVal, ppTInfo, rgMemId, pcFound);
-        }
+        HRESULT FindName([NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, ITypeInfo** ppTInfo, [NativeTypeName("MEMBERID *")] int* rgMemId, ushort* pcFound);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public void ReleaseTLibAttr(TLIBATTR* pTLibAttr)
-        {
-            ((delegate* unmanaged<ITypeLib*, TLIBATTR*, void>)(lpVtbl[12]))((ITypeLib*)Unsafe.AsPointer(ref this), pTLibAttr);
-        }
+        void ReleaseTLibAttr(TLIBATTR* pTLibAttr);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            uint GetTypeInfoCount();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITypeLib*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetTypeInfo(uint index, ITypeInfo** ppTInfo);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITypeLib*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT GetTypeInfoType(uint index, TYPEKIND* pTKind);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITypeLib*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT GetTypeInfoOfGuid([NativeTypeName("const GUID &")] Guid* guid, ITypeInfo** ppTinfo);
+        [NativeTypeName("UINT () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITypeLib*, uint> GetTypeInfoCount;
 
-            [VtblIndex(7)]
-            HRESULT GetLibAttr(TLIBATTR** ppTLibAttr);
+        [NativeTypeName("HRESULT (UINT, ITypeInfo **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITypeLib*, uint, ITypeInfo**, int> GetTypeInfo;
 
-            [VtblIndex(8)]
-            HRESULT GetTypeComp(ITypeComp** ppTComp);
+        [NativeTypeName("HRESULT (UINT, TYPEKIND *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITypeLib*, uint, TYPEKIND*, int> GetTypeInfoType;
 
-            [VtblIndex(9)]
-            HRESULT GetDocumentation(int index, [NativeTypeName("BSTR *")] ushort** pBstrName, [NativeTypeName("BSTR *")] ushort** pBstrDocString, [NativeTypeName("DWORD *")] uint* pdwHelpContext, [NativeTypeName("BSTR *")] ushort** pBstrHelpFile);
+        [NativeTypeName("HRESULT (const GUID &, ITypeInfo **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITypeLib*, Guid*, ITypeInfo**, int> GetTypeInfoOfGuid;
 
-            [VtblIndex(10)]
-            HRESULT IsName([NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, BOOL* pfName);
+        [NativeTypeName("HRESULT (TLIBATTR **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITypeLib*, TLIBATTR**, int> GetLibAttr;
 
-            [VtblIndex(11)]
-            HRESULT FindName([NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, ITypeInfo** ppTInfo, [NativeTypeName("MEMBERID *")] int* rgMemId, ushort* pcFound);
+        [NativeTypeName("HRESULT (ITypeComp **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITypeLib*, ITypeComp**, int> GetTypeComp;
 
-            [VtblIndex(12)]
-            void ReleaseTLibAttr(TLIBATTR* pTLibAttr);
-        }
+        [NativeTypeName("HRESULT (INT, BSTR *, BSTR *, DWORD *, BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITypeLib*, int, ushort**, ushort**, uint*, ushort**, int> GetDocumentation;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITypeLib*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (LPOLESTR, ULONG, BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITypeLib*, ushort*, uint, BOOL*, int> IsName;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITypeLib*, uint> AddRef;
+        [NativeTypeName("HRESULT (LPOLESTR, ULONG, ITypeInfo **, MEMBERID *, USHORT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITypeLib*, ushort*, uint, ITypeInfo**, int*, ushort*, int> FindName;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITypeLib*, uint> Release;
-
-            [NativeTypeName("UINT () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITypeLib*, uint> GetTypeInfoCount;
-
-            [NativeTypeName("HRESULT (UINT, ITypeInfo **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITypeLib*, uint, ITypeInfo**, int> GetTypeInfo;
-
-            [NativeTypeName("HRESULT (UINT, TYPEKIND *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITypeLib*, uint, TYPEKIND*, int> GetTypeInfoType;
-
-            [NativeTypeName("HRESULT (const GUID &, ITypeInfo **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITypeLib*, Guid*, ITypeInfo**, int> GetTypeInfoOfGuid;
-
-            [NativeTypeName("HRESULT (TLIBATTR **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITypeLib*, TLIBATTR**, int> GetLibAttr;
-
-            [NativeTypeName("HRESULT (ITypeComp **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITypeLib*, ITypeComp**, int> GetTypeComp;
-
-            [NativeTypeName("HRESULT (INT, BSTR *, BSTR *, DWORD *, BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITypeLib*, int, ushort**, ushort**, uint*, ushort**, int> GetDocumentation;
-
-            [NativeTypeName("HRESULT (LPOLESTR, ULONG, BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITypeLib*, ushort*, uint, BOOL*, int> IsName;
-
-            [NativeTypeName("HRESULT (LPOLESTR, ULONG, ITypeInfo **, MEMBERID *, USHORT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITypeLib*, ushort*, uint, ITypeInfo**, int*, ushort*, int> FindName;
-
-            [NativeTypeName("void (TLIBATTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITypeLib*, TLIBATTR*, void> ReleaseTLibAttr;
-        }
+        [NativeTypeName("void (TLIBATTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITypeLib*, TLIBATTR*, void> ReleaseTLibAttr;
     }
 }

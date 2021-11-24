@@ -3,14 +3,13 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct CERT_AUTHORITY_INFO_ACCESS
-    {
-        [NativeTypeName("DWORD")]
-        public uint cAccDescr;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("PCERT_ACCESS_DESCRIPTION")]
-        public CERT_ACCESS_DESCRIPTION* rgAccDescr;
-    }
+public unsafe partial struct CERT_AUTHORITY_INFO_ACCESS
+{
+    [NativeTypeName("DWORD")]
+    public uint cAccDescr;
+
+    [NativeTypeName("PCERT_ACCESS_DESCRIPTION")]
+    public CERT_ACCESS_DESCRIPTION* rgAccDescr;
 }

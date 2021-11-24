@@ -5,18 +5,17 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct SHQUERYRBINFO32
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct SHQUERYRBINFO32
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("long long")]
-        public long i64Size;
+    [NativeTypeName("long long")]
+    public long i64Size;
 
-        [NativeTypeName("long long")]
-        public long i64NumItems;
-    }
+    [NativeTypeName("long long")]
+    public long i64NumItems;
 }

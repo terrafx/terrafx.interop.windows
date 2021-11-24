@@ -6,17 +6,16 @@
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.1")]
+public partial struct D3D11_FEATURE_DATA_D3D9_OPTIONS1
 {
-    [SupportedOSPlatform("windows8.1")]
-    public partial struct D3D11_FEATURE_DATA_D3D9_OPTIONS1
-    {
-        public BOOL FullNonPow2TextureSupported;
+    public BOOL FullNonPow2TextureSupported;
 
-        public BOOL DepthAsTextureWithLessEqualComparisonFilterSupported;
+    public BOOL DepthAsTextureWithLessEqualComparisonFilterSupported;
 
-        public BOOL SimpleInstancingSupported;
+    public BOOL SimpleInstancingSupported;
 
-        public BOOL TextureCubeFaceRenderTargetWithNonCubeDepthStencilSupported;
-    }
+    public BOOL TextureCubeFaceRenderTargetWithNonCubeDepthStencilSupported;
 }

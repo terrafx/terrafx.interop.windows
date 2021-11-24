@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct D3D11_VIDEO_CONTENT_PROTECTION_CAPS
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct D3D11_VIDEO_CONTENT_PROTECTION_CAPS
-    {
-        public uint Caps;
+    public uint Caps;
 
-        public uint KeyExchangeTypeCount;
+    public uint KeyExchangeTypeCount;
 
-        public uint BlockAlignmentSize;
+    public uint BlockAlignmentSize;
 
-        [NativeTypeName("ULONGLONG")]
-        public ulong ProtectedMemorySize;
-    }
+    [NativeTypeName("ULONGLONG")]
+    public ulong ProtectedMemorySize;
 }

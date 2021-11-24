@@ -5,11 +5,10 @@
 
 using static TerraFX.Interop.Windows.SPLOADOPTIONS;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechLoadOption
 {
-    public enum SpeechLoadOption
-    {
-        SLOStatic = SPLO_STATIC,
-        SLODynamic = SPLO_DYNAMIC,
-    }
+    SLOStatic = SPLO_STATIC,
+    SLODynamic = SPLO_DYNAMIC,
 }

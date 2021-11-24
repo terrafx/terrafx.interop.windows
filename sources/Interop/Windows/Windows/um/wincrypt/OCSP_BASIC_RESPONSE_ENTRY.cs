@@ -6,43 +6,42 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct OCSP_BASIC_RESPONSE_ENTRY
 {
-    public unsafe partial struct OCSP_BASIC_RESPONSE_ENTRY
+    public OCSP_CERT_ID CertId;
+
+    [NativeTypeName("DWORD")]
+    public uint dwCertStatus;
+
+    [NativeTypeName("_OCSP_BASIC_RESPONSE_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:5682:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public FILETIME ThisUpdate;
+
+    public FILETIME NextUpdate;
+
+    [NativeTypeName("DWORD")]
+    public uint cExtension;
+
+    [NativeTypeName("PCERT_EXTENSION")]
+    public CERT_EXTENSION* rgExtension;
+
+    public ref OCSP_BASIC_REVOKED_INFO* pRevokedInfo
     {
-        public OCSP_CERT_ID CertId;
-
-        [NativeTypeName("DWORD")]
-        public uint dwCertStatus;
-
-        [NativeTypeName("_OCSP_BASIC_RESPONSE_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:5682:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public FILETIME ThisUpdate;
-
-        public FILETIME NextUpdate;
-
-        [NativeTypeName("DWORD")]
-        public uint cExtension;
-
-        [NativeTypeName("PCERT_EXTENSION")]
-        public CERT_EXTENSION* rgExtension;
-
-        public ref OCSP_BASIC_REVOKED_INFO* pRevokedInfo
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pRevokedInfo;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pRevokedInfo;
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("POCSP_BASIC_REVOKED_INFO")]
-            public OCSP_BASIC_REVOKED_INFO* pRevokedInfo;
-        }
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("POCSP_BASIC_REVOKED_INFO")]
+        public OCSP_BASIC_REVOKED_INFO* pRevokedInfo;
     }
 }

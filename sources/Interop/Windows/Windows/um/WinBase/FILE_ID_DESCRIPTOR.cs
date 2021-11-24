@@ -7,56 +7,55 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct FILE_ID_DESCRIPTOR
 {
-    public partial struct FILE_ID_DESCRIPTOR
+    [NativeTypeName("DWORD")]
+    public uint dwSize;
+
+    public FILE_ID_TYPE Type;
+
+    [NativeTypeName("FILE_ID_DESCRIPTOR::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinBase.h:9164:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public ref LARGE_INTEGER FileId
     {
-        [NativeTypeName("DWORD")]
-        public uint dwSize;
-
-        public FILE_ID_TYPE Type;
-
-        [NativeTypeName("FILE_ID_DESCRIPTOR::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinBase.h:9164:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public ref LARGE_INTEGER FileId
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.FileId, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.FileId, 1));
         }
+    }
 
-        public ref Guid ObjectId
+    public ref Guid ObjectId
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ObjectId, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ObjectId, 1));
         }
+    }
 
-        public ref FILE_ID_128 ExtendedFileId
+    public ref FILE_ID_128 ExtendedFileId
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ExtendedFileId, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ExtendedFileId, 1));
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            public LARGE_INTEGER FileId;
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        public LARGE_INTEGER FileId;
 
-            [FieldOffset(0)]
-            public Guid ObjectId;
+        [FieldOffset(0)]
+        public Guid ObjectId;
 
-            [FieldOffset(0)]
-            public FILE_ID_128 ExtendedFileId;
-        }
+        [FieldOffset(0)]
+        public FILE_ID_128 ExtendedFileId;
     }
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IPreviewHandler" /> struct.</summary>
+public static unsafe partial class IPreviewHandlerTests
 {
-    /// <summary>Provides validation of the <see cref="IPreviewHandler" /> struct.</summary>
-    public static unsafe partial class IPreviewHandlerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPreviewHandler" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPreviewHandler" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IPreviewHandler).GUID, Is.EqualTo(IID_IPreviewHandler));
-        }
+        Assert.That(typeof(IPreviewHandler).GUID, Is.EqualTo(IID_IPreviewHandler));
+    }
 
-        /// <summary>Validates that the <see cref="IPreviewHandler" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IPreviewHandler>(), Is.EqualTo(sizeof(IPreviewHandler)));
-        }
+    /// <summary>Validates that the <see cref="IPreviewHandler" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IPreviewHandler>(), Is.EqualTo(sizeof(IPreviewHandler)));
+    }
 
-        /// <summary>Validates that the <see cref="IPreviewHandler" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IPreviewHandler).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IPreviewHandler" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IPreviewHandler).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IPreviewHandler" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IPreviewHandler" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IPreviewHandler), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IPreviewHandler), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IPreviewHandler), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IPreviewHandler), Is.EqualTo(4));
         }
     }
 }

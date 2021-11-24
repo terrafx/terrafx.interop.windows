@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDynamicHWHandler" /> struct.</summary>
+public static unsafe partial class IDynamicHWHandlerTests
 {
-    /// <summary>Provides validation of the <see cref="IDynamicHWHandler" /> struct.</summary>
-    public static unsafe partial class IDynamicHWHandlerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDynamicHWHandler" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDynamicHWHandler" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDynamicHWHandler).GUID, Is.EqualTo(IID_IDynamicHWHandler));
-        }
+        Assert.That(typeof(IDynamicHWHandler).GUID, Is.EqualTo(IID_IDynamicHWHandler));
+    }
 
-        /// <summary>Validates that the <see cref="IDynamicHWHandler" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDynamicHWHandler>(), Is.EqualTo(sizeof(IDynamicHWHandler)));
-        }
+    /// <summary>Validates that the <see cref="IDynamicHWHandler" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDynamicHWHandler>(), Is.EqualTo(sizeof(IDynamicHWHandler)));
+    }
 
-        /// <summary>Validates that the <see cref="IDynamicHWHandler" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDynamicHWHandler).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDynamicHWHandler" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDynamicHWHandler).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDynamicHWHandler" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDynamicHWHandler" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDynamicHWHandler), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDynamicHWHandler), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDynamicHWHandler), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDynamicHWHandler), Is.EqualTo(4));
         }
     }
 }

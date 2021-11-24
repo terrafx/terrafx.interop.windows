@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XSTATE_CONTEXT_AMD64" /> struct.</summary>
+public static unsafe partial class XSTATE_CONTEXT_AMD64Tests
 {
-    /// <summary>Provides validation of the <see cref="XSTATE_CONTEXT_AMD64" /> struct.</summary>
-    public static unsafe partial class XSTATE_CONTEXT_AMD64Tests
+    /// <summary>Validates that the <see cref="XSTATE_CONTEXT_AMD64" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XSTATE_CONTEXT_AMD64" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XSTATE_CONTEXT_AMD64>(), Is.EqualTo(sizeof(XSTATE_CONTEXT_AMD64)));
-        }
+        Assert.That(Marshal.SizeOf<XSTATE_CONTEXT_AMD64>(), Is.EqualTo(sizeof(XSTATE_CONTEXT_AMD64)));
+    }
 
-        /// <summary>Validates that the <see cref="XSTATE_CONTEXT_AMD64" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XSTATE_CONTEXT_AMD64).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XSTATE_CONTEXT_AMD64" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XSTATE_CONTEXT_AMD64).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XSTATE_CONTEXT_AMD64" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XSTATE_CONTEXT_AMD64" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XSTATE_CONTEXT_AMD64), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(XSTATE_CONTEXT_AMD64), Is.EqualTo(24));
-            }
+            Assert.That(sizeof(XSTATE_CONTEXT_AMD64), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(XSTATE_CONTEXT_AMD64), Is.EqualTo(24));
         }
     }
 }

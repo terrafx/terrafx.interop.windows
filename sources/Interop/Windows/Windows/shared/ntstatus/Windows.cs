@@ -3,23 +3,22 @@
 // Ported from shared/ntstatus.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class Windows
 {
-    public static partial class Windows
-    {
-        [NativeTypeName("#define FACILTIY_MUI_ERROR_CODE 0xB")]
-        public const int FACILTIY_MUI_ERROR_CODE = 0xB;
+    [NativeTypeName("#define FACILTIY_MUI_ERROR_CODE 0xB")]
+    public const int FACILTIY_MUI_ERROR_CODE = 0xB;
 
-        [NativeTypeName("#define EPT_NT_INVALID_ENTRY ((NTSTATUS)0xC0020034L)")]
-        public const int EPT_NT_INVALID_ENTRY = unchecked((int)(0xC0020034));
+    [NativeTypeName("#define EPT_NT_INVALID_ENTRY ((NTSTATUS)0xC0020034L)")]
+    public const int EPT_NT_INVALID_ENTRY = unchecked((int)(0xC0020034));
 
-        [NativeTypeName("#define EPT_NT_CANT_PERFORM_OP ((NTSTATUS)0xC0020035L)")]
-        public const int EPT_NT_CANT_PERFORM_OP = unchecked((int)(0xC0020035));
+    [NativeTypeName("#define EPT_NT_CANT_PERFORM_OP ((NTSTATUS)0xC0020035L)")]
+    public const int EPT_NT_CANT_PERFORM_OP = unchecked((int)(0xC0020035));
 
-        [NativeTypeName("#define EPT_NT_NOT_REGISTERED ((NTSTATUS)0xC0020036L)")]
-        public const int EPT_NT_NOT_REGISTERED = unchecked((int)(0xC0020036));
+    [NativeTypeName("#define EPT_NT_NOT_REGISTERED ((NTSTATUS)0xC0020036L)")]
+    public const int EPT_NT_NOT_REGISTERED = unchecked((int)(0xC0020036));
 
-        [NativeTypeName("#define EPT_NT_CANT_CREATE ((NTSTATUS)0xC002004CL)")]
-        public const int EPT_NT_CANT_CREATE = unchecked((int)(0xC002004C));
-    }
+    [NativeTypeName("#define EPT_NT_CANT_CREATE ((NTSTATUS)0xC002004CL)")]
+    public const int EPT_NT_CANT_CREATE = unchecked((int)(0xC002004C));
 }

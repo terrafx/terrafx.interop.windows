@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum MF3DVideoOutputType
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum MF3DVideoOutputType
-    {
-        MF3DVideoOutputType_BaseView = 0,
-        MF3DVideoOutputType_Stereo = 1,
-    }
+    MF3DVideoOutputType_BaseView = 0,
+    MF3DVideoOutputType_Stereo = 1,
 }

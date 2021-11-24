@@ -3,13 +3,12 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct WS_SERVICE_SECURITY_IDENTITIES
-    {
-        public WS_STRING* serviceIdentities;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("ULONG")]
-        public uint serviceIdentityCount;
-    }
+public unsafe partial struct WS_SERVICE_SECURITY_IDENTITIES
+{
+    public WS_STRING* serviceIdentities;
+
+    [NativeTypeName("ULONG")]
+    public uint serviceIdentityCount;
 }

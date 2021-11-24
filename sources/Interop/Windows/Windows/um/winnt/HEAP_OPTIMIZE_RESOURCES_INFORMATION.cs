@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.1")]
-    public partial struct HEAP_OPTIMIZE_RESOURCES_INFORMATION
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
-    }
+[SupportedOSPlatform("windows8.1")]
+public partial struct HEAP_OPTIMIZE_RESOURCES_INFORMATION
+{
+    [NativeTypeName("DWORD")]
+    public uint Version;
+
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 }

@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum DESKTOP_SLIDESHOW_STATE
 {
-    [Flags]
-    public enum DESKTOP_SLIDESHOW_STATE
-    {
-        DSS_ENABLED = 0x1,
-        DSS_SLIDESHOW = 0x2,
-        DSS_DISABLED_BY_REMOTE_SESSION = 0x4,
-    }
+    DSS_ENABLED = 0x1,
+    DSS_SLIDESHOW = 0x2,
+    DSS_DISABLED_BY_REMOTE_SESSION = 0x4,
 }

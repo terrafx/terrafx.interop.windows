@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IShellBrowser" /> struct.</summary>
+public static unsafe partial class IShellBrowserTests
 {
-    /// <summary>Provides validation of the <see cref="IShellBrowser" /> struct.</summary>
-    public static unsafe partial class IShellBrowserTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IShellBrowser" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IShellBrowser" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IShellBrowser).GUID, Is.EqualTo(IID_IShellBrowser));
-        }
+        Assert.That(typeof(IShellBrowser).GUID, Is.EqualTo(IID_IShellBrowser));
+    }
 
-        /// <summary>Validates that the <see cref="IShellBrowser" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IShellBrowser>(), Is.EqualTo(sizeof(IShellBrowser)));
-        }
+    /// <summary>Validates that the <see cref="IShellBrowser" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IShellBrowser>(), Is.EqualTo(sizeof(IShellBrowser)));
+    }
 
-        /// <summary>Validates that the <see cref="IShellBrowser" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IShellBrowser).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IShellBrowser" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IShellBrowser).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IShellBrowser" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IShellBrowser" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IShellBrowser), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IShellBrowser), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IShellBrowser), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IShellBrowser), Is.EqualTo(4));
         }
     }
 }

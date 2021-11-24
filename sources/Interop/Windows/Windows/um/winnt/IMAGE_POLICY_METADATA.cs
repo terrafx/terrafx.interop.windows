@@ -3,19 +3,18 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct IMAGE_POLICY_METADATA
 {
-    public unsafe partial struct IMAGE_POLICY_METADATA
-    {
-        public byte Version;
+    public byte Version;
 
-        [NativeTypeName("BYTE [7]")]
-        public fixed byte Reserved0[7];
+    [NativeTypeName("BYTE [7]")]
+    public fixed byte Reserved0[7];
 
-        [NativeTypeName("ULONGLONG")]
-        public ulong ApplicationId;
+    [NativeTypeName("ULONGLONG")]
+    public ulong ApplicationId;
 
-        [NativeTypeName("IMAGE_POLICY_ENTRY []")]
-        public IMAGE_POLICY_ENTRY Policies;
-    }
+    [NativeTypeName("IMAGE_POLICY_ENTRY []")]
+    public IMAGE_POLICY_ENTRY Policies;
 }

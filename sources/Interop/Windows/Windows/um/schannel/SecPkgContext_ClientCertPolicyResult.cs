@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct SecPkgContext_ClientCertPolicyResult
-    {
-        public HRESULT dwPolicyResult;
+namespace TerraFX.Interop.Windows;
 
-        public Guid guidPolicyId;
-    }
+public partial struct SecPkgContext_ClientCertPolicyResult
+{
+    public HRESULT dwPolicyResult;
+
+    public Guid guidPolicyId;
 }

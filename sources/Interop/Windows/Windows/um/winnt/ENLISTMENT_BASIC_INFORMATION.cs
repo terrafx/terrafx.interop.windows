@@ -5,14 +5,13 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct ENLISTMENT_BASIC_INFORMATION
 {
-    public partial struct ENLISTMENT_BASIC_INFORMATION
-    {
-        public Guid EnlistmentId;
+    public Guid EnlistmentId;
 
-        public Guid TransactionId;
+    public Guid TransactionId;
 
-        public Guid ResourceManagerId;
-    }
+    public Guid ResourceManagerId;
 }

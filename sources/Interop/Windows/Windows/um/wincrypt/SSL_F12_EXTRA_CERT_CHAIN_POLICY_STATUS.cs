@@ -5,24 +5,23 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("DWORD")]
-        public uint dwErrorLevel;
+    [NativeTypeName("DWORD")]
+    public uint dwErrorLevel;
 
-        [NativeTypeName("DWORD")]
-        public uint dwErrorCategory;
+    [NativeTypeName("DWORD")]
+    public uint dwErrorCategory;
 
-        [NativeTypeName("DWORD")]
-        public uint dwReserved;
+    [NativeTypeName("DWORD")]
+    public uint dwReserved;
 
-        [NativeTypeName("WCHAR [256]")]
-        public fixed ushort wszErrorText[256];
-    }
+    [NativeTypeName("WCHAR [256]")]
+    public fixed ushort wszErrorText[256];
 }

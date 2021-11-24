@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("73540D69-EDEB-4EE9-96C9-23AA30B25916")]
+[NativeTypeName("struct ITfLangBarItem : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ITfLangBarItem : ITfLangBarItem.Interface
 {
-    [Guid("73540D69-EDEB-4EE9-96C9-23AA30B25916")]
-    [NativeTypeName("struct ITfLangBarItem : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfLangBarItem : ITfLangBarItem.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ITfLangBarItem*, Guid*, void**, int>)(lpVtbl[0]))((ITfLangBarItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ITfLangBarItem*, Guid*, void**, int>)(lpVtbl[0]))((ITfLangBarItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ITfLangBarItem*, uint>)(lpVtbl[1]))((ITfLangBarItem*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ITfLangBarItem*, uint>)(lpVtbl[1]))((ITfLangBarItem*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ITfLangBarItem*, uint>)(lpVtbl[2]))((ITfLangBarItem*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ITfLangBarItem*, uint>)(lpVtbl[2]))((ITfLangBarItem*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetInfo(TF_LANGBARITEMINFO* pInfo)
+    {
+        return ((delegate* unmanaged<ITfLangBarItem*, TF_LANGBARITEMINFO*, int>)(lpVtbl[3]))((ITfLangBarItem*)Unsafe.AsPointer(ref this), pInfo);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetStatus([NativeTypeName("DWORD *")] uint* pdwStatus)
+    {
+        return ((delegate* unmanaged<ITfLangBarItem*, uint*, int>)(lpVtbl[4]))((ITfLangBarItem*)Unsafe.AsPointer(ref this), pdwStatus);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Show(BOOL fShow)
+    {
+        return ((delegate* unmanaged<ITfLangBarItem*, BOOL, int>)(lpVtbl[5]))((ITfLangBarItem*)Unsafe.AsPointer(ref this), fShow);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetTooltipString([NativeTypeName("BSTR *")] ushort** pbstrToolTip)
+    {
+        return ((delegate* unmanaged<ITfLangBarItem*, ushort**, int>)(lpVtbl[6]))((ITfLangBarItem*)Unsafe.AsPointer(ref this), pbstrToolTip);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetInfo(TF_LANGBARITEMINFO* pInfo)
-        {
-            return ((delegate* unmanaged<ITfLangBarItem*, TF_LANGBARITEMINFO*, int>)(lpVtbl[3]))((ITfLangBarItem*)Unsafe.AsPointer(ref this), pInfo);
-        }
+        HRESULT GetInfo(TF_LANGBARITEMINFO* pInfo);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetStatus([NativeTypeName("DWORD *")] uint* pdwStatus)
-        {
-            return ((delegate* unmanaged<ITfLangBarItem*, uint*, int>)(lpVtbl[4]))((ITfLangBarItem*)Unsafe.AsPointer(ref this), pdwStatus);
-        }
+        HRESULT GetStatus([NativeTypeName("DWORD *")] uint* pdwStatus);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT Show(BOOL fShow)
-        {
-            return ((delegate* unmanaged<ITfLangBarItem*, BOOL, int>)(lpVtbl[5]))((ITfLangBarItem*)Unsafe.AsPointer(ref this), fShow);
-        }
+        HRESULT Show(BOOL fShow);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetTooltipString([NativeTypeName("BSTR *")] ushort** pbstrToolTip)
-        {
-            return ((delegate* unmanaged<ITfLangBarItem*, ushort**, int>)(lpVtbl[6]))((ITfLangBarItem*)Unsafe.AsPointer(ref this), pbstrToolTip);
-        }
+        HRESULT GetTooltipString([NativeTypeName("BSTR *")] ushort** pbstrToolTip);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetInfo(TF_LANGBARITEMINFO* pInfo);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfLangBarItem*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetStatus([NativeTypeName("DWORD *")] uint* pdwStatus);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfLangBarItem*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT Show(BOOL fShow);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfLangBarItem*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT GetTooltipString([NativeTypeName("BSTR *")] ushort** pbstrToolTip);
-        }
+        [NativeTypeName("HRESULT (TF_LANGBARITEMINFO *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfLangBarItem*, TF_LANGBARITEMINFO*, int> GetInfo;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfLangBarItem*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfLangBarItem*, uint*, int> GetStatus;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfLangBarItem*, uint> AddRef;
+        [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfLangBarItem*, BOOL, int> Show;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfLangBarItem*, uint> Release;
-
-            [NativeTypeName("HRESULT (TF_LANGBARITEMINFO *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfLangBarItem*, TF_LANGBARITEMINFO*, int> GetInfo;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfLangBarItem*, uint*, int> GetStatus;
-
-            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfLangBarItem*, BOOL, int> Show;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfLangBarItem*, ushort**, int> GetTooltipString;
-        }
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfLangBarItem*, ushort**, int> GetTooltipString;
     }
 }

@@ -5,16 +5,15 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    public static unsafe partial class Windows
-    {
-        [SuppressGCTransition]
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL QueryPerformanceCounter(LARGE_INTEGER* lpPerformanceCount);
+namespace TerraFX.Interop.Windows;
 
-        [SuppressGCTransition]
-        [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
-        public static extern BOOL QueryPerformanceFrequency(LARGE_INTEGER* lpFrequency);
-    }
+public static unsafe partial class Windows
+{
+    [SuppressGCTransition]
+    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    public static extern BOOL QueryPerformanceCounter(LARGE_INTEGER* lpPerformanceCount);
+
+    [SuppressGCTransition]
+    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    public static extern BOOL QueryPerformanceFrequency(LARGE_INTEGER* lpFrequency);
 }

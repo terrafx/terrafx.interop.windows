@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DWRITE_FONT_FEATURE" /> struct.</summary>
+public static unsafe partial class DWRITE_FONT_FEATURETests
 {
-    /// <summary>Provides validation of the <see cref="DWRITE_FONT_FEATURE" /> struct.</summary>
-    public static unsafe partial class DWRITE_FONT_FEATURETests
+    /// <summary>Validates that the <see cref="DWRITE_FONT_FEATURE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DWRITE_FONT_FEATURE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DWRITE_FONT_FEATURE>(), Is.EqualTo(sizeof(DWRITE_FONT_FEATURE)));
-        }
+        Assert.That(Marshal.SizeOf<DWRITE_FONT_FEATURE>(), Is.EqualTo(sizeof(DWRITE_FONT_FEATURE)));
+    }
 
-        /// <summary>Validates that the <see cref="DWRITE_FONT_FEATURE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DWRITE_FONT_FEATURE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DWRITE_FONT_FEATURE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DWRITE_FONT_FEATURE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DWRITE_FONT_FEATURE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DWRITE_FONT_FEATURE), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="DWRITE_FONT_FEATURE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DWRITE_FONT_FEATURE), Is.EqualTo(8));
     }
 }

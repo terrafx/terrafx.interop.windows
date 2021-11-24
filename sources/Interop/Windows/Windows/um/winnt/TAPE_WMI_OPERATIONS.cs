@@ -3,17 +3,16 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct TAPE_WMI_OPERATIONS
 {
-    public unsafe partial struct TAPE_WMI_OPERATIONS
-    {
-        [NativeTypeName("DWORD")]
-        public uint Method;
+    [NativeTypeName("DWORD")]
+    public uint Method;
 
-        [NativeTypeName("DWORD")]
-        public uint DataBufferSize;
+    [NativeTypeName("DWORD")]
+    public uint DataBufferSize;
 
-        [NativeTypeName("PVOID")]
-        public void* DataBuffer;
-    }
+    [NativeTypeName("PVOID")]
+    public void* DataBuffer;
 }

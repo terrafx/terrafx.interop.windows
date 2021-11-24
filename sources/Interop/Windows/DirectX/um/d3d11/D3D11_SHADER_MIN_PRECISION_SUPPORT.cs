@@ -3,11 +3,10 @@
 // Ported from um/d3d11.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum D3D11_SHADER_MIN_PRECISION_SUPPORT
 {
-    public enum D3D11_SHADER_MIN_PRECISION_SUPPORT
-    {
-        D3D11_SHADER_MIN_PRECISION_10_BIT = 0x1,
-        D3D11_SHADER_MIN_PRECISION_16_BIT = 0x2,
-    }
+    D3D11_SHADER_MIN_PRECISION_10_BIT = 0x1,
+    D3D11_SHADER_MIN_PRECISION_16_BIT = 0x2,
 }

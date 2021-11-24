@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="STRRET" /> struct.</summary>
+public static unsafe partial class STRRETTests
 {
-    /// <summary>Provides validation of the <see cref="STRRET" /> struct.</summary>
-    public static unsafe partial class STRRETTests
+    /// <summary>Validates that the <see cref="STRRET" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="STRRET" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<STRRET>(), Is.EqualTo(sizeof(STRRET)));
-        }
+        Assert.That(Marshal.SizeOf<STRRET>(), Is.EqualTo(sizeof(STRRET)));
+    }
 
-        /// <summary>Validates that the <see cref="STRRET" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(STRRET).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="STRRET" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(STRRET).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="STRRET" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="STRRET" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(STRRET), Is.EqualTo(272));
-            }
-            else
-            {
-                Assert.That(sizeof(STRRET), Is.EqualTo(264));
-            }
+            Assert.That(sizeof(STRRET), Is.EqualTo(272));
+        }
+        else
+        {
+            Assert.That(sizeof(STRRET), Is.EqualTo(264));
         }
     }
 }

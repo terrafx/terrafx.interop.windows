@@ -3,13 +3,12 @@
 // Ported from shared/ws2ipdef.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct IPV6_MREQ
-    {
-        public IN6_ADDR ipv6mr_multiaddr;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("ULONG")]
-        public uint ipv6mr_interface;
-    }
+public partial struct IPV6_MREQ
+{
+    public IN6_ADDR ipv6mr_multiaddr;
+
+    [NativeTypeName("ULONG")]
+    public uint ipv6mr_interface;
 }

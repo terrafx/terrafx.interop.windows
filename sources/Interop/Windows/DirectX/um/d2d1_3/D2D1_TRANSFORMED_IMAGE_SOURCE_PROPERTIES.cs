@@ -3,18 +3,17 @@
 // Ported from um/d2d1_3.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES
 {
-    public partial struct D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES
-    {
-        public D2D1_ORIENTATION orientation;
+    public D2D1_ORIENTATION orientation;
 
-        public float scaleX;
+    public float scaleX;
 
-        public float scaleY;
+    public float scaleY;
 
-        public D2D1_INTERPOLATION_MODE interpolationMode;
+    public D2D1_INTERPOLATION_MODE interpolationMode;
 
-        public D2D1_TRANSFORMED_IMAGE_SOURCE_OPTIONS options;
-    }
+    public D2D1_TRANSFORMED_IMAGE_SOURCE_OPTIONS options;
 }

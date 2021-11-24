@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFVideoMediaType" /> struct.</summary>
+public static unsafe partial class IMFVideoMediaTypeTests
 {
-    /// <summary>Provides validation of the <see cref="IMFVideoMediaType" /> struct.</summary>
-    public static unsafe partial class IMFVideoMediaTypeTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFVideoMediaType" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFVideoMediaType" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFVideoMediaType).GUID, Is.EqualTo(IID_IMFVideoMediaType));
-        }
+        Assert.That(typeof(IMFVideoMediaType).GUID, Is.EqualTo(IID_IMFVideoMediaType));
+    }
 
-        /// <summary>Validates that the <see cref="IMFVideoMediaType" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFVideoMediaType>(), Is.EqualTo(sizeof(IMFVideoMediaType)));
-        }
+    /// <summary>Validates that the <see cref="IMFVideoMediaType" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFVideoMediaType>(), Is.EqualTo(sizeof(IMFVideoMediaType)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFVideoMediaType" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFVideoMediaType).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFVideoMediaType" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFVideoMediaType).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFVideoMediaType" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFVideoMediaType" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFVideoMediaType), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFVideoMediaType), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFVideoMediaType), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFVideoMediaType), Is.EqualTo(4));
         }
     }
 }

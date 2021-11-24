@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("0D04D285-6BEC-11CF-8B97-00AA00476DA6")]
+public partial struct OldHTMLFormElement
 {
-    [Guid("0D04D285-6BEC-11CF-8B97-00AA00476DA6")]
-    public partial struct OldHTMLFormElement
-    {
-    }
 }

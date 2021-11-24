@@ -5,15 +5,14 @@
 
 using System;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+public unsafe partial struct IWeakReference
 {
-    public unsafe partial struct IWeakReference
+    public int Resolve<T>(T** objectReference)
+        where T : unmanaged, IInspectable.Interface
     {
-        public int Resolve<T>(T** objectReference)
-            where T : unmanaged, IInspectable.Interface
-        {
-            Guid iid = typeof(T).GUID;
-            return Resolve(&iid, (IInspectable**)objectReference);
-        }
+        Guid iid = typeof(T).GUID;
+        return Resolve(&iid, (IInspectable**)objectReference);
     }
 }

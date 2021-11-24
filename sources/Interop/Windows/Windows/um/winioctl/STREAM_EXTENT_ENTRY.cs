@@ -5,21 +5,20 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct STREAM_EXTENT_ENTRY
 {
-    public partial struct STREAM_EXTENT_ENTRY
+    [NativeTypeName("DWORD")]
+    public uint Flags;
+
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:15362:5)")]
+    public _ExtentInformation_e__Union ExtentInformation;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _ExtentInformation_e__Union
     {
-        [NativeTypeName("DWORD")]
-        public uint Flags;
-
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:15362:5)")]
-        public _ExtentInformation_e__Union ExtentInformation;
-
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _ExtentInformation_e__Union
-        {
-            [FieldOffset(0)]
-            public RETRIEVAL_POINTERS_BUFFER RetrievalPointers;
-        }
+        [FieldOffset(0)]
+        public RETRIEVAL_POINTERS_BUFFER RetrievalPointers;
     }
 }

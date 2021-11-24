@@ -5,12 +5,11 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
-{
-    public partial struct D3D11_FEATURE_DATA_THREADING
-    {
-        public BOOL DriverConcurrentCreates;
+namespace TerraFX.Interop.DirectX;
 
-        public BOOL DriverCommandLists;
-    }
+public partial struct D3D11_FEATURE_DATA_THREADING
+{
+    public BOOL DriverConcurrentCreates;
+
+    public BOOL DriverCommandLists;
 }

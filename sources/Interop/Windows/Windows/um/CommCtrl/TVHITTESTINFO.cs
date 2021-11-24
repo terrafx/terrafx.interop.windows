@@ -3,14 +3,13 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TVHITTESTINFO
 {
-    public partial struct TVHITTESTINFO
-    {
-        public POINT pt;
+    public POINT pt;
 
-        public uint flags;
+    public uint flags;
 
-        public HTREEITEM hItem;
-    }
+    public HTREEITEM hItem;
 }

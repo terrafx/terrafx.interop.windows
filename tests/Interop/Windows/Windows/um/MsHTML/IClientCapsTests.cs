@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IClientCaps" /> struct.</summary>
+public static unsafe partial class IClientCapsTests
 {
-    /// <summary>Provides validation of the <see cref="IClientCaps" /> struct.</summary>
-    public static unsafe partial class IClientCapsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IClientCaps" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IClientCaps" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IClientCaps).GUID, Is.EqualTo(IID_IClientCaps));
-        }
+        Assert.That(typeof(IClientCaps).GUID, Is.EqualTo(IID_IClientCaps));
+    }
 
-        /// <summary>Validates that the <see cref="IClientCaps" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IClientCaps>(), Is.EqualTo(sizeof(IClientCaps)));
-        }
+    /// <summary>Validates that the <see cref="IClientCaps" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IClientCaps>(), Is.EqualTo(sizeof(IClientCaps)));
+    }
 
-        /// <summary>Validates that the <see cref="IClientCaps" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IClientCaps).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IClientCaps" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IClientCaps).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IClientCaps" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IClientCaps" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IClientCaps), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IClientCaps), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IClientCaps), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IClientCaps), Is.EqualTo(4));
         }
     }
 }

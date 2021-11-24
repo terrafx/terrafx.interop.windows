@@ -3,13 +3,12 @@
 // Ported from um/oaidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct IDLDESC
-    {
-        [NativeTypeName("ULONG_PTR")]
-        public nuint dwReserved;
+namespace TerraFX.Interop.Windows;
 
-        public ushort wIDLFlags;
-    }
+public partial struct IDLDESC
+{
+    [NativeTypeName("ULONG_PTR")]
+    public nuint dwReserved;
+
+    public ushort wIDLFlags;
 }

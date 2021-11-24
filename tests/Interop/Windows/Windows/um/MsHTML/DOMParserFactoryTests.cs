@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DOMParserFactory" /> struct.</summary>
+public static unsafe partial class DOMParserFactoryTests
 {
-    /// <summary>Provides validation of the <see cref="DOMParserFactory" /> struct.</summary>
-    public static unsafe partial class DOMParserFactoryTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DOMParserFactory" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DOMParserFactory" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DOMParserFactory).GUID, Is.EqualTo(IID_DOMParserFactory));
-        }
+        Assert.That(typeof(DOMParserFactory).GUID, Is.EqualTo(IID_DOMParserFactory));
+    }
 
-        /// <summary>Validates that the <see cref="DOMParserFactory" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DOMParserFactory>(), Is.EqualTo(sizeof(DOMParserFactory)));
-        }
+    /// <summary>Validates that the <see cref="DOMParserFactory" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DOMParserFactory>(), Is.EqualTo(sizeof(DOMParserFactory)));
+    }
 
-        /// <summary>Validates that the <see cref="DOMParserFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DOMParserFactory).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DOMParserFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DOMParserFactory).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DOMParserFactory" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DOMParserFactory), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="DOMParserFactory" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DOMParserFactory), Is.EqualTo(1));
     }
 }

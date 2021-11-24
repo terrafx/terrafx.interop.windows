@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.1")]
-    public partial struct ROI_AREA
-    {
-        public RECT rect;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("INT32")]
-        public int QPDelta;
-    }
+[SupportedOSPlatform("windows8.1")]
+public partial struct ROI_AREA
+{
+    public RECT rect;
+
+    [NativeTypeName("INT32")]
+    public int QPDelta;
 }

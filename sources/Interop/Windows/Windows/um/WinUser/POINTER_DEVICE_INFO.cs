@@ -5,26 +5,25 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct POINTER_DEVICE_INFO
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct POINTER_DEVICE_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint displayOrientation;
+    [NativeTypeName("DWORD")]
+    public uint displayOrientation;
 
-        public HANDLE device;
+    public HANDLE device;
 
-        public POINTER_DEVICE_TYPE pointerDeviceType;
+    public POINTER_DEVICE_TYPE pointerDeviceType;
 
-        public HMONITOR monitor;
+    public HMONITOR monitor;
 
-        [NativeTypeName("ULONG")]
-        public uint startingCursorId;
+    [NativeTypeName("ULONG")]
+    public uint startingCursorId;
 
-        public ushort maxActiveContacts;
+    public ushort maxActiveContacts;
 
-        [NativeTypeName("WCHAR [520]")]
-        public fixed ushort productString[520];
-    }
+    [NativeTypeName("WCHAR [520]")]
+    public fixed ushort productString[520];
 }

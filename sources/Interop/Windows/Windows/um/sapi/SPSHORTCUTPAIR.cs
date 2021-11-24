@@ -3,22 +3,21 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SPSHORTCUTPAIR
 {
-    public unsafe partial struct SPSHORTCUTPAIR
-    {
-        [NativeTypeName("struct SPSHORTCUTPAIR *")]
-        public SPSHORTCUTPAIR* pNextSHORTCUTPAIR;
+    [NativeTypeName("struct SPSHORTCUTPAIR *")]
+    public SPSHORTCUTPAIR* pNextSHORTCUTPAIR;
 
-        [NativeTypeName("WORD")]
-        public ushort LangID;
+    [NativeTypeName("WORD")]
+    public ushort LangID;
 
-        public SPSHORTCUTTYPE shType;
+    public SPSHORTCUTTYPE shType;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszDisplay;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszDisplay;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszSpoken;
-    }
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszSpoken;
 }

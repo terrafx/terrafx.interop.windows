@@ -3,11 +3,10 @@
 // Ported from um/ocidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum PICTUREATTRIBUTES
 {
-    public enum PICTUREATTRIBUTES
-    {
-        PICTURE_SCALABLE = 0x1,
-        PICTURE_TRANSPARENT = 0x2,
-    }
+    PICTURE_SCALABLE = 0x1,
+    PICTURE_TRANSPARENT = 0x2,
 }

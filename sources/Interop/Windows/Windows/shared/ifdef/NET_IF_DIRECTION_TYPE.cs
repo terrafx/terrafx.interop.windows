@@ -3,13 +3,12 @@
 // Ported from shared/ifdef.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum NET_IF_DIRECTION_TYPE
 {
-    public enum NET_IF_DIRECTION_TYPE
-    {
-        NET_IF_DIRECTION_SENDRECEIVE,
-        NET_IF_DIRECTION_SENDONLY,
-        NET_IF_DIRECTION_RECEIVEONLY,
-        NET_IF_DIRECTION_MAXIMUM,
-    }
+    NET_IF_DIRECTION_SENDRECEIVE,
+    NET_IF_DIRECTION_SENDONLY,
+    NET_IF_DIRECTION_RECEIVEONLY,
+    NET_IF_DIRECTION_MAXIMUM,
 }

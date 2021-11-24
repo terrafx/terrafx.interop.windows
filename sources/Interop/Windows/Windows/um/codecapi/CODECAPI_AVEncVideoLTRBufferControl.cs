@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("A4A0E93D-4CBC-444C-89F4-826D310E92A7")]
+public partial struct CODECAPI_AVEncVideoLTRBufferControl
 {
-    [Guid("A4A0E93D-4CBC-444C-89F4-826D310E92A7")]
-    public partial struct CODECAPI_AVEncVideoLTRBufferControl
-    {
-    }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="FILE_TYPE_NOTIFICATION_INPUT" /> struct.</summary>
+public static unsafe partial class FILE_TYPE_NOTIFICATION_INPUTTests
 {
-    /// <summary>Provides validation of the <see cref="FILE_TYPE_NOTIFICATION_INPUT" /> struct.</summary>
-    public static unsafe partial class FILE_TYPE_NOTIFICATION_INPUTTests
+    /// <summary>Validates that the <see cref="FILE_TYPE_NOTIFICATION_INPUT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="FILE_TYPE_NOTIFICATION_INPUT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<FILE_TYPE_NOTIFICATION_INPUT>(), Is.EqualTo(sizeof(FILE_TYPE_NOTIFICATION_INPUT)));
-        }
+        Assert.That(Marshal.SizeOf<FILE_TYPE_NOTIFICATION_INPUT>(), Is.EqualTo(sizeof(FILE_TYPE_NOTIFICATION_INPUT)));
+    }
 
-        /// <summary>Validates that the <see cref="FILE_TYPE_NOTIFICATION_INPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(FILE_TYPE_NOTIFICATION_INPUT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="FILE_TYPE_NOTIFICATION_INPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(FILE_TYPE_NOTIFICATION_INPUT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="FILE_TYPE_NOTIFICATION_INPUT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(FILE_TYPE_NOTIFICATION_INPUT), Is.EqualTo(24));
-        }
+    /// <summary>Validates that the <see cref="FILE_TYPE_NOTIFICATION_INPUT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(FILE_TYPE_NOTIFICATION_INPUT), Is.EqualTo(24));
     }
 }

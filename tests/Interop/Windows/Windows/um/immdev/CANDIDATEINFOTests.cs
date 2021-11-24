@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CANDIDATEINFO" /> struct.</summary>
+public static unsafe partial class CANDIDATEINFOTests
 {
-    /// <summary>Provides validation of the <see cref="CANDIDATEINFO" /> struct.</summary>
-    public static unsafe partial class CANDIDATEINFOTests
+    /// <summary>Validates that the <see cref="CANDIDATEINFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CANDIDATEINFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CANDIDATEINFO>(), Is.EqualTo(sizeof(CANDIDATEINFO)));
-        }
+        Assert.That(Marshal.SizeOf<CANDIDATEINFO>(), Is.EqualTo(sizeof(CANDIDATEINFO)));
+    }
 
-        /// <summary>Validates that the <see cref="CANDIDATEINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CANDIDATEINFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CANDIDATEINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CANDIDATEINFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CANDIDATEINFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CANDIDATEINFO), Is.EqualTo(144));
-        }
+    /// <summary>Validates that the <see cref="CANDIDATEINFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CANDIDATEINFO), Is.EqualTo(144));
     }
 }

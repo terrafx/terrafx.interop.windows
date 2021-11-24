@@ -3,17 +3,16 @@
 // Ported from shared/hidsdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct HIDD_ATTRIBUTES
 {
-    public partial struct HIDD_ATTRIBUTES
-    {
-        [NativeTypeName("ULONG")]
-        public uint Size;
+    [NativeTypeName("ULONG")]
+    public uint Size;
 
-        public ushort VendorID;
+    public ushort VendorID;
 
-        public ushort ProductID;
+    public ushort ProductID;
 
-        public ushort VersionNumber;
-    }
+    public ushort VersionNumber;
 }

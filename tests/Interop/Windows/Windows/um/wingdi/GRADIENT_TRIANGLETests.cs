@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="GRADIENT_TRIANGLE" /> struct.</summary>
+public static unsafe partial class GRADIENT_TRIANGLETests
 {
-    /// <summary>Provides validation of the <see cref="GRADIENT_TRIANGLE" /> struct.</summary>
-    public static unsafe partial class GRADIENT_TRIANGLETests
+    /// <summary>Validates that the <see cref="GRADIENT_TRIANGLE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="GRADIENT_TRIANGLE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<GRADIENT_TRIANGLE>(), Is.EqualTo(sizeof(GRADIENT_TRIANGLE)));
-        }
+        Assert.That(Marshal.SizeOf<GRADIENT_TRIANGLE>(), Is.EqualTo(sizeof(GRADIENT_TRIANGLE)));
+    }
 
-        /// <summary>Validates that the <see cref="GRADIENT_TRIANGLE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(GRADIENT_TRIANGLE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="GRADIENT_TRIANGLE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(GRADIENT_TRIANGLE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="GRADIENT_TRIANGLE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(GRADIENT_TRIANGLE), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="GRADIENT_TRIANGLE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(GRADIENT_TRIANGLE), Is.EqualTo(12));
     }
 }

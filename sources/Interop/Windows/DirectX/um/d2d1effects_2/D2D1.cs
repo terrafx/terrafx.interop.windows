@@ -3,11 +3,10 @@
 // Ported from um/d2d1effects_2.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public static partial class D2D1
 {
-    public static partial class D2D1
-    {
-        [NativeTypeName("#define D2D1_SCENE_REFERRED_SDR_WHITE_LEVEL 80.0f")]
-        public const float D2D1_SCENE_REFERRED_SDR_WHITE_LEVEL = 80.0f;
-    }
+    [NativeTypeName("#define D2D1_SCENE_REFERRED_SDR_WHITE_LEVEL 80.0f")]
+    public const float D2D1_SCENE_REFERRED_SDR_WHITE_LEVEL = 80.0f;
 }

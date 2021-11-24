@@ -5,15 +5,14 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct COMPATIBILITY_CONTEXT_ELEMENT
 {
-    public partial struct COMPATIBILITY_CONTEXT_ELEMENT
-    {
-        public Guid Id;
+    public Guid Id;
 
-        public ACTCTX_COMPATIBILITY_ELEMENT_TYPE Type;
+    public ACTCTX_COMPATIBILITY_ELEMENT_TYPE Type;
 
-        [NativeTypeName("ULONGLONG")]
-        public ulong MaxVersionTested;
-    }
+    [NativeTypeName("ULONGLONG")]
+    public ulong MaxVersionTested;
 }

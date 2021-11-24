@@ -7,30 +7,29 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TRANSMSGLIST
 {
-    public partial struct TRANSMSGLIST
+    public uint uMsgCount;
+
+    [NativeTypeName("TRANSMSG [1]")]
+    public _TransMsg_e__FixedBuffer TransMsg;
+
+    public partial struct _TransMsg_e__FixedBuffer
     {
-        public uint uMsgCount;
+        public TRANSMSG e0;
 
-        [NativeTypeName("TRANSMSG [1]")]
-        public _TransMsg_e__FixedBuffer TransMsg;
-
-        public partial struct _TransMsg_e__FixedBuffer
+        public ref TRANSMSG this[int index]
         {
-            public TRANSMSG e0;
-
-            public ref TRANSMSG this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<TRANSMSG> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<TRANSMSG> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

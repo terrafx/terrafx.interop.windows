@@ -5,18 +5,17 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct DROPFILES
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct DROPFILES
-    {
-        [NativeTypeName("DWORD")]
-        public uint pFiles;
+    [NativeTypeName("DWORD")]
+    public uint pFiles;
 
-        public POINT pt;
+    public POINT pt;
 
-        public BOOL fNC;
+    public BOOL fNC;
 
-        public BOOL fWide;
-    }
+    public BOOL fWide;
 }

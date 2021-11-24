@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IAsyncRpcChannelBuffer" /> struct.</summary>
+public static unsafe partial class IAsyncRpcChannelBufferTests
 {
-    /// <summary>Provides validation of the <see cref="IAsyncRpcChannelBuffer" /> struct.</summary>
-    public static unsafe partial class IAsyncRpcChannelBufferTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAsyncRpcChannelBuffer" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAsyncRpcChannelBuffer" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAsyncRpcChannelBuffer).GUID, Is.EqualTo(IID_IAsyncRpcChannelBuffer));
-        }
+        Assert.That(typeof(IAsyncRpcChannelBuffer).GUID, Is.EqualTo(IID_IAsyncRpcChannelBuffer));
+    }
 
-        /// <summary>Validates that the <see cref="IAsyncRpcChannelBuffer" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IAsyncRpcChannelBuffer>(), Is.EqualTo(sizeof(IAsyncRpcChannelBuffer)));
-        }
+    /// <summary>Validates that the <see cref="IAsyncRpcChannelBuffer" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IAsyncRpcChannelBuffer>(), Is.EqualTo(sizeof(IAsyncRpcChannelBuffer)));
+    }
 
-        /// <summary>Validates that the <see cref="IAsyncRpcChannelBuffer" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IAsyncRpcChannelBuffer).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IAsyncRpcChannelBuffer" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IAsyncRpcChannelBuffer).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IAsyncRpcChannelBuffer" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IAsyncRpcChannelBuffer" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IAsyncRpcChannelBuffer), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IAsyncRpcChannelBuffer), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IAsyncRpcChannelBuffer), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IAsyncRpcChannelBuffer), Is.EqualTo(4));
         }
     }
 }

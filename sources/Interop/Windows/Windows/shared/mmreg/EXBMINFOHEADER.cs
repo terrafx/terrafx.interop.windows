@@ -5,14 +5,13 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct EXBMINFOHEADER
-    {
-        public BITMAPINFOHEADER bmi;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint biExtDataOffset;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct EXBMINFOHEADER
+{
+    public BITMAPINFOHEADER bmi;
+
+    [NativeTypeName("DWORD")]
+    public uint biExtDataOffset;
 }

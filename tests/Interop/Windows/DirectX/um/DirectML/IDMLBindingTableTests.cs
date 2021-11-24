@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDMLBindingTable" /> struct.</summary>
+public static unsafe partial class IDMLBindingTableTests
 {
-    /// <summary>Provides validation of the <see cref="IDMLBindingTable" /> struct.</summary>
-    public static unsafe partial class IDMLBindingTableTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDMLBindingTable" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDMLBindingTable" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDMLBindingTable).GUID, Is.EqualTo(IID_IDMLBindingTable));
-        }
+        Assert.That(typeof(IDMLBindingTable).GUID, Is.EqualTo(IID_IDMLBindingTable));
+    }
 
-        /// <summary>Validates that the <see cref="IDMLBindingTable" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDMLBindingTable>(), Is.EqualTo(sizeof(IDMLBindingTable)));
-        }
+    /// <summary>Validates that the <see cref="IDMLBindingTable" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDMLBindingTable>(), Is.EqualTo(sizeof(IDMLBindingTable)));
+    }
 
-        /// <summary>Validates that the <see cref="IDMLBindingTable" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDMLBindingTable).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDMLBindingTable" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDMLBindingTable).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDMLBindingTable" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDMLBindingTable" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDMLBindingTable), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDMLBindingTable), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDMLBindingTable), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDMLBindingTable), Is.EqualTo(4));
         }
     }
 }

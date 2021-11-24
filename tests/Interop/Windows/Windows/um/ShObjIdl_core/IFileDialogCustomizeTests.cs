@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IFileDialogCustomize" /> struct.</summary>
+public static unsafe partial class IFileDialogCustomizeTests
 {
-    /// <summary>Provides validation of the <see cref="IFileDialogCustomize" /> struct.</summary>
-    public static unsafe partial class IFileDialogCustomizeTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IFileDialogCustomize" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IFileDialogCustomize" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IFileDialogCustomize).GUID, Is.EqualTo(IID_IFileDialogCustomize));
-        }
+        Assert.That(typeof(IFileDialogCustomize).GUID, Is.EqualTo(IID_IFileDialogCustomize));
+    }
 
-        /// <summary>Validates that the <see cref="IFileDialogCustomize" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IFileDialogCustomize>(), Is.EqualTo(sizeof(IFileDialogCustomize)));
-        }
+    /// <summary>Validates that the <see cref="IFileDialogCustomize" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IFileDialogCustomize>(), Is.EqualTo(sizeof(IFileDialogCustomize)));
+    }
 
-        /// <summary>Validates that the <see cref="IFileDialogCustomize" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IFileDialogCustomize).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IFileDialogCustomize" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IFileDialogCustomize).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IFileDialogCustomize" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IFileDialogCustomize" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IFileDialogCustomize), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IFileDialogCustomize), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IFileDialogCustomize), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IFileDialogCustomize), Is.EqualTo(4));
         }
     }
 }

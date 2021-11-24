@@ -8,91 +8,90 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+[Guid("6A0083F9-8947-4C1D-9CE0-CDEE22B23135")]
+[NativeTypeName("struct IMFMediaKeySessionNotify : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IMFMediaKeySessionNotify : IMFMediaKeySessionNotify.Interface
 {
-    [SupportedOSPlatform("windows8.1")]
-    [Guid("6A0083F9-8947-4C1D-9CE0-CDEE22B23135")]
-    [NativeTypeName("struct IMFMediaKeySessionNotify : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaKeySessionNotify : IMFMediaKeySessionNotify.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMFMediaKeySessionNotify*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaKeySessionNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMFMediaKeySessionNotify*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaKeySessionNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMFMediaKeySessionNotify*, uint>)(lpVtbl[1]))((IMFMediaKeySessionNotify*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMFMediaKeySessionNotify*, uint>)(lpVtbl[1]))((IMFMediaKeySessionNotify*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMFMediaKeySessionNotify*, uint>)(lpVtbl[2]))((IMFMediaKeySessionNotify*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMFMediaKeySessionNotify*, uint>)(lpVtbl[2]))((IMFMediaKeySessionNotify*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public void KeyMessage([NativeTypeName("BSTR")] ushort* destinationURL, [NativeTypeName("const BYTE *")] byte* message, [NativeTypeName("DWORD")] uint cb)
+    {
+        ((delegate* unmanaged<IMFMediaKeySessionNotify*, ushort*, byte*, uint, void>)(lpVtbl[3]))((IMFMediaKeySessionNotify*)Unsafe.AsPointer(ref this), destinationURL, message, cb);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public void KeyAdded()
+    {
+        ((delegate* unmanaged<IMFMediaKeySessionNotify*, void>)(lpVtbl[4]))((IMFMediaKeySessionNotify*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public void KeyError(ushort code, [NativeTypeName("DWORD")] uint systemCode)
+    {
+        ((delegate* unmanaged<IMFMediaKeySessionNotify*, ushort, uint, void>)(lpVtbl[5]))((IMFMediaKeySessionNotify*)Unsafe.AsPointer(ref this), code, systemCode);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public void KeyMessage([NativeTypeName("BSTR")] ushort* destinationURL, [NativeTypeName("const BYTE *")] byte* message, [NativeTypeName("DWORD")] uint cb)
-        {
-            ((delegate* unmanaged<IMFMediaKeySessionNotify*, ushort*, byte*, uint, void>)(lpVtbl[3]))((IMFMediaKeySessionNotify*)Unsafe.AsPointer(ref this), destinationURL, message, cb);
-        }
+        void KeyMessage([NativeTypeName("BSTR")] ushort* destinationURL, [NativeTypeName("const BYTE *")] byte* message, [NativeTypeName("DWORD")] uint cb);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public void KeyAdded()
-        {
-            ((delegate* unmanaged<IMFMediaKeySessionNotify*, void>)(lpVtbl[4]))((IMFMediaKeySessionNotify*)Unsafe.AsPointer(ref this));
-        }
+        void KeyAdded();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public void KeyError(ushort code, [NativeTypeName("DWORD")] uint systemCode)
-        {
-            ((delegate* unmanaged<IMFMediaKeySessionNotify*, ushort, uint, void>)(lpVtbl[5]))((IMFMediaKeySessionNotify*)Unsafe.AsPointer(ref this), code, systemCode);
-        }
+        void KeyError(ushort code, [NativeTypeName("DWORD")] uint systemCode);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            void KeyMessage([NativeTypeName("BSTR")] ushort* destinationURL, [NativeTypeName("const BYTE *")] byte* message, [NativeTypeName("DWORD")] uint cb);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaKeySessionNotify*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            void KeyAdded();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaKeySessionNotify*, uint> AddRef;
 
-            [VtblIndex(5)]
-            void KeyError(ushort code, [NativeTypeName("DWORD")] uint systemCode);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaKeySessionNotify*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaKeySessionNotify*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("void (BSTR, const BYTE *, DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaKeySessionNotify*, ushort*, byte*, uint, void> KeyMessage;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaKeySessionNotify*, uint> AddRef;
+        [NativeTypeName("void () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaKeySessionNotify*, void> KeyAdded;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaKeySessionNotify*, uint> Release;
-
-            [NativeTypeName("void (BSTR, const BYTE *, DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaKeySessionNotify*, ushort*, byte*, uint, void> KeyMessage;
-
-            [NativeTypeName("void () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaKeySessionNotify*, void> KeyAdded;
-
-            [NativeTypeName("void (USHORT, DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaKeySessionNotify*, ushort, uint, void> KeyError;
-        }
+        [NativeTypeName("void (USHORT, DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaKeySessionNotify*, ushort, uint, void> KeyError;
     }
 }

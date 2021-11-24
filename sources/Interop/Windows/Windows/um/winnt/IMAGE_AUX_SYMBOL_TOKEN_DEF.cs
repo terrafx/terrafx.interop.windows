@@ -5,19 +5,18 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 2)]
+public unsafe partial struct IMAGE_AUX_SYMBOL_TOKEN_DEF
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 2)]
-    public unsafe partial struct IMAGE_AUX_SYMBOL_TOKEN_DEF
-    {
-        public byte bAuxType;
+    public byte bAuxType;
 
-        public byte bReserved;
+    public byte bReserved;
 
-        [NativeTypeName("DWORD")]
-        public uint SymbolTableIndex;
+    [NativeTypeName("DWORD")]
+    public uint SymbolTableIndex;
 
-        [NativeTypeName("BYTE [12]")]
-        public fixed byte rgbReserved[12];
-    }
+    [NativeTypeName("BYTE [12]")]
+    public fixed byte rgbReserved[12];
 }

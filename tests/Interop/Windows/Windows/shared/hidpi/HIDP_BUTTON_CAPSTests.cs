@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HIDP_BUTTON_CAPS" /> struct.</summary>
+public static unsafe partial class HIDP_BUTTON_CAPSTests
 {
-    /// <summary>Provides validation of the <see cref="HIDP_BUTTON_CAPS" /> struct.</summary>
-    public static unsafe partial class HIDP_BUTTON_CAPSTests
+    /// <summary>Validates that the <see cref="HIDP_BUTTON_CAPS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="HIDP_BUTTON_CAPS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HIDP_BUTTON_CAPS>(), Is.EqualTo(sizeof(HIDP_BUTTON_CAPS)));
-        }
+        Assert.That(Marshal.SizeOf<HIDP_BUTTON_CAPS>(), Is.EqualTo(sizeof(HIDP_BUTTON_CAPS)));
+    }
 
-        /// <summary>Validates that the <see cref="HIDP_BUTTON_CAPS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HIDP_BUTTON_CAPS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HIDP_BUTTON_CAPS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HIDP_BUTTON_CAPS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HIDP_BUTTON_CAPS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HIDP_BUTTON_CAPS), Is.EqualTo(72));
-        }
+    /// <summary>Validates that the <see cref="HIDP_BUTTON_CAPS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HIDP_BUTTON_CAPS), Is.EqualTo(72));
     }
 }

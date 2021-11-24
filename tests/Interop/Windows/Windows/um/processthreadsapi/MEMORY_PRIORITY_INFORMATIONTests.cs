@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MEMORY_PRIORITY_INFORMATION" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class MEMORY_PRIORITY_INFORMATIONTests
 {
-    /// <summary>Provides validation of the <see cref="MEMORY_PRIORITY_INFORMATION" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class MEMORY_PRIORITY_INFORMATIONTests
+    /// <summary>Validates that the <see cref="MEMORY_PRIORITY_INFORMATION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MEMORY_PRIORITY_INFORMATION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MEMORY_PRIORITY_INFORMATION>(), Is.EqualTo(sizeof(MEMORY_PRIORITY_INFORMATION)));
-        }
+        Assert.That(Marshal.SizeOf<MEMORY_PRIORITY_INFORMATION>(), Is.EqualTo(sizeof(MEMORY_PRIORITY_INFORMATION)));
+    }
 
-        /// <summary>Validates that the <see cref="MEMORY_PRIORITY_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MEMORY_PRIORITY_INFORMATION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MEMORY_PRIORITY_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MEMORY_PRIORITY_INFORMATION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MEMORY_PRIORITY_INFORMATION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MEMORY_PRIORITY_INFORMATION), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="MEMORY_PRIORITY_INFORMATION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MEMORY_PRIORITY_INFORMATION), Is.EqualTo(4));
     }
 }

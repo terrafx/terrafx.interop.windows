@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum DWRITE_AUTOMATIC_FONT_AXES
 {
-    [Flags]
-    public enum DWRITE_AUTOMATIC_FONT_AXES
-    {
-        DWRITE_AUTOMATIC_FONT_AXES_NONE = 0x0000,
-        DWRITE_AUTOMATIC_FONT_AXES_OPTICAL_SIZE = 0x0001,
-    }
+    DWRITE_AUTOMATIC_FONT_AXES_NONE = 0x0000,
+    DWRITE_AUTOMATIC_FONT_AXES_OPTICAL_SIZE = 0x0001,
 }

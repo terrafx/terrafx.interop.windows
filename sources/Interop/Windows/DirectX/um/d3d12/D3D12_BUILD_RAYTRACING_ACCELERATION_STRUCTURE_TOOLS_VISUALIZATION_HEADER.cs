@@ -3,12 +3,11 @@
 // Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
-{
-    public partial struct D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_TOOLS_VISUALIZATION_HEADER
-    {
-        public D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE Type;
+namespace TerraFX.Interop.DirectX;
 
-        public uint NumDescs;
-    }
+public partial struct D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_TOOLS_VISUALIZATION_HEADER
+{
+    public D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE Type;
+
+    public uint NumDescs;
 }

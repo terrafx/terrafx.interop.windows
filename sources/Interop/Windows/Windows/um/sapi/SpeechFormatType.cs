@@ -5,11 +5,10 @@
 
 using static TerraFX.Interop.Windows.SPSTREAMFORMATTYPE;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechFormatType
 {
-    public enum SpeechFormatType
-    {
-        SFTInput = SPWF_INPUT,
-        SFTSREngine = SPWF_SRENGINE,
-    }
+    SFTInput = SPWF_INPUT,
+    SFTSREngine = SPWF_SRENGINE,
 }

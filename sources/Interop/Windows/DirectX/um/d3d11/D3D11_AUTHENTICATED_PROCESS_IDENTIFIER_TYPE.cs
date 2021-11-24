@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public enum D3D11_AUTHENTICATED_PROCESS_IDENTIFIER_TYPE
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum D3D11_AUTHENTICATED_PROCESS_IDENTIFIER_TYPE
-    {
-        D3D11_PROCESSIDTYPE_UNKNOWN = 0,
-        D3D11_PROCESSIDTYPE_DWM = 1,
-        D3D11_PROCESSIDTYPE_HANDLE = 2,
-    }
+    D3D11_PROCESSIDTYPE_UNKNOWN = 0,
+    D3D11_PROCESSIDTYPE_DWM = 1,
+    D3D11_PROCESSIDTYPE_HANDLE = 2,
 }

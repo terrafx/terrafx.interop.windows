@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PRJ_NOTIFICATION_PARAMETERS" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.17763.0")]
+public static unsafe partial class PRJ_NOTIFICATION_PARAMETERSTests
 {
-    /// <summary>Provides validation of the <see cref="PRJ_NOTIFICATION_PARAMETERS" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0.17763.0")]
-    public static unsafe partial class PRJ_NOTIFICATION_PARAMETERSTests
+    /// <summary>Validates that the <see cref="PRJ_NOTIFICATION_PARAMETERS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PRJ_NOTIFICATION_PARAMETERS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PRJ_NOTIFICATION_PARAMETERS>(), Is.EqualTo(sizeof(PRJ_NOTIFICATION_PARAMETERS)));
-        }
+        Assert.That(Marshal.SizeOf<PRJ_NOTIFICATION_PARAMETERS>(), Is.EqualTo(sizeof(PRJ_NOTIFICATION_PARAMETERS)));
+    }
 
-        /// <summary>Validates that the <see cref="PRJ_NOTIFICATION_PARAMETERS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutExplicitTest()
-        {
-            Assert.That(typeof(PRJ_NOTIFICATION_PARAMETERS).IsExplicitLayout, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PRJ_NOTIFICATION_PARAMETERS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutExplicitTest()
+    {
+        Assert.That(typeof(PRJ_NOTIFICATION_PARAMETERS).IsExplicitLayout, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PRJ_NOTIFICATION_PARAMETERS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(PRJ_NOTIFICATION_PARAMETERS), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="PRJ_NOTIFICATION_PARAMETERS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(PRJ_NOTIFICATION_PARAMETERS), Is.EqualTo(4));
     }
 }

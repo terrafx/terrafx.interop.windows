@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ACCESS_REASONS" /> struct.</summary>
+public static unsafe partial class ACCESS_REASONSTests
 {
-    /// <summary>Provides validation of the <see cref="ACCESS_REASONS" /> struct.</summary>
-    public static unsafe partial class ACCESS_REASONSTests
+    /// <summary>Validates that the <see cref="ACCESS_REASONS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="ACCESS_REASONS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ACCESS_REASONS>(), Is.EqualTo(sizeof(ACCESS_REASONS)));
-        }
+        Assert.That(Marshal.SizeOf<ACCESS_REASONS>(), Is.EqualTo(sizeof(ACCESS_REASONS)));
+    }
 
-        /// <summary>Validates that the <see cref="ACCESS_REASONS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ACCESS_REASONS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ACCESS_REASONS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ACCESS_REASONS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ACCESS_REASONS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(ACCESS_REASONS), Is.EqualTo(128));
-        }
+    /// <summary>Validates that the <see cref="ACCESS_REASONS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(ACCESS_REASONS), Is.EqualTo(128));
     }
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DispSVGStopElement" /> struct.</summary>
+public static unsafe partial class DispSVGStopElementTests
 {
-    /// <summary>Provides validation of the <see cref="DispSVGStopElement" /> struct.</summary>
-    public static unsafe partial class DispSVGStopElementTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispSVGStopElement" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispSVGStopElement" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DispSVGStopElement).GUID, Is.EqualTo(IID_DispSVGStopElement));
-        }
+        Assert.That(typeof(DispSVGStopElement).GUID, Is.EqualTo(IID_DispSVGStopElement));
+    }
 
-        /// <summary>Validates that the <see cref="DispSVGStopElement" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DispSVGStopElement>(), Is.EqualTo(sizeof(DispSVGStopElement)));
-        }
+    /// <summary>Validates that the <see cref="DispSVGStopElement" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DispSVGStopElement>(), Is.EqualTo(sizeof(DispSVGStopElement)));
+    }
 
-        /// <summary>Validates that the <see cref="DispSVGStopElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DispSVGStopElement).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DispSVGStopElement" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DispSVGStopElement).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DispSVGStopElement" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DispSVGStopElement" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DispSVGStopElement), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(DispSVGStopElement), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(DispSVGStopElement), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(DispSVGStopElement), Is.EqualTo(4));
         }
     }
 }

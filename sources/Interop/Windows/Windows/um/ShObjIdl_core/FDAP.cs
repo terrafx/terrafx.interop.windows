@@ -3,11 +3,10 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum FDAP
 {
-    public enum FDAP
-    {
-        FDAP_BOTTOM = 0,
-        FDAP_TOP = 1,
-    }
+    FDAP_BOTTOM = 0,
+    FDAP_TOP = 1,
 }

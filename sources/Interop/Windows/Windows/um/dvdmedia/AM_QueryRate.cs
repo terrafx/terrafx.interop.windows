@@ -3,14 +3,13 @@
 // Ported from um/dvdmedia.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct AM_QueryRate
-    {
-        [NativeTypeName("LONG")]
-        public int lMaxForwardFullFrame;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("LONG")]
-        public int lMaxReverseFullFrame;
-    }
+public partial struct AM_QueryRate
+{
+    [NativeTypeName("LONG")]
+    public int lMaxForwardFullFrame;
+
+    [NativeTypeName("LONG")]
+    public int lMaxReverseFullFrame;
 }

@@ -6,42 +6,41 @@
 using System.Runtime.CompilerServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct ID3D11On12On7Device : ID3D11On12On7Device.Interface
 {
-    public unsafe partial struct ID3D11On12On7Device : ID3D11On12On7Device.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT AcquireResource(void* pResource, D3D12_RESOURCE_STATES state)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ID3D11On12On7Device*, void*, D3D12_RESOURCE_STATES, int>)(lpVtbl[0]))((ID3D11On12On7Device*)Unsafe.AsPointer(ref this), pResource, state);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    public HRESULT ReleaseResource(void* pResource, D3D12_RESOURCE_STATES state)
+    {
+        return ((delegate* unmanaged<ID3D11On12On7Device*, void*, D3D12_RESOURCE_STATES, int>)(lpVtbl[1]))((ID3D11On12On7Device*)Unsafe.AsPointer(ref this), pResource, state);
+    }
+
+    public interface Interface
+    {
         [VtblIndex(0)]
-        public HRESULT AcquireResource(void* pResource, D3D12_RESOURCE_STATES state)
-        {
-            return ((delegate* unmanaged<ID3D11On12On7Device*, void*, D3D12_RESOURCE_STATES, int>)(lpVtbl[0]))((ID3D11On12On7Device*)Unsafe.AsPointer(ref this), pResource, state);
-        }
+        HRESULT AcquireResource(void* pResource, D3D12_RESOURCE_STATES state);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(1)]
-        public HRESULT ReleaseResource(void* pResource, D3D12_RESOURCE_STATES state)
-        {
-            return ((delegate* unmanaged<ID3D11On12On7Device*, void*, D3D12_RESOURCE_STATES, int>)(lpVtbl[1]))((ID3D11On12On7Device*)Unsafe.AsPointer(ref this), pResource, state);
-        }
+        HRESULT ReleaseResource(void* pResource, D3D12_RESOURCE_STATES state);
+    }
 
-        public interface Interface
-        {
-            [VtblIndex(0)]
-            HRESULT AcquireResource(void* pResource, D3D12_RESOURCE_STATES state);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (ID3D11On12On7Resource *, D3D12_RESOURCE_STATES) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D11On12On7Device*, void*, D3D12_RESOURCE_STATES, int> AcquireResource;
 
-            [VtblIndex(1)]
-            HRESULT ReleaseResource(void* pResource, D3D12_RESOURCE_STATES state);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (ID3D11On12On7Resource *, D3D12_RESOURCE_STATES) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D11On12On7Device*, void*, D3D12_RESOURCE_STATES, int> AcquireResource;
-
-            [NativeTypeName("HRESULT (ID3D11On12On7Resource *, D3D12_RESOURCE_STATES) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D11On12On7Device*, void*, D3D12_RESOURCE_STATES, int> ReleaseResource;
-        }
+        [NativeTypeName("HRESULT (ID3D11On12On7Resource *, D3D12_RESOURCE_STATES) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D11On12On7Device*, void*, D3D12_RESOURCE_STATES, int> ReleaseResource;
     }
 }

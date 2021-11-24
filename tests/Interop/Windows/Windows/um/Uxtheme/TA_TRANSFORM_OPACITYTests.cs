@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TA_TRANSFORM_OPACITY" /> struct.</summary>
+public static unsafe partial class TA_TRANSFORM_OPACITYTests
 {
-    /// <summary>Provides validation of the <see cref="TA_TRANSFORM_OPACITY" /> struct.</summary>
-    public static unsafe partial class TA_TRANSFORM_OPACITYTests
+    /// <summary>Validates that the <see cref="TA_TRANSFORM_OPACITY" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TA_TRANSFORM_OPACITY" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TA_TRANSFORM_OPACITY>(), Is.EqualTo(sizeof(TA_TRANSFORM_OPACITY)));
-        }
+        Assert.That(Marshal.SizeOf<TA_TRANSFORM_OPACITY>(), Is.EqualTo(sizeof(TA_TRANSFORM_OPACITY)));
+    }
 
-        /// <summary>Validates that the <see cref="TA_TRANSFORM_OPACITY" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TA_TRANSFORM_OPACITY).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TA_TRANSFORM_OPACITY" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TA_TRANSFORM_OPACITY).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TA_TRANSFORM_OPACITY" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(TA_TRANSFORM_OPACITY), Is.EqualTo(28));
-        }
+    /// <summary>Validates that the <see cref="TA_TRANSFORM_OPACITY" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(TA_TRANSFORM_OPACITY), Is.EqualTo(28));
     }
 }

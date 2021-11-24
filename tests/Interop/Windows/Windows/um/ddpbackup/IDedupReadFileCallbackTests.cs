@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDedupReadFileCallback" /> struct.</summary>
+public static unsafe partial class IDedupReadFileCallbackTests
 {
-    /// <summary>Provides validation of the <see cref="IDedupReadFileCallback" /> struct.</summary>
-    public static unsafe partial class IDedupReadFileCallbackTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDedupReadFileCallback" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDedupReadFileCallback" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDedupReadFileCallback).GUID, Is.EqualTo(IID_IDedupReadFileCallback));
-        }
+        Assert.That(typeof(IDedupReadFileCallback).GUID, Is.EqualTo(IID_IDedupReadFileCallback));
+    }
 
-        /// <summary>Validates that the <see cref="IDedupReadFileCallback" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDedupReadFileCallback>(), Is.EqualTo(sizeof(IDedupReadFileCallback)));
-        }
+    /// <summary>Validates that the <see cref="IDedupReadFileCallback" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDedupReadFileCallback>(), Is.EqualTo(sizeof(IDedupReadFileCallback)));
+    }
 
-        /// <summary>Validates that the <see cref="IDedupReadFileCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDedupReadFileCallback).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDedupReadFileCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDedupReadFileCallback).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDedupReadFileCallback" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDedupReadFileCallback" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDedupReadFileCallback), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDedupReadFileCallback), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDedupReadFileCallback), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDedupReadFileCallback), Is.EqualTo(4));
         }
     }
 }

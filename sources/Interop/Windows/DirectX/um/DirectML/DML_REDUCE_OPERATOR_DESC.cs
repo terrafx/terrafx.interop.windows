@@ -3,21 +3,20 @@
 // Ported from um/DirectML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct DML_REDUCE_OPERATOR_DESC
 {
-    public unsafe partial struct DML_REDUCE_OPERATOR_DESC
-    {
-        public DML_REDUCE_FUNCTION Function;
+    public DML_REDUCE_FUNCTION Function;
 
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* InputTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* InputTensor;
 
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* OutputTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* OutputTensor;
 
-        public uint AxisCount;
+    public uint AxisCount;
 
-        [NativeTypeName("const UINT *")]
-        public uint* Axes;
-    }
+    [NativeTypeName("const UINT *")]
+    public uint* Axes;
 }

@@ -3,14 +3,13 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct DVD_ATR
-    {
-        [NativeTypeName("ULONG")]
-        public uint ulCAT;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("BYTE [768]")]
-        public fixed byte pbATRI[768];
-    }
+public unsafe partial struct DVD_ATR
+{
+    [NativeTypeName("ULONG")]
+    public uint ulCAT;
+
+    [NativeTypeName("BYTE [768]")]
+    public fixed byte pbATRI[768];
 }

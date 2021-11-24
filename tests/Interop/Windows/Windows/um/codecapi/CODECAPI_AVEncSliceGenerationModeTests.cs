@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CODECAPI_AVEncSliceGenerationMode" /> struct.</summary>
+public static unsafe partial class CODECAPI_AVEncSliceGenerationModeTests
 {
-    /// <summary>Provides validation of the <see cref="CODECAPI_AVEncSliceGenerationMode" /> struct.</summary>
-    public static unsafe partial class CODECAPI_AVEncSliceGenerationModeTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncSliceGenerationMode" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncSliceGenerationMode" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncSliceGenerationMode).GUID, Is.EqualTo(IID_CODECAPI_AVEncSliceGenerationMode));
-        }
+        Assert.That(typeof(CODECAPI_AVEncSliceGenerationMode).GUID, Is.EqualTo(IID_CODECAPI_AVEncSliceGenerationMode));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncSliceGenerationMode" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CODECAPI_AVEncSliceGenerationMode>(), Is.EqualTo(sizeof(CODECAPI_AVEncSliceGenerationMode)));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncSliceGenerationMode" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<CODECAPI_AVEncSliceGenerationMode>(), Is.EqualTo(sizeof(CODECAPI_AVEncSliceGenerationMode)));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncSliceGenerationMode" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncSliceGenerationMode).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncSliceGenerationMode" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CODECAPI_AVEncSliceGenerationMode).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncSliceGenerationMode" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CODECAPI_AVEncSliceGenerationMode), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncSliceGenerationMode" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CODECAPI_AVEncSliceGenerationMode), Is.EqualTo(1));
     }
 }

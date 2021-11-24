@@ -5,26 +5,25 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct REGFILTERPINS2
 {
-    public unsafe partial struct REGFILTERPINS2
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        public uint cInstances;
+    public uint cInstances;
 
-        public uint nMediaTypes;
+    public uint nMediaTypes;
 
-        [NativeTypeName("const REGPINTYPES *")]
-        public REGPINTYPES* lpMediaType;
+    [NativeTypeName("const REGPINTYPES *")]
+    public REGPINTYPES* lpMediaType;
 
-        public uint nMediums;
+    public uint nMediums;
 
-        [NativeTypeName("const REGPINMEDIUM *")]
-        public REGPINMEDIUM* lpMedium;
+    [NativeTypeName("const REGPINMEDIUM *")]
+    public REGPINMEDIUM* lpMedium;
 
-        [NativeTypeName("const CLSID *")]
-        public Guid* clsPinCategory;
-    }
+    [NativeTypeName("const CLSID *")]
+    public Guid* clsPinCategory;
 }

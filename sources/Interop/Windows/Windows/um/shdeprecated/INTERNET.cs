@@ -3,17 +3,16 @@
 // Ported from um/shdeprecated.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class INTERNET
 {
-    public static partial class INTERNET
-    {
-        [NativeTypeName("#define INTERNET_MAX_PATH_LENGTH 2048")]
-        public const int INTERNET_MAX_PATH_LENGTH = 2048;
+    [NativeTypeName("#define INTERNET_MAX_PATH_LENGTH 2048")]
+    public const int INTERNET_MAX_PATH_LENGTH = 2048;
 
-        [NativeTypeName("#define INTERNET_MAX_SCHEME_LENGTH 32")]
-        public const int INTERNET_MAX_SCHEME_LENGTH = 32;
+    [NativeTypeName("#define INTERNET_MAX_SCHEME_LENGTH 32")]
+    public const int INTERNET_MAX_SCHEME_LENGTH = 32;
 
-        [NativeTypeName("#define INTERNET_MAX_URL_LENGTH (INTERNET_MAX_SCHEME_LENGTH \\\r\n                                        + sizeof(\"://\") \\\r\n                                        + INTERNET_MAX_PATH_LENGTH)")]
-        public const uint INTERNET_MAX_URL_LENGTH = (32 + 4 + 2048);
-    }
+    [NativeTypeName("#define INTERNET_MAX_URL_LENGTH (INTERNET_MAX_SCHEME_LENGTH \\\r\n                                        + sizeof(\"://\") \\\r\n                                        + INTERNET_MAX_PATH_LENGTH)")]
+    public const uint INTERNET_MAX_URL_LENGTH = (32 + 4 + 2048);
 }

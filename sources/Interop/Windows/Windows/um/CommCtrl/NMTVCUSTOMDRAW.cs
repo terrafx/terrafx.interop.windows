@@ -3,16 +3,15 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct NMTVCUSTOMDRAW
 {
-    public partial struct NMTVCUSTOMDRAW
-    {
-        public NMCUSTOMDRAW nmcd;
+    public NMCUSTOMDRAW nmcd;
 
-        public COLORREF clrText;
+    public COLORREF clrText;
 
-        public COLORREF clrTextBk;
+    public COLORREF clrTextBk;
 
-        public int iLevel;
-    }
+    public int iLevel;
 }

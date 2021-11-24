@@ -5,18 +5,17 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct EXP_PROPERTYSTORAGE
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct EXP_PROPERTYSTORAGE
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("DWORD")]
-        public uint dwSignature;
+    [NativeTypeName("DWORD")]
+    public uint dwSignature;
 
-        [NativeTypeName("BYTE [1]")]
-        public fixed byte abPropertyStorage[1];
-    }
+    [NativeTypeName("BYTE [1]")]
+    public fixed byte abPropertyStorage[1];
 }

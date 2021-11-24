@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("DE053668-F4EC-47A9-86D0-836770F0C1D5")]
+public partial struct CODECAPI_AVEncVideoDisplayDimension
 {
-    [Guid("DE053668-F4EC-47A9-86D0-836770F0C1D5")]
-    public partial struct CODECAPI_AVEncVideoDisplayDimension
-    {
-    }
 }

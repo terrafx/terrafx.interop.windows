@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DISK_CONTROLLER_NUMBER" /> struct.</summary>
+public static unsafe partial class DISK_CONTROLLER_NUMBERTests
 {
-    /// <summary>Provides validation of the <see cref="DISK_CONTROLLER_NUMBER" /> struct.</summary>
-    public static unsafe partial class DISK_CONTROLLER_NUMBERTests
+    /// <summary>Validates that the <see cref="DISK_CONTROLLER_NUMBER" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DISK_CONTROLLER_NUMBER" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DISK_CONTROLLER_NUMBER>(), Is.EqualTo(sizeof(DISK_CONTROLLER_NUMBER)));
-        }
+        Assert.That(Marshal.SizeOf<DISK_CONTROLLER_NUMBER>(), Is.EqualTo(sizeof(DISK_CONTROLLER_NUMBER)));
+    }
 
-        /// <summary>Validates that the <see cref="DISK_CONTROLLER_NUMBER" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DISK_CONTROLLER_NUMBER).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DISK_CONTROLLER_NUMBER" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DISK_CONTROLLER_NUMBER).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DISK_CONTROLLER_NUMBER" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DISK_CONTROLLER_NUMBER), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="DISK_CONTROLLER_NUMBER" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DISK_CONTROLLER_NUMBER), Is.EqualTo(8));
     }
 }

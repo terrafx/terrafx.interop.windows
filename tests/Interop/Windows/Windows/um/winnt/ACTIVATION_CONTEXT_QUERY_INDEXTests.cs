@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ACTIVATION_CONTEXT_QUERY_INDEX" /> struct.</summary>
+public static unsafe partial class ACTIVATION_CONTEXT_QUERY_INDEXTests
 {
-    /// <summary>Provides validation of the <see cref="ACTIVATION_CONTEXT_QUERY_INDEX" /> struct.</summary>
-    public static unsafe partial class ACTIVATION_CONTEXT_QUERY_INDEXTests
+    /// <summary>Validates that the <see cref="ACTIVATION_CONTEXT_QUERY_INDEX" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="ACTIVATION_CONTEXT_QUERY_INDEX" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ACTIVATION_CONTEXT_QUERY_INDEX>(), Is.EqualTo(sizeof(ACTIVATION_CONTEXT_QUERY_INDEX)));
-        }
+        Assert.That(Marshal.SizeOf<ACTIVATION_CONTEXT_QUERY_INDEX>(), Is.EqualTo(sizeof(ACTIVATION_CONTEXT_QUERY_INDEX)));
+    }
 
-        /// <summary>Validates that the <see cref="ACTIVATION_CONTEXT_QUERY_INDEX" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ACTIVATION_CONTEXT_QUERY_INDEX).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ACTIVATION_CONTEXT_QUERY_INDEX" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ACTIVATION_CONTEXT_QUERY_INDEX).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ACTIVATION_CONTEXT_QUERY_INDEX" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(ACTIVATION_CONTEXT_QUERY_INDEX), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="ACTIVATION_CONTEXT_QUERY_INDEX" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(ACTIVATION_CONTEXT_QUERY_INDEX), Is.EqualTo(8));
     }
 }

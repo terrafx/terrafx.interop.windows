@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISyncMgrSyncCallback" /> struct.</summary>
+public static unsafe partial class ISyncMgrSyncCallbackTests
 {
-    /// <summary>Provides validation of the <see cref="ISyncMgrSyncCallback" /> struct.</summary>
-    public static unsafe partial class ISyncMgrSyncCallbackTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISyncMgrSyncCallback" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISyncMgrSyncCallback" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISyncMgrSyncCallback).GUID, Is.EqualTo(IID_ISyncMgrSyncCallback));
-        }
+        Assert.That(typeof(ISyncMgrSyncCallback).GUID, Is.EqualTo(IID_ISyncMgrSyncCallback));
+    }
 
-        /// <summary>Validates that the <see cref="ISyncMgrSyncCallback" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISyncMgrSyncCallback>(), Is.EqualTo(sizeof(ISyncMgrSyncCallback)));
-        }
+    /// <summary>Validates that the <see cref="ISyncMgrSyncCallback" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISyncMgrSyncCallback>(), Is.EqualTo(sizeof(ISyncMgrSyncCallback)));
+    }
 
-        /// <summary>Validates that the <see cref="ISyncMgrSyncCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISyncMgrSyncCallback).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISyncMgrSyncCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISyncMgrSyncCallback).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISyncMgrSyncCallback" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISyncMgrSyncCallback" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISyncMgrSyncCallback), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISyncMgrSyncCallback), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISyncMgrSyncCallback), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISyncMgrSyncCallback), Is.EqualTo(4));
         }
     }
 }

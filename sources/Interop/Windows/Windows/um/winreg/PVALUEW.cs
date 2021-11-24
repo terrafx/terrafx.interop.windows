@@ -3,19 +3,18 @@
 // Ported from um/winreg.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct PVALUEW
 {
-    public unsafe partial struct PVALUEW
-    {
-        [NativeTypeName("LPWSTR")]
-        public ushort* pv_valuename;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pv_valuename;
 
-        public int pv_valuelen;
+    public int pv_valuelen;
 
-        [NativeTypeName("LPVOID")]
-        public void* pv_value_context;
+    [NativeTypeName("LPVOID")]
+    public void* pv_value_context;
 
-        [NativeTypeName("DWORD")]
-        public uint pv_type;
-    }
+    [NativeTypeName("DWORD")]
+    public uint pv_type;
 }

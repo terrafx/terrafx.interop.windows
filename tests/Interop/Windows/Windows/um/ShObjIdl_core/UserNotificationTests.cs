@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="UserNotification" /> struct.</summary>
+public static unsafe partial class UserNotificationTests
 {
-    /// <summary>Provides validation of the <see cref="UserNotification" /> struct.</summary>
-    public static unsafe partial class UserNotificationTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="UserNotification" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="UserNotification" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(UserNotification).GUID, Is.EqualTo(IID_UserNotification));
-        }
+        Assert.That(typeof(UserNotification).GUID, Is.EqualTo(IID_UserNotification));
+    }
 
-        /// <summary>Validates that the <see cref="UserNotification" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<UserNotification>(), Is.EqualTo(sizeof(UserNotification)));
-        }
+    /// <summary>Validates that the <see cref="UserNotification" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<UserNotification>(), Is.EqualTo(sizeof(UserNotification)));
+    }
 
-        /// <summary>Validates that the <see cref="UserNotification" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(UserNotification).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="UserNotification" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(UserNotification).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="UserNotification" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(UserNotification), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="UserNotification" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(UserNotification), Is.EqualTo(1));
     }
 }

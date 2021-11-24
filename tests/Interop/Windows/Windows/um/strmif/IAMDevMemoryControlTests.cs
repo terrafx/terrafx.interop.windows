@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IAMDevMemoryControl" /> struct.</summary>
+public static unsafe partial class IAMDevMemoryControlTests
 {
-    /// <summary>Provides validation of the <see cref="IAMDevMemoryControl" /> struct.</summary>
-    public static unsafe partial class IAMDevMemoryControlTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMDevMemoryControl" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMDevMemoryControl" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAMDevMemoryControl).GUID, Is.EqualTo(IID_IAMDevMemoryControl));
-        }
+        Assert.That(typeof(IAMDevMemoryControl).GUID, Is.EqualTo(IID_IAMDevMemoryControl));
+    }
 
-        /// <summary>Validates that the <see cref="IAMDevMemoryControl" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IAMDevMemoryControl>(), Is.EqualTo(sizeof(IAMDevMemoryControl)));
-        }
+    /// <summary>Validates that the <see cref="IAMDevMemoryControl" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IAMDevMemoryControl>(), Is.EqualTo(sizeof(IAMDevMemoryControl)));
+    }
 
-        /// <summary>Validates that the <see cref="IAMDevMemoryControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IAMDevMemoryControl).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IAMDevMemoryControl" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IAMDevMemoryControl).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IAMDevMemoryControl" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IAMDevMemoryControl" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IAMDevMemoryControl), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IAMDevMemoryControl), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IAMDevMemoryControl), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IAMDevMemoryControl), Is.EqualTo(4));
         }
     }
 }

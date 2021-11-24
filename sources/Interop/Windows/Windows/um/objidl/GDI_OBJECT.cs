@@ -5,30 +5,29 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct GDI_OBJECT
 {
-    public partial struct GDI_OBJECT
+    [NativeTypeName("DWORD")]
+    public uint ObjectType;
+
+    [NativeTypeName("union __MIDL_IAdviseSink_0002")]
+    public _u_e__Union u;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _u_e__Union
     {
-        [NativeTypeName("DWORD")]
-        public uint ObjectType;
+        [FieldOffset(0)]
+        [NativeTypeName("wireHBITMAP")]
+        public userHBITMAP* hBitmap;
 
-        [NativeTypeName("union __MIDL_IAdviseSink_0002")]
-        public _u_e__Union u;
+        [FieldOffset(0)]
+        [NativeTypeName("wireHPALETTE")]
+        public userHPALETTE* hPalette;
 
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _u_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("wireHBITMAP")]
-            public userHBITMAP* hBitmap;
-
-            [FieldOffset(0)]
-            [NativeTypeName("wireHPALETTE")]
-            public userHPALETTE* hPalette;
-
-            [FieldOffset(0)]
-            [NativeTypeName("wireHGLOBAL")]
-            public userHGLOBAL* hGeneric;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("wireHGLOBAL")]
+        public userHGLOBAL* hGeneric;
     }
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDvdControl" /> struct.</summary>
+public static unsafe partial class IDvdControlTests
 {
-    /// <summary>Provides validation of the <see cref="IDvdControl" /> struct.</summary>
-    public static unsafe partial class IDvdControlTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDvdControl" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDvdControl" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDvdControl).GUID, Is.EqualTo(IID_IDvdControl));
-        }
+        Assert.That(typeof(IDvdControl).GUID, Is.EqualTo(IID_IDvdControl));
+    }
 
-        /// <summary>Validates that the <see cref="IDvdControl" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDvdControl>(), Is.EqualTo(sizeof(IDvdControl)));
-        }
+    /// <summary>Validates that the <see cref="IDvdControl" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDvdControl>(), Is.EqualTo(sizeof(IDvdControl)));
+    }
 
-        /// <summary>Validates that the <see cref="IDvdControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDvdControl).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDvdControl" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDvdControl).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDvdControl" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDvdControl" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDvdControl), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDvdControl), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDvdControl), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDvdControl), Is.EqualTo(4));
         }
     }
 }

@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public partial struct USN_RECORD_COMMON_HEADER
 {
-    [SupportedOSPlatform("windows8.1")]
-    public partial struct USN_RECORD_COMMON_HEADER
-    {
-        [NativeTypeName("DWORD")]
-        public uint RecordLength;
+    [NativeTypeName("DWORD")]
+    public uint RecordLength;
 
-        [NativeTypeName("WORD")]
-        public ushort MajorVersion;
+    [NativeTypeName("WORD")]
+    public ushort MajorVersion;
 
-        [NativeTypeName("WORD")]
-        public ushort MinorVersion;
-    }
+    [NativeTypeName("WORD")]
+    public ushort MinorVersion;
 }

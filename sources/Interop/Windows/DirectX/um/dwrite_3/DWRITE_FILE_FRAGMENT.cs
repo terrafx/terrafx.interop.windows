@@ -3,14 +3,13 @@
 // Ported from um/dwrite_3.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
-{
-    public partial struct DWRITE_FILE_FRAGMENT
-    {
-        [NativeTypeName("UINT64")]
-        public ulong fileOffset;
+namespace TerraFX.Interop.DirectX;
 
-        [NativeTypeName("UINT64")]
-        public ulong fragmentSize;
-    }
+public partial struct DWRITE_FILE_FRAGMENT
+{
+    [NativeTypeName("UINT64")]
+    public ulong fileOffset;
+
+    [NativeTypeName("UINT64")]
+    public ulong fragmentSize;
 }

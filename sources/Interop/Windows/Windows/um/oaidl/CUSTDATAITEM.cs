@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct CUSTDATAITEM
-    {
-        public Guid guid;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("VARIANTARG")]
-        public VARIANT varValue;
-    }
+public partial struct CUSTDATAITEM
+{
+    public Guid guid;
+
+    [NativeTypeName("VARIANTARG")]
+    public VARIANT varValue;
 }

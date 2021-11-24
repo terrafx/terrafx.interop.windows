@@ -6,56 +6,55 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Explicit)]
+public partial struct TIMECODE
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public partial struct TIMECODE
+    [FieldOffset(0)]
+    [NativeTypeName("_timecode::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/strmif.h:14218:4)")]
+    public _Anonymous_e__Struct Anonymous;
+
+    [FieldOffset(0)]
+    [NativeTypeName("DWORDLONG")]
+    public ulong qw;
+
+    public ref ushort wFrameRate
     {
-        [FieldOffset(0)]
-        [NativeTypeName("_timecode::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/strmif.h:14218:4)")]
-        public _Anonymous_e__Struct Anonymous;
-
-        [FieldOffset(0)]
-        [NativeTypeName("DWORDLONG")]
-        public ulong qw;
-
-        public ref ushort wFrameRate
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.wFrameRate, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.wFrameRate, 1));
         }
+    }
 
-        public ref ushort wFrameFract
+    public ref ushort wFrameFract
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.wFrameFract, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.wFrameFract, 1));
         }
+    }
 
-        public ref uint dwFrames
+    public ref uint dwFrames
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwFrames, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwFrames, 1));
         }
+    }
 
-        public partial struct _Anonymous_e__Struct
-        {
-            [NativeTypeName("WORD")]
-            public ushort wFrameRate;
+    public partial struct _Anonymous_e__Struct
+    {
+        [NativeTypeName("WORD")]
+        public ushort wFrameRate;
 
-            [NativeTypeName("WORD")]
-            public ushort wFrameFract;
+        [NativeTypeName("WORD")]
+        public ushort wFrameFract;
 
-            [NativeTypeName("DWORD")]
-            public uint dwFrames;
-        }
+        [NativeTypeName("DWORD")]
+        public uint dwFrames;
     }
 }

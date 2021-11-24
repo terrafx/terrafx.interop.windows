@@ -5,23 +5,22 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct RESTOREPOINTINFOEX
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct RESTOREPOINTINFOEX
-    {
-        public FILETIME ftCreation;
+    public FILETIME ftCreation;
 
-        [NativeTypeName("DWORD")]
-        public uint dwEventType;
+    [NativeTypeName("DWORD")]
+    public uint dwEventType;
 
-        [NativeTypeName("DWORD")]
-        public uint dwRestorePtType;
+    [NativeTypeName("DWORD")]
+    public uint dwRestorePtType;
 
-        [NativeTypeName("DWORD")]
-        public uint dwRPNum;
+    [NativeTypeName("DWORD")]
+    public uint dwRPNum;
 
-        [NativeTypeName("WCHAR [256]")]
-        public fixed ushort szDescription[256];
-    }
+    [NativeTypeName("WCHAR [256]")]
+    public fixed ushort szDescription[256];
 }

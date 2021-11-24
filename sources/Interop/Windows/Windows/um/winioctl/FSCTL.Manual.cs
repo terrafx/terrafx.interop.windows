@@ -3,23 +3,22 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static unsafe partial class FSCTL
 {
-    public static unsafe partial class FSCTL
+    [NativeTypeName("#define FSCTL_ENABLE_PER_IO_FLAGS CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 267, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public static int FSCTL_ENABLE_PER_IO_FLAGS
     {
-        [NativeTypeName("#define FSCTL_ENABLE_PER_IO_FLAGS CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 267, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
-        public static int FSCTL_ENABLE_PER_IO_FLAGS
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return 0;
-                }
-                else
-                {
-                    return (((0x00000009) << 16) | ((0) << 14) | ((267) << 2) | (0));
-                }
+                return 0;
+            }
+            else
+            {
+                return (((0x00000009) << 16) | ((0) << 14) | ((267) << 2) | (0));
             }
         }
     }

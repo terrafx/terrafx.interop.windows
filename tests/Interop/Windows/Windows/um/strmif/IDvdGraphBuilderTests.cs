@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDvdGraphBuilder" /> struct.</summary>
+public static unsafe partial class IDvdGraphBuilderTests
 {
-    /// <summary>Provides validation of the <see cref="IDvdGraphBuilder" /> struct.</summary>
-    public static unsafe partial class IDvdGraphBuilderTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDvdGraphBuilder" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDvdGraphBuilder" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDvdGraphBuilder).GUID, Is.EqualTo(IID_IDvdGraphBuilder));
-        }
+        Assert.That(typeof(IDvdGraphBuilder).GUID, Is.EqualTo(IID_IDvdGraphBuilder));
+    }
 
-        /// <summary>Validates that the <see cref="IDvdGraphBuilder" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDvdGraphBuilder>(), Is.EqualTo(sizeof(IDvdGraphBuilder)));
-        }
+    /// <summary>Validates that the <see cref="IDvdGraphBuilder" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDvdGraphBuilder>(), Is.EqualTo(sizeof(IDvdGraphBuilder)));
+    }
 
-        /// <summary>Validates that the <see cref="IDvdGraphBuilder" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDvdGraphBuilder).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDvdGraphBuilder" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDvdGraphBuilder).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDvdGraphBuilder" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDvdGraphBuilder" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDvdGraphBuilder), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDvdGraphBuilder), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDvdGraphBuilder), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDvdGraphBuilder), Is.EqualTo(4));
         }
     }
 }

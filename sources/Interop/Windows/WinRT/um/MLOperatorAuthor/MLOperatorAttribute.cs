@@ -3,15 +3,14 @@
 // Ported from um/MLOperatorAuthor.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+public unsafe partial struct MLOperatorAttribute
 {
-    public unsafe partial struct MLOperatorAttribute
-    {
-        [NativeTypeName("const char *")]
-        public sbyte* name;
+    [NativeTypeName("const char *")]
+    public sbyte* name;
 
-        public MLOperatorAttributeType type;
+    public MLOperatorAttributeType type;
 
-        public bool required;
-    }
+    public bool required;
 }

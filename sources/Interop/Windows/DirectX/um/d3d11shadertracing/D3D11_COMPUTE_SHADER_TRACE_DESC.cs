@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct D3D11_COMPUTE_SHADER_TRACE_DESC
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct D3D11_COMPUTE_SHADER_TRACE_DESC
-    {
-        [NativeTypeName("UINT64")]
-        public ulong Invocation;
+    [NativeTypeName("UINT64")]
+    public ulong Invocation;
 
-        [NativeTypeName("UINT [3]")]
-        public fixed uint ThreadIDInGroup[3];
+    [NativeTypeName("UINT [3]")]
+    public fixed uint ThreadIDInGroup[3];
 
-        [NativeTypeName("UINT [3]")]
-        public fixed uint ThreadGroupID[3];
-    }
+    [NativeTypeName("UINT [3]")]
+    public fixed uint ThreadGroupID[3];
 }

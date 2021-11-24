@@ -5,24 +5,23 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct IMAGE_DYNAMIC_RELOCATION64_V2
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct IMAGE_DYNAMIC_RELOCATION64_V2
-    {
-        [NativeTypeName("DWORD")]
-        public uint HeaderSize;
+    [NativeTypeName("DWORD")]
+    public uint HeaderSize;
 
-        [NativeTypeName("DWORD")]
-        public uint FixupInfoSize;
+    [NativeTypeName("DWORD")]
+    public uint FixupInfoSize;
 
-        [NativeTypeName("ULONGLONG")]
-        public ulong Symbol;
+    [NativeTypeName("ULONGLONG")]
+    public ulong Symbol;
 
-        [NativeTypeName("DWORD")]
-        public uint SymbolGroup;
+    [NativeTypeName("DWORD")]
+    public uint SymbolGroup;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
-    }
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 }

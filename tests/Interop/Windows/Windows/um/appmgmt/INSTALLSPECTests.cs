@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="INSTALLSPEC" /> struct.</summary>
+public static unsafe partial class INSTALLSPECTests
 {
-    /// <summary>Provides validation of the <see cref="INSTALLSPEC" /> struct.</summary>
-    public static unsafe partial class INSTALLSPECTests
+    /// <summary>Validates that the <see cref="INSTALLSPEC" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="INSTALLSPEC" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<INSTALLSPEC>(), Is.EqualTo(sizeof(INSTALLSPEC)));
-        }
+        Assert.That(Marshal.SizeOf<INSTALLSPEC>(), Is.EqualTo(sizeof(INSTALLSPEC)));
+    }
 
-        /// <summary>Validates that the <see cref="INSTALLSPEC" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutExplicitTest()
-        {
-            Assert.That(typeof(INSTALLSPEC).IsExplicitLayout, Is.True);
-        }
+    /// <summary>Validates that the <see cref="INSTALLSPEC" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutExplicitTest()
+    {
+        Assert.That(typeof(INSTALLSPEC).IsExplicitLayout, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="INSTALLSPEC" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="INSTALLSPEC" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(INSTALLSPEC), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(INSTALLSPEC), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(INSTALLSPEC), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(INSTALLSPEC), Is.EqualTo(20));
         }
     }
 }

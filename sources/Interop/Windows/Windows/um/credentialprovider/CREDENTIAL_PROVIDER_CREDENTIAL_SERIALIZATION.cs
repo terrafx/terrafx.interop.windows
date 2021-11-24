@@ -5,18 +5,17 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION
 {
-    public unsafe partial struct CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION
-    {
-        [NativeTypeName("ULONG")]
-        public uint ulAuthenticationPackage;
+    [NativeTypeName("ULONG")]
+    public uint ulAuthenticationPackage;
 
-        public Guid clsidCredentialProvider;
+    public Guid clsidCredentialProvider;
 
-        [NativeTypeName("ULONG")]
-        public uint cbSerialization;
+    [NativeTypeName("ULONG")]
+    public uint cbSerialization;
 
-        public byte* rgbSerialization;
-    }
+    public byte* rgbSerialization;
 }

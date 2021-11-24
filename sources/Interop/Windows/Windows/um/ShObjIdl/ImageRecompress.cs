@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("6E33091C-D2F8-4740-B55E-2E11D1477A2C")]
+public partial struct ImageRecompress
 {
-    [Guid("6E33091C-D2F8-4740-B55E-2E11D1477A2C")]
-    public partial struct ImageRecompress
-    {
-    }
 }

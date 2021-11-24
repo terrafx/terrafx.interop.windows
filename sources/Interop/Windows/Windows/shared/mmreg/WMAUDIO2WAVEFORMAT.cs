@@ -5,20 +5,19 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct WMAUDIO2WAVEFORMAT
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct WMAUDIO2WAVEFORMAT
-    {
-        public WAVEFORMATEX wfx;
+    public WAVEFORMATEX wfx;
 
-        [NativeTypeName("DWORD")]
-        public uint dwSamplesPerBlock;
+    [NativeTypeName("DWORD")]
+    public uint dwSamplesPerBlock;
 
-        [NativeTypeName("WORD")]
-        public ushort wEncodeOptions;
+    [NativeTypeName("WORD")]
+    public ushort wEncodeOptions;
 
-        [NativeTypeName("DWORD")]
-        public uint dwSuperBlockAlign;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwSuperBlockAlign;
 }

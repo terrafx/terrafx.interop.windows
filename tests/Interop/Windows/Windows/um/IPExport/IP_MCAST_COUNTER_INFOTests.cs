@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IP_MCAST_COUNTER_INFO" /> struct.</summary>
+public static unsafe partial class IP_MCAST_COUNTER_INFOTests
 {
-    /// <summary>Provides validation of the <see cref="IP_MCAST_COUNTER_INFO" /> struct.</summary>
-    public static unsafe partial class IP_MCAST_COUNTER_INFOTests
+    /// <summary>Validates that the <see cref="IP_MCAST_COUNTER_INFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IP_MCAST_COUNTER_INFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IP_MCAST_COUNTER_INFO>(), Is.EqualTo(sizeof(IP_MCAST_COUNTER_INFO)));
-        }
+        Assert.That(Marshal.SizeOf<IP_MCAST_COUNTER_INFO>(), Is.EqualTo(sizeof(IP_MCAST_COUNTER_INFO)));
+    }
 
-        /// <summary>Validates that the <see cref="IP_MCAST_COUNTER_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IP_MCAST_COUNTER_INFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IP_MCAST_COUNTER_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IP_MCAST_COUNTER_INFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IP_MCAST_COUNTER_INFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(IP_MCAST_COUNTER_INFO), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="IP_MCAST_COUNTER_INFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(IP_MCAST_COUNTER_INFO), Is.EqualTo(32));
     }
 }

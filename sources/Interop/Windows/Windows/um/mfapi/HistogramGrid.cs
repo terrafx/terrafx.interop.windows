@@ -3,16 +3,15 @@
 // Ported from um/mfapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct HistogramGrid
 {
-    public partial struct HistogramGrid
-    {
-        [NativeTypeName("ULONG")]
-        public uint Width;
+    [NativeTypeName("ULONG")]
+    public uint Width;
 
-        [NativeTypeName("ULONG")]
-        public uint Height;
+    [NativeTypeName("ULONG")]
+    public uint Height;
 
-        public RECT Region;
-    }
+    public RECT Region;
 }

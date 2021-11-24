@@ -3,17 +3,16 @@
 // Ported from um/mfidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct MFRR_COMPONENTS
 {
-    public unsafe partial struct MFRR_COMPONENTS
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwRRInfoVersion;
+    [NativeTypeName("DWORD")]
+    public uint dwRRInfoVersion;
 
-        [NativeTypeName("DWORD")]
-        public uint dwRRComponents;
+    [NativeTypeName("DWORD")]
+    public uint dwRRComponents;
 
-        [NativeTypeName("PMFRR_COMPONENT_HASH_INFO")]
-        public MFRR_COMPONENT_HASH_INFO* pRRComponents;
-    }
+    [NativeTypeName("PMFRR_COMPONENT_HASH_INFO")]
+    public MFRR_COMPONENT_HASH_INFO* pRRComponents;
 }

@@ -3,14 +3,13 @@
 // Ported from um/winhttp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct HTTP_VERSION_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwMajorVersion;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint dwMinorVersion;
-    }
+public partial struct HTTP_VERSION_INFO
+{
+    [NativeTypeName("DWORD")]
+    public uint dwMajorVersion;
+
+    [NativeTypeName("DWORD")]
+    public uint dwMinorVersion;
 }

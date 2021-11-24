@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SAFEARRAYBOUND" /> struct.</summary>
+public static unsafe partial class SAFEARRAYBOUNDTests
 {
-    /// <summary>Provides validation of the <see cref="SAFEARRAYBOUND" /> struct.</summary>
-    public static unsafe partial class SAFEARRAYBOUNDTests
+    /// <summary>Validates that the <see cref="SAFEARRAYBOUND" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SAFEARRAYBOUND" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SAFEARRAYBOUND>(), Is.EqualTo(sizeof(SAFEARRAYBOUND)));
-        }
+        Assert.That(Marshal.SizeOf<SAFEARRAYBOUND>(), Is.EqualTo(sizeof(SAFEARRAYBOUND)));
+    }
 
-        /// <summary>Validates that the <see cref="SAFEARRAYBOUND" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SAFEARRAYBOUND).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SAFEARRAYBOUND" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SAFEARRAYBOUND).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SAFEARRAYBOUND" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SAFEARRAYBOUND), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="SAFEARRAYBOUND" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SAFEARRAYBOUND), Is.EqualTo(8));
     }
 }

@@ -3,11 +3,10 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum EDIT_CONTROL_FEATURE
 {
-    public enum EDIT_CONTROL_FEATURE
-    {
-        EDIT_CONTROL_FEATURE_ENTERPRISE_DATA_PROTECTION_PASTE_SUPPORT = 0,
-        EDIT_CONTROL_FEATURE_PASTE_NOTIFICATIONS = 1,
-    }
+    EDIT_CONTROL_FEATURE_ENTERPRISE_DATA_PROTECTION_PASTE_SUPPORT = 0,
+    EDIT_CONTROL_FEATURE_PASTE_NOTIFICATIONS = 1,
 }

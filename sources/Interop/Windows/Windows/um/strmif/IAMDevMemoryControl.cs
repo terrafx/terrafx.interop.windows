@@ -7,90 +7,89 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("C6545BF1-E76B-11D0-BD52-00A0C911CE86")]
+[NativeTypeName("struct IAMDevMemoryControl : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IAMDevMemoryControl : IAMDevMemoryControl.Interface
 {
-    [Guid("C6545BF1-E76B-11D0-BD52-00A0C911CE86")]
-    [NativeTypeName("struct IAMDevMemoryControl : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMDevMemoryControl : IAMDevMemoryControl.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IAMDevMemoryControl*, Guid*, void**, int>)(lpVtbl[0]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IAMDevMemoryControl*, Guid*, void**, int>)(lpVtbl[0]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IAMDevMemoryControl*, uint>)(lpVtbl[1]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IAMDevMemoryControl*, uint>)(lpVtbl[1]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IAMDevMemoryControl*, uint>)(lpVtbl[2]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IAMDevMemoryControl*, uint>)(lpVtbl[2]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT QueryWriteSync()
+    {
+        return ((delegate* unmanaged<IAMDevMemoryControl*, int>)(lpVtbl[3]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT WriteSync()
+    {
+        return ((delegate* unmanaged<IAMDevMemoryControl*, int>)(lpVtbl[4]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetDevId([NativeTypeName("DWORD *")] uint* pdwDevId)
+    {
+        return ((delegate* unmanaged<IAMDevMemoryControl*, uint*, int>)(lpVtbl[5]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this), pdwDevId);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT QueryWriteSync()
-        {
-            return ((delegate* unmanaged<IAMDevMemoryControl*, int>)(lpVtbl[3]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT QueryWriteSync();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT WriteSync()
-        {
-            return ((delegate* unmanaged<IAMDevMemoryControl*, int>)(lpVtbl[4]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT WriteSync();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetDevId([NativeTypeName("DWORD *")] uint* pdwDevId)
-        {
-            return ((delegate* unmanaged<IAMDevMemoryControl*, uint*, int>)(lpVtbl[5]))((IAMDevMemoryControl*)Unsafe.AsPointer(ref this), pdwDevId);
-        }
+        HRESULT GetDevId([NativeTypeName("DWORD *")] uint* pdwDevId);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT QueryWriteSync();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMDevMemoryControl*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT WriteSync();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMDevMemoryControl*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT GetDevId([NativeTypeName("DWORD *")] uint* pdwDevId);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMDevMemoryControl*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMDevMemoryControl*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMDevMemoryControl*, int> QueryWriteSync;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMDevMemoryControl*, uint> AddRef;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMDevMemoryControl*, int> WriteSync;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMDevMemoryControl*, uint> Release;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMDevMemoryControl*, int> QueryWriteSync;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMDevMemoryControl*, int> WriteSync;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMDevMemoryControl*, uint*, int> GetDevId;
-        }
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMDevMemoryControl*, uint*, int> GetDevId;
     }
 }

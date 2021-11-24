@@ -3,13 +3,12 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum styleWrapThrough
 {
-    public enum styleWrapThrough
-    {
-        styleWrapThroughNotSet = 0,
-        styleWrapThroughWrap = 1,
-        styleWrapThroughNone = 2,
-        styleWrapThrough_Max = 2147483647,
-    }
+    styleWrapThroughNotSet = 0,
+    styleWrapThroughWrap = 1,
+    styleWrapThroughNone = 2,
+    styleWrapThrough_Max = 2147483647,
 }

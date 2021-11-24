@@ -3,17 +3,16 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SPVCONTEXT
 {
-    public unsafe partial struct SPVCONTEXT
-    {
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pCategory;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pCategory;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pBefore;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pBefore;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pAfter;
-    }
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pAfter;
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SCM_BUS_DEDICATED_MEMORY_STATE" /> struct.</summary>
+public static unsafe partial class SCM_BUS_DEDICATED_MEMORY_STATETests
 {
-    /// <summary>Provides validation of the <see cref="SCM_BUS_DEDICATED_MEMORY_STATE" /> struct.</summary>
-    public static unsafe partial class SCM_BUS_DEDICATED_MEMORY_STATETests
+    /// <summary>Validates that the <see cref="SCM_BUS_DEDICATED_MEMORY_STATE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SCM_BUS_DEDICATED_MEMORY_STATE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SCM_BUS_DEDICATED_MEMORY_STATE>(), Is.EqualTo(sizeof(SCM_BUS_DEDICATED_MEMORY_STATE)));
-        }
+        Assert.That(Marshal.SizeOf<SCM_BUS_DEDICATED_MEMORY_STATE>(), Is.EqualTo(sizeof(SCM_BUS_DEDICATED_MEMORY_STATE)));
+    }
 
-        /// <summary>Validates that the <see cref="SCM_BUS_DEDICATED_MEMORY_STATE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SCM_BUS_DEDICATED_MEMORY_STATE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SCM_BUS_DEDICATED_MEMORY_STATE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SCM_BUS_DEDICATED_MEMORY_STATE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SCM_BUS_DEDICATED_MEMORY_STATE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SCM_BUS_DEDICATED_MEMORY_STATE), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SCM_BUS_DEDICATED_MEMORY_STATE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SCM_BUS_DEDICATED_MEMORY_STATE), Is.EqualTo(1));
     }
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HIGHCONTRASTA" /> struct.</summary>
+public static unsafe partial class HIGHCONTRASTATests
 {
-    /// <summary>Provides validation of the <see cref="HIGHCONTRASTA" /> struct.</summary>
-    public static unsafe partial class HIGHCONTRASTATests
+    /// <summary>Validates that the <see cref="HIGHCONTRASTA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="HIGHCONTRASTA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HIGHCONTRASTA>(), Is.EqualTo(sizeof(HIGHCONTRASTA)));
-        }
+        Assert.That(Marshal.SizeOf<HIGHCONTRASTA>(), Is.EqualTo(sizeof(HIGHCONTRASTA)));
+    }
 
-        /// <summary>Validates that the <see cref="HIGHCONTRASTA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HIGHCONTRASTA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HIGHCONTRASTA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HIGHCONTRASTA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HIGHCONTRASTA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="HIGHCONTRASTA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(HIGHCONTRASTA), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(HIGHCONTRASTA), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(HIGHCONTRASTA), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(HIGHCONTRASTA), Is.EqualTo(12));
         }
     }
 }

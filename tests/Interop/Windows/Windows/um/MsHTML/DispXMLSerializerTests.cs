@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DispXMLSerializer" /> struct.</summary>
+public static unsafe partial class DispXMLSerializerTests
 {
-    /// <summary>Provides validation of the <see cref="DispXMLSerializer" /> struct.</summary>
-    public static unsafe partial class DispXMLSerializerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispXMLSerializer" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispXMLSerializer" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DispXMLSerializer).GUID, Is.EqualTo(IID_DispXMLSerializer));
-        }
+        Assert.That(typeof(DispXMLSerializer).GUID, Is.EqualTo(IID_DispXMLSerializer));
+    }
 
-        /// <summary>Validates that the <see cref="DispXMLSerializer" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DispXMLSerializer>(), Is.EqualTo(sizeof(DispXMLSerializer)));
-        }
+    /// <summary>Validates that the <see cref="DispXMLSerializer" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DispXMLSerializer>(), Is.EqualTo(sizeof(DispXMLSerializer)));
+    }
 
-        /// <summary>Validates that the <see cref="DispXMLSerializer" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DispXMLSerializer).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DispXMLSerializer" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DispXMLSerializer).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DispXMLSerializer" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DispXMLSerializer" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DispXMLSerializer), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(DispXMLSerializer), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(DispXMLSerializer), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(DispXMLSerializer), Is.EqualTo(4));
         }
     }
 }

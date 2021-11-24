@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="BASEBROWSERDATA" /> struct.</summary>
+public static unsafe partial class BASEBROWSERDATATests
 {
-    /// <summary>Provides validation of the <see cref="BASEBROWSERDATA" /> struct.</summary>
-    public static unsafe partial class BASEBROWSERDATATests
+    /// <summary>Validates that the <see cref="BASEBROWSERDATA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="BASEBROWSERDATA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<BASEBROWSERDATA>(), Is.EqualTo(sizeof(BASEBROWSERDATA)));
-        }
+        Assert.That(Marshal.SizeOf<BASEBROWSERDATA>(), Is.EqualTo(sizeof(BASEBROWSERDATA)));
+    }
 
-        /// <summary>Validates that the <see cref="BASEBROWSERDATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(BASEBROWSERDATA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="BASEBROWSERDATA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(BASEBROWSERDATA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="BASEBROWSERDATA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="BASEBROWSERDATA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(BASEBROWSERDATA), Is.EqualTo(216));
-            }
-            else
-            {
-                Assert.That(sizeof(BASEBROWSERDATA), Is.EqualTo(132));
-            }
+            Assert.That(sizeof(BASEBROWSERDATA), Is.EqualTo(216));
+        }
+        else
+        {
+            Assert.That(sizeof(BASEBROWSERDATA), Is.EqualTo(132));
         }
     }
 }

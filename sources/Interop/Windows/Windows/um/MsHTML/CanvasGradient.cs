@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("30510715-98B5-11CF-BB82-00AA00BDCE0B")]
+public partial struct CanvasGradient
 {
-    [Guid("30510715-98B5-11CF-BB82-00AA00BDCE0B")]
-    public partial struct CanvasGradient
-    {
-    }
 }

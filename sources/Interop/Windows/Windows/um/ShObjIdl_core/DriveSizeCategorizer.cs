@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("94357B53-CA29-4B78-83AE-E8FE7409134F")]
+public partial struct DriveSizeCategorizer
 {
-    [Guid("94357B53-CA29-4B78-83AE-E8FE7409134F")]
-    public partial struct DriveSizeCategorizer
-    {
-    }
 }

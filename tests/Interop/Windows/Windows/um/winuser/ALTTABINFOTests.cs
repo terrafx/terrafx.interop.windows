@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ALTTABINFO" /> struct.</summary>
+public static unsafe partial class ALTTABINFOTests
 {
-    /// <summary>Provides validation of the <see cref="ALTTABINFO" /> struct.</summary>
-    public static unsafe partial class ALTTABINFOTests
+    /// <summary>Validates that the <see cref="ALTTABINFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="ALTTABINFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ALTTABINFO>(), Is.EqualTo(sizeof(ALTTABINFO)));
-        }
+        Assert.That(Marshal.SizeOf<ALTTABINFO>(), Is.EqualTo(sizeof(ALTTABINFO)));
+    }
 
-        /// <summary>Validates that the <see cref="ALTTABINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ALTTABINFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ALTTABINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ALTTABINFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ALTTABINFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(ALTTABINFO), Is.EqualTo(40));
-        }
+    /// <summary>Validates that the <see cref="ALTTABINFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(ALTTABINFO), Is.EqualTo(40));
     }
 }

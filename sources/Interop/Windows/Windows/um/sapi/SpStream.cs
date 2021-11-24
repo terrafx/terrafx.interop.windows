@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("715D9C59-4442-11D2-9605-00C04F8EE628")]
+public partial struct SpStream
 {
-    [Guid("715D9C59-4442-11D2-9605-00C04F8EE628")]
-    public partial struct SpStream
-    {
-    }
 }

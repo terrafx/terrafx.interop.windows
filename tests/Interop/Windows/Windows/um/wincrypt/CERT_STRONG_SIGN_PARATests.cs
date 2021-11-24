@@ -8,38 +8,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CERT_STRONG_SIGN_PARA" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class CERT_STRONG_SIGN_PARATests
 {
-    /// <summary>Provides validation of the <see cref="CERT_STRONG_SIGN_PARA" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class CERT_STRONG_SIGN_PARATests
+    /// <summary>Validates that the <see cref="CERT_STRONG_SIGN_PARA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CERT_STRONG_SIGN_PARA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CERT_STRONG_SIGN_PARA>(), Is.EqualTo(sizeof(CERT_STRONG_SIGN_PARA)));
-        }
+        Assert.That(Marshal.SizeOf<CERT_STRONG_SIGN_PARA>(), Is.EqualTo(sizeof(CERT_STRONG_SIGN_PARA)));
+    }
 
-        /// <summary>Validates that the <see cref="CERT_STRONG_SIGN_PARA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CERT_STRONG_SIGN_PARA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CERT_STRONG_SIGN_PARA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CERT_STRONG_SIGN_PARA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CERT_STRONG_SIGN_PARA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CERT_STRONG_SIGN_PARA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CERT_STRONG_SIGN_PARA), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(CERT_STRONG_SIGN_PARA), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(CERT_STRONG_SIGN_PARA), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(CERT_STRONG_SIGN_PARA), Is.EqualTo(12));
         }
     }
 }

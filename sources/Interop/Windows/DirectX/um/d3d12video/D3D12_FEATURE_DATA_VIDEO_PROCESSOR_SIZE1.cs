@@ -5,26 +5,25 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D12_FEATURE_DATA_VIDEO_PROCESSOR_SIZE1
 {
-    public unsafe partial struct D3D12_FEATURE_DATA_VIDEO_PROCESSOR_SIZE1
-    {
-        public uint NodeMask;
+    public uint NodeMask;
 
-        [NativeTypeName("const D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC *")]
-        public D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC* pOutputStreamDesc;
+    [NativeTypeName("const D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC *")]
+    public D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC* pOutputStreamDesc;
 
-        public uint NumInputStreamDescs;
+    public uint NumInputStreamDescs;
 
-        [NativeTypeName("const D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC *")]
-        public D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC* pInputStreamDescs;
+    [NativeTypeName("const D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC *")]
+    public D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC* pInputStreamDescs;
 
-        public BOOL Protected;
+    public BOOL Protected;
 
-        [NativeTypeName("UINT64")]
-        public ulong MemoryPoolL0Size;
+    [NativeTypeName("UINT64")]
+    public ulong MemoryPoolL0Size;
 
-        [NativeTypeName("UINT64")]
-        public ulong MemoryPoolL1Size;
-    }
+    [NativeTypeName("UINT64")]
+    public ulong MemoryPoolL1Size;
 }

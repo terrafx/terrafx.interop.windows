@@ -3,12 +3,11 @@
 // Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum D3D12_AXIS_SHADING_RATE
 {
-    public enum D3D12_AXIS_SHADING_RATE
-    {
-        D3D12_AXIS_SHADING_RATE_1X = 0,
-        D3D12_AXIS_SHADING_RATE_2X = 0x1,
-        D3D12_AXIS_SHADING_RATE_4X = 0x2,
-    }
+    D3D12_AXIS_SHADING_RATE_1X = 0,
+    D3D12_AXIS_SHADING_RATE_2X = 0x1,
+    D3D12_AXIS_SHADING_RATE_4X = 0x2,
 }

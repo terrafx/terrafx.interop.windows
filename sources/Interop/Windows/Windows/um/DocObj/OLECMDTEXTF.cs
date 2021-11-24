@@ -3,12 +3,11 @@
 // Ported from um/DocObj.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum OLECMDTEXTF
 {
-    public enum OLECMDTEXTF
-    {
-        OLECMDTEXTF_NONE = 0,
-        OLECMDTEXTF_NAME = 1,
-        OLECMDTEXTF_STATUS = 2,
-    }
+    OLECMDTEXTF_NONE = 0,
+    OLECMDTEXTF_NAME = 1,
+    OLECMDTEXTF_STATUS = 2,
 }

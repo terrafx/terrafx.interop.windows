@@ -7,3119 +7,3118 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("CB787B2F-BD6C-4635-BA52-933126BD2DCD")]
+[NativeTypeName("struct IDiaSymbol : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface
 {
-    [Guid("CB787B2F-BD6C-4635-BA52-933126BD2DCD")]
-    [NativeTypeName("struct IDiaSymbol : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDiaSymbol*, Guid*, void**, int>)(lpVtbl[0]))((IDiaSymbol*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, Guid*, void**, int>)(lpVtbl[0]))((IDiaSymbol*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint>)(lpVtbl[1]))((IDiaSymbol*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint>)(lpVtbl[1]))((IDiaSymbol*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint>)(lpVtbl[2]))((IDiaSymbol*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint>)(lpVtbl[2]))((IDiaSymbol*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT get_symIndexId([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[3]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT get_symTag([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[4]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT get_name([NativeTypeName("BSTR *")] ushort** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[5]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT get_lexicalParent(IDiaSymbol** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[6]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT get_classParent(IDiaSymbol** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[7]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT get_type(IDiaSymbol** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[8]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT get_dataKind([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[9]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT get_locationType([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[10]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT get_addressSection([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[11]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT get_addressOffset([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[12]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT get_relativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[13]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, ulong*, int>)(lpVtbl[14]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT get_registerId([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[15]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT get_offset([NativeTypeName("LONG *")] int* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, int*, int>)(lpVtbl[16]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT get_length([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, ulong*, int>)(lpVtbl[17]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT get_slot([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[18]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
+    public HRESULT get_volatileType(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[19]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(20)]
+    public HRESULT get_constType(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[20]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(21)]
+    public HRESULT get_unalignedType(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[21]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(22)]
+    public HRESULT get_access([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[22]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(23)]
+    public HRESULT get_libraryName([NativeTypeName("BSTR *")] ushort** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[23]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(24)]
+    public HRESULT get_platform([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[24]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(25)]
+    public HRESULT get_language([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[25]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(26)]
+    public HRESULT get_editAndContinueEnabled(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[26]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(27)]
+    public HRESULT get_frontEndMajor([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[27]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(28)]
+    public HRESULT get_frontEndMinor([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[28]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(29)]
+    public HRESULT get_frontEndBuild([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[29]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(30)]
+    public HRESULT get_backEndMajor([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[30]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(31)]
+    public HRESULT get_backEndMinor([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[31]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(32)]
+    public HRESULT get_backEndBuild([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[32]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(33)]
+    public HRESULT get_sourceFileName([NativeTypeName("BSTR *")] ushort** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[33]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(34)]
+    public HRESULT get_unused([NativeTypeName("BSTR *")] ushort** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[34]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(35)]
+    public HRESULT get_thunkOrdinal([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[35]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(36)]
+    public HRESULT get_thisAdjust([NativeTypeName("LONG *")] int* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, int*, int>)(lpVtbl[36]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(37)]
+    public HRESULT get_virtualBaseOffset([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[37]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(38)]
+    public HRESULT get_virtual(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[38]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(39)]
+    public HRESULT get_intro(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[39]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(40)]
+    public HRESULT get_pure(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[40]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(41)]
+    public HRESULT get_callingConvention([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[41]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(42)]
+    public HRESULT get_value(VARIANT* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, VARIANT*, int>)(lpVtbl[42]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(43)]
+    public HRESULT get_baseType([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[43]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(44)]
+    public HRESULT get_token([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[44]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(45)]
+    public HRESULT get_timeStamp([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[45]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(46)]
+    public HRESULT get_guid(Guid* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, Guid*, int>)(lpVtbl[46]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(47)]
+    public HRESULT get_symbolsFileName([NativeTypeName("BSTR *")] ushort** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[47]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(48)]
+    public HRESULT get_reference(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[48]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(49)]
+    public HRESULT get_count([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[49]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(50)]
+    public HRESULT get_bitPosition([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[50]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(51)]
+    public HRESULT get_arrayIndexType(IDiaSymbol** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[51]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(52)]
+    public HRESULT get_packed(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[52]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(53)]
+    public HRESULT get_constructor(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[53]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(54)]
+    public HRESULT get_overloadedOperator(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[54]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(55)]
+    public HRESULT get_nested(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[55]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(56)]
+    public HRESULT get_hasNestedTypes(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[56]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(57)]
+    public HRESULT get_hasAssignmentOperator(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[57]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(58)]
+    public HRESULT get_hasCastOperator(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[58]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(59)]
+    public HRESULT get_scoped(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[59]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(60)]
+    public HRESULT get_virtualBaseClass(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[60]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(61)]
+    public HRESULT get_indirectVirtualBaseClass(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[61]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(62)]
+    public HRESULT get_virtualBasePointerOffset([NativeTypeName("LONG *")] int* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, int*, int>)(lpVtbl[62]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(63)]
+    public HRESULT get_virtualTableShape(IDiaSymbol** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[63]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(64)]
+    public HRESULT get_lexicalParentId([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[64]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(65)]
+    public HRESULT get_classParentId([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[65]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(66)]
+    public HRESULT get_typeId([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[66]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(67)]
+    public HRESULT get_arrayIndexTypeId([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[67]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(68)]
+    public HRESULT get_virtualTableShapeId([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[68]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(69)]
+    public HRESULT get_code(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[69]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(70)]
+    public HRESULT get_function(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[70]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(71)]
+    public HRESULT get_managed(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[71]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(72)]
+    public HRESULT get_msil(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[72]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(73)]
+    public HRESULT get_virtualBaseDispIndex([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[73]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(74)]
+    public HRESULT get_undecoratedName([NativeTypeName("BSTR *")] ushort** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[74]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(75)]
+    public HRESULT get_age([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[75]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(76)]
+    public HRESULT get_signature([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[76]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(77)]
+    public HRESULT get_compilerGenerated(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[77]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(78)]
+    public HRESULT get_addressTaken(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[78]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(79)]
+    public HRESULT get_rank([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[79]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(80)]
+    public HRESULT get_lowerBound(IDiaSymbol** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[80]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(81)]
+    public HRESULT get_upperBound(IDiaSymbol** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[81]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(82)]
+    public HRESULT get_lowerBoundId([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[82]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(83)]
+    public HRESULT get_upperBoundId([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[83]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(84)]
+    public HRESULT get_dataBytes([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint, uint*, byte*, int>)(lpVtbl[84]))((IDiaSymbol*)Unsafe.AsPointer(ref this), cbData, pcbData, pbData);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(85)]
+    public HRESULT findChildren([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, IDiaEnumSymbols**, int>)(lpVtbl[85]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, ppResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(86)]
+    public HRESULT findChildrenEx([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, IDiaEnumSymbols**, int>)(lpVtbl[86]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, ppResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(87)]
+    public HRESULT findChildrenExByAddr([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaEnumSymbols** ppResult)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, uint, uint, IDiaEnumSymbols**, int>)(lpVtbl[87]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, isect, offset, ppResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(88)]
+    public HRESULT findChildrenExByVA([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("ULONGLONG")] ulong va, IDiaEnumSymbols** ppResult)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, ulong, IDiaEnumSymbols**, int>)(lpVtbl[88]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, va, ppResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(89)]
+    public HRESULT findChildrenExByRVA([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, uint, IDiaEnumSymbols**, int>)(lpVtbl[89]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, rva, ppResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(90)]
+    public HRESULT get_targetSection([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[90]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(91)]
+    public HRESULT get_targetOffset([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[91]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(92)]
+    public HRESULT get_targetRelativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[92]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(93)]
+    public HRESULT get_targetVirtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, ulong*, int>)(lpVtbl[93]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(94)]
+    public HRESULT get_machineType([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[94]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(95)]
+    public HRESULT get_oemId([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[95]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(96)]
+    public HRESULT get_oemSymbolId([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[96]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(97)]
+    public HRESULT get_types([NativeTypeName("DWORD")] uint cTypes, [NativeTypeName("DWORD *")] uint* pcTypes, IDiaSymbol** pTypes)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint, uint*, IDiaSymbol**, int>)(lpVtbl[97]))((IDiaSymbol*)Unsafe.AsPointer(ref this), cTypes, pcTypes, pTypes);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(98)]
+    public HRESULT get_typeIds([NativeTypeName("DWORD")] uint cTypeIds, [NativeTypeName("DWORD *")] uint* pcTypeIds, [NativeTypeName("DWORD *")] uint* pdwTypeIds)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint, uint*, uint*, int>)(lpVtbl[98]))((IDiaSymbol*)Unsafe.AsPointer(ref this), cTypeIds, pcTypeIds, pdwTypeIds);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(99)]
+    public HRESULT get_objectPointerType(IDiaSymbol** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[99]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(100)]
+    public HRESULT get_udtKind([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[100]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(101)]
+    public HRESULT get_undecoratedNameEx([NativeTypeName("DWORD")] uint undecorateOptions, [NativeTypeName("BSTR *")] ushort** name)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint, ushort**, int>)(lpVtbl[101]))((IDiaSymbol*)Unsafe.AsPointer(ref this), undecorateOptions, name);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(102)]
+    public HRESULT get_noReturn(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[102]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(103)]
+    public HRESULT get_customCallingConvention(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[103]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(104)]
+    public HRESULT get_noInline(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[104]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(105)]
+    public HRESULT get_optimizedCodeDebugInfo(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[105]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(106)]
+    public HRESULT get_notReached(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[106]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(107)]
+    public HRESULT get_interruptReturn(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[107]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(108)]
+    public HRESULT get_farReturn(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[108]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(109)]
+    public HRESULT get_isStatic(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[109]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(110)]
+    public HRESULT get_hasDebugInfo(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[110]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(111)]
+    public HRESULT get_isLTCG(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[111]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(112)]
+    public HRESULT get_isDataAligned(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[112]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(113)]
+    public HRESULT get_hasSecurityChecks(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[113]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(114)]
+    public HRESULT get_compilerName([NativeTypeName("BSTR *")] ushort** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[114]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(115)]
+    public HRESULT get_hasAlloca(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[115]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(116)]
+    public HRESULT get_hasSetJump(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[116]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(117)]
+    public HRESULT get_hasLongJump(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[117]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(118)]
+    public HRESULT get_hasInlAsm(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[118]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(119)]
+    public HRESULT get_hasEH(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[119]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(120)]
+    public HRESULT get_hasSEH(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[120]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(121)]
+    public HRESULT get_hasEHa(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[121]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(122)]
+    public HRESULT get_isNaked(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[122]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(123)]
+    public HRESULT get_isAggregated(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[123]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(124)]
+    public HRESULT get_isSplitted(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[124]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(125)]
+    public HRESULT get_container(IDiaSymbol** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[125]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(126)]
+    public HRESULT get_inlSpec(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[126]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(127)]
+    public HRESULT get_noStackOrdering(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[127]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(128)]
+    public HRESULT get_virtualBaseTableType(IDiaSymbol** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[128]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(129)]
+    public HRESULT get_hasManagedCode(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[129]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(130)]
+    public HRESULT get_isHotpatchable(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[130]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(131)]
+    public HRESULT get_isCVTCIL(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[131]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(132)]
+    public HRESULT get_isMSILNetmodule(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[132]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(133)]
+    public HRESULT get_isCTypes(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[133]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(134)]
+    public HRESULT get_isStripped(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[134]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(135)]
+    public HRESULT get_frontEndQFE([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[135]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(136)]
+    public HRESULT get_backEndQFE([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[136]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(137)]
+    public HRESULT get_wasInlined(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[137]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(138)]
+    public HRESULT get_strictGSCheck(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[138]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(139)]
+    public HRESULT get_isCxxReturnUdt(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[139]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(140)]
+    public HRESULT get_isConstructorVirtualBase(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[140]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(141)]
+    public HRESULT get_RValueReference(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[141]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(142)]
+    public HRESULT get_unmodifiedType(IDiaSymbol** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[142]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(143)]
+    public HRESULT get_framePointerPresent(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[143]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(144)]
+    public HRESULT get_isSafeBuffers(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[144]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(145)]
+    public HRESULT get_intrinsic(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[145]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(146)]
+    public HRESULT get_sealed(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[146]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(147)]
+    public HRESULT get_hfaFloat(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[147]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(148)]
+    public HRESULT get_hfaDouble(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[148]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(149)]
+    public HRESULT get_liveRangeStartAddressSection([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[149]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(150)]
+    public HRESULT get_liveRangeStartAddressOffset([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[150]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(151)]
+    public HRESULT get_liveRangeStartRelativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[151]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(152)]
+    public HRESULT get_countLiveRanges([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[152]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(153)]
+    public HRESULT get_liveRangeLength([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, ulong*, int>)(lpVtbl[153]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(154)]
+    public HRESULT get_offsetInUdt([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[154]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(155)]
+    public HRESULT get_paramBasePointerRegisterId([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[155]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(156)]
+    public HRESULT get_localBasePointerRegisterId([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[156]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(157)]
+    public HRESULT get_isLocationControlFlowDependent(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[157]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(158)]
+    public HRESULT get_stride([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[158]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(159)]
+    public HRESULT get_numberOfRows([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[159]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(160)]
+    public HRESULT get_numberOfColumns([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[160]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(161)]
+    public HRESULT get_isMatrixRowMajor(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[161]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(162)]
+    public HRESULT get_numericProperties([NativeTypeName("DWORD")] uint cnt, [NativeTypeName("DWORD *")] uint* pcnt, [NativeTypeName("DWORD *")] uint* pProperties)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint, uint*, uint*, int>)(lpVtbl[162]))((IDiaSymbol*)Unsafe.AsPointer(ref this), cnt, pcnt, pProperties);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(163)]
+    public HRESULT get_modifierValues([NativeTypeName("DWORD")] uint cnt, [NativeTypeName("DWORD *")] uint* pcnt, [NativeTypeName("WORD *")] ushort* pModifiers)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint, uint*, ushort*, int>)(lpVtbl[163]))((IDiaSymbol*)Unsafe.AsPointer(ref this), cnt, pcnt, pModifiers);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(164)]
+    public HRESULT get_isReturnValue(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[164]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(165)]
+    public HRESULT get_isOptimizedAway(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[165]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(166)]
+    public HRESULT get_builtInKind([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[166]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(167)]
+    public HRESULT get_registerType([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[167]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(168)]
+    public HRESULT get_baseDataSlot([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[168]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(169)]
+    public HRESULT get_baseDataOffset([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[169]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(170)]
+    public HRESULT get_textureSlot([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[170]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(171)]
+    public HRESULT get_samplerSlot([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[171]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(172)]
+    public HRESULT get_uavSlot([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[172]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(173)]
+    public HRESULT get_sizeInUdt([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[173]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(174)]
+    public HRESULT get_memorySpaceKind([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[174]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(175)]
+    public HRESULT get_unmodifiedTypeId([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[175]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(176)]
+    public HRESULT get_subTypeId([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[176]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(177)]
+    public HRESULT get_subType(IDiaSymbol** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[177]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(178)]
+    public HRESULT get_numberOfModifiers([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[178]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(179)]
+    public HRESULT get_numberOfRegisterIndices([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[179]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(180)]
+    public HRESULT get_isHLSLData(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[180]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(181)]
+    public HRESULT get_isPointerToDataMember(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[181]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(182)]
+    public HRESULT get_isPointerToMemberFunction(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[182]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(183)]
+    public HRESULT get_isSingleInheritance(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[183]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(184)]
+    public HRESULT get_isMultipleInheritance(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[184]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(185)]
+    public HRESULT get_isVirtualInheritance(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[185]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(186)]
+    public HRESULT get_restrictedType(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[186]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(187)]
+    public HRESULT get_isPointerBasedOnSymbolValue(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[187]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(188)]
+    public HRESULT get_baseSymbol(IDiaSymbol** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[188]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(189)]
+    public HRESULT get_baseSymbolId([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[189]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(190)]
+    public HRESULT get_objectFileName([NativeTypeName("BSTR *")] ushort** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[190]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(191)]
+    public HRESULT get_isAcceleratorGroupSharedLocal(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[191]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(192)]
+    public HRESULT get_isAcceleratorPointerTagLiveRange(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[192]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(193)]
+    public HRESULT get_isAcceleratorStubFunction(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[193]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(194)]
+    public HRESULT get_numberOfAcceleratorPointerTags([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[194]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(195)]
+    public HRESULT get_isSdl(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[195]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(196)]
+    public HRESULT get_isWinRTPointer(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[196]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(197)]
+    public HRESULT get_isRefUdt(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[197]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(198)]
+    public HRESULT get_isValueUdt(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[198]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(199)]
+    public HRESULT get_isInterfaceUdt(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[199]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(200)]
+    public HRESULT findInlineFramesByAddr([NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaEnumSymbols** ppResult)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint, uint, IDiaEnumSymbols**, int>)(lpVtbl[200]))((IDiaSymbol*)Unsafe.AsPointer(ref this), isect, offset, ppResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(201)]
+    public HRESULT findInlineFramesByRVA([NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint, IDiaEnumSymbols**, int>)(lpVtbl[201]))((IDiaSymbol*)Unsafe.AsPointer(ref this), rva, ppResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(202)]
+    public HRESULT findInlineFramesByVA([NativeTypeName("ULONGLONG")] ulong va, IDiaEnumSymbols** ppResult)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, ulong, IDiaEnumSymbols**, int>)(lpVtbl[202]))((IDiaSymbol*)Unsafe.AsPointer(ref this), va, ppResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(203)]
+    public HRESULT findInlineeLines(IDiaEnumLineNumbers** ppResult)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, IDiaEnumLineNumbers**, int>)(lpVtbl[203]))((IDiaSymbol*)Unsafe.AsPointer(ref this), ppResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(204)]
+    public HRESULT findInlineeLinesByAddr([NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint, uint, uint, IDiaEnumLineNumbers**, int>)(lpVtbl[204]))((IDiaSymbol*)Unsafe.AsPointer(ref this), isect, offset, length, ppResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(205)]
+    public HRESULT findInlineeLinesByRVA([NativeTypeName("DWORD")] uint rva, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint, uint, IDiaEnumLineNumbers**, int>)(lpVtbl[205]))((IDiaSymbol*)Unsafe.AsPointer(ref this), rva, length, ppResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(206)]
+    public HRESULT findInlineeLinesByVA([NativeTypeName("ULONGLONG")] ulong va, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, ulong, uint, IDiaEnumLineNumbers**, int>)(lpVtbl[206]))((IDiaSymbol*)Unsafe.AsPointer(ref this), va, length, ppResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(207)]
+    public HRESULT findSymbolsForAcceleratorPointerTag([NativeTypeName("DWORD")] uint tagValue, IDiaEnumSymbols** ppResult)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint, IDiaEnumSymbols**, int>)(lpVtbl[207]))((IDiaSymbol*)Unsafe.AsPointer(ref this), tagValue, ppResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(208)]
+    public HRESULT findSymbolsByRVAForAcceleratorPointerTag([NativeTypeName("DWORD")] uint tagValue, [NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint, uint, IDiaEnumSymbols**, int>)(lpVtbl[208]))((IDiaSymbol*)Unsafe.AsPointer(ref this), tagValue, rva, ppResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(209)]
+    public HRESULT get_acceleratorPointerTags([NativeTypeName("DWORD")] uint cnt, [NativeTypeName("DWORD *")] uint* pcnt, [NativeTypeName("DWORD *")] uint* pPointerTags)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint, uint*, uint*, int>)(lpVtbl[209]))((IDiaSymbol*)Unsafe.AsPointer(ref this), cnt, pcnt, pPointerTags);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(210)]
+    public HRESULT getSrcLineOnTypeDefn(IDiaLineNumber** ppResult)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, IDiaLineNumber**, int>)(lpVtbl[210]))((IDiaSymbol*)Unsafe.AsPointer(ref this), ppResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(211)]
+    public HRESULT get_isPGO(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[211]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(212)]
+    public HRESULT get_hasValidPGOCounts(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[212]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(213)]
+    public HRESULT get_isOptimizedForSpeed(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[213]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(214)]
+    public HRESULT get_PGOEntryCount([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[214]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(215)]
+    public HRESULT get_PGOEdgeCount([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[215]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(216)]
+    public HRESULT get_PGODynamicInstructionCount([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, ulong*, int>)(lpVtbl[216]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(217)]
+    public HRESULT get_staticSize([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[217]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(218)]
+    public HRESULT get_finalLiveStaticSize([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[218]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(219)]
+    public HRESULT get_phaseName([NativeTypeName("BSTR *")] ushort** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[219]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(220)]
+    public HRESULT get_hasControlFlowCheck(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[220]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(221)]
+    public HRESULT get_constantExport(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[221]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(222)]
+    public HRESULT get_dataExport(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[222]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(223)]
+    public HRESULT get_privateExport(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[223]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(224)]
+    public HRESULT get_noNameExport(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[224]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(225)]
+    public HRESULT get_exportHasExplicitlyAssignedOrdinal(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[225]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(226)]
+    public HRESULT get_exportIsForwarder(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[226]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(227)]
+    public HRESULT get_ordinal([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[227]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(228)]
+    public HRESULT get_frameSize([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[228]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(229)]
+    public HRESULT get_exceptionHandlerAddressSection([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[229]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(230)]
+    public HRESULT get_exceptionHandlerAddressOffset([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[230]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(231)]
+    public HRESULT get_exceptionHandlerRelativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[231]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(232)]
+    public HRESULT get_exceptionHandlerVirtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, ulong*, int>)(lpVtbl[232]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(233)]
+    public HRESULT findInputAssemblyFile(IDiaInputAssemblyFile** ppResult)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, IDiaInputAssemblyFile**, int>)(lpVtbl[233]))((IDiaSymbol*)Unsafe.AsPointer(ref this), ppResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(234)]
+    public HRESULT get_characteristics([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[234]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(235)]
+    public HRESULT get_coffGroup(IDiaSymbol** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[235]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(236)]
+    public HRESULT get_bindID([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[236]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(237)]
+    public HRESULT get_bindSpace([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[237]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(238)]
+    public HRESULT get_bindSlot([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[238]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT get_symIndexId([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[3]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_symIndexId([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT get_symTag([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[4]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_symTag([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT get_name([NativeTypeName("BSTR *")] ushort** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[5]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_name([NativeTypeName("BSTR *")] ushort** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT get_lexicalParent(IDiaSymbol** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[6]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_lexicalParent(IDiaSymbol** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT get_classParent(IDiaSymbol** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[7]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_classParent(IDiaSymbol** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT get_type(IDiaSymbol** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[8]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_type(IDiaSymbol** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT get_dataKind([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[9]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_dataKind([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT get_locationType([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[10]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_locationType([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT get_addressSection([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[11]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_addressSection([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT get_addressOffset([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[12]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_addressOffset([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT get_relativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[13]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_relativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, ulong*, int>)(lpVtbl[14]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT get_registerId([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[15]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_registerId([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT get_offset([NativeTypeName("LONG *")] int* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, int*, int>)(lpVtbl[16]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_offset([NativeTypeName("LONG *")] int* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT get_length([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, ulong*, int>)(lpVtbl[17]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_length([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT get_slot([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[18]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_slot([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT get_volatileType(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[19]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_volatileType(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT get_constType(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[20]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_constType(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public HRESULT get_unalignedType(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[21]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_unalignedType(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        public HRESULT get_access([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[22]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_access([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        public HRESULT get_libraryName([NativeTypeName("BSTR *")] ushort** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[23]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_libraryName([NativeTypeName("BSTR *")] ushort** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT get_platform([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[24]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_platform([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        public HRESULT get_language([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[25]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_language([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        public HRESULT get_editAndContinueEnabled(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[26]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_editAndContinueEnabled(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        public HRESULT get_frontEndMajor([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[27]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_frontEndMajor([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        public HRESULT get_frontEndMinor([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[28]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_frontEndMinor([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(29)]
-        public HRESULT get_frontEndBuild([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[29]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_frontEndBuild([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
-        public HRESULT get_backEndMajor([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[30]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_backEndMajor([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        public HRESULT get_backEndMinor([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[31]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_backEndMinor([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(32)]
-        public HRESULT get_backEndBuild([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[32]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_backEndBuild([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(33)]
-        public HRESULT get_sourceFileName([NativeTypeName("BSTR *")] ushort** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[33]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_sourceFileName([NativeTypeName("BSTR *")] ushort** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(34)]
-        public HRESULT get_unused([NativeTypeName("BSTR *")] ushort** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[34]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_unused([NativeTypeName("BSTR *")] ushort** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(35)]
-        public HRESULT get_thunkOrdinal([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[35]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_thunkOrdinal([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(36)]
-        public HRESULT get_thisAdjust([NativeTypeName("LONG *")] int* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, int*, int>)(lpVtbl[36]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_thisAdjust([NativeTypeName("LONG *")] int* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(37)]
-        public HRESULT get_virtualBaseOffset([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[37]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_virtualBaseOffset([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(38)]
-        public HRESULT get_virtual(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[38]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_virtual(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(39)]
-        public HRESULT get_intro(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[39]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_intro(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(40)]
-        public HRESULT get_pure(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[40]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_pure(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(41)]
-        public HRESULT get_callingConvention([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[41]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_callingConvention([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(42)]
-        public HRESULT get_value(VARIANT* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, VARIANT*, int>)(lpVtbl[42]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_value(VARIANT* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(43)]
-        public HRESULT get_baseType([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[43]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_baseType([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(44)]
-        public HRESULT get_token([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[44]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_token([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(45)]
-        public HRESULT get_timeStamp([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[45]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_timeStamp([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(46)]
-        public HRESULT get_guid(Guid* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, Guid*, int>)(lpVtbl[46]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_guid(Guid* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(47)]
-        public HRESULT get_symbolsFileName([NativeTypeName("BSTR *")] ushort** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[47]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_symbolsFileName([NativeTypeName("BSTR *")] ushort** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(48)]
-        public HRESULT get_reference(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[48]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_reference(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(49)]
-        public HRESULT get_count([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[49]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_count([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(50)]
-        public HRESULT get_bitPosition([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[50]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_bitPosition([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(51)]
-        public HRESULT get_arrayIndexType(IDiaSymbol** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[51]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_arrayIndexType(IDiaSymbol** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(52)]
-        public HRESULT get_packed(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[52]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_packed(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(53)]
-        public HRESULT get_constructor(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[53]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_constructor(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(54)]
-        public HRESULT get_overloadedOperator(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[54]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_overloadedOperator(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(55)]
-        public HRESULT get_nested(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[55]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_nested(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(56)]
-        public HRESULT get_hasNestedTypes(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[56]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_hasNestedTypes(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(57)]
-        public HRESULT get_hasAssignmentOperator(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[57]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_hasAssignmentOperator(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(58)]
-        public HRESULT get_hasCastOperator(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[58]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_hasCastOperator(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(59)]
-        public HRESULT get_scoped(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[59]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_scoped(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(60)]
-        public HRESULT get_virtualBaseClass(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[60]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_virtualBaseClass(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(61)]
-        public HRESULT get_indirectVirtualBaseClass(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[61]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_indirectVirtualBaseClass(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(62)]
-        public HRESULT get_virtualBasePointerOffset([NativeTypeName("LONG *")] int* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, int*, int>)(lpVtbl[62]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_virtualBasePointerOffset([NativeTypeName("LONG *")] int* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(63)]
-        public HRESULT get_virtualTableShape(IDiaSymbol** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[63]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_virtualTableShape(IDiaSymbol** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(64)]
-        public HRESULT get_lexicalParentId([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[64]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_lexicalParentId([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(65)]
-        public HRESULT get_classParentId([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[65]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_classParentId([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(66)]
-        public HRESULT get_typeId([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[66]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_typeId([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(67)]
-        public HRESULT get_arrayIndexTypeId([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[67]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_arrayIndexTypeId([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(68)]
-        public HRESULT get_virtualTableShapeId([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[68]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_virtualTableShapeId([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(69)]
-        public HRESULT get_code(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[69]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_code(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(70)]
-        public HRESULT get_function(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[70]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_function(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(71)]
-        public HRESULT get_managed(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[71]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_managed(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(72)]
-        public HRESULT get_msil(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[72]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_msil(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(73)]
-        public HRESULT get_virtualBaseDispIndex([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[73]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_virtualBaseDispIndex([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(74)]
-        public HRESULT get_undecoratedName([NativeTypeName("BSTR *")] ushort** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[74]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_undecoratedName([NativeTypeName("BSTR *")] ushort** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(75)]
-        public HRESULT get_age([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[75]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_age([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(76)]
-        public HRESULT get_signature([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[76]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_signature([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(77)]
-        public HRESULT get_compilerGenerated(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[77]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_compilerGenerated(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(78)]
-        public HRESULT get_addressTaken(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[78]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_addressTaken(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(79)]
-        public HRESULT get_rank([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[79]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_rank([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(80)]
-        public HRESULT get_lowerBound(IDiaSymbol** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[80]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_lowerBound(IDiaSymbol** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(81)]
-        public HRESULT get_upperBound(IDiaSymbol** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[81]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_upperBound(IDiaSymbol** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(82)]
-        public HRESULT get_lowerBoundId([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[82]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_lowerBoundId([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(83)]
-        public HRESULT get_upperBoundId([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[83]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_upperBoundId([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(84)]
-        public HRESULT get_dataBytes([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint, uint*, byte*, int>)(lpVtbl[84]))((IDiaSymbol*)Unsafe.AsPointer(ref this), cbData, pcbData, pbData);
-        }
+        HRESULT get_dataBytes([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(85)]
-        public HRESULT findChildren([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, IDiaEnumSymbols**, int>)(lpVtbl[85]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, ppResult);
-        }
+        HRESULT findChildren([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(86)]
-        public HRESULT findChildrenEx([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, IDiaEnumSymbols**, int>)(lpVtbl[86]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, ppResult);
-        }
+        HRESULT findChildrenEx([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(87)]
-        public HRESULT findChildrenExByAddr([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaEnumSymbols** ppResult)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, uint, uint, IDiaEnumSymbols**, int>)(lpVtbl[87]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, isect, offset, ppResult);
-        }
+        HRESULT findChildrenExByAddr([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaEnumSymbols** ppResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(88)]
-        public HRESULT findChildrenExByVA([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("ULONGLONG")] ulong va, IDiaEnumSymbols** ppResult)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, ulong, IDiaEnumSymbols**, int>)(lpVtbl[88]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, va, ppResult);
-        }
+        HRESULT findChildrenExByVA([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("ULONGLONG")] ulong va, IDiaEnumSymbols** ppResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(89)]
-        public HRESULT findChildrenExByRVA([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, uint, IDiaEnumSymbols**, int>)(lpVtbl[89]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, rva, ppResult);
-        }
+        HRESULT findChildrenExByRVA([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(90)]
-        public HRESULT get_targetSection([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[90]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_targetSection([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(91)]
-        public HRESULT get_targetOffset([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[91]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_targetOffset([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(92)]
-        public HRESULT get_targetRelativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[92]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_targetRelativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(93)]
-        public HRESULT get_targetVirtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, ulong*, int>)(lpVtbl[93]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_targetVirtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(94)]
-        public HRESULT get_machineType([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[94]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_machineType([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(95)]
-        public HRESULT get_oemId([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[95]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_oemId([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(96)]
-        public HRESULT get_oemSymbolId([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[96]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_oemSymbolId([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(97)]
-        public HRESULT get_types([NativeTypeName("DWORD")] uint cTypes, [NativeTypeName("DWORD *")] uint* pcTypes, IDiaSymbol** pTypes)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint, uint*, IDiaSymbol**, int>)(lpVtbl[97]))((IDiaSymbol*)Unsafe.AsPointer(ref this), cTypes, pcTypes, pTypes);
-        }
+        HRESULT get_types([NativeTypeName("DWORD")] uint cTypes, [NativeTypeName("DWORD *")] uint* pcTypes, IDiaSymbol** pTypes);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(98)]
-        public HRESULT get_typeIds([NativeTypeName("DWORD")] uint cTypeIds, [NativeTypeName("DWORD *")] uint* pcTypeIds, [NativeTypeName("DWORD *")] uint* pdwTypeIds)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint, uint*, uint*, int>)(lpVtbl[98]))((IDiaSymbol*)Unsafe.AsPointer(ref this), cTypeIds, pcTypeIds, pdwTypeIds);
-        }
+        HRESULT get_typeIds([NativeTypeName("DWORD")] uint cTypeIds, [NativeTypeName("DWORD *")] uint* pcTypeIds, [NativeTypeName("DWORD *")] uint* pdwTypeIds);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(99)]
-        public HRESULT get_objectPointerType(IDiaSymbol** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[99]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_objectPointerType(IDiaSymbol** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(100)]
-        public HRESULT get_udtKind([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[100]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_udtKind([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(101)]
-        public HRESULT get_undecoratedNameEx([NativeTypeName("DWORD")] uint undecorateOptions, [NativeTypeName("BSTR *")] ushort** name)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint, ushort**, int>)(lpVtbl[101]))((IDiaSymbol*)Unsafe.AsPointer(ref this), undecorateOptions, name);
-        }
+        HRESULT get_undecoratedNameEx([NativeTypeName("DWORD")] uint undecorateOptions, [NativeTypeName("BSTR *")] ushort** name);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(102)]
-        public HRESULT get_noReturn(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[102]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_noReturn(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(103)]
-        public HRESULT get_customCallingConvention(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[103]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_customCallingConvention(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(104)]
-        public HRESULT get_noInline(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[104]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_noInline(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(105)]
-        public HRESULT get_optimizedCodeDebugInfo(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[105]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_optimizedCodeDebugInfo(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(106)]
-        public HRESULT get_notReached(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[106]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_notReached(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(107)]
-        public HRESULT get_interruptReturn(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[107]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_interruptReturn(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(108)]
-        public HRESULT get_farReturn(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[108]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_farReturn(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(109)]
-        public HRESULT get_isStatic(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[109]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isStatic(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(110)]
-        public HRESULT get_hasDebugInfo(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[110]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_hasDebugInfo(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(111)]
-        public HRESULT get_isLTCG(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[111]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isLTCG(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(112)]
-        public HRESULT get_isDataAligned(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[112]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isDataAligned(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(113)]
-        public HRESULT get_hasSecurityChecks(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[113]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_hasSecurityChecks(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(114)]
-        public HRESULT get_compilerName([NativeTypeName("BSTR *")] ushort** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[114]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_compilerName([NativeTypeName("BSTR *")] ushort** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(115)]
-        public HRESULT get_hasAlloca(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[115]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_hasAlloca(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(116)]
-        public HRESULT get_hasSetJump(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[116]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_hasSetJump(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(117)]
-        public HRESULT get_hasLongJump(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[117]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_hasLongJump(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(118)]
-        public HRESULT get_hasInlAsm(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[118]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_hasInlAsm(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(119)]
-        public HRESULT get_hasEH(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[119]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_hasEH(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(120)]
-        public HRESULT get_hasSEH(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[120]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_hasSEH(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(121)]
-        public HRESULT get_hasEHa(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[121]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_hasEHa(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(122)]
-        public HRESULT get_isNaked(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[122]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isNaked(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(123)]
-        public HRESULT get_isAggregated(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[123]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isAggregated(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(124)]
-        public HRESULT get_isSplitted(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[124]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isSplitted(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(125)]
-        public HRESULT get_container(IDiaSymbol** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[125]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_container(IDiaSymbol** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(126)]
-        public HRESULT get_inlSpec(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[126]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_inlSpec(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(127)]
-        public HRESULT get_noStackOrdering(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[127]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_noStackOrdering(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(128)]
-        public HRESULT get_virtualBaseTableType(IDiaSymbol** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[128]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_virtualBaseTableType(IDiaSymbol** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(129)]
-        public HRESULT get_hasManagedCode(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[129]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_hasManagedCode(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(130)]
-        public HRESULT get_isHotpatchable(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[130]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isHotpatchable(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(131)]
-        public HRESULT get_isCVTCIL(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[131]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isCVTCIL(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(132)]
-        public HRESULT get_isMSILNetmodule(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[132]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isMSILNetmodule(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(133)]
-        public HRESULT get_isCTypes(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[133]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isCTypes(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(134)]
-        public HRESULT get_isStripped(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[134]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isStripped(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(135)]
-        public HRESULT get_frontEndQFE([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[135]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_frontEndQFE([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(136)]
-        public HRESULT get_backEndQFE([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[136]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_backEndQFE([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(137)]
-        public HRESULT get_wasInlined(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[137]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_wasInlined(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(138)]
-        public HRESULT get_strictGSCheck(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[138]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_strictGSCheck(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(139)]
-        public HRESULT get_isCxxReturnUdt(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[139]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isCxxReturnUdt(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(140)]
-        public HRESULT get_isConstructorVirtualBase(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[140]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isConstructorVirtualBase(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(141)]
-        public HRESULT get_RValueReference(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[141]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_RValueReference(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(142)]
-        public HRESULT get_unmodifiedType(IDiaSymbol** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[142]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_unmodifiedType(IDiaSymbol** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(143)]
-        public HRESULT get_framePointerPresent(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[143]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_framePointerPresent(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(144)]
-        public HRESULT get_isSafeBuffers(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[144]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isSafeBuffers(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(145)]
-        public HRESULT get_intrinsic(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[145]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_intrinsic(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(146)]
-        public HRESULT get_sealed(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[146]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_sealed(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(147)]
-        public HRESULT get_hfaFloat(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[147]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_hfaFloat(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(148)]
-        public HRESULT get_hfaDouble(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[148]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_hfaDouble(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(149)]
-        public HRESULT get_liveRangeStartAddressSection([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[149]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_liveRangeStartAddressSection([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(150)]
-        public HRESULT get_liveRangeStartAddressOffset([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[150]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_liveRangeStartAddressOffset([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(151)]
-        public HRESULT get_liveRangeStartRelativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[151]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_liveRangeStartRelativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(152)]
-        public HRESULT get_countLiveRanges([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[152]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_countLiveRanges([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(153)]
-        public HRESULT get_liveRangeLength([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, ulong*, int>)(lpVtbl[153]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_liveRangeLength([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(154)]
-        public HRESULT get_offsetInUdt([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[154]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_offsetInUdt([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(155)]
-        public HRESULT get_paramBasePointerRegisterId([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[155]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_paramBasePointerRegisterId([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(156)]
-        public HRESULT get_localBasePointerRegisterId([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[156]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_localBasePointerRegisterId([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(157)]
-        public HRESULT get_isLocationControlFlowDependent(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[157]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isLocationControlFlowDependent(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(158)]
-        public HRESULT get_stride([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[158]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_stride([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(159)]
-        public HRESULT get_numberOfRows([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[159]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_numberOfRows([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(160)]
-        public HRESULT get_numberOfColumns([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[160]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_numberOfColumns([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(161)]
-        public HRESULT get_isMatrixRowMajor(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[161]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isMatrixRowMajor(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(162)]
-        public HRESULT get_numericProperties([NativeTypeName("DWORD")] uint cnt, [NativeTypeName("DWORD *")] uint* pcnt, [NativeTypeName("DWORD *")] uint* pProperties)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint, uint*, uint*, int>)(lpVtbl[162]))((IDiaSymbol*)Unsafe.AsPointer(ref this), cnt, pcnt, pProperties);
-        }
+        HRESULT get_numericProperties([NativeTypeName("DWORD")] uint cnt, [NativeTypeName("DWORD *")] uint* pcnt, [NativeTypeName("DWORD *")] uint* pProperties);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(163)]
-        public HRESULT get_modifierValues([NativeTypeName("DWORD")] uint cnt, [NativeTypeName("DWORD *")] uint* pcnt, [NativeTypeName("WORD *")] ushort* pModifiers)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint, uint*, ushort*, int>)(lpVtbl[163]))((IDiaSymbol*)Unsafe.AsPointer(ref this), cnt, pcnt, pModifiers);
-        }
+        HRESULT get_modifierValues([NativeTypeName("DWORD")] uint cnt, [NativeTypeName("DWORD *")] uint* pcnt, [NativeTypeName("WORD *")] ushort* pModifiers);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(164)]
-        public HRESULT get_isReturnValue(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[164]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isReturnValue(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(165)]
-        public HRESULT get_isOptimizedAway(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[165]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isOptimizedAway(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(166)]
-        public HRESULT get_builtInKind([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[166]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_builtInKind([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(167)]
-        public HRESULT get_registerType([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[167]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_registerType([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(168)]
-        public HRESULT get_baseDataSlot([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[168]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_baseDataSlot([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(169)]
-        public HRESULT get_baseDataOffset([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[169]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_baseDataOffset([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(170)]
-        public HRESULT get_textureSlot([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[170]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_textureSlot([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(171)]
-        public HRESULT get_samplerSlot([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[171]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_samplerSlot([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(172)]
-        public HRESULT get_uavSlot([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[172]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_uavSlot([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(173)]
-        public HRESULT get_sizeInUdt([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[173]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_sizeInUdt([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(174)]
-        public HRESULT get_memorySpaceKind([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[174]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_memorySpaceKind([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(175)]
-        public HRESULT get_unmodifiedTypeId([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[175]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_unmodifiedTypeId([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(176)]
-        public HRESULT get_subTypeId([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[176]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_subTypeId([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(177)]
-        public HRESULT get_subType(IDiaSymbol** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[177]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_subType(IDiaSymbol** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(178)]
-        public HRESULT get_numberOfModifiers([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[178]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_numberOfModifiers([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(179)]
-        public HRESULT get_numberOfRegisterIndices([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[179]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_numberOfRegisterIndices([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(180)]
-        public HRESULT get_isHLSLData(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[180]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isHLSLData(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(181)]
-        public HRESULT get_isPointerToDataMember(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[181]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isPointerToDataMember(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(182)]
-        public HRESULT get_isPointerToMemberFunction(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[182]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isPointerToMemberFunction(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(183)]
-        public HRESULT get_isSingleInheritance(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[183]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isSingleInheritance(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(184)]
-        public HRESULT get_isMultipleInheritance(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[184]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isMultipleInheritance(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(185)]
-        public HRESULT get_isVirtualInheritance(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[185]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isVirtualInheritance(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(186)]
-        public HRESULT get_restrictedType(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[186]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_restrictedType(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(187)]
-        public HRESULT get_isPointerBasedOnSymbolValue(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[187]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isPointerBasedOnSymbolValue(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(188)]
-        public HRESULT get_baseSymbol(IDiaSymbol** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[188]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_baseSymbol(IDiaSymbol** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(189)]
-        public HRESULT get_baseSymbolId([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[189]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_baseSymbolId([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(190)]
-        public HRESULT get_objectFileName([NativeTypeName("BSTR *")] ushort** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[190]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_objectFileName([NativeTypeName("BSTR *")] ushort** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(191)]
-        public HRESULT get_isAcceleratorGroupSharedLocal(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[191]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isAcceleratorGroupSharedLocal(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(192)]
-        public HRESULT get_isAcceleratorPointerTagLiveRange(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[192]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isAcceleratorPointerTagLiveRange(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(193)]
-        public HRESULT get_isAcceleratorStubFunction(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[193]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isAcceleratorStubFunction(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(194)]
-        public HRESULT get_numberOfAcceleratorPointerTags([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[194]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_numberOfAcceleratorPointerTags([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(195)]
-        public HRESULT get_isSdl(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[195]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isSdl(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(196)]
-        public HRESULT get_isWinRTPointer(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[196]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isWinRTPointer(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(197)]
-        public HRESULT get_isRefUdt(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[197]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isRefUdt(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(198)]
-        public HRESULT get_isValueUdt(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[198]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isValueUdt(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(199)]
-        public HRESULT get_isInterfaceUdt(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[199]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isInterfaceUdt(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(200)]
-        public HRESULT findInlineFramesByAddr([NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaEnumSymbols** ppResult)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint, uint, IDiaEnumSymbols**, int>)(lpVtbl[200]))((IDiaSymbol*)Unsafe.AsPointer(ref this), isect, offset, ppResult);
-        }
+        HRESULT findInlineFramesByAddr([NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaEnumSymbols** ppResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(201)]
-        public HRESULT findInlineFramesByRVA([NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint, IDiaEnumSymbols**, int>)(lpVtbl[201]))((IDiaSymbol*)Unsafe.AsPointer(ref this), rva, ppResult);
-        }
+        HRESULT findInlineFramesByRVA([NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(202)]
-        public HRESULT findInlineFramesByVA([NativeTypeName("ULONGLONG")] ulong va, IDiaEnumSymbols** ppResult)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, ulong, IDiaEnumSymbols**, int>)(lpVtbl[202]))((IDiaSymbol*)Unsafe.AsPointer(ref this), va, ppResult);
-        }
+        HRESULT findInlineFramesByVA([NativeTypeName("ULONGLONG")] ulong va, IDiaEnumSymbols** ppResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(203)]
-        public HRESULT findInlineeLines(IDiaEnumLineNumbers** ppResult)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, IDiaEnumLineNumbers**, int>)(lpVtbl[203]))((IDiaSymbol*)Unsafe.AsPointer(ref this), ppResult);
-        }
+        HRESULT findInlineeLines(IDiaEnumLineNumbers** ppResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(204)]
-        public HRESULT findInlineeLinesByAddr([NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint, uint, uint, IDiaEnumLineNumbers**, int>)(lpVtbl[204]))((IDiaSymbol*)Unsafe.AsPointer(ref this), isect, offset, length, ppResult);
-        }
+        HRESULT findInlineeLinesByAddr([NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(205)]
-        public HRESULT findInlineeLinesByRVA([NativeTypeName("DWORD")] uint rva, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint, uint, IDiaEnumLineNumbers**, int>)(lpVtbl[205]))((IDiaSymbol*)Unsafe.AsPointer(ref this), rva, length, ppResult);
-        }
+        HRESULT findInlineeLinesByRVA([NativeTypeName("DWORD")] uint rva, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(206)]
-        public HRESULT findInlineeLinesByVA([NativeTypeName("ULONGLONG")] ulong va, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, ulong, uint, IDiaEnumLineNumbers**, int>)(lpVtbl[206]))((IDiaSymbol*)Unsafe.AsPointer(ref this), va, length, ppResult);
-        }
+        HRESULT findInlineeLinesByVA([NativeTypeName("ULONGLONG")] ulong va, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(207)]
-        public HRESULT findSymbolsForAcceleratorPointerTag([NativeTypeName("DWORD")] uint tagValue, IDiaEnumSymbols** ppResult)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint, IDiaEnumSymbols**, int>)(lpVtbl[207]))((IDiaSymbol*)Unsafe.AsPointer(ref this), tagValue, ppResult);
-        }
+        HRESULT findSymbolsForAcceleratorPointerTag([NativeTypeName("DWORD")] uint tagValue, IDiaEnumSymbols** ppResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(208)]
-        public HRESULT findSymbolsByRVAForAcceleratorPointerTag([NativeTypeName("DWORD")] uint tagValue, [NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint, uint, IDiaEnumSymbols**, int>)(lpVtbl[208]))((IDiaSymbol*)Unsafe.AsPointer(ref this), tagValue, rva, ppResult);
-        }
+        HRESULT findSymbolsByRVAForAcceleratorPointerTag([NativeTypeName("DWORD")] uint tagValue, [NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(209)]
-        public HRESULT get_acceleratorPointerTags([NativeTypeName("DWORD")] uint cnt, [NativeTypeName("DWORD *")] uint* pcnt, [NativeTypeName("DWORD *")] uint* pPointerTags)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint, uint*, uint*, int>)(lpVtbl[209]))((IDiaSymbol*)Unsafe.AsPointer(ref this), cnt, pcnt, pPointerTags);
-        }
+        HRESULT get_acceleratorPointerTags([NativeTypeName("DWORD")] uint cnt, [NativeTypeName("DWORD *")] uint* pcnt, [NativeTypeName("DWORD *")] uint* pPointerTags);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(210)]
-        public HRESULT getSrcLineOnTypeDefn(IDiaLineNumber** ppResult)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, IDiaLineNumber**, int>)(lpVtbl[210]))((IDiaSymbol*)Unsafe.AsPointer(ref this), ppResult);
-        }
+        HRESULT getSrcLineOnTypeDefn(IDiaLineNumber** ppResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(211)]
-        public HRESULT get_isPGO(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[211]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isPGO(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(212)]
-        public HRESULT get_hasValidPGOCounts(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[212]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_hasValidPGOCounts(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(213)]
-        public HRESULT get_isOptimizedForSpeed(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[213]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_isOptimizedForSpeed(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(214)]
-        public HRESULT get_PGOEntryCount([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[214]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_PGOEntryCount([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(215)]
-        public HRESULT get_PGOEdgeCount([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[215]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_PGOEdgeCount([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(216)]
-        public HRESULT get_PGODynamicInstructionCount([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, ulong*, int>)(lpVtbl[216]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_PGODynamicInstructionCount([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(217)]
-        public HRESULT get_staticSize([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[217]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_staticSize([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(218)]
-        public HRESULT get_finalLiveStaticSize([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[218]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_finalLiveStaticSize([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(219)]
-        public HRESULT get_phaseName([NativeTypeName("BSTR *")] ushort** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[219]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_phaseName([NativeTypeName("BSTR *")] ushort** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(220)]
-        public HRESULT get_hasControlFlowCheck(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[220]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_hasControlFlowCheck(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(221)]
-        public HRESULT get_constantExport(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[221]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_constantExport(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(222)]
-        public HRESULT get_dataExport(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[222]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_dataExport(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(223)]
-        public HRESULT get_privateExport(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[223]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_privateExport(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(224)]
-        public HRESULT get_noNameExport(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[224]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_noNameExport(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(225)]
-        public HRESULT get_exportHasExplicitlyAssignedOrdinal(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[225]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_exportHasExplicitlyAssignedOrdinal(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(226)]
-        public HRESULT get_exportIsForwarder(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[226]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_exportIsForwarder(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(227)]
-        public HRESULT get_ordinal([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[227]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_ordinal([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(228)]
-        public HRESULT get_frameSize([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[228]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_frameSize([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(229)]
-        public HRESULT get_exceptionHandlerAddressSection([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[229]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_exceptionHandlerAddressSection([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(230)]
-        public HRESULT get_exceptionHandlerAddressOffset([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[230]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_exceptionHandlerAddressOffset([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(231)]
-        public HRESULT get_exceptionHandlerRelativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[231]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_exceptionHandlerRelativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(232)]
-        public HRESULT get_exceptionHandlerVirtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, ulong*, int>)(lpVtbl[232]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_exceptionHandlerVirtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(233)]
-        public HRESULT findInputAssemblyFile(IDiaInputAssemblyFile** ppResult)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, IDiaInputAssemblyFile**, int>)(lpVtbl[233]))((IDiaSymbol*)Unsafe.AsPointer(ref this), ppResult);
-        }
+        HRESULT findInputAssemblyFile(IDiaInputAssemblyFile** ppResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(234)]
-        public HRESULT get_characteristics([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[234]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_characteristics([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(235)]
-        public HRESULT get_coffGroup(IDiaSymbol** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[235]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_coffGroup(IDiaSymbol** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(236)]
-        public HRESULT get_bindID([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[236]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_bindID([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(237)]
-        public HRESULT get_bindSpace([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[237]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_bindSpace([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(238)]
-        public HRESULT get_bindSlot([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[238]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_bindSlot([NativeTypeName("DWORD *")] uint* pRetVal);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT get_symIndexId([NativeTypeName("DWORD *")] uint* pRetVal);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT get_symTag([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT get_name([NativeTypeName("BSTR *")] ushort** pRetVal);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT get_lexicalParent(IDiaSymbol** pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_symIndexId;
 
-            [VtblIndex(7)]
-            HRESULT get_classParent(IDiaSymbol** pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_symTag;
 
-            [VtblIndex(8)]
-            HRESULT get_type(IDiaSymbol** pRetVal);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_name;
 
-            [VtblIndex(9)]
-            HRESULT get_dataKind([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_lexicalParent;
 
-            [VtblIndex(10)]
-            HRESULT get_locationType([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_classParent;
 
-            [VtblIndex(11)]
-            HRESULT get_addressSection([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_type;
 
-            [VtblIndex(12)]
-            HRESULT get_addressOffset([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_dataKind;
 
-            [VtblIndex(13)]
-            HRESULT get_relativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_locationType;
 
-            [VtblIndex(14)]
-            HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_addressSection;
 
-            [VtblIndex(15)]
-            HRESULT get_registerId([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_addressOffset;
 
-            [VtblIndex(16)]
-            HRESULT get_offset([NativeTypeName("LONG *")] int* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_relativeVirtualAddress;
 
-            [VtblIndex(17)]
-            HRESULT get_length([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
+        [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, ulong*, int> get_virtualAddress;
 
-            [VtblIndex(18)]
-            HRESULT get_slot([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_registerId;
 
-            [VtblIndex(19)]
-            HRESULT get_volatileType(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, int*, int> get_offset;
 
-            [VtblIndex(20)]
-            HRESULT get_constType(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, ulong*, int> get_length;
 
-            [VtblIndex(21)]
-            HRESULT get_unalignedType(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_slot;
 
-            [VtblIndex(22)]
-            HRESULT get_access([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_volatileType;
 
-            [VtblIndex(23)]
-            HRESULT get_libraryName([NativeTypeName("BSTR *")] ushort** pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_constType;
 
-            [VtblIndex(24)]
-            HRESULT get_platform([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_unalignedType;
 
-            [VtblIndex(25)]
-            HRESULT get_language([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_access;
 
-            [VtblIndex(26)]
-            HRESULT get_editAndContinueEnabled(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_libraryName;
 
-            [VtblIndex(27)]
-            HRESULT get_frontEndMajor([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_platform;
 
-            [VtblIndex(28)]
-            HRESULT get_frontEndMinor([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_language;
 
-            [VtblIndex(29)]
-            HRESULT get_frontEndBuild([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_editAndContinueEnabled;
 
-            [VtblIndex(30)]
-            HRESULT get_backEndMajor([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_frontEndMajor;
 
-            [VtblIndex(31)]
-            HRESULT get_backEndMinor([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_frontEndMinor;
 
-            [VtblIndex(32)]
-            HRESULT get_backEndBuild([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_frontEndBuild;
 
-            [VtblIndex(33)]
-            HRESULT get_sourceFileName([NativeTypeName("BSTR *")] ushort** pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_backEndMajor;
 
-            [VtblIndex(34)]
-            HRESULT get_unused([NativeTypeName("BSTR *")] ushort** pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_backEndMinor;
 
-            [VtblIndex(35)]
-            HRESULT get_thunkOrdinal([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_backEndBuild;
 
-            [VtblIndex(36)]
-            HRESULT get_thisAdjust([NativeTypeName("LONG *")] int* pRetVal);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_sourceFileName;
 
-            [VtblIndex(37)]
-            HRESULT get_virtualBaseOffset([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_unused;
 
-            [VtblIndex(38)]
-            HRESULT get_virtual(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_thunkOrdinal;
 
-            [VtblIndex(39)]
-            HRESULT get_intro(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, int*, int> get_thisAdjust;
 
-            [VtblIndex(40)]
-            HRESULT get_pure(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_virtualBaseOffset;
 
-            [VtblIndex(41)]
-            HRESULT get_callingConvention([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_virtual;
 
-            [VtblIndex(42)]
-            HRESULT get_value(VARIANT* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_intro;
 
-            [VtblIndex(43)]
-            HRESULT get_baseType([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_pure;
 
-            [VtblIndex(44)]
-            HRESULT get_token([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_callingConvention;
 
-            [VtblIndex(45)]
-            HRESULT get_timeStamp([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, VARIANT*, int> get_value;
 
-            [VtblIndex(46)]
-            HRESULT get_guid(Guid* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_baseType;
 
-            [VtblIndex(47)]
-            HRESULT get_symbolsFileName([NativeTypeName("BSTR *")] ushort** pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_token;
 
-            [VtblIndex(48)]
-            HRESULT get_reference(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_timeStamp;
 
-            [VtblIndex(49)]
-            HRESULT get_count([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, Guid*, int> get_guid;
 
-            [VtblIndex(50)]
-            HRESULT get_bitPosition([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_symbolsFileName;
 
-            [VtblIndex(51)]
-            HRESULT get_arrayIndexType(IDiaSymbol** pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_reference;
 
-            [VtblIndex(52)]
-            HRESULT get_packed(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_count;
 
-            [VtblIndex(53)]
-            HRESULT get_constructor(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_bitPosition;
 
-            [VtblIndex(54)]
-            HRESULT get_overloadedOperator(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_arrayIndexType;
 
-            [VtblIndex(55)]
-            HRESULT get_nested(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_packed;
 
-            [VtblIndex(56)]
-            HRESULT get_hasNestedTypes(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_constructor;
 
-            [VtblIndex(57)]
-            HRESULT get_hasAssignmentOperator(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_overloadedOperator;
 
-            [VtblIndex(58)]
-            HRESULT get_hasCastOperator(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_nested;
 
-            [VtblIndex(59)]
-            HRESULT get_scoped(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasNestedTypes;
 
-            [VtblIndex(60)]
-            HRESULT get_virtualBaseClass(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasAssignmentOperator;
 
-            [VtblIndex(61)]
-            HRESULT get_indirectVirtualBaseClass(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasCastOperator;
 
-            [VtblIndex(62)]
-            HRESULT get_virtualBasePointerOffset([NativeTypeName("LONG *")] int* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_scoped;
 
-            [VtblIndex(63)]
-            HRESULT get_virtualTableShape(IDiaSymbol** pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_virtualBaseClass;
 
-            [VtblIndex(64)]
-            HRESULT get_lexicalParentId([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_indirectVirtualBaseClass;
 
-            [VtblIndex(65)]
-            HRESULT get_classParentId([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, int*, int> get_virtualBasePointerOffset;
 
-            [VtblIndex(66)]
-            HRESULT get_typeId([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_virtualTableShape;
 
-            [VtblIndex(67)]
-            HRESULT get_arrayIndexTypeId([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_lexicalParentId;
 
-            [VtblIndex(68)]
-            HRESULT get_virtualTableShapeId([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_classParentId;
 
-            [VtblIndex(69)]
-            HRESULT get_code(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_typeId;
 
-            [VtblIndex(70)]
-            HRESULT get_function(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_arrayIndexTypeId;
 
-            [VtblIndex(71)]
-            HRESULT get_managed(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_virtualTableShapeId;
 
-            [VtblIndex(72)]
-            HRESULT get_msil(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_code;
 
-            [VtblIndex(73)]
-            HRESULT get_virtualBaseDispIndex([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_function;
 
-            [VtblIndex(74)]
-            HRESULT get_undecoratedName([NativeTypeName("BSTR *")] ushort** pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_managed;
 
-            [VtblIndex(75)]
-            HRESULT get_age([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_msil;
 
-            [VtblIndex(76)]
-            HRESULT get_signature([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_virtualBaseDispIndex;
 
-            [VtblIndex(77)]
-            HRESULT get_compilerGenerated(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_undecoratedName;
 
-            [VtblIndex(78)]
-            HRESULT get_addressTaken(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_age;
 
-            [VtblIndex(79)]
-            HRESULT get_rank([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_signature;
 
-            [VtblIndex(80)]
-            HRESULT get_lowerBound(IDiaSymbol** pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_compilerGenerated;
 
-            [VtblIndex(81)]
-            HRESULT get_upperBound(IDiaSymbol** pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_addressTaken;
 
-            [VtblIndex(82)]
-            HRESULT get_lowerBoundId([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_rank;
 
-            [VtblIndex(83)]
-            HRESULT get_upperBoundId([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_lowerBound;
 
-            [VtblIndex(84)]
-            HRESULT get_dataBytes([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData);
+        [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_upperBound;
 
-            [VtblIndex(85)]
-            HRESULT findChildren([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_lowerBoundId;
 
-            [VtblIndex(86)]
-            HRESULT findChildrenEx([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_upperBoundId;
 
-            [VtblIndex(87)]
-            HRESULT findChildrenExByAddr([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaEnumSymbols** ppResult);
+        [NativeTypeName("HRESULT (DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint, uint*, byte*, int> get_dataBytes;
 
-            [VtblIndex(88)]
-            HRESULT findChildrenExByVA([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("ULONGLONG")] ulong va, IDiaEnumSymbols** ppResult);
+        [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, IDiaEnumSymbols**, int> findChildren;
 
-            [VtblIndex(89)]
-            HRESULT findChildrenExByRVA([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult);
+        [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, IDiaEnumSymbols**, int> findChildrenEx;
 
-            [VtblIndex(90)]
-            HRESULT get_targetSection([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, uint, uint, IDiaEnumSymbols**, int> findChildrenExByAddr;
 
-            [VtblIndex(91)]
-            HRESULT get_targetOffset([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, ULONGLONG, IDiaEnumSymbols **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, ulong, IDiaEnumSymbols**, int> findChildrenExByVA;
 
-            [VtblIndex(92)]
-            HRESULT get_targetRelativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, uint, IDiaEnumSymbols**, int> findChildrenExByRVA;
 
-            [VtblIndex(93)]
-            HRESULT get_targetVirtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_targetSection;
 
-            [VtblIndex(94)]
-            HRESULT get_machineType([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_targetOffset;
 
-            [VtblIndex(95)]
-            HRESULT get_oemId([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_targetRelativeVirtualAddress;
 
-            [VtblIndex(96)]
-            HRESULT get_oemSymbolId([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, ulong*, int> get_targetVirtualAddress;
 
-            [VtblIndex(97)]
-            HRESULT get_types([NativeTypeName("DWORD")] uint cTypes, [NativeTypeName("DWORD *")] uint* pcTypes, IDiaSymbol** pTypes);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_machineType;
 
-            [VtblIndex(98)]
-            HRESULT get_typeIds([NativeTypeName("DWORD")] uint cTypeIds, [NativeTypeName("DWORD *")] uint* pcTypeIds, [NativeTypeName("DWORD *")] uint* pdwTypeIds);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_oemId;
 
-            [VtblIndex(99)]
-            HRESULT get_objectPointerType(IDiaSymbol** pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_oemSymbolId;
 
-            [VtblIndex(100)]
-            HRESULT get_udtKind([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD, DWORD *, IDiaSymbol **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint, uint*, IDiaSymbol**, int> get_types;
 
-            [VtblIndex(101)]
-            HRESULT get_undecoratedNameEx([NativeTypeName("DWORD")] uint undecorateOptions, [NativeTypeName("BSTR *")] ushort** name);
+        [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint, uint*, uint*, int> get_typeIds;
 
-            [VtblIndex(102)]
-            HRESULT get_noReturn(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_objectPointerType;
 
-            [VtblIndex(103)]
-            HRESULT get_customCallingConvention(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_udtKind;
 
-            [VtblIndex(104)]
-            HRESULT get_noInline(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint, ushort**, int> get_undecoratedNameEx;
 
-            [VtblIndex(105)]
-            HRESULT get_optimizedCodeDebugInfo(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_noReturn;
 
-            [VtblIndex(106)]
-            HRESULT get_notReached(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_customCallingConvention;
 
-            [VtblIndex(107)]
-            HRESULT get_interruptReturn(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_noInline;
 
-            [VtblIndex(108)]
-            HRESULT get_farReturn(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_optimizedCodeDebugInfo;
 
-            [VtblIndex(109)]
-            HRESULT get_isStatic(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_notReached;
 
-            [VtblIndex(110)]
-            HRESULT get_hasDebugInfo(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_interruptReturn;
 
-            [VtblIndex(111)]
-            HRESULT get_isLTCG(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_farReturn;
 
-            [VtblIndex(112)]
-            HRESULT get_isDataAligned(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isStatic;
 
-            [VtblIndex(113)]
-            HRESULT get_hasSecurityChecks(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasDebugInfo;
 
-            [VtblIndex(114)]
-            HRESULT get_compilerName([NativeTypeName("BSTR *")] ushort** pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isLTCG;
 
-            [VtblIndex(115)]
-            HRESULT get_hasAlloca(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isDataAligned;
 
-            [VtblIndex(116)]
-            HRESULT get_hasSetJump(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasSecurityChecks;
 
-            [VtblIndex(117)]
-            HRESULT get_hasLongJump(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_compilerName;
 
-            [VtblIndex(118)]
-            HRESULT get_hasInlAsm(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasAlloca;
 
-            [VtblIndex(119)]
-            HRESULT get_hasEH(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasSetJump;
 
-            [VtblIndex(120)]
-            HRESULT get_hasSEH(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasLongJump;
 
-            [VtblIndex(121)]
-            HRESULT get_hasEHa(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasInlAsm;
 
-            [VtblIndex(122)]
-            HRESULT get_isNaked(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasEH;
 
-            [VtblIndex(123)]
-            HRESULT get_isAggregated(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasSEH;
 
-            [VtblIndex(124)]
-            HRESULT get_isSplitted(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasEHa;
 
-            [VtblIndex(125)]
-            HRESULT get_container(IDiaSymbol** pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isNaked;
 
-            [VtblIndex(126)]
-            HRESULT get_inlSpec(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isAggregated;
 
-            [VtblIndex(127)]
-            HRESULT get_noStackOrdering(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isSplitted;
 
-            [VtblIndex(128)]
-            HRESULT get_virtualBaseTableType(IDiaSymbol** pRetVal);
+        [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_container;
 
-            [VtblIndex(129)]
-            HRESULT get_hasManagedCode(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_inlSpec;
 
-            [VtblIndex(130)]
-            HRESULT get_isHotpatchable(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_noStackOrdering;
 
-            [VtblIndex(131)]
-            HRESULT get_isCVTCIL(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_virtualBaseTableType;
 
-            [VtblIndex(132)]
-            HRESULT get_isMSILNetmodule(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasManagedCode;
 
-            [VtblIndex(133)]
-            HRESULT get_isCTypes(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isHotpatchable;
 
-            [VtblIndex(134)]
-            HRESULT get_isStripped(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isCVTCIL;
 
-            [VtblIndex(135)]
-            HRESULT get_frontEndQFE([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isMSILNetmodule;
 
-            [VtblIndex(136)]
-            HRESULT get_backEndQFE([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isCTypes;
 
-            [VtblIndex(137)]
-            HRESULT get_wasInlined(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isStripped;
 
-            [VtblIndex(138)]
-            HRESULT get_strictGSCheck(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_frontEndQFE;
 
-            [VtblIndex(139)]
-            HRESULT get_isCxxReturnUdt(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_backEndQFE;
 
-            [VtblIndex(140)]
-            HRESULT get_isConstructorVirtualBase(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_wasInlined;
 
-            [VtblIndex(141)]
-            HRESULT get_RValueReference(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_strictGSCheck;
 
-            [VtblIndex(142)]
-            HRESULT get_unmodifiedType(IDiaSymbol** pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isCxxReturnUdt;
 
-            [VtblIndex(143)]
-            HRESULT get_framePointerPresent(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isConstructorVirtualBase;
 
-            [VtblIndex(144)]
-            HRESULT get_isSafeBuffers(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_RValueReference;
 
-            [VtblIndex(145)]
-            HRESULT get_intrinsic(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_unmodifiedType;
 
-            [VtblIndex(146)]
-            HRESULT get_sealed(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_framePointerPresent;
 
-            [VtblIndex(147)]
-            HRESULT get_hfaFloat(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isSafeBuffers;
 
-            [VtblIndex(148)]
-            HRESULT get_hfaDouble(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_intrinsic;
 
-            [VtblIndex(149)]
-            HRESULT get_liveRangeStartAddressSection([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_sealed;
 
-            [VtblIndex(150)]
-            HRESULT get_liveRangeStartAddressOffset([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hfaFloat;
 
-            [VtblIndex(151)]
-            HRESULT get_liveRangeStartRelativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hfaDouble;
 
-            [VtblIndex(152)]
-            HRESULT get_countLiveRanges([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_liveRangeStartAddressSection;
 
-            [VtblIndex(153)]
-            HRESULT get_liveRangeLength([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_liveRangeStartAddressOffset;
 
-            [VtblIndex(154)]
-            HRESULT get_offsetInUdt([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_liveRangeStartRelativeVirtualAddress;
 
-            [VtblIndex(155)]
-            HRESULT get_paramBasePointerRegisterId([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_countLiveRanges;
 
-            [VtblIndex(156)]
-            HRESULT get_localBasePointerRegisterId([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, ulong*, int> get_liveRangeLength;
 
-            [VtblIndex(157)]
-            HRESULT get_isLocationControlFlowDependent(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_offsetInUdt;
 
-            [VtblIndex(158)]
-            HRESULT get_stride([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_paramBasePointerRegisterId;
 
-            [VtblIndex(159)]
-            HRESULT get_numberOfRows([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_localBasePointerRegisterId;
 
-            [VtblIndex(160)]
-            HRESULT get_numberOfColumns([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isLocationControlFlowDependent;
 
-            [VtblIndex(161)]
-            HRESULT get_isMatrixRowMajor(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_stride;
 
-            [VtblIndex(162)]
-            HRESULT get_numericProperties([NativeTypeName("DWORD")] uint cnt, [NativeTypeName("DWORD *")] uint* pcnt, [NativeTypeName("DWORD *")] uint* pProperties);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_numberOfRows;
 
-            [VtblIndex(163)]
-            HRESULT get_modifierValues([NativeTypeName("DWORD")] uint cnt, [NativeTypeName("DWORD *")] uint* pcnt, [NativeTypeName("WORD *")] ushort* pModifiers);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_numberOfColumns;
 
-            [VtblIndex(164)]
-            HRESULT get_isReturnValue(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isMatrixRowMajor;
 
-            [VtblIndex(165)]
-            HRESULT get_isOptimizedAway(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint, uint*, uint*, int> get_numericProperties;
 
-            [VtblIndex(166)]
-            HRESULT get_builtInKind([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD, DWORD *, WORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint, uint*, ushort*, int> get_modifierValues;
 
-            [VtblIndex(167)]
-            HRESULT get_registerType([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isReturnValue;
 
-            [VtblIndex(168)]
-            HRESULT get_baseDataSlot([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isOptimizedAway;
 
-            [VtblIndex(169)]
-            HRESULT get_baseDataOffset([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_builtInKind;
 
-            [VtblIndex(170)]
-            HRESULT get_textureSlot([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_registerType;
 
-            [VtblIndex(171)]
-            HRESULT get_samplerSlot([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_baseDataSlot;
 
-            [VtblIndex(172)]
-            HRESULT get_uavSlot([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_baseDataOffset;
 
-            [VtblIndex(173)]
-            HRESULT get_sizeInUdt([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_textureSlot;
 
-            [VtblIndex(174)]
-            HRESULT get_memorySpaceKind([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_samplerSlot;
 
-            [VtblIndex(175)]
-            HRESULT get_unmodifiedTypeId([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_uavSlot;
 
-            [VtblIndex(176)]
-            HRESULT get_subTypeId([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_sizeInUdt;
 
-            [VtblIndex(177)]
-            HRESULT get_subType(IDiaSymbol** pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_memorySpaceKind;
 
-            [VtblIndex(178)]
-            HRESULT get_numberOfModifiers([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_unmodifiedTypeId;
 
-            [VtblIndex(179)]
-            HRESULT get_numberOfRegisterIndices([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_subTypeId;
 
-            [VtblIndex(180)]
-            HRESULT get_isHLSLData(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_subType;
 
-            [VtblIndex(181)]
-            HRESULT get_isPointerToDataMember(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_numberOfModifiers;
 
-            [VtblIndex(182)]
-            HRESULT get_isPointerToMemberFunction(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_numberOfRegisterIndices;
 
-            [VtblIndex(183)]
-            HRESULT get_isSingleInheritance(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isHLSLData;
 
-            [VtblIndex(184)]
-            HRESULT get_isMultipleInheritance(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isPointerToDataMember;
 
-            [VtblIndex(185)]
-            HRESULT get_isVirtualInheritance(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isPointerToMemberFunction;
 
-            [VtblIndex(186)]
-            HRESULT get_restrictedType(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isSingleInheritance;
 
-            [VtblIndex(187)]
-            HRESULT get_isPointerBasedOnSymbolValue(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isMultipleInheritance;
 
-            [VtblIndex(188)]
-            HRESULT get_baseSymbol(IDiaSymbol** pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isVirtualInheritance;
 
-            [VtblIndex(189)]
-            HRESULT get_baseSymbolId([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_restrictedType;
 
-            [VtblIndex(190)]
-            HRESULT get_objectFileName([NativeTypeName("BSTR *")] ushort** pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isPointerBasedOnSymbolValue;
 
-            [VtblIndex(191)]
-            HRESULT get_isAcceleratorGroupSharedLocal(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_baseSymbol;
 
-            [VtblIndex(192)]
-            HRESULT get_isAcceleratorPointerTagLiveRange(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_baseSymbolId;
 
-            [VtblIndex(193)]
-            HRESULT get_isAcceleratorStubFunction(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_objectFileName;
 
-            [VtblIndex(194)]
-            HRESULT get_numberOfAcceleratorPointerTags([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isAcceleratorGroupSharedLocal;
 
-            [VtblIndex(195)]
-            HRESULT get_isSdl(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isAcceleratorPointerTagLiveRange;
 
-            [VtblIndex(196)]
-            HRESULT get_isWinRTPointer(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isAcceleratorStubFunction;
 
-            [VtblIndex(197)]
-            HRESULT get_isRefUdt(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_numberOfAcceleratorPointerTags;
 
-            [VtblIndex(198)]
-            HRESULT get_isValueUdt(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isSdl;
 
-            [VtblIndex(199)]
-            HRESULT get_isInterfaceUdt(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isWinRTPointer;
 
-            [VtblIndex(200)]
-            HRESULT findInlineFramesByAddr([NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaEnumSymbols** ppResult);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isRefUdt;
 
-            [VtblIndex(201)]
-            HRESULT findInlineFramesByRVA([NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isValueUdt;
 
-            [VtblIndex(202)]
-            HRESULT findInlineFramesByVA([NativeTypeName("ULONGLONG")] ulong va, IDiaEnumSymbols** ppResult);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isInterfaceUdt;
 
-            [VtblIndex(203)]
-            HRESULT findInlineeLines(IDiaEnumLineNumbers** ppResult);
+        [NativeTypeName("HRESULT (DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint, uint, IDiaEnumSymbols**, int> findInlineFramesByAddr;
 
-            [VtblIndex(204)]
-            HRESULT findInlineeLinesByAddr([NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult);
+        [NativeTypeName("HRESULT (DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint, IDiaEnumSymbols**, int> findInlineFramesByRVA;
 
-            [VtblIndex(205)]
-            HRESULT findInlineeLinesByRVA([NativeTypeName("DWORD")] uint rva, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult);
+        [NativeTypeName("HRESULT (ULONGLONG, IDiaEnumSymbols **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, ulong, IDiaEnumSymbols**, int> findInlineFramesByVA;
 
-            [VtblIndex(206)]
-            HRESULT findInlineeLinesByVA([NativeTypeName("ULONGLONG")] ulong va, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult);
+        [NativeTypeName("HRESULT (IDiaEnumLineNumbers **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, IDiaEnumLineNumbers**, int> findInlineeLines;
 
-            [VtblIndex(207)]
-            HRESULT findSymbolsForAcceleratorPointerTag([NativeTypeName("DWORD")] uint tagValue, IDiaEnumSymbols** ppResult);
+        [NativeTypeName("HRESULT (DWORD, DWORD, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint, uint, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByAddr;
 
-            [VtblIndex(208)]
-            HRESULT findSymbolsByRVAForAcceleratorPointerTag([NativeTypeName("DWORD")] uint tagValue, [NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult);
+        [NativeTypeName("HRESULT (DWORD, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByRVA;
 
-            [VtblIndex(209)]
-            HRESULT get_acceleratorPointerTags([NativeTypeName("DWORD")] uint cnt, [NativeTypeName("DWORD *")] uint* pcnt, [NativeTypeName("DWORD *")] uint* pPointerTags);
+        [NativeTypeName("HRESULT (ULONGLONG, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, ulong, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByVA;
 
-            [VtblIndex(210)]
-            HRESULT getSrcLineOnTypeDefn(IDiaLineNumber** ppResult);
+        [NativeTypeName("HRESULT (DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint, IDiaEnumSymbols**, int> findSymbolsForAcceleratorPointerTag;
 
-            [VtblIndex(211)]
-            HRESULT get_isPGO(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint, uint, IDiaEnumSymbols**, int> findSymbolsByRVAForAcceleratorPointerTag;
 
-            [VtblIndex(212)]
-            HRESULT get_hasValidPGOCounts(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint, uint*, uint*, int> get_acceleratorPointerTags;
 
-            [VtblIndex(213)]
-            HRESULT get_isOptimizedForSpeed(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (IDiaLineNumber **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, IDiaLineNumber**, int> getSrcLineOnTypeDefn;
 
-            [VtblIndex(214)]
-            HRESULT get_PGOEntryCount([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isPGO;
 
-            [VtblIndex(215)]
-            HRESULT get_PGOEdgeCount([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasValidPGOCounts;
 
-            [VtblIndex(216)]
-            HRESULT get_PGODynamicInstructionCount([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isOptimizedForSpeed;
 
-            [VtblIndex(217)]
-            HRESULT get_staticSize([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_PGOEntryCount;
 
-            [VtblIndex(218)]
-            HRESULT get_finalLiveStaticSize([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_PGOEdgeCount;
 
-            [VtblIndex(219)]
-            HRESULT get_phaseName([NativeTypeName("BSTR *")] ushort** pRetVal);
+        [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, ulong*, int> get_PGODynamicInstructionCount;
 
-            [VtblIndex(220)]
-            HRESULT get_hasControlFlowCheck(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_staticSize;
 
-            [VtblIndex(221)]
-            HRESULT get_constantExport(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_finalLiveStaticSize;
 
-            [VtblIndex(222)]
-            HRESULT get_dataExport(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_phaseName;
 
-            [VtblIndex(223)]
-            HRESULT get_privateExport(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasControlFlowCheck;
 
-            [VtblIndex(224)]
-            HRESULT get_noNameExport(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_constantExport;
 
-            [VtblIndex(225)]
-            HRESULT get_exportHasExplicitlyAssignedOrdinal(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_dataExport;
 
-            [VtblIndex(226)]
-            HRESULT get_exportIsForwarder(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_privateExport;
 
-            [VtblIndex(227)]
-            HRESULT get_ordinal([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_noNameExport;
 
-            [VtblIndex(228)]
-            HRESULT get_frameSize([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_exportHasExplicitlyAssignedOrdinal;
 
-            [VtblIndex(229)]
-            HRESULT get_exceptionHandlerAddressSection([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_exportIsForwarder;
 
-            [VtblIndex(230)]
-            HRESULT get_exceptionHandlerAddressOffset([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_ordinal;
 
-            [VtblIndex(231)]
-            HRESULT get_exceptionHandlerRelativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_frameSize;
 
-            [VtblIndex(232)]
-            HRESULT get_exceptionHandlerVirtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_exceptionHandlerAddressSection;
 
-            [VtblIndex(233)]
-            HRESULT findInputAssemblyFile(IDiaInputAssemblyFile** ppResult);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_exceptionHandlerAddressOffset;
 
-            [VtblIndex(234)]
-            HRESULT get_characteristics([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_exceptionHandlerRelativeVirtualAddress;
 
-            [VtblIndex(235)]
-            HRESULT get_coffGroup(IDiaSymbol** pRetVal);
+        [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, ulong*, int> get_exceptionHandlerVirtualAddress;
 
-            [VtblIndex(236)]
-            HRESULT get_bindID([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (IDiaInputAssemblyFile **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, IDiaInputAssemblyFile**, int> findInputAssemblyFile;
 
-            [VtblIndex(237)]
-            HRESULT get_bindSpace([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_characteristics;
 
-            [VtblIndex(238)]
-            HRESULT get_bindSlot([NativeTypeName("DWORD *")] uint* pRetVal);
-        }
+        [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_coffGroup;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_bindID;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint> AddRef;
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_bindSpace;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint> Release;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_symIndexId;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_symTag;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_name;
-
-            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_lexicalParent;
-
-            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_classParent;
-
-            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_type;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_dataKind;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_locationType;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_addressSection;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_addressOffset;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_relativeVirtualAddress;
-
-            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, ulong*, int> get_virtualAddress;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_registerId;
-
-            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, int*, int> get_offset;
-
-            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, ulong*, int> get_length;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_slot;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_volatileType;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_constType;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_unalignedType;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_access;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_libraryName;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_platform;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_language;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_editAndContinueEnabled;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_frontEndMajor;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_frontEndMinor;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_frontEndBuild;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_backEndMajor;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_backEndMinor;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_backEndBuild;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_sourceFileName;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_unused;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_thunkOrdinal;
-
-            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, int*, int> get_thisAdjust;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_virtualBaseOffset;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_virtual;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_intro;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_pure;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_callingConvention;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, VARIANT*, int> get_value;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_baseType;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_token;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_timeStamp;
-
-            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, Guid*, int> get_guid;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_symbolsFileName;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_reference;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_count;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_bitPosition;
-
-            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_arrayIndexType;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_packed;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_constructor;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_overloadedOperator;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_nested;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasNestedTypes;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasAssignmentOperator;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasCastOperator;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_scoped;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_virtualBaseClass;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_indirectVirtualBaseClass;
-
-            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, int*, int> get_virtualBasePointerOffset;
-
-            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_virtualTableShape;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_lexicalParentId;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_classParentId;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_typeId;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_arrayIndexTypeId;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_virtualTableShapeId;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_code;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_function;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_managed;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_msil;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_virtualBaseDispIndex;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_undecoratedName;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_age;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_signature;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_compilerGenerated;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_addressTaken;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_rank;
-
-            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_lowerBound;
-
-            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_upperBound;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_lowerBoundId;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_upperBoundId;
-
-            [NativeTypeName("HRESULT (DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint, uint*, byte*, int> get_dataBytes;
-
-            [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, IDiaEnumSymbols**, int> findChildren;
-
-            [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, IDiaEnumSymbols**, int> findChildrenEx;
-
-            [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, uint, uint, IDiaEnumSymbols**, int> findChildrenExByAddr;
-
-            [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, ULONGLONG, IDiaEnumSymbols **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, ulong, IDiaEnumSymbols**, int> findChildrenExByVA;
-
-            [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, uint, IDiaEnumSymbols**, int> findChildrenExByRVA;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_targetSection;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_targetOffset;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_targetRelativeVirtualAddress;
-
-            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, ulong*, int> get_targetVirtualAddress;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_machineType;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_oemId;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_oemSymbolId;
-
-            [NativeTypeName("HRESULT (DWORD, DWORD *, IDiaSymbol **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint, uint*, IDiaSymbol**, int> get_types;
-
-            [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint, uint*, uint*, int> get_typeIds;
-
-            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_objectPointerType;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_udtKind;
-
-            [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint, ushort**, int> get_undecoratedNameEx;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_noReturn;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_customCallingConvention;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_noInline;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_optimizedCodeDebugInfo;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_notReached;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_interruptReturn;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_farReturn;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isStatic;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasDebugInfo;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isLTCG;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isDataAligned;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasSecurityChecks;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_compilerName;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasAlloca;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasSetJump;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasLongJump;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasInlAsm;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasEH;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasSEH;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasEHa;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isNaked;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isAggregated;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isSplitted;
-
-            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_container;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_inlSpec;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_noStackOrdering;
-
-            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_virtualBaseTableType;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasManagedCode;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isHotpatchable;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isCVTCIL;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isMSILNetmodule;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isCTypes;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isStripped;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_frontEndQFE;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_backEndQFE;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_wasInlined;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_strictGSCheck;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isCxxReturnUdt;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isConstructorVirtualBase;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_RValueReference;
-
-            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_unmodifiedType;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_framePointerPresent;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isSafeBuffers;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_intrinsic;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_sealed;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hfaFloat;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hfaDouble;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_liveRangeStartAddressSection;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_liveRangeStartAddressOffset;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_liveRangeStartRelativeVirtualAddress;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_countLiveRanges;
-
-            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, ulong*, int> get_liveRangeLength;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_offsetInUdt;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_paramBasePointerRegisterId;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_localBasePointerRegisterId;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isLocationControlFlowDependent;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_stride;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_numberOfRows;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_numberOfColumns;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isMatrixRowMajor;
-
-            [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint, uint*, uint*, int> get_numericProperties;
-
-            [NativeTypeName("HRESULT (DWORD, DWORD *, WORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint, uint*, ushort*, int> get_modifierValues;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isReturnValue;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isOptimizedAway;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_builtInKind;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_registerType;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_baseDataSlot;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_baseDataOffset;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_textureSlot;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_samplerSlot;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_uavSlot;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_sizeInUdt;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_memorySpaceKind;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_unmodifiedTypeId;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_subTypeId;
-
-            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_subType;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_numberOfModifiers;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_numberOfRegisterIndices;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isHLSLData;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isPointerToDataMember;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isPointerToMemberFunction;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isSingleInheritance;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isMultipleInheritance;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isVirtualInheritance;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_restrictedType;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isPointerBasedOnSymbolValue;
-
-            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_baseSymbol;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_baseSymbolId;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_objectFileName;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isAcceleratorGroupSharedLocal;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isAcceleratorPointerTagLiveRange;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isAcceleratorStubFunction;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_numberOfAcceleratorPointerTags;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isSdl;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isWinRTPointer;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isRefUdt;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isValueUdt;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isInterfaceUdt;
-
-            [NativeTypeName("HRESULT (DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint, uint, IDiaEnumSymbols**, int> findInlineFramesByAddr;
-
-            [NativeTypeName("HRESULT (DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint, IDiaEnumSymbols**, int> findInlineFramesByRVA;
-
-            [NativeTypeName("HRESULT (ULONGLONG, IDiaEnumSymbols **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, ulong, IDiaEnumSymbols**, int> findInlineFramesByVA;
-
-            [NativeTypeName("HRESULT (IDiaEnumLineNumbers **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, IDiaEnumLineNumbers**, int> findInlineeLines;
-
-            [NativeTypeName("HRESULT (DWORD, DWORD, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint, uint, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByAddr;
-
-            [NativeTypeName("HRESULT (DWORD, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByRVA;
-
-            [NativeTypeName("HRESULT (ULONGLONG, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, ulong, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByVA;
-
-            [NativeTypeName("HRESULT (DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint, IDiaEnumSymbols**, int> findSymbolsForAcceleratorPointerTag;
-
-            [NativeTypeName("HRESULT (DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint, uint, IDiaEnumSymbols**, int> findSymbolsByRVAForAcceleratorPointerTag;
-
-            [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint, uint*, uint*, int> get_acceleratorPointerTags;
-
-            [NativeTypeName("HRESULT (IDiaLineNumber **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, IDiaLineNumber**, int> getSrcLineOnTypeDefn;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isPGO;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasValidPGOCounts;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_isOptimizedForSpeed;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_PGOEntryCount;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_PGOEdgeCount;
-
-            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, ulong*, int> get_PGODynamicInstructionCount;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_staticSize;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_finalLiveStaticSize;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, ushort**, int> get_phaseName;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_hasControlFlowCheck;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_constantExport;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_dataExport;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_privateExport;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_noNameExport;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_exportHasExplicitlyAssignedOrdinal;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, BOOL*, int> get_exportIsForwarder;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_ordinal;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_frameSize;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_exceptionHandlerAddressSection;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_exceptionHandlerAddressOffset;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_exceptionHandlerRelativeVirtualAddress;
-
-            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, ulong*, int> get_exceptionHandlerVirtualAddress;
-
-            [NativeTypeName("HRESULT (IDiaInputAssemblyFile **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, IDiaInputAssemblyFile**, int> findInputAssemblyFile;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_characteristics;
-
-            [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int> get_coffGroup;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_bindID;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_bindSpace;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaSymbol*, uint*, int> get_bindSlot;
-        }
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaSymbol*, uint*, int> get_bindSlot;
     }
 }

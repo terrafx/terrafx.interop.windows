@@ -7,116 +7,115 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("AA80E80E-2021-11D2-93E0-0060B067B86E")]
+[NativeTypeName("struct ITfThreadMgrEventSink : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ITfThreadMgrEventSink : ITfThreadMgrEventSink.Interface
 {
-    [Guid("AA80E80E-2021-11D2-93E0-0060B067B86E")]
-    [NativeTypeName("struct ITfThreadMgrEventSink : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfThreadMgrEventSink : ITfThreadMgrEventSink.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ITfThreadMgrEventSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ITfThreadMgrEventSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ITfThreadMgrEventSink*, uint>)(lpVtbl[1]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ITfThreadMgrEventSink*, uint>)(lpVtbl[1]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ITfThreadMgrEventSink*, uint>)(lpVtbl[2]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ITfThreadMgrEventSink*, uint>)(lpVtbl[2]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT OnInitDocumentMgr(ITfDocumentMgr* pdim)
+    {
+        return ((delegate* unmanaged<ITfThreadMgrEventSink*, ITfDocumentMgr*, int>)(lpVtbl[3]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), pdim);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT OnUninitDocumentMgr(ITfDocumentMgr* pdim)
+    {
+        return ((delegate* unmanaged<ITfThreadMgrEventSink*, ITfDocumentMgr*, int>)(lpVtbl[4]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), pdim);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT OnSetFocus(ITfDocumentMgr* pdimFocus, ITfDocumentMgr* pdimPrevFocus)
+    {
+        return ((delegate* unmanaged<ITfThreadMgrEventSink*, ITfDocumentMgr*, ITfDocumentMgr*, int>)(lpVtbl[5]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), pdimFocus, pdimPrevFocus);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT OnPushContext(ITfContext* pic)
+    {
+        return ((delegate* unmanaged<ITfThreadMgrEventSink*, ITfContext*, int>)(lpVtbl[6]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), pic);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT OnPopContext(ITfContext* pic)
+    {
+        return ((delegate* unmanaged<ITfThreadMgrEventSink*, ITfContext*, int>)(lpVtbl[7]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), pic);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT OnInitDocumentMgr(ITfDocumentMgr* pdim)
-        {
-            return ((delegate* unmanaged<ITfThreadMgrEventSink*, ITfDocumentMgr*, int>)(lpVtbl[3]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), pdim);
-        }
+        HRESULT OnInitDocumentMgr(ITfDocumentMgr* pdim);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT OnUninitDocumentMgr(ITfDocumentMgr* pdim)
-        {
-            return ((delegate* unmanaged<ITfThreadMgrEventSink*, ITfDocumentMgr*, int>)(lpVtbl[4]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), pdim);
-        }
+        HRESULT OnUninitDocumentMgr(ITfDocumentMgr* pdim);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT OnSetFocus(ITfDocumentMgr* pdimFocus, ITfDocumentMgr* pdimPrevFocus)
-        {
-            return ((delegate* unmanaged<ITfThreadMgrEventSink*, ITfDocumentMgr*, ITfDocumentMgr*, int>)(lpVtbl[5]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), pdimFocus, pdimPrevFocus);
-        }
+        HRESULT OnSetFocus(ITfDocumentMgr* pdimFocus, ITfDocumentMgr* pdimPrevFocus);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT OnPushContext(ITfContext* pic)
-        {
-            return ((delegate* unmanaged<ITfThreadMgrEventSink*, ITfContext*, int>)(lpVtbl[6]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), pic);
-        }
+        HRESULT OnPushContext(ITfContext* pic);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT OnPopContext(ITfContext* pic)
-        {
-            return ((delegate* unmanaged<ITfThreadMgrEventSink*, ITfContext*, int>)(lpVtbl[7]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), pic);
-        }
+        HRESULT OnPopContext(ITfContext* pic);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT OnInitDocumentMgr(ITfDocumentMgr* pdim);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfThreadMgrEventSink*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT OnUninitDocumentMgr(ITfDocumentMgr* pdim);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfThreadMgrEventSink*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT OnSetFocus(ITfDocumentMgr* pdimFocus, ITfDocumentMgr* pdimPrevFocus);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfThreadMgrEventSink*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT OnPushContext(ITfContext* pic);
+        [NativeTypeName("HRESULT (ITfDocumentMgr *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfThreadMgrEventSink*, ITfDocumentMgr*, int> OnInitDocumentMgr;
 
-            [VtblIndex(7)]
-            HRESULT OnPopContext(ITfContext* pic);
-        }
+        [NativeTypeName("HRESULT (ITfDocumentMgr *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfThreadMgrEventSink*, ITfDocumentMgr*, int> OnUninitDocumentMgr;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfThreadMgrEventSink*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (ITfDocumentMgr *, ITfDocumentMgr *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfThreadMgrEventSink*, ITfDocumentMgr*, ITfDocumentMgr*, int> OnSetFocus;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfThreadMgrEventSink*, uint> AddRef;
+        [NativeTypeName("HRESULT (ITfContext *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfThreadMgrEventSink*, ITfContext*, int> OnPushContext;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfThreadMgrEventSink*, uint> Release;
-
-            [NativeTypeName("HRESULT (ITfDocumentMgr *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfThreadMgrEventSink*, ITfDocumentMgr*, int> OnInitDocumentMgr;
-
-            [NativeTypeName("HRESULT (ITfDocumentMgr *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfThreadMgrEventSink*, ITfDocumentMgr*, int> OnUninitDocumentMgr;
-
-            [NativeTypeName("HRESULT (ITfDocumentMgr *, ITfDocumentMgr *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfThreadMgrEventSink*, ITfDocumentMgr*, ITfDocumentMgr*, int> OnSetFocus;
-
-            [NativeTypeName("HRESULT (ITfContext *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfThreadMgrEventSink*, ITfContext*, int> OnPushContext;
-
-            [NativeTypeName("HRESULT (ITfContext *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfThreadMgrEventSink*, ITfContext*, int> OnPopContext;
-        }
+        [NativeTypeName("HRESULT (ITfContext *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfThreadMgrEventSink*, ITfContext*, int> OnPopContext;
     }
 }

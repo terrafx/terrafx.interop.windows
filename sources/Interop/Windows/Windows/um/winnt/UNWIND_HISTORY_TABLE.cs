@@ -7,56 +7,55 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct UNWIND_HISTORY_TABLE
 {
-    public partial struct UNWIND_HISTORY_TABLE
+    [NativeTypeName("DWORD")]
+    public uint Count;
+
+    public byte LocalHint;
+
+    public byte GlobalHint;
+
+    public byte Search;
+
+    public byte Once;
+
+    [NativeTypeName("ULONG_PTR")]
+    public nuint LowAddress;
+
+    [NativeTypeName("ULONG_PTR")]
+    public nuint HighAddress;
+
+    [NativeTypeName("UNWIND_HISTORY_TABLE_ENTRY [12]")]
+    public _Entry_e__FixedBuffer Entry;
+
+    public partial struct _Entry_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint Count;
+        public UNWIND_HISTORY_TABLE_ENTRY e0;
+        public UNWIND_HISTORY_TABLE_ENTRY e1;
+        public UNWIND_HISTORY_TABLE_ENTRY e2;
+        public UNWIND_HISTORY_TABLE_ENTRY e3;
+        public UNWIND_HISTORY_TABLE_ENTRY e4;
+        public UNWIND_HISTORY_TABLE_ENTRY e5;
+        public UNWIND_HISTORY_TABLE_ENTRY e6;
+        public UNWIND_HISTORY_TABLE_ENTRY e7;
+        public UNWIND_HISTORY_TABLE_ENTRY e8;
+        public UNWIND_HISTORY_TABLE_ENTRY e9;
+        public UNWIND_HISTORY_TABLE_ENTRY e10;
+        public UNWIND_HISTORY_TABLE_ENTRY e11;
 
-        public byte LocalHint;
-
-        public byte GlobalHint;
-
-        public byte Search;
-
-        public byte Once;
-
-        [NativeTypeName("ULONG_PTR")]
-        public nuint LowAddress;
-
-        [NativeTypeName("ULONG_PTR")]
-        public nuint HighAddress;
-
-        [NativeTypeName("UNWIND_HISTORY_TABLE_ENTRY [12]")]
-        public _Entry_e__FixedBuffer Entry;
-
-        public partial struct _Entry_e__FixedBuffer
+        public ref UNWIND_HISTORY_TABLE_ENTRY this[int index]
         {
-            public UNWIND_HISTORY_TABLE_ENTRY e0;
-            public UNWIND_HISTORY_TABLE_ENTRY e1;
-            public UNWIND_HISTORY_TABLE_ENTRY e2;
-            public UNWIND_HISTORY_TABLE_ENTRY e3;
-            public UNWIND_HISTORY_TABLE_ENTRY e4;
-            public UNWIND_HISTORY_TABLE_ENTRY e5;
-            public UNWIND_HISTORY_TABLE_ENTRY e6;
-            public UNWIND_HISTORY_TABLE_ENTRY e7;
-            public UNWIND_HISTORY_TABLE_ENTRY e8;
-            public UNWIND_HISTORY_TABLE_ENTRY e9;
-            public UNWIND_HISTORY_TABLE_ENTRY e10;
-            public UNWIND_HISTORY_TABLE_ENTRY e11;
-
-            public ref UNWIND_HISTORY_TABLE_ENTRY this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan()[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<UNWIND_HISTORY_TABLE_ENTRY> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 12);
+            get
+            {
+                return ref AsSpan()[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<UNWIND_HISTORY_TABLE_ENTRY> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 12);
     }
 }

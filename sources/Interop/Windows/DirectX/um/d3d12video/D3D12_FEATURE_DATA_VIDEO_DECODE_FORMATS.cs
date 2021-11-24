@@ -3,16 +3,15 @@
 // Ported from um/d3d12video.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D12_FEATURE_DATA_VIDEO_DECODE_FORMATS
 {
-    public unsafe partial struct D3D12_FEATURE_DATA_VIDEO_DECODE_FORMATS
-    {
-        public uint NodeIndex;
+    public uint NodeIndex;
 
-        public D3D12_VIDEO_DECODE_CONFIGURATION Configuration;
+    public D3D12_VIDEO_DECODE_CONFIGURATION Configuration;
 
-        public uint FormatCount;
+    public uint FormatCount;
 
-        public DXGI_FORMAT* pOutputFormats;
-    }
+    public DXGI_FORMAT* pOutputFormats;
 }

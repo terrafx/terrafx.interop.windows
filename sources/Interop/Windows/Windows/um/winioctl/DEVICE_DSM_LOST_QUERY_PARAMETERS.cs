@@ -3,14 +3,13 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct DEVICE_DSM_LOST_QUERY_PARAMETERS
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong Granularity;
-    }
+public partial struct DEVICE_DSM_LOST_QUERY_PARAMETERS
+{
+    [NativeTypeName("DWORD")]
+    public uint Version;
+
+    [NativeTypeName("DWORDLONG")]
+    public ulong Granularity;
 }

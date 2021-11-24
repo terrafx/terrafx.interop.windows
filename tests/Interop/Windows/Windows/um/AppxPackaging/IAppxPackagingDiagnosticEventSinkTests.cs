@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IAppxPackagingDiagnosticEventSink" /> struct.</summary>
+public static unsafe partial class IAppxPackagingDiagnosticEventSinkTests
 {
-    /// <summary>Provides validation of the <see cref="IAppxPackagingDiagnosticEventSink" /> struct.</summary>
-    public static unsafe partial class IAppxPackagingDiagnosticEventSinkTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppxPackagingDiagnosticEventSink" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppxPackagingDiagnosticEventSink" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAppxPackagingDiagnosticEventSink).GUID, Is.EqualTo(IID_IAppxPackagingDiagnosticEventSink));
-        }
+        Assert.That(typeof(IAppxPackagingDiagnosticEventSink).GUID, Is.EqualTo(IID_IAppxPackagingDiagnosticEventSink));
+    }
 
-        /// <summary>Validates that the <see cref="IAppxPackagingDiagnosticEventSink" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IAppxPackagingDiagnosticEventSink>(), Is.EqualTo(sizeof(IAppxPackagingDiagnosticEventSink)));
-        }
+    /// <summary>Validates that the <see cref="IAppxPackagingDiagnosticEventSink" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IAppxPackagingDiagnosticEventSink>(), Is.EqualTo(sizeof(IAppxPackagingDiagnosticEventSink)));
+    }
 
-        /// <summary>Validates that the <see cref="IAppxPackagingDiagnosticEventSink" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IAppxPackagingDiagnosticEventSink).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IAppxPackagingDiagnosticEventSink" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IAppxPackagingDiagnosticEventSink).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IAppxPackagingDiagnosticEventSink" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IAppxPackagingDiagnosticEventSink" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IAppxPackagingDiagnosticEventSink), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IAppxPackagingDiagnosticEventSink), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IAppxPackagingDiagnosticEventSink), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IAppxPackagingDiagnosticEventSink), Is.EqualTo(4));
         }
     }
 }

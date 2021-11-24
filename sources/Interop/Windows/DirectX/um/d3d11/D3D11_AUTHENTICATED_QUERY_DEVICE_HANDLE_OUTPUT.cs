@@ -6,13 +6,12 @@
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
-{
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct D3D11_AUTHENTICATED_QUERY_DEVICE_HANDLE_OUTPUT
-    {
-        public D3D11_AUTHENTICATED_QUERY_OUTPUT Output;
+namespace TerraFX.Interop.DirectX;
 
-        public HANDLE DeviceHandle;
-    }
+[SupportedOSPlatform("windows8.0")]
+public partial struct D3D11_AUTHENTICATED_QUERY_DEVICE_HANDLE_OUTPUT
+{
+    public D3D11_AUTHENTICATED_QUERY_OUTPUT Output;
+
+    public HANDLE DeviceHandle;
 }

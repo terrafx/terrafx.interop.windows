@@ -5,20 +5,19 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D10_EFFECT_DESC
 {
-    public partial struct D3D10_EFFECT_DESC
-    {
-        public BOOL IsChildEffect;
+    public BOOL IsChildEffect;
 
-        public uint ConstantBuffers;
+    public uint ConstantBuffers;
 
-        public uint SharedConstantBuffers;
+    public uint SharedConstantBuffers;
 
-        public uint GlobalVariables;
+    public uint GlobalVariables;
 
-        public uint SharedGlobalVariables;
+    public uint SharedGlobalVariables;
 
-        public uint Techniques;
-    }
+    public uint Techniques;
 }

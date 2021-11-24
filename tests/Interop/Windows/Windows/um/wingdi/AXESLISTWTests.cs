@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="AXESLISTW" /> struct.</summary>
+public static unsafe partial class AXESLISTWTests
 {
-    /// <summary>Provides validation of the <see cref="AXESLISTW" /> struct.</summary>
-    public static unsafe partial class AXESLISTWTests
+    /// <summary>Validates that the <see cref="AXESLISTW" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="AXESLISTW" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<AXESLISTW>(), Is.EqualTo(sizeof(AXESLISTW)));
-        }
+        Assert.That(Marshal.SizeOf<AXESLISTW>(), Is.EqualTo(sizeof(AXESLISTW)));
+    }
 
-        /// <summary>Validates that the <see cref="AXESLISTW" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(AXESLISTW).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="AXESLISTW" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(AXESLISTW).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="AXESLISTW" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(AXESLISTW), Is.EqualTo(648));
-        }
+    /// <summary>Validates that the <see cref="AXESLISTW" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(AXESLISTW), Is.EqualTo(648));
     }
 }

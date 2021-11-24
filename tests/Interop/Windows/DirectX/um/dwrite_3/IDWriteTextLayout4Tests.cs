@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDWriteTextLayout4" /> struct.</summary>
+public static unsafe partial class IDWriteTextLayout4Tests
 {
-    /// <summary>Provides validation of the <see cref="IDWriteTextLayout4" /> struct.</summary>
-    public static unsafe partial class IDWriteTextLayout4Tests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWriteTextLayout4" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWriteTextLayout4" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDWriteTextLayout4).GUID, Is.EqualTo(IID_IDWriteTextLayout4));
-        }
+        Assert.That(typeof(IDWriteTextLayout4).GUID, Is.EqualTo(IID_IDWriteTextLayout4));
+    }
 
-        /// <summary>Validates that the <see cref="IDWriteTextLayout4" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDWriteTextLayout4>(), Is.EqualTo(sizeof(IDWriteTextLayout4)));
-        }
+    /// <summary>Validates that the <see cref="IDWriteTextLayout4" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDWriteTextLayout4>(), Is.EqualTo(sizeof(IDWriteTextLayout4)));
+    }
 
-        /// <summary>Validates that the <see cref="IDWriteTextLayout4" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDWriteTextLayout4).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDWriteTextLayout4" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDWriteTextLayout4).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDWriteTextLayout4" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDWriteTextLayout4" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDWriteTextLayout4), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDWriteTextLayout4), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDWriteTextLayout4), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDWriteTextLayout4), Is.EqualTo(4));
         }
     }
 }

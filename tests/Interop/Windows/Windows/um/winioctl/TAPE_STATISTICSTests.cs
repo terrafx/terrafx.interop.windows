@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TAPE_STATISTICS" /> struct.</summary>
+public static unsafe partial class TAPE_STATISTICSTests
 {
-    /// <summary>Provides validation of the <see cref="TAPE_STATISTICS" /> struct.</summary>
-    public static unsafe partial class TAPE_STATISTICSTests
+    /// <summary>Validates that the <see cref="TAPE_STATISTICS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TAPE_STATISTICS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TAPE_STATISTICS>(), Is.EqualTo(sizeof(TAPE_STATISTICS)));
-        }
+        Assert.That(Marshal.SizeOf<TAPE_STATISTICS>(), Is.EqualTo(sizeof(TAPE_STATISTICS)));
+    }
 
-        /// <summary>Validates that the <see cref="TAPE_STATISTICS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TAPE_STATISTICS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TAPE_STATISTICS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TAPE_STATISTICS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TAPE_STATISTICS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(TAPE_STATISTICS), Is.EqualTo(48));
-        }
+    /// <summary>Validates that the <see cref="TAPE_STATISTICS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(TAPE_STATISTICS), Is.EqualTo(48));
     }
 }

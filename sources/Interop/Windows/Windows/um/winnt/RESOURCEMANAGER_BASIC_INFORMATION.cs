@@ -5,16 +5,15 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct RESOURCEMANAGER_BASIC_INFORMATION
 {
-    public unsafe partial struct RESOURCEMANAGER_BASIC_INFORMATION
-    {
-        public Guid ResourceManagerId;
+    public Guid ResourceManagerId;
 
-        [NativeTypeName("DWORD")]
-        public uint DescriptionLength;
+    [NativeTypeName("DWORD")]
+    public uint DescriptionLength;
 
-        [NativeTypeName("WCHAR [1]")]
-        public fixed ushort Description[1];
-    }
+    [NativeTypeName("WCHAR [1]")]
+    public fixed ushort Description[1];
 }

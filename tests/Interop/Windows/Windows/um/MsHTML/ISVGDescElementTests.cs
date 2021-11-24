@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISVGDescElement" /> struct.</summary>
+public static unsafe partial class ISVGDescElementTests
 {
-    /// <summary>Provides validation of the <see cref="ISVGDescElement" /> struct.</summary>
-    public static unsafe partial class ISVGDescElementTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISVGDescElement" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISVGDescElement" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISVGDescElement).GUID, Is.EqualTo(IID_ISVGDescElement));
-        }
+        Assert.That(typeof(ISVGDescElement).GUID, Is.EqualTo(IID_ISVGDescElement));
+    }
 
-        /// <summary>Validates that the <see cref="ISVGDescElement" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISVGDescElement>(), Is.EqualTo(sizeof(ISVGDescElement)));
-        }
+    /// <summary>Validates that the <see cref="ISVGDescElement" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISVGDescElement>(), Is.EqualTo(sizeof(ISVGDescElement)));
+    }
 
-        /// <summary>Validates that the <see cref="ISVGDescElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISVGDescElement).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISVGDescElement" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISVGDescElement).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISVGDescElement" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISVGDescElement" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISVGDescElement), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISVGDescElement), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISVGDescElement), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISVGDescElement), Is.EqualTo(4));
         }
     }
 }

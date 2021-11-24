@@ -5,154 +5,153 @@
 
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct DVD_TIMECODE
 {
-    public partial struct DVD_TIMECODE
+    public uint _bitfield;
+
+    [NativeTypeName("ULONG : 4")]
+    public uint Hours1
     {
-        public uint _bitfield;
-
-        [NativeTypeName("ULONG : 4")]
-        public uint Hours1
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return _bitfield & 0xFu;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~0xFu) | (value & 0xFu);
-            }
+            return _bitfield & 0xFu;
         }
 
-        [NativeTypeName("ULONG : 4")]
-        public uint Hours10
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield >> 4) & 0xFu;
-            }
+            _bitfield = (_bitfield & ~0xFu) | (value & 0xFu);
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0xFu << 4)) | ((value & 0xFu) << 4);
-            }
+    [NativeTypeName("ULONG : 4")]
+    public uint Hours10
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield >> 4) & 0xFu;
         }
 
-        [NativeTypeName("ULONG : 4")]
-        public uint Minutes1
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield >> 8) & 0xFu;
-            }
+            _bitfield = (_bitfield & ~(0xFu << 4)) | ((value & 0xFu) << 4);
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0xFu << 8)) | ((value & 0xFu) << 8);
-            }
+    [NativeTypeName("ULONG : 4")]
+    public uint Minutes1
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield >> 8) & 0xFu;
         }
 
-        [NativeTypeName("ULONG : 4")]
-        public uint Minutes10
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield >> 12) & 0xFu;
-            }
+            _bitfield = (_bitfield & ~(0xFu << 8)) | ((value & 0xFu) << 8);
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0xFu << 12)) | ((value & 0xFu) << 12);
-            }
+    [NativeTypeName("ULONG : 4")]
+    public uint Minutes10
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield >> 12) & 0xFu;
         }
 
-        [NativeTypeName("ULONG : 4")]
-        public uint Seconds1
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield >> 16) & 0xFu;
-            }
+            _bitfield = (_bitfield & ~(0xFu << 12)) | ((value & 0xFu) << 12);
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0xFu << 16)) | ((value & 0xFu) << 16);
-            }
+    [NativeTypeName("ULONG : 4")]
+    public uint Seconds1
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield >> 16) & 0xFu;
         }
 
-        [NativeTypeName("ULONG : 4")]
-        public uint Seconds10
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield >> 20) & 0xFu;
-            }
+            _bitfield = (_bitfield & ~(0xFu << 16)) | ((value & 0xFu) << 16);
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0xFu << 20)) | ((value & 0xFu) << 20);
-            }
+    [NativeTypeName("ULONG : 4")]
+    public uint Seconds10
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield >> 20) & 0xFu;
         }
 
-        [NativeTypeName("ULONG : 4")]
-        public uint Frames1
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield >> 24) & 0xFu;
-            }
+            _bitfield = (_bitfield & ~(0xFu << 20)) | ((value & 0xFu) << 20);
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0xFu << 24)) | ((value & 0xFu) << 24);
-            }
+    [NativeTypeName("ULONG : 4")]
+    public uint Frames1
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield >> 24) & 0xFu;
         }
 
-        [NativeTypeName("ULONG : 2")]
-        public uint Frames10
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield >> 28) & 0x3u;
-            }
+            _bitfield = (_bitfield & ~(0xFu << 24)) | ((value & 0xFu) << 24);
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0x3u << 28)) | ((value & 0x3u) << 28);
-            }
+    [NativeTypeName("ULONG : 2")]
+    public uint Frames10
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield >> 28) & 0x3u;
         }
 
-        [NativeTypeName("ULONG : 2")]
-        public uint FrameRateCode
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield >> 30) & 0x3u;
-            }
+            _bitfield = (_bitfield & ~(0x3u << 28)) | ((value & 0x3u) << 28);
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0x3u << 30)) | ((value & 0x3u) << 30);
-            }
+    [NativeTypeName("ULONG : 2")]
+    public uint FrameRateCode
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield >> 30) & 0x3u;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield = (_bitfield & ~(0x3u << 30)) | ((value & 0x3u) << 30);
         }
     }
 }

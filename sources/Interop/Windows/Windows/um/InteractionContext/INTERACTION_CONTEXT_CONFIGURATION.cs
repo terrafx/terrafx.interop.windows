@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct INTERACTION_CONTEXT_CONFIGURATION
-    {
-        public INTERACTION_ID interactionId;
+namespace TerraFX.Interop.Windows;
 
-        public INTERACTION_CONFIGURATION_FLAGS enable;
-    }
+[SupportedOSPlatform("windows8.0")]
+public partial struct INTERACTION_CONTEXT_CONFIGURATION
+{
+    public INTERACTION_ID interactionId;
+
+    public INTERACTION_CONFIGURATION_FLAGS enable;
 }

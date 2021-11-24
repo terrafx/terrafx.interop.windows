@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TF_SELECTION" /> struct.</summary>
+public static unsafe partial class TF_SELECTIONTests
 {
-    /// <summary>Provides validation of the <see cref="TF_SELECTION" /> struct.</summary>
-    public static unsafe partial class TF_SELECTIONTests
+    /// <summary>Validates that the <see cref="TF_SELECTION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TF_SELECTION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TF_SELECTION>(), Is.EqualTo(sizeof(TF_SELECTION)));
-        }
+        Assert.That(Marshal.SizeOf<TF_SELECTION>(), Is.EqualTo(sizeof(TF_SELECTION)));
+    }
 
-        /// <summary>Validates that the <see cref="TF_SELECTION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TF_SELECTION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TF_SELECTION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TF_SELECTION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TF_SELECTION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="TF_SELECTION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(TF_SELECTION), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(TF_SELECTION), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(TF_SELECTION), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(TF_SELECTION), Is.EqualTo(12));
         }
     }
 }

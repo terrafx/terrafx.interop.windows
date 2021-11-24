@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISpeechAudio" /> struct.</summary>
+public static unsafe partial class ISpeechAudioTests
 {
-    /// <summary>Provides validation of the <see cref="ISpeechAudio" /> struct.</summary>
-    public static unsafe partial class ISpeechAudioTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpeechAudio" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpeechAudio" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISpeechAudio).GUID, Is.EqualTo(IID_ISpeechAudio));
-        }
+        Assert.That(typeof(ISpeechAudio).GUID, Is.EqualTo(IID_ISpeechAudio));
+    }
 
-        /// <summary>Validates that the <see cref="ISpeechAudio" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISpeechAudio>(), Is.EqualTo(sizeof(ISpeechAudio)));
-        }
+    /// <summary>Validates that the <see cref="ISpeechAudio" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISpeechAudio>(), Is.EqualTo(sizeof(ISpeechAudio)));
+    }
 
-        /// <summary>Validates that the <see cref="ISpeechAudio" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISpeechAudio).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISpeechAudio" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISpeechAudio).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISpeechAudio" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISpeechAudio" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISpeechAudio), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISpeechAudio), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISpeechAudio), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISpeechAudio), Is.EqualTo(4));
         }
     }
 }

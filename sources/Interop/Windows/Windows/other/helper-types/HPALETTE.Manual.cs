@@ -2,12 +2,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct HPALETTE : IEquatable<HPALETTE>
-    {
-        public static explicit operator HPALETTE(HGDIOBJ value) => new HPALETTE(value.Value);
+namespace TerraFX.Interop.Windows;
 
-        public static implicit operator HGDIOBJ(HPALETTE value) => new HGDIOBJ(value.Value);
-    }
+public unsafe partial struct HPALETTE : IEquatable<HPALETTE>
+{
+    public static explicit operator HPALETTE(HGDIOBJ value) => new HPALETTE(value.Value);
+
+    public static implicit operator HGDIOBJ(HPALETTE value) => new HGDIOBJ(value.Value);
 }

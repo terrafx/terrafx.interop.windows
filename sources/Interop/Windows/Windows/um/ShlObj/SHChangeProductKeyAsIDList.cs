@@ -5,16 +5,15 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SHChangeProductKeyAsIDList
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SHChangeProductKeyAsIDList
-    {
-        public ushort cb;
+    public ushort cb;
 
-        [NativeTypeName("WCHAR [39]")]
-        public fixed ushort wszProductKey[39];
+    [NativeTypeName("WCHAR [39]")]
+    public fixed ushort wszProductKey[39];
 
-        public ushort cbZero;
-    }
+    public ushort cbZero;
 }

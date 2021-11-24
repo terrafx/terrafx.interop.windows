@@ -5,19 +5,18 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public partial struct MFPinholeCameraIntrinsic_IntrinsicModel
 {
-    [SupportedOSPlatform("windows10.0")]
-    public partial struct MFPinholeCameraIntrinsic_IntrinsicModel
-    {
-        [NativeTypeName("UINT32")]
-        public uint Width;
+    [NativeTypeName("UINT32")]
+    public uint Width;
 
-        [NativeTypeName("UINT32")]
-        public uint Height;
+    [NativeTypeName("UINT32")]
+    public uint Height;
 
-        public MFCameraIntrinsic_PinholeCameraModel CameraModel;
+    public MFCameraIntrinsic_PinholeCameraModel CameraModel;
 
-        public MFCameraIntrinsic_DistortionModel DistortionModel;
-    }
+    public MFCameraIntrinsic_DistortionModel DistortionModel;
 }

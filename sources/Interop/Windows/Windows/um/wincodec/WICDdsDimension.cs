@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public enum WICDdsDimension
 {
-    [SupportedOSPlatform("windows8.1")]
-    public enum WICDdsDimension
-    {
-        WICDdsTexture1D = 0,
-        WICDdsTexture2D = 0x1,
-        WICDdsTexture3D = 0x2,
-        WICDdsTextureCube = 0x3,
-        WICDDSTEXTURE_FORCE_DWORD = 0x7fffffff,
-    }
+    WICDdsTexture1D = 0,
+    WICDdsTexture2D = 0x1,
+    WICDdsTexture3D = 0x2,
+    WICDdsTextureCube = 0x3,
+    WICDDSTEXTURE_FORCE_DWORD = 0x7fffffff,
 }

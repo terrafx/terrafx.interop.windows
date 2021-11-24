@@ -7,16 +7,15 @@ using NUnit.Framework;
 using System;
 using static TerraFX.Interop.Windows.AM;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="AM" /> class.</summary>
+public static partial class AMTests
 {
-    /// <summary>Provides validation of the <see cref="AM" /> class.</summary>
-    public static partial class AMTests
+    /// <summary>Validates that the value of the <see cref="AM_MEDIA_TYPE_REPRESENTATION" /> property is correct.</summary>
+    [Test]
+    public static void AM_MEDIA_TYPE_REPRESENTATIONTest()
     {
-        /// <summary>Validates that the value of the <see cref="AM_MEDIA_TYPE_REPRESENTATION" /> property is correct.</summary>
-        [Test]
-        public static void AM_MEDIA_TYPE_REPRESENTATIONTest()
-        {
-            Assert.That(AM_MEDIA_TYPE_REPRESENTATION, Is.EqualTo(new Guid(0xe2e42ad2, 0x132c, 0x491e, 0xa2, 0x68, 0x3c, 0x7c, 0x2d, 0xca, 0x18, 0x1f)));
-        }
+        Assert.That(AM_MEDIA_TYPE_REPRESENTATION, Is.EqualTo(new Guid(0xe2e42ad2, 0x132c, 0x491e, 0xa2, 0x68, 0x3c, 0x7c, 0x2d, 0xca, 0x18, 0x1f)));
     }
 }

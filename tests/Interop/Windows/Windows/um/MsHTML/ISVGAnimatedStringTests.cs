@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISVGAnimatedString" /> struct.</summary>
+public static unsafe partial class ISVGAnimatedStringTests
 {
-    /// <summary>Provides validation of the <see cref="ISVGAnimatedString" /> struct.</summary>
-    public static unsafe partial class ISVGAnimatedStringTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISVGAnimatedString" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISVGAnimatedString" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISVGAnimatedString).GUID, Is.EqualTo(IID_ISVGAnimatedString));
-        }
+        Assert.That(typeof(ISVGAnimatedString).GUID, Is.EqualTo(IID_ISVGAnimatedString));
+    }
 
-        /// <summary>Validates that the <see cref="ISVGAnimatedString" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISVGAnimatedString>(), Is.EqualTo(sizeof(ISVGAnimatedString)));
-        }
+    /// <summary>Validates that the <see cref="ISVGAnimatedString" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISVGAnimatedString>(), Is.EqualTo(sizeof(ISVGAnimatedString)));
+    }
 
-        /// <summary>Validates that the <see cref="ISVGAnimatedString" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISVGAnimatedString).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISVGAnimatedString" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISVGAnimatedString).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISVGAnimatedString" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISVGAnimatedString" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISVGAnimatedString), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISVGAnimatedString), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISVGAnimatedString), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISVGAnimatedString), Is.EqualTo(4));
         }
     }
 }

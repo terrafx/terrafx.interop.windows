@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SVGAnimatedLength" /> struct.</summary>
+public static unsafe partial class SVGAnimatedLengthTests
 {
-    /// <summary>Provides validation of the <see cref="SVGAnimatedLength" /> struct.</summary>
-    public static unsafe partial class SVGAnimatedLengthTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGAnimatedLength" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGAnimatedLength" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SVGAnimatedLength).GUID, Is.EqualTo(IID_SVGAnimatedLength));
-        }
+        Assert.That(typeof(SVGAnimatedLength).GUID, Is.EqualTo(IID_SVGAnimatedLength));
+    }
 
-        /// <summary>Validates that the <see cref="SVGAnimatedLength" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SVGAnimatedLength>(), Is.EqualTo(sizeof(SVGAnimatedLength)));
-        }
+    /// <summary>Validates that the <see cref="SVGAnimatedLength" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SVGAnimatedLength>(), Is.EqualTo(sizeof(SVGAnimatedLength)));
+    }
 
-        /// <summary>Validates that the <see cref="SVGAnimatedLength" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SVGAnimatedLength).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SVGAnimatedLength" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SVGAnimatedLength).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SVGAnimatedLength" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SVGAnimatedLength), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SVGAnimatedLength" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SVGAnimatedLength), Is.EqualTo(1));
     }
 }

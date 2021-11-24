@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TYPEDESC" /> struct.</summary>
+public static unsafe partial class TYPEDESCTests
 {
-    /// <summary>Provides validation of the <see cref="TYPEDESC" /> struct.</summary>
-    public static unsafe partial class TYPEDESCTests
+    /// <summary>Validates that the <see cref="TYPEDESC" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TYPEDESC" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TYPEDESC>(), Is.EqualTo(sizeof(TYPEDESC)));
-        }
+        Assert.That(Marshal.SizeOf<TYPEDESC>(), Is.EqualTo(sizeof(TYPEDESC)));
+    }
 
-        /// <summary>Validates that the <see cref="TYPEDESC" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TYPEDESC).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TYPEDESC" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TYPEDESC).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TYPEDESC" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="TYPEDESC" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(TYPEDESC), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(TYPEDESC), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(TYPEDESC), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(TYPEDESC), Is.EqualTo(8));
         }
     }
 }

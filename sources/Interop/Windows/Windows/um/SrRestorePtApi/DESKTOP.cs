@@ -3,11 +3,10 @@
 // Ported from um/SrRestorePtApi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class DESKTOP
 {
-    public static partial class DESKTOP
-    {
-        [NativeTypeName("#define DESKTOP_SETTING 2")]
-        public const int DESKTOP_SETTING = 2;
-    }
+    [NativeTypeName("#define DESKTOP_SETTING 2")]
+    public const int DESKTOP_SETTING = 2;
 }

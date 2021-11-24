@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MSIPATCHSEQUENCEINFOW" /> struct.</summary>
+public static unsafe partial class MSIPATCHSEQUENCEINFOWTests
 {
-    /// <summary>Provides validation of the <see cref="MSIPATCHSEQUENCEINFOW" /> struct.</summary>
-    public static unsafe partial class MSIPATCHSEQUENCEINFOWTests
+    /// <summary>Validates that the <see cref="MSIPATCHSEQUENCEINFOW" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MSIPATCHSEQUENCEINFOW" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MSIPATCHSEQUENCEINFOW>(), Is.EqualTo(sizeof(MSIPATCHSEQUENCEINFOW)));
-        }
+        Assert.That(Marshal.SizeOf<MSIPATCHSEQUENCEINFOW>(), Is.EqualTo(sizeof(MSIPATCHSEQUENCEINFOW)));
+    }
 
-        /// <summary>Validates that the <see cref="MSIPATCHSEQUENCEINFOW" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MSIPATCHSEQUENCEINFOW).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MSIPATCHSEQUENCEINFOW" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MSIPATCHSEQUENCEINFOW).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MSIPATCHSEQUENCEINFOW" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="MSIPATCHSEQUENCEINFOW" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(MSIPATCHSEQUENCEINFOW), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(MSIPATCHSEQUENCEINFOW), Is.EqualTo(16));
-            }
+            Assert.That(sizeof(MSIPATCHSEQUENCEINFOW), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(MSIPATCHSEQUENCEINFOW), Is.EqualTo(16));
         }
     }
 }

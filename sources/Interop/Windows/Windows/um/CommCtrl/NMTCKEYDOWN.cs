@@ -5,16 +5,15 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct NMTCKEYDOWN
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct NMTCKEYDOWN
-    {
-        public NMHDR hdr;
+    public NMHDR hdr;
 
-        [NativeTypeName("WORD")]
-        public ushort wVKey;
+    [NativeTypeName("WORD")]
+    public ushort wVKey;
 
-        public uint flags;
-    }
+    public uint flags;
 }

@@ -5,14 +5,13 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct CIDA
-    {
-        public uint cidl;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("UINT [1]")]
-        public fixed uint aoffset[1];
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct CIDA
+{
+    public uint cidl;
+
+    [NativeTypeName("UINT [1]")]
+    public fixed uint aoffset[1];
 }

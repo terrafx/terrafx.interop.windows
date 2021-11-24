@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum D2D1_LAYER_OPTIONS : uint
 {
-    [Flags]
-    public enum D2D1_LAYER_OPTIONS : uint
-    {
-        D2D1_LAYER_OPTIONS_NONE = 0x00000000,
-        D2D1_LAYER_OPTIONS_INITIALIZE_FOR_CLEARTYPE = 0x00000001,
-        D2D1_LAYER_OPTIONS_FORCE_DWORD = 0xffffffff,
-    }
+    D2D1_LAYER_OPTIONS_NONE = 0x00000000,
+    D2D1_LAYER_OPTIONS_INITIALIZE_FOR_CLEARTYPE = 0x00000001,
+    D2D1_LAYER_OPTIONS_FORCE_DWORD = 0xffffffff,
 }

@@ -3,30 +3,29 @@
 // Ported from um/mfidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct MFBYTESTREAM_BUFFERING_PARAMS
 {
-    public unsafe partial struct MFBYTESTREAM_BUFFERING_PARAMS
-    {
-        [NativeTypeName("QWORD")]
-        public ulong cbTotalFileSize;
+    [NativeTypeName("QWORD")]
+    public ulong cbTotalFileSize;
 
-        [NativeTypeName("QWORD")]
-        public ulong cbPlayableDataSize;
+    [NativeTypeName("QWORD")]
+    public ulong cbPlayableDataSize;
 
-        public MF_LEAKY_BUCKET_PAIR* prgBuckets;
+    public MF_LEAKY_BUCKET_PAIR* prgBuckets;
 
-        [NativeTypeName("DWORD")]
-        public uint cBuckets;
+    [NativeTypeName("DWORD")]
+    public uint cBuckets;
 
-        [NativeTypeName("QWORD")]
-        public ulong qwNetBufferingTime;
+    [NativeTypeName("QWORD")]
+    public ulong qwNetBufferingTime;
 
-        [NativeTypeName("QWORD")]
-        public ulong qwExtraBufferingTimeDuringSeek;
+    [NativeTypeName("QWORD")]
+    public ulong qwExtraBufferingTimeDuringSeek;
 
-        [NativeTypeName("QWORD")]
-        public ulong qwPlayDuration;
+    [NativeTypeName("QWORD")]
+    public ulong qwPlayDuration;
 
-        public float dRate;
-    }
+    public float dRate;
 }

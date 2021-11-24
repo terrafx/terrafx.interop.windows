@@ -6,31 +6,30 @@
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct D3D11_VIDEO_PROCESSOR_STREAM
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct D3D11_VIDEO_PROCESSOR_STREAM
-    {
-        public BOOL Enable;
+    public BOOL Enable;
 
-        public uint OutputIndex;
+    public uint OutputIndex;
 
-        public uint InputFrameOrField;
+    public uint InputFrameOrField;
 
-        public uint PastFrames;
+    public uint PastFrames;
 
-        public uint FutureFrames;
+    public uint FutureFrames;
 
-        public ID3D11VideoProcessorInputView** ppPastSurfaces;
+    public ID3D11VideoProcessorInputView** ppPastSurfaces;
 
-        public ID3D11VideoProcessorInputView* pInputSurface;
+    public ID3D11VideoProcessorInputView* pInputSurface;
 
-        public ID3D11VideoProcessorInputView** ppFutureSurfaces;
+    public ID3D11VideoProcessorInputView** ppFutureSurfaces;
 
-        public ID3D11VideoProcessorInputView** ppPastSurfacesRight;
+    public ID3D11VideoProcessorInputView** ppPastSurfacesRight;
 
-        public ID3D11VideoProcessorInputView* pInputSurfaceRight;
+    public ID3D11VideoProcessorInputView* pInputSurfaceRight;
 
-        public ID3D11VideoProcessorInputView** ppFutureSurfacesRight;
-    }
+    public ID3D11VideoProcessorInputView** ppFutureSurfacesRight;
 }

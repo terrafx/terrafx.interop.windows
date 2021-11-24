@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="STORAGE_IDLE_POWERUP_REASON" /> struct.</summary>
+public static unsafe partial class STORAGE_IDLE_POWERUP_REASONTests
 {
-    /// <summary>Provides validation of the <see cref="STORAGE_IDLE_POWERUP_REASON" /> struct.</summary>
-    public static unsafe partial class STORAGE_IDLE_POWERUP_REASONTests
+    /// <summary>Validates that the <see cref="STORAGE_IDLE_POWERUP_REASON" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="STORAGE_IDLE_POWERUP_REASON" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<STORAGE_IDLE_POWERUP_REASON>(), Is.EqualTo(sizeof(STORAGE_IDLE_POWERUP_REASON)));
-        }
+        Assert.That(Marshal.SizeOf<STORAGE_IDLE_POWERUP_REASON>(), Is.EqualTo(sizeof(STORAGE_IDLE_POWERUP_REASON)));
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_IDLE_POWERUP_REASON" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(STORAGE_IDLE_POWERUP_REASON).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="STORAGE_IDLE_POWERUP_REASON" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(STORAGE_IDLE_POWERUP_REASON).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_IDLE_POWERUP_REASON" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(STORAGE_IDLE_POWERUP_REASON), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="STORAGE_IDLE_POWERUP_REASON" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(STORAGE_IDLE_POWERUP_REASON), Is.EqualTo(12));
     }
 }

@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum D3D12_SHADER_CACHE_FLAGS
 {
-    [Flags]
-    public enum D3D12_SHADER_CACHE_FLAGS
-    {
-        D3D12_SHADER_CACHE_FLAG_NONE = 0,
-        D3D12_SHADER_CACHE_FLAG_DRIVER_VERSIONED = 0x1,
-        D3D12_SHADER_CACHE_FLAG_USE_WORKING_DIR = 0x2,
-    }
+    D3D12_SHADER_CACHE_FLAG_NONE = 0,
+    D3D12_SHADER_CACHE_FLAG_DRIVER_VERSIONED = 0x1,
+    D3D12_SHADER_CACHE_FLAG_USE_WORKING_DIR = 0x2,
 }

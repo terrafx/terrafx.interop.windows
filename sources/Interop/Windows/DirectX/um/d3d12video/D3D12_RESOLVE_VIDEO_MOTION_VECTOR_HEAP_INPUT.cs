@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+public unsafe partial struct D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public unsafe partial struct D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT
-    {
-        public ID3D12VideoMotionVectorHeap* pMotionVectorHeap;
+    public ID3D12VideoMotionVectorHeap* pMotionVectorHeap;
 
-        public uint PixelWidth;
+    public uint PixelWidth;
 
-        public uint PixelHeight;
-    }
+    public uint PixelHeight;
 }

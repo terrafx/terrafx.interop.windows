@@ -5,26 +5,25 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 2)]
+public partial struct DLGITEMTEMPLATE
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 2)]
-    public partial struct DLGITEMTEMPLATE
-    {
-        [NativeTypeName("DWORD")]
-        public uint style;
+    [NativeTypeName("DWORD")]
+    public uint style;
 
-        [NativeTypeName("DWORD")]
-        public uint dwExtendedStyle;
+    [NativeTypeName("DWORD")]
+    public uint dwExtendedStyle;
 
-        public short x;
+    public short x;
 
-        public short y;
+    public short y;
 
-        public short cx;
+    public short cx;
 
-        public short cy;
+    public short cy;
 
-        [NativeTypeName("WORD")]
-        public ushort id;
-    }
+    [NativeTypeName("WORD")]
+    public ushort id;
 }

@@ -3,11 +3,10 @@
 // Ported from shared/ws2def.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class TCP
 {
-    public static partial class TCP
-    {
-        [NativeTypeName("#define TCP_NODELAY 0x0001")]
-        public const int TCP_NODELAY = 0x0001;
-    }
+    [NativeTypeName("#define TCP_NODELAY 0x0001")]
+    public const int TCP_NODELAY = 0x0001;
 }

@@ -3,16 +3,15 @@
 // Ported from um/dwrite_3.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[NativeTypeName("struct DWRITE_LINE_METRICS1 : DWRITE_LINE_METRICS")]
+[NativeInheritance("DWRITE_LINE_METRICS")]
+public partial struct DWRITE_LINE_METRICS1
 {
-    [NativeTypeName("struct DWRITE_LINE_METRICS1 : DWRITE_LINE_METRICS")]
-    [NativeInheritance("DWRITE_LINE_METRICS")]
-    public partial struct DWRITE_LINE_METRICS1
-    {
-        public DWRITE_LINE_METRICS Base;
+    public DWRITE_LINE_METRICS Base;
 
-        public float leadingBefore;
+    public float leadingBefore;
 
-        public float leadingAfter;
-    }
+    public float leadingAfter;
 }

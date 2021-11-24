@@ -6,38 +6,37 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct FILEDESCRIPTORW
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct FILEDESCRIPTORW
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        [NativeTypeName("CLSID")]
-        public Guid clsid;
+    [NativeTypeName("CLSID")]
+    public Guid clsid;
 
-        [NativeTypeName("SIZEL")]
-        public SIZE sizel;
+    [NativeTypeName("SIZEL")]
+    public SIZE sizel;
 
-        public POINTL pointl;
+    public POINTL pointl;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFileAttributes;
+    [NativeTypeName("DWORD")]
+    public uint dwFileAttributes;
 
-        public FILETIME ftCreationTime;
+    public FILETIME ftCreationTime;
 
-        public FILETIME ftLastAccessTime;
+    public FILETIME ftLastAccessTime;
 
-        public FILETIME ftLastWriteTime;
+    public FILETIME ftLastWriteTime;
 
-        [NativeTypeName("DWORD")]
-        public uint nFileSizeHigh;
+    [NativeTypeName("DWORD")]
+    public uint nFileSizeHigh;
 
-        [NativeTypeName("DWORD")]
-        public uint nFileSizeLow;
+    [NativeTypeName("DWORD")]
+    public uint nFileSizeLow;
 
-        [NativeTypeName("WCHAR [260]")]
-        public fixed ushort cFileName[260];
-    }
+    [NativeTypeName("WCHAR [260]")]
+    public fixed ushort cFileName[260];
 }

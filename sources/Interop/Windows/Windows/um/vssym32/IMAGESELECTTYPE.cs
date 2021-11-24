@@ -3,12 +3,11 @@
 // Ported from um/vssym32.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum IMAGESELECTTYPE
 {
-    public enum IMAGESELECTTYPE
-    {
-        IST_NONE = 0,
-        IST_SIZE = 1,
-        IST_DPI = 2,
-    }
+    IST_NONE = 0,
+    IST_SIZE = 1,
+    IST_DPI = 2,
 }

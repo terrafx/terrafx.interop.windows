@@ -3,17 +3,16 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SCM_PD_LAST_FW_ACTIVATION_STATUS
 {
-    public enum SCM_PD_LAST_FW_ACTIVATION_STATUS
-    {
-        ScmPdLastFwActivationStatus_None = 0,
-        ScmPdLastFwActivationStatus_Success = 1,
-        ScmPdLastFwActivationStatus_FwNotFound = 2,
-        ScmPdLastFwActivationStatus_ColdRebootRequired = 3,
-        ScmPdLastFwActivaitonStatus_ActivationInProgress = 4,
-        ScmPdLastFwActivaitonStatus_Retry = 5,
-        ScmPdLastFwActivaitonStatus_FwUnsupported = 6,
-        ScmPdLastFwActivaitonStatus_UnknownError = 7,
-    }
+    ScmPdLastFwActivationStatus_None = 0,
+    ScmPdLastFwActivationStatus_Success = 1,
+    ScmPdLastFwActivationStatus_FwNotFound = 2,
+    ScmPdLastFwActivationStatus_ColdRebootRequired = 3,
+    ScmPdLastFwActivaitonStatus_ActivationInProgress = 4,
+    ScmPdLastFwActivaitonStatus_Retry = 5,
+    ScmPdLastFwActivaitonStatus_FwUnsupported = 6,
+    ScmPdLastFwActivaitonStatus_UnknownError = 7,
 }

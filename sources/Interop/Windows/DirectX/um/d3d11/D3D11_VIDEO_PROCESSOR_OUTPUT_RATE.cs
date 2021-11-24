@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public enum D3D11_VIDEO_PROCESSOR_OUTPUT_RATE
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum D3D11_VIDEO_PROCESSOR_OUTPUT_RATE
-    {
-        D3D11_VIDEO_PROCESSOR_OUTPUT_RATE_NORMAL = 0,
-        D3D11_VIDEO_PROCESSOR_OUTPUT_RATE_HALF = 1,
-        D3D11_VIDEO_PROCESSOR_OUTPUT_RATE_CUSTOM = 2,
-    }
+    D3D11_VIDEO_PROCESSOR_OUTPUT_RATE_NORMAL = 0,
+    D3D11_VIDEO_PROCESSOR_OUTPUT_RATE_HALF = 1,
+    D3D11_VIDEO_PROCESSOR_OUTPUT_RATE_CUSTOM = 2,
 }

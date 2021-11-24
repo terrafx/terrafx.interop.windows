@@ -3,14 +3,13 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct FILE_REFERENCE_RANGE
-    {
-        [NativeTypeName("DWORDLONG")]
-        public ulong StartingFileReferenceNumber;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong EndingFileReferenceNumber;
-    }
+public partial struct FILE_REFERENCE_RANGE
+{
+    [NativeTypeName("DWORDLONG")]
+    public ulong StartingFileReferenceNumber;
+
+    [NativeTypeName("DWORDLONG")]
+    public ulong EndingFileReferenceNumber;
 }

@@ -3,27 +3,26 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SECURITY_DESCRIPTOR
 {
-    public unsafe partial struct SECURITY_DESCRIPTOR
-    {
-        public byte Revision;
+    public byte Revision;
 
-        public byte Sbz1;
+    public byte Sbz1;
 
-        [NativeTypeName("SECURITY_DESCRIPTOR_CONTROL")]
-        public ushort Control;
+    [NativeTypeName("SECURITY_DESCRIPTOR_CONTROL")]
+    public ushort Control;
 
-        [NativeTypeName("PSID")]
-        public void* Owner;
+    [NativeTypeName("PSID")]
+    public void* Owner;
 
-        [NativeTypeName("PSID")]
-        public void* Group;
+    [NativeTypeName("PSID")]
+    public void* Group;
 
-        [NativeTypeName("PACL")]
-        public ACL* Sacl;
+    [NativeTypeName("PACL")]
+    public ACL* Sacl;
 
-        [NativeTypeName("PACL")]
-        public ACL* Dacl;
-    }
+    [NativeTypeName("PACL")]
+    public ACL* Dacl;
 }

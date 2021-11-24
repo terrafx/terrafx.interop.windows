@@ -5,14 +5,13 @@
 
 using System;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[Flags]
+[NativeTypeName("uint32_t")]
+public enum MLOperatorParameterOptions : uint
 {
-    [Flags]
-    [NativeTypeName("uint32_t")]
-    public enum MLOperatorParameterOptions : uint
-    {
-        Single = 0,
-        Optional = 1,
-        Variadic = 2,
-    }
+    Single = 0,
+    Optional = 1,
+    Variadic = 2,
 }

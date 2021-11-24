@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CABINETSTATE" /> struct.</summary>
+public static unsafe partial class CABINETSTATETests
 {
-    /// <summary>Provides validation of the <see cref="CABINETSTATE" /> struct.</summary>
-    public static unsafe partial class CABINETSTATETests
+    /// <summary>Validates that the <see cref="CABINETSTATE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CABINETSTATE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CABINETSTATE>(), Is.EqualTo(sizeof(CABINETSTATE)));
-        }
+        Assert.That(Marshal.SizeOf<CABINETSTATE>(), Is.EqualTo(sizeof(CABINETSTATE)));
+    }
 
-        /// <summary>Validates that the <see cref="CABINETSTATE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CABINETSTATE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CABINETSTATE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CABINETSTATE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CABINETSTATE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CABINETSTATE), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="CABINETSTATE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CABINETSTATE), Is.EqualTo(12));
     }
 }

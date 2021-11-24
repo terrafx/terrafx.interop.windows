@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("AA509086-5CA9-4C25-8F95-589D3C07B48A")]
+public partial struct VirtualDesktopManager
 {
-    [Guid("AA509086-5CA9-4C25-8F95-589D3C07B48A")]
-    public partial struct VirtualDesktopManager
-    {
-    }
 }

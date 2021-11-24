@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SmartcardPinProvider" /> struct.</summary>
+public static unsafe partial class SmartcardPinProviderTests
 {
-    /// <summary>Provides validation of the <see cref="SmartcardPinProvider" /> struct.</summary>
-    public static unsafe partial class SmartcardPinProviderTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SmartcardPinProvider" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SmartcardPinProvider" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SmartcardPinProvider).GUID, Is.EqualTo(IID_SmartcardPinProvider));
-        }
+        Assert.That(typeof(SmartcardPinProvider).GUID, Is.EqualTo(IID_SmartcardPinProvider));
+    }
 
-        /// <summary>Validates that the <see cref="SmartcardPinProvider" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SmartcardPinProvider>(), Is.EqualTo(sizeof(SmartcardPinProvider)));
-        }
+    /// <summary>Validates that the <see cref="SmartcardPinProvider" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SmartcardPinProvider>(), Is.EqualTo(sizeof(SmartcardPinProvider)));
+    }
 
-        /// <summary>Validates that the <see cref="SmartcardPinProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SmartcardPinProvider).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SmartcardPinProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SmartcardPinProvider).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SmartcardPinProvider" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SmartcardPinProvider), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SmartcardPinProvider" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SmartcardPinProvider), Is.EqualTo(1));
     }
 }

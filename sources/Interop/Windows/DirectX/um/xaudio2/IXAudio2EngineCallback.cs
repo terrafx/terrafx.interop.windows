@@ -6,55 +6,54 @@
 using System.Runtime.CompilerServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct IXAudio2EngineCallback : IXAudio2EngineCallback.Interface
 {
-    public unsafe partial struct IXAudio2EngineCallback : IXAudio2EngineCallback.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public void OnProcessingPassStart()
     {
-        public void** lpVtbl;
+        ((delegate* unmanaged<IXAudio2EngineCallback*, void>)(lpVtbl[0]))((IXAudio2EngineCallback*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    public void OnProcessingPassEnd()
+    {
+        ((delegate* unmanaged<IXAudio2EngineCallback*, void>)(lpVtbl[1]))((IXAudio2EngineCallback*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    public void OnCriticalError(HRESULT Error)
+    {
+        ((delegate* unmanaged<IXAudio2EngineCallback*, HRESULT, void>)(lpVtbl[2]))((IXAudio2EngineCallback*)Unsafe.AsPointer(ref this), Error);
+    }
+
+    public interface Interface
+    {
         [VtblIndex(0)]
-        public void OnProcessingPassStart()
-        {
-            ((delegate* unmanaged<IXAudio2EngineCallback*, void>)(lpVtbl[0]))((IXAudio2EngineCallback*)Unsafe.AsPointer(ref this));
-        }
+        void OnProcessingPassStart();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(1)]
-        public void OnProcessingPassEnd()
-        {
-            ((delegate* unmanaged<IXAudio2EngineCallback*, void>)(lpVtbl[1]))((IXAudio2EngineCallback*)Unsafe.AsPointer(ref this));
-        }
+        void OnProcessingPassEnd();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(2)]
-        public void OnCriticalError(HRESULT Error)
-        {
-            ((delegate* unmanaged<IXAudio2EngineCallback*, HRESULT, void>)(lpVtbl[2]))((IXAudio2EngineCallback*)Unsafe.AsPointer(ref this), Error);
-        }
+        void OnCriticalError(HRESULT Error);
+    }
 
-        public interface Interface
-        {
-            [VtblIndex(0)]
-            void OnProcessingPassStart();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2EngineCallback*, void> OnProcessingPassStart;
 
-            [VtblIndex(1)]
-            void OnProcessingPassEnd();
+        [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2EngineCallback*, void> OnProcessingPassEnd;
 
-            [VtblIndex(2)]
-            void OnCriticalError(HRESULT Error);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2EngineCallback*, void> OnProcessingPassStart;
-
-            [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2EngineCallback*, void> OnProcessingPassEnd;
-
-            [NativeTypeName("void (HRESULT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2EngineCallback*, HRESULT, void> OnCriticalError;
-        }
+        [NativeTypeName("void (HRESULT) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2EngineCallback*, HRESULT, void> OnCriticalError;
     }
 }

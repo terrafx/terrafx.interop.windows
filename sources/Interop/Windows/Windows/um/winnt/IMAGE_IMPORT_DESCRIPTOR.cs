@@ -6,53 +6,52 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct IMAGE_IMPORT_DESCRIPTOR
 {
-    public partial struct IMAGE_IMPORT_DESCRIPTOR
+    [NativeTypeName("_IMAGE_IMPORT_DESCRIPTOR::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:19561:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    [NativeTypeName("DWORD")]
+    public uint TimeDateStamp;
+
+    [NativeTypeName("DWORD")]
+    public uint ForwarderChain;
+
+    [NativeTypeName("DWORD")]
+    public uint Name;
+
+    [NativeTypeName("DWORD")]
+    public uint FirstThunk;
+
+    public ref uint Characteristics
     {
-        [NativeTypeName("_IMAGE_IMPORT_DESCRIPTOR::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:19561:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        [NativeTypeName("DWORD")]
-        public uint TimeDateStamp;
-
-        [NativeTypeName("DWORD")]
-        public uint ForwarderChain;
-
-        [NativeTypeName("DWORD")]
-        public uint Name;
-
-        [NativeTypeName("DWORD")]
-        public uint FirstThunk;
-
-        public ref uint Characteristics
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Characteristics, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Characteristics, 1));
         }
+    }
 
-        public ref uint OriginalFirstThunk
+    public ref uint OriginalFirstThunk
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.OriginalFirstThunk, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.OriginalFirstThunk, 1));
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint Characteristics;
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint Characteristics;
 
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint OriginalFirstThunk;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint OriginalFirstThunk;
     }
 }

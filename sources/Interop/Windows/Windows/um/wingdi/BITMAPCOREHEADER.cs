@@ -3,23 +3,22 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct BITMAPCOREHEADER
 {
-    public partial struct BITMAPCOREHEADER
-    {
-        [NativeTypeName("DWORD")]
-        public uint bcSize;
+    [NativeTypeName("DWORD")]
+    public uint bcSize;
 
-        [NativeTypeName("WORD")]
-        public ushort bcWidth;
+    [NativeTypeName("WORD")]
+    public ushort bcWidth;
 
-        [NativeTypeName("WORD")]
-        public ushort bcHeight;
+    [NativeTypeName("WORD")]
+    public ushort bcHeight;
 
-        [NativeTypeName("WORD")]
-        public ushort bcPlanes;
+    [NativeTypeName("WORD")]
+    public ushort bcPlanes;
 
-        [NativeTypeName("WORD")]
-        public ushort bcBitCount;
-    }
+    [NativeTypeName("WORD")]
+    public ushort bcBitCount;
 }

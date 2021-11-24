@@ -3,15 +3,14 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    [NativeTypeName("struct tagMONITORINFOEXA : tagMONITORINFO")]
-    [NativeInheritance("tagMONITORINFO")]
-    public unsafe partial struct MONITORINFOEXA
-    {
-        public MONITORINFO Base;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("CHAR [32]")]
-        public fixed sbyte szDevice[32];
-    }
+[NativeTypeName("struct tagMONITORINFOEXA : tagMONITORINFO")]
+[NativeInheritance("tagMONITORINFO")]
+public unsafe partial struct MONITORINFOEXA
+{
+    public MONITORINFO Base;
+
+    [NativeTypeName("CHAR [32]")]
+    public fixed sbyte szDevice[32];
 }

@@ -5,11 +5,10 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum D3D11_RAISE_FLAG
 {
-    [Flags]
-    public enum D3D11_RAISE_FLAG
-    {
-        D3D11_RAISE_FLAG_DRIVER_INTERNAL_ERROR = 0x1,
-    }
+    D3D11_RAISE_FLAG_DRIVER_INTERNAL_ERROR = 0x1,
 }

@@ -3,28 +3,27 @@
 // Ported from um/d3d12video.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_FEATURE_DATA_VIDEO_DECODE_SUPPORT
 {
-    public partial struct D3D12_FEATURE_DATA_VIDEO_DECODE_SUPPORT
-    {
-        public uint NodeIndex;
+    public uint NodeIndex;
 
-        public D3D12_VIDEO_DECODE_CONFIGURATION Configuration;
+    public D3D12_VIDEO_DECODE_CONFIGURATION Configuration;
 
-        public uint Width;
+    public uint Width;
 
-        public uint Height;
+    public uint Height;
 
-        public DXGI_FORMAT DecodeFormat;
+    public DXGI_FORMAT DecodeFormat;
 
-        public DXGI_RATIONAL FrameRate;
+    public DXGI_RATIONAL FrameRate;
 
-        public uint BitRate;
+    public uint BitRate;
 
-        public D3D12_VIDEO_DECODE_SUPPORT_FLAGS SupportFlags;
+    public D3D12_VIDEO_DECODE_SUPPORT_FLAGS SupportFlags;
 
-        public D3D12_VIDEO_DECODE_CONFIGURATION_FLAGS ConfigurationFlags;
+    public D3D12_VIDEO_DECODE_CONFIGURATION_FLAGS ConfigurationFlags;
 
-        public D3D12_VIDEO_DECODE_TIER DecodeTier;
-    }
+    public D3D12_VIDEO_DECODE_TIER DecodeTier;
 }

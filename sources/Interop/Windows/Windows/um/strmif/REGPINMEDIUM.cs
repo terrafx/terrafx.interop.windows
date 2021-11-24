@@ -5,17 +5,16 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct REGPINMEDIUM
 {
-    public partial struct REGPINMEDIUM
-    {
-        [NativeTypeName("CLSID")]
-        public Guid clsMedium;
+    [NativeTypeName("CLSID")]
+    public Guid clsMedium;
 
-        [NativeTypeName("DWORD")]
-        public uint dw1;
+    [NativeTypeName("DWORD")]
+    public uint dw1;
 
-        [NativeTypeName("DWORD")]
-        public uint dw2;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dw2;
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NMVIEWCHANGE" /> struct.</summary>
+public static unsafe partial class NMVIEWCHANGETests
 {
-    /// <summary>Provides validation of the <see cref="NMVIEWCHANGE" /> struct.</summary>
-    public static unsafe partial class NMVIEWCHANGETests
+    /// <summary>Validates that the <see cref="NMVIEWCHANGE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NMVIEWCHANGE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NMVIEWCHANGE>(), Is.EqualTo(sizeof(NMVIEWCHANGE)));
-        }
+        Assert.That(Marshal.SizeOf<NMVIEWCHANGE>(), Is.EqualTo(sizeof(NMVIEWCHANGE)));
+    }
 
-        /// <summary>Validates that the <see cref="NMVIEWCHANGE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NMVIEWCHANGE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NMVIEWCHANGE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NMVIEWCHANGE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NMVIEWCHANGE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="NMVIEWCHANGE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(NMVIEWCHANGE), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(NMVIEWCHANGE), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(NMVIEWCHANGE), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(NMVIEWCHANGE), Is.EqualTo(20));
         }
     }
 }

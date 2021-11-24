@@ -3,13 +3,12 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SERVICE_ERROR_TYPE
 {
-    public enum SERVICE_ERROR_TYPE
-    {
-        IgnoreError = 0x00000000,
-        NormalError = 0x00000001,
-        SevereError = 0x00000002,
-        CriticalError = 0x00000003,
-    }
+    IgnoreError = 0x00000000,
+    NormalError = 0x00000001,
+    SevereError = 0x00000002,
+    CriticalError = 0x00000003,
 }

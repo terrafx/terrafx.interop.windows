@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WCM_TIME_INTERVAL" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class WCM_TIME_INTERVALTests
 {
-    /// <summary>Provides validation of the <see cref="WCM_TIME_INTERVAL" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class WCM_TIME_INTERVALTests
+    /// <summary>Validates that the <see cref="WCM_TIME_INTERVAL" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WCM_TIME_INTERVAL" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WCM_TIME_INTERVAL>(), Is.EqualTo(sizeof(WCM_TIME_INTERVAL)));
-        }
+        Assert.That(Marshal.SizeOf<WCM_TIME_INTERVAL>(), Is.EqualTo(sizeof(WCM_TIME_INTERVAL)));
+    }
 
-        /// <summary>Validates that the <see cref="WCM_TIME_INTERVAL" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WCM_TIME_INTERVAL).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WCM_TIME_INTERVAL" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WCM_TIME_INTERVAL).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WCM_TIME_INTERVAL" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(WCM_TIME_INTERVAL), Is.EqualTo(14));
-        }
+    /// <summary>Validates that the <see cref="WCM_TIME_INTERVAL" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(WCM_TIME_INTERVAL), Is.EqualTo(14));
     }
 }

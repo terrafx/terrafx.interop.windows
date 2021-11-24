@@ -3,16 +3,15 @@
 // Ported from um/dcommon.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D_RECT_F
 {
-    public partial struct D2D_RECT_F
-    {
-        public float left;
+    public float left;
 
-        public float top;
+    public float top;
 
-        public float right;
+    public float right;
 
-        public float bottom;
-    }
+    public float bottom;
 }

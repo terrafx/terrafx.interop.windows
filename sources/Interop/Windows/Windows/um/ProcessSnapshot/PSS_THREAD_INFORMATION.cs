@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.1")]
-    public partial struct PSS_THREAD_INFORMATION
-    {
-        [NativeTypeName("DWORD")]
-        public uint ThreadsCaptured;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint ContextLength;
-    }
+[SupportedOSPlatform("windows8.1")]
+public partial struct PSS_THREAD_INFORMATION
+{
+    [NativeTypeName("DWORD")]
+    public uint ThreadsCaptured;
+
+    [NativeTypeName("DWORD")]
+    public uint ContextLength;
 }

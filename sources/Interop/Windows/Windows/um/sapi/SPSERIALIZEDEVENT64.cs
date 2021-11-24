@@ -5,54 +5,53 @@
 
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SPSERIALIZEDEVENT64
 {
-    public partial struct SPSERIALIZEDEVENT64
+    public int _bitfield;
+
+    [NativeTypeName("SPEVENTENUM : 16")]
+    public SPEVENTENUM eEventId
     {
-        public int _bitfield;
-
-        [NativeTypeName("SPEVENTENUM : 16")]
-        public SPEVENTENUM eEventId
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (SPEVENTENUM)(_bitfield & 0xFFFF);
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~0xFFFF) | ((int)(value) & 0xFFFF);
-            }
+            return (SPEVENTENUM)(_bitfield & 0xFFFF);
         }
 
-        [NativeTypeName("SPEVENTLPARAMTYPE : 16")]
-        public SPEVENTLPARAMTYPE elParamType
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (SPEVENTLPARAMTYPE)((_bitfield >> 16) & 0xFFFF);
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0xFFFF << 16)) | (((int)(value) & 0xFFFF) << 16);
-            }
+            _bitfield = (_bitfield & ~0xFFFF) | ((int)(value) & 0xFFFF);
         }
-
-        [NativeTypeName("ULONG")]
-        public uint ulStreamNum;
-
-        [NativeTypeName("ULONGLONG")]
-        public ulong ullAudioStreamOffset;
-
-        [NativeTypeName("ULONGLONG")]
-        public ulong SerializedwParam;
-
-        [NativeTypeName("LONGLONG")]
-        public long SerializedlParam;
     }
+
+    [NativeTypeName("SPEVENTLPARAMTYPE : 16")]
+    public SPEVENTLPARAMTYPE elParamType
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (SPEVENTLPARAMTYPE)((_bitfield >> 16) & 0xFFFF);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield = (_bitfield & ~(0xFFFF << 16)) | (((int)(value) & 0xFFFF) << 16);
+        }
+    }
+
+    [NativeTypeName("ULONG")]
+    public uint ulStreamNum;
+
+    [NativeTypeName("ULONGLONG")]
+    public ulong ullAudioStreamOffset;
+
+    [NativeTypeName("ULONGLONG")]
+    public ulong SerializedwParam;
+
+    [NativeTypeName("LONGLONG")]
+    public long SerializedlParam;
 }

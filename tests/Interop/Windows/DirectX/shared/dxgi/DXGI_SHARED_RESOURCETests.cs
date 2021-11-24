@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DXGI_SHARED_RESOURCE" /> struct.</summary>
+public static unsafe partial class DXGI_SHARED_RESOURCETests
 {
-    /// <summary>Provides validation of the <see cref="DXGI_SHARED_RESOURCE" /> struct.</summary>
-    public static unsafe partial class DXGI_SHARED_RESOURCETests
+    /// <summary>Validates that the <see cref="DXGI_SHARED_RESOURCE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DXGI_SHARED_RESOURCE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DXGI_SHARED_RESOURCE>(), Is.EqualTo(sizeof(DXGI_SHARED_RESOURCE)));
-        }
+        Assert.That(Marshal.SizeOf<DXGI_SHARED_RESOURCE>(), Is.EqualTo(sizeof(DXGI_SHARED_RESOURCE)));
+    }
 
-        /// <summary>Validates that the <see cref="DXGI_SHARED_RESOURCE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DXGI_SHARED_RESOURCE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DXGI_SHARED_RESOURCE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DXGI_SHARED_RESOURCE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DXGI_SHARED_RESOURCE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DXGI_SHARED_RESOURCE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DXGI_SHARED_RESOURCE), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(DXGI_SHARED_RESOURCE), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(DXGI_SHARED_RESOURCE), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(DXGI_SHARED_RESOURCE), Is.EqualTo(4));
         }
     }
 }

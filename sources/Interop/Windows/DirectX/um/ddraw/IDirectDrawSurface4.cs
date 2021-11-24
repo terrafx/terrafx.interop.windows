@@ -7,590 +7,589 @@ using System;
 using System.Runtime.CompilerServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[NativeTypeName("struct IDirectDrawSurface4 : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IDirectDrawSurface4 : IDirectDrawSurface4.Interface
 {
-    [NativeTypeName("struct IDirectDrawSurface4 : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDirectDrawSurface4 : IDirectDrawSurface4.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDirectDrawSurface4*, Guid*, void**, int>)(lpVtbl[0]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, Guid*, void**, int>)(lpVtbl[0]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, uint>)(lpVtbl[1]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, uint>)(lpVtbl[1]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, uint>)(lpVtbl[2]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, uint>)(lpVtbl[2]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT AddAttachedSurface([NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param0)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, IDirectDrawSurface4*, int>)(lpVtbl[3]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT AddOverlayDirtyRect([NativeTypeName("LPRECT")] RECT* param0)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, RECT*, int>)(lpVtbl[4]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Blt([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param1, [NativeTypeName("LPRECT")] RECT* param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPDDBLTFX")] DDBLTFX* param4)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, RECT*, IDirectDrawSurface4*, RECT*, uint, DDBLTFX*, int>)(lpVtbl[5]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1, param2, param3, param4);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT BltBatch([NativeTypeName("LPDDBLTBATCH")] DDBLTBATCH* param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, DDBLTBATCH*, uint, uint, int>)(lpVtbl[6]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1, param2);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT BltFast([NativeTypeName("DWORD")] uint param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param2, [NativeTypeName("LPRECT")] RECT* param3, [NativeTypeName("DWORD")] uint param4)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, uint, uint, IDirectDrawSurface4*, RECT*, uint, int>)(lpVtbl[7]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1, param2, param3, param4);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT DeleteAttachedSurface([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param1)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, uint, IDirectDrawSurface4*, int>)(lpVtbl[8]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT EnumAttachedSurfaces([NativeTypeName("LPVOID")] void* param0, [NativeTypeName("LPDDENUMSURFACESCALLBACK2")] delegate* unmanaged<IDirectDrawSurface4*, DDSURFACEDESC2*, void*, HRESULT> param1)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, void*, delegate* unmanaged<IDirectDrawSurface4*, DDSURFACEDESC2*, void*, HRESULT>, int>)(lpVtbl[9]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT EnumOverlayZOrders([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPVOID")] void* param1, [NativeTypeName("LPDDENUMSURFACESCALLBACK2")] delegate* unmanaged<IDirectDrawSurface4*, DDSURFACEDESC2*, void*, HRESULT> param2)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, uint, void*, delegate* unmanaged<IDirectDrawSurface4*, DDSURFACEDESC2*, void*, HRESULT>, int>)(lpVtbl[10]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1, param2);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT Flip([NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param0, [NativeTypeName("DWORD")] uint param1)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, IDirectDrawSurface4*, uint, int>)(lpVtbl[11]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT GetAttachedSurface([NativeTypeName("LPDDSCAPS2")] DDSCAPS2* param0, [NativeTypeName("LPDIRECTDRAWSURFACE4 *")] IDirectDrawSurface4** param1)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, DDSCAPS2*, IDirectDrawSurface4**, int>)(lpVtbl[12]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT GetBltStatus([NativeTypeName("DWORD")] uint param0)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, uint, int>)(lpVtbl[13]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT GetCaps([NativeTypeName("LPDDSCAPS2")] DDSCAPS2* param0)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, DDSCAPS2*, int>)(lpVtbl[14]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT GetClipper([NativeTypeName("LPDIRECTDRAWCLIPPER *")] IDirectDrawClipper** param0)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, IDirectDrawClipper**, int>)(lpVtbl[15]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT GetColorKey([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDDCOLORKEY")] DDCOLORKEY* param1)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, uint, DDCOLORKEY*, int>)(lpVtbl[16]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT GetDC(HDC* param0)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, HDC*, int>)(lpVtbl[17]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT GetFlipStatus([NativeTypeName("DWORD")] uint param0)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, uint, int>)(lpVtbl[18]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
+    public HRESULT GetOverlayPosition([NativeTypeName("LPLONG")] int* param0, [NativeTypeName("LPLONG")] int* param1)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, int*, int*, int>)(lpVtbl[19]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(20)]
+    public HRESULT GetPalette([NativeTypeName("LPDIRECTDRAWPALETTE *")] IDirectDrawPalette** param0)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, IDirectDrawPalette**, int>)(lpVtbl[20]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(21)]
+    public HRESULT GetPixelFormat([NativeTypeName("LPDDPIXELFORMAT")] DDPIXELFORMAT* param0)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, DDPIXELFORMAT*, int>)(lpVtbl[21]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(22)]
+    public HRESULT GetSurfaceDesc([NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param0)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, DDSURFACEDESC2*, int>)(lpVtbl[22]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(23)]
+    public HRESULT Initialize([NativeTypeName("LPDIRECTDRAW")] IDirectDraw* param0, [NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param1)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, IDirectDraw*, DDSURFACEDESC2*, int>)(lpVtbl[23]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(24)]
+    public HRESULT IsLost()
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, int>)(lpVtbl[24]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(25)]
+    public HRESULT Lock([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param1, [NativeTypeName("DWORD")] uint param2, HANDLE param3)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, RECT*, DDSURFACEDESC2*, uint, HANDLE, int>)(lpVtbl[25]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1, param2, param3);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(26)]
+    public HRESULT ReleaseDC(HDC param0)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, HDC, int>)(lpVtbl[26]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(27)]
+    public HRESULT Restore()
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, int>)(lpVtbl[27]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(28)]
+    public HRESULT SetClipper([NativeTypeName("LPDIRECTDRAWCLIPPER")] IDirectDrawClipper* param0)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, IDirectDrawClipper*, int>)(lpVtbl[28]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(29)]
+    public HRESULT SetColorKey([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDDCOLORKEY")] DDCOLORKEY* param1)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, uint, DDCOLORKEY*, int>)(lpVtbl[29]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(30)]
+    public HRESULT SetOverlayPosition([NativeTypeName("LONG")] int param0, [NativeTypeName("LONG")] int param1)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, int, int, int>)(lpVtbl[30]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(31)]
+    public HRESULT SetPalette([NativeTypeName("LPDIRECTDRAWPALETTE")] IDirectDrawPalette* param0)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, IDirectDrawPalette*, int>)(lpVtbl[31]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(32)]
+    public HRESULT Unlock([NativeTypeName("LPRECT")] RECT* param0)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, RECT*, int>)(lpVtbl[32]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(33)]
+    public HRESULT UpdateOverlay([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param1, [NativeTypeName("LPRECT")] RECT* param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPDDOVERLAYFX")] DDOVERLAYFX* param4)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, RECT*, IDirectDrawSurface4*, RECT*, uint, DDOVERLAYFX*, int>)(lpVtbl[33]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1, param2, param3, param4);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(34)]
+    public HRESULT UpdateOverlayDisplay([NativeTypeName("DWORD")] uint param0)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, uint, int>)(lpVtbl[34]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(35)]
+    public HRESULT UpdateOverlayZOrder([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param1)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, uint, IDirectDrawSurface4*, int>)(lpVtbl[35]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(36)]
+    public HRESULT GetDDInterface([NativeTypeName("LPVOID *")] void** param0)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, void**, int>)(lpVtbl[36]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(37)]
+    public HRESULT PageLock([NativeTypeName("DWORD")] uint param0)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, uint, int>)(lpVtbl[37]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(38)]
+    public HRESULT PageUnlock([NativeTypeName("DWORD")] uint param0)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, uint, int>)(lpVtbl[38]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(39)]
+    public HRESULT SetSurfaceDesc([NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param0, [NativeTypeName("DWORD")] uint param1)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, DDSURFACEDESC2*, uint, int>)(lpVtbl[39]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(40)]
+    public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* param0, [NativeTypeName("LPVOID")] void* param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, Guid*, void*, uint, uint, int>)(lpVtbl[40]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1, param2, param3);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(41)]
+    public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* param0, [NativeTypeName("LPVOID")] void* param1, [NativeTypeName("LPDWORD")] uint* param2)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, Guid*, void*, uint*, int>)(lpVtbl[41]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1, param2);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(42)]
+    public HRESULT FreePrivateData([NativeTypeName("const GUID &")] Guid* param0)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, Guid*, int>)(lpVtbl[42]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(43)]
+    public HRESULT GetUniquenessValue([NativeTypeName("LPDWORD")] uint* param0)
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, uint*, int>)(lpVtbl[43]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(44)]
+    public HRESULT ChangeUniquenessValue()
+    {
+        return ((delegate* unmanaged<IDirectDrawSurface4*, int>)(lpVtbl[44]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT AddAttachedSurface([NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param0)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, IDirectDrawSurface4*, int>)(lpVtbl[3]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
-        }
+        HRESULT AddAttachedSurface([NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT AddOverlayDirtyRect([NativeTypeName("LPRECT")] RECT* param0)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, RECT*, int>)(lpVtbl[4]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
-        }
+        HRESULT AddOverlayDirtyRect([NativeTypeName("LPRECT")] RECT* param0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT Blt([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param1, [NativeTypeName("LPRECT")] RECT* param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPDDBLTFX")] DDBLTFX* param4)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, RECT*, IDirectDrawSurface4*, RECT*, uint, DDBLTFX*, int>)(lpVtbl[5]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1, param2, param3, param4);
-        }
+        HRESULT Blt([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param1, [NativeTypeName("LPRECT")] RECT* param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPDDBLTFX")] DDBLTFX* param4);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT BltBatch([NativeTypeName("LPDDBLTBATCH")] DDBLTBATCH* param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, DDBLTBATCH*, uint, uint, int>)(lpVtbl[6]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1, param2);
-        }
+        HRESULT BltBatch([NativeTypeName("LPDDBLTBATCH")] DDBLTBATCH* param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT BltFast([NativeTypeName("DWORD")] uint param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param2, [NativeTypeName("LPRECT")] RECT* param3, [NativeTypeName("DWORD")] uint param4)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, uint, uint, IDirectDrawSurface4*, RECT*, uint, int>)(lpVtbl[7]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1, param2, param3, param4);
-        }
+        HRESULT BltFast([NativeTypeName("DWORD")] uint param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param2, [NativeTypeName("LPRECT")] RECT* param3, [NativeTypeName("DWORD")] uint param4);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT DeleteAttachedSurface([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param1)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, uint, IDirectDrawSurface4*, int>)(lpVtbl[8]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1);
-        }
+        HRESULT DeleteAttachedSurface([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param1);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(9)]
-        public HRESULT EnumAttachedSurfaces([NativeTypeName("LPVOID")] void* param0, [NativeTypeName("LPDDENUMSURFACESCALLBACK2")] delegate* unmanaged<IDirectDrawSurface4*, DDSURFACEDESC2*, void*, HRESULT> param1)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, void*, delegate* unmanaged<IDirectDrawSurface4*, DDSURFACEDESC2*, void*, HRESULT>, int>)(lpVtbl[9]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(10)]
-        public HRESULT EnumOverlayZOrders([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPVOID")] void* param1, [NativeTypeName("LPDDENUMSURFACESCALLBACK2")] delegate* unmanaged<IDirectDrawSurface4*, DDSURFACEDESC2*, void*, HRESULT> param2)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, uint, void*, delegate* unmanaged<IDirectDrawSurface4*, DDSURFACEDESC2*, void*, HRESULT>, int>)(lpVtbl[10]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1, param2);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT Flip([NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param0, [NativeTypeName("DWORD")] uint param1)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, IDirectDrawSurface4*, uint, int>)(lpVtbl[11]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1);
-        }
+        HRESULT Flip([NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param0, [NativeTypeName("DWORD")] uint param1);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT GetAttachedSurface([NativeTypeName("LPDDSCAPS2")] DDSCAPS2* param0, [NativeTypeName("LPDIRECTDRAWSURFACE4 *")] IDirectDrawSurface4** param1)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, DDSCAPS2*, IDirectDrawSurface4**, int>)(lpVtbl[12]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1);
-        }
+        HRESULT GetAttachedSurface([NativeTypeName("LPDDSCAPS2")] DDSCAPS2* param0, [NativeTypeName("LPDIRECTDRAWSURFACE4 *")] IDirectDrawSurface4** param1);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT GetBltStatus([NativeTypeName("DWORD")] uint param0)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, uint, int>)(lpVtbl[13]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
-        }
+        HRESULT GetBltStatus([NativeTypeName("DWORD")] uint param0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT GetCaps([NativeTypeName("LPDDSCAPS2")] DDSCAPS2* param0)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, DDSCAPS2*, int>)(lpVtbl[14]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
-        }
+        HRESULT GetCaps([NativeTypeName("LPDDSCAPS2")] DDSCAPS2* param0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT GetClipper([NativeTypeName("LPDIRECTDRAWCLIPPER *")] IDirectDrawClipper** param0)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, IDirectDrawClipper**, int>)(lpVtbl[15]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
-        }
+        HRESULT GetClipper([NativeTypeName("LPDIRECTDRAWCLIPPER *")] IDirectDrawClipper** param0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT GetColorKey([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDDCOLORKEY")] DDCOLORKEY* param1)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, uint, DDCOLORKEY*, int>)(lpVtbl[16]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1);
-        }
+        HRESULT GetColorKey([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDDCOLORKEY")] DDCOLORKEY* param1);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT GetDC(HDC* param0)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, HDC*, int>)(lpVtbl[17]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
-        }
+        HRESULT GetDC(HDC* param0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT GetFlipStatus([NativeTypeName("DWORD")] uint param0)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, uint, int>)(lpVtbl[18]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
-        }
+        HRESULT GetFlipStatus([NativeTypeName("DWORD")] uint param0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT GetOverlayPosition([NativeTypeName("LPLONG")] int* param0, [NativeTypeName("LPLONG")] int* param1)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, int*, int*, int>)(lpVtbl[19]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1);
-        }
+        HRESULT GetOverlayPosition([NativeTypeName("LPLONG")] int* param0, [NativeTypeName("LPLONG")] int* param1);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT GetPalette([NativeTypeName("LPDIRECTDRAWPALETTE *")] IDirectDrawPalette** param0)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, IDirectDrawPalette**, int>)(lpVtbl[20]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
-        }
+        HRESULT GetPalette([NativeTypeName("LPDIRECTDRAWPALETTE *")] IDirectDrawPalette** param0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public HRESULT GetPixelFormat([NativeTypeName("LPDDPIXELFORMAT")] DDPIXELFORMAT* param0)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, DDPIXELFORMAT*, int>)(lpVtbl[21]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
-        }
+        HRESULT GetPixelFormat([NativeTypeName("LPDDPIXELFORMAT")] DDPIXELFORMAT* param0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        public HRESULT GetSurfaceDesc([NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param0)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, DDSURFACEDESC2*, int>)(lpVtbl[22]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
-        }
+        HRESULT GetSurfaceDesc([NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        public HRESULT Initialize([NativeTypeName("LPDIRECTDRAW")] IDirectDraw* param0, [NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param1)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, IDirectDraw*, DDSURFACEDESC2*, int>)(lpVtbl[23]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1);
-        }
+        HRESULT Initialize([NativeTypeName("LPDIRECTDRAW")] IDirectDraw* param0, [NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param1);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT IsLost()
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, int>)(lpVtbl[24]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT IsLost();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        public HRESULT Lock([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param1, [NativeTypeName("DWORD")] uint param2, HANDLE param3)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, RECT*, DDSURFACEDESC2*, uint, HANDLE, int>)(lpVtbl[25]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1, param2, param3);
-        }
+        HRESULT Lock([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param1, [NativeTypeName("DWORD")] uint param2, HANDLE param3);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        public HRESULT ReleaseDC(HDC param0)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, HDC, int>)(lpVtbl[26]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
-        }
+        HRESULT ReleaseDC(HDC param0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        public HRESULT Restore()
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, int>)(lpVtbl[27]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Restore();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        public HRESULT SetClipper([NativeTypeName("LPDIRECTDRAWCLIPPER")] IDirectDrawClipper* param0)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, IDirectDrawClipper*, int>)(lpVtbl[28]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
-        }
+        HRESULT SetClipper([NativeTypeName("LPDIRECTDRAWCLIPPER")] IDirectDrawClipper* param0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(29)]
-        public HRESULT SetColorKey([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDDCOLORKEY")] DDCOLORKEY* param1)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, uint, DDCOLORKEY*, int>)(lpVtbl[29]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1);
-        }
+        HRESULT SetColorKey([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDDCOLORKEY")] DDCOLORKEY* param1);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
-        public HRESULT SetOverlayPosition([NativeTypeName("LONG")] int param0, [NativeTypeName("LONG")] int param1)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, int, int, int>)(lpVtbl[30]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1);
-        }
+        HRESULT SetOverlayPosition([NativeTypeName("LONG")] int param0, [NativeTypeName("LONG")] int param1);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        public HRESULT SetPalette([NativeTypeName("LPDIRECTDRAWPALETTE")] IDirectDrawPalette* param0)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, IDirectDrawPalette*, int>)(lpVtbl[31]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
-        }
+        HRESULT SetPalette([NativeTypeName("LPDIRECTDRAWPALETTE")] IDirectDrawPalette* param0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(32)]
-        public HRESULT Unlock([NativeTypeName("LPRECT")] RECT* param0)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, RECT*, int>)(lpVtbl[32]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
-        }
+        HRESULT Unlock([NativeTypeName("LPRECT")] RECT* param0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(33)]
-        public HRESULT UpdateOverlay([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param1, [NativeTypeName("LPRECT")] RECT* param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPDDOVERLAYFX")] DDOVERLAYFX* param4)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, RECT*, IDirectDrawSurface4*, RECT*, uint, DDOVERLAYFX*, int>)(lpVtbl[33]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1, param2, param3, param4);
-        }
+        HRESULT UpdateOverlay([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param1, [NativeTypeName("LPRECT")] RECT* param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPDDOVERLAYFX")] DDOVERLAYFX* param4);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(34)]
-        public HRESULT UpdateOverlayDisplay([NativeTypeName("DWORD")] uint param0)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, uint, int>)(lpVtbl[34]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
-        }
+        HRESULT UpdateOverlayDisplay([NativeTypeName("DWORD")] uint param0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(35)]
-        public HRESULT UpdateOverlayZOrder([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param1)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, uint, IDirectDrawSurface4*, int>)(lpVtbl[35]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1);
-        }
+        HRESULT UpdateOverlayZOrder([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param1);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(36)]
-        public HRESULT GetDDInterface([NativeTypeName("LPVOID *")] void** param0)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, void**, int>)(lpVtbl[36]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
-        }
+        HRESULT GetDDInterface([NativeTypeName("LPVOID *")] void** param0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(37)]
-        public HRESULT PageLock([NativeTypeName("DWORD")] uint param0)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, uint, int>)(lpVtbl[37]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
-        }
+        HRESULT PageLock([NativeTypeName("DWORD")] uint param0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(38)]
-        public HRESULT PageUnlock([NativeTypeName("DWORD")] uint param0)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, uint, int>)(lpVtbl[38]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
-        }
+        HRESULT PageUnlock([NativeTypeName("DWORD")] uint param0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(39)]
-        public HRESULT SetSurfaceDesc([NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param0, [NativeTypeName("DWORD")] uint param1)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, DDSURFACEDESC2*, uint, int>)(lpVtbl[39]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1);
-        }
+        HRESULT SetSurfaceDesc([NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param0, [NativeTypeName("DWORD")] uint param1);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(40)]
-        public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* param0, [NativeTypeName("LPVOID")] void* param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, Guid*, void*, uint, uint, int>)(lpVtbl[40]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1, param2, param3);
-        }
+        HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* param0, [NativeTypeName("LPVOID")] void* param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(41)]
-        public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* param0, [NativeTypeName("LPVOID")] void* param1, [NativeTypeName("LPDWORD")] uint* param2)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, Guid*, void*, uint*, int>)(lpVtbl[41]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0, param1, param2);
-        }
+        HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* param0, [NativeTypeName("LPVOID")] void* param1, [NativeTypeName("LPDWORD")] uint* param2);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(42)]
-        public HRESULT FreePrivateData([NativeTypeName("const GUID &")] Guid* param0)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, Guid*, int>)(lpVtbl[42]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
-        }
+        HRESULT FreePrivateData([NativeTypeName("const GUID &")] Guid* param0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(43)]
-        public HRESULT GetUniquenessValue([NativeTypeName("LPDWORD")] uint* param0)
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, uint*, int>)(lpVtbl[43]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this), param0);
-        }
+        HRESULT GetUniquenessValue([NativeTypeName("LPDWORD")] uint* param0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(44)]
-        public HRESULT ChangeUniquenessValue()
-        {
-            return ((delegate* unmanaged<IDirectDrawSurface4*, int>)(lpVtbl[44]))((IDirectDrawSurface4*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT ChangeUniquenessValue();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT AddAttachedSurface([NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param0);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT AddOverlayDirtyRect([NativeTypeName("LPRECT")] RECT* param0);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT Blt([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param1, [NativeTypeName("LPRECT")] RECT* param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPDDBLTFX")] DDBLTFX* param4);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT BltBatch([NativeTypeName("LPDDBLTBATCH")] DDBLTBATCH* param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2);
+        [NativeTypeName("HRESULT (LPDIRECTDRAWSURFACE4) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, IDirectDrawSurface4*, int> AddAttachedSurface;
 
-            [VtblIndex(7)]
-            HRESULT BltFast([NativeTypeName("DWORD")] uint param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param2, [NativeTypeName("LPRECT")] RECT* param3, [NativeTypeName("DWORD")] uint param4);
+        [NativeTypeName("HRESULT (LPRECT) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, RECT*, int> AddOverlayDirtyRect;
 
-            [VtblIndex(8)]
-            HRESULT DeleteAttachedSurface([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param1);
+        [NativeTypeName("HRESULT (LPRECT, LPDIRECTDRAWSURFACE4, LPRECT, DWORD, LPDDBLTFX) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, RECT*, IDirectDrawSurface4*, RECT*, uint, DDBLTFX*, int> Blt;
 
-            [VtblIndex(11)]
-            HRESULT Flip([NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param0, [NativeTypeName("DWORD")] uint param1);
+        [NativeTypeName("HRESULT (LPDDBLTBATCH, DWORD, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, DDBLTBATCH*, uint, uint, int> BltBatch;
 
-            [VtblIndex(12)]
-            HRESULT GetAttachedSurface([NativeTypeName("LPDDSCAPS2")] DDSCAPS2* param0, [NativeTypeName("LPDIRECTDRAWSURFACE4 *")] IDirectDrawSurface4** param1);
+        [NativeTypeName("HRESULT (DWORD, DWORD, LPDIRECTDRAWSURFACE4, LPRECT, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, uint, uint, IDirectDrawSurface4*, RECT*, uint, int> BltFast;
 
-            [VtblIndex(13)]
-            HRESULT GetBltStatus([NativeTypeName("DWORD")] uint param0);
+        [NativeTypeName("HRESULT (DWORD, LPDIRECTDRAWSURFACE4) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, uint, IDirectDrawSurface4*, int> DeleteAttachedSurface;
 
-            [VtblIndex(14)]
-            HRESULT GetCaps([NativeTypeName("LPDDSCAPS2")] DDSCAPS2* param0);
+        [NativeTypeName("HRESULT (LPVOID, LPDDENUMSURFACESCALLBACK2) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, void*, delegate* unmanaged<IDirectDrawSurface4*, DDSURFACEDESC2*, void*, HRESULT>, int> EnumAttachedSurfaces;
 
-            [VtblIndex(15)]
-            HRESULT GetClipper([NativeTypeName("LPDIRECTDRAWCLIPPER *")] IDirectDrawClipper** param0);
+        [NativeTypeName("HRESULT (DWORD, LPVOID, LPDDENUMSURFACESCALLBACK2) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, uint, void*, delegate* unmanaged<IDirectDrawSurface4*, DDSURFACEDESC2*, void*, HRESULT>, int> EnumOverlayZOrders;
 
-            [VtblIndex(16)]
-            HRESULT GetColorKey([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDDCOLORKEY")] DDCOLORKEY* param1);
+        [NativeTypeName("HRESULT (LPDIRECTDRAWSURFACE4, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, IDirectDrawSurface4*, uint, int> Flip;
 
-            [VtblIndex(17)]
-            HRESULT GetDC(HDC* param0);
+        [NativeTypeName("HRESULT (LPDDSCAPS2, LPDIRECTDRAWSURFACE4 *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, DDSCAPS2*, IDirectDrawSurface4**, int> GetAttachedSurface;
 
-            [VtblIndex(18)]
-            HRESULT GetFlipStatus([NativeTypeName("DWORD")] uint param0);
+        [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, uint, int> GetBltStatus;
 
-            [VtblIndex(19)]
-            HRESULT GetOverlayPosition([NativeTypeName("LPLONG")] int* param0, [NativeTypeName("LPLONG")] int* param1);
+        [NativeTypeName("HRESULT (LPDDSCAPS2) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, DDSCAPS2*, int> GetCaps;
 
-            [VtblIndex(20)]
-            HRESULT GetPalette([NativeTypeName("LPDIRECTDRAWPALETTE *")] IDirectDrawPalette** param0);
+        [NativeTypeName("HRESULT (LPDIRECTDRAWCLIPPER *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, IDirectDrawClipper**, int> GetClipper;
 
-            [VtblIndex(21)]
-            HRESULT GetPixelFormat([NativeTypeName("LPDDPIXELFORMAT")] DDPIXELFORMAT* param0);
+        [NativeTypeName("HRESULT (DWORD, LPDDCOLORKEY) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, uint, DDCOLORKEY*, int> GetColorKey;
 
-            [VtblIndex(22)]
-            HRESULT GetSurfaceDesc([NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param0);
+        [NativeTypeName("HRESULT (HDC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, HDC*, int> GetDC;
 
-            [VtblIndex(23)]
-            HRESULT Initialize([NativeTypeName("LPDIRECTDRAW")] IDirectDraw* param0, [NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param1);
+        [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, uint, int> GetFlipStatus;
 
-            [VtblIndex(24)]
-            HRESULT IsLost();
+        [NativeTypeName("HRESULT (LPLONG, LPLONG) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, int*, int*, int> GetOverlayPosition;
 
-            [VtblIndex(25)]
-            HRESULT Lock([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param1, [NativeTypeName("DWORD")] uint param2, HANDLE param3);
+        [NativeTypeName("HRESULT (LPDIRECTDRAWPALETTE *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, IDirectDrawPalette**, int> GetPalette;
 
-            [VtblIndex(26)]
-            HRESULT ReleaseDC(HDC param0);
+        [NativeTypeName("HRESULT (LPDDPIXELFORMAT) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, DDPIXELFORMAT*, int> GetPixelFormat;
 
-            [VtblIndex(27)]
-            HRESULT Restore();
+        [NativeTypeName("HRESULT (LPDDSURFACEDESC2) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, DDSURFACEDESC2*, int> GetSurfaceDesc;
 
-            [VtblIndex(28)]
-            HRESULT SetClipper([NativeTypeName("LPDIRECTDRAWCLIPPER")] IDirectDrawClipper* param0);
+        [NativeTypeName("HRESULT (LPDIRECTDRAW, LPDDSURFACEDESC2) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, IDirectDraw*, DDSURFACEDESC2*, int> Initialize;
 
-            [VtblIndex(29)]
-            HRESULT SetColorKey([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDDCOLORKEY")] DDCOLORKEY* param1);
+        [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, int> IsLost;
 
-            [VtblIndex(30)]
-            HRESULT SetOverlayPosition([NativeTypeName("LONG")] int param0, [NativeTypeName("LONG")] int param1);
+        [NativeTypeName("HRESULT (LPRECT, LPDDSURFACEDESC2, DWORD, HANDLE) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, RECT*, DDSURFACEDESC2*, uint, HANDLE, int> Lock;
 
-            [VtblIndex(31)]
-            HRESULT SetPalette([NativeTypeName("LPDIRECTDRAWPALETTE")] IDirectDrawPalette* param0);
+        [NativeTypeName("HRESULT (HDC) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, HDC, int> ReleaseDC;
 
-            [VtblIndex(32)]
-            HRESULT Unlock([NativeTypeName("LPRECT")] RECT* param0);
+        [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, int> Restore;
 
-            [VtblIndex(33)]
-            HRESULT UpdateOverlay([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param1, [NativeTypeName("LPRECT")] RECT* param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPDDOVERLAYFX")] DDOVERLAYFX* param4);
+        [NativeTypeName("HRESULT (LPDIRECTDRAWCLIPPER) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, IDirectDrawClipper*, int> SetClipper;
 
-            [VtblIndex(34)]
-            HRESULT UpdateOverlayDisplay([NativeTypeName("DWORD")] uint param0);
+        [NativeTypeName("HRESULT (DWORD, LPDDCOLORKEY) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, uint, DDCOLORKEY*, int> SetColorKey;
 
-            [VtblIndex(35)]
-            HRESULT UpdateOverlayZOrder([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDIRECTDRAWSURFACE4")] IDirectDrawSurface4* param1);
+        [NativeTypeName("HRESULT (LONG, LONG) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, int, int, int> SetOverlayPosition;
 
-            [VtblIndex(36)]
-            HRESULT GetDDInterface([NativeTypeName("LPVOID *")] void** param0);
+        [NativeTypeName("HRESULT (LPDIRECTDRAWPALETTE) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, IDirectDrawPalette*, int> SetPalette;
 
-            [VtblIndex(37)]
-            HRESULT PageLock([NativeTypeName("DWORD")] uint param0);
+        [NativeTypeName("HRESULT (LPRECT) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, RECT*, int> Unlock;
 
-            [VtblIndex(38)]
-            HRESULT PageUnlock([NativeTypeName("DWORD")] uint param0);
+        [NativeTypeName("HRESULT (LPRECT, LPDIRECTDRAWSURFACE4, LPRECT, DWORD, LPDDOVERLAYFX) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, RECT*, IDirectDrawSurface4*, RECT*, uint, DDOVERLAYFX*, int> UpdateOverlay;
 
-            [VtblIndex(39)]
-            HRESULT SetSurfaceDesc([NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param0, [NativeTypeName("DWORD")] uint param1);
+        [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, uint, int> UpdateOverlayDisplay;
 
-            [VtblIndex(40)]
-            HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* param0, [NativeTypeName("LPVOID")] void* param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3);
+        [NativeTypeName("HRESULT (DWORD, LPDIRECTDRAWSURFACE4) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, uint, IDirectDrawSurface4*, int> UpdateOverlayZOrder;
 
-            [VtblIndex(41)]
-            HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* param0, [NativeTypeName("LPVOID")] void* param1, [NativeTypeName("LPDWORD")] uint* param2);
+        [NativeTypeName("HRESULT (LPVOID *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, void**, int> GetDDInterface;
 
-            [VtblIndex(42)]
-            HRESULT FreePrivateData([NativeTypeName("const GUID &")] Guid* param0);
+        [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, uint, int> PageLock;
 
-            [VtblIndex(43)]
-            HRESULT GetUniquenessValue([NativeTypeName("LPDWORD")] uint* param0);
+        [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, uint, int> PageUnlock;
 
-            [VtblIndex(44)]
-            HRESULT ChangeUniquenessValue();
-        }
+        [NativeTypeName("HRESULT (LPDDSURFACEDESC2, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, DDSURFACEDESC2*, uint, int> SetSurfaceDesc;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (const GUID &, LPVOID, DWORD, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, Guid*, void*, uint, uint, int> SetPrivateData;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, uint> AddRef;
+        [NativeTypeName("HRESULT (const GUID &, LPVOID, LPDWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, Guid*, void*, uint*, int> GetPrivateData;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, uint> Release;
+        [NativeTypeName("HRESULT (const GUID &) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, Guid*, int> FreePrivateData;
 
-            [NativeTypeName("HRESULT (LPDIRECTDRAWSURFACE4) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, IDirectDrawSurface4*, int> AddAttachedSurface;
+        [NativeTypeName("HRESULT (LPDWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, uint*, int> GetUniquenessValue;
 
-            [NativeTypeName("HRESULT (LPRECT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, RECT*, int> AddOverlayDirtyRect;
-
-            [NativeTypeName("HRESULT (LPRECT, LPDIRECTDRAWSURFACE4, LPRECT, DWORD, LPDDBLTFX) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, RECT*, IDirectDrawSurface4*, RECT*, uint, DDBLTFX*, int> Blt;
-
-            [NativeTypeName("HRESULT (LPDDBLTBATCH, DWORD, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, DDBLTBATCH*, uint, uint, int> BltBatch;
-
-            [NativeTypeName("HRESULT (DWORD, DWORD, LPDIRECTDRAWSURFACE4, LPRECT, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, uint, uint, IDirectDrawSurface4*, RECT*, uint, int> BltFast;
-
-            [NativeTypeName("HRESULT (DWORD, LPDIRECTDRAWSURFACE4) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, uint, IDirectDrawSurface4*, int> DeleteAttachedSurface;
-
-            [NativeTypeName("HRESULT (LPVOID, LPDDENUMSURFACESCALLBACK2) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, void*, delegate* unmanaged<IDirectDrawSurface4*, DDSURFACEDESC2*, void*, HRESULT>, int> EnumAttachedSurfaces;
-
-            [NativeTypeName("HRESULT (DWORD, LPVOID, LPDDENUMSURFACESCALLBACK2) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, uint, void*, delegate* unmanaged<IDirectDrawSurface4*, DDSURFACEDESC2*, void*, HRESULT>, int> EnumOverlayZOrders;
-
-            [NativeTypeName("HRESULT (LPDIRECTDRAWSURFACE4, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, IDirectDrawSurface4*, uint, int> Flip;
-
-            [NativeTypeName("HRESULT (LPDDSCAPS2, LPDIRECTDRAWSURFACE4 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, DDSCAPS2*, IDirectDrawSurface4**, int> GetAttachedSurface;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, uint, int> GetBltStatus;
-
-            [NativeTypeName("HRESULT (LPDDSCAPS2) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, DDSCAPS2*, int> GetCaps;
-
-            [NativeTypeName("HRESULT (LPDIRECTDRAWCLIPPER *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, IDirectDrawClipper**, int> GetClipper;
-
-            [NativeTypeName("HRESULT (DWORD, LPDDCOLORKEY) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, uint, DDCOLORKEY*, int> GetColorKey;
-
-            [NativeTypeName("HRESULT (HDC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, HDC*, int> GetDC;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, uint, int> GetFlipStatus;
-
-            [NativeTypeName("HRESULT (LPLONG, LPLONG) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, int*, int*, int> GetOverlayPosition;
-
-            [NativeTypeName("HRESULT (LPDIRECTDRAWPALETTE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, IDirectDrawPalette**, int> GetPalette;
-
-            [NativeTypeName("HRESULT (LPDDPIXELFORMAT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, DDPIXELFORMAT*, int> GetPixelFormat;
-
-            [NativeTypeName("HRESULT (LPDDSURFACEDESC2) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, DDSURFACEDESC2*, int> GetSurfaceDesc;
-
-            [NativeTypeName("HRESULT (LPDIRECTDRAW, LPDDSURFACEDESC2) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, IDirectDraw*, DDSURFACEDESC2*, int> Initialize;
-
-            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, int> IsLost;
-
-            [NativeTypeName("HRESULT (LPRECT, LPDDSURFACEDESC2, DWORD, HANDLE) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, RECT*, DDSURFACEDESC2*, uint, HANDLE, int> Lock;
-
-            [NativeTypeName("HRESULT (HDC) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, HDC, int> ReleaseDC;
-
-            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, int> Restore;
-
-            [NativeTypeName("HRESULT (LPDIRECTDRAWCLIPPER) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, IDirectDrawClipper*, int> SetClipper;
-
-            [NativeTypeName("HRESULT (DWORD, LPDDCOLORKEY) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, uint, DDCOLORKEY*, int> SetColorKey;
-
-            [NativeTypeName("HRESULT (LONG, LONG) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, int, int, int> SetOverlayPosition;
-
-            [NativeTypeName("HRESULT (LPDIRECTDRAWPALETTE) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, IDirectDrawPalette*, int> SetPalette;
-
-            [NativeTypeName("HRESULT (LPRECT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, RECT*, int> Unlock;
-
-            [NativeTypeName("HRESULT (LPRECT, LPDIRECTDRAWSURFACE4, LPRECT, DWORD, LPDDOVERLAYFX) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, RECT*, IDirectDrawSurface4*, RECT*, uint, DDOVERLAYFX*, int> UpdateOverlay;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, uint, int> UpdateOverlayDisplay;
-
-            [NativeTypeName("HRESULT (DWORD, LPDIRECTDRAWSURFACE4) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, uint, IDirectDrawSurface4*, int> UpdateOverlayZOrder;
-
-            [NativeTypeName("HRESULT (LPVOID *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, void**, int> GetDDInterface;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, uint, int> PageLock;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, uint, int> PageUnlock;
-
-            [NativeTypeName("HRESULT (LPDDSURFACEDESC2, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, DDSURFACEDESC2*, uint, int> SetSurfaceDesc;
-
-            [NativeTypeName("HRESULT (const GUID &, LPVOID, DWORD, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, Guid*, void*, uint, uint, int> SetPrivateData;
-
-            [NativeTypeName("HRESULT (const GUID &, LPVOID, LPDWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, Guid*, void*, uint*, int> GetPrivateData;
-
-            [NativeTypeName("HRESULT (const GUID &) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, Guid*, int> FreePrivateData;
-
-            [NativeTypeName("HRESULT (LPDWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, uint*, int> GetUniquenessValue;
-
-            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectDrawSurface4*, int> ChangeUniquenessValue;
-        }
+        [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectDrawSurface4*, int> ChangeUniquenessValue;
     }
 }

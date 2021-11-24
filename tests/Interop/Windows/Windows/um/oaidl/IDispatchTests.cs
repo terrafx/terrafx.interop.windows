@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDispatch" /> struct.</summary>
+public static unsafe partial class IDispatchTests
 {
-    /// <summary>Provides validation of the <see cref="IDispatch" /> struct.</summary>
-    public static unsafe partial class IDispatchTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDispatch" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDispatch" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDispatch).GUID, Is.EqualTo(IID_IDispatch));
-        }
+        Assert.That(typeof(IDispatch).GUID, Is.EqualTo(IID_IDispatch));
+    }
 
-        /// <summary>Validates that the <see cref="IDispatch" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDispatch>(), Is.EqualTo(sizeof(IDispatch)));
-        }
+    /// <summary>Validates that the <see cref="IDispatch" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDispatch>(), Is.EqualTo(sizeof(IDispatch)));
+    }
 
-        /// <summary>Validates that the <see cref="IDispatch" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDispatch).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDispatch" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDispatch).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDispatch" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDispatch" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDispatch), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDispatch), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDispatch), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDispatch), Is.EqualTo(4));
         }
     }
 }

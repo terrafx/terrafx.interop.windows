@@ -3,17 +3,16 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct UMS_CREATE_THREAD_ATTRIBUTES
 {
-    public unsafe partial struct UMS_CREATE_THREAD_ATTRIBUTES
-    {
-        [NativeTypeName("DWORD")]
-        public uint UmsVersion;
+    [NativeTypeName("DWORD")]
+    public uint UmsVersion;
 
-        [NativeTypeName("PVOID")]
-        public void* UmsContext;
+    [NativeTypeName("PVOID")]
+    public void* UmsContext;
 
-        [NativeTypeName("PVOID")]
-        public void* UmsCompletionList;
-    }
+    [NativeTypeName("PVOID")]
+    public void* UmsCompletionList;
 }

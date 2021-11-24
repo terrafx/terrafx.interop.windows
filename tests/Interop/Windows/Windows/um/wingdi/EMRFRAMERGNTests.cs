@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="EMRFRAMERGN" /> struct.</summary>
+public static unsafe partial class EMRFRAMERGNTests
 {
-    /// <summary>Provides validation of the <see cref="EMRFRAMERGN" /> struct.</summary>
-    public static unsafe partial class EMRFRAMERGNTests
+    /// <summary>Validates that the <see cref="EMRFRAMERGN" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="EMRFRAMERGN" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<EMRFRAMERGN>(), Is.EqualTo(sizeof(EMRFRAMERGN)));
-        }
+        Assert.That(Marshal.SizeOf<EMRFRAMERGN>(), Is.EqualTo(sizeof(EMRFRAMERGN)));
+    }
 
-        /// <summary>Validates that the <see cref="EMRFRAMERGN" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(EMRFRAMERGN).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="EMRFRAMERGN" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(EMRFRAMERGN).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="EMRFRAMERGN" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(EMRFRAMERGN), Is.EqualTo(44));
-        }
+    /// <summary>Validates that the <see cref="EMRFRAMERGN" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(EMRFRAMERGN), Is.EqualTo(44));
     }
 }

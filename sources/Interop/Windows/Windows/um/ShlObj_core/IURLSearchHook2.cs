@@ -7,74 +7,73 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("5EE44DA4-6D32-46E3-86BC-07540DEDD0E0")]
+[NativeTypeName("struct IURLSearchHook2 : IURLSearchHook")]
+[NativeInheritance("IURLSearchHook")]
+public unsafe partial struct IURLSearchHook2 : IURLSearchHook2.Interface
 {
-    [Guid("5EE44DA4-6D32-46E3-86BC-07540DEDD0E0")]
-    [NativeTypeName("struct IURLSearchHook2 : IURLSearchHook")]
-    [NativeInheritance("IURLSearchHook")]
-    public unsafe partial struct IURLSearchHook2 : IURLSearchHook2.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IURLSearchHook2*, Guid*, void**, int>)(lpVtbl[0]))((IURLSearchHook2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IURLSearchHook2*, Guid*, void**, int>)(lpVtbl[0]))((IURLSearchHook2*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IURLSearchHook2*, uint>)(lpVtbl[1]))((IURLSearchHook2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IURLSearchHook2*, uint>)(lpVtbl[1]))((IURLSearchHook2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IURLSearchHook2*, uint>)(lpVtbl[2]))((IURLSearchHook2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IURLSearchHook2*, uint>)(lpVtbl[2]))((IURLSearchHook2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Translate([NativeTypeName("PWSTR")] ushort* pwszSearchURL, [NativeTypeName("DWORD")] uint cchBufferSize)
+    {
+        return ((delegate* unmanaged<IURLSearchHook2*, ushort*, uint, int>)(lpVtbl[3]))((IURLSearchHook2*)Unsafe.AsPointer(ref this), pwszSearchURL, cchBufferSize);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT Translate([NativeTypeName("PWSTR")] ushort* pwszSearchURL, [NativeTypeName("DWORD")] uint cchBufferSize)
-        {
-            return ((delegate* unmanaged<IURLSearchHook2*, ushort*, uint, int>)(lpVtbl[3]))((IURLSearchHook2*)Unsafe.AsPointer(ref this), pwszSearchURL, cchBufferSize);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT TranslateWithSearchContext([NativeTypeName("PWSTR")] ushort* pwszSearchURL, [NativeTypeName("DWORD")] uint cchBufferSize, ISearchContext* pSearchContext)
+    {
+        return ((delegate* unmanaged<IURLSearchHook2*, ushort*, uint, ISearchContext*, int>)(lpVtbl[4]))((IURLSearchHook2*)Unsafe.AsPointer(ref this), pwszSearchURL, cchBufferSize, pSearchContext);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IURLSearchHook.Interface
+    {
         [VtblIndex(4)]
-        public HRESULT TranslateWithSearchContext([NativeTypeName("PWSTR")] ushort* pwszSearchURL, [NativeTypeName("DWORD")] uint cchBufferSize, ISearchContext* pSearchContext)
-        {
-            return ((delegate* unmanaged<IURLSearchHook2*, ushort*, uint, ISearchContext*, int>)(lpVtbl[4]))((IURLSearchHook2*)Unsafe.AsPointer(ref this), pwszSearchURL, cchBufferSize, pSearchContext);
-        }
+        HRESULT TranslateWithSearchContext([NativeTypeName("PWSTR")] ushort* pwszSearchURL, [NativeTypeName("DWORD")] uint cchBufferSize, ISearchContext* pSearchContext);
+    }
 
-        public interface Interface : IURLSearchHook.Interface
-        {
-            [VtblIndex(4)]
-            HRESULT TranslateWithSearchContext([NativeTypeName("PWSTR")] ushort* pwszSearchURL, [NativeTypeName("DWORD")] uint cchBufferSize, ISearchContext* pSearchContext);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IURLSearchHook2*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IURLSearchHook2*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IURLSearchHook2*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IURLSearchHook2*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IURLSearchHook2*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IURLSearchHook2*, uint> Release;
+        [NativeTypeName("HRESULT (PWSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IURLSearchHook2*, ushort*, uint, int> Translate;
 
-            [NativeTypeName("HRESULT (PWSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IURLSearchHook2*, ushort*, uint, int> Translate;
-
-            [NativeTypeName("HRESULT (PWSTR, DWORD, ISearchContext *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IURLSearchHook2*, ushort*, uint, ISearchContext*, int> TranslateWithSearchContext;
-        }
+        [NativeTypeName("HRESULT (PWSTR, DWORD, ISearchContext *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IURLSearchHook2*, ushort*, uint, ISearchContext*, int> TranslateWithSearchContext;
     }
 }

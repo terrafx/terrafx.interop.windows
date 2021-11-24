@@ -3,17 +3,16 @@
 // Ported from shared/wtypesbase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct FLAGGED_WORD_BLOB
 {
-    public unsafe partial struct FLAGGED_WORD_BLOB
-    {
-        [NativeTypeName("ULONG")]
-        public uint fFlags;
+    [NativeTypeName("ULONG")]
+    public uint fFlags;
 
-        [NativeTypeName("ULONG")]
-        public uint clSize;
+    [NativeTypeName("ULONG")]
+    public uint clSize;
 
-        [NativeTypeName("unsigned short [1]")]
-        public fixed ushort asData[1];
-    }
+    [NativeTypeName("unsigned short [1]")]
+    public fixed ushort asData[1];
 }

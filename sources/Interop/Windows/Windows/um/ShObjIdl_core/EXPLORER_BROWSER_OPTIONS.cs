@@ -5,19 +5,18 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum EXPLORER_BROWSER_OPTIONS
 {
-    [Flags]
-    public enum EXPLORER_BROWSER_OPTIONS
-    {
-        EBO_NONE = 0,
-        EBO_NAVIGATEONCE = 0x1,
-        EBO_SHOWFRAMES = 0x2,
-        EBO_ALWAYSNAVIGATE = 0x4,
-        EBO_NOTRAVELLOG = 0x8,
-        EBO_NOWRAPPERWINDOW = 0x10,
-        EBO_HTMLSHAREPOINTVIEW = 0x20,
-        EBO_NOBORDER = 0x40,
-        EBO_NOPERSISTVIEWSTATE = 0x80,
-    }
+    EBO_NONE = 0,
+    EBO_NAVIGATEONCE = 0x1,
+    EBO_SHOWFRAMES = 0x2,
+    EBO_ALWAYSNAVIGATE = 0x4,
+    EBO_NOTRAVELLOG = 0x8,
+    EBO_NOWRAPPERWINDOW = 0x10,
+    EBO_HTMLSHAREPOINTVIEW = 0x20,
+    EBO_NOBORDER = 0x40,
+    EBO_NOPERSISTVIEWSTATE = 0x80,
 }

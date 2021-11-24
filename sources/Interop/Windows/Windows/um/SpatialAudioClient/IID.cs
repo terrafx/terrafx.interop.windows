@@ -8,169 +8,168 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class IID
 {
-    public static partial class IID
+    public static ref readonly Guid IID_IAudioFormatEnumerator
     {
-        public static ref readonly Guid IID_IAudioFormatEnumerator
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x58, 0xA8, 0xDA, 0xDC,
-                    0x5A, 0x89,
-                    0x22, 0x4A,
-                    0xA5,
-                    0xEB,
-                    0x67,
-                    0xBD,
-                    0xA5,
-                    0x06,
-                    0x09,
-                    0x6D
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x58, 0xA8, 0xDA, 0xDC,
+                0x5A, 0x89,
+                0x22, 0x4A,
+                0xA5,
+                0xEB,
+                0x67,
+                0xBD,
+                0xA5,
+                0x06,
+                0x09,
+                0x6D
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid IID_ISpatialAudioObjectBase
+    public static ref readonly Guid IID_ISpatialAudioObjectBase
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xF2, 0xB8, 0xE0, 0xCC,
-                    0x4D, 0x8D,
-                    0xFB, 0x4E,
-                    0xA8,
-                    0xCF,
-                    0x3D,
-                    0x6E,
-                    0xCF,
-                    0x1C,
-                    0x30,
-                    0xE0
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0xF2, 0xB8, 0xE0, 0xCC,
+                0x4D, 0x8D,
+                0xFB, 0x4E,
+                0xA8,
+                0xCF,
+                0x3D,
+                0x6E,
+                0xCF,
+                0x1C,
+                0x30,
+                0xE0
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid IID_ISpatialAudioObject
+    public static ref readonly Guid IID_ISpatialAudioObject
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x67, 0x89, 0xE2, 0xDD,
-                    0x1B, 0x52,
-                    0xE5, 0x46,
-                    0x8F,
-                    0x00,
-                    0xBD,
-                    0x6F,
-                    0x2B,
-                    0xC8,
-                    0xAB,
-                    0x1D
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x67, 0x89, 0xE2, 0xDD,
+                0x1B, 0x52,
+                0xE5, 0x46,
+                0x8F,
+                0x00,
+                0xBD,
+                0x6F,
+                0x2B,
+                0xC8,
+                0xAB,
+                0x1D
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid IID_ISpatialAudioObjectRenderStreamBase
+    public static ref readonly Guid IID_ISpatialAudioObjectRenderStreamBase
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x03, 0xF4, 0xAA, 0xFE,
-                    0xD8, 0xC1,
-                    0x0D, 0x45,
-                    0xAA,
-                    0x05,
-                    0xE0,
-                    0xCC,
-                    0xEE,
-                    0x75,
-                    0x02,
-                    0xA8
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x03, 0xF4, 0xAA, 0xFE,
+                0xD8, 0xC1,
+                0x0D, 0x45,
+                0xAA,
+                0x05,
+                0xE0,
+                0xCC,
+                0xEE,
+                0x75,
+                0x02,
+                0xA8
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid IID_ISpatialAudioObjectRenderStream
+    public static ref readonly Guid IID_ISpatialAudioObjectRenderStream
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x73, 0xF4, 0xB5, 0xBA,
-                    0x23, 0xB4,
-                    0x7B, 0x47,
-                    0x85,
-                    0xF5,
-                    0xB5,
-                    0xA3,
-                    0x32,
-                    0xA0,
-                    0x41,
-                    0x53
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x73, 0xF4, 0xB5, 0xBA,
+                0x23, 0xB4,
+                0x7B, 0x47,
+                0x85,
+                0xF5,
+                0xB5,
+                0xA3,
+                0x32,
+                0xA0,
+                0x41,
+                0x53
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid IID_ISpatialAudioObjectRenderStreamNotify
+    public static ref readonly Guid IID_ISpatialAudioObjectRenderStreamNotify
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xE6, 0x83, 0xDF, 0xDD,
-                    0xD7, 0x68,
-                    0x70, 0x4C,
-                    0x88,
-                    0x3F,
-                    0xA1,
-                    0x83,
-                    0x6A,
-                    0xFB,
-                    0x4A,
-                    0x50
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0xE6, 0x83, 0xDF, 0xDD,
+                0xD7, 0x68,
+                0x70, 0x4C,
+                0x88,
+                0x3F,
+                0xA1,
+                0x83,
+                0x6A,
+                0xFB,
+                0x4A,
+                0x50
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid IID_ISpatialAudioClient
+    public static ref readonly Guid IID_ISpatialAudioClient
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x66, 0xE0, 0xF8, 0xBB,
-                    0xAA, 0xAA,
-                    0xBE, 0x49,
-                    0x9A,
-                    0x4D,
-                    0xFD,
-                    0x2A,
-                    0x85,
-                    0x8E,
-                    0xA2,
-                    0x7F
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x66, 0xE0, 0xF8, 0xBB,
+                0xAA, 0xAA,
+                0xBE, 0x49,
+                0x9A,
+                0x4D,
+                0xFD,
+                0x2A,
+                0x85,
+                0x8E,
+                0xA2,
+                0x7F
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

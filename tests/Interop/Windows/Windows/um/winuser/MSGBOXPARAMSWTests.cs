@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MSGBOXPARAMSW" /> struct.</summary>
+public static unsafe partial class MSGBOXPARAMSWTests
 {
-    /// <summary>Provides validation of the <see cref="MSGBOXPARAMSW" /> struct.</summary>
-    public static unsafe partial class MSGBOXPARAMSWTests
+    /// <summary>Validates that the <see cref="MSGBOXPARAMSW" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MSGBOXPARAMSW" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MSGBOXPARAMSW>(), Is.EqualTo(sizeof(MSGBOXPARAMSW)));
-        }
+        Assert.That(Marshal.SizeOf<MSGBOXPARAMSW>(), Is.EqualTo(sizeof(MSGBOXPARAMSW)));
+    }
 
-        /// <summary>Validates that the <see cref="MSGBOXPARAMSW" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MSGBOXPARAMSW).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MSGBOXPARAMSW" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MSGBOXPARAMSW).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MSGBOXPARAMSW" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="MSGBOXPARAMSW" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(MSGBOXPARAMSW), Is.EqualTo(80));
-            }
-            else
-            {
-                Assert.That(sizeof(MSGBOXPARAMSW), Is.EqualTo(40));
-            }
+            Assert.That(sizeof(MSGBOXPARAMSW), Is.EqualTo(80));
+        }
+        else
+        {
+            Assert.That(sizeof(MSGBOXPARAMSW), Is.EqualTo(40));
         }
     }
 }

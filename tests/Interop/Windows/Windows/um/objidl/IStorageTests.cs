@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IStorage" /> struct.</summary>
+public static unsafe partial class IStorageTests
 {
-    /// <summary>Provides validation of the <see cref="IStorage" /> struct.</summary>
-    public static unsafe partial class IStorageTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IStorage" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IStorage" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IStorage).GUID, Is.EqualTo(IID_IStorage));
-        }
+        Assert.That(typeof(IStorage).GUID, Is.EqualTo(IID_IStorage));
+    }
 
-        /// <summary>Validates that the <see cref="IStorage" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IStorage>(), Is.EqualTo(sizeof(IStorage)));
-        }
+    /// <summary>Validates that the <see cref="IStorage" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IStorage>(), Is.EqualTo(sizeof(IStorage)));
+    }
 
-        /// <summary>Validates that the <see cref="IStorage" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IStorage).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IStorage" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IStorage).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IStorage" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IStorage" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IStorage), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IStorage), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IStorage), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IStorage), Is.EqualTo(4));
         }
     }
 }

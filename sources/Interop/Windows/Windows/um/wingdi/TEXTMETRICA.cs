@@ -3,59 +3,58 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TEXTMETRICA
 {
-    public partial struct TEXTMETRICA
-    {
-        [NativeTypeName("LONG")]
-        public int tmHeight;
+    [NativeTypeName("LONG")]
+    public int tmHeight;
 
-        [NativeTypeName("LONG")]
-        public int tmAscent;
+    [NativeTypeName("LONG")]
+    public int tmAscent;
 
-        [NativeTypeName("LONG")]
-        public int tmDescent;
+    [NativeTypeName("LONG")]
+    public int tmDescent;
 
-        [NativeTypeName("LONG")]
-        public int tmInternalLeading;
+    [NativeTypeName("LONG")]
+    public int tmInternalLeading;
 
-        [NativeTypeName("LONG")]
-        public int tmExternalLeading;
+    [NativeTypeName("LONG")]
+    public int tmExternalLeading;
 
-        [NativeTypeName("LONG")]
-        public int tmAveCharWidth;
+    [NativeTypeName("LONG")]
+    public int tmAveCharWidth;
 
-        [NativeTypeName("LONG")]
-        public int tmMaxCharWidth;
+    [NativeTypeName("LONG")]
+    public int tmMaxCharWidth;
 
-        [NativeTypeName("LONG")]
-        public int tmWeight;
+    [NativeTypeName("LONG")]
+    public int tmWeight;
 
-        [NativeTypeName("LONG")]
-        public int tmOverhang;
+    [NativeTypeName("LONG")]
+    public int tmOverhang;
 
-        [NativeTypeName("LONG")]
-        public int tmDigitizedAspectX;
+    [NativeTypeName("LONG")]
+    public int tmDigitizedAspectX;
 
-        [NativeTypeName("LONG")]
-        public int tmDigitizedAspectY;
+    [NativeTypeName("LONG")]
+    public int tmDigitizedAspectY;
 
-        public byte tmFirstChar;
+    public byte tmFirstChar;
 
-        public byte tmLastChar;
+    public byte tmLastChar;
 
-        public byte tmDefaultChar;
+    public byte tmDefaultChar;
 
-        public byte tmBreakChar;
+    public byte tmBreakChar;
 
-        public byte tmItalic;
+    public byte tmItalic;
 
-        public byte tmUnderlined;
+    public byte tmUnderlined;
 
-        public byte tmStruckOut;
+    public byte tmStruckOut;
 
-        public byte tmPitchAndFamily;
+    public byte tmPitchAndFamily;
 
-        public byte tmCharSet;
-    }
+    public byte tmCharSet;
 }

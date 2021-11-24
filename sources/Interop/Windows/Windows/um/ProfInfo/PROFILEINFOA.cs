@@ -3,31 +3,30 @@
 // Ported from um/ProfInfo.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct PROFILEINFOA
 {
-    public unsafe partial struct PROFILEINFOA
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwSize;
+    [NativeTypeName("DWORD")]
+    public uint dwSize;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* lpUserName;
+    [NativeTypeName("LPSTR")]
+    public sbyte* lpUserName;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* lpProfilePath;
+    [NativeTypeName("LPSTR")]
+    public sbyte* lpProfilePath;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* lpDefaultPath;
+    [NativeTypeName("LPSTR")]
+    public sbyte* lpDefaultPath;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* lpServerName;
+    [NativeTypeName("LPSTR")]
+    public sbyte* lpServerName;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* lpPolicyPath;
+    [NativeTypeName("LPSTR")]
+    public sbyte* lpPolicyPath;
 
-        public HANDLE hProfile;
-    }
+    public HANDLE hProfile;
 }

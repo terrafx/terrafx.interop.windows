@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IKnownFolder" /> struct.</summary>
+public static unsafe partial class IKnownFolderTests
 {
-    /// <summary>Provides validation of the <see cref="IKnownFolder" /> struct.</summary>
-    public static unsafe partial class IKnownFolderTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IKnownFolder" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IKnownFolder" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IKnownFolder).GUID, Is.EqualTo(IID_IKnownFolder));
-        }
+        Assert.That(typeof(IKnownFolder).GUID, Is.EqualTo(IID_IKnownFolder));
+    }
 
-        /// <summary>Validates that the <see cref="IKnownFolder" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IKnownFolder>(), Is.EqualTo(sizeof(IKnownFolder)));
-        }
+    /// <summary>Validates that the <see cref="IKnownFolder" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IKnownFolder>(), Is.EqualTo(sizeof(IKnownFolder)));
+    }
 
-        /// <summary>Validates that the <see cref="IKnownFolder" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IKnownFolder).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IKnownFolder" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IKnownFolder).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IKnownFolder" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IKnownFolder" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IKnownFolder), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IKnownFolder), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IKnownFolder), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IKnownFolder), Is.EqualTo(4));
         }
     }
 }

@@ -5,17 +5,16 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_SERVICE_CONTRACT
 {
-    public unsafe partial struct WS_SERVICE_CONTRACT
-    {
-        [NativeTypeName("const WS_CONTRACT_DESCRIPTION *")]
-        public WS_CONTRACT_DESCRIPTION* contractDescription;
+    [NativeTypeName("const WS_CONTRACT_DESCRIPTION *")]
+    public WS_CONTRACT_DESCRIPTION* contractDescription;
 
-        [NativeTypeName("WS_SERVICE_MESSAGE_RECEIVE_CALLBACK")]
-        public delegate* unmanaged<IntPtr, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> defaultMessageHandlerCallback;
+    [NativeTypeName("WS_SERVICE_MESSAGE_RECEIVE_CALLBACK")]
+    public delegate* unmanaged<IntPtr, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> defaultMessageHandlerCallback;
 
-        [NativeTypeName("const void *")]
-        public void* methodTable;
-    }
+    [NativeTypeName("const void *")]
+    public void* methodTable;
 }

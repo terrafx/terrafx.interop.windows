@@ -3,11 +3,10 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum WS_SECURITY_HEADER_VERSION
 {
-    public enum WS_SECURITY_HEADER_VERSION
-    {
-        WS_SECURITY_HEADER_VERSION_1_0 = 0x1,
-        WS_SECURITY_HEADER_VERSION_1_1 = 0x2,
-    }
+    WS_SECURITY_HEADER_VERSION_1_0 = 0x1,
+    WS_SECURITY_HEADER_VERSION_1_1 = 0x2,
 }

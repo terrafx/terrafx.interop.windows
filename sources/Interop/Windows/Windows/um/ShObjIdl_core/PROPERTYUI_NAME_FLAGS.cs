@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum PROPERTYUI_NAME_FLAGS
 {
-    [Flags]
-    public enum PROPERTYUI_NAME_FLAGS
-    {
-        PUIFNF_DEFAULT = 0,
-        PUIFNF_MNEMONIC = 0x1,
-    }
+    PUIFNF_DEFAULT = 0,
+    PUIFNF_MNEMONIC = 0x1,
 }

@@ -5,11 +5,10 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.17763.0")]
+public enum PRJ_PLACEHOLDER_ID
 {
-    [SupportedOSPlatform("windows10.0.17763.0")]
-    public enum PRJ_PLACEHOLDER_ID
-    {
-        PRJ_PLACEHOLDER_ID_LENGTH = 128,
-    }
+    PRJ_PLACEHOLDER_ID_LENGTH = 128,
 }

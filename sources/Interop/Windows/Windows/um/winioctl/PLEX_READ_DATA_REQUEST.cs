@@ -3,16 +3,15 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct PLEX_READ_DATA_REQUEST
 {
-    public partial struct PLEX_READ_DATA_REQUEST
-    {
-        public LARGE_INTEGER ByteOffset;
+    public LARGE_INTEGER ByteOffset;
 
-        [NativeTypeName("DWORD")]
-        public uint ByteLength;
+    [NativeTypeName("DWORD")]
+    public uint ByteLength;
 
-        [NativeTypeName("DWORD")]
-        public uint PlexNumber;
-    }
+    [NativeTypeName("DWORD")]
+    public uint PlexNumber;
 }

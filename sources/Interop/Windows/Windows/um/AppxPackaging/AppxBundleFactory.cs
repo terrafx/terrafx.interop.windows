@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("378E0446-5384-43B7-8877-E7DBDD883446")]
+public partial struct AppxBundleFactory
 {
-    [Guid("378E0446-5384-43B7-8877-E7DBDD883446")]
-    public partial struct AppxBundleFactory
-    {
-    }
 }

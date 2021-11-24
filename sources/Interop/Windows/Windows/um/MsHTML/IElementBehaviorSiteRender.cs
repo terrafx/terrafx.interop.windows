@@ -7,90 +7,89 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3050F4A7-98B5-11CF-BB82-00AA00BDCE0B")]
+[NativeTypeName("struct IElementBehaviorSiteRender : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IElementBehaviorSiteRender : IElementBehaviorSiteRender.Interface
 {
-    [Guid("3050F4A7-98B5-11CF-BB82-00AA00BDCE0B")]
-    [NativeTypeName("struct IElementBehaviorSiteRender : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IElementBehaviorSiteRender : IElementBehaviorSiteRender.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IElementBehaviorSiteRender*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorSiteRender*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IElementBehaviorSiteRender*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorSiteRender*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IElementBehaviorSiteRender*, uint>)(lpVtbl[1]))((IElementBehaviorSiteRender*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IElementBehaviorSiteRender*, uint>)(lpVtbl[1]))((IElementBehaviorSiteRender*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IElementBehaviorSiteRender*, uint>)(lpVtbl[2]))((IElementBehaviorSiteRender*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IElementBehaviorSiteRender*, uint>)(lpVtbl[2]))((IElementBehaviorSiteRender*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Invalidate(RECT* pRect)
+    {
+        return ((delegate* unmanaged<IElementBehaviorSiteRender*, RECT*, int>)(lpVtbl[3]))((IElementBehaviorSiteRender*)Unsafe.AsPointer(ref this), pRect);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT InvalidateRenderInfo()
+    {
+        return ((delegate* unmanaged<IElementBehaviorSiteRender*, int>)(lpVtbl[4]))((IElementBehaviorSiteRender*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT InvalidateStyle()
+    {
+        return ((delegate* unmanaged<IElementBehaviorSiteRender*, int>)(lpVtbl[5]))((IElementBehaviorSiteRender*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Invalidate(RECT* pRect)
-        {
-            return ((delegate* unmanaged<IElementBehaviorSiteRender*, RECT*, int>)(lpVtbl[3]))((IElementBehaviorSiteRender*)Unsafe.AsPointer(ref this), pRect);
-        }
+        HRESULT Invalidate(RECT* pRect);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT InvalidateRenderInfo()
-        {
-            return ((delegate* unmanaged<IElementBehaviorSiteRender*, int>)(lpVtbl[4]))((IElementBehaviorSiteRender*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT InvalidateRenderInfo();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT InvalidateStyle()
-        {
-            return ((delegate* unmanaged<IElementBehaviorSiteRender*, int>)(lpVtbl[5]))((IElementBehaviorSiteRender*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT InvalidateStyle();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Invalidate(RECT* pRect);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IElementBehaviorSiteRender*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT InvalidateRenderInfo();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IElementBehaviorSiteRender*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT InvalidateStyle();
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IElementBehaviorSiteRender*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IElementBehaviorSiteRender*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IElementBehaviorSiteRender*, RECT*, int> Invalidate;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IElementBehaviorSiteRender*, uint> AddRef;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IElementBehaviorSiteRender*, int> InvalidateRenderInfo;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IElementBehaviorSiteRender*, uint> Release;
-
-            [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IElementBehaviorSiteRender*, RECT*, int> Invalidate;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IElementBehaviorSiteRender*, int> InvalidateRenderInfo;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IElementBehaviorSiteRender*, int> InvalidateStyle;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IElementBehaviorSiteRender*, int> InvalidateStyle;
     }
 }

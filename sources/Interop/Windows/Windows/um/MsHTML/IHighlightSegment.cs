@@ -7,62 +7,61 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3050F690-98B5-11CF-BB82-00AA00BDCE0B")]
+[NativeTypeName("struct IHighlightSegment : ISegment")]
+[NativeInheritance("ISegment")]
+public unsafe partial struct IHighlightSegment : IHighlightSegment.Interface
 {
-    [Guid("3050F690-98B5-11CF-BB82-00AA00BDCE0B")]
-    [NativeTypeName("struct IHighlightSegment : ISegment")]
-    [NativeInheritance("ISegment")]
-    public unsafe partial struct IHighlightSegment : IHighlightSegment.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IHighlightSegment*, Guid*, void**, int>)(lpVtbl[0]))((IHighlightSegment*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IHighlightSegment*, Guid*, void**, int>)(lpVtbl[0]))((IHighlightSegment*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IHighlightSegment*, uint>)(lpVtbl[1]))((IHighlightSegment*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IHighlightSegment*, uint>)(lpVtbl[1]))((IHighlightSegment*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IHighlightSegment*, uint>)(lpVtbl[2]))((IHighlightSegment*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IHighlightSegment*, uint>)(lpVtbl[2]))((IHighlightSegment*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetPointers(IMarkupPointer* pIStart, IMarkupPointer* pIEnd)
+    {
+        return ((delegate* unmanaged<IHighlightSegment*, IMarkupPointer*, IMarkupPointer*, int>)(lpVtbl[3]))((IHighlightSegment*)Unsafe.AsPointer(ref this), pIStart, pIEnd);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetPointers(IMarkupPointer* pIStart, IMarkupPointer* pIEnd)
-        {
-            return ((delegate* unmanaged<IHighlightSegment*, IMarkupPointer*, IMarkupPointer*, int>)(lpVtbl[3]))((IHighlightSegment*)Unsafe.AsPointer(ref this), pIStart, pIEnd);
-        }
+    public interface Interface : ISegment.Interface
+    {
+    }
 
-        public interface Interface : ISegment.Interface
-        {
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHighlightSegment*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHighlightSegment*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IHighlightSegment*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IHighlightSegment*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IHighlightSegment*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IHighlightSegment*, uint> Release;
-
-            [NativeTypeName("HRESULT (IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHighlightSegment*, IMarkupPointer*, IMarkupPointer*, int> GetPointers;
-        }
+        [NativeTypeName("HRESULT (IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHighlightSegment*, IMarkupPointer*, IMarkupPointer*, int> GetPointers;
     }
 }

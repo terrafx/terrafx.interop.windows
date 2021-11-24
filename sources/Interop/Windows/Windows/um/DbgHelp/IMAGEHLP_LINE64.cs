@@ -3,23 +3,22 @@
 // Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct IMAGEHLP_LINE64
 {
-    public unsafe partial struct IMAGEHLP_LINE64
-    {
-        [NativeTypeName("DWORD")]
-        public uint SizeOfStruct;
+    [NativeTypeName("DWORD")]
+    public uint SizeOfStruct;
 
-        [NativeTypeName("PVOID")]
-        public void* Key;
+    [NativeTypeName("PVOID")]
+    public void* Key;
 
-        [NativeTypeName("DWORD")]
-        public uint LineNumber;
+    [NativeTypeName("DWORD")]
+    public uint LineNumber;
 
-        [NativeTypeName("PCHAR")]
-        public sbyte* FileName;
+    [NativeTypeName("PCHAR")]
+    public sbyte* FileName;
 
-        [NativeTypeName("DWORD64")]
-        public ulong Address;
-    }
+    [NativeTypeName("DWORD64")]
+    public ulong Address;
 }

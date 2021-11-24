@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="D3D12_VIDEO_DECODE_REFERENCE_FRAMES" /> struct.</summary>
+public static unsafe partial class D3D12_VIDEO_DECODE_REFERENCE_FRAMESTests
 {
-    /// <summary>Provides validation of the <see cref="D3D12_VIDEO_DECODE_REFERENCE_FRAMES" /> struct.</summary>
-    public static unsafe partial class D3D12_VIDEO_DECODE_REFERENCE_FRAMESTests
+    /// <summary>Validates that the <see cref="D3D12_VIDEO_DECODE_REFERENCE_FRAMES" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="D3D12_VIDEO_DECODE_REFERENCE_FRAMES" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<D3D12_VIDEO_DECODE_REFERENCE_FRAMES>(), Is.EqualTo(sizeof(D3D12_VIDEO_DECODE_REFERENCE_FRAMES)));
-        }
+        Assert.That(Marshal.SizeOf<D3D12_VIDEO_DECODE_REFERENCE_FRAMES>(), Is.EqualTo(sizeof(D3D12_VIDEO_DECODE_REFERENCE_FRAMES)));
+    }
 
-        /// <summary>Validates that the <see cref="D3D12_VIDEO_DECODE_REFERENCE_FRAMES" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(D3D12_VIDEO_DECODE_REFERENCE_FRAMES).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="D3D12_VIDEO_DECODE_REFERENCE_FRAMES" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(D3D12_VIDEO_DECODE_REFERENCE_FRAMES).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="D3D12_VIDEO_DECODE_REFERENCE_FRAMES" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="D3D12_VIDEO_DECODE_REFERENCE_FRAMES" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(D3D12_VIDEO_DECODE_REFERENCE_FRAMES), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(D3D12_VIDEO_DECODE_REFERENCE_FRAMES), Is.EqualTo(16));
-            }
+            Assert.That(sizeof(D3D12_VIDEO_DECODE_REFERENCE_FRAMES), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(D3D12_VIDEO_DECODE_REFERENCE_FRAMES), Is.EqualTo(16));
         }
     }
 }

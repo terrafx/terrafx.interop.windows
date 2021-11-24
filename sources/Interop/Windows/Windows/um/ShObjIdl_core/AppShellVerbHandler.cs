@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("4ED3A719-CEA8-4BD9-910D-E252F997AFC2")]
+public partial struct AppShellVerbHandler
 {
-    [Guid("4ED3A719-CEA8-4BD9-910D-E252F997AFC2")]
-    public partial struct AppShellVerbHandler
-    {
-    }
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFNetSchemeHandlerConfig" /> struct.</summary>
+public static unsafe partial class IMFNetSchemeHandlerConfigTests
 {
-    /// <summary>Provides validation of the <see cref="IMFNetSchemeHandlerConfig" /> struct.</summary>
-    public static unsafe partial class IMFNetSchemeHandlerConfigTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFNetSchemeHandlerConfig" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFNetSchemeHandlerConfig" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFNetSchemeHandlerConfig).GUID, Is.EqualTo(IID_IMFNetSchemeHandlerConfig));
-        }
+        Assert.That(typeof(IMFNetSchemeHandlerConfig).GUID, Is.EqualTo(IID_IMFNetSchemeHandlerConfig));
+    }
 
-        /// <summary>Validates that the <see cref="IMFNetSchemeHandlerConfig" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFNetSchemeHandlerConfig>(), Is.EqualTo(sizeof(IMFNetSchemeHandlerConfig)));
-        }
+    /// <summary>Validates that the <see cref="IMFNetSchemeHandlerConfig" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFNetSchemeHandlerConfig>(), Is.EqualTo(sizeof(IMFNetSchemeHandlerConfig)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFNetSchemeHandlerConfig" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFNetSchemeHandlerConfig).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFNetSchemeHandlerConfig" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFNetSchemeHandlerConfig).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFNetSchemeHandlerConfig" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFNetSchemeHandlerConfig" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFNetSchemeHandlerConfig), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFNetSchemeHandlerConfig), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFNetSchemeHandlerConfig), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFNetSchemeHandlerConfig), Is.EqualTo(4));
         }
     }
 }

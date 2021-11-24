@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SCM_PHYSICAL_DEVICE_INSTANCE" /> struct.</summary>
+public static unsafe partial class SCM_PHYSICAL_DEVICE_INSTANCETests
 {
-    /// <summary>Provides validation of the <see cref="SCM_PHYSICAL_DEVICE_INSTANCE" /> struct.</summary>
-    public static unsafe partial class SCM_PHYSICAL_DEVICE_INSTANCETests
+    /// <summary>Validates that the <see cref="SCM_PHYSICAL_DEVICE_INSTANCE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SCM_PHYSICAL_DEVICE_INSTANCE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SCM_PHYSICAL_DEVICE_INSTANCE>(), Is.EqualTo(sizeof(SCM_PHYSICAL_DEVICE_INSTANCE)));
-        }
+        Assert.That(Marshal.SizeOf<SCM_PHYSICAL_DEVICE_INSTANCE>(), Is.EqualTo(sizeof(SCM_PHYSICAL_DEVICE_INSTANCE)));
+    }
 
-        /// <summary>Validates that the <see cref="SCM_PHYSICAL_DEVICE_INSTANCE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SCM_PHYSICAL_DEVICE_INSTANCE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SCM_PHYSICAL_DEVICE_INSTANCE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SCM_PHYSICAL_DEVICE_INSTANCE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SCM_PHYSICAL_DEVICE_INSTANCE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SCM_PHYSICAL_DEVICE_INSTANCE), Is.EqualTo(524));
-        }
+    /// <summary>Validates that the <see cref="SCM_PHYSICAL_DEVICE_INSTANCE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SCM_PHYSICAL_DEVICE_INSTANCE), Is.EqualTo(524));
     }
 }

@@ -6,20 +6,19 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct SP_DEVICE_INTERFACE_DATA32
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct SP_DEVICE_INTERFACE_DATA32
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public Guid InterfaceClassGuid;
+    public Guid InterfaceClassGuid;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint Reserved;
-    }
+    [NativeTypeName("ULONG_PTR")]
+    public nuint Reserved;
 }

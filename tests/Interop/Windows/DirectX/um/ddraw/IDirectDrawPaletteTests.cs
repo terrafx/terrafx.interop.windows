@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDirectDrawPalette" /> struct.</summary>
+public static unsafe partial class IDirectDrawPaletteTests
 {
-    /// <summary>Provides validation of the <see cref="IDirectDrawPalette" /> struct.</summary>
-    public static unsafe partial class IDirectDrawPaletteTests
+    /// <summary>Validates that the <see cref="IDirectDrawPalette" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IDirectDrawPalette" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDirectDrawPalette>(), Is.EqualTo(sizeof(IDirectDrawPalette)));
-        }
+        Assert.That(Marshal.SizeOf<IDirectDrawPalette>(), Is.EqualTo(sizeof(IDirectDrawPalette)));
+    }
 
-        /// <summary>Validates that the <see cref="IDirectDrawPalette" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDirectDrawPalette).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDirectDrawPalette" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDirectDrawPalette).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDirectDrawPalette" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDirectDrawPalette" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDirectDrawPalette), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDirectDrawPalette), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDirectDrawPalette), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDirectDrawPalette), Is.EqualTo(4));
         }
     }
 }

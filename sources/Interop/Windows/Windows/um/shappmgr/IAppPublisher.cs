@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("07250A10-9CF9-11D1-9076-006008059382")]
+[NativeTypeName("struct IAppPublisher : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IAppPublisher : IAppPublisher.Interface
 {
-    [Guid("07250A10-9CF9-11D1-9076-006008059382")]
-    [NativeTypeName("struct IAppPublisher : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppPublisher : IAppPublisher.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IAppPublisher*, Guid*, void**, int>)(lpVtbl[0]))((IAppPublisher*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IAppPublisher*, Guid*, void**, int>)(lpVtbl[0]))((IAppPublisher*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IAppPublisher*, uint>)(lpVtbl[1]))((IAppPublisher*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IAppPublisher*, uint>)(lpVtbl[1]))((IAppPublisher*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IAppPublisher*, uint>)(lpVtbl[2]))((IAppPublisher*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IAppPublisher*, uint>)(lpVtbl[2]))((IAppPublisher*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetNumberOfCategories([NativeTypeName("DWORD *")] uint* pdwCat)
+    {
+        return ((delegate* unmanaged<IAppPublisher*, uint*, int>)(lpVtbl[3]))((IAppPublisher*)Unsafe.AsPointer(ref this), pdwCat);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetCategories(APPCATEGORYINFOLIST* pAppCategoryList)
+    {
+        return ((delegate* unmanaged<IAppPublisher*, APPCATEGORYINFOLIST*, int>)(lpVtbl[4]))((IAppPublisher*)Unsafe.AsPointer(ref this), pAppCategoryList);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetNumberOfApps([NativeTypeName("DWORD *")] uint* pdwApps)
+    {
+        return ((delegate* unmanaged<IAppPublisher*, uint*, int>)(lpVtbl[5]))((IAppPublisher*)Unsafe.AsPointer(ref this), pdwApps);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT EnumApps(Guid* pAppCategoryId, IEnumPublishedApps** ppepa)
+    {
+        return ((delegate* unmanaged<IAppPublisher*, Guid*, IEnumPublishedApps**, int>)(lpVtbl[6]))((IAppPublisher*)Unsafe.AsPointer(ref this), pAppCategoryId, ppepa);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetNumberOfCategories([NativeTypeName("DWORD *")] uint* pdwCat)
-        {
-            return ((delegate* unmanaged<IAppPublisher*, uint*, int>)(lpVtbl[3]))((IAppPublisher*)Unsafe.AsPointer(ref this), pdwCat);
-        }
+        HRESULT GetNumberOfCategories([NativeTypeName("DWORD *")] uint* pdwCat);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetCategories(APPCATEGORYINFOLIST* pAppCategoryList)
-        {
-            return ((delegate* unmanaged<IAppPublisher*, APPCATEGORYINFOLIST*, int>)(lpVtbl[4]))((IAppPublisher*)Unsafe.AsPointer(ref this), pAppCategoryList);
-        }
+        HRESULT GetCategories(APPCATEGORYINFOLIST* pAppCategoryList);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetNumberOfApps([NativeTypeName("DWORD *")] uint* pdwApps)
-        {
-            return ((delegate* unmanaged<IAppPublisher*, uint*, int>)(lpVtbl[5]))((IAppPublisher*)Unsafe.AsPointer(ref this), pdwApps);
-        }
+        HRESULT GetNumberOfApps([NativeTypeName("DWORD *")] uint* pdwApps);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT EnumApps(Guid* pAppCategoryId, IEnumPublishedApps** ppepa)
-        {
-            return ((delegate* unmanaged<IAppPublisher*, Guid*, IEnumPublishedApps**, int>)(lpVtbl[6]))((IAppPublisher*)Unsafe.AsPointer(ref this), pAppCategoryId, ppepa);
-        }
+        HRESULT EnumApps(Guid* pAppCategoryId, IEnumPublishedApps** ppepa);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetNumberOfCategories([NativeTypeName("DWORD *")] uint* pdwCat);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppPublisher*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetCategories(APPCATEGORYINFOLIST* pAppCategoryList);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppPublisher*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT GetNumberOfApps([NativeTypeName("DWORD *")] uint* pdwApps);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppPublisher*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT EnumApps(Guid* pAppCategoryId, IEnumPublishedApps** ppepa);
-        }
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppPublisher*, uint*, int> GetNumberOfCategories;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppPublisher*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (APPCATEGORYINFOLIST *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppPublisher*, APPCATEGORYINFOLIST*, int> GetCategories;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppPublisher*, uint> AddRef;
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppPublisher*, uint*, int> GetNumberOfApps;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppPublisher*, uint> Release;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppPublisher*, uint*, int> GetNumberOfCategories;
-
-            [NativeTypeName("HRESULT (APPCATEGORYINFOLIST *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppPublisher*, APPCATEGORYINFOLIST*, int> GetCategories;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppPublisher*, uint*, int> GetNumberOfApps;
-
-            [NativeTypeName("HRESULT (GUID *, IEnumPublishedApps **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppPublisher*, Guid*, IEnumPublishedApps**, int> EnumApps;
-        }
+        [NativeTypeName("HRESULT (GUID *, IEnumPublishedApps **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppPublisher*, Guid*, IEnumPublishedApps**, int> EnumApps;
     }
 }

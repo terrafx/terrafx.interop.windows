@@ -3,16 +3,15 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION
 {
-    public partial struct ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION
-    {
-        [NativeTypeName("DWORD")]
-        public uint ulFlags;
+    [NativeTypeName("DWORD")]
+    public uint ulFlags;
 
-        public ACTCTX_REQUESTED_RUN_LEVEL RunLevel;
+    public ACTCTX_REQUESTED_RUN_LEVEL RunLevel;
 
-        [NativeTypeName("DWORD")]
-        public uint UiAccess;
-    }
+    [NativeTypeName("DWORD")]
+    public uint UiAccess;
 }

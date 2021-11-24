@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct CAUUID
-    {
-        [NativeTypeName("ULONG")]
-        public uint cElems;
+namespace TerraFX.Interop.Windows;
 
-        public Guid* pElems;
-    }
+public unsafe partial struct CAUUID
+{
+    [NativeTypeName("ULONG")]
+    public uint cElems;
+
+    public Guid* pElems;
 }

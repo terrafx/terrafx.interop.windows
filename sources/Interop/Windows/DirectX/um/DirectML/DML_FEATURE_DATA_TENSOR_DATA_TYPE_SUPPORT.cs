@@ -5,10 +5,9 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT
 {
-    public partial struct DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT
-    {
-        public BOOL IsSupported;
-    }
+    public BOOL IsSupported;
 }

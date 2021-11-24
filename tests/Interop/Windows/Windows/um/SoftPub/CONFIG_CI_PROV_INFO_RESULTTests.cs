@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CONFIG_CI_PROV_INFO_RESULT" /> struct.</summary>
+public static unsafe partial class CONFIG_CI_PROV_INFO_RESULTTests
 {
-    /// <summary>Provides validation of the <see cref="CONFIG_CI_PROV_INFO_RESULT" /> struct.</summary>
-    public static unsafe partial class CONFIG_CI_PROV_INFO_RESULTTests
+    /// <summary>Validates that the <see cref="CONFIG_CI_PROV_INFO_RESULT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CONFIG_CI_PROV_INFO_RESULT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CONFIG_CI_PROV_INFO_RESULT>(), Is.EqualTo(sizeof(CONFIG_CI_PROV_INFO_RESULT)));
-        }
+        Assert.That(Marshal.SizeOf<CONFIG_CI_PROV_INFO_RESULT>(), Is.EqualTo(sizeof(CONFIG_CI_PROV_INFO_RESULT)));
+    }
 
-        /// <summary>Validates that the <see cref="CONFIG_CI_PROV_INFO_RESULT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CONFIG_CI_PROV_INFO_RESULT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CONFIG_CI_PROV_INFO_RESULT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CONFIG_CI_PROV_INFO_RESULT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CONFIG_CI_PROV_INFO_RESULT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CONFIG_CI_PROV_INFO_RESULT), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="CONFIG_CI_PROV_INFO_RESULT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CONFIG_CI_PROV_INFO_RESULT), Is.EqualTo(16));
     }
 }

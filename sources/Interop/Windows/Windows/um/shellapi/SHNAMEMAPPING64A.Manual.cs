@@ -3,18 +3,17 @@
 // Ported from um/shellapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SHNAMEMAPPING64A
 {
-    public unsafe partial struct SHNAMEMAPPING64A
-    {
-        [NativeTypeName("LPSTR")]
-        public sbyte* pszOldPath;
+    [NativeTypeName("LPSTR")]
+    public sbyte* pszOldPath;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* pszNewPath;
+    [NativeTypeName("LPSTR")]
+    public sbyte* pszNewPath;
 
-        public int cchOldPath;
+    public int cchOldPath;
 
-        public int cchNewPath;
-    }
+    public int cchNewPath;
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DRIVER_VER_INFO" /> struct.</summary>
+public static unsafe partial class DRIVER_VER_INFOTests
 {
-    /// <summary>Provides validation of the <see cref="DRIVER_VER_INFO" /> struct.</summary>
-    public static unsafe partial class DRIVER_VER_INFOTests
+    /// <summary>Validates that the <see cref="DRIVER_VER_INFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DRIVER_VER_INFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DRIVER_VER_INFO>(), Is.EqualTo(sizeof(DRIVER_VER_INFO)));
-        }
+        Assert.That(Marshal.SizeOf<DRIVER_VER_INFO>(), Is.EqualTo(sizeof(DRIVER_VER_INFO)));
+    }
 
-        /// <summary>Validates that the <see cref="DRIVER_VER_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DRIVER_VER_INFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DRIVER_VER_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DRIVER_VER_INFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DRIVER_VER_INFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DRIVER_VER_INFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DRIVER_VER_INFO), Is.EqualTo(1104));
-            }
-            else
-            {
-                Assert.That(sizeof(DRIVER_VER_INFO), Is.EqualTo(1088));
-            }
+            Assert.That(sizeof(DRIVER_VER_INFO), Is.EqualTo(1104));
+        }
+        else
+        {
+            Assert.That(sizeof(DRIVER_VER_INFO), Is.EqualTo(1088));
         }
     }
 }

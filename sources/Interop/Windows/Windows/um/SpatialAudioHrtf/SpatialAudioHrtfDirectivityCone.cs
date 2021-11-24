@@ -5,15 +5,14 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct SpatialAudioHrtfDirectivityCone
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct SpatialAudioHrtfDirectivityCone
-    {
-        public SpatialAudioHrtfDirectivity directivity;
+    public SpatialAudioHrtfDirectivity directivity;
 
-        public float InnerAngle;
+    public float InnerAngle;
 
-        public float OuterAngle;
-    }
+    public float OuterAngle;
 }

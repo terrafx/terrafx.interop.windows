@@ -3,13 +3,12 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum RESTOREBUTTONSTATES
 {
-    public enum RESTOREBUTTONSTATES
-    {
-        RBS_NORMAL = 1,
-        RBS_HOT = 2,
-        RBS_PUSHED = 3,
-        RBS_DISABLED = 4,
-    }
+    RBS_NORMAL = 1,
+    RBS_HOT = 2,
+    RBS_PUSHED = 3,
+    RBS_DISABLED = 4,
 }

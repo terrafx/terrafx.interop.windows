@@ -6,23 +6,22 @@
 using System.Numerics;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct X3DAUDIO_LISTENER
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct X3DAUDIO_LISTENER
-    {
-        [NativeTypeName("X3DAUDIO_VECTOR")]
-        public Vector3 OrientFront;
+    [NativeTypeName("X3DAUDIO_VECTOR")]
+    public Vector3 OrientFront;
 
-        [NativeTypeName("X3DAUDIO_VECTOR")]
-        public Vector3 OrientTop;
+    [NativeTypeName("X3DAUDIO_VECTOR")]
+    public Vector3 OrientTop;
 
-        [NativeTypeName("X3DAUDIO_VECTOR")]
-        public Vector3 Position;
+    [NativeTypeName("X3DAUDIO_VECTOR")]
+    public Vector3 Position;
 
-        [NativeTypeName("X3DAUDIO_VECTOR")]
-        public Vector3 Velocity;
+    [NativeTypeName("X3DAUDIO_VECTOR")]
+    public Vector3 Velocity;
 
-        public X3DAUDIO_CONE* pCone;
-    }
+    public X3DAUDIO_CONE* pCone;
 }

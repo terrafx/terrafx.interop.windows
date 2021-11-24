@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public enum DCOMPOSITION_BITMAP_INTERPOLATION_MODE
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum DCOMPOSITION_BITMAP_INTERPOLATION_MODE
-    {
-        DCOMPOSITION_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR = 0,
-        DCOMPOSITION_BITMAP_INTERPOLATION_MODE_LINEAR = 1,
-        DCOMPOSITION_BITMAP_INTERPOLATION_MODE_INHERIT = unchecked((int)(0xffffffff)),
-    }
+    DCOMPOSITION_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR = 0,
+    DCOMPOSITION_BITMAP_INTERPOLATION_MODE_LINEAR = 1,
+    DCOMPOSITION_BITMAP_INTERPOLATION_MODE_INHERIT = unchecked((int)(0xffffffff)),
 }

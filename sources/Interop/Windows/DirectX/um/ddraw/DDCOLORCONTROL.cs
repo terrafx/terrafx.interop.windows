@@ -3,38 +3,37 @@
 // Ported from um/ddraw.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DDCOLORCONTROL
 {
-    public partial struct DDCOLORCONTROL
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwSize;
+    [NativeTypeName("DWORD")]
+    public uint dwSize;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        [NativeTypeName("LONG")]
-        public int lBrightness;
+    [NativeTypeName("LONG")]
+    public int lBrightness;
 
-        [NativeTypeName("LONG")]
-        public int lContrast;
+    [NativeTypeName("LONG")]
+    public int lContrast;
 
-        [NativeTypeName("LONG")]
-        public int lHue;
+    [NativeTypeName("LONG")]
+    public int lHue;
 
-        [NativeTypeName("LONG")]
-        public int lSaturation;
+    [NativeTypeName("LONG")]
+    public int lSaturation;
 
-        [NativeTypeName("LONG")]
-        public int lSharpness;
+    [NativeTypeName("LONG")]
+    public int lSharpness;
 
-        [NativeTypeName("LONG")]
-        public int lGamma;
+    [NativeTypeName("LONG")]
+    public int lGamma;
 
-        [NativeTypeName("LONG")]
-        public int lColorEnable;
+    [NativeTypeName("LONG")]
+    public int lColorEnable;
 
-        [NativeTypeName("DWORD")]
-        public uint dwReserved1;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwReserved1;
 }

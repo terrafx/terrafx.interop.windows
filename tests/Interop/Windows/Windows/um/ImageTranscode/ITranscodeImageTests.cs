@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ITranscodeImage" /> struct.</summary>
+public static unsafe partial class ITranscodeImageTests
 {
-    /// <summary>Provides validation of the <see cref="ITranscodeImage" /> struct.</summary>
-    public static unsafe partial class ITranscodeImageTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITranscodeImage" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITranscodeImage" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ITranscodeImage).GUID, Is.EqualTo(IID_ITranscodeImage));
-        }
+        Assert.That(typeof(ITranscodeImage).GUID, Is.EqualTo(IID_ITranscodeImage));
+    }
 
-        /// <summary>Validates that the <see cref="ITranscodeImage" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ITranscodeImage>(), Is.EqualTo(sizeof(ITranscodeImage)));
-        }
+    /// <summary>Validates that the <see cref="ITranscodeImage" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ITranscodeImage>(), Is.EqualTo(sizeof(ITranscodeImage)));
+    }
 
-        /// <summary>Validates that the <see cref="ITranscodeImage" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ITranscodeImage).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ITranscodeImage" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ITranscodeImage).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ITranscodeImage" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ITranscodeImage" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ITranscodeImage), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ITranscodeImage), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ITranscodeImage), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ITranscodeImage), Is.EqualTo(4));
         }
     }
 }

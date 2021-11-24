@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct FILE_LEVEL_TRIM_RANGE
-    {
-        [NativeTypeName("DWORDLONG")]
-        public ulong Offset;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong Length;
-    }
+[SupportedOSPlatform("windows8.0")]
+public partial struct FILE_LEVEL_TRIM_RANGE
+{
+    [NativeTypeName("DWORDLONG")]
+    public ulong Offset;
+
+    [NativeTypeName("DWORDLONG")]
+    public ulong Length;
 }

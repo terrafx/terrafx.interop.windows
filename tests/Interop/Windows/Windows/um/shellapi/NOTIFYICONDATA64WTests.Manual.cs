@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NOTIFYICONDATA64W" /> struct.</summary>
+public static unsafe partial class NOTIFYICONDATA64WTests
 {
-    /// <summary>Provides validation of the <see cref="NOTIFYICONDATA64W" /> struct.</summary>
-    public static unsafe partial class NOTIFYICONDATA64WTests
+    /// <summary>Validates that the <see cref="NOTIFYICONDATA64W" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NOTIFYICONDATA64W" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NOTIFYICONDATA64W>(), Is.EqualTo(sizeof(NOTIFYICONDATA64W)));
-        }
+        Assert.That(Marshal.SizeOf<NOTIFYICONDATA64W>(), Is.EqualTo(sizeof(NOTIFYICONDATA64W)));
+    }
 
-        /// <summary>Validates that the <see cref="NOTIFYICONDATA64W" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NOTIFYICONDATA64W).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NOTIFYICONDATA64W" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NOTIFYICONDATA64W).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NOTIFYICONDATA64W" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="NOTIFYICONDATA64W" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(NOTIFYICONDATA64W), Is.EqualTo(976));
-            }
-            else
-            {
-                Assert.That(sizeof(NOTIFYICONDATA64W), Is.EqualTo(956));
-            }
+            Assert.That(sizeof(NOTIFYICONDATA64W), Is.EqualTo(976));
+        }
+        else
+        {
+            Assert.That(sizeof(NOTIFYICONDATA64W), Is.EqualTo(956));
         }
     }
 }

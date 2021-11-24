@@ -3,23 +3,22 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct HELPWININFOA
 {
-    public unsafe partial struct HELPWININFOA
-    {
-        public int wStructSize;
+    public int wStructSize;
 
-        public int x;
+    public int x;
 
-        public int y;
+    public int y;
 
-        public int dx;
+    public int dx;
 
-        public int dy;
+    public int dy;
 
-        public int wMax;
+    public int wMax;
 
-        [NativeTypeName("CHAR [2]")]
-        public fixed sbyte rgchMember[2];
-    }
+    [NativeTypeName("CHAR [2]")]
+    public fixed sbyte rgchMember[2];
 }

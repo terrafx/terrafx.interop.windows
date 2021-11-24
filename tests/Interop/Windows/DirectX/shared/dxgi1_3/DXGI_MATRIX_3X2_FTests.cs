@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DXGI_MATRIX_3X2_F" /> struct.</summary>
+[SupportedOSPlatform("windows8.1")]
+public static unsafe partial class DXGI_MATRIX_3X2_FTests
 {
-    /// <summary>Provides validation of the <see cref="DXGI_MATRIX_3X2_F" /> struct.</summary>
-    [SupportedOSPlatform("windows8.1")]
-    public static unsafe partial class DXGI_MATRIX_3X2_FTests
+    /// <summary>Validates that the <see cref="DXGI_MATRIX_3X2_F" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DXGI_MATRIX_3X2_F" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DXGI_MATRIX_3X2_F>(), Is.EqualTo(sizeof(DXGI_MATRIX_3X2_F)));
-        }
+        Assert.That(Marshal.SizeOf<DXGI_MATRIX_3X2_F>(), Is.EqualTo(sizeof(DXGI_MATRIX_3X2_F)));
+    }
 
-        /// <summary>Validates that the <see cref="DXGI_MATRIX_3X2_F" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DXGI_MATRIX_3X2_F).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DXGI_MATRIX_3X2_F" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DXGI_MATRIX_3X2_F).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DXGI_MATRIX_3X2_F" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DXGI_MATRIX_3X2_F), Is.EqualTo(24));
-        }
+    /// <summary>Validates that the <see cref="DXGI_MATRIX_3X2_F" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DXGI_MATRIX_3X2_F), Is.EqualTo(24));
     }
 }

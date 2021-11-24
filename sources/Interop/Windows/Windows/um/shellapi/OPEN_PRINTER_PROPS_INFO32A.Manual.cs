@@ -5,22 +5,21 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct OPEN_PRINTER_PROPS_INFO32A
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct OPEN_PRINTER_PROPS_INFO32A
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwSize;
+    [NativeTypeName("DWORD")]
+    public uint dwSize;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* pszSheetName;
+    [NativeTypeName("LPSTR")]
+    public sbyte* pszSheetName;
 
-        public uint uSheetIndex;
+    public uint uSheetIndex;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        public BOOL bModal;
-    }
+    public BOOL bModal;
 }

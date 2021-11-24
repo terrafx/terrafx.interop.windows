@@ -3,19 +3,18 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct STORAGE_BREAK_RESERVATION_REQUEST
 {
-    public partial struct STORAGE_BREAK_RESERVATION_REQUEST
-    {
-        [NativeTypeName("DWORD")]
-        public uint Length;
+    [NativeTypeName("DWORD")]
+    public uint Length;
 
-        public byte _unused;
+    public byte _unused;
 
-        public byte PathId;
+    public byte PathId;
 
-        public byte TargetId;
+    public byte TargetId;
 
-        public byte Lun;
-    }
+    public byte Lun;
 }

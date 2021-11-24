@@ -5,37 +5,36 @@
 
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SCM_PD_REINITIALIZE_MEDIA_INPUT
 {
-    public partial struct SCM_PD_REINITIALIZE_MEDIA_INPUT
+    [NativeTypeName("DWORD")]
+    public uint Version;
+
+    [NativeTypeName("DWORD")]
+    public uint Size;
+
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:8431:5)")]
+    public _Options_e__Struct Options;
+
+    public partial struct _Options_e__Struct
     {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+        public uint _bitfield;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
-
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:8431:5)")]
-        public _Options_e__Struct Options;
-
-        public partial struct _Options_e__Struct
+        [NativeTypeName("DWORD : 1")]
+        public uint Overwrite
         {
-            public uint _bitfield;
-
-            [NativeTypeName("DWORD : 1")]
-            public uint Overwrite
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
             {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return _bitfield & 0x1u;
-                }
+                return _bitfield & 0x1u;
+            }
 
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                set
-                {
-                    _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
-                }
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
             }
         }
     }

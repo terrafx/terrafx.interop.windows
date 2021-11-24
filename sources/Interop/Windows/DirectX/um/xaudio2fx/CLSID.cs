@@ -8,54 +8,53 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class CLSID
 {
-    public static partial class CLSID
+    public static ref readonly Guid CLSID_AudioVolumeMeter
     {
-        public static ref readonly Guid CLSID_AudioVolumeMeter
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x66, 0xB1, 0xC3, 0x4F,
-                    0x2A, 0x97,
-                    0xCF, 0x40,
-                    0xBC,
-                    0x37,
-                    0x7D,
-                    0xB0,
-                    0x3D,
-                    0xB2,
-                    0xFB,
-                    0xA3
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x66, 0xB1, 0xC3, 0x4F,
+                0x2A, 0x97,
+                0xCF, 0x40,
+                0xBC,
+                0x37,
+                0x7D,
+                0xB0,
+                0x3D,
+                0xB2,
+                0xFB,
+                0xA3
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid CLSID_AudioReverb
+    public static ref readonly Guid CLSID_AudioReverb
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x16, 0x3B, 0x63, 0xC2,
-                    0x1B, 0x47,
-                    0x98, 0x44,
-                    0xB8,
-                    0xC5,
-                    0x4F,
-                    0x09,
-                    0x59,
-                    0xE2,
-                    0xEC,
-                    0x09
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x16, 0x3B, 0x63, 0xC2,
+                0x1B, 0x47,
+                0x98, 0x44,
+                0xB8,
+                0xC5,
+                0x4F,
+                0x09,
+                0x59,
+                0xE2,
+                0xEC,
+                0x09
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

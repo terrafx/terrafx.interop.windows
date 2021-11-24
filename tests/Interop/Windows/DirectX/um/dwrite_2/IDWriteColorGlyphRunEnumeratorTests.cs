@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDWriteColorGlyphRunEnumerator" /> struct.</summary>
+[SupportedOSPlatform("windows8.1")]
+public static unsafe partial class IDWriteColorGlyphRunEnumeratorTests
 {
-    /// <summary>Provides validation of the <see cref="IDWriteColorGlyphRunEnumerator" /> struct.</summary>
-    [SupportedOSPlatform("windows8.1")]
-    public static unsafe partial class IDWriteColorGlyphRunEnumeratorTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWriteColorGlyphRunEnumerator" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWriteColorGlyphRunEnumerator" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDWriteColorGlyphRunEnumerator).GUID, Is.EqualTo(IID_IDWriteColorGlyphRunEnumerator));
-        }
+        Assert.That(typeof(IDWriteColorGlyphRunEnumerator).GUID, Is.EqualTo(IID_IDWriteColorGlyphRunEnumerator));
+    }
 
-        /// <summary>Validates that the <see cref="IDWriteColorGlyphRunEnumerator" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDWriteColorGlyphRunEnumerator>(), Is.EqualTo(sizeof(IDWriteColorGlyphRunEnumerator)));
-        }
+    /// <summary>Validates that the <see cref="IDWriteColorGlyphRunEnumerator" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDWriteColorGlyphRunEnumerator>(), Is.EqualTo(sizeof(IDWriteColorGlyphRunEnumerator)));
+    }
 
-        /// <summary>Validates that the <see cref="IDWriteColorGlyphRunEnumerator" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDWriteColorGlyphRunEnumerator).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDWriteColorGlyphRunEnumerator" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDWriteColorGlyphRunEnumerator).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDWriteColorGlyphRunEnumerator" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDWriteColorGlyphRunEnumerator" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDWriteColorGlyphRunEnumerator), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDWriteColorGlyphRunEnumerator), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDWriteColorGlyphRunEnumerator), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDWriteColorGlyphRunEnumerator), Is.EqualTo(4));
         }
     }
 }

@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct CAT_MEMBERINFO2
-    {
-        public Guid SubjectGuid;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint dwCertVersion;
-    }
+public partial struct CAT_MEMBERINFO2
+{
+    public Guid SubjectGuid;
+
+    [NativeTypeName("DWORD")]
+    public uint dwCertVersion;
 }

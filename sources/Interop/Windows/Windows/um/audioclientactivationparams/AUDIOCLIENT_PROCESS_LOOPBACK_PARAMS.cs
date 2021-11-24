@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows10.0.19043.0")]
-    public partial struct AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS
-    {
-        [NativeTypeName("DWORD")]
-        public uint TargetProcessId;
+namespace TerraFX.Interop.Windows;
 
-        public PROCESS_LOOPBACK_MODE ProcessLoopbackMode;
-    }
+[SupportedOSPlatform("windows10.0.19043.0")]
+public partial struct AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS
+{
+    [NativeTypeName("DWORD")]
+    public uint TargetProcessId;
+
+    public PROCESS_LOOPBACK_MODE ProcessLoopbackMode;
 }

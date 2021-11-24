@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+[NativeTypeName("uint32_t")]
+public enum DXCoreAdapterPreference : uint
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    [NativeTypeName("uint32_t")]
-    public enum DXCoreAdapterPreference : uint
-    {
-        Hardware = 0,
-        MinimumPower = 1,
-        HighPerformance = 2,
-    }
+    Hardware = 0,
+    MinimumPower = 1,
+    HighPerformance = 2,
 }

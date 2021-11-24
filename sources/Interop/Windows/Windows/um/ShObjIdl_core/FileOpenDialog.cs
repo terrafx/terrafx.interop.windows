@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("DC1C5A9C-E88A-4DDE-A5A1-60F82A20AEF7")]
+public partial struct FileOpenDialog
 {
-    [Guid("DC1C5A9C-E88A-4DDE-A5A1-60F82A20AEF7")]
-    public partial struct FileOpenDialog
-    {
-    }
 }

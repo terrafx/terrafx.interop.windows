@@ -8,33 +8,32 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
-{
-    public static partial class DirectX
-    {
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid WKPDID_D3DAutoDebugObjectNameW
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x36, 0x2E, 0x90, 0xD4,
-                    0x7A, 0x75,
-                    0x42, 0x49,
-                    0x95,
-                    0x94,
-                    0xB6,
-                    0x76,
-                    0x9A,
-                    0xFA,
-                    0x43,
-                    0xCD
-                };
+namespace TerraFX.Interop.DirectX;
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+public static partial class DirectX
+{
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid WKPDID_D3DAutoDebugObjectNameW
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x36, 0x2E, 0x90, 0xD4,
+                0x7A, 0x75,
+                0x42, 0x49,
+                0x95,
+                0x94,
+                0xB6,
+                0x76,
+                0x9A,
+                0xFA,
+                0x43,
+                0xCD
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

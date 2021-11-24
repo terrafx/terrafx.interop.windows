@@ -5,17 +5,16 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct MANIPULATION_VELOCITY
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct MANIPULATION_VELOCITY
-    {
-        public float velocityX;
+    public float velocityX;
 
-        public float velocityY;
+    public float velocityY;
 
-        public float velocityExpansion;
+    public float velocityExpansion;
 
-        public float velocityAngular;
-    }
+    public float velocityAngular;
 }

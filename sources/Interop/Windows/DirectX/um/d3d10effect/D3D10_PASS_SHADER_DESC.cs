@@ -3,12 +3,11 @@
 // Ported from um/d3d10effect.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
-{
-    public unsafe partial struct D3D10_PASS_SHADER_DESC
-    {
-        public ID3D10EffectShaderVariable* pShaderVariable;
+namespace TerraFX.Interop.DirectX;
 
-        public uint ShaderIndex;
-    }
+public unsafe partial struct D3D10_PASS_SHADER_DESC
+{
+    public ID3D10EffectShaderVariable* pShaderVariable;
+
+    public uint ShaderIndex;
 }

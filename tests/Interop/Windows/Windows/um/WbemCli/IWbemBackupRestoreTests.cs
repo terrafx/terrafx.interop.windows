@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IWbemBackupRestore" /> struct.</summary>
+public static unsafe partial class IWbemBackupRestoreTests
 {
-    /// <summary>Provides validation of the <see cref="IWbemBackupRestore" /> struct.</summary>
-    public static unsafe partial class IWbemBackupRestoreTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWbemBackupRestore" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWbemBackupRestore" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IWbemBackupRestore).GUID, Is.EqualTo(IID_IWbemBackupRestore));
-        }
+        Assert.That(typeof(IWbemBackupRestore).GUID, Is.EqualTo(IID_IWbemBackupRestore));
+    }
 
-        /// <summary>Validates that the <see cref="IWbemBackupRestore" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IWbemBackupRestore>(), Is.EqualTo(sizeof(IWbemBackupRestore)));
-        }
+    /// <summary>Validates that the <see cref="IWbemBackupRestore" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IWbemBackupRestore>(), Is.EqualTo(sizeof(IWbemBackupRestore)));
+    }
 
-        /// <summary>Validates that the <see cref="IWbemBackupRestore" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IWbemBackupRestore).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IWbemBackupRestore" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IWbemBackupRestore).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IWbemBackupRestore" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IWbemBackupRestore" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IWbemBackupRestore), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IWbemBackupRestore), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IWbemBackupRestore), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IWbemBackupRestore), Is.EqualTo(4));
         }
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="COMPOSITIONFORM" /> struct.</summary>
+public static unsafe partial class COMPOSITIONFORMTests
 {
-    /// <summary>Provides validation of the <see cref="COMPOSITIONFORM" /> struct.</summary>
-    public static unsafe partial class COMPOSITIONFORMTests
+    /// <summary>Validates that the <see cref="COMPOSITIONFORM" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="COMPOSITIONFORM" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<COMPOSITIONFORM>(), Is.EqualTo(sizeof(COMPOSITIONFORM)));
-        }
+        Assert.That(Marshal.SizeOf<COMPOSITIONFORM>(), Is.EqualTo(sizeof(COMPOSITIONFORM)));
+    }
 
-        /// <summary>Validates that the <see cref="COMPOSITIONFORM" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(COMPOSITIONFORM).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="COMPOSITIONFORM" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(COMPOSITIONFORM).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="COMPOSITIONFORM" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(COMPOSITIONFORM), Is.EqualTo(28));
-        }
+    /// <summary>Validates that the <see cref="COMPOSITIONFORM" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(COMPOSITIONFORM), Is.EqualTo(28));
     }
 }

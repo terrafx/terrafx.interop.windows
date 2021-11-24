@@ -3,14 +3,13 @@
 // Ported from um/mfobjects.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MF_FILE_OPENMODE
 {
-    public enum MF_FILE_OPENMODE
-    {
-        MF_OPENMODE_FAIL_IF_NOT_EXIST = 0,
-        MF_OPENMODE_FAIL_IF_EXIST = 1,
-        MF_OPENMODE_RESET_IF_EXIST = 2,
-        MF_OPENMODE_APPEND_IF_EXIST = 3,
-        MF_OPENMODE_DELETE_IF_EXIST = 4,
-    }
+    MF_OPENMODE_FAIL_IF_NOT_EXIST = 0,
+    MF_OPENMODE_FAIL_IF_EXIST = 1,
+    MF_OPENMODE_RESET_IF_EXIST = 2,
+    MF_OPENMODE_APPEND_IF_EXIST = 3,
+    MF_OPENMODE_DELETE_IF_EXIST = 4,
 }

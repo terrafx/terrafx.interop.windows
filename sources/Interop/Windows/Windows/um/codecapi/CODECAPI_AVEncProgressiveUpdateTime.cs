@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("649FAF66-AFC6-4828-8FDC-0771CD9AB17D")]
+public partial struct CODECAPI_AVEncProgressiveUpdateTime
 {
-    [Guid("649FAF66-AFC6-4828-8FDC-0771CD9AB17D")]
-    public partial struct CODECAPI_AVEncProgressiveUpdateTime
-    {
-    }
 }

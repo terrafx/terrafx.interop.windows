@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="POWER_MONITOR_INVOCATION" /> struct.</summary>
+public static unsafe partial class POWER_MONITOR_INVOCATIONTests
 {
-    /// <summary>Provides validation of the <see cref="POWER_MONITOR_INVOCATION" /> struct.</summary>
-    public static unsafe partial class POWER_MONITOR_INVOCATIONTests
+    /// <summary>Validates that the <see cref="POWER_MONITOR_INVOCATION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="POWER_MONITOR_INVOCATION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<POWER_MONITOR_INVOCATION>(), Is.EqualTo(sizeof(POWER_MONITOR_INVOCATION)));
-        }
+        Assert.That(Marshal.SizeOf<POWER_MONITOR_INVOCATION>(), Is.EqualTo(sizeof(POWER_MONITOR_INVOCATION)));
+    }
 
-        /// <summary>Validates that the <see cref="POWER_MONITOR_INVOCATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(POWER_MONITOR_INVOCATION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="POWER_MONITOR_INVOCATION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(POWER_MONITOR_INVOCATION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="POWER_MONITOR_INVOCATION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(POWER_MONITOR_INVOCATION), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="POWER_MONITOR_INVOCATION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(POWER_MONITOR_INVOCATION), Is.EqualTo(8));
     }
 }

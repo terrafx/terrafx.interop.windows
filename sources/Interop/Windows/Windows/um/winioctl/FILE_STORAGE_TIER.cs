@@ -5,26 +5,25 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct FILE_STORAGE_TIER
 {
-    public unsafe partial struct FILE_STORAGE_TIER
-    {
-        public Guid Id;
+    public Guid Id;
 
-        [NativeTypeName("WCHAR [256]")]
-        public fixed ushort Name[256];
+    [NativeTypeName("WCHAR [256]")]
+    public fixed ushort Name[256];
 
-        [NativeTypeName("WCHAR [256]")]
-        public fixed ushort Description[256];
+    [NativeTypeName("WCHAR [256]")]
+    public fixed ushort Description[256];
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong Flags;
+    [NativeTypeName("DWORDLONG")]
+    public ulong Flags;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong ProvisionedCapacity;
+    [NativeTypeName("DWORDLONG")]
+    public ulong ProvisionedCapacity;
 
-        public FILE_STORAGE_TIER_MEDIA_TYPE MediaType;
+    public FILE_STORAGE_TIER_MEDIA_TYPE MediaType;
 
-        public FILE_STORAGE_TIER_CLASS Class;
-    }
+    public FILE_STORAGE_TIER_CLASS Class;
 }

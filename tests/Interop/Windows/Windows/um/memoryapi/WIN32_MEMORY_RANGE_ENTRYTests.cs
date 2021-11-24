@@ -8,38 +8,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WIN32_MEMORY_RANGE_ENTRY" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class WIN32_MEMORY_RANGE_ENTRYTests
 {
-    /// <summary>Provides validation of the <see cref="WIN32_MEMORY_RANGE_ENTRY" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class WIN32_MEMORY_RANGE_ENTRYTests
+    /// <summary>Validates that the <see cref="WIN32_MEMORY_RANGE_ENTRY" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WIN32_MEMORY_RANGE_ENTRY" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WIN32_MEMORY_RANGE_ENTRY>(), Is.EqualTo(sizeof(WIN32_MEMORY_RANGE_ENTRY)));
-        }
+        Assert.That(Marshal.SizeOf<WIN32_MEMORY_RANGE_ENTRY>(), Is.EqualTo(sizeof(WIN32_MEMORY_RANGE_ENTRY)));
+    }
 
-        /// <summary>Validates that the <see cref="WIN32_MEMORY_RANGE_ENTRY" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WIN32_MEMORY_RANGE_ENTRY).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WIN32_MEMORY_RANGE_ENTRY" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WIN32_MEMORY_RANGE_ENTRY).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WIN32_MEMORY_RANGE_ENTRY" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="WIN32_MEMORY_RANGE_ENTRY" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(WIN32_MEMORY_RANGE_ENTRY), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(WIN32_MEMORY_RANGE_ENTRY), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(WIN32_MEMORY_RANGE_ENTRY), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(WIN32_MEMORY_RANGE_ENTRY), Is.EqualTo(8));
         }
     }
 }

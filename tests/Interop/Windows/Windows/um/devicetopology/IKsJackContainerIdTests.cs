@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IKsJackContainerId" /> struct.</summary>
+public static unsafe partial class IKsJackContainerIdTests
 {
-    /// <summary>Provides validation of the <see cref="IKsJackContainerId" /> struct.</summary>
-    public static unsafe partial class IKsJackContainerIdTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IKsJackContainerId" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IKsJackContainerId" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IKsJackContainerId).GUID, Is.EqualTo(IID_IKsJackContainerId));
-        }
+        Assert.That(typeof(IKsJackContainerId).GUID, Is.EqualTo(IID_IKsJackContainerId));
+    }
 
-        /// <summary>Validates that the <see cref="IKsJackContainerId" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IKsJackContainerId>(), Is.EqualTo(sizeof(IKsJackContainerId)));
-        }
+    /// <summary>Validates that the <see cref="IKsJackContainerId" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IKsJackContainerId>(), Is.EqualTo(sizeof(IKsJackContainerId)));
+    }
 
-        /// <summary>Validates that the <see cref="IKsJackContainerId" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IKsJackContainerId).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IKsJackContainerId" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IKsJackContainerId).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IKsJackContainerId" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IKsJackContainerId" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IKsJackContainerId), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IKsJackContainerId), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IKsJackContainerId), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IKsJackContainerId), Is.EqualTo(4));
         }
     }
 }

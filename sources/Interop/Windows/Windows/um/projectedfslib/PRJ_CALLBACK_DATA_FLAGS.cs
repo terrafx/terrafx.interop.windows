@@ -6,13 +6,12 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+[SupportedOSPlatform("windows10.0.17763.0")]
+public enum PRJ_CALLBACK_DATA_FLAGS
 {
-    [Flags]
-    [SupportedOSPlatform("windows10.0.17763.0")]
-    public enum PRJ_CALLBACK_DATA_FLAGS
-    {
-        PRJ_CB_DATA_FLAG_ENUM_RESTART_SCAN = 0x00000001,
-        PRJ_CB_DATA_FLAG_ENUM_RETURN_SINGLE_ENTRY = 0x00000002,
-    }
+    PRJ_CB_DATA_FLAG_ENUM_RESTART_SCAN = 0x00000001,
+    PRJ_CB_DATA_FLAG_ENUM_RETURN_SINGLE_ENTRY = 0x00000002,
 }

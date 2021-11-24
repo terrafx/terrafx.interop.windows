@@ -3,13 +3,12 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct CRYPT_PSOURCE_ALGORITHM
-    {
-        [NativeTypeName("LPSTR")]
-        public sbyte* pszObjId;
+namespace TerraFX.Interop.Windows;
 
-        public CRYPT_DATA_BLOB EncodingParameters;
-    }
+public unsafe partial struct CRYPT_PSOURCE_ALGORITHM
+{
+    [NativeTypeName("LPSTR")]
+    public sbyte* pszObjId;
+
+    public CRYPT_DATA_BLOB EncodingParameters;
 }

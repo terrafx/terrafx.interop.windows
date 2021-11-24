@@ -5,11 +5,10 @@
 
 using static TerraFX.Interop.Windows.SPWORDTYPE;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechWordType
 {
-    public enum SpeechWordType
-    {
-        SWTAdded = eWORDTYPE_ADDED,
-        SWTDeleted = eWORDTYPE_DELETED,
-    }
+    SWTAdded = eWORDTYPE_ADDED,
+    SWTDeleted = eWORDTYPE_DELETED,
 }

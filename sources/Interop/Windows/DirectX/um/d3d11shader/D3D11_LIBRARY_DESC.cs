@@ -3,15 +3,14 @@
 // Ported from um/d3d11shader.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D11_LIBRARY_DESC
 {
-    public unsafe partial struct D3D11_LIBRARY_DESC
-    {
-        [NativeTypeName("LPCSTR")]
-        public sbyte* Creator;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* Creator;
 
-        public uint Flags;
+    public uint Flags;
 
-        public uint FunctionCount;
-    }
+    public uint FunctionCount;
 }

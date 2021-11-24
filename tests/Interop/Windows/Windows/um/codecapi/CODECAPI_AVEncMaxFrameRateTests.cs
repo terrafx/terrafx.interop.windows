@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CODECAPI_AVEncMaxFrameRate" /> struct.</summary>
+public static unsafe partial class CODECAPI_AVEncMaxFrameRateTests
 {
-    /// <summary>Provides validation of the <see cref="CODECAPI_AVEncMaxFrameRate" /> struct.</summary>
-    public static unsafe partial class CODECAPI_AVEncMaxFrameRateTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncMaxFrameRate" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncMaxFrameRate" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncMaxFrameRate).GUID, Is.EqualTo(IID_CODECAPI_AVEncMaxFrameRate));
-        }
+        Assert.That(typeof(CODECAPI_AVEncMaxFrameRate).GUID, Is.EqualTo(IID_CODECAPI_AVEncMaxFrameRate));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncMaxFrameRate" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CODECAPI_AVEncMaxFrameRate>(), Is.EqualTo(sizeof(CODECAPI_AVEncMaxFrameRate)));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncMaxFrameRate" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<CODECAPI_AVEncMaxFrameRate>(), Is.EqualTo(sizeof(CODECAPI_AVEncMaxFrameRate)));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncMaxFrameRate" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncMaxFrameRate).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncMaxFrameRate" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CODECAPI_AVEncMaxFrameRate).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncMaxFrameRate" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CODECAPI_AVEncMaxFrameRate), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncMaxFrameRate" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CODECAPI_AVEncMaxFrameRate), Is.EqualTo(1));
     }
 }

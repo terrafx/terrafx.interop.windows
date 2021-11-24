@@ -3,20 +3,19 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct FILE_INITIATE_REPAIR_OUTPUT_BUFFER
 {
-    public partial struct FILE_INITIATE_REPAIR_OUTPUT_BUFFER
-    {
-        [NativeTypeName("DWORDLONG")]
-        public ulong Hint1;
+    [NativeTypeName("DWORDLONG")]
+    public ulong Hint1;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong Hint2;
+    [NativeTypeName("DWORDLONG")]
+    public ulong Hint2;
 
-        [NativeTypeName("CLSN")]
-        public ulong Clsn;
+    [NativeTypeName("CLSN")]
+    public ulong Clsn;
 
-        [NativeTypeName("DWORD")]
-        public uint Status;
-    }
+    [NativeTypeName("DWORD")]
+    public uint Status;
 }

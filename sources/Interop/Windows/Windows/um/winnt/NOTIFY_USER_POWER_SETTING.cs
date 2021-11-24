@@ -5,10 +5,9 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct NOTIFY_USER_POWER_SETTING
 {
-    public partial struct NOTIFY_USER_POWER_SETTING
-    {
-        public Guid Guid;
-    }
+    public Guid Guid;
 }

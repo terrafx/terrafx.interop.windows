@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public enum MF_TIMED_TEXT_UNIT_TYPE
 {
-    [SupportedOSPlatform("windows10.0")]
-    public enum MF_TIMED_TEXT_UNIT_TYPE
-    {
-        MF_TIMED_TEXT_UNIT_TYPE_PIXELS = 0,
-        MF_TIMED_TEXT_UNIT_TYPE_PERCENTAGE = 1,
-    }
+    MF_TIMED_TEXT_UNIT_TYPE_PIXELS = 0,
+    MF_TIMED_TEXT_UNIT_TYPE_PERCENTAGE = 1,
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="INSTALLDATA" /> struct.</summary>
+public static unsafe partial class INSTALLDATATests
 {
-    /// <summary>Provides validation of the <see cref="INSTALLDATA" /> struct.</summary>
-    public static unsafe partial class INSTALLDATATests
+    /// <summary>Validates that the <see cref="INSTALLDATA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="INSTALLDATA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<INSTALLDATA>(), Is.EqualTo(sizeof(INSTALLDATA)));
-        }
+        Assert.That(Marshal.SizeOf<INSTALLDATA>(), Is.EqualTo(sizeof(INSTALLDATA)));
+    }
 
-        /// <summary>Validates that the <see cref="INSTALLDATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(INSTALLDATA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="INSTALLDATA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(INSTALLDATA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="INSTALLDATA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="INSTALLDATA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(INSTALLDATA), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(INSTALLDATA), Is.EqualTo(24));
-            }
+            Assert.That(sizeof(INSTALLDATA), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(INSTALLDATA), Is.EqualTo(24));
         }
     }
 }

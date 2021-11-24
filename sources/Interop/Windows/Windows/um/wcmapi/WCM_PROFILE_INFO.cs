@@ -6,16 +6,15 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct WCM_PROFILE_INFO
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct WCM_PROFILE_INFO
-    {
-        [NativeTypeName("WCHAR [256]")]
-        public fixed ushort strProfileName[256];
+    [NativeTypeName("WCHAR [256]")]
+    public fixed ushort strProfileName[256];
 
-        public Guid AdapterGUID;
+    public Guid AdapterGUID;
 
-        public WCM_MEDIA_TYPE Media;
-    }
+    public WCM_MEDIA_TYPE Media;
 }

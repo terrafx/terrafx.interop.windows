@@ -5,45 +5,44 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public partial struct USN_JOURNAL_DATA_V2
 {
-    [SupportedOSPlatform("windows8.1")]
-    public partial struct USN_JOURNAL_DATA_V2
-    {
-        [NativeTypeName("DWORDLONG")]
-        public ulong UsnJournalID;
+    [NativeTypeName("DWORDLONG")]
+    public ulong UsnJournalID;
 
-        [NativeTypeName("USN")]
-        public long FirstUsn;
+    [NativeTypeName("USN")]
+    public long FirstUsn;
 
-        [NativeTypeName("USN")]
-        public long NextUsn;
+    [NativeTypeName("USN")]
+    public long NextUsn;
 
-        [NativeTypeName("USN")]
-        public long LowestValidUsn;
+    [NativeTypeName("USN")]
+    public long LowestValidUsn;
 
-        [NativeTypeName("USN")]
-        public long MaxUsn;
+    [NativeTypeName("USN")]
+    public long MaxUsn;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong MaximumSize;
+    [NativeTypeName("DWORDLONG")]
+    public ulong MaximumSize;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong AllocationDelta;
+    [NativeTypeName("DWORDLONG")]
+    public ulong AllocationDelta;
 
-        [NativeTypeName("WORD")]
-        public ushort MinSupportedMajorVersion;
+    [NativeTypeName("WORD")]
+    public ushort MinSupportedMajorVersion;
 
-        [NativeTypeName("WORD")]
-        public ushort MaxSupportedMajorVersion;
+    [NativeTypeName("WORD")]
+    public ushort MaxSupportedMajorVersion;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong RangeTrackChunkSize;
+    [NativeTypeName("DWORDLONG")]
+    public ulong RangeTrackChunkSize;
 
-        [NativeTypeName("LONGLONG")]
-        public long RangeTrackFileSizeThreshold;
-    }
+    [NativeTypeName("LONGLONG")]
+    public long RangeTrackFileSizeThreshold;
 }

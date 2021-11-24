@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("6AAD30AF-6BA8-4CCC-8FCA-18D19BEAEB1C")]
+public partial struct CODECAPI_AVEncCommonStreamEndHandling
 {
-    [Guid("6AAD30AF-6BA8-4CCC-8FCA-18D19BEAEB1C")]
-    public partial struct CODECAPI_AVEncCommonStreamEndHandling
-    {
-    }
 }

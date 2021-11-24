@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("B1AEC16F-2383-4852-B0E9-8F0B1DC66B4D")]
+public partial struct PackageDebugSettings
 {
-    [Guid("B1AEC16F-2383-4852-B0E9-8F0B1DC66B4D")]
-    public partial struct PackageDebugSettings
-    {
-    }
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SINGLE_LIST_ENTRY" /> struct.</summary>
+public static unsafe partial class SINGLE_LIST_ENTRYTests
 {
-    /// <summary>Provides validation of the <see cref="SINGLE_LIST_ENTRY" /> struct.</summary>
-    public static unsafe partial class SINGLE_LIST_ENTRYTests
+    /// <summary>Validates that the <see cref="SINGLE_LIST_ENTRY" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SINGLE_LIST_ENTRY" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SINGLE_LIST_ENTRY>(), Is.EqualTo(sizeof(SINGLE_LIST_ENTRY)));
-        }
+        Assert.That(Marshal.SizeOf<SINGLE_LIST_ENTRY>(), Is.EqualTo(sizeof(SINGLE_LIST_ENTRY)));
+    }
 
-        /// <summary>Validates that the <see cref="SINGLE_LIST_ENTRY" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SINGLE_LIST_ENTRY).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SINGLE_LIST_ENTRY" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SINGLE_LIST_ENTRY).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SINGLE_LIST_ENTRY" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SINGLE_LIST_ENTRY" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SINGLE_LIST_ENTRY), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(SINGLE_LIST_ENTRY), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(SINGLE_LIST_ENTRY), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(SINGLE_LIST_ENTRY), Is.EqualTo(4));
         }
     }
 }

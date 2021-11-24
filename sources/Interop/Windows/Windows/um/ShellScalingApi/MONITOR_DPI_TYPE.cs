@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public enum MONITOR_DPI_TYPE
 {
-    [SupportedOSPlatform("windows8.1")]
-    public enum MONITOR_DPI_TYPE
-    {
-        MDT_EFFECTIVE_DPI = 0,
-        MDT_ANGULAR_DPI = 1,
-        MDT_RAW_DPI = 2,
-        MDT_DEFAULT = MDT_EFFECTIVE_DPI,
-    }
+    MDT_EFFECTIVE_DPI = 0,
+    MDT_ANGULAR_DPI = 1,
+    MDT_RAW_DPI = 2,
+    MDT_DEFAULT = MDT_EFFECTIVE_DPI,
 }

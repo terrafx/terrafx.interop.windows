@@ -5,14 +5,13 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.WinRT
-{
-    public static unsafe partial class WinRT
-    {
-        [DllImport("ole32", ExactSpelling = true)]
-        public static extern void CoSetMessageDispatcher([NativeTypeName("PMessageDispatcher")] IMessageDispatcher* pMessageDispatcher);
+namespace TerraFX.Interop.WinRT;
 
-        [DllImport("ole32", ExactSpelling = true)]
-        public static extern void CoHandlePriorityEventsFromMessagePump();
-    }
+public static unsafe partial class WinRT
+{
+    [DllImport("ole32", ExactSpelling = true)]
+    public static extern void CoSetMessageDispatcher([NativeTypeName("PMessageDispatcher")] IMessageDispatcher* pMessageDispatcher);
+
+    [DllImport("ole32", ExactSpelling = true)]
+    public static extern void CoHandlePriorityEventsFromMessagePump();
 }

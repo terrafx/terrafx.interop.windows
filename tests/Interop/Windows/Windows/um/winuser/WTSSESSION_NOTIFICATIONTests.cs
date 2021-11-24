@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WTSSESSION_NOTIFICATION" /> struct.</summary>
+public static unsafe partial class WTSSESSION_NOTIFICATIONTests
 {
-    /// <summary>Provides validation of the <see cref="WTSSESSION_NOTIFICATION" /> struct.</summary>
-    public static unsafe partial class WTSSESSION_NOTIFICATIONTests
+    /// <summary>Validates that the <see cref="WTSSESSION_NOTIFICATION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WTSSESSION_NOTIFICATION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WTSSESSION_NOTIFICATION>(), Is.EqualTo(sizeof(WTSSESSION_NOTIFICATION)));
-        }
+        Assert.That(Marshal.SizeOf<WTSSESSION_NOTIFICATION>(), Is.EqualTo(sizeof(WTSSESSION_NOTIFICATION)));
+    }
 
-        /// <summary>Validates that the <see cref="WTSSESSION_NOTIFICATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WTSSESSION_NOTIFICATION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WTSSESSION_NOTIFICATION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WTSSESSION_NOTIFICATION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WTSSESSION_NOTIFICATION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(WTSSESSION_NOTIFICATION), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="WTSSESSION_NOTIFICATION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(WTSSESSION_NOTIFICATION), Is.EqualTo(8));
     }
 }

@@ -5,29 +5,28 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SIZE : IEquatable<SIZE>
 {
-    public partial struct SIZE : IEquatable<SIZE>
+    public SIZE([NativeTypeName("INT32")] int cx = 0, [NativeTypeName("INT32")] int cy = 0)
     {
-        public SIZE([NativeTypeName("INT32")] int cx = 0, [NativeTypeName("INT32")] int cy = 0)
-        {
-            this.cx = cx;
-            this.cy = cy;
-        }
-
-        public static bool operator ==([NativeTypeName("const SIZE &")] in SIZE l, [NativeTypeName("const SIZE &")] in SIZE r)
-        {
-            return (l.cx == r.cx)
-                && (l.cy == r.cy);
-        }
-
-        public static bool operator !=([NativeTypeName("const SIZE &")] in SIZE l, [NativeTypeName("const SIZE &")] in SIZE r)
-            => !(l == r);
-
-        public override bool Equals(object? obj) => (obj is SIZE other) && Equals(other);
-
-        public bool Equals(SIZE other) => this == other;
-
-        public override int GetHashCode() => HashCode.Combine(cx, cy);
+        this.cx = cx;
+        this.cy = cy;
     }
+
+    public static bool operator ==([NativeTypeName("const SIZE &")] in SIZE l, [NativeTypeName("const SIZE &")] in SIZE r)
+    {
+        return (l.cx == r.cx)
+            && (l.cy == r.cy);
+    }
+
+    public static bool operator !=([NativeTypeName("const SIZE &")] in SIZE l, [NativeTypeName("const SIZE &")] in SIZE r)
+        => !(l == r);
+
+    public override bool Equals(object? obj) => (obj is SIZE other) && Equals(other);
+
+    public bool Equals(SIZE other) => this == other;
+
+    public override int GetHashCode() => HashCode.Combine(cx, cy);
 }

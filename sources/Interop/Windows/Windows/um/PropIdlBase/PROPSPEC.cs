@@ -6,44 +6,43 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct PROPSPEC
 {
-    public unsafe partial struct PROPSPEC
+    [NativeTypeName("ULONG")]
+    public uint ulKind;
+
+    [NativeTypeName("tagPROPSPEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/PropIdlBase.h:452:43)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public ref uint propid
     {
-        [NativeTypeName("ULONG")]
-        public uint ulKind;
-
-        [NativeTypeName("tagPROPSPEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/PropIdlBase.h:452:43)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public ref uint propid
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.propid, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.propid, 1));
         }
+    }
 
-        public ref ushort* lpwstr
+    public ref ushort* lpwstr
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.lpwstr;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.lpwstr;
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("PROPID")]
-            public uint propid;
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("PROPID")]
+        public uint propid;
 
-            [FieldOffset(0)]
-            [NativeTypeName("LPOLESTR")]
-            public ushort* lpwstr;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("LPOLESTR")]
+        public ushort* lpwstr;
     }
 }

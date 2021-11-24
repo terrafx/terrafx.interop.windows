@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DRIVERSTATUS" /> struct.</summary>
+public static unsafe partial class DRIVERSTATUSTests
 {
-    /// <summary>Provides validation of the <see cref="DRIVERSTATUS" /> struct.</summary>
-    public static unsafe partial class DRIVERSTATUSTests
+    /// <summary>Validates that the <see cref="DRIVERSTATUS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DRIVERSTATUS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DRIVERSTATUS>(), Is.EqualTo(sizeof(DRIVERSTATUS)));
-        }
+        Assert.That(Marshal.SizeOf<DRIVERSTATUS>(), Is.EqualTo(sizeof(DRIVERSTATUS)));
+    }
 
-        /// <summary>Validates that the <see cref="DRIVERSTATUS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DRIVERSTATUS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DRIVERSTATUS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DRIVERSTATUS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DRIVERSTATUS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DRIVERSTATUS), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="DRIVERSTATUS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DRIVERSTATUS), Is.EqualTo(12));
     }
 }

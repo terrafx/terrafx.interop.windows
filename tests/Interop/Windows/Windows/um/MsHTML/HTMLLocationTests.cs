@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLLocation" /> struct.</summary>
+public static unsafe partial class HTMLLocationTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLLocation" /> struct.</summary>
-    public static unsafe partial class HTMLLocationTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLLocation" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLLocation" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLLocation).GUID, Is.EqualTo(IID_HTMLLocation));
-        }
+        Assert.That(typeof(HTMLLocation).GUID, Is.EqualTo(IID_HTMLLocation));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLLocation" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLLocation>(), Is.EqualTo(sizeof(HTMLLocation)));
-        }
+    /// <summary>Validates that the <see cref="HTMLLocation" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLLocation>(), Is.EqualTo(sizeof(HTMLLocation)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLLocation" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLLocation).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLLocation" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLLocation).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLLocation" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HTMLLocation), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="HTMLLocation" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HTMLLocation), Is.EqualTo(1));
     }
 }

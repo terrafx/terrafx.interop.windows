@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="BitmapDescription" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.14393.0")]
+public static unsafe partial class BitmapDescriptionTests
 {
-    /// <summary>Provides validation of the <see cref="BitmapDescription" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0.14393.0")]
-    public static unsafe partial class BitmapDescriptionTests
+    /// <summary>Validates that the <see cref="BitmapDescription" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="BitmapDescription" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<BitmapDescription>(), Is.EqualTo(sizeof(BitmapDescription)));
-        }
+        Assert.That(Marshal.SizeOf<BitmapDescription>(), Is.EqualTo(sizeof(BitmapDescription)));
+    }
 
-        /// <summary>Validates that the <see cref="BitmapDescription" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(BitmapDescription).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="BitmapDescription" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(BitmapDescription).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="BitmapDescription" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(BitmapDescription), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="BitmapDescription" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(BitmapDescription), Is.EqualTo(16));
     }
 }

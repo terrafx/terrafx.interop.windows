@@ -5,36 +5,35 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SYMSRV_INDEX_INFO
 {
-    public unsafe partial struct SYMSRV_INDEX_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint sizeofstruct;
+    [NativeTypeName("DWORD")]
+    public uint sizeofstruct;
 
-        [NativeTypeName("char [261]")]
-        public fixed sbyte file[261];
+    [NativeTypeName("char [261]")]
+    public fixed sbyte file[261];
 
-        public BOOL stripped;
+    public BOOL stripped;
 
-        [NativeTypeName("DWORD")]
-        public uint timestamp;
+    [NativeTypeName("DWORD")]
+    public uint timestamp;
 
-        [NativeTypeName("DWORD")]
-        public uint size;
+    [NativeTypeName("DWORD")]
+    public uint size;
 
-        [NativeTypeName("char [261]")]
-        public fixed sbyte dbgfile[261];
+    [NativeTypeName("char [261]")]
+    public fixed sbyte dbgfile[261];
 
-        [NativeTypeName("char [261]")]
-        public fixed sbyte pdbfile[261];
+    [NativeTypeName("char [261]")]
+    public fixed sbyte pdbfile[261];
 
-        public Guid guid;
+    public Guid guid;
 
-        [NativeTypeName("DWORD")]
-        public uint sig;
+    [NativeTypeName("DWORD")]
+    public uint sig;
 
-        [NativeTypeName("DWORD")]
-        public uint age;
-    }
+    [NativeTypeName("DWORD")]
+    public uint age;
 }

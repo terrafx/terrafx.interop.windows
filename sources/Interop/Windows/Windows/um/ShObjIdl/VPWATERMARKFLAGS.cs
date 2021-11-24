@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum VPWATERMARKFLAGS
 {
-    [Flags]
-    public enum VPWATERMARKFLAGS
-    {
-        VPWF_DEFAULT = 0,
-        VPWF_ALPHABLEND = 0x1,
-    }
+    VPWF_DEFAULT = 0,
+    VPWF_ALPHABLEND = 0x1,
 }

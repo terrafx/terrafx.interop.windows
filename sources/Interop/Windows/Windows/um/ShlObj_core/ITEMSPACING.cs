@@ -3,16 +3,15 @@
 // Ported from um/ShlObj_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct ITEMSPACING
 {
-    public partial struct ITEMSPACING
-    {
-        public int cxSmall;
+    public int cxSmall;
 
-        public int cySmall;
+    public int cySmall;
 
-        public int cxLarge;
+    public int cxLarge;
 
-        public int cyLarge;
-    }
+    public int cyLarge;
 }

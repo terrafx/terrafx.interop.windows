@@ -3,14 +3,13 @@
 // Ported from um/IPTypes.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct IP_ADAPTER_DNS_SUFFIX
-    {
-        [NativeTypeName("struct _IP_ADAPTER_DNS_SUFFIX *")]
-        public IP_ADAPTER_DNS_SUFFIX* Next;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("WCHAR [256]")]
-        public fixed ushort String[256];
-    }
+public unsafe partial struct IP_ADAPTER_DNS_SUFFIX
+{
+    [NativeTypeName("struct _IP_ADAPTER_DNS_SUFFIX *")]
+    public IP_ADAPTER_DNS_SUFFIX* Next;
+
+    [NativeTypeName("WCHAR [256]")]
+    public fixed ushort String[256];
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("ACE52D03-E5CD-4B20-82FF-E71B11BEAE1D")]
+public partial struct IENamespaceTreeControl
 {
-    [Guid("ACE52D03-E5CD-4B20-82FF-E71B11BEAE1D")]
-    public partial struct IENamespaceTreeControl
-    {
-    }
 }

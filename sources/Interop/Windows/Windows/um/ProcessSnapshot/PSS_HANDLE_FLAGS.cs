@@ -6,16 +6,15 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+[SupportedOSPlatform("windows8.1")]
+public enum PSS_HANDLE_FLAGS
 {
-    [Flags]
-    [SupportedOSPlatform("windows8.1")]
-    public enum PSS_HANDLE_FLAGS
-    {
-        PSS_HANDLE_NONE = 0x00,
-        PSS_HANDLE_HAVE_TYPE = 0x01,
-        PSS_HANDLE_HAVE_NAME = 0x02,
-        PSS_HANDLE_HAVE_BASIC_INFORMATION = 0x04,
-        PSS_HANDLE_HAVE_TYPE_SPECIFIC_INFORMATION = 0x08,
-    }
+    PSS_HANDLE_NONE = 0x00,
+    PSS_HANDLE_HAVE_TYPE = 0x01,
+    PSS_HANDLE_HAVE_NAME = 0x02,
+    PSS_HANDLE_HAVE_BASIC_INFORMATION = 0x04,
+    PSS_HANDLE_HAVE_TYPE_SPECIFIC_INFORMATION = 0x08,
 }

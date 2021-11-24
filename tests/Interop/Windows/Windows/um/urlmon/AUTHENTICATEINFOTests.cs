@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="AUTHENTICATEINFO" /> struct.</summary>
+public static unsafe partial class AUTHENTICATEINFOTests
 {
-    /// <summary>Provides validation of the <see cref="AUTHENTICATEINFO" /> struct.</summary>
-    public static unsafe partial class AUTHENTICATEINFOTests
+    /// <summary>Validates that the <see cref="AUTHENTICATEINFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="AUTHENTICATEINFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<AUTHENTICATEINFO>(), Is.EqualTo(sizeof(AUTHENTICATEINFO)));
-        }
+        Assert.That(Marshal.SizeOf<AUTHENTICATEINFO>(), Is.EqualTo(sizeof(AUTHENTICATEINFO)));
+    }
 
-        /// <summary>Validates that the <see cref="AUTHENTICATEINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(AUTHENTICATEINFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="AUTHENTICATEINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(AUTHENTICATEINFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="AUTHENTICATEINFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(AUTHENTICATEINFO), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="AUTHENTICATEINFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(AUTHENTICATEINFO), Is.EqualTo(8));
     }
 }

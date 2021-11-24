@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MFCONTENTPROTECTIONDEVICE_INPUT_DATA" /> struct.</summary>
+[SupportedOSPlatform("windows10.0")]
+public static unsafe partial class MFCONTENTPROTECTIONDEVICE_INPUT_DATATests
 {
-    /// <summary>Provides validation of the <see cref="MFCONTENTPROTECTIONDEVICE_INPUT_DATA" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0")]
-    public static unsafe partial class MFCONTENTPROTECTIONDEVICE_INPUT_DATATests
+    /// <summary>Validates that the <see cref="MFCONTENTPROTECTIONDEVICE_INPUT_DATA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MFCONTENTPROTECTIONDEVICE_INPUT_DATA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MFCONTENTPROTECTIONDEVICE_INPUT_DATA>(), Is.EqualTo(sizeof(MFCONTENTPROTECTIONDEVICE_INPUT_DATA)));
-        }
+        Assert.That(Marshal.SizeOf<MFCONTENTPROTECTIONDEVICE_INPUT_DATA>(), Is.EqualTo(sizeof(MFCONTENTPROTECTIONDEVICE_INPUT_DATA)));
+    }
 
-        /// <summary>Validates that the <see cref="MFCONTENTPROTECTIONDEVICE_INPUT_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MFCONTENTPROTECTIONDEVICE_INPUT_DATA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MFCONTENTPROTECTIONDEVICE_INPUT_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MFCONTENTPROTECTIONDEVICE_INPUT_DATA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MFCONTENTPROTECTIONDEVICE_INPUT_DATA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MFCONTENTPROTECTIONDEVICE_INPUT_DATA), Is.EqualTo(20));
-        }
+    /// <summary>Validates that the <see cref="MFCONTENTPROTECTIONDEVICE_INPUT_DATA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MFCONTENTPROTECTIONDEVICE_INPUT_DATA), Is.EqualTo(20));
     }
 }

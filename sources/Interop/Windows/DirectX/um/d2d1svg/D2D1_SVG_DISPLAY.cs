@@ -3,12 +3,11 @@
 // Ported from um/d2d1svg.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum D2D1_SVG_DISPLAY : uint
 {
-    public enum D2D1_SVG_DISPLAY : uint
-    {
-        D2D1_SVG_DISPLAY_INLINE = 0,
-        D2D1_SVG_DISPLAY_NONE = 1,
-        D2D1_SVG_DISPLAY_FORCE_DWORD = 0xffffffff,
-    }
+    D2D1_SVG_DISPLAY_INLINE = 0,
+    D2D1_SVG_DISPLAY_NONE = 1,
+    D2D1_SVG_DISPLAY_FORCE_DWORD = 0xffffffff,
 }

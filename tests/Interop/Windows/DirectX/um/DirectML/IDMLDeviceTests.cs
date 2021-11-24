@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDMLDevice" /> struct.</summary>
+public static unsafe partial class IDMLDeviceTests
 {
-    /// <summary>Provides validation of the <see cref="IDMLDevice" /> struct.</summary>
-    public static unsafe partial class IDMLDeviceTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDMLDevice" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDMLDevice" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDMLDevice).GUID, Is.EqualTo(IID_IDMLDevice));
-        }
+        Assert.That(typeof(IDMLDevice).GUID, Is.EqualTo(IID_IDMLDevice));
+    }
 
-        /// <summary>Validates that the <see cref="IDMLDevice" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDMLDevice>(), Is.EqualTo(sizeof(IDMLDevice)));
-        }
+    /// <summary>Validates that the <see cref="IDMLDevice" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDMLDevice>(), Is.EqualTo(sizeof(IDMLDevice)));
+    }
 
-        /// <summary>Validates that the <see cref="IDMLDevice" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDMLDevice).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDMLDevice" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDMLDevice).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDMLDevice" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDMLDevice" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDMLDevice), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDMLDevice), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDMLDevice), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDMLDevice), Is.EqualTo(4));
         }
     }
 }

@@ -5,25 +5,24 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct DEVICEDUMP_STORAGEDEVICE_DATA
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct DEVICEDUMP_STORAGEDEVICE_DATA
-    {
-        public DEVICEDUMP_STRUCTURE_VERSION Descriptor;
+    public DEVICEDUMP_STRUCTURE_VERSION Descriptor;
 
-        public DEVICEDUMP_SECTION_HEADER SectionHeader;
+    public DEVICEDUMP_SECTION_HEADER SectionHeader;
 
-        [NativeTypeName("DWORD")]
-        public uint dwBufferSize;
+    [NativeTypeName("DWORD")]
+    public uint dwBufferSize;
 
-        [NativeTypeName("DWORD")]
-        public uint dwReasonForCollection;
+    [NativeTypeName("DWORD")]
+    public uint dwReasonForCollection;
 
-        public DEVICEDUMP_SUBSECTION_POINTER PublicData;
+    public DEVICEDUMP_SUBSECTION_POINTER PublicData;
 
-        public DEVICEDUMP_SUBSECTION_POINTER RestrictedData;
+    public DEVICEDUMP_SUBSECTION_POINTER RestrictedData;
 
-        public DEVICEDUMP_SUBSECTION_POINTER PrivateData;
-    }
+    public DEVICEDUMP_SUBSECTION_POINTER PrivateData;
 }

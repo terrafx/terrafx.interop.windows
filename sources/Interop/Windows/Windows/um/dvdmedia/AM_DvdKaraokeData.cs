@@ -3,14 +3,13 @@
 // Ported from um/dvdmedia.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct AM_DvdKaraokeData
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwDownmix;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint dwSpeakerAssignment;
-    }
+public partial struct AM_DvdKaraokeData
+{
+    [NativeTypeName("DWORD")]
+    public uint dwDownmix;
+
+    [NativeTypeName("DWORD")]
+    public uint dwSpeakerAssignment;
 }

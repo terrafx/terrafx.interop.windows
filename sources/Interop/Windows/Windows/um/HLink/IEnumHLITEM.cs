@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("79EAC9C6-BAF9-11CE-8C82-00AA004BA90B")]
+[NativeTypeName("struct IEnumHLITEM : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IEnumHLITEM : IEnumHLITEM.Interface
 {
-    [Guid("79EAC9C6-BAF9-11CE-8C82-00AA004BA90B")]
-    [NativeTypeName("struct IEnumHLITEM : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumHLITEM : IEnumHLITEM.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IEnumHLITEM*, Guid*, void**, int>)(lpVtbl[0]))((IEnumHLITEM*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IEnumHLITEM*, Guid*, void**, int>)(lpVtbl[0]))((IEnumHLITEM*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IEnumHLITEM*, uint>)(lpVtbl[1]))((IEnumHLITEM*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IEnumHLITEM*, uint>)(lpVtbl[1]))((IEnumHLITEM*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IEnumHLITEM*, uint>)(lpVtbl[2]))((IEnumHLITEM*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IEnumHLITEM*, uint>)(lpVtbl[2]))((IEnumHLITEM*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Next([NativeTypeName("ULONG")] uint celt, HLITEM* rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
+    {
+        return ((delegate* unmanaged<IEnumHLITEM*, uint, HLITEM*, uint*, int>)(lpVtbl[3]))((IEnumHLITEM*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
+    {
+        return ((delegate* unmanaged<IEnumHLITEM*, uint, int>)(lpVtbl[4]))((IEnumHLITEM*)Unsafe.AsPointer(ref this), celt);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Reset()
+    {
+        return ((delegate* unmanaged<IEnumHLITEM*, int>)(lpVtbl[5]))((IEnumHLITEM*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Clone(IEnumHLITEM** ppienumhlitem)
+    {
+        return ((delegate* unmanaged<IEnumHLITEM*, IEnumHLITEM**, int>)(lpVtbl[6]))((IEnumHLITEM*)Unsafe.AsPointer(ref this), ppienumhlitem);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Next([NativeTypeName("ULONG")] uint celt, HLITEM* rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
-        {
-            return ((delegate* unmanaged<IEnumHLITEM*, uint, HLITEM*, uint*, int>)(lpVtbl[3]))((IEnumHLITEM*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
-        }
+        HRESULT Next([NativeTypeName("ULONG")] uint celt, HLITEM* rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
-        {
-            return ((delegate* unmanaged<IEnumHLITEM*, uint, int>)(lpVtbl[4]))((IEnumHLITEM*)Unsafe.AsPointer(ref this), celt);
-        }
+        HRESULT Skip([NativeTypeName("ULONG")] uint celt);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT Reset()
-        {
-            return ((delegate* unmanaged<IEnumHLITEM*, int>)(lpVtbl[5]))((IEnumHLITEM*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Reset();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Clone(IEnumHLITEM** ppienumhlitem)
-        {
-            return ((delegate* unmanaged<IEnumHLITEM*, IEnumHLITEM**, int>)(lpVtbl[6]))((IEnumHLITEM*)Unsafe.AsPointer(ref this), ppienumhlitem);
-        }
+        HRESULT Clone(IEnumHLITEM** ppienumhlitem);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Next([NativeTypeName("ULONG")] uint celt, HLITEM* rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumHLITEM*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT Skip([NativeTypeName("ULONG")] uint celt);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumHLITEM*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT Reset();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumHLITEM*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT Clone(IEnumHLITEM** ppienumhlitem);
-        }
+        [NativeTypeName("HRESULT (ULONG, HLITEM *, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumHLITEM*, uint, HLITEM*, uint*, int> Next;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumHLITEM*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumHLITEM*, uint, int> Skip;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumHLITEM*, uint> AddRef;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumHLITEM*, int> Reset;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumHLITEM*, uint> Release;
-
-            [NativeTypeName("HRESULT (ULONG, HLITEM *, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumHLITEM*, uint, HLITEM*, uint*, int> Next;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumHLITEM*, uint, int> Skip;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumHLITEM*, int> Reset;
-
-            [NativeTypeName("HRESULT (IEnumHLITEM **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumHLITEM*, IEnumHLITEM**, int> Clone;
-        }
+        [NativeTypeName("HRESULT (IEnumHLITEM **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumHLITEM*, IEnumHLITEM**, int> Clone;
     }
 }

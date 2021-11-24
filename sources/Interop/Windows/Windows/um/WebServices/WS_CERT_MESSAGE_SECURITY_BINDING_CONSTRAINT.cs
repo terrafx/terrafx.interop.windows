@@ -3,12 +3,11 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct WS_CERT_MESSAGE_SECURITY_BINDING_CONSTRAINT
-    {
-        public WS_SECURITY_BINDING_CONSTRAINT bindingConstraint;
+namespace TerraFX.Interop.Windows;
 
-        public WS_MESSAGE_SECURITY_USAGE bindingUsage;
-    }
+public partial struct WS_CERT_MESSAGE_SECURITY_BINDING_CONSTRAINT
+{
+    public WS_SECURITY_BINDING_CONSTRAINT bindingConstraint;
+
+    public WS_MESSAGE_SECURITY_USAGE bindingUsage;
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IInternetSession" /> struct.</summary>
+public static unsafe partial class IInternetSessionTests
 {
-    /// <summary>Provides validation of the <see cref="IInternetSession" /> struct.</summary>
-    public static unsafe partial class IInternetSessionTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IInternetSession" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IInternetSession" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IInternetSession).GUID, Is.EqualTo(IID_IInternetSession));
-        }
+        Assert.That(typeof(IInternetSession).GUID, Is.EqualTo(IID_IInternetSession));
+    }
 
-        /// <summary>Validates that the <see cref="IInternetSession" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IInternetSession>(), Is.EqualTo(sizeof(IInternetSession)));
-        }
+    /// <summary>Validates that the <see cref="IInternetSession" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IInternetSession>(), Is.EqualTo(sizeof(IInternetSession)));
+    }
 
-        /// <summary>Validates that the <see cref="IInternetSession" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IInternetSession).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IInternetSession" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IInternetSession).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IInternetSession" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IInternetSession" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IInternetSession), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IInternetSession), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IInternetSession), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IInternetSession), Is.EqualTo(4));
         }
     }
 }

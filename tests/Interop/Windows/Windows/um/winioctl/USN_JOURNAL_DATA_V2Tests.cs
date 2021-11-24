@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="USN_JOURNAL_DATA_V2" /> struct.</summary>
+[SupportedOSPlatform("windows8.1")]
+public static unsafe partial class USN_JOURNAL_DATA_V2Tests
 {
-    /// <summary>Provides validation of the <see cref="USN_JOURNAL_DATA_V2" /> struct.</summary>
-    [SupportedOSPlatform("windows8.1")]
-    public static unsafe partial class USN_JOURNAL_DATA_V2Tests
+    /// <summary>Validates that the <see cref="USN_JOURNAL_DATA_V2" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="USN_JOURNAL_DATA_V2" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<USN_JOURNAL_DATA_V2>(), Is.EqualTo(sizeof(USN_JOURNAL_DATA_V2)));
-        }
+        Assert.That(Marshal.SizeOf<USN_JOURNAL_DATA_V2>(), Is.EqualTo(sizeof(USN_JOURNAL_DATA_V2)));
+    }
 
-        /// <summary>Validates that the <see cref="USN_JOURNAL_DATA_V2" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(USN_JOURNAL_DATA_V2).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="USN_JOURNAL_DATA_V2" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(USN_JOURNAL_DATA_V2).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="USN_JOURNAL_DATA_V2" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(USN_JOURNAL_DATA_V2), Is.EqualTo(80));
-        }
+    /// <summary>Validates that the <see cref="USN_JOURNAL_DATA_V2" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(USN_JOURNAL_DATA_V2), Is.EqualTo(80));
     }
 }

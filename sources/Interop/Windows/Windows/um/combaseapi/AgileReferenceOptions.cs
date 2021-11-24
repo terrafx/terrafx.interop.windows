@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public enum AgileReferenceOptions
 {
-    [SupportedOSPlatform("windows8.1")]
-    public enum AgileReferenceOptions
-    {
-        AGILEREFERENCE_DEFAULT = 0,
-        AGILEREFERENCE_DELAYEDMARSHAL = 1,
-    }
+    AGILEREFERENCE_DEFAULT = 0,
+    AGILEREFERENCE_DELAYEDMARSHAL = 1,
 }

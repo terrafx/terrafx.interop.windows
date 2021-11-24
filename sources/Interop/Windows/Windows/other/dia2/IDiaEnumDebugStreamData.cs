@@ -7,155 +7,154 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("486943E8-D187-4A6B-A3C4-291259FFF60D")]
+[NativeTypeName("struct IDiaEnumDebugStreamData : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IDiaEnumDebugStreamData : IDiaEnumDebugStreamData.Interface
 {
-    [Guid("486943E8-D187-4A6B-A3C4-291259FFF60D")]
-    [NativeTypeName("struct IDiaEnumDebugStreamData : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaEnumDebugStreamData : IDiaEnumDebugStreamData.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDiaEnumDebugStreamData*, Guid*, void**, int>)(lpVtbl[0]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDiaEnumDebugStreamData*, Guid*, void**, int>)(lpVtbl[0]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDiaEnumDebugStreamData*, uint>)(lpVtbl[1]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDiaEnumDebugStreamData*, uint>)(lpVtbl[1]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDiaEnumDebugStreamData*, uint>)(lpVtbl[2]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDiaEnumDebugStreamData*, uint>)(lpVtbl[2]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT get__NewEnum(IUnknown** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaEnumDebugStreamData*, IUnknown**, int>)(lpVtbl[3]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), pRetVal);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaEnumDebugStreamData*, int*, int>)(lpVtbl[4]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT get_name([NativeTypeName("BSTR *")] ushort** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaEnumDebugStreamData*, ushort**, int>)(lpVtbl[5]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Item([NativeTypeName("DWORD")] uint index, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)
+    {
+        return ((delegate* unmanaged<IDiaEnumDebugStreamData*, uint, uint, uint*, byte*, int>)(lpVtbl[6]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), index, cbData, pcbData, pbData);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData, [NativeTypeName("ULONG *")] uint* pceltFetched)
+    {
+        return ((delegate* unmanaged<IDiaEnumDebugStreamData*, uint, uint, uint*, byte*, uint*, int>)(lpVtbl[7]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), celt, cbData, pcbData, pbData, pceltFetched);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
+    {
+        return ((delegate* unmanaged<IDiaEnumDebugStreamData*, uint, int>)(lpVtbl[8]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), celt);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT Reset()
+    {
+        return ((delegate* unmanaged<IDiaEnumDebugStreamData*, int>)(lpVtbl[9]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT Clone(IDiaEnumDebugStreamData** ppenum)
+    {
+        return ((delegate* unmanaged<IDiaEnumDebugStreamData*, IDiaEnumDebugStreamData**, int>)(lpVtbl[10]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), ppenum);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT get__NewEnum(IUnknown** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaEnumDebugStreamData*, IUnknown**, int>)(lpVtbl[3]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get__NewEnum(IUnknown** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaEnumDebugStreamData*, int*, int>)(lpVtbl[4]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT get_name([NativeTypeName("BSTR *")] ushort** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaEnumDebugStreamData*, ushort**, int>)(lpVtbl[5]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_name([NativeTypeName("BSTR *")] ushort** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Item([NativeTypeName("DWORD")] uint index, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)
-        {
-            return ((delegate* unmanaged<IDiaEnumDebugStreamData*, uint, uint, uint*, byte*, int>)(lpVtbl[6]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), index, cbData, pcbData, pbData);
-        }
+        HRESULT Item([NativeTypeName("DWORD")] uint index, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData, [NativeTypeName("ULONG *")] uint* pceltFetched)
-        {
-            return ((delegate* unmanaged<IDiaEnumDebugStreamData*, uint, uint, uint*, byte*, uint*, int>)(lpVtbl[7]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), celt, cbData, pcbData, pbData, pceltFetched);
-        }
+        HRESULT Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData, [NativeTypeName("ULONG *")] uint* pceltFetched);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
-        {
-            return ((delegate* unmanaged<IDiaEnumDebugStreamData*, uint, int>)(lpVtbl[8]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), celt);
-        }
+        HRESULT Skip([NativeTypeName("ULONG")] uint celt);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT Reset()
-        {
-            return ((delegate* unmanaged<IDiaEnumDebugStreamData*, int>)(lpVtbl[9]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Reset();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT Clone(IDiaEnumDebugStreamData** ppenum)
-        {
-            return ((delegate* unmanaged<IDiaEnumDebugStreamData*, IDiaEnumDebugStreamData**, int>)(lpVtbl[10]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), ppenum);
-        }
+        HRESULT Clone(IDiaEnumDebugStreamData** ppenum);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT get__NewEnum(IUnknown** pRetVal);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaEnumDebugStreamData*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaEnumDebugStreamData*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT get_name([NativeTypeName("BSTR *")] ushort** pRetVal);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaEnumDebugStreamData*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT Item([NativeTypeName("DWORD")] uint index, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData);
+        [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaEnumDebugStreamData*, IUnknown**, int> get__NewEnum;
 
-            [VtblIndex(7)]
-            HRESULT Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData, [NativeTypeName("ULONG *")] uint* pceltFetched);
+        [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaEnumDebugStreamData*, int*, int> get_Count;
 
-            [VtblIndex(8)]
-            HRESULT Skip([NativeTypeName("ULONG")] uint celt);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaEnumDebugStreamData*, ushort**, int> get_name;
 
-            [VtblIndex(9)]
-            HRESULT Reset();
+        [NativeTypeName("HRESULT (DWORD, DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaEnumDebugStreamData*, uint, uint, uint*, byte*, int> Item;
 
-            [VtblIndex(10)]
-            HRESULT Clone(IDiaEnumDebugStreamData** ppenum);
-        }
+        [NativeTypeName("HRESULT (ULONG, DWORD, DWORD *, BYTE *, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaEnumDebugStreamData*, uint, uint, uint*, byte*, uint*, int> Next;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaEnumDebugStreamData*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaEnumDebugStreamData*, uint, int> Skip;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaEnumDebugStreamData*, uint> AddRef;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaEnumDebugStreamData*, int> Reset;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaEnumDebugStreamData*, uint> Release;
-
-            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaEnumDebugStreamData*, IUnknown**, int> get__NewEnum;
-
-            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaEnumDebugStreamData*, int*, int> get_Count;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaEnumDebugStreamData*, ushort**, int> get_name;
-
-            [NativeTypeName("HRESULT (DWORD, DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaEnumDebugStreamData*, uint, uint, uint*, byte*, int> Item;
-
-            [NativeTypeName("HRESULT (ULONG, DWORD, DWORD *, BYTE *, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaEnumDebugStreamData*, uint, uint, uint*, byte*, uint*, int> Next;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaEnumDebugStreamData*, uint, int> Skip;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaEnumDebugStreamData*, int> Reset;
-
-            [NativeTypeName("HRESULT (IDiaEnumDebugStreamData **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaEnumDebugStreamData*, IDiaEnumDebugStreamData**, int> Clone;
-        }
+        [NativeTypeName("HRESULT (IDiaEnumDebugStreamData **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaEnumDebugStreamData*, IDiaEnumDebugStreamData**, int> Clone;
     }
 }

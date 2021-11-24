@@ -6,16 +6,15 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[Flags]
+[SupportedOSPlatform("windows10.0")]
+public enum HANDLE_ACCESS_OPTIONS
 {
-    [Flags]
-    [SupportedOSPlatform("windows10.0")]
-    public enum HANDLE_ACCESS_OPTIONS
-    {
-        HAO_NONE = 0,
-        HAO_READ_ATTRIBUTES = 0x80,
-        HAO_READ = 0x120089,
-        HAO_WRITE = 0x120116,
-        HAO_DELETE = 0x10000,
-    }
+    HAO_NONE = 0,
+    HAO_READ_ATTRIBUTES = 0x80,
+    HAO_READ = 0x120089,
+    HAO_WRITE = 0x120116,
+    HAO_DELETE = 0x10000,
 }

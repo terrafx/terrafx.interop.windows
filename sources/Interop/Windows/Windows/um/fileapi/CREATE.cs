@@ -3,14 +3,13 @@
 // Ported from um/fileapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class CREATE
-    {
-        [NativeTypeName("#define CREATE_NEW 1")]
-        public const int CREATE_NEW = 1;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("#define CREATE_ALWAYS 2")]
-        public const int CREATE_ALWAYS = 2;
-    }
+public static partial class CREATE
+{
+    [NativeTypeName("#define CREATE_NEW 1")]
+    public const int CREATE_NEW = 1;
+
+    [NativeTypeName("#define CREATE_ALWAYS 2")]
+    public const int CREATE_ALWAYS = 2;
 }

@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct SCM_INTERLEAVED_PD_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint DeviceHandle;
+namespace TerraFX.Interop.Windows;
 
-        public Guid DeviceGuid;
-    }
+public partial struct SCM_INTERLEAVED_PD_INFO
+{
+    [NativeTypeName("DWORD")]
+    public uint DeviceHandle;
+
+    public Guid DeviceGuid;
 }

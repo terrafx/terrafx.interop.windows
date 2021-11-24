@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="AudioClientProperties" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.22000.0")]
+public static unsafe partial class AudioClientPropertiesTests
 {
-    /// <summary>Provides validation of the <see cref="AudioClientProperties" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0.22000.0")]
-    public static unsafe partial class AudioClientPropertiesTests
+    /// <summary>Validates that the <see cref="AudioClientProperties" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="AudioClientProperties" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<AudioClientProperties>(), Is.EqualTo(sizeof(AudioClientProperties)));
-        }
+        Assert.That(Marshal.SizeOf<AudioClientProperties>(), Is.EqualTo(sizeof(AudioClientProperties)));
+    }
 
-        /// <summary>Validates that the <see cref="AudioClientProperties" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(AudioClientProperties).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="AudioClientProperties" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(AudioClientProperties).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="AudioClientProperties" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(AudioClientProperties), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="AudioClientProperties" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(AudioClientProperties), Is.EqualTo(16));
     }
 }

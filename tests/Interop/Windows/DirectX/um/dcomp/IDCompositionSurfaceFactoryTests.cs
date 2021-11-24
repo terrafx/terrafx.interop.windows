@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDCompositionSurfaceFactory" /> struct.</summary>
+[SupportedOSPlatform("windows8.1")]
+public static unsafe partial class IDCompositionSurfaceFactoryTests
 {
-    /// <summary>Provides validation of the <see cref="IDCompositionSurfaceFactory" /> struct.</summary>
-    [SupportedOSPlatform("windows8.1")]
-    public static unsafe partial class IDCompositionSurfaceFactoryTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDCompositionSurfaceFactory" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDCompositionSurfaceFactory" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDCompositionSurfaceFactory).GUID, Is.EqualTo(IID_IDCompositionSurfaceFactory));
-        }
+        Assert.That(typeof(IDCompositionSurfaceFactory).GUID, Is.EqualTo(IID_IDCompositionSurfaceFactory));
+    }
 
-        /// <summary>Validates that the <see cref="IDCompositionSurfaceFactory" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDCompositionSurfaceFactory>(), Is.EqualTo(sizeof(IDCompositionSurfaceFactory)));
-        }
+    /// <summary>Validates that the <see cref="IDCompositionSurfaceFactory" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDCompositionSurfaceFactory>(), Is.EqualTo(sizeof(IDCompositionSurfaceFactory)));
+    }
 
-        /// <summary>Validates that the <see cref="IDCompositionSurfaceFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDCompositionSurfaceFactory).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDCompositionSurfaceFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDCompositionSurfaceFactory).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDCompositionSurfaceFactory" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDCompositionSurfaceFactory" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDCompositionSurfaceFactory), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDCompositionSurfaceFactory), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDCompositionSurfaceFactory), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDCompositionSurfaceFactory), Is.EqualTo(4));
         }
     }
 }

@@ -5,14 +5,13 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILES
 {
-    public unsafe partial struct D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILES
-    {
-        public uint NodeIndex;
+    public uint NodeIndex;
 
-        public uint ProfileCount;
+    public uint ProfileCount;
 
-        public Guid* pProfiles;
-    }
+    public Guid* pProfiles;
 }

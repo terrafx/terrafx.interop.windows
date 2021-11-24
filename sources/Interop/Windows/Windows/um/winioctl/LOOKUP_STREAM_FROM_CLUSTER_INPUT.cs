@@ -7,34 +7,33 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct LOOKUP_STREAM_FROM_CLUSTER_INPUT
 {
-    public partial struct LOOKUP_STREAM_FROM_CLUSTER_INPUT
+    [NativeTypeName("DWORD")]
+    public uint Flags;
+
+    [NativeTypeName("DWORD")]
+    public uint NumberOfClusters;
+
+    [NativeTypeName("LARGE_INTEGER [1]")]
+    public _Cluster_e__FixedBuffer Cluster;
+
+    public partial struct _Cluster_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+        public LARGE_INTEGER e0;
 
-        [NativeTypeName("DWORD")]
-        public uint NumberOfClusters;
-
-        [NativeTypeName("LARGE_INTEGER [1]")]
-        public _Cluster_e__FixedBuffer Cluster;
-
-        public partial struct _Cluster_e__FixedBuffer
+        public ref LARGE_INTEGER this[int index]
         {
-            public LARGE_INTEGER e0;
-
-            public ref LARGE_INTEGER this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<LARGE_INTEGER> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<LARGE_INTEGER> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

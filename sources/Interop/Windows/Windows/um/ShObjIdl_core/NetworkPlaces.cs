@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("208D2C60-3AEA-1069-A2D7-08002B30309D")]
+public partial struct NetworkPlaces
 {
-    [Guid("208D2C60-3AEA-1069-A2D7-08002B30309D")]
-    public partial struct NetworkPlaces
-    {
-    }
 }

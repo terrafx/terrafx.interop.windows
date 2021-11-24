@@ -7,40 +7,39 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct STORAGE_CRYPTO_DESCRIPTOR
 {
-    public partial struct STORAGE_CRYPTO_DESCRIPTOR
+    [NativeTypeName("DWORD")]
+    public uint Version;
+
+    [NativeTypeName("DWORD")]
+    public uint Size;
+
+    [NativeTypeName("DWORD")]
+    public uint NumKeysSupported;
+
+    [NativeTypeName("DWORD")]
+    public uint NumCryptoCapabilities;
+
+    [NativeTypeName("STORAGE_CRYPTO_CAPABILITY [1]")]
+    public _CryptoCapabilities_e__FixedBuffer CryptoCapabilities;
+
+    public partial struct _CryptoCapabilities_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+        public STORAGE_CRYPTO_CAPABILITY e0;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
-
-        [NativeTypeName("DWORD")]
-        public uint NumKeysSupported;
-
-        [NativeTypeName("DWORD")]
-        public uint NumCryptoCapabilities;
-
-        [NativeTypeName("STORAGE_CRYPTO_CAPABILITY [1]")]
-        public _CryptoCapabilities_e__FixedBuffer CryptoCapabilities;
-
-        public partial struct _CryptoCapabilities_e__FixedBuffer
+        public ref STORAGE_CRYPTO_CAPABILITY this[int index]
         {
-            public STORAGE_CRYPTO_CAPABILITY e0;
-
-            public ref STORAGE_CRYPTO_CAPABILITY this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<STORAGE_CRYPTO_CAPABILITY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<STORAGE_CRYPTO_CAPABILITY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

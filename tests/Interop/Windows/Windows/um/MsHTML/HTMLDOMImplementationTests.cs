@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLDOMImplementation" /> struct.</summary>
+public static unsafe partial class HTMLDOMImplementationTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLDOMImplementation" /> struct.</summary>
-    public static unsafe partial class HTMLDOMImplementationTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLDOMImplementation" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLDOMImplementation" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLDOMImplementation).GUID, Is.EqualTo(IID_HTMLDOMImplementation));
-        }
+        Assert.That(typeof(HTMLDOMImplementation).GUID, Is.EqualTo(IID_HTMLDOMImplementation));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLDOMImplementation" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLDOMImplementation>(), Is.EqualTo(sizeof(HTMLDOMImplementation)));
-        }
+    /// <summary>Validates that the <see cref="HTMLDOMImplementation" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLDOMImplementation>(), Is.EqualTo(sizeof(HTMLDOMImplementation)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLDOMImplementation" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLDOMImplementation).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLDOMImplementation" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLDOMImplementation).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLDOMImplementation" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HTMLDOMImplementation), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="HTMLDOMImplementation" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HTMLDOMImplementation), Is.EqualTo(1));
     }
 }

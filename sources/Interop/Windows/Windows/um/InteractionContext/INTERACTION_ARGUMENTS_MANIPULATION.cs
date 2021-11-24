@@ -5,17 +5,16 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct INTERACTION_ARGUMENTS_MANIPULATION
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct INTERACTION_ARGUMENTS_MANIPULATION
-    {
-        public MANIPULATION_TRANSFORM delta;
+    public MANIPULATION_TRANSFORM delta;
 
-        public MANIPULATION_TRANSFORM cumulative;
+    public MANIPULATION_TRANSFORM cumulative;
 
-        public MANIPULATION_VELOCITY velocity;
+    public MANIPULATION_VELOCITY velocity;
 
-        public MANIPULATION_RAILS_STATE railsState;
-    }
+    public MANIPULATION_RAILS_STATE railsState;
 }

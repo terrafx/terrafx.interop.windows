@@ -3,17 +3,16 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct MESSAGE_RESOURCE_ENTRY
 {
-    public unsafe partial struct MESSAGE_RESOURCE_ENTRY
-    {
-        [NativeTypeName("WORD")]
-        public ushort Length;
+    [NativeTypeName("WORD")]
+    public ushort Length;
 
-        [NativeTypeName("WORD")]
-        public ushort Flags;
+    [NativeTypeName("WORD")]
+    public ushort Flags;
 
-        [NativeTypeName("BYTE [1]")]
-        public fixed byte Text[1];
-    }
+    [NativeTypeName("BYTE [1]")]
+    public fixed byte Text[1];
 }

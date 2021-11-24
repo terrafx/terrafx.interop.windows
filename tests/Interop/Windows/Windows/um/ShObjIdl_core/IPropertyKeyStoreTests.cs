@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IPropertyKeyStore" /> struct.</summary>
+public static unsafe partial class IPropertyKeyStoreTests
 {
-    /// <summary>Provides validation of the <see cref="IPropertyKeyStore" /> struct.</summary>
-    public static unsafe partial class IPropertyKeyStoreTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPropertyKeyStore" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPropertyKeyStore" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IPropertyKeyStore).GUID, Is.EqualTo(IID_IPropertyKeyStore));
-        }
+        Assert.That(typeof(IPropertyKeyStore).GUID, Is.EqualTo(IID_IPropertyKeyStore));
+    }
 
-        /// <summary>Validates that the <see cref="IPropertyKeyStore" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IPropertyKeyStore>(), Is.EqualTo(sizeof(IPropertyKeyStore)));
-        }
+    /// <summary>Validates that the <see cref="IPropertyKeyStore" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IPropertyKeyStore>(), Is.EqualTo(sizeof(IPropertyKeyStore)));
+    }
 
-        /// <summary>Validates that the <see cref="IPropertyKeyStore" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IPropertyKeyStore).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IPropertyKeyStore" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IPropertyKeyStore).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IPropertyKeyStore" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IPropertyKeyStore" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IPropertyKeyStore), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IPropertyKeyStore), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IPropertyKeyStore), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IPropertyKeyStore), Is.EqualTo(4));
         }
     }
 }

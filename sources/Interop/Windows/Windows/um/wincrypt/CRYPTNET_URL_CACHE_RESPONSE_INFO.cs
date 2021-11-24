@@ -3,28 +3,27 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CRYPTNET_URL_CACHE_RESPONSE_INFO
 {
-    public unsafe partial struct CRYPTNET_URL_CACHE_RESPONSE_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("WORD")]
-        public ushort wResponseType;
+    [NativeTypeName("WORD")]
+    public ushort wResponseType;
 
-        [NativeTypeName("WORD")]
-        public ushort wResponseFlags;
+    [NativeTypeName("WORD")]
+    public ushort wResponseFlags;
 
-        public FILETIME LastModifiedTime;
+    public FILETIME LastModifiedTime;
 
-        [NativeTypeName("DWORD")]
-        public uint dwMaxAge;
+    [NativeTypeName("DWORD")]
+    public uint dwMaxAge;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pwszETag;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pwszETag;
 
-        [NativeTypeName("DWORD")]
-        public uint dwProxyId;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwProxyId;
 }

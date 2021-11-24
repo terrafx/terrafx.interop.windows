@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLTextContainerEvents" /> struct.</summary>
+public static unsafe partial class HTMLTextContainerEventsTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLTextContainerEvents" /> struct.</summary>
-    public static unsafe partial class HTMLTextContainerEventsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLTextContainerEvents" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLTextContainerEvents" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLTextContainerEvents).GUID, Is.EqualTo(IID_HTMLTextContainerEvents));
-        }
+        Assert.That(typeof(HTMLTextContainerEvents).GUID, Is.EqualTo(IID_HTMLTextContainerEvents));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLTextContainerEvents" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLTextContainerEvents>(), Is.EqualTo(sizeof(HTMLTextContainerEvents)));
-        }
+    /// <summary>Validates that the <see cref="HTMLTextContainerEvents" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLTextContainerEvents>(), Is.EqualTo(sizeof(HTMLTextContainerEvents)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLTextContainerEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLTextContainerEvents).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLTextContainerEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLTextContainerEvents).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLTextContainerEvents" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="HTMLTextContainerEvents" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(HTMLTextContainerEvents), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(HTMLTextContainerEvents), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(HTMLTextContainerEvents), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(HTMLTextContainerEvents), Is.EqualTo(4));
         }
     }
 }

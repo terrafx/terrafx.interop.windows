@@ -3,11 +3,10 @@
 // Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class IMAGE
 {
-    public static partial class IMAGE
-    {
-        [NativeTypeName("#define IMAGE_SEPARATION (64*1024)")]
-        public const int IMAGE_SEPARATION = (64 * 1024);
-    }
+    [NativeTypeName("#define IMAGE_SEPARATION (64*1024)")]
+    public const int IMAGE_SEPARATION = (64 * 1024);
 }

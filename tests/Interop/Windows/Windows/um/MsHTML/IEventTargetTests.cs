@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IEventTarget" /> struct.</summary>
+public static unsafe partial class IEventTargetTests
 {
-    /// <summary>Provides validation of the <see cref="IEventTarget" /> struct.</summary>
-    public static unsafe partial class IEventTargetTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IEventTarget" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IEventTarget" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IEventTarget).GUID, Is.EqualTo(IID_IEventTarget));
-        }
+        Assert.That(typeof(IEventTarget).GUID, Is.EqualTo(IID_IEventTarget));
+    }
 
-        /// <summary>Validates that the <see cref="IEventTarget" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IEventTarget>(), Is.EqualTo(sizeof(IEventTarget)));
-        }
+    /// <summary>Validates that the <see cref="IEventTarget" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IEventTarget>(), Is.EqualTo(sizeof(IEventTarget)));
+    }
 
-        /// <summary>Validates that the <see cref="IEventTarget" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IEventTarget).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IEventTarget" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IEventTarget).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IEventTarget" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IEventTarget" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IEventTarget), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IEventTarget), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IEventTarget), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IEventTarget), Is.EqualTo(4));
         }
     }
 }

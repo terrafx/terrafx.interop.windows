@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
-{
-    [SupportedOSPlatform("windows8.1")]
-    [NativeTypeName("struct DWRITE_TEXT_METRICS1 : DWRITE_TEXT_METRICS")]
-    [NativeInheritance("DWRITE_TEXT_METRICS")]
-    public partial struct DWRITE_TEXT_METRICS1
-    {
-        public DWRITE_TEXT_METRICS Base;
+namespace TerraFX.Interop.DirectX;
 
-        public float heightIncludingTrailingWhitespace;
-    }
+[SupportedOSPlatform("windows8.1")]
+[NativeTypeName("struct DWRITE_TEXT_METRICS1 : DWRITE_TEXT_METRICS")]
+[NativeInheritance("DWRITE_TEXT_METRICS")]
+public partial struct DWRITE_TEXT_METRICS1
+{
+    public DWRITE_TEXT_METRICS Base;
+
+    public float heightIncludingTrailingWhitespace;
 }

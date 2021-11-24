@@ -3,20 +3,19 @@
 // Ported from um/d3d10shader.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D10_SHADER_VARIABLE_DESC
 {
-    public unsafe partial struct D3D10_SHADER_VARIABLE_DESC
-    {
-        [NativeTypeName("LPCSTR")]
-        public sbyte* Name;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* Name;
 
-        public uint StartOffset;
+    public uint StartOffset;
 
-        public uint Size;
+    public uint Size;
 
-        public uint uFlags;
+    public uint uFlags;
 
-        [NativeTypeName("LPVOID")]
-        public void* DefaultValue;
-    }
+    [NativeTypeName("LPVOID")]
+    public void* DefaultValue;
 }

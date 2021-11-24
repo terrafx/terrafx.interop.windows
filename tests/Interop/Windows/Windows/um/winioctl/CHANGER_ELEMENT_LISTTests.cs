@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CHANGER_ELEMENT_LIST" /> struct.</summary>
+public static unsafe partial class CHANGER_ELEMENT_LISTTests
 {
-    /// <summary>Provides validation of the <see cref="CHANGER_ELEMENT_LIST" /> struct.</summary>
-    public static unsafe partial class CHANGER_ELEMENT_LISTTests
+    /// <summary>Validates that the <see cref="CHANGER_ELEMENT_LIST" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CHANGER_ELEMENT_LIST" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CHANGER_ELEMENT_LIST>(), Is.EqualTo(sizeof(CHANGER_ELEMENT_LIST)));
-        }
+        Assert.That(Marshal.SizeOf<CHANGER_ELEMENT_LIST>(), Is.EqualTo(sizeof(CHANGER_ELEMENT_LIST)));
+    }
 
-        /// <summary>Validates that the <see cref="CHANGER_ELEMENT_LIST" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CHANGER_ELEMENT_LIST).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CHANGER_ELEMENT_LIST" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CHANGER_ELEMENT_LIST).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CHANGER_ELEMENT_LIST" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CHANGER_ELEMENT_LIST), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="CHANGER_ELEMENT_LIST" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CHANGER_ELEMENT_LIST), Is.EqualTo(12));
     }
 }

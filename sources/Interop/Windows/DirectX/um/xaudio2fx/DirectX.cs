@@ -6,14 +6,13 @@
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
-{
-    public static unsafe partial class DirectX
-    {
-        [DllImport("xaudio2_9", ExactSpelling = true)]
-        public static extern HRESULT CreateAudioVolumeMeter(IUnknown** ppApo);
+namespace TerraFX.Interop.DirectX;
 
-        [DllImport("xaudio2_9", ExactSpelling = true)]
-        public static extern HRESULT CreateAudioReverb(IUnknown** ppApo);
-    }
+public static unsafe partial class DirectX
+{
+    [DllImport("xaudio2_9", ExactSpelling = true)]
+    public static extern HRESULT CreateAudioVolumeMeter(IUnknown** ppApo);
+
+    [DllImport("xaudio2_9", ExactSpelling = true)]
+    public static extern HRESULT CreateAudioReverb(IUnknown** ppApo);
 }

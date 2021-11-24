@@ -5,33 +5,32 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct X3DAUDIO_CONE
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct X3DAUDIO_CONE
-    {
-        [NativeTypeName("FLOAT32")]
-        public float InnerAngle;
+    [NativeTypeName("FLOAT32")]
+    public float InnerAngle;
 
-        [NativeTypeName("FLOAT32")]
-        public float OuterAngle;
+    [NativeTypeName("FLOAT32")]
+    public float OuterAngle;
 
-        [NativeTypeName("FLOAT32")]
-        public float InnerVolume;
+    [NativeTypeName("FLOAT32")]
+    public float InnerVolume;
 
-        [NativeTypeName("FLOAT32")]
-        public float OuterVolume;
+    [NativeTypeName("FLOAT32")]
+    public float OuterVolume;
 
-        [NativeTypeName("FLOAT32")]
-        public float InnerLPF;
+    [NativeTypeName("FLOAT32")]
+    public float InnerLPF;
 
-        [NativeTypeName("FLOAT32")]
-        public float OuterLPF;
+    [NativeTypeName("FLOAT32")]
+    public float OuterLPF;
 
-        [NativeTypeName("FLOAT32")]
-        public float InnerReverb;
+    [NativeTypeName("FLOAT32")]
+    public float InnerReverb;
 
-        [NativeTypeName("FLOAT32")]
-        public float OuterReverb;
-    }
+    [NativeTypeName("FLOAT32")]
+    public float OuterReverb;
 }

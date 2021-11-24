@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ITfContextOwner" /> struct.</summary>
+public static unsafe partial class ITfContextOwnerTests
 {
-    /// <summary>Provides validation of the <see cref="ITfContextOwner" /> struct.</summary>
-    public static unsafe partial class ITfContextOwnerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfContextOwner" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfContextOwner" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ITfContextOwner).GUID, Is.EqualTo(IID_ITfContextOwner));
-        }
+        Assert.That(typeof(ITfContextOwner).GUID, Is.EqualTo(IID_ITfContextOwner));
+    }
 
-        /// <summary>Validates that the <see cref="ITfContextOwner" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ITfContextOwner>(), Is.EqualTo(sizeof(ITfContextOwner)));
-        }
+    /// <summary>Validates that the <see cref="ITfContextOwner" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ITfContextOwner>(), Is.EqualTo(sizeof(ITfContextOwner)));
+    }
 
-        /// <summary>Validates that the <see cref="ITfContextOwner" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ITfContextOwner).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ITfContextOwner" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ITfContextOwner).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ITfContextOwner" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ITfContextOwner" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ITfContextOwner), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ITfContextOwner), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ITfContextOwner), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ITfContextOwner), Is.EqualTo(4));
         }
     }
 }

@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO
-    {
-        public CRYPT_DATA_BLOB CertSignHashCNGAlgPropData;
+namespace TerraFX.Interop.Windows;
 
-        public CRYPT_DATA_BLOB CertIssuerPubKeyBitLengthPropData;
-    }
+[SupportedOSPlatform("windows8.0")]
+public partial struct CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO
+{
+    public CRYPT_DATA_BLOB CertSignHashCNGAlgPropData;
+
+    public CRYPT_DATA_BLOB CertIssuerPubKeyBitLengthPropData;
 }

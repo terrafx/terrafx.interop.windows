@@ -3,25 +3,24 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TBMETRICS
 {
-    public partial struct TBMETRICS
-    {
-        public uint cbSize;
+    public uint cbSize;
 
-        [NativeTypeName("DWORD")]
-        public uint dwMask;
+    [NativeTypeName("DWORD")]
+    public uint dwMask;
 
-        public int cxPad;
+    public int cxPad;
 
-        public int cyPad;
+    public int cyPad;
 
-        public int cxBarPad;
+    public int cxBarPad;
 
-        public int cyBarPad;
+    public int cyBarPad;
 
-        public int cxButtonSpacing;
+    public int cxButtonSpacing;
 
-        public int cyButtonSpacing;
-    }
+    public int cyButtonSpacing;
 }

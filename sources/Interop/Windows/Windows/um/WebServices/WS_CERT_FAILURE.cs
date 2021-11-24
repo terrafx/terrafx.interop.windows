@@ -3,14 +3,13 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class WS_CERT_FAILURE
 {
-    public static partial class WS_CERT_FAILURE
-    {
-        public const int WS_CERT_FAILURE_CN_MISMATCH = 0x1;
-        public const int WS_CERT_FAILURE_INVALID_DATE = 0x2;
-        public const int WS_CERT_FAILURE_UNTRUSTED_ROOT = 0x4;
-        public const int WS_CERT_FAILURE_WRONG_USAGE = 0x8;
-        public const int WS_CERT_FAILURE_REVOCATION_OFFLINE = 0x10;
-    }
+    public const int WS_CERT_FAILURE_CN_MISMATCH = 0x1;
+    public const int WS_CERT_FAILURE_INVALID_DATE = 0x2;
+    public const int WS_CERT_FAILURE_UNTRUSTED_ROOT = 0x4;
+    public const int WS_CERT_FAILURE_WRONG_USAGE = 0x8;
+    public const int WS_CERT_FAILURE_REVOCATION_OFFLINE = 0x10;
 }

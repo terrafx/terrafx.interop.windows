@@ -5,76 +5,75 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct VIDEOPARAMETERS
 {
-    public unsafe partial struct VIDEOPARAMETERS
-    {
-        public Guid Guid;
+    public Guid Guid;
 
-        [NativeTypeName("ULONG")]
-        public uint dwOffset;
+    [NativeTypeName("ULONG")]
+    public uint dwOffset;
 
-        [NativeTypeName("ULONG")]
-        public uint dwCommand;
+    [NativeTypeName("ULONG")]
+    public uint dwCommand;
 
-        [NativeTypeName("ULONG")]
-        public uint dwFlags;
+    [NativeTypeName("ULONG")]
+    public uint dwFlags;
 
-        [NativeTypeName("ULONG")]
-        public uint dwMode;
+    [NativeTypeName("ULONG")]
+    public uint dwMode;
 
-        [NativeTypeName("ULONG")]
-        public uint dwTVStandard;
+    [NativeTypeName("ULONG")]
+    public uint dwTVStandard;
 
-        [NativeTypeName("ULONG")]
-        public uint dwAvailableModes;
+    [NativeTypeName("ULONG")]
+    public uint dwAvailableModes;
 
-        [NativeTypeName("ULONG")]
-        public uint dwAvailableTVStandard;
+    [NativeTypeName("ULONG")]
+    public uint dwAvailableTVStandard;
 
-        [NativeTypeName("ULONG")]
-        public uint dwFlickerFilter;
+    [NativeTypeName("ULONG")]
+    public uint dwFlickerFilter;
 
-        [NativeTypeName("ULONG")]
-        public uint dwOverScanX;
+    [NativeTypeName("ULONG")]
+    public uint dwOverScanX;
 
-        [NativeTypeName("ULONG")]
-        public uint dwOverScanY;
+    [NativeTypeName("ULONG")]
+    public uint dwOverScanY;
 
-        [NativeTypeName("ULONG")]
-        public uint dwMaxUnscaledX;
+    [NativeTypeName("ULONG")]
+    public uint dwMaxUnscaledX;
 
-        [NativeTypeName("ULONG")]
-        public uint dwMaxUnscaledY;
+    [NativeTypeName("ULONG")]
+    public uint dwMaxUnscaledY;
 
-        [NativeTypeName("ULONG")]
-        public uint dwPositionX;
+    [NativeTypeName("ULONG")]
+    public uint dwPositionX;
 
-        [NativeTypeName("ULONG")]
-        public uint dwPositionY;
+    [NativeTypeName("ULONG")]
+    public uint dwPositionY;
 
-        [NativeTypeName("ULONG")]
-        public uint dwBrightness;
+    [NativeTypeName("ULONG")]
+    public uint dwBrightness;
 
-        [NativeTypeName("ULONG")]
-        public uint dwContrast;
+    [NativeTypeName("ULONG")]
+    public uint dwContrast;
 
-        [NativeTypeName("ULONG")]
-        public uint dwCPType;
+    [NativeTypeName("ULONG")]
+    public uint dwCPType;
 
-        [NativeTypeName("ULONG")]
-        public uint dwCPCommand;
+    [NativeTypeName("ULONG")]
+    public uint dwCPCommand;
 
-        [NativeTypeName("ULONG")]
-        public uint dwCPStandard;
+    [NativeTypeName("ULONG")]
+    public uint dwCPStandard;
 
-        [NativeTypeName("ULONG")]
-        public uint dwCPKey;
+    [NativeTypeName("ULONG")]
+    public uint dwCPKey;
 
-        [NativeTypeName("ULONG")]
-        public uint bCP_APSTriggerBits;
+    [NativeTypeName("ULONG")]
+    public uint bCP_APSTriggerBits;
 
-        [NativeTypeName("UCHAR [256]")]
-        public fixed byte bOEMCopyProtection[256];
-    }
+    [NativeTypeName("UCHAR [256]")]
+    public fixed byte bOEMCopyProtection[256];
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT" /> struct.</summary>
+public static unsafe partial class D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNTTests
 {
-    /// <summary>Provides validation of the <see cref="D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT" /> struct.</summary>
-    public static unsafe partial class D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNTTests
+    /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT>(), Is.EqualTo(sizeof(D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT)));
-        }
+        Assert.That(Marshal.SizeOf<D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT>(), Is.EqualTo(sizeof(D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT)));
+    }
 
-        /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT), Is.EqualTo(8));
     }
 }

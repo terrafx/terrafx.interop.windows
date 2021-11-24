@@ -8,598 +8,597 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+[Guid("98A1B0BB-03EB-4935-AE7C-93C1FA0E1C93")]
+[NativeTypeName("struct IMFMediaEngine : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
 {
-    [SupportedOSPlatform("windows8.0")]
-    [Guid("98A1B0BB-03EB-4935-AE7C-93C1FA0E1C93")]
-    [NativeTypeName("struct IMFMediaEngine : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMFMediaEngine*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, uint>)(lpVtbl[1]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, uint>)(lpVtbl[1]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, uint>)(lpVtbl[2]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, uint>)(lpVtbl[2]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetError(IMFMediaError** ppError)
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, IMFMediaError**, int>)(lpVtbl[3]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppError);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT SetErrorCode(MF_MEDIA_ENGINE_ERR error)
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, MF_MEDIA_ENGINE_ERR, int>)(lpVtbl[4]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), error);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT SetSourceElements(IMFMediaEngineSrcElements* pSrcElements)
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, IMFMediaEngineSrcElements*, int>)(lpVtbl[5]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), pSrcElements);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT SetSource([NativeTypeName("BSTR")] ushort* pUrl)
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, ushort*, int>)(lpVtbl[6]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), pUrl);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT GetCurrentSource([NativeTypeName("BSTR *")] ushort** ppUrl)
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, ushort**, int>)(lpVtbl[7]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppUrl);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public ushort GetNetworkState()
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, ushort>)(lpVtbl[8]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public MF_MEDIA_ENGINE_PRELOAD GetPreload()
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, MF_MEDIA_ENGINE_PRELOAD>)(lpVtbl[9]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT SetPreload(MF_MEDIA_ENGINE_PRELOAD Preload)
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, MF_MEDIA_ENGINE_PRELOAD, int>)(lpVtbl[10]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Preload);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT GetBuffered(IMFMediaTimeRange** ppBuffered)
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, IMFMediaTimeRange**, int>)(lpVtbl[11]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppBuffered);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT Load()
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[12]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT CanPlayType([NativeTypeName("BSTR")] ushort* type, MF_MEDIA_ENGINE_CANPLAY* pAnswer)
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, ushort*, MF_MEDIA_ENGINE_CANPLAY*, int>)(lpVtbl[13]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), type, pAnswer);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public ushort GetReadyState()
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, ushort>)(lpVtbl[14]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public BOOL IsSeeking()
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[15]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public double GetCurrentTime()
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[16]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT SetCurrentTime(double seekTime)
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, double, int>)(lpVtbl[17]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), seekTime);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public double GetStartTime()
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[18]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
+    public double GetDuration()
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[19]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(20)]
+    public BOOL IsPaused()
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[20]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(21)]
+    public double GetDefaultPlaybackRate()
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[21]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(22)]
+    public HRESULT SetDefaultPlaybackRate(double Rate)
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, double, int>)(lpVtbl[22]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Rate);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(23)]
+    public double GetPlaybackRate()
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[23]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(24)]
+    public HRESULT SetPlaybackRate(double Rate)
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, double, int>)(lpVtbl[24]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Rate);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(25)]
+    public HRESULT GetPlayed(IMFMediaTimeRange** ppPlayed)
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, IMFMediaTimeRange**, int>)(lpVtbl[25]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppPlayed);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(26)]
+    public HRESULT GetSeekable(IMFMediaTimeRange** ppSeekable)
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, IMFMediaTimeRange**, int>)(lpVtbl[26]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppSeekable);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(27)]
+    public BOOL IsEnded()
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[27]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(28)]
+    public BOOL GetAutoPlay()
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[28]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(29)]
+    public HRESULT SetAutoPlay(BOOL AutoPlay)
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, BOOL, int>)(lpVtbl[29]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), AutoPlay);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(30)]
+    public BOOL GetLoop()
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[30]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(31)]
+    public HRESULT SetLoop(BOOL Loop)
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, BOOL, int>)(lpVtbl[31]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Loop);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(32)]
+    public HRESULT Play()
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[32]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(33)]
+    public HRESULT Pause()
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[33]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(34)]
+    public BOOL GetMuted()
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[34]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(35)]
+    public HRESULT SetMuted(BOOL Muted)
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, BOOL, int>)(lpVtbl[35]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Muted);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(36)]
+    public double GetVolume()
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[36]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(37)]
+    public HRESULT SetVolume(double Volume)
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, double, int>)(lpVtbl[37]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Volume);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(38)]
+    public BOOL HasVideo()
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[38]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(39)]
+    public BOOL HasAudio()
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[39]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(40)]
+    public HRESULT GetNativeVideoSize([NativeTypeName("DWORD *")] uint* cx, [NativeTypeName("DWORD *")] uint* cy)
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, uint*, uint*, int>)(lpVtbl[40]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), cx, cy);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(41)]
+    public HRESULT GetVideoAspectRatio([NativeTypeName("DWORD *")] uint* cx, [NativeTypeName("DWORD *")] uint* cy)
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, uint*, uint*, int>)(lpVtbl[41]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), cx, cy);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(42)]
+    public HRESULT Shutdown()
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[42]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(43)]
+    public HRESULT TransferVideoFrame(IUnknown* pDstSurf, [NativeTypeName("const MFVideoNormalizedRect *")] MFVideoNormalizedRect* pSrc, [NativeTypeName("const RECT *")] RECT* pDst, [NativeTypeName("const MFARGB *")] MFARGB* pBorderClr)
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, IUnknown*, MFVideoNormalizedRect*, RECT*, MFARGB*, int>)(lpVtbl[43]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), pDstSurf, pSrc, pDst, pBorderClr);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(44)]
+    public HRESULT OnVideoStreamTick([NativeTypeName("LONGLONG *")] long* pPts)
+    {
+        return ((delegate* unmanaged<IMFMediaEngine*, long*, int>)(lpVtbl[44]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), pPts);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetError(IMFMediaError** ppError)
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, IMFMediaError**, int>)(lpVtbl[3]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppError);
-        }
+        HRESULT GetError(IMFMediaError** ppError);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetErrorCode(MF_MEDIA_ENGINE_ERR error)
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, MF_MEDIA_ENGINE_ERR, int>)(lpVtbl[4]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), error);
-        }
+        HRESULT SetErrorCode(MF_MEDIA_ENGINE_ERR error);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetSourceElements(IMFMediaEngineSrcElements* pSrcElements)
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, IMFMediaEngineSrcElements*, int>)(lpVtbl[5]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), pSrcElements);
-        }
+        HRESULT SetSourceElements(IMFMediaEngineSrcElements* pSrcElements);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT SetSource([NativeTypeName("BSTR")] ushort* pUrl)
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, ushort*, int>)(lpVtbl[6]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), pUrl);
-        }
+        HRESULT SetSource([NativeTypeName("BSTR")] ushort* pUrl);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetCurrentSource([NativeTypeName("BSTR *")] ushort** ppUrl)
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, ushort**, int>)(lpVtbl[7]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppUrl);
-        }
+        HRESULT GetCurrentSource([NativeTypeName("BSTR *")] ushort** ppUrl);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public ushort GetNetworkState()
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, ushort>)(lpVtbl[8]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
-        }
+        ushort GetNetworkState();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public MF_MEDIA_ENGINE_PRELOAD GetPreload()
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, MF_MEDIA_ENGINE_PRELOAD>)(lpVtbl[9]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
-        }
+        MF_MEDIA_ENGINE_PRELOAD GetPreload();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT SetPreload(MF_MEDIA_ENGINE_PRELOAD Preload)
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, MF_MEDIA_ENGINE_PRELOAD, int>)(lpVtbl[10]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Preload);
-        }
+        HRESULT SetPreload(MF_MEDIA_ENGINE_PRELOAD Preload);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT GetBuffered(IMFMediaTimeRange** ppBuffered)
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, IMFMediaTimeRange**, int>)(lpVtbl[11]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppBuffered);
-        }
+        HRESULT GetBuffered(IMFMediaTimeRange** ppBuffered);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT Load()
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[12]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Load();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT CanPlayType([NativeTypeName("BSTR")] ushort* type, MF_MEDIA_ENGINE_CANPLAY* pAnswer)
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, ushort*, MF_MEDIA_ENGINE_CANPLAY*, int>)(lpVtbl[13]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), type, pAnswer);
-        }
+        HRESULT CanPlayType([NativeTypeName("BSTR")] ushort* type, MF_MEDIA_ENGINE_CANPLAY* pAnswer);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public ushort GetReadyState()
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, ushort>)(lpVtbl[14]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
-        }
+        ushort GetReadyState();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public BOOL IsSeeking()
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[15]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
-        }
+        BOOL IsSeeking();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public double GetCurrentTime()
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[16]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
-        }
+        double GetCurrentTime();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT SetCurrentTime(double seekTime)
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, double, int>)(lpVtbl[17]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), seekTime);
-        }
+        HRESULT SetCurrentTime(double seekTime);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public double GetStartTime()
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[18]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
-        }
+        double GetStartTime();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public double GetDuration()
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[19]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
-        }
+        double GetDuration();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public BOOL IsPaused()
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[20]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
-        }
+        BOOL IsPaused();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public double GetDefaultPlaybackRate()
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[21]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
-        }
+        double GetDefaultPlaybackRate();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        public HRESULT SetDefaultPlaybackRate(double Rate)
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, double, int>)(lpVtbl[22]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Rate);
-        }
+        HRESULT SetDefaultPlaybackRate(double Rate);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        public double GetPlaybackRate()
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[23]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
-        }
+        double GetPlaybackRate();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT SetPlaybackRate(double Rate)
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, double, int>)(lpVtbl[24]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Rate);
-        }
+        HRESULT SetPlaybackRate(double Rate);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        public HRESULT GetPlayed(IMFMediaTimeRange** ppPlayed)
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, IMFMediaTimeRange**, int>)(lpVtbl[25]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppPlayed);
-        }
+        HRESULT GetPlayed(IMFMediaTimeRange** ppPlayed);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        public HRESULT GetSeekable(IMFMediaTimeRange** ppSeekable)
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, IMFMediaTimeRange**, int>)(lpVtbl[26]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppSeekable);
-        }
+        HRESULT GetSeekable(IMFMediaTimeRange** ppSeekable);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        public BOOL IsEnded()
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[27]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
-        }
+        BOOL IsEnded();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        public BOOL GetAutoPlay()
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[28]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
-        }
+        BOOL GetAutoPlay();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(29)]
-        public HRESULT SetAutoPlay(BOOL AutoPlay)
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, BOOL, int>)(lpVtbl[29]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), AutoPlay);
-        }
+        HRESULT SetAutoPlay(BOOL AutoPlay);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
-        public BOOL GetLoop()
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[30]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
-        }
+        BOOL GetLoop();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        public HRESULT SetLoop(BOOL Loop)
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, BOOL, int>)(lpVtbl[31]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Loop);
-        }
+        HRESULT SetLoop(BOOL Loop);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(32)]
-        public HRESULT Play()
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[32]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Play();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(33)]
-        public HRESULT Pause()
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[33]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Pause();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(34)]
-        public BOOL GetMuted()
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[34]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
-        }
+        BOOL GetMuted();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(35)]
-        public HRESULT SetMuted(BOOL Muted)
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, BOOL, int>)(lpVtbl[35]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Muted);
-        }
+        HRESULT SetMuted(BOOL Muted);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(36)]
-        public double GetVolume()
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[36]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
-        }
+        double GetVolume();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(37)]
-        public HRESULT SetVolume(double Volume)
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, double, int>)(lpVtbl[37]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Volume);
-        }
+        HRESULT SetVolume(double Volume);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(38)]
-        public BOOL HasVideo()
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[38]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
-        }
+        BOOL HasVideo();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(39)]
-        public BOOL HasAudio()
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[39]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
-        }
+        BOOL HasAudio();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(40)]
-        public HRESULT GetNativeVideoSize([NativeTypeName("DWORD *")] uint* cx, [NativeTypeName("DWORD *")] uint* cy)
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, uint*, uint*, int>)(lpVtbl[40]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), cx, cy);
-        }
+        HRESULT GetNativeVideoSize([NativeTypeName("DWORD *")] uint* cx, [NativeTypeName("DWORD *")] uint* cy);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(41)]
-        public HRESULT GetVideoAspectRatio([NativeTypeName("DWORD *")] uint* cx, [NativeTypeName("DWORD *")] uint* cy)
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, uint*, uint*, int>)(lpVtbl[41]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), cx, cy);
-        }
+        HRESULT GetVideoAspectRatio([NativeTypeName("DWORD *")] uint* cx, [NativeTypeName("DWORD *")] uint* cy);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(42)]
-        public HRESULT Shutdown()
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[42]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Shutdown();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(43)]
-        public HRESULT TransferVideoFrame(IUnknown* pDstSurf, [NativeTypeName("const MFVideoNormalizedRect *")] MFVideoNormalizedRect* pSrc, [NativeTypeName("const RECT *")] RECT* pDst, [NativeTypeName("const MFARGB *")] MFARGB* pBorderClr)
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, IUnknown*, MFVideoNormalizedRect*, RECT*, MFARGB*, int>)(lpVtbl[43]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), pDstSurf, pSrc, pDst, pBorderClr);
-        }
+        HRESULT TransferVideoFrame(IUnknown* pDstSurf, [NativeTypeName("const MFVideoNormalizedRect *")] MFVideoNormalizedRect* pSrc, [NativeTypeName("const RECT *")] RECT* pDst, [NativeTypeName("const MFARGB *")] MFARGB* pBorderClr);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(44)]
-        public HRESULT OnVideoStreamTick([NativeTypeName("LONGLONG *")] long* pPts)
-        {
-            return ((delegate* unmanaged<IMFMediaEngine*, long*, int>)(lpVtbl[44]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), pPts);
-        }
+        HRESULT OnVideoStreamTick([NativeTypeName("LONGLONG *")] long* pPts);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetError(IMFMediaError** ppError);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT SetErrorCode(MF_MEDIA_ENGINE_ERR error);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT SetSourceElements(IMFMediaEngineSrcElements* pSrcElements);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT SetSource([NativeTypeName("BSTR")] ushort* pUrl);
+        [NativeTypeName("HRESULT (IMFMediaError **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, IMFMediaError**, int> GetError;
 
-            [VtblIndex(7)]
-            HRESULT GetCurrentSource([NativeTypeName("BSTR *")] ushort** ppUrl);
+        [NativeTypeName("HRESULT (MF_MEDIA_ENGINE_ERR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, MF_MEDIA_ENGINE_ERR, int> SetErrorCode;
 
-            [VtblIndex(8)]
-            ushort GetNetworkState();
+        [NativeTypeName("HRESULT (IMFMediaEngineSrcElements *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, IMFMediaEngineSrcElements*, int> SetSourceElements;
 
-            [VtblIndex(9)]
-            MF_MEDIA_ENGINE_PRELOAD GetPreload();
+        [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, ushort*, int> SetSource;
 
-            [VtblIndex(10)]
-            HRESULT SetPreload(MF_MEDIA_ENGINE_PRELOAD Preload);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, ushort**, int> GetCurrentSource;
 
-            [VtblIndex(11)]
-            HRESULT GetBuffered(IMFMediaTimeRange** ppBuffered);
+        [NativeTypeName("USHORT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, ushort> GetNetworkState;
 
-            [VtblIndex(12)]
-            HRESULT Load();
+        [NativeTypeName("MF_MEDIA_ENGINE_PRELOAD () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, MF_MEDIA_ENGINE_PRELOAD> GetPreload;
 
-            [VtblIndex(13)]
-            HRESULT CanPlayType([NativeTypeName("BSTR")] ushort* type, MF_MEDIA_ENGINE_CANPLAY* pAnswer);
+        [NativeTypeName("HRESULT (MF_MEDIA_ENGINE_PRELOAD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, MF_MEDIA_ENGINE_PRELOAD, int> SetPreload;
 
-            [VtblIndex(14)]
-            ushort GetReadyState();
+        [NativeTypeName("HRESULT (IMFMediaTimeRange **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, IMFMediaTimeRange**, int> GetBuffered;
 
-            [VtblIndex(15)]
-            BOOL IsSeeking();
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, int> Load;
 
-            [VtblIndex(16)]
-            double GetCurrentTime();
+        [NativeTypeName("HRESULT (BSTR, MF_MEDIA_ENGINE_CANPLAY *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, ushort*, MF_MEDIA_ENGINE_CANPLAY*, int> CanPlayType;
 
-            [VtblIndex(17)]
-            HRESULT SetCurrentTime(double seekTime);
+        [NativeTypeName("USHORT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, ushort> GetReadyState;
 
-            [VtblIndex(18)]
-            double GetStartTime();
+        [NativeTypeName("BOOL () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, int> IsSeeking;
 
-            [VtblIndex(19)]
-            double GetDuration();
+        [NativeTypeName("double () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, double> GetCurrentTime;
 
-            [VtblIndex(20)]
-            BOOL IsPaused();
+        [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, double, int> SetCurrentTime;
 
-            [VtblIndex(21)]
-            double GetDefaultPlaybackRate();
+        [NativeTypeName("double () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, double> GetStartTime;
 
-            [VtblIndex(22)]
-            HRESULT SetDefaultPlaybackRate(double Rate);
+        [NativeTypeName("double () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, double> GetDuration;
 
-            [VtblIndex(23)]
-            double GetPlaybackRate();
+        [NativeTypeName("BOOL () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, int> IsPaused;
 
-            [VtblIndex(24)]
-            HRESULT SetPlaybackRate(double Rate);
+        [NativeTypeName("double () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, double> GetDefaultPlaybackRate;
 
-            [VtblIndex(25)]
-            HRESULT GetPlayed(IMFMediaTimeRange** ppPlayed);
+        [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, double, int> SetDefaultPlaybackRate;
 
-            [VtblIndex(26)]
-            HRESULT GetSeekable(IMFMediaTimeRange** ppSeekable);
+        [NativeTypeName("double () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, double> GetPlaybackRate;
 
-            [VtblIndex(27)]
-            BOOL IsEnded();
+        [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, double, int> SetPlaybackRate;
 
-            [VtblIndex(28)]
-            BOOL GetAutoPlay();
+        [NativeTypeName("HRESULT (IMFMediaTimeRange **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, IMFMediaTimeRange**, int> GetPlayed;
 
-            [VtblIndex(29)]
-            HRESULT SetAutoPlay(BOOL AutoPlay);
+        [NativeTypeName("HRESULT (IMFMediaTimeRange **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, IMFMediaTimeRange**, int> GetSeekable;
 
-            [VtblIndex(30)]
-            BOOL GetLoop();
+        [NativeTypeName("BOOL () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, int> IsEnded;
 
-            [VtblIndex(31)]
-            HRESULT SetLoop(BOOL Loop);
+        [NativeTypeName("BOOL () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, int> GetAutoPlay;
 
-            [VtblIndex(32)]
-            HRESULT Play();
+        [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, BOOL, int> SetAutoPlay;
 
-            [VtblIndex(33)]
-            HRESULT Pause();
+        [NativeTypeName("BOOL () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, int> GetLoop;
 
-            [VtblIndex(34)]
-            BOOL GetMuted();
+        [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, BOOL, int> SetLoop;
 
-            [VtblIndex(35)]
-            HRESULT SetMuted(BOOL Muted);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, int> Play;
 
-            [VtblIndex(36)]
-            double GetVolume();
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, int> Pause;
 
-            [VtblIndex(37)]
-            HRESULT SetVolume(double Volume);
+        [NativeTypeName("BOOL () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, int> GetMuted;
 
-            [VtblIndex(38)]
-            BOOL HasVideo();
+        [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, BOOL, int> SetMuted;
 
-            [VtblIndex(39)]
-            BOOL HasAudio();
+        [NativeTypeName("double () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, double> GetVolume;
 
-            [VtblIndex(40)]
-            HRESULT GetNativeVideoSize([NativeTypeName("DWORD *")] uint* cx, [NativeTypeName("DWORD *")] uint* cy);
+        [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, double, int> SetVolume;
 
-            [VtblIndex(41)]
-            HRESULT GetVideoAspectRatio([NativeTypeName("DWORD *")] uint* cx, [NativeTypeName("DWORD *")] uint* cy);
+        [NativeTypeName("BOOL () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, int> HasVideo;
 
-            [VtblIndex(42)]
-            HRESULT Shutdown();
+        [NativeTypeName("BOOL () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, int> HasAudio;
 
-            [VtblIndex(43)]
-            HRESULT TransferVideoFrame(IUnknown* pDstSurf, [NativeTypeName("const MFVideoNormalizedRect *")] MFVideoNormalizedRect* pSrc, [NativeTypeName("const RECT *")] RECT* pDst, [NativeTypeName("const MFARGB *")] MFARGB* pBorderClr);
+        [NativeTypeName("HRESULT (DWORD *, DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, uint*, uint*, int> GetNativeVideoSize;
 
-            [VtblIndex(44)]
-            HRESULT OnVideoStreamTick([NativeTypeName("LONGLONG *")] long* pPts);
-        }
+        [NativeTypeName("HRESULT (DWORD *, DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, uint*, uint*, int> GetVideoAspectRatio;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, int> Shutdown;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, uint> AddRef;
+        [NativeTypeName("HRESULT (IUnknown *, const MFVideoNormalizedRect *, const RECT *, const MFARGB *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, IUnknown*, MFVideoNormalizedRect*, RECT*, MFARGB*, int> TransferVideoFrame;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, uint> Release;
-
-            [NativeTypeName("HRESULT (IMFMediaError **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, IMFMediaError**, int> GetError;
-
-            [NativeTypeName("HRESULT (MF_MEDIA_ENGINE_ERR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, MF_MEDIA_ENGINE_ERR, int> SetErrorCode;
-
-            [NativeTypeName("HRESULT (IMFMediaEngineSrcElements *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, IMFMediaEngineSrcElements*, int> SetSourceElements;
-
-            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, ushort*, int> SetSource;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, ushort**, int> GetCurrentSource;
-
-            [NativeTypeName("USHORT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, ushort> GetNetworkState;
-
-            [NativeTypeName("MF_MEDIA_ENGINE_PRELOAD () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, MF_MEDIA_ENGINE_PRELOAD> GetPreload;
-
-            [NativeTypeName("HRESULT (MF_MEDIA_ENGINE_PRELOAD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, MF_MEDIA_ENGINE_PRELOAD, int> SetPreload;
-
-            [NativeTypeName("HRESULT (IMFMediaTimeRange **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, IMFMediaTimeRange**, int> GetBuffered;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, int> Load;
-
-            [NativeTypeName("HRESULT (BSTR, MF_MEDIA_ENGINE_CANPLAY *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, ushort*, MF_MEDIA_ENGINE_CANPLAY*, int> CanPlayType;
-
-            [NativeTypeName("USHORT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, ushort> GetReadyState;
-
-            [NativeTypeName("BOOL () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, int> IsSeeking;
-
-            [NativeTypeName("double () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, double> GetCurrentTime;
-
-            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, double, int> SetCurrentTime;
-
-            [NativeTypeName("double () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, double> GetStartTime;
-
-            [NativeTypeName("double () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, double> GetDuration;
-
-            [NativeTypeName("BOOL () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, int> IsPaused;
-
-            [NativeTypeName("double () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, double> GetDefaultPlaybackRate;
-
-            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, double, int> SetDefaultPlaybackRate;
-
-            [NativeTypeName("double () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, double> GetPlaybackRate;
-
-            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, double, int> SetPlaybackRate;
-
-            [NativeTypeName("HRESULT (IMFMediaTimeRange **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, IMFMediaTimeRange**, int> GetPlayed;
-
-            [NativeTypeName("HRESULT (IMFMediaTimeRange **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, IMFMediaTimeRange**, int> GetSeekable;
-
-            [NativeTypeName("BOOL () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, int> IsEnded;
-
-            [NativeTypeName("BOOL () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, int> GetAutoPlay;
-
-            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, BOOL, int> SetAutoPlay;
-
-            [NativeTypeName("BOOL () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, int> GetLoop;
-
-            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, BOOL, int> SetLoop;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, int> Play;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, int> Pause;
-
-            [NativeTypeName("BOOL () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, int> GetMuted;
-
-            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, BOOL, int> SetMuted;
-
-            [NativeTypeName("double () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, double> GetVolume;
-
-            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, double, int> SetVolume;
-
-            [NativeTypeName("BOOL () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, int> HasVideo;
-
-            [NativeTypeName("BOOL () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, int> HasAudio;
-
-            [NativeTypeName("HRESULT (DWORD *, DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, uint*, uint*, int> GetNativeVideoSize;
-
-            [NativeTypeName("HRESULT (DWORD *, DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, uint*, uint*, int> GetVideoAspectRatio;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, int> Shutdown;
-
-            [NativeTypeName("HRESULT (IUnknown *, const MFVideoNormalizedRect *, const RECT *, const MFARGB *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, IUnknown*, MFVideoNormalizedRect*, RECT*, MFARGB*, int> TransferVideoFrame;
-
-            [NativeTypeName("HRESULT (LONGLONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngine*, long*, int> OnVideoStreamTick;
-        }
+        [NativeTypeName("HRESULT (LONGLONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngine*, long*, int> OnVideoStreamTick;
     }
 }

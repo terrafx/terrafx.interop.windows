@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("6F45DC1E-5384-457A-BC13-2CD81B0D28ED")]
+public partial struct V1PasswordCredentialProvider
 {
-    [Guid("6F45DC1E-5384-457A-BC13-2CD81B0D28ED")]
-    public partial struct V1PasswordCredentialProvider
-    {
-    }
 }

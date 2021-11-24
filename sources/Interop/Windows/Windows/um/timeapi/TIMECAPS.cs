@@ -5,13 +5,12 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct TIMECAPS
-    {
-        public uint wPeriodMin;
+namespace TerraFX.Interop.Windows;
 
-        public uint wPeriodMax;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct TIMECAPS
+{
+    public uint wPeriodMin;
+
+    public uint wPeriodMax;
 }

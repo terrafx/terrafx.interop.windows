@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IPinFlowControl" /> struct.</summary>
+public static unsafe partial class IPinFlowControlTests
 {
-    /// <summary>Provides validation of the <see cref="IPinFlowControl" /> struct.</summary>
-    public static unsafe partial class IPinFlowControlTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPinFlowControl" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPinFlowControl" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IPinFlowControl).GUID, Is.EqualTo(IID_IPinFlowControl));
-        }
+        Assert.That(typeof(IPinFlowControl).GUID, Is.EqualTo(IID_IPinFlowControl));
+    }
 
-        /// <summary>Validates that the <see cref="IPinFlowControl" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IPinFlowControl>(), Is.EqualTo(sizeof(IPinFlowControl)));
-        }
+    /// <summary>Validates that the <see cref="IPinFlowControl" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IPinFlowControl>(), Is.EqualTo(sizeof(IPinFlowControl)));
+    }
 
-        /// <summary>Validates that the <see cref="IPinFlowControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IPinFlowControl).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IPinFlowControl" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IPinFlowControl).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IPinFlowControl" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IPinFlowControl" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IPinFlowControl), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IPinFlowControl), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IPinFlowControl), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IPinFlowControl), Is.EqualTo(4));
         }
     }
 }

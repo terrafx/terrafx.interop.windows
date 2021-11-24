@@ -3,14 +3,13 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum VIRTUAL_STORAGE_BEHAVIOR_CODE
 {
-    public enum VIRTUAL_STORAGE_BEHAVIOR_CODE
-    {
-        VirtualStorageBehaviorUndefined = 0,
-        VirtualStorageBehaviorCacheWriteThrough = 1,
-        VirtualStorageBehaviorCacheWriteBack = 2,
-        VirtualStorageBehaviorStopIoProcessing = 3,
-        VirtualStorageBehaviorRestartIoProcessing = 4,
-    }
+    VirtualStorageBehaviorUndefined = 0,
+    VirtualStorageBehaviorCacheWriteThrough = 1,
+    VirtualStorageBehaviorCacheWriteBack = 2,
+    VirtualStorageBehaviorStopIoProcessing = 3,
+    VirtualStorageBehaviorRestartIoProcessing = 4,
 }

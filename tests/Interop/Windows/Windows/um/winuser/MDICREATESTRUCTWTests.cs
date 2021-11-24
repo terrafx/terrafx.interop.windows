@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MDICREATESTRUCTW" /> struct.</summary>
+public static unsafe partial class MDICREATESTRUCTWTests
 {
-    /// <summary>Provides validation of the <see cref="MDICREATESTRUCTW" /> struct.</summary>
-    public static unsafe partial class MDICREATESTRUCTWTests
+    /// <summary>Validates that the <see cref="MDICREATESTRUCTW" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MDICREATESTRUCTW" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MDICREATESTRUCTW>(), Is.EqualTo(sizeof(MDICREATESTRUCTW)));
-        }
+        Assert.That(Marshal.SizeOf<MDICREATESTRUCTW>(), Is.EqualTo(sizeof(MDICREATESTRUCTW)));
+    }
 
-        /// <summary>Validates that the <see cref="MDICREATESTRUCTW" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MDICREATESTRUCTW).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MDICREATESTRUCTW" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MDICREATESTRUCTW).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MDICREATESTRUCTW" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="MDICREATESTRUCTW" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(MDICREATESTRUCTW), Is.EqualTo(56));
-            }
-            else
-            {
-                Assert.That(sizeof(MDICREATESTRUCTW), Is.EqualTo(36));
-            }
+            Assert.That(sizeof(MDICREATESTRUCTW), Is.EqualTo(56));
+        }
+        else
+        {
+            Assert.That(sizeof(MDICREATESTRUCTW), Is.EqualTo(36));
         }
     }
 }

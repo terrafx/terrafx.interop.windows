@@ -3,11 +3,10 @@
 // Ported from um/dwrite_1.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum DWRITE_VERTICAL_GLYPH_ORIENTATION
 {
-    public enum DWRITE_VERTICAL_GLYPH_ORIENTATION
-    {
-        DWRITE_VERTICAL_GLYPH_ORIENTATION_DEFAULT,
-        DWRITE_VERTICAL_GLYPH_ORIENTATION_STACKED,
-    }
+    DWRITE_VERTICAL_GLYPH_ORIENTATION_DEFAULT,
+    DWRITE_VERTICAL_GLYPH_ORIENTATION_STACKED,
 }

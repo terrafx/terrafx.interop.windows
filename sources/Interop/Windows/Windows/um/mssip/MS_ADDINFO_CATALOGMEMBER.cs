@@ -5,17 +5,16 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MS_ADDINFO_CATALOGMEMBER
 {
-    public partial struct MS_ADDINFO_CATALOGMEMBER
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbStruct;
+    [NativeTypeName("DWORD")]
+    public uint cbStruct;
 
-        [NativeTypeName("struct CRYPTCATSTORE_ *")]
-        public IntPtr pStore;
+    [NativeTypeName("struct CRYPTCATSTORE_ *")]
+    public IntPtr pStore;
 
-        [NativeTypeName("struct CRYPTCATMEMBER_ *")]
-        public IntPtr pMember;
-    }
+    [NativeTypeName("struct CRYPTCATMEMBER_ *")]
+    public IntPtr pMember;
 }

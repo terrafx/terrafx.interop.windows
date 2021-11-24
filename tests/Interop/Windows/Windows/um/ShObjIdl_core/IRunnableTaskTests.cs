@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IRunnableTask" /> struct.</summary>
+public static unsafe partial class IRunnableTaskTests
 {
-    /// <summary>Provides validation of the <see cref="IRunnableTask" /> struct.</summary>
-    public static unsafe partial class IRunnableTaskTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IRunnableTask" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IRunnableTask" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IRunnableTask).GUID, Is.EqualTo(IID_IRunnableTask));
-        }
+        Assert.That(typeof(IRunnableTask).GUID, Is.EqualTo(IID_IRunnableTask));
+    }
 
-        /// <summary>Validates that the <see cref="IRunnableTask" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IRunnableTask>(), Is.EqualTo(sizeof(IRunnableTask)));
-        }
+    /// <summary>Validates that the <see cref="IRunnableTask" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IRunnableTask>(), Is.EqualTo(sizeof(IRunnableTask)));
+    }
 
-        /// <summary>Validates that the <see cref="IRunnableTask" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IRunnableTask).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IRunnableTask" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IRunnableTask).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IRunnableTask" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IRunnableTask" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IRunnableTask), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IRunnableTask), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IRunnableTask), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IRunnableTask), Is.EqualTo(4));
         }
     }
 }

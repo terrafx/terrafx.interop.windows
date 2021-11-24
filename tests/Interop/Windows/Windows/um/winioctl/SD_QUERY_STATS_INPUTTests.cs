@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SD_QUERY_STATS_INPUT" /> struct.</summary>
+public static unsafe partial class SD_QUERY_STATS_INPUTTests
 {
-    /// <summary>Provides validation of the <see cref="SD_QUERY_STATS_INPUT" /> struct.</summary>
-    public static unsafe partial class SD_QUERY_STATS_INPUTTests
+    /// <summary>Validates that the <see cref="SD_QUERY_STATS_INPUT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SD_QUERY_STATS_INPUT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SD_QUERY_STATS_INPUT>(), Is.EqualTo(sizeof(SD_QUERY_STATS_INPUT)));
-        }
+        Assert.That(Marshal.SizeOf<SD_QUERY_STATS_INPUT>(), Is.EqualTo(sizeof(SD_QUERY_STATS_INPUT)));
+    }
 
-        /// <summary>Validates that the <see cref="SD_QUERY_STATS_INPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SD_QUERY_STATS_INPUT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SD_QUERY_STATS_INPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SD_QUERY_STATS_INPUT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SD_QUERY_STATS_INPUT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SD_QUERY_STATS_INPUT), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="SD_QUERY_STATS_INPUT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SD_QUERY_STATS_INPUT), Is.EqualTo(4));
     }
 }

@@ -5,24 +5,23 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct SourceInfo
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct SourceInfo
-    {
-        [NativeTypeName("BSTR")]
-        public ushort* FileName;
+    [NativeTypeName("BSTR")]
+    public ushort* FileName;
 
-        [NativeTypeName("unsigned int")]
-        public uint LineNumber;
+    [NativeTypeName("unsigned int")]
+    public uint LineNumber;
 
-        [NativeTypeName("unsigned int")]
-        public uint ColumnNumber;
+    [NativeTypeName("unsigned int")]
+    public uint ColumnNumber;
 
-        [NativeTypeName("unsigned int")]
-        public uint CharPosition;
+    [NativeTypeName("unsigned int")]
+    public uint CharPosition;
 
-        [NativeTypeName("BSTR")]
-        public ushort* Hash;
-    }
+    [NativeTypeName("BSTR")]
+    public ushort* Hash;
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DVD_ATR" /> struct.</summary>
+public static unsafe partial class DVD_ATRTests
 {
-    /// <summary>Provides validation of the <see cref="DVD_ATR" /> struct.</summary>
-    public static unsafe partial class DVD_ATRTests
+    /// <summary>Validates that the <see cref="DVD_ATR" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DVD_ATR" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DVD_ATR>(), Is.EqualTo(sizeof(DVD_ATR)));
-        }
+        Assert.That(Marshal.SizeOf<DVD_ATR>(), Is.EqualTo(sizeof(DVD_ATR)));
+    }
 
-        /// <summary>Validates that the <see cref="DVD_ATR" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DVD_ATR).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DVD_ATR" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DVD_ATR).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DVD_ATR" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DVD_ATR), Is.EqualTo(772));
-        }
+    /// <summary>Validates that the <see cref="DVD_ATR" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DVD_ATR), Is.EqualTo(772));
     }
 }

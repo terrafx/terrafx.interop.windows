@@ -3,14 +3,13 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_SERVICE_ENDPOINT_METADATA
 {
-    public unsafe partial struct WS_SERVICE_ENDPOINT_METADATA
-    {
-        public WS_XML_STRING* portName;
+    public WS_XML_STRING* portName;
 
-        public WS_XML_STRING* bindingName;
+    public WS_XML_STRING* bindingName;
 
-        public WS_XML_STRING* bindingNs;
-    }
+    public WS_XML_STRING* bindingNs;
 }

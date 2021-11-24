@@ -3,10 +3,9 @@
 // Ported from um/d3d11.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum D3D11_COUNTER
 {
-    public enum D3D11_COUNTER
-    {
-        D3D11_COUNTER_DEVICE_DEPENDENT_0 = 0x40000000,
-    }
+    D3D11_COUNTER_DEVICE_DEPENDENT_0 = 0x40000000,
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="VALENTW" /> struct.</summary>
+public static unsafe partial class VALENTWTests
 {
-    /// <summary>Provides validation of the <see cref="VALENTW" /> struct.</summary>
-    public static unsafe partial class VALENTWTests
+    /// <summary>Validates that the <see cref="VALENTW" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="VALENTW" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<VALENTW>(), Is.EqualTo(sizeof(VALENTW)));
-        }
+        Assert.That(Marshal.SizeOf<VALENTW>(), Is.EqualTo(sizeof(VALENTW)));
+    }
 
-        /// <summary>Validates that the <see cref="VALENTW" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(VALENTW).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="VALENTW" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(VALENTW).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="VALENTW" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="VALENTW" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(VALENTW), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(VALENTW), Is.EqualTo(16));
-            }
+            Assert.That(sizeof(VALENTW), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(VALENTW), Is.EqualTo(16));
         }
     }
 }

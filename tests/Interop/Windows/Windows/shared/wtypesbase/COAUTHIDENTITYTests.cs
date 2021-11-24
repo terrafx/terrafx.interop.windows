@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="COAUTHIDENTITY" /> struct.</summary>
+public static unsafe partial class COAUTHIDENTITYTests
 {
-    /// <summary>Provides validation of the <see cref="COAUTHIDENTITY" /> struct.</summary>
-    public static unsafe partial class COAUTHIDENTITYTests
+    /// <summary>Validates that the <see cref="COAUTHIDENTITY" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="COAUTHIDENTITY" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<COAUTHIDENTITY>(), Is.EqualTo(sizeof(COAUTHIDENTITY)));
-        }
+        Assert.That(Marshal.SizeOf<COAUTHIDENTITY>(), Is.EqualTo(sizeof(COAUTHIDENTITY)));
+    }
 
-        /// <summary>Validates that the <see cref="COAUTHIDENTITY" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(COAUTHIDENTITY).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="COAUTHIDENTITY" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(COAUTHIDENTITY).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="COAUTHIDENTITY" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="COAUTHIDENTITY" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(COAUTHIDENTITY), Is.EqualTo(48));
-            }
-            else
-            {
-                Assert.That(sizeof(COAUTHIDENTITY), Is.EqualTo(28));
-            }
+            Assert.That(sizeof(COAUTHIDENTITY), Is.EqualTo(48));
+        }
+        else
+        {
+            Assert.That(sizeof(COAUTHIDENTITY), Is.EqualTo(28));
         }
     }
 }

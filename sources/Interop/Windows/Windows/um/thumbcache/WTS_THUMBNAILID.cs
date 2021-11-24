@@ -3,11 +3,10 @@
 // Ported from um/thumbcache.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WTS_THUMBNAILID
 {
-    public unsafe partial struct WTS_THUMBNAILID
-    {
-        [NativeTypeName("BYTE [16]")]
-        public fixed byte rgbKey[16];
-    }
+    [NativeTypeName("BYTE [16]")]
+    public fixed byte rgbKey[16];
 }

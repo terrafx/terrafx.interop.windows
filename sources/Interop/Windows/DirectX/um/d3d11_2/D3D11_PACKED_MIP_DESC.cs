@@ -5,19 +5,18 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.1")]
+public partial struct D3D11_PACKED_MIP_DESC
 {
-    [SupportedOSPlatform("windows8.1")]
-    public partial struct D3D11_PACKED_MIP_DESC
-    {
-        [NativeTypeName("UINT8")]
-        public byte NumStandardMips;
+    [NativeTypeName("UINT8")]
+    public byte NumStandardMips;
 
-        [NativeTypeName("UINT8")]
-        public byte NumPackedMips;
+    [NativeTypeName("UINT8")]
+    public byte NumPackedMips;
 
-        public uint NumTilesForPackedMips;
+    public uint NumTilesForPackedMips;
 
-        public uint StartTileIndexInOverallResource;
-    }
+    public uint StartTileIndexInOverallResource;
 }

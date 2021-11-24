@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
-{
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct D3D11_AES_CTR_IV
-    {
-        [NativeTypeName("UINT64")]
-        public ulong IV;
+namespace TerraFX.Interop.DirectX;
 
-        [NativeTypeName("UINT64")]
-        public ulong Count;
-    }
+[SupportedOSPlatform("windows8.0")]
+public partial struct D3D11_AES_CTR_IV
+{
+    [NativeTypeName("UINT64")]
+    public ulong IV;
+
+    [NativeTypeName("UINT64")]
+    public ulong Count;
 }

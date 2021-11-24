@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum INTERACTION_ID
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum INTERACTION_ID
-    {
-        INTERACTION_ID_NONE = 0x00000000,
-        INTERACTION_ID_MANIPULATION = 0x00000001,
-        INTERACTION_ID_TAP = 0x00000002,
-        INTERACTION_ID_SECONDARY_TAP = 0x00000003,
-        INTERACTION_ID_HOLD = 0x00000004,
-        INTERACTION_ID_DRAG = 0x00000005,
-        INTERACTION_ID_CROSS_SLIDE = 0x00000006,
-        INTERACTION_ID_MAX = unchecked((int)(0xffffffff)),
-    }
+    INTERACTION_ID_NONE = 0x00000000,
+    INTERACTION_ID_MANIPULATION = 0x00000001,
+    INTERACTION_ID_TAP = 0x00000002,
+    INTERACTION_ID_SECONDARY_TAP = 0x00000003,
+    INTERACTION_ID_HOLD = 0x00000004,
+    INTERACTION_ID_DRAG = 0x00000005,
+    INTERACTION_ID_CROSS_SLIDE = 0x00000006,
+    INTERACTION_ID_MAX = unchecked((int)(0xffffffff)),
 }

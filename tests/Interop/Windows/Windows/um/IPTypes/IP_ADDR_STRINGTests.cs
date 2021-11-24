@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IP_ADDR_STRING" /> struct.</summary>
+public static unsafe partial class IP_ADDR_STRINGTests
 {
-    /// <summary>Provides validation of the <see cref="IP_ADDR_STRING" /> struct.</summary>
-    public static unsafe partial class IP_ADDR_STRINGTests
+    /// <summary>Validates that the <see cref="IP_ADDR_STRING" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IP_ADDR_STRING" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IP_ADDR_STRING>(), Is.EqualTo(sizeof(IP_ADDR_STRING)));
-        }
+        Assert.That(Marshal.SizeOf<IP_ADDR_STRING>(), Is.EqualTo(sizeof(IP_ADDR_STRING)));
+    }
 
-        /// <summary>Validates that the <see cref="IP_ADDR_STRING" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IP_ADDR_STRING).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IP_ADDR_STRING" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IP_ADDR_STRING).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IP_ADDR_STRING" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IP_ADDR_STRING" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IP_ADDR_STRING), Is.EqualTo(48));
-            }
-            else
-            {
-                Assert.That(sizeof(IP_ADDR_STRING), Is.EqualTo(40));
-            }
+            Assert.That(sizeof(IP_ADDR_STRING), Is.EqualTo(48));
+        }
+        else
+        {
+            Assert.That(sizeof(IP_ADDR_STRING), Is.EqualTo(40));
         }
     }
 }

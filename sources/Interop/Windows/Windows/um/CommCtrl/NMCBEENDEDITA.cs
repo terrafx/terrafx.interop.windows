@@ -3,19 +3,18 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct NMCBEENDEDITA
 {
-    public unsafe partial struct NMCBEENDEDITA
-    {
-        public NMHDR hdr;
+    public NMHDR hdr;
 
-        public BOOL fChanged;
+    public BOOL fChanged;
 
-        public int iNewSelection;
+    public int iNewSelection;
 
-        [NativeTypeName("char [260]")]
-        public fixed sbyte szText[260];
+    [NativeTypeName("char [260]")]
+    public fixed sbyte szText[260];
 
-        public int iWhy;
-    }
+    public int iWhy;
 }

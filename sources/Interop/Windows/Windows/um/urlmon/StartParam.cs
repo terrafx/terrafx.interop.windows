@@ -5,15 +5,14 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct StartParam
 {
-    public unsafe partial struct StartParam
-    {
-        [NativeTypeName("IID")]
-        public Guid iid;
+    [NativeTypeName("IID")]
+    public Guid iid;
 
-        public IBindCtx* pIBindCtx;
+    public IBindCtx* pIBindCtx;
 
-        public IUnknown* pItf;
-    }
+    public IUnknown* pItf;
 }

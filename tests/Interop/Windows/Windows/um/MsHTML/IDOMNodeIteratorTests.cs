@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDOMNodeIterator" /> struct.</summary>
+public static unsafe partial class IDOMNodeIteratorTests
 {
-    /// <summary>Provides validation of the <see cref="IDOMNodeIterator" /> struct.</summary>
-    public static unsafe partial class IDOMNodeIteratorTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDOMNodeIterator" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDOMNodeIterator" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDOMNodeIterator).GUID, Is.EqualTo(IID_IDOMNodeIterator));
-        }
+        Assert.That(typeof(IDOMNodeIterator).GUID, Is.EqualTo(IID_IDOMNodeIterator));
+    }
 
-        /// <summary>Validates that the <see cref="IDOMNodeIterator" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDOMNodeIterator>(), Is.EqualTo(sizeof(IDOMNodeIterator)));
-        }
+    /// <summary>Validates that the <see cref="IDOMNodeIterator" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDOMNodeIterator>(), Is.EqualTo(sizeof(IDOMNodeIterator)));
+    }
 
-        /// <summary>Validates that the <see cref="IDOMNodeIterator" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDOMNodeIterator).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDOMNodeIterator" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDOMNodeIterator).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDOMNodeIterator" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDOMNodeIterator" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDOMNodeIterator), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDOMNodeIterator), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDOMNodeIterator), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDOMNodeIterator), Is.EqualTo(4));
         }
     }
 }

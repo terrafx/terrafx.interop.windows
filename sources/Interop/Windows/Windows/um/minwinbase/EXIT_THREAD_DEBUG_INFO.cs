@@ -3,11 +3,10 @@
 // Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct EXIT_THREAD_DEBUG_INFO
 {
-    public partial struct EXIT_THREAD_DEBUG_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwExitCode;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwExitCode;
 }

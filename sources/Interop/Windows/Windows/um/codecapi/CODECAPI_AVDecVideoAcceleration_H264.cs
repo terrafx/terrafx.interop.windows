@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("F7DB8A2F-4F48-4EE8-AE31-8B6EBE558AE2")]
+public partial struct CODECAPI_AVDecVideoAcceleration_H264
 {
-    [Guid("F7DB8A2F-4F48-4EE8-AE31-8B6EBE558AE2")]
-    public partial struct CODECAPI_AVDecVideoAcceleration_H264
-    {
-    }
 }

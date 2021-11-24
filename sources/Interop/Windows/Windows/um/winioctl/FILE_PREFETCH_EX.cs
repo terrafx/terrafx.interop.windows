@@ -3,20 +3,19 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct FILE_PREFETCH_EX
 {
-    public unsafe partial struct FILE_PREFETCH_EX
-    {
-        [NativeTypeName("DWORD")]
-        public uint Type;
+    [NativeTypeName("DWORD")]
+    public uint Type;
 
-        [NativeTypeName("DWORD")]
-        public uint Count;
+    [NativeTypeName("DWORD")]
+    public uint Count;
 
-        [NativeTypeName("PVOID")]
-        public void* Context;
+    [NativeTypeName("PVOID")]
+    public void* Context;
 
-        [NativeTypeName("DWORDLONG [1]")]
-        public fixed ulong Prefetch[1];
-    }
+    [NativeTypeName("DWORDLONG [1]")]
+    public fixed ulong Prefetch[1];
 }

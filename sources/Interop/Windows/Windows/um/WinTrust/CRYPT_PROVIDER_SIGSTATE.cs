@@ -5,39 +5,38 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct CRYPT_PROVIDER_SIGSTATE
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct CRYPT_PROVIDER_SIGSTATE
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbStruct;
+    [NativeTypeName("DWORD")]
+    public uint cbStruct;
 
-        public HCRYPTMSG* rhSecondarySigs;
+    public HCRYPTMSG* rhSecondarySigs;
 
-        public HCRYPTMSG hPrimarySig;
+    public HCRYPTMSG hPrimarySig;
 
-        public BOOL fFirstAttemptMade;
+    public BOOL fFirstAttemptMade;
 
-        public BOOL fNoMoreSigs;
+    public BOOL fNoMoreSigs;
 
-        [NativeTypeName("DWORD")]
-        public uint cSecondarySigs;
+    [NativeTypeName("DWORD")]
+    public uint cSecondarySigs;
 
-        [NativeTypeName("DWORD")]
-        public uint dwCurrentIndex;
+    [NativeTypeName("DWORD")]
+    public uint dwCurrentIndex;
 
-        public BOOL fSupportMultiSig;
+    public BOOL fSupportMultiSig;
 
-        [NativeTypeName("DWORD")]
-        public uint dwCryptoPolicySupport;
+    [NativeTypeName("DWORD")]
+    public uint dwCryptoPolicySupport;
 
-        [NativeTypeName("DWORD")]
-        public uint iAttemptCount;
+    [NativeTypeName("DWORD")]
+    public uint iAttemptCount;
 
-        public BOOL fCheckedSealing;
+    public BOOL fCheckedSealing;
 
-        [NativeTypeName("struct _SEALING_SIGNATURE_ATTRIBUTE *")]
-        public SEALING_SIGNATURE_ATTRIBUTE* pSealingSignature;
-    }
+    [NativeTypeName("struct _SEALING_SIGNATURE_ATTRIBUTE *")]
+    public SEALING_SIGNATURE_ATTRIBUTE* pSealingSignature;
 }

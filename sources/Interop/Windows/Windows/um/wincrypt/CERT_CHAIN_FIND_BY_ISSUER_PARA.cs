@@ -3,31 +3,30 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CERT_CHAIN_FIND_BY_ISSUER_PARA
 {
-    public unsafe partial struct CERT_CHAIN_FIND_BY_ISSUER_PARA
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* pszUsageIdentifier;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* pszUsageIdentifier;
 
-        [NativeTypeName("DWORD")]
-        public uint dwKeySpec;
+    [NativeTypeName("DWORD")]
+    public uint dwKeySpec;
 
-        [NativeTypeName("DWORD")]
-        public uint dwAcquirePrivateKeyFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwAcquirePrivateKeyFlags;
 
-        [NativeTypeName("DWORD")]
-        public uint cIssuer;
+    [NativeTypeName("DWORD")]
+    public uint cIssuer;
 
-        [NativeTypeName("CERT_NAME_BLOB *")]
-        public CRYPT_DATA_BLOB* rgIssuer;
+    [NativeTypeName("CERT_NAME_BLOB *")]
+    public CRYPT_DATA_BLOB* rgIssuer;
 
-        [NativeTypeName("PFN_CERT_CHAIN_FIND_BY_ISSUER_CALLBACK")]
-        public delegate* unmanaged<CERT_CONTEXT*, void*, BOOL> pfnFindCallback;
+    [NativeTypeName("PFN_CERT_CHAIN_FIND_BY_ISSUER_CALLBACK")]
+    public delegate* unmanaged<CERT_CONTEXT*, void*, BOOL> pfnFindCallback;
 
-        public void* pvFindArg;
-    }
+    public void* pvFindArg;
 }

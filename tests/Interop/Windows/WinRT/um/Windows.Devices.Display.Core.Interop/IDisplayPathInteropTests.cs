@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDisplayPathInterop" /> struct.</summary>
+public static unsafe partial class IDisplayPathInteropTests
 {
-    /// <summary>Provides validation of the <see cref="IDisplayPathInterop" /> struct.</summary>
-    public static unsafe partial class IDisplayPathInteropTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDisplayPathInterop" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDisplayPathInterop" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDisplayPathInterop).GUID, Is.EqualTo(IID_IDisplayPathInterop));
-        }
+        Assert.That(typeof(IDisplayPathInterop).GUID, Is.EqualTo(IID_IDisplayPathInterop));
+    }
 
-        /// <summary>Validates that the <see cref="IDisplayPathInterop" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDisplayPathInterop>(), Is.EqualTo(sizeof(IDisplayPathInterop)));
-        }
+    /// <summary>Validates that the <see cref="IDisplayPathInterop" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDisplayPathInterop>(), Is.EqualTo(sizeof(IDisplayPathInterop)));
+    }
 
-        /// <summary>Validates that the <see cref="IDisplayPathInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDisplayPathInterop).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDisplayPathInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDisplayPathInterop).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDisplayPathInterop" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDisplayPathInterop" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDisplayPathInterop), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDisplayPathInterop), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDisplayPathInterop), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDisplayPathInterop), Is.EqualTo(4));
         }
     }
 }

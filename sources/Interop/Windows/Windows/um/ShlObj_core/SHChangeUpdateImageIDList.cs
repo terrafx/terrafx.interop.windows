@@ -5,25 +5,24 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SHChangeUpdateImageIDList
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SHChangeUpdateImageIDList
-    {
-        public ushort cb;
+    public ushort cb;
 
-        public int iIconIndex;
+    public int iIconIndex;
 
-        public int iCurIndex;
+    public int iCurIndex;
 
-        public uint uFlags;
+    public uint uFlags;
 
-        [NativeTypeName("DWORD")]
-        public uint dwProcessID;
+    [NativeTypeName("DWORD")]
+    public uint dwProcessID;
 
-        [NativeTypeName("WCHAR [260]")]
-        public fixed ushort szName[260];
+    [NativeTypeName("WCHAR [260]")]
+    public fixed ushort szName[260];
 
-        public ushort cbZero;
-    }
+    public ushort cbZero;
 }

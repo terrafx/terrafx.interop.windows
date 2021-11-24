@@ -9,130 +9,129 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+[Guid("CBFD91D9-51B2-45E4-B3DE-D19CCFB863C5")]
+[NativeTypeName("struct IDCompositionAnimation : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IDCompositionAnimation : IDCompositionAnimation.Interface
 {
-    [SupportedOSPlatform("windows8.0")]
-    [Guid("CBFD91D9-51B2-45E4-B3DE-D19CCFB863C5")]
-    [NativeTypeName("struct IDCompositionAnimation : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDCompositionAnimation : IDCompositionAnimation.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDCompositionAnimation*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDCompositionAnimation*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDCompositionAnimation*, uint>)(lpVtbl[1]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDCompositionAnimation*, uint>)(lpVtbl[1]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDCompositionAnimation*, uint>)(lpVtbl[2]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDCompositionAnimation*, uint>)(lpVtbl[2]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Reset()
+    {
+        return ((delegate* unmanaged<IDCompositionAnimation*, int>)(lpVtbl[3]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT SetAbsoluteBeginTime(LARGE_INTEGER beginTime)
+    {
+        return ((delegate* unmanaged<IDCompositionAnimation*, LARGE_INTEGER, int>)(lpVtbl[4]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), beginTime);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT AddCubic(double beginOffset, float constantCoefficient, float linearCoefficient, float quadraticCoefficient, float cubicCoefficient)
+    {
+        return ((delegate* unmanaged<IDCompositionAnimation*, double, float, float, float, float, int>)(lpVtbl[5]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), beginOffset, constantCoefficient, linearCoefficient, quadraticCoefficient, cubicCoefficient);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT AddSinusoidal(double beginOffset, float bias, float amplitude, float frequency, float phase)
+    {
+        return ((delegate* unmanaged<IDCompositionAnimation*, double, float, float, float, float, int>)(lpVtbl[6]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), beginOffset, bias, amplitude, frequency, phase);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT AddRepeat(double beginOffset, double durationToRepeat)
+    {
+        return ((delegate* unmanaged<IDCompositionAnimation*, double, double, int>)(lpVtbl[7]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), beginOffset, durationToRepeat);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT End(double endOffset, float endValue)
+    {
+        return ((delegate* unmanaged<IDCompositionAnimation*, double, float, int>)(lpVtbl[8]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), endOffset, endValue);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Reset()
-        {
-            return ((delegate* unmanaged<IDCompositionAnimation*, int>)(lpVtbl[3]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Reset();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetAbsoluteBeginTime(LARGE_INTEGER beginTime)
-        {
-            return ((delegate* unmanaged<IDCompositionAnimation*, LARGE_INTEGER, int>)(lpVtbl[4]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), beginTime);
-        }
+        HRESULT SetAbsoluteBeginTime(LARGE_INTEGER beginTime);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT AddCubic(double beginOffset, float constantCoefficient, float linearCoefficient, float quadraticCoefficient, float cubicCoefficient)
-        {
-            return ((delegate* unmanaged<IDCompositionAnimation*, double, float, float, float, float, int>)(lpVtbl[5]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), beginOffset, constantCoefficient, linearCoefficient, quadraticCoefficient, cubicCoefficient);
-        }
+        HRESULT AddCubic(double beginOffset, float constantCoefficient, float linearCoefficient, float quadraticCoefficient, float cubicCoefficient);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT AddSinusoidal(double beginOffset, float bias, float amplitude, float frequency, float phase)
-        {
-            return ((delegate* unmanaged<IDCompositionAnimation*, double, float, float, float, float, int>)(lpVtbl[6]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), beginOffset, bias, amplitude, frequency, phase);
-        }
+        HRESULT AddSinusoidal(double beginOffset, float bias, float amplitude, float frequency, float phase);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT AddRepeat(double beginOffset, double durationToRepeat)
-        {
-            return ((delegate* unmanaged<IDCompositionAnimation*, double, double, int>)(lpVtbl[7]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), beginOffset, durationToRepeat);
-        }
+        HRESULT AddRepeat(double beginOffset, double durationToRepeat);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT End(double endOffset, float endValue)
-        {
-            return ((delegate* unmanaged<IDCompositionAnimation*, double, float, int>)(lpVtbl[8]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), endOffset, endValue);
-        }
+        HRESULT End(double endOffset, float endValue);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Reset();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionAnimation*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT SetAbsoluteBeginTime(LARGE_INTEGER beginTime);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionAnimation*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT AddCubic(double beginOffset, float constantCoefficient, float linearCoefficient, float quadraticCoefficient, float cubicCoefficient);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionAnimation*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT AddSinusoidal(double beginOffset, float bias, float amplitude, float frequency, float phase);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionAnimation*, int> Reset;
 
-            [VtblIndex(7)]
-            HRESULT AddRepeat(double beginOffset, double durationToRepeat);
+        [NativeTypeName("HRESULT (LARGE_INTEGER) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionAnimation*, LARGE_INTEGER, int> SetAbsoluteBeginTime;
 
-            [VtblIndex(8)]
-            HRESULT End(double endOffset, float endValue);
-        }
+        [NativeTypeName("HRESULT (double, float, float, float, float) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionAnimation*, double, float, float, float, float, int> AddCubic;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionAnimation*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (double, float, float, float, float) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionAnimation*, double, float, float, float, float, int> AddSinusoidal;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionAnimation*, uint> AddRef;
+        [NativeTypeName("HRESULT (double, double) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionAnimation*, double, double, int> AddRepeat;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionAnimation*, uint> Release;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionAnimation*, int> Reset;
-
-            [NativeTypeName("HRESULT (LARGE_INTEGER) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionAnimation*, LARGE_INTEGER, int> SetAbsoluteBeginTime;
-
-            [NativeTypeName("HRESULT (double, float, float, float, float) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionAnimation*, double, float, float, float, float, int> AddCubic;
-
-            [NativeTypeName("HRESULT (double, float, float, float, float) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionAnimation*, double, float, float, float, float, int> AddSinusoidal;
-
-            [NativeTypeName("HRESULT (double, double) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionAnimation*, double, double, int> AddRepeat;
-
-            [NativeTypeName("HRESULT (double, float) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionAnimation*, double, float, int> End;
-        }
+        [NativeTypeName("HRESULT (double, float) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionAnimation*, double, float, int> End;
     }
 }

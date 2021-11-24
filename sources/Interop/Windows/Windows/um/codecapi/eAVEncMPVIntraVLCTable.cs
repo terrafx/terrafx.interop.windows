@@ -3,12 +3,11 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum eAVEncMPVIntraVLCTable
 {
-    public enum eAVEncMPVIntraVLCTable
-    {
-        eAVEncMPVIntraVLCTable_Auto = 0,
-        eAVEncMPVIntraVLCTable_MPEG1 = 1,
-        eAVEncMPVIntraVLCTable_Alternate = 2,
-    }
+    eAVEncMPVIntraVLCTable_Auto = 0,
+    eAVEncMPVIntraVLCTable_MPEG1 = 1,
+    eAVEncMPVIntraVLCTable_Alternate = 2,
 }

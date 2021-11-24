@@ -3,21 +3,20 @@
 // Ported from um/shellapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct APPBARDATA64
 {
-    public partial struct APPBARDATA64
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public HWND hWnd;
+    public HWND hWnd;
 
-        public uint uCallbackMessage;
+    public uint uCallbackMessage;
 
-        public uint uEdge;
+    public uint uEdge;
 
-        public RECT rc;
+    public RECT rc;
 
-        public LPARAM lParam;
-    }
+    public LPARAM lParam;
 }

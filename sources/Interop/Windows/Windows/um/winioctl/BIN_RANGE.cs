@@ -3,12 +3,11 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct BIN_RANGE
-    {
-        public LARGE_INTEGER StartValue;
+namespace TerraFX.Interop.Windows;
 
-        public LARGE_INTEGER Length;
-    }
+public partial struct BIN_RANGE
+{
+    public LARGE_INTEGER StartValue;
+
+    public LARGE_INTEGER Length;
 }

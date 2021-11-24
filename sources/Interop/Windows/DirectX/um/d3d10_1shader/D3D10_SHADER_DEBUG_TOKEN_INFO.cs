@@ -3,18 +3,17 @@
 // Ported from um/d3d10_1shader.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D10_SHADER_DEBUG_TOKEN_INFO
 {
-    public partial struct D3D10_SHADER_DEBUG_TOKEN_INFO
-    {
-        public uint File;
+    public uint File;
 
-        public uint Line;
+    public uint Line;
 
-        public uint Column;
+    public uint Column;
 
-        public uint TokenLength;
+    public uint TokenLength;
 
-        public uint TokenId;
-    }
+    public uint TokenId;
 }

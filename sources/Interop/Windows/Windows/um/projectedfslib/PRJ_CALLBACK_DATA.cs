@@ -6,36 +6,35 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.17763.0")]
+public unsafe partial struct PRJ_CALLBACK_DATA
 {
-    [SupportedOSPlatform("windows10.0.17763.0")]
-    public unsafe partial struct PRJ_CALLBACK_DATA
-    {
-        [NativeTypeName("UINT32")]
-        public uint Size;
+    [NativeTypeName("UINT32")]
+    public uint Size;
 
-        public PRJ_CALLBACK_DATA_FLAGS Flags;
+    public PRJ_CALLBACK_DATA_FLAGS Flags;
 
-        public PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT NamespaceVirtualizationContext;
+    public PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT NamespaceVirtualizationContext;
 
-        [NativeTypeName("INT32")]
-        public int CommandId;
+    [NativeTypeName("INT32")]
+    public int CommandId;
 
-        public Guid FileId;
+    public Guid FileId;
 
-        public Guid DataStreamId;
+    public Guid DataStreamId;
 
-        [NativeTypeName("PCWSTR")]
-        public ushort* FilePathName;
+    [NativeTypeName("PCWSTR")]
+    public ushort* FilePathName;
 
-        public PRJ_PLACEHOLDER_VERSION_INFO* VersionInfo;
+    public PRJ_PLACEHOLDER_VERSION_INFO* VersionInfo;
 
-        [NativeTypeName("UINT32")]
-        public uint TriggeringProcessId;
+    [NativeTypeName("UINT32")]
+    public uint TriggeringProcessId;
 
-        [NativeTypeName("PCWSTR")]
-        public ushort* TriggeringProcessImageFileName;
+    [NativeTypeName("PCWSTR")]
+    public ushort* TriggeringProcessImageFileName;
 
-        public void* InstanceContext;
-    }
+    public void* InstanceContext;
 }

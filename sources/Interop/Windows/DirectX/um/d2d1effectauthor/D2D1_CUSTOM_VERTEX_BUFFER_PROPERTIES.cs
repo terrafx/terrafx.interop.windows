@@ -3,23 +3,22 @@
 // Ported from um/d2d1effectauthor.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES
 {
-    public unsafe partial struct D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES
-    {
-        [NativeTypeName("const BYTE *")]
-        public byte* shaderBufferWithInputSignature;
+    [NativeTypeName("const BYTE *")]
+    public byte* shaderBufferWithInputSignature;
 
-        [NativeTypeName("UINT32")]
-        public uint shaderBufferSize;
+    [NativeTypeName("UINT32")]
+    public uint shaderBufferSize;
 
-        [NativeTypeName("const D2D1_INPUT_ELEMENT_DESC *")]
-        public D2D1_INPUT_ELEMENT_DESC* inputElements;
+    [NativeTypeName("const D2D1_INPUT_ELEMENT_DESC *")]
+    public D2D1_INPUT_ELEMENT_DESC* inputElements;
 
-        [NativeTypeName("UINT32")]
-        public uint elementCount;
+    [NativeTypeName("UINT32")]
+    public uint elementCount;
 
-        [NativeTypeName("UINT32")]
-        public uint stride;
-    }
+    [NativeTypeName("UINT32")]
+    public uint stride;
 }

@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+[NativeTypeName("uint32_t")]
+public enum DXCoreSegmentGroup : uint
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    [NativeTypeName("uint32_t")]
-    public enum DXCoreSegmentGroup : uint
-    {
-        Local = 0,
-        NonLocal = 1,
-    }
+    Local = 0,
+    NonLocal = 1,
 }

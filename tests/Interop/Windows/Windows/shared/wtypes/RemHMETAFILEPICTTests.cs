@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="RemHMETAFILEPICT" /> struct.</summary>
+public static unsafe partial class RemHMETAFILEPICTTests
 {
-    /// <summary>Provides validation of the <see cref="RemHMETAFILEPICT" /> struct.</summary>
-    public static unsafe partial class RemHMETAFILEPICTTests
+    /// <summary>Validates that the <see cref="RemHMETAFILEPICT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="RemHMETAFILEPICT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<RemHMETAFILEPICT>(), Is.EqualTo(sizeof(RemHMETAFILEPICT)));
-        }
+        Assert.That(Marshal.SizeOf<RemHMETAFILEPICT>(), Is.EqualTo(sizeof(RemHMETAFILEPICT)));
+    }
 
-        /// <summary>Validates that the <see cref="RemHMETAFILEPICT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(RemHMETAFILEPICT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="RemHMETAFILEPICT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(RemHMETAFILEPICT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="RemHMETAFILEPICT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(RemHMETAFILEPICT), Is.EqualTo(20));
-        }
+    /// <summary>Validates that the <see cref="RemHMETAFILEPICT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(RemHMETAFILEPICT), Is.EqualTo(20));
     }
 }

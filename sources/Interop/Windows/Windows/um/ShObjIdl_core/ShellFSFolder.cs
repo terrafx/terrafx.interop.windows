@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("F3364BA0-65B9-11CE-A9BA-00AA004AE837")]
+public partial struct ShellFSFolder
 {
-    [Guid("F3364BA0-65B9-11CE-A9BA-00AA004AE837")]
-    public partial struct ShellFSFolder
-    {
-    }
 }

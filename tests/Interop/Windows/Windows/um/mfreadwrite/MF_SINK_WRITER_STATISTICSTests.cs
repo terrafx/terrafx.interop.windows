@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MF_SINK_WRITER_STATISTICS" /> struct.</summary>
+public static unsafe partial class MF_SINK_WRITER_STATISTICSTests
 {
-    /// <summary>Provides validation of the <see cref="MF_SINK_WRITER_STATISTICS" /> struct.</summary>
-    public static unsafe partial class MF_SINK_WRITER_STATISTICSTests
+    /// <summary>Validates that the <see cref="MF_SINK_WRITER_STATISTICS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MF_SINK_WRITER_STATISTICS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MF_SINK_WRITER_STATISTICS>(), Is.EqualTo(sizeof(MF_SINK_WRITER_STATISTICS)));
-        }
+        Assert.That(Marshal.SizeOf<MF_SINK_WRITER_STATISTICS>(), Is.EqualTo(sizeof(MF_SINK_WRITER_STATISTICS)));
+    }
 
-        /// <summary>Validates that the <see cref="MF_SINK_WRITER_STATISTICS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MF_SINK_WRITER_STATISTICS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MF_SINK_WRITER_STATISTICS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MF_SINK_WRITER_STATISTICS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MF_SINK_WRITER_STATISTICS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MF_SINK_WRITER_STATISTICS), Is.EqualTo(112));
-        }
+    /// <summary>Validates that the <see cref="MF_SINK_WRITER_STATISTICS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MF_SINK_WRITER_STATISTICS), Is.EqualTo(112));
     }
 }

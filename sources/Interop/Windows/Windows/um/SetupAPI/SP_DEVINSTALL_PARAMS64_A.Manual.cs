@@ -3,36 +3,35 @@
 // Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SP_DEVINSTALL_PARAMS64_A
 {
-    public unsafe partial struct SP_DEVINSTALL_PARAMS64_A
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        [NativeTypeName("DWORD")]
-        public uint FlagsEx;
+    [NativeTypeName("DWORD")]
+    public uint FlagsEx;
 
-        public HWND hwndParent;
+    public HWND hwndParent;
 
-        [NativeTypeName("PSP_FILE_CALLBACK_W")]
-        public delegate* unmanaged<void*, uint, nuint, nuint, uint> InstallMsgHandler;
+    [NativeTypeName("PSP_FILE_CALLBACK_W")]
+    public delegate* unmanaged<void*, uint, nuint, nuint, uint> InstallMsgHandler;
 
-        [NativeTypeName("PVOID")]
-        public void* InstallMsgHandlerContext;
+    [NativeTypeName("PVOID")]
+    public void* InstallMsgHandlerContext;
 
-        public HSPFILEQ FileQueue;
+    public HSPFILEQ FileQueue;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint ClassInstallReserved;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint ClassInstallReserved;
 
-        [NativeTypeName("DWORD")]
-        public uint Reserved;
+    [NativeTypeName("DWORD")]
+    public uint Reserved;
 
-        [NativeTypeName("CHAR [260]")]
-        public fixed sbyte DriverPath[260];
-    }
+    [NativeTypeName("CHAR [260]")]
+    public fixed sbyte DriverPath[260];
 }

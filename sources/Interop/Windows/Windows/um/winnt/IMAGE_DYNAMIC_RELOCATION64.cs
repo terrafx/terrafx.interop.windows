@@ -5,15 +5,14 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct IMAGE_DYNAMIC_RELOCATION64
-    {
-        [NativeTypeName("ULONGLONG")]
-        public ulong Symbol;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint BaseRelocSize;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct IMAGE_DYNAMIC_RELOCATION64
+{
+    [NativeTypeName("ULONGLONG")]
+    public ulong Symbol;
+
+    [NativeTypeName("DWORD")]
+    public uint BaseRelocSize;
 }

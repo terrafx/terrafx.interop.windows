@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CRYPT_3DES_KEY_STATE" /> struct.</summary>
+public static unsafe partial class CRYPT_3DES_KEY_STATETests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_3DES_KEY_STATE" /> struct.</summary>
-    public static unsafe partial class CRYPT_3DES_KEY_STATETests
+    /// <summary>Validates that the <see cref="CRYPT_3DES_KEY_STATE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CRYPT_3DES_KEY_STATE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CRYPT_3DES_KEY_STATE>(), Is.EqualTo(sizeof(CRYPT_3DES_KEY_STATE)));
-        }
+        Assert.That(Marshal.SizeOf<CRYPT_3DES_KEY_STATE>(), Is.EqualTo(sizeof(CRYPT_3DES_KEY_STATE)));
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_3DES_KEY_STATE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CRYPT_3DES_KEY_STATE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CRYPT_3DES_KEY_STATE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CRYPT_3DES_KEY_STATE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_3DES_KEY_STATE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CRYPT_3DES_KEY_STATE), Is.EqualTo(40));
-        }
+    /// <summary>Validates that the <see cref="CRYPT_3DES_KEY_STATE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CRYPT_3DES_KEY_STATE), Is.EqualTo(40));
     }
 }

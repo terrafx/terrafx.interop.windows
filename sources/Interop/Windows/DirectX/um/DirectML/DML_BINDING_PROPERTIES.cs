@@ -3,16 +3,15 @@
 // Ported from um/DirectML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DML_BINDING_PROPERTIES
 {
-    public partial struct DML_BINDING_PROPERTIES
-    {
-        public uint RequiredDescriptorCount;
+    public uint RequiredDescriptorCount;
 
-        [NativeTypeName("UINT64")]
-        public ulong TemporaryResourceSize;
+    [NativeTypeName("UINT64")]
+    public ulong TemporaryResourceSize;
 
-        [NativeTypeName("UINT64")]
-        public ulong PersistentResourceSize;
-    }
+    [NativeTypeName("UINT64")]
+    public ulong PersistentResourceSize;
 }

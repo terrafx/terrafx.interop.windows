@@ -7,46 +7,45 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct PHYSICAL_ELEMENT_STATUS
 {
-    public partial struct PHYSICAL_ELEMENT_STATUS
+    [NativeTypeName("DWORD")]
+    public uint Version;
+
+    [NativeTypeName("DWORD")]
+    public uint Size;
+
+    [NativeTypeName("DWORD")]
+    public uint DescriptorCount;
+
+    [NativeTypeName("DWORD")]
+    public uint ReturnedDescriptorCount;
+
+    [NativeTypeName("DWORD")]
+    public uint ElementIdentifierBeingDepoped;
+
+    [NativeTypeName("DWORD")]
+    public uint Reserved;
+
+    [NativeTypeName("PHYSICAL_ELEMENT_STATUS_DESCRIPTOR [1]")]
+    public _Descriptors_e__FixedBuffer Descriptors;
+
+    public partial struct _Descriptors_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+        public PHYSICAL_ELEMENT_STATUS_DESCRIPTOR e0;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
-
-        [NativeTypeName("DWORD")]
-        public uint DescriptorCount;
-
-        [NativeTypeName("DWORD")]
-        public uint ReturnedDescriptorCount;
-
-        [NativeTypeName("DWORD")]
-        public uint ElementIdentifierBeingDepoped;
-
-        [NativeTypeName("DWORD")]
-        public uint Reserved;
-
-        [NativeTypeName("PHYSICAL_ELEMENT_STATUS_DESCRIPTOR [1]")]
-        public _Descriptors_e__FixedBuffer Descriptors;
-
-        public partial struct _Descriptors_e__FixedBuffer
+        public ref PHYSICAL_ELEMENT_STATUS_DESCRIPTOR this[int index]
         {
-            public PHYSICAL_ELEMENT_STATUS_DESCRIPTOR e0;
-
-            public ref PHYSICAL_ELEMENT_STATUS_DESCRIPTOR this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<PHYSICAL_ELEMENT_STATUS_DESCRIPTOR> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<PHYSICAL_ELEMENT_STATUS_DESCRIPTOR> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

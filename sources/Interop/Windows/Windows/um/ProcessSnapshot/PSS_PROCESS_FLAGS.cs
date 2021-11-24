@@ -6,17 +6,16 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+[SupportedOSPlatform("windows8.1")]
+public enum PSS_PROCESS_FLAGS
 {
-    [Flags]
-    [SupportedOSPlatform("windows8.1")]
-    public enum PSS_PROCESS_FLAGS
-    {
-        PSS_PROCESS_FLAGS_NONE = 0x00000000,
-        PSS_PROCESS_FLAGS_PROTECTED = 0x00000001,
-        PSS_PROCESS_FLAGS_WOW64 = 0x00000002,
-        PSS_PROCESS_FLAGS_RESERVED_03 = 0x00000004,
-        PSS_PROCESS_FLAGS_RESERVED_04 = 0x00000008,
-        PSS_PROCESS_FLAGS_FROZEN = 0x00000010,
-    }
+    PSS_PROCESS_FLAGS_NONE = 0x00000000,
+    PSS_PROCESS_FLAGS_PROTECTED = 0x00000001,
+    PSS_PROCESS_FLAGS_WOW64 = 0x00000002,
+    PSS_PROCESS_FLAGS_RESERVED_03 = 0x00000004,
+    PSS_PROCESS_FLAGS_RESERVED_04 = 0x00000008,
+    PSS_PROCESS_FLAGS_FROZEN = 0x00000010,
 }

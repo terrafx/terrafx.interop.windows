@@ -6,80 +6,79 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 4)]
+public unsafe partial struct HIDP_LINK_COLLECTION_NODE
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 4)]
-    public unsafe partial struct HIDP_LINK_COLLECTION_NODE
+    [NativeTypeName("USAGE")]
+    public ushort LinkUsage;
+
+    [NativeTypeName("USAGE")]
+    public ushort LinkUsagePage;
+
+    [NativeTypeName("USHORT")]
+    public ushort Parent;
+
+    [NativeTypeName("USHORT")]
+    public ushort NumberOfChildren;
+
+    [NativeTypeName("USHORT")]
+    public ushort NextSibling;
+
+    [NativeTypeName("USHORT")]
+    public ushort FirstChild;
+
+    public uint _bitfield;
+
+    [NativeTypeName("ULONG : 8")]
+    public uint CollectionType
     {
-        [NativeTypeName("USAGE")]
-        public ushort LinkUsage;
-
-        [NativeTypeName("USAGE")]
-        public ushort LinkUsagePage;
-
-        [NativeTypeName("USHORT")]
-        public ushort Parent;
-
-        [NativeTypeName("USHORT")]
-        public ushort NumberOfChildren;
-
-        [NativeTypeName("USHORT")]
-        public ushort NextSibling;
-
-        [NativeTypeName("USHORT")]
-        public ushort FirstChild;
-
-        public uint _bitfield;
-
-        [NativeTypeName("ULONG : 8")]
-        public uint CollectionType
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return _bitfield & 0xFFu;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~0xFFu) | (value & 0xFFu);
-            }
+            return _bitfield & 0xFFu;
         }
 
-        [NativeTypeName("ULONG : 1")]
-        public uint IsAlias
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield >> 8) & 0x1u;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0x1u << 8)) | ((value & 0x1u) << 8);
-            }
+            _bitfield = (_bitfield & ~0xFFu) | (value & 0xFFu);
         }
-
-        [NativeTypeName("ULONG : 23")]
-        public uint Reserved
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield >> 9) & 0x7FFFFFu;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0x7FFFFFu << 9)) | ((value & 0x7FFFFFu) << 9);
-            }
-        }
-
-        [NativeTypeName("PVOID")]
-        public void* UserContext;
     }
+
+    [NativeTypeName("ULONG : 1")]
+    public uint IsAlias
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield >> 8) & 0x1u;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield = (_bitfield & ~(0x1u << 8)) | ((value & 0x1u) << 8);
+        }
+    }
+
+    [NativeTypeName("ULONG : 23")]
+    public uint Reserved
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield >> 9) & 0x7FFFFFu;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield = (_bitfield & ~(0x7FFFFFu << 9)) | ((value & 0x7FFFFFu) << 9);
+        }
+    }
+
+    [NativeTypeName("PVOID")]
+    public void* UserContext;
 }

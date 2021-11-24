@@ -3,13 +3,12 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum _DVRESOLUTION
 {
-    public enum _DVRESOLUTION
-    {
-        DVRESOLUTION_FULL = 1000,
-        DVRESOLUTION_HALF = 1001,
-        DVRESOLUTION_QUARTER = 1002,
-        DVRESOLUTION_DC = 1003,
-    }
+    DVRESOLUTION_FULL = 1000,
+    DVRESOLUTION_HALF = 1001,
+    DVRESOLUTION_QUARTER = 1002,
+    DVRESOLUTION_DC = 1003,
 }

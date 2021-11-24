@@ -3,12 +3,11 @@
 // Ported from shared/dxgi1_2.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum DXGI_OFFER_RESOURCE_PRIORITY
 {
-    public enum DXGI_OFFER_RESOURCE_PRIORITY
-    {
-        DXGI_OFFER_RESOURCE_PRIORITY_LOW = 1,
-        DXGI_OFFER_RESOURCE_PRIORITY_NORMAL = (DXGI_OFFER_RESOURCE_PRIORITY_LOW + 1),
-        DXGI_OFFER_RESOURCE_PRIORITY_HIGH = (DXGI_OFFER_RESOURCE_PRIORITY_NORMAL + 1),
-    }
+    DXGI_OFFER_RESOURCE_PRIORITY_LOW = 1,
+    DXGI_OFFER_RESOURCE_PRIORITY_NORMAL = (DXGI_OFFER_RESOURCE_PRIORITY_LOW + 1),
+    DXGI_OFFER_RESOURCE_PRIORITY_HIGH = (DXGI_OFFER_RESOURCE_PRIORITY_NORMAL + 1),
 }

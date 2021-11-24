@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CODECAPI_AVEncVideoHeaderDropFrame" /> struct.</summary>
+public static unsafe partial class CODECAPI_AVEncVideoHeaderDropFrameTests
 {
-    /// <summary>Provides validation of the <see cref="CODECAPI_AVEncVideoHeaderDropFrame" /> struct.</summary>
-    public static unsafe partial class CODECAPI_AVEncVideoHeaderDropFrameTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncVideoHeaderDropFrame" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncVideoHeaderDropFrame" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncVideoHeaderDropFrame).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoHeaderDropFrame));
-        }
+        Assert.That(typeof(CODECAPI_AVEncVideoHeaderDropFrame).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoHeaderDropFrame));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoHeaderDropFrame" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoHeaderDropFrame>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoHeaderDropFrame)));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoHeaderDropFrame" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoHeaderDropFrame>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoHeaderDropFrame)));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoHeaderDropFrame" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncVideoHeaderDropFrame).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoHeaderDropFrame" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CODECAPI_AVEncVideoHeaderDropFrame).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoHeaderDropFrame" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CODECAPI_AVEncVideoHeaderDropFrame), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoHeaderDropFrame" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CODECAPI_AVEncVideoHeaderDropFrame), Is.EqualTo(1));
     }
 }

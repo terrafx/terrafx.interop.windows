@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ITypeChangeEvents" /> struct.</summary>
+public static unsafe partial class ITypeChangeEventsTests
 {
-    /// <summary>Provides validation of the <see cref="ITypeChangeEvents" /> struct.</summary>
-    public static unsafe partial class ITypeChangeEventsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITypeChangeEvents" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITypeChangeEvents" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ITypeChangeEvents).GUID, Is.EqualTo(IID_ITypeChangeEvents));
-        }
+        Assert.That(typeof(ITypeChangeEvents).GUID, Is.EqualTo(IID_ITypeChangeEvents));
+    }
 
-        /// <summary>Validates that the <see cref="ITypeChangeEvents" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ITypeChangeEvents>(), Is.EqualTo(sizeof(ITypeChangeEvents)));
-        }
+    /// <summary>Validates that the <see cref="ITypeChangeEvents" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ITypeChangeEvents>(), Is.EqualTo(sizeof(ITypeChangeEvents)));
+    }
 
-        /// <summary>Validates that the <see cref="ITypeChangeEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ITypeChangeEvents).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ITypeChangeEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ITypeChangeEvents).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ITypeChangeEvents" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ITypeChangeEvents" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ITypeChangeEvents), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ITypeChangeEvents), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ITypeChangeEvents), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ITypeChangeEvents), Is.EqualTo(4));
         }
     }
 }

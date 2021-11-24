@@ -5,10 +5,9 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct WS_GUID_DESCRIPTION
 {
-    public partial struct WS_GUID_DESCRIPTION
-    {
-        public Guid value;
-    }
+    public Guid value;
 }

@@ -5,19 +5,18 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.1")]
+public partial struct D3D11_SUBRESOURCE_TILING
 {
-    [SupportedOSPlatform("windows8.1")]
-    public partial struct D3D11_SUBRESOURCE_TILING
-    {
-        public uint WidthInTiles;
+    public uint WidthInTiles;
 
-        [NativeTypeName("UINT16")]
-        public ushort HeightInTiles;
+    [NativeTypeName("UINT16")]
+    public ushort HeightInTiles;
 
-        [NativeTypeName("UINT16")]
-        public ushort DepthInTiles;
+    [NativeTypeName("UINT16")]
+    public ushort DepthInTiles;
 
-        public uint StartTileIndexInOverallResource;
-    }
+    public uint StartTileIndexInOverallResource;
 }

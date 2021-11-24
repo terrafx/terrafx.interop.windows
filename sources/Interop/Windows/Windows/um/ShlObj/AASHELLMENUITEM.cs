@@ -3,20 +3,19 @@
 // Ported from um/ShlObj.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct AASHELLMENUITEM
 {
-    public unsafe partial struct AASHELLMENUITEM
-    {
-        public void* lpReserved1;
+    public void* lpReserved1;
 
-        public int iReserved;
+    public int iReserved;
 
-        public uint uiReserved;
+    public uint uiReserved;
 
-        [NativeTypeName("LPAASHELLMENUFILENAME")]
-        public AASHELLMENUFILENAME* lpName;
+    [NativeTypeName("LPAASHELLMENUFILENAME")]
+    public AASHELLMENUFILENAME* lpName;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* psz;
-    }
+    [NativeTypeName("LPWSTR")]
+    public ushort* psz;
 }

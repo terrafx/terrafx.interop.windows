@@ -5,16 +5,15 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[SupportedOSPlatform("windows10.0")]
+public partial struct ParentChildRelation
 {
-    [SupportedOSPlatform("windows10.0")]
-    public partial struct ParentChildRelation
-    {
-        public InstanceHandle Parent;
+    public InstanceHandle Parent;
 
-        public InstanceHandle Child;
+    public InstanceHandle Child;
 
-        [NativeTypeName("unsigned int")]
-        public uint ChildIndex;
-    }
+    [NativeTypeName("unsigned int")]
+    public uint ChildIndex;
 }

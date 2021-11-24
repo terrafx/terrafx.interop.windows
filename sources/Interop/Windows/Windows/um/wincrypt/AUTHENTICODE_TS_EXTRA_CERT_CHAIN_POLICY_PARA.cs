@@ -3,16 +3,15 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct AUTHENTICODE_TS_EXTRA_CERT_CHAIN_POLICY_PARA
 {
-    public partial struct AUTHENTICODE_TS_EXTRA_CERT_CHAIN_POLICY_PARA
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("DWORD")]
-        public uint dwRegPolicySettings;
+    [NativeTypeName("DWORD")]
+    public uint dwRegPolicySettings;
 
-        public BOOL fCommercial;
-    }
+    public BOOL fCommercial;
 }

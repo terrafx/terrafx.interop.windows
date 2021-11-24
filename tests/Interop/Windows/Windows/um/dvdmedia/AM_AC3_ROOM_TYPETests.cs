@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="AM_AC3_ROOM_TYPE" /> struct.</summary>
+public static unsafe partial class AM_AC3_ROOM_TYPETests
 {
-    /// <summary>Provides validation of the <see cref="AM_AC3_ROOM_TYPE" /> struct.</summary>
-    public static unsafe partial class AM_AC3_ROOM_TYPETests
+    /// <summary>Validates that the <see cref="AM_AC3_ROOM_TYPE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="AM_AC3_ROOM_TYPE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<AM_AC3_ROOM_TYPE>(), Is.EqualTo(sizeof(AM_AC3_ROOM_TYPE)));
-        }
+        Assert.That(Marshal.SizeOf<AM_AC3_ROOM_TYPE>(), Is.EqualTo(sizeof(AM_AC3_ROOM_TYPE)));
+    }
 
-        /// <summary>Validates that the <see cref="AM_AC3_ROOM_TYPE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(AM_AC3_ROOM_TYPE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="AM_AC3_ROOM_TYPE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(AM_AC3_ROOM_TYPE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="AM_AC3_ROOM_TYPE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(AM_AC3_ROOM_TYPE), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="AM_AC3_ROOM_TYPE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(AM_AC3_ROOM_TYPE), Is.EqualTo(4));
     }
 }

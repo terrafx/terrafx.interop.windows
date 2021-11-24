@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="POWERBROADCAST_SETTING" /> struct.</summary>
+public static unsafe partial class POWERBROADCAST_SETTINGTests
 {
-    /// <summary>Provides validation of the <see cref="POWERBROADCAST_SETTING" /> struct.</summary>
-    public static unsafe partial class POWERBROADCAST_SETTINGTests
+    /// <summary>Validates that the <see cref="POWERBROADCAST_SETTING" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="POWERBROADCAST_SETTING" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<POWERBROADCAST_SETTING>(), Is.EqualTo(sizeof(POWERBROADCAST_SETTING)));
-        }
+        Assert.That(Marshal.SizeOf<POWERBROADCAST_SETTING>(), Is.EqualTo(sizeof(POWERBROADCAST_SETTING)));
+    }
 
-        /// <summary>Validates that the <see cref="POWERBROADCAST_SETTING" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(POWERBROADCAST_SETTING).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="POWERBROADCAST_SETTING" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(POWERBROADCAST_SETTING).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="POWERBROADCAST_SETTING" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(POWERBROADCAST_SETTING), Is.EqualTo(24));
-        }
+    /// <summary>Validates that the <see cref="POWERBROADCAST_SETTING" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(POWERBROADCAST_SETTING), Is.EqualTo(24));
     }
 }

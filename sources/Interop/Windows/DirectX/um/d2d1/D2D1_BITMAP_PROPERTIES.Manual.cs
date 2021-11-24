@@ -9,30 +9,29 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.DirectX.DirectX;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D1_BITMAP_PROPERTIES
 {
-    public partial struct D2D1_BITMAP_PROPERTIES
+    public static ref readonly D2D1_BITMAP_PROPERTIES DEFAULT
     {
-        public static ref readonly D2D1_BITMAP_PROPERTIES DEFAULT
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x00, 0x00, 0x00, 0x00,
                     0x00, 0x00, 0x00, 0x00,
                     0x00, 0x00, 0xC0, 0x42,
                     0x00, 0x00, 0xC0, 0x42,
                 };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<D2D1_BITMAP_PROPERTIES>());
-                return ref Unsafe.As<byte, D2D1_BITMAP_PROPERTIES>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<D2D1_BITMAP_PROPERTIES>());
+            return ref Unsafe.As<byte, D2D1_BITMAP_PROPERTIES>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public D2D1_BITMAP_PROPERTIES([NativeTypeName("const D2D1_PIXEL_FORMAT &")] in D2D1_PIXEL_FORMAT pixelFormat = default, float dpiX = 96.0f, float dpiY = 96.0f)
-        {
-            this = BitmapProperties(pixelFormat, dpiX, dpiY);
-        }
+    public D2D1_BITMAP_PROPERTIES([NativeTypeName("const D2D1_PIXEL_FORMAT &")] in D2D1_PIXEL_FORMAT pixelFormat = default, float dpiX = 96.0f, float dpiY = 96.0f)
+    {
+        this = BitmapProperties(pixelFormat, dpiX, dpiY);
     }
 }

@@ -3,12 +3,11 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct WS_XML_BOOL_TEXT
-    {
-        public WS_XML_TEXT text;
+namespace TerraFX.Interop.Windows;
 
-        public BOOL value;
-    }
+public partial struct WS_XML_BOOL_TEXT
+{
+    public WS_XML_TEXT text;
+
+    public BOOL value;
 }

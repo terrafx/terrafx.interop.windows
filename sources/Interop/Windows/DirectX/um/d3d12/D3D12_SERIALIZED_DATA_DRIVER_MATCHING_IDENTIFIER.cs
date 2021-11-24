@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
-{
-    public unsafe partial struct D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER
-    {
-        public Guid DriverOpaqueGUID;
+namespace TerraFX.Interop.DirectX;
 
-        [NativeTypeName("BYTE [16]")]
-        public fixed byte DriverOpaqueVersioningData[16];
-    }
+public unsafe partial struct D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER
+{
+    public Guid DriverOpaqueGUID;
+
+    [NativeTypeName("BYTE [16]")]
+    public fixed byte DriverOpaqueVersioningData[16];
 }

@@ -3,17 +3,16 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum AHTYPE
 {
-    public enum AHTYPE
-    {
-        AHTYPE_UNDEFINED = 0,
-        AHTYPE_USER_APPLICATION = 0x8,
-        AHTYPE_ANY_APPLICATION = 0x10,
-        AHTYPE_MACHINEDEFAULT = 0x20,
-        AHTYPE_PROGID = 0x40,
-        AHTYPE_APPLICATION = 0x80,
-        AHTYPE_CLASS_APPLICATION = 0x100,
-        AHTYPE_ANY_PROGID = 0x200,
-    }
+    AHTYPE_UNDEFINED = 0,
+    AHTYPE_USER_APPLICATION = 0x8,
+    AHTYPE_ANY_APPLICATION = 0x10,
+    AHTYPE_MACHINEDEFAULT = 0x20,
+    AHTYPE_PROGID = 0x40,
+    AHTYPE_APPLICATION = 0x80,
+    AHTYPE_CLASS_APPLICATION = 0x100,
+    AHTYPE_ANY_PROGID = 0x200,
 }

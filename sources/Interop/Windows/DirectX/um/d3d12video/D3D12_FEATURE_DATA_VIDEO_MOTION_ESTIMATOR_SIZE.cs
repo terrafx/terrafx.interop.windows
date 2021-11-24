@@ -6,33 +6,32 @@
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+public partial struct D3D12_FEATURE_DATA_VIDEO_MOTION_ESTIMATOR_SIZE
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public partial struct D3D12_FEATURE_DATA_VIDEO_MOTION_ESTIMATOR_SIZE
-    {
-        public uint NodeIndex;
+    public uint NodeIndex;
 
-        public DXGI_FORMAT InputFormat;
+    public DXGI_FORMAT InputFormat;
 
-        public D3D12_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE BlockSize;
+    public D3D12_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE BlockSize;
 
-        public D3D12_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION Precision;
+    public D3D12_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION Precision;
 
-        public D3D12_VIDEO_SIZE_RANGE SizeRange;
+    public D3D12_VIDEO_SIZE_RANGE SizeRange;
 
-        public BOOL Protected;
+    public BOOL Protected;
 
-        [NativeTypeName("UINT64")]
-        public ulong MotionVectorHeapMemoryPoolL0Size;
+    [NativeTypeName("UINT64")]
+    public ulong MotionVectorHeapMemoryPoolL0Size;
 
-        [NativeTypeName("UINT64")]
-        public ulong MotionVectorHeapMemoryPoolL1Size;
+    [NativeTypeName("UINT64")]
+    public ulong MotionVectorHeapMemoryPoolL1Size;
 
-        [NativeTypeName("UINT64")]
-        public ulong MotionEstimatorMemoryPoolL0Size;
+    [NativeTypeName("UINT64")]
+    public ulong MotionEstimatorMemoryPoolL0Size;
 
-        [NativeTypeName("UINT64")]
-        public ulong MotionEstimatorMemoryPoolL1Size;
-    }
+    [NativeTypeName("UINT64")]
+    public ulong MotionEstimatorMemoryPoolL1Size;
 }

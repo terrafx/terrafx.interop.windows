@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DEVPROPCOMPKEY" /> struct.</summary>
+public static unsafe partial class DEVPROPCOMPKEYTests
 {
-    /// <summary>Provides validation of the <see cref="DEVPROPCOMPKEY" /> struct.</summary>
-    public static unsafe partial class DEVPROPCOMPKEYTests
+    /// <summary>Validates that the <see cref="DEVPROPCOMPKEY" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DEVPROPCOMPKEY" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DEVPROPCOMPKEY>(), Is.EqualTo(sizeof(DEVPROPCOMPKEY)));
-        }
+        Assert.That(Marshal.SizeOf<DEVPROPCOMPKEY>(), Is.EqualTo(sizeof(DEVPROPCOMPKEY)));
+    }
 
-        /// <summary>Validates that the <see cref="DEVPROPCOMPKEY" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DEVPROPCOMPKEY).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DEVPROPCOMPKEY" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DEVPROPCOMPKEY).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DEVPROPCOMPKEY" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DEVPROPCOMPKEY" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DEVPROPCOMPKEY), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(DEVPROPCOMPKEY), Is.EqualTo(28));
-            }
+            Assert.That(sizeof(DEVPROPCOMPKEY), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(DEVPROPCOMPKEY), Is.EqualTo(28));
         }
     }
 }

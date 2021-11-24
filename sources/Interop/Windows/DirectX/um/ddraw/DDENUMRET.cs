@@ -3,14 +3,13 @@
 // Ported from um/ddraw.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
-{
-    public static partial class DDENUMRET
-    {
-        [NativeTypeName("#define DDENUMRET_CANCEL 0")]
-        public const int DDENUMRET_CANCEL = 0;
+namespace TerraFX.Interop.DirectX;
 
-        [NativeTypeName("#define DDENUMRET_OK 1")]
-        public const int DDENUMRET_OK = 1;
-    }
+public static partial class DDENUMRET
+{
+    [NativeTypeName("#define DDENUMRET_CANCEL 0")]
+    public const int DDENUMRET_CANCEL = 0;
+
+    [NativeTypeName("#define DDENUMRET_OK 1")]
+    public const int DDENUMRET_OK = 1;
 }

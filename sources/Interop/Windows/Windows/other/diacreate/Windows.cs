@@ -6,14 +6,13 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    public static unsafe partial class Windows
-    {
-        [DllImport("msdia140", ExactSpelling = true)]
-        public static extern HRESULT NoRegCoCreate([NativeTypeName("const wchar_t *")] ushort* dllName, [NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+namespace TerraFX.Interop.Windows;
 
-        [DllImport("msdia140", ExactSpelling = true)]
-        public static extern HRESULT NoOleCoCreate([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
-    }
+public static unsafe partial class Windows
+{
+    [DllImport("msdia140", ExactSpelling = true)]
+    public static extern HRESULT NoRegCoCreate([NativeTypeName("const wchar_t *")] ushort* dllName, [NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+    [DllImport("msdia140", ExactSpelling = true)]
+    public static extern HRESULT NoOleCoCreate([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 }

@@ -3,11 +3,10 @@
 // Ported from um/appmodel.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum AppPolicyThreadInitializationType
 {
-    public enum AppPolicyThreadInitializationType
-    {
-        AppPolicyThreadInitializationType_None = 0,
-        AppPolicyThreadInitializationType_InitializeWinRT = 1,
-    }
+    AppPolicyThreadInitializationType_None = 0,
+    AppPolicyThreadInitializationType_InitializeWinRT = 1,
 }

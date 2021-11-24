@@ -5,17 +5,16 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public partial struct MF_QUATERNION
 {
-    [SupportedOSPlatform("windows10.0")]
-    public partial struct MF_QUATERNION
-    {
-        public float x;
+    public float x;
 
-        public float y;
+    public float y;
 
-        public float z;
+    public float z;
 
-        public float w;
-    }
+    public float w;
 }

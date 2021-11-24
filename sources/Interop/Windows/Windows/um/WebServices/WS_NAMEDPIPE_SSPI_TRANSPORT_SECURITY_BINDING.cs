@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING
-    {
-        public WS_SECURITY_BINDING binding;
+namespace TerraFX.Interop.Windows;
 
-        public WS_WINDOWS_INTEGRATED_AUTH_CREDENTIAL* clientCredential;
-    }
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING
+{
+    public WS_SECURITY_BINDING binding;
+
+    public WS_WINDOWS_INTEGRATED_AUTH_CREDENTIAL* clientCredential;
 }

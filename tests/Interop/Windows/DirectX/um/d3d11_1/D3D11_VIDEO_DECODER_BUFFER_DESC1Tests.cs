@@ -8,38 +8,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="D3D11_VIDEO_DECODER_BUFFER_DESC1" /> struct.</summary>
+[SupportedOSPlatform("windows10.0")]
+public static unsafe partial class D3D11_VIDEO_DECODER_BUFFER_DESC1Tests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_VIDEO_DECODER_BUFFER_DESC1" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0")]
-    public static unsafe partial class D3D11_VIDEO_DECODER_BUFFER_DESC1Tests
+    /// <summary>Validates that the <see cref="D3D11_VIDEO_DECODER_BUFFER_DESC1" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="D3D11_VIDEO_DECODER_BUFFER_DESC1" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<D3D11_VIDEO_DECODER_BUFFER_DESC1>(), Is.EqualTo(sizeof(D3D11_VIDEO_DECODER_BUFFER_DESC1)));
-        }
+        Assert.That(Marshal.SizeOf<D3D11_VIDEO_DECODER_BUFFER_DESC1>(), Is.EqualTo(sizeof(D3D11_VIDEO_DECODER_BUFFER_DESC1)));
+    }
 
-        /// <summary>Validates that the <see cref="D3D11_VIDEO_DECODER_BUFFER_DESC1" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(D3D11_VIDEO_DECODER_BUFFER_DESC1).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="D3D11_VIDEO_DECODER_BUFFER_DESC1" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(D3D11_VIDEO_DECODER_BUFFER_DESC1).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="D3D11_VIDEO_DECODER_BUFFER_DESC1" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="D3D11_VIDEO_DECODER_BUFFER_DESC1" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(D3D11_VIDEO_DECODER_BUFFER_DESC1), Is.EqualTo(48));
-            }
-            else
-            {
-                Assert.That(sizeof(D3D11_VIDEO_DECODER_BUFFER_DESC1), Is.EqualTo(28));
-            }
+            Assert.That(sizeof(D3D11_VIDEO_DECODER_BUFFER_DESC1), Is.EqualTo(48));
+        }
+        else
+        {
+            Assert.That(sizeof(D3D11_VIDEO_DECODER_BUFFER_DESC1), Is.EqualTo(28));
         }
     }
 }

@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0")]
+public enum DWRITE_LOCALITY
 {
-    [SupportedOSPlatform("windows10.0")]
-    public enum DWRITE_LOCALITY
-    {
-        DWRITE_LOCALITY_REMOTE,
-        DWRITE_LOCALITY_PARTIAL,
-        DWRITE_LOCALITY_LOCAL,
-    }
+    DWRITE_LOCALITY_REMOTE,
+    DWRITE_LOCALITY_PARTIAL,
+    DWRITE_LOCALITY_LOCAL,
 }

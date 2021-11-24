@@ -5,13 +5,12 @@
 
 using static TerraFX.Interop.DirectX.DirectX;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D1_QUADRATIC_BEZIER_SEGMENT
 {
-    public partial struct D2D1_QUADRATIC_BEZIER_SEGMENT
+    public D2D1_QUADRATIC_BEZIER_SEGMENT([NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F point1, [NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F point2)
     {
-        public D2D1_QUADRATIC_BEZIER_SEGMENT([NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F point1, [NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F point2)
-        {
-            this = QuadraticBezierSegment(point1, point2);
-        }
+        this = QuadraticBezierSegment(point1, point2);
     }
 }

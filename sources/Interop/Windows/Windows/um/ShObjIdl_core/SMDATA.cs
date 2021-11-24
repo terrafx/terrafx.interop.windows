@@ -3,36 +3,35 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SMDATA
 {
-    public unsafe partial struct SMDATA
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwMask;
+    [NativeTypeName("DWORD")]
+    public uint dwMask;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        public HMENU hmenu;
+    public HMENU hmenu;
 
-        public HWND hwnd;
+    public HWND hwnd;
 
-        public uint uId;
+    public uint uId;
 
-        public uint uIdParent;
+    public uint uIdParent;
 
-        public uint uIdAncestor;
+    public uint uIdAncestor;
 
-        public IUnknown* punk;
+    public IUnknown* punk;
 
-        [NativeTypeName("LPITEMIDLIST")]
-        public ITEMIDLIST* pidlFolder;
+    [NativeTypeName("LPITEMIDLIST")]
+    public ITEMIDLIST* pidlFolder;
 
-        [NativeTypeName("LPITEMIDLIST")]
-        public ITEMIDLIST* pidlItem;
+    [NativeTypeName("LPITEMIDLIST")]
+    public ITEMIDLIST* pidlItem;
 
-        public IShellFolder* psf;
+    public IShellFolder* psf;
 
-        public void* pvUserData;
-    }
+    public void* pvUserData;
 }

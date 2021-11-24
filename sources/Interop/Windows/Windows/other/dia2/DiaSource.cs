@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("E6756135-1E65-4D17-8576-610761398C3C")]
+public partial struct DiaSource
 {
-    [Guid("E6756135-1E65-4D17-8576-610761398C3C")]
-    public partial struct DiaSource
-    {
-    }
 }

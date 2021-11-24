@@ -3,27 +3,26 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CERT_SIMPLE_CHAIN
 {
-    public unsafe partial struct CERT_SIMPLE_CHAIN
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public CERT_TRUST_STATUS TrustStatus;
+    public CERT_TRUST_STATUS TrustStatus;
 
-        [NativeTypeName("DWORD")]
-        public uint cElement;
+    [NativeTypeName("DWORD")]
+    public uint cElement;
 
-        [NativeTypeName("PCERT_CHAIN_ELEMENT *")]
-        public CERT_CHAIN_ELEMENT** rgpElement;
+    [NativeTypeName("PCERT_CHAIN_ELEMENT *")]
+    public CERT_CHAIN_ELEMENT** rgpElement;
 
-        [NativeTypeName("PCERT_TRUST_LIST_INFO")]
-        public CERT_TRUST_LIST_INFO* pTrustListInfo;
+    [NativeTypeName("PCERT_TRUST_LIST_INFO")]
+    public CERT_TRUST_LIST_INFO* pTrustListInfo;
 
-        public BOOL fHasRevocationFreshnessTime;
+    public BOOL fHasRevocationFreshnessTime;
 
-        [NativeTypeName("DWORD")]
-        public uint dwRevocationFreshnessTime;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwRevocationFreshnessTime;
 }

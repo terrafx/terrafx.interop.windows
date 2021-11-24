@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISyncMgrEventStore" /> struct.</summary>
+public static unsafe partial class ISyncMgrEventStoreTests
 {
-    /// <summary>Provides validation of the <see cref="ISyncMgrEventStore" /> struct.</summary>
-    public static unsafe partial class ISyncMgrEventStoreTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISyncMgrEventStore" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISyncMgrEventStore" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISyncMgrEventStore).GUID, Is.EqualTo(IID_ISyncMgrEventStore));
-        }
+        Assert.That(typeof(ISyncMgrEventStore).GUID, Is.EqualTo(IID_ISyncMgrEventStore));
+    }
 
-        /// <summary>Validates that the <see cref="ISyncMgrEventStore" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISyncMgrEventStore>(), Is.EqualTo(sizeof(ISyncMgrEventStore)));
-        }
+    /// <summary>Validates that the <see cref="ISyncMgrEventStore" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISyncMgrEventStore>(), Is.EqualTo(sizeof(ISyncMgrEventStore)));
+    }
 
-        /// <summary>Validates that the <see cref="ISyncMgrEventStore" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISyncMgrEventStore).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISyncMgrEventStore" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISyncMgrEventStore).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISyncMgrEventStore" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISyncMgrEventStore" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISyncMgrEventStore), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISyncMgrEventStore), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISyncMgrEventStore), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISyncMgrEventStore), Is.EqualTo(4));
         }
     }
 }

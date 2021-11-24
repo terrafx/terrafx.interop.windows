@@ -5,21 +5,20 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_FAULT
 {
-    public unsafe partial struct WS_FAULT
-    {
-        public WS_FAULT_CODE* code;
+    public WS_FAULT_CODE* code;
 
-        public WS_FAULT_REASON* reasons;
+    public WS_FAULT_REASON* reasons;
 
-        [NativeTypeName("ULONG")]
-        public uint reasonCount;
+    [NativeTypeName("ULONG")]
+    public uint reasonCount;
 
-        public WS_STRING actor;
+    public WS_STRING actor;
 
-        public WS_STRING node;
+    public WS_STRING node;
 
-        public IntPtr detail;
-    }
+    public IntPtr detail;
 }

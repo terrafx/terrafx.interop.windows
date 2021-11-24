@@ -3,13 +3,12 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct CMC_TAGGED_ATTRIBUTE
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwBodyPartID;
+namespace TerraFX.Interop.Windows;
 
-        public CRYPT_ATTRIBUTE Attribute;
-    }
+public partial struct CMC_TAGGED_ATTRIBUTE
+{
+    [NativeTypeName("DWORD")]
+    public uint dwBodyPartID;
+
+    public CRYPT_ATTRIBUTE Attribute;
 }

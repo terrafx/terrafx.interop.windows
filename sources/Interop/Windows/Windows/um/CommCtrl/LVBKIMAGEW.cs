@@ -3,22 +3,21 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct LVBKIMAGEW
 {
-    public unsafe partial struct LVBKIMAGEW
-    {
-        [NativeTypeName("ULONG")]
-        public uint ulFlags;
+    [NativeTypeName("ULONG")]
+    public uint ulFlags;
 
-        public HBITMAP hbm;
+    public HBITMAP hbm;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszImage;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszImage;
 
-        public uint cchImageMax;
+    public uint cchImageMax;
 
-        public int xOffsetPercent;
+    public int xOffsetPercent;
 
-        public int yOffsetPercent;
-    }
+    public int yOffsetPercent;
 }

@@ -7,129 +7,128 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("AA80E7F4-2021-11D2-93E0-0060B067B86E")]
+[NativeTypeName("struct ITfDocumentMgr : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ITfDocumentMgr : ITfDocumentMgr.Interface
 {
-    [Guid("AA80E7F4-2021-11D2-93E0-0060B067B86E")]
-    [NativeTypeName("struct ITfDocumentMgr : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfDocumentMgr : ITfDocumentMgr.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ITfDocumentMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ITfDocumentMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ITfDocumentMgr*, uint>)(lpVtbl[1]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ITfDocumentMgr*, uint>)(lpVtbl[1]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ITfDocumentMgr*, uint>)(lpVtbl[2]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ITfDocumentMgr*, uint>)(lpVtbl[2]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT CreateContext([NativeTypeName("TfClientId")] uint tidOwner, [NativeTypeName("DWORD")] uint dwFlags, IUnknown* punk, ITfContext** ppic, [NativeTypeName("TfEditCookie *")] uint* pecTextStore)
+    {
+        return ((delegate* unmanaged<ITfDocumentMgr*, uint, uint, IUnknown*, ITfContext**, uint*, int>)(lpVtbl[3]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), tidOwner, dwFlags, punk, ppic, pecTextStore);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Push(ITfContext* pic)
+    {
+        return ((delegate* unmanaged<ITfDocumentMgr*, ITfContext*, int>)(lpVtbl[4]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), pic);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Pop([NativeTypeName("DWORD")] uint dwFlags)
+    {
+        return ((delegate* unmanaged<ITfDocumentMgr*, uint, int>)(lpVtbl[5]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), dwFlags);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetTop(ITfContext** ppic)
+    {
+        return ((delegate* unmanaged<ITfDocumentMgr*, ITfContext**, int>)(lpVtbl[6]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), ppic);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT GetBase(ITfContext** ppic)
+    {
+        return ((delegate* unmanaged<ITfDocumentMgr*, ITfContext**, int>)(lpVtbl[7]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), ppic);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT EnumContexts(IEnumTfContexts** ppEnum)
+    {
+        return ((delegate* unmanaged<ITfDocumentMgr*, IEnumTfContexts**, int>)(lpVtbl[8]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), ppEnum);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT CreateContext([NativeTypeName("TfClientId")] uint tidOwner, [NativeTypeName("DWORD")] uint dwFlags, IUnknown* punk, ITfContext** ppic, [NativeTypeName("TfEditCookie *")] uint* pecTextStore)
-        {
-            return ((delegate* unmanaged<ITfDocumentMgr*, uint, uint, IUnknown*, ITfContext**, uint*, int>)(lpVtbl[3]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), tidOwner, dwFlags, punk, ppic, pecTextStore);
-        }
+        HRESULT CreateContext([NativeTypeName("TfClientId")] uint tidOwner, [NativeTypeName("DWORD")] uint dwFlags, IUnknown* punk, ITfContext** ppic, [NativeTypeName("TfEditCookie *")] uint* pecTextStore);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Push(ITfContext* pic)
-        {
-            return ((delegate* unmanaged<ITfDocumentMgr*, ITfContext*, int>)(lpVtbl[4]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), pic);
-        }
+        HRESULT Push(ITfContext* pic);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT Pop([NativeTypeName("DWORD")] uint dwFlags)
-        {
-            return ((delegate* unmanaged<ITfDocumentMgr*, uint, int>)(lpVtbl[5]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), dwFlags);
-        }
+        HRESULT Pop([NativeTypeName("DWORD")] uint dwFlags);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetTop(ITfContext** ppic)
-        {
-            return ((delegate* unmanaged<ITfDocumentMgr*, ITfContext**, int>)(lpVtbl[6]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), ppic);
-        }
+        HRESULT GetTop(ITfContext** ppic);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetBase(ITfContext** ppic)
-        {
-            return ((delegate* unmanaged<ITfDocumentMgr*, ITfContext**, int>)(lpVtbl[7]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), ppic);
-        }
+        HRESULT GetBase(ITfContext** ppic);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT EnumContexts(IEnumTfContexts** ppEnum)
-        {
-            return ((delegate* unmanaged<ITfDocumentMgr*, IEnumTfContexts**, int>)(lpVtbl[8]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), ppEnum);
-        }
+        HRESULT EnumContexts(IEnumTfContexts** ppEnum);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT CreateContext([NativeTypeName("TfClientId")] uint tidOwner, [NativeTypeName("DWORD")] uint dwFlags, IUnknown* punk, ITfContext** ppic, [NativeTypeName("TfEditCookie *")] uint* pecTextStore);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfDocumentMgr*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT Push(ITfContext* pic);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfDocumentMgr*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT Pop([NativeTypeName("DWORD")] uint dwFlags);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfDocumentMgr*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT GetTop(ITfContext** ppic);
+        [NativeTypeName("HRESULT (TfClientId, DWORD, IUnknown *, ITfContext **, TfEditCookie *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfDocumentMgr*, uint, uint, IUnknown*, ITfContext**, uint*, int> CreateContext;
 
-            [VtblIndex(7)]
-            HRESULT GetBase(ITfContext** ppic);
+        [NativeTypeName("HRESULT (ITfContext *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfDocumentMgr*, ITfContext*, int> Push;
 
-            [VtblIndex(8)]
-            HRESULT EnumContexts(IEnumTfContexts** ppEnum);
-        }
+        [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfDocumentMgr*, uint, int> Pop;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfDocumentMgr*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (ITfContext **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfDocumentMgr*, ITfContext**, int> GetTop;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfDocumentMgr*, uint> AddRef;
+        [NativeTypeName("HRESULT (ITfContext **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfDocumentMgr*, ITfContext**, int> GetBase;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfDocumentMgr*, uint> Release;
-
-            [NativeTypeName("HRESULT (TfClientId, DWORD, IUnknown *, ITfContext **, TfEditCookie *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfDocumentMgr*, uint, uint, IUnknown*, ITfContext**, uint*, int> CreateContext;
-
-            [NativeTypeName("HRESULT (ITfContext *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfDocumentMgr*, ITfContext*, int> Push;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfDocumentMgr*, uint, int> Pop;
-
-            [NativeTypeName("HRESULT (ITfContext **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfDocumentMgr*, ITfContext**, int> GetTop;
-
-            [NativeTypeName("HRESULT (ITfContext **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfDocumentMgr*, ITfContext**, int> GetBase;
-
-            [NativeTypeName("HRESULT (IEnumTfContexts **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfDocumentMgr*, IEnumTfContexts**, int> EnumContexts;
-        }
+        [NativeTypeName("HRESULT (IEnumTfContexts **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfDocumentMgr*, IEnumTfContexts**, int> EnumContexts;
     }
 }

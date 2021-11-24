@@ -5,16 +5,15 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_VIDEO_PROCESS_TRANSFORM
 {
-    public partial struct D3D12_VIDEO_PROCESS_TRANSFORM
-    {
-        [NativeTypeName("D3D12_RECT")]
-        public RECT SourceRectangle;
+    [NativeTypeName("D3D12_RECT")]
+    public RECT SourceRectangle;
 
-        [NativeTypeName("D3D12_RECT")]
-        public RECT DestinationRectangle;
+    [NativeTypeName("D3D12_RECT")]
+    public RECT DestinationRectangle;
 
-        public D3D12_VIDEO_PROCESS_ORIENTATION Orientation;
-    }
+    public D3D12_VIDEO_PROCESS_ORIENTATION Orientation;
 }

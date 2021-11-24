@@ -3,13 +3,12 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct CRYPT_OID_FUNC_ENTRY
-    {
-        [NativeTypeName("LPCSTR")]
-        public sbyte* pszOID;
+namespace TerraFX.Interop.Windows;
 
-        public void* pvFuncAddr;
-    }
+public unsafe partial struct CRYPT_OID_FUNC_ENTRY
+{
+    [NativeTypeName("LPCSTR")]
+    public sbyte* pszOID;
+
+    public void* pvFuncAddr;
 }

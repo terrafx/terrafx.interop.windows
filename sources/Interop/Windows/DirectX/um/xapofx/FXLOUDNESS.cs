@@ -3,14 +3,13 @@
 // Ported from um/xapofx.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
-{
-    public static partial class FXLOUDNESS
-    {
-        [NativeTypeName("#define FXLOUDNESS_DEFAULT_MOMENTARY_MS 400")]
-        public const int FXLOUDNESS_DEFAULT_MOMENTARY_MS = 400;
+namespace TerraFX.Interop.DirectX;
 
-        [NativeTypeName("#define FXLOUDNESS_DEFAULT_SHORTTERM_MS 3000")]
-        public const int FXLOUDNESS_DEFAULT_SHORTTERM_MS = 3000;
-    }
+public static partial class FXLOUDNESS
+{
+    [NativeTypeName("#define FXLOUDNESS_DEFAULT_MOMENTARY_MS 400")]
+    public const int FXLOUDNESS_DEFAULT_MOMENTARY_MS = 400;
+
+    [NativeTypeName("#define FXLOUDNESS_DEFAULT_SHORTTERM_MS 3000")]
+    public const int FXLOUDNESS_DEFAULT_SHORTTERM_MS = 3000;
 }

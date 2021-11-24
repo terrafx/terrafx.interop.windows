@@ -3,21 +3,20 @@
 // Ported from um/d3d10_1shader.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D10_SHADER_DEBUG_VAR_INFO
 {
-    public partial struct D3D10_SHADER_DEBUG_VAR_INFO
-    {
-        public uint TokenId;
+    public uint TokenId;
 
-        [NativeTypeName("D3D10_SHADER_VARIABLE_TYPE")]
-        public D3D_SHADER_VARIABLE_TYPE Type;
+    [NativeTypeName("D3D10_SHADER_VARIABLE_TYPE")]
+    public D3D_SHADER_VARIABLE_TYPE Type;
 
-        public uint Register;
+    public uint Register;
 
-        public uint Component;
+    public uint Component;
 
-        public uint ScopeVar;
+    public uint ScopeVar;
 
-        public uint ScopeVarOffset;
-    }
+    public uint ScopeVarOffset;
 }

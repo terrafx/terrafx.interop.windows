@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SVGElementInstanceList" /> struct.</summary>
+public static unsafe partial class SVGElementInstanceListTests
 {
-    /// <summary>Provides validation of the <see cref="SVGElementInstanceList" /> struct.</summary>
-    public static unsafe partial class SVGElementInstanceListTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGElementInstanceList" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGElementInstanceList" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SVGElementInstanceList).GUID, Is.EqualTo(IID_SVGElementInstanceList));
-        }
+        Assert.That(typeof(SVGElementInstanceList).GUID, Is.EqualTo(IID_SVGElementInstanceList));
+    }
 
-        /// <summary>Validates that the <see cref="SVGElementInstanceList" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SVGElementInstanceList>(), Is.EqualTo(sizeof(SVGElementInstanceList)));
-        }
+    /// <summary>Validates that the <see cref="SVGElementInstanceList" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SVGElementInstanceList>(), Is.EqualTo(sizeof(SVGElementInstanceList)));
+    }
 
-        /// <summary>Validates that the <see cref="SVGElementInstanceList" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SVGElementInstanceList).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SVGElementInstanceList" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SVGElementInstanceList).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SVGElementInstanceList" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SVGElementInstanceList), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SVGElementInstanceList" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SVGElementInstanceList), Is.EqualTo(1));
     }
 }

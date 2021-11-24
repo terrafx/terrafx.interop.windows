@@ -3,17 +3,16 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct WS_HTTP_HEADER_MAPPING
 {
-    public partial struct WS_HTTP_HEADER_MAPPING
-    {
-        public const int WS_HTTP_HEADER_MAPPING_COMMA_SEPARATOR = 0x1;
-        public const int WS_HTTP_HEADER_MAPPING_SEMICOLON_SEPARATOR = 0x2;
-        public const int WS_HTTP_HEADER_MAPPING_QUOTED_VALUE = 0x4;
+    public const int WS_HTTP_HEADER_MAPPING_COMMA_SEPARATOR = 0x1;
+    public const int WS_HTTP_HEADER_MAPPING_SEMICOLON_SEPARATOR = 0x2;
+    public const int WS_HTTP_HEADER_MAPPING_QUOTED_VALUE = 0x4;
 
-        public WS_XML_STRING headerName;
+    public WS_XML_STRING headerName;
 
-        [NativeTypeName("ULONG")]
-        public uint headerMappingOptions;
-    }
+    [NativeTypeName("ULONG")]
+    public uint headerMappingOptions;
 }

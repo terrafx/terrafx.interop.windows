@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="StorageLayout" /> struct.</summary>
+public static unsafe partial class StorageLayoutTests
 {
-    /// <summary>Provides validation of the <see cref="StorageLayout" /> struct.</summary>
-    public static unsafe partial class StorageLayoutTests
+    /// <summary>Validates that the <see cref="StorageLayout" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="StorageLayout" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<StorageLayout>(), Is.EqualTo(sizeof(StorageLayout)));
-        }
+        Assert.That(Marshal.SizeOf<StorageLayout>(), Is.EqualTo(sizeof(StorageLayout)));
+    }
 
-        /// <summary>Validates that the <see cref="StorageLayout" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(StorageLayout).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="StorageLayout" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(StorageLayout).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="StorageLayout" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="StorageLayout" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(StorageLayout), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(StorageLayout), Is.EqualTo(24));
-            }
+            Assert.That(sizeof(StorageLayout), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(StorageLayout), Is.EqualTo(24));
         }
     }
 }

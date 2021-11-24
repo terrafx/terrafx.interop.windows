@@ -5,17 +5,16 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D12_DISCARD_REGION
 {
-    public unsafe partial struct D3D12_DISCARD_REGION
-    {
-        public uint NumRects;
+    public uint NumRects;
 
-        [NativeTypeName("const D3D12_RECT *")]
-        public RECT* pRects;
+    [NativeTypeName("const D3D12_RECT *")]
+    public RECT* pRects;
 
-        public uint FirstSubresource;
+    public uint FirstSubresource;
 
-        public uint NumSubresources;
-    }
+    public uint NumSubresources;
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DVD_MUA_MixingInfo" /> struct.</summary>
+public static unsafe partial class DVD_MUA_MixingInfoTests
 {
-    /// <summary>Provides validation of the <see cref="DVD_MUA_MixingInfo" /> struct.</summary>
-    public static unsafe partial class DVD_MUA_MixingInfoTests
+    /// <summary>Validates that the <see cref="DVD_MUA_MixingInfo" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DVD_MUA_MixingInfo" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DVD_MUA_MixingInfo>(), Is.EqualTo(sizeof(DVD_MUA_MixingInfo)));
-        }
+        Assert.That(Marshal.SizeOf<DVD_MUA_MixingInfo>(), Is.EqualTo(sizeof(DVD_MUA_MixingInfo)));
+    }
 
-        /// <summary>Validates that the <see cref="DVD_MUA_MixingInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DVD_MUA_MixingInfo).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DVD_MUA_MixingInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DVD_MUA_MixingInfo).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DVD_MUA_MixingInfo" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DVD_MUA_MixingInfo), Is.EqualTo(20));
-        }
+    /// <summary>Validates that the <see cref="DVD_MUA_MixingInfo" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DVD_MUA_MixingInfo), Is.EqualTo(20));
     }
 }

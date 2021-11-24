@@ -5,22 +5,21 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS1
 {
-    public unsafe partial struct D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS1
-    {
-        public BOOL Enable;
+    public BOOL Enable;
 
-        public ID3D12Resource* pReferenceTexture2D;
+    public ID3D12Resource* pReferenceTexture2D;
 
-        public uint ReferenceSubresource;
+    public uint ReferenceSubresource;
 
-        public DXGI_COLOR_SPACE_TYPE OutputColorSpace;
+    public DXGI_COLOR_SPACE_TYPE OutputColorSpace;
 
-        public DXGI_COLOR_SPACE_TYPE DecodeColorSpace;
+    public DXGI_COLOR_SPACE_TYPE DecodeColorSpace;
 
-        public uint OutputWidth;
+    public uint OutputWidth;
 
-        public uint OutputHeight;
-    }
+    public uint OutputHeight;
 }

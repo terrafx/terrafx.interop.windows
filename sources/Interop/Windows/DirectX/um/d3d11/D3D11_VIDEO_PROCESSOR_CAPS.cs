@@ -5,27 +5,26 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct D3D11_VIDEO_PROCESSOR_CAPS
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct D3D11_VIDEO_PROCESSOR_CAPS
-    {
-        public uint DeviceCaps;
+    public uint DeviceCaps;
 
-        public uint FeatureCaps;
+    public uint FeatureCaps;
 
-        public uint FilterCaps;
+    public uint FilterCaps;
 
-        public uint InputFormatCaps;
+    public uint InputFormatCaps;
 
-        public uint AutoStreamCaps;
+    public uint AutoStreamCaps;
 
-        public uint StereoCaps;
+    public uint StereoCaps;
 
-        public uint RateConversionCapsCount;
+    public uint RateConversionCapsCount;
 
-        public uint MaxInputStreams;
+    public uint MaxInputStreams;
 
-        public uint MaxStreamStates;
-    }
+    public uint MaxStreamStates;
 }

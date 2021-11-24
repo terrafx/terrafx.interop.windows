@@ -5,11 +5,10 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public partial struct PSS_VA_CLONE_INFORMATION
 {
-    [SupportedOSPlatform("windows8.1")]
-    public partial struct PSS_VA_CLONE_INFORMATION
-    {
-        public HANDLE VaCloneHandle;
-    }
+    public HANDLE VaCloneHandle;
 }

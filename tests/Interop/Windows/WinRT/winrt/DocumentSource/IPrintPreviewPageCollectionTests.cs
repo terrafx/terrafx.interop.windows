@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IPrintPreviewPageCollection" /> struct.</summary>
+public static unsafe partial class IPrintPreviewPageCollectionTests
 {
-    /// <summary>Provides validation of the <see cref="IPrintPreviewPageCollection" /> struct.</summary>
-    public static unsafe partial class IPrintPreviewPageCollectionTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPrintPreviewPageCollection" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPrintPreviewPageCollection" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IPrintPreviewPageCollection).GUID, Is.EqualTo(IID_IPrintPreviewPageCollection));
-        }
+        Assert.That(typeof(IPrintPreviewPageCollection).GUID, Is.EqualTo(IID_IPrintPreviewPageCollection));
+    }
 
-        /// <summary>Validates that the <see cref="IPrintPreviewPageCollection" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IPrintPreviewPageCollection>(), Is.EqualTo(sizeof(IPrintPreviewPageCollection)));
-        }
+    /// <summary>Validates that the <see cref="IPrintPreviewPageCollection" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IPrintPreviewPageCollection>(), Is.EqualTo(sizeof(IPrintPreviewPageCollection)));
+    }
 
-        /// <summary>Validates that the <see cref="IPrintPreviewPageCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IPrintPreviewPageCollection).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IPrintPreviewPageCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IPrintPreviewPageCollection).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IPrintPreviewPageCollection" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IPrintPreviewPageCollection" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IPrintPreviewPageCollection), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IPrintPreviewPageCollection), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IPrintPreviewPageCollection), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IPrintPreviewPageCollection), Is.EqualTo(4));
         }
     }
 }

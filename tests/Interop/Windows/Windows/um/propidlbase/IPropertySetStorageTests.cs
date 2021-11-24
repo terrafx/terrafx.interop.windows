@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IPropertySetStorage" /> struct.</summary>
+public static unsafe partial class IPropertySetStorageTests
 {
-    /// <summary>Provides validation of the <see cref="IPropertySetStorage" /> struct.</summary>
-    public static unsafe partial class IPropertySetStorageTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPropertySetStorage" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPropertySetStorage" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IPropertySetStorage).GUID, Is.EqualTo(IID_IPropertySetStorage));
-        }
+        Assert.That(typeof(IPropertySetStorage).GUID, Is.EqualTo(IID_IPropertySetStorage));
+    }
 
-        /// <summary>Validates that the <see cref="IPropertySetStorage" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IPropertySetStorage>(), Is.EqualTo(sizeof(IPropertySetStorage)));
-        }
+    /// <summary>Validates that the <see cref="IPropertySetStorage" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IPropertySetStorage>(), Is.EqualTo(sizeof(IPropertySetStorage)));
+    }
 
-        /// <summary>Validates that the <see cref="IPropertySetStorage" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IPropertySetStorage).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IPropertySetStorage" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IPropertySetStorage).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IPropertySetStorage" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IPropertySetStorage" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IPropertySetStorage), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IPropertySetStorage), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IPropertySetStorage), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IPropertySetStorage), Is.EqualTo(4));
         }
     }
 }

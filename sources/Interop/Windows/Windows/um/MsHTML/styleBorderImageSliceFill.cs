@@ -3,12 +3,11 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum styleBorderImageSliceFill
 {
-    public enum styleBorderImageSliceFill
-    {
-        styleBorderImageSliceFillNotSet = 0,
-        styleBorderImageSliceFillFill = 1,
-        styleBorderImageSliceFill_Max = 2147483647,
-    }
+    styleBorderImageSliceFillNotSet = 0,
+    styleBorderImageSliceFillFill = 1,
+    styleBorderImageSliceFill_Max = 2147483647,
 }

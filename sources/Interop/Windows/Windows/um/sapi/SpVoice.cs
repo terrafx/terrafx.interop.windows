@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("96749377-3391-11D2-9EE3-00C04F797396")]
+public partial struct SpVoice
 {
-    [Guid("96749377-3391-11D2-9EE3-00C04F797396")]
-    public partial struct SpVoice
-    {
-    }
 }

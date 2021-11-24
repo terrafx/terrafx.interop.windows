@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TBINSERTMARK" /> struct.</summary>
+public static unsafe partial class TBINSERTMARKTests
 {
-    /// <summary>Provides validation of the <see cref="TBINSERTMARK" /> struct.</summary>
-    public static unsafe partial class TBINSERTMARKTests
+    /// <summary>Validates that the <see cref="TBINSERTMARK" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TBINSERTMARK" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TBINSERTMARK>(), Is.EqualTo(sizeof(TBINSERTMARK)));
-        }
+        Assert.That(Marshal.SizeOf<TBINSERTMARK>(), Is.EqualTo(sizeof(TBINSERTMARK)));
+    }
 
-        /// <summary>Validates that the <see cref="TBINSERTMARK" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TBINSERTMARK).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TBINSERTMARK" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TBINSERTMARK).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TBINSERTMARK" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(TBINSERTMARK), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="TBINSERTMARK" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(TBINSERTMARK), Is.EqualTo(8));
     }
 }

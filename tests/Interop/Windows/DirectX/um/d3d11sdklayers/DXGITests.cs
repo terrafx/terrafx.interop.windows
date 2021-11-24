@@ -7,16 +7,15 @@ using NUnit.Framework;
 using System;
 using static TerraFX.Interop.DirectX.DXGI;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DXGI" /> class.</summary>
+public static partial class DXGITests
 {
-    /// <summary>Provides validation of the <see cref="DXGI" /> class.</summary>
-    public static partial class DXGITests
+    /// <summary>Validates that the value of the <see cref="DXGI_DEBUG_D3D11" /> property is correct.</summary>
+    [Test]
+    public static void DXGI_DEBUG_D3D11Test()
     {
-        /// <summary>Validates that the value of the <see cref="DXGI_DEBUG_D3D11" /> property is correct.</summary>
-        [Test]
-        public static void DXGI_DEBUG_D3D11Test()
-        {
-            Assert.That(DXGI_DEBUG_D3D11, Is.EqualTo(new Guid(0x4b99317b, 0xac39, 0x4aa6, 0xbb, 0xb, 0xba, 0xa0, 0x47, 0x84, 0x79, 0x8f)));
-        }
+        Assert.That(DXGI_DEBUG_D3D11, Is.EqualTo(new Guid(0x4b99317b, 0xac39, 0x4aa6, 0xbb, 0xb, 0xba, 0xa0, 0x47, 0x84, 0x79, 0x8f)));
     }
 }

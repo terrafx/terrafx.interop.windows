@@ -8,161 +8,160 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Guid("F1C0CA52-92A3-4F00-B4CE-F35691EFD9D9")]
+[NativeTypeName("struct ID2D1SvgStrokeDashArray : ID2D1SvgAttribute")]
+[NativeInheritance("ID2D1SvgAttribute")]
+public unsafe partial struct ID2D1SvgStrokeDashArray : ID2D1SvgStrokeDashArray.Interface
 {
-    [Guid("F1C0CA52-92A3-4F00-B4CE-F35691EFD9D9")]
-    [NativeTypeName("struct ID2D1SvgStrokeDashArray : ID2D1SvgAttribute")]
-    [NativeInheritance("ID2D1SvgAttribute")]
-    public unsafe partial struct ID2D1SvgStrokeDashArray : ID2D1SvgStrokeDashArray.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, uint>)(lpVtbl[1]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, uint>)(lpVtbl[1]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, uint>)(lpVtbl[2]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, uint>)(lpVtbl[2]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public void GetFactory(ID2D1Factory** factory)
+    {
+        ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this), factory);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public void GetFactory(ID2D1Factory** factory)
-        {
-            ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this), factory);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public void GetElement(ID2D1SvgElement** element)
+    {
+        ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, ID2D1SvgElement**, void>)(lpVtbl[4]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this), element);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public void GetElement(ID2D1SvgElement** element)
-        {
-            ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, ID2D1SvgElement**, void>)(lpVtbl[4]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this), element);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Clone(ID2D1SvgAttribute** attribute)
+    {
+        return ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, ID2D1SvgAttribute**, int>)(lpVtbl[5]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this), attribute);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT Clone(ID2D1SvgAttribute** attribute)
-        {
-            return ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, ID2D1SvgAttribute**, int>)(lpVtbl[5]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this), attribute);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT RemoveDashesAtEnd([NativeTypeName("UINT32")] uint dashesCount)
+    {
+        return ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, uint, int>)(lpVtbl[6]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this), dashesCount);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT UpdateDashes([NativeTypeName("const D2D1_SVG_LENGTH *")] D2D1_SVG_LENGTH* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0)
+    {
+        return ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, D2D1_SVG_LENGTH*, uint, uint, int>)(lpVtbl[7]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this), dashes, dashesCount, startIndex);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT UpdateDashes([NativeTypeName("const FLOAT *")] float* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0)
+    {
+        return ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, float*, uint, uint, int>)(lpVtbl[8]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this), dashes, dashesCount, startIndex);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT GetDashes(D2D1_SVG_LENGTH* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0)
+    {
+        return ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, D2D1_SVG_LENGTH*, uint, uint, int>)(lpVtbl[9]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this), dashes, dashesCount, startIndex);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT GetDashes(float* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0)
+    {
+        return ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, float*, uint, uint, int>)(lpVtbl[10]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this), dashes, dashesCount, startIndex);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    [return: NativeTypeName("UINT32")]
+    public uint GetDashesCount()
+    {
+        return ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, uint>)(lpVtbl[11]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : ID2D1SvgAttribute.Interface
+    {
         [VtblIndex(6)]
-        public HRESULT RemoveDashesAtEnd([NativeTypeName("UINT32")] uint dashesCount)
-        {
-            return ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, uint, int>)(lpVtbl[6]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this), dashesCount);
-        }
+        HRESULT RemoveDashesAtEnd([NativeTypeName("UINT32")] uint dashesCount);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT UpdateDashes([NativeTypeName("const D2D1_SVG_LENGTH *")] D2D1_SVG_LENGTH* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0)
-        {
-            return ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, D2D1_SVG_LENGTH*, uint, uint, int>)(lpVtbl[7]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this), dashes, dashesCount, startIndex);
-        }
+        HRESULT UpdateDashes([NativeTypeName("const D2D1_SVG_LENGTH *")] D2D1_SVG_LENGTH* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT UpdateDashes([NativeTypeName("const FLOAT *")] float* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0)
-        {
-            return ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, float*, uint, uint, int>)(lpVtbl[8]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this), dashes, dashesCount, startIndex);
-        }
+        HRESULT UpdateDashes([NativeTypeName("const FLOAT *")] float* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetDashes(D2D1_SVG_LENGTH* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0)
-        {
-            return ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, D2D1_SVG_LENGTH*, uint, uint, int>)(lpVtbl[9]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this), dashes, dashesCount, startIndex);
-        }
+        HRESULT GetDashes(D2D1_SVG_LENGTH* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetDashes(float* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0)
-        {
-            return ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, float*, uint, uint, int>)(lpVtbl[10]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this), dashes, dashesCount, startIndex);
-        }
+        HRESULT GetDashes(float* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
         [return: NativeTypeName("UINT32")]
-        public uint GetDashesCount()
-        {
-            return ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, uint>)(lpVtbl[11]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this));
-        }
+        uint GetDashesCount();
+    }
 
-        public interface Interface : ID2D1SvgAttribute.Interface
-        {
-            [VtblIndex(6)]
-            HRESULT RemoveDashesAtEnd([NativeTypeName("UINT32")] uint dashesCount);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1SvgStrokeDashArray*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(7)]
-            HRESULT UpdateDashes([NativeTypeName("const D2D1_SVG_LENGTH *")] D2D1_SVG_LENGTH* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1SvgStrokeDashArray*, uint> AddRef;
 
-            [VtblIndex(8)]
-            HRESULT UpdateDashes([NativeTypeName("const FLOAT *")] float* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1SvgStrokeDashArray*, uint> Release;
 
-            [VtblIndex(9)]
-            HRESULT GetDashes(D2D1_SVG_LENGTH* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0);
+        [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1SvgStrokeDashArray*, ID2D1Factory**, void> GetFactory;
 
-            [VtblIndex(10)]
-            HRESULT GetDashes(float* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0);
+        [NativeTypeName("void (ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1SvgStrokeDashArray*, ID2D1SvgElement**, void> GetElement;
 
-            [VtblIndex(11)]
-            [return: NativeTypeName("UINT32")]
-            uint GetDashesCount();
-        }
+        [NativeTypeName("HRESULT (ID2D1SvgAttribute **) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1SvgStrokeDashArray*, ID2D1SvgAttribute**, int> Clone;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1SvgStrokeDashArray*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1SvgStrokeDashArray*, uint, int> RemoveDashesAtEnd;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1SvgStrokeDashArray*, uint> AddRef;
+        [NativeTypeName("HRESULT (const D2D1_SVG_LENGTH *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1SvgStrokeDashArray*, D2D1_SVG_LENGTH*, uint, uint, int> UpdateDashes;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1SvgStrokeDashArray*, uint> Release;
+        [NativeTypeName("HRESULT (const FLOAT *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1SvgStrokeDashArray*, float*, uint, uint, int> UpdateDashes1;
 
-            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1SvgStrokeDashArray*, ID2D1Factory**, void> GetFactory;
+        [NativeTypeName("HRESULT (D2D1_SVG_LENGTH *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1SvgStrokeDashArray*, D2D1_SVG_LENGTH*, uint, uint, int> GetDashes;
 
-            [NativeTypeName("void (ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1SvgStrokeDashArray*, ID2D1SvgElement**, void> GetElement;
+        [NativeTypeName("HRESULT (FLOAT *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1SvgStrokeDashArray*, float*, uint, uint, int> GetDashes1;
 
-            [NativeTypeName("HRESULT (ID2D1SvgAttribute **) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1SvgStrokeDashArray*, ID2D1SvgAttribute**, int> Clone;
-
-            [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1SvgStrokeDashArray*, uint, int> RemoveDashesAtEnd;
-
-            [NativeTypeName("HRESULT (const D2D1_SVG_LENGTH *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1SvgStrokeDashArray*, D2D1_SVG_LENGTH*, uint, uint, int> UpdateDashes;
-
-            [NativeTypeName("HRESULT (const FLOAT *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1SvgStrokeDashArray*, float*, uint, uint, int> UpdateDashes1;
-
-            [NativeTypeName("HRESULT (D2D1_SVG_LENGTH *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1SvgStrokeDashArray*, D2D1_SVG_LENGTH*, uint, uint, int> GetDashes;
-
-            [NativeTypeName("HRESULT (FLOAT *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1SvgStrokeDashArray*, float*, uint, uint, int> GetDashes1;
-
-            [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1SvgStrokeDashArray*, uint> GetDashesCount;
-        }
+        [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1SvgStrokeDashArray*, uint> GetDashesCount;
     }
 }

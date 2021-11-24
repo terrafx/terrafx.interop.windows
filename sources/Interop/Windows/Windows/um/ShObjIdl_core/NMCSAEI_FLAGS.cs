@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum NMCSAEI_FLAGS
 {
-    [Flags]
-    public enum NMCSAEI_FLAGS
-    {
-        NMCSAEI_SELECT = 0,
-        NMCSAEI_EDIT = 0x1,
-    }
+    NMCSAEI_SELECT = 0,
+    NMCSAEI_EDIT = 0x1,
 }

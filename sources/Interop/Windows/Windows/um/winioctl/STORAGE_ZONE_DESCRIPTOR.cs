@@ -3,27 +3,26 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct STORAGE_ZONE_DESCRIPTOR
 {
-    public unsafe partial struct STORAGE_ZONE_DESCRIPTOR
-    {
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        public STORAGE_ZONE_TYPES ZoneType;
+    public STORAGE_ZONE_TYPES ZoneType;
 
-        public STORAGE_ZONE_CONDITION ZoneCondition;
+    public STORAGE_ZONE_CONDITION ZoneCondition;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte ResetWritePointerRecommend;
+    [NativeTypeName("BOOLEAN")]
+    public byte ResetWritePointerRecommend;
 
-        [NativeTypeName("BYTE [3]")]
-        public fixed byte Reserved0[3];
+    [NativeTypeName("BYTE [3]")]
+    public fixed byte Reserved0[3];
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong ZoneSize;
+    [NativeTypeName("DWORDLONG")]
+    public ulong ZoneSize;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong WritePointerOffset;
-    }
+    [NativeTypeName("DWORDLONG")]
+    public ulong WritePointerOffset;
 }

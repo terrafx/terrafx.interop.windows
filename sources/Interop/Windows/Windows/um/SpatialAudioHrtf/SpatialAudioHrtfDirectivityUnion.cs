@@ -5,18 +5,17 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Explicit)]
+public partial struct SpatialAudioHrtfDirectivityUnion
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public partial struct SpatialAudioHrtfDirectivityUnion
-    {
-        [FieldOffset(0)]
-        public SpatialAudioHrtfDirectivityCone Cone;
+    [FieldOffset(0)]
+    public SpatialAudioHrtfDirectivityCone Cone;
 
-        [FieldOffset(0)]
-        public SpatialAudioHrtfDirectivityCardioid Cardiod;
+    [FieldOffset(0)]
+    public SpatialAudioHrtfDirectivityCardioid Cardiod;
 
-        [FieldOffset(0)]
-        public SpatialAudioHrtfDirectivity Omni;
-    }
+    [FieldOffset(0)]
+    public SpatialAudioHrtfDirectivity Omni;
 }

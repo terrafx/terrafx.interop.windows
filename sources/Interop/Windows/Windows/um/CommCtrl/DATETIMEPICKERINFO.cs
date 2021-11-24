@@ -3,27 +3,26 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct DATETIMEPICKERINFO
 {
-    public partial struct DATETIMEPICKERINFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public RECT rcCheck;
+    public RECT rcCheck;
 
-        [NativeTypeName("DWORD")]
-        public uint stateCheck;
+    [NativeTypeName("DWORD")]
+    public uint stateCheck;
 
-        public RECT rcButton;
+    public RECT rcButton;
 
-        [NativeTypeName("DWORD")]
-        public uint stateButton;
+    [NativeTypeName("DWORD")]
+    public uint stateButton;
 
-        public HWND hwndEdit;
+    public HWND hwndEdit;
 
-        public HWND hwndUD;
+    public HWND hwndUD;
 
-        public HWND hwndDropDown;
-    }
+    public HWND hwndDropDown;
 }

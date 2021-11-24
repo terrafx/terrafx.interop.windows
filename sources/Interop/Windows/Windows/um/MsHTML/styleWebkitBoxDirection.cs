@@ -3,13 +3,12 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum styleWebkitBoxDirection
 {
-    public enum styleWebkitBoxDirection
-    {
-        styleWebkitBoxDirectionNormal = 0,
-        styleWebkitBoxDirectionReverse = 1,
-        styleWebkitBoxDirectionNotSet = 2,
-        styleWebkitBoxDirection_Max = 2147483647,
-    }
+    styleWebkitBoxDirectionNormal = 0,
+    styleWebkitBoxDirectionReverse = 1,
+    styleWebkitBoxDirectionNotSet = 2,
+    styleWebkitBoxDirection_Max = 2147483647,
 }

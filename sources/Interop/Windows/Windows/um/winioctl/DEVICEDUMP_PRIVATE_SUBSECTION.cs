@@ -5,17 +5,16 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct DEVICEDUMP_PRIVATE_SUBSECTION
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct DEVICEDUMP_PRIVATE_SUBSECTION
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        public GP_LOG_PAGE_DESCRIPTOR GPLogId;
+    public GP_LOG_PAGE_DESCRIPTOR GPLogId;
 
-        [NativeTypeName("BYTE [1]")]
-        public fixed byte bData[1];
-    }
+    [NativeTypeName("BYTE [1]")]
+    public fixed byte bData[1];
 }

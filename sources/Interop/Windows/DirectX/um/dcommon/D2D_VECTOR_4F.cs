@@ -3,16 +3,15 @@
 // Ported from um/dcommon.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D_VECTOR_4F
 {
-    public partial struct D2D_VECTOR_4F
-    {
-        public float x;
+    public float x;
 
-        public float y;
+    public float y;
 
-        public float z;
+    public float z;
 
-        public float w;
-    }
+    public float w;
 }

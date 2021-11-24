@@ -5,11 +5,10 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum DXGI_OFFER_RESOURCE_FLAGS
 {
-    [Flags]
-    public enum DXGI_OFFER_RESOURCE_FLAGS
-    {
-        DXGI_OFFER_RESOURCE_FLAG_ALLOW_DECOMMIT = 0x1,
-    }
+    DXGI_OFFER_RESOURCE_FLAG_ALLOW_DECOMMIT = 0x1,
 }

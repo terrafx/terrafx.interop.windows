@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IRandomAccessStreamFileAccessMode" /> struct.</summary>
+[SupportedOSPlatform("windows10.0")]
+public static unsafe partial class IRandomAccessStreamFileAccessModeTests
 {
-    /// <summary>Provides validation of the <see cref="IRandomAccessStreamFileAccessMode" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0")]
-    public static unsafe partial class IRandomAccessStreamFileAccessModeTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IRandomAccessStreamFileAccessMode" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IRandomAccessStreamFileAccessMode" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IRandomAccessStreamFileAccessMode).GUID, Is.EqualTo(IID_IRandomAccessStreamFileAccessMode));
-        }
+        Assert.That(typeof(IRandomAccessStreamFileAccessMode).GUID, Is.EqualTo(IID_IRandomAccessStreamFileAccessMode));
+    }
 
-        /// <summary>Validates that the <see cref="IRandomAccessStreamFileAccessMode" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IRandomAccessStreamFileAccessMode>(), Is.EqualTo(sizeof(IRandomAccessStreamFileAccessMode)));
-        }
+    /// <summary>Validates that the <see cref="IRandomAccessStreamFileAccessMode" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IRandomAccessStreamFileAccessMode>(), Is.EqualTo(sizeof(IRandomAccessStreamFileAccessMode)));
+    }
 
-        /// <summary>Validates that the <see cref="IRandomAccessStreamFileAccessMode" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IRandomAccessStreamFileAccessMode).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IRandomAccessStreamFileAccessMode" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IRandomAccessStreamFileAccessMode).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IRandomAccessStreamFileAccessMode" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IRandomAccessStreamFileAccessMode" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IRandomAccessStreamFileAccessMode), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IRandomAccessStreamFileAccessMode), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IRandomAccessStreamFileAccessMode), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IRandomAccessStreamFileAccessMode), Is.EqualTo(4));
         }
     }
 }

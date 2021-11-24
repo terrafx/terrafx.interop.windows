@@ -3,13 +3,12 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SPINPARTS
 {
-    public enum SPINPARTS
-    {
-        SPNP_UP = 1,
-        SPNP_DOWN = 2,
-        SPNP_UPHORZ = 3,
-        SPNP_DOWNHORZ = 4,
-    }
+    SPNP_UP = 1,
+    SPNP_DOWN = 2,
+    SPNP_UPHORZ = 3,
+    SPNP_DOWNHORZ = 4,
 }

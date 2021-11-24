@@ -3,11 +3,10 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum _AMSTREAMSELECTENABLEFLAGS
 {
-    public enum _AMSTREAMSELECTENABLEFLAGS
-    {
-        AMSTREAMSELECTENABLE_ENABLE = 0x1,
-        AMSTREAMSELECTENABLE_ENABLEALL = 0x2,
-    }
+    AMSTREAMSELECTENABLE_ENABLE = 0x1,
+    AMSTREAMSELECTENABLE_ENABLEALL = 0x2,
 }

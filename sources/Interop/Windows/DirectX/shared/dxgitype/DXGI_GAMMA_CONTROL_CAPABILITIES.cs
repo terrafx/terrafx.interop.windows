@@ -5,19 +5,18 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct DXGI_GAMMA_CONTROL_CAPABILITIES
 {
-    public unsafe partial struct DXGI_GAMMA_CONTROL_CAPABILITIES
-    {
-        public BOOL ScaleAndOffsetSupported;
+    public BOOL ScaleAndOffsetSupported;
 
-        public float MaxConvertedValue;
+    public float MaxConvertedValue;
 
-        public float MinConvertedValue;
+    public float MinConvertedValue;
 
-        public uint NumGammaControlPoints;
+    public uint NumGammaControlPoints;
 
-        [NativeTypeName("float [1025]")]
-        public fixed float ControlPointPositions[1025];
-    }
+    [NativeTypeName("float [1025]")]
+    public fixed float ControlPointPositions[1025];
 }

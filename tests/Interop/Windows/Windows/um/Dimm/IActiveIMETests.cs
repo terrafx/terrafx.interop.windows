@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IActiveIME" /> struct.</summary>
+public static unsafe partial class IActiveIMETests
 {
-    /// <summary>Provides validation of the <see cref="IActiveIME" /> struct.</summary>
-    public static unsafe partial class IActiveIMETests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IActiveIME" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IActiveIME" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IActiveIME).GUID, Is.EqualTo(IID_IActiveIME));
-        }
+        Assert.That(typeof(IActiveIME).GUID, Is.EqualTo(IID_IActiveIME));
+    }
 
-        /// <summary>Validates that the <see cref="IActiveIME" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IActiveIME>(), Is.EqualTo(sizeof(IActiveIME)));
-        }
+    /// <summary>Validates that the <see cref="IActiveIME" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IActiveIME>(), Is.EqualTo(sizeof(IActiveIME)));
+    }
 
-        /// <summary>Validates that the <see cref="IActiveIME" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IActiveIME).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IActiveIME" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IActiveIME).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IActiveIME" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IActiveIME" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IActiveIME), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IActiveIME), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IActiveIME), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IActiveIME), Is.EqualTo(4));
         }
     }
 }

@@ -3,15 +3,14 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum BALLOONSTEMSTATES
 {
-    public enum BALLOONSTEMSTATES
-    {
-        TTBSS_POINTINGUPLEFTWALL = 1,
-        TTBSS_POINTINGUPCENTERED = 2,
-        TTBSS_POINTINGUPRIGHTWALL = 3,
-        TTBSS_POINTINGDOWNRIGHTWALL = 4,
-        TTBSS_POINTINGDOWNCENTERED = 5,
-        TTBSS_POINTINGDOWNLEFTWALL = 6,
-    }
+    TTBSS_POINTINGUPLEFTWALL = 1,
+    TTBSS_POINTINGUPCENTERED = 2,
+    TTBSS_POINTINGUPRIGHTWALL = 3,
+    TTBSS_POINTINGDOWNRIGHTWALL = 4,
+    TTBSS_POINTINGDOWNCENTERED = 5,
+    TTBSS_POINTINGDOWNLEFTWALL = 6,
 }

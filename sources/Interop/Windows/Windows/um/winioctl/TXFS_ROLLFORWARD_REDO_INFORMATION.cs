@@ -3,19 +3,18 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TXFS_ROLLFORWARD_REDO_INFORMATION
 {
-    public partial struct TXFS_ROLLFORWARD_REDO_INFORMATION
-    {
-        public LARGE_INTEGER LastVirtualClock;
+    public LARGE_INTEGER LastVirtualClock;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong LastRedoLsn;
+    [NativeTypeName("DWORDLONG")]
+    public ulong LastRedoLsn;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong HighestRecoveryLsn;
+    [NativeTypeName("DWORDLONG")]
+    public ulong HighestRecoveryLsn;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
-    }
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 }

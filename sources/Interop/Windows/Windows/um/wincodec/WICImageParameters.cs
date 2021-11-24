@@ -6,25 +6,24 @@
 using System.Runtime.Versioning;
 using TerraFX.Interop.DirectX;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct WICImageParameters
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct WICImageParameters
-    {
-        public D2D1_PIXEL_FORMAT PixelFormat;
+    public D2D1_PIXEL_FORMAT PixelFormat;
 
-        public float DpiX;
+    public float DpiX;
 
-        public float DpiY;
+    public float DpiY;
 
-        public float Top;
+    public float Top;
 
-        public float Left;
+    public float Left;
 
-        [NativeTypeName("UINT32")]
-        public uint PixelWidth;
+    [NativeTypeName("UINT32")]
+    public uint PixelWidth;
 
-        [NativeTypeName("UINT32")]
-        public uint PixelHeight;
-    }
+    [NativeTypeName("UINT32")]
+    public uint PixelHeight;
 }

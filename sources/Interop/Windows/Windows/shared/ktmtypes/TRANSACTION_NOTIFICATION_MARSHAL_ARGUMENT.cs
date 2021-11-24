@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct TRANSACTION_NOTIFICATION_MARSHAL_ARGUMENT
-    {
-        [NativeTypeName("ULONG")]
-        public uint MarshalCookie;
+namespace TerraFX.Interop.Windows;
 
-        public Guid UOW;
-    }
+public partial struct TRANSACTION_NOTIFICATION_MARSHAL_ARGUMENT
+{
+    [NativeTypeName("ULONG")]
+    public uint MarshalCookie;
+
+    public Guid UOW;
 }

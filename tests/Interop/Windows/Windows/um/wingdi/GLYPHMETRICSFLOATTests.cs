@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="GLYPHMETRICSFLOAT" /> struct.</summary>
+public static unsafe partial class GLYPHMETRICSFLOATTests
 {
-    /// <summary>Provides validation of the <see cref="GLYPHMETRICSFLOAT" /> struct.</summary>
-    public static unsafe partial class GLYPHMETRICSFLOATTests
+    /// <summary>Validates that the <see cref="GLYPHMETRICSFLOAT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="GLYPHMETRICSFLOAT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<GLYPHMETRICSFLOAT>(), Is.EqualTo(sizeof(GLYPHMETRICSFLOAT)));
-        }
+        Assert.That(Marshal.SizeOf<GLYPHMETRICSFLOAT>(), Is.EqualTo(sizeof(GLYPHMETRICSFLOAT)));
+    }
 
-        /// <summary>Validates that the <see cref="GLYPHMETRICSFLOAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(GLYPHMETRICSFLOAT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="GLYPHMETRICSFLOAT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(GLYPHMETRICSFLOAT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="GLYPHMETRICSFLOAT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(GLYPHMETRICSFLOAT), Is.EqualTo(24));
-        }
+    /// <summary>Validates that the <see cref="GLYPHMETRICSFLOAT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(GLYPHMETRICSFLOAT), Is.EqualTo(24));
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CONSOLE_SCREEN_BUFFER_INFOEX" /> struct.</summary>
+public static unsafe partial class CONSOLE_SCREEN_BUFFER_INFOEXTests
 {
-    /// <summary>Provides validation of the <see cref="CONSOLE_SCREEN_BUFFER_INFOEX" /> struct.</summary>
-    public static unsafe partial class CONSOLE_SCREEN_BUFFER_INFOEXTests
+    /// <summary>Validates that the <see cref="CONSOLE_SCREEN_BUFFER_INFOEX" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CONSOLE_SCREEN_BUFFER_INFOEX" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CONSOLE_SCREEN_BUFFER_INFOEX>(), Is.EqualTo(sizeof(CONSOLE_SCREEN_BUFFER_INFOEX)));
-        }
+        Assert.That(Marshal.SizeOf<CONSOLE_SCREEN_BUFFER_INFOEX>(), Is.EqualTo(sizeof(CONSOLE_SCREEN_BUFFER_INFOEX)));
+    }
 
-        /// <summary>Validates that the <see cref="CONSOLE_SCREEN_BUFFER_INFOEX" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CONSOLE_SCREEN_BUFFER_INFOEX).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CONSOLE_SCREEN_BUFFER_INFOEX" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CONSOLE_SCREEN_BUFFER_INFOEX).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CONSOLE_SCREEN_BUFFER_INFOEX" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CONSOLE_SCREEN_BUFFER_INFOEX), Is.EqualTo(96));
-        }
+    /// <summary>Validates that the <see cref="CONSOLE_SCREEN_BUFFER_INFOEX" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CONSOLE_SCREEN_BUFFER_INFOEX), Is.EqualTo(96));
     }
 }

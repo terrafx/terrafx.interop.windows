@@ -5,12 +5,11 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct MIXERCONTROLDETAILS_UNSIGNED
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct MIXERCONTROLDETAILS_UNSIGNED
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwValue;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwValue;
 }

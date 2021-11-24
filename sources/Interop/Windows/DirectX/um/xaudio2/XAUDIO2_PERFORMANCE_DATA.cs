@@ -5,51 +5,50 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct XAUDIO2_PERFORMANCE_DATA
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct XAUDIO2_PERFORMANCE_DATA
-    {
-        [NativeTypeName("UINT64")]
-        public ulong AudioCyclesSinceLastQuery;
+    [NativeTypeName("UINT64")]
+    public ulong AudioCyclesSinceLastQuery;
 
-        [NativeTypeName("UINT64")]
-        public ulong TotalCyclesSinceLastQuery;
+    [NativeTypeName("UINT64")]
+    public ulong TotalCyclesSinceLastQuery;
 
-        [NativeTypeName("UINT32")]
-        public uint MinimumCyclesPerQuantum;
+    [NativeTypeName("UINT32")]
+    public uint MinimumCyclesPerQuantum;
 
-        [NativeTypeName("UINT32")]
-        public uint MaximumCyclesPerQuantum;
+    [NativeTypeName("UINT32")]
+    public uint MaximumCyclesPerQuantum;
 
-        [NativeTypeName("UINT32")]
-        public uint MemoryUsageInBytes;
+    [NativeTypeName("UINT32")]
+    public uint MemoryUsageInBytes;
 
-        [NativeTypeName("UINT32")]
-        public uint CurrentLatencyInSamples;
+    [NativeTypeName("UINT32")]
+    public uint CurrentLatencyInSamples;
 
-        [NativeTypeName("UINT32")]
-        public uint GlitchesSinceEngineStarted;
+    [NativeTypeName("UINT32")]
+    public uint GlitchesSinceEngineStarted;
 
-        [NativeTypeName("UINT32")]
-        public uint ActiveSourceVoiceCount;
+    [NativeTypeName("UINT32")]
+    public uint ActiveSourceVoiceCount;
 
-        [NativeTypeName("UINT32")]
-        public uint TotalSourceVoiceCount;
+    [NativeTypeName("UINT32")]
+    public uint TotalSourceVoiceCount;
 
-        [NativeTypeName("UINT32")]
-        public uint ActiveSubmixVoiceCount;
+    [NativeTypeName("UINT32")]
+    public uint ActiveSubmixVoiceCount;
 
-        [NativeTypeName("UINT32")]
-        public uint ActiveResamplerCount;
+    [NativeTypeName("UINT32")]
+    public uint ActiveResamplerCount;
 
-        [NativeTypeName("UINT32")]
-        public uint ActiveMatrixMixCount;
+    [NativeTypeName("UINT32")]
+    public uint ActiveMatrixMixCount;
 
-        [NativeTypeName("UINT32")]
-        public uint ActiveXmaSourceVoices;
+    [NativeTypeName("UINT32")]
+    public uint ActiveXmaSourceVoices;
 
-        [NativeTypeName("UINT32")]
-        public uint ActiveXmaStreams;
-    }
+    [NativeTypeName("UINT32")]
+    public uint ActiveXmaStreams;
 }

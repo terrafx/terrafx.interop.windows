@@ -3,14 +3,13 @@
 // Ported from shared/Iprtrmib.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct MIB_BOUNDARYROW
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwGroupAddress;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint dwGroupMask;
-    }
+public partial struct MIB_BOUNDARYROW
+{
+    [NativeTypeName("DWORD")]
+    public uint dwGroupAddress;
+
+    [NativeTypeName("DWORD")]
+    public uint dwGroupMask;
 }

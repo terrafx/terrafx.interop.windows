@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CHANGER_EXCHANGE_MEDIUM" /> struct.</summary>
+public static unsafe partial class CHANGER_EXCHANGE_MEDIUMTests
 {
-    /// <summary>Provides validation of the <see cref="CHANGER_EXCHANGE_MEDIUM" /> struct.</summary>
-    public static unsafe partial class CHANGER_EXCHANGE_MEDIUMTests
+    /// <summary>Validates that the <see cref="CHANGER_EXCHANGE_MEDIUM" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CHANGER_EXCHANGE_MEDIUM" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CHANGER_EXCHANGE_MEDIUM>(), Is.EqualTo(sizeof(CHANGER_EXCHANGE_MEDIUM)));
-        }
+        Assert.That(Marshal.SizeOf<CHANGER_EXCHANGE_MEDIUM>(), Is.EqualTo(sizeof(CHANGER_EXCHANGE_MEDIUM)));
+    }
 
-        /// <summary>Validates that the <see cref="CHANGER_EXCHANGE_MEDIUM" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CHANGER_EXCHANGE_MEDIUM).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CHANGER_EXCHANGE_MEDIUM" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CHANGER_EXCHANGE_MEDIUM).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CHANGER_EXCHANGE_MEDIUM" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CHANGER_EXCHANGE_MEDIUM), Is.EqualTo(36));
-        }
+    /// <summary>Validates that the <see cref="CHANGER_EXCHANGE_MEDIUM" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CHANGER_EXCHANGE_MEDIUM), Is.EqualTo(36));
     }
 }

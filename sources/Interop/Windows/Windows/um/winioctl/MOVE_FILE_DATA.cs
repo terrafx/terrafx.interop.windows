@@ -3,17 +3,16 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MOVE_FILE_DATA
 {
-    public partial struct MOVE_FILE_DATA
-    {
-        public HANDLE FileHandle;
+    public HANDLE FileHandle;
 
-        public LARGE_INTEGER StartingVcn;
+    public LARGE_INTEGER StartingVcn;
 
-        public LARGE_INTEGER StartingLcn;
+    public LARGE_INTEGER StartingLcn;
 
-        [NativeTypeName("DWORD")]
-        public uint ClusterCount;
-    }
+    [NativeTypeName("DWORD")]
+    public uint ClusterCount;
 }

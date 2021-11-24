@@ -3,47 +3,46 @@
 // Ported from um/urlmon.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SOFTDISTINFO
 {
-    public unsafe partial struct SOFTDISTINFO
-    {
-        [NativeTypeName("ULONG")]
-        public uint cbSize;
+    [NativeTypeName("ULONG")]
+    public uint cbSize;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        [NativeTypeName("DWORD")]
-        public uint dwAdState;
+    [NativeTypeName("DWORD")]
+    public uint dwAdState;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* szTitle;
+    [NativeTypeName("LPWSTR")]
+    public ushort* szTitle;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* szAbstract;
+    [NativeTypeName("LPWSTR")]
+    public ushort* szAbstract;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* szHREF;
+    [NativeTypeName("LPWSTR")]
+    public ushort* szHREF;
 
-        [NativeTypeName("DWORD")]
-        public uint dwInstalledVersionMS;
+    [NativeTypeName("DWORD")]
+    public uint dwInstalledVersionMS;
 
-        [NativeTypeName("DWORD")]
-        public uint dwInstalledVersionLS;
+    [NativeTypeName("DWORD")]
+    public uint dwInstalledVersionLS;
 
-        [NativeTypeName("DWORD")]
-        public uint dwUpdateVersionMS;
+    [NativeTypeName("DWORD")]
+    public uint dwUpdateVersionMS;
 
-        [NativeTypeName("DWORD")]
-        public uint dwUpdateVersionLS;
+    [NativeTypeName("DWORD")]
+    public uint dwUpdateVersionLS;
 
-        [NativeTypeName("DWORD")]
-        public uint dwAdvertisedVersionMS;
+    [NativeTypeName("DWORD")]
+    public uint dwAdvertisedVersionMS;
 
-        [NativeTypeName("DWORD")]
-        public uint dwAdvertisedVersionLS;
+    [NativeTypeName("DWORD")]
+    public uint dwAdvertisedVersionLS;
 
-        [NativeTypeName("DWORD")]
-        public uint dwReserved;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwReserved;
 }

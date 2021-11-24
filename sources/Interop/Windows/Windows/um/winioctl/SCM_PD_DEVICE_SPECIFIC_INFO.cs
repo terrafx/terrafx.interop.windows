@@ -7,37 +7,36 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SCM_PD_DEVICE_SPECIFIC_INFO
 {
-    public partial struct SCM_PD_DEVICE_SPECIFIC_INFO
+    [NativeTypeName("DWORD")]
+    public uint Version;
+
+    [NativeTypeName("DWORD")]
+    public uint Size;
+
+    [NativeTypeName("DWORD")]
+    public uint NumberOfProperties;
+
+    [NativeTypeName("SCM_PD_DEVICE_SPECIFIC_PROPERTY [1]")]
+    public _DeviceSpecificProperties_e__FixedBuffer DeviceSpecificProperties;
+
+    public partial struct _DeviceSpecificProperties_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+        public SCM_PD_DEVICE_SPECIFIC_PROPERTY e0;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
-
-        [NativeTypeName("DWORD")]
-        public uint NumberOfProperties;
-
-        [NativeTypeName("SCM_PD_DEVICE_SPECIFIC_PROPERTY [1]")]
-        public _DeviceSpecificProperties_e__FixedBuffer DeviceSpecificProperties;
-
-        public partial struct _DeviceSpecificProperties_e__FixedBuffer
+        public ref SCM_PD_DEVICE_SPECIFIC_PROPERTY this[int index]
         {
-            public SCM_PD_DEVICE_SPECIFIC_PROPERTY e0;
-
-            public ref SCM_PD_DEVICE_SPECIFIC_PROPERTY this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<SCM_PD_DEVICE_SPECIFIC_PROPERTY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<SCM_PD_DEVICE_SPECIFIC_PROPERTY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

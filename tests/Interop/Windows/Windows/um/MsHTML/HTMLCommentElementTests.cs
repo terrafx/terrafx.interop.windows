@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLCommentElement" /> struct.</summary>
+public static unsafe partial class HTMLCommentElementTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLCommentElement" /> struct.</summary>
-    public static unsafe partial class HTMLCommentElementTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLCommentElement" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLCommentElement" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLCommentElement).GUID, Is.EqualTo(IID_HTMLCommentElement));
-        }
+        Assert.That(typeof(HTMLCommentElement).GUID, Is.EqualTo(IID_HTMLCommentElement));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLCommentElement" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLCommentElement>(), Is.EqualTo(sizeof(HTMLCommentElement)));
-        }
+    /// <summary>Validates that the <see cref="HTMLCommentElement" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLCommentElement>(), Is.EqualTo(sizeof(HTMLCommentElement)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLCommentElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLCommentElement).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLCommentElement" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLCommentElement).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLCommentElement" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HTMLCommentElement), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="HTMLCommentElement" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HTMLCommentElement), Is.EqualTo(1));
     }
 }

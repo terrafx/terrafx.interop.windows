@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+public partial struct D3D12_RESOURCE_COORDINATE
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public partial struct D3D12_RESOURCE_COORDINATE
-    {
-        [NativeTypeName("UINT64")]
-        public ulong X;
+    [NativeTypeName("UINT64")]
+    public ulong X;
 
-        public uint Y;
+    public uint Y;
 
-        public uint Z;
+    public uint Z;
 
-        public uint SubresourceIndex;
-    }
+    public uint SubresourceIndex;
 }

@@ -3,12 +3,11 @@
 // Ported from um/msctf.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct TF_SELECTIONSTYLE
-    {
-        public TfActiveSelEnd ase;
+namespace TerraFX.Interop.Windows;
 
-        public BOOL fInterimChar;
-    }
+public partial struct TF_SELECTIONSTYLE
+{
+    public TfActiveSelEnd ase;
+
+    public BOOL fInterimChar;
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="FILEPATHS32_A" /> struct.</summary>
+public static unsafe partial class FILEPATHS32_ATests
 {
-    /// <summary>Provides validation of the <see cref="FILEPATHS32_A" /> struct.</summary>
-    public static unsafe partial class FILEPATHS32_ATests
+    /// <summary>Validates that the <see cref="FILEPATHS32_A" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="FILEPATHS32_A" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<FILEPATHS32_A>(), Is.EqualTo(sizeof(FILEPATHS32_A)));
-        }
+        Assert.That(Marshal.SizeOf<FILEPATHS32_A>(), Is.EqualTo(sizeof(FILEPATHS32_A)));
+    }
 
-        /// <summary>Validates that the <see cref="FILEPATHS32_A" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(FILEPATHS32_A).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="FILEPATHS32_A" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(FILEPATHS32_A).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="FILEPATHS32_A" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="FILEPATHS32_A" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(FILEPATHS32_A), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(FILEPATHS32_A), Is.EqualTo(16));
-            }
+            Assert.That(sizeof(FILEPATHS32_A), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(FILEPATHS32_A), Is.EqualTo(16));
         }
     }
 }

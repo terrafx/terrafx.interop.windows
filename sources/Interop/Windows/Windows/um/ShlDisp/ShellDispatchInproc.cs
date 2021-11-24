@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("0A89A860-D7B1-11CE-8350-444553540000")]
+public partial struct ShellDispatchInproc
 {
-    [Guid("0A89A860-D7B1-11CE-8350-444553540000")]
-    public partial struct ShellDispatchInproc
-    {
-    }
 }

@@ -7,64 +7,63 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("2F0666C6-12F7-4360-B511-A394A0553725")]
+[NativeTypeName("struct ILaunchTargetViewSizePreference : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ILaunchTargetViewSizePreference : ILaunchTargetViewSizePreference.Interface
 {
-    [Guid("2F0666C6-12F7-4360-B511-A394A0553725")]
-    [NativeTypeName("struct ILaunchTargetViewSizePreference : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ILaunchTargetViewSizePreference : ILaunchTargetViewSizePreference.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ILaunchTargetViewSizePreference*, Guid*, void**, int>)(lpVtbl[0]))((ILaunchTargetViewSizePreference*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ILaunchTargetViewSizePreference*, Guid*, void**, int>)(lpVtbl[0]))((ILaunchTargetViewSizePreference*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ILaunchTargetViewSizePreference*, uint>)(lpVtbl[1]))((ILaunchTargetViewSizePreference*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ILaunchTargetViewSizePreference*, uint>)(lpVtbl[1]))((ILaunchTargetViewSizePreference*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ILaunchTargetViewSizePreference*, uint>)(lpVtbl[2]))((ILaunchTargetViewSizePreference*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ILaunchTargetViewSizePreference*, uint>)(lpVtbl[2]))((ILaunchTargetViewSizePreference*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetTargetViewSizePreference(APPLICATION_VIEW_SIZE_PREFERENCE* targetSizeOnLaunch)
+    {
+        return ((delegate* unmanaged<ILaunchTargetViewSizePreference*, APPLICATION_VIEW_SIZE_PREFERENCE*, int>)(lpVtbl[3]))((ILaunchTargetViewSizePreference*)Unsafe.AsPointer(ref this), targetSizeOnLaunch);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetTargetViewSizePreference(APPLICATION_VIEW_SIZE_PREFERENCE* targetSizeOnLaunch)
-        {
-            return ((delegate* unmanaged<ILaunchTargetViewSizePreference*, APPLICATION_VIEW_SIZE_PREFERENCE*, int>)(lpVtbl[3]))((ILaunchTargetViewSizePreference*)Unsafe.AsPointer(ref this), targetSizeOnLaunch);
-        }
+        HRESULT GetTargetViewSizePreference(APPLICATION_VIEW_SIZE_PREFERENCE* targetSizeOnLaunch);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetTargetViewSizePreference(APPLICATION_VIEW_SIZE_PREFERENCE* targetSizeOnLaunch);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ILaunchTargetViewSizePreference*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ILaunchTargetViewSizePreference*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ILaunchTargetViewSizePreference*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ILaunchTargetViewSizePreference*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ILaunchTargetViewSizePreference*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ILaunchTargetViewSizePreference*, uint> Release;
-
-            [NativeTypeName("HRESULT (APPLICATION_VIEW_SIZE_PREFERENCE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ILaunchTargetViewSizePreference*, APPLICATION_VIEW_SIZE_PREFERENCE*, int> GetTargetViewSizePreference;
-        }
+        [NativeTypeName("HRESULT (APPLICATION_VIEW_SIZE_PREFERENCE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ILaunchTargetViewSizePreference*, APPLICATION_VIEW_SIZE_PREFERENCE*, int> GetTargetViewSizePreference;
     }
 }

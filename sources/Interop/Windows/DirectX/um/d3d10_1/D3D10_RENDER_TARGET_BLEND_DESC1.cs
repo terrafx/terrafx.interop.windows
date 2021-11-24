@@ -5,25 +5,24 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D10_RENDER_TARGET_BLEND_DESC1
 {
-    public partial struct D3D10_RENDER_TARGET_BLEND_DESC1
-    {
-        public BOOL BlendEnable;
+    public BOOL BlendEnable;
 
-        public D3D10_BLEND SrcBlend;
+    public D3D10_BLEND SrcBlend;
 
-        public D3D10_BLEND DestBlend;
+    public D3D10_BLEND DestBlend;
 
-        public D3D10_BLEND_OP BlendOp;
+    public D3D10_BLEND_OP BlendOp;
 
-        public D3D10_BLEND SrcBlendAlpha;
+    public D3D10_BLEND SrcBlendAlpha;
 
-        public D3D10_BLEND DestBlendAlpha;
+    public D3D10_BLEND DestBlendAlpha;
 
-        public D3D10_BLEND_OP BlendOpAlpha;
+    public D3D10_BLEND_OP BlendOpAlpha;
 
-        [NativeTypeName("UINT8")]
-        public byte RenderTargetWriteMask;
-    }
+    [NativeTypeName("UINT8")]
+    public byte RenderTargetWriteMask;
 }

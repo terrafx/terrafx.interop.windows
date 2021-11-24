@@ -3,13 +3,12 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum TREEVIEWPARTS
 {
-    public enum TREEVIEWPARTS
-    {
-        TVP_TREEITEM = 1,
-        TVP_GLYPH = 2,
-        TVP_BRANCH = 3,
-        TVP_HOTGLYPH = 4,
-    }
+    TVP_TREEITEM = 1,
+    TVP_GLYPH = 2,
+    TVP_BRANCH = 3,
+    TVP_HOTGLYPH = 4,
 }

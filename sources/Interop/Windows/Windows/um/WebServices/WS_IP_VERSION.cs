@@ -3,12 +3,11 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum WS_IP_VERSION
 {
-    public enum WS_IP_VERSION
-    {
-        WS_IP_VERSION_4 = 1,
-        WS_IP_VERSION_6 = 2,
-        WS_IP_VERSION_AUTO = 3,
-    }
+    WS_IP_VERSION_4 = 1,
+    WS_IP_VERSION_6 = 2,
+    WS_IP_VERSION_AUTO = 3,
 }

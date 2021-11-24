@@ -5,12 +5,11 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
-{
-    public partial struct DXGI_OUTDUPL_POINTER_POSITION
-    {
-        public POINT Position;
+namespace TerraFX.Interop.DirectX;
 
-        public BOOL Visible;
-    }
+public partial struct DXGI_OUTDUPL_POINTER_POSITION
+{
+    public POINT Position;
+
+    public BOOL Visible;
 }

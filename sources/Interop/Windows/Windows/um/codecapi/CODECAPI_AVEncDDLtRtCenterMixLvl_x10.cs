@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("DCA128A2-491F-4600-B2DA-76E3344B4197")]
+public partial struct CODECAPI_AVEncDDLtRtCenterMixLvl_x10
 {
-    [Guid("DCA128A2-491F-4600-B2DA-76E3344B4197")]
-    public partial struct CODECAPI_AVEncDDLtRtCenterMixLvl_x10
-    {
-    }
 }

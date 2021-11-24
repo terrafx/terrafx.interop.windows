@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum EXTCONN
 {
-    [Flags]
-    public enum EXTCONN
-    {
-        EXTCONN_STRONG = 0x1,
-        EXTCONN_WEAK = 0x2,
-        EXTCONN_CALLABLE = 0x4,
-    }
+    EXTCONN_STRONG = 0x1,
+    EXTCONN_WEAK = 0x2,
+    EXTCONN_CALLABLE = 0x4,
 }

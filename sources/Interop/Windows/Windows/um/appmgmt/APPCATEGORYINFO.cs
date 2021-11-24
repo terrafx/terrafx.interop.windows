@@ -5,16 +5,15 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct APPCATEGORYINFO
 {
-    public unsafe partial struct APPCATEGORYINFO
-    {
-        [NativeTypeName("LCID")]
-        public uint Locale;
+    [NativeTypeName("LCID")]
+    public uint Locale;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszDescription;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszDescription;
 
-        public Guid AppCategoryId;
-    }
+    public Guid AppCategoryId;
 }

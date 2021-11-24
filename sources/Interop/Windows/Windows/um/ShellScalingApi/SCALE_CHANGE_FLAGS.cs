@@ -6,14 +6,13 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+[SupportedOSPlatform("windows8.0")]
+public enum SCALE_CHANGE_FLAGS
 {
-    [Flags]
-    [SupportedOSPlatform("windows8.0")]
-    public enum SCALE_CHANGE_FLAGS
-    {
-        SCF_VALUE_NONE = 0x00,
-        SCF_SCALE = 0x01,
-        SCF_PHYSICAL = 0x02,
-    }
+    SCF_VALUE_NONE = 0x00,
+    SCF_SCALE = 0x01,
+    SCF_PHYSICAL = 0x02,
 }

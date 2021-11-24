@@ -3,23 +3,22 @@
 // Ported from um/Mobsync.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SYNCMGRPROGRESSITEM
 {
-    public unsafe partial struct SYNCMGRPROGRESSITEM
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public uint mask;
+    public uint mask;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* lpcStatusText;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* lpcStatusText;
 
-        [NativeTypeName("DWORD")]
-        public uint dwStatusType;
+    [NativeTypeName("DWORD")]
+    public uint dwStatusType;
 
-        public int iProgValue;
+    public int iProgValue;
 
-        public int iMaxValue;
-    }
+    public int iMaxValue;
 }

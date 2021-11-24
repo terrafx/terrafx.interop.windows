@@ -6,25 +6,24 @@
 using System.Runtime.Versioning;
 using TerraFX.Interop.DirectX;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public partial struct WICDdsParameters
 {
-    [SupportedOSPlatform("windows8.1")]
-    public partial struct WICDdsParameters
-    {
-        public uint Width;
+    public uint Width;
 
-        public uint Height;
+    public uint Height;
 
-        public uint Depth;
+    public uint Depth;
 
-        public uint MipLevels;
+    public uint MipLevels;
 
-        public uint ArraySize;
+    public uint ArraySize;
 
-        public DXGI_FORMAT DxgiFormat;
+    public DXGI_FORMAT DxgiFormat;
 
-        public WICDdsDimension Dimension;
+    public WICDdsDimension Dimension;
 
-        public WICDdsAlphaMode AlphaMode;
-    }
+    public WICDdsAlphaMode AlphaMode;
 }

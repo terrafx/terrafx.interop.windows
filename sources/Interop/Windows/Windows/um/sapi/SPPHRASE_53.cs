@@ -3,17 +3,16 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[NativeTypeName("struct SPPHRASE_53 : SPPHRASE_50")]
+[NativeInheritance("SPPHRASE_50")]
+public unsafe partial struct SPPHRASE_53
 {
-    [NativeTypeName("struct SPPHRASE_53 : SPPHRASE_50")]
-    [NativeInheritance("SPPHRASE_50")]
-    public unsafe partial struct SPPHRASE_53
-    {
-        public SPPHRASE_50 Base;
+    public SPPHRASE_50 Base;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pSML;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pSML;
 
-        public SPSEMANTICERRORINFO* pSemanticErrorInfo;
-    }
+    public SPSEMANTICERRORINFO* pSemanticErrorInfo;
 }

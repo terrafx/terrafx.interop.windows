@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("301D103A-CBF9-4776-8899-7C15B461AB26")]
+public partial struct CODECAPI_AVEncDDProductionMixLevel
 {
-    [Guid("301D103A-CBF9-4776-8899-7C15B461AB26")]
-    public partial struct CODECAPI_AVEncDDProductionMixLevel
-    {
-    }
 }

@@ -5,11 +5,10 @@
 
 using static TerraFX.Interop.Windows.DISPID_SpeechRecoResult;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum DISPID_SpeechXMLRecoResult
 {
-    public enum DISPID_SpeechXMLRecoResult
-    {
-        DISPID_SRRGetXMLResult = (DISPID_SRRDiscardResultInfo + 1),
-        DISPID_SRRGetXMLErrorInfo = (DISPID_SRRGetXMLResult + 1),
-    }
+    DISPID_SRRGetXMLResult = (DISPID_SRRDiscardResultInfo + 1),
+    DISPID_SRRGetXMLErrorInfo = (DISPID_SRRGetXMLResult + 1),
 }

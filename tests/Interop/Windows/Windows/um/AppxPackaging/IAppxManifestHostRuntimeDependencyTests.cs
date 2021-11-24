@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IAppxManifestHostRuntimeDependency" /> struct.</summary>
+public static unsafe partial class IAppxManifestHostRuntimeDependencyTests
 {
-    /// <summary>Provides validation of the <see cref="IAppxManifestHostRuntimeDependency" /> struct.</summary>
-    public static unsafe partial class IAppxManifestHostRuntimeDependencyTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppxManifestHostRuntimeDependency" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppxManifestHostRuntimeDependency" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAppxManifestHostRuntimeDependency).GUID, Is.EqualTo(IID_IAppxManifestHostRuntimeDependency));
-        }
+        Assert.That(typeof(IAppxManifestHostRuntimeDependency).GUID, Is.EqualTo(IID_IAppxManifestHostRuntimeDependency));
+    }
 
-        /// <summary>Validates that the <see cref="IAppxManifestHostRuntimeDependency" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IAppxManifestHostRuntimeDependency>(), Is.EqualTo(sizeof(IAppxManifestHostRuntimeDependency)));
-        }
+    /// <summary>Validates that the <see cref="IAppxManifestHostRuntimeDependency" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IAppxManifestHostRuntimeDependency>(), Is.EqualTo(sizeof(IAppxManifestHostRuntimeDependency)));
+    }
 
-        /// <summary>Validates that the <see cref="IAppxManifestHostRuntimeDependency" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IAppxManifestHostRuntimeDependency).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IAppxManifestHostRuntimeDependency" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IAppxManifestHostRuntimeDependency).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IAppxManifestHostRuntimeDependency" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IAppxManifestHostRuntimeDependency" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IAppxManifestHostRuntimeDependency), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IAppxManifestHostRuntimeDependency), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IAppxManifestHostRuntimeDependency), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IAppxManifestHostRuntimeDependency), Is.EqualTo(4));
         }
     }
 }

@@ -5,29 +5,28 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct REPAIR_COPIES_INPUT
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct REPAIR_COPIES_INPUT
-    {
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        public LARGE_INTEGER FileOffset;
+    public LARGE_INTEGER FileOffset;
 
-        [NativeTypeName("DWORD")]
-        public uint Length;
+    [NativeTypeName("DWORD")]
+    public uint Length;
 
-        [NativeTypeName("DWORD")]
-        public uint SourceCopy;
+    [NativeTypeName("DWORD")]
+    public uint SourceCopy;
 
-        [NativeTypeName("DWORD")]
-        public uint NumberOfRepairCopies;
+    [NativeTypeName("DWORD")]
+    public uint NumberOfRepairCopies;
 
-        [NativeTypeName("DWORD [1]")]
-        public fixed uint RepairCopies[1];
-    }
+    [NativeTypeName("DWORD [1]")]
+    public fixed uint RepairCopies[1];
 }

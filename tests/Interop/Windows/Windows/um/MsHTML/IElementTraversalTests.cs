@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IElementTraversal" /> struct.</summary>
+public static unsafe partial class IElementTraversalTests
 {
-    /// <summary>Provides validation of the <see cref="IElementTraversal" /> struct.</summary>
-    public static unsafe partial class IElementTraversalTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IElementTraversal" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IElementTraversal" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IElementTraversal).GUID, Is.EqualTo(IID_IElementTraversal));
-        }
+        Assert.That(typeof(IElementTraversal).GUID, Is.EqualTo(IID_IElementTraversal));
+    }
 
-        /// <summary>Validates that the <see cref="IElementTraversal" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IElementTraversal>(), Is.EqualTo(sizeof(IElementTraversal)));
-        }
+    /// <summary>Validates that the <see cref="IElementTraversal" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IElementTraversal>(), Is.EqualTo(sizeof(IElementTraversal)));
+    }
 
-        /// <summary>Validates that the <see cref="IElementTraversal" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IElementTraversal).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IElementTraversal" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IElementTraversal).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IElementTraversal" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IElementTraversal" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IElementTraversal), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IElementTraversal), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IElementTraversal), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IElementTraversal), Is.EqualTo(4));
         }
     }
 }

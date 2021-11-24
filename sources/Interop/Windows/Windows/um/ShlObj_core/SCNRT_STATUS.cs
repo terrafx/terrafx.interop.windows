@@ -3,11 +3,10 @@
 // Ported from um/ShlObj_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SCNRT_STATUS
 {
-    public enum SCNRT_STATUS
-    {
-        SCNRT_ENABLE = 0,
-        SCNRT_DISABLE = 1,
-    }
+    SCNRT_ENABLE = 0,
+    SCNRT_DISABLE = 1,
 }

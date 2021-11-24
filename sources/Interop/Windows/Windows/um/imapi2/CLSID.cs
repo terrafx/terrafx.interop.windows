@@ -8,330 +8,329 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class CLSID
 {
-    public static partial class CLSID
+    public static ref readonly Guid CLSID_MsftDiscRecorder2
     {
-        public static ref readonly Guid CLSID_MsftDiscRecorder2
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x2D, 0x41, 0x35, 0x27,
-                    0x64, 0x7F,
-                    0x0F, 0x5B,
-                    0x8F,
-                    0x00,
-                    0x5D,
-                    0x77,
-                    0xAF,
-                    0xBE,
-                    0x26,
-                    0x1E
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x2D, 0x41, 0x35, 0x27,
+                0x64, 0x7F,
+                0x0F, 0x5B,
+                0x8F,
+                0x00,
+                0x5D,
+                0x77,
+                0xAF,
+                0xBE,
+                0x26,
+                0x1E
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid CLSID_MsftWriteEngine2
+    public static ref readonly Guid CLSID_MsftWriteEngine2
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x2C, 0x41, 0x35, 0x27,
-                    0x64, 0x7F,
-                    0x0F, 0x5B,
-                    0x8F,
-                    0x00,
-                    0x5D,
-                    0x77,
-                    0xAF,
-                    0xBE,
-                    0x26,
-                    0x1E
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x2C, 0x41, 0x35, 0x27,
+                0x64, 0x7F,
+                0x0F, 0x5B,
+                0x8F,
+                0x00,
+                0x5D,
+                0x77,
+                0xAF,
+                0xBE,
+                0x26,
+                0x1E
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid CLSID_MsftDiscFormat2Erase
+    public static ref readonly Guid CLSID_MsftDiscFormat2Erase
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x2B, 0x41, 0x35, 0x27,
-                    0x64, 0x7F,
-                    0x0F, 0x5B,
-                    0x8F,
-                    0x00,
-                    0x5D,
-                    0x77,
-                    0xAF,
-                    0xBE,
-                    0x26,
-                    0x1E
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x2B, 0x41, 0x35, 0x27,
+                0x64, 0x7F,
+                0x0F, 0x5B,
+                0x8F,
+                0x00,
+                0x5D,
+                0x77,
+                0xAF,
+                0xBE,
+                0x26,
+                0x1E
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid CLSID_MsftDiscFormat2Data
+    public static ref readonly Guid CLSID_MsftDiscFormat2Data
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x2A, 0x41, 0x35, 0x27,
-                    0x64, 0x7F,
-                    0x0F, 0x5B,
-                    0x8F,
-                    0x00,
-                    0x5D,
-                    0x77,
-                    0xAF,
-                    0xBE,
-                    0x26,
-                    0x1E
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x2A, 0x41, 0x35, 0x27,
+                0x64, 0x7F,
+                0x0F, 0x5B,
+                0x8F,
+                0x00,
+                0x5D,
+                0x77,
+                0xAF,
+                0xBE,
+                0x26,
+                0x1E
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid CLSID_MsftDiscFormat2TrackAtOnce
+    public static ref readonly Guid CLSID_MsftDiscFormat2TrackAtOnce
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x29, 0x41, 0x35, 0x27,
-                    0x64, 0x7F,
-                    0x0F, 0x5B,
-                    0x8F,
-                    0x00,
-                    0x5D,
-                    0x77,
-                    0xAF,
-                    0xBE,
-                    0x26,
-                    0x1E
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x29, 0x41, 0x35, 0x27,
+                0x64, 0x7F,
+                0x0F, 0x5B,
+                0x8F,
+                0x00,
+                0x5D,
+                0x77,
+                0xAF,
+                0xBE,
+                0x26,
+                0x1E
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid CLSID_MsftDiscFormat2RawCD
+    public static ref readonly Guid CLSID_MsftDiscFormat2RawCD
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x28, 0x41, 0x35, 0x27,
-                    0x64, 0x7F,
-                    0x0F, 0x5B,
-                    0x8F,
-                    0x00,
-                    0x5D,
-                    0x77,
-                    0xAF,
-                    0xBE,
-                    0x26,
-                    0x1E
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x28, 0x41, 0x35, 0x27,
+                0x64, 0x7F,
+                0x0F, 0x5B,
+                0x8F,
+                0x00,
+                0x5D,
+                0x77,
+                0xAF,
+                0xBE,
+                0x26,
+                0x1E
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid CLSID_MsftStreamZero
+    public static ref readonly Guid CLSID_MsftStreamZero
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x27, 0x41, 0x35, 0x27,
-                    0x64, 0x7F,
-                    0x0F, 0x5B,
-                    0x8F,
-                    0x00,
-                    0x5D,
-                    0x77,
-                    0xAF,
-                    0xBE,
-                    0x26,
-                    0x1E
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x27, 0x41, 0x35, 0x27,
+                0x64, 0x7F,
+                0x0F, 0x5B,
+                0x8F,
+                0x00,
+                0x5D,
+                0x77,
+                0xAF,
+                0xBE,
+                0x26,
+                0x1E
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid CLSID_MsftStreamPrng001
+    public static ref readonly Guid CLSID_MsftStreamPrng001
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x26, 0x41, 0x35, 0x27,
-                    0x64, 0x7F,
-                    0x0F, 0x5B,
-                    0x8F,
-                    0x00,
-                    0x5D,
-                    0x77,
-                    0xAF,
-                    0xBE,
-                    0x26,
-                    0x1E
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x26, 0x41, 0x35, 0x27,
+                0x64, 0x7F,
+                0x0F, 0x5B,
+                0x8F,
+                0x00,
+                0x5D,
+                0x77,
+                0xAF,
+                0xBE,
+                0x26,
+                0x1E
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid CLSID_MsftStreamConcatenate
+    public static ref readonly Guid CLSID_MsftStreamConcatenate
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x25, 0x41, 0x35, 0x27,
-                    0x64, 0x7F,
-                    0x0F, 0x5B,
-                    0x8F,
-                    0x00,
-                    0x5D,
-                    0x77,
-                    0xAF,
-                    0xBE,
-                    0x26,
-                    0x1E
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x25, 0x41, 0x35, 0x27,
+                0x64, 0x7F,
+                0x0F, 0x5B,
+                0x8F,
+                0x00,
+                0x5D,
+                0x77,
+                0xAF,
+                0xBE,
+                0x26,
+                0x1E
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid CLSID_MsftStreamInterleave
+    public static ref readonly Guid CLSID_MsftStreamInterleave
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x24, 0x41, 0x35, 0x27,
-                    0x64, 0x7F,
-                    0x0F, 0x5B,
-                    0x8F,
-                    0x00,
-                    0x5D,
-                    0x77,
-                    0xAF,
-                    0xBE,
-                    0x26,
-                    0x1E
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x24, 0x41, 0x35, 0x27,
+                0x64, 0x7F,
+                0x0F, 0x5B,
+                0x8F,
+                0x00,
+                0x5D,
+                0x77,
+                0xAF,
+                0xBE,
+                0x26,
+                0x1E
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid CLSID_MsftWriteSpeedDescriptor
+    public static ref readonly Guid CLSID_MsftWriteSpeedDescriptor
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x23, 0x41, 0x35, 0x27,
-                    0x64, 0x7F,
-                    0x0F, 0x5B,
-                    0x8F,
-                    0x00,
-                    0x5D,
-                    0x77,
-                    0xAF,
-                    0xBE,
-                    0x26,
-                    0x1E
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x23, 0x41, 0x35, 0x27,
+                0x64, 0x7F,
+                0x0F, 0x5B,
+                0x8F,
+                0x00,
+                0x5D,
+                0x77,
+                0xAF,
+                0xBE,
+                0x26,
+                0x1E
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid CLSID_MsftMultisessionSequential
+    public static ref readonly Guid CLSID_MsftMultisessionSequential
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x22, 0x41, 0x35, 0x27,
-                    0x64, 0x7F,
-                    0x0F, 0x5B,
-                    0x8F,
-                    0x00,
-                    0x5D,
-                    0x77,
-                    0xAF,
-                    0xBE,
-                    0x26,
-                    0x1E
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x22, 0x41, 0x35, 0x27,
+                0x64, 0x7F,
+                0x0F, 0x5B,
+                0x8F,
+                0x00,
+                0x5D,
+                0x77,
+                0xAF,
+                0xBE,
+                0x26,
+                0x1E
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid CLSID_MsftMultisessionRandomWrite
+    public static ref readonly Guid CLSID_MsftMultisessionRandomWrite
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x24, 0xCA, 0x07, 0xB5,
-                    0x04, 0x22,
-                    0xDD, 0x11,
-                    0x96,
-                    0x6A,
-                    0x00,
-                    0x1A,
-                    0xA0,
-                    0x1B,
-                    0xBC,
-                    0x58
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x24, 0xCA, 0x07, 0xB5,
+                0x04, 0x22,
+                0xDD, 0x11,
+                0x96,
+                0x6A,
+                0x00,
+                0x1A,
+                0xA0,
+                0x1B,
+                0xBC,
+                0x58
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid CLSID_MsftRawCDImageCreator
+    public static ref readonly Guid CLSID_MsftRawCDImageCreator
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x61, 0x35, 0x98, 0x25,
-                    0x65, 0x9D,
-                    0xCE, 0x49,
-                    0xB3,
-                    0x35,
-                    0x40,
-                    0x63,
-                    0x0D,
-                    0x90,
-                    0x12,
-                    0x27
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x61, 0x35, 0x98, 0x25,
+                0x65, 0x9D,
+                0xCE, 0x49,
+                0xB3,
+                0x35,
+                0x40,
+                0x63,
+                0x0D,
+                0x90,
+                0x12,
+                0x27
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

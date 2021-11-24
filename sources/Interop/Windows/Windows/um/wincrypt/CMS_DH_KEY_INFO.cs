@@ -3,21 +3,20 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CMS_DH_KEY_INFO
 {
-    public unsafe partial struct CMS_DH_KEY_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwVersion;
+    [NativeTypeName("DWORD")]
+    public uint dwVersion;
 
-        [NativeTypeName("ALG_ID")]
-        public uint Algid;
+    [NativeTypeName("ALG_ID")]
+    public uint Algid;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* pszContentEncObjId;
+    [NativeTypeName("LPSTR")]
+    public sbyte* pszContentEncObjId;
 
-        public CRYPT_DATA_BLOB PubInfo;
+    public CRYPT_DATA_BLOB PubInfo;
 
-        public void* pReserved;
-    }
+    public void* pReserved;
 }

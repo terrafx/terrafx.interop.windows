@@ -3,14 +3,13 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct FLOAT128
-    {
-        [NativeTypeName("long long")]
-        public long LowPart;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("long long")]
-        public long HighPart;
-    }
+public partial struct FLOAT128
+{
+    [NativeTypeName("long long")]
+    public long LowPart;
+
+    [NativeTypeName("long long")]
+    public long HighPart;
 }

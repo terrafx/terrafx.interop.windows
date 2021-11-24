@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ICanvasRenderingContext2D" /> struct.</summary>
+public static unsafe partial class ICanvasRenderingContext2DTests
 {
-    /// <summary>Provides validation of the <see cref="ICanvasRenderingContext2D" /> struct.</summary>
-    public static unsafe partial class ICanvasRenderingContext2DTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ICanvasRenderingContext2D" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ICanvasRenderingContext2D" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ICanvasRenderingContext2D).GUID, Is.EqualTo(IID_ICanvasRenderingContext2D));
-        }
+        Assert.That(typeof(ICanvasRenderingContext2D).GUID, Is.EqualTo(IID_ICanvasRenderingContext2D));
+    }
 
-        /// <summary>Validates that the <see cref="ICanvasRenderingContext2D" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ICanvasRenderingContext2D>(), Is.EqualTo(sizeof(ICanvasRenderingContext2D)));
-        }
+    /// <summary>Validates that the <see cref="ICanvasRenderingContext2D" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ICanvasRenderingContext2D>(), Is.EqualTo(sizeof(ICanvasRenderingContext2D)));
+    }
 
-        /// <summary>Validates that the <see cref="ICanvasRenderingContext2D" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ICanvasRenderingContext2D).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ICanvasRenderingContext2D" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ICanvasRenderingContext2D).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ICanvasRenderingContext2D" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ICanvasRenderingContext2D" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ICanvasRenderingContext2D), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ICanvasRenderingContext2D), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ICanvasRenderingContext2D), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ICanvasRenderingContext2D), Is.EqualTo(4));
         }
     }
 }

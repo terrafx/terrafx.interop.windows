@@ -3,62 +3,61 @@
 // Ported from shared/tcpestats.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TCP_ESTATS_SND_CONG_ROD_v0
 {
-    public partial struct TCP_ESTATS_SND_CONG_ROD_v0
-    {
-        [NativeTypeName("ULONG")]
-        public uint SndLimTransRwin;
+    [NativeTypeName("ULONG")]
+    public uint SndLimTransRwin;
 
-        [NativeTypeName("ULONG")]
-        public uint SndLimTimeRwin;
+    [NativeTypeName("ULONG")]
+    public uint SndLimTimeRwin;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint SndLimBytesRwin;
+    [NativeTypeName("SIZE_T")]
+    public nuint SndLimBytesRwin;
 
-        [NativeTypeName("ULONG")]
-        public uint SndLimTransCwnd;
+    [NativeTypeName("ULONG")]
+    public uint SndLimTransCwnd;
 
-        [NativeTypeName("ULONG")]
-        public uint SndLimTimeCwnd;
+    [NativeTypeName("ULONG")]
+    public uint SndLimTimeCwnd;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint SndLimBytesCwnd;
+    [NativeTypeName("SIZE_T")]
+    public nuint SndLimBytesCwnd;
 
-        [NativeTypeName("ULONG")]
-        public uint SndLimTransSnd;
+    [NativeTypeName("ULONG")]
+    public uint SndLimTransSnd;
 
-        [NativeTypeName("ULONG")]
-        public uint SndLimTimeSnd;
+    [NativeTypeName("ULONG")]
+    public uint SndLimTimeSnd;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint SndLimBytesSnd;
+    [NativeTypeName("SIZE_T")]
+    public nuint SndLimBytesSnd;
 
-        [NativeTypeName("ULONG")]
-        public uint SlowStart;
+    [NativeTypeName("ULONG")]
+    public uint SlowStart;
 
-        [NativeTypeName("ULONG")]
-        public uint CongAvoid;
+    [NativeTypeName("ULONG")]
+    public uint CongAvoid;
 
-        [NativeTypeName("ULONG")]
-        public uint OtherReductions;
+    [NativeTypeName("ULONG")]
+    public uint OtherReductions;
 
-        [NativeTypeName("ULONG")]
-        public uint CurCwnd;
+    [NativeTypeName("ULONG")]
+    public uint CurCwnd;
 
-        [NativeTypeName("ULONG")]
-        public uint MaxSsCwnd;
+    [NativeTypeName("ULONG")]
+    public uint MaxSsCwnd;
 
-        [NativeTypeName("ULONG")]
-        public uint MaxCaCwnd;
+    [NativeTypeName("ULONG")]
+    public uint MaxCaCwnd;
 
-        [NativeTypeName("ULONG")]
-        public uint CurSsthresh;
+    [NativeTypeName("ULONG")]
+    public uint CurSsthresh;
 
-        [NativeTypeName("ULONG")]
-        public uint MaxSsthresh;
+    [NativeTypeName("ULONG")]
+    public uint MaxSsthresh;
 
-        [NativeTypeName("ULONG")]
-        public uint MinSsthresh;
-    }
+    [NativeTypeName("ULONG")]
+    public uint MinSsthresh;
 }

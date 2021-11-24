@@ -3,29 +3,28 @@
 // Ported from um/schannel.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct X509Certificate
 {
-    public unsafe partial struct X509Certificate
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD [4]")]
-        public fixed uint SerialNumber[4];
+    [NativeTypeName("DWORD [4]")]
+    public fixed uint SerialNumber[4];
 
-        [NativeTypeName("ALG_ID")]
-        public uint SignatureAlgorithm;
+    [NativeTypeName("ALG_ID")]
+    public uint SignatureAlgorithm;
 
-        public FILETIME ValidFrom;
+    public FILETIME ValidFrom;
 
-        public FILETIME ValidUntil;
+    public FILETIME ValidUntil;
 
-        [NativeTypeName("PSTR")]
-        public sbyte* pszIssuer;
+    [NativeTypeName("PSTR")]
+    public sbyte* pszIssuer;
 
-        [NativeTypeName("PSTR")]
-        public sbyte* pszSubject;
+    [NativeTypeName("PSTR")]
+    public sbyte* pszSubject;
 
-        public PctPublicKey* pPublicKey;
-    }
+    public PctPublicKey* pPublicKey;
 }

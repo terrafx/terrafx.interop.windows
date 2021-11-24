@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("CBE0FED3-4B91-4E90-8354-8A8C84EC6872")]
+public partial struct ThumbnailStreamCache
 {
-    [Guid("CBE0FED3-4B91-4E90-8354-8A8C84EC6872")]
-    public partial struct ThumbnailStreamCache
-    {
-    }
 }

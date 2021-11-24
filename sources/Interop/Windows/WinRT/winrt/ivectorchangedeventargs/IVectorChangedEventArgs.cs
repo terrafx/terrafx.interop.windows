@@ -8,107 +8,106 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[Guid("575933DF-34FE-4480-AF15-07691F3D5D9B")]
+[NativeTypeName("struct IVectorChangedEventArgs : IInspectable")]
+[NativeInheritance("IInspectable")]
+public unsafe partial struct IVectorChangedEventArgs : IVectorChangedEventArgs.Interface
 {
-    [Guid("575933DF-34FE-4480-AF15-07691F3D5D9B")]
-    [NativeTypeName("struct IVectorChangedEventArgs : IInspectable")]
-    [NativeInheritance("IInspectable")]
-    public unsafe partial struct IVectorChangedEventArgs : IVectorChangedEventArgs.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IVectorChangedEventArgs*, Guid*, void**, int>)(lpVtbl[0]))((IVectorChangedEventArgs*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IVectorChangedEventArgs*, Guid*, void**, int>)(lpVtbl[0]))((IVectorChangedEventArgs*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IVectorChangedEventArgs*, uint>)(lpVtbl[1]))((IVectorChangedEventArgs*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IVectorChangedEventArgs*, uint>)(lpVtbl[1]))((IVectorChangedEventArgs*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IVectorChangedEventArgs*, uint>)(lpVtbl[2]))((IVectorChangedEventArgs*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IVectorChangedEventArgs*, uint>)(lpVtbl[2]))((IVectorChangedEventArgs*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
+    {
+        return ((delegate* unmanaged<IVectorChangedEventArgs*, uint*, Guid**, int>)(lpVtbl[3]))((IVectorChangedEventArgs*)Unsafe.AsPointer(ref this), iidCount, iids);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
-        {
-            return ((delegate* unmanaged<IVectorChangedEventArgs*, uint*, Guid**, int>)(lpVtbl[3]))((IVectorChangedEventArgs*)Unsafe.AsPointer(ref this), iidCount, iids);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetRuntimeClassName(HSTRING* className)
+    {
+        return ((delegate* unmanaged<IVectorChangedEventArgs*, HSTRING*, int>)(lpVtbl[4]))((IVectorChangedEventArgs*)Unsafe.AsPointer(ref this), className);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT GetRuntimeClassName(HSTRING* className)
-        {
-            return ((delegate* unmanaged<IVectorChangedEventArgs*, HSTRING*, int>)(lpVtbl[4]))((IVectorChangedEventArgs*)Unsafe.AsPointer(ref this), className);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetTrustLevel(TrustLevel* trustLevel)
+    {
+        return ((delegate* unmanaged<IVectorChangedEventArgs*, TrustLevel*, int>)(lpVtbl[5]))((IVectorChangedEventArgs*)Unsafe.AsPointer(ref this), trustLevel);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT GetTrustLevel(TrustLevel* trustLevel)
-        {
-            return ((delegate* unmanaged<IVectorChangedEventArgs*, TrustLevel*, int>)(lpVtbl[5]))((IVectorChangedEventArgs*)Unsafe.AsPointer(ref this), trustLevel);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT get_CollectionChange([NativeTypeName("ABI::Windows::Foundation::Collections::CollectionChange *")] CollectionChange* value)
+    {
+        return ((delegate* unmanaged<IVectorChangedEventArgs*, CollectionChange*, int>)(lpVtbl[6]))((IVectorChangedEventArgs*)Unsafe.AsPointer(ref this), value);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT get_Index([NativeTypeName("unsigned int *")] uint* value)
+    {
+        return ((delegate* unmanaged<IVectorChangedEventArgs*, uint*, int>)(lpVtbl[7]))((IVectorChangedEventArgs*)Unsafe.AsPointer(ref this), value);
+    }
+
+    public interface Interface : IInspectable.Interface
+    {
         [VtblIndex(6)]
-        public HRESULT get_CollectionChange([NativeTypeName("ABI::Windows::Foundation::Collections::CollectionChange *")] CollectionChange* value)
-        {
-            return ((delegate* unmanaged<IVectorChangedEventArgs*, CollectionChange*, int>)(lpVtbl[6]))((IVectorChangedEventArgs*)Unsafe.AsPointer(ref this), value);
-        }
+        HRESULT get_CollectionChange([NativeTypeName("ABI::Windows::Foundation::Collections::CollectionChange *")] CollectionChange* value);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT get_Index([NativeTypeName("unsigned int *")] uint* value)
-        {
-            return ((delegate* unmanaged<IVectorChangedEventArgs*, uint*, int>)(lpVtbl[7]))((IVectorChangedEventArgs*)Unsafe.AsPointer(ref this), value);
-        }
+        HRESULT get_Index([NativeTypeName("unsigned int *")] uint* value);
+    }
 
-        public interface Interface : IInspectable.Interface
-        {
-            [VtblIndex(6)]
-            HRESULT get_CollectionChange([NativeTypeName("ABI::Windows::Foundation::Collections::CollectionChange *")] CollectionChange* value);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IVectorChangedEventArgs*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(7)]
-            HRESULT get_Index([NativeTypeName("unsigned int *")] uint* value);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IVectorChangedEventArgs*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IVectorChangedEventArgs*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IVectorChangedEventArgs*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IVectorChangedEventArgs*, uint> AddRef;
+        [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IVectorChangedEventArgs*, uint*, Guid**, int> GetIids;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IVectorChangedEventArgs*, uint> Release;
+        [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IVectorChangedEventArgs*, HSTRING*, int> GetRuntimeClassName;
 
-            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IVectorChangedEventArgs*, uint*, Guid**, int> GetIids;
+        [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IVectorChangedEventArgs*, TrustLevel*, int> GetTrustLevel;
 
-            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IVectorChangedEventArgs*, HSTRING*, int> GetRuntimeClassName;
+        [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::CollectionChange *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IVectorChangedEventArgs*, CollectionChange*, int> get_CollectionChange;
 
-            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IVectorChangedEventArgs*, TrustLevel*, int> GetTrustLevel;
-
-            [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::CollectionChange *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IVectorChangedEventArgs*, CollectionChange*, int> get_CollectionChange;
-
-            [NativeTypeName("HRESULT (unsigned int *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IVectorChangedEventArgs*, uint*, int> get_Index;
-        }
+        [NativeTypeName("HRESULT (unsigned int *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IVectorChangedEventArgs*, uint*, int> get_Index;
     }
 }

@@ -7,31 +7,30 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MIB_IPMCAST_BOUNDARY_TABLE
 {
-    public partial struct MIB_IPMCAST_BOUNDARY_TABLE
+    [NativeTypeName("DWORD")]
+    public uint dwNumEntries;
+
+    [NativeTypeName("MIB_IPMCAST_BOUNDARY [1]")]
+    public _table_e__FixedBuffer table;
+
+    public partial struct _table_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint dwNumEntries;
+        public MIB_IPMCAST_BOUNDARY e0;
 
-        [NativeTypeName("MIB_IPMCAST_BOUNDARY [1]")]
-        public _table_e__FixedBuffer table;
-
-        public partial struct _table_e__FixedBuffer
+        public ref MIB_IPMCAST_BOUNDARY this[int index]
         {
-            public MIB_IPMCAST_BOUNDARY e0;
-
-            public ref MIB_IPMCAST_BOUNDARY this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<MIB_IPMCAST_BOUNDARY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<MIB_IPMCAST_BOUNDARY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

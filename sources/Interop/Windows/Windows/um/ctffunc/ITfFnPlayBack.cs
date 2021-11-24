@@ -7,87 +7,86 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("A3A416A4-0F64-11D3-B5B7-00C04FC324A1")]
+[NativeTypeName("struct ITfFnPlayBack : ITfFunction")]
+[NativeInheritance("ITfFunction")]
+public unsafe partial struct ITfFnPlayBack : ITfFnPlayBack.Interface
 {
-    [Guid("A3A416A4-0F64-11D3-B5B7-00C04FC324A1")]
-    [NativeTypeName("struct ITfFnPlayBack : ITfFunction")]
-    [NativeInheritance("ITfFunction")]
-    public unsafe partial struct ITfFnPlayBack : ITfFnPlayBack.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ITfFnPlayBack*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ITfFnPlayBack*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ITfFnPlayBack*, uint>)(lpVtbl[1]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ITfFnPlayBack*, uint>)(lpVtbl[1]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ITfFnPlayBack*, uint>)(lpVtbl[2]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ITfFnPlayBack*, uint>)(lpVtbl[2]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+    {
+        return ((delegate* unmanaged<ITfFnPlayBack*, ushort**, int>)(lpVtbl[3]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this), pbstrName);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
-        {
-            return ((delegate* unmanaged<ITfFnPlayBack*, ushort**, int>)(lpVtbl[3]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this), pbstrName);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT QueryRange(ITfRange* pRange, ITfRange** ppNewRange, BOOL* pfPlayable)
+    {
+        return ((delegate* unmanaged<ITfFnPlayBack*, ITfRange*, ITfRange**, BOOL*, int>)(lpVtbl[4]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this), pRange, ppNewRange, pfPlayable);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Play(ITfRange* pRange)
+    {
+        return ((delegate* unmanaged<ITfFnPlayBack*, ITfRange*, int>)(lpVtbl[5]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this), pRange);
+    }
+
+    public interface Interface : ITfFunction.Interface
+    {
         [VtblIndex(4)]
-        public HRESULT QueryRange(ITfRange* pRange, ITfRange** ppNewRange, BOOL* pfPlayable)
-        {
-            return ((delegate* unmanaged<ITfFnPlayBack*, ITfRange*, ITfRange**, BOOL*, int>)(lpVtbl[4]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this), pRange, ppNewRange, pfPlayable);
-        }
+        HRESULT QueryRange(ITfRange* pRange, ITfRange** ppNewRange, BOOL* pfPlayable);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT Play(ITfRange* pRange)
-        {
-            return ((delegate* unmanaged<ITfFnPlayBack*, ITfRange*, int>)(lpVtbl[5]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this), pRange);
-        }
+        HRESULT Play(ITfRange* pRange);
+    }
 
-        public interface Interface : ITfFunction.Interface
-        {
-            [VtblIndex(4)]
-            HRESULT QueryRange(ITfRange* pRange, ITfRange** ppNewRange, BOOL* pfPlayable);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfFnPlayBack*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(5)]
-            HRESULT Play(ITfRange* pRange);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfFnPlayBack*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfFnPlayBack*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfFnPlayBack*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfFnPlayBack*, uint> AddRef;
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfFnPlayBack*, ushort**, int> GetDisplayName;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfFnPlayBack*, uint> Release;
+        [NativeTypeName("HRESULT (ITfRange *, ITfRange **, BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfFnPlayBack*, ITfRange*, ITfRange**, BOOL*, int> QueryRange;
 
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfFnPlayBack*, ushort**, int> GetDisplayName;
-
-            [NativeTypeName("HRESULT (ITfRange *, ITfRange **, BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfFnPlayBack*, ITfRange*, ITfRange**, BOOL*, int> QueryRange;
-
-            [NativeTypeName("HRESULT (ITfRange *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfFnPlayBack*, ITfRange*, int> Play;
-        }
+        [NativeTypeName("HRESULT (ITfRange *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfFnPlayBack*, ITfRange*, int> Play;
     }
 }

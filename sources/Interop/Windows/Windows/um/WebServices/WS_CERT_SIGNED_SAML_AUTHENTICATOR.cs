@@ -5,24 +5,23 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_CERT_SIGNED_SAML_AUTHENTICATOR
 {
-    public unsafe partial struct WS_CERT_SIGNED_SAML_AUTHENTICATOR
-    {
-        public WS_SAML_AUTHENTICATOR authenticator;
+    public WS_SAML_AUTHENTICATOR authenticator;
 
-        [NativeTypeName("const struct _CERT_CONTEXT **")]
-        public CERT_CONTEXT** trustedIssuerCerts;
+    [NativeTypeName("const struct _CERT_CONTEXT **")]
+    public CERT_CONTEXT** trustedIssuerCerts;
 
-        [NativeTypeName("ULONG")]
-        public uint trustedIssuerCertCount;
+    [NativeTypeName("ULONG")]
+    public uint trustedIssuerCertCount;
 
-        [NativeTypeName("const struct _CERT_CONTEXT *")]
-        public CERT_CONTEXT* decryptionCert;
+    [NativeTypeName("const struct _CERT_CONTEXT *")]
+    public CERT_CONTEXT* decryptionCert;
 
-        [NativeTypeName("WS_VALIDATE_SAML_CALLBACK")]
-        public delegate* unmanaged<void*, IntPtr, IntPtr, HRESULT> samlValidator;
+    [NativeTypeName("WS_VALIDATE_SAML_CALLBACK")]
+    public delegate* unmanaged<void*, IntPtr, IntPtr, HRESULT> samlValidator;
 
-        public void* samlValidatorCallbackState;
-    }
+    public void* samlValidatorCallbackState;
 }

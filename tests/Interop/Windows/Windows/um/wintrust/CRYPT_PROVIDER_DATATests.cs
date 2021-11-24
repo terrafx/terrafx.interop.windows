@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CRYPT_PROVIDER_DATA" /> struct.</summary>
+public static unsafe partial class CRYPT_PROVIDER_DATATests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_PROVIDER_DATA" /> struct.</summary>
-    public static unsafe partial class CRYPT_PROVIDER_DATATests
+    /// <summary>Validates that the <see cref="CRYPT_PROVIDER_DATA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CRYPT_PROVIDER_DATA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CRYPT_PROVIDER_DATA>(), Is.EqualTo(sizeof(CRYPT_PROVIDER_DATA)));
-        }
+        Assert.That(Marshal.SizeOf<CRYPT_PROVIDER_DATA>(), Is.EqualTo(sizeof(CRYPT_PROVIDER_DATA)));
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_PROVIDER_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CRYPT_PROVIDER_DATA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CRYPT_PROVIDER_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CRYPT_PROVIDER_DATA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_PROVIDER_DATA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CRYPT_PROVIDER_DATA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CRYPT_PROVIDER_DATA), Is.EqualTo(240));
-            }
-            else
-            {
-                Assert.That(sizeof(CRYPT_PROVIDER_DATA), Is.EqualTo(136));
-            }
+            Assert.That(sizeof(CRYPT_PROVIDER_DATA), Is.EqualTo(240));
+        }
+        else
+        {
+            Assert.That(sizeof(CRYPT_PROVIDER_DATA), Is.EqualTo(136));
         }
     }
 }

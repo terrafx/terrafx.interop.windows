@@ -5,43 +5,42 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static unsafe partial class OCR
 {
-    public static unsafe partial class OCR
-    {
-        public const int OCR_NORMAL = 32512;
+    public const int OCR_NORMAL = 32512;
 
-        public const int OCR_IBEAM = 32513;
+    public const int OCR_IBEAM = 32513;
 
-        public const int OCR_WAIT = 32514;
+    public const int OCR_WAIT = 32514;
 
-        public const int OCR_CROSS = 32515;
+    public const int OCR_CROSS = 32515;
 
-        public const int OCR_UP = 32516;
+    public const int OCR_UP = 32516;
 
-        [Obsolete("use OCR_SIZEALL")]
-        public const int OCR_SIZE = 32640;
+    [Obsolete("use OCR_SIZEALL")]
+    public const int OCR_SIZE = 32640;
 
-        [Obsolete("use OCR_NORMAL")]
-        public const int OCR_ICON = 32641;
+    [Obsolete("use OCR_NORMAL")]
+    public const int OCR_ICON = 32641;
 
-        public const int OCR_SIZENWSE = 32642;
+    public const int OCR_SIZENWSE = 32642;
 
-        public const int OCR_SIZENESW = 32643;
+    public const int OCR_SIZENESW = 32643;
 
-        public const int OCR_SIZEWE = 32644;
+    public const int OCR_SIZEWE = 32644;
 
-        public const int OCR_SIZENS = 32645;
+    public const int OCR_SIZENS = 32645;
 
-        public const int OCR_SIZEALL = 32646;
+    public const int OCR_SIZEALL = 32646;
 
-        [Obsolete("use OIC_WINLOGO")]
-        public const int OCR_ICOCUR = 32647;
+    [Obsolete("use OIC_WINLOGO")]
+    public const int OCR_ICOCUR = 32647;
 
-        public const int OCR_NO = 32648;
+    public const int OCR_NO = 32648;
 
-        public const int OCR_HAND = 32649;
+    public const int OCR_HAND = 32649;
 
-        public const int OCR_APPSTARTING = 32650;
-    }
+    public const int OCR_APPSTARTING = 32650;
 }

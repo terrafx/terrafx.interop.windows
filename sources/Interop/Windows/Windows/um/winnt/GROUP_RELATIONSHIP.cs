@@ -7,37 +7,36 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct GROUP_RELATIONSHIP
 {
-    public unsafe partial struct GROUP_RELATIONSHIP
+    [NativeTypeName("WORD")]
+    public ushort MaximumGroupCount;
+
+    [NativeTypeName("WORD")]
+    public ushort ActiveGroupCount;
+
+    [NativeTypeName("BYTE [20]")]
+    public fixed byte Reserved[20];
+
+    [NativeTypeName("PROCESSOR_GROUP_INFO [1]")]
+    public _GroupInfo_e__FixedBuffer GroupInfo;
+
+    public partial struct _GroupInfo_e__FixedBuffer
     {
-        [NativeTypeName("WORD")]
-        public ushort MaximumGroupCount;
+        public PROCESSOR_GROUP_INFO e0;
 
-        [NativeTypeName("WORD")]
-        public ushort ActiveGroupCount;
-
-        [NativeTypeName("BYTE [20]")]
-        public fixed byte Reserved[20];
-
-        [NativeTypeName("PROCESSOR_GROUP_INFO [1]")]
-        public _GroupInfo_e__FixedBuffer GroupInfo;
-
-        public partial struct _GroupInfo_e__FixedBuffer
+        public ref PROCESSOR_GROUP_INFO this[int index]
         {
-            public PROCESSOR_GROUP_INFO e0;
-
-            public ref PROCESSOR_GROUP_INFO this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<PROCESSOR_GROUP_INFO> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<PROCESSOR_GROUP_INFO> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

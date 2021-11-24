@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMAGE_SYMBOL" /> struct.</summary>
+public static unsafe partial class IMAGE_SYMBOLTests
 {
-    /// <summary>Provides validation of the <see cref="IMAGE_SYMBOL" /> struct.</summary>
-    public static unsafe partial class IMAGE_SYMBOLTests
+    /// <summary>Validates that the <see cref="IMAGE_SYMBOL" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IMAGE_SYMBOL" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMAGE_SYMBOL>(), Is.EqualTo(sizeof(IMAGE_SYMBOL)));
-        }
+        Assert.That(Marshal.SizeOf<IMAGE_SYMBOL>(), Is.EqualTo(sizeof(IMAGE_SYMBOL)));
+    }
 
-        /// <summary>Validates that the <see cref="IMAGE_SYMBOL" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMAGE_SYMBOL).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMAGE_SYMBOL" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMAGE_SYMBOL).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMAGE_SYMBOL" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(IMAGE_SYMBOL), Is.EqualTo(18));
-        }
+    /// <summary>Validates that the <see cref="IMAGE_SYMBOL" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(IMAGE_SYMBOL), Is.EqualTo(18));
     }
 }

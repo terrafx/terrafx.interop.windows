@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum MF_CAPTURE_ENGINE_DEVICE_TYPE
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum MF_CAPTURE_ENGINE_DEVICE_TYPE
-    {
-        MF_CAPTURE_ENGINE_DEVICE_TYPE_AUDIO = 0,
-        MF_CAPTURE_ENGINE_DEVICE_TYPE_VIDEO = 0x1,
-    }
+    MF_CAPTURE_ENGINE_DEVICE_TYPE_AUDIO = 0,
+    MF_CAPTURE_ENGINE_DEVICE_TYPE_VIDEO = 0x1,
 }

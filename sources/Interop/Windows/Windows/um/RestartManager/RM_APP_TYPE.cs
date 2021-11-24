@@ -3,16 +3,15 @@
 // Ported from um/RestartManager.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum RM_APP_TYPE
 {
-    public enum RM_APP_TYPE
-    {
-        RmUnknownApp = 0,
-        RmMainWindow = 1,
-        RmOtherWindow = 2,
-        RmService = 3,
-        RmExplorer = 4,
-        RmConsole = 5,
-        RmCritical = 1000,
-    }
+    RmUnknownApp = 0,
+    RmMainWindow = 1,
+    RmOtherWindow = 2,
+    RmService = 3,
+    RmExplorer = 4,
+    RmConsole = 5,
+    RmCritical = 1000,
 }

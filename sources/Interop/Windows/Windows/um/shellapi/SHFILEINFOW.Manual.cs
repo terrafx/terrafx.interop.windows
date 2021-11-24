@@ -6,107 +6,106 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Explicit)]
+public unsafe partial struct SHFILEINFOW
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct SHFILEINFOW
+    public static uint SizeOf
     {
-        public static uint SizeOf
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return (uint)(sizeof(SHFILEINFO32W));
-                }
-                else
-                {
-                    return (uint)(sizeof(SHFILEINFO64W));
-                }
+                return (uint)(sizeof(SHFILEINFO32W));
+            }
+            else
+            {
+                return (uint)(sizeof(SHFILEINFO64W));
             }
         }
+    }
 
-        [FieldOffset(0)]
-        public SHFILEINFO32W _value32;
+    [FieldOffset(0)]
+    public SHFILEINFO32W _value32;
 
-        [FieldOffset(0)]
-        public SHFILEINFO64W _value64;
+    [FieldOffset(0)]
+    public SHFILEINFO64W _value64;
 
-        public ref HICON hIcon
+    public ref HICON hIcon
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.hIcon, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.hIcon, 1));
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.hIcon, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.hIcon, 1));
             }
         }
+    }
 
-        public ref int iIcon
+    public ref int iIcon
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.iIcon, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.iIcon, 1));
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.iIcon, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.iIcon, 1));
             }
         }
+    }
 
-        [NativeTypeName("DWORD")]
-        public ref uint dwAttributes
+    [NativeTypeName("DWORD")]
+    public ref uint dwAttributes
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.dwAttributes, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.dwAttributes, 1));
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.dwAttributes, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.dwAttributes, 1));
             }
         }
+    }
 
-        [NativeTypeName("WCHAR [260]")]
-        public Span<ushort> szDisplayName
+    [NativeTypeName("WCHAR [260]")]
+    public Span<ushort> szDisplayName
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return MemoryMarshal.CreateSpan(ref _value32.szDisplayName[0], 1);
-                }
-                else
-                {
-                    return MemoryMarshal.CreateSpan(ref _value64.szDisplayName[0], 1);
-                }
+                return MemoryMarshal.CreateSpan(ref _value32.szDisplayName[0], 1);
+            }
+            else
+            {
+                return MemoryMarshal.CreateSpan(ref _value64.szDisplayName[0], 1);
             }
         }
+    }
 
-        [NativeTypeName("WCHAR [80]")]
-        public Span<ushort> szTypeName
+    [NativeTypeName("WCHAR [80]")]
+    public Span<ushort> szTypeName
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return MemoryMarshal.CreateSpan(ref _value32.szTypeName[0], 1);
-                }
-                else
-                {
-                    return MemoryMarshal.CreateSpan(ref _value64.szTypeName[0], 1);
-                }
+                return MemoryMarshal.CreateSpan(ref _value32.szTypeName[0], 1);
+            }
+            else
+            {
+                return MemoryMarshal.CreateSpan(ref _value64.szTypeName[0], 1);
             }
         }
     }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ENUMUILANG" /> struct.</summary>
+public static unsafe partial class ENUMUILANGTests
 {
-    /// <summary>Provides validation of the <see cref="ENUMUILANG" /> struct.</summary>
-    public static unsafe partial class ENUMUILANGTests
+    /// <summary>Validates that the <see cref="ENUMUILANG" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="ENUMUILANG" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ENUMUILANG>(), Is.EqualTo(sizeof(ENUMUILANG)));
-        }
+        Assert.That(Marshal.SizeOf<ENUMUILANG>(), Is.EqualTo(sizeof(ENUMUILANG)));
+    }
 
-        /// <summary>Validates that the <see cref="ENUMUILANG" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ENUMUILANG).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ENUMUILANG" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ENUMUILANG).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ENUMUILANG" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ENUMUILANG" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ENUMUILANG), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(ENUMUILANG), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(ENUMUILANG), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(ENUMUILANG), Is.EqualTo(12));
         }
     }
 }

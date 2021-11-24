@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("CE4A85DB-5768-475B-A4E1-C0BCA2112A6B")]
+public partial struct DiaStackWalker
 {
-    [Guid("CE4A85DB-5768-475B-A4E1-C0BCA2112A6B")]
-    public partial struct DiaStackWalker
-    {
-    }
 }

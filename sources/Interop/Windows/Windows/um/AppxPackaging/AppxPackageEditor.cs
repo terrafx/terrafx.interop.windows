@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("F004F2CA-AEBC-4B0D-BF58-E516D5BCC0AB")]
+public partial struct AppxPackageEditor
 {
-    [Guid("F004F2CA-AEBC-4B0D-BF58-E516D5BCC0AB")]
-    public partial struct AppxPackageEditor
-    {
-    }
 }

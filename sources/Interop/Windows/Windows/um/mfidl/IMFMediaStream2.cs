@@ -7,147 +7,146 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("C5BC37D6-75C7-46A1-A132-81B5F723C20F")]
+[NativeTypeName("struct IMFMediaStream2 : IMFMediaStream")]
+[NativeInheritance("IMFMediaStream")]
+public unsafe partial struct IMFMediaStream2 : IMFMediaStream2.Interface
 {
-    [Guid("C5BC37D6-75C7-46A1-A132-81B5F723C20F")]
-    [NativeTypeName("struct IMFMediaStream2 : IMFMediaStream")]
-    [NativeInheritance("IMFMediaStream")]
-    public unsafe partial struct IMFMediaStream2 : IMFMediaStream2.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMFMediaStream2*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMFMediaStream2*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMFMediaStream2*, uint>)(lpVtbl[1]))((IMFMediaStream2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMFMediaStream2*, uint>)(lpVtbl[1]))((IMFMediaStream2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMFMediaStream2*, uint>)(lpVtbl[2]))((IMFMediaStream2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMFMediaStream2*, uint>)(lpVtbl[2]))((IMFMediaStream2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetEvent([NativeTypeName("DWORD")] uint dwFlags, IMFMediaEvent** ppEvent)
+    {
+        return ((delegate* unmanaged<IMFMediaStream2*, uint, IMFMediaEvent**, int>)(lpVtbl[3]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), dwFlags, ppEvent);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetEvent([NativeTypeName("DWORD")] uint dwFlags, IMFMediaEvent** ppEvent)
-        {
-            return ((delegate* unmanaged<IMFMediaStream2*, uint, IMFMediaEvent**, int>)(lpVtbl[3]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), dwFlags, ppEvent);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT BeginGetEvent(IMFAsyncCallback* pCallback, IUnknown* punkState)
+    {
+        return ((delegate* unmanaged<IMFMediaStream2*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[4]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), pCallback, punkState);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT BeginGetEvent(IMFAsyncCallback* pCallback, IUnknown* punkState)
-        {
-            return ((delegate* unmanaged<IMFMediaStream2*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[4]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), pCallback, punkState);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT EndGetEvent(IMFAsyncResult* pResult, IMFMediaEvent** ppEvent)
+    {
+        return ((delegate* unmanaged<IMFMediaStream2*, IMFAsyncResult*, IMFMediaEvent**, int>)(lpVtbl[5]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), pResult, ppEvent);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT EndGetEvent(IMFAsyncResult* pResult, IMFMediaEvent** ppEvent)
-        {
-            return ((delegate* unmanaged<IMFMediaStream2*, IMFAsyncResult*, IMFMediaEvent**, int>)(lpVtbl[5]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), pResult, ppEvent);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT QueueEvent([NativeTypeName("MediaEventType")] uint met, [NativeTypeName("const GUID &")] Guid* guidExtendedType, HRESULT hrStatus, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvValue)
+    {
+        return ((delegate* unmanaged<IMFMediaStream2*, uint, Guid*, HRESULT, PROPVARIANT*, int>)(lpVtbl[6]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), met, guidExtendedType, hrStatus, pvValue);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(6)]
-        public HRESULT QueueEvent([NativeTypeName("MediaEventType")] uint met, [NativeTypeName("const GUID &")] Guid* guidExtendedType, HRESULT hrStatus, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvValue)
-        {
-            return ((delegate* unmanaged<IMFMediaStream2*, uint, Guid*, HRESULT, PROPVARIANT*, int>)(lpVtbl[6]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), met, guidExtendedType, hrStatus, pvValue);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT GetMediaSource(IMFMediaSource** ppMediaSource)
+    {
+        return ((delegate* unmanaged<IMFMediaStream2*, IMFMediaSource**, int>)(lpVtbl[7]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), ppMediaSource);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(7)]
-        public HRESULT GetMediaSource(IMFMediaSource** ppMediaSource)
-        {
-            return ((delegate* unmanaged<IMFMediaStream2*, IMFMediaSource**, int>)(lpVtbl[7]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), ppMediaSource);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT GetStreamDescriptor(IMFStreamDescriptor** ppStreamDescriptor)
+    {
+        return ((delegate* unmanaged<IMFMediaStream2*, IMFStreamDescriptor**, int>)(lpVtbl[8]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), ppStreamDescriptor);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(8)]
-        public HRESULT GetStreamDescriptor(IMFStreamDescriptor** ppStreamDescriptor)
-        {
-            return ((delegate* unmanaged<IMFMediaStream2*, IMFStreamDescriptor**, int>)(lpVtbl[8]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), ppStreamDescriptor);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT RequestSample(IUnknown* pToken)
+    {
+        return ((delegate* unmanaged<IMFMediaStream2*, IUnknown*, int>)(lpVtbl[9]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), pToken);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(9)]
-        public HRESULT RequestSample(IUnknown* pToken)
-        {
-            return ((delegate* unmanaged<IMFMediaStream2*, IUnknown*, int>)(lpVtbl[9]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), pToken);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT SetStreamState(MF_STREAM_STATE value)
+    {
+        return ((delegate* unmanaged<IMFMediaStream2*, MF_STREAM_STATE, int>)(lpVtbl[10]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), value);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT GetStreamState(MF_STREAM_STATE* value)
+    {
+        return ((delegate* unmanaged<IMFMediaStream2*, MF_STREAM_STATE*, int>)(lpVtbl[11]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), value);
+    }
+
+    public interface Interface : IMFMediaStream.Interface
+    {
         [VtblIndex(10)]
-        public HRESULT SetStreamState(MF_STREAM_STATE value)
-        {
-            return ((delegate* unmanaged<IMFMediaStream2*, MF_STREAM_STATE, int>)(lpVtbl[10]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), value);
-        }
+        HRESULT SetStreamState(MF_STREAM_STATE value);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT GetStreamState(MF_STREAM_STATE* value)
-        {
-            return ((delegate* unmanaged<IMFMediaStream2*, MF_STREAM_STATE*, int>)(lpVtbl[11]))((IMFMediaStream2*)Unsafe.AsPointer(ref this), value);
-        }
+        HRESULT GetStreamState(MF_STREAM_STATE* value);
+    }
 
-        public interface Interface : IMFMediaStream.Interface
-        {
-            [VtblIndex(10)]
-            HRESULT SetStreamState(MF_STREAM_STATE value);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaStream2*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(11)]
-            HRESULT GetStreamState(MF_STREAM_STATE* value);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaStream2*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaStream2*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaStream2*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaStream2*, uint> AddRef;
+        [NativeTypeName("HRESULT (DWORD, IMFMediaEvent **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaStream2*, uint, IMFMediaEvent**, int> GetEvent;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaStream2*, uint> Release;
+        [NativeTypeName("HRESULT (IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaStream2*, IMFAsyncCallback*, IUnknown*, int> BeginGetEvent;
 
-            [NativeTypeName("HRESULT (DWORD, IMFMediaEvent **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaStream2*, uint, IMFMediaEvent**, int> GetEvent;
+        [NativeTypeName("HRESULT (IMFAsyncResult *, IMFMediaEvent **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaStream2*, IMFAsyncResult*, IMFMediaEvent**, int> EndGetEvent;
 
-            [NativeTypeName("HRESULT (IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaStream2*, IMFAsyncCallback*, IUnknown*, int> BeginGetEvent;
+        [NativeTypeName("HRESULT (MediaEventType, const GUID &, HRESULT, const PROPVARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaStream2*, uint, Guid*, HRESULT, PROPVARIANT*, int> QueueEvent;
 
-            [NativeTypeName("HRESULT (IMFAsyncResult *, IMFMediaEvent **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaStream2*, IMFAsyncResult*, IMFMediaEvent**, int> EndGetEvent;
+        [NativeTypeName("HRESULT (IMFMediaSource **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaStream2*, IMFMediaSource**, int> GetMediaSource;
 
-            [NativeTypeName("HRESULT (MediaEventType, const GUID &, HRESULT, const PROPVARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaStream2*, uint, Guid*, HRESULT, PROPVARIANT*, int> QueueEvent;
+        [NativeTypeName("HRESULT (IMFStreamDescriptor **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaStream2*, IMFStreamDescriptor**, int> GetStreamDescriptor;
 
-            [NativeTypeName("HRESULT (IMFMediaSource **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaStream2*, IMFMediaSource**, int> GetMediaSource;
+        [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaStream2*, IUnknown*, int> RequestSample;
 
-            [NativeTypeName("HRESULT (IMFStreamDescriptor **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaStream2*, IMFStreamDescriptor**, int> GetStreamDescriptor;
+        [NativeTypeName("HRESULT (MF_STREAM_STATE) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaStream2*, MF_STREAM_STATE, int> SetStreamState;
 
-            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaStream2*, IUnknown*, int> RequestSample;
-
-            [NativeTypeName("HRESULT (MF_STREAM_STATE) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaStream2*, MF_STREAM_STATE, int> SetStreamState;
-
-            [NativeTypeName("HRESULT (MF_STREAM_STATE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaStream2*, MF_STREAM_STATE*, int> GetStreamState;
-        }
+        [NativeTypeName("HRESULT (MF_STREAM_STATE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaStream2*, MF_STREAM_STATE*, int> GetStreamState;
     }
 }

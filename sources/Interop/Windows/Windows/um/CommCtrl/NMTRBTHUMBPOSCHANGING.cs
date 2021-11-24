@@ -3,15 +3,14 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct NMTRBTHUMBPOSCHANGING
 {
-    public partial struct NMTRBTHUMBPOSCHANGING
-    {
-        public NMHDR hdr;
+    public NMHDR hdr;
 
-        [NativeTypeName("DWORD")]
-        public uint dwPos;
+    [NativeTypeName("DWORD")]
+    public uint dwPos;
 
-        public int nReason;
-    }
+    public int nReason;
 }

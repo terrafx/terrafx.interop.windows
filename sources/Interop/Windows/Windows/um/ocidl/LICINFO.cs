@@ -3,15 +3,14 @@
 // Ported from um/ocidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct LICINFO
 {
-    public partial struct LICINFO
-    {
-        [NativeTypeName("LONG")]
-        public int cbLicInfo;
+    [NativeTypeName("LONG")]
+    public int cbLicInfo;
 
-        public BOOL fRuntimeKeyAvail;
+    public BOOL fRuntimeKeyAvail;
 
-        public BOOL fLicVerified;
-    }
+    public BOOL fLicVerified;
 }

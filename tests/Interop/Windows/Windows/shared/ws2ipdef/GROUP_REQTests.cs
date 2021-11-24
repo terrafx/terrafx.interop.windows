@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="GROUP_REQ" /> struct.</summary>
+public static unsafe partial class GROUP_REQTests
 {
-    /// <summary>Provides validation of the <see cref="GROUP_REQ" /> struct.</summary>
-    public static unsafe partial class GROUP_REQTests
+    /// <summary>Validates that the <see cref="GROUP_REQ" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="GROUP_REQ" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<GROUP_REQ>(), Is.EqualTo(sizeof(GROUP_REQ)));
-        }
+        Assert.That(Marshal.SizeOf<GROUP_REQ>(), Is.EqualTo(sizeof(GROUP_REQ)));
+    }
 
-        /// <summary>Validates that the <see cref="GROUP_REQ" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(GROUP_REQ).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="GROUP_REQ" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(GROUP_REQ).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="GROUP_REQ" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(GROUP_REQ), Is.EqualTo(136));
-        }
+    /// <summary>Validates that the <see cref="GROUP_REQ" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(GROUP_REQ), Is.EqualTo(136));
     }
 }

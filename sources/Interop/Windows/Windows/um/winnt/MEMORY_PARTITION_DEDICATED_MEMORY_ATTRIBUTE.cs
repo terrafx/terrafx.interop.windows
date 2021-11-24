@@ -3,16 +3,15 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE
 {
-    public partial struct MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE
-    {
-        public MEM_DEDICATED_ATTRIBUTE_TYPE Type;
+    public MEM_DEDICATED_ATTRIBUTE_TYPE Type;
 
-        [NativeTypeName("DWORD")]
-        public uint Reserved;
+    [NativeTypeName("DWORD")]
+    public uint Reserved;
 
-        [NativeTypeName("DWORD64")]
-        public ulong Value;
-    }
+    [NativeTypeName("DWORD64")]
+    public ulong Value;
 }

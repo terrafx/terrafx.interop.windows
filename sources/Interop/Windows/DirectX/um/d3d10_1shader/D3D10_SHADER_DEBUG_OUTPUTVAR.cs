@@ -5,26 +5,25 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D10_SHADER_DEBUG_OUTPUTVAR
 {
-    public partial struct D3D10_SHADER_DEBUG_OUTPUTVAR
-    {
-        public uint Var;
+    public uint Var;
 
-        public uint uValueMin;
+    public uint uValueMin;
 
-        public uint uValueMax;
+    public uint uValueMax;
 
-        public int iValueMin;
+    public int iValueMin;
 
-        public int iValueMax;
+    public int iValueMax;
 
-        public float fValueMin;
+    public float fValueMin;
 
-        public float fValueMax;
+    public float fValueMax;
 
-        public BOOL bNaNPossible;
+    public BOOL bNaNPossible;
 
-        public BOOL bInfPossible;
-    }
+    public BOOL bInfPossible;
 }

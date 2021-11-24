@@ -3,37 +3,36 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct PPM_WMI_IDLE_STATE
 {
-    public partial struct PPM_WMI_IDLE_STATE
-    {
-        [NativeTypeName("DWORD")]
-        public uint Latency;
+    [NativeTypeName("DWORD")]
+    public uint Latency;
 
-        [NativeTypeName("DWORD")]
-        public uint Power;
+    [NativeTypeName("DWORD")]
+    public uint Power;
 
-        [NativeTypeName("DWORD")]
-        public uint TimeCheck;
+    [NativeTypeName("DWORD")]
+    public uint TimeCheck;
 
-        public byte PromotePercent;
+    public byte PromotePercent;
 
-        public byte DemotePercent;
+    public byte DemotePercent;
 
-        public byte StateType;
+    public byte StateType;
 
-        public byte Reserved;
+    public byte Reserved;
 
-        [NativeTypeName("DWORD")]
-        public uint StateFlags;
+    [NativeTypeName("DWORD")]
+    public uint StateFlags;
 
-        [NativeTypeName("DWORD")]
-        public uint Context;
+    [NativeTypeName("DWORD")]
+    public uint Context;
 
-        [NativeTypeName("DWORD")]
-        public uint IdleHandler;
+    [NativeTypeName("DWORD")]
+    public uint IdleHandler;
 
-        [NativeTypeName("DWORD")]
-        public uint Reserved1;
-    }
+    [NativeTypeName("DWORD")]
+    public uint Reserved1;
 }

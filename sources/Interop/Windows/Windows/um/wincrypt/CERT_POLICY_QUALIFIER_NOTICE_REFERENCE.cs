@@ -3,16 +3,15 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CERT_POLICY_QUALIFIER_NOTICE_REFERENCE
 {
-    public unsafe partial struct CERT_POLICY_QUALIFIER_NOTICE_REFERENCE
-    {
-        [NativeTypeName("LPSTR")]
-        public sbyte* pszOrganization;
+    [NativeTypeName("LPSTR")]
+    public sbyte* pszOrganization;
 
-        [NativeTypeName("DWORD")]
-        public uint cNoticeNumbers;
+    [NativeTypeName("DWORD")]
+    public uint cNoticeNumbers;
 
-        public int* rgNoticeNumbers;
-    }
+    public int* rgNoticeNumbers;
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DDOSCAPS" /> struct.</summary>
+public static unsafe partial class DDOSCAPSTests
 {
-    /// <summary>Provides validation of the <see cref="DDOSCAPS" /> struct.</summary>
-    public static unsafe partial class DDOSCAPSTests
+    /// <summary>Validates that the <see cref="DDOSCAPS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DDOSCAPS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DDOSCAPS>(), Is.EqualTo(sizeof(DDOSCAPS)));
-        }
+        Assert.That(Marshal.SizeOf<DDOSCAPS>(), Is.EqualTo(sizeof(DDOSCAPS)));
+    }
 
-        /// <summary>Validates that the <see cref="DDOSCAPS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DDOSCAPS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DDOSCAPS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DDOSCAPS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DDOSCAPS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DDOSCAPS), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="DDOSCAPS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DDOSCAPS), Is.EqualTo(4));
     }
 }

@@ -5,20 +5,19 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct FILEPATHS32_W
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct FILEPATHS32_W
-    {
-        [NativeTypeName("PCWSTR")]
-        public ushort* Target;
+    [NativeTypeName("PCWSTR")]
+    public ushort* Target;
 
-        [NativeTypeName("PCWSTR")]
-        public ushort* Source;
+    [NativeTypeName("PCWSTR")]
+    public ushort* Source;
 
-        public uint Win32Error;
+    public uint Win32Error;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
-    }
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 }

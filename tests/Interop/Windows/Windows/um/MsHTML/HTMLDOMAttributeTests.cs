@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLDOMAttribute" /> struct.</summary>
+public static unsafe partial class HTMLDOMAttributeTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLDOMAttribute" /> struct.</summary>
-    public static unsafe partial class HTMLDOMAttributeTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLDOMAttribute" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLDOMAttribute" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLDOMAttribute).GUID, Is.EqualTo(IID_HTMLDOMAttribute));
-        }
+        Assert.That(typeof(HTMLDOMAttribute).GUID, Is.EqualTo(IID_HTMLDOMAttribute));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLDOMAttribute" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLDOMAttribute>(), Is.EqualTo(sizeof(HTMLDOMAttribute)));
-        }
+    /// <summary>Validates that the <see cref="HTMLDOMAttribute" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLDOMAttribute>(), Is.EqualTo(sizeof(HTMLDOMAttribute)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLDOMAttribute" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLDOMAttribute).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLDOMAttribute" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLDOMAttribute).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLDOMAttribute" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HTMLDOMAttribute), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="HTMLDOMAttribute" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HTMLDOMAttribute), Is.EqualTo(1));
     }
 }

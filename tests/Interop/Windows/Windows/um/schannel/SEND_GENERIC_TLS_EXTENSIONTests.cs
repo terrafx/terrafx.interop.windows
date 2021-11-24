@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SEND_GENERIC_TLS_EXTENSION" /> struct.</summary>
+public static unsafe partial class SEND_GENERIC_TLS_EXTENSIONTests
 {
-    /// <summary>Provides validation of the <see cref="SEND_GENERIC_TLS_EXTENSION" /> struct.</summary>
-    public static unsafe partial class SEND_GENERIC_TLS_EXTENSIONTests
+    /// <summary>Validates that the <see cref="SEND_GENERIC_TLS_EXTENSION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SEND_GENERIC_TLS_EXTENSION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SEND_GENERIC_TLS_EXTENSION>(), Is.EqualTo(sizeof(SEND_GENERIC_TLS_EXTENSION)));
-        }
+        Assert.That(Marshal.SizeOf<SEND_GENERIC_TLS_EXTENSION>(), Is.EqualTo(sizeof(SEND_GENERIC_TLS_EXTENSION)));
+    }
 
-        /// <summary>Validates that the <see cref="SEND_GENERIC_TLS_EXTENSION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SEND_GENERIC_TLS_EXTENSION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SEND_GENERIC_TLS_EXTENSION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SEND_GENERIC_TLS_EXTENSION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SEND_GENERIC_TLS_EXTENSION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SEND_GENERIC_TLS_EXTENSION), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="SEND_GENERIC_TLS_EXTENSION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SEND_GENERIC_TLS_EXTENSION), Is.EqualTo(12));
     }
 }

@@ -3,13 +3,12 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum VMRMode
 {
-    public enum VMRMode
-    {
-        VMRMode_Windowed = 0x1,
-        VMRMode_Windowless = 0x2,
-        VMRMode_Renderless = 0x4,
-        VMRMode_Mask = 0x7,
-    }
+    VMRMode_Windowed = 0x1,
+    VMRMode_Windowless = 0x2,
+    VMRMode_Renderless = 0x4,
+    VMRMode_Mask = 0x7,
 }

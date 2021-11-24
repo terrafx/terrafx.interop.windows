@@ -5,18 +5,17 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct DXDIAG_INIT_PARAMS
 {
-    public unsafe partial struct DXDIAG_INIT_PARAMS
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwSize;
+    [NativeTypeName("DWORD")]
+    public uint dwSize;
 
-        [NativeTypeName("DWORD")]
-        public uint dwDxDiagHeaderVersion;
+    [NativeTypeName("DWORD")]
+    public uint dwDxDiagHeaderVersion;
 
-        public BOOL bAllowWHQLChecks;
+    public BOOL bAllowWHQLChecks;
 
-        public void* pReserved;
-    }
+    public void* pReserved;
 }

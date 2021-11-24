@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDCompositionDeviceDebug" /> struct.</summary>
+[SupportedOSPlatform("windows8.1")]
+public static unsafe partial class IDCompositionDeviceDebugTests
 {
-    /// <summary>Provides validation of the <see cref="IDCompositionDeviceDebug" /> struct.</summary>
-    [SupportedOSPlatform("windows8.1")]
-    public static unsafe partial class IDCompositionDeviceDebugTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDCompositionDeviceDebug" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDCompositionDeviceDebug" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDCompositionDeviceDebug).GUID, Is.EqualTo(IID_IDCompositionDeviceDebug));
-        }
+        Assert.That(typeof(IDCompositionDeviceDebug).GUID, Is.EqualTo(IID_IDCompositionDeviceDebug));
+    }
 
-        /// <summary>Validates that the <see cref="IDCompositionDeviceDebug" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDCompositionDeviceDebug>(), Is.EqualTo(sizeof(IDCompositionDeviceDebug)));
-        }
+    /// <summary>Validates that the <see cref="IDCompositionDeviceDebug" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDCompositionDeviceDebug>(), Is.EqualTo(sizeof(IDCompositionDeviceDebug)));
+    }
 
-        /// <summary>Validates that the <see cref="IDCompositionDeviceDebug" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDCompositionDeviceDebug).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDCompositionDeviceDebug" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDCompositionDeviceDebug).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDCompositionDeviceDebug" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDCompositionDeviceDebug" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDCompositionDeviceDebug), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDCompositionDeviceDebug), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDCompositionDeviceDebug), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDCompositionDeviceDebug), Is.EqualTo(4));
         }
     }
 }

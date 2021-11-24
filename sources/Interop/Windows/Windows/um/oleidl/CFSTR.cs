@@ -3,11 +3,10 @@
 // Ported from um/oleidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class CFSTR
 {
-    public static partial class CFSTR
-    {
-        [NativeTypeName("#define CFSTR_ENTERPRISE_ID (TEXT(\"EnterpriseDataProtectionId\"))")]
-        public const string CFSTR_ENTERPRISE_ID = ("EnterpriseDataProtectionId");
-    }
+    [NativeTypeName("#define CFSTR_ENTERPRISE_ID (TEXT(\"EnterpriseDataProtectionId\"))")]
+    public const string CFSTR_ENTERPRISE_ID = ("EnterpriseDataProtectionId");
 }

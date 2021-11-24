@@ -5,23 +5,22 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct KCRM_PROTOCOL_BLOB
 {
-    public partial struct KCRM_PROTOCOL_BLOB
-    {
-        [NativeTypeName("CRM_PROTOCOL_ID")]
-        public Guid ProtocolId;
+    [NativeTypeName("CRM_PROTOCOL_ID")]
+    public Guid ProtocolId;
 
-        [NativeTypeName("ULONG")]
-        public uint StaticInfoLength;
+    [NativeTypeName("ULONG")]
+    public uint StaticInfoLength;
 
-        [NativeTypeName("ULONG")]
-        public uint TransactionIdInfoLength;
+    [NativeTypeName("ULONG")]
+    public uint TransactionIdInfoLength;
 
-        [NativeTypeName("ULONG")]
-        public uint Unused1;
+    [NativeTypeName("ULONG")]
+    public uint Unused1;
 
-        [NativeTypeName("ULONG")]
-        public uint Unused2;
-    }
+    [NativeTypeName("ULONG")]
+    public uint Unused2;
 }

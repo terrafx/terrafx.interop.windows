@@ -7,75 +7,74 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct PROCESSOR_POWER_POLICY
 {
-    public unsafe partial struct PROCESSOR_POWER_POLICY
+    [NativeTypeName("DWORD")]
+    public uint Revision;
+
+    public byte DynamicThrottle;
+
+    [NativeTypeName("BYTE [3]")]
+    public fixed byte Spare[3];
+
+    public uint _bitfield;
+
+    [NativeTypeName("DWORD : 1")]
+    public uint DisableCStates
     {
-        [NativeTypeName("DWORD")]
-        public uint Revision;
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return _bitfield & 0x1u;
+        }
 
-        public byte DynamicThrottle;
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
+        }
+    }
 
-        [NativeTypeName("BYTE [3]")]
-        public fixed byte Spare[3];
+    [NativeTypeName("DWORD : 31")]
+    public uint Reserved
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield >> 1) & 0x7FFFFFFFu;
+        }
 
-        public uint _bitfield;
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield = (_bitfield & ~(0x7FFFFFFFu << 1)) | ((value & 0x7FFFFFFFu) << 1);
+        }
+    }
 
-        [NativeTypeName("DWORD : 1")]
-        public uint DisableCStates
+    [NativeTypeName("DWORD")]
+    public uint PolicyCount;
+
+    [NativeTypeName("PROCESSOR_POWER_POLICY_INFO [3]")]
+    public _Policy_e__FixedBuffer Policy;
+
+    public partial struct _Policy_e__FixedBuffer
+    {
+        public PROCESSOR_POWER_POLICY_INFO e0;
+        public PROCESSOR_POWER_POLICY_INFO e1;
+        public PROCESSOR_POWER_POLICY_INFO e2;
+
+        public ref PROCESSOR_POWER_POLICY_INFO this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return _bitfield & 0x1u;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
+                return ref AsSpan()[index];
             }
         }
 
-        [NativeTypeName("DWORD : 31")]
-        public uint Reserved
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield >> 1) & 0x7FFFFFFFu;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0x7FFFFFFFu << 1)) | ((value & 0x7FFFFFFFu) << 1);
-            }
-        }
-
-        [NativeTypeName("DWORD")]
-        public uint PolicyCount;
-
-        [NativeTypeName("PROCESSOR_POWER_POLICY_INFO [3]")]
-        public _Policy_e__FixedBuffer Policy;
-
-        public partial struct _Policy_e__FixedBuffer
-        {
-            public PROCESSOR_POWER_POLICY_INFO e0;
-            public PROCESSOR_POWER_POLICY_INFO e1;
-            public PROCESSOR_POWER_POLICY_INFO e2;
-
-            public ref PROCESSOR_POWER_POLICY_INFO this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan()[index];
-                }
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<PROCESSOR_POWER_POLICY_INFO> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
-        }
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<PROCESSOR_POWER_POLICY_INFO> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
     }
 }

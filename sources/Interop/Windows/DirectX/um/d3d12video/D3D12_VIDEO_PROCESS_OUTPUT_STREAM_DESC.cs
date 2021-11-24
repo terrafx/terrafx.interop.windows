@@ -5,23 +5,22 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC
 {
-    public unsafe partial struct D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC
-    {
-        public DXGI_FORMAT Format;
+    public DXGI_FORMAT Format;
 
-        public DXGI_COLOR_SPACE_TYPE ColorSpace;
+    public DXGI_COLOR_SPACE_TYPE ColorSpace;
 
-        public D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE AlphaFillMode;
+    public D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE AlphaFillMode;
 
-        public uint AlphaFillModeSourceStreamIndex;
+    public uint AlphaFillModeSourceStreamIndex;
 
-        [NativeTypeName("FLOAT [4]")]
-        public fixed float BackgroundColor[4];
+    [NativeTypeName("FLOAT [4]")]
+    public fixed float BackgroundColor[4];
 
-        public DXGI_RATIONAL FrameRate;
+    public DXGI_RATIONAL FrameRate;
 
-        public BOOL EnableStereo;
-    }
+    public BOOL EnableStereo;
 }

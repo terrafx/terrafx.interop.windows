@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IQueryCodePage" /> struct.</summary>
+public static unsafe partial class IQueryCodePageTests
 {
-    /// <summary>Provides validation of the <see cref="IQueryCodePage" /> struct.</summary>
-    public static unsafe partial class IQueryCodePageTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IQueryCodePage" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IQueryCodePage" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IQueryCodePage).GUID, Is.EqualTo(IID_IQueryCodePage));
-        }
+        Assert.That(typeof(IQueryCodePage).GUID, Is.EqualTo(IID_IQueryCodePage));
+    }
 
-        /// <summary>Validates that the <see cref="IQueryCodePage" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IQueryCodePage>(), Is.EqualTo(sizeof(IQueryCodePage)));
-        }
+    /// <summary>Validates that the <see cref="IQueryCodePage" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IQueryCodePage>(), Is.EqualTo(sizeof(IQueryCodePage)));
+    }
 
-        /// <summary>Validates that the <see cref="IQueryCodePage" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IQueryCodePage).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IQueryCodePage" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IQueryCodePage).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IQueryCodePage" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IQueryCodePage" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IQueryCodePage), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IQueryCodePage), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IQueryCodePage), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IQueryCodePage), Is.EqualTo(4));
         }
     }
 }

@@ -8,31 +8,30 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class CLSID
-    {
-        public static ref readonly Guid CLSID_IsolatedAppLauncher
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x30, 0x24, 0x81, 0xBC,
-                    0x5E, 0xE7,
-                    0xD1, 0x4F,
-                    0x96,
-                    0x41,
-                    0x1F,
-                    0x9F,
-                    0x1E,
-                    0x2D,
-                    0x9A,
-                    0x1F
-                };
+namespace TerraFX.Interop.Windows;
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+public static partial class CLSID
+{
+    public static ref readonly Guid CLSID_IsolatedAppLauncher
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x30, 0x24, 0x81, 0xBC,
+                0x5E, 0xE7,
+                0xD1, 0x4F,
+                0x96,
+                0x41,
+                0x1F,
+                0x9F,
+                0x1E,
+                0x2D,
+                0x9A,
+                0x1F
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

@@ -5,19 +5,18 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct APPX_KEY_INFO
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct APPX_KEY_INFO
-    {
-        [NativeTypeName("UINT32")]
-        public uint keyLength;
+    [NativeTypeName("UINT32")]
+    public uint keyLength;
 
-        [NativeTypeName("UINT32")]
-        public uint keyIdLength;
+    [NativeTypeName("UINT32")]
+    public uint keyIdLength;
 
-        public byte* key;
+    public byte* key;
 
-        public byte* keyId;
-    }
+    public byte* keyId;
 }

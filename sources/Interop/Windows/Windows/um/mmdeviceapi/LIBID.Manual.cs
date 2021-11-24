@@ -7,16 +7,16 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static unsafe partial class LIBID
 {
-    public static unsafe partial class LIBID
+    public static ref readonly Guid LIBID_MMDeviceAPILib
     {
-        public static ref readonly Guid LIBID_MMDeviceAPILib
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0xA3, 0xAF, 0xDA, 0x2F,
                     0x23, 0x75,
                     0x66, 0x4F,
@@ -30,8 +30,7 @@ namespace TerraFX.Interop.Windows
                     0xF6
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

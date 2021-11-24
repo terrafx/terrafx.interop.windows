@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="STORAGE_OFFLOAD_TOKEN" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class STORAGE_OFFLOAD_TOKENTests
 {
-    /// <summary>Provides validation of the <see cref="STORAGE_OFFLOAD_TOKEN" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class STORAGE_OFFLOAD_TOKENTests
+    /// <summary>Validates that the <see cref="STORAGE_OFFLOAD_TOKEN" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="STORAGE_OFFLOAD_TOKEN" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<STORAGE_OFFLOAD_TOKEN>(), Is.EqualTo(sizeof(STORAGE_OFFLOAD_TOKEN)));
-        }
+        Assert.That(Marshal.SizeOf<STORAGE_OFFLOAD_TOKEN>(), Is.EqualTo(sizeof(STORAGE_OFFLOAD_TOKEN)));
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_OFFLOAD_TOKEN" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(STORAGE_OFFLOAD_TOKEN).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="STORAGE_OFFLOAD_TOKEN" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(STORAGE_OFFLOAD_TOKEN).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_OFFLOAD_TOKEN" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(STORAGE_OFFLOAD_TOKEN), Is.EqualTo(512));
-        }
+    /// <summary>Validates that the <see cref="STORAGE_OFFLOAD_TOKEN" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(STORAGE_OFFLOAD_TOKEN), Is.EqualTo(512));
     }
 }

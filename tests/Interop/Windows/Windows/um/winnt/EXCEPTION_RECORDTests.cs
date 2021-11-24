@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="EXCEPTION_RECORD" /> struct.</summary>
+public static unsafe partial class EXCEPTION_RECORDTests
 {
-    /// <summary>Provides validation of the <see cref="EXCEPTION_RECORD" /> struct.</summary>
-    public static unsafe partial class EXCEPTION_RECORDTests
+    /// <summary>Validates that the <see cref="EXCEPTION_RECORD" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="EXCEPTION_RECORD" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<EXCEPTION_RECORD>(), Is.EqualTo(sizeof(EXCEPTION_RECORD)));
-        }
+        Assert.That(Marshal.SizeOf<EXCEPTION_RECORD>(), Is.EqualTo(sizeof(EXCEPTION_RECORD)));
+    }
 
-        /// <summary>Validates that the <see cref="EXCEPTION_RECORD" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(EXCEPTION_RECORD).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="EXCEPTION_RECORD" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(EXCEPTION_RECORD).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="EXCEPTION_RECORD" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="EXCEPTION_RECORD" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(EXCEPTION_RECORD), Is.EqualTo(152));
-            }
-            else
-            {
-                Assert.That(sizeof(EXCEPTION_RECORD), Is.EqualTo(80));
-            }
+            Assert.That(sizeof(EXCEPTION_RECORD), Is.EqualTo(152));
+        }
+        else
+        {
+            Assert.That(sizeof(EXCEPTION_RECORD), Is.EqualTo(80));
         }
     }
 }

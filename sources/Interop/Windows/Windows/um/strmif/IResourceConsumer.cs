@@ -7,77 +7,76 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("56A868AD-0AD4-11CE-B03A-0020AF0BA770")]
+[NativeTypeName("struct IResourceConsumer : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IResourceConsumer : IResourceConsumer.Interface
 {
-    [Guid("56A868AD-0AD4-11CE-B03A-0020AF0BA770")]
-    [NativeTypeName("struct IResourceConsumer : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IResourceConsumer : IResourceConsumer.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IResourceConsumer*, Guid*, void**, int>)(lpVtbl[0]))((IResourceConsumer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IResourceConsumer*, Guid*, void**, int>)(lpVtbl[0]))((IResourceConsumer*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IResourceConsumer*, uint>)(lpVtbl[1]))((IResourceConsumer*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IResourceConsumer*, uint>)(lpVtbl[1]))((IResourceConsumer*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IResourceConsumer*, uint>)(lpVtbl[2]))((IResourceConsumer*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IResourceConsumer*, uint>)(lpVtbl[2]))((IResourceConsumer*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT AcquireResource([NativeTypeName("LONG")] int idResource)
+    {
+        return ((delegate* unmanaged<IResourceConsumer*, int, int>)(lpVtbl[3]))((IResourceConsumer*)Unsafe.AsPointer(ref this), idResource);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT ReleaseResource([NativeTypeName("LONG")] int idResource)
+    {
+        return ((delegate* unmanaged<IResourceConsumer*, int, int>)(lpVtbl[4]))((IResourceConsumer*)Unsafe.AsPointer(ref this), idResource);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT AcquireResource([NativeTypeName("LONG")] int idResource)
-        {
-            return ((delegate* unmanaged<IResourceConsumer*, int, int>)(lpVtbl[3]))((IResourceConsumer*)Unsafe.AsPointer(ref this), idResource);
-        }
+        HRESULT AcquireResource([NativeTypeName("LONG")] int idResource);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT ReleaseResource([NativeTypeName("LONG")] int idResource)
-        {
-            return ((delegate* unmanaged<IResourceConsumer*, int, int>)(lpVtbl[4]))((IResourceConsumer*)Unsafe.AsPointer(ref this), idResource);
-        }
+        HRESULT ReleaseResource([NativeTypeName("LONG")] int idResource);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT AcquireResource([NativeTypeName("LONG")] int idResource);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IResourceConsumer*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT ReleaseResource([NativeTypeName("LONG")] int idResource);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IResourceConsumer*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IResourceConsumer*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IResourceConsumer*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IResourceConsumer*, uint> AddRef;
+        [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IResourceConsumer*, int, int> AcquireResource;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IResourceConsumer*, uint> Release;
-
-            [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IResourceConsumer*, int, int> AcquireResource;
-
-            [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IResourceConsumer*, int, int> ReleaseResource;
-        }
+        [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IResourceConsumer*, int, int> ReleaseResource;
     }
 }

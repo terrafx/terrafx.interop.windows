@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDiscRecorder2Ex" /> struct.</summary>
+public static unsafe partial class IDiscRecorder2ExTests
 {
-    /// <summary>Provides validation of the <see cref="IDiscRecorder2Ex" /> struct.</summary>
-    public static unsafe partial class IDiscRecorder2ExTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDiscRecorder2Ex" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDiscRecorder2Ex" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDiscRecorder2Ex).GUID, Is.EqualTo(IID_IDiscRecorder2Ex));
-        }
+        Assert.That(typeof(IDiscRecorder2Ex).GUID, Is.EqualTo(IID_IDiscRecorder2Ex));
+    }
 
-        /// <summary>Validates that the <see cref="IDiscRecorder2Ex" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDiscRecorder2Ex>(), Is.EqualTo(sizeof(IDiscRecorder2Ex)));
-        }
+    /// <summary>Validates that the <see cref="IDiscRecorder2Ex" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDiscRecorder2Ex>(), Is.EqualTo(sizeof(IDiscRecorder2Ex)));
+    }
 
-        /// <summary>Validates that the <see cref="IDiscRecorder2Ex" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDiscRecorder2Ex).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDiscRecorder2Ex" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDiscRecorder2Ex).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDiscRecorder2Ex" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDiscRecorder2Ex" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDiscRecorder2Ex), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDiscRecorder2Ex), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDiscRecorder2Ex), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDiscRecorder2Ex), Is.EqualTo(4));
         }
     }
 }

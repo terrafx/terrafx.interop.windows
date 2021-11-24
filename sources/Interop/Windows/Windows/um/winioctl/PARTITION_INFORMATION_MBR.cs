@@ -5,21 +5,20 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct PARTITION_INFORMATION_MBR
 {
-    public partial struct PARTITION_INFORMATION_MBR
-    {
-        public byte PartitionType;
+    public byte PartitionType;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte BootIndicator;
+    [NativeTypeName("BOOLEAN")]
+    public byte BootIndicator;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte RecognizedPartition;
+    [NativeTypeName("BOOLEAN")]
+    public byte RecognizedPartition;
 
-        [NativeTypeName("DWORD")]
-        public uint HiddenSectors;
+    [NativeTypeName("DWORD")]
+    public uint HiddenSectors;
 
-        public Guid PartitionId;
-    }
+    public Guid PartitionId;
 }

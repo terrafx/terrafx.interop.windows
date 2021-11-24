@@ -3,11 +3,10 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum AMPROPERTY_PIN
 {
-    public enum AMPROPERTY_PIN
-    {
-        AMPROPERTY_PIN_CATEGORY = 0,
-        AMPROPERTY_PIN_MEDIUM = (AMPROPERTY_PIN_CATEGORY + 1),
-    }
+    AMPROPERTY_PIN_CATEGORY = 0,
+    AMPROPERTY_PIN_MEDIUM = (AMPROPERTY_PIN_CATEGORY + 1),
 }

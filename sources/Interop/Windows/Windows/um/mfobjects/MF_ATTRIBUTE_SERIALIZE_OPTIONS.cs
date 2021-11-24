@@ -3,10 +3,9 @@
 // Ported from um/mfobjects.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MF_ATTRIBUTE_SERIALIZE_OPTIONS
 {
-    public enum MF_ATTRIBUTE_SERIALIZE_OPTIONS
-    {
-        MF_ATTRIBUTE_SERIALIZE_UNKNOWN_BYREF = 0x1,
-    }
+    MF_ATTRIBUTE_SERIALIZE_UNKNOWN_BYREF = 0x1,
 }

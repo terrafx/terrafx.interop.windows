@@ -3,23 +3,22 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct XSTATE_CONTEXT_AMD64
 {
-    public unsafe partial struct XSTATE_CONTEXT_AMD64
-    {
-        [NativeTypeName("DWORD64")]
-        public ulong Mask;
+    [NativeTypeName("DWORD64")]
+    public ulong Mask;
 
-        [NativeTypeName("DWORD")]
-        public uint Length;
+    [NativeTypeName("DWORD")]
+    public uint Length;
 
-        [NativeTypeName("DWORD")]
-        public uint Reserved1;
+    [NativeTypeName("DWORD")]
+    public uint Reserved1;
 
-        [NativeTypeName("PXSAVE_AREA")]
-        public XSAVE_AREA* Area;
+    [NativeTypeName("PXSAVE_AREA")]
+    public XSAVE_AREA* Area;
 
-        [NativeTypeName("PVOID")]
-        public void* Buffer;
-    }
+    [NativeTypeName("PVOID")]
+    public void* Buffer;
 }

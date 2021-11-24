@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MsftDiscFormat2Data" /> struct.</summary>
+public static unsafe partial class MsftDiscFormat2DataTests
 {
-    /// <summary>Provides validation of the <see cref="MsftDiscFormat2Data" /> struct.</summary>
-    public static unsafe partial class MsftDiscFormat2DataTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="MsftDiscFormat2Data" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="MsftDiscFormat2Data" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(MsftDiscFormat2Data).GUID, Is.EqualTo(CLSID_MsftDiscFormat2Data));
-        }
+        Assert.That(typeof(MsftDiscFormat2Data).GUID, Is.EqualTo(CLSID_MsftDiscFormat2Data));
+    }
 
-        /// <summary>Validates that the <see cref="MsftDiscFormat2Data" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MsftDiscFormat2Data>(), Is.EqualTo(sizeof(MsftDiscFormat2Data)));
-        }
+    /// <summary>Validates that the <see cref="MsftDiscFormat2Data" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<MsftDiscFormat2Data>(), Is.EqualTo(sizeof(MsftDiscFormat2Data)));
+    }
 
-        /// <summary>Validates that the <see cref="MsftDiscFormat2Data" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MsftDiscFormat2Data).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MsftDiscFormat2Data" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MsftDiscFormat2Data).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MsftDiscFormat2Data" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MsftDiscFormat2Data), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="MsftDiscFormat2Data" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MsftDiscFormat2Data), Is.EqualTo(1));
     }
 }

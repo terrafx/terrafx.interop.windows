@@ -3,15 +3,14 @@
 // Ported from um/d3d10.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum D3D10_TEXTURECUBE_FACE
 {
-    public enum D3D10_TEXTURECUBE_FACE
-    {
-        D3D10_TEXTURECUBE_FACE_POSITIVE_X = 0,
-        D3D10_TEXTURECUBE_FACE_NEGATIVE_X = 1,
-        D3D10_TEXTURECUBE_FACE_POSITIVE_Y = 2,
-        D3D10_TEXTURECUBE_FACE_NEGATIVE_Y = 3,
-        D3D10_TEXTURECUBE_FACE_POSITIVE_Z = 4,
-        D3D10_TEXTURECUBE_FACE_NEGATIVE_Z = 5,
-    }
+    D3D10_TEXTURECUBE_FACE_POSITIVE_X = 0,
+    D3D10_TEXTURECUBE_FACE_NEGATIVE_X = 1,
+    D3D10_TEXTURECUBE_FACE_POSITIVE_Y = 2,
+    D3D10_TEXTURECUBE_FACE_NEGATIVE_Y = 3,
+    D3D10_TEXTURECUBE_FACE_POSITIVE_Z = 4,
+    D3D10_TEXTURECUBE_FACE_NEGATIVE_Z = 5,
 }

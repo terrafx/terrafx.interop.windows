@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WINHTTP_HEADER_NAME" /> struct.</summary>
+public static unsafe partial class WINHTTP_HEADER_NAMETests
 {
-    /// <summary>Provides validation of the <see cref="WINHTTP_HEADER_NAME" /> struct.</summary>
-    public static unsafe partial class WINHTTP_HEADER_NAMETests
+    /// <summary>Validates that the <see cref="WINHTTP_HEADER_NAME" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WINHTTP_HEADER_NAME" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WINHTTP_HEADER_NAME>(), Is.EqualTo(sizeof(WINHTTP_HEADER_NAME)));
-        }
+        Assert.That(Marshal.SizeOf<WINHTTP_HEADER_NAME>(), Is.EqualTo(sizeof(WINHTTP_HEADER_NAME)));
+    }
 
-        /// <summary>Validates that the <see cref="WINHTTP_HEADER_NAME" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutExplicitTest()
-        {
-            Assert.That(typeof(WINHTTP_HEADER_NAME).IsExplicitLayout, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WINHTTP_HEADER_NAME" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutExplicitTest()
+    {
+        Assert.That(typeof(WINHTTP_HEADER_NAME).IsExplicitLayout, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WINHTTP_HEADER_NAME" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="WINHTTP_HEADER_NAME" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(WINHTTP_HEADER_NAME), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(WINHTTP_HEADER_NAME), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(WINHTTP_HEADER_NAME), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(WINHTTP_HEADER_NAME), Is.EqualTo(4));
         }
     }
 }

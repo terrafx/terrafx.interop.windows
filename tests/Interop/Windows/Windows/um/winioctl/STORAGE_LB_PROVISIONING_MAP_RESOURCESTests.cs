@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="STORAGE_LB_PROVISIONING_MAP_RESOURCES" /> struct.</summary>
+public static unsafe partial class STORAGE_LB_PROVISIONING_MAP_RESOURCESTests
 {
-    /// <summary>Provides validation of the <see cref="STORAGE_LB_PROVISIONING_MAP_RESOURCES" /> struct.</summary>
-    public static unsafe partial class STORAGE_LB_PROVISIONING_MAP_RESOURCESTests
+    /// <summary>Validates that the <see cref="STORAGE_LB_PROVISIONING_MAP_RESOURCES" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="STORAGE_LB_PROVISIONING_MAP_RESOURCES" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<STORAGE_LB_PROVISIONING_MAP_RESOURCES>(), Is.EqualTo(sizeof(STORAGE_LB_PROVISIONING_MAP_RESOURCES)));
-        }
+        Assert.That(Marshal.SizeOf<STORAGE_LB_PROVISIONING_MAP_RESOURCES>(), Is.EqualTo(sizeof(STORAGE_LB_PROVISIONING_MAP_RESOURCES)));
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_LB_PROVISIONING_MAP_RESOURCES" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(STORAGE_LB_PROVISIONING_MAP_RESOURCES).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="STORAGE_LB_PROVISIONING_MAP_RESOURCES" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(STORAGE_LB_PROVISIONING_MAP_RESOURCES).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_LB_PROVISIONING_MAP_RESOURCES" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(STORAGE_LB_PROVISIONING_MAP_RESOURCES), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="STORAGE_LB_PROVISIONING_MAP_RESOURCES" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(STORAGE_LB_PROVISIONING_MAP_RESOURCES), Is.EqualTo(32));
     }
 }

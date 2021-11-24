@@ -6,17 +6,16 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+public partial struct D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_PARAMETER_COUNT
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public partial struct D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_PARAMETER_COUNT
-    {
-        public Guid CommandId;
+    public Guid CommandId;
 
-        public D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE Stage;
+    public D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE Stage;
 
-        public uint ParameterCount;
+    public uint ParameterCount;
 
-        public uint ParameterPacking;
-    }
+    public uint ParameterPacking;
 }

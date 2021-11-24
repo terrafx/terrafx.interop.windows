@@ -3,19 +3,18 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct NMTVGETINFOTIPA
 {
-    public unsafe partial struct NMTVGETINFOTIPA
-    {
-        public NMHDR hdr;
+    public NMHDR hdr;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* pszText;
+    [NativeTypeName("LPSTR")]
+    public sbyte* pszText;
 
-        public int cchTextMax;
+    public int cchTextMax;
 
-        public HTREEITEM hItem;
+    public HTREEITEM hItem;
 
-        public LPARAM lParam;
-    }
+    public LPARAM lParam;
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("40247D84-E895-497F-B44C-B74560ACFE27")]
+public partial struct CODECAPI_AVEncVideoInverseTelecineThreshold
 {
-    [Guid("40247D84-E895-497F-B44C-B74560ACFE27")]
-    public partial struct CODECAPI_AVEncVideoInverseTelecineThreshold
-    {
-    }
 }

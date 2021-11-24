@@ -5,15 +5,14 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct SP_CLASSINSTALL_HEADER32
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DI_FUNCTION")]
-        public uint InstallFunction;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct SP_CLASSINSTALL_HEADER32
+{
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
+
+    [NativeTypeName("DI_FUNCTION")]
+    public uint InstallFunction;
 }

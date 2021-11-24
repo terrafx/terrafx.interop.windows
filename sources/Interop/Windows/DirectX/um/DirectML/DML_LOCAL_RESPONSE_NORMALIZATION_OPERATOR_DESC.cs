@@ -5,24 +5,23 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC
 {
-    public unsafe partial struct DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC
-    {
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* InputTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* InputTensor;
 
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* OutputTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* OutputTensor;
 
-        public BOOL CrossChannel;
+    public BOOL CrossChannel;
 
-        public uint LocalSize;
+    public uint LocalSize;
 
-        public float Alpha;
+    public float Alpha;
 
-        public float Beta;
+    public float Beta;
 
-        public float Bias;
-    }
+    public float Bias;
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TOKEN_SID_INFORMATION" /> struct.</summary>
+public static unsafe partial class TOKEN_SID_INFORMATIONTests
 {
-    /// <summary>Provides validation of the <see cref="TOKEN_SID_INFORMATION" /> struct.</summary>
-    public static unsafe partial class TOKEN_SID_INFORMATIONTests
+    /// <summary>Validates that the <see cref="TOKEN_SID_INFORMATION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TOKEN_SID_INFORMATION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TOKEN_SID_INFORMATION>(), Is.EqualTo(sizeof(TOKEN_SID_INFORMATION)));
-        }
+        Assert.That(Marshal.SizeOf<TOKEN_SID_INFORMATION>(), Is.EqualTo(sizeof(TOKEN_SID_INFORMATION)));
+    }
 
-        /// <summary>Validates that the <see cref="TOKEN_SID_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TOKEN_SID_INFORMATION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TOKEN_SID_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TOKEN_SID_INFORMATION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TOKEN_SID_INFORMATION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="TOKEN_SID_INFORMATION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(TOKEN_SID_INFORMATION), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(TOKEN_SID_INFORMATION), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(TOKEN_SID_INFORMATION), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(TOKEN_SID_INFORMATION), Is.EqualTo(4));
         }
     }
 }

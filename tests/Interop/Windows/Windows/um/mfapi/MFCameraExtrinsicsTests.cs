@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MFCameraExtrinsics" /> struct.</summary>
+[SupportedOSPlatform("windows10.0")]
+public static unsafe partial class MFCameraExtrinsicsTests
 {
-    /// <summary>Provides validation of the <see cref="MFCameraExtrinsics" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0")]
-    public static unsafe partial class MFCameraExtrinsicsTests
+    /// <summary>Validates that the <see cref="MFCameraExtrinsics" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MFCameraExtrinsics" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MFCameraExtrinsics>(), Is.EqualTo(sizeof(MFCameraExtrinsics)));
-        }
+        Assert.That(Marshal.SizeOf<MFCameraExtrinsics>(), Is.EqualTo(sizeof(MFCameraExtrinsics)));
+    }
 
-        /// <summary>Validates that the <see cref="MFCameraExtrinsics" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MFCameraExtrinsics).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MFCameraExtrinsics" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MFCameraExtrinsics).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MFCameraExtrinsics" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MFCameraExtrinsics), Is.EqualTo(48));
-        }
+    /// <summary>Validates that the <see cref="MFCameraExtrinsics" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MFCameraExtrinsics), Is.EqualTo(48));
     }
 }

@@ -8,38 +8,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="D3D11_VIDEO_PROCESSOR_STREAM" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class D3D11_VIDEO_PROCESSOR_STREAMTests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_VIDEO_PROCESSOR_STREAM" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class D3D11_VIDEO_PROCESSOR_STREAMTests
+    /// <summary>Validates that the <see cref="D3D11_VIDEO_PROCESSOR_STREAM" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="D3D11_VIDEO_PROCESSOR_STREAM" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<D3D11_VIDEO_PROCESSOR_STREAM>(), Is.EqualTo(sizeof(D3D11_VIDEO_PROCESSOR_STREAM)));
-        }
+        Assert.That(Marshal.SizeOf<D3D11_VIDEO_PROCESSOR_STREAM>(), Is.EqualTo(sizeof(D3D11_VIDEO_PROCESSOR_STREAM)));
+    }
 
-        /// <summary>Validates that the <see cref="D3D11_VIDEO_PROCESSOR_STREAM" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(D3D11_VIDEO_PROCESSOR_STREAM).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="D3D11_VIDEO_PROCESSOR_STREAM" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(D3D11_VIDEO_PROCESSOR_STREAM).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="D3D11_VIDEO_PROCESSOR_STREAM" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="D3D11_VIDEO_PROCESSOR_STREAM" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(D3D11_VIDEO_PROCESSOR_STREAM), Is.EqualTo(72));
-            }
-            else
-            {
-                Assert.That(sizeof(D3D11_VIDEO_PROCESSOR_STREAM), Is.EqualTo(44));
-            }
+            Assert.That(sizeof(D3D11_VIDEO_PROCESSOR_STREAM), Is.EqualTo(72));
+        }
+        else
+        {
+            Assert.That(sizeof(D3D11_VIDEO_PROCESSOR_STREAM), Is.EqualTo(44));
         }
     }
 }

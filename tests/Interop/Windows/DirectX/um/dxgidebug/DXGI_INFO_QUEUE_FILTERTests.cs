@@ -8,38 +8,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DXGI_INFO_QUEUE_FILTER" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class DXGI_INFO_QUEUE_FILTERTests
 {
-    /// <summary>Provides validation of the <see cref="DXGI_INFO_QUEUE_FILTER" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class DXGI_INFO_QUEUE_FILTERTests
+    /// <summary>Validates that the <see cref="DXGI_INFO_QUEUE_FILTER" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DXGI_INFO_QUEUE_FILTER" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DXGI_INFO_QUEUE_FILTER>(), Is.EqualTo(sizeof(DXGI_INFO_QUEUE_FILTER)));
-        }
+        Assert.That(Marshal.SizeOf<DXGI_INFO_QUEUE_FILTER>(), Is.EqualTo(sizeof(DXGI_INFO_QUEUE_FILTER)));
+    }
 
-        /// <summary>Validates that the <see cref="DXGI_INFO_QUEUE_FILTER" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DXGI_INFO_QUEUE_FILTER).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DXGI_INFO_QUEUE_FILTER" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DXGI_INFO_QUEUE_FILTER).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DXGI_INFO_QUEUE_FILTER" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DXGI_INFO_QUEUE_FILTER" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DXGI_INFO_QUEUE_FILTER), Is.EqualTo(96));
-            }
-            else
-            {
-                Assert.That(sizeof(DXGI_INFO_QUEUE_FILTER), Is.EqualTo(48));
-            }
+            Assert.That(sizeof(DXGI_INFO_QUEUE_FILTER), Is.EqualTo(96));
+        }
+        else
+        {
+            Assert.That(sizeof(DXGI_INFO_QUEUE_FILTER), Is.EqualTo(48));
         }
     }
 }

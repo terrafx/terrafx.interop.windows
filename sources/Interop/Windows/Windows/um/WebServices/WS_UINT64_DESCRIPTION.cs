@@ -3,14 +3,13 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct WS_UINT64_DESCRIPTION
-    {
-        [NativeTypeName("unsigned long long")]
-        public ulong minValue;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("unsigned long long")]
-        public ulong maxValue;
-    }
+public partial struct WS_UINT64_DESCRIPTION
+{
+    [NativeTypeName("unsigned long long")]
+    public ulong minValue;
+
+    [NativeTypeName("unsigned long long")]
+    public ulong maxValue;
 }

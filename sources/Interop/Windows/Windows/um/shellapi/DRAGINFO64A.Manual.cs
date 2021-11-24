@@ -3,20 +3,19 @@
 // Ported from um/shellapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct DRAGINFO64A
 {
-    public unsafe partial struct DRAGINFO64A
-    {
-        public uint uSize;
+    public uint uSize;
 
-        public POINT pt;
+    public POINT pt;
 
-        public BOOL fNC;
+    public BOOL fNC;
 
-        [NativeTypeName("PZZSTR")]
-        public sbyte* lpFileList;
+    [NativeTypeName("PZZSTR")]
+    public sbyte* lpFileList;
 
-        [NativeTypeName("DWORD")]
-        public uint grfKeyState;
-    }
+    [NativeTypeName("DWORD")]
+    public uint grfKeyState;
 }

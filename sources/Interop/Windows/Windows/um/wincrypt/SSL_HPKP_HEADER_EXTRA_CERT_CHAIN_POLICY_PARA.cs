@@ -5,36 +5,35 @@
 
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA
 {
-    public unsafe partial struct SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
+
+    [NativeTypeName("DWORD")]
+    public uint dwReserved;
+
+    [NativeTypeName("LPWSTR")]
+    public ushort* pwszServerName;
+
+    [NativeTypeName("LPSTR [2]")]
+    public _rgpszHpkpValue_e__FixedBuffer rgpszHpkpValue;
+
+    public unsafe partial struct _rgpszHpkpValue_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+        public sbyte* e0;
+        public sbyte* e1;
 
-        [NativeTypeName("DWORD")]
-        public uint dwReserved;
-
-        [NativeTypeName("LPWSTR")]
-        public ushort* pwszServerName;
-
-        [NativeTypeName("LPSTR [2]")]
-        public _rgpszHpkpValue_e__FixedBuffer rgpszHpkpValue;
-
-        public unsafe partial struct _rgpszHpkpValue_e__FixedBuffer
+        public ref sbyte* this[int index]
         {
-            public sbyte* e0;
-            public sbyte* e1;
-
-            public ref sbyte* this[int index]
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
             {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                fixed (sbyte** pThis = &e0)
                 {
-                    fixed (sbyte** pThis = &e0)
-                    {
-                        return ref pThis[index];
-                    }
+                    return ref pThis[index];
                 }
             }
         }

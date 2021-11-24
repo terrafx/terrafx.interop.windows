@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct MODLOAD_PDBGUID_PDBAGE
-    {
-        public Guid PdbGuid;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint PdbAge;
-    }
+public partial struct MODLOAD_PDBGUID_PDBAGE
+{
+    public Guid PdbGuid;
+
+    [NativeTypeName("DWORD")]
+    public uint PdbAge;
 }

@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFDXGIDeviceManagerSource" /> struct.</summary>
+[SupportedOSPlatform("windows8.1")]
+public static unsafe partial class IMFDXGIDeviceManagerSourceTests
 {
-    /// <summary>Provides validation of the <see cref="IMFDXGIDeviceManagerSource" /> struct.</summary>
-    [SupportedOSPlatform("windows8.1")]
-    public static unsafe partial class IMFDXGIDeviceManagerSourceTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFDXGIDeviceManagerSource" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFDXGIDeviceManagerSource" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFDXGIDeviceManagerSource).GUID, Is.EqualTo(IID_IMFDXGIDeviceManagerSource));
-        }
+        Assert.That(typeof(IMFDXGIDeviceManagerSource).GUID, Is.EqualTo(IID_IMFDXGIDeviceManagerSource));
+    }
 
-        /// <summary>Validates that the <see cref="IMFDXGIDeviceManagerSource" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFDXGIDeviceManagerSource>(), Is.EqualTo(sizeof(IMFDXGIDeviceManagerSource)));
-        }
+    /// <summary>Validates that the <see cref="IMFDXGIDeviceManagerSource" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFDXGIDeviceManagerSource>(), Is.EqualTo(sizeof(IMFDXGIDeviceManagerSource)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFDXGIDeviceManagerSource" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFDXGIDeviceManagerSource).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFDXGIDeviceManagerSource" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFDXGIDeviceManagerSource).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFDXGIDeviceManagerSource" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFDXGIDeviceManagerSource" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFDXGIDeviceManagerSource), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFDXGIDeviceManagerSource), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFDXGIDeviceManagerSource), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFDXGIDeviceManagerSource), Is.EqualTo(4));
         }
     }
 }

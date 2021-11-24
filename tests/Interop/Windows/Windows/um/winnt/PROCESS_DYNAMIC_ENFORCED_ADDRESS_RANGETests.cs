@@ -8,38 +8,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.19041.0")]
+public static unsafe partial class PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGETests
 {
-    /// <summary>Provides validation of the <see cref="PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public static unsafe partial class PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGETests
+    /// <summary>Validates that the <see cref="PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE>(), Is.EqualTo(sizeof(PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE)));
-        }
+        Assert.That(Marshal.SizeOf<PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE>(), Is.EqualTo(sizeof(PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE)));
+    }
 
-        /// <summary>Validates that the <see cref="PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE), Is.EqualTo(12));
         }
     }
 }

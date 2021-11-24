@@ -3,17 +3,16 @@
 // Ported from um/ddraw.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct DDGAMMARAMP
 {
-    public unsafe partial struct DDGAMMARAMP
-    {
-        [NativeTypeName("WORD [256]")]
-        public fixed ushort red[256];
+    [NativeTypeName("WORD [256]")]
+    public fixed ushort red[256];
 
-        [NativeTypeName("WORD [256]")]
-        public fixed ushort green[256];
+    [NativeTypeName("WORD [256]")]
+    public fixed ushort green[256];
 
-        [NativeTypeName("WORD [256]")]
-        public fixed ushort blue[256];
-    }
+    [NativeTypeName("WORD [256]")]
+    public fixed ushort blue[256];
 }

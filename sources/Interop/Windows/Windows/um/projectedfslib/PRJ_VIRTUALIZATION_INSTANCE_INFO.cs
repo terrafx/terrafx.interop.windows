@@ -6,14 +6,13 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows10.0.17763.0")]
-    public partial struct PRJ_VIRTUALIZATION_INSTANCE_INFO
-    {
-        public Guid InstanceID;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("UINT32")]
-        public uint WriteAlignment;
-    }
+[SupportedOSPlatform("windows10.0.17763.0")]
+public partial struct PRJ_VIRTUALIZATION_INSTANCE_INFO
+{
+    public Guid InstanceID;
+
+    [NativeTypeName("UINT32")]
+    public uint WriteAlignment;
 }

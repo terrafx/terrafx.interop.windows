@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("9C668CFE-08E1-424A-934E-B764B064802A")]
+public partial struct CODECAPI_AVEncVideoMaxTemporalLayers
 {
-    [Guid("9C668CFE-08E1-424A-934E-B764B064802A")]
-    public partial struct CODECAPI_AVEncVideoMaxTemporalLayers
-    {
-    }
 }

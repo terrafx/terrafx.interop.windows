@@ -3,16 +3,15 @@
 // Ported from cvconst.h in the Debug Interface Access SDK
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class NAMEHASH_BUILD
 {
-    public static partial class NAMEHASH_BUILD
-    {
-        public const int NAMEHASH_BUILD_START = 0;
-        public const int NAMEHASH_BUILD_PAUSE = 1;
-        public const int NAMEHASH_BUILD_RESUME = 2;
-        public const int NAMEHASH_BUILD_COMPLETE = 3;
-        public const int NAMEHASH_BUILD_ERROR = 4;
-        public const int NAMEHASH_BUILD_OOM = NAMEHASH_BUILD_ERROR;
-        public const int NAMEHASH_BUILD_FAIL_TO_OPEN_MOD = 5;
-    }
+    public const int NAMEHASH_BUILD_START = 0;
+    public const int NAMEHASH_BUILD_PAUSE = 1;
+    public const int NAMEHASH_BUILD_RESUME = 2;
+    public const int NAMEHASH_BUILD_COMPLETE = 3;
+    public const int NAMEHASH_BUILD_ERROR = 4;
+    public const int NAMEHASH_BUILD_OOM = NAMEHASH_BUILD_ERROR;
+    public const int NAMEHASH_BUILD_FAIL_TO_OPEN_MOD = 5;
 }

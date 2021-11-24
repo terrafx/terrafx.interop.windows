@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDelayedPropertyStoreFactory" /> struct.</summary>
+public static unsafe partial class IDelayedPropertyStoreFactoryTests
 {
-    /// <summary>Provides validation of the <see cref="IDelayedPropertyStoreFactory" /> struct.</summary>
-    public static unsafe partial class IDelayedPropertyStoreFactoryTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDelayedPropertyStoreFactory" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDelayedPropertyStoreFactory" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDelayedPropertyStoreFactory).GUID, Is.EqualTo(IID_IDelayedPropertyStoreFactory));
-        }
+        Assert.That(typeof(IDelayedPropertyStoreFactory).GUID, Is.EqualTo(IID_IDelayedPropertyStoreFactory));
+    }
 
-        /// <summary>Validates that the <see cref="IDelayedPropertyStoreFactory" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDelayedPropertyStoreFactory>(), Is.EqualTo(sizeof(IDelayedPropertyStoreFactory)));
-        }
+    /// <summary>Validates that the <see cref="IDelayedPropertyStoreFactory" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDelayedPropertyStoreFactory>(), Is.EqualTo(sizeof(IDelayedPropertyStoreFactory)));
+    }
 
-        /// <summary>Validates that the <see cref="IDelayedPropertyStoreFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDelayedPropertyStoreFactory).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDelayedPropertyStoreFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDelayedPropertyStoreFactory).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDelayedPropertyStoreFactory" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDelayedPropertyStoreFactory" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDelayedPropertyStoreFactory), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDelayedPropertyStoreFactory), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDelayedPropertyStoreFactory), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDelayedPropertyStoreFactory), Is.EqualTo(4));
         }
     }
 }

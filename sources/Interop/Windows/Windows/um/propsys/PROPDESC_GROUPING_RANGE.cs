@@ -3,16 +3,15 @@
 // Ported from um/propsys.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum PROPDESC_GROUPING_RANGE
 {
-    public enum PROPDESC_GROUPING_RANGE
-    {
-        PDGR_DISCRETE = 0,
-        PDGR_ALPHANUMERIC = 1,
-        PDGR_SIZE = 2,
-        PDGR_DYNAMIC = 3,
-        PDGR_DATE = 4,
-        PDGR_PERCENT = 5,
-        PDGR_ENUMERATED = 6,
-    }
+    PDGR_DISCRETE = 0,
+    PDGR_ALPHANUMERIC = 1,
+    PDGR_SIZE = 2,
+    PDGR_DYNAMIC = 3,
+    PDGR_DATE = 4,
+    PDGR_PERCENT = 5,
+    PDGR_ENUMERATED = 6,
 }

@@ -5,30 +5,29 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct FILE_STORAGE_INFO
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct FILE_STORAGE_INFO
-    {
-        [NativeTypeName("ULONG")]
-        public uint LogicalBytesPerSector;
+    [NativeTypeName("ULONG")]
+    public uint LogicalBytesPerSector;
 
-        [NativeTypeName("ULONG")]
-        public uint PhysicalBytesPerSectorForAtomicity;
+    [NativeTypeName("ULONG")]
+    public uint PhysicalBytesPerSectorForAtomicity;
 
-        [NativeTypeName("ULONG")]
-        public uint PhysicalBytesPerSectorForPerformance;
+    [NativeTypeName("ULONG")]
+    public uint PhysicalBytesPerSectorForPerformance;
 
-        [NativeTypeName("ULONG")]
-        public uint FileSystemEffectivePhysicalBytesPerSectorForAtomicity;
+    [NativeTypeName("ULONG")]
+    public uint FileSystemEffectivePhysicalBytesPerSectorForAtomicity;
 
-        [NativeTypeName("ULONG")]
-        public uint Flags;
+    [NativeTypeName("ULONG")]
+    public uint Flags;
 
-        [NativeTypeName("ULONG")]
-        public uint ByteOffsetForSectorAlignment;
+    [NativeTypeName("ULONG")]
+    public uint ByteOffsetForSectorAlignment;
 
-        [NativeTypeName("ULONG")]
-        public uint ByteOffsetForPartitionAlignment;
-    }
+    [NativeTypeName("ULONG")]
+    public uint ByteOffsetForPartitionAlignment;
 }

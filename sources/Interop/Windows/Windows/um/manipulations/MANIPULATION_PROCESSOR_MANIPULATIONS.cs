@@ -5,16 +5,15 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum MANIPULATION_PROCESSOR_MANIPULATIONS
 {
-    [Flags]
-    public enum MANIPULATION_PROCESSOR_MANIPULATIONS
-    {
-        MANIPULATION_NONE = 0,
-        MANIPULATION_TRANSLATE_X = 0x1,
-        MANIPULATION_TRANSLATE_Y = 0x2,
-        MANIPULATION_SCALE = 0x4,
-        MANIPULATION_ROTATE = 0x8,
-        MANIPULATION_ALL = 0xf,
-    }
+    MANIPULATION_NONE = 0,
+    MANIPULATION_TRANSLATE_X = 0x1,
+    MANIPULATION_TRANSLATE_Y = 0x2,
+    MANIPULATION_SCALE = 0x4,
+    MANIPULATION_ROTATE = 0x8,
+    MANIPULATION_ALL = 0xf,
 }

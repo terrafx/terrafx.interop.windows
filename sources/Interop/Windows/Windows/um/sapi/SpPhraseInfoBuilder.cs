@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("C23FC28D-C55F-4720-8B32-91F73C2BD5D1")]
+public partial struct SpPhraseInfoBuilder
 {
-    [Guid("C23FC28D-C55F-4720-8B32-91F73C2BD5D1")]
-    public partial struct SpPhraseInfoBuilder
-    {
-    }
 }

@@ -5,28 +5,27 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.18362.0")]
+public enum WINHTTP_REQUEST_STAT_ENTRY
 {
-    [SupportedOSPlatform("windows10.0.18362.0")]
-    public enum WINHTTP_REQUEST_STAT_ENTRY
-    {
-        WinHttpConnectFailureCount = 0,
-        WinHttpProxyFailureCount,
-        WinHttpTlsHandshakeClientLeg1Size,
-        WinHttpTlsHandshakeServerLeg1Size,
-        WinHttpTlsHandshakeClientLeg2Size,
-        WinHttpTlsHandshakeServerLeg2Size,
-        WinHttpRequestHeadersSize,
-        WinHttpRequestHeadersCompressedSize,
-        WinHttpResponseHeadersSize,
-        WinHttpResponseHeadersCompressedSize,
-        WinHttpResponseBodySize,
-        WinHttpResponseBodyCompressedSize,
-        WinHttpProxyTlsHandshakeClientLeg1Size,
-        WinHttpProxyTlsHandshakeServerLeg1Size,
-        WinHttpProxyTlsHandshakeClientLeg2Size,
-        WinHttpProxyTlsHandshakeServerLeg2Size,
-        WinHttpRequestStatLast,
-        WinHttpRequestStatMax = 32,
-    }
+    WinHttpConnectFailureCount = 0,
+    WinHttpProxyFailureCount,
+    WinHttpTlsHandshakeClientLeg1Size,
+    WinHttpTlsHandshakeServerLeg1Size,
+    WinHttpTlsHandshakeClientLeg2Size,
+    WinHttpTlsHandshakeServerLeg2Size,
+    WinHttpRequestHeadersSize,
+    WinHttpRequestHeadersCompressedSize,
+    WinHttpResponseHeadersSize,
+    WinHttpResponseHeadersCompressedSize,
+    WinHttpResponseBodySize,
+    WinHttpResponseBodyCompressedSize,
+    WinHttpProxyTlsHandshakeClientLeg1Size,
+    WinHttpProxyTlsHandshakeServerLeg1Size,
+    WinHttpProxyTlsHandshakeClientLeg2Size,
+    WinHttpProxyTlsHandshakeServerLeg2Size,
+    WinHttpRequestStatLast,
+    WinHttpRequestStatMax = 32,
 }

@@ -3,20 +3,19 @@
 // Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct OVERLAPPED_ENTRY
 {
-    public unsafe partial struct OVERLAPPED_ENTRY
-    {
-        [NativeTypeName("ULONG_PTR")]
-        public nuint lpCompletionKey;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint lpCompletionKey;
 
-        [NativeTypeName("LPOVERLAPPED")]
-        public OVERLAPPED* lpOverlapped;
+    [NativeTypeName("LPOVERLAPPED")]
+    public OVERLAPPED* lpOverlapped;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint Internal;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint Internal;
 
-        [NativeTypeName("DWORD")]
-        public uint dwNumberOfBytesTransferred;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwNumberOfBytesTransferred;
 }

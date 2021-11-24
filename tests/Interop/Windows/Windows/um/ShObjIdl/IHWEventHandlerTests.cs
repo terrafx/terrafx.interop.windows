@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IHWEventHandler" /> struct.</summary>
+public static unsafe partial class IHWEventHandlerTests
 {
-    /// <summary>Provides validation of the <see cref="IHWEventHandler" /> struct.</summary>
-    public static unsafe partial class IHWEventHandlerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHWEventHandler" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHWEventHandler" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IHWEventHandler).GUID, Is.EqualTo(IID_IHWEventHandler));
-        }
+        Assert.That(typeof(IHWEventHandler).GUID, Is.EqualTo(IID_IHWEventHandler));
+    }
 
-        /// <summary>Validates that the <see cref="IHWEventHandler" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IHWEventHandler>(), Is.EqualTo(sizeof(IHWEventHandler)));
-        }
+    /// <summary>Validates that the <see cref="IHWEventHandler" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IHWEventHandler>(), Is.EqualTo(sizeof(IHWEventHandler)));
+    }
 
-        /// <summary>Validates that the <see cref="IHWEventHandler" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IHWEventHandler).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IHWEventHandler" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IHWEventHandler).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IHWEventHandler" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IHWEventHandler" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IHWEventHandler), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IHWEventHandler), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IHWEventHandler), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IHWEventHandler), Is.EqualTo(4));
         }
     }
 }

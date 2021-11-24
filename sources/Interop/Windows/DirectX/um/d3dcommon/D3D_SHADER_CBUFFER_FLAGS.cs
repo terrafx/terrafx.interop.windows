@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum D3D_SHADER_CBUFFER_FLAGS
 {
-    [Flags]
-    public enum D3D_SHADER_CBUFFER_FLAGS
-    {
-        D3D_CBF_USERPACKED = 1,
-        D3D10_CBF_USERPACKED = D3D_CBF_USERPACKED,
-        D3D_CBF_FORCE_DWORD = 0x7fffffff,
-    }
+    D3D_CBF_USERPACKED = 1,
+    D3D10_CBF_USERPACKED = D3D_CBF_USERPACKED,
+    D3D_CBF_FORCE_DWORD = 0x7fffffff,
 }

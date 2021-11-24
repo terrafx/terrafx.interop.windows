@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ImageRecompress" /> struct.</summary>
+public static unsafe partial class ImageRecompressTests
 {
-    /// <summary>Provides validation of the <see cref="ImageRecompress" /> struct.</summary>
-    public static unsafe partial class ImageRecompressTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ImageRecompress" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ImageRecompress" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ImageRecompress).GUID, Is.EqualTo(IID_ImageRecompress));
-        }
+        Assert.That(typeof(ImageRecompress).GUID, Is.EqualTo(IID_ImageRecompress));
+    }
 
-        /// <summary>Validates that the <see cref="ImageRecompress" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ImageRecompress>(), Is.EqualTo(sizeof(ImageRecompress)));
-        }
+    /// <summary>Validates that the <see cref="ImageRecompress" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ImageRecompress>(), Is.EqualTo(sizeof(ImageRecompress)));
+    }
 
-        /// <summary>Validates that the <see cref="ImageRecompress" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ImageRecompress).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ImageRecompress" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ImageRecompress).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ImageRecompress" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(ImageRecompress), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="ImageRecompress" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(ImageRecompress), Is.EqualTo(1));
     }
 }

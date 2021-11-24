@@ -3,17 +3,16 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct MULTIKEYHELPA
 {
-    public unsafe partial struct MULTIKEYHELPA
-    {
-        [NativeTypeName("DWORD")]
-        public uint mkSize;
+    [NativeTypeName("DWORD")]
+    public uint mkSize;
 
-        [NativeTypeName("CHAR")]
-        public sbyte mkKeylist;
+    [NativeTypeName("CHAR")]
+    public sbyte mkKeylist;
 
-        [NativeTypeName("CHAR [1]")]
-        public fixed sbyte szKeyphrase[1];
-    }
+    [NativeTypeName("CHAR [1]")]
+    public fixed sbyte szKeyphrase[1];
 }

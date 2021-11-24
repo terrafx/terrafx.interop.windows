@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMAGEHLP_JIT_SYMBOLMAP" /> struct.</summary>
+public static unsafe partial class IMAGEHLP_JIT_SYMBOLMAPTests
 {
-    /// <summary>Provides validation of the <see cref="IMAGEHLP_JIT_SYMBOLMAP" /> struct.</summary>
-    public static unsafe partial class IMAGEHLP_JIT_SYMBOLMAPTests
+    /// <summary>Validates that the <see cref="IMAGEHLP_JIT_SYMBOLMAP" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IMAGEHLP_JIT_SYMBOLMAP" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMAGEHLP_JIT_SYMBOLMAP>(), Is.EqualTo(sizeof(IMAGEHLP_JIT_SYMBOLMAP)));
-        }
+        Assert.That(Marshal.SizeOf<IMAGEHLP_JIT_SYMBOLMAP>(), Is.EqualTo(sizeof(IMAGEHLP_JIT_SYMBOLMAP)));
+    }
 
-        /// <summary>Validates that the <see cref="IMAGEHLP_JIT_SYMBOLMAP" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMAGEHLP_JIT_SYMBOLMAP).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMAGEHLP_JIT_SYMBOLMAP" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMAGEHLP_JIT_SYMBOLMAP).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMAGEHLP_JIT_SYMBOLMAP" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(IMAGEHLP_JIT_SYMBOLMAP), Is.EqualTo(24));
-        }
+    /// <summary>Validates that the <see cref="IMAGEHLP_JIT_SYMBOLMAP" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(IMAGEHLP_JIT_SYMBOLMAP), Is.EqualTo(24));
     }
 }

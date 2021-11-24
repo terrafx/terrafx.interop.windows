@@ -5,11 +5,10 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum MF_SOURCE_READER_CONTROL_FLAG
 {
-    [Flags]
-    public enum MF_SOURCE_READER_CONTROL_FLAG
-    {
-        MF_SOURCE_READER_CONTROLF_DRAIN = 0x1,
-    }
+    MF_SOURCE_READER_CONTROLF_DRAIN = 0x1,
 }

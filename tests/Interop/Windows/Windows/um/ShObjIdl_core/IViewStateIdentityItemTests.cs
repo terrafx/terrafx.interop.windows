@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IViewStateIdentityItem" /> struct.</summary>
+public static unsafe partial class IViewStateIdentityItemTests
 {
-    /// <summary>Provides validation of the <see cref="IViewStateIdentityItem" /> struct.</summary>
-    public static unsafe partial class IViewStateIdentityItemTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IViewStateIdentityItem" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IViewStateIdentityItem" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IViewStateIdentityItem).GUID, Is.EqualTo(IID_IViewStateIdentityItem));
-        }
+        Assert.That(typeof(IViewStateIdentityItem).GUID, Is.EqualTo(IID_IViewStateIdentityItem));
+    }
 
-        /// <summary>Validates that the <see cref="IViewStateIdentityItem" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IViewStateIdentityItem>(), Is.EqualTo(sizeof(IViewStateIdentityItem)));
-        }
+    /// <summary>Validates that the <see cref="IViewStateIdentityItem" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IViewStateIdentityItem>(), Is.EqualTo(sizeof(IViewStateIdentityItem)));
+    }
 
-        /// <summary>Validates that the <see cref="IViewStateIdentityItem" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IViewStateIdentityItem).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IViewStateIdentityItem" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IViewStateIdentityItem).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IViewStateIdentityItem" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IViewStateIdentityItem" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IViewStateIdentityItem), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IViewStateIdentityItem), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IViewStateIdentityItem), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IViewStateIdentityItem), Is.EqualTo(4));
         }
     }
 }

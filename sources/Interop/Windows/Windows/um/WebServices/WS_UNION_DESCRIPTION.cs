@@ -3,27 +3,26 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_UNION_DESCRIPTION
 {
-    public unsafe partial struct WS_UNION_DESCRIPTION
-    {
-        [NativeTypeName("ULONG")]
-        public uint size;
+    [NativeTypeName("ULONG")]
+    public uint size;
 
-        [NativeTypeName("ULONG")]
-        public uint alignment;
+    [NativeTypeName("ULONG")]
+    public uint alignment;
 
-        public WS_UNION_FIELD_DESCRIPTION** fields;
+    public WS_UNION_FIELD_DESCRIPTION** fields;
 
-        [NativeTypeName("ULONG")]
-        public uint fieldCount;
+    [NativeTypeName("ULONG")]
+    public uint fieldCount;
 
-        [NativeTypeName("ULONG")]
-        public uint enumOffset;
+    [NativeTypeName("ULONG")]
+    public uint enumOffset;
 
-        public int noneEnumValue;
+    public int noneEnumValue;
 
-        [NativeTypeName("ULONG *")]
-        public uint* valueIndices;
-    }
+    [NativeTypeName("ULONG *")]
+    public uint* valueIndices;
 }

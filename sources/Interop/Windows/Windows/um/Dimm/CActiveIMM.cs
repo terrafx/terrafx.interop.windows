@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("4955DD33-B159-11D0-8FCF-00AA006BCC59")]
+public partial struct CActiveIMM
 {
-    [Guid("4955DD33-B159-11D0-8FCF-00AA006BCC59")]
-    public partial struct CActiveIMM
-    {
-    }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PSFEATURE_CUSTPAPER" /> struct.</summary>
+public static unsafe partial class PSFEATURE_CUSTPAPERTests
 {
-    /// <summary>Provides validation of the <see cref="PSFEATURE_CUSTPAPER" /> struct.</summary>
-    public static unsafe partial class PSFEATURE_CUSTPAPERTests
+    /// <summary>Validates that the <see cref="PSFEATURE_CUSTPAPER" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PSFEATURE_CUSTPAPER" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PSFEATURE_CUSTPAPER>(), Is.EqualTo(sizeof(PSFEATURE_CUSTPAPER)));
-        }
+        Assert.That(Marshal.SizeOf<PSFEATURE_CUSTPAPER>(), Is.EqualTo(sizeof(PSFEATURE_CUSTPAPER)));
+    }
 
-        /// <summary>Validates that the <see cref="PSFEATURE_CUSTPAPER" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PSFEATURE_CUSTPAPER).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PSFEATURE_CUSTPAPER" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PSFEATURE_CUSTPAPER).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PSFEATURE_CUSTPAPER" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(PSFEATURE_CUSTPAPER), Is.EqualTo(20));
-        }
+    /// <summary>Validates that the <see cref="PSFEATURE_CUSTPAPER" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(PSFEATURE_CUSTPAPER), Is.EqualTo(20));
     }
 }

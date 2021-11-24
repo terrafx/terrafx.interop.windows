@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="COMPAREITEMSTRUCT" /> struct.</summary>
+public static unsafe partial class COMPAREITEMSTRUCTTests
 {
-    /// <summary>Provides validation of the <see cref="COMPAREITEMSTRUCT" /> struct.</summary>
-    public static unsafe partial class COMPAREITEMSTRUCTTests
+    /// <summary>Validates that the <see cref="COMPAREITEMSTRUCT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="COMPAREITEMSTRUCT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<COMPAREITEMSTRUCT>(), Is.EqualTo(sizeof(COMPAREITEMSTRUCT)));
-        }
+        Assert.That(Marshal.SizeOf<COMPAREITEMSTRUCT>(), Is.EqualTo(sizeof(COMPAREITEMSTRUCT)));
+    }
 
-        /// <summary>Validates that the <see cref="COMPAREITEMSTRUCT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(COMPAREITEMSTRUCT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="COMPAREITEMSTRUCT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(COMPAREITEMSTRUCT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="COMPAREITEMSTRUCT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="COMPAREITEMSTRUCT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(COMPAREITEMSTRUCT), Is.EqualTo(56));
-            }
-            else
-            {
-                Assert.That(sizeof(COMPAREITEMSTRUCT), Is.EqualTo(32));
-            }
+            Assert.That(sizeof(COMPAREITEMSTRUCT), Is.EqualTo(56));
+        }
+        else
+        {
+            Assert.That(sizeof(COMPAREITEMSTRUCT), Is.EqualTo(32));
         }
     }
 }

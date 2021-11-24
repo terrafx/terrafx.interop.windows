@@ -3,28 +3,27 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO
 {
-    public unsafe partial struct CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public int iDeltaCrlIndicator;
+    public int iDeltaCrlIndicator;
 
-        [NativeTypeName("LPFILETIME")]
-        public FILETIME* pftCacheResync;
+    [NativeTypeName("LPFILETIME")]
+    public FILETIME* pftCacheResync;
 
-        [NativeTypeName("LPFILETIME")]
-        public FILETIME* pLastSyncTime;
+    [NativeTypeName("LPFILETIME")]
+    public FILETIME* pLastSyncTime;
 
-        [NativeTypeName("LPFILETIME")]
-        public FILETIME* pMaxAgeTime;
+    [NativeTypeName("LPFILETIME")]
+    public FILETIME* pMaxAgeTime;
 
-        [NativeTypeName("PCERT_REVOCATION_CHAIN_PARA")]
-        public CERT_REVOCATION_CHAIN_PARA* pChainPara;
+    [NativeTypeName("PCERT_REVOCATION_CHAIN_PARA")]
+    public CERT_REVOCATION_CHAIN_PARA* pChainPara;
 
-        [NativeTypeName("PCRYPT_INTEGER_BLOB")]
-        public CRYPT_DATA_BLOB* pDeltaCrlIndicator;
-    }
+    [NativeTypeName("PCRYPT_INTEGER_BLOB")]
+    public CRYPT_DATA_BLOB* pDeltaCrlIndicator;
 }

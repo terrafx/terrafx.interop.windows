@@ -5,77 +5,76 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D12_FUNCTION_DESC
 {
-    public unsafe partial struct D3D12_FUNCTION_DESC
-    {
-        public uint Version;
+    public uint Version;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* Creator;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* Creator;
 
-        public uint Flags;
+    public uint Flags;
 
-        public uint ConstantBuffers;
+    public uint ConstantBuffers;
 
-        public uint BoundResources;
+    public uint BoundResources;
 
-        public uint InstructionCount;
+    public uint InstructionCount;
 
-        public uint TempRegisterCount;
+    public uint TempRegisterCount;
 
-        public uint TempArrayCount;
+    public uint TempArrayCount;
 
-        public uint DefCount;
+    public uint DefCount;
 
-        public uint DclCount;
+    public uint DclCount;
 
-        public uint TextureNormalInstructions;
+    public uint TextureNormalInstructions;
 
-        public uint TextureLoadInstructions;
+    public uint TextureLoadInstructions;
 
-        public uint TextureCompInstructions;
+    public uint TextureCompInstructions;
 
-        public uint TextureBiasInstructions;
+    public uint TextureBiasInstructions;
 
-        public uint TextureGradientInstructions;
+    public uint TextureGradientInstructions;
 
-        public uint FloatInstructionCount;
+    public uint FloatInstructionCount;
 
-        public uint IntInstructionCount;
+    public uint IntInstructionCount;
 
-        public uint UintInstructionCount;
+    public uint UintInstructionCount;
 
-        public uint StaticFlowControlCount;
+    public uint StaticFlowControlCount;
 
-        public uint DynamicFlowControlCount;
+    public uint DynamicFlowControlCount;
 
-        public uint MacroInstructionCount;
+    public uint MacroInstructionCount;
 
-        public uint ArrayInstructionCount;
+    public uint ArrayInstructionCount;
 
-        public uint MovInstructionCount;
+    public uint MovInstructionCount;
 
-        public uint MovcInstructionCount;
+    public uint MovcInstructionCount;
 
-        public uint ConversionInstructionCount;
+    public uint ConversionInstructionCount;
 
-        public uint BitwiseInstructionCount;
+    public uint BitwiseInstructionCount;
 
-        public D3D_FEATURE_LEVEL MinFeatureLevel;
+    public D3D_FEATURE_LEVEL MinFeatureLevel;
 
-        [NativeTypeName("UINT64")]
-        public ulong RequiredFeatureFlags;
+    [NativeTypeName("UINT64")]
+    public ulong RequiredFeatureFlags;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* Name;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* Name;
 
-        public int FunctionParameterCount;
+    public int FunctionParameterCount;
 
-        public BOOL HasReturn;
+    public BOOL HasReturn;
 
-        public BOOL Has10Level9VertexShader;
+    public BOOL Has10Level9VertexShader;
 
-        public BOOL Has10Level9PixelShader;
-    }
+    public BOOL Has10Level9PixelShader;
 }

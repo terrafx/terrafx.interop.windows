@@ -3,17 +3,16 @@
 // Ported from um/ShlObj_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class MM
 {
-    public static partial class MM
-    {
-        [NativeTypeName("#define MM_ADDSEPARATOR 0x00000001L")]
-        public const int MM_ADDSEPARATOR = 0x00000001;
+    [NativeTypeName("#define MM_ADDSEPARATOR 0x00000001L")]
+    public const int MM_ADDSEPARATOR = 0x00000001;
 
-        [NativeTypeName("#define MM_SUBMENUSHAVEIDS 0x00000002L")]
-        public const int MM_SUBMENUSHAVEIDS = 0x00000002;
+    [NativeTypeName("#define MM_SUBMENUSHAVEIDS 0x00000002L")]
+    public const int MM_SUBMENUSHAVEIDS = 0x00000002;
 
-        [NativeTypeName("#define MM_DONTREMOVESEPS 0x00000004L")]
-        public const int MM_DONTREMOVESEPS = 0x00000004;
-    }
+    [NativeTypeName("#define MM_DONTREMOVESEPS 0x00000004L")]
+    public const int MM_DONTREMOVESEPS = 0x00000004;
 }

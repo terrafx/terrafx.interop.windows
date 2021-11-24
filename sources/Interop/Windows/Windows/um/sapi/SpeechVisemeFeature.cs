@@ -5,12 +5,11 @@
 
 using static TerraFX.Interop.Windows.SPVFEATURE;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechVisemeFeature
 {
-    public enum SpeechVisemeFeature
-    {
-        SVF_None = 0,
-        SVF_Stressed = SPVFEATURE_STRESSED,
-        SVF_Emphasis = SPVFEATURE_EMPHASIS,
-    }
+    SVF_None = 0,
+    SVF_Stressed = SPVFEATURE_STRESSED,
+    SVF_Emphasis = SPVFEATURE_EMPHASIS,
 }

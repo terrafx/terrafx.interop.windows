@@ -6,16 +6,15 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.DirectX
-{
-    public unsafe partial struct D3D12_RT_FORMAT_ARRAY
-    {
-        public D3D12_RT_FORMAT_ARRAY([NativeTypeName("const DXGI_FORMAT *")] DXGI_FORMAT* pFormats, uint NumFormats)
-        {
-            Unsafe.SkipInit(out this);
+namespace TerraFX.Interop.DirectX;
 
-            NumRenderTargets = NumFormats;
-            Buffer.MemoryCopy(Unsafe.AsPointer(ref RTFormats), pFormats, sizeof(_RTFormats_e__FixedBuffer), sizeof(_RTFormats_e__FixedBuffer));
-        }
+public unsafe partial struct D3D12_RT_FORMAT_ARRAY
+{
+    public D3D12_RT_FORMAT_ARRAY([NativeTypeName("const DXGI_FORMAT *")] DXGI_FORMAT* pFormats, uint NumFormats)
+    {
+        Unsafe.SkipInit(out this);
+
+        NumRenderTargets = NumFormats;
+        Buffer.MemoryCopy(Unsafe.AsPointer(ref RTFormats), pFormats, sizeof(_RTFormats_e__FixedBuffer), sizeof(_RTFormats_e__FixedBuffer));
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="USEROBJECTFLAGS" /> struct.</summary>
+public static unsafe partial class USEROBJECTFLAGSTests
 {
-    /// <summary>Provides validation of the <see cref="USEROBJECTFLAGS" /> struct.</summary>
-    public static unsafe partial class USEROBJECTFLAGSTests
+    /// <summary>Validates that the <see cref="USEROBJECTFLAGS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="USEROBJECTFLAGS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<USEROBJECTFLAGS>(), Is.EqualTo(sizeof(USEROBJECTFLAGS)));
-        }
+        Assert.That(Marshal.SizeOf<USEROBJECTFLAGS>(), Is.EqualTo(sizeof(USEROBJECTFLAGS)));
+    }
 
-        /// <summary>Validates that the <see cref="USEROBJECTFLAGS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(USEROBJECTFLAGS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="USEROBJECTFLAGS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(USEROBJECTFLAGS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="USEROBJECTFLAGS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(USEROBJECTFLAGS), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="USEROBJECTFLAGS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(USEROBJECTFLAGS), Is.EqualTo(12));
     }
 }

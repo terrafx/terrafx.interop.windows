@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XSAVE_CET_U_FORMAT" /> struct.</summary>
+public static unsafe partial class XSAVE_CET_U_FORMATTests
 {
-    /// <summary>Provides validation of the <see cref="XSAVE_CET_U_FORMAT" /> struct.</summary>
-    public static unsafe partial class XSAVE_CET_U_FORMATTests
+    /// <summary>Validates that the <see cref="XSAVE_CET_U_FORMAT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XSAVE_CET_U_FORMAT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XSAVE_CET_U_FORMAT>(), Is.EqualTo(sizeof(XSAVE_CET_U_FORMAT)));
-        }
+        Assert.That(Marshal.SizeOf<XSAVE_CET_U_FORMAT>(), Is.EqualTo(sizeof(XSAVE_CET_U_FORMAT)));
+    }
 
-        /// <summary>Validates that the <see cref="XSAVE_CET_U_FORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XSAVE_CET_U_FORMAT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XSAVE_CET_U_FORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XSAVE_CET_U_FORMAT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XSAVE_CET_U_FORMAT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(XSAVE_CET_U_FORMAT), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="XSAVE_CET_U_FORMAT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(XSAVE_CET_U_FORMAT), Is.EqualTo(16));
     }
 }

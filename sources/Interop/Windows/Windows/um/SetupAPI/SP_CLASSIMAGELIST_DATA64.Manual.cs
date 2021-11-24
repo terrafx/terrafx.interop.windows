@@ -3,16 +3,15 @@
 // Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SP_CLASSIMAGELIST_DATA64
 {
-    public partial struct SP_CLASSIMAGELIST_DATA64
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public HIMAGELIST ImageList;
+    public HIMAGELIST ImageList;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint Reserved;
-    }
+    [NativeTypeName("ULONG_PTR")]
+    public nuint Reserved;
 }

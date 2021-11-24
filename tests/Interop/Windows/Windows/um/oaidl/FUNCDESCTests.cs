@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="FUNCDESC" /> struct.</summary>
+public static unsafe partial class FUNCDESCTests
 {
-    /// <summary>Provides validation of the <see cref="FUNCDESC" /> struct.</summary>
-    public static unsafe partial class FUNCDESCTests
+    /// <summary>Validates that the <see cref="FUNCDESC" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="FUNCDESC" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<FUNCDESC>(), Is.EqualTo(sizeof(FUNCDESC)));
-        }
+        Assert.That(Marshal.SizeOf<FUNCDESC>(), Is.EqualTo(sizeof(FUNCDESC)));
+    }
 
-        /// <summary>Validates that the <see cref="FUNCDESC" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(FUNCDESC).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="FUNCDESC" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(FUNCDESC).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="FUNCDESC" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="FUNCDESC" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(FUNCDESC), Is.EqualTo(88));
-            }
-            else
-            {
-                Assert.That(sizeof(FUNCDESC), Is.EqualTo(52));
-            }
+            Assert.That(sizeof(FUNCDESC), Is.EqualTo(88));
+        }
+        else
+        {
+            Assert.That(sizeof(FUNCDESC), Is.EqualTo(52));
         }
     }
 }

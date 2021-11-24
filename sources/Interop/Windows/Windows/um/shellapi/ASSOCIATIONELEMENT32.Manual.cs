@@ -5,16 +5,15 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct ASSOCIATIONELEMENT32
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct ASSOCIATIONELEMENT32
-    {
-        public ASSOCCLASS ac;
+    public ASSOCCLASS ac;
 
-        public HKEY hkClass;
+    public HKEY hkClass;
 
-        [NativeTypeName("PCWSTR")]
-        public ushort* pszClass;
-    }
+    [NativeTypeName("PCWSTR")]
+    public ushort* pszClass;
 }

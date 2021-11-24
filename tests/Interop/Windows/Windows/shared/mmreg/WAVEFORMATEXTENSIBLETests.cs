@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WAVEFORMATEXTENSIBLE" /> struct.</summary>
+public static unsafe partial class WAVEFORMATEXTENSIBLETests
 {
-    /// <summary>Provides validation of the <see cref="WAVEFORMATEXTENSIBLE" /> struct.</summary>
-    public static unsafe partial class WAVEFORMATEXTENSIBLETests
+    /// <summary>Validates that the <see cref="WAVEFORMATEXTENSIBLE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WAVEFORMATEXTENSIBLE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WAVEFORMATEXTENSIBLE>(), Is.EqualTo(sizeof(WAVEFORMATEXTENSIBLE)));
-        }
+        Assert.That(Marshal.SizeOf<WAVEFORMATEXTENSIBLE>(), Is.EqualTo(sizeof(WAVEFORMATEXTENSIBLE)));
+    }
 
-        /// <summary>Validates that the <see cref="WAVEFORMATEXTENSIBLE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WAVEFORMATEXTENSIBLE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WAVEFORMATEXTENSIBLE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WAVEFORMATEXTENSIBLE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WAVEFORMATEXTENSIBLE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(WAVEFORMATEXTENSIBLE), Is.EqualTo(40));
-        }
+    /// <summary>Validates that the <see cref="WAVEFORMATEXTENSIBLE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(WAVEFORMATEXTENSIBLE), Is.EqualTo(40));
     }
 }

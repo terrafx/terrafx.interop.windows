@@ -7,16 +7,15 @@ using NUnit.Framework;
 using System;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CLSID" /> class.</summary>
+public static partial class CLSIDTests
 {
-    /// <summary>Provides validation of the <see cref="CLSID" /> class.</summary>
-    public static partial class CLSIDTests
+    /// <summary>Validates that the value of the <see cref="CLSID_RendezvousApplication" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_RendezvousApplicationTest()
     {
-        /// <summary>Validates that the value of the <see cref="CLSID_RendezvousApplication" /> property is correct.</summary>
-        [Test]
-        public static void CLSID_RendezvousApplicationTest()
-        {
-            Assert.That(CLSID_RendezvousApplication, Is.EqualTo(new Guid(0x0B7E019A, 0xB5DE, 0x47fa, 0x89, 0x66, 0x90, 0x82, 0xF8, 0x2F, 0xB1, 0x92)));
-        }
+        Assert.That(CLSID_RendezvousApplication, Is.EqualTo(new Guid(0x0B7E019A, 0xB5DE, 0x47fa, 0x89, 0x66, 0x90, 0x82, 0xF8, 0x2F, 0xB1, 0x92)));
     }
 }

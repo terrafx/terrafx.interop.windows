@@ -3,13 +3,12 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MDIMINBUTTONSTATES
 {
-    public enum MDIMINBUTTONSTATES
-    {
-        MDMI_NORMAL = 1,
-        MDMI_HOT = 2,
-        MDMI_PUSHED = 3,
-        MDMI_DISABLED = 4,
-    }
+    MDMI_NORMAL = 1,
+    MDMI_HOT = 2,
+    MDMI_PUSHED = 3,
+    MDMI_DISABLED = 4,
 }

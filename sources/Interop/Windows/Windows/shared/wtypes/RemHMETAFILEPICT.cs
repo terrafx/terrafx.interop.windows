@@ -3,23 +3,22 @@
 // Ported from shared/wtypes.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct RemHMETAFILEPICT
 {
-    public unsafe partial struct RemHMETAFILEPICT
-    {
-        [NativeTypeName("LONG")]
-        public int mm;
+    [NativeTypeName("LONG")]
+    public int mm;
 
-        [NativeTypeName("LONG")]
-        public int xExt;
+    [NativeTypeName("LONG")]
+    public int xExt;
 
-        [NativeTypeName("LONG")]
-        public int yExt;
+    [NativeTypeName("LONG")]
+    public int yExt;
 
-        [NativeTypeName("ULONG")]
-        public uint cbData;
+    [NativeTypeName("ULONG")]
+    public uint cbData;
 
-        [NativeTypeName("byte [1]")]
-        public fixed byte data[1];
-    }
+    [NativeTypeName("byte [1]")]
+    public fixed byte data[1];
 }

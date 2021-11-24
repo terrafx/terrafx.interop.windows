@@ -5,28 +5,27 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public partial struct STORAGE_TEMPERATURE_THRESHOLD
 {
-    [SupportedOSPlatform("windows10.0")]
-    public partial struct STORAGE_TEMPERATURE_THRESHOLD
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("WORD")]
-        public ushort Flags;
+    [NativeTypeName("WORD")]
+    public ushort Flags;
 
-        [NativeTypeName("WORD")]
-        public ushort Index;
+    [NativeTypeName("WORD")]
+    public ushort Index;
 
-        public short Threshold;
+    public short Threshold;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte OverThreshold;
+    [NativeTypeName("BOOLEAN")]
+    public byte OverThreshold;
 
-        public byte Reserved;
-    }
+    public byte Reserved;
 }

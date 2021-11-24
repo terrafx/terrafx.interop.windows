@@ -5,30 +5,29 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+public static unsafe partial class WinRT
 {
-    public static unsafe partial class WinRT
+    [return: NativeTypeName("INT64")]
+    public static long Int64FromLuid([NativeTypeName("const LUID &")] LUID* Luid)
     {
-        [return: NativeTypeName("INT64")]
-        public static long Int64FromLuid([NativeTypeName("const LUID &")] LUID* Luid)
-        {
-            LARGE_INTEGER val = new LARGE_INTEGER();
+        LARGE_INTEGER val = new LARGE_INTEGER();
 
-            val.Anonymous.LowPart = Luid->LowPart;
-            val.Anonymous.HighPart = Luid->HighPart;
-            return val.QuadPart;
-        }
+        val.Anonymous.LowPart = Luid->LowPart;
+        val.Anonymous.HighPart = Luid->HighPart;
+        return val.QuadPart;
+    }
 
-        public static LUID LuidFromInt64([NativeTypeName("INT64")] long Int64)
-        {
-            LARGE_INTEGER val = new LARGE_INTEGER();
+    public static LUID LuidFromInt64([NativeTypeName("INT64")] long Int64)
+    {
+        LARGE_INTEGER val = new LARGE_INTEGER();
 
-            val.QuadPart = Int64;
-            LUID Luid = new LUID();
+        val.QuadPart = Int64;
+        LUID Luid = new LUID();
 
-            Luid.LowPart = val.Anonymous.LowPart;
-            Luid.HighPart = val.Anonymous.HighPart;
-            return Luid;
-        }
+        Luid.LowPart = val.Anonymous.LowPart;
+        Luid.HighPart = val.Anonymous.HighPart;
+        return Luid;
     }
 }

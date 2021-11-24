@@ -5,17 +5,16 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct D3D11_VIDEO_PROCESSOR_FILTER_RANGE
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct D3D11_VIDEO_PROCESSOR_FILTER_RANGE
-    {
-        public int Minimum;
+    public int Minimum;
 
-        public int Maximum;
+    public int Maximum;
 
-        public int Default;
+    public int Default;
 
-        public float Multiplier;
-    }
+    public float Multiplier;
 }

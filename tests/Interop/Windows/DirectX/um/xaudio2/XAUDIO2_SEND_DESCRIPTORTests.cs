@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XAUDIO2_SEND_DESCRIPTOR" /> struct.</summary>
+public static unsafe partial class XAUDIO2_SEND_DESCRIPTORTests
 {
-    /// <summary>Provides validation of the <see cref="XAUDIO2_SEND_DESCRIPTOR" /> struct.</summary>
-    public static unsafe partial class XAUDIO2_SEND_DESCRIPTORTests
+    /// <summary>Validates that the <see cref="XAUDIO2_SEND_DESCRIPTOR" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XAUDIO2_SEND_DESCRIPTOR" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XAUDIO2_SEND_DESCRIPTOR>(), Is.EqualTo(sizeof(XAUDIO2_SEND_DESCRIPTOR)));
-        }
+        Assert.That(Marshal.SizeOf<XAUDIO2_SEND_DESCRIPTOR>(), Is.EqualTo(sizeof(XAUDIO2_SEND_DESCRIPTOR)));
+    }
 
-        /// <summary>Validates that the <see cref="XAUDIO2_SEND_DESCRIPTOR" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XAUDIO2_SEND_DESCRIPTOR).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XAUDIO2_SEND_DESCRIPTOR" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XAUDIO2_SEND_DESCRIPTOR).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XAUDIO2_SEND_DESCRIPTOR" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XAUDIO2_SEND_DESCRIPTOR" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XAUDIO2_SEND_DESCRIPTOR), Is.EqualTo(12));
-            }
-            else
-            {
-                Assert.That(sizeof(XAUDIO2_SEND_DESCRIPTOR), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(XAUDIO2_SEND_DESCRIPTOR), Is.EqualTo(12));
+        }
+        else
+        {
+            Assert.That(sizeof(XAUDIO2_SEND_DESCRIPTOR), Is.EqualTo(8));
         }
     }
 }

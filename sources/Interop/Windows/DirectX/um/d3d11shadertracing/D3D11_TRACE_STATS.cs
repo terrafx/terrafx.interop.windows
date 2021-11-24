@@ -6,72 +6,71 @@
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct D3D11_TRACE_STATS
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct D3D11_TRACE_STATS
-    {
-        public D3D11_SHADER_TRACE_DESC TraceDesc;
+    public D3D11_SHADER_TRACE_DESC TraceDesc;
 
-        [NativeTypeName("UINT8")]
-        public byte NumInvocationsInStamp;
+    [NativeTypeName("UINT8")]
+    public byte NumInvocationsInStamp;
 
-        [NativeTypeName("UINT8")]
-        public byte TargetStampIndex;
+    [NativeTypeName("UINT8")]
+    public byte TargetStampIndex;
 
-        public uint NumTraceSteps;
+    public uint NumTraceSteps;
 
-        [NativeTypeName("D3D11_TRACE_COMPONENT_MASK [32]")]
-        public fixed byte InputMask[32];
+    [NativeTypeName("D3D11_TRACE_COMPONENT_MASK [32]")]
+    public fixed byte InputMask[32];
 
-        [NativeTypeName("D3D11_TRACE_COMPONENT_MASK [32]")]
-        public fixed byte OutputMask[32];
+    [NativeTypeName("D3D11_TRACE_COMPONENT_MASK [32]")]
+    public fixed byte OutputMask[32];
 
-        [NativeTypeName("UINT16")]
-        public ushort NumTemps;
+    [NativeTypeName("UINT16")]
+    public ushort NumTemps;
 
-        [NativeTypeName("UINT16")]
-        public ushort MaxIndexableTempIndex;
+    [NativeTypeName("UINT16")]
+    public ushort MaxIndexableTempIndex;
 
-        [NativeTypeName("UINT16 [4096]")]
-        public fixed ushort IndexableTempSize[4096];
+    [NativeTypeName("UINT16 [4096]")]
+    public fixed ushort IndexableTempSize[4096];
 
-        [NativeTypeName("UINT16")]
-        public ushort ImmediateConstantBufferSize;
+    [NativeTypeName("UINT16")]
+    public ushort ImmediateConstantBufferSize;
 
-        [NativeTypeName("UINT [4][2]")]
-        public fixed uint PixelPosition[4 * 2];
+    [NativeTypeName("UINT [4][2]")]
+    public fixed uint PixelPosition[4 * 2];
 
-        [NativeTypeName("UINT64 [4]")]
-        public fixed ulong PixelCoverageMask[4];
+    [NativeTypeName("UINT64 [4]")]
+    public fixed ulong PixelCoverageMask[4];
 
-        [NativeTypeName("UINT64 [4]")]
-        public fixed ulong PixelDiscardedMask[4];
+    [NativeTypeName("UINT64 [4]")]
+    public fixed ulong PixelDiscardedMask[4];
 
-        [NativeTypeName("UINT64 [4]")]
-        public fixed ulong PixelCoverageMaskAfterShader[4];
+    [NativeTypeName("UINT64 [4]")]
+    public fixed ulong PixelCoverageMaskAfterShader[4];
 
-        [NativeTypeName("UINT64 [4]")]
-        public fixed ulong PixelCoverageMaskAfterA2CSampleMask[4];
+    [NativeTypeName("UINT64 [4]")]
+    public fixed ulong PixelCoverageMaskAfterA2CSampleMask[4];
 
-        [NativeTypeName("UINT64 [4]")]
-        public fixed ulong PixelCoverageMaskAfterA2CSampleMaskDepth[4];
+    [NativeTypeName("UINT64 [4]")]
+    public fixed ulong PixelCoverageMaskAfterA2CSampleMaskDepth[4];
 
-        [NativeTypeName("UINT64 [4]")]
-        public fixed ulong PixelCoverageMaskAfterA2CSampleMaskDepthStencil[4];
+    [NativeTypeName("UINT64 [4]")]
+    public fixed ulong PixelCoverageMaskAfterA2CSampleMaskDepthStencil[4];
 
-        public BOOL PSOutputsDepth;
+    public BOOL PSOutputsDepth;
 
-        public BOOL PSOutputsMask;
+    public BOOL PSOutputsMask;
 
-        public D3D11_TRACE_GS_INPUT_PRIMITIVE GSInputPrimitive;
+    public D3D11_TRACE_GS_INPUT_PRIMITIVE GSInputPrimitive;
 
-        public BOOL GSInputsPrimitiveID;
+    public BOOL GSInputsPrimitiveID;
 
-        [NativeTypeName("D3D11_TRACE_COMPONENT_MASK [32]")]
-        public fixed byte HSOutputPatchConstantMask[32];
+    [NativeTypeName("D3D11_TRACE_COMPONENT_MASK [32]")]
+    public fixed byte HSOutputPatchConstantMask[32];
 
-        [NativeTypeName("D3D11_TRACE_COMPONENT_MASK [32]")]
-        public fixed byte DSInputPatchConstantMask[32];
-    }
+    [NativeTypeName("D3D11_TRACE_COMPONENT_MASK [32]")]
+    public fixed byte DSInputPatchConstantMask[32];
 }

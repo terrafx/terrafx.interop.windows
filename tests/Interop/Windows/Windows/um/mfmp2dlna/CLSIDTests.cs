@@ -7,16 +7,15 @@ using NUnit.Framework;
 using System;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CLSID" /> class.</summary>
+public static partial class CLSIDTests
 {
-    /// <summary>Provides validation of the <see cref="CLSID" /> class.</summary>
-    public static partial class CLSIDTests
+    /// <summary>Validates that the value of the <see cref="CLSID_MPEG2DLNASink" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_MPEG2DLNASinkTest()
     {
-        /// <summary>Validates that the value of the <see cref="CLSID_MPEG2DLNASink" /> property is correct.</summary>
-        [Test]
-        public static void CLSID_MPEG2DLNASinkTest()
-        {
-            Assert.That(CLSID_MPEG2DLNASink, Is.EqualTo(new Guid(0xfa5fe7c5, 0x6a1d, 0x4b11, 0xb4, 0x1f, 0xf9, 0x59, 0xd6, 0xc7, 0x65, 0x00)));
-        }
+        Assert.That(CLSID_MPEG2DLNASink, Is.EqualTo(new Guid(0xfa5fe7c5, 0x6a1d, 0x4b11, 0xb4, 0x1f, 0xf9, 0x59, 0xd6, 0xc7, 0x65, 0x00)));
     }
 }

@@ -3,20 +3,19 @@
 // Ported from um/HLink.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct HLBWINFO
 {
-    public partial struct HLBWINFO
-    {
-        [NativeTypeName("ULONG")]
-        public uint cbSize;
+    [NativeTypeName("ULONG")]
+    public uint cbSize;
 
-        [NativeTypeName("DWORD")]
-        public uint grfHLBWIF;
+    [NativeTypeName("DWORD")]
+    public uint grfHLBWIF;
 
-        public RECT rcFramePos;
+    public RECT rcFramePos;
 
-        public RECT rcDocPos;
+    public RECT rcDocPos;
 
-        public HLTBINFO hltbinfo;
-    }
+    public HLTBINFO hltbinfo;
 }

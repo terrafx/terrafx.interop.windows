@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CanvasGradient" /> struct.</summary>
+public static unsafe partial class CanvasGradientTests
 {
-    /// <summary>Provides validation of the <see cref="CanvasGradient" /> struct.</summary>
-    public static unsafe partial class CanvasGradientTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CanvasGradient" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CanvasGradient" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(CanvasGradient).GUID, Is.EqualTo(IID_CanvasGradient));
-        }
+        Assert.That(typeof(CanvasGradient).GUID, Is.EqualTo(IID_CanvasGradient));
+    }
 
-        /// <summary>Validates that the <see cref="CanvasGradient" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CanvasGradient>(), Is.EqualTo(sizeof(CanvasGradient)));
-        }
+    /// <summary>Validates that the <see cref="CanvasGradient" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<CanvasGradient>(), Is.EqualTo(sizeof(CanvasGradient)));
+    }
 
-        /// <summary>Validates that the <see cref="CanvasGradient" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CanvasGradient).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CanvasGradient" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CanvasGradient).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CanvasGradient" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CanvasGradient), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="CanvasGradient" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CanvasGradient), Is.EqualTo(1));
     }
 }

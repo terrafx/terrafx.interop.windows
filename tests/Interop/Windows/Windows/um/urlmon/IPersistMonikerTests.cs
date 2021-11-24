@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IPersistMoniker" /> struct.</summary>
+public static unsafe partial class IPersistMonikerTests
 {
-    /// <summary>Provides validation of the <see cref="IPersistMoniker" /> struct.</summary>
-    public static unsafe partial class IPersistMonikerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPersistMoniker" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPersistMoniker" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IPersistMoniker).GUID, Is.EqualTo(IID_IPersistMoniker));
-        }
+        Assert.That(typeof(IPersistMoniker).GUID, Is.EqualTo(IID_IPersistMoniker));
+    }
 
-        /// <summary>Validates that the <see cref="IPersistMoniker" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IPersistMoniker>(), Is.EqualTo(sizeof(IPersistMoniker)));
-        }
+    /// <summary>Validates that the <see cref="IPersistMoniker" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IPersistMoniker>(), Is.EqualTo(sizeof(IPersistMoniker)));
+    }
 
-        /// <summary>Validates that the <see cref="IPersistMoniker" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IPersistMoniker).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IPersistMoniker" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IPersistMoniker).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IPersistMoniker" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IPersistMoniker" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IPersistMoniker), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IPersistMoniker), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IPersistMoniker), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IPersistMoniker), Is.EqualTo(4));
         }
     }
 }

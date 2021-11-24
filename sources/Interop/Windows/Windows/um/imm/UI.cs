@@ -3,17 +3,16 @@
 // Ported from um/imm.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class UI
 {
-    public static partial class UI
-    {
-        [NativeTypeName("#define UI_CAP_2700 0x00000001")]
-        public const int UI_CAP_2700 = 0x00000001;
+    [NativeTypeName("#define UI_CAP_2700 0x00000001")]
+    public const int UI_CAP_2700 = 0x00000001;
 
-        [NativeTypeName("#define UI_CAP_ROT90 0x00000002")]
-        public const int UI_CAP_ROT90 = 0x00000002;
+    [NativeTypeName("#define UI_CAP_ROT90 0x00000002")]
+    public const int UI_CAP_ROT90 = 0x00000002;
 
-        [NativeTypeName("#define UI_CAP_ROTANY 0x00000004")]
-        public const int UI_CAP_ROTANY = 0x00000004;
-    }
+    [NativeTypeName("#define UI_CAP_ROTANY 0x00000004")]
+    public const int UI_CAP_ROTANY = 0x00000004;
 }

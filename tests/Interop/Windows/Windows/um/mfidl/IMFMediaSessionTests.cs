@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFMediaSession" /> struct.</summary>
+public static unsafe partial class IMFMediaSessionTests
 {
-    /// <summary>Provides validation of the <see cref="IMFMediaSession" /> struct.</summary>
-    public static unsafe partial class IMFMediaSessionTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFMediaSession" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFMediaSession" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFMediaSession).GUID, Is.EqualTo(IID_IMFMediaSession));
-        }
+        Assert.That(typeof(IMFMediaSession).GUID, Is.EqualTo(IID_IMFMediaSession));
+    }
 
-        /// <summary>Validates that the <see cref="IMFMediaSession" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFMediaSession>(), Is.EqualTo(sizeof(IMFMediaSession)));
-        }
+    /// <summary>Validates that the <see cref="IMFMediaSession" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFMediaSession>(), Is.EqualTo(sizeof(IMFMediaSession)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFMediaSession" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFMediaSession).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFMediaSession" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFMediaSession).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFMediaSession" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFMediaSession" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFMediaSession), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFMediaSession), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFMediaSession), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFMediaSession), Is.EqualTo(4));
         }
     }
 }

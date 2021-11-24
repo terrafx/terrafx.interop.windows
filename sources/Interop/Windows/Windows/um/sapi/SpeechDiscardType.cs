@@ -5,18 +5,17 @@
 
 using static TerraFX.Interop.Windows.SPVALUETYPE;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechDiscardType
 {
-    public enum SpeechDiscardType
-    {
-        SDTProperty = SPDF_PROPERTY,
-        SDTReplacement = SPDF_REPLACEMENT,
-        SDTRule = SPDF_RULE,
-        SDTDisplayText = SPDF_DISPLAYTEXT,
-        SDTLexicalForm = SPDF_LEXICALFORM,
-        SDTPronunciation = SPDF_PRONUNCIATION,
-        SDTAudio = SPDF_AUDIO,
-        SDTAlternates = SPDF_ALTERNATES,
-        SDTAll = SPDF_ALL,
-    }
+    SDTProperty = SPDF_PROPERTY,
+    SDTReplacement = SPDF_REPLACEMENT,
+    SDTRule = SPDF_RULE,
+    SDTDisplayText = SPDF_DISPLAYTEXT,
+    SDTLexicalForm = SPDF_LEXICALFORM,
+    SDTPronunciation = SPDF_PRONUNCIATION,
+    SDTAudio = SPDF_AUDIO,
+    SDTAlternates = SPDF_ALTERNATES,
+    SDTAll = SPDF_ALL,
 }

@@ -3,11 +3,10 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum DVD_FRAMERATE
 {
-    public enum DVD_FRAMERATE
-    {
-        DVD_FPS_25 = 1,
-        DVD_FPS_30NonDrop = 3,
-    }
+    DVD_FPS_25 = 1,
+    DVD_FPS_30NonDrop = 3,
 }

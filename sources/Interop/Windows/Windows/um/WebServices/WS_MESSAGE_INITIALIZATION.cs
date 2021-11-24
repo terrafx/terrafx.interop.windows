@@ -3,14 +3,13 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum WS_MESSAGE_INITIALIZATION
 {
-    public enum WS_MESSAGE_INITIALIZATION
-    {
-        WS_BLANK_MESSAGE = 0,
-        WS_DUPLICATE_MESSAGE = 1,
-        WS_REQUEST_MESSAGE = 2,
-        WS_REPLY_MESSAGE = 3,
-        WS_FAULT_MESSAGE = 4,
-    }
+    WS_BLANK_MESSAGE = 0,
+    WS_DUPLICATE_MESSAGE = 1,
+    WS_REQUEST_MESSAGE = 2,
+    WS_REPLY_MESSAGE = 3,
+    WS_FAULT_MESSAGE = 4,
 }

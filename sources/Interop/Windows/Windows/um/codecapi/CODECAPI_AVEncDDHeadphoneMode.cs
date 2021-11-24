@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("4052DBEC-52F5-42F5-9B00-D134B1341B9D")]
+public partial struct CODECAPI_AVEncDDHeadphoneMode
 {
-    [Guid("4052DBEC-52F5-42F5-9B00-D134B1341B9D")]
-    public partial struct CODECAPI_AVEncDDHeadphoneMode
-    {
-    }
 }

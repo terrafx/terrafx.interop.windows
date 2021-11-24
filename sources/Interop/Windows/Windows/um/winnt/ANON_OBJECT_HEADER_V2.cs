@@ -5,38 +5,37 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct ANON_OBJECT_HEADER_V2
 {
-    public partial struct ANON_OBJECT_HEADER_V2
-    {
-        [NativeTypeName("WORD")]
-        public ushort Sig1;
+    [NativeTypeName("WORD")]
+    public ushort Sig1;
 
-        [NativeTypeName("WORD")]
-        public ushort Sig2;
+    [NativeTypeName("WORD")]
+    public ushort Sig2;
 
-        [NativeTypeName("WORD")]
-        public ushort Version;
+    [NativeTypeName("WORD")]
+    public ushort Version;
 
-        [NativeTypeName("WORD")]
-        public ushort Machine;
+    [NativeTypeName("WORD")]
+    public ushort Machine;
 
-        [NativeTypeName("DWORD")]
-        public uint TimeDateStamp;
+    [NativeTypeName("DWORD")]
+    public uint TimeDateStamp;
 
-        [NativeTypeName("CLSID")]
-        public Guid ClassID;
+    [NativeTypeName("CLSID")]
+    public Guid ClassID;
 
-        [NativeTypeName("DWORD")]
-        public uint SizeOfData;
+    [NativeTypeName("DWORD")]
+    public uint SizeOfData;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        [NativeTypeName("DWORD")]
-        public uint MetaDataSize;
+    [NativeTypeName("DWORD")]
+    public uint MetaDataSize;
 
-        [NativeTypeName("DWORD")]
-        public uint MetaDataOffset;
-    }
+    [NativeTypeName("DWORD")]
+    public uint MetaDataOffset;
 }

@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum STDMSHLFLAGS
 {
-    [Flags]
-    public enum STDMSHLFLAGS
-    {
-        SMEXF_SERVER = 0x01,
-        SMEXF_HANDLER = 0x02,
-    }
+    SMEXF_SERVER = 0x01,
+    SMEXF_HANDLER = 0x02,
 }

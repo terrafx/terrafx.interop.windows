@@ -3,12 +3,11 @@
 // Ported from um/mfidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MF_TRANSFER_VIDEO_FRAME_FLAGS
 {
-    public enum MF_TRANSFER_VIDEO_FRAME_FLAGS
-    {
-        MF_TRANSFER_VIDEO_FRAME_DEFAULT = 0,
-        MF_TRANSFER_VIDEO_FRAME_STRETCH = 1,
-        MF_TRANSFER_VIDEO_FRAME_IGNORE_PAR = 2,
-    }
+    MF_TRANSFER_VIDEO_FRAME_DEFAULT = 0,
+    MF_TRANSFER_VIDEO_FRAME_STRETCH = 1,
+    MF_TRANSFER_VIDEO_FRAME_IGNORE_PAR = 2,
 }

@@ -5,14 +5,13 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum TA_TRANSFORM_FLAG
 {
-    [Flags]
-    public enum TA_TRANSFORM_FLAG
-    {
-        TATF_NONE = 0x0,
-        TATF_TARGETVALUES_USER = 0x1,
-        TATF_HASINITIALVALUES = 0x2,
-        TATF_HASORIGINVALUES = 0x4,
-    }
+    TATF_NONE = 0x0,
+    TATF_TARGETVALUES_USER = 0x1,
+    TATF_HASINITIALVALUES = 0x2,
+    TATF_HASORIGINVALUES = 0x4,
 }

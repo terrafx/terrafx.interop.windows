@@ -5,16 +5,15 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 4)]
+public partial struct WINHTTP_CONNECTION_INFO32
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 4)]
-    public partial struct WINHTTP_CONNECTION_INFO32
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public SOCKADDR_STORAGE LocalAddress;
+    public SOCKADDR_STORAGE LocalAddress;
 
-        public SOCKADDR_STORAGE RemoteAddress;
-    }
+    public SOCKADDR_STORAGE RemoteAddress;
 }

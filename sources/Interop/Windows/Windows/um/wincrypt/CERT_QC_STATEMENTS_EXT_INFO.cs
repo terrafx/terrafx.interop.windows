@@ -3,14 +3,13 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct CERT_QC_STATEMENTS_EXT_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cStatement;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("PCERT_QC_STATEMENT")]
-        public CERT_QC_STATEMENT* rgStatement;
-    }
+public unsafe partial struct CERT_QC_STATEMENTS_EXT_INFO
+{
+    [NativeTypeName("DWORD")]
+    public uint cStatement;
+
+    [NativeTypeName("PCERT_QC_STATEMENT")]
+    public CERT_QC_STATEMENT* rgStatement;
 }

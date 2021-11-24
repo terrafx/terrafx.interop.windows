@@ -3,13 +3,12 @@
 // Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct SYMBOL_INFO_PACKAGE
-    {
-        public SYMBOL_INFO si;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("CHAR [2001]")]
-        public fixed sbyte name[2001];
-    }
+public unsafe partial struct SYMBOL_INFO_PACKAGE
+{
+    public SYMBOL_INFO si;
+
+    [NativeTypeName("CHAR [2001]")]
+    public fixed sbyte name[2001];
 }

@@ -3,11 +3,10 @@
 // Ported from um/ocidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum DVEXTENTMODE
 {
-    public enum DVEXTENTMODE
-    {
-        DVEXTENT_CONTENT = 0,
-        DVEXTENT_INTEGRAL = (DVEXTENT_CONTENT + 1),
-    }
+    DVEXTENT_CONTENT = 0,
+    DVEXTENT_INTEGRAL = (DVEXTENT_CONTENT + 1),
 }

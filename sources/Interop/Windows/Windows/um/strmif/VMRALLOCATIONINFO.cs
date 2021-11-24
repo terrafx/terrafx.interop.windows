@@ -5,30 +5,29 @@
 
 using TerraFX.Interop.DirectX;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct VMRALLOCATIONINFO
 {
-    public unsafe partial struct VMRALLOCATIONINFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        [NativeTypeName("LPBITMAPINFOHEADER")]
-        public BITMAPINFOHEADER* lpHdr;
+    [NativeTypeName("LPBITMAPINFOHEADER")]
+    public BITMAPINFOHEADER* lpHdr;
 
-        [NativeTypeName("LPDDPIXELFORMAT")]
-        public DDPIXELFORMAT* lpPixFmt;
+    [NativeTypeName("LPDDPIXELFORMAT")]
+    public DDPIXELFORMAT* lpPixFmt;
 
-        public SIZE szAspectRatio;
+    public SIZE szAspectRatio;
 
-        [NativeTypeName("DWORD")]
-        public uint dwMinBuffers;
+    [NativeTypeName("DWORD")]
+    public uint dwMinBuffers;
 
-        [NativeTypeName("DWORD")]
-        public uint dwMaxBuffers;
+    [NativeTypeName("DWORD")]
+    public uint dwMaxBuffers;
 
-        [NativeTypeName("DWORD")]
-        public uint dwInterlaceFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwInterlaceFlags;
 
-        public SIZE szNativeSize;
-    }
+    public SIZE szNativeSize;
 }

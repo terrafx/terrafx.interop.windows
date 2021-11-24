@@ -3,18 +3,17 @@
 // Ported from um/oaidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct DISPPARAMS
 {
-    public unsafe partial struct DISPPARAMS
-    {
-        [NativeTypeName("VARIANTARG *")]
-        public VARIANT* rgvarg;
+    [NativeTypeName("VARIANTARG *")]
+    public VARIANT* rgvarg;
 
-        [NativeTypeName("DISPID *")]
-        public int* rgdispidNamedArgs;
+    [NativeTypeName("DISPID *")]
+    public int* rgdispidNamedArgs;
 
-        public uint cArgs;
+    public uint cArgs;
 
-        public uint cNamedArgs;
-    }
+    public uint cNamedArgs;
 }

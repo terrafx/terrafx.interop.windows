@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("EA85E7C3-9567-4D99-87C4-02C1C278CA7C")]
+public partial struct CODECAPI_AVEncVideoOutputFrameRate
 {
-    [Guid("EA85E7C3-9567-4D99-87C4-02C1C278CA7C")]
-    public partial struct CODECAPI_AVEncVideoOutputFrameRate
-    {
-    }
 }

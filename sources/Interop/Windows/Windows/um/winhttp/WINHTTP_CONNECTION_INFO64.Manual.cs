@@ -3,15 +3,14 @@
 // Ported from um/winhttp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct WINHTTP_CONNECTION_INFO64
 {
-    public partial struct WINHTTP_CONNECTION_INFO64
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public SOCKADDR_STORAGE LocalAddress;
+    public SOCKADDR_STORAGE LocalAddress;
 
-        public SOCKADDR_STORAGE RemoteAddress;
-    }
+    public SOCKADDR_STORAGE RemoteAddress;
 }

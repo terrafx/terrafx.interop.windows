@@ -6,19 +6,18 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[Flags]
+[SupportedOSPlatform("windows10.0")]
+public enum MetadataBit
 {
-    [Flags]
-    [SupportedOSPlatform("windows10.0")]
-    public enum MetadataBit
-    {
-        None = 0,
-        IsValueHandle = 0x1,
-        IsPropertyReadOnly = 0x2,
-        IsValueCollection = 0x4,
-        IsValueCollectionReadOnly = 0x8,
-        IsValueBindingExpression = 0x10,
-        IsValueNull = 0x20,
-        IsValueHandleAndEvaluatedValue = 0x40,
-    }
+    None = 0,
+    IsValueHandle = 0x1,
+    IsPropertyReadOnly = 0x2,
+    IsValueCollection = 0x4,
+    IsValueCollectionReadOnly = 0x8,
+    IsValueBindingExpression = 0x10,
+    IsValueNull = 0x20,
+    IsValueHandleAndEvaluatedValue = 0x40,
 }

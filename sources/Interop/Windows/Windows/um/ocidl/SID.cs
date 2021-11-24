@@ -6,11 +6,10 @@
 using System;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SID
 {
-    public partial struct SID
-    {
-        [NativeTypeName("#define SID_SOleUndoManager IID_IOleUndoManager")]
-        public static ref readonly Guid SID_SOleUndoManager => ref IID_IOleUndoManager;
-    }
+    [NativeTypeName("#define SID_SOleUndoManager IID_IOleUndoManager")]
+    public static ref readonly Guid SID_SOleUndoManager => ref IID_IOleUndoManager;
 }

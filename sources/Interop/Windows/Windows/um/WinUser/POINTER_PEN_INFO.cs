@@ -5,29 +5,28 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct POINTER_PEN_INFO
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct POINTER_PEN_INFO
-    {
-        public POINTER_INFO pointerInfo;
+    public POINTER_INFO pointerInfo;
 
-        [NativeTypeName("PEN_FLAGS")]
-        public uint penFlags;
+    [NativeTypeName("PEN_FLAGS")]
+    public uint penFlags;
 
-        [NativeTypeName("PEN_MASK")]
-        public uint penMask;
+    [NativeTypeName("PEN_MASK")]
+    public uint penMask;
 
-        [NativeTypeName("UINT32")]
-        public uint pressure;
+    [NativeTypeName("UINT32")]
+    public uint pressure;
 
-        [NativeTypeName("UINT32")]
-        public uint rotation;
+    [NativeTypeName("UINT32")]
+    public uint rotation;
 
-        [NativeTypeName("INT32")]
-        public int tiltX;
+    [NativeTypeName("INT32")]
+    public int tiltX;
 
-        [NativeTypeName("INT32")]
-        public int tiltY;
-    }
+    [NativeTypeName("INT32")]
+    public int tiltY;
 }

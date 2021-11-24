@@ -3,17 +3,16 @@
 // Ported from shared/ws2ipdef.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct sockaddr_in6_old
 {
-    public partial struct sockaddr_in6_old
-    {
-        public short sin6_family;
+    public short sin6_family;
 
-        public ushort sin6_port;
+    public ushort sin6_port;
 
-        [NativeTypeName("ULONG")]
-        public uint sin6_flowinfo;
+    [NativeTypeName("ULONG")]
+    public uint sin6_flowinfo;
 
-        public IN6_ADDR sin6_addr;
-    }
+    public IN6_ADDR sin6_addr;
 }

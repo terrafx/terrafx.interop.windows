@@ -3,14 +3,13 @@
 // Ported from um/IPExport.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct IP_ADAPTER_ORDER_MAP
-    {
-        [NativeTypeName("ULONG")]
-        public uint NumAdapters;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("ULONG [1]")]
-        public fixed uint AdapterOrder[1];
-    }
+public unsafe partial struct IP_ADAPTER_ORDER_MAP
+{
+    [NativeTypeName("ULONG")]
+    public uint NumAdapters;
+
+    [NativeTypeName("ULONG [1]")]
+    public fixed uint AdapterOrder[1];
 }

@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public enum D3D11_VIDEO_PROCESSOR_ROTATION
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum D3D11_VIDEO_PROCESSOR_ROTATION
-    {
-        D3D11_VIDEO_PROCESSOR_ROTATION_IDENTITY = 0,
-        D3D11_VIDEO_PROCESSOR_ROTATION_90 = 1,
-        D3D11_VIDEO_PROCESSOR_ROTATION_180 = 2,
-        D3D11_VIDEO_PROCESSOR_ROTATION_270 = 3,
-    }
+    D3D11_VIDEO_PROCESSOR_ROTATION_IDENTITY = 0,
+    D3D11_VIDEO_PROCESSOR_ROTATION_90 = 1,
+    D3D11_VIDEO_PROCESSOR_ROTATION_180 = 2,
+    D3D11_VIDEO_PROCESSOR_ROTATION_270 = 3,
 }

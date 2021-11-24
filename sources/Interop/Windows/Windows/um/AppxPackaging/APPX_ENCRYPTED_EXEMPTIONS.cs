@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct APPX_ENCRYPTED_EXEMPTIONS
-    {
-        [NativeTypeName("UINT32")]
-        public uint count;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("LPCWSTR *")]
-        public ushort** plainTextFiles;
-    }
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct APPX_ENCRYPTED_EXEMPTIONS
+{
+    [NativeTypeName("UINT32")]
+    public uint count;
+
+    [NativeTypeName("LPCWSTR *")]
+    public ushort** plainTextFiles;
 }

@@ -3,12 +3,11 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum FDE_SHAREVIOLATION_RESPONSE
 {
-    public enum FDE_SHAREVIOLATION_RESPONSE
-    {
-        FDESVR_DEFAULT = 0,
-        FDESVR_ACCEPT = 1,
-        FDESVR_REFUSE = 2,
-    }
+    FDESVR_DEFAULT = 0,
+    FDESVR_ACCEPT = 1,
+    FDESVR_REFUSE = 2,
 }

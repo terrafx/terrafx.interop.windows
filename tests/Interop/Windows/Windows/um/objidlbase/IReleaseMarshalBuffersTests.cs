@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IReleaseMarshalBuffers" /> struct.</summary>
+public static unsafe partial class IReleaseMarshalBuffersTests
 {
-    /// <summary>Provides validation of the <see cref="IReleaseMarshalBuffers" /> struct.</summary>
-    public static unsafe partial class IReleaseMarshalBuffersTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IReleaseMarshalBuffers" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IReleaseMarshalBuffers" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IReleaseMarshalBuffers).GUID, Is.EqualTo(IID_IReleaseMarshalBuffers));
-        }
+        Assert.That(typeof(IReleaseMarshalBuffers).GUID, Is.EqualTo(IID_IReleaseMarshalBuffers));
+    }
 
-        /// <summary>Validates that the <see cref="IReleaseMarshalBuffers" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IReleaseMarshalBuffers>(), Is.EqualTo(sizeof(IReleaseMarshalBuffers)));
-        }
+    /// <summary>Validates that the <see cref="IReleaseMarshalBuffers" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IReleaseMarshalBuffers>(), Is.EqualTo(sizeof(IReleaseMarshalBuffers)));
+    }
 
-        /// <summary>Validates that the <see cref="IReleaseMarshalBuffers" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IReleaseMarshalBuffers).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IReleaseMarshalBuffers" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IReleaseMarshalBuffers).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IReleaseMarshalBuffers" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IReleaseMarshalBuffers" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IReleaseMarshalBuffers), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IReleaseMarshalBuffers), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IReleaseMarshalBuffers), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IReleaseMarshalBuffers), Is.EqualTo(4));
         }
     }
 }

@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum UNDOCK_REASON
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum UNDOCK_REASON
-    {
-        UR_RESOLUTION_CHANGE = 0,
-        UR_MONITOR_DISCONNECT = 1,
-    }
+    UR_RESOLUTION_CHANGE = 0,
+    UR_MONITOR_DISCONNECT = 1,
 }

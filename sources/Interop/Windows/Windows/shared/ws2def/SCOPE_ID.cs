@@ -6,97 +6,96 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SCOPE_ID
 {
-    public partial struct SCOPE_ID
+    [NativeTypeName("SCOPE_ID::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/ws2def.h:623:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public uint Zone
     {
-        [NativeTypeName("SCOPE_ID::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/ws2def.h:623:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public uint Zone
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.Zone;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.Zone = value;
-            }
+            return Anonymous.Anonymous.Zone;
         }
 
-        public uint Level
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.Level;
-            }
+            Anonymous.Anonymous.Zone = value;
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.Level = value;
-            }
+    public uint Level
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.Level;
         }
 
-        public ref uint Value
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Value, 1));
-            }
+            Anonymous.Anonymous.Level = value;
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
+    public ref uint Value
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [FieldOffset(0)]
-            [NativeTypeName("SCOPE_ID::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/ws2def.h:624:9)")]
-            public _Anonymous_e__Struct Anonymous;
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Value, 1));
+        }
+    }
 
-            [FieldOffset(0)]
-            [NativeTypeName("ULONG")]
-            public uint Value;
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("SCOPE_ID::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/ws2def.h:624:9)")]
+        public _Anonymous_e__Struct Anonymous;
 
-            public partial struct _Anonymous_e__Struct
+        [FieldOffset(0)]
+        [NativeTypeName("ULONG")]
+        public uint Value;
+
+        public partial struct _Anonymous_e__Struct
+        {
+            public uint _bitfield;
+
+            [NativeTypeName("ULONG : 28")]
+            public uint Zone
             {
-                public uint _bitfield;
-
-                [NativeTypeName("ULONG : 28")]
-                public uint Zone
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return _bitfield & 0xFFFFFFFu;
-                    }
-
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~0xFFFFFFFu) | (value & 0xFFFFFFFu);
-                    }
+                    return _bitfield & 0xFFFFFFFu;
                 }
 
-                [NativeTypeName("ULONG : 4")]
-                public uint Level
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 28) & 0xFu;
-                    }
+                    _bitfield = (_bitfield & ~0xFFFFFFFu) | (value & 0xFFFFFFFu);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0xFu << 28)) | ((value & 0xFu) << 28);
-                    }
+            [NativeTypeName("ULONG : 4")]
+            public uint Level
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 28) & 0xFu;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~(0xFu << 28)) | ((value & 0xFu) << 28);
                 }
             }
         }

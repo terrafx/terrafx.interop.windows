@@ -3,15 +3,14 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class WS_HTTP_HEADER_AUTH_SCHEME
 {
-    public static partial class WS_HTTP_HEADER_AUTH_SCHEME
-    {
-        public const int WS_HTTP_HEADER_AUTH_SCHEME_NONE = 0x1;
-        public const int WS_HTTP_HEADER_AUTH_SCHEME_BASIC = 0x2;
-        public const int WS_HTTP_HEADER_AUTH_SCHEME_DIGEST = 0x4;
-        public const int WS_HTTP_HEADER_AUTH_SCHEME_NTLM = 0x8;
-        public const int WS_HTTP_HEADER_AUTH_SCHEME_NEGOTIATE = 0x10;
-        public const int WS_HTTP_HEADER_AUTH_SCHEME_PASSPORT = 0x20;
-    }
+    public const int WS_HTTP_HEADER_AUTH_SCHEME_NONE = 0x1;
+    public const int WS_HTTP_HEADER_AUTH_SCHEME_BASIC = 0x2;
+    public const int WS_HTTP_HEADER_AUTH_SCHEME_DIGEST = 0x4;
+    public const int WS_HTTP_HEADER_AUTH_SCHEME_NTLM = 0x8;
+    public const int WS_HTTP_HEADER_AUTH_SCHEME_NEGOTIATE = 0x10;
+    public const int WS_HTTP_HEADER_AUTH_SCHEME_PASSPORT = 0x20;
 }

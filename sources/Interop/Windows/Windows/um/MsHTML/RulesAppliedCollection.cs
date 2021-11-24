@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("671926EE-C3CF-40AF-BE8F-1CBAEE6486E8")]
+public partial struct RulesAppliedCollection
 {
-    [Guid("671926EE-C3CF-40AF-BE8F-1CBAEE6486E8")]
-    public partial struct RulesAppliedCollection
-    {
-    }
 }

@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.1")]
-    public partial struct USN_RECORD_EXTENT
-    {
-        [NativeTypeName("LONGLONG")]
-        public long Offset;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("LONGLONG")]
-        public long Length;
-    }
+[SupportedOSPlatform("windows8.1")]
+public partial struct USN_RECORD_EXTENT
+{
+    [NativeTypeName("LONGLONG")]
+    public long Offset;
+
+    [NativeTypeName("LONGLONG")]
+    public long Length;
 }

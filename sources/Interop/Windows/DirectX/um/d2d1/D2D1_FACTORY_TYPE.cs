@@ -3,12 +3,11 @@
 // Ported from um/d2d1.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum D2D1_FACTORY_TYPE : uint
 {
-    public enum D2D1_FACTORY_TYPE : uint
-    {
-        D2D1_FACTORY_TYPE_SINGLE_THREADED = 0,
-        D2D1_FACTORY_TYPE_MULTI_THREADED = 1,
-        D2D1_FACTORY_TYPE_FORCE_DWORD = 0xffffffff,
-    }
+    D2D1_FACTORY_TYPE_SINGLE_THREADED = 0,
+    D2D1_FACTORY_TYPE_MULTI_THREADED = 1,
+    D2D1_FACTORY_TYPE_FORCE_DWORD = 0xffffffff,
 }

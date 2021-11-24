@@ -3,13 +3,12 @@
 // Ported from um/Psapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct PSAPI_WORKING_SET_EX_INFORMATION
-    {
-        [NativeTypeName("PVOID")]
-        public void* VirtualAddress;
+namespace TerraFX.Interop.Windows;
 
-        public PSAPI_WORKING_SET_EX_BLOCK VirtualAttributes;
-    }
+public unsafe partial struct PSAPI_WORKING_SET_EX_INFORMATION
+{
+    [NativeTypeName("PVOID")]
+    public void* VirtualAddress;
+
+    public PSAPI_WORKING_SET_EX_BLOCK VirtualAttributes;
 }

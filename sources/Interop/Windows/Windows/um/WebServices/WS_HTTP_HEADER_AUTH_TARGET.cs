@@ -3,11 +3,10 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum WS_HTTP_HEADER_AUTH_TARGET
 {
-    public enum WS_HTTP_HEADER_AUTH_TARGET
-    {
-        WS_HTTP_HEADER_AUTH_TARGET_SERVICE = 1,
-        WS_HTTP_HEADER_AUTH_TARGET_PROXY = 2,
-    }
+    WS_HTTP_HEADER_AUTH_TARGET_SERVICE = 1,
+    WS_HTTP_HEADER_AUTH_TARGET_PROXY = 2,
 }

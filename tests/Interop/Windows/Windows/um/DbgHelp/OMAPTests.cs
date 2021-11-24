@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="OMAP" /> struct.</summary>
+public static unsafe partial class OMAPTests
 {
-    /// <summary>Provides validation of the <see cref="OMAP" /> struct.</summary>
-    public static unsafe partial class OMAPTests
+    /// <summary>Validates that the <see cref="OMAP" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="OMAP" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<OMAP>(), Is.EqualTo(sizeof(OMAP)));
-        }
+        Assert.That(Marshal.SizeOf<OMAP>(), Is.EqualTo(sizeof(OMAP)));
+    }
 
-        /// <summary>Validates that the <see cref="OMAP" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(OMAP).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="OMAP" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(OMAP).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="OMAP" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(OMAP), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="OMAP" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(OMAP), Is.EqualTo(8));
     }
 }

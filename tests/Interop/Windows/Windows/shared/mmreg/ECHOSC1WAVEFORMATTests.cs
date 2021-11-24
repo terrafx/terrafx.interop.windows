@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ECHOSC1WAVEFORMAT" /> struct.</summary>
+public static unsafe partial class ECHOSC1WAVEFORMATTests
 {
-    /// <summary>Provides validation of the <see cref="ECHOSC1WAVEFORMAT" /> struct.</summary>
-    public static unsafe partial class ECHOSC1WAVEFORMATTests
+    /// <summary>Validates that the <see cref="ECHOSC1WAVEFORMAT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="ECHOSC1WAVEFORMAT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ECHOSC1WAVEFORMAT>(), Is.EqualTo(sizeof(ECHOSC1WAVEFORMAT)));
-        }
+        Assert.That(Marshal.SizeOf<ECHOSC1WAVEFORMAT>(), Is.EqualTo(sizeof(ECHOSC1WAVEFORMAT)));
+    }
 
-        /// <summary>Validates that the <see cref="ECHOSC1WAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ECHOSC1WAVEFORMAT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ECHOSC1WAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ECHOSC1WAVEFORMAT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ECHOSC1WAVEFORMAT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(ECHOSC1WAVEFORMAT), Is.EqualTo(18));
-        }
+    /// <summary>Validates that the <see cref="ECHOSC1WAVEFORMAT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(ECHOSC1WAVEFORMAT), Is.EqualTo(18));
     }
 }

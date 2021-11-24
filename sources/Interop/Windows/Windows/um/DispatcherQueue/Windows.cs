@@ -5,11 +5,10 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static unsafe partial class Windows
 {
-    public static unsafe partial class Windows
-    {
-        [DllImport("coremessaging", ExactSpelling = true)]
-        public static extern HRESULT CreateDispatcherQueueController(DispatcherQueueOptions options, [NativeTypeName("ABI::Windows::System::IDispatcherQueueController **")] void** dispatcherQueueController);
-    }
+    [DllImport("coremessaging", ExactSpelling = true)]
+    public static extern HRESULT CreateDispatcherQueueController(DispatcherQueueOptions options, [NativeTypeName("ABI::Windows::System::IDispatcherQueueController **")] void** dispatcherQueueController);
 }

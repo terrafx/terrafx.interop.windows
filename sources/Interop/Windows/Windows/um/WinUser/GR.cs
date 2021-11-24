@@ -3,20 +3,19 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class GR
 {
-    public static partial class GR
-    {
-        [NativeTypeName("#define GR_GDIOBJECTS 0")]
-        public const int GR_GDIOBJECTS = 0;
+    [NativeTypeName("#define GR_GDIOBJECTS 0")]
+    public const int GR_GDIOBJECTS = 0;
 
-        [NativeTypeName("#define GR_USEROBJECTS 1")]
-        public const int GR_USEROBJECTS = 1;
+    [NativeTypeName("#define GR_USEROBJECTS 1")]
+    public const int GR_USEROBJECTS = 1;
 
-        [NativeTypeName("#define GR_GDIOBJECTS_PEAK 2")]
-        public const int GR_GDIOBJECTS_PEAK = 2;
+    [NativeTypeName("#define GR_GDIOBJECTS_PEAK 2")]
+    public const int GR_GDIOBJECTS_PEAK = 2;
 
-        [NativeTypeName("#define GR_USEROBJECTS_PEAK 4")]
-        public const int GR_USEROBJECTS_PEAK = 4;
-    }
+    [NativeTypeName("#define GR_USEROBJECTS_PEAK 4")]
+    public const int GR_USEROBJECTS_PEAK = 4;
 }

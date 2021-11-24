@@ -5,13 +5,12 @@
 
 using static TerraFX.Interop.DirectX.DirectX;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D1_GRADIENT_STOP
 {
-    public partial struct D2D1_GRADIENT_STOP
+    public D2D1_GRADIENT_STOP(float position, [NativeTypeName("const D2D1_COLOR_F &")] in DXGI_RGBA color)
     {
-        public D2D1_GRADIENT_STOP(float position, [NativeTypeName("const D2D1_COLOR_F &")] in DXGI_RGBA color)
-        {
-            this = GradientStop(position, color);
-        }
+        this = GradientStop(position, color);
     }
 }

@@ -5,20 +5,19 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public unsafe partial struct PSS_AUXILIARY_PAGE_ENTRY
 {
-    [SupportedOSPlatform("windows8.1")]
-    public unsafe partial struct PSS_AUXILIARY_PAGE_ENTRY
-    {
-        public void* Address;
+    public void* Address;
 
-        public MEMORY_BASIC_INFORMATION BasicInformation;
+    public MEMORY_BASIC_INFORMATION BasicInformation;
 
-        public FILETIME CaptureTime;
+    public FILETIME CaptureTime;
 
-        public void* PageContents;
+    public void* PageContents;
 
-        [NativeTypeName("DWORD")]
-        public uint PageSize;
-    }
+    [NativeTypeName("DWORD")]
+    public uint PageSize;
 }

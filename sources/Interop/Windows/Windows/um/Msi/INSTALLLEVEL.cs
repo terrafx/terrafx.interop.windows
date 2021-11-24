@@ -3,12 +3,11 @@
 // Ported from um/Msi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum INSTALLLEVEL
 {
-    public enum INSTALLLEVEL
-    {
-        INSTALLLEVEL_DEFAULT = 0,
-        INSTALLLEVEL_MINIMUM = 1,
-        INSTALLLEVEL_MAXIMUM = 0xFFFF,
-    }
+    INSTALLLEVEL_DEFAULT = 0,
+    INSTALLLEVEL_MINIMUM = 1,
+    INSTALLLEVEL_MAXIMUM = 0xFFFF,
 }

@@ -5,42 +5,41 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SCM_REGION
 {
-    public partial struct SCM_REGION
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        [NativeTypeName("DWORD")]
-        public uint NfitHandle;
+    [NativeTypeName("DWORD")]
+    public uint NfitHandle;
 
-        public Guid LogicalDeviceGuid;
+    public Guid LogicalDeviceGuid;
 
-        public Guid AddressRangeType;
+    public Guid AddressRangeType;
 
-        [NativeTypeName("DWORD")]
-        public uint AssociatedId;
+    [NativeTypeName("DWORD")]
+    public uint AssociatedId;
 
-        [NativeTypeName("DWORD64")]
-        public ulong Length;
+    [NativeTypeName("DWORD64")]
+    public ulong Length;
 
-        [NativeTypeName("DWORD64")]
-        public ulong StartingDPA;
+    [NativeTypeName("DWORD64")]
+    public ulong StartingDPA;
 
-        [NativeTypeName("DWORD64")]
-        public ulong BaseSPA;
+    [NativeTypeName("DWORD64")]
+    public ulong BaseSPA;
 
-        [NativeTypeName("DWORD64")]
-        public ulong SPAOffset;
+    [NativeTypeName("DWORD64")]
+    public ulong SPAOffset;
 
-        [NativeTypeName("DWORD64")]
-        public ulong RegionOffset;
-    }
+    [NativeTypeName("DWORD64")]
+    public ulong RegionOffset;
 }

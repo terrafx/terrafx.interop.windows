@@ -3,13 +3,12 @@
 // Ported from um/MsiDefs.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum msidbRegistryRoot
 {
-    public enum msidbRegistryRoot
-    {
-        msidbRegistryRootClassesRoot = 0,
-        msidbRegistryRootCurrentUser = 1,
-        msidbRegistryRootLocalMachine = 2,
-        msidbRegistryRootUsers = 3,
-    }
+    msidbRegistryRootClassesRoot = 0,
+    msidbRegistryRootCurrentUser = 1,
+    msidbRegistryRootLocalMachine = 2,
+    msidbRegistryRootUsers = 3,
 }

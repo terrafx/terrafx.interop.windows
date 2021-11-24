@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="STORAGE_HW_ENDURANCE_DATA_DESCRIPTOR" /> struct.</summary>
+public static unsafe partial class STORAGE_HW_ENDURANCE_DATA_DESCRIPTORTests
 {
-    /// <summary>Provides validation of the <see cref="STORAGE_HW_ENDURANCE_DATA_DESCRIPTOR" /> struct.</summary>
-    public static unsafe partial class STORAGE_HW_ENDURANCE_DATA_DESCRIPTORTests
+    /// <summary>Validates that the <see cref="STORAGE_HW_ENDURANCE_DATA_DESCRIPTOR" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="STORAGE_HW_ENDURANCE_DATA_DESCRIPTOR" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<STORAGE_HW_ENDURANCE_DATA_DESCRIPTOR>(), Is.EqualTo(sizeof(STORAGE_HW_ENDURANCE_DATA_DESCRIPTOR)));
-        }
+        Assert.That(Marshal.SizeOf<STORAGE_HW_ENDURANCE_DATA_DESCRIPTOR>(), Is.EqualTo(sizeof(STORAGE_HW_ENDURANCE_DATA_DESCRIPTOR)));
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_HW_ENDURANCE_DATA_DESCRIPTOR" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(STORAGE_HW_ENDURANCE_DATA_DESCRIPTOR).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="STORAGE_HW_ENDURANCE_DATA_DESCRIPTOR" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(STORAGE_HW_ENDURANCE_DATA_DESCRIPTOR).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_HW_ENDURANCE_DATA_DESCRIPTOR" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(STORAGE_HW_ENDURANCE_DATA_DESCRIPTOR), Is.EqualTo(56));
-        }
+    /// <summary>Validates that the <see cref="STORAGE_HW_ENDURANCE_DATA_DESCRIPTOR" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(STORAGE_HW_ENDURANCE_DATA_DESCRIPTOR), Is.EqualTo(56));
     }
 }

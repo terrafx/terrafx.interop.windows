@@ -3,16 +3,15 @@
 // Ported from um/objidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct FLAG_STGMEDIUM
 {
-    public partial struct FLAG_STGMEDIUM
-    {
-        [NativeTypeName("LONG")]
-        public int ContextFlags;
+    [NativeTypeName("LONG")]
+    public int ContextFlags;
 
-        [NativeTypeName("LONG")]
-        public int fPassOwnership;
+    [NativeTypeName("LONG")]
+    public int fPassOwnership;
 
-        public STGMEDIUM Stgmed;
-    }
+    public STGMEDIUM Stgmed;
 }

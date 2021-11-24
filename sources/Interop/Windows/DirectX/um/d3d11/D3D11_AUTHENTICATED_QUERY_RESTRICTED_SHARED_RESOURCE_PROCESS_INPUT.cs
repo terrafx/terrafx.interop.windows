@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
-{
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct D3D11_AUTHENTICATED_QUERY_RESTRICTED_SHARED_RESOURCE_PROCESS_INPUT
-    {
-        public D3D11_AUTHENTICATED_QUERY_INPUT Input;
+namespace TerraFX.Interop.DirectX;
 
-        public uint ProcessIndex;
-    }
+[SupportedOSPlatform("windows8.0")]
+public partial struct D3D11_AUTHENTICATED_QUERY_RESTRICTED_SHARED_RESOURCE_PROCESS_INPUT
+{
+    public D3D11_AUTHENTICATED_QUERY_INPUT Input;
+
+    public uint ProcessIndex;
 }

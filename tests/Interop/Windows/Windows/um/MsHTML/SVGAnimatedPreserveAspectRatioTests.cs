@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SVGAnimatedPreserveAspectRatio" /> struct.</summary>
+public static unsafe partial class SVGAnimatedPreserveAspectRatioTests
 {
-    /// <summary>Provides validation of the <see cref="SVGAnimatedPreserveAspectRatio" /> struct.</summary>
-    public static unsafe partial class SVGAnimatedPreserveAspectRatioTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGAnimatedPreserveAspectRatio" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGAnimatedPreserveAspectRatio" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SVGAnimatedPreserveAspectRatio).GUID, Is.EqualTo(IID_SVGAnimatedPreserveAspectRatio));
-        }
+        Assert.That(typeof(SVGAnimatedPreserveAspectRatio).GUID, Is.EqualTo(IID_SVGAnimatedPreserveAspectRatio));
+    }
 
-        /// <summary>Validates that the <see cref="SVGAnimatedPreserveAspectRatio" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SVGAnimatedPreserveAspectRatio>(), Is.EqualTo(sizeof(SVGAnimatedPreserveAspectRatio)));
-        }
+    /// <summary>Validates that the <see cref="SVGAnimatedPreserveAspectRatio" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SVGAnimatedPreserveAspectRatio>(), Is.EqualTo(sizeof(SVGAnimatedPreserveAspectRatio)));
+    }
 
-        /// <summary>Validates that the <see cref="SVGAnimatedPreserveAspectRatio" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SVGAnimatedPreserveAspectRatio).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SVGAnimatedPreserveAspectRatio" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SVGAnimatedPreserveAspectRatio).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SVGAnimatedPreserveAspectRatio" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SVGAnimatedPreserveAspectRatio), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SVGAnimatedPreserveAspectRatio" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SVGAnimatedPreserveAspectRatio), Is.EqualTo(1));
     }
 }

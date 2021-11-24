@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IBindStatusCallback" /> struct.</summary>
+public static unsafe partial class IBindStatusCallbackTests
 {
-    /// <summary>Provides validation of the <see cref="IBindStatusCallback" /> struct.</summary>
-    public static unsafe partial class IBindStatusCallbackTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IBindStatusCallback" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IBindStatusCallback" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IBindStatusCallback).GUID, Is.EqualTo(IID_IBindStatusCallback));
-        }
+        Assert.That(typeof(IBindStatusCallback).GUID, Is.EqualTo(IID_IBindStatusCallback));
+    }
 
-        /// <summary>Validates that the <see cref="IBindStatusCallback" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IBindStatusCallback>(), Is.EqualTo(sizeof(IBindStatusCallback)));
-        }
+    /// <summary>Validates that the <see cref="IBindStatusCallback" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IBindStatusCallback>(), Is.EqualTo(sizeof(IBindStatusCallback)));
+    }
 
-        /// <summary>Validates that the <see cref="IBindStatusCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IBindStatusCallback).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IBindStatusCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IBindStatusCallback).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IBindStatusCallback" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IBindStatusCallback" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IBindStatusCallback), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IBindStatusCallback), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IBindStatusCallback), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IBindStatusCallback), Is.EqualTo(4));
         }
     }
 }

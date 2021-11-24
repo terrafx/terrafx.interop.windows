@@ -3,21 +3,20 @@
 // Ported from um/wincodec.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum WICNamedWhitePoint
 {
-    public enum WICNamedWhitePoint
-    {
-        WICWhitePointDefault = 0x1,
-        WICWhitePointDaylight = 0x2,
-        WICWhitePointCloudy = 0x4,
-        WICWhitePointShade = 0x8,
-        WICWhitePointTungsten = 0x10,
-        WICWhitePointFluorescent = 0x20,
-        WICWhitePointFlash = 0x40,
-        WICWhitePointUnderwater = 0x80,
-        WICWhitePointCustom = 0x100,
-        WICWhitePointAutoWhiteBalance = 0x200,
-        WICWhitePointAsShot = WICWhitePointDefault,
-        WICNAMEDWHITEPOINT_FORCE_DWORD = 0x7fffffff,
-    }
+    WICWhitePointDefault = 0x1,
+    WICWhitePointDaylight = 0x2,
+    WICWhitePointCloudy = 0x4,
+    WICWhitePointShade = 0x8,
+    WICWhitePointTungsten = 0x10,
+    WICWhitePointFluorescent = 0x20,
+    WICWhitePointFlash = 0x40,
+    WICWhitePointUnderwater = 0x80,
+    WICWhitePointCustom = 0x100,
+    WICWhitePointAutoWhiteBalance = 0x200,
+    WICWhitePointAsShot = WICWhitePointDefault,
+    WICNAMEDWHITEPOINT_FORCE_DWORD = 0x7fffffff,
 }

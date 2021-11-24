@@ -7,233 +7,232 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("79EAC9C7-BAF9-11CE-8C82-00AA004BA90B")]
+[NativeTypeName("struct IHlinkBrowseContext : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IHlinkBrowseContext : IHlinkBrowseContext.Interface
 {
-    [Guid("79EAC9C7-BAF9-11CE-8C82-00AA004BA90B")]
-    [NativeTypeName("struct IHlinkBrowseContext : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHlinkBrowseContext : IHlinkBrowseContext.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IHlinkBrowseContext*, Guid*, void**, int>)(lpVtbl[0]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IHlinkBrowseContext*, Guid*, void**, int>)(lpVtbl[0]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IHlinkBrowseContext*, uint>)(lpVtbl[1]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IHlinkBrowseContext*, uint>)(lpVtbl[1]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IHlinkBrowseContext*, uint>)(lpVtbl[2]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IHlinkBrowseContext*, uint>)(lpVtbl[2]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Register([NativeTypeName("DWORD")] uint reserved, IUnknown* piunk, IMoniker* pimk, [NativeTypeName("DWORD *")] uint* pdwRegister)
+    {
+        return ((delegate* unmanaged<IHlinkBrowseContext*, uint, IUnknown*, IMoniker*, uint*, int>)(lpVtbl[3]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), reserved, piunk, pimk, pdwRegister);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetObjectW(IMoniker* pimk, BOOL fBindIfRootRegistered, IUnknown** ppiunk)
+    {
+        return ((delegate* unmanaged<IHlinkBrowseContext*, IMoniker*, BOOL, IUnknown**, int>)(lpVtbl[4]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), pimk, fBindIfRootRegistered, ppiunk);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Revoke([NativeTypeName("DWORD")] uint dwRegister)
+    {
+        return ((delegate* unmanaged<IHlinkBrowseContext*, uint, int>)(lpVtbl[5]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), dwRegister);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT SetBrowseWindowInfo(HLBWINFO* phlbwi)
+    {
+        return ((delegate* unmanaged<IHlinkBrowseContext*, HLBWINFO*, int>)(lpVtbl[6]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), phlbwi);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT GetBrowseWindowInfo(HLBWINFO* phlbwi)
+    {
+        return ((delegate* unmanaged<IHlinkBrowseContext*, HLBWINFO*, int>)(lpVtbl[7]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), phlbwi);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT SetInitialHlink(IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName)
+    {
+        return ((delegate* unmanaged<IHlinkBrowseContext*, IMoniker*, ushort*, ushort*, int>)(lpVtbl[8]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), pimkTarget, pwzLocation, pwzFriendlyName);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT OnNavigateHlink([NativeTypeName("DWORD")] uint grfHLNF, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName, [NativeTypeName("ULONG *")] uint* puHLID)
+    {
+        return ((delegate* unmanaged<IHlinkBrowseContext*, uint, IMoniker*, ushort*, ushort*, uint*, int>)(lpVtbl[9]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), grfHLNF, pimkTarget, pwzLocation, pwzFriendlyName, puHLID);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT UpdateHlink([NativeTypeName("ULONG")] uint uHLID, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName)
+    {
+        return ((delegate* unmanaged<IHlinkBrowseContext*, uint, IMoniker*, ushort*, ushort*, int>)(lpVtbl[10]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), uHLID, pimkTarget, pwzLocation, pwzFriendlyName);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT EnumNavigationStack([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("DWORD")] uint grfHLFNAMEF, IEnumHLITEM** ppienumhlitem)
+    {
+        return ((delegate* unmanaged<IHlinkBrowseContext*, uint, uint, IEnumHLITEM**, int>)(lpVtbl[11]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), dwReserved, grfHLFNAMEF, ppienumhlitem);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT QueryHlink([NativeTypeName("DWORD")] uint grfHLQF, [NativeTypeName("ULONG")] uint uHLID)
+    {
+        return ((delegate* unmanaged<IHlinkBrowseContext*, uint, uint, int>)(lpVtbl[12]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), grfHLQF, uHLID);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT GetHlink([NativeTypeName("ULONG")] uint uHLID, IHlink** ppihl)
+    {
+        return ((delegate* unmanaged<IHlinkBrowseContext*, uint, IHlink**, int>)(lpVtbl[13]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), uHLID, ppihl);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT SetCurrentHlink([NativeTypeName("ULONG")] uint uHLID)
+    {
+        return ((delegate* unmanaged<IHlinkBrowseContext*, uint, int>)(lpVtbl[14]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), uHLID);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT Clone(IUnknown* piunkOuter, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppiunkObj)
+    {
+        return ((delegate* unmanaged<IHlinkBrowseContext*, IUnknown*, Guid*, IUnknown**, int>)(lpVtbl[15]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), piunkOuter, riid, ppiunkObj);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT Close([NativeTypeName("DWORD")] uint reserved)
+    {
+        return ((delegate* unmanaged<IHlinkBrowseContext*, uint, int>)(lpVtbl[16]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), reserved);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Register([NativeTypeName("DWORD")] uint reserved, IUnknown* piunk, IMoniker* pimk, [NativeTypeName("DWORD *")] uint* pdwRegister)
-        {
-            return ((delegate* unmanaged<IHlinkBrowseContext*, uint, IUnknown*, IMoniker*, uint*, int>)(lpVtbl[3]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), reserved, piunk, pimk, pdwRegister);
-        }
+        HRESULT Register([NativeTypeName("DWORD")] uint reserved, IUnknown* piunk, IMoniker* pimk, [NativeTypeName("DWORD *")] uint* pdwRegister);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetObjectW(IMoniker* pimk, BOOL fBindIfRootRegistered, IUnknown** ppiunk)
-        {
-            return ((delegate* unmanaged<IHlinkBrowseContext*, IMoniker*, BOOL, IUnknown**, int>)(lpVtbl[4]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), pimk, fBindIfRootRegistered, ppiunk);
-        }
+        HRESULT GetObjectW(IMoniker* pimk, BOOL fBindIfRootRegistered, IUnknown** ppiunk);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT Revoke([NativeTypeName("DWORD")] uint dwRegister)
-        {
-            return ((delegate* unmanaged<IHlinkBrowseContext*, uint, int>)(lpVtbl[5]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), dwRegister);
-        }
+        HRESULT Revoke([NativeTypeName("DWORD")] uint dwRegister);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT SetBrowseWindowInfo(HLBWINFO* phlbwi)
-        {
-            return ((delegate* unmanaged<IHlinkBrowseContext*, HLBWINFO*, int>)(lpVtbl[6]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), phlbwi);
-        }
+        HRESULT SetBrowseWindowInfo(HLBWINFO* phlbwi);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetBrowseWindowInfo(HLBWINFO* phlbwi)
-        {
-            return ((delegate* unmanaged<IHlinkBrowseContext*, HLBWINFO*, int>)(lpVtbl[7]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), phlbwi);
-        }
+        HRESULT GetBrowseWindowInfo(HLBWINFO* phlbwi);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT SetInitialHlink(IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName)
-        {
-            return ((delegate* unmanaged<IHlinkBrowseContext*, IMoniker*, ushort*, ushort*, int>)(lpVtbl[8]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), pimkTarget, pwzLocation, pwzFriendlyName);
-        }
+        HRESULT SetInitialHlink(IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT OnNavigateHlink([NativeTypeName("DWORD")] uint grfHLNF, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName, [NativeTypeName("ULONG *")] uint* puHLID)
-        {
-            return ((delegate* unmanaged<IHlinkBrowseContext*, uint, IMoniker*, ushort*, ushort*, uint*, int>)(lpVtbl[9]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), grfHLNF, pimkTarget, pwzLocation, pwzFriendlyName, puHLID);
-        }
+        HRESULT OnNavigateHlink([NativeTypeName("DWORD")] uint grfHLNF, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName, [NativeTypeName("ULONG *")] uint* puHLID);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT UpdateHlink([NativeTypeName("ULONG")] uint uHLID, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName)
-        {
-            return ((delegate* unmanaged<IHlinkBrowseContext*, uint, IMoniker*, ushort*, ushort*, int>)(lpVtbl[10]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), uHLID, pimkTarget, pwzLocation, pwzFriendlyName);
-        }
+        HRESULT UpdateHlink([NativeTypeName("ULONG")] uint uHLID, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT EnumNavigationStack([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("DWORD")] uint grfHLFNAMEF, IEnumHLITEM** ppienumhlitem)
-        {
-            return ((delegate* unmanaged<IHlinkBrowseContext*, uint, uint, IEnumHLITEM**, int>)(lpVtbl[11]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), dwReserved, grfHLFNAMEF, ppienumhlitem);
-        }
+        HRESULT EnumNavigationStack([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("DWORD")] uint grfHLFNAMEF, IEnumHLITEM** ppienumhlitem);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT QueryHlink([NativeTypeName("DWORD")] uint grfHLQF, [NativeTypeName("ULONG")] uint uHLID)
-        {
-            return ((delegate* unmanaged<IHlinkBrowseContext*, uint, uint, int>)(lpVtbl[12]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), grfHLQF, uHLID);
-        }
+        HRESULT QueryHlink([NativeTypeName("DWORD")] uint grfHLQF, [NativeTypeName("ULONG")] uint uHLID);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT GetHlink([NativeTypeName("ULONG")] uint uHLID, IHlink** ppihl)
-        {
-            return ((delegate* unmanaged<IHlinkBrowseContext*, uint, IHlink**, int>)(lpVtbl[13]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), uHLID, ppihl);
-        }
+        HRESULT GetHlink([NativeTypeName("ULONG")] uint uHLID, IHlink** ppihl);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT SetCurrentHlink([NativeTypeName("ULONG")] uint uHLID)
-        {
-            return ((delegate* unmanaged<IHlinkBrowseContext*, uint, int>)(lpVtbl[14]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), uHLID);
-        }
+        HRESULT SetCurrentHlink([NativeTypeName("ULONG")] uint uHLID);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT Clone(IUnknown* piunkOuter, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppiunkObj)
-        {
-            return ((delegate* unmanaged<IHlinkBrowseContext*, IUnknown*, Guid*, IUnknown**, int>)(lpVtbl[15]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), piunkOuter, riid, ppiunkObj);
-        }
+        HRESULT Clone(IUnknown* piunkOuter, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppiunkObj);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT Close([NativeTypeName("DWORD")] uint reserved)
-        {
-            return ((delegate* unmanaged<IHlinkBrowseContext*, uint, int>)(lpVtbl[16]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), reserved);
-        }
+        HRESULT Close([NativeTypeName("DWORD")] uint reserved);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Register([NativeTypeName("DWORD")] uint reserved, IUnknown* piunk, IMoniker* pimk, [NativeTypeName("DWORD *")] uint* pdwRegister);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHlinkBrowseContext*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetObjectW(IMoniker* pimk, BOOL fBindIfRootRegistered, IUnknown** ppiunk);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IHlinkBrowseContext*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT Revoke([NativeTypeName("DWORD")] uint dwRegister);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IHlinkBrowseContext*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT SetBrowseWindowInfo(HLBWINFO* phlbwi);
+        [NativeTypeName("HRESULT (DWORD, IUnknown *, IMoniker *, DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHlinkBrowseContext*, uint, IUnknown*, IMoniker*, uint*, int> Register;
 
-            [VtblIndex(7)]
-            HRESULT GetBrowseWindowInfo(HLBWINFO* phlbwi);
+        [NativeTypeName("HRESULT (IMoniker *, BOOL, IUnknown **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHlinkBrowseContext*, IMoniker*, BOOL, IUnknown**, int> GetObjectW;
 
-            [VtblIndex(8)]
-            HRESULT SetInitialHlink(IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName);
+        [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHlinkBrowseContext*, uint, int> Revoke;
 
-            [VtblIndex(9)]
-            HRESULT OnNavigateHlink([NativeTypeName("DWORD")] uint grfHLNF, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName, [NativeTypeName("ULONG *")] uint* puHLID);
+        [NativeTypeName("HRESULT (HLBWINFO *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHlinkBrowseContext*, HLBWINFO*, int> SetBrowseWindowInfo;
 
-            [VtblIndex(10)]
-            HRESULT UpdateHlink([NativeTypeName("ULONG")] uint uHLID, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName);
+        [NativeTypeName("HRESULT (HLBWINFO *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHlinkBrowseContext*, HLBWINFO*, int> GetBrowseWindowInfo;
 
-            [VtblIndex(11)]
-            HRESULT EnumNavigationStack([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("DWORD")] uint grfHLFNAMEF, IEnumHLITEM** ppienumhlitem);
+        [NativeTypeName("HRESULT (IMoniker *, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHlinkBrowseContext*, IMoniker*, ushort*, ushort*, int> SetInitialHlink;
 
-            [VtblIndex(12)]
-            HRESULT QueryHlink([NativeTypeName("DWORD")] uint grfHLQF, [NativeTypeName("ULONG")] uint uHLID);
+        [NativeTypeName("HRESULT (DWORD, IMoniker *, LPCWSTR, LPCWSTR, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHlinkBrowseContext*, uint, IMoniker*, ushort*, ushort*, uint*, int> OnNavigateHlink;
 
-            [VtblIndex(13)]
-            HRESULT GetHlink([NativeTypeName("ULONG")] uint uHLID, IHlink** ppihl);
+        [NativeTypeName("HRESULT (ULONG, IMoniker *, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHlinkBrowseContext*, uint, IMoniker*, ushort*, ushort*, int> UpdateHlink;
 
-            [VtblIndex(14)]
-            HRESULT SetCurrentHlink([NativeTypeName("ULONG")] uint uHLID);
+        [NativeTypeName("HRESULT (DWORD, DWORD, IEnumHLITEM **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHlinkBrowseContext*, uint, uint, IEnumHLITEM**, int> EnumNavigationStack;
 
-            [VtblIndex(15)]
-            HRESULT Clone(IUnknown* piunkOuter, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppiunkObj);
+        [NativeTypeName("HRESULT (DWORD, ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHlinkBrowseContext*, uint, uint, int> QueryHlink;
 
-            [VtblIndex(16)]
-            HRESULT Close([NativeTypeName("DWORD")] uint reserved);
-        }
+        [NativeTypeName("HRESULT (ULONG, IHlink **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHlinkBrowseContext*, uint, IHlink**, int> GetHlink;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHlinkBrowseContext*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHlinkBrowseContext*, uint, int> SetCurrentHlink;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IHlinkBrowseContext*, uint> AddRef;
+        [NativeTypeName("HRESULT (IUnknown *, const IID &, IUnknown **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHlinkBrowseContext*, IUnknown*, Guid*, IUnknown**, int> Clone;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IHlinkBrowseContext*, uint> Release;
-
-            [NativeTypeName("HRESULT (DWORD, IUnknown *, IMoniker *, DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHlinkBrowseContext*, uint, IUnknown*, IMoniker*, uint*, int> Register;
-
-            [NativeTypeName("HRESULT (IMoniker *, BOOL, IUnknown **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHlinkBrowseContext*, IMoniker*, BOOL, IUnknown**, int> GetObjectW;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHlinkBrowseContext*, uint, int> Revoke;
-
-            [NativeTypeName("HRESULT (HLBWINFO *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHlinkBrowseContext*, HLBWINFO*, int> SetBrowseWindowInfo;
-
-            [NativeTypeName("HRESULT (HLBWINFO *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHlinkBrowseContext*, HLBWINFO*, int> GetBrowseWindowInfo;
-
-            [NativeTypeName("HRESULT (IMoniker *, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHlinkBrowseContext*, IMoniker*, ushort*, ushort*, int> SetInitialHlink;
-
-            [NativeTypeName("HRESULT (DWORD, IMoniker *, LPCWSTR, LPCWSTR, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHlinkBrowseContext*, uint, IMoniker*, ushort*, ushort*, uint*, int> OnNavigateHlink;
-
-            [NativeTypeName("HRESULT (ULONG, IMoniker *, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHlinkBrowseContext*, uint, IMoniker*, ushort*, ushort*, int> UpdateHlink;
-
-            [NativeTypeName("HRESULT (DWORD, DWORD, IEnumHLITEM **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHlinkBrowseContext*, uint, uint, IEnumHLITEM**, int> EnumNavigationStack;
-
-            [NativeTypeName("HRESULT (DWORD, ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHlinkBrowseContext*, uint, uint, int> QueryHlink;
-
-            [NativeTypeName("HRESULT (ULONG, IHlink **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHlinkBrowseContext*, uint, IHlink**, int> GetHlink;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHlinkBrowseContext*, uint, int> SetCurrentHlink;
-
-            [NativeTypeName("HRESULT (IUnknown *, const IID &, IUnknown **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHlinkBrowseContext*, IUnknown*, Guid*, IUnknown**, int> Clone;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHlinkBrowseContext*, uint, int> Close;
-        }
+        [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHlinkBrowseContext*, uint, int> Close;
     }
 }

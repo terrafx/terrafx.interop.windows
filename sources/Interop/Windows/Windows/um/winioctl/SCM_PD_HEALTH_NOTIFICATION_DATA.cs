@@ -5,10 +5,9 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SCM_PD_HEALTH_NOTIFICATION_DATA
 {
-    public partial struct SCM_PD_HEALTH_NOTIFICATION_DATA
-    {
-        public Guid DeviceGuid;
-    }
+    public Guid DeviceGuid;
 }

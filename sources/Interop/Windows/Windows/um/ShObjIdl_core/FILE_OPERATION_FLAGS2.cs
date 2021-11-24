@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum FILE_OPERATION_FLAGS2
 {
-    [Flags]
-    public enum FILE_OPERATION_FLAGS2
-    {
-        FOF2_NONE = 0,
-        FOF2_MERGEFOLDERSONCOLLISION = 0x1,
-    }
+    FOF2_NONE = 0,
+    FOF2_MERGEFOLDERSONCOLLISION = 0x1,
 }

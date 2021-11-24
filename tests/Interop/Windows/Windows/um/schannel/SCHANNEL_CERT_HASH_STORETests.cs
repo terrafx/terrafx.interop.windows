@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SCHANNEL_CERT_HASH_STORE" /> struct.</summary>
+public static unsafe partial class SCHANNEL_CERT_HASH_STORETests
 {
-    /// <summary>Provides validation of the <see cref="SCHANNEL_CERT_HASH_STORE" /> struct.</summary>
-    public static unsafe partial class SCHANNEL_CERT_HASH_STORETests
+    /// <summary>Validates that the <see cref="SCHANNEL_CERT_HASH_STORE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SCHANNEL_CERT_HASH_STORE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SCHANNEL_CERT_HASH_STORE>(), Is.EqualTo(sizeof(SCHANNEL_CERT_HASH_STORE)));
-        }
+        Assert.That(Marshal.SizeOf<SCHANNEL_CERT_HASH_STORE>(), Is.EqualTo(sizeof(SCHANNEL_CERT_HASH_STORE)));
+    }
 
-        /// <summary>Validates that the <see cref="SCHANNEL_CERT_HASH_STORE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SCHANNEL_CERT_HASH_STORE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SCHANNEL_CERT_HASH_STORE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SCHANNEL_CERT_HASH_STORE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SCHANNEL_CERT_HASH_STORE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SCHANNEL_CERT_HASH_STORE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SCHANNEL_CERT_HASH_STORE), Is.EqualTo(296));
-            }
-            else
-            {
-                Assert.That(sizeof(SCHANNEL_CERT_HASH_STORE), Is.EqualTo(288));
-            }
+            Assert.That(sizeof(SCHANNEL_CERT_HASH_STORE), Is.EqualTo(296));
+        }
+        else
+        {
+            Assert.That(sizeof(SCHANNEL_CERT_HASH_STORE), Is.EqualTo(288));
         }
     }
 }

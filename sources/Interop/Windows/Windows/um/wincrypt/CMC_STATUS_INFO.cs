@@ -6,56 +6,55 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CMC_STATUS_INFO
 {
-    public unsafe partial struct CMC_STATUS_INFO
+    [NativeTypeName("DWORD")]
+    public uint dwStatus;
+
+    [NativeTypeName("DWORD")]
+    public uint cBodyList;
+
+    [NativeTypeName("DWORD *")]
+    public uint* rgdwBodyList;
+
+    [NativeTypeName("LPWSTR")]
+    public ushort* pwszStatusString;
+
+    [NativeTypeName("DWORD")]
+    public uint dwOtherInfoChoice;
+
+    [NativeTypeName("_CMC_STATUS_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:5293:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public ref uint dwFailInfo
     {
-        [NativeTypeName("DWORD")]
-        public uint dwStatus;
-
-        [NativeTypeName("DWORD")]
-        public uint cBodyList;
-
-        [NativeTypeName("DWORD *")]
-        public uint* rgdwBodyList;
-
-        [NativeTypeName("LPWSTR")]
-        public ushort* pwszStatusString;
-
-        [NativeTypeName("DWORD")]
-        public uint dwOtherInfoChoice;
-
-        [NativeTypeName("_CMC_STATUS_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:5293:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public ref uint dwFailInfo
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwFailInfo, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwFailInfo, 1));
         }
+    }
 
-        public ref CMC_PEND_INFO* pPendInfo
+    public ref CMC_PEND_INFO* pPendInfo
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pPendInfo;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pPendInfo;
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint dwFailInfo;
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint dwFailInfo;
 
-            [FieldOffset(0)]
-            [NativeTypeName("PCMC_PEND_INFO")]
-            public CMC_PEND_INFO* pPendInfo;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("PCMC_PEND_INFO")]
+        public CMC_PEND_INFO* pPendInfo;
     }
 }

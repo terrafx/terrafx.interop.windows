@@ -5,21 +5,20 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MT_ARBITRARY_HEADER
 {
-    public partial struct MT_ARBITRARY_HEADER
-    {
-        public Guid majortype;
+    public Guid majortype;
 
-        public Guid subtype;
+    public Guid subtype;
 
-        public BOOL bFixedSizeSamples;
+    public BOOL bFixedSizeSamples;
 
-        public BOOL bTemporalCompression;
+    public BOOL bTemporalCompression;
 
-        [NativeTypeName("ULONG")]
-        public uint lSampleSize;
+    [NativeTypeName("ULONG")]
+    public uint lSampleSize;
 
-        public Guid formattype;
-    }
+    public Guid formattype;
 }

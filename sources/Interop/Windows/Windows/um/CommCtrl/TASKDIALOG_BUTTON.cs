@@ -5,14 +5,13 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct TASKDIALOG_BUTTON
-    {
-        public int nButtonID;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("PCWSTR")]
-        public ushort* pszButtonText;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct TASKDIALOG_BUTTON
+{
+    public int nButtonID;
+
+    [NativeTypeName("PCWSTR")]
+    public ushort* pszButtonText;
 }

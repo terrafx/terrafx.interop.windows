@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="D2D1_BLEND_DESCRIPTION" /> struct.</summary>
+public static unsafe partial class D2D1_BLEND_DESCRIPTIONTests
 {
-    /// <summary>Provides validation of the <see cref="D2D1_BLEND_DESCRIPTION" /> struct.</summary>
-    public static unsafe partial class D2D1_BLEND_DESCRIPTIONTests
+    /// <summary>Validates that the <see cref="D2D1_BLEND_DESCRIPTION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="D2D1_BLEND_DESCRIPTION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<D2D1_BLEND_DESCRIPTION>(), Is.EqualTo(sizeof(D2D1_BLEND_DESCRIPTION)));
-        }
+        Assert.That(Marshal.SizeOf<D2D1_BLEND_DESCRIPTION>(), Is.EqualTo(sizeof(D2D1_BLEND_DESCRIPTION)));
+    }
 
-        /// <summary>Validates that the <see cref="D2D1_BLEND_DESCRIPTION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(D2D1_BLEND_DESCRIPTION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="D2D1_BLEND_DESCRIPTION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(D2D1_BLEND_DESCRIPTION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="D2D1_BLEND_DESCRIPTION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(D2D1_BLEND_DESCRIPTION), Is.EqualTo(40));
-        }
+    /// <summary>Validates that the <see cref="D2D1_BLEND_DESCRIPTION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(D2D1_BLEND_DESCRIPTION), Is.EqualTo(40));
     }
 }

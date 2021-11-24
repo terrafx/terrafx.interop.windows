@@ -3,15 +3,14 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SPWORDPRONUNCIATIONLIST
 {
-    public unsafe partial struct SPWORDPRONUNCIATIONLIST
-    {
-        [NativeTypeName("ULONG")]
-        public uint ulSize;
+    [NativeTypeName("ULONG")]
+    public uint ulSize;
 
-        public byte* pvBuffer;
+    public byte* pvBuffer;
 
-        public SPWORDPRONUNCIATION* pFirstWordPronunciation;
-    }
+    public SPWORDPRONUNCIATION* pFirstWordPronunciation;
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IPropertyEnumTypeList" /> struct.</summary>
+public static unsafe partial class IPropertyEnumTypeListTests
 {
-    /// <summary>Provides validation of the <see cref="IPropertyEnumTypeList" /> struct.</summary>
-    public static unsafe partial class IPropertyEnumTypeListTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPropertyEnumTypeList" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPropertyEnumTypeList" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IPropertyEnumTypeList).GUID, Is.EqualTo(IID_IPropertyEnumTypeList));
-        }
+        Assert.That(typeof(IPropertyEnumTypeList).GUID, Is.EqualTo(IID_IPropertyEnumTypeList));
+    }
 
-        /// <summary>Validates that the <see cref="IPropertyEnumTypeList" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IPropertyEnumTypeList>(), Is.EqualTo(sizeof(IPropertyEnumTypeList)));
-        }
+    /// <summary>Validates that the <see cref="IPropertyEnumTypeList" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IPropertyEnumTypeList>(), Is.EqualTo(sizeof(IPropertyEnumTypeList)));
+    }
 
-        /// <summary>Validates that the <see cref="IPropertyEnumTypeList" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IPropertyEnumTypeList).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IPropertyEnumTypeList" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IPropertyEnumTypeList).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IPropertyEnumTypeList" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IPropertyEnumTypeList" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IPropertyEnumTypeList), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IPropertyEnumTypeList), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IPropertyEnumTypeList), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IPropertyEnumTypeList), Is.EqualTo(4));
         }
     }
 }

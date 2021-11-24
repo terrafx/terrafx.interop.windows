@@ -7,49 +7,48 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct AXESLISTW
 {
-    public partial struct AXESLISTW
+    [NativeTypeName("DWORD")]
+    public uint axlReserved;
+
+    [NativeTypeName("DWORD")]
+    public uint axlNumAxes;
+
+    [NativeTypeName("AXISINFOW [16]")]
+    public _axlAxisInfo_e__FixedBuffer axlAxisInfo;
+
+    public partial struct _axlAxisInfo_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint axlReserved;
+        public AXISINFOW e0;
+        public AXISINFOW e1;
+        public AXISINFOW e2;
+        public AXISINFOW e3;
+        public AXISINFOW e4;
+        public AXISINFOW e5;
+        public AXISINFOW e6;
+        public AXISINFOW e7;
+        public AXISINFOW e8;
+        public AXISINFOW e9;
+        public AXISINFOW e10;
+        public AXISINFOW e11;
+        public AXISINFOW e12;
+        public AXISINFOW e13;
+        public AXISINFOW e14;
+        public AXISINFOW e15;
 
-        [NativeTypeName("DWORD")]
-        public uint axlNumAxes;
-
-        [NativeTypeName("AXISINFOW [16]")]
-        public _axlAxisInfo_e__FixedBuffer axlAxisInfo;
-
-        public partial struct _axlAxisInfo_e__FixedBuffer
+        public ref AXISINFOW this[int index]
         {
-            public AXISINFOW e0;
-            public AXISINFOW e1;
-            public AXISINFOW e2;
-            public AXISINFOW e3;
-            public AXISINFOW e4;
-            public AXISINFOW e5;
-            public AXISINFOW e6;
-            public AXISINFOW e7;
-            public AXISINFOW e8;
-            public AXISINFOW e9;
-            public AXISINFOW e10;
-            public AXISINFOW e11;
-            public AXISINFOW e12;
-            public AXISINFOW e13;
-            public AXISINFOW e14;
-            public AXISINFOW e15;
-
-            public ref AXISINFOW this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan()[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<AXISINFOW> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
+            get
+            {
+                return ref AsSpan()[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<AXISINFOW> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
     }
 }

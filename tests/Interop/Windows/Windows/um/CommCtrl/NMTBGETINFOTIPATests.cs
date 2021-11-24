@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NMTBGETINFOTIPA" /> struct.</summary>
+public static unsafe partial class NMTBGETINFOTIPATests
 {
-    /// <summary>Provides validation of the <see cref="NMTBGETINFOTIPA" /> struct.</summary>
-    public static unsafe partial class NMTBGETINFOTIPATests
+    /// <summary>Validates that the <see cref="NMTBGETINFOTIPA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NMTBGETINFOTIPA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NMTBGETINFOTIPA>(), Is.EqualTo(sizeof(NMTBGETINFOTIPA)));
-        }
+        Assert.That(Marshal.SizeOf<NMTBGETINFOTIPA>(), Is.EqualTo(sizeof(NMTBGETINFOTIPA)));
+    }
 
-        /// <summary>Validates that the <see cref="NMTBGETINFOTIPA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NMTBGETINFOTIPA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NMTBGETINFOTIPA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NMTBGETINFOTIPA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NMTBGETINFOTIPA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="NMTBGETINFOTIPA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(NMTBGETINFOTIPA), Is.EqualTo(48));
-            }
-            else
-            {
-                Assert.That(sizeof(NMTBGETINFOTIPA), Is.EqualTo(28));
-            }
+            Assert.That(sizeof(NMTBGETINFOTIPA), Is.EqualTo(48));
+        }
+        else
+        {
+            Assert.That(sizeof(NMTBGETINFOTIPA), Is.EqualTo(28));
         }
     }
 }

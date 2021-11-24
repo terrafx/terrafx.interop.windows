@@ -3,17 +3,16 @@
 // Ported from um/processthreadsapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct PROCESS_POWER_THROTTLING_STATE
 {
-    public partial struct PROCESS_POWER_THROTTLING_STATE
-    {
-        [NativeTypeName("ULONG")]
-        public uint Version;
+    [NativeTypeName("ULONG")]
+    public uint Version;
 
-        [NativeTypeName("ULONG")]
-        public uint ControlMask;
+    [NativeTypeName("ULONG")]
+    public uint ControlMask;
 
-        [NativeTypeName("ULONG")]
-        public uint StateMask;
-    }
+    [NativeTypeName("ULONG")]
+    public uint StateMask;
 }

@@ -3,20 +3,19 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CRYPT_RC4_KEY_STATE
 {
-    public unsafe partial struct CRYPT_RC4_KEY_STATE
-    {
-        [NativeTypeName("unsigned char [16]")]
-        public fixed byte Key[16];
+    [NativeTypeName("unsigned char [16]")]
+    public fixed byte Key[16];
 
-        [NativeTypeName("unsigned char [256]")]
-        public fixed byte SBox[256];
+    [NativeTypeName("unsigned char [256]")]
+    public fixed byte SBox[256];
 
-        [NativeTypeName("unsigned char")]
-        public byte i;
+    [NativeTypeName("unsigned char")]
+    public byte i;
 
-        [NativeTypeName("unsigned char")]
-        public byte j;
-    }
+    [NativeTypeName("unsigned char")]
+    public byte j;
 }

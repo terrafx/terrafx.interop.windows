@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum MANIPULATION_RAILS_STATE
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum MANIPULATION_RAILS_STATE
-    {
-        MANIPULATION_RAILS_STATE_UNDECIDED = 0x00000000,
-        MANIPULATION_RAILS_STATE_FREE = 0x00000001,
-        MANIPULATION_RAILS_STATE_RAILED = 0x00000002,
-        MANIPULATION_RAILS_STATE_MAX = unchecked((int)(0xffffffff)),
-    }
+    MANIPULATION_RAILS_STATE_UNDECIDED = 0x00000000,
+    MANIPULATION_RAILS_STATE_FREE = 0x00000001,
+    MANIPULATION_RAILS_STATE_RAILED = 0x00000002,
+    MANIPULATION_RAILS_STATE_MAX = unchecked((int)(0xffffffff)),
 }

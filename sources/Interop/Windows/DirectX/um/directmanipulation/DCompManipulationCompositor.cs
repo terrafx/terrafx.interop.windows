@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Guid("79DEA627-A08A-43AC-8EF5-6900B9299126")]
+public partial struct DCompManipulationCompositor
 {
-    [Guid("79DEA627-A08A-43AC-8EF5-6900B9299126")]
-    public partial struct DCompManipulationCompositor
-    {
-    }
 }

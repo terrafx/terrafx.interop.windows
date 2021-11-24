@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
-{
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public partial struct DXCoreAdapterMemoryBudgetNodeSegmentGroup
-    {
-        [NativeTypeName("uint32_t")]
-        public uint nodeIndex;
+namespace TerraFX.Interop.DirectX;
 
-        public DXCoreSegmentGroup segmentGroup;
-    }
+[SupportedOSPlatform("windows10.0.19041.0")]
+public partial struct DXCoreAdapterMemoryBudgetNodeSegmentGroup
+{
+    [NativeTypeName("uint32_t")]
+    public uint nodeIndex;
+
+    public DXCoreSegmentGroup segmentGroup;
 }

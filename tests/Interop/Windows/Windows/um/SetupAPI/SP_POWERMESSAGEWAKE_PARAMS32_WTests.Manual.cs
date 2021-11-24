@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SP_POWERMESSAGEWAKE_PARAMS32_W" /> struct.</summary>
+public static unsafe partial class SP_POWERMESSAGEWAKE_PARAMS32_WTests
 {
-    /// <summary>Provides validation of the <see cref="SP_POWERMESSAGEWAKE_PARAMS32_W" /> struct.</summary>
-    public static unsafe partial class SP_POWERMESSAGEWAKE_PARAMS32_WTests
+    /// <summary>Validates that the <see cref="SP_POWERMESSAGEWAKE_PARAMS32_W" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SP_POWERMESSAGEWAKE_PARAMS32_W" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SP_POWERMESSAGEWAKE_PARAMS32_W>(), Is.EqualTo(sizeof(SP_POWERMESSAGEWAKE_PARAMS32_W)));
-        }
+        Assert.That(Marshal.SizeOf<SP_POWERMESSAGEWAKE_PARAMS32_W>(), Is.EqualTo(sizeof(SP_POWERMESSAGEWAKE_PARAMS32_W)));
+    }
 
-        /// <summary>Validates that the <see cref="SP_POWERMESSAGEWAKE_PARAMS32_W" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SP_POWERMESSAGEWAKE_PARAMS32_W).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SP_POWERMESSAGEWAKE_PARAMS32_W" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SP_POWERMESSAGEWAKE_PARAMS32_W).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SP_POWERMESSAGEWAKE_PARAMS32_W" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SP_POWERMESSAGEWAKE_PARAMS32_W), Is.EqualTo(1032));
-        }
+    /// <summary>Validates that the <see cref="SP_POWERMESSAGEWAKE_PARAMS32_W" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SP_POWERMESSAGEWAKE_PARAMS32_W), Is.EqualTo(1032));
     }
 }

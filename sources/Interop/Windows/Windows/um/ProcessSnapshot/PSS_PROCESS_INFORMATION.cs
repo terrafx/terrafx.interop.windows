@@ -5,81 +5,80 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public unsafe partial struct PSS_PROCESS_INFORMATION
 {
-    [SupportedOSPlatform("windows8.1")]
-    public unsafe partial struct PSS_PROCESS_INFORMATION
-    {
-        [NativeTypeName("DWORD")]
-        public uint ExitStatus;
+    [NativeTypeName("DWORD")]
+    public uint ExitStatus;
 
-        public void* PebBaseAddress;
+    public void* PebBaseAddress;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint AffinityMask;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint AffinityMask;
 
-        [NativeTypeName("LONG")]
-        public int BasePriority;
+    [NativeTypeName("LONG")]
+    public int BasePriority;
 
-        [NativeTypeName("DWORD")]
-        public uint ProcessId;
+    [NativeTypeName("DWORD")]
+    public uint ProcessId;
 
-        [NativeTypeName("DWORD")]
-        public uint ParentProcessId;
+    [NativeTypeName("DWORD")]
+    public uint ParentProcessId;
 
-        public PSS_PROCESS_FLAGS Flags;
+    public PSS_PROCESS_FLAGS Flags;
 
-        public FILETIME CreateTime;
+    public FILETIME CreateTime;
 
-        public FILETIME ExitTime;
+    public FILETIME ExitTime;
 
-        public FILETIME KernelTime;
+    public FILETIME KernelTime;
 
-        public FILETIME UserTime;
+    public FILETIME UserTime;
 
-        [NativeTypeName("DWORD")]
-        public uint PriorityClass;
+    [NativeTypeName("DWORD")]
+    public uint PriorityClass;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint PeakVirtualSize;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint PeakVirtualSize;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint VirtualSize;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint VirtualSize;
 
-        [NativeTypeName("DWORD")]
-        public uint PageFaultCount;
+    [NativeTypeName("DWORD")]
+    public uint PageFaultCount;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint PeakWorkingSetSize;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint PeakWorkingSetSize;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint WorkingSetSize;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint WorkingSetSize;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint QuotaPeakPagedPoolUsage;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint QuotaPeakPagedPoolUsage;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint QuotaPagedPoolUsage;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint QuotaPagedPoolUsage;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint QuotaPeakNonPagedPoolUsage;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint QuotaPeakNonPagedPoolUsage;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint QuotaNonPagedPoolUsage;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint QuotaNonPagedPoolUsage;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint PagefileUsage;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint PagefileUsage;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint PeakPagefileUsage;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint PeakPagefileUsage;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint PrivateUsage;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint PrivateUsage;
 
-        [NativeTypeName("DWORD")]
-        public uint ExecuteFlags;
+    [NativeTypeName("DWORD")]
+    public uint ExecuteFlags;
 
-        [NativeTypeName("wchar_t [260]")]
-        public fixed ushort ImageFileName[260];
-    }
+    [NativeTypeName("wchar_t [260]")]
+    public fixed ushort ImageFileName[260];
 }

@@ -3,19 +3,18 @@
 // Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_DESC
 {
-    public partial struct D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_DESC
-    {
-        [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
-        public ulong DestAccelerationStructureData;
+    [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
+    public ulong DestAccelerationStructureData;
 
-        public D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_INPUTS Inputs;
+    public D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_INPUTS Inputs;
 
-        [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
-        public ulong SourceAccelerationStructureData;
+    [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
+    public ulong SourceAccelerationStructureData;
 
-        [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
-        public ulong ScratchAccelerationStructureData;
-    }
+    [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
+    public ulong ScratchAccelerationStructureData;
 }

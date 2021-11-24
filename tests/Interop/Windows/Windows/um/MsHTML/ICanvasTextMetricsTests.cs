@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ICanvasTextMetrics" /> struct.</summary>
+public static unsafe partial class ICanvasTextMetricsTests
 {
-    /// <summary>Provides validation of the <see cref="ICanvasTextMetrics" /> struct.</summary>
-    public static unsafe partial class ICanvasTextMetricsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ICanvasTextMetrics" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ICanvasTextMetrics" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ICanvasTextMetrics).GUID, Is.EqualTo(IID_ICanvasTextMetrics));
-        }
+        Assert.That(typeof(ICanvasTextMetrics).GUID, Is.EqualTo(IID_ICanvasTextMetrics));
+    }
 
-        /// <summary>Validates that the <see cref="ICanvasTextMetrics" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ICanvasTextMetrics>(), Is.EqualTo(sizeof(ICanvasTextMetrics)));
-        }
+    /// <summary>Validates that the <see cref="ICanvasTextMetrics" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ICanvasTextMetrics>(), Is.EqualTo(sizeof(ICanvasTextMetrics)));
+    }
 
-        /// <summary>Validates that the <see cref="ICanvasTextMetrics" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ICanvasTextMetrics).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ICanvasTextMetrics" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ICanvasTextMetrics).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ICanvasTextMetrics" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ICanvasTextMetrics" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ICanvasTextMetrics), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ICanvasTextMetrics), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ICanvasTextMetrics), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ICanvasTextMetrics), Is.EqualTo(4));
         }
     }
 }

@@ -3,12 +3,11 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum HEADERDROPDOWNFILTERSTATES
 {
-    public enum HEADERDROPDOWNFILTERSTATES
-    {
-        HDDFS_NORMAL = 1,
-        HDDFS_SOFTHOT = 2,
-        HDDFS_HOT = 3,
-    }
+    HDDFS_NORMAL = 1,
+    HDDFS_SOFTHOT = 2,
+    HDDFS_HOT = 3,
 }

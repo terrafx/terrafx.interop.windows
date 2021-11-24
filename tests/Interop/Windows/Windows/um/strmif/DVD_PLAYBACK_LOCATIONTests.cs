@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DVD_PLAYBACK_LOCATION" /> struct.</summary>
+public static unsafe partial class DVD_PLAYBACK_LOCATIONTests
 {
-    /// <summary>Provides validation of the <see cref="DVD_PLAYBACK_LOCATION" /> struct.</summary>
-    public static unsafe partial class DVD_PLAYBACK_LOCATIONTests
+    /// <summary>Validates that the <see cref="DVD_PLAYBACK_LOCATION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DVD_PLAYBACK_LOCATION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DVD_PLAYBACK_LOCATION>(), Is.EqualTo(sizeof(DVD_PLAYBACK_LOCATION)));
-        }
+        Assert.That(Marshal.SizeOf<DVD_PLAYBACK_LOCATION>(), Is.EqualTo(sizeof(DVD_PLAYBACK_LOCATION)));
+    }
 
-        /// <summary>Validates that the <see cref="DVD_PLAYBACK_LOCATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DVD_PLAYBACK_LOCATION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DVD_PLAYBACK_LOCATION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DVD_PLAYBACK_LOCATION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DVD_PLAYBACK_LOCATION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DVD_PLAYBACK_LOCATION), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="DVD_PLAYBACK_LOCATION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DVD_PLAYBACK_LOCATION), Is.EqualTo(12));
     }
 }

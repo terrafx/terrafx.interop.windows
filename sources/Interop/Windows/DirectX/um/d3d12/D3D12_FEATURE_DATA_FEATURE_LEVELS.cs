@@ -3,15 +3,14 @@
 // Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D12_FEATURE_DATA_FEATURE_LEVELS
 {
-    public unsafe partial struct D3D12_FEATURE_DATA_FEATURE_LEVELS
-    {
-        public uint NumFeatureLevels;
+    public uint NumFeatureLevels;
 
-        [NativeTypeName("const D3D_FEATURE_LEVEL *")]
-        public D3D_FEATURE_LEVEL* pFeatureLevelsRequested;
+    [NativeTypeName("const D3D_FEATURE_LEVEL *")]
+    public D3D_FEATURE_LEVEL* pFeatureLevelsRequested;
 
-        public D3D_FEATURE_LEVEL MaxSupportedFeatureLevel;
-    }
+    public D3D_FEATURE_LEVEL MaxSupportedFeatureLevel;
 }

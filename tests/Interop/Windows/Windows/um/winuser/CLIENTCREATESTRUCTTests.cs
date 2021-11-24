@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CLIENTCREATESTRUCT" /> struct.</summary>
+public static unsafe partial class CLIENTCREATESTRUCTTests
 {
-    /// <summary>Provides validation of the <see cref="CLIENTCREATESTRUCT" /> struct.</summary>
-    public static unsafe partial class CLIENTCREATESTRUCTTests
+    /// <summary>Validates that the <see cref="CLIENTCREATESTRUCT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CLIENTCREATESTRUCT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CLIENTCREATESTRUCT>(), Is.EqualTo(sizeof(CLIENTCREATESTRUCT)));
-        }
+        Assert.That(Marshal.SizeOf<CLIENTCREATESTRUCT>(), Is.EqualTo(sizeof(CLIENTCREATESTRUCT)));
+    }
 
-        /// <summary>Validates that the <see cref="CLIENTCREATESTRUCT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CLIENTCREATESTRUCT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CLIENTCREATESTRUCT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CLIENTCREATESTRUCT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CLIENTCREATESTRUCT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CLIENTCREATESTRUCT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CLIENTCREATESTRUCT), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(CLIENTCREATESTRUCT), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(CLIENTCREATESTRUCT), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(CLIENTCREATESTRUCT), Is.EqualTo(8));
         }
     }
 }

@@ -5,11 +5,10 @@
 
 using TerraFX.Interop.WinRT;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class JOB
 {
-    public static partial class JOB
-    {
-        [NativeTypeName("#define JOB_PAGE_APPLICATION_DEFINED ( ( UINT32  )-1 )")]
-        public const uint JOB_PAGE_APPLICATION_DEFINED = unchecked((uint)(-1));
-    }
+    [NativeTypeName("#define JOB_PAGE_APPLICATION_DEFINED ( ( UINT32  )-1 )")]
+    public const uint JOB_PAGE_APPLICATION_DEFINED = unchecked((uint)(-1));
 }

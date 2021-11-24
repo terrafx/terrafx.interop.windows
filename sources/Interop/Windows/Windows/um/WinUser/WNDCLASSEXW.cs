@@ -3,35 +3,34 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WNDCLASSEXW
 {
-    public unsafe partial struct WNDCLASSEXW
-    {
-        public uint cbSize;
+    public uint cbSize;
 
-        public uint style;
+    public uint style;
 
-        [NativeTypeName("WNDPROC")]
-        public delegate* unmanaged<HWND, uint, WPARAM, LPARAM, LRESULT> lpfnWndProc;
+    [NativeTypeName("WNDPROC")]
+    public delegate* unmanaged<HWND, uint, WPARAM, LPARAM, LRESULT> lpfnWndProc;
 
-        public int cbClsExtra;
+    public int cbClsExtra;
 
-        public int cbWndExtra;
+    public int cbWndExtra;
 
-        public HINSTANCE hInstance;
+    public HINSTANCE hInstance;
 
-        public HICON hIcon;
+    public HICON hIcon;
 
-        public HCURSOR hCursor;
+    public HCURSOR hCursor;
 
-        public HBRUSH hbrBackground;
+    public HBRUSH hbrBackground;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* lpszMenuName;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* lpszMenuName;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* lpszClassName;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* lpszClassName;
 
-        public HICON hIconSm;
-    }
+    public HICON hIconSm;
 }

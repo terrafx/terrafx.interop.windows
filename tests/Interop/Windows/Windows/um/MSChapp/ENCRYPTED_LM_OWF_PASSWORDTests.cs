@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ENCRYPTED_LM_OWF_PASSWORD" /> struct.</summary>
+public static unsafe partial class ENCRYPTED_LM_OWF_PASSWORDTests
 {
-    /// <summary>Provides validation of the <see cref="ENCRYPTED_LM_OWF_PASSWORD" /> struct.</summary>
-    public static unsafe partial class ENCRYPTED_LM_OWF_PASSWORDTests
+    /// <summary>Validates that the <see cref="ENCRYPTED_LM_OWF_PASSWORD" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="ENCRYPTED_LM_OWF_PASSWORD" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ENCRYPTED_LM_OWF_PASSWORD>(), Is.EqualTo(sizeof(ENCRYPTED_LM_OWF_PASSWORD)));
-        }
+        Assert.That(Marshal.SizeOf<ENCRYPTED_LM_OWF_PASSWORD>(), Is.EqualTo(sizeof(ENCRYPTED_LM_OWF_PASSWORD)));
+    }
 
-        /// <summary>Validates that the <see cref="ENCRYPTED_LM_OWF_PASSWORD" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ENCRYPTED_LM_OWF_PASSWORD).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ENCRYPTED_LM_OWF_PASSWORD" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ENCRYPTED_LM_OWF_PASSWORD).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ENCRYPTED_LM_OWF_PASSWORD" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(ENCRYPTED_LM_OWF_PASSWORD), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="ENCRYPTED_LM_OWF_PASSWORD" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(ENCRYPTED_LM_OWF_PASSWORD), Is.EqualTo(16));
     }
 }

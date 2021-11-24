@@ -7,360 +7,359 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("42F85136-DB7E-439C-85F1-E4075D135FC8")]
+[NativeTypeName("struct IFileDialog : IModalWindow")]
+[NativeInheritance("IModalWindow")]
+public unsafe partial struct IFileDialog : IFileDialog.Interface
 {
-    [Guid("42F85136-DB7E-439C-85F1-E4075D135FC8")]
-    [NativeTypeName("struct IFileDialog : IModalWindow")]
-    [NativeInheritance("IModalWindow")]
-    public unsafe partial struct IFileDialog : IFileDialog.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IFileDialog*, Guid*, void**, int>)(lpVtbl[0]))((IFileDialog*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IFileDialog*, Guid*, void**, int>)(lpVtbl[0]))((IFileDialog*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IFileDialog*, uint>)(lpVtbl[1]))((IFileDialog*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IFileDialog*, uint>)(lpVtbl[1]))((IFileDialog*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IFileDialog*, uint>)(lpVtbl[2]))((IFileDialog*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IFileDialog*, uint>)(lpVtbl[2]))((IFileDialog*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Show(HWND hwndOwner)
+    {
+        return ((delegate* unmanaged<IFileDialog*, HWND, int>)(lpVtbl[3]))((IFileDialog*)Unsafe.AsPointer(ref this), hwndOwner);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT Show(HWND hwndOwner)
-        {
-            return ((delegate* unmanaged<IFileDialog*, HWND, int>)(lpVtbl[3]))((IFileDialog*)Unsafe.AsPointer(ref this), hwndOwner);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT SetFileTypes(uint cFileTypes, [NativeTypeName("const COMDLG_FILTERSPEC *")] COMDLG_FILTERSPEC* rgFilterSpec)
+    {
+        return ((delegate* unmanaged<IFileDialog*, uint, COMDLG_FILTERSPEC*, int>)(lpVtbl[4]))((IFileDialog*)Unsafe.AsPointer(ref this), cFileTypes, rgFilterSpec);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT SetFileTypeIndex(uint iFileType)
+    {
+        return ((delegate* unmanaged<IFileDialog*, uint, int>)(lpVtbl[5]))((IFileDialog*)Unsafe.AsPointer(ref this), iFileType);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetFileTypeIndex(uint* piFileType)
+    {
+        return ((delegate* unmanaged<IFileDialog*, uint*, int>)(lpVtbl[6]))((IFileDialog*)Unsafe.AsPointer(ref this), piFileType);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT Advise(IFileDialogEvents* pfde, [NativeTypeName("DWORD *")] uint* pdwCookie)
+    {
+        return ((delegate* unmanaged<IFileDialog*, IFileDialogEvents*, uint*, int>)(lpVtbl[7]))((IFileDialog*)Unsafe.AsPointer(ref this), pfde, pdwCookie);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie)
+    {
+        return ((delegate* unmanaged<IFileDialog*, uint, int>)(lpVtbl[8]))((IFileDialog*)Unsafe.AsPointer(ref this), dwCookie);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT SetOptions([NativeTypeName("FILEOPENDIALOGOPTIONS")] uint fos)
+    {
+        return ((delegate* unmanaged<IFileDialog*, uint, int>)(lpVtbl[9]))((IFileDialog*)Unsafe.AsPointer(ref this), fos);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT GetOptions([NativeTypeName("FILEOPENDIALOGOPTIONS *")] uint* pfos)
+    {
+        return ((delegate* unmanaged<IFileDialog*, uint*, int>)(lpVtbl[10]))((IFileDialog*)Unsafe.AsPointer(ref this), pfos);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT SetDefaultFolder(IShellItem* psi)
+    {
+        return ((delegate* unmanaged<IFileDialog*, IShellItem*, int>)(lpVtbl[11]))((IFileDialog*)Unsafe.AsPointer(ref this), psi);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT SetFolder(IShellItem* psi)
+    {
+        return ((delegate* unmanaged<IFileDialog*, IShellItem*, int>)(lpVtbl[12]))((IFileDialog*)Unsafe.AsPointer(ref this), psi);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT GetFolder(IShellItem** ppsi)
+    {
+        return ((delegate* unmanaged<IFileDialog*, IShellItem**, int>)(lpVtbl[13]))((IFileDialog*)Unsafe.AsPointer(ref this), ppsi);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT GetCurrentSelection(IShellItem** ppsi)
+    {
+        return ((delegate* unmanaged<IFileDialog*, IShellItem**, int>)(lpVtbl[14]))((IFileDialog*)Unsafe.AsPointer(ref this), ppsi);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT SetFileName([NativeTypeName("LPCWSTR")] ushort* pszName)
+    {
+        return ((delegate* unmanaged<IFileDialog*, ushort*, int>)(lpVtbl[15]))((IFileDialog*)Unsafe.AsPointer(ref this), pszName);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT GetFileName([NativeTypeName("LPWSTR *")] ushort** pszName)
+    {
+        return ((delegate* unmanaged<IFileDialog*, ushort**, int>)(lpVtbl[16]))((IFileDialog*)Unsafe.AsPointer(ref this), pszName);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT SetTitle([NativeTypeName("LPCWSTR")] ushort* pszTitle)
+    {
+        return ((delegate* unmanaged<IFileDialog*, ushort*, int>)(lpVtbl[17]))((IFileDialog*)Unsafe.AsPointer(ref this), pszTitle);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT SetOkButtonLabel([NativeTypeName("LPCWSTR")] ushort* pszText)
+    {
+        return ((delegate* unmanaged<IFileDialog*, ushort*, int>)(lpVtbl[18]))((IFileDialog*)Unsafe.AsPointer(ref this), pszText);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
+    public HRESULT SetFileNameLabel([NativeTypeName("LPCWSTR")] ushort* pszLabel)
+    {
+        return ((delegate* unmanaged<IFileDialog*, ushort*, int>)(lpVtbl[19]))((IFileDialog*)Unsafe.AsPointer(ref this), pszLabel);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(20)]
+    public HRESULT GetResult(IShellItem** ppsi)
+    {
+        return ((delegate* unmanaged<IFileDialog*, IShellItem**, int>)(lpVtbl[20]))((IFileDialog*)Unsafe.AsPointer(ref this), ppsi);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(21)]
+    public HRESULT AddPlace(IShellItem* psi, FDAP fdap)
+    {
+        return ((delegate* unmanaged<IFileDialog*, IShellItem*, FDAP, int>)(lpVtbl[21]))((IFileDialog*)Unsafe.AsPointer(ref this), psi, fdap);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(22)]
+    public HRESULT SetDefaultExtension([NativeTypeName("LPCWSTR")] ushort* pszDefaultExtension)
+    {
+        return ((delegate* unmanaged<IFileDialog*, ushort*, int>)(lpVtbl[22]))((IFileDialog*)Unsafe.AsPointer(ref this), pszDefaultExtension);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(23)]
+    public HRESULT Close(HRESULT hr)
+    {
+        return ((delegate* unmanaged<IFileDialog*, HRESULT, int>)(lpVtbl[23]))((IFileDialog*)Unsafe.AsPointer(ref this), hr);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(24)]
+    public HRESULT SetClientGuid([NativeTypeName("const GUID &")] Guid* guid)
+    {
+        return ((delegate* unmanaged<IFileDialog*, Guid*, int>)(lpVtbl[24]))((IFileDialog*)Unsafe.AsPointer(ref this), guid);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(25)]
+    public HRESULT ClearClientData()
+    {
+        return ((delegate* unmanaged<IFileDialog*, int>)(lpVtbl[25]))((IFileDialog*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(26)]
+    public HRESULT SetFilter(IShellItemFilter* pFilter)
+    {
+        return ((delegate* unmanaged<IFileDialog*, IShellItemFilter*, int>)(lpVtbl[26]))((IFileDialog*)Unsafe.AsPointer(ref this), pFilter);
+    }
+
+    public interface Interface : IModalWindow.Interface
+    {
         [VtblIndex(4)]
-        public HRESULT SetFileTypes(uint cFileTypes, [NativeTypeName("const COMDLG_FILTERSPEC *")] COMDLG_FILTERSPEC* rgFilterSpec)
-        {
-            return ((delegate* unmanaged<IFileDialog*, uint, COMDLG_FILTERSPEC*, int>)(lpVtbl[4]))((IFileDialog*)Unsafe.AsPointer(ref this), cFileTypes, rgFilterSpec);
-        }
+        HRESULT SetFileTypes(uint cFileTypes, [NativeTypeName("const COMDLG_FILTERSPEC *")] COMDLG_FILTERSPEC* rgFilterSpec);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetFileTypeIndex(uint iFileType)
-        {
-            return ((delegate* unmanaged<IFileDialog*, uint, int>)(lpVtbl[5]))((IFileDialog*)Unsafe.AsPointer(ref this), iFileType);
-        }
+        HRESULT SetFileTypeIndex(uint iFileType);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetFileTypeIndex(uint* piFileType)
-        {
-            return ((delegate* unmanaged<IFileDialog*, uint*, int>)(lpVtbl[6]))((IFileDialog*)Unsafe.AsPointer(ref this), piFileType);
-        }
+        HRESULT GetFileTypeIndex(uint* piFileType);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT Advise(IFileDialogEvents* pfde, [NativeTypeName("DWORD *")] uint* pdwCookie)
-        {
-            return ((delegate* unmanaged<IFileDialog*, IFileDialogEvents*, uint*, int>)(lpVtbl[7]))((IFileDialog*)Unsafe.AsPointer(ref this), pfde, pdwCookie);
-        }
+        HRESULT Advise(IFileDialogEvents* pfde, [NativeTypeName("DWORD *")] uint* pdwCookie);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie)
-        {
-            return ((delegate* unmanaged<IFileDialog*, uint, int>)(lpVtbl[8]))((IFileDialog*)Unsafe.AsPointer(ref this), dwCookie);
-        }
+        HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT SetOptions([NativeTypeName("FILEOPENDIALOGOPTIONS")] uint fos)
-        {
-            return ((delegate* unmanaged<IFileDialog*, uint, int>)(lpVtbl[9]))((IFileDialog*)Unsafe.AsPointer(ref this), fos);
-        }
+        HRESULT SetOptions([NativeTypeName("FILEOPENDIALOGOPTIONS")] uint fos);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetOptions([NativeTypeName("FILEOPENDIALOGOPTIONS *")] uint* pfos)
-        {
-            return ((delegate* unmanaged<IFileDialog*, uint*, int>)(lpVtbl[10]))((IFileDialog*)Unsafe.AsPointer(ref this), pfos);
-        }
+        HRESULT GetOptions([NativeTypeName("FILEOPENDIALOGOPTIONS *")] uint* pfos);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT SetDefaultFolder(IShellItem* psi)
-        {
-            return ((delegate* unmanaged<IFileDialog*, IShellItem*, int>)(lpVtbl[11]))((IFileDialog*)Unsafe.AsPointer(ref this), psi);
-        }
+        HRESULT SetDefaultFolder(IShellItem* psi);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT SetFolder(IShellItem* psi)
-        {
-            return ((delegate* unmanaged<IFileDialog*, IShellItem*, int>)(lpVtbl[12]))((IFileDialog*)Unsafe.AsPointer(ref this), psi);
-        }
+        HRESULT SetFolder(IShellItem* psi);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT GetFolder(IShellItem** ppsi)
-        {
-            return ((delegate* unmanaged<IFileDialog*, IShellItem**, int>)(lpVtbl[13]))((IFileDialog*)Unsafe.AsPointer(ref this), ppsi);
-        }
+        HRESULT GetFolder(IShellItem** ppsi);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT GetCurrentSelection(IShellItem** ppsi)
-        {
-            return ((delegate* unmanaged<IFileDialog*, IShellItem**, int>)(lpVtbl[14]))((IFileDialog*)Unsafe.AsPointer(ref this), ppsi);
-        }
+        HRESULT GetCurrentSelection(IShellItem** ppsi);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT SetFileName([NativeTypeName("LPCWSTR")] ushort* pszName)
-        {
-            return ((delegate* unmanaged<IFileDialog*, ushort*, int>)(lpVtbl[15]))((IFileDialog*)Unsafe.AsPointer(ref this), pszName);
-        }
+        HRESULT SetFileName([NativeTypeName("LPCWSTR")] ushort* pszName);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT GetFileName([NativeTypeName("LPWSTR *")] ushort** pszName)
-        {
-            return ((delegate* unmanaged<IFileDialog*, ushort**, int>)(lpVtbl[16]))((IFileDialog*)Unsafe.AsPointer(ref this), pszName);
-        }
+        HRESULT GetFileName([NativeTypeName("LPWSTR *")] ushort** pszName);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT SetTitle([NativeTypeName("LPCWSTR")] ushort* pszTitle)
-        {
-            return ((delegate* unmanaged<IFileDialog*, ushort*, int>)(lpVtbl[17]))((IFileDialog*)Unsafe.AsPointer(ref this), pszTitle);
-        }
+        HRESULT SetTitle([NativeTypeName("LPCWSTR")] ushort* pszTitle);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT SetOkButtonLabel([NativeTypeName("LPCWSTR")] ushort* pszText)
-        {
-            return ((delegate* unmanaged<IFileDialog*, ushort*, int>)(lpVtbl[18]))((IFileDialog*)Unsafe.AsPointer(ref this), pszText);
-        }
+        HRESULT SetOkButtonLabel([NativeTypeName("LPCWSTR")] ushort* pszText);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT SetFileNameLabel([NativeTypeName("LPCWSTR")] ushort* pszLabel)
-        {
-            return ((delegate* unmanaged<IFileDialog*, ushort*, int>)(lpVtbl[19]))((IFileDialog*)Unsafe.AsPointer(ref this), pszLabel);
-        }
+        HRESULT SetFileNameLabel([NativeTypeName("LPCWSTR")] ushort* pszLabel);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT GetResult(IShellItem** ppsi)
-        {
-            return ((delegate* unmanaged<IFileDialog*, IShellItem**, int>)(lpVtbl[20]))((IFileDialog*)Unsafe.AsPointer(ref this), ppsi);
-        }
+        HRESULT GetResult(IShellItem** ppsi);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public HRESULT AddPlace(IShellItem* psi, FDAP fdap)
-        {
-            return ((delegate* unmanaged<IFileDialog*, IShellItem*, FDAP, int>)(lpVtbl[21]))((IFileDialog*)Unsafe.AsPointer(ref this), psi, fdap);
-        }
+        HRESULT AddPlace(IShellItem* psi, FDAP fdap);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        public HRESULT SetDefaultExtension([NativeTypeName("LPCWSTR")] ushort* pszDefaultExtension)
-        {
-            return ((delegate* unmanaged<IFileDialog*, ushort*, int>)(lpVtbl[22]))((IFileDialog*)Unsafe.AsPointer(ref this), pszDefaultExtension);
-        }
+        HRESULT SetDefaultExtension([NativeTypeName("LPCWSTR")] ushort* pszDefaultExtension);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        public HRESULT Close(HRESULT hr)
-        {
-            return ((delegate* unmanaged<IFileDialog*, HRESULT, int>)(lpVtbl[23]))((IFileDialog*)Unsafe.AsPointer(ref this), hr);
-        }
+        HRESULT Close(HRESULT hr);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT SetClientGuid([NativeTypeName("const GUID &")] Guid* guid)
-        {
-            return ((delegate* unmanaged<IFileDialog*, Guid*, int>)(lpVtbl[24]))((IFileDialog*)Unsafe.AsPointer(ref this), guid);
-        }
+        HRESULT SetClientGuid([NativeTypeName("const GUID &")] Guid* guid);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        public HRESULT ClearClientData()
-        {
-            return ((delegate* unmanaged<IFileDialog*, int>)(lpVtbl[25]))((IFileDialog*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT ClearClientData();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        public HRESULT SetFilter(IShellItemFilter* pFilter)
-        {
-            return ((delegate* unmanaged<IFileDialog*, IShellItemFilter*, int>)(lpVtbl[26]))((IFileDialog*)Unsafe.AsPointer(ref this), pFilter);
-        }
+        HRESULT SetFilter(IShellItemFilter* pFilter);
+    }
 
-        public interface Interface : IModalWindow.Interface
-        {
-            [VtblIndex(4)]
-            HRESULT SetFileTypes(uint cFileTypes, [NativeTypeName("const COMDLG_FILTERSPEC *")] COMDLG_FILTERSPEC* rgFilterSpec);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(5)]
-            HRESULT SetFileTypeIndex(uint iFileType);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, uint> AddRef;
 
-            [VtblIndex(6)]
-            HRESULT GetFileTypeIndex(uint* piFileType);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, uint> Release;
 
-            [VtblIndex(7)]
-            HRESULT Advise(IFileDialogEvents* pfde, [NativeTypeName("DWORD *")] uint* pdwCookie);
+        [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, HWND, int> Show;
 
-            [VtblIndex(8)]
-            HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie);
+        [NativeTypeName("HRESULT (UINT, const COMDLG_FILTERSPEC *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, uint, COMDLG_FILTERSPEC*, int> SetFileTypes;
 
-            [VtblIndex(9)]
-            HRESULT SetOptions([NativeTypeName("FILEOPENDIALOGOPTIONS")] uint fos);
+        [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, uint, int> SetFileTypeIndex;
 
-            [VtblIndex(10)]
-            HRESULT GetOptions([NativeTypeName("FILEOPENDIALOGOPTIONS *")] uint* pfos);
+        [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, uint*, int> GetFileTypeIndex;
 
-            [VtblIndex(11)]
-            HRESULT SetDefaultFolder(IShellItem* psi);
+        [NativeTypeName("HRESULT (IFileDialogEvents *, DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, IFileDialogEvents*, uint*, int> Advise;
 
-            [VtblIndex(12)]
-            HRESULT SetFolder(IShellItem* psi);
+        [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, uint, int> Unadvise;
 
-            [VtblIndex(13)]
-            HRESULT GetFolder(IShellItem** ppsi);
+        [NativeTypeName("HRESULT (FILEOPENDIALOGOPTIONS) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, uint, int> SetOptions;
 
-            [VtblIndex(14)]
-            HRESULT GetCurrentSelection(IShellItem** ppsi);
+        [NativeTypeName("HRESULT (FILEOPENDIALOGOPTIONS *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, uint*, int> GetOptions;
 
-            [VtblIndex(15)]
-            HRESULT SetFileName([NativeTypeName("LPCWSTR")] ushort* pszName);
+        [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, IShellItem*, int> SetDefaultFolder;
 
-            [VtblIndex(16)]
-            HRESULT GetFileName([NativeTypeName("LPWSTR *")] ushort** pszName);
+        [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, IShellItem*, int> SetFolder;
 
-            [VtblIndex(17)]
-            HRESULT SetTitle([NativeTypeName("LPCWSTR")] ushort* pszTitle);
+        [NativeTypeName("HRESULT (IShellItem **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, IShellItem**, int> GetFolder;
 
-            [VtblIndex(18)]
-            HRESULT SetOkButtonLabel([NativeTypeName("LPCWSTR")] ushort* pszText);
+        [NativeTypeName("HRESULT (IShellItem **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, IShellItem**, int> GetCurrentSelection;
 
-            [VtblIndex(19)]
-            HRESULT SetFileNameLabel([NativeTypeName("LPCWSTR")] ushort* pszLabel);
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, ushort*, int> SetFileName;
 
-            [VtblIndex(20)]
-            HRESULT GetResult(IShellItem** ppsi);
+        [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, ushort**, int> GetFileName;
 
-            [VtblIndex(21)]
-            HRESULT AddPlace(IShellItem* psi, FDAP fdap);
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, ushort*, int> SetTitle;
 
-            [VtblIndex(22)]
-            HRESULT SetDefaultExtension([NativeTypeName("LPCWSTR")] ushort* pszDefaultExtension);
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, ushort*, int> SetOkButtonLabel;
 
-            [VtblIndex(23)]
-            HRESULT Close(HRESULT hr);
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, ushort*, int> SetFileNameLabel;
 
-            [VtblIndex(24)]
-            HRESULT SetClientGuid([NativeTypeName("const GUID &")] Guid* guid);
+        [NativeTypeName("HRESULT (IShellItem **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, IShellItem**, int> GetResult;
 
-            [VtblIndex(25)]
-            HRESULT ClearClientData();
+        [NativeTypeName("HRESULT (IShellItem *, FDAP) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, IShellItem*, FDAP, int> AddPlace;
 
-            [VtblIndex(26)]
-            HRESULT SetFilter(IShellItemFilter* pFilter);
-        }
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, ushort*, int> SetDefaultExtension;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, HRESULT, int> Close;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, uint> AddRef;
+        [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, Guid*, int> SetClientGuid;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, uint> Release;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, int> ClearClientData;
 
-            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, HWND, int> Show;
-
-            [NativeTypeName("HRESULT (UINT, const COMDLG_FILTERSPEC *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, uint, COMDLG_FILTERSPEC*, int> SetFileTypes;
-
-            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, uint, int> SetFileTypeIndex;
-
-            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, uint*, int> GetFileTypeIndex;
-
-            [NativeTypeName("HRESULT (IFileDialogEvents *, DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, IFileDialogEvents*, uint*, int> Advise;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, uint, int> Unadvise;
-
-            [NativeTypeName("HRESULT (FILEOPENDIALOGOPTIONS) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, uint, int> SetOptions;
-
-            [NativeTypeName("HRESULT (FILEOPENDIALOGOPTIONS *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, uint*, int> GetOptions;
-
-            [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, IShellItem*, int> SetDefaultFolder;
-
-            [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, IShellItem*, int> SetFolder;
-
-            [NativeTypeName("HRESULT (IShellItem **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, IShellItem**, int> GetFolder;
-
-            [NativeTypeName("HRESULT (IShellItem **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, IShellItem**, int> GetCurrentSelection;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, ushort*, int> SetFileName;
-
-            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, ushort**, int> GetFileName;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, ushort*, int> SetTitle;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, ushort*, int> SetOkButtonLabel;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, ushort*, int> SetFileNameLabel;
-
-            [NativeTypeName("HRESULT (IShellItem **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, IShellItem**, int> GetResult;
-
-            [NativeTypeName("HRESULT (IShellItem *, FDAP) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, IShellItem*, FDAP, int> AddPlace;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, ushort*, int> SetDefaultExtension;
-
-            [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, HRESULT, int> Close;
-
-            [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, Guid*, int> SetClientGuid;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, int> ClearClientData;
-
-            [NativeTypeName("HRESULT (IShellItemFilter *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFileDialog*, IShellItemFilter*, int> SetFilter;
-        }
+        [NativeTypeName("HRESULT (IShellItemFilter *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFileDialog*, IShellItemFilter*, int> SetFilter;
     }
 }

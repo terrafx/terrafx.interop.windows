@@ -6,56 +6,55 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct MIXERCONTROLDETAILS
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct MIXERCONTROLDETAILS
+    [NativeTypeName("DWORD")]
+    public uint cbStruct;
+
+    [NativeTypeName("DWORD")]
+    public uint dwControlID;
+
+    [NativeTypeName("DWORD")]
+    public uint cChannels;
+
+    [NativeTypeName("tMIXERCONTROLDETAILS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mmeapi.h:2308:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    [NativeTypeName("DWORD")]
+    public uint cbDetails;
+
+    [NativeTypeName("LPVOID")]
+    public void* paDetails;
+
+    public ref HWND hwndOwner
     {
-        [NativeTypeName("DWORD")]
-        public uint cbStruct;
-
-        [NativeTypeName("DWORD")]
-        public uint dwControlID;
-
-        [NativeTypeName("DWORD")]
-        public uint cChannels;
-
-        [NativeTypeName("tMIXERCONTROLDETAILS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mmeapi.h:2308:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        [NativeTypeName("DWORD")]
-        public uint cbDetails;
-
-        [NativeTypeName("LPVOID")]
-        public void* paDetails;
-
-        public ref HWND hwndOwner
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.hwndOwner;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.hwndOwner;
         }
+    }
 
-        public ref uint cMultipleItems
+    public ref uint cMultipleItems
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cMultipleItems, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cMultipleItems, 1));
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit, Pack = 1)]
-        public partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            public HWND hwndOwner;
+    [StructLayout(LayoutKind.Explicit, Pack = 1)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        public HWND hwndOwner;
 
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint cMultipleItems;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint cMultipleItems;
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="QCMINFO_IDMAP_PLACEMENT" /> struct.</summary>
+public static unsafe partial class QCMINFO_IDMAP_PLACEMENTTests
 {
-    /// <summary>Provides validation of the <see cref="QCMINFO_IDMAP_PLACEMENT" /> struct.</summary>
-    public static unsafe partial class QCMINFO_IDMAP_PLACEMENTTests
+    /// <summary>Validates that the <see cref="QCMINFO_IDMAP_PLACEMENT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="QCMINFO_IDMAP_PLACEMENT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<QCMINFO_IDMAP_PLACEMENT>(), Is.EqualTo(sizeof(QCMINFO_IDMAP_PLACEMENT)));
-        }
+        Assert.That(Marshal.SizeOf<QCMINFO_IDMAP_PLACEMENT>(), Is.EqualTo(sizeof(QCMINFO_IDMAP_PLACEMENT)));
+    }
 
-        /// <summary>Validates that the <see cref="QCMINFO_IDMAP_PLACEMENT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(QCMINFO_IDMAP_PLACEMENT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="QCMINFO_IDMAP_PLACEMENT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(QCMINFO_IDMAP_PLACEMENT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="QCMINFO_IDMAP_PLACEMENT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(QCMINFO_IDMAP_PLACEMENT), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="QCMINFO_IDMAP_PLACEMENT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(QCMINFO_IDMAP_PLACEMENT), Is.EqualTo(8));
     }
 }

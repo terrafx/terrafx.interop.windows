@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMediaSample" /> struct.</summary>
+public static unsafe partial class IMediaSampleTests
 {
-    /// <summary>Provides validation of the <see cref="IMediaSample" /> struct.</summary>
-    public static unsafe partial class IMediaSampleTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMediaSample" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMediaSample" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMediaSample).GUID, Is.EqualTo(IID_IMediaSample));
-        }
+        Assert.That(typeof(IMediaSample).GUID, Is.EqualTo(IID_IMediaSample));
+    }
 
-        /// <summary>Validates that the <see cref="IMediaSample" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMediaSample>(), Is.EqualTo(sizeof(IMediaSample)));
-        }
+    /// <summary>Validates that the <see cref="IMediaSample" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMediaSample>(), Is.EqualTo(sizeof(IMediaSample)));
+    }
 
-        /// <summary>Validates that the <see cref="IMediaSample" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMediaSample).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMediaSample" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMediaSample).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMediaSample" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMediaSample" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMediaSample), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMediaSample), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMediaSample), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMediaSample), Is.EqualTo(4));
         }
     }
 }

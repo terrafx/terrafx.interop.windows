@@ -7,86 +7,85 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct STORAGE_HW_FIRMWARE_INFO
 {
-    public unsafe partial struct STORAGE_HW_FIRMWARE_INFO
+    [NativeTypeName("DWORD")]
+    public uint Version;
+
+    [NativeTypeName("DWORD")]
+    public uint Size;
+
+    public byte _bitfield;
+
+    [NativeTypeName("byte : 1")]
+    public byte SupportUpgrade
     {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)(_bitfield & 0x1u);
+        }
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield = (byte)((_bitfield & ~0x1u) | (value & 0x1u));
+        }
+    }
 
-        public byte _bitfield;
+    [NativeTypeName("byte : 7")]
+    public byte Reserved0
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)((_bitfield >> 1) & 0x7Fu);
+        }
 
-        [NativeTypeName("byte : 1")]
-        public byte SupportUpgrade
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield = (byte)((_bitfield & ~(0x7Fu << 1)) | ((value & 0x7Fu) << 1));
+        }
+    }
+
+    public byte SlotCount;
+
+    public byte ActiveSlot;
+
+    public byte PendingActivateSlot;
+
+    [NativeTypeName("BOOLEAN")]
+    public byte FirmwareShared;
+
+    [NativeTypeName("BYTE [3]")]
+    public fixed byte Reserved[3];
+
+    [NativeTypeName("DWORD")]
+    public uint ImagePayloadAlignment;
+
+    [NativeTypeName("DWORD")]
+    public uint ImagePayloadMaxSize;
+
+    [NativeTypeName("STORAGE_HW_FIRMWARE_SLOT_INFO [1]")]
+    public _Slot_e__FixedBuffer Slot;
+
+    public partial struct _Slot_e__FixedBuffer
+    {
+        public STORAGE_HW_FIRMWARE_SLOT_INFO e0;
+
+        public ref STORAGE_HW_FIRMWARE_SLOT_INFO this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return (byte)(_bitfield & 0x1u);
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (byte)((_bitfield & ~0x1u) | (value & 0x1u));
+                return ref AsSpan(int.MaxValue)[index];
             }
         }
 
-        [NativeTypeName("byte : 7")]
-        public byte Reserved0
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)((_bitfield >> 1) & 0x7Fu);
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (byte)((_bitfield & ~(0x7Fu << 1)) | ((value & 0x7Fu) << 1));
-            }
-        }
-
-        public byte SlotCount;
-
-        public byte ActiveSlot;
-
-        public byte PendingActivateSlot;
-
-        [NativeTypeName("BOOLEAN")]
-        public byte FirmwareShared;
-
-        [NativeTypeName("BYTE [3]")]
-        public fixed byte Reserved[3];
-
-        [NativeTypeName("DWORD")]
-        public uint ImagePayloadAlignment;
-
-        [NativeTypeName("DWORD")]
-        public uint ImagePayloadMaxSize;
-
-        [NativeTypeName("STORAGE_HW_FIRMWARE_SLOT_INFO [1]")]
-        public _Slot_e__FixedBuffer Slot;
-
-        public partial struct _Slot_e__FixedBuffer
-        {
-            public STORAGE_HW_FIRMWARE_SLOT_INFO e0;
-
-            public ref STORAGE_HW_FIRMWARE_SLOT_INFO this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<STORAGE_HW_FIRMWARE_SLOT_INFO> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
-        }
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<STORAGE_HW_FIRMWARE_SLOT_INFO> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

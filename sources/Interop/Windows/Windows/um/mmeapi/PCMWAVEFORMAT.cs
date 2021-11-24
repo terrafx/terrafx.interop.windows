@@ -5,14 +5,13 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct PCMWAVEFORMAT
-    {
-        public WAVEFORMAT wf;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("WORD")]
-        public ushort wBitsPerSample;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct PCMWAVEFORMAT
+{
+    public WAVEFORMAT wf;
+
+    [NativeTypeName("WORD")]
+    public ushort wBitsPerSample;
 }

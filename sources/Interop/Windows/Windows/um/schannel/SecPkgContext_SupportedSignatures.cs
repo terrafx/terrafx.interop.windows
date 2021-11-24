@@ -3,14 +3,13 @@
 // Ported from um/schannel.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct SecPkgContext_SupportedSignatures
-    {
-        [NativeTypeName("WORD")]
-        public ushort cSignatureAndHashAlgorithms;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("WORD *")]
-        public ushort* pSignatureAndHashAlgorithms;
-    }
+public unsafe partial struct SecPkgContext_SupportedSignatures
+{
+    [NativeTypeName("WORD")]
+    public ushort cSignatureAndHashAlgorithms;
+
+    [NativeTypeName("WORD *")]
+    public ushort* pSignatureAndHashAlgorithms;
 }

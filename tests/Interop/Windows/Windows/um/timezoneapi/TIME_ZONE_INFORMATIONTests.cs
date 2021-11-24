@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TIME_ZONE_INFORMATION" /> struct.</summary>
+public static unsafe partial class TIME_ZONE_INFORMATIONTests
 {
-    /// <summary>Provides validation of the <see cref="TIME_ZONE_INFORMATION" /> struct.</summary>
-    public static unsafe partial class TIME_ZONE_INFORMATIONTests
+    /// <summary>Validates that the <see cref="TIME_ZONE_INFORMATION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TIME_ZONE_INFORMATION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TIME_ZONE_INFORMATION>(), Is.EqualTo(sizeof(TIME_ZONE_INFORMATION)));
-        }
+        Assert.That(Marshal.SizeOf<TIME_ZONE_INFORMATION>(), Is.EqualTo(sizeof(TIME_ZONE_INFORMATION)));
+    }
 
-        /// <summary>Validates that the <see cref="TIME_ZONE_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TIME_ZONE_INFORMATION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TIME_ZONE_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TIME_ZONE_INFORMATION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TIME_ZONE_INFORMATION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(TIME_ZONE_INFORMATION), Is.EqualTo(172));
-        }
+    /// <summary>Validates that the <see cref="TIME_ZONE_INFORMATION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(TIME_ZONE_INFORMATION), Is.EqualTo(172));
     }
 }

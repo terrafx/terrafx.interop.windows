@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("F32C0DAB-F3CB-4217-B79F-8762768B5F67")]
+public partial struct CODECAPI_AVEncWMVDecoderComplexity
 {
-    [Guid("F32C0DAB-F3CB-4217-B79F-8762768B5F67")]
-    public partial struct CODECAPI_AVEncWMVDecoderComplexity
-    {
-    }
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("E40BD720-3955-4453-ACF9-B79132A38FA0")]
+public partial struct CODECAPI_AVEncMP12MuxPacketOverhead
 {
-    [Guid("E40BD720-3955-4453-ACF9-B79132A38FA0")]
-    public partial struct CODECAPI_AVEncMP12MuxPacketOverhead
-    {
-    }
 }

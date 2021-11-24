@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DispHTMLIFrame" /> struct.</summary>
+public static unsafe partial class DispHTMLIFrameTests
 {
-    /// <summary>Provides validation of the <see cref="DispHTMLIFrame" /> struct.</summary>
-    public static unsafe partial class DispHTMLIFrameTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispHTMLIFrame" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispHTMLIFrame" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DispHTMLIFrame).GUID, Is.EqualTo(IID_DispHTMLIFrame));
-        }
+        Assert.That(typeof(DispHTMLIFrame).GUID, Is.EqualTo(IID_DispHTMLIFrame));
+    }
 
-        /// <summary>Validates that the <see cref="DispHTMLIFrame" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DispHTMLIFrame>(), Is.EqualTo(sizeof(DispHTMLIFrame)));
-        }
+    /// <summary>Validates that the <see cref="DispHTMLIFrame" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DispHTMLIFrame>(), Is.EqualTo(sizeof(DispHTMLIFrame)));
+    }
 
-        /// <summary>Validates that the <see cref="DispHTMLIFrame" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DispHTMLIFrame).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DispHTMLIFrame" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DispHTMLIFrame).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DispHTMLIFrame" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DispHTMLIFrame" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DispHTMLIFrame), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(DispHTMLIFrame), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(DispHTMLIFrame), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(DispHTMLIFrame), Is.EqualTo(4));
         }
     }
 }

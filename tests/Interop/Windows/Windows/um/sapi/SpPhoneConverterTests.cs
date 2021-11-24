@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SpPhoneConverter" /> struct.</summary>
+public static unsafe partial class SpPhoneConverterTests
 {
-    /// <summary>Provides validation of the <see cref="SpPhoneConverter" /> struct.</summary>
-    public static unsafe partial class SpPhoneConverterTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SpPhoneConverter" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SpPhoneConverter" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SpPhoneConverter).GUID, Is.EqualTo(CLSID_SpPhoneConverter));
-        }
+        Assert.That(typeof(SpPhoneConverter).GUID, Is.EqualTo(CLSID_SpPhoneConverter));
+    }
 
-        /// <summary>Validates that the <see cref="SpPhoneConverter" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SpPhoneConverter>(), Is.EqualTo(sizeof(SpPhoneConverter)));
-        }
+    /// <summary>Validates that the <see cref="SpPhoneConverter" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SpPhoneConverter>(), Is.EqualTo(sizeof(SpPhoneConverter)));
+    }
 
-        /// <summary>Validates that the <see cref="SpPhoneConverter" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SpPhoneConverter).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SpPhoneConverter" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SpPhoneConverter).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SpPhoneConverter" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SpPhoneConverter), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SpPhoneConverter" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SpPhoneConverter), Is.EqualTo(1));
     }
 }

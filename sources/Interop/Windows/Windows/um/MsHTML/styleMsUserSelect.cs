@@ -3,15 +3,14 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum styleMsUserSelect
 {
-    public enum styleMsUserSelect
-    {
-        styleMsUserSelectAuto = 0,
-        styleMsUserSelectText = 1,
-        styleMsUserSelectElement = 2,
-        styleMsUserSelectNone = 3,
-        styleMsUserSelectNotSet = 4,
-        styleMsUserSelect_Max = 2147483647,
-    }
+    styleMsUserSelectAuto = 0,
+    styleMsUserSelectText = 1,
+    styleMsUserSelectElement = 2,
+    styleMsUserSelectNone = 3,
+    styleMsUserSelectNotSet = 4,
+    styleMsUserSelect_Max = 2147483647,
 }

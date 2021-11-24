@@ -3,17 +3,16 @@
 // Ported from shared/nldef.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct NL_PATH_BANDWIDTH_ROD
 {
-    public partial struct NL_PATH_BANDWIDTH_ROD
-    {
-        [NativeTypeName("ULONG64")]
-        public ulong Bandwidth;
+    [NativeTypeName("ULONG64")]
+    public ulong Bandwidth;
 
-        [NativeTypeName("ULONG64")]
-        public ulong Instability;
+    [NativeTypeName("ULONG64")]
+    public ulong Instability;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte BandwidthPeaked;
-    }
+    [NativeTypeName("BOOLEAN")]
+    public byte BandwidthPeaked;
 }

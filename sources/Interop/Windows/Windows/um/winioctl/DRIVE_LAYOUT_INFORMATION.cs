@@ -7,34 +7,33 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct DRIVE_LAYOUT_INFORMATION
 {
-    public partial struct DRIVE_LAYOUT_INFORMATION
+    [NativeTypeName("DWORD")]
+    public uint PartitionCount;
+
+    [NativeTypeName("DWORD")]
+    public uint Signature;
+
+    [NativeTypeName("PARTITION_INFORMATION [1]")]
+    public _PartitionEntry_e__FixedBuffer PartitionEntry;
+
+    public partial struct _PartitionEntry_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint PartitionCount;
+        public PARTITION_INFORMATION e0;
 
-        [NativeTypeName("DWORD")]
-        public uint Signature;
-
-        [NativeTypeName("PARTITION_INFORMATION [1]")]
-        public _PartitionEntry_e__FixedBuffer PartitionEntry;
-
-        public partial struct _PartitionEntry_e__FixedBuffer
+        public ref PARTITION_INFORMATION this[int index]
         {
-            public PARTITION_INFORMATION e0;
-
-            public ref PARTITION_INFORMATION this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<PARTITION_INFORMATION> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<PARTITION_INFORMATION> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

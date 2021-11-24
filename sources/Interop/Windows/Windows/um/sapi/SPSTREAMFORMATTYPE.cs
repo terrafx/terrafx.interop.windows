@@ -3,11 +3,10 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SPSTREAMFORMATTYPE
 {
-    public enum SPSTREAMFORMATTYPE
-    {
-        SPWF_INPUT = 0,
-        SPWF_SRENGINE = (SPWF_INPUT + 1),
-    }
+    SPWF_INPUT = 0,
+    SPWF_SRENGINE = (SPWF_INPUT + 1),
 }

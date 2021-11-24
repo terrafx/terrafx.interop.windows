@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct IsolatedAppLauncherTelemetryParameters
-    {
-        public BOOL EnableForLaunch;
+namespace TerraFX.Interop.Windows;
 
-        public Guid CorrelationGUID;
-    }
+public partial struct IsolatedAppLauncherTelemetryParameters
+{
+    public BOOL EnableForLaunch;
+
+    public Guid CorrelationGUID;
 }

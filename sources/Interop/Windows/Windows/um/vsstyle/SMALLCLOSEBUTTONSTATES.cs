@@ -3,13 +3,12 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SMALLCLOSEBUTTONSTATES
 {
-    public enum SMALLCLOSEBUTTONSTATES
-    {
-        SCBS_NORMAL = 1,
-        SCBS_HOT = 2,
-        SCBS_PUSHED = 3,
-        SCBS_DISABLED = 4,
-    }
+    SCBS_NORMAL = 1,
+    SCBS_HOT = 2,
+    SCBS_PUSHED = 3,
+    SCBS_DISABLED = 4,
 }

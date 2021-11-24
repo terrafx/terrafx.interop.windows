@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NMUPDOWN" /> struct.</summary>
+public static unsafe partial class NMUPDOWNTests
 {
-    /// <summary>Provides validation of the <see cref="NMUPDOWN" /> struct.</summary>
-    public static unsafe partial class NMUPDOWNTests
+    /// <summary>Validates that the <see cref="NMUPDOWN" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NMUPDOWN" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NMUPDOWN>(), Is.EqualTo(sizeof(NMUPDOWN)));
-        }
+        Assert.That(Marshal.SizeOf<NMUPDOWN>(), Is.EqualTo(sizeof(NMUPDOWN)));
+    }
 
-        /// <summary>Validates that the <see cref="NMUPDOWN" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NMUPDOWN).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NMUPDOWN" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NMUPDOWN).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NMUPDOWN" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="NMUPDOWN" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(NMUPDOWN), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(NMUPDOWN), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(NMUPDOWN), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(NMUPDOWN), Is.EqualTo(20));
         }
     }
 }

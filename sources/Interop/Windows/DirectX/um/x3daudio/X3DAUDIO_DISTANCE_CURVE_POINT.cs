@@ -5,15 +5,14 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct X3DAUDIO_DISTANCE_CURVE_POINT
-    {
-        [NativeTypeName("FLOAT32")]
-        public float Distance;
+namespace TerraFX.Interop.DirectX;
 
-        [NativeTypeName("FLOAT32")]
-        public float DSPSetting;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct X3DAUDIO_DISTANCE_CURVE_POINT
+{
+    [NativeTypeName("FLOAT32")]
+    public float Distance;
+
+    [NativeTypeName("FLOAT32")]
+    public float DSPSetting;
 }

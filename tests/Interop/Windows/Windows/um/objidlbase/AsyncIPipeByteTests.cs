@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="AsyncIPipeByte" /> struct.</summary>
+public static unsafe partial class AsyncIPipeByteTests
 {
-    /// <summary>Provides validation of the <see cref="AsyncIPipeByte" /> struct.</summary>
-    public static unsafe partial class AsyncIPipeByteTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="AsyncIPipeByte" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="AsyncIPipeByte" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(AsyncIPipeByte).GUID, Is.EqualTo(IID_AsyncIPipeByte));
-        }
+        Assert.That(typeof(AsyncIPipeByte).GUID, Is.EqualTo(IID_AsyncIPipeByte));
+    }
 
-        /// <summary>Validates that the <see cref="AsyncIPipeByte" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<AsyncIPipeByte>(), Is.EqualTo(sizeof(AsyncIPipeByte)));
-        }
+    /// <summary>Validates that the <see cref="AsyncIPipeByte" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<AsyncIPipeByte>(), Is.EqualTo(sizeof(AsyncIPipeByte)));
+    }
 
-        /// <summary>Validates that the <see cref="AsyncIPipeByte" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(AsyncIPipeByte).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="AsyncIPipeByte" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(AsyncIPipeByte).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="AsyncIPipeByte" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="AsyncIPipeByte" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(AsyncIPipeByte), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(AsyncIPipeByte), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(AsyncIPipeByte), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(AsyncIPipeByte), Is.EqualTo(4));
         }
     }
 }

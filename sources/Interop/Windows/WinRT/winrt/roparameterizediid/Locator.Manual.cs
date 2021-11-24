@@ -6,32 +6,32 @@
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+public unsafe struct _Locator
 {
-    public unsafe struct _Locator
+    private static readonly void** Vtbl = InitVtbl();
+
+    private static void** InitVtbl()
     {
-        private void** lpVtbl;
-        private delegate*<ushort*, IRoSimpleMetaDataBuilder*, int> _fn;
+        var vtbl = (void**)RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(_Locator), sizeof(void*) * 1);
+        vtbl[0] = (delegate* unmanaged<_Locator*, ushort*, IRoSimpleMetaDataBuilder*, int>)&Locate;
+        return vtbl;
+    }
 
-        public _Locator(delegate*<ushort*, IRoSimpleMetaDataBuilder*, int> fn)
-        {
-            lpVtbl = computedVtbl;
-            _fn = fn;
-        }
+    public void** lpVtbl;
 
-        private static void** computedVtbl = ComputeVtable();
+    public delegate*<ushort*, IRoSimpleMetaDataBuilder*, int> _fn;
 
-        private static void** ComputeVtable()
-        {
-            var vtbl = (void**) RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(_Locator), sizeof(void*) * 1);
-            vtbl[0] = (delegate* unmanaged<_Locator*, ushort*, IRoSimpleMetaDataBuilder*, int>) &Locate;
-            return vtbl;
-        }
+    public _Locator(delegate*<ushort*, IRoSimpleMetaDataBuilder*, int> fn)
+    {
+        lpVtbl = Vtbl;
+        _fn = fn;
+    }
 
-        [UnmanagedCallersOnly]
-        private static int Locate(_Locator* @this, ushort* name, IRoSimpleMetaDataBuilder* pushMetaData)
-        {
-            return @this->_fn(name, pushMetaData);
-        }
+    [UnmanagedCallersOnly]
+    private static int Locate(_Locator* @this, ushort* name, IRoSimpleMetaDataBuilder* pushMetaData)
+    {
+        return @this->_fn(name, pushMetaData);
     }
 }

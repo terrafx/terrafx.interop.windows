@@ -3,11 +3,10 @@
 // Ported from shared/windef.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct APP_LOCAL_DEVICE_ID
 {
-    public unsafe partial struct APP_LOCAL_DEVICE_ID
-    {
-        [NativeTypeName("BYTE [32]")]
-        public fixed byte value[32];
-    }
+    [NativeTypeName("BYTE [32]")]
+    public fixed byte value[32];
 }

@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDXGIOutput5" /> struct.</summary>
+[SupportedOSPlatform("windows10.0")]
+public static unsafe partial class IDXGIOutput5Tests
 {
-    /// <summary>Provides validation of the <see cref="IDXGIOutput5" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0")]
-    public static unsafe partial class IDXGIOutput5Tests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDXGIOutput5" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDXGIOutput5" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDXGIOutput5).GUID, Is.EqualTo(IID_IDXGIOutput5));
-        }
+        Assert.That(typeof(IDXGIOutput5).GUID, Is.EqualTo(IID_IDXGIOutput5));
+    }
 
-        /// <summary>Validates that the <see cref="IDXGIOutput5" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDXGIOutput5>(), Is.EqualTo(sizeof(IDXGIOutput5)));
-        }
+    /// <summary>Validates that the <see cref="IDXGIOutput5" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDXGIOutput5>(), Is.EqualTo(sizeof(IDXGIOutput5)));
+    }
 
-        /// <summary>Validates that the <see cref="IDXGIOutput5" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDXGIOutput5).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDXGIOutput5" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDXGIOutput5).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDXGIOutput5" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDXGIOutput5" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDXGIOutput5), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDXGIOutput5), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDXGIOutput5), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDXGIOutput5), Is.EqualTo(4));
         }
     }
 }

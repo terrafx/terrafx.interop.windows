@@ -6,17 +6,16 @@
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct D3D11_KEY_EXCHANGE_HW_PROTECTION_DATA
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct D3D11_KEY_EXCHANGE_HW_PROTECTION_DATA
-    {
-        public uint HWProtectionFunctionID;
+    public uint HWProtectionFunctionID;
 
-        public D3D11_KEY_EXCHANGE_HW_PROTECTION_INPUT_DATA* pInputData;
+    public D3D11_KEY_EXCHANGE_HW_PROTECTION_INPUT_DATA* pInputData;
 
-        public D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA* pOutputData;
+    public D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA* pOutputData;
 
-        public HRESULT Status;
-    }
+    public HRESULT Status;
 }

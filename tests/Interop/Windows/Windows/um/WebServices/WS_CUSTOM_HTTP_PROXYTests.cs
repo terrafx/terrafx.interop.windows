@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WS_CUSTOM_HTTP_PROXY" /> struct.</summary>
+public static unsafe partial class WS_CUSTOM_HTTP_PROXYTests
 {
-    /// <summary>Provides validation of the <see cref="WS_CUSTOM_HTTP_PROXY" /> struct.</summary>
-    public static unsafe partial class WS_CUSTOM_HTTP_PROXYTests
+    /// <summary>Validates that the <see cref="WS_CUSTOM_HTTP_PROXY" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WS_CUSTOM_HTTP_PROXY" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WS_CUSTOM_HTTP_PROXY>(), Is.EqualTo(sizeof(WS_CUSTOM_HTTP_PROXY)));
-        }
+        Assert.That(Marshal.SizeOf<WS_CUSTOM_HTTP_PROXY>(), Is.EqualTo(sizeof(WS_CUSTOM_HTTP_PROXY)));
+    }
 
-        /// <summary>Validates that the <see cref="WS_CUSTOM_HTTP_PROXY" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WS_CUSTOM_HTTP_PROXY).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WS_CUSTOM_HTTP_PROXY" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WS_CUSTOM_HTTP_PROXY).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WS_CUSTOM_HTTP_PROXY" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="WS_CUSTOM_HTTP_PROXY" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(WS_CUSTOM_HTTP_PROXY), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(WS_CUSTOM_HTTP_PROXY), Is.EqualTo(16));
-            }
+            Assert.That(sizeof(WS_CUSTOM_HTTP_PROXY), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(WS_CUSTOM_HTTP_PROXY), Is.EqualTo(16));
         }
     }
 }

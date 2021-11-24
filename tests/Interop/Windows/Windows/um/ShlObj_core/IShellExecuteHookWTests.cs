@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IShellExecuteHookW" /> struct.</summary>
+public static unsafe partial class IShellExecuteHookWTests
 {
-    /// <summary>Provides validation of the <see cref="IShellExecuteHookW" /> struct.</summary>
-    public static unsafe partial class IShellExecuteHookWTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IShellExecuteHookW" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IShellExecuteHookW" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IShellExecuteHookW).GUID, Is.EqualTo(IID_IShellExecuteHookW));
-        }
+        Assert.That(typeof(IShellExecuteHookW).GUID, Is.EqualTo(IID_IShellExecuteHookW));
+    }
 
-        /// <summary>Validates that the <see cref="IShellExecuteHookW" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IShellExecuteHookW>(), Is.EqualTo(sizeof(IShellExecuteHookW)));
-        }
+    /// <summary>Validates that the <see cref="IShellExecuteHookW" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IShellExecuteHookW>(), Is.EqualTo(sizeof(IShellExecuteHookW)));
+    }
 
-        /// <summary>Validates that the <see cref="IShellExecuteHookW" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IShellExecuteHookW).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IShellExecuteHookW" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IShellExecuteHookW).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IShellExecuteHookW" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IShellExecuteHookW" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IShellExecuteHookW), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IShellExecuteHookW), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IShellExecuteHookW), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IShellExecuteHookW), Is.EqualTo(4));
         }
     }
 }

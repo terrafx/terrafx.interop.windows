@@ -5,74 +5,73 @@
 
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct PROCESSOR_POWER_POLICY_INFO
 {
-    public unsafe partial struct PROCESSOR_POWER_POLICY_INFO
+    [NativeTypeName("DWORD")]
+    public uint TimeCheck;
+
+    [NativeTypeName("DWORD")]
+    public uint DemoteLimit;
+
+    [NativeTypeName("DWORD")]
+    public uint PromoteLimit;
+
+    public byte DemotePercent;
+
+    public byte PromotePercent;
+
+    [NativeTypeName("BYTE [2]")]
+    public fixed byte Spare[2];
+
+    public uint _bitfield;
+
+    [NativeTypeName("DWORD : 1")]
+    public uint AllowDemotion
     {
-        [NativeTypeName("DWORD")]
-        public uint TimeCheck;
-
-        [NativeTypeName("DWORD")]
-        public uint DemoteLimit;
-
-        [NativeTypeName("DWORD")]
-        public uint PromoteLimit;
-
-        public byte DemotePercent;
-
-        public byte PromotePercent;
-
-        [NativeTypeName("BYTE [2]")]
-        public fixed byte Spare[2];
-
-        public uint _bitfield;
-
-        [NativeTypeName("DWORD : 1")]
-        public uint AllowDemotion
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return _bitfield & 0x1u;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
-            }
+            return _bitfield & 0x1u;
         }
 
-        [NativeTypeName("DWORD : 1")]
-        public uint AllowPromotion
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield >> 1) & 0x1u;
-            }
+            _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1);
-            }
+    [NativeTypeName("DWORD : 1")]
+    public uint AllowPromotion
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield >> 1) & 0x1u;
         }
 
-        [NativeTypeName("DWORD : 30")]
-        public uint Reserved
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield >> 2) & 0x3FFFFFFFu;
-            }
+            _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1);
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0x3FFFFFFFu << 2)) | ((value & 0x3FFFFFFFu) << 2);
-            }
+    [NativeTypeName("DWORD : 30")]
+    public uint Reserved
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield >> 2) & 0x3FFFFFFFu;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield = (_bitfield & ~(0x3FFFFFFFu << 2)) | ((value & 0x3FFFFFFFu) << 2);
         }
     }
 }

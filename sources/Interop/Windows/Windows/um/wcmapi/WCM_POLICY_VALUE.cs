@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct WCM_POLICY_VALUE
-    {
-        public BOOL fValue;
+namespace TerraFX.Interop.Windows;
 
-        public BOOL fIsGroupPolicy;
-    }
+[SupportedOSPlatform("windows8.0")]
+public partial struct WCM_POLICY_VALUE
+{
+    public BOOL fValue;
+
+    public BOOL fIsGroupPolicy;
 }

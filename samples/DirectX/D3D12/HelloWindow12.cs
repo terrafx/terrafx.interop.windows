@@ -6,21 +6,20 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Samples.DirectX.D3D12
+namespace TerraFX.Samples.DirectX.D3D12;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe class HelloWindow12 : DX12Sample
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe class HelloWindow12 : DX12Sample
+    public HelloWindow12(string name) : base(name)
     {
-        public HelloWindow12(string name) : base(name)
-        {
-        }
+    }
 
-        protected override void Draw()
-        {
-        }
+    protected override void Draw()
+    {
+    }
 
-        public override void OnUpdate(TimeSpan delta)
-        {
-        }
+    public override void OnUpdate(TimeSpan delta)
+    {
     }
 }

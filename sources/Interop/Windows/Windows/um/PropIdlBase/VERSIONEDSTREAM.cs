@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct VERSIONEDSTREAM
-    {
-        public Guid guidVersion;
+namespace TerraFX.Interop.Windows;
 
-        public IStream* pStream;
-    }
+public unsafe partial struct VERSIONEDSTREAM
+{
+    public Guid guidVersion;
+
+    public IStream* pStream;
 }

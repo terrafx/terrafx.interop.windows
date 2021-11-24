@@ -3,13 +3,12 @@
 // Ported from um/d2d1effects_2.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum D2D1_POSTERIZE_PROP : uint
 {
-    public enum D2D1_POSTERIZE_PROP : uint
-    {
-        D2D1_POSTERIZE_PROP_RED_VALUE_COUNT = 0,
-        D2D1_POSTERIZE_PROP_GREEN_VALUE_COUNT = 1,
-        D2D1_POSTERIZE_PROP_BLUE_VALUE_COUNT = 2,
-        D2D1_POSTERIZE_PROP_FORCE_DWORD = 0xffffffff,
-    }
+    D2D1_POSTERIZE_PROP_RED_VALUE_COUNT = 0,
+    D2D1_POSTERIZE_PROP_GREEN_VALUE_COUNT = 1,
+    D2D1_POSTERIZE_PROP_BLUE_VALUE_COUNT = 2,
+    D2D1_POSTERIZE_PROP_FORCE_DWORD = 0xffffffff,
 }

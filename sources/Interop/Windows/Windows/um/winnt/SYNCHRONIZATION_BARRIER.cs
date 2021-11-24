@@ -7,41 +7,40 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SYNCHRONIZATION_BARRIER
 {
-    public partial struct SYNCHRONIZATION_BARRIER
+    [NativeTypeName("DWORD")]
+    public uint Reserved1;
+
+    [NativeTypeName("DWORD")]
+    public uint Reserved2;
+
+    [NativeTypeName("ULONG_PTR [2]")]
+    public _Reserved3_e__FixedBuffer Reserved3;
+
+    [NativeTypeName("DWORD")]
+    public uint Reserved4;
+
+    [NativeTypeName("DWORD")]
+    public uint Reserved5;
+
+    public partial struct _Reserved3_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint Reserved1;
+        public nuint e0;
+        public nuint e1;
 
-        [NativeTypeName("DWORD")]
-        public uint Reserved2;
-
-        [NativeTypeName("ULONG_PTR [2]")]
-        public _Reserved3_e__FixedBuffer Reserved3;
-
-        [NativeTypeName("DWORD")]
-        public uint Reserved4;
-
-        [NativeTypeName("DWORD")]
-        public uint Reserved5;
-
-        public partial struct _Reserved3_e__FixedBuffer
+        public ref nuint this[int index]
         {
-            public nuint e0;
-            public nuint e1;
-
-            public ref nuint this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan()[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<nuint> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
+            get
+            {
+                return ref AsSpan()[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<nuint> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IO_COUNTERS" /> struct.</summary>
+public static unsafe partial class IO_COUNTERSTests
 {
-    /// <summary>Provides validation of the <see cref="IO_COUNTERS" /> struct.</summary>
-    public static unsafe partial class IO_COUNTERSTests
+    /// <summary>Validates that the <see cref="IO_COUNTERS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IO_COUNTERS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IO_COUNTERS>(), Is.EqualTo(sizeof(IO_COUNTERS)));
-        }
+        Assert.That(Marshal.SizeOf<IO_COUNTERS>(), Is.EqualTo(sizeof(IO_COUNTERS)));
+    }
 
-        /// <summary>Validates that the <see cref="IO_COUNTERS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IO_COUNTERS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IO_COUNTERS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IO_COUNTERS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IO_COUNTERS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(IO_COUNTERS), Is.EqualTo(48));
-        }
+    /// <summary>Validates that the <see cref="IO_COUNTERS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(IO_COUNTERS), Is.EqualTo(48));
     }
 }

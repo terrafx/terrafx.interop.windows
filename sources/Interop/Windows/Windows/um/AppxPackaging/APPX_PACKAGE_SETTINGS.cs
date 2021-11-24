@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct APPX_PACKAGE_SETTINGS
-    {
-        public BOOL forceZip32;
+namespace TerraFX.Interop.Windows;
 
-        public IUri* hashMethod;
-    }
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct APPX_PACKAGE_SETTINGS
+{
+    public BOOL forceZip32;
+
+    public IUri* hashMethod;
 }

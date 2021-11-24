@@ -3,13 +3,12 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum styleFillRule
 {
-    public enum styleFillRule
-    {
-        styleFillRuleNotSet = 0,
-        styleFillRuleNonZero = 1,
-        styleFillRuleEvenOdd = 2,
-        styleFillRule_Max = 2147483647,
-    }
+    styleFillRuleNotSet = 0,
+    styleFillRuleNonZero = 1,
+    styleFillRuleEvenOdd = 2,
+    styleFillRule_Max = 2147483647,
 }

@@ -7,31 +7,30 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MIB_TCPTABLE
 {
-    public partial struct MIB_TCPTABLE
+    [NativeTypeName("DWORD")]
+    public uint dwNumEntries;
+
+    [NativeTypeName("MIB_TCPROW [1]")]
+    public _table_e__FixedBuffer table;
+
+    public partial struct _table_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint dwNumEntries;
+        public MIB_TCPROW_LH e0;
 
-        [NativeTypeName("MIB_TCPROW [1]")]
-        public _table_e__FixedBuffer table;
-
-        public partial struct _table_e__FixedBuffer
+        public ref MIB_TCPROW_LH this[int index]
         {
-            public MIB_TCPROW_LH e0;
-
-            public ref MIB_TCPROW_LH this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<MIB_TCPROW_LH> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<MIB_TCPROW_LH> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

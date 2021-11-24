@@ -3,14 +3,13 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SPSEMANTICFORMAT
 {
-    public enum SPSEMANTICFORMAT
-    {
-        SPSMF_SAPI_PROPERTIES = 0,
-        SPSMF_SRGS_SEMANTICINTERPRETATION_MS = 1,
-        SPSMF_SRGS_SAPIPROPERTIES = 2,
-        SPSMF_UPS = 4,
-        SPSMF_SRGS_SEMANTICINTERPRETATION_W3C = 8,
-    }
+    SPSMF_SAPI_PROPERTIES = 0,
+    SPSMF_SRGS_SEMANTICINTERPRETATION_MS = 1,
+    SPSMF_SRGS_SAPIPROPERTIES = 2,
+    SPSMF_UPS = 4,
+    SPSMF_SRGS_SEMANTICINTERPRETATION_W3C = 8,
 }

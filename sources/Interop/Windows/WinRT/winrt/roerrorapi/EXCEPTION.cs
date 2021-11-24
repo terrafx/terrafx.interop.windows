@@ -5,14 +5,13 @@
 
 using TerraFX.Interop.WinRT;
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class EXCEPTION
-    {
-        [NativeTypeName("#define EXCEPTION_RO_ORIGINATEERROR ((DWORD)((0x1 << 30) | (FACILITY_WINDOWS << 16) | 0x201))")]
-        public const uint EXCEPTION_RO_ORIGINATEERROR = ((uint)((0x1 << 30) | (8 << 16) | 0x201));
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("#define EXCEPTION_RO_TRANSFORMERROR ((DWORD)((0x1 << 30) | (FACILITY_WINDOWS << 16) | 0x202))")]
-        public const uint EXCEPTION_RO_TRANSFORMERROR = ((uint)((0x1 << 30) | (8 << 16) | 0x202));
-    }
+public static partial class EXCEPTION
+{
+    [NativeTypeName("#define EXCEPTION_RO_ORIGINATEERROR ((DWORD)((0x1 << 30) | (FACILITY_WINDOWS << 16) | 0x201))")]
+    public const uint EXCEPTION_RO_ORIGINATEERROR = ((uint)((0x1 << 30) | (8 << 16) | 0x201));
+
+    [NativeTypeName("#define EXCEPTION_RO_TRANSFORMERROR ((DWORD)((0x1 << 30) | (FACILITY_WINDOWS << 16) | 0x202))")]
+    public const uint EXCEPTION_RO_TRANSFORMERROR = ((uint)((0x1 << 30) | (8 << 16) | 0x202));
 }

@@ -5,11 +5,10 @@
 
 using static TerraFX.Interop.Windows.SECURITY_IMPERSONATION_LEVEL;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class DEFAULT
 {
-    public static partial class DEFAULT
-    {
-        [NativeTypeName("#define DEFAULT_IMPERSONATION_LEVEL SecurityImpersonation")]
-        public const SECURITY_IMPERSONATION_LEVEL DEFAULT_IMPERSONATION_LEVEL = SecurityImpersonation;
-    }
+    [NativeTypeName("#define DEFAULT_IMPERSONATION_LEVEL SecurityImpersonation")]
+    public const SECURITY_IMPERSONATION_LEVEL DEFAULT_IMPERSONATION_LEVEL = SecurityImpersonation;
 }

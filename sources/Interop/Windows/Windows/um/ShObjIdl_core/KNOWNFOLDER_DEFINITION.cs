@@ -5,46 +5,45 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct KNOWNFOLDER_DEFINITION
 {
-    public unsafe partial struct KNOWNFOLDER_DEFINITION
-    {
-        public KF_CATEGORY category;
+    public KF_CATEGORY category;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszName;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszName;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszDescription;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszDescription;
 
-        [NativeTypeName("KNOWNFOLDERID")]
-        public Guid fidParent;
+    [NativeTypeName("KNOWNFOLDERID")]
+    public Guid fidParent;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszRelativePath;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszRelativePath;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszParsingName;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszParsingName;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszTooltip;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszTooltip;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszLocalizedName;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszLocalizedName;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszIcon;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszIcon;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszSecurity;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszSecurity;
 
-        [NativeTypeName("DWORD")]
-        public uint dwAttributes;
+    [NativeTypeName("DWORD")]
+    public uint dwAttributes;
 
-        [NativeTypeName("KF_DEFINITION_FLAGS")]
-        public uint kfdFlags;
+    [NativeTypeName("KF_DEFINITION_FLAGS")]
+    public uint kfdFlags;
 
-        [NativeTypeName("FOLDERTYPEID")]
-        public Guid ftidType;
-    }
+    [NativeTypeName("FOLDERTYPEID")]
+    public Guid ftidType;
 }

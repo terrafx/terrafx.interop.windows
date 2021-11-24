@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct SecPkgContext_KeyingMaterial
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbKeyingMaterial;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("PBYTE")]
-        public byte* pbKeyingMaterial;
-    }
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct SecPkgContext_KeyingMaterial
+{
+    [NativeTypeName("DWORD")]
+    public uint cbKeyingMaterial;
+
+    [NativeTypeName("PBYTE")]
+    public byte* pbKeyingMaterial;
 }

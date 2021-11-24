@@ -5,128 +5,127 @@
 
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
 {
-    public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
+    public float expansionMinimum;
+
+    public float expansionMaximum;
+
+    public float compressionMaximum;
+
+    public uint _bitfield;
+
+    [NativeTypeName("UINT32 : 8")]
+    public uint expansionPriority
     {
-        public float expansionMinimum;
-
-        public float expansionMaximum;
-
-        public float compressionMaximum;
-
-        public uint _bitfield;
-
-        [NativeTypeName("UINT32 : 8")]
-        public uint expansionPriority
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return _bitfield & 0xFFu;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~0xFFu) | (value & 0xFFu);
-            }
+            return _bitfield & 0xFFu;
         }
 
-        [NativeTypeName("UINT32 : 8")]
-        public uint compressionPriority
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield >> 8) & 0xFFu;
-            }
+            _bitfield = (_bitfield & ~0xFFu) | (value & 0xFFu);
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0xFFu << 8)) | ((value & 0xFFu) << 8);
-            }
+    [NativeTypeName("UINT32 : 8")]
+    public uint compressionPriority
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield >> 8) & 0xFFu;
         }
 
-        [NativeTypeName("UINT32 : 1")]
-        public uint allowResidualExpansion
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield >> 16) & 0x1u;
-            }
+            _bitfield = (_bitfield & ~(0xFFu << 8)) | ((value & 0xFFu) << 8);
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0x1u << 16)) | ((value & 0x1u) << 16);
-            }
+    [NativeTypeName("UINT32 : 1")]
+    public uint allowResidualExpansion
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield >> 16) & 0x1u;
         }
 
-        [NativeTypeName("UINT32 : 1")]
-        public uint allowResidualCompression
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield >> 17) & 0x1u;
-            }
+            _bitfield = (_bitfield & ~(0x1u << 16)) | ((value & 0x1u) << 16);
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0x1u << 17)) | ((value & 0x1u) << 17);
-            }
+    [NativeTypeName("UINT32 : 1")]
+    public uint allowResidualCompression
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield >> 17) & 0x1u;
         }
 
-        [NativeTypeName("UINT32 : 1")]
-        public uint applyToLeadingEdge
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield >> 18) & 0x1u;
-            }
+            _bitfield = (_bitfield & ~(0x1u << 17)) | ((value & 0x1u) << 17);
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0x1u << 18)) | ((value & 0x1u) << 18);
-            }
+    [NativeTypeName("UINT32 : 1")]
+    public uint applyToLeadingEdge
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield >> 18) & 0x1u;
         }
 
-        [NativeTypeName("UINT32 : 1")]
-        public uint applyToTrailingEdge
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield >> 19) & 0x1u;
-            }
+            _bitfield = (_bitfield & ~(0x1u << 18)) | ((value & 0x1u) << 18);
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0x1u << 19)) | ((value & 0x1u) << 19);
-            }
+    [NativeTypeName("UINT32 : 1")]
+    public uint applyToTrailingEdge
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield >> 19) & 0x1u;
         }
 
-        [NativeTypeName("UINT32 : 12")]
-        public uint reserved
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield >> 20) & 0xFFFu;
-            }
+            _bitfield = (_bitfield & ~(0x1u << 19)) | ((value & 0x1u) << 19);
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0xFFFu << 20)) | ((value & 0xFFFu) << 20);
-            }
+    [NativeTypeName("UINT32 : 12")]
+    public uint reserved
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield >> 20) & 0xFFFu;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield = (_bitfield & ~(0xFFFu << 20)) | ((value & 0xFFFu) << 20);
         }
     }
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CRYPT_BIT_BLOB" /> struct.</summary>
+public static unsafe partial class CRYPT_BIT_BLOBTests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_BIT_BLOB" /> struct.</summary>
-    public static unsafe partial class CRYPT_BIT_BLOBTests
+    /// <summary>Validates that the <see cref="CRYPT_BIT_BLOB" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CRYPT_BIT_BLOB" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CRYPT_BIT_BLOB>(), Is.EqualTo(sizeof(CRYPT_BIT_BLOB)));
-        }
+        Assert.That(Marshal.SizeOf<CRYPT_BIT_BLOB>(), Is.EqualTo(sizeof(CRYPT_BIT_BLOB)));
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_BIT_BLOB" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CRYPT_BIT_BLOB).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CRYPT_BIT_BLOB" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CRYPT_BIT_BLOB).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_BIT_BLOB" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CRYPT_BIT_BLOB" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CRYPT_BIT_BLOB), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(CRYPT_BIT_BLOB), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(CRYPT_BIT_BLOB), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(CRYPT_BIT_BLOB), Is.EqualTo(12));
         }
     }
 }

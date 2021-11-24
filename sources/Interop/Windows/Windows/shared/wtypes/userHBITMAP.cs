@@ -5,29 +5,28 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct userHBITMAP
 {
-    public partial struct userHBITMAP
+    [NativeTypeName("LONG")]
+    public int fContext;
+
+    [NativeTypeName("union __MIDL_IWinTypes_0007")]
+    public _u_e__Union u;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _u_e__Union
     {
+        [FieldOffset(0)]
         [NativeTypeName("LONG")]
-        public int fContext;
+        public int hInproc;
 
-        [NativeTypeName("union __MIDL_IWinTypes_0007")]
-        public _u_e__Union u;
+        [FieldOffset(0)]
+        public userBITMAP* hRemote;
 
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _u_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("LONG")]
-            public int hInproc;
-
-            [FieldOffset(0)]
-            public userBITMAP* hRemote;
-
-            [FieldOffset(0)]
-            [NativeTypeName("long long")]
-            public long hInproc64;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("long long")]
+        public long hInproc64;
     }
 }

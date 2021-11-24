@@ -3,16 +3,15 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum htmlClear
 {
-    public enum htmlClear
-    {
-        htmlClearNotSet = 0,
-        htmlClearAll = 1,
-        htmlClearLeft = 2,
-        htmlClearRight = 3,
-        htmlClearBoth = 4,
-        htmlClearNone = 5,
-        htmlClear_Max = 2147483647,
-    }
+    htmlClearNotSet = 0,
+    htmlClearAll = 1,
+    htmlClearLeft = 2,
+    htmlClearRight = 3,
+    htmlClearBoth = 4,
+    htmlClearNone = 5,
+    htmlClear_Max = 2147483647,
 }

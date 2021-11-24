@@ -3,14 +3,13 @@
 // Ported from um/winhttp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct WINHTTP_FAILED_CONNECTION_RETRIES
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwMaxRetries;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint dwAllowedRetryConditions;
-    }
+public partial struct WINHTTP_FAILED_CONNECTION_RETRIES
+{
+    [NativeTypeName("DWORD")]
+    public uint dwMaxRetries;
+
+    [NativeTypeName("DWORD")]
+    public uint dwAllowedRetryConditions;
 }

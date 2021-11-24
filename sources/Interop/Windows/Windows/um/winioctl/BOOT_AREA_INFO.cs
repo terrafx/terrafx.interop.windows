@@ -7,37 +7,36 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct BOOT_AREA_INFO
 {
-    public partial struct BOOT_AREA_INFO
+    [NativeTypeName("DWORD")]
+    public uint BootSectorCount;
+
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:13756:5) [2]")]
+    public _BootSectors_e__FixedBuffer BootSectors;
+
+    public partial struct _Anonymous_e__Struct
     {
-        [NativeTypeName("DWORD")]
-        public uint BootSectorCount;
+        public LARGE_INTEGER Offset;
+    }
 
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:13756:5) [2]")]
-        public _BootSectors_e__FixedBuffer BootSectors;
+    public partial struct _BootSectors_e__FixedBuffer
+    {
+        public _Anonymous_e__Struct e0;
+        public _Anonymous_e__Struct e1;
 
-        public partial struct _Anonymous_e__Struct
+        public ref _Anonymous_e__Struct this[int index]
         {
-            public LARGE_INTEGER Offset;
-        }
-
-        public partial struct _BootSectors_e__FixedBuffer
-        {
-            public _Anonymous_e__Struct e0;
-            public _Anonymous_e__Struct e1;
-
-            public ref _Anonymous_e__Struct this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan()[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<_Anonymous_e__Struct> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
+            get
+            {
+                return ref AsSpan()[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<_Anonymous_e__Struct> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
     }
 }

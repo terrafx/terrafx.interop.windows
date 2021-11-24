@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public enum REGISTRATION_INFORMATION_CLASS
 {
-    [SupportedOSPlatform("windows8.1")]
-    public enum REGISTRATION_INFORMATION_CLASS
-    {
-        DeviceRegistrationBasicInfo = 1,
-        MaxDeviceInfoClass,
-    }
+    DeviceRegistrationBasicInfo = 1,
+    MaxDeviceInfoClass,
 }

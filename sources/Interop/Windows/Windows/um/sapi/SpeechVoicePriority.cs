@@ -5,12 +5,11 @@
 
 using static TerraFX.Interop.Windows.SPVPRIORITY;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechVoicePriority
 {
-    public enum SpeechVoicePriority
-    {
-        SVPNormal = SPVPRI_NORMAL,
-        SVPAlert = SPVPRI_ALERT,
-        SVPOver = SPVPRI_OVER,
-    }
+    SVPNormal = SPVPRI_NORMAL,
+    SVPAlert = SPVPRI_ALERT,
+    SVPOver = SPVPRI_OVER,
 }

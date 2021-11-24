@@ -5,10 +5,9 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_FEATURE_DATA_VIDEO_ARCHITECTURE
 {
-    public partial struct D3D12_FEATURE_DATA_VIDEO_ARCHITECTURE
-    {
-        public BOOL IOCoherent;
-    }
+    public BOOL IOCoherent;
 }

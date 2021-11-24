@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IAppxManifestPackageId" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class IAppxManifestPackageIdTests
 {
-    /// <summary>Provides validation of the <see cref="IAppxManifestPackageId" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class IAppxManifestPackageIdTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppxManifestPackageId" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppxManifestPackageId" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAppxManifestPackageId).GUID, Is.EqualTo(IID_IAppxManifestPackageId));
-        }
+        Assert.That(typeof(IAppxManifestPackageId).GUID, Is.EqualTo(IID_IAppxManifestPackageId));
+    }
 
-        /// <summary>Validates that the <see cref="IAppxManifestPackageId" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IAppxManifestPackageId>(), Is.EqualTo(sizeof(IAppxManifestPackageId)));
-        }
+    /// <summary>Validates that the <see cref="IAppxManifestPackageId" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IAppxManifestPackageId>(), Is.EqualTo(sizeof(IAppxManifestPackageId)));
+    }
 
-        /// <summary>Validates that the <see cref="IAppxManifestPackageId" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IAppxManifestPackageId).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IAppxManifestPackageId" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IAppxManifestPackageId).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IAppxManifestPackageId" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IAppxManifestPackageId" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IAppxManifestPackageId), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IAppxManifestPackageId), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IAppxManifestPackageId), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IAppxManifestPackageId), Is.EqualTo(4));
         }
     }
 }

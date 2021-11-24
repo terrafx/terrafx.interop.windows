@@ -7,267 +7,266 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("EA1AFB91-9E28-4B86-90E9-9E9F8A5EEFAF")]
+[NativeTypeName("struct ITaskbarList3 : ITaskbarList2")]
+[NativeInheritance("ITaskbarList2")]
+public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface
 {
-    [Guid("EA1AFB91-9E28-4B86-90E9-9E9F8A5EEFAF")]
-    [NativeTypeName("struct ITaskbarList3 : ITaskbarList2")]
-    [NativeInheritance("ITaskbarList2")]
-    public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ITaskbarList3*, Guid*, void**, int>)(lpVtbl[0]))((ITaskbarList3*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ITaskbarList3*, Guid*, void**, int>)(lpVtbl[0]))((ITaskbarList3*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ITaskbarList3*, uint>)(lpVtbl[1]))((ITaskbarList3*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ITaskbarList3*, uint>)(lpVtbl[1]))((ITaskbarList3*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ITaskbarList3*, uint>)(lpVtbl[2]))((ITaskbarList3*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ITaskbarList3*, uint>)(lpVtbl[2]))((ITaskbarList3*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT HrInit()
+    {
+        return ((delegate* unmanaged<ITaskbarList3*, int>)(lpVtbl[3]))((ITaskbarList3*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT HrInit()
-        {
-            return ((delegate* unmanaged<ITaskbarList3*, int>)(lpVtbl[3]))((ITaskbarList3*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT AddTab(HWND hwnd)
+    {
+        return ((delegate* unmanaged<ITaskbarList3*, HWND, int>)(lpVtbl[4]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT AddTab(HWND hwnd)
-        {
-            return ((delegate* unmanaged<ITaskbarList3*, HWND, int>)(lpVtbl[4]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT DeleteTab(HWND hwnd)
+    {
+        return ((delegate* unmanaged<ITaskbarList3*, HWND, int>)(lpVtbl[5]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT DeleteTab(HWND hwnd)
-        {
-            return ((delegate* unmanaged<ITaskbarList3*, HWND, int>)(lpVtbl[5]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT ActivateTab(HWND hwnd)
+    {
+        return ((delegate* unmanaged<ITaskbarList3*, HWND, int>)(lpVtbl[6]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(6)]
-        public HRESULT ActivateTab(HWND hwnd)
-        {
-            return ((delegate* unmanaged<ITaskbarList3*, HWND, int>)(lpVtbl[6]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT SetActiveAlt(HWND hwnd)
+    {
+        return ((delegate* unmanaged<ITaskbarList3*, HWND, int>)(lpVtbl[7]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(7)]
-        public HRESULT SetActiveAlt(HWND hwnd)
-        {
-            return ((delegate* unmanaged<ITaskbarList3*, HWND, int>)(lpVtbl[7]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT MarkFullscreenWindow(HWND hwnd, BOOL fFullscreen)
+    {
+        return ((delegate* unmanaged<ITaskbarList3*, HWND, BOOL, int>)(lpVtbl[8]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, fFullscreen);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(8)]
-        public HRESULT MarkFullscreenWindow(HWND hwnd, BOOL fFullscreen)
-        {
-            return ((delegate* unmanaged<ITaskbarList3*, HWND, BOOL, int>)(lpVtbl[8]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, fFullscreen);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT SetProgressValue(HWND hwnd, [NativeTypeName("ULONGLONG")] ulong ullCompleted, [NativeTypeName("ULONGLONG")] ulong ullTotal)
+    {
+        return ((delegate* unmanaged<ITaskbarList3*, HWND, ulong, ulong, int>)(lpVtbl[9]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, ullCompleted, ullTotal);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT SetProgressState(HWND hwnd, TBPFLAG tbpFlags)
+    {
+        return ((delegate* unmanaged<ITaskbarList3*, HWND, TBPFLAG, int>)(lpVtbl[10]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, tbpFlags);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT RegisterTab(HWND hwndTab, HWND hwndMDI)
+    {
+        return ((delegate* unmanaged<ITaskbarList3*, HWND, HWND, int>)(lpVtbl[11]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwndTab, hwndMDI);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT UnregisterTab(HWND hwndTab)
+    {
+        return ((delegate* unmanaged<ITaskbarList3*, HWND, int>)(lpVtbl[12]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwndTab);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT SetTabOrder(HWND hwndTab, HWND hwndInsertBefore)
+    {
+        return ((delegate* unmanaged<ITaskbarList3*, HWND, HWND, int>)(lpVtbl[13]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwndTab, hwndInsertBefore);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT SetTabActive(HWND hwndTab, HWND hwndMDI, [NativeTypeName("DWORD")] uint dwReserved)
+    {
+        return ((delegate* unmanaged<ITaskbarList3*, HWND, HWND, uint, int>)(lpVtbl[14]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwndTab, hwndMDI, dwReserved);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT ThumbBarAddButtons(HWND hwnd, uint cButtons, [NativeTypeName("LPTHUMBBUTTON")] THUMBBUTTON* pButton)
+    {
+        return ((delegate* unmanaged<ITaskbarList3*, HWND, uint, THUMBBUTTON*, int>)(lpVtbl[15]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, cButtons, pButton);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT ThumbBarUpdateButtons(HWND hwnd, uint cButtons, [NativeTypeName("LPTHUMBBUTTON")] THUMBBUTTON* pButton)
+    {
+        return ((delegate* unmanaged<ITaskbarList3*, HWND, uint, THUMBBUTTON*, int>)(lpVtbl[16]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, cButtons, pButton);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT ThumbBarSetImageList(HWND hwnd, HIMAGELIST himl)
+    {
+        return ((delegate* unmanaged<ITaskbarList3*, HWND, HIMAGELIST, int>)(lpVtbl[17]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, himl);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT SetOverlayIcon(HWND hwnd, HICON hIcon, [NativeTypeName("LPCWSTR")] ushort* pszDescription)
+    {
+        return ((delegate* unmanaged<ITaskbarList3*, HWND, HICON, ushort*, int>)(lpVtbl[18]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, hIcon, pszDescription);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
+    public HRESULT SetThumbnailTooltip(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszTip)
+    {
+        return ((delegate* unmanaged<ITaskbarList3*, HWND, ushort*, int>)(lpVtbl[19]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, pszTip);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(20)]
+    public HRESULT SetThumbnailClip(HWND hwnd, RECT* prcClip)
+    {
+        return ((delegate* unmanaged<ITaskbarList3*, HWND, RECT*, int>)(lpVtbl[20]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, prcClip);
+    }
+
+    public interface Interface : ITaskbarList2.Interface
+    {
         [VtblIndex(9)]
-        public HRESULT SetProgressValue(HWND hwnd, [NativeTypeName("ULONGLONG")] ulong ullCompleted, [NativeTypeName("ULONGLONG")] ulong ullTotal)
-        {
-            return ((delegate* unmanaged<ITaskbarList3*, HWND, ulong, ulong, int>)(lpVtbl[9]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, ullCompleted, ullTotal);
-        }
+        HRESULT SetProgressValue(HWND hwnd, [NativeTypeName("ULONGLONG")] ulong ullCompleted, [NativeTypeName("ULONGLONG")] ulong ullTotal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT SetProgressState(HWND hwnd, TBPFLAG tbpFlags)
-        {
-            return ((delegate* unmanaged<ITaskbarList3*, HWND, TBPFLAG, int>)(lpVtbl[10]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, tbpFlags);
-        }
+        HRESULT SetProgressState(HWND hwnd, TBPFLAG tbpFlags);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT RegisterTab(HWND hwndTab, HWND hwndMDI)
-        {
-            return ((delegate* unmanaged<ITaskbarList3*, HWND, HWND, int>)(lpVtbl[11]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwndTab, hwndMDI);
-        }
+        HRESULT RegisterTab(HWND hwndTab, HWND hwndMDI);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT UnregisterTab(HWND hwndTab)
-        {
-            return ((delegate* unmanaged<ITaskbarList3*, HWND, int>)(lpVtbl[12]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwndTab);
-        }
+        HRESULT UnregisterTab(HWND hwndTab);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT SetTabOrder(HWND hwndTab, HWND hwndInsertBefore)
-        {
-            return ((delegate* unmanaged<ITaskbarList3*, HWND, HWND, int>)(lpVtbl[13]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwndTab, hwndInsertBefore);
-        }
+        HRESULT SetTabOrder(HWND hwndTab, HWND hwndInsertBefore);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT SetTabActive(HWND hwndTab, HWND hwndMDI, [NativeTypeName("DWORD")] uint dwReserved)
-        {
-            return ((delegate* unmanaged<ITaskbarList3*, HWND, HWND, uint, int>)(lpVtbl[14]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwndTab, hwndMDI, dwReserved);
-        }
+        HRESULT SetTabActive(HWND hwndTab, HWND hwndMDI, [NativeTypeName("DWORD")] uint dwReserved);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT ThumbBarAddButtons(HWND hwnd, uint cButtons, [NativeTypeName("LPTHUMBBUTTON")] THUMBBUTTON* pButton)
-        {
-            return ((delegate* unmanaged<ITaskbarList3*, HWND, uint, THUMBBUTTON*, int>)(lpVtbl[15]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, cButtons, pButton);
-        }
+        HRESULT ThumbBarAddButtons(HWND hwnd, uint cButtons, [NativeTypeName("LPTHUMBBUTTON")] THUMBBUTTON* pButton);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT ThumbBarUpdateButtons(HWND hwnd, uint cButtons, [NativeTypeName("LPTHUMBBUTTON")] THUMBBUTTON* pButton)
-        {
-            return ((delegate* unmanaged<ITaskbarList3*, HWND, uint, THUMBBUTTON*, int>)(lpVtbl[16]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, cButtons, pButton);
-        }
+        HRESULT ThumbBarUpdateButtons(HWND hwnd, uint cButtons, [NativeTypeName("LPTHUMBBUTTON")] THUMBBUTTON* pButton);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT ThumbBarSetImageList(HWND hwnd, HIMAGELIST himl)
-        {
-            return ((delegate* unmanaged<ITaskbarList3*, HWND, HIMAGELIST, int>)(lpVtbl[17]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, himl);
-        }
+        HRESULT ThumbBarSetImageList(HWND hwnd, HIMAGELIST himl);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT SetOverlayIcon(HWND hwnd, HICON hIcon, [NativeTypeName("LPCWSTR")] ushort* pszDescription)
-        {
-            return ((delegate* unmanaged<ITaskbarList3*, HWND, HICON, ushort*, int>)(lpVtbl[18]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, hIcon, pszDescription);
-        }
+        HRESULT SetOverlayIcon(HWND hwnd, HICON hIcon, [NativeTypeName("LPCWSTR")] ushort* pszDescription);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT SetThumbnailTooltip(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszTip)
-        {
-            return ((delegate* unmanaged<ITaskbarList3*, HWND, ushort*, int>)(lpVtbl[19]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, pszTip);
-        }
+        HRESULT SetThumbnailTooltip(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszTip);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT SetThumbnailClip(HWND hwnd, RECT* prcClip)
-        {
-            return ((delegate* unmanaged<ITaskbarList3*, HWND, RECT*, int>)(lpVtbl[20]))((ITaskbarList3*)Unsafe.AsPointer(ref this), hwnd, prcClip);
-        }
+        HRESULT SetThumbnailClip(HWND hwnd, RECT* prcClip);
+    }
 
-        public interface Interface : ITaskbarList2.Interface
-        {
-            [VtblIndex(9)]
-            HRESULT SetProgressValue(HWND hwnd, [NativeTypeName("ULONGLONG")] ulong ullCompleted, [NativeTypeName("ULONGLONG")] ulong ullTotal);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITaskbarList3*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(10)]
-            HRESULT SetProgressState(HWND hwnd, TBPFLAG tbpFlags);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITaskbarList3*, uint> AddRef;
 
-            [VtblIndex(11)]
-            HRESULT RegisterTab(HWND hwndTab, HWND hwndMDI);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITaskbarList3*, uint> Release;
 
-            [VtblIndex(12)]
-            HRESULT UnregisterTab(HWND hwndTab);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITaskbarList3*, int> HrInit;
 
-            [VtblIndex(13)]
-            HRESULT SetTabOrder(HWND hwndTab, HWND hwndInsertBefore);
+        [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITaskbarList3*, HWND, int> AddTab;
 
-            [VtblIndex(14)]
-            HRESULT SetTabActive(HWND hwndTab, HWND hwndMDI, [NativeTypeName("DWORD")] uint dwReserved);
+        [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITaskbarList3*, HWND, int> DeleteTab;
 
-            [VtblIndex(15)]
-            HRESULT ThumbBarAddButtons(HWND hwnd, uint cButtons, [NativeTypeName("LPTHUMBBUTTON")] THUMBBUTTON* pButton);
+        [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITaskbarList3*, HWND, int> ActivateTab;
 
-            [VtblIndex(16)]
-            HRESULT ThumbBarUpdateButtons(HWND hwnd, uint cButtons, [NativeTypeName("LPTHUMBBUTTON")] THUMBBUTTON* pButton);
+        [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITaskbarList3*, HWND, int> SetActiveAlt;
 
-            [VtblIndex(17)]
-            HRESULT ThumbBarSetImageList(HWND hwnd, HIMAGELIST himl);
+        [NativeTypeName("HRESULT (HWND, BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITaskbarList3*, HWND, BOOL, int> MarkFullscreenWindow;
 
-            [VtblIndex(18)]
-            HRESULT SetOverlayIcon(HWND hwnd, HICON hIcon, [NativeTypeName("LPCWSTR")] ushort* pszDescription);
+        [NativeTypeName("HRESULT (HWND, ULONGLONG, ULONGLONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITaskbarList3*, HWND, ulong, ulong, int> SetProgressValue;
 
-            [VtblIndex(19)]
-            HRESULT SetThumbnailTooltip(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszTip);
+        [NativeTypeName("HRESULT (HWND, TBPFLAG) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITaskbarList3*, HWND, TBPFLAG, int> SetProgressState;
 
-            [VtblIndex(20)]
-            HRESULT SetThumbnailClip(HWND hwnd, RECT* prcClip);
-        }
+        [NativeTypeName("HRESULT (HWND, HWND) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITaskbarList3*, HWND, HWND, int> RegisterTab;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITaskbarList3*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITaskbarList3*, HWND, int> UnregisterTab;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITaskbarList3*, uint> AddRef;
+        [NativeTypeName("HRESULT (HWND, HWND) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITaskbarList3*, HWND, HWND, int> SetTabOrder;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITaskbarList3*, uint> Release;
+        [NativeTypeName("HRESULT (HWND, HWND, DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITaskbarList3*, HWND, HWND, uint, int> SetTabActive;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITaskbarList3*, int> HrInit;
+        [NativeTypeName("HRESULT (HWND, UINT, LPTHUMBBUTTON) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITaskbarList3*, HWND, uint, THUMBBUTTON*, int> ThumbBarAddButtons;
 
-            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITaskbarList3*, HWND, int> AddTab;
+        [NativeTypeName("HRESULT (HWND, UINT, LPTHUMBBUTTON) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITaskbarList3*, HWND, uint, THUMBBUTTON*, int> ThumbBarUpdateButtons;
 
-            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITaskbarList3*, HWND, int> DeleteTab;
+        [NativeTypeName("HRESULT (HWND, HIMAGELIST) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITaskbarList3*, HWND, HIMAGELIST, int> ThumbBarSetImageList;
 
-            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITaskbarList3*, HWND, int> ActivateTab;
+        [NativeTypeName("HRESULT (HWND, HICON, LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITaskbarList3*, HWND, HICON, ushort*, int> SetOverlayIcon;
 
-            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITaskbarList3*, HWND, int> SetActiveAlt;
+        [NativeTypeName("HRESULT (HWND, LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITaskbarList3*, HWND, ushort*, int> SetThumbnailTooltip;
 
-            [NativeTypeName("HRESULT (HWND, BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITaskbarList3*, HWND, BOOL, int> MarkFullscreenWindow;
-
-            [NativeTypeName("HRESULT (HWND, ULONGLONG, ULONGLONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITaskbarList3*, HWND, ulong, ulong, int> SetProgressValue;
-
-            [NativeTypeName("HRESULT (HWND, TBPFLAG) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITaskbarList3*, HWND, TBPFLAG, int> SetProgressState;
-
-            [NativeTypeName("HRESULT (HWND, HWND) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITaskbarList3*, HWND, HWND, int> RegisterTab;
-
-            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITaskbarList3*, HWND, int> UnregisterTab;
-
-            [NativeTypeName("HRESULT (HWND, HWND) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITaskbarList3*, HWND, HWND, int> SetTabOrder;
-
-            [NativeTypeName("HRESULT (HWND, HWND, DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITaskbarList3*, HWND, HWND, uint, int> SetTabActive;
-
-            [NativeTypeName("HRESULT (HWND, UINT, LPTHUMBBUTTON) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITaskbarList3*, HWND, uint, THUMBBUTTON*, int> ThumbBarAddButtons;
-
-            [NativeTypeName("HRESULT (HWND, UINT, LPTHUMBBUTTON) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITaskbarList3*, HWND, uint, THUMBBUTTON*, int> ThumbBarUpdateButtons;
-
-            [NativeTypeName("HRESULT (HWND, HIMAGELIST) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITaskbarList3*, HWND, HIMAGELIST, int> ThumbBarSetImageList;
-
-            [NativeTypeName("HRESULT (HWND, HICON, LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITaskbarList3*, HWND, HICON, ushort*, int> SetOverlayIcon;
-
-            [NativeTypeName("HRESULT (HWND, LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITaskbarList3*, HWND, ushort*, int> SetThumbnailTooltip;
-
-            [NativeTypeName("HRESULT (HWND, RECT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITaskbarList3*, HWND, RECT*, int> SetThumbnailClip;
-        }
+        [NativeTypeName("HRESULT (HWND, RECT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITaskbarList3*, HWND, RECT*, int> SetThumbnailClip;
     }
 }

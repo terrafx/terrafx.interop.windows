@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("2B79EBB7-F484-4AF7-BB58-A2A188C5CBBE")]
+public partial struct CODECAPI_AVEncMPVQScaleType
 {
-    [Guid("2B79EBB7-F484-4AF7-BB58-A2A188C5CBBE")]
-    public partial struct CODECAPI_AVEncMPVQScaleType
-    {
-    }
 }

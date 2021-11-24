@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("C6B6F8ED-6D19-44B4-B539-B159B793A32D")]
+public partial struct FsiNamedStreams
 {
-    [Guid("C6B6F8ED-6D19-44B4-B539-B159B793A32D")]
-    public partial struct FsiNamedStreams
-    {
-    }
 }

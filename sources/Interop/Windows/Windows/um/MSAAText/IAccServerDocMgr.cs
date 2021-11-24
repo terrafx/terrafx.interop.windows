@@ -7,90 +7,89 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("AD7C73CF-6DD5-4855-ABC2-B04BAD5B9153")]
+[NativeTypeName("struct IAccServerDocMgr : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IAccServerDocMgr : IAccServerDocMgr.Interface
 {
-    [Guid("AD7C73CF-6DD5-4855-ABC2-B04BAD5B9153")]
-    [NativeTypeName("struct IAccServerDocMgr : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAccServerDocMgr : IAccServerDocMgr.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IAccServerDocMgr*, Guid*, void**, int>)(lpVtbl[0]))((IAccServerDocMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IAccServerDocMgr*, Guid*, void**, int>)(lpVtbl[0]))((IAccServerDocMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IAccServerDocMgr*, uint>)(lpVtbl[1]))((IAccServerDocMgr*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IAccServerDocMgr*, uint>)(lpVtbl[1]))((IAccServerDocMgr*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IAccServerDocMgr*, uint>)(lpVtbl[2]))((IAccServerDocMgr*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IAccServerDocMgr*, uint>)(lpVtbl[2]))((IAccServerDocMgr*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT NewDocument([NativeTypeName("const IID &")] Guid* riid, IUnknown* punk)
+    {
+        return ((delegate* unmanaged<IAccServerDocMgr*, Guid*, IUnknown*, int>)(lpVtbl[3]))((IAccServerDocMgr*)Unsafe.AsPointer(ref this), riid, punk);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT RevokeDocument(IUnknown* punk)
+    {
+        return ((delegate* unmanaged<IAccServerDocMgr*, IUnknown*, int>)(lpVtbl[4]))((IAccServerDocMgr*)Unsafe.AsPointer(ref this), punk);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT OnDocumentFocus(IUnknown* punk)
+    {
+        return ((delegate* unmanaged<IAccServerDocMgr*, IUnknown*, int>)(lpVtbl[5]))((IAccServerDocMgr*)Unsafe.AsPointer(ref this), punk);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT NewDocument([NativeTypeName("const IID &")] Guid* riid, IUnknown* punk)
-        {
-            return ((delegate* unmanaged<IAccServerDocMgr*, Guid*, IUnknown*, int>)(lpVtbl[3]))((IAccServerDocMgr*)Unsafe.AsPointer(ref this), riid, punk);
-        }
+        HRESULT NewDocument([NativeTypeName("const IID &")] Guid* riid, IUnknown* punk);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT RevokeDocument(IUnknown* punk)
-        {
-            return ((delegate* unmanaged<IAccServerDocMgr*, IUnknown*, int>)(lpVtbl[4]))((IAccServerDocMgr*)Unsafe.AsPointer(ref this), punk);
-        }
+        HRESULT RevokeDocument(IUnknown* punk);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT OnDocumentFocus(IUnknown* punk)
-        {
-            return ((delegate* unmanaged<IAccServerDocMgr*, IUnknown*, int>)(lpVtbl[5]))((IAccServerDocMgr*)Unsafe.AsPointer(ref this), punk);
-        }
+        HRESULT OnDocumentFocus(IUnknown* punk);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT NewDocument([NativeTypeName("const IID &")] Guid* riid, IUnknown* punk);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAccServerDocMgr*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT RevokeDocument(IUnknown* punk);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAccServerDocMgr*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT OnDocumentFocus(IUnknown* punk);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAccServerDocMgr*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAccServerDocMgr*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (const IID &, IUnknown *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAccServerDocMgr*, Guid*, IUnknown*, int> NewDocument;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAccServerDocMgr*, uint> AddRef;
+        [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAccServerDocMgr*, IUnknown*, int> RevokeDocument;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAccServerDocMgr*, uint> Release;
-
-            [NativeTypeName("HRESULT (const IID &, IUnknown *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAccServerDocMgr*, Guid*, IUnknown*, int> NewDocument;
-
-            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAccServerDocMgr*, IUnknown*, int> RevokeDocument;
-
-            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAccServerDocMgr*, IUnknown*, int> OnDocumentFocus;
-        }
+        [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAccServerDocMgr*, IUnknown*, int> OnDocumentFocus;
     }
 }

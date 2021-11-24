@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="EC_VARIANT" /> struct.</summary>
+public static unsafe partial class EC_VARIANTTests
 {
-    /// <summary>Provides validation of the <see cref="EC_VARIANT" /> struct.</summary>
-    public static unsafe partial class EC_VARIANTTests
+    /// <summary>Validates that the <see cref="EC_VARIANT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="EC_VARIANT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<EC_VARIANT>(), Is.EqualTo(sizeof(EC_VARIANT)));
-        }
+        Assert.That(Marshal.SizeOf<EC_VARIANT>(), Is.EqualTo(sizeof(EC_VARIANT)));
+    }
 
-        /// <summary>Validates that the <see cref="EC_VARIANT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(EC_VARIANT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="EC_VARIANT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(EC_VARIANT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="EC_VARIANT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(EC_VARIANT), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="EC_VARIANT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(EC_VARIANT), Is.EqualTo(16));
     }
 }

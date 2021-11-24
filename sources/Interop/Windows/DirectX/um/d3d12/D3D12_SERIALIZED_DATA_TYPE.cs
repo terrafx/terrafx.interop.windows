@@ -3,10 +3,9 @@
 // Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum D3D12_SERIALIZED_DATA_TYPE
 {
-    public enum D3D12_SERIALIZED_DATA_TYPE
-    {
-        D3D12_SERIALIZED_DATA_RAYTRACING_ACCELERATION_STRUCTURE = 0,
-    }
+    D3D12_SERIALIZED_DATA_RAYTRACING_ACCELERATION_STRUCTURE = 0,
 }

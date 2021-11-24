@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("289978AC-A101-4341-A817-21EBA7FD046D")]
+public partial struct ConflictFolder
 {
-    [Guid("289978AC-A101-4341-A817-21EBA7FD046D")]
-    public partial struct ConflictFolder
-    {
-    }
 }

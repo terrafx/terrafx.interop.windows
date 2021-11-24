@@ -3,29 +3,28 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CMSG_SIGNED_ENCODE_INFO
 {
-    public unsafe partial struct CMSG_SIGNED_ENCODE_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("DWORD")]
-        public uint cSigners;
+    [NativeTypeName("DWORD")]
+    public uint cSigners;
 
-        [NativeTypeName("PCMSG_SIGNER_ENCODE_INFO")]
-        public CMSG_SIGNER_ENCODE_INFO* rgSigners;
+    [NativeTypeName("PCMSG_SIGNER_ENCODE_INFO")]
+    public CMSG_SIGNER_ENCODE_INFO* rgSigners;
 
-        [NativeTypeName("DWORD")]
-        public uint cCertEncoded;
+    [NativeTypeName("DWORD")]
+    public uint cCertEncoded;
 
-        [NativeTypeName("PCERT_BLOB")]
-        public CRYPT_DATA_BLOB* rgCertEncoded;
+    [NativeTypeName("PCERT_BLOB")]
+    public CRYPT_DATA_BLOB* rgCertEncoded;
 
-        [NativeTypeName("DWORD")]
-        public uint cCrlEncoded;
+    [NativeTypeName("DWORD")]
+    public uint cCrlEncoded;
 
-        [NativeTypeName("PCRL_BLOB")]
-        public CRYPT_DATA_BLOB* rgCrlEncoded;
-    }
+    [NativeTypeName("PCRL_BLOB")]
+    public CRYPT_DATA_BLOB* rgCrlEncoded;
 }

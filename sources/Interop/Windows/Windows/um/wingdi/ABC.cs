@@ -3,14 +3,13 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct ABC
 {
-    public partial struct ABC
-    {
-        public int abcA;
+    public int abcA;
 
-        public uint abcB;
+    public uint abcB;
 
-        public int abcC;
-    }
+    public int abcC;
 }

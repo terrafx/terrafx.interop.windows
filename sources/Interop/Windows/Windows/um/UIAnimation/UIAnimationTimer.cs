@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("BFCD4A0C-06B6-4384-B768-0DAA792C380E")]
+public partial struct UIAnimationTimer
 {
-    [Guid("BFCD4A0C-06B6-4384-B768-0DAA792C380E")]
-    public partial struct UIAnimationTimer
-    {
-    }
 }

@@ -5,18 +5,17 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Explicit)]
+public unsafe partial struct BINDPTR
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct BINDPTR
-    {
-        [FieldOffset(0)]
-        public FUNCDESC* lpfuncdesc;
+    [FieldOffset(0)]
+    public FUNCDESC* lpfuncdesc;
 
-        [FieldOffset(0)]
-        public VARDESC* lpvardesc;
+    [FieldOffset(0)]
+    public VARDESC* lpvardesc;
 
-        [FieldOffset(0)]
-        public ITypeComp* lptcomp;
-    }
+    [FieldOffset(0)]
+    public ITypeComp* lptcomp;
 }

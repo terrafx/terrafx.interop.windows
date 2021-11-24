@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("0010890E-8789-413C-ADBC-48F5B511B3AF")]
+public partial struct UserNotification
 {
-    [Guid("0010890E-8789-413C-ADBC-48F5B511B3AF")]
-    public partial struct UserNotification
-    {
-    }
 }

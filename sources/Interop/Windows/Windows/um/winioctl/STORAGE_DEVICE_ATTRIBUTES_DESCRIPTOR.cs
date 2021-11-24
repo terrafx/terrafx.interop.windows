@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public partial struct STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR
 {
-    [SupportedOSPlatform("windows10.0")]
-    public partial struct STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("DWORD64")]
-        public ulong Attributes;
-    }
+    [NativeTypeName("DWORD64")]
+    public ulong Attributes;
 }

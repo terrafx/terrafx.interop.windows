@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CSPLATFORM" /> struct.</summary>
+public static unsafe partial class CSPLATFORMTests
 {
-    /// <summary>Provides validation of the <see cref="CSPLATFORM" /> struct.</summary>
-    public static unsafe partial class CSPLATFORMTests
+    /// <summary>Validates that the <see cref="CSPLATFORM" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CSPLATFORM" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CSPLATFORM>(), Is.EqualTo(sizeof(CSPLATFORM)));
-        }
+        Assert.That(Marshal.SizeOf<CSPLATFORM>(), Is.EqualTo(sizeof(CSPLATFORM)));
+    }
 
-        /// <summary>Validates that the <see cref="CSPLATFORM" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CSPLATFORM).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CSPLATFORM" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CSPLATFORM).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CSPLATFORM" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CSPLATFORM), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="CSPLATFORM" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CSPLATFORM), Is.EqualTo(16));
     }
 }

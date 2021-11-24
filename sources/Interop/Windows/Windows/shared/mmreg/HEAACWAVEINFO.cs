@@ -5,26 +5,25 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct HEAACWAVEINFO
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct HEAACWAVEINFO
-    {
-        public WAVEFORMATEX wfx;
+    public WAVEFORMATEX wfx;
 
-        [NativeTypeName("WORD")]
-        public ushort wPayloadType;
+    [NativeTypeName("WORD")]
+    public ushort wPayloadType;
 
-        [NativeTypeName("WORD")]
-        public ushort wAudioProfileLevelIndication;
+    [NativeTypeName("WORD")]
+    public ushort wAudioProfileLevelIndication;
 
-        [NativeTypeName("WORD")]
-        public ushort wStructType;
+    [NativeTypeName("WORD")]
+    public ushort wStructType;
 
-        [NativeTypeName("WORD")]
-        public ushort wReserved1;
+    [NativeTypeName("WORD")]
+    public ushort wReserved1;
 
-        [NativeTypeName("DWORD")]
-        public uint dwReserved2;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwReserved2;
 }

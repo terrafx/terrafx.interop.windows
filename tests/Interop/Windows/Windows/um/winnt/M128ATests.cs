@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="M128A" /> struct.</summary>
+public static unsafe partial class M128ATests
 {
-    /// <summary>Provides validation of the <see cref="M128A" /> struct.</summary>
-    public static unsafe partial class M128ATests
+    /// <summary>Validates that the <see cref="M128A" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="M128A" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<M128A>(), Is.EqualTo(sizeof(M128A)));
-        }
+        Assert.That(Marshal.SizeOf<M128A>(), Is.EqualTo(sizeof(M128A)));
+    }
 
-        /// <summary>Validates that the <see cref="M128A" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(M128A).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="M128A" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(M128A).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="M128A" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(M128A), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="M128A" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(M128A), Is.EqualTo(16));
     }
 }

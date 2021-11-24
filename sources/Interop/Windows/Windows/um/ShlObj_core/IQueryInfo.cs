@@ -7,77 +7,76 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("00021500-0000-0000-C000-000000000046")]
+[NativeTypeName("struct IQueryInfo : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IQueryInfo : IQueryInfo.Interface
 {
-    [Guid("00021500-0000-0000-C000-000000000046")]
-    [NativeTypeName("struct IQueryInfo : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IQueryInfo : IQueryInfo.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IQueryInfo*, Guid*, void**, int>)(lpVtbl[0]))((IQueryInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IQueryInfo*, Guid*, void**, int>)(lpVtbl[0]))((IQueryInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IQueryInfo*, uint>)(lpVtbl[1]))((IQueryInfo*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IQueryInfo*, uint>)(lpVtbl[1]))((IQueryInfo*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IQueryInfo*, uint>)(lpVtbl[2]))((IQueryInfo*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IQueryInfo*, uint>)(lpVtbl[2]))((IQueryInfo*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetInfoTip([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PWSTR *")] ushort** ppwszTip)
+    {
+        return ((delegate* unmanaged<IQueryInfo*, uint, ushort**, int>)(lpVtbl[3]))((IQueryInfo*)Unsafe.AsPointer(ref this), dwFlags, ppwszTip);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetInfoFlags([NativeTypeName("DWORD *")] uint* pdwFlags)
+    {
+        return ((delegate* unmanaged<IQueryInfo*, uint*, int>)(lpVtbl[4]))((IQueryInfo*)Unsafe.AsPointer(ref this), pdwFlags);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetInfoTip([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PWSTR *")] ushort** ppwszTip)
-        {
-            return ((delegate* unmanaged<IQueryInfo*, uint, ushort**, int>)(lpVtbl[3]))((IQueryInfo*)Unsafe.AsPointer(ref this), dwFlags, ppwszTip);
-        }
+        HRESULT GetInfoTip([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PWSTR *")] ushort** ppwszTip);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetInfoFlags([NativeTypeName("DWORD *")] uint* pdwFlags)
-        {
-            return ((delegate* unmanaged<IQueryInfo*, uint*, int>)(lpVtbl[4]))((IQueryInfo*)Unsafe.AsPointer(ref this), pdwFlags);
-        }
+        HRESULT GetInfoFlags([NativeTypeName("DWORD *")] uint* pdwFlags);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetInfoTip([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PWSTR *")] ushort** ppwszTip);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IQueryInfo*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetInfoFlags([NativeTypeName("DWORD *")] uint* pdwFlags);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IQueryInfo*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IQueryInfo*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IQueryInfo*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IQueryInfo*, uint> AddRef;
+        [NativeTypeName("HRESULT (DWORD, PWSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IQueryInfo*, uint, ushort**, int> GetInfoTip;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IQueryInfo*, uint> Release;
-
-            [NativeTypeName("HRESULT (DWORD, PWSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IQueryInfo*, uint, ushort**, int> GetInfoTip;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IQueryInfo*, uint*, int> GetInfoFlags;
-        }
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IQueryInfo*, uint*, int> GetInfoFlags;
     }
 }

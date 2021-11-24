@@ -9,36 +9,35 @@ using TerraFX.Interop.DirectX;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.Windows.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+public static unsafe partial class WinRT
 {
-    public static unsafe partial class WinRT
+    public static IInspectable* CreateDirect3DDevice(IDXGISurface* dxgiSurface)
     {
-        public static IInspectable* CreateDirect3DDevice(IDXGISurface* dxgiSurface)
+        IInspectable* inspectableSurface;
+        Marshal.ThrowExceptionForHR(CreateDirect3D11SurfaceFromDXGISurface(dxgiSurface, &inspectableSurface));
+        return inspectableSurface;
+    }
+
+    public static HRESULT GetDXGIInterfaceFromObject(IInspectable* @object, Guid* iid, void** p)
+    {
+        IDirect3DDxgiInterfaceAccess* dxgiInterfaceAccess;
+
+        HRESULT hr = @object->QueryInterface(__uuidof<IDirect3DDxgiInterfaceAccess>(), (void**)&dxgiInterfaceAccess);
+
+        if (SUCCEEDED(hr))
         {
-            IInspectable* inspectableSurface;
-            Marshal.ThrowExceptionForHR(CreateDirect3D11SurfaceFromDXGISurface(dxgiSurface, &inspectableSurface));
-            return inspectableSurface;
+            hr = dxgiInterfaceAccess->GetInterface(iid, p);
         }
 
-        public static HRESULT GetDXGIInterfaceFromObject(IInspectable* @object, Guid* iid, void** p)
-        {
-            IDirect3DDxgiInterfaceAccess* dxgiInterfaceAccess;
+        _ = dxgiInterfaceAccess->Release();
+        return hr;
+    }
 
-            HRESULT hr = @object->QueryInterface(__uuidof<IDirect3DDxgiInterfaceAccess>(), (void**) &dxgiInterfaceAccess);
-
-            if (SUCCEEDED(hr))
-            {
-                hr = dxgiInterfaceAccess->GetInterface(iid, p);
-            }
-
-            _ = dxgiInterfaceAccess->Release();
-            return hr;
-        }
-
-        public static HRESULT GetDXGIInterface<DXGI_TYPE>(IInspectable* @object, DXGI_TYPE** dxgi)
-            where DXGI_TYPE : unmanaged, IUnknown.Interface
-        {
-            return GetDXGIInterfaceFromObject(@object, __uuidof<DXGI_TYPE>(), (void**) dxgi);
-        }
+    public static HRESULT GetDXGIInterface<DXGI_TYPE>(IInspectable* @object, DXGI_TYPE** dxgi)
+        where DXGI_TYPE : unmanaged, IUnknown.Interface
+    {
+        return GetDXGIInterfaceFromObject(@object, __uuidof<DXGI_TYPE>(), (void**)dxgi);
     }
 }

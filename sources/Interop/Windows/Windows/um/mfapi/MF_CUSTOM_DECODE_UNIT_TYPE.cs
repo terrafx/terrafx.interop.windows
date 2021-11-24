@@ -3,11 +3,10 @@
 // Ported from um/mfapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MF_CUSTOM_DECODE_UNIT_TYPE
 {
-    public enum MF_CUSTOM_DECODE_UNIT_TYPE
-    {
-        MF_DECODE_UNIT_NAL = 0,
-        MF_DECODE_UNIT_SEI = 1,
-    }
+    MF_DECODE_UNIT_NAL = 0,
+    MF_DECODE_UNIT_SEI = 1,
 }

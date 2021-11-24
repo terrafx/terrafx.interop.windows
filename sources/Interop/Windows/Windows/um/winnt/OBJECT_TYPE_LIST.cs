@@ -5,16 +5,15 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct OBJECT_TYPE_LIST
 {
-    public unsafe partial struct OBJECT_TYPE_LIST
-    {
-        [NativeTypeName("WORD")]
-        public ushort Level;
+    [NativeTypeName("WORD")]
+    public ushort Level;
 
-        [NativeTypeName("WORD")]
-        public ushort Sbz;
+    [NativeTypeName("WORD")]
+    public ushort Sbz;
 
-        public Guid* ObjectType;
-    }
+    public Guid* ObjectType;
 }

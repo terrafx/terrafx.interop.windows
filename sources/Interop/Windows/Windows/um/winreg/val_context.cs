@@ -3,16 +3,15 @@
 // Ported from um/winreg.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct val_context
 {
-    public unsafe partial struct val_context
-    {
-        public int valuelen;
+    public int valuelen;
 
-        [NativeTypeName("LPVOID")]
-        public void* value_context;
+    [NativeTypeName("LPVOID")]
+    public void* value_context;
 
-        [NativeTypeName("LPVOID")]
-        public void* val_buff_ptr;
-    }
+    [NativeTypeName("LPVOID")]
+    public void* val_buff_ptr;
 }

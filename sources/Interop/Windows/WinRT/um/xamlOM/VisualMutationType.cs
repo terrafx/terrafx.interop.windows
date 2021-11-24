@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[SupportedOSPlatform("windows10.0")]
+public enum VisualMutationType
 {
-    [SupportedOSPlatform("windows10.0")]
-    public enum VisualMutationType
-    {
-        Add = 0,
-        Remove = (Add + 1),
-    }
+    Add = 0,
+    Remove = (Add + 1),
 }

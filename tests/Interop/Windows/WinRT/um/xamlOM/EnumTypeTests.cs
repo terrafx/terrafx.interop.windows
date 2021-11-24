@@ -8,38 +8,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="EnumType" /> struct.</summary>
+[SupportedOSPlatform("windows10.0")]
+public static unsafe partial class EnumTypeTests
 {
-    /// <summary>Provides validation of the <see cref="EnumType" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0")]
-    public static unsafe partial class EnumTypeTests
+    /// <summary>Validates that the <see cref="EnumType" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="EnumType" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<EnumType>(), Is.EqualTo(sizeof(EnumType)));
-        }
+        Assert.That(Marshal.SizeOf<EnumType>(), Is.EqualTo(sizeof(EnumType)));
+    }
 
-        /// <summary>Validates that the <see cref="EnumType" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(EnumType).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="EnumType" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(EnumType).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="EnumType" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="EnumType" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(EnumType), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(EnumType), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(EnumType), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(EnumType), Is.EqualTo(12));
         }
     }
 }

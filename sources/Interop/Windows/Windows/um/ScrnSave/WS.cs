@@ -3,11 +3,10 @@
 // Ported from um/ScrnSave.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class WS
 {
-    public static partial class WS
-    {
-        [NativeTypeName("#define WS_GT (WS_GROUP | WS_TABSTOP)")]
-        public const int WS_GT = (0x00020000 | 0x00010000);
-    }
+    [NativeTypeName("#define WS_GT (WS_GROUP | WS_TABSTOP)")]
+    public const int WS_GT = (0x00020000 | 0x00010000);
 }

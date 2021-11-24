@@ -5,16 +5,15 @@
 
 using static TerraFX.Interop.Windows.SPINTERFERENCE;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechInterference
 {
-    public enum SpeechInterference
-    {
-        SINone = SPINTERFERENCE_NONE,
-        SINoise = SPINTERFERENCE_NOISE,
-        SINoSignal = SPINTERFERENCE_NOSIGNAL,
-        SITooLoud = SPINTERFERENCE_TOOLOUD,
-        SITooQuiet = SPINTERFERENCE_TOOQUIET,
-        SITooFast = SPINTERFERENCE_TOOFAST,
-        SITooSlow = SPINTERFERENCE_TOOSLOW,
-    }
+    SINone = SPINTERFERENCE_NONE,
+    SINoise = SPINTERFERENCE_NOISE,
+    SINoSignal = SPINTERFERENCE_NOSIGNAL,
+    SITooLoud = SPINTERFERENCE_TOOLOUD,
+    SITooQuiet = SPINTERFERENCE_TOOQUIET,
+    SITooFast = SPINTERFERENCE_TOOFAST,
+    SITooSlow = SPINTERFERENCE_TOOSLOW,
 }

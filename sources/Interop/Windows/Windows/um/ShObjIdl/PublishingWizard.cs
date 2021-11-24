@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("6B33163C-76A5-4B6C-BF21-45DE9CD503A1")]
+public partial struct PublishingWizard
 {
-    [Guid("6B33163C-76A5-4B6C-BF21-45DE9CD503A1")]
-    public partial struct PublishingWizard
-    {
-    }
 }

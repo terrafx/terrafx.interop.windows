@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum SZM_FLAGS
 {
-    [Flags]
-    public enum SZM_FLAGS
-    {
-        SZM_CREATE = 0,
-        SZM_DELETE = 0x1,
-    }
+    SZM_CREATE = 0,
+    SZM_DELETE = 0x1,
 }

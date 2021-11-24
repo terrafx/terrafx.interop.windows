@@ -5,25 +5,24 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TF_PERSISTENT_PROPERTY_HEADER_ACP
 {
-    public partial struct TF_PERSISTENT_PROPERTY_HEADER_ACP
-    {
-        public Guid guidType;
+    public Guid guidType;
 
-        [NativeTypeName("LONG")]
-        public int ichStart;
+    [NativeTypeName("LONG")]
+    public int ichStart;
 
-        [NativeTypeName("LONG")]
-        public int cch;
+    [NativeTypeName("LONG")]
+    public int cch;
 
-        [NativeTypeName("ULONG")]
-        public uint cb;
+    [NativeTypeName("ULONG")]
+    public uint cb;
 
-        [NativeTypeName("DWORD")]
-        public uint dwPrivate;
+    [NativeTypeName("DWORD")]
+    public uint dwPrivate;
 
-        [NativeTypeName("CLSID")]
-        public Guid clsidTIP;
-    }
+    [NativeTypeName("CLSID")]
+    public Guid clsidTIP;
 }

@@ -3,14 +3,13 @@
 // Ported from um/d3d12sdklayers.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_DEBUG_DEVICE_GPU_BASED_VALIDATION_SETTINGS
 {
-    public partial struct D3D12_DEBUG_DEVICE_GPU_BASED_VALIDATION_SETTINGS
-    {
-        public uint MaxMessagesPerCommandList;
+    public uint MaxMessagesPerCommandList;
 
-        public D3D12_GPU_BASED_VALIDATION_SHADER_PATCH_MODE DefaultShaderPatchMode;
+    public D3D12_GPU_BASED_VALIDATION_SHADER_PATCH_MODE DefaultShaderPatchMode;
 
-        public D3D12_GPU_BASED_VALIDATION_PIPELINE_STATE_CREATE_FLAGS PipelineStateCreateFlags;
-    }
+    public D3D12_GPU_BASED_VALIDATION_PIPELINE_STATE_CREATE_FLAGS PipelineStateCreateFlags;
 }

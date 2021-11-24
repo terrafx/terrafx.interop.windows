@@ -6,35 +6,34 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct WAVEFORMATEXTENSIBLE
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct WAVEFORMATEXTENSIBLE
+    public WAVEFORMATEX Format;
+
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/mmreg.h:2525:5)")]
+    public _Samples_e__Union Samples;
+
+    [NativeTypeName("DWORD")]
+    public uint dwChannelMask;
+
+    public Guid SubFormat;
+
+    [StructLayout(LayoutKind.Explicit, Pack = 1)]
+    public partial struct _Samples_e__Union
     {
-        public WAVEFORMATEX Format;
+        [FieldOffset(0)]
+        [NativeTypeName("WORD")]
+        public ushort wValidBitsPerSample;
 
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/mmreg.h:2525:5)")]
-        public _Samples_e__Union Samples;
+        [FieldOffset(0)]
+        [NativeTypeName("WORD")]
+        public ushort wSamplesPerBlock;
 
-        [NativeTypeName("DWORD")]
-        public uint dwChannelMask;
-
-        public Guid SubFormat;
-
-        [StructLayout(LayoutKind.Explicit, Pack = 1)]
-        public partial struct _Samples_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("WORD")]
-            public ushort wValidBitsPerSample;
-
-            [FieldOffset(0)]
-            [NativeTypeName("WORD")]
-            public ushort wSamplesPerBlock;
-
-            [FieldOffset(0)]
-            [NativeTypeName("WORD")]
-            public ushort wReserved;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("WORD")]
+        public ushort wReserved;
     }
 }

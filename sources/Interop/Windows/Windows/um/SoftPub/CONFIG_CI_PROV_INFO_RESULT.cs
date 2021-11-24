@@ -3,19 +3,18 @@
 // Ported from um/SoftPub.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct CONFIG_CI_PROV_INFO_RESULT
 {
-    public partial struct CONFIG_CI_PROV_INFO_RESULT
-    {
-        public HRESULT hr;
+    public HRESULT hr;
 
-        [NativeTypeName("DWORD")]
-        public uint dwResult;
+    [NativeTypeName("DWORD")]
+    public uint dwResult;
 
-        [NativeTypeName("DWORD")]
-        public uint dwPolicyIndex;
+    [NativeTypeName("DWORD")]
+    public uint dwPolicyIndex;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte fIsExplicitDeny;
-    }
+    [NativeTypeName("BOOLEAN")]
+    public byte fIsExplicitDeny;
 }

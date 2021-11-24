@@ -5,45 +5,44 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct X3DAUDIO_DSP_SETTINGS
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct X3DAUDIO_DSP_SETTINGS
-    {
-        [NativeTypeName("FLOAT32 *")]
-        public float* pMatrixCoefficients;
+    [NativeTypeName("FLOAT32 *")]
+    public float* pMatrixCoefficients;
 
-        [NativeTypeName("FLOAT32 *")]
-        public float* pDelayTimes;
+    [NativeTypeName("FLOAT32 *")]
+    public float* pDelayTimes;
 
-        [NativeTypeName("UINT32")]
-        public uint SrcChannelCount;
+    [NativeTypeName("UINT32")]
+    public uint SrcChannelCount;
 
-        [NativeTypeName("UINT32")]
-        public uint DstChannelCount;
+    [NativeTypeName("UINT32")]
+    public uint DstChannelCount;
 
-        [NativeTypeName("FLOAT32")]
-        public float LPFDirectCoefficient;
+    [NativeTypeName("FLOAT32")]
+    public float LPFDirectCoefficient;
 
-        [NativeTypeName("FLOAT32")]
-        public float LPFReverbCoefficient;
+    [NativeTypeName("FLOAT32")]
+    public float LPFReverbCoefficient;
 
-        [NativeTypeName("FLOAT32")]
-        public float ReverbLevel;
+    [NativeTypeName("FLOAT32")]
+    public float ReverbLevel;
 
-        [NativeTypeName("FLOAT32")]
-        public float DopplerFactor;
+    [NativeTypeName("FLOAT32")]
+    public float DopplerFactor;
 
-        [NativeTypeName("FLOAT32")]
-        public float EmitterToListenerAngle;
+    [NativeTypeName("FLOAT32")]
+    public float EmitterToListenerAngle;
 
-        [NativeTypeName("FLOAT32")]
-        public float EmitterToListenerDistance;
+    [NativeTypeName("FLOAT32")]
+    public float EmitterToListenerDistance;
 
-        [NativeTypeName("FLOAT32")]
-        public float EmitterVelocityComponent;
+    [NativeTypeName("FLOAT32")]
+    public float EmitterVelocityComponent;
 
-        [NativeTypeName("FLOAT32")]
-        public float ListenerVelocityComponent;
-    }
+    [NativeTypeName("FLOAT32")]
+    public float ListenerVelocityComponent;
 }

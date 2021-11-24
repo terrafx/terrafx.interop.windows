@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IHolographicCameraInterop" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.19041.0")]
+public static unsafe partial class IHolographicCameraInteropTests
 {
-    /// <summary>Provides validation of the <see cref="IHolographicCameraInterop" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public static unsafe partial class IHolographicCameraInteropTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHolographicCameraInterop" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHolographicCameraInterop" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IHolographicCameraInterop).GUID, Is.EqualTo(IID_IHolographicCameraInterop));
-        }
+        Assert.That(typeof(IHolographicCameraInterop).GUID, Is.EqualTo(IID_IHolographicCameraInterop));
+    }
 
-        /// <summary>Validates that the <see cref="IHolographicCameraInterop" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IHolographicCameraInterop>(), Is.EqualTo(sizeof(IHolographicCameraInterop)));
-        }
+    /// <summary>Validates that the <see cref="IHolographicCameraInterop" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IHolographicCameraInterop>(), Is.EqualTo(sizeof(IHolographicCameraInterop)));
+    }
 
-        /// <summary>Validates that the <see cref="IHolographicCameraInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IHolographicCameraInterop).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IHolographicCameraInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IHolographicCameraInterop).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IHolographicCameraInterop" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IHolographicCameraInterop" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IHolographicCameraInterop), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IHolographicCameraInterop), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IHolographicCameraInterop), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IHolographicCameraInterop), Is.EqualTo(4));
         }
     }
 }

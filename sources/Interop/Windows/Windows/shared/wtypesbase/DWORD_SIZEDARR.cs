@@ -3,14 +3,13 @@
 // Ported from shared/wtypesbase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct DWORD_SIZEDARR
-    {
-        [NativeTypeName("ULONG")]
-        public uint clSize;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("ULONG *")]
-        public uint* pData;
-    }
+public unsafe partial struct DWORD_SIZEDARR
+{
+    [NativeTypeName("ULONG")]
+    public uint clSize;
+
+    [NativeTypeName("ULONG *")]
+    public uint* pData;
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("66E4E4FB-F385-4DD0-8D74-A2EFD1BC6178")]
+public partial struct ShellImageDataFactory
 {
-    [Guid("66E4E4FB-F385-4DD0-8D74-A2EFD1BC6178")]
-    public partial struct ShellImageDataFactory
-    {
-    }
 }

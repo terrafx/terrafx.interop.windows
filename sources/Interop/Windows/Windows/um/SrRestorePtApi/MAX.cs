@@ -3,20 +3,19 @@
 // Ported from um/SrRestorePtApi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class MAX
 {
-    public static partial class MAX
-    {
-        [NativeTypeName("#define MAX_EVENT 104")]
-        public const int MAX_EVENT = 104;
+    [NativeTypeName("#define MAX_EVENT 104")]
+    public const int MAX_EVENT = 104;
 
-        [NativeTypeName("#define MAX_RPT 18")]
-        public const int MAX_RPT = 18;
+    [NativeTypeName("#define MAX_RPT 18")]
+    public const int MAX_RPT = 18;
 
-        [NativeTypeName("#define MAX_DESC 64")]
-        public const int MAX_DESC = 64;
+    [NativeTypeName("#define MAX_DESC 64")]
+    public const int MAX_DESC = 64;
 
-        [NativeTypeName("#define MAX_DESC_W 256")]
-        public const int MAX_DESC_W = 256;
-    }
+    [NativeTypeName("#define MAX_DESC_W 256")]
+    public const int MAX_DESC_W = 256;
 }

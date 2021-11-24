@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("59488217-007A-4F7A-8E41-5C48B1EAC5C6")]
+public partial struct CODECAPI_AVDecCommonMeanBitRate
 {
-    [Guid("59488217-007A-4F7A-8E41-5C48B1EAC5C6")]
-    public partial struct CODECAPI_AVDecCommonMeanBitRate
-    {
-    }
 }

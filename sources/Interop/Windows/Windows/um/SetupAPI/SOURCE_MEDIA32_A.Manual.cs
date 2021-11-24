@@ -5,27 +5,26 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SOURCE_MEDIA32_A
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SOURCE_MEDIA32_A
-    {
-        [NativeTypeName("PCSTR")]
-        public sbyte* Reserved;
+    [NativeTypeName("PCSTR")]
+    public sbyte* Reserved;
 
-        [NativeTypeName("PCSTR")]
-        public sbyte* Tagfile;
+    [NativeTypeName("PCSTR")]
+    public sbyte* Tagfile;
 
-        [NativeTypeName("PCSTR")]
-        public sbyte* Description;
+    [NativeTypeName("PCSTR")]
+    public sbyte* Description;
 
-        [NativeTypeName("PCSTR")]
-        public sbyte* SourcePath;
+    [NativeTypeName("PCSTR")]
+    public sbyte* SourcePath;
 
-        [NativeTypeName("PCSTR")]
-        public sbyte* SourceFile;
+    [NativeTypeName("PCSTR")]
+    public sbyte* SourceFile;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
-    }
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 }

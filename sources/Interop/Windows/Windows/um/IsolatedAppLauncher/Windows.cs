@@ -5,14 +5,13 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    public static unsafe partial class Windows
-    {
-        [DllImport("shcore", ExactSpelling = true)]
-        public static extern HRESULT IsProcessInWDAGContainer([NativeTypeName("PVOID")] void* Reserved, BOOL* isProcessInWDAGContainer);
+namespace TerraFX.Interop.Windows;
 
-        [DllImport("shcore", ExactSpelling = true)]
-        public static extern HRESULT IsProcessInIsolatedContainer(BOOL* isProcessInIsolatedContainer);
-    }
+public static unsafe partial class Windows
+{
+    [DllImport("shcore", ExactSpelling = true)]
+    public static extern HRESULT IsProcessInWDAGContainer([NativeTypeName("PVOID")] void* Reserved, BOOL* isProcessInWDAGContainer);
+
+    [DllImport("shcore", ExactSpelling = true)]
+    public static extern HRESULT IsProcessInIsolatedContainer(BOOL* isProcessInIsolatedContainer);
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("94596C7E-3744-41CE-893E-BBF09122F76A")]
+public partial struct SmartcardPinProvider
 {
-    [Guid("94596C7E-3744-41CE-893E-BBF09122F76A")]
-    public partial struct SmartcardPinProvider
-    {
-    }
 }

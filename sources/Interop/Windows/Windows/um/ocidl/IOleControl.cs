@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("B196B288-BAB4-101A-B69C-00AA00341D07")]
+[NativeTypeName("struct IOleControl : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IOleControl : IOleControl.Interface
 {
-    [Guid("B196B288-BAB4-101A-B69C-00AA00341D07")]
-    [NativeTypeName("struct IOleControl : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IOleControl : IOleControl.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IOleControl*, Guid*, void**, int>)(lpVtbl[0]))((IOleControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IOleControl*, Guid*, void**, int>)(lpVtbl[0]))((IOleControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IOleControl*, uint>)(lpVtbl[1]))((IOleControl*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IOleControl*, uint>)(lpVtbl[1]))((IOleControl*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IOleControl*, uint>)(lpVtbl[2]))((IOleControl*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IOleControl*, uint>)(lpVtbl[2]))((IOleControl*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetControlInfo(CONTROLINFO* pCI)
+    {
+        return ((delegate* unmanaged<IOleControl*, CONTROLINFO*, int>)(lpVtbl[3]))((IOleControl*)Unsafe.AsPointer(ref this), pCI);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT OnMnemonic(MSG* pMsg)
+    {
+        return ((delegate* unmanaged<IOleControl*, MSG*, int>)(lpVtbl[4]))((IOleControl*)Unsafe.AsPointer(ref this), pMsg);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT OnAmbientPropertyChange([NativeTypeName("DISPID")] int dispID)
+    {
+        return ((delegate* unmanaged<IOleControl*, int, int>)(lpVtbl[5]))((IOleControl*)Unsafe.AsPointer(ref this), dispID);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT FreezeEvents(BOOL bFreeze)
+    {
+        return ((delegate* unmanaged<IOleControl*, BOOL, int>)(lpVtbl[6]))((IOleControl*)Unsafe.AsPointer(ref this), bFreeze);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetControlInfo(CONTROLINFO* pCI)
-        {
-            return ((delegate* unmanaged<IOleControl*, CONTROLINFO*, int>)(lpVtbl[3]))((IOleControl*)Unsafe.AsPointer(ref this), pCI);
-        }
+        HRESULT GetControlInfo(CONTROLINFO* pCI);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT OnMnemonic(MSG* pMsg)
-        {
-            return ((delegate* unmanaged<IOleControl*, MSG*, int>)(lpVtbl[4]))((IOleControl*)Unsafe.AsPointer(ref this), pMsg);
-        }
+        HRESULT OnMnemonic(MSG* pMsg);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT OnAmbientPropertyChange([NativeTypeName("DISPID")] int dispID)
-        {
-            return ((delegate* unmanaged<IOleControl*, int, int>)(lpVtbl[5]))((IOleControl*)Unsafe.AsPointer(ref this), dispID);
-        }
+        HRESULT OnAmbientPropertyChange([NativeTypeName("DISPID")] int dispID);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT FreezeEvents(BOOL bFreeze)
-        {
-            return ((delegate* unmanaged<IOleControl*, BOOL, int>)(lpVtbl[6]))((IOleControl*)Unsafe.AsPointer(ref this), bFreeze);
-        }
+        HRESULT FreezeEvents(BOOL bFreeze);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetControlInfo(CONTROLINFO* pCI);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOleControl*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT OnMnemonic(MSG* pMsg);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IOleControl*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT OnAmbientPropertyChange([NativeTypeName("DISPID")] int dispID);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IOleControl*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT FreezeEvents(BOOL bFreeze);
-        }
+        [NativeTypeName("HRESULT (CONTROLINFO *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOleControl*, CONTROLINFO*, int> GetControlInfo;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOleControl*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOleControl*, MSG*, int> OnMnemonic;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IOleControl*, uint> AddRef;
+        [NativeTypeName("HRESULT (DISPID) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOleControl*, int, int> OnAmbientPropertyChange;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IOleControl*, uint> Release;
-
-            [NativeTypeName("HRESULT (CONTROLINFO *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOleControl*, CONTROLINFO*, int> GetControlInfo;
-
-            [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOleControl*, MSG*, int> OnMnemonic;
-
-            [NativeTypeName("HRESULT (DISPID) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOleControl*, int, int> OnAmbientPropertyChange;
-
-            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOleControl*, BOOL, int> FreezeEvents;
-        }
+        [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOleControl*, BOOL, int> FreezeEvents;
     }
 }

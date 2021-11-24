@@ -5,15 +5,14 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct FXMASTERINGLIMITER_PARAMETERS
-    {
-        [NativeTypeName("UINT32")]
-        public uint Release;
+namespace TerraFX.Interop.DirectX;
 
-        [NativeTypeName("UINT32")]
-        public uint Loudness;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct FXMASTERINGLIMITER_PARAMETERS
+{
+    [NativeTypeName("UINT32")]
+    public uint Release;
+
+    [NativeTypeName("UINT32")]
+    public uint Loudness;
 }

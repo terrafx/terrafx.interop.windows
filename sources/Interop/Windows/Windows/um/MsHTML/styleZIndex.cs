@@ -3,11 +3,10 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum styleZIndex
 {
-    public enum styleZIndex
-    {
-        styleZIndexAuto = -2147483647,
-        styleZIndex_Max = 2147483647,
-    }
+    styleZIndexAuto = -2147483647,
+    styleZIndex_Max = 2147483647,
 }

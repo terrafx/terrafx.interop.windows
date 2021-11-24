@@ -5,21 +5,20 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct WAVEFILTER
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct WAVEFILTER
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbStruct;
+    [NativeTypeName("DWORD")]
+    public uint cbStruct;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFilterTag;
+    [NativeTypeName("DWORD")]
+    public uint dwFilterTag;
 
-        [NativeTypeName("DWORD")]
-        public uint fdwFilter;
+    [NativeTypeName("DWORD")]
+    public uint fdwFilter;
 
-        [NativeTypeName("DWORD [5]")]
-        public fixed uint dwReserved[5];
-    }
+    [NativeTypeName("DWORD [5]")]
+    public fixed uint dwReserved[5];
 }

@@ -3,20 +3,19 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum tagAM_SAMPLE_PROPERTY_FLAGS
 {
-    public enum tagAM_SAMPLE_PROPERTY_FLAGS
-    {
-        AM_SAMPLE_SPLICEPOINT = 0x1,
-        AM_SAMPLE_PREROLL = 0x2,
-        AM_SAMPLE_DATADISCONTINUITY = 0x4,
-        AM_SAMPLE_TYPECHANGED = 0x8,
-        AM_SAMPLE_TIMEVALID = 0x10,
-        AM_SAMPLE_TIMEDISCONTINUITY = 0x40,
-        AM_SAMPLE_FLUSH_ON_PAUSE = 0x80,
-        AM_SAMPLE_STOPVALID = 0x100,
-        AM_SAMPLE_ENDOFSTREAM = 0x200,
-        AM_STREAM_MEDIA = 0,
-        AM_STREAM_CONTROL = 1,
-    }
+    AM_SAMPLE_SPLICEPOINT = 0x1,
+    AM_SAMPLE_PREROLL = 0x2,
+    AM_SAMPLE_DATADISCONTINUITY = 0x4,
+    AM_SAMPLE_TYPECHANGED = 0x8,
+    AM_SAMPLE_TIMEVALID = 0x10,
+    AM_SAMPLE_TIMEDISCONTINUITY = 0x40,
+    AM_SAMPLE_FLUSH_ON_PAUSE = 0x80,
+    AM_SAMPLE_STOPVALID = 0x100,
+    AM_SAMPLE_ENDOFSTREAM = 0x200,
+    AM_STREAM_MEDIA = 0,
+    AM_STREAM_CONTROL = 1,
 }

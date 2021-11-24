@@ -5,15 +5,14 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum CM_MASK
 {
-    [Flags]
-    public enum CM_MASK
-    {
-        CM_MASK_WIDTH = 0x1,
-        CM_MASK_DEFAULTWIDTH = 0x2,
-        CM_MASK_IDEALWIDTH = 0x4,
-        CM_MASK_NAME = 0x8,
-        CM_MASK_STATE = 0x10,
-    }
+    CM_MASK_WIDTH = 0x1,
+    CM_MASK_DEFAULTWIDTH = 0x2,
+    CM_MASK_IDEALWIDTH = 0x4,
+    CM_MASK_NAME = 0x8,
+    CM_MASK_STATE = 0x10,
 }

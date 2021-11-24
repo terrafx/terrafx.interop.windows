@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TBADDBITMAP" /> struct.</summary>
+public static unsafe partial class TBADDBITMAPTests
 {
-    /// <summary>Provides validation of the <see cref="TBADDBITMAP" /> struct.</summary>
-    public static unsafe partial class TBADDBITMAPTests
+    /// <summary>Validates that the <see cref="TBADDBITMAP" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TBADDBITMAP" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TBADDBITMAP>(), Is.EqualTo(sizeof(TBADDBITMAP)));
-        }
+        Assert.That(Marshal.SizeOf<TBADDBITMAP>(), Is.EqualTo(sizeof(TBADDBITMAP)));
+    }
 
-        /// <summary>Validates that the <see cref="TBADDBITMAP" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TBADDBITMAP).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TBADDBITMAP" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TBADDBITMAP).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TBADDBITMAP" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="TBADDBITMAP" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(TBADDBITMAP), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(TBADDBITMAP), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(TBADDBITMAP), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(TBADDBITMAP), Is.EqualTo(8));
         }
     }
 }

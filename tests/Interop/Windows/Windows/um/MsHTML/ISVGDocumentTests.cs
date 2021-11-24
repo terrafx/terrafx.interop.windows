@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISVGDocument" /> struct.</summary>
+public static unsafe partial class ISVGDocumentTests
 {
-    /// <summary>Provides validation of the <see cref="ISVGDocument" /> struct.</summary>
-    public static unsafe partial class ISVGDocumentTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISVGDocument" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISVGDocument" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISVGDocument).GUID, Is.EqualTo(IID_ISVGDocument));
-        }
+        Assert.That(typeof(ISVGDocument).GUID, Is.EqualTo(IID_ISVGDocument));
+    }
 
-        /// <summary>Validates that the <see cref="ISVGDocument" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISVGDocument>(), Is.EqualTo(sizeof(ISVGDocument)));
-        }
+    /// <summary>Validates that the <see cref="ISVGDocument" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISVGDocument>(), Is.EqualTo(sizeof(ISVGDocument)));
+    }
 
-        /// <summary>Validates that the <see cref="ISVGDocument" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISVGDocument).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISVGDocument" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISVGDocument).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISVGDocument" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISVGDocument" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISVGDocument), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISVGDocument), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISVGDocument), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISVGDocument), Is.EqualTo(4));
         }
     }
 }

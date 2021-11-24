@@ -5,11 +5,10 @@
 
 using static TerraFX.Interop.Windows.Windows;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class E
 {
-    public static partial class E
-    {
-        [NativeTypeName("#define E_DATATYPE_MISMATCH HRESULT_FROM_WIN32(ERROR_DATATYPE_MISMATCH)")]
-        public static HRESULT E_DATATYPE_MISMATCH => HRESULT_FROM_WIN32(1629);
-    }
+    [NativeTypeName("#define E_DATATYPE_MISMATCH HRESULT_FROM_WIN32(ERROR_DATATYPE_MISMATCH)")]
+    public static HRESULT E_DATATYPE_MISMATCH => HRESULT_FROM_WIN32(1629);
 }

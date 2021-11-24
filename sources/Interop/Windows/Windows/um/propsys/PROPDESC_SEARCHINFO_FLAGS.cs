@@ -5,16 +5,15 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum PROPDESC_SEARCHINFO_FLAGS
 {
-    [Flags]
-    public enum PROPDESC_SEARCHINFO_FLAGS
-    {
-        PDSIF_DEFAULT = 0,
-        PDSIF_ININVERTEDINDEX = 0x1,
-        PDSIF_ISCOLUMN = 0x2,
-        PDSIF_ISCOLUMNSPARSE = 0x4,
-        PDSIF_ALWAYSINCLUDE = 0x8,
-        PDSIF_USEFORTYPEAHEAD = 0x10,
-    }
+    PDSIF_DEFAULT = 0,
+    PDSIF_ININVERTEDINDEX = 0x1,
+    PDSIF_ISCOLUMN = 0x2,
+    PDSIF_ISCOLUMNSPARSE = 0x4,
+    PDSIF_ALWAYSINCLUDE = 0x8,
+    PDSIF_USEFORTYPEAHEAD = 0x10,
 }

@@ -8,33 +8,32 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class CLSID
-    {
-        [NativeTypeName("const CLSID")]
-        public static ref readonly Guid CLSID_RendezvousApplication
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x9A, 0x01, 0x7E, 0x0B,
-                    0xDE, 0xB5,
-                    0xFA, 0x47,
-                    0x89,
-                    0x66,
-                    0x90,
-                    0x82,
-                    0xF8,
-                    0x2F,
-                    0xB1,
-                    0x92
-                };
+namespace TerraFX.Interop.Windows;
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+public static partial class CLSID
+{
+    [NativeTypeName("const CLSID")]
+    public static ref readonly Guid CLSID_RendezvousApplication
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x9A, 0x01, 0x7E, 0x0B,
+                0xDE, 0xB5,
+                0xFA, 0x47,
+                0x89,
+                0x66,
+                0x90,
+                0x82,
+                0xF8,
+                0x2F,
+                0xB1,
+                0x92
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

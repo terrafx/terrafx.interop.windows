@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="BYTE_SIZEDARR" /> struct.</summary>
+public static unsafe partial class BYTE_SIZEDARRTests
 {
-    /// <summary>Provides validation of the <see cref="BYTE_SIZEDARR" /> struct.</summary>
-    public static unsafe partial class BYTE_SIZEDARRTests
+    /// <summary>Validates that the <see cref="BYTE_SIZEDARR" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="BYTE_SIZEDARR" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<BYTE_SIZEDARR>(), Is.EqualTo(sizeof(BYTE_SIZEDARR)));
-        }
+        Assert.That(Marshal.SizeOf<BYTE_SIZEDARR>(), Is.EqualTo(sizeof(BYTE_SIZEDARR)));
+    }
 
-        /// <summary>Validates that the <see cref="BYTE_SIZEDARR" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(BYTE_SIZEDARR).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="BYTE_SIZEDARR" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(BYTE_SIZEDARR).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="BYTE_SIZEDARR" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="BYTE_SIZEDARR" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(BYTE_SIZEDARR), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(BYTE_SIZEDARR), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(BYTE_SIZEDARR), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(BYTE_SIZEDARR), Is.EqualTo(8));
         }
     }
 }

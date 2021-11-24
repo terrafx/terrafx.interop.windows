@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDCompositionColorMatrixEffect" /> struct.</summary>
+public static unsafe partial class IDCompositionColorMatrixEffectTests
 {
-    /// <summary>Provides validation of the <see cref="IDCompositionColorMatrixEffect" /> struct.</summary>
-    public static unsafe partial class IDCompositionColorMatrixEffectTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDCompositionColorMatrixEffect" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDCompositionColorMatrixEffect" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDCompositionColorMatrixEffect).GUID, Is.EqualTo(IID_IDCompositionColorMatrixEffect));
-        }
+        Assert.That(typeof(IDCompositionColorMatrixEffect).GUID, Is.EqualTo(IID_IDCompositionColorMatrixEffect));
+    }
 
-        /// <summary>Validates that the <see cref="IDCompositionColorMatrixEffect" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDCompositionColorMatrixEffect>(), Is.EqualTo(sizeof(IDCompositionColorMatrixEffect)));
-        }
+    /// <summary>Validates that the <see cref="IDCompositionColorMatrixEffect" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDCompositionColorMatrixEffect>(), Is.EqualTo(sizeof(IDCompositionColorMatrixEffect)));
+    }
 
-        /// <summary>Validates that the <see cref="IDCompositionColorMatrixEffect" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDCompositionColorMatrixEffect).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDCompositionColorMatrixEffect" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDCompositionColorMatrixEffect).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDCompositionColorMatrixEffect" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDCompositionColorMatrixEffect" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDCompositionColorMatrixEffect), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDCompositionColorMatrixEffect), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDCompositionColorMatrixEffect), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDCompositionColorMatrixEffect), Is.EqualTo(4));
         }
     }
 }

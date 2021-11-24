@@ -7,51 +7,50 @@ using NUnit.Framework;
 using System;
 using static TerraFX.Interop.Windows.TIME;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TIME" /> class.</summary>
+public static partial class TIMETests
 {
-    /// <summary>Provides validation of the <see cref="TIME" /> class.</summary>
-    public static partial class TIMETests
+    /// <summary>Validates that the value of the <see cref="TIME_FORMAT_NONE" /> property is correct.</summary>
+    [Test]
+    public static void TIME_FORMAT_NONETest()
     {
-        /// <summary>Validates that the value of the <see cref="TIME_FORMAT_NONE" /> property is correct.</summary>
-        [Test]
-        public static void TIME_FORMAT_NONETest()
-        {
-            Assert.That(TIME_FORMAT_NONE, Is.EqualTo(new Guid(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)));
-        }
+        Assert.That(TIME_FORMAT_NONE, Is.EqualTo(new Guid(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)));
+    }
 
-        /// <summary>Validates that the value of the <see cref="TIME_FORMAT_FRAME" /> property is correct.</summary>
-        [Test]
-        public static void TIME_FORMAT_FRAMETest()
-        {
-            Assert.That(TIME_FORMAT_FRAME, Is.EqualTo(new Guid(0x7b785570, 0x8c82, 0x11cf, 0xbc, 0xc, 0x0, 0xaa, 0x0, 0xac, 0x74, 0xf6)));
-        }
+    /// <summary>Validates that the value of the <see cref="TIME_FORMAT_FRAME" /> property is correct.</summary>
+    [Test]
+    public static void TIME_FORMAT_FRAMETest()
+    {
+        Assert.That(TIME_FORMAT_FRAME, Is.EqualTo(new Guid(0x7b785570, 0x8c82, 0x11cf, 0xbc, 0xc, 0x0, 0xaa, 0x0, 0xac, 0x74, 0xf6)));
+    }
 
-        /// <summary>Validates that the value of the <see cref="TIME_FORMAT_BYTE" /> property is correct.</summary>
-        [Test]
-        public static void TIME_FORMAT_BYTETest()
-        {
-            Assert.That(TIME_FORMAT_BYTE, Is.EqualTo(new Guid(0x7b785571, 0x8c82, 0x11cf, 0xbc, 0xc, 0x0, 0xaa, 0x0, 0xac, 0x74, 0xf6)));
-        }
+    /// <summary>Validates that the value of the <see cref="TIME_FORMAT_BYTE" /> property is correct.</summary>
+    [Test]
+    public static void TIME_FORMAT_BYTETest()
+    {
+        Assert.That(TIME_FORMAT_BYTE, Is.EqualTo(new Guid(0x7b785571, 0x8c82, 0x11cf, 0xbc, 0xc, 0x0, 0xaa, 0x0, 0xac, 0x74, 0xf6)));
+    }
 
-        /// <summary>Validates that the value of the <see cref="TIME_FORMAT_SAMPLE" /> property is correct.</summary>
-        [Test]
-        public static void TIME_FORMAT_SAMPLETest()
-        {
-            Assert.That(TIME_FORMAT_SAMPLE, Is.EqualTo(new Guid(0x7b785572, 0x8c82, 0x11cf, 0xbc, 0xc, 0x0, 0xaa, 0x0, 0xac, 0x74, 0xf6)));
-        }
+    /// <summary>Validates that the value of the <see cref="TIME_FORMAT_SAMPLE" /> property is correct.</summary>
+    [Test]
+    public static void TIME_FORMAT_SAMPLETest()
+    {
+        Assert.That(TIME_FORMAT_SAMPLE, Is.EqualTo(new Guid(0x7b785572, 0x8c82, 0x11cf, 0xbc, 0xc, 0x0, 0xaa, 0x0, 0xac, 0x74, 0xf6)));
+    }
 
-        /// <summary>Validates that the value of the <see cref="TIME_FORMAT_FIELD" /> property is correct.</summary>
-        [Test]
-        public static void TIME_FORMAT_FIELDTest()
-        {
-            Assert.That(TIME_FORMAT_FIELD, Is.EqualTo(new Guid(0x7b785573, 0x8c82, 0x11cf, 0xbc, 0xc, 0x0, 0xaa, 0x0, 0xac, 0x74, 0xf6)));
-        }
+    /// <summary>Validates that the value of the <see cref="TIME_FORMAT_FIELD" /> property is correct.</summary>
+    [Test]
+    public static void TIME_FORMAT_FIELDTest()
+    {
+        Assert.That(TIME_FORMAT_FIELD, Is.EqualTo(new Guid(0x7b785573, 0x8c82, 0x11cf, 0xbc, 0xc, 0x0, 0xaa, 0x0, 0xac, 0x74, 0xf6)));
+    }
 
-        /// <summary>Validates that the value of the <see cref="TIME_FORMAT_MEDIA_TIME" /> property is correct.</summary>
-        [Test]
-        public static void TIME_FORMAT_MEDIA_TIMETest()
-        {
-            Assert.That(TIME_FORMAT_MEDIA_TIME, Is.EqualTo(new Guid(0x7b785574, 0x8c82, 0x11cf, 0xbc, 0xc, 0x0, 0xaa, 0x0, 0xac, 0x74, 0xf6)));
-        }
+    /// <summary>Validates that the value of the <see cref="TIME_FORMAT_MEDIA_TIME" /> property is correct.</summary>
+    [Test]
+    public static void TIME_FORMAT_MEDIA_TIMETest()
+    {
+        Assert.That(TIME_FORMAT_MEDIA_TIME, Is.EqualTo(new Guid(0x7b785574, 0x8c82, 0x11cf, 0xbc, 0xc, 0x0, 0xaa, 0x0, 0xac, 0x74, 0xf6)));
     }
 }

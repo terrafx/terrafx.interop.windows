@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ROI_AREA" /> struct.</summary>
+[SupportedOSPlatform("windows8.1")]
+public static unsafe partial class ROI_AREATests
 {
-    /// <summary>Provides validation of the <see cref="ROI_AREA" /> struct.</summary>
-    [SupportedOSPlatform("windows8.1")]
-    public static unsafe partial class ROI_AREATests
+    /// <summary>Validates that the <see cref="ROI_AREA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="ROI_AREA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ROI_AREA>(), Is.EqualTo(sizeof(ROI_AREA)));
-        }
+        Assert.That(Marshal.SizeOf<ROI_AREA>(), Is.EqualTo(sizeof(ROI_AREA)));
+    }
 
-        /// <summary>Validates that the <see cref="ROI_AREA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ROI_AREA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ROI_AREA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ROI_AREA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ROI_AREA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(ROI_AREA), Is.EqualTo(20));
-        }
+    /// <summary>Validates that the <see cref="ROI_AREA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(ROI_AREA), Is.EqualTo(20));
     }
 }

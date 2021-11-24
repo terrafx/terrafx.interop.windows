@@ -5,11 +5,10 @@
 
 using TerraFX.Interop.WinRT;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class MAX
 {
-    public static partial class MAX
-    {
-        [NativeTypeName("#define MAX_ERROR_MESSAGE_CHARS 512")]
-        public const int MAX_ERROR_MESSAGE_CHARS = 512;
-    }
+    [NativeTypeName("#define MAX_ERROR_MESSAGE_CHARS 512")]
+    public const int MAX_ERROR_MESSAGE_CHARS = 512;
 }

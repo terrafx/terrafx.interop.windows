@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFMediaEngineSupportsSourceTransfer" /> struct.</summary>
+[SupportedOSPlatform("windows8.1")]
+public static unsafe partial class IMFMediaEngineSupportsSourceTransferTests
 {
-    /// <summary>Provides validation of the <see cref="IMFMediaEngineSupportsSourceTransfer" /> struct.</summary>
-    [SupportedOSPlatform("windows8.1")]
-    public static unsafe partial class IMFMediaEngineSupportsSourceTransferTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFMediaEngineSupportsSourceTransfer" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFMediaEngineSupportsSourceTransfer" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFMediaEngineSupportsSourceTransfer).GUID, Is.EqualTo(IID_IMFMediaEngineSupportsSourceTransfer));
-        }
+        Assert.That(typeof(IMFMediaEngineSupportsSourceTransfer).GUID, Is.EqualTo(IID_IMFMediaEngineSupportsSourceTransfer));
+    }
 
-        /// <summary>Validates that the <see cref="IMFMediaEngineSupportsSourceTransfer" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFMediaEngineSupportsSourceTransfer>(), Is.EqualTo(sizeof(IMFMediaEngineSupportsSourceTransfer)));
-        }
+    /// <summary>Validates that the <see cref="IMFMediaEngineSupportsSourceTransfer" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFMediaEngineSupportsSourceTransfer>(), Is.EqualTo(sizeof(IMFMediaEngineSupportsSourceTransfer)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFMediaEngineSupportsSourceTransfer" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFMediaEngineSupportsSourceTransfer).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFMediaEngineSupportsSourceTransfer" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFMediaEngineSupportsSourceTransfer).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFMediaEngineSupportsSourceTransfer" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFMediaEngineSupportsSourceTransfer" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFMediaEngineSupportsSourceTransfer), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFMediaEngineSupportsSourceTransfer), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFMediaEngineSupportsSourceTransfer), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFMediaEngineSupportsSourceTransfer), Is.EqualTo(4));
         }
     }
 }

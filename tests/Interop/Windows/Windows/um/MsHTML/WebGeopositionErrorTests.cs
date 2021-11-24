@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WebGeopositionError" /> struct.</summary>
+public static unsafe partial class WebGeopositionErrorTests
 {
-    /// <summary>Provides validation of the <see cref="WebGeopositionError" /> struct.</summary>
-    public static unsafe partial class WebGeopositionErrorTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="WebGeopositionError" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="WebGeopositionError" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(WebGeopositionError).GUID, Is.EqualTo(IID_WebGeopositionError));
-        }
+        Assert.That(typeof(WebGeopositionError).GUID, Is.EqualTo(IID_WebGeopositionError));
+    }
 
-        /// <summary>Validates that the <see cref="WebGeopositionError" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WebGeopositionError>(), Is.EqualTo(sizeof(WebGeopositionError)));
-        }
+    /// <summary>Validates that the <see cref="WebGeopositionError" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<WebGeopositionError>(), Is.EqualTo(sizeof(WebGeopositionError)));
+    }
 
-        /// <summary>Validates that the <see cref="WebGeopositionError" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WebGeopositionError).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WebGeopositionError" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WebGeopositionError).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WebGeopositionError" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(WebGeopositionError), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="WebGeopositionError" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(WebGeopositionError), Is.EqualTo(1));
     }
 }

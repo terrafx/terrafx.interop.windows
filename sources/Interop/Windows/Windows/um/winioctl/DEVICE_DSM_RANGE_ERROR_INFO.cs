@@ -7,40 +7,39 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct DEVICE_DSM_RANGE_ERROR_INFO
 {
-    public partial struct DEVICE_DSM_RANGE_ERROR_INFO
+    [NativeTypeName("DWORD")]
+    public uint Version;
+
+    [NativeTypeName("DWORD")]
+    public uint Flags;
+
+    [NativeTypeName("DWORD")]
+    public uint TotalNumberOfRanges;
+
+    [NativeTypeName("DWORD")]
+    public uint NumberOfRangesReturned;
+
+    [NativeTypeName("DEVICE_STORAGE_RANGE_ATTRIBUTES [1]")]
+    public _Ranges_e__FixedBuffer Ranges;
+
+    public partial struct _Ranges_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+        public DEVICE_STORAGE_RANGE_ATTRIBUTES e0;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
-
-        [NativeTypeName("DWORD")]
-        public uint TotalNumberOfRanges;
-
-        [NativeTypeName("DWORD")]
-        public uint NumberOfRangesReturned;
-
-        [NativeTypeName("DEVICE_STORAGE_RANGE_ATTRIBUTES [1]")]
-        public _Ranges_e__FixedBuffer Ranges;
-
-        public partial struct _Ranges_e__FixedBuffer
+        public ref DEVICE_STORAGE_RANGE_ATTRIBUTES this[int index]
         {
-            public DEVICE_STORAGE_RANGE_ATTRIBUTES e0;
-
-            public ref DEVICE_STORAGE_RANGE_ATTRIBUTES this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<DEVICE_STORAGE_RANGE_ATTRIBUTES> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<DEVICE_STORAGE_RANGE_ATTRIBUTES> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

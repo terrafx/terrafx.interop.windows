@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFPresentationClock" /> struct.</summary>
+public static unsafe partial class IMFPresentationClockTests
 {
-    /// <summary>Provides validation of the <see cref="IMFPresentationClock" /> struct.</summary>
-    public static unsafe partial class IMFPresentationClockTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFPresentationClock" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFPresentationClock" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFPresentationClock).GUID, Is.EqualTo(IID_IMFPresentationClock));
-        }
+        Assert.That(typeof(IMFPresentationClock).GUID, Is.EqualTo(IID_IMFPresentationClock));
+    }
 
-        /// <summary>Validates that the <see cref="IMFPresentationClock" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFPresentationClock>(), Is.EqualTo(sizeof(IMFPresentationClock)));
-        }
+    /// <summary>Validates that the <see cref="IMFPresentationClock" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFPresentationClock>(), Is.EqualTo(sizeof(IMFPresentationClock)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFPresentationClock" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFPresentationClock).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFPresentationClock" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFPresentationClock).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFPresentationClock" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFPresentationClock" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFPresentationClock), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFPresentationClock), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFPresentationClock), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFPresentationClock), Is.EqualTo(4));
         }
     }
 }

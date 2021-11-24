@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SpResourceManager" /> struct.</summary>
+public static unsafe partial class SpResourceManagerTests
 {
-    /// <summary>Provides validation of the <see cref="SpResourceManager" /> struct.</summary>
-    public static unsafe partial class SpResourceManagerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SpResourceManager" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SpResourceManager" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SpResourceManager).GUID, Is.EqualTo(CLSID_SpResourceManager));
-        }
+        Assert.That(typeof(SpResourceManager).GUID, Is.EqualTo(CLSID_SpResourceManager));
+    }
 
-        /// <summary>Validates that the <see cref="SpResourceManager" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SpResourceManager>(), Is.EqualTo(sizeof(SpResourceManager)));
-        }
+    /// <summary>Validates that the <see cref="SpResourceManager" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SpResourceManager>(), Is.EqualTo(sizeof(SpResourceManager)));
+    }
 
-        /// <summary>Validates that the <see cref="SpResourceManager" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SpResourceManager).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SpResourceManager" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SpResourceManager).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SpResourceManager" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SpResourceManager), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SpResourceManager" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SpResourceManager), Is.EqualTo(1));
     }
 }

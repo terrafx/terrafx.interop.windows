@@ -5,11 +5,10 @@
 
 using TerraFX.Interop.DirectX;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class FACILITY
 {
-    public static partial class FACILITY
-    {
-        [NativeTypeName("#define FACILITY_XAUDIO2 0x896")]
-        public const int FACILITY_XAUDIO2 = 0x896;
-    }
+    [NativeTypeName("#define FACILITY_XAUDIO2 0x896")]
+    public const int FACILITY_XAUDIO2 = 0x896;
 }

@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="InertiaProcessor" /> struct.</summary>
+public static unsafe partial class InertiaProcessorTests
 {
-    /// <summary>Provides validation of the <see cref="InertiaProcessor" /> struct.</summary>
-    public static unsafe partial class InertiaProcessorTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="InertiaProcessor" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="InertiaProcessor" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(InertiaProcessor).GUID, Is.EqualTo(CLSID_InertiaProcessor));
-        }
+        Assert.That(typeof(InertiaProcessor).GUID, Is.EqualTo(CLSID_InertiaProcessor));
+    }
 
-        /// <summary>Validates that the <see cref="InertiaProcessor" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<InertiaProcessor>(), Is.EqualTo(sizeof(InertiaProcessor)));
-        }
+    /// <summary>Validates that the <see cref="InertiaProcessor" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<InertiaProcessor>(), Is.EqualTo(sizeof(InertiaProcessor)));
+    }
 
-        /// <summary>Validates that the <see cref="InertiaProcessor" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(InertiaProcessor).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="InertiaProcessor" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(InertiaProcessor).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="InertiaProcessor" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(InertiaProcessor), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="InertiaProcessor" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(InertiaProcessor), Is.EqualTo(1));
     }
 }

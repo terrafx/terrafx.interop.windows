@@ -3,10 +3,9 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct WOF_EXTERNAL_FILE_ID
 {
-    public partial struct WOF_EXTERNAL_FILE_ID
-    {
-        public FILE_ID_128 FileId;
-    }
+    public FILE_ID_128 FileId;
 }

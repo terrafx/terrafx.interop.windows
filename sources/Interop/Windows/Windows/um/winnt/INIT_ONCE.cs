@@ -5,13 +5,12 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Explicit)]
+public unsafe partial struct INIT_ONCE
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct INIT_ONCE
-    {
-        [FieldOffset(0)]
-        [NativeTypeName("PVOID")]
-        public void* Ptr;
-    }
+    [FieldOffset(0)]
+    [NativeTypeName("PVOID")]
+    public void* Ptr;
 }

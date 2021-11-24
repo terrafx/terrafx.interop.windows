@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("07AA0886-CC8D-4E19-A410-1C75AF686E62")]
+public partial struct OnexCredentialProvider
 {
-    [Guid("07AA0886-CC8D-4E19-A410-1C75AF686E62")]
-    public partial struct OnexCredentialProvider
-    {
-    }
 }

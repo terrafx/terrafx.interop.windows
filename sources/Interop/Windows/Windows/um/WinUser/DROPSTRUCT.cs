@@ -3,23 +3,22 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct DROPSTRUCT
 {
-    public partial struct DROPSTRUCT
-    {
-        public HWND hwndSource;
+    public HWND hwndSource;
 
-        public HWND hwndSink;
+    public HWND hwndSink;
 
-        [NativeTypeName("DWORD")]
-        public uint wFmt;
+    [NativeTypeName("DWORD")]
+    public uint wFmt;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint dwData;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint dwData;
 
-        public POINT ptDrop;
+    public POINT ptDrop;
 
-        [NativeTypeName("DWORD")]
-        public uint dwControlData;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwControlData;
 }

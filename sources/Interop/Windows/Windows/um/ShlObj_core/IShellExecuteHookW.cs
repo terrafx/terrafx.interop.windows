@@ -7,64 +7,63 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("000214FB-0000-0000-C000-000000000046")]
+[NativeTypeName("struct IShellExecuteHookW : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IShellExecuteHookW : IShellExecuteHookW.Interface
 {
-    [Guid("000214FB-0000-0000-C000-000000000046")]
-    [NativeTypeName("struct IShellExecuteHookW : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellExecuteHookW : IShellExecuteHookW.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IShellExecuteHookW*, Guid*, void**, int>)(lpVtbl[0]))((IShellExecuteHookW*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IShellExecuteHookW*, Guid*, void**, int>)(lpVtbl[0]))((IShellExecuteHookW*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IShellExecuteHookW*, uint>)(lpVtbl[1]))((IShellExecuteHookW*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IShellExecuteHookW*, uint>)(lpVtbl[1]))((IShellExecuteHookW*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IShellExecuteHookW*, uint>)(lpVtbl[2]))((IShellExecuteHookW*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IShellExecuteHookW*, uint>)(lpVtbl[2]))((IShellExecuteHookW*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Execute([NativeTypeName("LPSHELLEXECUTEINFOW")] void* pei)
+    {
+        return ((delegate* unmanaged<IShellExecuteHookW*, void*, int>)(lpVtbl[3]))((IShellExecuteHookW*)Unsafe.AsPointer(ref this), pei);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Execute([NativeTypeName("LPSHELLEXECUTEINFOW")] void* pei)
-        {
-            return ((delegate* unmanaged<IShellExecuteHookW*, void*, int>)(lpVtbl[3]))((IShellExecuteHookW*)Unsafe.AsPointer(ref this), pei);
-        }
+        HRESULT Execute([NativeTypeName("LPSHELLEXECUTEINFOW")] void* pei);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Execute([NativeTypeName("LPSHELLEXECUTEINFOW")] void* pei);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellExecuteHookW*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellExecuteHookW*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellExecuteHookW*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellExecuteHookW*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellExecuteHookW*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellExecuteHookW*, uint> Release;
-
-            [NativeTypeName("HRESULT (LPSHELLEXECUTEINFOW) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellExecuteHookW*, void*, int> Execute;
-        }
+        [NativeTypeName("HRESULT (LPSHELLEXECUTEINFOW) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellExecuteHookW*, void*, int> Execute;
     }
 }

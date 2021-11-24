@@ -6,15 +6,14 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public partial struct MFCameraExtrinsic_CalibratedTransform
 {
-    [SupportedOSPlatform("windows10.0")]
-    public partial struct MFCameraExtrinsic_CalibratedTransform
-    {
-        public Guid CalibrationId;
+    public Guid CalibrationId;
 
-        public MF_FLOAT3 Position;
+    public MF_FLOAT3 Position;
 
-        public MF_QUATERNION Orientation;
-    }
+    public MF_QUATERNION Orientation;
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CERT_SYSTEM_STORE_RELOCATE_PARA" /> struct.</summary>
+public static unsafe partial class CERT_SYSTEM_STORE_RELOCATE_PARATests
 {
-    /// <summary>Provides validation of the <see cref="CERT_SYSTEM_STORE_RELOCATE_PARA" /> struct.</summary>
-    public static unsafe partial class CERT_SYSTEM_STORE_RELOCATE_PARATests
+    /// <summary>Validates that the <see cref="CERT_SYSTEM_STORE_RELOCATE_PARA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CERT_SYSTEM_STORE_RELOCATE_PARA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CERT_SYSTEM_STORE_RELOCATE_PARA>(), Is.EqualTo(sizeof(CERT_SYSTEM_STORE_RELOCATE_PARA)));
-        }
+        Assert.That(Marshal.SizeOf<CERT_SYSTEM_STORE_RELOCATE_PARA>(), Is.EqualTo(sizeof(CERT_SYSTEM_STORE_RELOCATE_PARA)));
+    }
 
-        /// <summary>Validates that the <see cref="CERT_SYSTEM_STORE_RELOCATE_PARA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CERT_SYSTEM_STORE_RELOCATE_PARA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CERT_SYSTEM_STORE_RELOCATE_PARA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CERT_SYSTEM_STORE_RELOCATE_PARA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CERT_SYSTEM_STORE_RELOCATE_PARA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CERT_SYSTEM_STORE_RELOCATE_PARA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CERT_SYSTEM_STORE_RELOCATE_PARA), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(CERT_SYSTEM_STORE_RELOCATE_PARA), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(CERT_SYSTEM_STORE_RELOCATE_PARA), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(CERT_SYSTEM_STORE_RELOCATE_PARA), Is.EqualTo(8));
         }
     }
 }

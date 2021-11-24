@@ -6,128 +6,127 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
+    [NativeTypeName("DWORD")]
+    public uint Version;
+
+    [NativeTypeName("DWORD")]
+    public uint Size;
+
+    public byte _bitfield;
+
+    [NativeTypeName("byte : 1")]
+    public byte ThinProvisioningEnabled
     {
-        [NativeTypeName("DWORD")]
-        public uint Version;
-
-        [NativeTypeName("DWORD")]
-        public uint Size;
-
-        public byte _bitfield;
-
-        [NativeTypeName("byte : 1")]
-        public byte ThinProvisioningEnabled
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)(_bitfield & 0x1u);
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (byte)((_bitfield & ~0x1u) | (value & 0x1u));
-            }
+            return (byte)(_bitfield & 0x1u);
         }
 
-        [NativeTypeName("byte : 1")]
-        public byte ThinProvisioningReadZeros
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)((_bitfield >> 1) & 0x1u);
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (byte)((_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1));
-            }
+            _bitfield = (byte)((_bitfield & ~0x1u) | (value & 0x1u));
         }
-
-        [NativeTypeName("byte : 3")]
-        public byte AnchorSupported
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)((_bitfield >> 2) & 0x7u);
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (byte)((_bitfield & ~(0x7u << 2)) | ((value & 0x7u) << 2));
-            }
-        }
-
-        [NativeTypeName("byte : 1")]
-        public byte UnmapGranularityAlignmentValid
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)((_bitfield >> 5) & 0x1u);
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (byte)((_bitfield & ~(0x1u << 5)) | ((value & 0x1u) << 5));
-            }
-        }
-
-        [NativeTypeName("byte : 1")]
-        public byte GetFreeSpaceSupported
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)((_bitfield >> 6) & 0x1u);
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (byte)((_bitfield & ~(0x1u << 6)) | ((value & 0x1u) << 6));
-            }
-        }
-
-        [NativeTypeName("byte : 1")]
-        public byte MapSupported
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)((_bitfield >> 7) & 0x1u);
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (byte)((_bitfield & ~(0x1u << 7)) | ((value & 0x1u) << 7));
-            }
-        }
-
-        [NativeTypeName("BYTE [7]")]
-        public fixed byte Reserved1[7];
-
-        [NativeTypeName("DWORDLONG")]
-        public ulong OptimalUnmapGranularity;
-
-        [NativeTypeName("DWORDLONG")]
-        public ulong UnmapGranularityAlignment;
-
-        [NativeTypeName("DWORD")]
-        public uint MaxUnmapLbaCount;
-
-        [NativeTypeName("DWORD")]
-        public uint MaxUnmapBlockDescriptorCount;
     }
+
+    [NativeTypeName("byte : 1")]
+    public byte ThinProvisioningReadZeros
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)((_bitfield >> 1) & 0x1u);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield = (byte)((_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1));
+        }
+    }
+
+    [NativeTypeName("byte : 3")]
+    public byte AnchorSupported
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)((_bitfield >> 2) & 0x7u);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield = (byte)((_bitfield & ~(0x7u << 2)) | ((value & 0x7u) << 2));
+        }
+    }
+
+    [NativeTypeName("byte : 1")]
+    public byte UnmapGranularityAlignmentValid
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)((_bitfield >> 5) & 0x1u);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield = (byte)((_bitfield & ~(0x1u << 5)) | ((value & 0x1u) << 5));
+        }
+    }
+
+    [NativeTypeName("byte : 1")]
+    public byte GetFreeSpaceSupported
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)((_bitfield >> 6) & 0x1u);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield = (byte)((_bitfield & ~(0x1u << 6)) | ((value & 0x1u) << 6));
+        }
+    }
+
+    [NativeTypeName("byte : 1")]
+    public byte MapSupported
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)((_bitfield >> 7) & 0x1u);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield = (byte)((_bitfield & ~(0x1u << 7)) | ((value & 0x1u) << 7));
+        }
+    }
+
+    [NativeTypeName("BYTE [7]")]
+    public fixed byte Reserved1[7];
+
+    [NativeTypeName("DWORDLONG")]
+    public ulong OptimalUnmapGranularity;
+
+    [NativeTypeName("DWORDLONG")]
+    public ulong UnmapGranularityAlignment;
+
+    [NativeTypeName("DWORD")]
+    public uint MaxUnmapLbaCount;
+
+    [NativeTypeName("DWORD")]
+    public uint MaxUnmapBlockDescriptorCount;
 }

@@ -8,31 +8,30 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class CLSID
-    {
-        public static ref readonly Guid CLSID_DedupBackupSupport
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xAD, 0xB2, 0xD6, 0x73,
-                    0x84, 0x29,
-                    0x15, 0x47,
-                    0xB2,
-                    0xE3,
-                    0x92,
-                    0x4C,
-                    0x14,
-                    0x97,
-                    0x44,
-                    0xDD
-                };
+namespace TerraFX.Interop.Windows;
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+public static partial class CLSID
+{
+    public static ref readonly Guid CLSID_DedupBackupSupport
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xAD, 0xB2, 0xD6, 0x73,
+                0x84, 0x29,
+                0x15, 0x47,
+                0xB2,
+                0xE3,
+                0x92,
+                0x4C,
+                0x14,
+                0x97,
+                0x44,
+                0xDD
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

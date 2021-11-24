@@ -3,23 +3,22 @@
 // Ported from um/dxcore_interface.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DXCoreHardwareIDParts
 {
-    public partial struct DXCoreHardwareIDParts
-    {
-        [NativeTypeName("uint32_t")]
-        public uint vendorID;
+    [NativeTypeName("uint32_t")]
+    public uint vendorID;
 
-        [NativeTypeName("uint32_t")]
-        public uint deviceID;
+    [NativeTypeName("uint32_t")]
+    public uint deviceID;
 
-        [NativeTypeName("uint32_t")]
-        public uint subSystemID;
+    [NativeTypeName("uint32_t")]
+    public uint subSystemID;
 
-        [NativeTypeName("uint32_t")]
-        public uint subVendorID;
+    [NativeTypeName("uint32_t")]
+    public uint subVendorID;
 
-        [NativeTypeName("uint32_t")]
-        public uint revisionID;
-    }
+    [NativeTypeName("uint32_t")]
+    public uint revisionID;
 }

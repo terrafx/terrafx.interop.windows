@@ -3,24 +3,23 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct IDEREGS
 {
-    public partial struct IDEREGS
-    {
-        public byte bFeaturesReg;
+    public byte bFeaturesReg;
 
-        public byte bSectorCountReg;
+    public byte bSectorCountReg;
 
-        public byte bSectorNumberReg;
+    public byte bSectorNumberReg;
 
-        public byte bCylLowReg;
+    public byte bCylLowReg;
 
-        public byte bCylHighReg;
+    public byte bCylHighReg;
 
-        public byte bDriveHeadReg;
+    public byte bDriveHeadReg;
 
-        public byte bCommandReg;
+    public byte bCommandReg;
 
-        public byte bReserved;
-    }
+    public byte bReserved;
 }

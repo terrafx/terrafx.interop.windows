@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("089EDF13-CF71-4338-8D13-9E569DBDC319")]
+[NativeTypeName("struct IMFSimpleAudioVolume : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IMFSimpleAudioVolume : IMFSimpleAudioVolume.Interface
 {
-    [Guid("089EDF13-CF71-4338-8D13-9E569DBDC319")]
-    [NativeTypeName("struct IMFSimpleAudioVolume : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSimpleAudioVolume : IMFSimpleAudioVolume.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMFSimpleAudioVolume*, Guid*, void**, int>)(lpVtbl[0]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMFSimpleAudioVolume*, Guid*, void**, int>)(lpVtbl[0]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMFSimpleAudioVolume*, uint>)(lpVtbl[1]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMFSimpleAudioVolume*, uint>)(lpVtbl[1]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMFSimpleAudioVolume*, uint>)(lpVtbl[2]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMFSimpleAudioVolume*, uint>)(lpVtbl[2]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT SetMasterVolume(float fLevel)
+    {
+        return ((delegate* unmanaged<IMFSimpleAudioVolume*, float, int>)(lpVtbl[3]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), fLevel);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetMasterVolume(float* pfLevel)
+    {
+        return ((delegate* unmanaged<IMFSimpleAudioVolume*, float*, int>)(lpVtbl[4]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), pfLevel);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT SetMute([NativeTypeName("const BOOL")] BOOL bMute)
+    {
+        return ((delegate* unmanaged<IMFSimpleAudioVolume*, BOOL, int>)(lpVtbl[5]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), bMute);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetMute(BOOL* pbMute)
+    {
+        return ((delegate* unmanaged<IMFSimpleAudioVolume*, BOOL*, int>)(lpVtbl[6]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), pbMute);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT SetMasterVolume(float fLevel)
-        {
-            return ((delegate* unmanaged<IMFSimpleAudioVolume*, float, int>)(lpVtbl[3]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), fLevel);
-        }
+        HRESULT SetMasterVolume(float fLevel);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetMasterVolume(float* pfLevel)
-        {
-            return ((delegate* unmanaged<IMFSimpleAudioVolume*, float*, int>)(lpVtbl[4]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), pfLevel);
-        }
+        HRESULT GetMasterVolume(float* pfLevel);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetMute([NativeTypeName("const BOOL")] BOOL bMute)
-        {
-            return ((delegate* unmanaged<IMFSimpleAudioVolume*, BOOL, int>)(lpVtbl[5]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), bMute);
-        }
+        HRESULT SetMute([NativeTypeName("const BOOL")] BOOL bMute);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetMute(BOOL* pbMute)
-        {
-            return ((delegate* unmanaged<IMFSimpleAudioVolume*, BOOL*, int>)(lpVtbl[6]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), pbMute);
-        }
+        HRESULT GetMute(BOOL* pbMute);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT SetMasterVolume(float fLevel);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSimpleAudioVolume*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetMasterVolume(float* pfLevel);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSimpleAudioVolume*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT SetMute([NativeTypeName("const BOOL")] BOOL bMute);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSimpleAudioVolume*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT GetMute(BOOL* pbMute);
-        }
+        [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSimpleAudioVolume*, float, int> SetMasterVolume;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSimpleAudioVolume*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSimpleAudioVolume*, float*, int> GetMasterVolume;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSimpleAudioVolume*, uint> AddRef;
+        [NativeTypeName("HRESULT (const BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSimpleAudioVolume*, BOOL, int> SetMute;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSimpleAudioVolume*, uint> Release;
-
-            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSimpleAudioVolume*, float, int> SetMasterVolume;
-
-            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSimpleAudioVolume*, float*, int> GetMasterVolume;
-
-            [NativeTypeName("HRESULT (const BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSimpleAudioVolume*, BOOL, int> SetMute;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSimpleAudioVolume*, BOOL*, int> GetMute;
-        }
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSimpleAudioVolume*, BOOL*, int> GetMute;
     }
 }

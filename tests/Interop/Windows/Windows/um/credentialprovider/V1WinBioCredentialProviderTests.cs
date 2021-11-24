@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="V1WinBioCredentialProvider" /> struct.</summary>
+public static unsafe partial class V1WinBioCredentialProviderTests
 {
-    /// <summary>Provides validation of the <see cref="V1WinBioCredentialProvider" /> struct.</summary>
-    public static unsafe partial class V1WinBioCredentialProviderTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="V1WinBioCredentialProvider" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="V1WinBioCredentialProvider" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(V1WinBioCredentialProvider).GUID, Is.EqualTo(IID_V1WinBioCredentialProvider));
-        }
+        Assert.That(typeof(V1WinBioCredentialProvider).GUID, Is.EqualTo(IID_V1WinBioCredentialProvider));
+    }
 
-        /// <summary>Validates that the <see cref="V1WinBioCredentialProvider" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<V1WinBioCredentialProvider>(), Is.EqualTo(sizeof(V1WinBioCredentialProvider)));
-        }
+    /// <summary>Validates that the <see cref="V1WinBioCredentialProvider" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<V1WinBioCredentialProvider>(), Is.EqualTo(sizeof(V1WinBioCredentialProvider)));
+    }
 
-        /// <summary>Validates that the <see cref="V1WinBioCredentialProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(V1WinBioCredentialProvider).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="V1WinBioCredentialProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(V1WinBioCredentialProvider).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="V1WinBioCredentialProvider" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(V1WinBioCredentialProvider), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="V1WinBioCredentialProvider" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(V1WinBioCredentialProvider), Is.EqualTo(1));
     }
 }

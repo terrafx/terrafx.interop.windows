@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SHDRAGIMAGE" /> struct.</summary>
+public static unsafe partial class SHDRAGIMAGETests
 {
-    /// <summary>Provides validation of the <see cref="SHDRAGIMAGE" /> struct.</summary>
-    public static unsafe partial class SHDRAGIMAGETests
+    /// <summary>Validates that the <see cref="SHDRAGIMAGE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SHDRAGIMAGE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SHDRAGIMAGE>(), Is.EqualTo(sizeof(SHDRAGIMAGE)));
-        }
+        Assert.That(Marshal.SizeOf<SHDRAGIMAGE>(), Is.EqualTo(sizeof(SHDRAGIMAGE)));
+    }
 
-        /// <summary>Validates that the <see cref="SHDRAGIMAGE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SHDRAGIMAGE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SHDRAGIMAGE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SHDRAGIMAGE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SHDRAGIMAGE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SHDRAGIMAGE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SHDRAGIMAGE), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(SHDRAGIMAGE), Is.EqualTo(24));
-            }
+            Assert.That(sizeof(SHDRAGIMAGE), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(SHDRAGIMAGE), Is.EqualTo(24));
         }
     }
 }

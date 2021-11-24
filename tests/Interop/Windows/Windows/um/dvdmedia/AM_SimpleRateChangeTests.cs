@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="AM_SimpleRateChange" /> struct.</summary>
+public static unsafe partial class AM_SimpleRateChangeTests
 {
-    /// <summary>Provides validation of the <see cref="AM_SimpleRateChange" /> struct.</summary>
-    public static unsafe partial class AM_SimpleRateChangeTests
+    /// <summary>Validates that the <see cref="AM_SimpleRateChange" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="AM_SimpleRateChange" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<AM_SimpleRateChange>(), Is.EqualTo(sizeof(AM_SimpleRateChange)));
-        }
+        Assert.That(Marshal.SizeOf<AM_SimpleRateChange>(), Is.EqualTo(sizeof(AM_SimpleRateChange)));
+    }
 
-        /// <summary>Validates that the <see cref="AM_SimpleRateChange" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(AM_SimpleRateChange).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="AM_SimpleRateChange" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(AM_SimpleRateChange).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="AM_SimpleRateChange" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(AM_SimpleRateChange), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="AM_SimpleRateChange" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(AM_SimpleRateChange), Is.EqualTo(16));
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="RGBTRIPLE" /> struct.</summary>
+public static unsafe partial class RGBTRIPLETests
 {
-    /// <summary>Provides validation of the <see cref="RGBTRIPLE" /> struct.</summary>
-    public static unsafe partial class RGBTRIPLETests
+    /// <summary>Validates that the <see cref="RGBTRIPLE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="RGBTRIPLE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<RGBTRIPLE>(), Is.EqualTo(sizeof(RGBTRIPLE)));
-        }
+        Assert.That(Marshal.SizeOf<RGBTRIPLE>(), Is.EqualTo(sizeof(RGBTRIPLE)));
+    }
 
-        /// <summary>Validates that the <see cref="RGBTRIPLE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(RGBTRIPLE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="RGBTRIPLE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(RGBTRIPLE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="RGBTRIPLE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(RGBTRIPLE), Is.EqualTo(3));
-        }
+    /// <summary>Validates that the <see cref="RGBTRIPLE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(RGBTRIPLE), Is.EqualTo(3));
     }
 }

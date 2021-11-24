@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("D5120AA3-46BA-44C5-822D-CA8092C1FC72")]
+public partial struct FrameworkInputPane
 {
-    [Guid("D5120AA3-46BA-44C5-822D-CA8092C1FC72")]
-    public partial struct FrameworkInputPane
-    {
-    }
 }

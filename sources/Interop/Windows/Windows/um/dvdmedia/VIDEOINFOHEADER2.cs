@@ -6,71 +6,70 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct VIDEOINFOHEADER2
 {
-    public partial struct VIDEOINFOHEADER2
+    public RECT rcSource;
+
+    public RECT rcTarget;
+
+    [NativeTypeName("DWORD")]
+    public uint dwBitRate;
+
+    [NativeTypeName("DWORD")]
+    public uint dwBitErrorRate;
+
+    [NativeTypeName("REFERENCE_TIME")]
+    public long AvgTimePerFrame;
+
+    [NativeTypeName("DWORD")]
+    public uint dwInterlaceFlags;
+
+    [NativeTypeName("DWORD")]
+    public uint dwCopyProtectFlags;
+
+    [NativeTypeName("DWORD")]
+    public uint dwPictAspectRatioX;
+
+    [NativeTypeName("DWORD")]
+    public uint dwPictAspectRatioY;
+
+    [NativeTypeName("tagVIDEOINFOHEADER2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/dvdmedia.h:317:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    [NativeTypeName("DWORD")]
+    public uint dwReserved2;
+
+    public BITMAPINFOHEADER bmiHeader;
+
+    public ref uint dwControlFlags
     {
-        public RECT rcSource;
-
-        public RECT rcTarget;
-
-        [NativeTypeName("DWORD")]
-        public uint dwBitRate;
-
-        [NativeTypeName("DWORD")]
-        public uint dwBitErrorRate;
-
-        [NativeTypeName("REFERENCE_TIME")]
-        public long AvgTimePerFrame;
-
-        [NativeTypeName("DWORD")]
-        public uint dwInterlaceFlags;
-
-        [NativeTypeName("DWORD")]
-        public uint dwCopyProtectFlags;
-
-        [NativeTypeName("DWORD")]
-        public uint dwPictAspectRatioX;
-
-        [NativeTypeName("DWORD")]
-        public uint dwPictAspectRatioY;
-
-        [NativeTypeName("tagVIDEOINFOHEADER2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/dvdmedia.h:317:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        [NativeTypeName("DWORD")]
-        public uint dwReserved2;
-
-        public BITMAPINFOHEADER bmiHeader;
-
-        public ref uint dwControlFlags
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwControlFlags, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwControlFlags, 1));
         }
+    }
 
-        public ref uint dwReserved1
+    public ref uint dwReserved1
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwReserved1, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwReserved1, 1));
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint dwControlFlags;
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint dwControlFlags;
 
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint dwReserved1;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint dwReserved1;
     }
 }

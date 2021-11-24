@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IQualProp" /> struct.</summary>
+public static unsafe partial class IQualPropTests
 {
-    /// <summary>Provides validation of the <see cref="IQualProp" /> struct.</summary>
-    public static unsafe partial class IQualPropTests
+    /// <summary>Validates that the <see cref="IQualProp" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IQualProp" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IQualProp>(), Is.EqualTo(sizeof(IQualProp)));
-        }
+        Assert.That(Marshal.SizeOf<IQualProp>(), Is.EqualTo(sizeof(IQualProp)));
+    }
 
-        /// <summary>Validates that the <see cref="IQualProp" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IQualProp).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IQualProp" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IQualProp).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IQualProp" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IQualProp" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IQualProp), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IQualProp), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IQualProp), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IQualProp), Is.EqualTo(4));
         }
     }
 }

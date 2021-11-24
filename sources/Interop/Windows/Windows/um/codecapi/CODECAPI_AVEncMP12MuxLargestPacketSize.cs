@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("35CEB711-F461-4B92-A4EF-17B6841ED254")]
+public partial struct CODECAPI_AVEncMP12MuxLargestPacketSize
 {
-    [Guid("35CEB711-F461-4B92-A4EF-17B6841ED254")]
-    public partial struct CODECAPI_AVEncMP12MuxLargestPacketSize
-    {
-    }
 }

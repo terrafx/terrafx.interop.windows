@@ -5,32 +5,31 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT
 {
-    public unsafe partial struct WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT
+    public WS_SECURITY_BINDING_CONSTRAINT bindingConstraint;
+
+    public WS_MESSAGE_SECURITY_USAGE bindingUsage;
+
+    public WS_XML_STRING* claimConstraints;
+
+    [NativeTypeName("ULONG")]
+    public uint claimConstraintCount;
+
+    public WS_REQUEST_SECURITY_TOKEN_PROPERTY_CONSTRAINT* requestSecurityTokenPropertyConstraints;
+
+    [NativeTypeName("ULONG")]
+    public uint requestSecurityTokenPropertyConstraintCount;
+
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WebServices.h:6262:5)")]
+    public _out_e__Struct @out;
+
+    public unsafe partial struct _out_e__Struct
     {
-        public WS_SECURITY_BINDING_CONSTRAINT bindingConstraint;
+        public WS_ENDPOINT_ADDRESS* issuerAddress;
 
-        public WS_MESSAGE_SECURITY_USAGE bindingUsage;
-
-        public WS_XML_STRING* claimConstraints;
-
-        [NativeTypeName("ULONG")]
-        public uint claimConstraintCount;
-
-        public WS_REQUEST_SECURITY_TOKEN_PROPERTY_CONSTRAINT* requestSecurityTokenPropertyConstraints;
-
-        [NativeTypeName("ULONG")]
-        public uint requestSecurityTokenPropertyConstraintCount;
-
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WebServices.h:6262:5)")]
-        public _out_e__Struct @out;
-
-        public unsafe partial struct _out_e__Struct
-        {
-            public WS_ENDPOINT_ADDRESS* issuerAddress;
-
-            public IntPtr requestSecurityTokenTemplate;
-        }
+        public IntPtr requestSecurityTokenTemplate;
     }
 }

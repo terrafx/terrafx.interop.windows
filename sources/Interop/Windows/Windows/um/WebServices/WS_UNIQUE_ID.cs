@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct WS_UNIQUE_ID
-    {
-        public WS_STRING uri;
+namespace TerraFX.Interop.Windows;
 
-        public Guid guid;
-    }
+public partial struct WS_UNIQUE_ID
+{
+    public WS_STRING uri;
+
+    public Guid guid;
 }

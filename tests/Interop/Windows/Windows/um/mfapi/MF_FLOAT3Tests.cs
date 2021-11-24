@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MF_FLOAT3" /> struct.</summary>
+[SupportedOSPlatform("windows10.0")]
+public static unsafe partial class MF_FLOAT3Tests
 {
-    /// <summary>Provides validation of the <see cref="MF_FLOAT3" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0")]
-    public static unsafe partial class MF_FLOAT3Tests
+    /// <summary>Validates that the <see cref="MF_FLOAT3" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MF_FLOAT3" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MF_FLOAT3>(), Is.EqualTo(sizeof(MF_FLOAT3)));
-        }
+        Assert.That(Marshal.SizeOf<MF_FLOAT3>(), Is.EqualTo(sizeof(MF_FLOAT3)));
+    }
 
-        /// <summary>Validates that the <see cref="MF_FLOAT3" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MF_FLOAT3).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MF_FLOAT3" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MF_FLOAT3).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MF_FLOAT3" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MF_FLOAT3), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="MF_FLOAT3" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MF_FLOAT3), Is.EqualTo(12));
     }
 }

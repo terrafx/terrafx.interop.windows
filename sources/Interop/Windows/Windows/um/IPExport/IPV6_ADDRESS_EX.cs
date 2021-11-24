@@ -5,20 +5,19 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct IPV6_ADDRESS_EX
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct IPV6_ADDRESS_EX
-    {
-        public ushort sin6_port;
+    public ushort sin6_port;
 
-        [NativeTypeName("ULONG")]
-        public uint sin6_flowinfo;
+    [NativeTypeName("ULONG")]
+    public uint sin6_flowinfo;
 
-        [NativeTypeName("USHORT [8]")]
-        public fixed ushort sin6_addr[8];
+    [NativeTypeName("USHORT [8]")]
+    public fixed ushort sin6_addr[8];
 
-        [NativeTypeName("ULONG")]
-        public uint sin6_scope_id;
-    }
+    [NativeTypeName("ULONG")]
+    public uint sin6_scope_id;
 }

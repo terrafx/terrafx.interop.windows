@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct SOCKET_PROCESSOR_AFFINITY
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct SOCKET_PROCESSOR_AFFINITY
-    {
-        public PROCESSOR_NUMBER Processor;
+    public PROCESSOR_NUMBER Processor;
 
-        public ushort NumaNodeId;
+    public ushort NumaNodeId;
 
-        public ushort Reserved;
-    }
+    public ushort Reserved;
 }

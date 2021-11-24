@@ -3,16 +3,15 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum styleTextAlignLast
 {
-    public enum styleTextAlignLast
-    {
-        styleTextAlignLastNotSet = 0,
-        styleTextAlignLastLeft = 1,
-        styleTextAlignLastCenter = 2,
-        styleTextAlignLastRight = 3,
-        styleTextAlignLastJustify = 4,
-        styleTextAlignLastAuto = 5,
-        styleTextAlignLast_Max = 2147483647,
-    }
+    styleTextAlignLastNotSet = 0,
+    styleTextAlignLastLeft = 1,
+    styleTextAlignLastCenter = 2,
+    styleTextAlignLastRight = 3,
+    styleTextAlignLastJustify = 4,
+    styleTextAlignLastAuto = 5,
+    styleTextAlignLast_Max = 2147483647,
 }

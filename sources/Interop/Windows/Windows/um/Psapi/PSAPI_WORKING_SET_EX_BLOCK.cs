@@ -6,452 +6,451 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Explicit)]
+public partial struct PSAPI_WORKING_SET_EX_BLOCK
 {
+    [FieldOffset(0)]
+    [NativeTypeName("ULONG_PTR")]
+    public nuint Flags;
+
+    [FieldOffset(0)]
+    [NativeTypeName("_PSAPI_WORKING_SET_EX_BLOCK::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/Psapi.h:406:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public nuint Valid
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.Valid;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous.Anonymous.Valid = value;
+        }
+    }
+
+    public nuint ShareCount
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.ShareCount;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous.Anonymous.ShareCount = value;
+        }
+    }
+
+    public nuint Win32Protection
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.Win32Protection;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous.Anonymous.Win32Protection = value;
+        }
+    }
+
+    public nuint Shared
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.Shared;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous.Anonymous.Shared = value;
+        }
+    }
+
+    public nuint Node
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.Node;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous.Anonymous.Node = value;
+        }
+    }
+
+    public nuint Locked
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.Locked;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous.Anonymous.Locked = value;
+        }
+    }
+
+    public nuint LargePage
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.LargePage;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous.Anonymous.LargePage = value;
+        }
+    }
+
+    public nuint Reserved
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.Reserved;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous.Anonymous.Reserved = value;
+        }
+    }
+
+    public nuint Bad
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.Bad;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous.Anonymous.Bad = value;
+        }
+    }
+
+    public nuint ReservedUlong
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.ReservedUlong;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous.Anonymous.ReservedUlong = value;
+        }
+    }
+
+    public ref _Anonymous_e__Union._Invalid_e__Struct Invalid
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Invalid, 1));
+        }
+    }
+
     [StructLayout(LayoutKind.Explicit)]
-    public partial struct PSAPI_WORKING_SET_EX_BLOCK
+    public partial struct _Anonymous_e__Union
     {
         [FieldOffset(0)]
-        [NativeTypeName("ULONG_PTR")]
-        public nuint Flags;
+        [NativeTypeName("_PSAPI_WORKING_SET_EX_BLOCK::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/Psapi.h:407:9)")]
+        public _Anonymous_e__Struct Anonymous;
 
         [FieldOffset(0)]
-        [NativeTypeName("_PSAPI_WORKING_SET_EX_BLOCK::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/Psapi.h:406:5)")]
-        public _Anonymous_e__Union Anonymous;
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/Psapi.h:422:9)")]
+        public _Invalid_e__Struct Invalid;
 
-        public nuint Valid
+        public partial struct _Anonymous_e__Struct
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            public nuint _bitfield;
+
+            [NativeTypeName("ULONG_PTR : 1")]
+            public nuint Valid
             {
-                return Anonymous.Anonymous.Valid;
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return _bitfield & 0x1u;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
+                }
             }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
+            [NativeTypeName("ULONG_PTR : 3")]
+            public nuint ShareCount
             {
-                Anonymous.Anonymous.Valid = value;
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 1) & 0x7u;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~(0x7u << 1)) | ((value & 0x7u) << 1);
+                }
+            }
+
+            [NativeTypeName("ULONG_PTR : 11")]
+            public nuint Win32Protection
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 4) & 0x7FFu;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~(0x7FFu << 4)) | ((value & 0x7FFu) << 4);
+                }
+            }
+
+            [NativeTypeName("ULONG_PTR : 1")]
+            public nuint Shared
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 15) & 0x1u;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~(0x1u << 15)) | ((value & 0x1u) << 15);
+                }
+            }
+
+            [NativeTypeName("ULONG_PTR : 6")]
+            public nuint Node
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 16) & 0x3Fu;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~(0x3Fu << 16)) | ((value & 0x3Fu) << 16);
+                }
+            }
+
+            [NativeTypeName("ULONG_PTR : 1")]
+            public nuint Locked
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 22) & 0x1u;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~(0x1u << 22)) | ((value & 0x1u) << 22);
+                }
+            }
+
+            [NativeTypeName("ULONG_PTR : 1")]
+            public nuint LargePage
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 23) & 0x1u;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~(0x1u << 23)) | ((value & 0x1u) << 23);
+                }
+            }
+
+            [NativeTypeName("ULONG_PTR : 7")]
+            public nuint Reserved
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 24) & 0x7Fu;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~(0x7Fu << 24)) | ((value & 0x7Fu) << 24);
+                }
+            }
+
+            [NativeTypeName("ULONG_PTR : 1")]
+            public nuint Bad
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 31) & 0x1u;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~(0x1u << 31)) | ((value & 0x1u) << 31);
+                }
+            }
+
+            [NativeTypeName("ULONG_PTR : 32")]
+            public nuint ReservedUlong
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 32) & 0x0u;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~(0x0u << 32)) | ((value & 0x0u) << 32);
+                }
             }
         }
 
-        public nuint ShareCount
+        public partial struct _Invalid_e__Struct
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            public nuint _bitfield;
+
+            [NativeTypeName("ULONG_PTR : 1")]
+            public nuint Valid
             {
-                return Anonymous.Anonymous.ShareCount;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.ShareCount = value;
-            }
-        }
-
-        public nuint Win32Protection
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.Win32Protection;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.Win32Protection = value;
-            }
-        }
-
-        public nuint Shared
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.Shared;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.Shared = value;
-            }
-        }
-
-        public nuint Node
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.Node;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.Node = value;
-            }
-        }
-
-        public nuint Locked
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.Locked;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.Locked = value;
-            }
-        }
-
-        public nuint LargePage
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.LargePage;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.LargePage = value;
-            }
-        }
-
-        public nuint Reserved
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.Reserved;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.Reserved = value;
-            }
-        }
-
-        public nuint Bad
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.Bad;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.Bad = value;
-            }
-        }
-
-        public nuint ReservedUlong
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.ReservedUlong;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.ReservedUlong = value;
-            }
-        }
-
-        public ref _Anonymous_e__Union._Invalid_e__Struct Invalid
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Invalid, 1));
-            }
-        }
-
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("_PSAPI_WORKING_SET_EX_BLOCK::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/Psapi.h:407:9)")]
-            public _Anonymous_e__Struct Anonymous;
-
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/Psapi.h:422:9)")]
-            public _Invalid_e__Struct Invalid;
-
-            public partial struct _Anonymous_e__Struct
-            {
-                public nuint _bitfield;
-
-                [NativeTypeName("ULONG_PTR : 1")]
-                public nuint Valid
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return _bitfield & 0x1u;
-                    }
-
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
-                    }
+                    return _bitfield & 0x1u;
                 }
 
-                [NativeTypeName("ULONG_PTR : 3")]
-                public nuint ShareCount
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 1) & 0x7u;
-                    }
-
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x7u << 1)) | ((value & 0x7u) << 1);
-                    }
-                }
-
-                [NativeTypeName("ULONG_PTR : 11")]
-                public nuint Win32Protection
-                {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 4) & 0x7FFu;
-                    }
-
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x7FFu << 4)) | ((value & 0x7FFu) << 4);
-                    }
-                }
-
-                [NativeTypeName("ULONG_PTR : 1")]
-                public nuint Shared
-                {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 15) & 0x1u;
-                    }
-
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 15)) | ((value & 0x1u) << 15);
-                    }
-                }
-
-                [NativeTypeName("ULONG_PTR : 6")]
-                public nuint Node
-                {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 16) & 0x3Fu;
-                    }
-
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x3Fu << 16)) | ((value & 0x3Fu) << 16);
-                    }
-                }
-
-                [NativeTypeName("ULONG_PTR : 1")]
-                public nuint Locked
-                {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 22) & 0x1u;
-                    }
-
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 22)) | ((value & 0x1u) << 22);
-                    }
-                }
-
-                [NativeTypeName("ULONG_PTR : 1")]
-                public nuint LargePage
-                {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 23) & 0x1u;
-                    }
-
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 23)) | ((value & 0x1u) << 23);
-                    }
-                }
-
-                [NativeTypeName("ULONG_PTR : 7")]
-                public nuint Reserved
-                {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 24) & 0x7Fu;
-                    }
-
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x7Fu << 24)) | ((value & 0x7Fu) << 24);
-                    }
-                }
-
-                [NativeTypeName("ULONG_PTR : 1")]
-                public nuint Bad
-                {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 31) & 0x1u;
-                    }
-
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 31)) | ((value & 0x1u) << 31);
-                    }
-                }
-
-                [NativeTypeName("ULONG_PTR : 32")]
-                public nuint ReservedUlong
-                {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 32) & 0x0u;
-                    }
-
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x0u << 32)) | ((value & 0x0u) << 32);
-                    }
+                    _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
                 }
             }
 
-            public partial struct _Invalid_e__Struct
+            [NativeTypeName("ULONG_PTR : 14")]
+            public nuint Reserved0
             {
-                public nuint _bitfield;
-
-                [NativeTypeName("ULONG_PTR : 1")]
-                public nuint Valid
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return _bitfield & 0x1u;
-                    }
-
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
-                    }
+                    return (_bitfield >> 1) & 0x3FFFu;
                 }
 
-                [NativeTypeName("ULONG_PTR : 14")]
-                public nuint Reserved0
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 1) & 0x3FFFu;
-                    }
+                    _bitfield = (_bitfield & ~(0x3FFFu << 1)) | ((value & 0x3FFFu) << 1);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x3FFFu << 1)) | ((value & 0x3FFFu) << 1);
-                    }
+            [NativeTypeName("ULONG_PTR : 1")]
+            public nuint Shared
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 15) & 0x1u;
                 }
 
-                [NativeTypeName("ULONG_PTR : 1")]
-                public nuint Shared
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 15) & 0x1u;
-                    }
+                    _bitfield = (_bitfield & ~(0x1u << 15)) | ((value & 0x1u) << 15);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 15)) | ((value & 0x1u) << 15);
-                    }
+            [NativeTypeName("ULONG_PTR : 15")]
+            public nuint Reserved1
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 16) & 0x7FFFu;
                 }
 
-                [NativeTypeName("ULONG_PTR : 15")]
-                public nuint Reserved1
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 16) & 0x7FFFu;
-                    }
+                    _bitfield = (_bitfield & ~(0x7FFFu << 16)) | ((value & 0x7FFFu) << 16);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x7FFFu << 16)) | ((value & 0x7FFFu) << 16);
-                    }
+            [NativeTypeName("ULONG_PTR : 1")]
+            public nuint Bad
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 31) & 0x1u;
                 }
 
-                [NativeTypeName("ULONG_PTR : 1")]
-                public nuint Bad
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 31) & 0x1u;
-                    }
+                    _bitfield = (_bitfield & ~(0x1u << 31)) | ((value & 0x1u) << 31);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 31)) | ((value & 0x1u) << 31);
-                    }
+            [NativeTypeName("ULONG_PTR : 32")]
+            public nuint ReservedUlong
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 32) & 0x0u;
                 }
 
-                [NativeTypeName("ULONG_PTR : 32")]
-                public nuint ReservedUlong
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 32) & 0x0u;
-                    }
-
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x0u << 32)) | ((value & 0x0u) << 32);
-                    }
+                    _bitfield = (_bitfield & ~(0x0u << 32)) | ((value & 0x0u) << 32);
                 }
             }
         }

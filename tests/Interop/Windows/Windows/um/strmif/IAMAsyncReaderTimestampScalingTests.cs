@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IAMAsyncReaderTimestampScaling" /> struct.</summary>
+public static unsafe partial class IAMAsyncReaderTimestampScalingTests
 {
-    /// <summary>Provides validation of the <see cref="IAMAsyncReaderTimestampScaling" /> struct.</summary>
-    public static unsafe partial class IAMAsyncReaderTimestampScalingTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMAsyncReaderTimestampScaling" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMAsyncReaderTimestampScaling" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAMAsyncReaderTimestampScaling).GUID, Is.EqualTo(IID_IAMAsyncReaderTimestampScaling));
-        }
+        Assert.That(typeof(IAMAsyncReaderTimestampScaling).GUID, Is.EqualTo(IID_IAMAsyncReaderTimestampScaling));
+    }
 
-        /// <summary>Validates that the <see cref="IAMAsyncReaderTimestampScaling" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IAMAsyncReaderTimestampScaling>(), Is.EqualTo(sizeof(IAMAsyncReaderTimestampScaling)));
-        }
+    /// <summary>Validates that the <see cref="IAMAsyncReaderTimestampScaling" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IAMAsyncReaderTimestampScaling>(), Is.EqualTo(sizeof(IAMAsyncReaderTimestampScaling)));
+    }
 
-        /// <summary>Validates that the <see cref="IAMAsyncReaderTimestampScaling" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IAMAsyncReaderTimestampScaling).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IAMAsyncReaderTimestampScaling" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IAMAsyncReaderTimestampScaling).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IAMAsyncReaderTimestampScaling" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IAMAsyncReaderTimestampScaling" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IAMAsyncReaderTimestampScaling), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IAMAsyncReaderTimestampScaling), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IAMAsyncReaderTimestampScaling), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IAMAsyncReaderTimestampScaling), Is.EqualTo(4));
         }
     }
 }

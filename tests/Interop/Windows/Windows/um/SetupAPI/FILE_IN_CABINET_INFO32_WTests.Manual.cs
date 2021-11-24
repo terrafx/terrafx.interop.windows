@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="FILE_IN_CABINET_INFO32_W" /> struct.</summary>
+public static unsafe partial class FILE_IN_CABINET_INFO32_WTests
 {
-    /// <summary>Provides validation of the <see cref="FILE_IN_CABINET_INFO32_W" /> struct.</summary>
-    public static unsafe partial class FILE_IN_CABINET_INFO32_WTests
+    /// <summary>Validates that the <see cref="FILE_IN_CABINET_INFO32_W" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="FILE_IN_CABINET_INFO32_W" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<FILE_IN_CABINET_INFO32_W>(), Is.EqualTo(sizeof(FILE_IN_CABINET_INFO32_W)));
-        }
+        Assert.That(Marshal.SizeOf<FILE_IN_CABINET_INFO32_W>(), Is.EqualTo(sizeof(FILE_IN_CABINET_INFO32_W)));
+    }
 
-        /// <summary>Validates that the <see cref="FILE_IN_CABINET_INFO32_W" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(FILE_IN_CABINET_INFO32_W).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="FILE_IN_CABINET_INFO32_W" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(FILE_IN_CABINET_INFO32_W).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="FILE_IN_CABINET_INFO32_W" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="FILE_IN_CABINET_INFO32_W" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(FILE_IN_CABINET_INFO32_W), Is.EqualTo(542));
-            }
-            else
-            {
-                Assert.That(sizeof(FILE_IN_CABINET_INFO32_W), Is.EqualTo(538));
-            }
+            Assert.That(sizeof(FILE_IN_CABINET_INFO32_W), Is.EqualTo(542));
+        }
+        else
+        {
+            Assert.That(sizeof(FILE_IN_CABINET_INFO32_W), Is.EqualTo(538));
         }
     }
 }

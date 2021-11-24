@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SyncMgrScheduleWizard" /> struct.</summary>
+public static unsafe partial class SyncMgrScheduleWizardTests
 {
-    /// <summary>Provides validation of the <see cref="SyncMgrScheduleWizard" /> struct.</summary>
-    public static unsafe partial class SyncMgrScheduleWizardTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SyncMgrScheduleWizard" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SyncMgrScheduleWizard" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SyncMgrScheduleWizard).GUID, Is.EqualTo(IID_SyncMgrScheduleWizard));
-        }
+        Assert.That(typeof(SyncMgrScheduleWizard).GUID, Is.EqualTo(IID_SyncMgrScheduleWizard));
+    }
 
-        /// <summary>Validates that the <see cref="SyncMgrScheduleWizard" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SyncMgrScheduleWizard>(), Is.EqualTo(sizeof(SyncMgrScheduleWizard)));
-        }
+    /// <summary>Validates that the <see cref="SyncMgrScheduleWizard" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SyncMgrScheduleWizard>(), Is.EqualTo(sizeof(SyncMgrScheduleWizard)));
+    }
 
-        /// <summary>Validates that the <see cref="SyncMgrScheduleWizard" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SyncMgrScheduleWizard).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SyncMgrScheduleWizard" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SyncMgrScheduleWizard).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SyncMgrScheduleWizard" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SyncMgrScheduleWizard), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SyncMgrScheduleWizard" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SyncMgrScheduleWizard), Is.EqualTo(1));
     }
 }

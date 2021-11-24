@@ -5,24 +5,23 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_FEATURE_DATA_WAVE_MMA
 {
-    public partial struct D3D12_FEATURE_DATA_WAVE_MMA
-    {
-        public D3D12_WAVE_MMA_INPUT_DATATYPE InputDataType;
+    public D3D12_WAVE_MMA_INPUT_DATATYPE InputDataType;
 
-        public D3D12_WAVE_MMA_DIMENSION M;
+    public D3D12_WAVE_MMA_DIMENSION M;
 
-        public D3D12_WAVE_MMA_DIMENSION N;
+    public D3D12_WAVE_MMA_DIMENSION N;
 
-        public BOOL Supported;
+    public BOOL Supported;
 
-        public uint K;
+    public uint K;
 
-        public D3D12_WAVE_MMA_ACCUM_DATATYPE AccumDataTypes;
+    public D3D12_WAVE_MMA_ACCUM_DATATYPE AccumDataTypes;
 
-        public uint RequiredWaveLaneCountMin;
+    public uint RequiredWaveLaneCountMin;
 
-        public uint RequiredWaveLaneCountMax;
-    }
+    public uint RequiredWaveLaneCountMax;
 }

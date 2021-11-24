@@ -5,36 +5,35 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct DXGI_ADAPTER_DESC2
 {
-    public unsafe partial struct DXGI_ADAPTER_DESC2
-    {
-        [NativeTypeName("WCHAR [128]")]
-        public fixed ushort Description[128];
+    [NativeTypeName("WCHAR [128]")]
+    public fixed ushort Description[128];
 
-        public uint VendorId;
+    public uint VendorId;
 
-        public uint DeviceId;
+    public uint DeviceId;
 
-        public uint SubSysId;
+    public uint SubSysId;
 
-        public uint Revision;
+    public uint Revision;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint DedicatedVideoMemory;
+    [NativeTypeName("SIZE_T")]
+    public nuint DedicatedVideoMemory;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint DedicatedSystemMemory;
+    [NativeTypeName("SIZE_T")]
+    public nuint DedicatedSystemMemory;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint SharedSystemMemory;
+    [NativeTypeName("SIZE_T")]
+    public nuint SharedSystemMemory;
 
-        public LUID AdapterLuid;
+    public LUID AdapterLuid;
 
-        public uint Flags;
+    public uint Flags;
 
-        public DXGI_GRAPHICS_PREEMPTION_GRANULARITY GraphicsPreemptionGranularity;
+    public DXGI_GRAPHICS_PREEMPTION_GRANULARITY GraphicsPreemptionGranularity;
 
-        public DXGI_COMPUTE_PREEMPTION_GRANULARITY ComputePreemptionGranularity;
-    }
+    public DXGI_COMPUTE_PREEMPTION_GRANULARITY ComputePreemptionGranularity;
 }

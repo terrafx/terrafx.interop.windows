@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SCHANNEL_SESSION_TOKEN" /> struct.</summary>
+public static unsafe partial class SCHANNEL_SESSION_TOKENTests
 {
-    /// <summary>Provides validation of the <see cref="SCHANNEL_SESSION_TOKEN" /> struct.</summary>
-    public static unsafe partial class SCHANNEL_SESSION_TOKENTests
+    /// <summary>Validates that the <see cref="SCHANNEL_SESSION_TOKEN" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SCHANNEL_SESSION_TOKEN" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SCHANNEL_SESSION_TOKEN>(), Is.EqualTo(sizeof(SCHANNEL_SESSION_TOKEN)));
-        }
+        Assert.That(Marshal.SizeOf<SCHANNEL_SESSION_TOKEN>(), Is.EqualTo(sizeof(SCHANNEL_SESSION_TOKEN)));
+    }
 
-        /// <summary>Validates that the <see cref="SCHANNEL_SESSION_TOKEN" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SCHANNEL_SESSION_TOKEN).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SCHANNEL_SESSION_TOKEN" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SCHANNEL_SESSION_TOKEN).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SCHANNEL_SESSION_TOKEN" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SCHANNEL_SESSION_TOKEN), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="SCHANNEL_SESSION_TOKEN" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SCHANNEL_SESSION_TOKEN), Is.EqualTo(8));
     }
 }

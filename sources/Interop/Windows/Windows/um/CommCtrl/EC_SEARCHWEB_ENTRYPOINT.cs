@@ -3,11 +3,10 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum EC_SEARCHWEB_ENTRYPOINT
 {
-    public enum EC_SEARCHWEB_ENTRYPOINT
-    {
-        EC_SEARCHWEB_ENTRYPOINT_EXTERNAL = 0,
-        EC_SEARCHWEB_ENTRYPOINT_CONTEXTMENU = 1,
-    }
+    EC_SEARCHWEB_ENTRYPOINT_EXTERNAL = 0,
+    EC_SEARCHWEB_ENTRYPOINT_CONTEXTMENU = 1,
 }

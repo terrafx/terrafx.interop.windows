@@ -7,116 +7,115 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("B5CF2CFA-8AEB-11D1-9364-0060B067B86E")]
+[NativeTypeName("struct IActiveIMMMessagePumpOwner : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IActiveIMMMessagePumpOwner : IActiveIMMMessagePumpOwner.Interface
 {
-    [Guid("B5CF2CFA-8AEB-11D1-9364-0060B067B86E")]
-    [NativeTypeName("struct IActiveIMMMessagePumpOwner : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IActiveIMMMessagePumpOwner : IActiveIMMMessagePumpOwner.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, Guid*, void**, int>)(lpVtbl[0]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, Guid*, void**, int>)(lpVtbl[0]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint>)(lpVtbl[1]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint>)(lpVtbl[1]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint>)(lpVtbl[2]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint>)(lpVtbl[2]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Start()
+    {
+        return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, int>)(lpVtbl[3]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT End()
+    {
+        return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, int>)(lpVtbl[4]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT OnTranslateMessage([NativeTypeName("const MSG *")] MSG* pMsg)
+    {
+        return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, MSG*, int>)(lpVtbl[5]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), pMsg);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Pause([NativeTypeName("DWORD *")] uint* pdwCookie)
+    {
+        return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint*, int>)(lpVtbl[6]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), pdwCookie);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT Resume([NativeTypeName("DWORD")] uint dwCookie)
+    {
+        return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint, int>)(lpVtbl[7]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), dwCookie);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Start()
-        {
-            return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, int>)(lpVtbl[3]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Start();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT End()
-        {
-            return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, int>)(lpVtbl[4]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT End();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT OnTranslateMessage([NativeTypeName("const MSG *")] MSG* pMsg)
-        {
-            return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, MSG*, int>)(lpVtbl[5]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), pMsg);
-        }
+        HRESULT OnTranslateMessage([NativeTypeName("const MSG *")] MSG* pMsg);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Pause([NativeTypeName("DWORD *")] uint* pdwCookie)
-        {
-            return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint*, int>)(lpVtbl[6]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), pdwCookie);
-        }
+        HRESULT Pause([NativeTypeName("DWORD *")] uint* pdwCookie);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT Resume([NativeTypeName("DWORD")] uint dwCookie)
-        {
-            return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint, int>)(lpVtbl[7]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), dwCookie);
-        }
+        HRESULT Resume([NativeTypeName("DWORD")] uint dwCookie);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Start();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IActiveIMMMessagePumpOwner*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT End();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT OnTranslateMessage([NativeTypeName("const MSG *")] MSG* pMsg);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT Pause([NativeTypeName("DWORD *")] uint* pdwCookie);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IActiveIMMMessagePumpOwner*, int> Start;
 
-            [VtblIndex(7)]
-            HRESULT Resume([NativeTypeName("DWORD")] uint dwCookie);
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IActiveIMMMessagePumpOwner*, int> End;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IActiveIMMMessagePumpOwner*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (const MSG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IActiveIMMMessagePumpOwner*, MSG*, int> OnTranslateMessage;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint> AddRef;
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint*, int> Pause;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint> Release;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IActiveIMMMessagePumpOwner*, int> Start;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IActiveIMMMessagePumpOwner*, int> End;
-
-            [NativeTypeName("HRESULT (const MSG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IActiveIMMMessagePumpOwner*, MSG*, int> OnTranslateMessage;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint*, int> Pause;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint, int> Resume;
-        }
+        [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint, int> Resume;
     }
 }

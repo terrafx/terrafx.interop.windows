@@ -3,39 +3,38 @@
 // Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D12_AUTO_BREADCRUMB_NODE1
 {
-    public unsafe partial struct D3D12_AUTO_BREADCRUMB_NODE1
-    {
-        [NativeTypeName("const char *")]
-        public sbyte* pCommandListDebugNameA;
+    [NativeTypeName("const char *")]
+    public sbyte* pCommandListDebugNameA;
 
-        [NativeTypeName("const wchar_t *")]
-        public ushort* pCommandListDebugNameW;
+    [NativeTypeName("const wchar_t *")]
+    public ushort* pCommandListDebugNameW;
 
-        [NativeTypeName("const char *")]
-        public sbyte* pCommandQueueDebugNameA;
+    [NativeTypeName("const char *")]
+    public sbyte* pCommandQueueDebugNameA;
 
-        [NativeTypeName("const wchar_t *")]
-        public ushort* pCommandQueueDebugNameW;
+    [NativeTypeName("const wchar_t *")]
+    public ushort* pCommandQueueDebugNameW;
 
-        public ID3D12GraphicsCommandList* pCommandList;
+    public ID3D12GraphicsCommandList* pCommandList;
 
-        public ID3D12CommandQueue* pCommandQueue;
+    public ID3D12CommandQueue* pCommandQueue;
 
-        public uint BreadcrumbCount;
+    public uint BreadcrumbCount;
 
-        [NativeTypeName("const UINT *")]
-        public uint* pLastBreadcrumbValue;
+    [NativeTypeName("const UINT *")]
+    public uint* pLastBreadcrumbValue;
 
-        [NativeTypeName("const D3D12_AUTO_BREADCRUMB_OP *")]
-        public D3D12_AUTO_BREADCRUMB_OP* pCommandHistory;
+    [NativeTypeName("const D3D12_AUTO_BREADCRUMB_OP *")]
+    public D3D12_AUTO_BREADCRUMB_OP* pCommandHistory;
 
-        [NativeTypeName("const struct D3D12_AUTO_BREADCRUMB_NODE1 *")]
-        public D3D12_AUTO_BREADCRUMB_NODE1* pNext;
+    [NativeTypeName("const struct D3D12_AUTO_BREADCRUMB_NODE1 *")]
+    public D3D12_AUTO_BREADCRUMB_NODE1* pNext;
 
-        public uint BreadcrumbContextsCount;
+    public uint BreadcrumbContextsCount;
 
-        public D3D12_DRED_BREADCRUMB_CONTEXT* pBreadcrumbContexts;
-    }
+    public D3D12_DRED_BREADCRUMB_CONTEXT* pBreadcrumbContexts;
 }

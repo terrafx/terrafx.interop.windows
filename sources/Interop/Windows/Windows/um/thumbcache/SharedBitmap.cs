@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("4DB26476-6787-4046-B836-E8412A9E8A27")]
+public partial struct SharedBitmap
 {
-    [Guid("4DB26476-6787-4046-B836-E8412A9E8A27")]
-    public partial struct SharedBitmap
-    {
-    }
 }

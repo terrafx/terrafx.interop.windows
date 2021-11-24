@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IInitializeCommand" /> struct.</summary>
+public static unsafe partial class IInitializeCommandTests
 {
-    /// <summary>Provides validation of the <see cref="IInitializeCommand" /> struct.</summary>
-    public static unsafe partial class IInitializeCommandTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IInitializeCommand" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IInitializeCommand" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IInitializeCommand).GUID, Is.EqualTo(IID_IInitializeCommand));
-        }
+        Assert.That(typeof(IInitializeCommand).GUID, Is.EqualTo(IID_IInitializeCommand));
+    }
 
-        /// <summary>Validates that the <see cref="IInitializeCommand" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IInitializeCommand>(), Is.EqualTo(sizeof(IInitializeCommand)));
-        }
+    /// <summary>Validates that the <see cref="IInitializeCommand" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IInitializeCommand>(), Is.EqualTo(sizeof(IInitializeCommand)));
+    }
 
-        /// <summary>Validates that the <see cref="IInitializeCommand" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IInitializeCommand).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IInitializeCommand" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IInitializeCommand).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IInitializeCommand" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IInitializeCommand" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IInitializeCommand), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IInitializeCommand), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IInitializeCommand), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IInitializeCommand), Is.EqualTo(4));
         }
     }
 }

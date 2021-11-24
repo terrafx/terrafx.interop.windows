@@ -3,14 +3,13 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum STORAGE_ZONE_TYPES
 {
-    public enum STORAGE_ZONE_TYPES
-    {
-        ZoneTypeUnknown = 0,
-        ZoneTypeConventional = 1,
-        ZoneTypeSequentialWriteRequired = 2,
-        ZoneTypeSequentialWritePreferred = 3,
-        ZoneTypeMax,
-    }
+    ZoneTypeUnknown = 0,
+    ZoneTypeConventional = 1,
+    ZoneTypeSequentialWriteRequired = 2,
+    ZoneTypeSequentialWritePreferred = 3,
+    ZoneTypeMax,
 }

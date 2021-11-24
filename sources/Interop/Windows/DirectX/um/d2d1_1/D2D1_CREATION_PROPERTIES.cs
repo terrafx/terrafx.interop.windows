@@ -3,14 +3,13 @@
 // Ported from um/d2d1_1.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D1_CREATION_PROPERTIES
 {
-    public partial struct D2D1_CREATION_PROPERTIES
-    {
-        public D2D1_THREADING_MODE threadingMode;
+    public D2D1_THREADING_MODE threadingMode;
 
-        public D2D1_DEBUG_LEVEL debugLevel;
+    public D2D1_DEBUG_LEVEL debugLevel;
 
-        public D2D1_DEVICE_CONTEXT_OPTIONS options;
-    }
+    public D2D1_DEVICE_CONTEXT_OPTIONS options;
 }

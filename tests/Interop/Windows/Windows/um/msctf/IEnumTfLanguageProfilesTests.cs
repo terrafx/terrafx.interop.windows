@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IEnumTfLanguageProfiles" /> struct.</summary>
+public static unsafe partial class IEnumTfLanguageProfilesTests
 {
-    /// <summary>Provides validation of the <see cref="IEnumTfLanguageProfiles" /> struct.</summary>
-    public static unsafe partial class IEnumTfLanguageProfilesTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IEnumTfLanguageProfiles" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IEnumTfLanguageProfiles" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IEnumTfLanguageProfiles).GUID, Is.EqualTo(IID_IEnumTfLanguageProfiles));
-        }
+        Assert.That(typeof(IEnumTfLanguageProfiles).GUID, Is.EqualTo(IID_IEnumTfLanguageProfiles));
+    }
 
-        /// <summary>Validates that the <see cref="IEnumTfLanguageProfiles" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IEnumTfLanguageProfiles>(), Is.EqualTo(sizeof(IEnumTfLanguageProfiles)));
-        }
+    /// <summary>Validates that the <see cref="IEnumTfLanguageProfiles" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IEnumTfLanguageProfiles>(), Is.EqualTo(sizeof(IEnumTfLanguageProfiles)));
+    }
 
-        /// <summary>Validates that the <see cref="IEnumTfLanguageProfiles" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IEnumTfLanguageProfiles).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IEnumTfLanguageProfiles" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IEnumTfLanguageProfiles).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IEnumTfLanguageProfiles" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IEnumTfLanguageProfiles" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IEnumTfLanguageProfiles), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IEnumTfLanguageProfiles), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IEnumTfLanguageProfiles), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IEnumTfLanguageProfiles), Is.EqualTo(4));
         }
     }
 }

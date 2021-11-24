@@ -6,19 +6,18 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SP_DEVINFO_LIST_DETAIL_DATA32_W
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SP_DEVINFO_LIST_DETAIL_DATA32_W
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public Guid ClassGuid;
+    public Guid ClassGuid;
 
-        public HANDLE RemoteMachineHandle;
+    public HANDLE RemoteMachineHandle;
 
-        [NativeTypeName("WCHAR [263]")]
-        public fixed ushort RemoteMachineName[263];
-    }
+    [NativeTypeName("WCHAR [263]")]
+    public fixed ushort RemoteMachineName[263];
 }

@@ -5,39 +5,38 @@
 
 using static TerraFX.Interop.Windows.SIGDN;
 
-namespace TerraFX.Interop.Windows
-{
-    public static unsafe partial class Windows
-    {
-        public static HRESULT SHResolveFolderPathInLibrary(IShellLibrary* plib, [NativeTypeName("PCWSTR")] ushort* pszFolderPath, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("PWSTR *")] ushort** ppszResolvedPath)
-        {
-            *ppszResolvedPath = null;
-            ITEMIDLIST* pidlFolder = SHSimpleIDListFromPath(pszFolderPath);
-            HRESULT hr = unchecked((pidlFolder) != null ? ((int)(0)) : ((int)(0x80070057)));
+namespace TerraFX.Interop.Windows;
 
+public static unsafe partial class Windows
+{
+    public static HRESULT SHResolveFolderPathInLibrary(IShellLibrary* plib, [NativeTypeName("PCWSTR")] ushort* pszFolderPath, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("PWSTR *")] ushort** ppszResolvedPath)
+    {
+        *ppszResolvedPath = null;
+        ITEMIDLIST* pidlFolder = SHSimpleIDListFromPath(pszFolderPath);
+        HRESULT hr = unchecked((pidlFolder) != null ? ((int)(0)) : ((int)(0x80070057)));
+
+        if (((unchecked((int)(hr))) >= 0))
+        {
+            IShellItem* psiFolder;
+
+            hr = SHCreateItemFromIDList(pidlFolder, __uuidof<IShellItem>(), (void**)(&psiFolder));
             if (((unchecked((int)(hr))) >= 0))
             {
-                IShellItem* psiFolder;
+                IShellItem* psiResolved;
 
-                hr = SHCreateItemFromIDList(pidlFolder, __uuidof<IShellItem>(), (void**)(&psiFolder));
+                hr = plib->ResolveFolder(psiFolder, dwTimeout, __uuidof<IShellItem>(), (void**)(&psiResolved));
                 if (((unchecked((int)(hr))) >= 0))
                 {
-                    IShellItem* psiResolved;
-
-                    hr = plib->ResolveFolder(psiFolder, dwTimeout, __uuidof<IShellItem>(), (void**)(&psiResolved));
-                    if (((unchecked((int)(hr))) >= 0))
-                    {
-                        unchecked(hr) = psiResolved->GetDisplayName(SIGDN_DESKTOPABSOLUTEPARSING, ppszResolvedPath);
-                        _ = psiResolved->Release();
-                    }
-
-                    _ = psiFolder->Release();
+                    unchecked(hr) = psiResolved->GetDisplayName(SIGDN_DESKTOPABSOLUTEPARSING, ppszResolvedPath);
+                    _ = psiResolved->Release();
                 }
 
-                CoTaskMemFree(pidlFolder);
+                _ = psiFolder->Release();
             }
 
-            return hr;
+            CoTaskMemFree(pidlFolder);
         }
+
+        return hr;
     }
 }

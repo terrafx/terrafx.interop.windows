@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SHFOLDERCUSTOMSETTINGS" /> struct.</summary>
+public static unsafe partial class SHFOLDERCUSTOMSETTINGSTests
 {
-    /// <summary>Provides validation of the <see cref="SHFOLDERCUSTOMSETTINGS" /> struct.</summary>
-    public static unsafe partial class SHFOLDERCUSTOMSETTINGSTests
+    /// <summary>Validates that the <see cref="SHFOLDERCUSTOMSETTINGS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SHFOLDERCUSTOMSETTINGS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SHFOLDERCUSTOMSETTINGS>(), Is.EqualTo(sizeof(SHFOLDERCUSTOMSETTINGS)));
-        }
+        Assert.That(Marshal.SizeOf<SHFOLDERCUSTOMSETTINGS>(), Is.EqualTo(sizeof(SHFOLDERCUSTOMSETTINGS)));
+    }
 
-        /// <summary>Validates that the <see cref="SHFOLDERCUSTOMSETTINGS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SHFOLDERCUSTOMSETTINGS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SHFOLDERCUSTOMSETTINGS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SHFOLDERCUSTOMSETTINGS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SHFOLDERCUSTOMSETTINGS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SHFOLDERCUSTOMSETTINGS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SHFOLDERCUSTOMSETTINGS), Is.EqualTo(104));
-            }
-            else
-            {
-                Assert.That(sizeof(SHFOLDERCUSTOMSETTINGS), Is.EqualTo(60));
-            }
+            Assert.That(sizeof(SHFOLDERCUSTOMSETTINGS), Is.EqualTo(104));
+        }
+        else
+        {
+            Assert.That(sizeof(SHFOLDERCUSTOMSETTINGS), Is.EqualTo(60));
         }
     }
 }

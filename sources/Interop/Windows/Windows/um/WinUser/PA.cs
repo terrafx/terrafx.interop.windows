@@ -3,14 +3,13 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class PA
-    {
-        [NativeTypeName("#define PA_ACTIVATE MA_ACTIVATE")]
-        public const int PA_ACTIVATE = 1;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("#define PA_NOACTIVATE MA_NOACTIVATE")]
-        public const int PA_NOACTIVATE = 3;
-    }
+public static partial class PA
+{
+    [NativeTypeName("#define PA_ACTIVATE MA_ACTIVATE")]
+    public const int PA_ACTIVATE = 1;
+
+    [NativeTypeName("#define PA_NOACTIVATE MA_NOACTIVATE")]
+    public const int PA_NOACTIVATE = 3;
 }

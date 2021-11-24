@@ -3,11 +3,10 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum GRIPPERSTATES
 {
-    public enum GRIPPERSTATES
-    {
-        TSGS_NORMAL = 1,
-        TSGS_CENTERED = 2,
-    }
+    TSGS_NORMAL = 1,
+    TSGS_CENTERED = 2,
 }

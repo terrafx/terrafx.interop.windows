@@ -3,24 +3,23 @@
 // Ported from um/d3d12video.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D12_FEATURE_DATA_VIDEO_PROCESSOR_SIZE
 {
-    public unsafe partial struct D3D12_FEATURE_DATA_VIDEO_PROCESSOR_SIZE
-    {
-        public uint NodeMask;
+    public uint NodeMask;
 
-        [NativeTypeName("const D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC *")]
-        public D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC* pOutputStreamDesc;
+    [NativeTypeName("const D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC *")]
+    public D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC* pOutputStreamDesc;
 
-        public uint NumInputStreamDescs;
+    public uint NumInputStreamDescs;
 
-        [NativeTypeName("const D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC *")]
-        public D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC* pInputStreamDescs;
+    [NativeTypeName("const D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC *")]
+    public D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC* pInputStreamDescs;
 
-        [NativeTypeName("UINT64")]
-        public ulong MemoryPoolL0Size;
+    [NativeTypeName("UINT64")]
+    public ulong MemoryPoolL0Size;
 
-        [NativeTypeName("UINT64")]
-        public ulong MemoryPoolL1Size;
-    }
+    [NativeTypeName("UINT64")]
+    public ulong MemoryPoolL1Size;
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DWRITE_INLINE_OBJECT_METRICS" /> struct.</summary>
+public static unsafe partial class DWRITE_INLINE_OBJECT_METRICSTests
 {
-    /// <summary>Provides validation of the <see cref="DWRITE_INLINE_OBJECT_METRICS" /> struct.</summary>
-    public static unsafe partial class DWRITE_INLINE_OBJECT_METRICSTests
+    /// <summary>Validates that the <see cref="DWRITE_INLINE_OBJECT_METRICS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DWRITE_INLINE_OBJECT_METRICS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DWRITE_INLINE_OBJECT_METRICS>(), Is.EqualTo(sizeof(DWRITE_INLINE_OBJECT_METRICS)));
-        }
+        Assert.That(Marshal.SizeOf<DWRITE_INLINE_OBJECT_METRICS>(), Is.EqualTo(sizeof(DWRITE_INLINE_OBJECT_METRICS)));
+    }
 
-        /// <summary>Validates that the <see cref="DWRITE_INLINE_OBJECT_METRICS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DWRITE_INLINE_OBJECT_METRICS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DWRITE_INLINE_OBJECT_METRICS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DWRITE_INLINE_OBJECT_METRICS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DWRITE_INLINE_OBJECT_METRICS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DWRITE_INLINE_OBJECT_METRICS), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="DWRITE_INLINE_OBJECT_METRICS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DWRITE_INLINE_OBJECT_METRICS), Is.EqualTo(16));
     }
 }

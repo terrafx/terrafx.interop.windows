@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="AUDIODESCRIPTION" /> struct.</summary>
+public static unsafe partial class AUDIODESCRIPTIONTests
 {
-    /// <summary>Provides validation of the <see cref="AUDIODESCRIPTION" /> struct.</summary>
-    public static unsafe partial class AUDIODESCRIPTIONTests
+    /// <summary>Validates that the <see cref="AUDIODESCRIPTION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="AUDIODESCRIPTION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<AUDIODESCRIPTION>(), Is.EqualTo(sizeof(AUDIODESCRIPTION)));
-        }
+        Assert.That(Marshal.SizeOf<AUDIODESCRIPTION>(), Is.EqualTo(sizeof(AUDIODESCRIPTION)));
+    }
 
-        /// <summary>Validates that the <see cref="AUDIODESCRIPTION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(AUDIODESCRIPTION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="AUDIODESCRIPTION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(AUDIODESCRIPTION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="AUDIODESCRIPTION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(AUDIODESCRIPTION), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="AUDIODESCRIPTION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(AUDIODESCRIPTION), Is.EqualTo(12));
     }
 }

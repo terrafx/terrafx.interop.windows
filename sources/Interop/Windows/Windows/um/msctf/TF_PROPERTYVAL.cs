@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct TF_PROPERTYVAL
-    {
-        public Guid guidId;
+namespace TerraFX.Interop.Windows;
 
-        public VARIANT varValue;
-    }
+public partial struct TF_PROPERTYVAL
+{
+    public Guid guidId;
+
+    public VARIANT varValue;
 }

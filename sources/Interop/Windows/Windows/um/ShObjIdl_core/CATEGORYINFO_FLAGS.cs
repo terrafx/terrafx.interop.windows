@@ -5,20 +5,19 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum CATEGORYINFO_FLAGS
 {
-    [Flags]
-    public enum CATEGORYINFO_FLAGS
-    {
-        CATINFO_NORMAL = 0,
-        CATINFO_COLLAPSED = 0x1,
-        CATINFO_HIDDEN = 0x2,
-        CATINFO_EXPANDED = 0x4,
-        CATINFO_NOHEADER = 0x8,
-        CATINFO_NOTCOLLAPSIBLE = 0x10,
-        CATINFO_NOHEADERCOUNT = 0x20,
-        CATINFO_SUBSETTED = 0x40,
-        CATINFO_SEPARATE_IMAGES = 0x80,
-        CATINFO_SHOWEMPTY = 0x100,
-    }
+    CATINFO_NORMAL = 0,
+    CATINFO_COLLAPSED = 0x1,
+    CATINFO_HIDDEN = 0x2,
+    CATINFO_EXPANDED = 0x4,
+    CATINFO_NOHEADER = 0x8,
+    CATINFO_NOTCOLLAPSIBLE = 0x10,
+    CATINFO_NOHEADERCOUNT = 0x20,
+    CATINFO_SUBSETTED = 0x40,
+    CATINFO_SEPARATE_IMAGES = 0x80,
+    CATINFO_SHOWEMPTY = 0x100,
 }

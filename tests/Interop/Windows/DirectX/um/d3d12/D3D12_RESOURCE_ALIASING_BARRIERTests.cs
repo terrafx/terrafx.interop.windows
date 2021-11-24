@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="D3D12_RESOURCE_ALIASING_BARRIER" /> struct.</summary>
+public static unsafe partial class D3D12_RESOURCE_ALIASING_BARRIERTests
 {
-    /// <summary>Provides validation of the <see cref="D3D12_RESOURCE_ALIASING_BARRIER" /> struct.</summary>
-    public static unsafe partial class D3D12_RESOURCE_ALIASING_BARRIERTests
+    /// <summary>Validates that the <see cref="D3D12_RESOURCE_ALIASING_BARRIER" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="D3D12_RESOURCE_ALIASING_BARRIER" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<D3D12_RESOURCE_ALIASING_BARRIER>(), Is.EqualTo(sizeof(D3D12_RESOURCE_ALIASING_BARRIER)));
-        }
+        Assert.That(Marshal.SizeOf<D3D12_RESOURCE_ALIASING_BARRIER>(), Is.EqualTo(sizeof(D3D12_RESOURCE_ALIASING_BARRIER)));
+    }
 
-        /// <summary>Validates that the <see cref="D3D12_RESOURCE_ALIASING_BARRIER" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(D3D12_RESOURCE_ALIASING_BARRIER).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="D3D12_RESOURCE_ALIASING_BARRIER" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(D3D12_RESOURCE_ALIASING_BARRIER).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="D3D12_RESOURCE_ALIASING_BARRIER" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="D3D12_RESOURCE_ALIASING_BARRIER" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(D3D12_RESOURCE_ALIASING_BARRIER), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(D3D12_RESOURCE_ALIASING_BARRIER), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(D3D12_RESOURCE_ALIASING_BARRIER), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(D3D12_RESOURCE_ALIASING_BARRIER), Is.EqualTo(8));
         }
     }
 }

@@ -3,21 +3,20 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct STORAGE_READ_CAPACITY
 {
-    public partial struct STORAGE_READ_CAPACITY
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("DWORD")]
-        public uint BlockLength;
+    [NativeTypeName("DWORD")]
+    public uint BlockLength;
 
-        public LARGE_INTEGER NumberOfBlocks;
+    public LARGE_INTEGER NumberOfBlocks;
 
-        public LARGE_INTEGER DiskLength;
-    }
+    public LARGE_INTEGER DiskLength;
 }

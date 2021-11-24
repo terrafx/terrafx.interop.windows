@@ -3,18 +3,17 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum STORAGE_DISK_OPERATIONAL_STATUS
 {
-    public enum STORAGE_DISK_OPERATIONAL_STATUS
-    {
-        DiskOpStatusNone = 0,
-        DiskOpStatusUnknown,
-        DiskOpStatusOk,
-        DiskOpStatusPredictingFailure,
-        DiskOpStatusInService,
-        DiskOpStatusHardwareError,
-        DiskOpStatusNotUsable,
-        DiskOpStatusTransientError,
-        DiskOpStatusMissing,
-    }
+    DiskOpStatusNone = 0,
+    DiskOpStatusUnknown,
+    DiskOpStatusOk,
+    DiskOpStatusPredictingFailure,
+    DiskOpStatusInService,
+    DiskOpStatusHardwareError,
+    DiskOpStatusNotUsable,
+    DiskOpStatusTransientError,
+    DiskOpStatusMissing,
 }

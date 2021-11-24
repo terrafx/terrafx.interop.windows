@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISpatialAudioObjectRenderStreamForMetadata" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.15063.0")]
+public static unsafe partial class ISpatialAudioObjectRenderStreamForMetadataTests
 {
-    /// <summary>Provides validation of the <see cref="ISpatialAudioObjectRenderStreamForMetadata" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0.15063.0")]
-    public static unsafe partial class ISpatialAudioObjectRenderStreamForMetadataTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpatialAudioObjectRenderStreamForMetadata" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpatialAudioObjectRenderStreamForMetadata" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISpatialAudioObjectRenderStreamForMetadata).GUID, Is.EqualTo(IID_ISpatialAudioObjectRenderStreamForMetadata));
-        }
+        Assert.That(typeof(ISpatialAudioObjectRenderStreamForMetadata).GUID, Is.EqualTo(IID_ISpatialAudioObjectRenderStreamForMetadata));
+    }
 
-        /// <summary>Validates that the <see cref="ISpatialAudioObjectRenderStreamForMetadata" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISpatialAudioObjectRenderStreamForMetadata>(), Is.EqualTo(sizeof(ISpatialAudioObjectRenderStreamForMetadata)));
-        }
+    /// <summary>Validates that the <see cref="ISpatialAudioObjectRenderStreamForMetadata" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISpatialAudioObjectRenderStreamForMetadata>(), Is.EqualTo(sizeof(ISpatialAudioObjectRenderStreamForMetadata)));
+    }
 
-        /// <summary>Validates that the <see cref="ISpatialAudioObjectRenderStreamForMetadata" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISpatialAudioObjectRenderStreamForMetadata).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISpatialAudioObjectRenderStreamForMetadata" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISpatialAudioObjectRenderStreamForMetadata).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISpatialAudioObjectRenderStreamForMetadata" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISpatialAudioObjectRenderStreamForMetadata" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISpatialAudioObjectRenderStreamForMetadata), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISpatialAudioObjectRenderStreamForMetadata), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISpatialAudioObjectRenderStreamForMetadata), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISpatialAudioObjectRenderStreamForMetadata), Is.EqualTo(4));
         }
     }
 }

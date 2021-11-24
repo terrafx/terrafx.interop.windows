@@ -6,30 +6,29 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct CRL_DIST_POINT_NAME
 {
-    public partial struct CRL_DIST_POINT_NAME
+    [NativeTypeName("DWORD")]
+    public uint dwDistPointNameChoice;
+
+    [NativeTypeName("_CRL_DIST_POINT_NAME::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:4429:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public ref CERT_ALT_NAME_INFO FullName
     {
-        [NativeTypeName("DWORD")]
-        public uint dwDistPointNameChoice;
-
-        [NativeTypeName("_CRL_DIST_POINT_NAME::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:4429:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public ref CERT_ALT_NAME_INFO FullName
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.FullName, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.FullName, 1));
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            public CERT_ALT_NAME_INFO FullName;
-        }
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        public CERT_ALT_NAME_INFO FullName;
     }
 }

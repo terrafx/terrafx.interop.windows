@@ -3,12 +3,11 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct WS_FAULT_REASON
-    {
-        public WS_STRING text;
+namespace TerraFX.Interop.Windows;
 
-        public WS_STRING lang;
-    }
+public partial struct WS_FAULT_REASON
+{
+    public WS_STRING text;
+
+    public WS_STRING lang;
 }

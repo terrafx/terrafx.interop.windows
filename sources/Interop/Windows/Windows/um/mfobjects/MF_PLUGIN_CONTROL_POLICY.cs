@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum MF_PLUGIN_CONTROL_POLICY
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum MF_PLUGIN_CONTROL_POLICY
-    {
-        MF_PLUGIN_CONTROL_POLICY_USE_ALL_PLUGINS = 0,
-        MF_PLUGIN_CONTROL_POLICY_USE_APPROVED_PLUGINS = 1,
-        MF_PLUGIN_CONTROL_POLICY_USE_WEB_PLUGINS = 2,
-        MF_PLUGIN_CONTROL_POLICY_USE_WEB_PLUGINS_EDGEMODE = 3,
-    }
+    MF_PLUGIN_CONTROL_POLICY_USE_ALL_PLUGINS = 0,
+    MF_PLUGIN_CONTROL_POLICY_USE_APPROVED_PLUGINS = 1,
+    MF_PLUGIN_CONTROL_POLICY_USE_WEB_PLUGINS = 2,
+    MF_PLUGIN_CONTROL_POLICY_USE_WEB_PLUGINS_EDGEMODE = 3,
 }

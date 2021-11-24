@@ -5,37 +5,36 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SP_DEVINSTALL_PARAMS32_W
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SP_DEVINSTALL_PARAMS32_W
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        [NativeTypeName("DWORD")]
-        public uint FlagsEx;
+    [NativeTypeName("DWORD")]
+    public uint FlagsEx;
 
-        public HWND hwndParent;
+    public HWND hwndParent;
 
-        [NativeTypeName("PSP_FILE_CALLBACK_W")]
-        public delegate* unmanaged<void*, uint, nuint, nuint, uint> InstallMsgHandler;
+    [NativeTypeName("PSP_FILE_CALLBACK_W")]
+    public delegate* unmanaged<void*, uint, nuint, nuint, uint> InstallMsgHandler;
 
-        [NativeTypeName("PVOID")]
-        public void* InstallMsgHandlerContext;
+    [NativeTypeName("PVOID")]
+    public void* InstallMsgHandlerContext;
 
-        public HSPFILEQ FileQueue;
+    public HSPFILEQ FileQueue;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint ClassInstallReserved;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint ClassInstallReserved;
 
-        [NativeTypeName("DWORD")]
-        public uint Reserved;
+    [NativeTypeName("DWORD")]
+    public uint Reserved;
 
-        [NativeTypeName("WCHAR [260]")]
-        public fixed ushort DriverPath[260];
-    }
+    [NativeTypeName("WCHAR [260]")]
+    public fixed ushort DriverPath[260];
 }

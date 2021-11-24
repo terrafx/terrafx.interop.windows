@@ -3,28 +3,27 @@
 // Ported from um/ShlObj_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct BROWSEINFOW
 {
-    public unsafe partial struct BROWSEINFOW
-    {
-        public HWND hwndOwner;
+    public HWND hwndOwner;
 
-        [NativeTypeName("LPCITEMIDLIST")]
-        public ITEMIDLIST* pidlRoot;
+    [NativeTypeName("LPCITEMIDLIST")]
+    public ITEMIDLIST* pidlRoot;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszDisplayName;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszDisplayName;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* lpszTitle;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* lpszTitle;
 
-        public uint ulFlags;
+    public uint ulFlags;
 
-        [NativeTypeName("BFFCALLBACK")]
-        public delegate* unmanaged<HWND, uint, LPARAM, LPARAM, int> lpfn;
+    [NativeTypeName("BFFCALLBACK")]
+    public delegate* unmanaged<HWND, uint, LPARAM, LPARAM, int> lpfn;
 
-        public LPARAM lParam;
+    public LPARAM lParam;
 
-        public int iImage;
-    }
+    public int iImage;
 }

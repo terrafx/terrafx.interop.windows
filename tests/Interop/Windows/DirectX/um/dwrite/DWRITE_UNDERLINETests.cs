@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DWRITE_UNDERLINE" /> struct.</summary>
+public static unsafe partial class DWRITE_UNDERLINETests
 {
-    /// <summary>Provides validation of the <see cref="DWRITE_UNDERLINE" /> struct.</summary>
-    public static unsafe partial class DWRITE_UNDERLINETests
+    /// <summary>Validates that the <see cref="DWRITE_UNDERLINE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DWRITE_UNDERLINE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DWRITE_UNDERLINE>(), Is.EqualTo(sizeof(DWRITE_UNDERLINE)));
-        }
+        Assert.That(Marshal.SizeOf<DWRITE_UNDERLINE>(), Is.EqualTo(sizeof(DWRITE_UNDERLINE)));
+    }
 
-        /// <summary>Validates that the <see cref="DWRITE_UNDERLINE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DWRITE_UNDERLINE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DWRITE_UNDERLINE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DWRITE_UNDERLINE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DWRITE_UNDERLINE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DWRITE_UNDERLINE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DWRITE_UNDERLINE), Is.EqualTo(40));
-            }
-            else
-            {
-                Assert.That(sizeof(DWRITE_UNDERLINE), Is.EqualTo(32));
-            }
+            Assert.That(sizeof(DWRITE_UNDERLINE), Is.EqualTo(40));
+        }
+        else
+        {
+            Assert.That(sizeof(DWRITE_UNDERLINE), Is.EqualTo(32));
         }
     }
 }

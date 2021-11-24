@@ -6,67 +6,66 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct IMAGE_COR20_HEADER
 {
-    public partial struct IMAGE_COR20_HEADER
+    [NativeTypeName("DWORD")]
+    public uint cb;
+
+    [NativeTypeName("WORD")]
+    public ushort MajorRuntimeVersion;
+
+    [NativeTypeName("WORD")]
+    public ushort MinorRuntimeVersion;
+
+    public IMAGE_DATA_DIRECTORY MetaData;
+
+    [NativeTypeName("DWORD")]
+    public uint Flags;
+
+    [NativeTypeName("IMAGE_COR20_HEADER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:20543:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public IMAGE_DATA_DIRECTORY Resources;
+
+    public IMAGE_DATA_DIRECTORY StrongNameSignature;
+
+    public IMAGE_DATA_DIRECTORY CodeManagerTable;
+
+    public IMAGE_DATA_DIRECTORY VTableFixups;
+
+    public IMAGE_DATA_DIRECTORY ExportAddressTableJumps;
+
+    public IMAGE_DATA_DIRECTORY ManagedNativeHeader;
+
+    public ref uint EntryPointToken
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.EntryPointToken, 1));
+        }
+    }
+
+    public ref uint EntryPointRVA
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.EntryPointRVA, 1));
+        }
+    }
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
         [NativeTypeName("DWORD")]
-        public uint cb;
+        public uint EntryPointToken;
 
-        [NativeTypeName("WORD")]
-        public ushort MajorRuntimeVersion;
-
-        [NativeTypeName("WORD")]
-        public ushort MinorRuntimeVersion;
-
-        public IMAGE_DATA_DIRECTORY MetaData;
-
+        [FieldOffset(0)]
         [NativeTypeName("DWORD")]
-        public uint Flags;
-
-        [NativeTypeName("IMAGE_COR20_HEADER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:20543:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public IMAGE_DATA_DIRECTORY Resources;
-
-        public IMAGE_DATA_DIRECTORY StrongNameSignature;
-
-        public IMAGE_DATA_DIRECTORY CodeManagerTable;
-
-        public IMAGE_DATA_DIRECTORY VTableFixups;
-
-        public IMAGE_DATA_DIRECTORY ExportAddressTableJumps;
-
-        public IMAGE_DATA_DIRECTORY ManagedNativeHeader;
-
-        public ref uint EntryPointToken
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.EntryPointToken, 1));
-            }
-        }
-
-        public ref uint EntryPointRVA
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.EntryPointRVA, 1));
-            }
-        }
-
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint EntryPointToken;
-
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint EntryPointRVA;
-        }
+        public uint EntryPointRVA;
     }
 }

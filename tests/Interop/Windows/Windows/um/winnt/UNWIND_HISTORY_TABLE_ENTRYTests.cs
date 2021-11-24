@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="UNWIND_HISTORY_TABLE_ENTRY" /> struct.</summary>
+public static unsafe partial class UNWIND_HISTORY_TABLE_ENTRYTests
 {
-    /// <summary>Provides validation of the <see cref="UNWIND_HISTORY_TABLE_ENTRY" /> struct.</summary>
-    public static unsafe partial class UNWIND_HISTORY_TABLE_ENTRYTests
+    /// <summary>Validates that the <see cref="UNWIND_HISTORY_TABLE_ENTRY" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="UNWIND_HISTORY_TABLE_ENTRY" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<UNWIND_HISTORY_TABLE_ENTRY>(), Is.EqualTo(sizeof(UNWIND_HISTORY_TABLE_ENTRY)));
-        }
+        Assert.That(Marshal.SizeOf<UNWIND_HISTORY_TABLE_ENTRY>(), Is.EqualTo(sizeof(UNWIND_HISTORY_TABLE_ENTRY)));
+    }
 
-        /// <summary>Validates that the <see cref="UNWIND_HISTORY_TABLE_ENTRY" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(UNWIND_HISTORY_TABLE_ENTRY).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="UNWIND_HISTORY_TABLE_ENTRY" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(UNWIND_HISTORY_TABLE_ENTRY).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="UNWIND_HISTORY_TABLE_ENTRY" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="UNWIND_HISTORY_TABLE_ENTRY" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(UNWIND_HISTORY_TABLE_ENTRY), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(UNWIND_HISTORY_TABLE_ENTRY), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(UNWIND_HISTORY_TABLE_ENTRY), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(UNWIND_HISTORY_TABLE_ENTRY), Is.EqualTo(8));
         }
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TXFS_GET_METADATA_INFO_OUT" /> struct.</summary>
+public static unsafe partial class TXFS_GET_METADATA_INFO_OUTTests
 {
-    /// <summary>Provides validation of the <see cref="TXFS_GET_METADATA_INFO_OUT" /> struct.</summary>
-    public static unsafe partial class TXFS_GET_METADATA_INFO_OUTTests
+    /// <summary>Validates that the <see cref="TXFS_GET_METADATA_INFO_OUT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TXFS_GET_METADATA_INFO_OUT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TXFS_GET_METADATA_INFO_OUT>(), Is.EqualTo(sizeof(TXFS_GET_METADATA_INFO_OUT)));
-        }
+        Assert.That(Marshal.SizeOf<TXFS_GET_METADATA_INFO_OUT>(), Is.EqualTo(sizeof(TXFS_GET_METADATA_INFO_OUT)));
+    }
 
-        /// <summary>Validates that the <see cref="TXFS_GET_METADATA_INFO_OUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TXFS_GET_METADATA_INFO_OUT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TXFS_GET_METADATA_INFO_OUT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TXFS_GET_METADATA_INFO_OUT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TXFS_GET_METADATA_INFO_OUT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(TXFS_GET_METADATA_INFO_OUT), Is.EqualTo(48));
-        }
+    /// <summary>Validates that the <see cref="TXFS_GET_METADATA_INFO_OUT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(TXFS_GET_METADATA_INFO_OUT), Is.EqualTo(48));
     }
 }

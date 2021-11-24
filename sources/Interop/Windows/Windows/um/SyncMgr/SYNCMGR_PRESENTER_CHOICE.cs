@@ -3,15 +3,14 @@
 // Ported from um/SyncMgr.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SYNCMGR_PRESENTER_CHOICE
 {
-    public enum SYNCMGR_PRESENTER_CHOICE
-    {
-        SYNCMGR_PC_NO_CHOICE = 0,
-        SYNCMGR_PC_KEEP_ONE = (SYNCMGR_PC_NO_CHOICE + 1),
-        SYNCMGR_PC_KEEP_MULTIPLE = (SYNCMGR_PC_KEEP_ONE + 1),
-        SYNCMGR_PC_KEEP_RECENT = (SYNCMGR_PC_KEEP_MULTIPLE + 1),
-        SYNCMGR_PC_REMOVE_FROM_SYNC_SET = (SYNCMGR_PC_KEEP_RECENT + 1),
-        SYNCMGR_PC_SKIP = (SYNCMGR_PC_REMOVE_FROM_SYNC_SET + 1),
-    }
+    SYNCMGR_PC_NO_CHOICE = 0,
+    SYNCMGR_PC_KEEP_ONE = (SYNCMGR_PC_NO_CHOICE + 1),
+    SYNCMGR_PC_KEEP_MULTIPLE = (SYNCMGR_PC_KEEP_ONE + 1),
+    SYNCMGR_PC_KEEP_RECENT = (SYNCMGR_PC_KEEP_MULTIPLE + 1),
+    SYNCMGR_PC_REMOVE_FROM_SYNC_SET = (SYNCMGR_PC_KEEP_RECENT + 1),
+    SYNCMGR_PC_SKIP = (SYNCMGR_PC_REMOVE_FROM_SYNC_SET + 1),
 }

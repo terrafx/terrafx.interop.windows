@@ -5,77 +5,76 @@
 
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct IMAGE_CE_RUNTIME_FUNCTION_ENTRY
 {
-    public partial struct IMAGE_CE_RUNTIME_FUNCTION_ENTRY
+    [NativeTypeName("DWORD")]
+    public uint FuncStart;
+
+    public uint _bitfield;
+
+    [NativeTypeName("DWORD : 8")]
+    public uint PrologLen
     {
-        [NativeTypeName("DWORD")]
-        public uint FuncStart;
-
-        public uint _bitfield;
-
-        [NativeTypeName("DWORD : 8")]
-        public uint PrologLen
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return _bitfield & 0xFFu;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~0xFFu) | (value & 0xFFu);
-            }
+            return _bitfield & 0xFFu;
         }
 
-        [NativeTypeName("DWORD : 22")]
-        public uint FuncLen
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield >> 8) & 0x3FFFFFu;
-            }
+            _bitfield = (_bitfield & ~0xFFu) | (value & 0xFFu);
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0x3FFFFFu << 8)) | ((value & 0x3FFFFFu) << 8);
-            }
+    [NativeTypeName("DWORD : 22")]
+    public uint FuncLen
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield >> 8) & 0x3FFFFFu;
         }
 
-        [NativeTypeName("DWORD : 1")]
-        public uint ThirtyTwoBit
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield >> 30) & 0x1u;
-            }
+            _bitfield = (_bitfield & ~(0x3FFFFFu << 8)) | ((value & 0x3FFFFFu) << 8);
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0x1u << 30)) | ((value & 0x1u) << 30);
-            }
+    [NativeTypeName("DWORD : 1")]
+    public uint ThirtyTwoBit
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield >> 30) & 0x1u;
         }
 
-        [NativeTypeName("DWORD : 1")]
-        public uint ExceptionFlag
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield >> 31) & 0x1u;
-            }
+            _bitfield = (_bitfield & ~(0x1u << 30)) | ((value & 0x1u) << 30);
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0x1u << 31)) | ((value & 0x1u) << 31);
-            }
+    [NativeTypeName("DWORD : 1")]
+    public uint ExceptionFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield >> 31) & 0x1u;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield = (_bitfield & ~(0x1u << 31)) | ((value & 0x1u) << 31);
         }
     }
 }

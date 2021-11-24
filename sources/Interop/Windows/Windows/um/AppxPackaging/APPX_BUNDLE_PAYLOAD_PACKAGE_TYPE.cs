@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public enum APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE
 {
-    [SupportedOSPlatform("windows8.1")]
-    public enum APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE
-    {
-        APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE_APPLICATION = 0,
-        APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE_RESOURCE = 1,
-    }
+    APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE_APPLICATION = 0,
+    APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE_RESOURCE = 1,
 }

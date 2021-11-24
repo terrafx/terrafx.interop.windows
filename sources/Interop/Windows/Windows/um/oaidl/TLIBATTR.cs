@@ -5,24 +5,23 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TLIBATTR
 {
-    public partial struct TLIBATTR
-    {
-        public Guid guid;
+    public Guid guid;
 
-        [NativeTypeName("LCID")]
-        public uint lcid;
+    [NativeTypeName("LCID")]
+    public uint lcid;
 
-        public SYSKIND syskind;
+    public SYSKIND syskind;
 
-        [NativeTypeName("WORD")]
-        public ushort wMajorVerNum;
+    [NativeTypeName("WORD")]
+    public ushort wMajorVerNum;
 
-        [NativeTypeName("WORD")]
-        public ushort wMinorVerNum;
+    [NativeTypeName("WORD")]
+    public ushort wMinorVerNum;
 
-        [NativeTypeName("WORD")]
-        public ushort wLibFlags;
-    }
+    [NativeTypeName("WORD")]
+    public ushort wLibFlags;
 }

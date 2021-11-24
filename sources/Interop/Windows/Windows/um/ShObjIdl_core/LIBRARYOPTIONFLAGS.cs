@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum LIBRARYOPTIONFLAGS
 {
-    [Flags]
-    public enum LIBRARYOPTIONFLAGS
-    {
-        LOF_DEFAULT = 0,
-        LOF_PINNEDTONAVPANE = 0x1,
-        LOF_MASK_ALL = 0x1,
-    }
+    LOF_DEFAULT = 0,
+    LOF_PINNEDTONAVPANE = 0x1,
+    LOF_MASK_ALL = 0x1,
 }

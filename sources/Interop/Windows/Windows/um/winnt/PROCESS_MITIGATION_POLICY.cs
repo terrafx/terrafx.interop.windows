@@ -5,28 +5,27 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum PROCESS_MITIGATION_POLICY
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum PROCESS_MITIGATION_POLICY
-    {
-        ProcessDEPPolicy,
-        ProcessASLRPolicy,
-        ProcessDynamicCodePolicy,
-        ProcessStrictHandleCheckPolicy,
-        ProcessSystemCallDisablePolicy,
-        ProcessMitigationOptionsMask,
-        ProcessExtensionPointDisablePolicy,
-        ProcessControlFlowGuardPolicy,
-        ProcessSignaturePolicy,
-        ProcessFontDisablePolicy,
-        ProcessImageLoadPolicy,
-        ProcessSystemCallFilterPolicy,
-        ProcessPayloadRestrictionPolicy,
-        ProcessChildProcessPolicy,
-        ProcessSideChannelIsolationPolicy,
-        ProcessUserShadowStackPolicy,
-        ProcessRedirectionTrustPolicy,
-        MaxProcessMitigationPolicy,
-    }
+    ProcessDEPPolicy,
+    ProcessASLRPolicy,
+    ProcessDynamicCodePolicy,
+    ProcessStrictHandleCheckPolicy,
+    ProcessSystemCallDisablePolicy,
+    ProcessMitigationOptionsMask,
+    ProcessExtensionPointDisablePolicy,
+    ProcessControlFlowGuardPolicy,
+    ProcessSignaturePolicy,
+    ProcessFontDisablePolicy,
+    ProcessImageLoadPolicy,
+    ProcessSystemCallFilterPolicy,
+    ProcessPayloadRestrictionPolicy,
+    ProcessChildProcessPolicy,
+    ProcessSideChannelIsolationPolicy,
+    ProcessUserShadowStackPolicy,
+    ProcessRedirectionTrustPolicy,
+    MaxProcessMitigationPolicy,
 }

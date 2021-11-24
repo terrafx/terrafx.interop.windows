@@ -3,13 +3,12 @@
 // Ported from shared/ifdef.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct IF_PHYSICAL_ADDRESS_LH
-    {
-        public ushort Length;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("UCHAR [32]")]
-        public fixed byte Address[32];
-    }
+public unsafe partial struct IF_PHYSICAL_ADDRESS_LH
+{
+    public ushort Length;
+
+    [NativeTypeName("UCHAR [32]")]
+    public fixed byte Address[32];
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ITfTransitoryExtensionSink" /> struct.</summary>
+public static unsafe partial class ITfTransitoryExtensionSinkTests
 {
-    /// <summary>Provides validation of the <see cref="ITfTransitoryExtensionSink" /> struct.</summary>
-    public static unsafe partial class ITfTransitoryExtensionSinkTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfTransitoryExtensionSink" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfTransitoryExtensionSink" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ITfTransitoryExtensionSink).GUID, Is.EqualTo(IID_ITfTransitoryExtensionSink));
-        }
+        Assert.That(typeof(ITfTransitoryExtensionSink).GUID, Is.EqualTo(IID_ITfTransitoryExtensionSink));
+    }
 
-        /// <summary>Validates that the <see cref="ITfTransitoryExtensionSink" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ITfTransitoryExtensionSink>(), Is.EqualTo(sizeof(ITfTransitoryExtensionSink)));
-        }
+    /// <summary>Validates that the <see cref="ITfTransitoryExtensionSink" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ITfTransitoryExtensionSink>(), Is.EqualTo(sizeof(ITfTransitoryExtensionSink)));
+    }
 
-        /// <summary>Validates that the <see cref="ITfTransitoryExtensionSink" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ITfTransitoryExtensionSink).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ITfTransitoryExtensionSink" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ITfTransitoryExtensionSink).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ITfTransitoryExtensionSink" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ITfTransitoryExtensionSink" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ITfTransitoryExtensionSink), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ITfTransitoryExtensionSink), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ITfTransitoryExtensionSink), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ITfTransitoryExtensionSink), Is.EqualTo(4));
         }
     }
 }

@@ -8,38 +8,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NOTIFICATION_USER_INPUT_DATA" /> struct.</summary>
+[SupportedOSPlatform("windows10.0")]
+public static unsafe partial class NOTIFICATION_USER_INPUT_DATATests
 {
-    /// <summary>Provides validation of the <see cref="NOTIFICATION_USER_INPUT_DATA" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0")]
-    public static unsafe partial class NOTIFICATION_USER_INPUT_DATATests
+    /// <summary>Validates that the <see cref="NOTIFICATION_USER_INPUT_DATA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NOTIFICATION_USER_INPUT_DATA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NOTIFICATION_USER_INPUT_DATA>(), Is.EqualTo(sizeof(NOTIFICATION_USER_INPUT_DATA)));
-        }
+        Assert.That(Marshal.SizeOf<NOTIFICATION_USER_INPUT_DATA>(), Is.EqualTo(sizeof(NOTIFICATION_USER_INPUT_DATA)));
+    }
 
-        /// <summary>Validates that the <see cref="NOTIFICATION_USER_INPUT_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NOTIFICATION_USER_INPUT_DATA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NOTIFICATION_USER_INPUT_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NOTIFICATION_USER_INPUT_DATA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NOTIFICATION_USER_INPUT_DATA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="NOTIFICATION_USER_INPUT_DATA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(NOTIFICATION_USER_INPUT_DATA), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(NOTIFICATION_USER_INPUT_DATA), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(NOTIFICATION_USER_INPUT_DATA), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(NOTIFICATION_USER_INPUT_DATA), Is.EqualTo(8));
         }
     }
 }

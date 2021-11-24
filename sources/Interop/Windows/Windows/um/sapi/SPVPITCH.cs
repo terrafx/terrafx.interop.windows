@@ -3,14 +3,13 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct SPVPITCH
-    {
-        [NativeTypeName("long")]
-        public int MiddleAdj;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("long")]
-        public int RangeAdj;
-    }
+public partial struct SPVPITCH
+{
+    [NativeTypeName("long")]
+    public int MiddleAdj;
+
+    [NativeTypeName("long")]
+    public int RangeAdj;
 }

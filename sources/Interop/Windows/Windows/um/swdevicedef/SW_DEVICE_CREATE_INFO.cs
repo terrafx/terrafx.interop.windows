@@ -5,35 +5,34 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SW_DEVICE_CREATE_INFO
 {
-    public unsafe partial struct SW_DEVICE_CREATE_INFO
-    {
-        [NativeTypeName("ULONG")]
-        public uint cbSize;
+    [NativeTypeName("ULONG")]
+    public uint cbSize;
 
-        [NativeTypeName("PCWSTR")]
-        public ushort* pszInstanceId;
+    [NativeTypeName("PCWSTR")]
+    public ushort* pszInstanceId;
 
-        [NativeTypeName("PCZZWSTR")]
-        public ushort* pszzHardwareIds;
+    [NativeTypeName("PCZZWSTR")]
+    public ushort* pszzHardwareIds;
 
-        [NativeTypeName("PCZZWSTR")]
-        public ushort* pszzCompatibleIds;
+    [NativeTypeName("PCZZWSTR")]
+    public ushort* pszzCompatibleIds;
 
-        [NativeTypeName("const GUID *")]
-        public Guid* pContainerId;
+    [NativeTypeName("const GUID *")]
+    public Guid* pContainerId;
 
-        [NativeTypeName("ULONG")]
-        public uint CapabilityFlags;
+    [NativeTypeName("ULONG")]
+    public uint CapabilityFlags;
 
-        [NativeTypeName("PCWSTR")]
-        public ushort* pszDeviceDescription;
+    [NativeTypeName("PCWSTR")]
+    public ushort* pszDeviceDescription;
 
-        [NativeTypeName("PCWSTR")]
-        public ushort* pszDeviceLocation;
+    [NativeTypeName("PCWSTR")]
+    public ushort* pszDeviceLocation;
 
-        [NativeTypeName("const SECURITY_DESCRIPTOR *")]
-        public SECURITY_DESCRIPTOR* pSecurityDescriptor;
-    }
+    [NativeTypeName("const SECURITY_DESCRIPTOR *")]
+    public SECURITY_DESCRIPTOR* pSecurityDescriptor;
 }

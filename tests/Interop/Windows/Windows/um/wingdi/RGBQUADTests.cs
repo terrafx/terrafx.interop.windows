@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="RGBQUAD" /> struct.</summary>
+public static unsafe partial class RGBQUADTests
 {
-    /// <summary>Provides validation of the <see cref="RGBQUAD" /> struct.</summary>
-    public static unsafe partial class RGBQUADTests
+    /// <summary>Validates that the <see cref="RGBQUAD" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="RGBQUAD" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<RGBQUAD>(), Is.EqualTo(sizeof(RGBQUAD)));
-        }
+        Assert.That(Marshal.SizeOf<RGBQUAD>(), Is.EqualTo(sizeof(RGBQUAD)));
+    }
 
-        /// <summary>Validates that the <see cref="RGBQUAD" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(RGBQUAD).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="RGBQUAD" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(RGBQUAD).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="RGBQUAD" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(RGBQUAD), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="RGBQUAD" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(RGBQUAD), Is.EqualTo(4));
     }
 }

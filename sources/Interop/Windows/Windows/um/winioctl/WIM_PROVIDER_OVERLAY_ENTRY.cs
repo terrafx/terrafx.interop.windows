@@ -5,27 +5,26 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct WIM_PROVIDER_OVERLAY_ENTRY
 {
-    public partial struct WIM_PROVIDER_OVERLAY_ENTRY
-    {
-        [NativeTypeName("DWORD")]
-        public uint NextEntryOffset;
+    [NativeTypeName("DWORD")]
+    public uint NextEntryOffset;
 
-        public LARGE_INTEGER DataSourceId;
+    public LARGE_INTEGER DataSourceId;
 
-        public Guid WimGuid;
+    public Guid WimGuid;
 
-        [NativeTypeName("DWORD")]
-        public uint WimFileNameOffset;
+    [NativeTypeName("DWORD")]
+    public uint WimFileNameOffset;
 
-        [NativeTypeName("DWORD")]
-        public uint WimType;
+    [NativeTypeName("DWORD")]
+    public uint WimType;
 
-        [NativeTypeName("DWORD")]
-        public uint WimIndex;
+    [NativeTypeName("DWORD")]
+    public uint WimIndex;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
-    }
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 }

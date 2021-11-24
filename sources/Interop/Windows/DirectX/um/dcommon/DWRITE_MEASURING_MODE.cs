@@ -3,12 +3,11 @@
 // Ported from um/dcommon.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum DWRITE_MEASURING_MODE
 {
-    public enum DWRITE_MEASURING_MODE
-    {
-        DWRITE_MEASURING_MODE_NATURAL,
-        DWRITE_MEASURING_MODE_GDI_CLASSIC,
-        DWRITE_MEASURING_MODE_GDI_NATURAL,
-    }
+    DWRITE_MEASURING_MODE_NATURAL,
+    DWRITE_MEASURING_MODE_GDI_CLASSIC,
+    DWRITE_MEASURING_MODE_GDI_NATURAL,
 }

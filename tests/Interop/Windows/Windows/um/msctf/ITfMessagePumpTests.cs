@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ITfMessagePump" /> struct.</summary>
+public static unsafe partial class ITfMessagePumpTests
 {
-    /// <summary>Provides validation of the <see cref="ITfMessagePump" /> struct.</summary>
-    public static unsafe partial class ITfMessagePumpTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfMessagePump" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfMessagePump" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ITfMessagePump).GUID, Is.EqualTo(IID_ITfMessagePump));
-        }
+        Assert.That(typeof(ITfMessagePump).GUID, Is.EqualTo(IID_ITfMessagePump));
+    }
 
-        /// <summary>Validates that the <see cref="ITfMessagePump" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ITfMessagePump>(), Is.EqualTo(sizeof(ITfMessagePump)));
-        }
+    /// <summary>Validates that the <see cref="ITfMessagePump" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ITfMessagePump>(), Is.EqualTo(sizeof(ITfMessagePump)));
+    }
 
-        /// <summary>Validates that the <see cref="ITfMessagePump" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ITfMessagePump).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ITfMessagePump" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ITfMessagePump).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ITfMessagePump" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ITfMessagePump" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ITfMessagePump), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ITfMessagePump), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ITfMessagePump), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ITfMessagePump), Is.EqualTo(4));
         }
     }
 }

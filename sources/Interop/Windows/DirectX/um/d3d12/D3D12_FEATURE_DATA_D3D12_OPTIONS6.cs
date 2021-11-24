@@ -5,18 +5,17 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_FEATURE_DATA_D3D12_OPTIONS6
 {
-    public partial struct D3D12_FEATURE_DATA_D3D12_OPTIONS6
-    {
-        public BOOL AdditionalShadingRatesSupported;
+    public BOOL AdditionalShadingRatesSupported;
 
-        public BOOL PerPrimitiveShadingRateSupportedWithViewportIndexing;
+    public BOOL PerPrimitiveShadingRateSupportedWithViewportIndexing;
 
-        public D3D12_VARIABLE_SHADING_RATE_TIER VariableShadingRateTier;
+    public D3D12_VARIABLE_SHADING_RATE_TIER VariableShadingRateTier;
 
-        public uint ShadingRateImageTileSize;
+    public uint ShadingRateImageTileSize;
 
-        public BOOL BackgroundProcessingSupported;
-    }
+    public BOOL BackgroundProcessingSupported;
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NMDATETIMEWMKEYDOWNA" /> struct.</summary>
+public static unsafe partial class NMDATETIMEWMKEYDOWNATests
 {
-    /// <summary>Provides validation of the <see cref="NMDATETIMEWMKEYDOWNA" /> struct.</summary>
-    public static unsafe partial class NMDATETIMEWMKEYDOWNATests
+    /// <summary>Validates that the <see cref="NMDATETIMEWMKEYDOWNA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NMDATETIMEWMKEYDOWNA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NMDATETIMEWMKEYDOWNA>(), Is.EqualTo(sizeof(NMDATETIMEWMKEYDOWNA)));
-        }
+        Assert.That(Marshal.SizeOf<NMDATETIMEWMKEYDOWNA>(), Is.EqualTo(sizeof(NMDATETIMEWMKEYDOWNA)));
+    }
 
-        /// <summary>Validates that the <see cref="NMDATETIMEWMKEYDOWNA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NMDATETIMEWMKEYDOWNA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NMDATETIMEWMKEYDOWNA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NMDATETIMEWMKEYDOWNA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NMDATETIMEWMKEYDOWNA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="NMDATETIMEWMKEYDOWNA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(NMDATETIMEWMKEYDOWNA), Is.EqualTo(56));
-            }
-            else
-            {
-                Assert.That(sizeof(NMDATETIMEWMKEYDOWNA), Is.EqualTo(36));
-            }
+            Assert.That(sizeof(NMDATETIMEWMKEYDOWNA), Is.EqualTo(56));
+        }
+        else
+        {
+            Assert.That(sizeof(NMDATETIMEWMKEYDOWNA), Is.EqualTo(36));
         }
     }
 }

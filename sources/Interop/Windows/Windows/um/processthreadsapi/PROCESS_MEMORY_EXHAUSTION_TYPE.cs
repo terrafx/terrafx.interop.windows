@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.10586.0")]
+public enum PROCESS_MEMORY_EXHAUSTION_TYPE
 {
-    [SupportedOSPlatform("windows10.0.10586.0")]
-    public enum PROCESS_MEMORY_EXHAUSTION_TYPE
-    {
-        PMETypeFailFastOnCommitFailure,
-        PMETypeMax,
-    }
+    PMETypeFailFastOnCommitFailure,
+    PMETypeMax,
 }

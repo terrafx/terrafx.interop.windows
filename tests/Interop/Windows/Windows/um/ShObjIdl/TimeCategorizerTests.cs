@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TimeCategorizer" /> struct.</summary>
+public static unsafe partial class TimeCategorizerTests
 {
-    /// <summary>Provides validation of the <see cref="TimeCategorizer" /> struct.</summary>
-    public static unsafe partial class TimeCategorizerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="TimeCategorizer" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="TimeCategorizer" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(TimeCategorizer).GUID, Is.EqualTo(IID_TimeCategorizer));
-        }
+        Assert.That(typeof(TimeCategorizer).GUID, Is.EqualTo(IID_TimeCategorizer));
+    }
 
-        /// <summary>Validates that the <see cref="TimeCategorizer" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TimeCategorizer>(), Is.EqualTo(sizeof(TimeCategorizer)));
-        }
+    /// <summary>Validates that the <see cref="TimeCategorizer" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<TimeCategorizer>(), Is.EqualTo(sizeof(TimeCategorizer)));
+    }
 
-        /// <summary>Validates that the <see cref="TimeCategorizer" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TimeCategorizer).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TimeCategorizer" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TimeCategorizer).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TimeCategorizer" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(TimeCategorizer), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="TimeCategorizer" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(TimeCategorizer), Is.EqualTo(1));
     }
 }

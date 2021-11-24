@@ -7,46 +7,45 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SCOPE_TABLE_AMD64
 {
-    public partial struct SCOPE_TABLE_AMD64
+    [NativeTypeName("DWORD")]
+    public uint Count;
+
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:2710:5) [1]")]
+    public _ScopeRecord_e__FixedBuffer ScopeRecord;
+
+    public partial struct _Anonymous_e__Struct
     {
         [NativeTypeName("DWORD")]
-        public uint Count;
+        public uint BeginAddress;
 
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:2710:5) [1]")]
-        public _ScopeRecord_e__FixedBuffer ScopeRecord;
+        [NativeTypeName("DWORD")]
+        public uint EndAddress;
 
-        public partial struct _Anonymous_e__Struct
+        [NativeTypeName("DWORD")]
+        public uint HandlerAddress;
+
+        [NativeTypeName("DWORD")]
+        public uint JumpTarget;
+    }
+
+    public partial struct _ScopeRecord_e__FixedBuffer
+    {
+        public _Anonymous_e__Struct e0;
+
+        public ref _Anonymous_e__Struct this[int index]
         {
-            [NativeTypeName("DWORD")]
-            public uint BeginAddress;
-
-            [NativeTypeName("DWORD")]
-            public uint EndAddress;
-
-            [NativeTypeName("DWORD")]
-            public uint HandlerAddress;
-
-            [NativeTypeName("DWORD")]
-            public uint JumpTarget;
-        }
-
-        public partial struct _ScopeRecord_e__FixedBuffer
-        {
-            public _Anonymous_e__Struct e0;
-
-            public ref _Anonymous_e__Struct this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<_Anonymous_e__Struct> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<_Anonymous_e__Struct> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

@@ -5,16 +5,15 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+public unsafe partial struct DML_DIAGONAL_MATRIX_OPERATOR_DESC
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public unsafe partial struct DML_DIAGONAL_MATRIX_OPERATOR_DESC
-    {
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* OutputTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* OutputTensor;
 
-        public int Offset;
+    public int Offset;
 
-        public float Value;
-    }
+    public float Value;
 }

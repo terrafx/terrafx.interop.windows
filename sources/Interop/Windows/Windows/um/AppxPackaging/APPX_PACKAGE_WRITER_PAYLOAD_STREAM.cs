@@ -5,19 +5,18 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct APPX_PACKAGE_WRITER_PAYLOAD_STREAM
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct APPX_PACKAGE_WRITER_PAYLOAD_STREAM
-    {
-        public IStream* inputStream;
+    public IStream* inputStream;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* fileName;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* fileName;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* contentType;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* contentType;
 
-        public APPX_COMPRESSION_OPTION compressionOption;
-    }
+    public APPX_COMPRESSION_OPTION compressionOption;
 }

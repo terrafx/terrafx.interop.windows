@@ -7,30 +7,29 @@ using NUnit.Framework;
 using System;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CLSID" /> class.</summary>
+public static partial class CLSIDTests
 {
-    /// <summary>Provides validation of the <see cref="CLSID" /> class.</summary>
-    public static partial class CLSIDTests
+    /// <summary>Validates that the value of the <see cref="CLSID_DirectDraw" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_DirectDrawTest()
     {
-        /// <summary>Validates that the value of the <see cref="CLSID_DirectDraw" /> property is correct.</summary>
-        [Test]
-        public static void CLSID_DirectDrawTest()
-        {
-            Assert.That(CLSID_DirectDraw, Is.EqualTo(new Guid(0xD7B70EE0, 0x4340, 0x11CF, 0xB0, 0x63, 0x00, 0x20, 0xAF, 0xC2, 0xCD, 0x35)));
-        }
+        Assert.That(CLSID_DirectDraw, Is.EqualTo(new Guid(0xD7B70EE0, 0x4340, 0x11CF, 0xB0, 0x63, 0x00, 0x20, 0xAF, 0xC2, 0xCD, 0x35)));
+    }
 
-        /// <summary>Validates that the value of the <see cref="CLSID_DirectDraw7" /> property is correct.</summary>
-        [Test]
-        public static void CLSID_DirectDraw7Test()
-        {
-            Assert.That(CLSID_DirectDraw7, Is.EqualTo(new Guid(0x3c305196, 0x50db, 0x11d3, 0x9c, 0xfe, 0x00, 0xc0, 0x4f, 0xd9, 0x30, 0xc5)));
-        }
+    /// <summary>Validates that the value of the <see cref="CLSID_DirectDraw7" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_DirectDraw7Test()
+    {
+        Assert.That(CLSID_DirectDraw7, Is.EqualTo(new Guid(0x3c305196, 0x50db, 0x11d3, 0x9c, 0xfe, 0x00, 0xc0, 0x4f, 0xd9, 0x30, 0xc5)));
+    }
 
-        /// <summary>Validates that the value of the <see cref="CLSID_DirectDrawClipper" /> property is correct.</summary>
-        [Test]
-        public static void CLSID_DirectDrawClipperTest()
-        {
-            Assert.That(CLSID_DirectDrawClipper, Is.EqualTo(new Guid(0x593817A0, 0x7DB3, 0x11CF, 0xA2, 0xDE, 0x00, 0xAA, 0x00, 0xb9, 0x33, 0x56)));
-        }
+    /// <summary>Validates that the value of the <see cref="CLSID_DirectDrawClipper" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_DirectDrawClipperTest()
+    {
+        Assert.That(CLSID_DirectDrawClipper, Is.EqualTo(new Guid(0x593817A0, 0x7DB3, 0x11CF, 0xA2, 0xDE, 0x00, 0xAA, 0x00, 0xb9, 0x33, 0x56)));
     }
 }

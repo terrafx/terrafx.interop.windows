@@ -7,34 +7,33 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TTPOLYCURVE
 {
-    public partial struct TTPOLYCURVE
+    [NativeTypeName("WORD")]
+    public ushort wType;
+
+    [NativeTypeName("WORD")]
+    public ushort cpfx;
+
+    [NativeTypeName("POINTFX [1]")]
+    public _apfx_e__FixedBuffer apfx;
+
+    public partial struct _apfx_e__FixedBuffer
     {
-        [NativeTypeName("WORD")]
-        public ushort wType;
+        public POINTFX e0;
 
-        [NativeTypeName("WORD")]
-        public ushort cpfx;
-
-        [NativeTypeName("POINTFX [1]")]
-        public _apfx_e__FixedBuffer apfx;
-
-        public partial struct _apfx_e__FixedBuffer
+        public ref POINTFX this[int index]
         {
-            public POINTFX e0;
-
-            public ref POINTFX this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<POINTFX> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<POINTFX> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

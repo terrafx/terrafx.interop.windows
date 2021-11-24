@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NMCBEDRAGBEGINA" /> struct.</summary>
+public static unsafe partial class NMCBEDRAGBEGINATests
 {
-    /// <summary>Provides validation of the <see cref="NMCBEDRAGBEGINA" /> struct.</summary>
-    public static unsafe partial class NMCBEDRAGBEGINATests
+    /// <summary>Validates that the <see cref="NMCBEDRAGBEGINA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NMCBEDRAGBEGINA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NMCBEDRAGBEGINA>(), Is.EqualTo(sizeof(NMCBEDRAGBEGINA)));
-        }
+        Assert.That(Marshal.SizeOf<NMCBEDRAGBEGINA>(), Is.EqualTo(sizeof(NMCBEDRAGBEGINA)));
+    }
 
-        /// <summary>Validates that the <see cref="NMCBEDRAGBEGINA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NMCBEDRAGBEGINA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NMCBEDRAGBEGINA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NMCBEDRAGBEGINA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NMCBEDRAGBEGINA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="NMCBEDRAGBEGINA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(NMCBEDRAGBEGINA), Is.EqualTo(288));
-            }
-            else
-            {
-                Assert.That(sizeof(NMCBEDRAGBEGINA), Is.EqualTo(276));
-            }
+            Assert.That(sizeof(NMCBEDRAGBEGINA), Is.EqualTo(288));
+        }
+        else
+        {
+            Assert.That(sizeof(NMCBEDRAGBEGINA), Is.EqualTo(276));
         }
     }
 }

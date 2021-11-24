@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DVIADPCMWAVEFORMAT" /> struct.</summary>
+public static unsafe partial class DVIADPCMWAVEFORMATTests
 {
-    /// <summary>Provides validation of the <see cref="DVIADPCMWAVEFORMAT" /> struct.</summary>
-    public static unsafe partial class DVIADPCMWAVEFORMATTests
+    /// <summary>Validates that the <see cref="DVIADPCMWAVEFORMAT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DVIADPCMWAVEFORMAT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DVIADPCMWAVEFORMAT>(), Is.EqualTo(sizeof(DVIADPCMWAVEFORMAT)));
-        }
+        Assert.That(Marshal.SizeOf<DVIADPCMWAVEFORMAT>(), Is.EqualTo(sizeof(DVIADPCMWAVEFORMAT)));
+    }
 
-        /// <summary>Validates that the <see cref="DVIADPCMWAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DVIADPCMWAVEFORMAT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DVIADPCMWAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DVIADPCMWAVEFORMAT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DVIADPCMWAVEFORMAT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DVIADPCMWAVEFORMAT), Is.EqualTo(20));
-        }
+    /// <summary>Validates that the <see cref="DVIADPCMWAVEFORMAT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DVIADPCMWAVEFORMAT), Is.EqualTo(20));
     }
 }

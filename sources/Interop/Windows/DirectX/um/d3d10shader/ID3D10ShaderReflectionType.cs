@@ -7,71 +7,70 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Guid("C530AD7D-9B16-4395-A979-BA2ECFF83ADD")]
+public unsafe partial struct ID3D10ShaderReflectionType : ID3D10ShaderReflectionType.Interface
 {
-    [Guid("C530AD7D-9B16-4395-A979-BA2ECFF83ADD")]
-    public unsafe partial struct ID3D10ShaderReflectionType : ID3D10ShaderReflectionType.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT GetDesc(D3D10_SHADER_TYPE_DESC* pDesc)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ID3D10ShaderReflectionType*, D3D10_SHADER_TYPE_DESC*, int>)(lpVtbl[0]))((ID3D10ShaderReflectionType*)Unsafe.AsPointer(ref this), pDesc);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    public ID3D10ShaderReflectionType* GetMemberTypeByIndex(uint Index)
+    {
+        return ((delegate* unmanaged<ID3D10ShaderReflectionType*, uint, ID3D10ShaderReflectionType*>)(lpVtbl[1]))((ID3D10ShaderReflectionType*)Unsafe.AsPointer(ref this), Index);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    public ID3D10ShaderReflectionType* GetMemberTypeByName([NativeTypeName("LPCSTR")] sbyte* Name)
+    {
+        return ((delegate* unmanaged<ID3D10ShaderReflectionType*, sbyte*, ID3D10ShaderReflectionType*>)(lpVtbl[2]))((ID3D10ShaderReflectionType*)Unsafe.AsPointer(ref this), Name);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    [return: NativeTypeName("LPCSTR")]
+    public sbyte* GetMemberTypeName(uint Index)
+    {
+        return ((delegate* unmanaged<ID3D10ShaderReflectionType*, uint, sbyte*>)(lpVtbl[3]))((ID3D10ShaderReflectionType*)Unsafe.AsPointer(ref this), Index);
+    }
+
+    public interface Interface
+    {
         [VtblIndex(0)]
-        public HRESULT GetDesc(D3D10_SHADER_TYPE_DESC* pDesc)
-        {
-            return ((delegate* unmanaged<ID3D10ShaderReflectionType*, D3D10_SHADER_TYPE_DESC*, int>)(lpVtbl[0]))((ID3D10ShaderReflectionType*)Unsafe.AsPointer(ref this), pDesc);
-        }
+        HRESULT GetDesc(D3D10_SHADER_TYPE_DESC* pDesc);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(1)]
-        public ID3D10ShaderReflectionType* GetMemberTypeByIndex(uint Index)
-        {
-            return ((delegate* unmanaged<ID3D10ShaderReflectionType*, uint, ID3D10ShaderReflectionType*>)(lpVtbl[1]))((ID3D10ShaderReflectionType*)Unsafe.AsPointer(ref this), Index);
-        }
+        ID3D10ShaderReflectionType* GetMemberTypeByIndex(uint Index);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(2)]
-        public ID3D10ShaderReflectionType* GetMemberTypeByName([NativeTypeName("LPCSTR")] sbyte* Name)
-        {
-            return ((delegate* unmanaged<ID3D10ShaderReflectionType*, sbyte*, ID3D10ShaderReflectionType*>)(lpVtbl[2]))((ID3D10ShaderReflectionType*)Unsafe.AsPointer(ref this), Name);
-        }
+        ID3D10ShaderReflectionType* GetMemberTypeByName([NativeTypeName("LPCSTR")] sbyte* Name);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
         [return: NativeTypeName("LPCSTR")]
-        public sbyte* GetMemberTypeName(uint Index)
-        {
-            return ((delegate* unmanaged<ID3D10ShaderReflectionType*, uint, sbyte*>)(lpVtbl[3]))((ID3D10ShaderReflectionType*)Unsafe.AsPointer(ref this), Index);
-        }
+        sbyte* GetMemberTypeName(uint Index);
+    }
 
-        public interface Interface
-        {
-            [VtblIndex(0)]
-            HRESULT GetDesc(D3D10_SHADER_TYPE_DESC* pDesc);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (D3D10_SHADER_TYPE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D10ShaderReflectionType*, D3D10_SHADER_TYPE_DESC*, int> GetDesc;
 
-            [VtblIndex(1)]
-            ID3D10ShaderReflectionType* GetMemberTypeByIndex(uint Index);
+        [NativeTypeName("ID3D10ShaderReflectionType *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D10ShaderReflectionType*, uint, ID3D10ShaderReflectionType*> GetMemberTypeByIndex;
 
-            [VtblIndex(2)]
-            ID3D10ShaderReflectionType* GetMemberTypeByName([NativeTypeName("LPCSTR")] sbyte* Name);
+        [NativeTypeName("ID3D10ShaderReflectionType *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D10ShaderReflectionType*, sbyte*, ID3D10ShaderReflectionType*> GetMemberTypeByName;
 
-            [VtblIndex(3)]
-            [return: NativeTypeName("LPCSTR")]
-            sbyte* GetMemberTypeName(uint Index);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (D3D10_SHADER_TYPE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D10ShaderReflectionType*, D3D10_SHADER_TYPE_DESC*, int> GetDesc;
-
-            [NativeTypeName("ID3D10ShaderReflectionType *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D10ShaderReflectionType*, uint, ID3D10ShaderReflectionType*> GetMemberTypeByIndex;
-
-            [NativeTypeName("ID3D10ShaderReflectionType *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D10ShaderReflectionType*, sbyte*, ID3D10ShaderReflectionType*> GetMemberTypeByName;
-
-            [NativeTypeName("LPCSTR (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D10ShaderReflectionType*, uint, sbyte*> GetMemberTypeName;
-        }
+        [NativeTypeName("LPCSTR (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D10ShaderReflectionType*, uint, sbyte*> GetMemberTypeName;
     }
 }

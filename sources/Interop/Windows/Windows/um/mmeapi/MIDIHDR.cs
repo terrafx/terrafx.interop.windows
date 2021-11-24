@@ -7,61 +7,60 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct MIDIHDR
 {
+    [NativeTypeName("LPSTR")]
+    public sbyte* lpData;
+
+    [NativeTypeName("DWORD")]
+    public uint dwBufferLength;
+
+    [NativeTypeName("DWORD")]
+    public uint dwBytesRecorded;
+
+    [NativeTypeName("DWORD_PTR")]
+    public nuint dwUser;
+
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
+
+    [NativeTypeName("struct midihdr_tag *")]
+    public MIDIHDR* lpNext;
+
+    [NativeTypeName("DWORD_PTR")]
+    public nuint reserved;
+
+    [NativeTypeName("DWORD")]
+    public uint dwOffset;
+
+    [NativeTypeName("DWORD_PTR [8]")]
+    public _dwReserved_e__FixedBuffer dwReserved;
+
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct MIDIHDR
+    public partial struct _dwReserved_e__FixedBuffer
     {
-        [NativeTypeName("LPSTR")]
-        public sbyte* lpData;
+        public nuint e0;
+        public nuint e1;
+        public nuint e2;
+        public nuint e3;
+        public nuint e4;
+        public nuint e5;
+        public nuint e6;
+        public nuint e7;
 
-        [NativeTypeName("DWORD")]
-        public uint dwBufferLength;
-
-        [NativeTypeName("DWORD")]
-        public uint dwBytesRecorded;
-
-        [NativeTypeName("DWORD_PTR")]
-        public nuint dwUser;
-
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
-
-        [NativeTypeName("struct midihdr_tag *")]
-        public MIDIHDR* lpNext;
-
-        [NativeTypeName("DWORD_PTR")]
-        public nuint reserved;
-
-        [NativeTypeName("DWORD")]
-        public uint dwOffset;
-
-        [NativeTypeName("DWORD_PTR [8]")]
-        public _dwReserved_e__FixedBuffer dwReserved;
-
-        [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public partial struct _dwReserved_e__FixedBuffer
+        public ref nuint this[int index]
         {
-            public nuint e0;
-            public nuint e1;
-            public nuint e2;
-            public nuint e3;
-            public nuint e4;
-            public nuint e5;
-            public nuint e6;
-            public nuint e7;
-
-            public ref nuint this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan()[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<nuint> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
+            get
+            {
+                return ref AsSpan()[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<nuint> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
     }
 }

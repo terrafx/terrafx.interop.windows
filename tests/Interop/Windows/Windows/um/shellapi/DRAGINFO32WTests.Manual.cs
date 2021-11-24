@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DRAGINFO32W" /> struct.</summary>
+public static unsafe partial class DRAGINFO32WTests
 {
-    /// <summary>Provides validation of the <see cref="DRAGINFO32W" /> struct.</summary>
-    public static unsafe partial class DRAGINFO32WTests
+    /// <summary>Validates that the <see cref="DRAGINFO32W" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DRAGINFO32W" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DRAGINFO32W>(), Is.EqualTo(sizeof(DRAGINFO32W)));
-        }
+        Assert.That(Marshal.SizeOf<DRAGINFO32W>(), Is.EqualTo(sizeof(DRAGINFO32W)));
+    }
 
-        /// <summary>Validates that the <see cref="DRAGINFO32W" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DRAGINFO32W).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DRAGINFO32W" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DRAGINFO32W).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DRAGINFO32W" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DRAGINFO32W" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DRAGINFO32W), Is.EqualTo(28));
-            }
-            else
-            {
-                Assert.That(sizeof(DRAGINFO32W), Is.EqualTo(24));
-            }
+            Assert.That(sizeof(DRAGINFO32W), Is.EqualTo(28));
+        }
+        else
+        {
+            Assert.That(sizeof(DRAGINFO32W), Is.EqualTo(24));
         }
     }
 }

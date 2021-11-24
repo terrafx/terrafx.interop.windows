@@ -5,15 +5,14 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct UNSIGNED_RATIO
-    {
-        [NativeTypeName("UINT32")]
-        public uint uiNumerator;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("UINT32")]
-        public uint uiDenominator;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct UNSIGNED_RATIO
+{
+    [NativeTypeName("UINT32")]
+    public uint uiNumerator;
+
+    [NativeTypeName("UINT32")]
+    public uint uiDenominator;
 }

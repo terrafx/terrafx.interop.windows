@@ -5,30 +5,29 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 2)]
+public partial struct METAHEADER
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 2)]
-    public partial struct METAHEADER
-    {
-        [NativeTypeName("WORD")]
-        public ushort mtType;
+    [NativeTypeName("WORD")]
+    public ushort mtType;
 
-        [NativeTypeName("WORD")]
-        public ushort mtHeaderSize;
+    [NativeTypeName("WORD")]
+    public ushort mtHeaderSize;
 
-        [NativeTypeName("WORD")]
-        public ushort mtVersion;
+    [NativeTypeName("WORD")]
+    public ushort mtVersion;
 
-        [NativeTypeName("DWORD")]
-        public uint mtSize;
+    [NativeTypeName("DWORD")]
+    public uint mtSize;
 
-        [NativeTypeName("WORD")]
-        public ushort mtNoObjects;
+    [NativeTypeName("WORD")]
+    public ushort mtNoObjects;
 
-        [NativeTypeName("DWORD")]
-        public uint mtMaxRecord;
+    [NativeTypeName("DWORD")]
+    public uint mtMaxRecord;
 
-        [NativeTypeName("WORD")]
-        public ushort mtNoParameters;
-    }
+    [NativeTypeName("WORD")]
+    public ushort mtNoParameters;
 }

@@ -6,48 +6,47 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 2)]
+public partial struct IMAGE_RELOCATION
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 2)]
-    public partial struct IMAGE_RELOCATION
+    [NativeTypeName("_IMAGE_RELOCATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:18936:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    [NativeTypeName("DWORD")]
+    public uint SymbolTableIndex;
+
+    [NativeTypeName("WORD")]
+    public ushort Type;
+
+    public ref uint VirtualAddress
     {
-        [NativeTypeName("_IMAGE_RELOCATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:18936:5)")]
-        public _Anonymous_e__Union Anonymous;
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.VirtualAddress, 1));
+        }
+    }
 
+    public ref uint RelocCount
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.RelocCount, 1));
+        }
+    }
+
+    [StructLayout(LayoutKind.Explicit, Pack = 2)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
         [NativeTypeName("DWORD")]
-        public uint SymbolTableIndex;
+        public uint VirtualAddress;
 
-        [NativeTypeName("WORD")]
-        public ushort Type;
-
-        public ref uint VirtualAddress
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.VirtualAddress, 1));
-            }
-        }
-
-        public ref uint RelocCount
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.RelocCount, 1));
-            }
-        }
-
-        [StructLayout(LayoutKind.Explicit, Pack = 2)]
-        public partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint VirtualAddress;
-
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint RelocCount;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint RelocCount;
     }
 }

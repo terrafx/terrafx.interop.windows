@@ -5,21 +5,20 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 4)]
+public unsafe partial struct WINHTTP_REQUEST_STATS32
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 4)]
-    public unsafe partial struct WINHTTP_REQUEST_STATS32
-    {
-        [NativeTypeName("ULONGLONG")]
-        public ulong ullFlags;
+    [NativeTypeName("ULONGLONG")]
+    public ulong ullFlags;
 
-        [NativeTypeName("ULONG")]
-        public uint ulIndex;
+    [NativeTypeName("ULONG")]
+    public uint ulIndex;
 
-        [NativeTypeName("ULONG")]
-        public uint cStats;
+    [NativeTypeName("ULONG")]
+    public uint cStats;
 
-        [NativeTypeName("ULONGLONG [32]")]
-        public fixed ulong rgullStats[32];
-    }
+    [NativeTypeName("ULONGLONG [32]")]
+    public fixed ulong rgullStats[32];
 }

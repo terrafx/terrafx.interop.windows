@@ -8,175 +8,174 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+[Guid("588D72AB-5BC1-496A-8714-B70617141B25")]
+[NativeTypeName("struct IMFSinkWriterEx : IMFSinkWriter")]
+[NativeInheritance("IMFSinkWriter")]
+public unsafe partial struct IMFSinkWriterEx : IMFSinkWriterEx.Interface
 {
-    [SupportedOSPlatform("windows8.0")]
-    [Guid("588D72AB-5BC1-496A-8714-B70617141B25")]
-    [NativeTypeName("struct IMFSinkWriterEx : IMFSinkWriter")]
-    [NativeInheritance("IMFSinkWriter")]
-    public unsafe partial struct IMFSinkWriterEx : IMFSinkWriterEx.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMFSinkWriterEx*, Guid*, void**, int>)(lpVtbl[0]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMFSinkWriterEx*, Guid*, void**, int>)(lpVtbl[0]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMFSinkWriterEx*, uint>)(lpVtbl[1]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMFSinkWriterEx*, uint>)(lpVtbl[1]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMFSinkWriterEx*, uint>)(lpVtbl[2]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMFSinkWriterEx*, uint>)(lpVtbl[2]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT AddStream(IMFMediaType* pTargetMediaType, [NativeTypeName("DWORD *")] uint* pdwStreamIndex)
+    {
+        return ((delegate* unmanaged<IMFSinkWriterEx*, IMFMediaType*, uint*, int>)(lpVtbl[3]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this), pTargetMediaType, pdwStreamIndex);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT AddStream(IMFMediaType* pTargetMediaType, [NativeTypeName("DWORD *")] uint* pdwStreamIndex)
-        {
-            return ((delegate* unmanaged<IMFSinkWriterEx*, IMFMediaType*, uint*, int>)(lpVtbl[3]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this), pTargetMediaType, pdwStreamIndex);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT SetInputMediaType([NativeTypeName("DWORD")] uint dwStreamIndex, IMFMediaType* pInputMediaType, IMFAttributes* pEncodingParameters)
+    {
+        return ((delegate* unmanaged<IMFSinkWriterEx*, uint, IMFMediaType*, IMFAttributes*, int>)(lpVtbl[4]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this), dwStreamIndex, pInputMediaType, pEncodingParameters);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT SetInputMediaType([NativeTypeName("DWORD")] uint dwStreamIndex, IMFMediaType* pInputMediaType, IMFAttributes* pEncodingParameters)
-        {
-            return ((delegate* unmanaged<IMFSinkWriterEx*, uint, IMFMediaType*, IMFAttributes*, int>)(lpVtbl[4]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this), dwStreamIndex, pInputMediaType, pEncodingParameters);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT BeginWriting()
+    {
+        return ((delegate* unmanaged<IMFSinkWriterEx*, int>)(lpVtbl[5]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT BeginWriting()
-        {
-            return ((delegate* unmanaged<IMFSinkWriterEx*, int>)(lpVtbl[5]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT WriteSample([NativeTypeName("DWORD")] uint dwStreamIndex, IMFSample* pSample)
+    {
+        return ((delegate* unmanaged<IMFSinkWriterEx*, uint, IMFSample*, int>)(lpVtbl[6]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this), dwStreamIndex, pSample);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(6)]
-        public HRESULT WriteSample([NativeTypeName("DWORD")] uint dwStreamIndex, IMFSample* pSample)
-        {
-            return ((delegate* unmanaged<IMFSinkWriterEx*, uint, IMFSample*, int>)(lpVtbl[6]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this), dwStreamIndex, pSample);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT SendStreamTick([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("LONGLONG")] long llTimestamp)
+    {
+        return ((delegate* unmanaged<IMFSinkWriterEx*, uint, long, int>)(lpVtbl[7]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this), dwStreamIndex, llTimestamp);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(7)]
-        public HRESULT SendStreamTick([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("LONGLONG")] long llTimestamp)
-        {
-            return ((delegate* unmanaged<IMFSinkWriterEx*, uint, long, int>)(lpVtbl[7]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this), dwStreamIndex, llTimestamp);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT PlaceMarker([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("LPVOID")] void* pvContext)
+    {
+        return ((delegate* unmanaged<IMFSinkWriterEx*, uint, void*, int>)(lpVtbl[8]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this), dwStreamIndex, pvContext);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(8)]
-        public HRESULT PlaceMarker([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("LPVOID")] void* pvContext)
-        {
-            return ((delegate* unmanaged<IMFSinkWriterEx*, uint, void*, int>)(lpVtbl[8]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this), dwStreamIndex, pvContext);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT NotifyEndOfSegment([NativeTypeName("DWORD")] uint dwStreamIndex)
+    {
+        return ((delegate* unmanaged<IMFSinkWriterEx*, uint, int>)(lpVtbl[9]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this), dwStreamIndex);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(9)]
-        public HRESULT NotifyEndOfSegment([NativeTypeName("DWORD")] uint dwStreamIndex)
-        {
-            return ((delegate* unmanaged<IMFSinkWriterEx*, uint, int>)(lpVtbl[9]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this), dwStreamIndex);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT Flush([NativeTypeName("DWORD")] uint dwStreamIndex)
+    {
+        return ((delegate* unmanaged<IMFSinkWriterEx*, uint, int>)(lpVtbl[10]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this), dwStreamIndex);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(10)]
-        public HRESULT Flush([NativeTypeName("DWORD")] uint dwStreamIndex)
-        {
-            return ((delegate* unmanaged<IMFSinkWriterEx*, uint, int>)(lpVtbl[10]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this), dwStreamIndex);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT Finalize()
+    {
+        return ((delegate* unmanaged<IMFSinkWriterEx*, int>)(lpVtbl[11]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(11)]
-        public HRESULT Finalize()
-        {
-            return ((delegate* unmanaged<IMFSinkWriterEx*, int>)(lpVtbl[11]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT GetServiceForStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("const GUID &")] Guid* guidService, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject)
+    {
+        return ((delegate* unmanaged<IMFSinkWriterEx*, uint, Guid*, Guid*, void**, int>)(lpVtbl[12]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this), dwStreamIndex, guidService, riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(12)]
-        public HRESULT GetServiceForStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("const GUID &")] Guid* guidService, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMFSinkWriterEx*, uint, Guid*, Guid*, void**, int>)(lpVtbl[12]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this), dwStreamIndex, guidService, riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT GetStatistics([NativeTypeName("DWORD")] uint dwStreamIndex, MF_SINK_WRITER_STATISTICS* pStats)
+    {
+        return ((delegate* unmanaged<IMFSinkWriterEx*, uint, MF_SINK_WRITER_STATISTICS*, int>)(lpVtbl[13]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this), dwStreamIndex, pStats);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(13)]
-        public HRESULT GetStatistics([NativeTypeName("DWORD")] uint dwStreamIndex, MF_SINK_WRITER_STATISTICS* pStats)
-        {
-            return ((delegate* unmanaged<IMFSinkWriterEx*, uint, MF_SINK_WRITER_STATISTICS*, int>)(lpVtbl[13]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this), dwStreamIndex, pStats);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT GetTransformForStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwTransformIndex, Guid* pGuidCategory, IMFTransform** ppTransform)
+    {
+        return ((delegate* unmanaged<IMFSinkWriterEx*, uint, uint, Guid*, IMFTransform**, int>)(lpVtbl[14]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this), dwStreamIndex, dwTransformIndex, pGuidCategory, ppTransform);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IMFSinkWriter.Interface
+    {
         [VtblIndex(14)]
-        public HRESULT GetTransformForStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwTransformIndex, Guid* pGuidCategory, IMFTransform** ppTransform)
-        {
-            return ((delegate* unmanaged<IMFSinkWriterEx*, uint, uint, Guid*, IMFTransform**, int>)(lpVtbl[14]))((IMFSinkWriterEx*)Unsafe.AsPointer(ref this), dwStreamIndex, dwTransformIndex, pGuidCategory, ppTransform);
-        }
+        HRESULT GetTransformForStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwTransformIndex, Guid* pGuidCategory, IMFTransform** ppTransform);
+    }
 
-        public interface Interface : IMFSinkWriter.Interface
-        {
-            [VtblIndex(14)]
-            HRESULT GetTransformForStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwTransformIndex, Guid* pGuidCategory, IMFTransform** ppTransform);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSinkWriterEx*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSinkWriterEx*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSinkWriterEx*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSinkWriterEx*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSinkWriterEx*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSinkWriterEx*, uint> Release;
+        [NativeTypeName("HRESULT (IMFMediaType *, DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSinkWriterEx*, IMFMediaType*, uint*, int> AddStream;
 
-            [NativeTypeName("HRESULT (IMFMediaType *, DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSinkWriterEx*, IMFMediaType*, uint*, int> AddStream;
+        [NativeTypeName("HRESULT (DWORD, IMFMediaType *, IMFAttributes *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSinkWriterEx*, uint, IMFMediaType*, IMFAttributes*, int> SetInputMediaType;
 
-            [NativeTypeName("HRESULT (DWORD, IMFMediaType *, IMFAttributes *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSinkWriterEx*, uint, IMFMediaType*, IMFAttributes*, int> SetInputMediaType;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSinkWriterEx*, int> BeginWriting;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSinkWriterEx*, int> BeginWriting;
+        [NativeTypeName("HRESULT (DWORD, IMFSample *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSinkWriterEx*, uint, IMFSample*, int> WriteSample;
 
-            [NativeTypeName("HRESULT (DWORD, IMFSample *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSinkWriterEx*, uint, IMFSample*, int> WriteSample;
+        [NativeTypeName("HRESULT (DWORD, LONGLONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSinkWriterEx*, uint, long, int> SendStreamTick;
 
-            [NativeTypeName("HRESULT (DWORD, LONGLONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSinkWriterEx*, uint, long, int> SendStreamTick;
+        [NativeTypeName("HRESULT (DWORD, LPVOID) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSinkWriterEx*, uint, void*, int> PlaceMarker;
 
-            [NativeTypeName("HRESULT (DWORD, LPVOID) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSinkWriterEx*, uint, void*, int> PlaceMarker;
+        [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSinkWriterEx*, uint, int> NotifyEndOfSegment;
 
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSinkWriterEx*, uint, int> NotifyEndOfSegment;
+        [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSinkWriterEx*, uint, int> Flush;
 
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSinkWriterEx*, uint, int> Flush;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSinkWriterEx*, int> Finalize;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSinkWriterEx*, int> Finalize;
+        [NativeTypeName("HRESULT (DWORD, const GUID &, const IID &, LPVOID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSinkWriterEx*, uint, Guid*, Guid*, void**, int> GetServiceForStream;
 
-            [NativeTypeName("HRESULT (DWORD, const GUID &, const IID &, LPVOID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSinkWriterEx*, uint, Guid*, Guid*, void**, int> GetServiceForStream;
+        [NativeTypeName("HRESULT (DWORD, MF_SINK_WRITER_STATISTICS *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSinkWriterEx*, uint, MF_SINK_WRITER_STATISTICS*, int> GetStatistics;
 
-            [NativeTypeName("HRESULT (DWORD, MF_SINK_WRITER_STATISTICS *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSinkWriterEx*, uint, MF_SINK_WRITER_STATISTICS*, int> GetStatistics;
-
-            [NativeTypeName("HRESULT (DWORD, DWORD, GUID *, IMFTransform **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSinkWriterEx*, uint, uint, Guid*, IMFTransform**, int> GetTransformForStream;
-        }
+        [NativeTypeName("HRESULT (DWORD, DWORD, GUID *, IMFTransform **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSinkWriterEx*, uint, uint, Guid*, IMFTransform**, int> GetTransformForStream;
     }
 }

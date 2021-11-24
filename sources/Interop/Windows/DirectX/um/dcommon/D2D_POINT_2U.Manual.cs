@@ -5,29 +5,28 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D_POINT_2U : IEquatable<D2D_POINT_2U>
 {
-    public partial struct D2D_POINT_2U : IEquatable<D2D_POINT_2U>
+    public D2D_POINT_2U([NativeTypeName("UINT32")] uint x = 0, [NativeTypeName("UINT32")] uint y = 0)
     {
-        public D2D_POINT_2U([NativeTypeName("UINT32")] uint x = 0, [NativeTypeName("UINT32")] uint y = 0)
-        {
-            this.x = x;
-            this.y = y;
-        }
-
-        public static bool operator ==([NativeTypeName("const D2D1_POINT_2U &")] in D2D_POINT_2U l, [NativeTypeName("const D2D1_POINT_2U &")] in D2D_POINT_2U r)
-        {
-            return (l.x == r.x)
-                && (l.y == r.y);
-        }
-
-        public static bool operator !=([NativeTypeName("const D2D1_POINT_2U &")] in D2D_POINT_2U l, [NativeTypeName("const D2D1_POINT_2U &")] in D2D_POINT_2U r)
-            => !(l == r);
-
-        public bool Equals(D2D_POINT_2U other) => this == other;
-
-        public override bool Equals(object? obj) => (obj is D2D_POINT_2U other) && this == other;
-
-        public override int GetHashCode() => HashCode.Combine(x, y);
+        this.x = x;
+        this.y = y;
     }
+
+    public static bool operator ==([NativeTypeName("const D2D1_POINT_2U &")] in D2D_POINT_2U l, [NativeTypeName("const D2D1_POINT_2U &")] in D2D_POINT_2U r)
+    {
+        return (l.x == r.x)
+            && (l.y == r.y);
+    }
+
+    public static bool operator !=([NativeTypeName("const D2D1_POINT_2U &")] in D2D_POINT_2U l, [NativeTypeName("const D2D1_POINT_2U &")] in D2D_POINT_2U r)
+        => !(l == r);
+
+    public bool Equals(D2D_POINT_2U other) => this == other;
+
+    public override bool Equals(object? obj) => (obj is D2D_POINT_2U other) && this == other;
+
+    public override int GetHashCode() => HashCode.Combine(x, y);
 }

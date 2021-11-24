@@ -5,26 +5,25 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SYNCMGRITEM
 {
-    public unsafe partial struct SYNCMGRITEM
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        public Guid ItemID;
+    public Guid ItemID;
 
-        [NativeTypeName("DWORD")]
-        public uint dwItemState;
+    [NativeTypeName("DWORD")]
+    public uint dwItemState;
 
-        public HICON hIcon;
+    public HICON hIcon;
 
-        [NativeTypeName("WCHAR [128]")]
-        public fixed ushort wszItemName[128];
+    [NativeTypeName("WCHAR [128]")]
+    public fixed ushort wszItemName[128];
 
-        public FILETIME ftLastUpdate;
-    }
+    public FILETIME ftLastUpdate;
 }

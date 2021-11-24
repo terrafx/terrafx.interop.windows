@@ -5,22 +5,21 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DXGI_FRAME_STATISTICS_MEDIA
 {
-    public partial struct DXGI_FRAME_STATISTICS_MEDIA
-    {
-        public uint PresentCount;
+    public uint PresentCount;
 
-        public uint PresentRefreshCount;
+    public uint PresentRefreshCount;
 
-        public uint SyncRefreshCount;
+    public uint SyncRefreshCount;
 
-        public LARGE_INTEGER SyncQPCTime;
+    public LARGE_INTEGER SyncQPCTime;
 
-        public LARGE_INTEGER SyncGPUTime;
+    public LARGE_INTEGER SyncGPUTime;
 
-        public DXGI_FRAME_PRESENTATION_MODE CompositionMode;
+    public DXGI_FRAME_PRESENTATION_MODE CompositionMode;
 
-        public uint ApprovedPresentDuration;
-    }
+    public uint ApprovedPresentDuration;
 }

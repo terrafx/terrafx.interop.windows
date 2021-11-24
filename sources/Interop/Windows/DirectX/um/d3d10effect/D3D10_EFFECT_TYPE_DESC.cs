@@ -3,31 +3,30 @@
 // Ported from um/d3d10effect.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D10_EFFECT_TYPE_DESC
 {
-    public unsafe partial struct D3D10_EFFECT_TYPE_DESC
-    {
-        [NativeTypeName("LPCSTR")]
-        public sbyte* TypeName;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* TypeName;
 
-        [NativeTypeName("D3D10_SHADER_VARIABLE_CLASS")]
-        public D3D_SHADER_VARIABLE_CLASS Class;
+    [NativeTypeName("D3D10_SHADER_VARIABLE_CLASS")]
+    public D3D_SHADER_VARIABLE_CLASS Class;
 
-        [NativeTypeName("D3D10_SHADER_VARIABLE_TYPE")]
-        public D3D_SHADER_VARIABLE_TYPE Type;
+    [NativeTypeName("D3D10_SHADER_VARIABLE_TYPE")]
+    public D3D_SHADER_VARIABLE_TYPE Type;
 
-        public uint Elements;
+    public uint Elements;
 
-        public uint Members;
+    public uint Members;
 
-        public uint Rows;
+    public uint Rows;
 
-        public uint Columns;
+    public uint Columns;
 
-        public uint PackedSize;
+    public uint PackedSize;
 
-        public uint UnpackedSize;
+    public uint UnpackedSize;
 
-        public uint Stride;
-    }
+    public uint Stride;
 }

@@ -5,17 +5,16 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0")]
+public partial struct D3D11_VIDEO_SAMPLE_DESC
 {
-    [SupportedOSPlatform("windows10.0")]
-    public partial struct D3D11_VIDEO_SAMPLE_DESC
-    {
-        public uint Width;
+    public uint Width;
 
-        public uint Height;
+    public uint Height;
 
-        public DXGI_FORMAT Format;
+    public DXGI_FORMAT Format;
 
-        public DXGI_COLOR_SPACE_TYPE ColorSpace;
-    }
+    public DXGI_COLOR_SPACE_TYPE ColorSpace;
 }

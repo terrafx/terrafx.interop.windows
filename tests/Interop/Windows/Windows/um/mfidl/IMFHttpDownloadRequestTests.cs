@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFHttpDownloadRequest" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.15063.0")]
+public static unsafe partial class IMFHttpDownloadRequestTests
 {
-    /// <summary>Provides validation of the <see cref="IMFHttpDownloadRequest" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0.15063.0")]
-    public static unsafe partial class IMFHttpDownloadRequestTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFHttpDownloadRequest" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFHttpDownloadRequest" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFHttpDownloadRequest).GUID, Is.EqualTo(IID_IMFHttpDownloadRequest));
-        }
+        Assert.That(typeof(IMFHttpDownloadRequest).GUID, Is.EqualTo(IID_IMFHttpDownloadRequest));
+    }
 
-        /// <summary>Validates that the <see cref="IMFHttpDownloadRequest" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFHttpDownloadRequest>(), Is.EqualTo(sizeof(IMFHttpDownloadRequest)));
-        }
+    /// <summary>Validates that the <see cref="IMFHttpDownloadRequest" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFHttpDownloadRequest>(), Is.EqualTo(sizeof(IMFHttpDownloadRequest)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFHttpDownloadRequest" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFHttpDownloadRequest).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFHttpDownloadRequest" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFHttpDownloadRequest).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFHttpDownloadRequest" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFHttpDownloadRequest" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFHttpDownloadRequest), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFHttpDownloadRequest), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFHttpDownloadRequest), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFHttpDownloadRequest), Is.EqualTo(4));
         }
     }
 }

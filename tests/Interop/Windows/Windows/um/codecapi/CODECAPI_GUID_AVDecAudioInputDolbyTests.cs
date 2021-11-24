@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CODECAPI_GUID_AVDecAudioInputDolby" /> struct.</summary>
+public static unsafe partial class CODECAPI_GUID_AVDecAudioInputDolbyTests
 {
-    /// <summary>Provides validation of the <see cref="CODECAPI_GUID_AVDecAudioInputDolby" /> struct.</summary>
-    public static unsafe partial class CODECAPI_GUID_AVDecAudioInputDolbyTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_GUID_AVDecAudioInputDolby" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_GUID_AVDecAudioInputDolby" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(CODECAPI_GUID_AVDecAudioInputDolby).GUID, Is.EqualTo(IID_CODECAPI_GUID_AVDecAudioInputDolby));
-        }
+        Assert.That(typeof(CODECAPI_GUID_AVDecAudioInputDolby).GUID, Is.EqualTo(IID_CODECAPI_GUID_AVDecAudioInputDolby));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_GUID_AVDecAudioInputDolby" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CODECAPI_GUID_AVDecAudioInputDolby>(), Is.EqualTo(sizeof(CODECAPI_GUID_AVDecAudioInputDolby)));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_GUID_AVDecAudioInputDolby" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<CODECAPI_GUID_AVDecAudioInputDolby>(), Is.EqualTo(sizeof(CODECAPI_GUID_AVDecAudioInputDolby)));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_GUID_AVDecAudioInputDolby" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CODECAPI_GUID_AVDecAudioInputDolby).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_GUID_AVDecAudioInputDolby" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CODECAPI_GUID_AVDecAudioInputDolby).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_GUID_AVDecAudioInputDolby" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CODECAPI_GUID_AVDecAudioInputDolby), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_GUID_AVDecAudioInputDolby" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CODECAPI_GUID_AVDecAudioInputDolby), Is.EqualTo(1));
     }
 }

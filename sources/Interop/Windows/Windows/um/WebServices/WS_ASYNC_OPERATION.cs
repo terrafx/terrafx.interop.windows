@@ -5,11 +5,10 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_ASYNC_OPERATION
 {
-    public unsafe partial struct WS_ASYNC_OPERATION
-    {
-        [NativeTypeName("WS_ASYNC_FUNCTION")]
-        public delegate* unmanaged<HRESULT, WS_CALLBACK_MODEL, void*, WS_ASYNC_OPERATION*, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> function;
-    }
+    [NativeTypeName("WS_ASYNC_FUNCTION")]
+    public delegate* unmanaged<HRESULT, WS_CALLBACK_MODEL, void*, WS_ASYNC_OPERATION*, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> function;
 }

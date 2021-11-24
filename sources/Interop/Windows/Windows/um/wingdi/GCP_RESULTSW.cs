@@ -3,30 +3,29 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct GCP_RESULTSW
 {
-    public unsafe partial struct GCP_RESULTSW
-    {
-        [NativeTypeName("DWORD")]
-        public uint lStructSize;
+    [NativeTypeName("DWORD")]
+    public uint lStructSize;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* lpOutString;
+    [NativeTypeName("LPWSTR")]
+    public ushort* lpOutString;
 
-        public uint* lpOrder;
+    public uint* lpOrder;
 
-        public int* lpDx;
+    public int* lpDx;
 
-        public int* lpCaretPos;
+    public int* lpCaretPos;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* lpClass;
+    [NativeTypeName("LPSTR")]
+    public sbyte* lpClass;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* lpGlyphs;
+    [NativeTypeName("LPWSTR")]
+    public ushort* lpGlyphs;
 
-        public uint nGlyphs;
+    public uint nGlyphs;
 
-        public int nMaxFit;
-    }
+    public int nMaxFit;
 }

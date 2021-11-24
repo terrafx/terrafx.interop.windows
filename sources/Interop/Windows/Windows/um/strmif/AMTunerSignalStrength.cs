@@ -3,12 +3,11 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum AMTunerSignalStrength
 {
-    public enum AMTunerSignalStrength
-    {
-        AMTUNER_HASNOSIGNALSTRENGTH = -1,
-        AMTUNER_NOSIGNAL = 0,
-        AMTUNER_SIGNALPRESENT = 1,
-    }
+    AMTUNER_HASNOSIGNALSTRENGTH = -1,
+    AMTUNER_NOSIGNAL = 0,
+    AMTUNER_SIGNALPRESENT = 1,
 }

@@ -5,14 +5,13 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SHARDAPPIDINFO
-    {
-        public IShellItem* psi;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("PCWSTR")]
-        public ushort* pszAppID;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SHARDAPPIDINFO
+{
+    public IShellItem* psi;
+
+    [NativeTypeName("PCWSTR")]
+    public ushort* pszAppID;
 }

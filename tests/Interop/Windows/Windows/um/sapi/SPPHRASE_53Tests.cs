@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SPPHRASE_53" /> struct.</summary>
+public static unsafe partial class SPPHRASE_53Tests
 {
-    /// <summary>Provides validation of the <see cref="SPPHRASE_53" /> struct.</summary>
-    public static unsafe partial class SPPHRASE_53Tests
+    /// <summary>Validates that the <see cref="SPPHRASE_53" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SPPHRASE_53" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SPPHRASE_53>(), Is.EqualTo(sizeof(SPPHRASE_53)));
-        }
+        Assert.That(Marshal.SizeOf<SPPHRASE_53>(), Is.EqualTo(sizeof(SPPHRASE_53)));
+    }
 
-        /// <summary>Validates that the <see cref="SPPHRASE_53" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SPPHRASE_53).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SPPHRASE_53" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SPPHRASE_53).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SPPHRASE_53" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SPPHRASE_53" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SPPHRASE_53), Is.EqualTo(176));
-            }
-            else
-            {
-                Assert.That(sizeof(SPPHRASE_53), Is.EqualTo(128));
-            }
+            Assert.That(sizeof(SPPHRASE_53), Is.EqualTo(176));
+        }
+        else
+        {
+            Assert.That(sizeof(SPPHRASE_53), Is.EqualTo(128));
         }
     }
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SHELLEXECUTEINFO64A" /> struct.</summary>
+public static unsafe partial class SHELLEXECUTEINFO64ATests
 {
-    /// <summary>Provides validation of the <see cref="SHELLEXECUTEINFO64A" /> struct.</summary>
-    public static unsafe partial class SHELLEXECUTEINFO64ATests
+    /// <summary>Validates that the <see cref="SHELLEXECUTEINFO64A" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SHELLEXECUTEINFO64A" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SHELLEXECUTEINFO64A>(), Is.EqualTo(sizeof(SHELLEXECUTEINFO64A)));
-        }
+        Assert.That(Marshal.SizeOf<SHELLEXECUTEINFO64A>(), Is.EqualTo(sizeof(SHELLEXECUTEINFO64A)));
+    }
 
-        /// <summary>Validates that the <see cref="SHELLEXECUTEINFO64A" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SHELLEXECUTEINFO64A).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SHELLEXECUTEINFO64A" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SHELLEXECUTEINFO64A).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SHELLEXECUTEINFO64A" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SHELLEXECUTEINFO64A" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SHELLEXECUTEINFO64A), Is.EqualTo(112));
-            }
-            else
-            {
-                Assert.That(sizeof(SHELLEXECUTEINFO64A), Is.EqualTo(60));
-            }
+            Assert.That(sizeof(SHELLEXECUTEINFO64A), Is.EqualTo(112));
+        }
+        else
+        {
+            Assert.That(sizeof(SHELLEXECUTEINFO64A), Is.EqualTo(60));
         }
     }
 }

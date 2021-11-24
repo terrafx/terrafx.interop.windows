@@ -5,15 +5,14 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum D2D1_MAP_OPTIONS : uint
 {
-    [Flags]
-    public enum D2D1_MAP_OPTIONS : uint
-    {
-        D2D1_MAP_OPTIONS_NONE = 0,
-        D2D1_MAP_OPTIONS_READ = 1,
-        D2D1_MAP_OPTIONS_WRITE = 2,
-        D2D1_MAP_OPTIONS_DISCARD = 4,
-        D2D1_MAP_OPTIONS_FORCE_DWORD = 0xffffffff,
-    }
+    D2D1_MAP_OPTIONS_NONE = 0,
+    D2D1_MAP_OPTIONS_READ = 1,
+    D2D1_MAP_OPTIONS_WRITE = 2,
+    D2D1_MAP_OPTIONS_DISCARD = 4,
+    D2D1_MAP_OPTIONS_FORCE_DWORD = 0xffffffff,
 }

@@ -3,50 +3,49 @@
 // Ported from shared/tcpestats.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TCP_ESTATS_REC_ROD_v0
 {
-    public partial struct TCP_ESTATS_REC_ROD_v0
-    {
-        [NativeTypeName("ULONG")]
-        public uint CurRwinSent;
+    [NativeTypeName("ULONG")]
+    public uint CurRwinSent;
 
-        [NativeTypeName("ULONG")]
-        public uint MaxRwinSent;
+    [NativeTypeName("ULONG")]
+    public uint MaxRwinSent;
 
-        [NativeTypeName("ULONG")]
-        public uint MinRwinSent;
+    [NativeTypeName("ULONG")]
+    public uint MinRwinSent;
 
-        [NativeTypeName("ULONG")]
-        public uint LimRwin;
+    [NativeTypeName("ULONG")]
+    public uint LimRwin;
 
-        [NativeTypeName("ULONG")]
-        public uint DupAckEpisodes;
+    [NativeTypeName("ULONG")]
+    public uint DupAckEpisodes;
 
-        [NativeTypeName("ULONG")]
-        public uint DupAcksOut;
+    [NativeTypeName("ULONG")]
+    public uint DupAcksOut;
 
-        [NativeTypeName("ULONG")]
-        public uint CeRcvd;
+    [NativeTypeName("ULONG")]
+    public uint CeRcvd;
 
-        [NativeTypeName("ULONG")]
-        public uint EcnSent;
+    [NativeTypeName("ULONG")]
+    public uint EcnSent;
 
-        [NativeTypeName("ULONG")]
-        public uint EcnNoncesRcvd;
+    [NativeTypeName("ULONG")]
+    public uint EcnNoncesRcvd;
 
-        [NativeTypeName("ULONG")]
-        public uint CurReasmQueue;
+    [NativeTypeName("ULONG")]
+    public uint CurReasmQueue;
 
-        [NativeTypeName("ULONG")]
-        public uint MaxReasmQueue;
+    [NativeTypeName("ULONG")]
+    public uint MaxReasmQueue;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint CurAppRQueue;
+    [NativeTypeName("SIZE_T")]
+    public nuint CurAppRQueue;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint MaxAppRQueue;
+    [NativeTypeName("SIZE_T")]
+    public nuint MaxAppRQueue;
 
-        [NativeTypeName("UCHAR")]
-        public byte WinScaleSent;
-    }
+    [NativeTypeName("UCHAR")]
+    public byte WinScaleSent;
 }

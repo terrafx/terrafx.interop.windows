@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct WCM_USAGE_DATA
-    {
-        [NativeTypeName("DWORD")]
-        public uint UsageInMegabytes;
+namespace TerraFX.Interop.Windows;
 
-        public FILETIME LastSyncTime;
-    }
+[SupportedOSPlatform("windows8.0")]
+public partial struct WCM_USAGE_DATA
+{
+    [NativeTypeName("DWORD")]
+    public uint UsageInMegabytes;
+
+    public FILETIME LastSyncTime;
 }

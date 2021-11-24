@@ -7,107 +7,106 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("0E6B3F66-98D1-48C0-A222-FBDE74E2FBC5")]
+[NativeTypeName("struct IWebWizardExtension : IWizardExtension")]
+[NativeInheritance("IWizardExtension")]
+public unsafe partial struct IWebWizardExtension : IWebWizardExtension.Interface
 {
-    [Guid("0E6B3F66-98D1-48C0-A222-FBDE74E2FBC5")]
-    [NativeTypeName("struct IWebWizardExtension : IWizardExtension")]
-    [NativeInheritance("IWizardExtension")]
-    public unsafe partial struct IWebWizardExtension : IWebWizardExtension.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IWebWizardExtension*, Guid*, void**, int>)(lpVtbl[0]))((IWebWizardExtension*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IWebWizardExtension*, Guid*, void**, int>)(lpVtbl[0]))((IWebWizardExtension*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IWebWizardExtension*, uint>)(lpVtbl[1]))((IWebWizardExtension*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IWebWizardExtension*, uint>)(lpVtbl[1]))((IWebWizardExtension*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IWebWizardExtension*, uint>)(lpVtbl[2]))((IWebWizardExtension*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IWebWizardExtension*, uint>)(lpVtbl[2]))((IWebWizardExtension*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT AddPages(HPROPSHEETPAGE* aPages, uint cPages, uint* pnPagesAdded)
+    {
+        return ((delegate* unmanaged<IWebWizardExtension*, HPROPSHEETPAGE*, uint, uint*, int>)(lpVtbl[3]))((IWebWizardExtension*)Unsafe.AsPointer(ref this), aPages, cPages, pnPagesAdded);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT AddPages(HPROPSHEETPAGE* aPages, uint cPages, uint* pnPagesAdded)
-        {
-            return ((delegate* unmanaged<IWebWizardExtension*, HPROPSHEETPAGE*, uint, uint*, int>)(lpVtbl[3]))((IWebWizardExtension*)Unsafe.AsPointer(ref this), aPages, cPages, pnPagesAdded);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetFirstPage(HPROPSHEETPAGE* phpage)
+    {
+        return ((delegate* unmanaged<IWebWizardExtension*, HPROPSHEETPAGE*, int>)(lpVtbl[4]))((IWebWizardExtension*)Unsafe.AsPointer(ref this), phpage);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT GetFirstPage(HPROPSHEETPAGE* phpage)
-        {
-            return ((delegate* unmanaged<IWebWizardExtension*, HPROPSHEETPAGE*, int>)(lpVtbl[4]))((IWebWizardExtension*)Unsafe.AsPointer(ref this), phpage);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetLastPage(HPROPSHEETPAGE* phpage)
+    {
+        return ((delegate* unmanaged<IWebWizardExtension*, HPROPSHEETPAGE*, int>)(lpVtbl[5]))((IWebWizardExtension*)Unsafe.AsPointer(ref this), phpage);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT GetLastPage(HPROPSHEETPAGE* phpage)
-        {
-            return ((delegate* unmanaged<IWebWizardExtension*, HPROPSHEETPAGE*, int>)(lpVtbl[5]))((IWebWizardExtension*)Unsafe.AsPointer(ref this), phpage);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT SetInitialURL([NativeTypeName("LPCWSTR")] ushort* pszURL)
+    {
+        return ((delegate* unmanaged<IWebWizardExtension*, ushort*, int>)(lpVtbl[6]))((IWebWizardExtension*)Unsafe.AsPointer(ref this), pszURL);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT SetErrorURL([NativeTypeName("LPCWSTR")] ushort* pszErrorURL)
+    {
+        return ((delegate* unmanaged<IWebWizardExtension*, ushort*, int>)(lpVtbl[7]))((IWebWizardExtension*)Unsafe.AsPointer(ref this), pszErrorURL);
+    }
+
+    public interface Interface : IWizardExtension.Interface
+    {
         [VtblIndex(6)]
-        public HRESULT SetInitialURL([NativeTypeName("LPCWSTR")] ushort* pszURL)
-        {
-            return ((delegate* unmanaged<IWebWizardExtension*, ushort*, int>)(lpVtbl[6]))((IWebWizardExtension*)Unsafe.AsPointer(ref this), pszURL);
-        }
+        HRESULT SetInitialURL([NativeTypeName("LPCWSTR")] ushort* pszURL);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT SetErrorURL([NativeTypeName("LPCWSTR")] ushort* pszErrorURL)
-        {
-            return ((delegate* unmanaged<IWebWizardExtension*, ushort*, int>)(lpVtbl[7]))((IWebWizardExtension*)Unsafe.AsPointer(ref this), pszErrorURL);
-        }
+        HRESULT SetErrorURL([NativeTypeName("LPCWSTR")] ushort* pszErrorURL);
+    }
 
-        public interface Interface : IWizardExtension.Interface
-        {
-            [VtblIndex(6)]
-            HRESULT SetInitialURL([NativeTypeName("LPCWSTR")] ushort* pszURL);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IWebWizardExtension*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(7)]
-            HRESULT SetErrorURL([NativeTypeName("LPCWSTR")] ushort* pszErrorURL);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IWebWizardExtension*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IWebWizardExtension*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IWebWizardExtension*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IWebWizardExtension*, uint> AddRef;
+        [NativeTypeName("HRESULT (HPROPSHEETPAGE *, UINT, UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IWebWizardExtension*, HPROPSHEETPAGE*, uint, uint*, int> AddPages;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IWebWizardExtension*, uint> Release;
+        [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IWebWizardExtension*, HPROPSHEETPAGE*, int> GetFirstPage;
 
-            [NativeTypeName("HRESULT (HPROPSHEETPAGE *, UINT, UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IWebWizardExtension*, HPROPSHEETPAGE*, uint, uint*, int> AddPages;
+        [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IWebWizardExtension*, HPROPSHEETPAGE*, int> GetLastPage;
 
-            [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IWebWizardExtension*, HPROPSHEETPAGE*, int> GetFirstPage;
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IWebWizardExtension*, ushort*, int> SetInitialURL;
 
-            [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IWebWizardExtension*, HPROPSHEETPAGE*, int> GetLastPage;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IWebWizardExtension*, ushort*, int> SetInitialURL;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IWebWizardExtension*, ushort*, int> SetErrorURL;
-        }
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IWebWizardExtension*, ushort*, int> SetErrorURL;
     }
 }

@@ -7,12 +7,11 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public static unsafe partial class DirectX
 {
-    public static unsafe partial class DirectX
-    {
-        [SupportedOSPlatform("windows8.0")]
-        [DllImport("d3dcompiler_47", ExactSpelling = true)]
-        public static extern HRESULT D3DDisassemble11Trace([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSize, ID3D11ShaderTrace* pTrace, uint StartStep, uint NumSteps, uint Flags, [NativeTypeName("struct ID3D10Blob **")] ID3DBlob** ppDisassembly);
-    }
+    [SupportedOSPlatform("windows8.0")]
+    [DllImport("d3dcompiler_47", ExactSpelling = true)]
+    public static extern HRESULT D3DDisassemble11Trace([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSize, ID3D11ShaderTrace* pTrace, uint StartStep, uint NumSteps, uint Flags, [NativeTypeName("struct ID3D10Blob **")] ID3DBlob** ppDisassembly);
 }

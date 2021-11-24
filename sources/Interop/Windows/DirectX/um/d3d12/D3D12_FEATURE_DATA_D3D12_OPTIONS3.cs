@@ -5,18 +5,17 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_FEATURE_DATA_D3D12_OPTIONS3
 {
-    public partial struct D3D12_FEATURE_DATA_D3D12_OPTIONS3
-    {
-        public BOOL CopyQueueTimestampQueriesSupported;
+    public BOOL CopyQueueTimestampQueriesSupported;
 
-        public BOOL CastingFullyTypedFormatSupported;
+    public BOOL CastingFullyTypedFormatSupported;
 
-        public D3D12_COMMAND_LIST_SUPPORT_FLAGS WriteBufferImmediateSupportFlags;
+    public D3D12_COMMAND_LIST_SUPPORT_FLAGS WriteBufferImmediateSupportFlags;
 
-        public D3D12_VIEW_INSTANCING_TIER ViewInstancingTier;
+    public D3D12_VIEW_INSTANCING_TIER ViewInstancingTier;
 
-        public BOOL BarycentricsSupported;
-    }
+    public BOOL BarycentricsSupported;
 }

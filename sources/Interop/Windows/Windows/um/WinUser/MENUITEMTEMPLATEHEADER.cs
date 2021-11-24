@@ -3,14 +3,13 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct MENUITEMTEMPLATEHEADER
-    {
-        [NativeTypeName("WORD")]
-        public ushort versionNumber;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("WORD")]
-        public ushort offset;
-    }
+public partial struct MENUITEMTEMPLATEHEADER
+{
+    [NativeTypeName("WORD")]
+    public ushort versionNumber;
+
+    [NativeTypeName("WORD")]
+    public ushort offset;
 }

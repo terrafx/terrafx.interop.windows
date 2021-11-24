@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISpeechRecognizer" /> struct.</summary>
+public static unsafe partial class ISpeechRecognizerTests
 {
-    /// <summary>Provides validation of the <see cref="ISpeechRecognizer" /> struct.</summary>
-    public static unsafe partial class ISpeechRecognizerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpeechRecognizer" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpeechRecognizer" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISpeechRecognizer).GUID, Is.EqualTo(IID_ISpeechRecognizer));
-        }
+        Assert.That(typeof(ISpeechRecognizer).GUID, Is.EqualTo(IID_ISpeechRecognizer));
+    }
 
-        /// <summary>Validates that the <see cref="ISpeechRecognizer" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISpeechRecognizer>(), Is.EqualTo(sizeof(ISpeechRecognizer)));
-        }
+    /// <summary>Validates that the <see cref="ISpeechRecognizer" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISpeechRecognizer>(), Is.EqualTo(sizeof(ISpeechRecognizer)));
+    }
 
-        /// <summary>Validates that the <see cref="ISpeechRecognizer" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISpeechRecognizer).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISpeechRecognizer" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISpeechRecognizer).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISpeechRecognizer" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISpeechRecognizer" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISpeechRecognizer), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISpeechRecognizer), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISpeechRecognizer), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISpeechRecognizer), Is.EqualTo(4));
         }
     }
 }

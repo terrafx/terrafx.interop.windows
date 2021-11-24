@@ -6,11 +6,10 @@
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public static unsafe partial class DirectX
 {
-    public static unsafe partial class DirectX
-    {
-        [DllImport("d3d11", ExactSpelling = true)]
-        public static extern HRESULT D3D11On12CreateDevice(IUnknown* pDevice, uint Flags, [NativeTypeName("const D3D_FEATURE_LEVEL *")] D3D_FEATURE_LEVEL* pFeatureLevels, uint FeatureLevels, [NativeTypeName("IUnknown *const *")] IUnknown** ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ID3D11DeviceContext** ppImmediateContext, D3D_FEATURE_LEVEL* pChosenFeatureLevel);
-    }
+    [DllImport("d3d11", ExactSpelling = true)]
+    public static extern HRESULT D3D11On12CreateDevice(IUnknown* pDevice, uint Flags, [NativeTypeName("const D3D_FEATURE_LEVEL *")] D3D_FEATURE_LEVEL* pFeatureLevels, uint FeatureLevels, [NativeTypeName("IUnknown *const *")] IUnknown** ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ID3D11DeviceContext** ppImmediateContext, D3D_FEATURE_LEVEL* pChosenFeatureLevel);
 }

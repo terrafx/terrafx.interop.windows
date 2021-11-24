@@ -3,15 +3,14 @@
 // Ported from um/ocidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum VIEWSTATUS
 {
-    public enum VIEWSTATUS
-    {
-        VIEWSTATUS_OPAQUE = 1,
-        VIEWSTATUS_SOLIDBKGND = 2,
-        VIEWSTATUS_DVASPECTOPAQUE = 4,
-        VIEWSTATUS_DVASPECTTRANSPARENT = 8,
-        VIEWSTATUS_SURFACE = 16,
-        VIEWSTATUS_3DSURFACE = 32,
-    }
+    VIEWSTATUS_OPAQUE = 1,
+    VIEWSTATUS_SOLIDBKGND = 2,
+    VIEWSTATUS_DVASPECTOPAQUE = 4,
+    VIEWSTATUS_DVASPECTTRANSPARENT = 8,
+    VIEWSTATUS_SURFACE = 16,
+    VIEWSTATUS_3DSURFACE = 32,
 }

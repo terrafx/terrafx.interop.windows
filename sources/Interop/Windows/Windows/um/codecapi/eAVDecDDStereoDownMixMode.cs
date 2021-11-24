@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum eAVDecDDStereoDownMixMode
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum eAVDecDDStereoDownMixMode
-    {
-        eAVDecDDStereoDownMixMode_Auto = 0,
-        eAVDecDDStereoDownMixMode_LtRt = 1,
-        eAVDecDDStereoDownMixMode_LoRo = 2,
-    }
+    eAVDecDDStereoDownMixMode_Auto = 0,
+    eAVDecDDStereoDownMixMode_LtRt = 1,
+    eAVDecDDStereoDownMixMode_LoRo = 2,
 }

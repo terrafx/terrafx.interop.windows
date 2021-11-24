@@ -5,18 +5,17 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WINTRUST_FILE_INFO
 {
-    public unsafe partial struct WINTRUST_FILE_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbStruct;
+    [NativeTypeName("DWORD")]
+    public uint cbStruct;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pcwszFilePath;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pcwszFilePath;
 
-        public HANDLE hFile;
+    public HANDLE hFile;
 
-        public Guid* pgKnownSubject;
-    }
+    public Guid* pgKnownSubject;
 }

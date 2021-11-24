@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CRYPT_CSP_PROVIDER" /> struct.</summary>
+public static unsafe partial class CRYPT_CSP_PROVIDERTests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_CSP_PROVIDER" /> struct.</summary>
-    public static unsafe partial class CRYPT_CSP_PROVIDERTests
+    /// <summary>Validates that the <see cref="CRYPT_CSP_PROVIDER" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CRYPT_CSP_PROVIDER" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CRYPT_CSP_PROVIDER>(), Is.EqualTo(sizeof(CRYPT_CSP_PROVIDER)));
-        }
+        Assert.That(Marshal.SizeOf<CRYPT_CSP_PROVIDER>(), Is.EqualTo(sizeof(CRYPT_CSP_PROVIDER)));
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_CSP_PROVIDER" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CRYPT_CSP_PROVIDER).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CRYPT_CSP_PROVIDER" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CRYPT_CSP_PROVIDER).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_CSP_PROVIDER" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CRYPT_CSP_PROVIDER" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CRYPT_CSP_PROVIDER), Is.EqualTo(40));
-            }
-            else
-            {
-                Assert.That(sizeof(CRYPT_CSP_PROVIDER), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(CRYPT_CSP_PROVIDER), Is.EqualTo(40));
+        }
+        else
+        {
+            Assert.That(sizeof(CRYPT_CSP_PROVIDER), Is.EqualTo(20));
         }
     }
 }

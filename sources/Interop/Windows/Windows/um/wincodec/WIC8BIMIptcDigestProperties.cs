@@ -3,12 +3,11 @@
 // Ported from um/wincodec.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum WIC8BIMIptcDigestProperties : uint
 {
-    public enum WIC8BIMIptcDigestProperties : uint
-    {
-        WIC8BIMIptcDigestPString = 0x1,
-        WIC8BIMIptcDigestIptcDigest = 0x2,
-        WIC8BIMIptcDigestProperties_FORCE_DWORD = 0x7fffffff,
-    }
+    WIC8BIMIptcDigestPString = 0x1,
+    WIC8BIMIptcDigestIptcDigest = 0x2,
+    WIC8BIMIptcDigestProperties_FORCE_DWORD = 0x7fffffff,
 }

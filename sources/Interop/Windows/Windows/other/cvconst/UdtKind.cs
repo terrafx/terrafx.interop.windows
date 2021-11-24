@@ -3,13 +3,12 @@
 // Ported from cvconst.h in the Debug Interface Access SDK
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum UdtKind
 {
-    public enum UdtKind
-    {
-        UdtStruct,
-        UdtClass,
-        UdtUnion,
-        UdtInterface,
-    }
+    UdtStruct,
+    UdtClass,
+    UdtUnion,
+    UdtInterface,
 }

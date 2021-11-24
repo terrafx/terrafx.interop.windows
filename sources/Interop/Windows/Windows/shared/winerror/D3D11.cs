@@ -5,20 +5,19 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public static partial class D3D11
 {
-    public static partial class D3D11
-    {
-        [NativeTypeName("#define D3D11_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS _HRESULT_TYPEDEF_(0x887C0001L)")]
-        public const int D3D11_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS = unchecked((int)(0x887C0001));
+    [NativeTypeName("#define D3D11_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS _HRESULT_TYPEDEF_(0x887C0001L)")]
+    public const int D3D11_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS = unchecked((int)(0x887C0001));
 
-        [NativeTypeName("#define D3D11_ERROR_FILE_NOT_FOUND _HRESULT_TYPEDEF_(0x887C0002L)")]
-        public const int D3D11_ERROR_FILE_NOT_FOUND = unchecked((int)(0x887C0002));
+    [NativeTypeName("#define D3D11_ERROR_FILE_NOT_FOUND _HRESULT_TYPEDEF_(0x887C0002L)")]
+    public const int D3D11_ERROR_FILE_NOT_FOUND = unchecked((int)(0x887C0002));
 
-        [NativeTypeName("#define D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS _HRESULT_TYPEDEF_(0x887C0003L)")]
-        public const int D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS = unchecked((int)(0x887C0003));
+    [NativeTypeName("#define D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS _HRESULT_TYPEDEF_(0x887C0003L)")]
+    public const int D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS = unchecked((int)(0x887C0003));
 
-        [NativeTypeName("#define D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD _HRESULT_TYPEDEF_(0x887C0004L)")]
-        public const int D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD = unchecked((int)(0x887C0004));
-    }
+    [NativeTypeName("#define D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD _HRESULT_TYPEDEF_(0x887C0004L)")]
+    public const int D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD = unchecked((int)(0x887C0004));
 }

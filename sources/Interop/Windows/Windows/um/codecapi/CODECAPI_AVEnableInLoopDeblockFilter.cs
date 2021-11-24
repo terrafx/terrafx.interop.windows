@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("D2E8E399-0623-4BF3-92A8-4D1818529DED")]
+public partial struct CODECAPI_AVEnableInLoopDeblockFilter
 {
-    [Guid("D2E8E399-0623-4BF3-92A8-4D1818529DED")]
-    public partial struct CODECAPI_AVEnableInLoopDeblockFilter
-    {
-    }
 }

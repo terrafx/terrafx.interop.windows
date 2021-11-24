@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DispWebGeolocation" /> struct.</summary>
+public static unsafe partial class DispWebGeolocationTests
 {
-    /// <summary>Provides validation of the <see cref="DispWebGeolocation" /> struct.</summary>
-    public static unsafe partial class DispWebGeolocationTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispWebGeolocation" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispWebGeolocation" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DispWebGeolocation).GUID, Is.EqualTo(IID_DispWebGeolocation));
-        }
+        Assert.That(typeof(DispWebGeolocation).GUID, Is.EqualTo(IID_DispWebGeolocation));
+    }
 
-        /// <summary>Validates that the <see cref="DispWebGeolocation" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DispWebGeolocation>(), Is.EqualTo(sizeof(DispWebGeolocation)));
-        }
+    /// <summary>Validates that the <see cref="DispWebGeolocation" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DispWebGeolocation>(), Is.EqualTo(sizeof(DispWebGeolocation)));
+    }
 
-        /// <summary>Validates that the <see cref="DispWebGeolocation" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DispWebGeolocation).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DispWebGeolocation" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DispWebGeolocation).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DispWebGeolocation" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DispWebGeolocation" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DispWebGeolocation), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(DispWebGeolocation), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(DispWebGeolocation), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(DispWebGeolocation), Is.EqualTo(4));
         }
     }
 }

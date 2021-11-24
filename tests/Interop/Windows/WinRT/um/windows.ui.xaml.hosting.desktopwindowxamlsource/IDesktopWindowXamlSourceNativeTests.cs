@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDesktopWindowXamlSourceNative" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.18362.0")]
+public static unsafe partial class IDesktopWindowXamlSourceNativeTests
 {
-    /// <summary>Provides validation of the <see cref="IDesktopWindowXamlSourceNative" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0.18362.0")]
-    public static unsafe partial class IDesktopWindowXamlSourceNativeTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDesktopWindowXamlSourceNative" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDesktopWindowXamlSourceNative" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDesktopWindowXamlSourceNative).GUID, Is.EqualTo(IID_IDesktopWindowXamlSourceNative));
-        }
+        Assert.That(typeof(IDesktopWindowXamlSourceNative).GUID, Is.EqualTo(IID_IDesktopWindowXamlSourceNative));
+    }
 
-        /// <summary>Validates that the <see cref="IDesktopWindowXamlSourceNative" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDesktopWindowXamlSourceNative>(), Is.EqualTo(sizeof(IDesktopWindowXamlSourceNative)));
-        }
+    /// <summary>Validates that the <see cref="IDesktopWindowXamlSourceNative" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDesktopWindowXamlSourceNative>(), Is.EqualTo(sizeof(IDesktopWindowXamlSourceNative)));
+    }
 
-        /// <summary>Validates that the <see cref="IDesktopWindowXamlSourceNative" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDesktopWindowXamlSourceNative).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDesktopWindowXamlSourceNative" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDesktopWindowXamlSourceNative).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDesktopWindowXamlSourceNative" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDesktopWindowXamlSourceNative" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDesktopWindowXamlSourceNative), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDesktopWindowXamlSourceNative), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDesktopWindowXamlSourceNative), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDesktopWindowXamlSourceNative), Is.EqualTo(4));
         }
     }
 }

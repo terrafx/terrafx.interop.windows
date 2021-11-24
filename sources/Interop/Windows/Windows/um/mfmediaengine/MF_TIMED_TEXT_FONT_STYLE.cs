@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public enum MF_TIMED_TEXT_FONT_STYLE
 {
-    [SupportedOSPlatform("windows10.0")]
-    public enum MF_TIMED_TEXT_FONT_STYLE
-    {
-        MF_TIMED_TEXT_FONT_STYLE_NORMAL = 0,
-        MF_TIMED_TEXT_FONT_STYLE_OBLIQUE = 1,
-        MF_TIMED_TEXT_FONT_STYLE_ITALIC = 2,
-    }
+    MF_TIMED_TEXT_FONT_STYLE_NORMAL = 0,
+    MF_TIMED_TEXT_FONT_STYLE_OBLIQUE = 1,
+    MF_TIMED_TEXT_FONT_STYLE_ITALIC = 2,
 }

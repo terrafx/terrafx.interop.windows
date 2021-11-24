@@ -8,25 +8,24 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D11_DEPTH_STENCILOP_DESC
 {
-    public partial struct D3D11_DEPTH_STENCILOP_DESC
+    public static ref readonly D3D11_DEPTH_STENCILOP_DESC DEFAULT
     {
-        public static ref readonly D3D11_DEPTH_STENCILOP_DESC DEFAULT
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x01, 0x00, 0x00, 0x00,
                     0x01, 0x00, 0x00, 0x00,
                     0x01, 0x00, 0x00, 0x00,
                     0x08, 0x00, 0x00, 0x00
                 };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<D3D11_DEPTH_STENCILOP_DESC>());
-                return ref Unsafe.As<byte, D3D11_DEPTH_STENCILOP_DESC>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<D3D11_DEPTH_STENCILOP_DESC>());
+            return ref Unsafe.As<byte, D3D11_DEPTH_STENCILOP_DESC>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

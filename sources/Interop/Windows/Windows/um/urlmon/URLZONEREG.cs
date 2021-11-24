@@ -3,12 +3,11 @@
 // Ported from um/urlmon.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum URLZONEREG
 {
-    public enum URLZONEREG
-    {
-        URLZONEREG_DEFAULT = 0,
-        URLZONEREG_HKLM = (URLZONEREG_DEFAULT + 1),
-        URLZONEREG_HKCU = (URLZONEREG_HKLM + 1),
-    }
+    URLZONEREG_DEFAULT = 0,
+    URLZONEREG_HKLM = (URLZONEREG_DEFAULT + 1),
+    URLZONEREG_HKCU = (URLZONEREG_HKLM + 1),
 }

@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CODECAPI_AVEncCommonStreamEndHandling" /> struct.</summary>
+public static unsafe partial class CODECAPI_AVEncCommonStreamEndHandlingTests
 {
-    /// <summary>Provides validation of the <see cref="CODECAPI_AVEncCommonStreamEndHandling" /> struct.</summary>
-    public static unsafe partial class CODECAPI_AVEncCommonStreamEndHandlingTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncCommonStreamEndHandling" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncCommonStreamEndHandling" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncCommonStreamEndHandling).GUID, Is.EqualTo(IID_CODECAPI_AVEncCommonStreamEndHandling));
-        }
+        Assert.That(typeof(CODECAPI_AVEncCommonStreamEndHandling).GUID, Is.EqualTo(IID_CODECAPI_AVEncCommonStreamEndHandling));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonStreamEndHandling" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CODECAPI_AVEncCommonStreamEndHandling>(), Is.EqualTo(sizeof(CODECAPI_AVEncCommonStreamEndHandling)));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonStreamEndHandling" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<CODECAPI_AVEncCommonStreamEndHandling>(), Is.EqualTo(sizeof(CODECAPI_AVEncCommonStreamEndHandling)));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonStreamEndHandling" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncCommonStreamEndHandling).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonStreamEndHandling" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CODECAPI_AVEncCommonStreamEndHandling).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonStreamEndHandling" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CODECAPI_AVEncCommonStreamEndHandling), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonStreamEndHandling" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CODECAPI_AVEncCommonStreamEndHandling), Is.EqualTo(1));
     }
 }

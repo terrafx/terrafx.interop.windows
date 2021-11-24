@@ -3,12 +3,11 @@
 // Ported from um/objidlbase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum LOCKTYPE
 {
-    public enum LOCKTYPE
-    {
-        LOCK_WRITE = 1,
-        LOCK_EXCLUSIVE = 2,
-        LOCK_ONLYONCE = 4,
-    }
+    LOCK_WRITE = 1,
+    LOCK_EXCLUSIVE = 2,
+    LOCK_ONLYONCE = 4,
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IBlockingLock" /> struct.</summary>
+public static unsafe partial class IBlockingLockTests
 {
-    /// <summary>Provides validation of the <see cref="IBlockingLock" /> struct.</summary>
-    public static unsafe partial class IBlockingLockTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IBlockingLock" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IBlockingLock" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IBlockingLock).GUID, Is.EqualTo(IID_IBlockingLock));
-        }
+        Assert.That(typeof(IBlockingLock).GUID, Is.EqualTo(IID_IBlockingLock));
+    }
 
-        /// <summary>Validates that the <see cref="IBlockingLock" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IBlockingLock>(), Is.EqualTo(sizeof(IBlockingLock)));
-        }
+    /// <summary>Validates that the <see cref="IBlockingLock" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IBlockingLock>(), Is.EqualTo(sizeof(IBlockingLock)));
+    }
 
-        /// <summary>Validates that the <see cref="IBlockingLock" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IBlockingLock).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IBlockingLock" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IBlockingLock).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IBlockingLock" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IBlockingLock" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IBlockingLock), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IBlockingLock), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IBlockingLock), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IBlockingLock), Is.EqualTo(4));
         }
     }
 }

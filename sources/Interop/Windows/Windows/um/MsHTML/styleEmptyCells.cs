@@ -3,13 +3,12 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum styleEmptyCells
 {
-    public enum styleEmptyCells
-    {
-        styleEmptyCellsNotSet = 0,
-        styleEmptyCellsShow = 1,
-        styleEmptyCellsHide = 2,
-        styleEmptyCells_Max = 2147483647,
-    }
+    styleEmptyCellsNotSet = 0,
+    styleEmptyCellsShow = 1,
+    styleEmptyCellsHide = 2,
+    styleEmptyCells_Max = 2147483647,
 }

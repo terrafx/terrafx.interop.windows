@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("BEDE146D-B616-4DC7-92B2-F5D9FA9298F7")]
+public partial struct CODECAPI_AVEncInputVideoSystem
 {
-    [Guid("BEDE146D-B616-4DC7-92B2-F5D9FA9298F7")]
-    public partial struct CODECAPI_AVEncInputVideoSystem
-    {
-    }
 }

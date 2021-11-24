@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct DEVICE_DATA_SET_REPAIR_PARAMETERS
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct DEVICE_DATA_SET_REPAIR_PARAMETERS
-    {
-        [NativeTypeName("DWORD")]
-        public uint NumberOfRepairCopies;
+    [NativeTypeName("DWORD")]
+    public uint NumberOfRepairCopies;
 
-        [NativeTypeName("DWORD")]
-        public uint SourceCopy;
+    [NativeTypeName("DWORD")]
+    public uint SourceCopy;
 
-        [NativeTypeName("DWORD [1]")]
-        public fixed uint RepairCopies[1];
-    }
+    [NativeTypeName("DWORD [1]")]
+    public fixed uint RepairCopies[1];
 }

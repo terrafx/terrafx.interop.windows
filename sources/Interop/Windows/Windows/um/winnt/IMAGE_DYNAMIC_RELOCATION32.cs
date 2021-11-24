@@ -5,15 +5,14 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct IMAGE_DYNAMIC_RELOCATION32
-    {
-        [NativeTypeName("DWORD")]
-        public uint Symbol;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint BaseRelocSize;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct IMAGE_DYNAMIC_RELOCATION32
+{
+    [NativeTypeName("DWORD")]
+    public uint Symbol;
+
+    [NativeTypeName("DWORD")]
+    public uint BaseRelocSize;
 }

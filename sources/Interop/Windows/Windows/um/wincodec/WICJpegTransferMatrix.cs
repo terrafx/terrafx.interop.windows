@@ -3,12 +3,11 @@
 // Ported from um/wincodec.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum WICJpegTransferMatrix : uint
 {
-    public enum WICJpegTransferMatrix : uint
-    {
-        WICJpegTransferMatrixIdentity = 0,
-        WICJpegTransferMatrixBT601 = 0x1,
-        WICJpegTransferMatrix_FORCE_DWORD = 0x7fffffff,
-    }
+    WICJpegTransferMatrixIdentity = 0,
+    WICJpegTransferMatrixBT601 = 0x1,
+    WICJpegTransferMatrix_FORCE_DWORD = 0x7fffffff,
 }

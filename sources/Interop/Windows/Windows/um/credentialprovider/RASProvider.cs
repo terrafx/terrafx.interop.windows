@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("5537E283-B1E7-4EF8-9C6E-7AB0AFE5056D")]
+public partial struct RASProvider
 {
-    [Guid("5537E283-B1E7-4EF8-9C6E-7AB0AFE5056D")]
-    public partial struct RASProvider
-    {
-    }
 }

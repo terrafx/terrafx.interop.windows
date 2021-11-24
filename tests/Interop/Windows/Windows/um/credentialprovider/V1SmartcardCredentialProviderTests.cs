@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="V1SmartcardCredentialProvider" /> struct.</summary>
+public static unsafe partial class V1SmartcardCredentialProviderTests
 {
-    /// <summary>Provides validation of the <see cref="V1SmartcardCredentialProvider" /> struct.</summary>
-    public static unsafe partial class V1SmartcardCredentialProviderTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="V1SmartcardCredentialProvider" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="V1SmartcardCredentialProvider" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(V1SmartcardCredentialProvider).GUID, Is.EqualTo(IID_V1SmartcardCredentialProvider));
-        }
+        Assert.That(typeof(V1SmartcardCredentialProvider).GUID, Is.EqualTo(IID_V1SmartcardCredentialProvider));
+    }
 
-        /// <summary>Validates that the <see cref="V1SmartcardCredentialProvider" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<V1SmartcardCredentialProvider>(), Is.EqualTo(sizeof(V1SmartcardCredentialProvider)));
-        }
+    /// <summary>Validates that the <see cref="V1SmartcardCredentialProvider" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<V1SmartcardCredentialProvider>(), Is.EqualTo(sizeof(V1SmartcardCredentialProvider)));
+    }
 
-        /// <summary>Validates that the <see cref="V1SmartcardCredentialProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(V1SmartcardCredentialProvider).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="V1SmartcardCredentialProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(V1SmartcardCredentialProvider).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="V1SmartcardCredentialProvider" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(V1SmartcardCredentialProvider), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="V1SmartcardCredentialProvider" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(V1SmartcardCredentialProvider), Is.EqualTo(1));
     }
 }

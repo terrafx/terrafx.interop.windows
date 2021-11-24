@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DispSVGPathElement" /> struct.</summary>
+public static unsafe partial class DispSVGPathElementTests
 {
-    /// <summary>Provides validation of the <see cref="DispSVGPathElement" /> struct.</summary>
-    public static unsafe partial class DispSVGPathElementTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispSVGPathElement" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispSVGPathElement" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DispSVGPathElement).GUID, Is.EqualTo(IID_DispSVGPathElement));
-        }
+        Assert.That(typeof(DispSVGPathElement).GUID, Is.EqualTo(IID_DispSVGPathElement));
+    }
 
-        /// <summary>Validates that the <see cref="DispSVGPathElement" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DispSVGPathElement>(), Is.EqualTo(sizeof(DispSVGPathElement)));
-        }
+    /// <summary>Validates that the <see cref="DispSVGPathElement" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DispSVGPathElement>(), Is.EqualTo(sizeof(DispSVGPathElement)));
+    }
 
-        /// <summary>Validates that the <see cref="DispSVGPathElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DispSVGPathElement).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DispSVGPathElement" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DispSVGPathElement).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DispSVGPathElement" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DispSVGPathElement" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DispSVGPathElement), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(DispSVGPathElement), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(DispSVGPathElement), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(DispSVGPathElement), Is.EqualTo(4));
         }
     }
 }

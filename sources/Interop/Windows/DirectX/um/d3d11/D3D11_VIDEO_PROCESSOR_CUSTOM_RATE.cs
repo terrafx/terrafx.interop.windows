@@ -6,17 +6,16 @@
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct D3D11_VIDEO_PROCESSOR_CUSTOM_RATE
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct D3D11_VIDEO_PROCESSOR_CUSTOM_RATE
-    {
-        public DXGI_RATIONAL CustomRate;
+    public DXGI_RATIONAL CustomRate;
 
-        public uint OutputFrames;
+    public uint OutputFrames;
 
-        public BOOL InputInterlaced;
+    public BOOL InputInterlaced;
 
-        public uint InputFramesOrFields;
-    }
+    public uint InputFramesOrFields;
 }

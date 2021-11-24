@@ -3,28 +3,27 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CERT_REVOCATION_INFO
 {
-    public unsafe partial struct CERT_REVOCATION_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("DWORD")]
-        public uint dwRevocationResult;
+    [NativeTypeName("DWORD")]
+    public uint dwRevocationResult;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* pszRevocationOid;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* pszRevocationOid;
 
-        [NativeTypeName("LPVOID")]
-        public void* pvOidSpecificInfo;
+    [NativeTypeName("LPVOID")]
+    public void* pvOidSpecificInfo;
 
-        public BOOL fHasFreshnessTime;
+    public BOOL fHasFreshnessTime;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFreshnessTime;
+    [NativeTypeName("DWORD")]
+    public uint dwFreshnessTime;
 
-        [NativeTypeName("PCERT_REVOCATION_CRL_INFO")]
-        public CERT_REVOCATION_CRL_INFO* pCrlInfo;
-    }
+    [NativeTypeName("PCERT_REVOCATION_CRL_INFO")]
+    public CERT_REVOCATION_CRL_INFO* pCrlInfo;
 }

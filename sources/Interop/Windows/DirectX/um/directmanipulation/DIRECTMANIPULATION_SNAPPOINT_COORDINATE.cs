@@ -6,14 +6,13 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+[SupportedOSPlatform("windows8.0")]
+public enum DIRECTMANIPULATION_SNAPPOINT_COORDINATE
 {
-    [Flags]
-    [SupportedOSPlatform("windows8.0")]
-    public enum DIRECTMANIPULATION_SNAPPOINT_COORDINATE
-    {
-        DIRECTMANIPULATION_COORDINATE_BOUNDARY = 0,
-        DIRECTMANIPULATION_COORDINATE_ORIGIN = 0x1,
-        DIRECTMANIPULATION_COORDINATE_MIRRORED = 0x10,
-    }
+    DIRECTMANIPULATION_COORDINATE_BOUNDARY = 0,
+    DIRECTMANIPULATION_COORDINATE_ORIGIN = 0x1,
+    DIRECTMANIPULATION_COORDINATE_MIRRORED = 0x10,
 }

@@ -3,23 +3,22 @@
 // Ported from um/amvideo.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct VIDEOINFOHEADER
 {
-    public partial struct VIDEOINFOHEADER
-    {
-        public RECT rcSource;
+    public RECT rcSource;
 
-        public RECT rcTarget;
+    public RECT rcTarget;
 
-        [NativeTypeName("DWORD")]
-        public uint dwBitRate;
+    [NativeTypeName("DWORD")]
+    public uint dwBitRate;
 
-        [NativeTypeName("DWORD")]
-        public uint dwBitErrorRate;
+    [NativeTypeName("DWORD")]
+    public uint dwBitErrorRate;
 
-        [NativeTypeName("REFERENCE_TIME")]
-        public long AvgTimePerFrame;
+    [NativeTypeName("REFERENCE_TIME")]
+    public long AvgTimePerFrame;
 
-        public BITMAPINFOHEADER bmiHeader;
-    }
+    public BITMAPINFOHEADER bmiHeader;
 }

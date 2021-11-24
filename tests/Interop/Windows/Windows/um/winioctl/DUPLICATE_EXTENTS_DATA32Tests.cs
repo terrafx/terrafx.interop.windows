@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DUPLICATE_EXTENTS_DATA32" /> struct.</summary>
+public static unsafe partial class DUPLICATE_EXTENTS_DATA32Tests
 {
-    /// <summary>Provides validation of the <see cref="DUPLICATE_EXTENTS_DATA32" /> struct.</summary>
-    public static unsafe partial class DUPLICATE_EXTENTS_DATA32Tests
+    /// <summary>Validates that the <see cref="DUPLICATE_EXTENTS_DATA32" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DUPLICATE_EXTENTS_DATA32" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DUPLICATE_EXTENTS_DATA32>(), Is.EqualTo(sizeof(DUPLICATE_EXTENTS_DATA32)));
-        }
+        Assert.That(Marshal.SizeOf<DUPLICATE_EXTENTS_DATA32>(), Is.EqualTo(sizeof(DUPLICATE_EXTENTS_DATA32)));
+    }
 
-        /// <summary>Validates that the <see cref="DUPLICATE_EXTENTS_DATA32" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DUPLICATE_EXTENTS_DATA32).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DUPLICATE_EXTENTS_DATA32" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DUPLICATE_EXTENTS_DATA32).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DUPLICATE_EXTENTS_DATA32" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DUPLICATE_EXTENTS_DATA32), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="DUPLICATE_EXTENTS_DATA32" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DUPLICATE_EXTENTS_DATA32), Is.EqualTo(32));
     }
 }

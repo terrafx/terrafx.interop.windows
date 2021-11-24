@@ -5,11 +5,10 @@
 
 using static TerraFX.Interop.Windows.SPRUNSTATE;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechRunState
 {
-    public enum SpeechRunState
-    {
-        SRSEDone = SPRS_DONE,
-        SRSEIsSpeaking = SPRS_IS_SPEAKING,
-    }
+    SRSEDone = SPRS_DONE,
+    SRSEIsSpeaking = SPRS_IS_SPEAKING,
 }

@@ -3,12 +3,11 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum NORMALGROUPCOLLAPSESTATES
 {
-    public enum NORMALGROUPCOLLAPSESTATES
-    {
-        EBNGC_NORMAL = 1,
-        EBNGC_HOT = 2,
-        EBNGC_PRESSED = 3,
-    }
+    EBNGC_NORMAL = 1,
+    EBNGC_HOT = 2,
+    EBNGC_PRESSED = 3,
 }

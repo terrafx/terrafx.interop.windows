@@ -3,16 +3,15 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum STORAGE_RPMB_COMMAND_TYPE
 {
-    public enum STORAGE_RPMB_COMMAND_TYPE
-    {
-        StorRpmbProgramAuthKey = 0x00000001,
-        StorRpmbQueryWriteCounter = 0x00000002,
-        StorRpmbAuthenticatedWrite = 0x00000003,
-        StorRpmbAuthenticatedRead = 0x00000004,
-        StorRpmbReadResultRequest = 0x00000005,
-        StorRpmbAuthenticatedDeviceConfigWrite = 0x00000006,
-        StorRpmbAuthenticatedDeviceConfigRead = 0x00000007,
-    }
+    StorRpmbProgramAuthKey = 0x00000001,
+    StorRpmbQueryWriteCounter = 0x00000002,
+    StorRpmbAuthenticatedWrite = 0x00000003,
+    StorRpmbAuthenticatedRead = 0x00000004,
+    StorRpmbReadResultRequest = 0x00000005,
+    StorRpmbAuthenticatedDeviceConfigWrite = 0x00000006,
+    StorRpmbAuthenticatedDeviceConfigRead = 0x00000007,
 }

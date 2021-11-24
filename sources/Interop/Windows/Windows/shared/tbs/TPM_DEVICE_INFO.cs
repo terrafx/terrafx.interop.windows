@@ -5,21 +5,20 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct TPM_DEVICE_INFO
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct TPM_DEVICE_INFO
-    {
-        [NativeTypeName("UINT32")]
-        public uint structVersion;
+    [NativeTypeName("UINT32")]
+    public uint structVersion;
 
-        [NativeTypeName("UINT32")]
-        public uint tpmVersion;
+    [NativeTypeName("UINT32")]
+    public uint tpmVersion;
 
-        [NativeTypeName("UINT32")]
-        public uint tpmInterfaceType;
+    [NativeTypeName("UINT32")]
+    public uint tpmInterfaceType;
 
-        [NativeTypeName("UINT32")]
-        public uint tpmImpRevision;
-    }
+    [NativeTypeName("UINT32")]
+    public uint tpmImpRevision;
 }

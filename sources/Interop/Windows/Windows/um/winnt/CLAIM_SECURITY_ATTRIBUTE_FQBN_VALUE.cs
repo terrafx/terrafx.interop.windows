@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE
-    {
-        [NativeTypeName("DWORD64")]
-        public ulong Version;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("PWSTR")]
-        public ushort* Name;
-    }
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE
+{
+    [NativeTypeName("DWORD64")]
+    public ulong Version;
+
+    [NativeTypeName("PWSTR")]
+    public ushort* Name;
 }

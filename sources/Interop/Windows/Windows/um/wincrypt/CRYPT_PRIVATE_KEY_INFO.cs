@@ -3,19 +3,18 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CRYPT_PRIVATE_KEY_INFO
 {
-    public unsafe partial struct CRYPT_PRIVATE_KEY_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        public CRYPT_ALGORITHM_IDENTIFIER Algorithm;
+    public CRYPT_ALGORITHM_IDENTIFIER Algorithm;
 
-        [NativeTypeName("CRYPT_DER_BLOB")]
-        public CRYPT_DATA_BLOB PrivateKey;
+    [NativeTypeName("CRYPT_DER_BLOB")]
+    public CRYPT_DATA_BLOB PrivateKey;
 
-        [NativeTypeName("PCRYPT_ATTRIBUTES")]
-        public CRYPT_ATTRIBUTES* pAttributes;
-    }
+    [NativeTypeName("PCRYPT_ATTRIBUTES")]
+    public CRYPT_ATTRIBUTES* pAttributes;
 }

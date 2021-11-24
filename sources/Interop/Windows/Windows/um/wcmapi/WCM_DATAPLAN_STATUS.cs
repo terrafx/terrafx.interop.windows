@@ -5,28 +5,27 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct WCM_DATAPLAN_STATUS
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct WCM_DATAPLAN_STATUS
-    {
-        public WCM_USAGE_DATA UsageData;
+    public WCM_USAGE_DATA UsageData;
 
-        [NativeTypeName("DWORD")]
-        public uint DataLimitInMegabytes;
+    [NativeTypeName("DWORD")]
+    public uint DataLimitInMegabytes;
 
-        [NativeTypeName("DWORD")]
-        public uint InboundBandwidthInKbps;
+    [NativeTypeName("DWORD")]
+    public uint InboundBandwidthInKbps;
 
-        [NativeTypeName("DWORD")]
-        public uint OutboundBandwidthInKbps;
+    [NativeTypeName("DWORD")]
+    public uint OutboundBandwidthInKbps;
 
-        public WCM_BILLING_CYCLE_INFO BillingCycle;
+    public WCM_BILLING_CYCLE_INFO BillingCycle;
 
-        [NativeTypeName("DWORD")]
-        public uint MaxTransferSizeInMegabytes;
+    [NativeTypeName("DWORD")]
+    public uint MaxTransferSizeInMegabytes;
 
-        [NativeTypeName("DWORD")]
-        public uint Reserved;
-    }
+    [NativeTypeName("DWORD")]
+    public uint Reserved;
 }

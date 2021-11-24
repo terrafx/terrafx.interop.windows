@@ -5,14 +5,13 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum TRANSFER_ADVISE_STATE
 {
-    [Flags]
-    public enum TRANSFER_ADVISE_STATE
-    {
-        TS_NONE = 0,
-        TS_PERFORMING = 0x1,
-        TS_PREPARING = 0x2,
-        TS_INDETERMINATE = 0x4,
-    }
+    TS_NONE = 0,
+    TS_PERFORMING = 0x1,
+    TS_PREPARING = 0x2,
+    TS_INDETERMINATE = 0x4,
 }

@@ -5,31 +5,30 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_SERVICE_ENDPOINT
 {
-    public unsafe partial struct WS_SERVICE_ENDPOINT
-    {
-        public WS_ENDPOINT_ADDRESS address;
+    public WS_ENDPOINT_ADDRESS address;
 
-        public WS_CHANNEL_BINDING channelBinding;
+    public WS_CHANNEL_BINDING channelBinding;
 
-        public WS_CHANNEL_TYPE channelType;
+    public WS_CHANNEL_TYPE channelType;
 
-        [NativeTypeName("const WS_SECURITY_DESCRIPTION *")]
-        public WS_SECURITY_DESCRIPTION* securityDescription;
+    [NativeTypeName("const WS_SECURITY_DESCRIPTION *")]
+    public WS_SECURITY_DESCRIPTION* securityDescription;
 
-        [NativeTypeName("const WS_SERVICE_CONTRACT *")]
-        public WS_SERVICE_CONTRACT* contract;
+    [NativeTypeName("const WS_SERVICE_CONTRACT *")]
+    public WS_SERVICE_CONTRACT* contract;
 
-        [NativeTypeName("WS_SERVICE_SECURITY_CALLBACK")]
-        public delegate* unmanaged<IntPtr, BOOL*, IntPtr, HRESULT> authorizationCallback;
+    [NativeTypeName("WS_SERVICE_SECURITY_CALLBACK")]
+    public delegate* unmanaged<IntPtr, BOOL*, IntPtr, HRESULT> authorizationCallback;
 
-        [NativeTypeName("const WS_SERVICE_ENDPOINT_PROPERTY *")]
-        public WS_SERVICE_ENDPOINT_PROPERTY* properties;
+    [NativeTypeName("const WS_SERVICE_ENDPOINT_PROPERTY *")]
+    public WS_SERVICE_ENDPOINT_PROPERTY* properties;
 
-        [NativeTypeName("ULONG")]
-        public uint propertyCount;
+    [NativeTypeName("ULONG")]
+    public uint propertyCount;
 
-        public WS_CHANNEL_PROPERTIES channelProperties;
-    }
+    public WS_CHANNEL_PROPERTIES channelProperties;
 }

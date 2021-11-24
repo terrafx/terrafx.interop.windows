@@ -5,83 +5,82 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Explicit)]
+public unsafe partial struct SP_PROPSHEETPAGE_REQUEST
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct SP_PROPSHEETPAGE_REQUEST
+    public static uint SizeOf
     {
-        public static uint SizeOf
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return (uint)(sizeof(SP_PROPSHEETPAGE_REQUEST32));
-                }
-                else
-                {
-                    return (uint)(sizeof(SP_PROPSHEETPAGE_REQUEST64));
-                }
+                return (uint)(sizeof(SP_PROPSHEETPAGE_REQUEST32));
+            }
+            else
+            {
+                return (uint)(sizeof(SP_PROPSHEETPAGE_REQUEST64));
             }
         }
-
-        [FieldOffset(0)]
-        public SP_PROPSHEETPAGE_REQUEST32 _value32;
-
-        [FieldOffset(0)]
-        public SP_PROPSHEETPAGE_REQUEST64 _value64;
-
-        [NativeTypeName("DWORD")]
-        public ref uint cbSize
-        {
-            get
-            {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cbSize, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cbSize, 1));
-                }
-            }
-        }
-
-        [NativeTypeName("DWORD")]
-        public ref uint PageRequested
-        {
-            get
-            {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.PageRequested, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.PageRequested, 1));
-                }
-            }
-        }
-
-        public ref HDEVINFO DeviceInfoSet
-        {
-            get
-            {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.DeviceInfoSet, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.DeviceInfoSet, 1));
-                }
-            }
-        }
-
-        // The following isn't exposed as there isn't a good way to
-        // convert from ref SP_DEVINFO_DATA32* to ref SP_DEVINFO_DATA*
-        //
-        // [NativeTypeName("PSP_DEVINFO_DATA")]
-        // public ref SP_DEVINFO_DATA* DeviceInfoData;
     }
+
+    [FieldOffset(0)]
+    public SP_PROPSHEETPAGE_REQUEST32 _value32;
+
+    [FieldOffset(0)]
+    public SP_PROPSHEETPAGE_REQUEST64 _value64;
+
+    [NativeTypeName("DWORD")]
+    public ref uint cbSize
+    {
+        get
+        {
+            if (sizeof(nint) == 4)
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cbSize, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cbSize, 1));
+            }
+        }
+    }
+
+    [NativeTypeName("DWORD")]
+    public ref uint PageRequested
+    {
+        get
+        {
+            if (sizeof(nint) == 4)
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.PageRequested, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.PageRequested, 1));
+            }
+        }
+    }
+
+    public ref HDEVINFO DeviceInfoSet
+    {
+        get
+        {
+            if (sizeof(nint) == 4)
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.DeviceInfoSet, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.DeviceInfoSet, 1));
+            }
+        }
+    }
+
+    // The following isn't exposed as there isn't a good way to
+    // convert from ref SP_DEVINFO_DATA32* to ref SP_DEVINFO_DATA*
+    //
+    // [NativeTypeName("PSP_DEVINFO_DATA")]
+    // public ref SP_DEVINFO_DATA* DeviceInfoData;
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IThumbnailHandlerFactory" /> struct.</summary>
+public static unsafe partial class IThumbnailHandlerFactoryTests
 {
-    /// <summary>Provides validation of the <see cref="IThumbnailHandlerFactory" /> struct.</summary>
-    public static unsafe partial class IThumbnailHandlerFactoryTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IThumbnailHandlerFactory" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IThumbnailHandlerFactory" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IThumbnailHandlerFactory).GUID, Is.EqualTo(IID_IThumbnailHandlerFactory));
-        }
+        Assert.That(typeof(IThumbnailHandlerFactory).GUID, Is.EqualTo(IID_IThumbnailHandlerFactory));
+    }
 
-        /// <summary>Validates that the <see cref="IThumbnailHandlerFactory" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IThumbnailHandlerFactory>(), Is.EqualTo(sizeof(IThumbnailHandlerFactory)));
-        }
+    /// <summary>Validates that the <see cref="IThumbnailHandlerFactory" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IThumbnailHandlerFactory>(), Is.EqualTo(sizeof(IThumbnailHandlerFactory)));
+    }
 
-        /// <summary>Validates that the <see cref="IThumbnailHandlerFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IThumbnailHandlerFactory).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IThumbnailHandlerFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IThumbnailHandlerFactory).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IThumbnailHandlerFactory" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IThumbnailHandlerFactory" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IThumbnailHandlerFactory), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IThumbnailHandlerFactory), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IThumbnailHandlerFactory), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IThumbnailHandlerFactory), Is.EqualTo(4));
         }
     }
 }

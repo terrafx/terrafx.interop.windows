@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("79B90B27-F4B1-42DC-9DD7-CDAF8135C400")]
+public partial struct CODECAPI_VideoEncoderDisplayContentType
 {
-    [Guid("79B90B27-F4B1-42DC-9DD7-CDAF8135C400")]
-    public partial struct CODECAPI_VideoEncoderDisplayContentType
-    {
-    }
 }

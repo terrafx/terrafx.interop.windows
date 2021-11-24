@@ -3,16 +3,15 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CERT_KEY_USAGE_RESTRICTION_INFO
 {
-    public unsafe partial struct CERT_KEY_USAGE_RESTRICTION_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cCertPolicyId;
+    [NativeTypeName("DWORD")]
+    public uint cCertPolicyId;
 
-        [NativeTypeName("PCERT_POLICY_ID")]
-        public CERT_POLICY_ID* rgCertPolicyId;
+    [NativeTypeName("PCERT_POLICY_ID")]
+    public CERT_POLICY_ID* rgCertPolicyId;
 
-        public CRYPT_BIT_BLOB RestrictedKeyUsage;
-    }
+    public CRYPT_BIT_BLOB RestrictedKeyUsage;
 }

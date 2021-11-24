@@ -5,14 +5,13 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum SLGP_FLAGS
 {
-    [Flags]
-    public enum SLGP_FLAGS
-    {
-        SLGP_SHORTPATH = 0x1,
-        SLGP_UNCPRIORITY = 0x2,
-        SLGP_RAWPATH = 0x4,
-        SLGP_RELATIVEPRIORITY = 0x8,
-    }
+    SLGP_SHORTPATH = 0x1,
+    SLGP_UNCPRIORITY = 0x2,
+    SLGP_RAWPATH = 0x4,
+    SLGP_RELATIVEPRIORITY = 0x8,
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PSAPI_WORKING_SET_EX_INFORMATION" /> struct.</summary>
+public static unsafe partial class PSAPI_WORKING_SET_EX_INFORMATIONTests
 {
-    /// <summary>Provides validation of the <see cref="PSAPI_WORKING_SET_EX_INFORMATION" /> struct.</summary>
-    public static unsafe partial class PSAPI_WORKING_SET_EX_INFORMATIONTests
+    /// <summary>Validates that the <see cref="PSAPI_WORKING_SET_EX_INFORMATION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PSAPI_WORKING_SET_EX_INFORMATION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PSAPI_WORKING_SET_EX_INFORMATION>(), Is.EqualTo(sizeof(PSAPI_WORKING_SET_EX_INFORMATION)));
-        }
+        Assert.That(Marshal.SizeOf<PSAPI_WORKING_SET_EX_INFORMATION>(), Is.EqualTo(sizeof(PSAPI_WORKING_SET_EX_INFORMATION)));
+    }
 
-        /// <summary>Validates that the <see cref="PSAPI_WORKING_SET_EX_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PSAPI_WORKING_SET_EX_INFORMATION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PSAPI_WORKING_SET_EX_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PSAPI_WORKING_SET_EX_INFORMATION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PSAPI_WORKING_SET_EX_INFORMATION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="PSAPI_WORKING_SET_EX_INFORMATION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(PSAPI_WORKING_SET_EX_INFORMATION), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(PSAPI_WORKING_SET_EX_INFORMATION), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(PSAPI_WORKING_SET_EX_INFORMATION), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(PSAPI_WORKING_SET_EX_INFORMATION), Is.EqualTo(8));
         }
     }
 }

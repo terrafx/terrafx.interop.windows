@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("9EF96870-E160-4792-820D-48CF0649E4EC")]
+public partial struct SpAudioFormat
 {
-    [Guid("9EF96870-E160-4792-820D-48CF0649E4EC")]
-    public partial struct SpAudioFormat
-    {
-    }
 }

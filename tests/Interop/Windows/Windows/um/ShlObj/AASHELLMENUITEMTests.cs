@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="AASHELLMENUITEM" /> struct.</summary>
+public static unsafe partial class AASHELLMENUITEMTests
 {
-    /// <summary>Provides validation of the <see cref="AASHELLMENUITEM" /> struct.</summary>
-    public static unsafe partial class AASHELLMENUITEMTests
+    /// <summary>Validates that the <see cref="AASHELLMENUITEM" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="AASHELLMENUITEM" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<AASHELLMENUITEM>(), Is.EqualTo(sizeof(AASHELLMENUITEM)));
-        }
+        Assert.That(Marshal.SizeOf<AASHELLMENUITEM>(), Is.EqualTo(sizeof(AASHELLMENUITEM)));
+    }
 
-        /// <summary>Validates that the <see cref="AASHELLMENUITEM" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(AASHELLMENUITEM).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="AASHELLMENUITEM" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(AASHELLMENUITEM).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="AASHELLMENUITEM" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="AASHELLMENUITEM" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(AASHELLMENUITEM), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(AASHELLMENUITEM), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(AASHELLMENUITEM), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(AASHELLMENUITEM), Is.EqualTo(20));
         }
     }
 }

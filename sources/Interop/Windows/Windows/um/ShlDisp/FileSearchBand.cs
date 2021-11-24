@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("C4EE31F3-4768-11D2-BE5C-00A0C9A83DA1")]
+public partial struct FileSearchBand
 {
-    [Guid("C4EE31F3-4768-11D2-BE5C-00A0C9A83DA1")]
-    public partial struct FileSearchBand
-    {
-    }
 }

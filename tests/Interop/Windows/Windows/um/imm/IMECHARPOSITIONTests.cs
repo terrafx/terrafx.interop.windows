@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMECHARPOSITION" /> struct.</summary>
+public static unsafe partial class IMECHARPOSITIONTests
 {
-    /// <summary>Provides validation of the <see cref="IMECHARPOSITION" /> struct.</summary>
-    public static unsafe partial class IMECHARPOSITIONTests
+    /// <summary>Validates that the <see cref="IMECHARPOSITION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IMECHARPOSITION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMECHARPOSITION>(), Is.EqualTo(sizeof(IMECHARPOSITION)));
-        }
+        Assert.That(Marshal.SizeOf<IMECHARPOSITION>(), Is.EqualTo(sizeof(IMECHARPOSITION)));
+    }
 
-        /// <summary>Validates that the <see cref="IMECHARPOSITION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMECHARPOSITION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMECHARPOSITION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMECHARPOSITION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMECHARPOSITION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(IMECHARPOSITION), Is.EqualTo(36));
-        }
+    /// <summary>Validates that the <see cref="IMECHARPOSITION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(IMECHARPOSITION), Is.EqualTo(36));
     }
 }

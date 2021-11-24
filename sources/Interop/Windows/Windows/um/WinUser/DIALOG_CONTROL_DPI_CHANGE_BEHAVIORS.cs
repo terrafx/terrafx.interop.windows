@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS
 {
-    [Flags]
-    public enum DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS
-    {
-        DCDC_DEFAULT = 0x0000,
-        DCDC_DISABLE_FONT_UPDATE = 0x0001,
-        DCDC_DISABLE_RELAYOUT = 0x0002,
-    }
+    DCDC_DEFAULT = 0x0000,
+    DCDC_DISABLE_FONT_UPDATE = 0x0001,
+    DCDC_DISABLE_RELAYOUT = 0x0002,
 }

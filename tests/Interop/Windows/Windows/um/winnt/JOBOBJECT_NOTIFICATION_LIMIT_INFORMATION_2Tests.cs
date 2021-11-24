@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2" /> struct.</summary>
+[SupportedOSPlatform("windows10.0")]
+public static unsafe partial class JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2Tests
 {
-    /// <summary>Provides validation of the <see cref="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0")]
-    public static unsafe partial class JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2Tests
+    /// <summary>Validates that the <see cref="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2>(), Is.EqualTo(sizeof(JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2)));
-        }
+        Assert.That(Marshal.SizeOf<JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2>(), Is.EqualTo(sizeof(JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2)));
+    }
 
-        /// <summary>Validates that the <see cref="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2), Is.EqualTo(72));
-        }
+    /// <summary>Validates that the <see cref="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2), Is.EqualTo(72));
     }
 }

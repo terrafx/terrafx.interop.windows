@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="REGPINMEDIUM" /> struct.</summary>
+public static unsafe partial class REGPINMEDIUMTests
 {
-    /// <summary>Provides validation of the <see cref="REGPINMEDIUM" /> struct.</summary>
-    public static unsafe partial class REGPINMEDIUMTests
+    /// <summary>Validates that the <see cref="REGPINMEDIUM" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="REGPINMEDIUM" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<REGPINMEDIUM>(), Is.EqualTo(sizeof(REGPINMEDIUM)));
-        }
+        Assert.That(Marshal.SizeOf<REGPINMEDIUM>(), Is.EqualTo(sizeof(REGPINMEDIUM)));
+    }
 
-        /// <summary>Validates that the <see cref="REGPINMEDIUM" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(REGPINMEDIUM).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="REGPINMEDIUM" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(REGPINMEDIUM).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="REGPINMEDIUM" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(REGPINMEDIUM), Is.EqualTo(24));
-        }
+    /// <summary>Validates that the <see cref="REGPINMEDIUM" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(REGPINMEDIUM), Is.EqualTo(24));
     }
 }

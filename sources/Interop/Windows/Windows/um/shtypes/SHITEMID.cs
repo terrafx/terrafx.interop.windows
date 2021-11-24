@@ -5,14 +5,13 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SHITEMID
-    {
-        public ushort cb;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("BYTE [1]")]
-        public fixed byte abID[1];
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SHITEMID
+{
+    public ushort cb;
+
+    [NativeTypeName("BYTE [1]")]
+    public fixed byte abID[1];
 }

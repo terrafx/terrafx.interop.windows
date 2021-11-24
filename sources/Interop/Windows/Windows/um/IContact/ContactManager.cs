@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("7165C8AB-AF88-42BD-86FD-5310B4285A02")]
+public partial struct ContactManager
 {
-    [Guid("7165C8AB-AF88-42BD-86FD-5310B4285A02")]
-    public partial struct ContactManager
-    {
-    }
 }

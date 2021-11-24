@@ -5,19 +5,18 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SP_DEVINFO_DATA64
 {
-    public partial struct SP_DEVINFO_DATA64
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public Guid ClassGuid;
+    public Guid ClassGuid;
 
-        [NativeTypeName("DWORD")]
-        public uint DevInst;
+    [NativeTypeName("DWORD")]
+    public uint DevInst;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint Reserved;
-    }
+    [NativeTypeName("ULONG_PTR")]
+    public nuint Reserved;
 }

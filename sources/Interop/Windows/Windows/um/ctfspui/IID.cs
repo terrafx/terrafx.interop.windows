@@ -8,33 +8,32 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class IID
-    {
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid IID_ITfSpeechUIServer
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x44, 0xA9, 0xE9, 0x90,
-                    0x44, 0x92,
-                    0x9F, 0x48,
-                    0xA7,
-                    0x8F,
-                    0xDE,
-                    0x67,
-                    0xAF,
-                    0xC0,
-                    0x13,
-                    0xA7
-                };
+namespace TerraFX.Interop.Windows;
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+public static partial class IID
+{
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ITfSpeechUIServer
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x44, 0xA9, 0xE9, 0x90,
+                0x44, 0x92,
+                0x9F, 0x48,
+                0xA7,
+                0x8F,
+                0xDE,
+                0x67,
+                0xAF,
+                0xC0,
+                0x13,
+                0xA7
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("06622D85-6856-4460-8DE1-A81921B41C4B")]
+public partial struct OpenControlPanel
 {
-    [Guid("06622D85-6856-4460-8DE1-A81921B41C4B")]
-    public partial struct OpenControlPanel
-    {
-    }
 }

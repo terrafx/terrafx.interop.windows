@@ -3,17 +3,16 @@
 // Ported from um/PropIdlBase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct STATPROPSTG
 {
-    public unsafe partial struct STATPROPSTG
-    {
-        [NativeTypeName("LPOLESTR")]
-        public ushort* lpwstrName;
+    [NativeTypeName("LPOLESTR")]
+    public ushort* lpwstrName;
 
-        [NativeTypeName("PROPID")]
-        public uint propid;
+    [NativeTypeName("PROPID")]
+    public uint propid;
 
-        [NativeTypeName("VARTYPE")]
-        public ushort vt;
-    }
+    [NativeTypeName("VARTYPE")]
+    public ushort vt;
 }

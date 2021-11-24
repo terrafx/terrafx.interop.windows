@@ -3,11 +3,10 @@
 // Ported from um/wincontypes.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class KEY
 {
-    public static partial class KEY
-    {
-        [NativeTypeName("#define KEY_EVENT 0x0001")]
-        public const int KEY_EVENT = 0x0001;
-    }
+    [NativeTypeName("#define KEY_EVENT 0x0001")]
+    public const int KEY_EVENT = 0x0001;
 }

@@ -7,77 +7,76 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("DE5BF786-477A-11D2-839D-00C04FD918D0")]
+[NativeTypeName("struct IDragSourceHelper : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IDragSourceHelper : IDragSourceHelper.Interface
 {
-    [Guid("DE5BF786-477A-11D2-839D-00C04FD918D0")]
-    [NativeTypeName("struct IDragSourceHelper : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDragSourceHelper : IDragSourceHelper.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDragSourceHelper*, Guid*, void**, int>)(lpVtbl[0]))((IDragSourceHelper*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDragSourceHelper*, Guid*, void**, int>)(lpVtbl[0]))((IDragSourceHelper*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDragSourceHelper*, uint>)(lpVtbl[1]))((IDragSourceHelper*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDragSourceHelper*, uint>)(lpVtbl[1]))((IDragSourceHelper*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDragSourceHelper*, uint>)(lpVtbl[2]))((IDragSourceHelper*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDragSourceHelper*, uint>)(lpVtbl[2]))((IDragSourceHelper*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT InitializeFromBitmap([NativeTypeName("LPSHDRAGIMAGE")] SHDRAGIMAGE* pshdi, IDataObject* pDataObject)
+    {
+        return ((delegate* unmanaged<IDragSourceHelper*, SHDRAGIMAGE*, IDataObject*, int>)(lpVtbl[3]))((IDragSourceHelper*)Unsafe.AsPointer(ref this), pshdi, pDataObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT InitializeFromWindow(HWND hwnd, POINT* ppt, IDataObject* pDataObject)
+    {
+        return ((delegate* unmanaged<IDragSourceHelper*, HWND, POINT*, IDataObject*, int>)(lpVtbl[4]))((IDragSourceHelper*)Unsafe.AsPointer(ref this), hwnd, ppt, pDataObject);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT InitializeFromBitmap([NativeTypeName("LPSHDRAGIMAGE")] SHDRAGIMAGE* pshdi, IDataObject* pDataObject)
-        {
-            return ((delegate* unmanaged<IDragSourceHelper*, SHDRAGIMAGE*, IDataObject*, int>)(lpVtbl[3]))((IDragSourceHelper*)Unsafe.AsPointer(ref this), pshdi, pDataObject);
-        }
+        HRESULT InitializeFromBitmap([NativeTypeName("LPSHDRAGIMAGE")] SHDRAGIMAGE* pshdi, IDataObject* pDataObject);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT InitializeFromWindow(HWND hwnd, POINT* ppt, IDataObject* pDataObject)
-        {
-            return ((delegate* unmanaged<IDragSourceHelper*, HWND, POINT*, IDataObject*, int>)(lpVtbl[4]))((IDragSourceHelper*)Unsafe.AsPointer(ref this), hwnd, ppt, pDataObject);
-        }
+        HRESULT InitializeFromWindow(HWND hwnd, POINT* ppt, IDataObject* pDataObject);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT InitializeFromBitmap([NativeTypeName("LPSHDRAGIMAGE")] SHDRAGIMAGE* pshdi, IDataObject* pDataObject);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDragSourceHelper*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT InitializeFromWindow(HWND hwnd, POINT* ppt, IDataObject* pDataObject);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDragSourceHelper*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDragSourceHelper*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDragSourceHelper*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDragSourceHelper*, uint> AddRef;
+        [NativeTypeName("HRESULT (LPSHDRAGIMAGE, IDataObject *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDragSourceHelper*, SHDRAGIMAGE*, IDataObject*, int> InitializeFromBitmap;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDragSourceHelper*, uint> Release;
-
-            [NativeTypeName("HRESULT (LPSHDRAGIMAGE, IDataObject *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDragSourceHelper*, SHDRAGIMAGE*, IDataObject*, int> InitializeFromBitmap;
-
-            [NativeTypeName("HRESULT (HWND, POINT *, IDataObject *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDragSourceHelper*, HWND, POINT*, IDataObject*, int> InitializeFromWindow;
-        }
+        [NativeTypeName("HRESULT (HWND, POINT *, IDataObject *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDragSourceHelper*, HWND, POINT*, IDataObject*, int> InitializeFromWindow;
     }
 }

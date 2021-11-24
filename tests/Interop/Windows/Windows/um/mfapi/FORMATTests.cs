@@ -7,16 +7,15 @@ using NUnit.Framework;
 using System;
 using static TerraFX.Interop.Windows.FORMAT;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="FORMAT" /> class.</summary>
+public static partial class FORMATTests
 {
-    /// <summary>Provides validation of the <see cref="FORMAT" /> class.</summary>
-    public static partial class FORMATTests
+    /// <summary>Validates that the value of the <see cref="FORMAT_MFVideoFormat" /> property is correct.</summary>
+    [Test]
+    public static void FORMAT_MFVideoFormatTest()
     {
-        /// <summary>Validates that the value of the <see cref="FORMAT_MFVideoFormat" /> property is correct.</summary>
-        [Test]
-        public static void FORMAT_MFVideoFormatTest()
-        {
-            Assert.That(FORMAT_MFVideoFormat, Is.EqualTo(new Guid(0xaed4ab2d, 0x7326, 0x43cb, 0x94, 0x64, 0xc8, 0x79, 0xca, 0xb9, 0xc4, 0x3d)));
-        }
+        Assert.That(FORMAT_MFVideoFormat, Is.EqualTo(new Guid(0xaed4ab2d, 0x7326, 0x43cb, 0x94, 0x64, 0xc8, 0x79, 0xca, 0xb9, 0xc4, 0x3d)));
     }
 }

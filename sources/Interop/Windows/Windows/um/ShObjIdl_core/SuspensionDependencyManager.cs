@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("6B273FC5-61FD-4918-95A2-C3B5E9D7F581")]
+public partial struct SuspensionDependencyManager
 {
-    [Guid("6B273FC5-61FD-4918-95A2-C3B5E9D7F581")]
-    public partial struct SuspensionDependencyManager
-    {
-    }
 }

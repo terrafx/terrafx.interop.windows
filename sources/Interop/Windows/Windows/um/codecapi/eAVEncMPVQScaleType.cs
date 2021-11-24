@@ -3,12 +3,11 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum eAVEncMPVQScaleType
 {
-    public enum eAVEncMPVQScaleType
-    {
-        eAVEncMPVQScaleType_Auto = 0,
-        eAVEncMPVQScaleType_Linear = 1,
-        eAVEncMPVQScaleType_NonLinear = 2,
-    }
+    eAVEncMPVQScaleType_Auto = 0,
+    eAVEncMPVQScaleType_Linear = 1,
+    eAVEncMPVQScaleType_NonLinear = 2,
 }

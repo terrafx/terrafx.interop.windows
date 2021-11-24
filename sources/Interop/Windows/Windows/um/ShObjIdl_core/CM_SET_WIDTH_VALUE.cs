@@ -3,11 +3,10 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum CM_SET_WIDTH_VALUE
 {
-    public enum CM_SET_WIDTH_VALUE
-    {
-        CM_WIDTH_USEDEFAULT = -1,
-        CM_WIDTH_AUTOSIZE = -2,
-    }
+    CM_WIDTH_USEDEFAULT = -1,
+    CM_WIDTH_AUTOSIZE = -2,
 }

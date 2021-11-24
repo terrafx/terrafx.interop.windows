@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IWICColorTransform" /> struct.</summary>
+public static unsafe partial class IWICColorTransformTests
 {
-    /// <summary>Provides validation of the <see cref="IWICColorTransform" /> struct.</summary>
-    public static unsafe partial class IWICColorTransformTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICColorTransform" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICColorTransform" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IWICColorTransform).GUID, Is.EqualTo(IID_IWICColorTransform));
-        }
+        Assert.That(typeof(IWICColorTransform).GUID, Is.EqualTo(IID_IWICColorTransform));
+    }
 
-        /// <summary>Validates that the <see cref="IWICColorTransform" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IWICColorTransform>(), Is.EqualTo(sizeof(IWICColorTransform)));
-        }
+    /// <summary>Validates that the <see cref="IWICColorTransform" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IWICColorTransform>(), Is.EqualTo(sizeof(IWICColorTransform)));
+    }
 
-        /// <summary>Validates that the <see cref="IWICColorTransform" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IWICColorTransform).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IWICColorTransform" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IWICColorTransform).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IWICColorTransform" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IWICColorTransform" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IWICColorTransform), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IWICColorTransform), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IWICColorTransform), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IWICColorTransform), Is.EqualTo(4));
         }
     }
 }

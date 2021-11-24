@@ -3,12 +3,11 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum eAVEncDDSurroundExMode
 {
-    public enum eAVEncDDSurroundExMode
-    {
-        eAVEncDDSurroundExMode_NotIndicated = 0,
-        eAVEncDDSurroundExMode_No = 1,
-        eAVEncDDSurroundExMode_Yes = 2,
-    }
+    eAVEncDDSurroundExMode_NotIndicated = 0,
+    eAVEncDDSurroundExMode_No = 1,
+    eAVEncDDSurroundExMode_Yes = 2,
 }

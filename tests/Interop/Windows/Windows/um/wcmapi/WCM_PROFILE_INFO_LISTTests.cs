@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WCM_PROFILE_INFO_LIST" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class WCM_PROFILE_INFO_LISTTests
 {
-    /// <summary>Provides validation of the <see cref="WCM_PROFILE_INFO_LIST" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class WCM_PROFILE_INFO_LISTTests
+    /// <summary>Validates that the <see cref="WCM_PROFILE_INFO_LIST" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WCM_PROFILE_INFO_LIST" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WCM_PROFILE_INFO_LIST>(), Is.EqualTo(sizeof(WCM_PROFILE_INFO_LIST)));
-        }
+        Assert.That(Marshal.SizeOf<WCM_PROFILE_INFO_LIST>(), Is.EqualTo(sizeof(WCM_PROFILE_INFO_LIST)));
+    }
 
-        /// <summary>Validates that the <see cref="WCM_PROFILE_INFO_LIST" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WCM_PROFILE_INFO_LIST).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WCM_PROFILE_INFO_LIST" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WCM_PROFILE_INFO_LIST).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WCM_PROFILE_INFO_LIST" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(WCM_PROFILE_INFO_LIST), Is.EqualTo(536));
-        }
+    /// <summary>Validates that the <see cref="WCM_PROFILE_INFO_LIST" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(WCM_PROFILE_INFO_LIST), Is.EqualTo(536));
     }
 }

@@ -5,17 +5,16 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SP_TROUBLESHOOTER_PARAMS32_W
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SP_TROUBLESHOOTER_PARAMS32_W
-    {
-        public SP_CLASSINSTALL_HEADER32 ClassInstallHeader;
+    public SP_CLASSINSTALL_HEADER32 ClassInstallHeader;
 
-        [NativeTypeName("WCHAR [260]")]
-        public fixed ushort ChmFile[260];
+    [NativeTypeName("WCHAR [260]")]
+    public fixed ushort ChmFile[260];
 
-        [NativeTypeName("WCHAR [260]")]
-        public fixed ushort HtmlTroubleShooter[260];
-    }
+    [NativeTypeName("WCHAR [260]")]
+    public fixed ushort HtmlTroubleShooter[260];
 }

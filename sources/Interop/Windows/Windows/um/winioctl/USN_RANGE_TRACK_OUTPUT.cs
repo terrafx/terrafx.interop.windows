@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public partial struct USN_RANGE_TRACK_OUTPUT
 {
-    [SupportedOSPlatform("windows8.1")]
-    public partial struct USN_RANGE_TRACK_OUTPUT
-    {
-        [NativeTypeName("USN")]
-        public long Usn;
-    }
+    [NativeTypeName("USN")]
+    public long Usn;
 }

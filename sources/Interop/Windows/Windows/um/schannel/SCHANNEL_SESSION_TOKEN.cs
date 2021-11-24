@@ -3,14 +3,13 @@
 // Ported from um/schannel.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct SCHANNEL_SESSION_TOKEN
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwTokenType;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
-    }
+public partial struct SCHANNEL_SESSION_TOKEN
+{
+    [NativeTypeName("DWORD")]
+    public uint dwTokenType;
+
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 }

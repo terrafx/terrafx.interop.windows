@@ -3,13 +3,12 @@
 // Ported from winrt/roparameterizediid.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+public static unsafe partial class WinRT
 {
-    public static unsafe partial class WinRT
+    public static _Locator Locator(delegate*<ushort*, IRoSimpleMetaDataBuilder*, int> fn)
     {
-        public static _Locator Locator(delegate*<ushort*, IRoSimpleMetaDataBuilder*, int> fn)
-        {
-            return new _Locator(fn);
-        }
+        return new _Locator(fn);
     }
 }

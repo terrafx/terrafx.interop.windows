@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="EMRSETMITERLIMIT" /> struct.</summary>
+public static unsafe partial class EMRSETMITERLIMITTests
 {
-    /// <summary>Provides validation of the <see cref="EMRSETMITERLIMIT" /> struct.</summary>
-    public static unsafe partial class EMRSETMITERLIMITTests
+    /// <summary>Validates that the <see cref="EMRSETMITERLIMIT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="EMRSETMITERLIMIT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<EMRSETMITERLIMIT>(), Is.EqualTo(sizeof(EMRSETMITERLIMIT)));
-        }
+        Assert.That(Marshal.SizeOf<EMRSETMITERLIMIT>(), Is.EqualTo(sizeof(EMRSETMITERLIMIT)));
+    }
 
-        /// <summary>Validates that the <see cref="EMRSETMITERLIMIT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(EMRSETMITERLIMIT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="EMRSETMITERLIMIT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(EMRSETMITERLIMIT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="EMRSETMITERLIMIT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(EMRSETMITERLIMIT), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="EMRSETMITERLIMIT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(EMRSETMITERLIMIT), Is.EqualTo(12));
     }
 }

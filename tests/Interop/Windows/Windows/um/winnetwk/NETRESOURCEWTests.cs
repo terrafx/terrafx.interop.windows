@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NETRESOURCEW" /> struct.</summary>
+public static unsafe partial class NETRESOURCEWTests
 {
-    /// <summary>Provides validation of the <see cref="NETRESOURCEW" /> struct.</summary>
-    public static unsafe partial class NETRESOURCEWTests
+    /// <summary>Validates that the <see cref="NETRESOURCEW" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NETRESOURCEW" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NETRESOURCEW>(), Is.EqualTo(sizeof(NETRESOURCEW)));
-        }
+        Assert.That(Marshal.SizeOf<NETRESOURCEW>(), Is.EqualTo(sizeof(NETRESOURCEW)));
+    }
 
-        /// <summary>Validates that the <see cref="NETRESOURCEW" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NETRESOURCEW).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NETRESOURCEW" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NETRESOURCEW).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NETRESOURCEW" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="NETRESOURCEW" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(NETRESOURCEW), Is.EqualTo(48));
-            }
-            else
-            {
-                Assert.That(sizeof(NETRESOURCEW), Is.EqualTo(32));
-            }
+            Assert.That(sizeof(NETRESOURCEW), Is.EqualTo(48));
+        }
+        else
+        {
+            Assert.That(sizeof(NETRESOURCEW), Is.EqualTo(32));
         }
     }
 }

@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct OPERATION_END_PARAMETERS
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct OPERATION_END_PARAMETERS
-    {
-        [NativeTypeName("ULONG")]
-        public uint Version;
+    [NativeTypeName("ULONG")]
+    public uint Version;
 
-        [NativeTypeName("OPERATION_ID")]
-        public uint OperationId;
+    [NativeTypeName("OPERATION_ID")]
+    public uint OperationId;
 
-        [NativeTypeName("ULONG")]
-        public uint Flags;
-    }
+    [NativeTypeName("ULONG")]
+    public uint Flags;
 }

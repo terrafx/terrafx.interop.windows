@@ -5,17 +5,16 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct SYSTEM_SCOPED_POLICY_ID_ACE
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct SYSTEM_SCOPED_POLICY_ID_ACE
-    {
-        public ACE_HEADER Header;
+    public ACE_HEADER Header;
 
-        [NativeTypeName("ACCESS_MASK")]
-        public uint Mask;
+    [NativeTypeName("ACCESS_MASK")]
+    public uint Mask;
 
-        [NativeTypeName("DWORD")]
-        public uint SidStart;
-    }
+    [NativeTypeName("DWORD")]
+    public uint SidStart;
 }

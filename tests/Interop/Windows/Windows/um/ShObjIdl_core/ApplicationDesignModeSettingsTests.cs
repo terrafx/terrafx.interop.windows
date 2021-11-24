@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ApplicationDesignModeSettings" /> struct.</summary>
+public static unsafe partial class ApplicationDesignModeSettingsTests
 {
-    /// <summary>Provides validation of the <see cref="ApplicationDesignModeSettings" /> struct.</summary>
-    public static unsafe partial class ApplicationDesignModeSettingsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ApplicationDesignModeSettings" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ApplicationDesignModeSettings" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ApplicationDesignModeSettings).GUID, Is.EqualTo(IID_ApplicationDesignModeSettings));
-        }
+        Assert.That(typeof(ApplicationDesignModeSettings).GUID, Is.EqualTo(IID_ApplicationDesignModeSettings));
+    }
 
-        /// <summary>Validates that the <see cref="ApplicationDesignModeSettings" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ApplicationDesignModeSettings>(), Is.EqualTo(sizeof(ApplicationDesignModeSettings)));
-        }
+    /// <summary>Validates that the <see cref="ApplicationDesignModeSettings" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ApplicationDesignModeSettings>(), Is.EqualTo(sizeof(ApplicationDesignModeSettings)));
+    }
 
-        /// <summary>Validates that the <see cref="ApplicationDesignModeSettings" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ApplicationDesignModeSettings).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ApplicationDesignModeSettings" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ApplicationDesignModeSettings).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ApplicationDesignModeSettings" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(ApplicationDesignModeSettings), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="ApplicationDesignModeSettings" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(ApplicationDesignModeSettings), Is.EqualTo(1));
     }
 }

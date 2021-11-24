@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDesktopWindowTargetInterop" /> struct.</summary>
+public static unsafe partial class IDesktopWindowTargetInteropTests
 {
-    /// <summary>Provides validation of the <see cref="IDesktopWindowTargetInterop" /> struct.</summary>
-    public static unsafe partial class IDesktopWindowTargetInteropTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDesktopWindowTargetInterop" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDesktopWindowTargetInterop" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDesktopWindowTargetInterop).GUID, Is.EqualTo(IID_IDesktopWindowTargetInterop));
-        }
+        Assert.That(typeof(IDesktopWindowTargetInterop).GUID, Is.EqualTo(IID_IDesktopWindowTargetInterop));
+    }
 
-        /// <summary>Validates that the <see cref="IDesktopWindowTargetInterop" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDesktopWindowTargetInterop>(), Is.EqualTo(sizeof(IDesktopWindowTargetInterop)));
-        }
+    /// <summary>Validates that the <see cref="IDesktopWindowTargetInterop" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDesktopWindowTargetInterop>(), Is.EqualTo(sizeof(IDesktopWindowTargetInterop)));
+    }
 
-        /// <summary>Validates that the <see cref="IDesktopWindowTargetInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDesktopWindowTargetInterop).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDesktopWindowTargetInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDesktopWindowTargetInterop).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDesktopWindowTargetInterop" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDesktopWindowTargetInterop" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDesktopWindowTargetInterop), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDesktopWindowTargetInterop), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDesktopWindowTargetInterop), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDesktopWindowTargetInterop), Is.EqualTo(4));
         }
     }
 }

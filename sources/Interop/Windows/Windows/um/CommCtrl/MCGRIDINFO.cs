@@ -3,36 +3,35 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct MCGRIDINFO
 {
-    public unsafe partial struct MCGRIDINFO
-    {
-        public uint cbSize;
+    public uint cbSize;
 
-        [NativeTypeName("DWORD")]
-        public uint dwPart;
+    [NativeTypeName("DWORD")]
+    public uint dwPart;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        public int iCalendar;
+    public int iCalendar;
 
-        public int iRow;
+    public int iRow;
 
-        public int iCol;
+    public int iCol;
 
-        public BOOL bSelected;
+    public BOOL bSelected;
 
-        public SYSTEMTIME stStart;
+    public SYSTEMTIME stStart;
 
-        public SYSTEMTIME stEnd;
+    public SYSTEMTIME stEnd;
 
-        public RECT rc;
+    public RECT rc;
 
-        [NativeTypeName("PWSTR")]
-        public ushort* pszName;
+    [NativeTypeName("PWSTR")]
+    public ushort* pszName;
 
-        [NativeTypeName("size_t")]
-        public nuint cchName;
-    }
+    [NativeTypeName("size_t")]
+    public nuint cchName;
 }

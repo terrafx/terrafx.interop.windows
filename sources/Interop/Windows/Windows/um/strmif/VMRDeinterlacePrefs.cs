@@ -3,13 +3,12 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum VMRDeinterlacePrefs
 {
-    public enum VMRDeinterlacePrefs
-    {
-        DeinterlacePref_NextBest = 0x1,
-        DeinterlacePref_BOB = 0x2,
-        DeinterlacePref_Weave = 0x4,
-        DeinterlacePref_Mask = 0x7,
-    }
+    DeinterlacePref_NextBest = 0x1,
+    DeinterlacePref_BOB = 0x2,
+    DeinterlacePref_Weave = 0x4,
+    DeinterlacePref_Mask = 0x7,
 }

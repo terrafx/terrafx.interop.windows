@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NET_IF_ALIAS_LH" /> struct.</summary>
+public static unsafe partial class NET_IF_ALIAS_LHTests
 {
-    /// <summary>Provides validation of the <see cref="NET_IF_ALIAS_LH" /> struct.</summary>
-    public static unsafe partial class NET_IF_ALIAS_LHTests
+    /// <summary>Validates that the <see cref="NET_IF_ALIAS_LH" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NET_IF_ALIAS_LH" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NET_IF_ALIAS_LH>(), Is.EqualTo(sizeof(NET_IF_ALIAS_LH)));
-        }
+        Assert.That(Marshal.SizeOf<NET_IF_ALIAS_LH>(), Is.EqualTo(sizeof(NET_IF_ALIAS_LH)));
+    }
 
-        /// <summary>Validates that the <see cref="NET_IF_ALIAS_LH" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NET_IF_ALIAS_LH).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NET_IF_ALIAS_LH" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NET_IF_ALIAS_LH).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NET_IF_ALIAS_LH" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(NET_IF_ALIAS_LH), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="NET_IF_ALIAS_LH" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(NET_IF_ALIAS_LH), Is.EqualTo(4));
     }
 }

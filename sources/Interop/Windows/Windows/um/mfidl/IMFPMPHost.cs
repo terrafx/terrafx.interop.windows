@@ -7,90 +7,89 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("F70CA1A9-FDC7-4782-B994-ADFFB1C98606")]
+[NativeTypeName("struct IMFPMPHost : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IMFPMPHost : IMFPMPHost.Interface
 {
-    [Guid("F70CA1A9-FDC7-4782-B994-ADFFB1C98606")]
-    [NativeTypeName("struct IMFPMPHost : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFPMPHost : IMFPMPHost.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMFPMPHost*, Guid*, void**, int>)(lpVtbl[0]))((IMFPMPHost*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMFPMPHost*, Guid*, void**, int>)(lpVtbl[0]))((IMFPMPHost*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMFPMPHost*, uint>)(lpVtbl[1]))((IMFPMPHost*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMFPMPHost*, uint>)(lpVtbl[1]))((IMFPMPHost*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMFPMPHost*, uint>)(lpVtbl[2]))((IMFPMPHost*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMFPMPHost*, uint>)(lpVtbl[2]))((IMFPMPHost*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT LockProcess()
+    {
+        return ((delegate* unmanaged<IMFPMPHost*, int>)(lpVtbl[3]))((IMFPMPHost*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT UnlockProcess()
+    {
+        return ((delegate* unmanaged<IMFPMPHost*, int>)(lpVtbl[4]))((IMFPMPHost*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT CreateObjectByCLSID([NativeTypeName("const IID &")] Guid* clsid, IStream* pStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+    {
+        return ((delegate* unmanaged<IMFPMPHost*, Guid*, IStream*, Guid*, void**, int>)(lpVtbl[5]))((IMFPMPHost*)Unsafe.AsPointer(ref this), clsid, pStream, riid, ppv);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT LockProcess()
-        {
-            return ((delegate* unmanaged<IMFPMPHost*, int>)(lpVtbl[3]))((IMFPMPHost*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT LockProcess();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT UnlockProcess()
-        {
-            return ((delegate* unmanaged<IMFPMPHost*, int>)(lpVtbl[4]))((IMFPMPHost*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT UnlockProcess();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT CreateObjectByCLSID([NativeTypeName("const IID &")] Guid* clsid, IStream* pStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
-        {
-            return ((delegate* unmanaged<IMFPMPHost*, Guid*, IStream*, Guid*, void**, int>)(lpVtbl[5]))((IMFPMPHost*)Unsafe.AsPointer(ref this), clsid, pStream, riid, ppv);
-        }
+        HRESULT CreateObjectByCLSID([NativeTypeName("const IID &")] Guid* clsid, IStream* pStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT LockProcess();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFPMPHost*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT UnlockProcess();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFPMPHost*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT CreateObjectByCLSID([NativeTypeName("const IID &")] Guid* clsid, IStream* pStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFPMPHost*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFPMPHost*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFPMPHost*, int> LockProcess;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFPMPHost*, uint> AddRef;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFPMPHost*, int> UnlockProcess;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFPMPHost*, uint> Release;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFPMPHost*, int> LockProcess;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFPMPHost*, int> UnlockProcess;
-
-            [NativeTypeName("HRESULT (const IID &, IStream *, const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFPMPHost*, Guid*, IStream*, Guid*, void**, int> CreateObjectByCLSID;
-        }
+        [NativeTypeName("HRESULT (const IID &, IStream *, const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFPMPHost*, Guid*, IStream*, Guid*, void**, int> CreateObjectByCLSID;
     }
 }

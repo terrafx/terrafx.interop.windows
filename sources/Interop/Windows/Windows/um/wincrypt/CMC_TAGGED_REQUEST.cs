@@ -6,31 +6,30 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CMC_TAGGED_REQUEST
 {
-    public unsafe partial struct CMC_TAGGED_REQUEST
+    [NativeTypeName("DWORD")]
+    public uint dwTaggedRequestChoice;
+
+    [NativeTypeName("_CMC_TAGGED_REQUEST::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:5231:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public ref CMC_TAGGED_CERT_REQUEST* pTaggedCertRequest
     {
-        [NativeTypeName("DWORD")]
-        public uint dwTaggedRequestChoice;
-
-        [NativeTypeName("_CMC_TAGGED_REQUEST::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:5231:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public ref CMC_TAGGED_CERT_REQUEST* pTaggedCertRequest
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pTaggedCertRequest;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pTaggedCertRequest;
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("PCMC_TAGGED_CERT_REQUEST")]
-            public CMC_TAGGED_CERT_REQUEST* pTaggedCertRequest;
-        }
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("PCMC_TAGGED_CERT_REQUEST")]
+        public CMC_TAGGED_CERT_REQUEST* pTaggedCertRequest;
     }
 }

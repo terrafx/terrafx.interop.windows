@@ -3,12 +3,11 @@
 // Ported from um/mftransform.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct MFAudioDecoderDegradationInfo
-    {
-        public MFT_AUDIO_DECODER_DEGRADATION_REASON eDegradationReason;
+namespace TerraFX.Interop.Windows;
 
-        public MFT_AUDIO_DECODER_DEGRADATION_TYPE eType;
-    }
+public partial struct MFAudioDecoderDegradationInfo
+{
+    public MFT_AUDIO_DECODER_DEGRADATION_REASON eDegradationReason;
+
+    public MFT_AUDIO_DECODER_DEGRADATION_TYPE eType;
 }

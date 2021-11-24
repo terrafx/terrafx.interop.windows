@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct CERT_STRONG_SIGN_SERIALIZED_INFO
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct CERT_STRONG_SIGN_SERIALIZED_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pwszCNGSignHashAlgids;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pwszCNGSignHashAlgids;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pwszCNGPubKeyMinBitLengths;
-    }
+    [NativeTypeName("LPWSTR")]
+    public ushort* pwszCNGPubKeyMinBitLengths;
 }

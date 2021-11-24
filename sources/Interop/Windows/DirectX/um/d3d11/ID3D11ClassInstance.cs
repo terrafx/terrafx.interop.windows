@@ -8,143 +8,142 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Guid("A6CD7FAA-B0B7-4A2F-9436-8662A65797CB")]
+[NativeTypeName("struct ID3D11ClassInstance : ID3D11DeviceChild")]
+[NativeInheritance("ID3D11DeviceChild")]
+public unsafe partial struct ID3D11ClassInstance : ID3D11ClassInstance.Interface
 {
-    [Guid("A6CD7FAA-B0B7-4A2F-9436-8662A65797CB")]
-    [NativeTypeName("struct ID3D11ClassInstance : ID3D11DeviceChild")]
-    [NativeInheritance("ID3D11DeviceChild")]
-    public unsafe partial struct ID3D11ClassInstance : ID3D11ClassInstance.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ID3D11ClassInstance*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ID3D11ClassInstance*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ID3D11ClassInstance*, uint>)(lpVtbl[1]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ID3D11ClassInstance*, uint>)(lpVtbl[1]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ID3D11ClassInstance*, uint>)(lpVtbl[2]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ID3D11ClassInstance*, uint>)(lpVtbl[2]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public void GetDevice(ID3D11Device** ppDevice)
+    {
+        ((delegate* unmanaged<ID3D11ClassInstance*, ID3D11Device**, void>)(lpVtbl[3]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), ppDevice);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public void GetDevice(ID3D11Device** ppDevice)
-        {
-            ((delegate* unmanaged<ID3D11ClassInstance*, ID3D11Device**, void>)(lpVtbl[3]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), ppDevice);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* pDataSize, void* pData)
+    {
+        return ((delegate* unmanaged<ID3D11ClassInstance*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* pDataSize, void* pData)
-        {
-            return ((delegate* unmanaged<ID3D11ClassInstance*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint DataSize, [NativeTypeName("const void *")] void* pData)
+    {
+        return ((delegate* unmanaged<ID3D11ClassInstance*, Guid*, uint, void*, int>)(lpVtbl[5]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint DataSize, [NativeTypeName("const void *")] void* pData)
-        {
-            return ((delegate* unmanaged<ID3D11ClassInstance*, Guid*, uint, void*, int>)(lpVtbl[5]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
+    {
+        return ((delegate* unmanaged<ID3D11ClassInstance*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), guid, pData);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(6)]
-        public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
-        {
-            return ((delegate* unmanaged<ID3D11ClassInstance*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), guid, pData);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public void GetClassLinkage(ID3D11ClassLinkage** ppLinkage)
+    {
+        ((delegate* unmanaged<ID3D11ClassInstance*, ID3D11ClassLinkage**, void>)(lpVtbl[7]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), ppLinkage);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public void GetDesc(D3D11_CLASS_INSTANCE_DESC* pDesc)
+    {
+        ((delegate* unmanaged<ID3D11ClassInstance*, D3D11_CLASS_INSTANCE_DESC*, void>)(lpVtbl[8]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), pDesc);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public void GetInstanceName([NativeTypeName("LPSTR")] sbyte* pInstanceName, [NativeTypeName("SIZE_T *")] nuint* pBufferLength)
+    {
+        ((delegate* unmanaged<ID3D11ClassInstance*, sbyte*, nuint*, void>)(lpVtbl[9]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), pInstanceName, pBufferLength);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public void GetTypeName([NativeTypeName("LPSTR")] sbyte* pTypeName, [NativeTypeName("SIZE_T *")] nuint* pBufferLength)
+    {
+        ((delegate* unmanaged<ID3D11ClassInstance*, sbyte*, nuint*, void>)(lpVtbl[10]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), pTypeName, pBufferLength);
+    }
+
+    public interface Interface : ID3D11DeviceChild.Interface
+    {
         [VtblIndex(7)]
-        public void GetClassLinkage(ID3D11ClassLinkage** ppLinkage)
-        {
-            ((delegate* unmanaged<ID3D11ClassInstance*, ID3D11ClassLinkage**, void>)(lpVtbl[7]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), ppLinkage);
-        }
+        void GetClassLinkage(ID3D11ClassLinkage** ppLinkage);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public void GetDesc(D3D11_CLASS_INSTANCE_DESC* pDesc)
-        {
-            ((delegate* unmanaged<ID3D11ClassInstance*, D3D11_CLASS_INSTANCE_DESC*, void>)(lpVtbl[8]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), pDesc);
-        }
+        void GetDesc(D3D11_CLASS_INSTANCE_DESC* pDesc);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public void GetInstanceName([NativeTypeName("LPSTR")] sbyte* pInstanceName, [NativeTypeName("SIZE_T *")] nuint* pBufferLength)
-        {
-            ((delegate* unmanaged<ID3D11ClassInstance*, sbyte*, nuint*, void>)(lpVtbl[9]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), pInstanceName, pBufferLength);
-        }
+        void GetInstanceName([NativeTypeName("LPSTR")] sbyte* pInstanceName, [NativeTypeName("SIZE_T *")] nuint* pBufferLength);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public void GetTypeName([NativeTypeName("LPSTR")] sbyte* pTypeName, [NativeTypeName("SIZE_T *")] nuint* pBufferLength)
-        {
-            ((delegate* unmanaged<ID3D11ClassInstance*, sbyte*, nuint*, void>)(lpVtbl[10]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), pTypeName, pBufferLength);
-        }
+        void GetTypeName([NativeTypeName("LPSTR")] sbyte* pTypeName, [NativeTypeName("SIZE_T *")] nuint* pBufferLength);
+    }
 
-        public interface Interface : ID3D11DeviceChild.Interface
-        {
-            [VtblIndex(7)]
-            void GetClassLinkage(ID3D11ClassLinkage** ppLinkage);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D11ClassInstance*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(8)]
-            void GetDesc(D3D11_CLASS_INSTANCE_DESC* pDesc);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D11ClassInstance*, uint> AddRef;
 
-            [VtblIndex(9)]
-            void GetInstanceName([NativeTypeName("LPSTR")] sbyte* pInstanceName, [NativeTypeName("SIZE_T *")] nuint* pBufferLength);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D11ClassInstance*, uint> Release;
 
-            [VtblIndex(10)]
-            void GetTypeName([NativeTypeName("LPSTR")] sbyte* pTypeName, [NativeTypeName("SIZE_T *")] nuint* pBufferLength);
-        }
+        [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D11ClassInstance*, ID3D11Device**, void> GetDevice;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D11ClassInstance*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D11ClassInstance*, Guid*, uint*, void*, int> GetPrivateData;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D11ClassInstance*, uint> AddRef;
+        [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D11ClassInstance*, Guid*, uint, void*, int> SetPrivateData;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D11ClassInstance*, uint> Release;
+        [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D11ClassInstance*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
-            [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D11ClassInstance*, ID3D11Device**, void> GetDevice;
+        [NativeTypeName("void (ID3D11ClassLinkage **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D11ClassInstance*, ID3D11ClassLinkage**, void> GetClassLinkage;
 
-            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D11ClassInstance*, Guid*, uint*, void*, int> GetPrivateData;
+        [NativeTypeName("void (D3D11_CLASS_INSTANCE_DESC *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D11ClassInstance*, D3D11_CLASS_INSTANCE_DESC*, void> GetDesc;
 
-            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D11ClassInstance*, Guid*, uint, void*, int> SetPrivateData;
+        [NativeTypeName("void (LPSTR, SIZE_T *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D11ClassInstance*, sbyte*, nuint*, void> GetInstanceName;
 
-            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D11ClassInstance*, Guid*, IUnknown*, int> SetPrivateDataInterface;
-
-            [NativeTypeName("void (ID3D11ClassLinkage **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D11ClassInstance*, ID3D11ClassLinkage**, void> GetClassLinkage;
-
-            [NativeTypeName("void (D3D11_CLASS_INSTANCE_DESC *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D11ClassInstance*, D3D11_CLASS_INSTANCE_DESC*, void> GetDesc;
-
-            [NativeTypeName("void (LPSTR, SIZE_T *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D11ClassInstance*, sbyte*, nuint*, void> GetInstanceName;
-
-            [NativeTypeName("void (LPSTR, SIZE_T *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D11ClassInstance*, sbyte*, nuint*, void> GetTypeName;
-        }
+        [NativeTypeName("void (LPSTR, SIZE_T *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D11ClassInstance*, sbyte*, nuint*, void> GetTypeName;
     }
 }

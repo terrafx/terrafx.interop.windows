@@ -3,17 +3,16 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct CHANGER_MOVE_MEDIUM
 {
-    public partial struct CHANGER_MOVE_MEDIUM
-    {
-        public CHANGER_ELEMENT Transport;
+    public CHANGER_ELEMENT Transport;
 
-        public CHANGER_ELEMENT Source;
+    public CHANGER_ELEMENT Source;
 
-        public CHANGER_ELEMENT Destination;
+    public CHANGER_ELEMENT Destination;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte Flip;
-    }
+    [NativeTypeName("BOOLEAN")]
+    public byte Flip;
 }

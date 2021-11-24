@@ -8,134 +8,133 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Guid("4998735C-3A19-473C-9781-656847E3A347")]
+[NativeTypeName("struct ID2D1BorderTransform : ID2D1ConcreteTransform")]
+[NativeInheritance("ID2D1ConcreteTransform")]
+public unsafe partial struct ID2D1BorderTransform : ID2D1BorderTransform.Interface
 {
-    [Guid("4998735C-3A19-473C-9781-656847E3A347")]
-    [NativeTypeName("struct ID2D1BorderTransform : ID2D1ConcreteTransform")]
-    [NativeInheritance("ID2D1ConcreteTransform")]
-    public unsafe partial struct ID2D1BorderTransform : ID2D1BorderTransform.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ID2D1BorderTransform*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ID2D1BorderTransform*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ID2D1BorderTransform*, uint>)(lpVtbl[1]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ID2D1BorderTransform*, uint>)(lpVtbl[1]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ID2D1BorderTransform*, uint>)(lpVtbl[2]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ID2D1BorderTransform*, uint>)(lpVtbl[2]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    [return: NativeTypeName("UINT32")]
+    public uint GetInputCount()
+    {
+        return ((delegate* unmanaged<ID2D1BorderTransform*, uint>)(lpVtbl[3]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        [return: NativeTypeName("UINT32")]
-        public uint GetInputCount()
-        {
-            return ((delegate* unmanaged<ID2D1BorderTransform*, uint>)(lpVtbl[3]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT SetOutputBuffer(D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth)
+    {
+        return ((delegate* unmanaged<ID2D1BorderTransform*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int>)(lpVtbl[4]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this), bufferPrecision, channelDepth);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT SetOutputBuffer(D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth)
-        {
-            return ((delegate* unmanaged<ID2D1BorderTransform*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int>)(lpVtbl[4]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this), bufferPrecision, channelDepth);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public void SetCached(BOOL isCached)
+    {
+        ((delegate* unmanaged<ID2D1BorderTransform*, BOOL, void>)(lpVtbl[5]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this), isCached);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public void SetCached(BOOL isCached)
-        {
-            ((delegate* unmanaged<ID2D1BorderTransform*, BOOL, void>)(lpVtbl[5]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this), isCached);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public void SetExtendModeX(D2D1_EXTEND_MODE extendMode)
+    {
+        ((delegate* unmanaged<ID2D1BorderTransform*, D2D1_EXTEND_MODE, void>)(lpVtbl[6]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this), extendMode);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public void SetExtendModeY(D2D1_EXTEND_MODE extendMode)
+    {
+        ((delegate* unmanaged<ID2D1BorderTransform*, D2D1_EXTEND_MODE, void>)(lpVtbl[7]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this), extendMode);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public D2D1_EXTEND_MODE GetExtendModeX()
+    {
+        return ((delegate* unmanaged<ID2D1BorderTransform*, D2D1_EXTEND_MODE>)(lpVtbl[8]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public D2D1_EXTEND_MODE GetExtendModeY()
+    {
+        return ((delegate* unmanaged<ID2D1BorderTransform*, D2D1_EXTEND_MODE>)(lpVtbl[9]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : ID2D1ConcreteTransform.Interface
+    {
         [VtblIndex(6)]
-        public void SetExtendModeX(D2D1_EXTEND_MODE extendMode)
-        {
-            ((delegate* unmanaged<ID2D1BorderTransform*, D2D1_EXTEND_MODE, void>)(lpVtbl[6]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this), extendMode);
-        }
+        void SetExtendModeX(D2D1_EXTEND_MODE extendMode);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public void SetExtendModeY(D2D1_EXTEND_MODE extendMode)
-        {
-            ((delegate* unmanaged<ID2D1BorderTransform*, D2D1_EXTEND_MODE, void>)(lpVtbl[7]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this), extendMode);
-        }
+        void SetExtendModeY(D2D1_EXTEND_MODE extendMode);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public D2D1_EXTEND_MODE GetExtendModeX()
-        {
-            return ((delegate* unmanaged<ID2D1BorderTransform*, D2D1_EXTEND_MODE>)(lpVtbl[8]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this));
-        }
+        D2D1_EXTEND_MODE GetExtendModeX();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public D2D1_EXTEND_MODE GetExtendModeY()
-        {
-            return ((delegate* unmanaged<ID2D1BorderTransform*, D2D1_EXTEND_MODE>)(lpVtbl[9]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this));
-        }
+        D2D1_EXTEND_MODE GetExtendModeY();
+    }
 
-        public interface Interface : ID2D1ConcreteTransform.Interface
-        {
-            [VtblIndex(6)]
-            void SetExtendModeX(D2D1_EXTEND_MODE extendMode);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1BorderTransform*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(7)]
-            void SetExtendModeY(D2D1_EXTEND_MODE extendMode);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1BorderTransform*, uint> AddRef;
 
-            [VtblIndex(8)]
-            D2D1_EXTEND_MODE GetExtendModeX();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1BorderTransform*, uint> Release;
 
-            [VtblIndex(9)]
-            D2D1_EXTEND_MODE GetExtendModeY();
-        }
+        [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1BorderTransform*, uint> GetInputCount;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1BorderTransform*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1BorderTransform*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int> SetOutputBuffer;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1BorderTransform*, uint> AddRef;
+        [NativeTypeName("void (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1BorderTransform*, BOOL, void> SetCached;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1BorderTransform*, uint> Release;
+        [NativeTypeName("void (D2D1_EXTEND_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1BorderTransform*, D2D1_EXTEND_MODE, void> SetExtendModeX;
 
-            [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1BorderTransform*, uint> GetInputCount;
+        [NativeTypeName("void (D2D1_EXTEND_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1BorderTransform*, D2D1_EXTEND_MODE, void> SetExtendModeY;
 
-            [NativeTypeName("HRESULT (D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1BorderTransform*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int> SetOutputBuffer;
+        [NativeTypeName("D2D1_EXTEND_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1BorderTransform*, D2D1_EXTEND_MODE> GetExtendModeX;
 
-            [NativeTypeName("void (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1BorderTransform*, BOOL, void> SetCached;
-
-            [NativeTypeName("void (D2D1_EXTEND_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1BorderTransform*, D2D1_EXTEND_MODE, void> SetExtendModeX;
-
-            [NativeTypeName("void (D2D1_EXTEND_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1BorderTransform*, D2D1_EXTEND_MODE, void> SetExtendModeY;
-
-            [NativeTypeName("D2D1_EXTEND_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1BorderTransform*, D2D1_EXTEND_MODE> GetExtendModeX;
-
-            [NativeTypeName("D2D1_EXTEND_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1BorderTransform*, D2D1_EXTEND_MODE> GetExtendModeY;
-        }
+        [NativeTypeName("D2D1_EXTEND_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1BorderTransform*, D2D1_EXTEND_MODE> GetExtendModeY;
     }
 }

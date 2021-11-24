@@ -7,16 +7,16 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class CLSID
 {
-    public static partial class CLSID
+    public static ref readonly Guid CLSID_AppxFactory
     {
-        public static ref readonly Guid CLSID_AppxFactory
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x40, 0xA1, 0x42, 0x58,
                     0x9F, 0xFF,
                     0x66, 0x41,
@@ -30,16 +30,16 @@ namespace TerraFX.Interop.Windows
                     0x81
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid CLSID_AppxBundleFactory
+    public static ref readonly Guid CLSID_AppxBundleFactory
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x46, 0x04, 0x8E, 0x37,
                     0x84, 0x52,
                     0xB7, 0x43,
@@ -53,16 +53,16 @@ namespace TerraFX.Interop.Windows
                     0x46
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid CLSID_AppxPackagingDiagnosticEventSinkManager
+    public static ref readonly Guid CLSID_AppxPackagingDiagnosticEventSinkManager
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x46, 0x0A, 0xCA, 0x50,
                     0x88, 0x15,
                     0x61, 0x41,
@@ -76,16 +76,16 @@ namespace TerraFX.Interop.Windows
                     0x5D
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid CLSID_AppxEncryptionFactory
+    public static ref readonly Guid CLSID_AppxEncryptionFactory
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0xDD, 0x4F, 0x66, 0xDC,
                     0x68, 0xD8,
                     0xEE, 0x46,
@@ -99,16 +99,16 @@ namespace TerraFX.Interop.Windows
                     0xF7
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid CLSID_AppxPackageEditor
+    public static ref readonly Guid CLSID_AppxPackageEditor
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0xCA, 0xF2, 0x04, 0xF0,
                     0xBC, 0xAE,
                     0x0D, 0x4B,
@@ -122,8 +122,7 @@ namespace TerraFX.Interop.Windows
                     0xAB
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

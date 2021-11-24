@@ -3,11 +3,10 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum COMPARTMENT_ID
 {
-    public enum COMPARTMENT_ID
-    {
-        UNSPECIFIED_COMPARTMENT_ID = 0,
-        DEFAULT_COMPARTMENT_ID,
-    }
+    UNSPECIFIED_COMPARTMENT_ID = 0,
+    DEFAULT_COMPARTMENT_ID,
 }

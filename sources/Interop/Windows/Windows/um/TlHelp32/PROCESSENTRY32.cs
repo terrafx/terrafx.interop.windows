@@ -3,38 +3,37 @@
 // Ported from um/TlHelp32.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct PROCESSENTRY32
 {
-    public unsafe partial struct PROCESSENTRY32
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwSize;
+    [NativeTypeName("DWORD")]
+    public uint dwSize;
 
-        [NativeTypeName("DWORD")]
-        public uint cntUsage;
+    [NativeTypeName("DWORD")]
+    public uint cntUsage;
 
-        [NativeTypeName("DWORD")]
-        public uint th32ProcessID;
+    [NativeTypeName("DWORD")]
+    public uint th32ProcessID;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint th32DefaultHeapID;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint th32DefaultHeapID;
 
-        [NativeTypeName("DWORD")]
-        public uint th32ModuleID;
+    [NativeTypeName("DWORD")]
+    public uint th32ModuleID;
 
-        [NativeTypeName("DWORD")]
-        public uint cntThreads;
+    [NativeTypeName("DWORD")]
+    public uint cntThreads;
 
-        [NativeTypeName("DWORD")]
-        public uint th32ParentProcessID;
+    [NativeTypeName("DWORD")]
+    public uint th32ParentProcessID;
 
-        [NativeTypeName("LONG")]
-        public int pcPriClassBase;
+    [NativeTypeName("LONG")]
+    public int pcPriClassBase;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        [NativeTypeName("CHAR [260]")]
-        public fixed sbyte szExeFile[260];
-    }
+    [NativeTypeName("CHAR [260]")]
+    public fixed sbyte szExeFile[260];
 }

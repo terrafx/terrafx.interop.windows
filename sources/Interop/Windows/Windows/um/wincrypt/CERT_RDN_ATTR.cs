@@ -3,17 +3,16 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CERT_RDN_ATTR
 {
-    public unsafe partial struct CERT_RDN_ATTR
-    {
-        [NativeTypeName("LPSTR")]
-        public sbyte* pszObjId;
+    [NativeTypeName("LPSTR")]
+    public sbyte* pszObjId;
 
-        [NativeTypeName("DWORD")]
-        public uint dwValueType;
+    [NativeTypeName("DWORD")]
+    public uint dwValueType;
 
-        [NativeTypeName("CERT_RDN_VALUE_BLOB")]
-        public CRYPT_DATA_BLOB Value;
-    }
+    [NativeTypeName("CERT_RDN_VALUE_BLOB")]
+    public CRYPT_DATA_BLOB Value;
 }

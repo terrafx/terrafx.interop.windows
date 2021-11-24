@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SCM_PD_REINITIALIZE_MEDIA_INPUT" /> struct.</summary>
+public static unsafe partial class SCM_PD_REINITIALIZE_MEDIA_INPUTTests
 {
-    /// <summary>Provides validation of the <see cref="SCM_PD_REINITIALIZE_MEDIA_INPUT" /> struct.</summary>
-    public static unsafe partial class SCM_PD_REINITIALIZE_MEDIA_INPUTTests
+    /// <summary>Validates that the <see cref="SCM_PD_REINITIALIZE_MEDIA_INPUT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SCM_PD_REINITIALIZE_MEDIA_INPUT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SCM_PD_REINITIALIZE_MEDIA_INPUT>(), Is.EqualTo(sizeof(SCM_PD_REINITIALIZE_MEDIA_INPUT)));
-        }
+        Assert.That(Marshal.SizeOf<SCM_PD_REINITIALIZE_MEDIA_INPUT>(), Is.EqualTo(sizeof(SCM_PD_REINITIALIZE_MEDIA_INPUT)));
+    }
 
-        /// <summary>Validates that the <see cref="SCM_PD_REINITIALIZE_MEDIA_INPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SCM_PD_REINITIALIZE_MEDIA_INPUT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SCM_PD_REINITIALIZE_MEDIA_INPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SCM_PD_REINITIALIZE_MEDIA_INPUT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SCM_PD_REINITIALIZE_MEDIA_INPUT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SCM_PD_REINITIALIZE_MEDIA_INPUT), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="SCM_PD_REINITIALIZE_MEDIA_INPUT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SCM_PD_REINITIALIZE_MEDIA_INPUT), Is.EqualTo(12));
     }
 }

@@ -5,16 +5,15 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS
-    {
-        CPCFO_NONE = 0,
-        CPCFO_ENABLE_PASSWORD_REVEAL = 0x1,
-        CPCFO_IS_EMAIL_ADDRESS = 0x2,
-        CPCFO_ENABLE_TOUCH_KEYBOARD_AUTO_INVOKE = 0x4,
-        CPCFO_NUMBERS_ONLY = 0x8,
-        CPCFO_SHOW_ENGLISH_KEYBOARD = 0x10,
-    }
+    CPCFO_NONE = 0,
+    CPCFO_ENABLE_PASSWORD_REVEAL = 0x1,
+    CPCFO_IS_EMAIL_ADDRESS = 0x2,
+    CPCFO_ENABLE_TOUCH_KEYBOARD_AUTO_INVOKE = 0x4,
+    CPCFO_NUMBERS_ONLY = 0x8,
+    CPCFO_SHOW_ENGLISH_KEYBOARD = 0x10,
 }

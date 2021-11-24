@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IHTMLDOMTextNode3" /> struct.</summary>
+public static unsafe partial class IHTMLDOMTextNode3Tests
 {
-    /// <summary>Provides validation of the <see cref="IHTMLDOMTextNode3" /> struct.</summary>
-    public static unsafe partial class IHTMLDOMTextNode3Tests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHTMLDOMTextNode3" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHTMLDOMTextNode3" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IHTMLDOMTextNode3).GUID, Is.EqualTo(IID_IHTMLDOMTextNode3));
-        }
+        Assert.That(typeof(IHTMLDOMTextNode3).GUID, Is.EqualTo(IID_IHTMLDOMTextNode3));
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLDOMTextNode3" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IHTMLDOMTextNode3>(), Is.EqualTo(sizeof(IHTMLDOMTextNode3)));
-        }
+    /// <summary>Validates that the <see cref="IHTMLDOMTextNode3" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IHTMLDOMTextNode3>(), Is.EqualTo(sizeof(IHTMLDOMTextNode3)));
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLDOMTextNode3" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IHTMLDOMTextNode3).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IHTMLDOMTextNode3" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IHTMLDOMTextNode3).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLDOMTextNode3" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IHTMLDOMTextNode3" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IHTMLDOMTextNode3), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IHTMLDOMTextNode3), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IHTMLDOMTextNode3), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IHTMLDOMTextNode3), Is.EqualTo(4));
         }
     }
 }

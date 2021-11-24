@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDCompositionGaussianBlurEffect" /> struct.</summary>
+public static unsafe partial class IDCompositionGaussianBlurEffectTests
 {
-    /// <summary>Provides validation of the <see cref="IDCompositionGaussianBlurEffect" /> struct.</summary>
-    public static unsafe partial class IDCompositionGaussianBlurEffectTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDCompositionGaussianBlurEffect" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDCompositionGaussianBlurEffect" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDCompositionGaussianBlurEffect).GUID, Is.EqualTo(IID_IDCompositionGaussianBlurEffect));
-        }
+        Assert.That(typeof(IDCompositionGaussianBlurEffect).GUID, Is.EqualTo(IID_IDCompositionGaussianBlurEffect));
+    }
 
-        /// <summary>Validates that the <see cref="IDCompositionGaussianBlurEffect" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDCompositionGaussianBlurEffect>(), Is.EqualTo(sizeof(IDCompositionGaussianBlurEffect)));
-        }
+    /// <summary>Validates that the <see cref="IDCompositionGaussianBlurEffect" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDCompositionGaussianBlurEffect>(), Is.EqualTo(sizeof(IDCompositionGaussianBlurEffect)));
+    }
 
-        /// <summary>Validates that the <see cref="IDCompositionGaussianBlurEffect" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDCompositionGaussianBlurEffect).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDCompositionGaussianBlurEffect" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDCompositionGaussianBlurEffect).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDCompositionGaussianBlurEffect" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDCompositionGaussianBlurEffect" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDCompositionGaussianBlurEffect), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDCompositionGaussianBlurEffect), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDCompositionGaussianBlurEffect), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDCompositionGaussianBlurEffect), Is.EqualTo(4));
         }
     }
 }

@@ -7,74 +7,73 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct FILE_OBJECTID_BUFFER
 {
-    public unsafe partial struct FILE_OBJECTID_BUFFER
+    [NativeTypeName("BYTE [16]")]
+    public fixed byte ObjectId[16];
+
+    [NativeTypeName("_FILE_OBJECTID_BUFFER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:12303:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public Span<byte> BirthVolumeId
     {
-        [NativeTypeName("BYTE [16]")]
-        public fixed byte ObjectId[16];
-
-        [NativeTypeName("_FILE_OBJECTID_BUFFER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:12303:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public Span<byte> BirthVolumeId
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.BirthVolumeId[0], 16);
-            }
+            return MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.BirthVolumeId[0], 16);
         }
+    }
 
-        public Span<byte> BirthObjectId
+    public Span<byte> BirthObjectId
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.BirthObjectId[0], 16);
-            }
+            return MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.BirthObjectId[0], 16);
         }
+    }
 
-        public Span<byte> DomainId
+    public Span<byte> DomainId
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.DomainId[0], 16);
-            }
+            return MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.DomainId[0], 16);
         }
+    }
 
-        public Span<byte> ExtendedInfo
+    public Span<byte> ExtendedInfo
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return MemoryMarshal.CreateSpan(ref Anonymous.ExtendedInfo[0], 48);
-            }
+            return MemoryMarshal.CreateSpan(ref Anonymous.ExtendedInfo[0], 48);
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("_FILE_OBJECTID_BUFFER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:12304:9)")]
+        public _Anonymous_e__Struct Anonymous;
+
+        [FieldOffset(0)]
+        [NativeTypeName("BYTE [48]")]
+        public fixed byte ExtendedInfo[48];
+
+        public unsafe partial struct _Anonymous_e__Struct
         {
-            [FieldOffset(0)]
-            [NativeTypeName("_FILE_OBJECTID_BUFFER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:12304:9)")]
-            public _Anonymous_e__Struct Anonymous;
+            [NativeTypeName("BYTE [16]")]
+            public fixed byte BirthVolumeId[16];
 
-            [FieldOffset(0)]
-            [NativeTypeName("BYTE [48]")]
-            public fixed byte ExtendedInfo[48];
+            [NativeTypeName("BYTE [16]")]
+            public fixed byte BirthObjectId[16];
 
-            public unsafe partial struct _Anonymous_e__Struct
-            {
-                [NativeTypeName("BYTE [16]")]
-                public fixed byte BirthVolumeId[16];
-
-                [NativeTypeName("BYTE [16]")]
-                public fixed byte BirthObjectId[16];
-
-                [NativeTypeName("BYTE [16]")]
-                public fixed byte DomainId[16];
-            }
+            [NativeTypeName("BYTE [16]")]
+            public fixed byte DomainId[16];
         }
     }
 }

@@ -3,13 +3,12 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct JOBOBJECT_ASSOCIATE_COMPLETION_PORT
-    {
-        [NativeTypeName("PVOID")]
-        public void* CompletionKey;
+namespace TerraFX.Interop.Windows;
 
-        public HANDLE CompletionPort;
-    }
+public unsafe partial struct JOBOBJECT_ASSOCIATE_COMPLETION_PORT
+{
+    [NativeTypeName("PVOID")]
+    public void* CompletionKey;
+
+    public HANDLE CompletionPort;
 }

@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CODECAPI_AVEncStatWMVDecoderComplexityProfile" /> struct.</summary>
+public static unsafe partial class CODECAPI_AVEncStatWMVDecoderComplexityProfileTests
 {
-    /// <summary>Provides validation of the <see cref="CODECAPI_AVEncStatWMVDecoderComplexityProfile" /> struct.</summary>
-    public static unsafe partial class CODECAPI_AVEncStatWMVDecoderComplexityProfileTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncStatWMVDecoderComplexityProfile" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncStatWMVDecoderComplexityProfile" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncStatWMVDecoderComplexityProfile).GUID, Is.EqualTo(IID_CODECAPI_AVEncStatWMVDecoderComplexityProfile));
-        }
+        Assert.That(typeof(CODECAPI_AVEncStatWMVDecoderComplexityProfile).GUID, Is.EqualTo(IID_CODECAPI_AVEncStatWMVDecoderComplexityProfile));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncStatWMVDecoderComplexityProfile" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CODECAPI_AVEncStatWMVDecoderComplexityProfile>(), Is.EqualTo(sizeof(CODECAPI_AVEncStatWMVDecoderComplexityProfile)));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncStatWMVDecoderComplexityProfile" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<CODECAPI_AVEncStatWMVDecoderComplexityProfile>(), Is.EqualTo(sizeof(CODECAPI_AVEncStatWMVDecoderComplexityProfile)));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncStatWMVDecoderComplexityProfile" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncStatWMVDecoderComplexityProfile).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncStatWMVDecoderComplexityProfile" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CODECAPI_AVEncStatWMVDecoderComplexityProfile).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncStatWMVDecoderComplexityProfile" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CODECAPI_AVEncStatWMVDecoderComplexityProfile), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncStatWMVDecoderComplexityProfile" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CODECAPI_AVEncStatWMVDecoderComplexityProfile), Is.EqualTo(1));
     }
 }

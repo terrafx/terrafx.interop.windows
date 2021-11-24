@@ -3,12 +3,11 @@
 // Ported from um/MsiDefs.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum msidbServiceConfigEvent
 {
-    public enum msidbServiceConfigEvent
-    {
-        msidbServiceConfigEventInstall = 0x00000001,
-        msidbServiceConfigEventUninstall = 0x00000002,
-        msidbServiceConfigEventReinstall = 0x00000004,
-    }
+    msidbServiceConfigEventInstall = 0x00000001,
+    msidbServiceConfigEventUninstall = 0x00000002,
+    msidbServiceConfigEventReinstall = 0x00000004,
 }

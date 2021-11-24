@@ -5,48 +5,47 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 4)]
+public unsafe partial struct IMAGE_ENCLAVE_CONFIG64
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 4)]
-    public unsafe partial struct IMAGE_ENCLAVE_CONFIG64
-    {
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("DWORD")]
-        public uint MinimumRequiredConfigSize;
+    [NativeTypeName("DWORD")]
+    public uint MinimumRequiredConfigSize;
 
-        [NativeTypeName("DWORD")]
-        public uint PolicyFlags;
+    [NativeTypeName("DWORD")]
+    public uint PolicyFlags;
 
-        [NativeTypeName("DWORD")]
-        public uint NumberOfImports;
+    [NativeTypeName("DWORD")]
+    public uint NumberOfImports;
 
-        [NativeTypeName("DWORD")]
-        public uint ImportList;
+    [NativeTypeName("DWORD")]
+    public uint ImportList;
 
-        [NativeTypeName("DWORD")]
-        public uint ImportEntrySize;
+    [NativeTypeName("DWORD")]
+    public uint ImportEntrySize;
 
-        [NativeTypeName("BYTE [16]")]
-        public fixed byte FamilyID[16];
+    [NativeTypeName("BYTE [16]")]
+    public fixed byte FamilyID[16];
 
-        [NativeTypeName("BYTE [16]")]
-        public fixed byte ImageID[16];
+    [NativeTypeName("BYTE [16]")]
+    public fixed byte ImageID[16];
 
-        [NativeTypeName("DWORD")]
-        public uint ImageVersion;
+    [NativeTypeName("DWORD")]
+    public uint ImageVersion;
 
-        [NativeTypeName("DWORD")]
-        public uint SecurityVersion;
+    [NativeTypeName("DWORD")]
+    public uint SecurityVersion;
 
-        [NativeTypeName("ULONGLONG")]
-        public ulong EnclaveSize;
+    [NativeTypeName("ULONGLONG")]
+    public ulong EnclaveSize;
 
-        [NativeTypeName("DWORD")]
-        public uint NumberOfThreads;
+    [NativeTypeName("DWORD")]
+    public uint NumberOfThreads;
 
-        [NativeTypeName("DWORD")]
-        public uint EnclaveFlags;
-    }
+    [NativeTypeName("DWORD")]
+    public uint EnclaveFlags;
 }

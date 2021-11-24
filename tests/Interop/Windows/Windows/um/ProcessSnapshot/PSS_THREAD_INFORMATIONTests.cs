@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PSS_THREAD_INFORMATION" /> struct.</summary>
+[SupportedOSPlatform("windows8.1")]
+public static unsafe partial class PSS_THREAD_INFORMATIONTests
 {
-    /// <summary>Provides validation of the <see cref="PSS_THREAD_INFORMATION" /> struct.</summary>
-    [SupportedOSPlatform("windows8.1")]
-    public static unsafe partial class PSS_THREAD_INFORMATIONTests
+    /// <summary>Validates that the <see cref="PSS_THREAD_INFORMATION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PSS_THREAD_INFORMATION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PSS_THREAD_INFORMATION>(), Is.EqualTo(sizeof(PSS_THREAD_INFORMATION)));
-        }
+        Assert.That(Marshal.SizeOf<PSS_THREAD_INFORMATION>(), Is.EqualTo(sizeof(PSS_THREAD_INFORMATION)));
+    }
 
-        /// <summary>Validates that the <see cref="PSS_THREAD_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PSS_THREAD_INFORMATION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PSS_THREAD_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PSS_THREAD_INFORMATION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PSS_THREAD_INFORMATION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(PSS_THREAD_INFORMATION), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="PSS_THREAD_INFORMATION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(PSS_THREAD_INFORMATION), Is.EqualTo(8));
     }
 }

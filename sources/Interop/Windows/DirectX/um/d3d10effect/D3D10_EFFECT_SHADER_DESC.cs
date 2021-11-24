@@ -5,25 +5,24 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D10_EFFECT_SHADER_DESC
 {
-    public unsafe partial struct D3D10_EFFECT_SHADER_DESC
-    {
-        [NativeTypeName("const BYTE *")]
-        public byte* pInputSignature;
+    [NativeTypeName("const BYTE *")]
+    public byte* pInputSignature;
 
-        public BOOL IsInline;
+    public BOOL IsInline;
 
-        [NativeTypeName("const BYTE *")]
-        public byte* pBytecode;
+    [NativeTypeName("const BYTE *")]
+    public byte* pBytecode;
 
-        public uint BytecodeLength;
+    public uint BytecodeLength;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* SODecl;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* SODecl;
 
-        public uint NumInputSignatureEntries;
+    public uint NumInputSignatureEntries;
 
-        public uint NumOutputSignatureEntries;
-    }
+    public uint NumOutputSignatureEntries;
 }

@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum MFVideo3DFormat
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum MFVideo3DFormat
-    {
-        MFVideo3DSampleFormat_BaseView = 0,
-        MFVideo3DSampleFormat_MultiView = 1,
-        MFVideo3DSampleFormat_Packed_LeftRight = 2,
-        MFVideo3DSampleFormat_Packed_TopBottom = 3,
-    }
+    MFVideo3DSampleFormat_BaseView = 0,
+    MFVideo3DSampleFormat_MultiView = 1,
+    MFVideo3DSampleFormat_Packed_LeftRight = 2,
+    MFVideo3DSampleFormat_Packed_TopBottom = 3,
 }

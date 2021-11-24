@@ -3,12 +3,11 @@
 // Ported from um/msctf.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum TF_DA_COLORTYPE
 {
-    public enum TF_DA_COLORTYPE
-    {
-        TF_CT_NONE = 0,
-        TF_CT_SYSCOLOR = 1,
-        TF_CT_COLORREF = 2,
-    }
+    TF_CT_NONE = 0,
+    TF_CT_SYSCOLOR = 1,
+    TF_CT_COLORREF = 2,
 }

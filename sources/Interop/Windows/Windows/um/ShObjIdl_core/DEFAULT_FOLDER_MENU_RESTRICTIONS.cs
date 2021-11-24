@@ -3,19 +3,18 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum DEFAULT_FOLDER_MENU_RESTRICTIONS
 {
-    public enum DEFAULT_FOLDER_MENU_RESTRICTIONS
-    {
-        DFMR_DEFAULT = 0,
-        DFMR_NO_STATIC_VERBS = 0x8,
-        DFMR_STATIC_VERBS_ONLY = 0x10,
-        DFMR_NO_RESOURCE_VERBS = 0x20,
-        DFMR_OPTIN_HANDLERS_ONLY = 0x40,
-        DFMR_RESOURCE_AND_FOLDER_VERBS_ONLY = 0x80,
-        DFMR_USE_SPECIFIED_HANDLERS = 0x100,
-        DFMR_USE_SPECIFIED_VERBS = 0x200,
-        DFMR_NO_ASYNC_VERBS = 0x400,
-        DFMR_NO_NATIVECPU_VERBS = 0x800,
-    }
+    DFMR_DEFAULT = 0,
+    DFMR_NO_STATIC_VERBS = 0x8,
+    DFMR_STATIC_VERBS_ONLY = 0x10,
+    DFMR_NO_RESOURCE_VERBS = 0x20,
+    DFMR_OPTIN_HANDLERS_ONLY = 0x40,
+    DFMR_RESOURCE_AND_FOLDER_VERBS_ONLY = 0x80,
+    DFMR_USE_SPECIFIED_HANDLERS = 0x100,
+    DFMR_USE_SPECIFIED_VERBS = 0x200,
+    DFMR_NO_ASYNC_VERBS = 0x400,
+    DFMR_NO_NATIVECPU_VERBS = 0x800,
 }

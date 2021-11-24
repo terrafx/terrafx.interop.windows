@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WIN_SPUB_TRUSTED_PUBLISHER_DATA" /> struct.</summary>
+public static unsafe partial class WIN_SPUB_TRUSTED_PUBLISHER_DATATests
 {
-    /// <summary>Provides validation of the <see cref="WIN_SPUB_TRUSTED_PUBLISHER_DATA" /> struct.</summary>
-    public static unsafe partial class WIN_SPUB_TRUSTED_PUBLISHER_DATATests
+    /// <summary>Validates that the <see cref="WIN_SPUB_TRUSTED_PUBLISHER_DATA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WIN_SPUB_TRUSTED_PUBLISHER_DATA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WIN_SPUB_TRUSTED_PUBLISHER_DATA>(), Is.EqualTo(sizeof(WIN_SPUB_TRUSTED_PUBLISHER_DATA)));
-        }
+        Assert.That(Marshal.SizeOf<WIN_SPUB_TRUSTED_PUBLISHER_DATA>(), Is.EqualTo(sizeof(WIN_SPUB_TRUSTED_PUBLISHER_DATA)));
+    }
 
-        /// <summary>Validates that the <see cref="WIN_SPUB_TRUSTED_PUBLISHER_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WIN_SPUB_TRUSTED_PUBLISHER_DATA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WIN_SPUB_TRUSTED_PUBLISHER_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WIN_SPUB_TRUSTED_PUBLISHER_DATA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WIN_SPUB_TRUSTED_PUBLISHER_DATA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="WIN_SPUB_TRUSTED_PUBLISHER_DATA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(WIN_SPUB_TRUSTED_PUBLISHER_DATA), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(WIN_SPUB_TRUSTED_PUBLISHER_DATA), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(WIN_SPUB_TRUSTED_PUBLISHER_DATA), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(WIN_SPUB_TRUSTED_PUBLISHER_DATA), Is.EqualTo(8));
         }
     }
 }

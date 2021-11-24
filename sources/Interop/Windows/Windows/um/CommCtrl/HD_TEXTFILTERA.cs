@@ -3,13 +3,12 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct HD_TEXTFILTERA
-    {
-        [NativeTypeName("LPSTR")]
-        public sbyte* pszText;
+namespace TerraFX.Interop.Windows;
 
-        public int cchTextMax;
-    }
+public unsafe partial struct HD_TEXTFILTERA
+{
+    [NativeTypeName("LPSTR")]
+    public sbyte* pszText;
+
+    public int cchTextMax;
 }

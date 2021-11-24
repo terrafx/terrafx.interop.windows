@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct DEVICE_DSM_OFFLOAD_READ_PARAMETERS
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct DEVICE_DSM_OFFLOAD_READ_PARAMETERS
-    {
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        [NativeTypeName("DWORD")]
-        public uint TimeToLive;
+    [NativeTypeName("DWORD")]
+    public uint TimeToLive;
 
-        [NativeTypeName("DWORD [2]")]
-        public fixed uint Reserved[2];
-    }
+    [NativeTypeName("DWORD [2]")]
+    public fixed uint Reserved[2];
 }

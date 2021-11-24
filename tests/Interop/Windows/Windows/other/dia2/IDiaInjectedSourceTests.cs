@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDiaInjectedSource" /> struct.</summary>
+public static unsafe partial class IDiaInjectedSourceTests
 {
-    /// <summary>Provides validation of the <see cref="IDiaInjectedSource" /> struct.</summary>
-    public static unsafe partial class IDiaInjectedSourceTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDiaInjectedSource" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDiaInjectedSource" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDiaInjectedSource).GUID, Is.EqualTo(IID_IDiaInjectedSource));
-        }
+        Assert.That(typeof(IDiaInjectedSource).GUID, Is.EqualTo(IID_IDiaInjectedSource));
+    }
 
-        /// <summary>Validates that the <see cref="IDiaInjectedSource" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDiaInjectedSource>(), Is.EqualTo(sizeof(IDiaInjectedSource)));
-        }
+    /// <summary>Validates that the <see cref="IDiaInjectedSource" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDiaInjectedSource>(), Is.EqualTo(sizeof(IDiaInjectedSource)));
+    }
 
-        /// <summary>Validates that the <see cref="IDiaInjectedSource" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDiaInjectedSource).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDiaInjectedSource" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDiaInjectedSource).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDiaInjectedSource" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDiaInjectedSource" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDiaInjectedSource), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDiaInjectedSource), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDiaInjectedSource), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDiaInjectedSource), Is.EqualTo(4));
         }
     }
 }

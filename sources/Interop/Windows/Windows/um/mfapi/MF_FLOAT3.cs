@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public partial struct MF_FLOAT3
 {
-    [SupportedOSPlatform("windows10.0")]
-    public partial struct MF_FLOAT3
-    {
-        public float x;
+    public float x;
 
-        public float y;
+    public float y;
 
-        public float z;
-    }
+    public float z;
 }

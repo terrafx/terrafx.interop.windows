@@ -3,18 +3,17 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct DISPLAYCONFIG_DEVICE_INFO_HEADER
 {
-    public partial struct DISPLAYCONFIG_DEVICE_INFO_HEADER
-    {
-        public DISPLAYCONFIG_DEVICE_INFO_TYPE type;
+    public DISPLAYCONFIG_DEVICE_INFO_TYPE type;
 
-        [NativeTypeName("UINT32")]
-        public uint size;
+    [NativeTypeName("UINT32")]
+    public uint size;
 
-        public LUID adapterId;
+    public LUID adapterId;
 
-        [NativeTypeName("UINT32")]
-        public uint id;
-    }
+    [NativeTypeName("UINT32")]
+    public uint id;
 }

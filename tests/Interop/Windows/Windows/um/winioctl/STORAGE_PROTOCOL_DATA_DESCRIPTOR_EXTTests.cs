@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXT" /> struct.</summary>
+public static unsafe partial class STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXTTests
 {
-    /// <summary>Provides validation of the <see cref="STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXT" /> struct.</summary>
-    public static unsafe partial class STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXTTests
+    /// <summary>Validates that the <see cref="STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXT>(), Is.EqualTo(sizeof(STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXT)));
-        }
+        Assert.That(Marshal.SizeOf<STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXT>(), Is.EqualTo(sizeof(STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXT)));
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXT), Is.EqualTo(72));
-        }
+    /// <summary>Validates that the <see cref="STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXT), Is.EqualTo(72));
     }
 }

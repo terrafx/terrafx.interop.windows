@@ -3,12 +3,11 @@
 // Ported from um/UIAnimation.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum UI_ANIMATION_ROUNDING_MODE
 {
-    public enum UI_ANIMATION_ROUNDING_MODE
-    {
-        UI_ANIMATION_ROUNDING_NEAREST = 0,
-        UI_ANIMATION_ROUNDING_FLOOR = 1,
-        UI_ANIMATION_ROUNDING_CEILING = 2,
-    }
+    UI_ANIMATION_ROUNDING_NEAREST = 0,
+    UI_ANIMATION_ROUNDING_FLOOR = 1,
+    UI_ANIMATION_ROUNDING_CEILING = 2,
 }

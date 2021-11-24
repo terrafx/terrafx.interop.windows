@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CODECAPI_AVEncMPVGenerateHeaderPicDispExt" /> struct.</summary>
+public static unsafe partial class CODECAPI_AVEncMPVGenerateHeaderPicDispExtTests
 {
-    /// <summary>Provides validation of the <see cref="CODECAPI_AVEncMPVGenerateHeaderPicDispExt" /> struct.</summary>
-    public static unsafe partial class CODECAPI_AVEncMPVGenerateHeaderPicDispExtTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncMPVGenerateHeaderPicDispExt" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncMPVGenerateHeaderPicDispExt" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncMPVGenerateHeaderPicDispExt).GUID, Is.EqualTo(IID_CODECAPI_AVEncMPVGenerateHeaderPicDispExt));
-        }
+        Assert.That(typeof(CODECAPI_AVEncMPVGenerateHeaderPicDispExt).GUID, Is.EqualTo(IID_CODECAPI_AVEncMPVGenerateHeaderPicDispExt));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVGenerateHeaderPicDispExt" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CODECAPI_AVEncMPVGenerateHeaderPicDispExt>(), Is.EqualTo(sizeof(CODECAPI_AVEncMPVGenerateHeaderPicDispExt)));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVGenerateHeaderPicDispExt" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<CODECAPI_AVEncMPVGenerateHeaderPicDispExt>(), Is.EqualTo(sizeof(CODECAPI_AVEncMPVGenerateHeaderPicDispExt)));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVGenerateHeaderPicDispExt" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncMPVGenerateHeaderPicDispExt).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVGenerateHeaderPicDispExt" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CODECAPI_AVEncMPVGenerateHeaderPicDispExt).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVGenerateHeaderPicDispExt" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CODECAPI_AVEncMPVGenerateHeaderPicDispExt), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVGenerateHeaderPicDispExt" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CODECAPI_AVEncMPVGenerateHeaderPicDispExt), Is.EqualTo(1));
     }
 }

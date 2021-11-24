@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFMediaEngineClassFactoryEx" /> struct.</summary>
+[SupportedOSPlatform("windows8.1")]
+public static unsafe partial class IMFMediaEngineClassFactoryExTests
 {
-    /// <summary>Provides validation of the <see cref="IMFMediaEngineClassFactoryEx" /> struct.</summary>
-    [SupportedOSPlatform("windows8.1")]
-    public static unsafe partial class IMFMediaEngineClassFactoryExTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFMediaEngineClassFactoryEx" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFMediaEngineClassFactoryEx" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFMediaEngineClassFactoryEx).GUID, Is.EqualTo(IID_IMFMediaEngineClassFactoryEx));
-        }
+        Assert.That(typeof(IMFMediaEngineClassFactoryEx).GUID, Is.EqualTo(IID_IMFMediaEngineClassFactoryEx));
+    }
 
-        /// <summary>Validates that the <see cref="IMFMediaEngineClassFactoryEx" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFMediaEngineClassFactoryEx>(), Is.EqualTo(sizeof(IMFMediaEngineClassFactoryEx)));
-        }
+    /// <summary>Validates that the <see cref="IMFMediaEngineClassFactoryEx" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFMediaEngineClassFactoryEx>(), Is.EqualTo(sizeof(IMFMediaEngineClassFactoryEx)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFMediaEngineClassFactoryEx" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFMediaEngineClassFactoryEx).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFMediaEngineClassFactoryEx" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFMediaEngineClassFactoryEx).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFMediaEngineClassFactoryEx" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFMediaEngineClassFactoryEx" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFMediaEngineClassFactoryEx), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFMediaEngineClassFactoryEx), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFMediaEngineClassFactoryEx), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFMediaEngineClassFactoryEx), Is.EqualTo(4));
         }
     }
 }

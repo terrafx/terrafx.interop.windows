@@ -6,59 +6,58 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION
+    public uint _bitfield;
+
+    [NativeTypeName("DWORD : 12")]
+    public uint PageRelativeOffset
     {
-        public uint _bitfield;
-
-        [NativeTypeName("DWORD : 12")]
-        public uint PageRelativeOffset
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return _bitfield & 0xFFFu;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~0xFFFu) | (value & 0xFFFu);
-            }
+            return _bitfield & 0xFFFu;
         }
 
-        [NativeTypeName("DWORD : 1")]
-        public uint IndirectCall
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield >> 12) & 0x1u;
-            }
+            _bitfield = (_bitfield & ~0xFFFu) | (value & 0xFFFu);
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0x1u << 12)) | ((value & 0x1u) << 12);
-            }
+    [NativeTypeName("DWORD : 1")]
+    public uint IndirectCall
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield >> 12) & 0x1u;
         }
 
-        [NativeTypeName("DWORD : 19")]
-        public uint IATIndex
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield >> 13) & 0x7FFFFu;
-            }
+            _bitfield = (_bitfield & ~(0x1u << 12)) | ((value & 0x1u) << 12);
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0x7FFFFu << 13)) | ((value & 0x7FFFFu) << 13);
-            }
+    [NativeTypeName("DWORD : 19")]
+    public uint IATIndex
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield >> 13) & 0x7FFFFu;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield = (_bitfield & ~(0x7FFFFu << 13)) | ((value & 0x7FFFFu) << 13);
         }
     }
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NMDATETIMECHANGE" /> struct.</summary>
+public static unsafe partial class NMDATETIMECHANGETests
 {
-    /// <summary>Provides validation of the <see cref="NMDATETIMECHANGE" /> struct.</summary>
-    public static unsafe partial class NMDATETIMECHANGETests
+    /// <summary>Validates that the <see cref="NMDATETIMECHANGE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NMDATETIMECHANGE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NMDATETIMECHANGE>(), Is.EqualTo(sizeof(NMDATETIMECHANGE)));
-        }
+        Assert.That(Marshal.SizeOf<NMDATETIMECHANGE>(), Is.EqualTo(sizeof(NMDATETIMECHANGE)));
+    }
 
-        /// <summary>Validates that the <see cref="NMDATETIMECHANGE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NMDATETIMECHANGE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NMDATETIMECHANGE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NMDATETIMECHANGE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NMDATETIMECHANGE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="NMDATETIMECHANGE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(NMDATETIMECHANGE), Is.EqualTo(48));
-            }
-            else
-            {
-                Assert.That(sizeof(NMDATETIMECHANGE), Is.EqualTo(32));
-            }
+            Assert.That(sizeof(NMDATETIMECHANGE), Is.EqualTo(48));
+        }
+        else
+        {
+            Assert.That(sizeof(NMDATETIMECHANGE), Is.EqualTo(32));
         }
     }
 }

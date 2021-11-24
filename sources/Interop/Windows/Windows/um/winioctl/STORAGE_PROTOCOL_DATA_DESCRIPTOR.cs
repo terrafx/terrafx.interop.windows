@@ -5,17 +5,16 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public partial struct STORAGE_PROTOCOL_DATA_DESCRIPTOR
 {
-    [SupportedOSPlatform("windows10.0")]
-    public partial struct STORAGE_PROTOCOL_DATA_DESCRIPTOR
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        public STORAGE_PROTOCOL_SPECIFIC_DATA ProtocolSpecificData;
-    }
+    public STORAGE_PROTOCOL_SPECIFIC_DATA ProtocolSpecificData;
 }

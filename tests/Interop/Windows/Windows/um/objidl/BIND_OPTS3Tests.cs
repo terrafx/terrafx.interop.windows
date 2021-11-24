@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="BIND_OPTS3" /> struct.</summary>
+public static unsafe partial class BIND_OPTS3Tests
 {
-    /// <summary>Provides validation of the <see cref="BIND_OPTS3" /> struct.</summary>
-    public static unsafe partial class BIND_OPTS3Tests
+    /// <summary>Validates that the <see cref="BIND_OPTS3" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="BIND_OPTS3" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<BIND_OPTS3>(), Is.EqualTo(sizeof(BIND_OPTS3)));
-        }
+        Assert.That(Marshal.SizeOf<BIND_OPTS3>(), Is.EqualTo(sizeof(BIND_OPTS3)));
+    }
 
-        /// <summary>Validates that the <see cref="BIND_OPTS3" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(BIND_OPTS3).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="BIND_OPTS3" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(BIND_OPTS3).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="BIND_OPTS3" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="BIND_OPTS3" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(BIND_OPTS3), Is.EqualTo(48));
-            }
-            else
-            {
-                Assert.That(sizeof(BIND_OPTS3), Is.EqualTo(36));
-            }
+            Assert.That(sizeof(BIND_OPTS3), Is.EqualTo(48));
+        }
+        else
+        {
+            Assert.That(sizeof(BIND_OPTS3), Is.EqualTo(36));
         }
     }
 }

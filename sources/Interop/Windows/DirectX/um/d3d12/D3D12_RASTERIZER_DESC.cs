@@ -5,30 +5,29 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_RASTERIZER_DESC
 {
-    public partial struct D3D12_RASTERIZER_DESC
-    {
-        public D3D12_FILL_MODE FillMode;
+    public D3D12_FILL_MODE FillMode;
 
-        public D3D12_CULL_MODE CullMode;
+    public D3D12_CULL_MODE CullMode;
 
-        public BOOL FrontCounterClockwise;
+    public BOOL FrontCounterClockwise;
 
-        public int DepthBias;
+    public int DepthBias;
 
-        public float DepthBiasClamp;
+    public float DepthBiasClamp;
 
-        public float SlopeScaledDepthBias;
+    public float SlopeScaledDepthBias;
 
-        public BOOL DepthClipEnable;
+    public BOOL DepthClipEnable;
 
-        public BOOL MultisampleEnable;
+    public BOOL MultisampleEnable;
 
-        public BOOL AntialiasedLineEnable;
+    public BOOL AntialiasedLineEnable;
 
-        public uint ForcedSampleCount;
+    public uint ForcedSampleCount;
 
-        public D3D12_CONSERVATIVE_RASTERIZATION_MODE ConservativeRaster;
-    }
+    public D3D12_CONSERVATIVE_RASTERIZATION_MODE ConservativeRaster;
 }

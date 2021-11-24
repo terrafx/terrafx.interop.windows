@@ -3,12 +3,11 @@
 // Ported from um/dwrite.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
-{
-    public partial struct DWRITE_GLYPH_OFFSET
-    {
-        public float advanceOffset;
+namespace TerraFX.Interop.DirectX;
 
-        public float ascenderOffset;
-    }
+public partial struct DWRITE_GLYPH_OFFSET
+{
+    public float advanceOffset;
+
+    public float ascenderOffset;
 }

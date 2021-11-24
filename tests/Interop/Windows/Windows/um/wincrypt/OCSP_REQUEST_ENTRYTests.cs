@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="OCSP_REQUEST_ENTRY" /> struct.</summary>
+public static unsafe partial class OCSP_REQUEST_ENTRYTests
 {
-    /// <summary>Provides validation of the <see cref="OCSP_REQUEST_ENTRY" /> struct.</summary>
-    public static unsafe partial class OCSP_REQUEST_ENTRYTests
+    /// <summary>Validates that the <see cref="OCSP_REQUEST_ENTRY" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="OCSP_REQUEST_ENTRY" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<OCSP_REQUEST_ENTRY>(), Is.EqualTo(sizeof(OCSP_REQUEST_ENTRY)));
-        }
+        Assert.That(Marshal.SizeOf<OCSP_REQUEST_ENTRY>(), Is.EqualTo(sizeof(OCSP_REQUEST_ENTRY)));
+    }
 
-        /// <summary>Validates that the <see cref="OCSP_REQUEST_ENTRY" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(OCSP_REQUEST_ENTRY).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="OCSP_REQUEST_ENTRY" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(OCSP_REQUEST_ENTRY).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="OCSP_REQUEST_ENTRY" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="OCSP_REQUEST_ENTRY" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(OCSP_REQUEST_ENTRY), Is.EqualTo(88));
-            }
-            else
-            {
-                Assert.That(sizeof(OCSP_REQUEST_ENTRY), Is.EqualTo(44));
-            }
+            Assert.That(sizeof(OCSP_REQUEST_ENTRY), Is.EqualTo(88));
+        }
+        else
+        {
+            Assert.That(sizeof(OCSP_REQUEST_ENTRY), Is.EqualTo(44));
         }
     }
 }

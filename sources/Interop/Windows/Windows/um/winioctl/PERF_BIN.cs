@@ -7,34 +7,33 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct PERF_BIN
 {
-    public partial struct PERF_BIN
+    [NativeTypeName("DWORD")]
+    public uint NumberOfBins;
+
+    [NativeTypeName("DWORD")]
+    public uint TypeOfBin;
+
+    [NativeTypeName("BIN_RANGE [1]")]
+    public _BinsRanges_e__FixedBuffer BinsRanges;
+
+    public partial struct _BinsRanges_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint NumberOfBins;
+        public BIN_RANGE e0;
 
-        [NativeTypeName("DWORD")]
-        public uint TypeOfBin;
-
-        [NativeTypeName("BIN_RANGE [1]")]
-        public _BinsRanges_e__FixedBuffer BinsRanges;
-
-        public partial struct _BinsRanges_e__FixedBuffer
+        public ref BIN_RANGE this[int index]
         {
-            public BIN_RANGE e0;
-
-            public ref BIN_RANGE this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<BIN_RANGE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<BIN_RANGE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

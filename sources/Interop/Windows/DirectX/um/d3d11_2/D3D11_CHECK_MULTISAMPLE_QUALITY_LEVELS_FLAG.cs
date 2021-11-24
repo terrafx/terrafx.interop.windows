@@ -6,12 +6,11 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+[SupportedOSPlatform("windows8.1")]
+public enum D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_FLAG
 {
-    [Flags]
-    [SupportedOSPlatform("windows8.1")]
-    public enum D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_FLAG
-    {
-        D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_TILED_RESOURCE = 0x1,
-    }
+    D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_TILED_RESOURCE = 0x1,
 }

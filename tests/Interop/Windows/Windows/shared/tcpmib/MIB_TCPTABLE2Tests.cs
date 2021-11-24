@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MIB_TCPTABLE2" /> struct.</summary>
+public static unsafe partial class MIB_TCPTABLE2Tests
 {
-    /// <summary>Provides validation of the <see cref="MIB_TCPTABLE2" /> struct.</summary>
-    public static unsafe partial class MIB_TCPTABLE2Tests
+    /// <summary>Validates that the <see cref="MIB_TCPTABLE2" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MIB_TCPTABLE2" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MIB_TCPTABLE2>(), Is.EqualTo(sizeof(MIB_TCPTABLE2)));
-        }
+        Assert.That(Marshal.SizeOf<MIB_TCPTABLE2>(), Is.EqualTo(sizeof(MIB_TCPTABLE2)));
+    }
 
-        /// <summary>Validates that the <see cref="MIB_TCPTABLE2" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MIB_TCPTABLE2).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MIB_TCPTABLE2" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MIB_TCPTABLE2).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MIB_TCPTABLE2" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MIB_TCPTABLE2), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="MIB_TCPTABLE2" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MIB_TCPTABLE2), Is.EqualTo(32));
     }
 }

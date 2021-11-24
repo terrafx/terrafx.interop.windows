@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IGraphicsEffectD2D1Interop" /> struct.</summary>
+public static unsafe partial class IGraphicsEffectD2D1InteropTests
 {
-    /// <summary>Provides validation of the <see cref="IGraphicsEffectD2D1Interop" /> struct.</summary>
-    public static unsafe partial class IGraphicsEffectD2D1InteropTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IGraphicsEffectD2D1Interop" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IGraphicsEffectD2D1Interop" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IGraphicsEffectD2D1Interop).GUID, Is.EqualTo(IID_IGraphicsEffectD2D1Interop));
-        }
+        Assert.That(typeof(IGraphicsEffectD2D1Interop).GUID, Is.EqualTo(IID_IGraphicsEffectD2D1Interop));
+    }
 
-        /// <summary>Validates that the <see cref="IGraphicsEffectD2D1Interop" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IGraphicsEffectD2D1Interop>(), Is.EqualTo(sizeof(IGraphicsEffectD2D1Interop)));
-        }
+    /// <summary>Validates that the <see cref="IGraphicsEffectD2D1Interop" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IGraphicsEffectD2D1Interop>(), Is.EqualTo(sizeof(IGraphicsEffectD2D1Interop)));
+    }
 
-        /// <summary>Validates that the <see cref="IGraphicsEffectD2D1Interop" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IGraphicsEffectD2D1Interop).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IGraphicsEffectD2D1Interop" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IGraphicsEffectD2D1Interop).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IGraphicsEffectD2D1Interop" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IGraphicsEffectD2D1Interop" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IGraphicsEffectD2D1Interop), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IGraphicsEffectD2D1Interop), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IGraphicsEffectD2D1Interop), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IGraphicsEffectD2D1Interop), Is.EqualTo(4));
         }
     }
 }

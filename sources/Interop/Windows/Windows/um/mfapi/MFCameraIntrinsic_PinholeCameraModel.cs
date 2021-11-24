@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows10.0")]
-    public partial struct MFCameraIntrinsic_PinholeCameraModel
-    {
-        public MF_FLOAT2 FocalLength;
+namespace TerraFX.Interop.Windows;
 
-        public MF_FLOAT2 PrincipalPoint;
-    }
+[SupportedOSPlatform("windows10.0")]
+public partial struct MFCameraIntrinsic_PinholeCameraModel
+{
+    public MF_FLOAT2 FocalLength;
+
+    public MF_FLOAT2 PrincipalPoint;
 }

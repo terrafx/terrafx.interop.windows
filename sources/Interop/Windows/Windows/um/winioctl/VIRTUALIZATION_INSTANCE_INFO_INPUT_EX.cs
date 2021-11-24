@@ -3,23 +3,22 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct VIRTUALIZATION_INSTANCE_INFO_INPUT_EX
 {
-    public partial struct VIRTUALIZATION_INSTANCE_INFO_INPUT_EX
-    {
-        [NativeTypeName("WORD")]
-        public ushort HeaderSize;
+    [NativeTypeName("WORD")]
+    public ushort HeaderSize;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        [NativeTypeName("DWORD")]
-        public uint NotificationInfoSize;
+    [NativeTypeName("DWORD")]
+    public uint NotificationInfoSize;
 
-        [NativeTypeName("WORD")]
-        public ushort NotificationInfoOffset;
+    [NativeTypeName("WORD")]
+    public ushort NotificationInfoOffset;
 
-        [NativeTypeName("WORD")]
-        public ushort ProviderMajorVersion;
-    }
+    [NativeTypeName("WORD")]
+    public ushort ProviderMajorVersion;
 }

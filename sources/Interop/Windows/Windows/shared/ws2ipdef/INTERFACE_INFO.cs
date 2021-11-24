@@ -3,17 +3,16 @@
 // Ported from shared/ws2ipdef.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct INTERFACE_INFO
 {
-    public partial struct INTERFACE_INFO
-    {
-        [NativeTypeName("ULONG")]
-        public uint iiFlags;
+    [NativeTypeName("ULONG")]
+    public uint iiFlags;
 
-        public sockaddr_gen iiAddress;
+    public sockaddr_gen iiAddress;
 
-        public sockaddr_gen iiBroadcastAddress;
+    public sockaddr_gen iiBroadcastAddress;
 
-        public sockaddr_gen iiNetmask;
-    }
+    public sockaddr_gen iiNetmask;
 }

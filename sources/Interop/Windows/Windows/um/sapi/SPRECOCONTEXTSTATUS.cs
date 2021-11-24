@@ -3,19 +3,18 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SPRECOCONTEXTSTATUS
 {
-    public unsafe partial struct SPRECOCONTEXTSTATUS
-    {
-        public SPINTERFERENCE eInterference;
+    public SPINTERFERENCE eInterference;
 
-        [NativeTypeName("WCHAR [255]")]
-        public fixed ushort szRequestTypeOfUI[255];
+    [NativeTypeName("WCHAR [255]")]
+    public fixed ushort szRequestTypeOfUI[255];
 
-        [NativeTypeName("DWORD")]
-        public uint dwReserved1;
+    [NativeTypeName("DWORD")]
+    public uint dwReserved1;
 
-        [NativeTypeName("DWORD")]
-        public uint dwReserved2;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwReserved2;
 }

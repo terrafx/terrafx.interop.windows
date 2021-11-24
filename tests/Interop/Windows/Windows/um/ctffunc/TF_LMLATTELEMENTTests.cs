@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TF_LMLATTELEMENT" /> struct.</summary>
+public static unsafe partial class TF_LMLATTELEMENTTests
 {
-    /// <summary>Provides validation of the <see cref="TF_LMLATTELEMENT" /> struct.</summary>
-    public static unsafe partial class TF_LMLATTELEMENTTests
+    /// <summary>Validates that the <see cref="TF_LMLATTELEMENT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TF_LMLATTELEMENT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TF_LMLATTELEMENT>(), Is.EqualTo(sizeof(TF_LMLATTELEMENT)));
-        }
+        Assert.That(Marshal.SizeOf<TF_LMLATTELEMENT>(), Is.EqualTo(sizeof(TF_LMLATTELEMENT)));
+    }
 
-        /// <summary>Validates that the <see cref="TF_LMLATTELEMENT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TF_LMLATTELEMENT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TF_LMLATTELEMENT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TF_LMLATTELEMENT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TF_LMLATTELEMENT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="TF_LMLATTELEMENT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(TF_LMLATTELEMENT), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(TF_LMLATTELEMENT), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(TF_LMLATTELEMENT), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(TF_LMLATTELEMENT), Is.EqualTo(20));
         }
     }
 }

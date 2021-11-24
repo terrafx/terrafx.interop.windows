@@ -3,24 +3,23 @@
 // Ported from um/d3d10.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D10_TEXTURE1D_DESC
 {
-    public partial struct D3D10_TEXTURE1D_DESC
-    {
-        public uint Width;
+    public uint Width;
 
-        public uint MipLevels;
+    public uint MipLevels;
 
-        public uint ArraySize;
+    public uint ArraySize;
 
-        public DXGI_FORMAT Format;
+    public DXGI_FORMAT Format;
 
-        public D3D10_USAGE Usage;
+    public D3D10_USAGE Usage;
 
-        public uint BindFlags;
+    public uint BindFlags;
 
-        public uint CPUAccessFlags;
+    public uint CPUAccessFlags;
 
-        public uint MiscFlags;
-    }
+    public uint MiscFlags;
 }

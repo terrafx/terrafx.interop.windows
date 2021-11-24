@@ -7,16 +7,15 @@ using NUnit.Framework;
 using System;
 using static TerraFX.Interop.Windows.Windows;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="Windows" /> class.</summary>
+public static partial class WindowsTests
 {
-    /// <summary>Provides validation of the <see cref="Windows" /> class.</summary>
-    public static partial class WindowsTests
+    /// <summary>Validates that the value of the <see cref="MFSampleExtension_DeviceReferenceSystemTime" /> property is correct.</summary>
+    [Test]
+    public static void MFSampleExtension_DeviceReferenceSystemTimeTest()
     {
-        /// <summary>Validates that the value of the <see cref="MFSampleExtension_DeviceReferenceSystemTime" /> property is correct.</summary>
-        [Test]
-        public static void MFSampleExtension_DeviceReferenceSystemTimeTest()
-        {
-            Assert.That(MFSampleExtension_DeviceReferenceSystemTime, Is.EqualTo(new Guid(0x6523775a, 0xba2d, 0x405f, 0xb2, 0xc5, 0x01, 0xff, 0x88, 0xe2, 0xe8, 0xf6)));
-        }
+        Assert.That(MFSampleExtension_DeviceReferenceSystemTime, Is.EqualTo(new Guid(0x6523775a, 0xba2d, 0x405f, 0xb2, 0xc5, 0x01, 0xff, 0x88, 0xe2, 0xe8, 0xf6)));
     }
 }

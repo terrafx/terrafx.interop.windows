@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TRANSMSGLIST" /> struct.</summary>
+public static unsafe partial class TRANSMSGLISTTests
 {
-    /// <summary>Provides validation of the <see cref="TRANSMSGLIST" /> struct.</summary>
-    public static unsafe partial class TRANSMSGLISTTests
+    /// <summary>Validates that the <see cref="TRANSMSGLIST" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TRANSMSGLIST" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TRANSMSGLIST>(), Is.EqualTo(sizeof(TRANSMSGLIST)));
-        }
+        Assert.That(Marshal.SizeOf<TRANSMSGLIST>(), Is.EqualTo(sizeof(TRANSMSGLIST)));
+    }
 
-        /// <summary>Validates that the <see cref="TRANSMSGLIST" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TRANSMSGLIST).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TRANSMSGLIST" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TRANSMSGLIST).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TRANSMSGLIST" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="TRANSMSGLIST" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(TRANSMSGLIST), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(TRANSMSGLIST), Is.EqualTo(16));
-            }
+            Assert.That(sizeof(TRANSMSGLIST), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(TRANSMSGLIST), Is.EqualTo(16));
         }
     }
 }

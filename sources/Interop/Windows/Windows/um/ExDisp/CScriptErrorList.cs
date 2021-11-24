@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("EFD01300-160F-11D2-BB2E-00805FF7EFCA")]
+public partial struct CScriptErrorList
 {
-    [Guid("EFD01300-160F-11D2-BB2E-00805FF7EFCA")]
-    public partial struct CScriptErrorList
-    {
-    }
 }

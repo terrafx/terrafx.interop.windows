@@ -7,77 +7,76 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("154995EE-54A6-4F14-AC97-D8CF0519644B")]
+[NativeTypeName("struct IAppxManifestOSPackageDependency : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IAppxManifestOSPackageDependency : IAppxManifestOSPackageDependency.Interface
 {
-    [Guid("154995EE-54A6-4F14-AC97-D8CF0519644B")]
-    [NativeTypeName("struct IAppxManifestOSPackageDependency : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestOSPackageDependency : IAppxManifestOSPackageDependency.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IAppxManifestOSPackageDependency*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestOSPackageDependency*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IAppxManifestOSPackageDependency*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestOSPackageDependency*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IAppxManifestOSPackageDependency*, uint>)(lpVtbl[1]))((IAppxManifestOSPackageDependency*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IAppxManifestOSPackageDependency*, uint>)(lpVtbl[1]))((IAppxManifestOSPackageDependency*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IAppxManifestOSPackageDependency*, uint>)(lpVtbl[2]))((IAppxManifestOSPackageDependency*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IAppxManifestOSPackageDependency*, uint>)(lpVtbl[2]))((IAppxManifestOSPackageDependency*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name)
+    {
+        return ((delegate* unmanaged<IAppxManifestOSPackageDependency*, ushort**, int>)(lpVtbl[3]))((IAppxManifestOSPackageDependency*)Unsafe.AsPointer(ref this), name);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetVersion([NativeTypeName("UINT64 *")] ulong* version)
+    {
+        return ((delegate* unmanaged<IAppxManifestOSPackageDependency*, ulong*, int>)(lpVtbl[4]))((IAppxManifestOSPackageDependency*)Unsafe.AsPointer(ref this), version);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name)
-        {
-            return ((delegate* unmanaged<IAppxManifestOSPackageDependency*, ushort**, int>)(lpVtbl[3]))((IAppxManifestOSPackageDependency*)Unsafe.AsPointer(ref this), name);
-        }
+        HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetVersion([NativeTypeName("UINT64 *")] ulong* version)
-        {
-            return ((delegate* unmanaged<IAppxManifestOSPackageDependency*, ulong*, int>)(lpVtbl[4]))((IAppxManifestOSPackageDependency*)Unsafe.AsPointer(ref this), version);
-        }
+        HRESULT GetVersion([NativeTypeName("UINT64 *")] ulong* version);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestOSPackageDependency*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetVersion([NativeTypeName("UINT64 *")] ulong* version);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestOSPackageDependency*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestOSPackageDependency*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestOSPackageDependency*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestOSPackageDependency*, uint> AddRef;
+        [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestOSPackageDependency*, ushort**, int> GetName;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestOSPackageDependency*, uint> Release;
-
-            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestOSPackageDependency*, ushort**, int> GetName;
-
-            [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestOSPackageDependency*, ulong*, int> GetVersion;
-        }
+        [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestOSPackageDependency*, ulong*, int> GetVersion;
     }
 }

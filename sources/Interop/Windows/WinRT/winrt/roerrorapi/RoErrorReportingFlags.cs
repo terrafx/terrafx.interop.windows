@@ -6,15 +6,14 @@
 using System;
 using static TerraFX.Interop.WinRT.RO_ERROR_REPORTING_FLAGS;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[Flags]
+public enum RoErrorReportingFlags
 {
-    [Flags]
-    public enum RoErrorReportingFlags
-    {
-        None = RO_ERROR_REPORTING_NONE,
-        SuppressExceptions = RO_ERROR_REPORTING_SUPPRESSEXCEPTIONS,
-        ForceExceptions = RO_ERROR_REPORTING_FORCEEXCEPTIONS,
-        UseSetErrorInfo = RO_ERROR_REPORTING_USESETERRORINFO,
-        SuppressSetErrorInfo = RO_ERROR_REPORTING_SUPPRESSSETERRORINFO,
-    }
+    None = RO_ERROR_REPORTING_NONE,
+    SuppressExceptions = RO_ERROR_REPORTING_SUPPRESSEXCEPTIONS,
+    ForceExceptions = RO_ERROR_REPORTING_FORCEEXCEPTIONS,
+    UseSetErrorInfo = RO_ERROR_REPORTING_USESETERRORINFO,
+    SuppressSetErrorInfo = RO_ERROR_REPORTING_SUPPRESSSETERRORINFO,
 }

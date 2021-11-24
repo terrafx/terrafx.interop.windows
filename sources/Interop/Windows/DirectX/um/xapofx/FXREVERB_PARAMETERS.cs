@@ -5,13 +5,12 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct FXREVERB_PARAMETERS
-    {
-        public float Diffusion;
+namespace TerraFX.Interop.DirectX;
 
-        public float RoomSize;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct FXREVERB_PARAMETERS
+{
+    public float Diffusion;
+
+    public float RoomSize;
 }

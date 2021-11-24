@@ -3,13 +3,12 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum eAVEncVideoColorTransferMatrix
 {
-    public enum eAVEncVideoColorTransferMatrix
-    {
-        eAVEncVideoColorTransferMatrix_SameAsSource = 0,
-        eAVEncVideoColorTransferMatrix_BT709 = 1,
-        eAVEncVideoColorTransferMatrix_BT601 = 2,
-        eAVEncVideoColorTransferMatrix_SMPTE240M = 3,
-    }
+    eAVEncVideoColorTransferMatrix_SameAsSource = 0,
+    eAVEncVideoColorTransferMatrix_BT709 = 1,
+    eAVEncVideoColorTransferMatrix_BT601 = 2,
+    eAVEncVideoColorTransferMatrix_SMPTE240M = 3,
 }

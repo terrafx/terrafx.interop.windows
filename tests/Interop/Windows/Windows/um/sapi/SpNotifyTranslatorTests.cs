@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SpNotifyTranslator" /> struct.</summary>
+public static unsafe partial class SpNotifyTranslatorTests
 {
-    /// <summary>Provides validation of the <see cref="SpNotifyTranslator" /> struct.</summary>
-    public static unsafe partial class SpNotifyTranslatorTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SpNotifyTranslator" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SpNotifyTranslator" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SpNotifyTranslator).GUID, Is.EqualTo(CLSID_SpNotifyTranslator));
-        }
+        Assert.That(typeof(SpNotifyTranslator).GUID, Is.EqualTo(CLSID_SpNotifyTranslator));
+    }
 
-        /// <summary>Validates that the <see cref="SpNotifyTranslator" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SpNotifyTranslator>(), Is.EqualTo(sizeof(SpNotifyTranslator)));
-        }
+    /// <summary>Validates that the <see cref="SpNotifyTranslator" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SpNotifyTranslator>(), Is.EqualTo(sizeof(SpNotifyTranslator)));
+    }
 
-        /// <summary>Validates that the <see cref="SpNotifyTranslator" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SpNotifyTranslator).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SpNotifyTranslator" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SpNotifyTranslator).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SpNotifyTranslator" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SpNotifyTranslator), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SpNotifyTranslator" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SpNotifyTranslator), Is.EqualTo(1));
     }
 }

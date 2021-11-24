@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SE_ACCESS_REQUEST" /> struct.</summary>
+public static unsafe partial class SE_ACCESS_REQUESTTests
 {
-    /// <summary>Provides validation of the <see cref="SE_ACCESS_REQUEST" /> struct.</summary>
-    public static unsafe partial class SE_ACCESS_REQUESTTests
+    /// <summary>Validates that the <see cref="SE_ACCESS_REQUEST" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SE_ACCESS_REQUEST" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SE_ACCESS_REQUEST>(), Is.EqualTo(sizeof(SE_ACCESS_REQUEST)));
-        }
+        Assert.That(Marshal.SizeOf<SE_ACCESS_REQUEST>(), Is.EqualTo(sizeof(SE_ACCESS_REQUEST)));
+    }
 
-        /// <summary>Validates that the <see cref="SE_ACCESS_REQUEST" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SE_ACCESS_REQUEST).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SE_ACCESS_REQUEST" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SE_ACCESS_REQUEST).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SE_ACCESS_REQUEST" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SE_ACCESS_REQUEST" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SE_ACCESS_REQUEST), Is.EqualTo(56));
-            }
-            else
-            {
-                Assert.That(sizeof(SE_ACCESS_REQUEST), Is.EqualTo(32));
-            }
+            Assert.That(sizeof(SE_ACCESS_REQUEST), Is.EqualTo(56));
+        }
+        else
+        {
+            Assert.That(sizeof(SE_ACCESS_REQUEST), Is.EqualTo(32));
         }
     }
 }

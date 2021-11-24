@@ -5,11 +5,10 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_SERVICE_PROPERTY_ACCEPT_CALLBACK
 {
-    public unsafe partial struct WS_SERVICE_PROPERTY_ACCEPT_CALLBACK
-    {
-        [NativeTypeName("WS_SERVICE_ACCEPT_CHANNEL_CALLBACK")]
-        public delegate* unmanaged<IntPtr, void**, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> callback;
-    }
+    [NativeTypeName("WS_SERVICE_ACCEPT_CHANNEL_CALLBACK")]
+    public delegate* unmanaged<IntPtr, void**, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> callback;
 }

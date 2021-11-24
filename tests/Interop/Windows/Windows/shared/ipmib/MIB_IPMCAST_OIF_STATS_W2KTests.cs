@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MIB_IPMCAST_OIF_STATS_W2K" /> struct.</summary>
+public static unsafe partial class MIB_IPMCAST_OIF_STATS_W2KTests
 {
-    /// <summary>Provides validation of the <see cref="MIB_IPMCAST_OIF_STATS_W2K" /> struct.</summary>
-    public static unsafe partial class MIB_IPMCAST_OIF_STATS_W2KTests
+    /// <summary>Validates that the <see cref="MIB_IPMCAST_OIF_STATS_W2K" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MIB_IPMCAST_OIF_STATS_W2K" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MIB_IPMCAST_OIF_STATS_W2K>(), Is.EqualTo(sizeof(MIB_IPMCAST_OIF_STATS_W2K)));
-        }
+        Assert.That(Marshal.SizeOf<MIB_IPMCAST_OIF_STATS_W2K>(), Is.EqualTo(sizeof(MIB_IPMCAST_OIF_STATS_W2K)));
+    }
 
-        /// <summary>Validates that the <see cref="MIB_IPMCAST_OIF_STATS_W2K" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MIB_IPMCAST_OIF_STATS_W2K).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MIB_IPMCAST_OIF_STATS_W2K" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MIB_IPMCAST_OIF_STATS_W2K).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MIB_IPMCAST_OIF_STATS_W2K" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="MIB_IPMCAST_OIF_STATS_W2K" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(MIB_IPMCAST_OIF_STATS_W2K), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(MIB_IPMCAST_OIF_STATS_W2K), Is.EqualTo(28));
-            }
+            Assert.That(sizeof(MIB_IPMCAST_OIF_STATS_W2K), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(MIB_IPMCAST_OIF_STATS_W2K), Is.EqualTo(28));
         }
     }
 }

@@ -3,35 +3,34 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct UPDATELAYEREDWINDOWINFO
 {
-    public unsafe partial struct UPDATELAYEREDWINDOWINFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public HDC hdcDst;
+    public HDC hdcDst;
 
-        [NativeTypeName("const POINT *")]
-        public POINT* pptDst;
+    [NativeTypeName("const POINT *")]
+    public POINT* pptDst;
 
-        [NativeTypeName("const SIZE *")]
-        public SIZE* psize;
+    [NativeTypeName("const SIZE *")]
+    public SIZE* psize;
 
-        public HDC hdcSrc;
+    public HDC hdcSrc;
 
-        [NativeTypeName("const POINT *")]
-        public POINT* pptSrc;
+    [NativeTypeName("const POINT *")]
+    public POINT* pptSrc;
 
-        public COLORREF crKey;
+    public COLORREF crKey;
 
-        [NativeTypeName("const BLENDFUNCTION *")]
-        public BLENDFUNCTION* pblend;
+    [NativeTypeName("const BLENDFUNCTION *")]
+    public BLENDFUNCTION* pblend;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        [NativeTypeName("const RECT *")]
-        public RECT* prcDirty;
-    }
+    [NativeTypeName("const RECT *")]
+    public RECT* prcDirty;
 }

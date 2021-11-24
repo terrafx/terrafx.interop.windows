@@ -3,17 +3,16 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SCM_PD_PASSTHROUGH_INVDIMM_INPUT
 {
-    public unsafe partial struct SCM_PD_PASSTHROUGH_INVDIMM_INPUT
-    {
-        [NativeTypeName("DWORD")]
-        public uint Opcode;
+    [NativeTypeName("DWORD")]
+    public uint Opcode;
 
-        [NativeTypeName("DWORD")]
-        public uint OpcodeParametersLength;
+    [NativeTypeName("DWORD")]
+    public uint OpcodeParametersLength;
 
-        [NativeTypeName("BYTE [1]")]
-        public fixed byte OpcodeParameters[1];
-    }
+    [NativeTypeName("BYTE [1]")]
+    public fixed byte OpcodeParameters[1];
 }

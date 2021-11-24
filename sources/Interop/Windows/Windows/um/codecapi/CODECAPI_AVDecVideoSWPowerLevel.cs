@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("FB5D2347-4DD8-4509-AED0-DB5FA9AA93F4")]
+public partial struct CODECAPI_AVDecVideoSWPowerLevel
 {
-    [Guid("FB5D2347-4DD8-4509-AED0-DB5FA9AA93F4")]
-    public partial struct CODECAPI_AVDecVideoSWPowerLevel
-    {
-    }
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IElementBehaviorSubmit" /> struct.</summary>
+public static unsafe partial class IElementBehaviorSubmitTests
 {
-    /// <summary>Provides validation of the <see cref="IElementBehaviorSubmit" /> struct.</summary>
-    public static unsafe partial class IElementBehaviorSubmitTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IElementBehaviorSubmit" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IElementBehaviorSubmit" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IElementBehaviorSubmit).GUID, Is.EqualTo(IID_IElementBehaviorSubmit));
-        }
+        Assert.That(typeof(IElementBehaviorSubmit).GUID, Is.EqualTo(IID_IElementBehaviorSubmit));
+    }
 
-        /// <summary>Validates that the <see cref="IElementBehaviorSubmit" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IElementBehaviorSubmit>(), Is.EqualTo(sizeof(IElementBehaviorSubmit)));
-        }
+    /// <summary>Validates that the <see cref="IElementBehaviorSubmit" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IElementBehaviorSubmit>(), Is.EqualTo(sizeof(IElementBehaviorSubmit)));
+    }
 
-        /// <summary>Validates that the <see cref="IElementBehaviorSubmit" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IElementBehaviorSubmit).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IElementBehaviorSubmit" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IElementBehaviorSubmit).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IElementBehaviorSubmit" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IElementBehaviorSubmit" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IElementBehaviorSubmit), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IElementBehaviorSubmit), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IElementBehaviorSubmit), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IElementBehaviorSubmit), Is.EqualTo(4));
         }
     }
 }

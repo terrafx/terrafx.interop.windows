@@ -8,33 +8,32 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class AM
-    {
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid AM_MEDIA_TYPE_REPRESENTATION
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xD2, 0x2A, 0xE4, 0xE2,
-                    0x2C, 0x13,
-                    0x1E, 0x49,
-                    0xA2,
-                    0x68,
-                    0x3C,
-                    0x7C,
-                    0x2D,
-                    0xCA,
-                    0x18,
-                    0x1F
-                };
+namespace TerraFX.Interop.Windows;
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+public static partial class AM
+{
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid AM_MEDIA_TYPE_REPRESENTATION
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xD2, 0x2A, 0xE4, 0xE2,
+                0x2C, 0x13,
+                0x1E, 0x49,
+                0xA2,
+                0x68,
+                0x3C,
+                0x7C,
+                0x2D,
+                0xCA,
+                0x18,
+                0x1F
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

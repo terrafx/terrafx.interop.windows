@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CODECAPI_AVEncStatHardwareBandwidthUtilitization" /> struct.</summary>
+public static unsafe partial class CODECAPI_AVEncStatHardwareBandwidthUtilitizationTests
 {
-    /// <summary>Provides validation of the <see cref="CODECAPI_AVEncStatHardwareBandwidthUtilitization" /> struct.</summary>
-    public static unsafe partial class CODECAPI_AVEncStatHardwareBandwidthUtilitizationTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncStatHardwareBandwidthUtilitization" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncStatHardwareBandwidthUtilitization" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncStatHardwareBandwidthUtilitization).GUID, Is.EqualTo(IID_CODECAPI_AVEncStatHardwareBandwidthUtilitization));
-        }
+        Assert.That(typeof(CODECAPI_AVEncStatHardwareBandwidthUtilitization).GUID, Is.EqualTo(IID_CODECAPI_AVEncStatHardwareBandwidthUtilitization));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncStatHardwareBandwidthUtilitization" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CODECAPI_AVEncStatHardwareBandwidthUtilitization>(), Is.EqualTo(sizeof(CODECAPI_AVEncStatHardwareBandwidthUtilitization)));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncStatHardwareBandwidthUtilitization" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<CODECAPI_AVEncStatHardwareBandwidthUtilitization>(), Is.EqualTo(sizeof(CODECAPI_AVEncStatHardwareBandwidthUtilitization)));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncStatHardwareBandwidthUtilitization" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncStatHardwareBandwidthUtilitization).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncStatHardwareBandwidthUtilitization" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CODECAPI_AVEncStatHardwareBandwidthUtilitization).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncStatHardwareBandwidthUtilitization" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CODECAPI_AVEncStatHardwareBandwidthUtilitization), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncStatHardwareBandwidthUtilitization" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CODECAPI_AVEncStatHardwareBandwidthUtilitization), Is.EqualTo(1));
     }
 }

@@ -5,33 +5,32 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct INPUT_RECORD
 {
-    public partial struct INPUT_RECORD
+    [NativeTypeName("WORD")]
+    public ushort EventType;
+
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincontypes.h:124:5)")]
+    public _Event_e__Union Event;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Event_e__Union
     {
-        [NativeTypeName("WORD")]
-        public ushort EventType;
+        [FieldOffset(0)]
+        public KEY_EVENT_RECORD KeyEvent;
 
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincontypes.h:124:5)")]
-        public _Event_e__Union Event;
+        [FieldOffset(0)]
+        public MOUSE_EVENT_RECORD MouseEvent;
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Event_e__Union
-        {
-            [FieldOffset(0)]
-            public KEY_EVENT_RECORD KeyEvent;
+        [FieldOffset(0)]
+        public WINDOW_BUFFER_SIZE_RECORD WindowBufferSizeEvent;
 
-            [FieldOffset(0)]
-            public MOUSE_EVENT_RECORD MouseEvent;
+        [FieldOffset(0)]
+        public MENU_EVENT_RECORD MenuEvent;
 
-            [FieldOffset(0)]
-            public WINDOW_BUFFER_SIZE_RECORD WindowBufferSizeEvent;
-
-            [FieldOffset(0)]
-            public MENU_EVENT_RECORD MenuEvent;
-
-            [FieldOffset(0)]
-            public FOCUS_EVENT_RECORD FocusEvent;
-        }
+        [FieldOffset(0)]
+        public FOCUS_EVENT_RECORD FocusEvent;
     }
 }

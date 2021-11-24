@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="POINTER_DEVICE_CURSOR_INFO" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class POINTER_DEVICE_CURSOR_INFOTests
 {
-    /// <summary>Provides validation of the <see cref="POINTER_DEVICE_CURSOR_INFO" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class POINTER_DEVICE_CURSOR_INFOTests
+    /// <summary>Validates that the <see cref="POINTER_DEVICE_CURSOR_INFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="POINTER_DEVICE_CURSOR_INFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<POINTER_DEVICE_CURSOR_INFO>(), Is.EqualTo(sizeof(POINTER_DEVICE_CURSOR_INFO)));
-        }
+        Assert.That(Marshal.SizeOf<POINTER_DEVICE_CURSOR_INFO>(), Is.EqualTo(sizeof(POINTER_DEVICE_CURSOR_INFO)));
+    }
 
-        /// <summary>Validates that the <see cref="POINTER_DEVICE_CURSOR_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(POINTER_DEVICE_CURSOR_INFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="POINTER_DEVICE_CURSOR_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(POINTER_DEVICE_CURSOR_INFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="POINTER_DEVICE_CURSOR_INFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(POINTER_DEVICE_CURSOR_INFO), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="POINTER_DEVICE_CURSOR_INFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(POINTER_DEVICE_CURSOR_INFO), Is.EqualTo(8));
     }
 }

@@ -5,21 +5,20 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct MIDIEVENT
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct MIDIEVENT
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwDeltaTime;
+    [NativeTypeName("DWORD")]
+    public uint dwDeltaTime;
 
-        [NativeTypeName("DWORD")]
-        public uint dwStreamID;
+    [NativeTypeName("DWORD")]
+    public uint dwStreamID;
 
-        [NativeTypeName("DWORD")]
-        public uint dwEvent;
+    [NativeTypeName("DWORD")]
+    public uint dwEvent;
 
-        [NativeTypeName("DWORD [1]")]
-        public fixed uint dwParms[1];
-    }
+    [NativeTypeName("DWORD [1]")]
+    public fixed uint dwParms[1];
 }

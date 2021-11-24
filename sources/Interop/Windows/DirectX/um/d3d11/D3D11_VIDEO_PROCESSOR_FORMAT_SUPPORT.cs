@@ -6,13 +6,12 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+[SupportedOSPlatform("windows8.0")]
+public enum D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT
 {
-    [Flags]
-    [SupportedOSPlatform("windows8.0")]
-    public enum D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT
-    {
-        D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT_INPUT = 0x1,
-        D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT_OUTPUT = 0x2,
-    }
+    D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT_INPUT = 0x1,
+    D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT_OUTPUT = 0x2,
 }

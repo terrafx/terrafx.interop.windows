@@ -3,11 +3,10 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum TASKDIALOG_ICON_ELEMENTS
 {
-    public enum TASKDIALOG_ICON_ELEMENTS
-    {
-        TDIE_ICON_MAIN,
-        TDIE_ICON_FOOTER,
-    }
+    TDIE_ICON_MAIN,
+    TDIE_ICON_FOOTER,
 }

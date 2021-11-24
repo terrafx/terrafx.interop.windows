@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="EXP_PROPERTYSTORAGE" /> struct.</summary>
+public static unsafe partial class EXP_PROPERTYSTORAGETests
 {
-    /// <summary>Provides validation of the <see cref="EXP_PROPERTYSTORAGE" /> struct.</summary>
-    public static unsafe partial class EXP_PROPERTYSTORAGETests
+    /// <summary>Validates that the <see cref="EXP_PROPERTYSTORAGE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="EXP_PROPERTYSTORAGE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<EXP_PROPERTYSTORAGE>(), Is.EqualTo(sizeof(EXP_PROPERTYSTORAGE)));
-        }
+        Assert.That(Marshal.SizeOf<EXP_PROPERTYSTORAGE>(), Is.EqualTo(sizeof(EXP_PROPERTYSTORAGE)));
+    }
 
-        /// <summary>Validates that the <see cref="EXP_PROPERTYSTORAGE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(EXP_PROPERTYSTORAGE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="EXP_PROPERTYSTORAGE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(EXP_PROPERTYSTORAGE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="EXP_PROPERTYSTORAGE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(EXP_PROPERTYSTORAGE), Is.EqualTo(9));
-        }
+    /// <summary>Validates that the <see cref="EXP_PROPERTYSTORAGE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(EXP_PROPERTYSTORAGE), Is.EqualTo(9));
     }
 }

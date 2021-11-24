@@ -7,64 +7,63 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("D60A7B49-1B9F-4BE2-B702-47E9DC05DEC3")]
+[NativeTypeName("struct ITfClientId : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ITfClientId : ITfClientId.Interface
 {
-    [Guid("D60A7B49-1B9F-4BE2-B702-47E9DC05DEC3")]
-    [NativeTypeName("struct ITfClientId : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfClientId : ITfClientId.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ITfClientId*, Guid*, void**, int>)(lpVtbl[0]))((ITfClientId*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ITfClientId*, Guid*, void**, int>)(lpVtbl[0]))((ITfClientId*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ITfClientId*, uint>)(lpVtbl[1]))((ITfClientId*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ITfClientId*, uint>)(lpVtbl[1]))((ITfClientId*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ITfClientId*, uint>)(lpVtbl[2]))((ITfClientId*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ITfClientId*, uint>)(lpVtbl[2]))((ITfClientId*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetClientId([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("TfClientId *")] uint* ptid)
+    {
+        return ((delegate* unmanaged<ITfClientId*, Guid*, uint*, int>)(lpVtbl[3]))((ITfClientId*)Unsafe.AsPointer(ref this), rclsid, ptid);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetClientId([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("TfClientId *")] uint* ptid)
-        {
-            return ((delegate* unmanaged<ITfClientId*, Guid*, uint*, int>)(lpVtbl[3]))((ITfClientId*)Unsafe.AsPointer(ref this), rclsid, ptid);
-        }
+        HRESULT GetClientId([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("TfClientId *")] uint* ptid);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetClientId([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("TfClientId *")] uint* ptid);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfClientId*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfClientId*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfClientId*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfClientId*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfClientId*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfClientId*, uint> Release;
-
-            [NativeTypeName("HRESULT (const IID &, TfClientId *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfClientId*, Guid*, uint*, int> GetClientId;
-        }
+        [NativeTypeName("HRESULT (const IID &, TfClientId *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfClientId*, Guid*, uint*, int> GetClientId;
     }
 }

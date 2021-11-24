@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("591209C7-767B-42B2-9FBA-44EE4615F2C7")]
+public partial struct ApplicationAssociationRegistration
 {
-    [Guid("591209C7-767B-42B2-9FBA-44EE4615F2C7")]
-    public partial struct ApplicationAssociationRegistration
-    {
-    }
 }

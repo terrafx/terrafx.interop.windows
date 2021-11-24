@@ -7,76 +7,75 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Explicit)]
+public unsafe partial struct SP_TROUBLESHOOTER_PARAMS_A
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct SP_TROUBLESHOOTER_PARAMS_A
+    public static uint SizeOf
     {
-        public static uint SizeOf
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return (uint)(sizeof(SP_TROUBLESHOOTER_PARAMS32_A));
-                }
-                else
-                {
-                    return (uint)(sizeof(SP_TROUBLESHOOTER_PARAMS64_A));
-                }
+                return (uint)(sizeof(SP_TROUBLESHOOTER_PARAMS32_A));
+            }
+            else
+            {
+                return (uint)(sizeof(SP_TROUBLESHOOTER_PARAMS64_A));
             }
         }
+    }
 
-        [FieldOffset(0)]
-        public SP_TROUBLESHOOTER_PARAMS32_A _value32;
+    [FieldOffset(0)]
+    public SP_TROUBLESHOOTER_PARAMS32_A _value32;
 
-        [FieldOffset(0)]
-        public SP_TROUBLESHOOTER_PARAMS64_A _value64;
+    [FieldOffset(0)]
+    public SP_TROUBLESHOOTER_PARAMS64_A _value64;
 
-        public ref SP_CLASSINSTALL_HEADER ClassInstallHeader
+    public ref SP_CLASSINSTALL_HEADER ClassInstallHeader
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Unsafe.As<SP_CLASSINSTALL_HEADER32, SP_CLASSINSTALL_HEADER>(ref _value32.ClassInstallHeader), 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Unsafe.As<SP_CLASSINSTALL_HEADER64, SP_CLASSINSTALL_HEADER>(ref _value64.ClassInstallHeader), 1));
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Unsafe.As<SP_CLASSINSTALL_HEADER32, SP_CLASSINSTALL_HEADER>(ref _value32.ClassInstallHeader), 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Unsafe.As<SP_CLASSINSTALL_HEADER64, SP_CLASSINSTALL_HEADER>(ref _value64.ClassInstallHeader), 1));
             }
         }
+    }
 
-        [NativeTypeName("CHAR [260]")]
-        public Span<sbyte> ChmFile
+    [NativeTypeName("CHAR [260]")]
+    public Span<sbyte> ChmFile
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return MemoryMarshal.CreateSpan(ref _value32.ChmFile[0], 1);
-                }
-                else
-                {
-                    return MemoryMarshal.CreateSpan(ref _value64.ChmFile[0], 1);
-                }
+                return MemoryMarshal.CreateSpan(ref _value32.ChmFile[0], 1);
+            }
+            else
+            {
+                return MemoryMarshal.CreateSpan(ref _value64.ChmFile[0], 1);
             }
         }
+    }
 
-        [NativeTypeName("CHAR [260]")]
-        public Span<sbyte> HtmlTroubleShooter
+    [NativeTypeName("CHAR [260]")]
+    public Span<sbyte> HtmlTroubleShooter
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return MemoryMarshal.CreateSpan(ref _value32.HtmlTroubleShooter[0], 1);
-                }
-                else
-                {
-                    return MemoryMarshal.CreateSpan(ref _value64.HtmlTroubleShooter[0], 1);
-                }
+                return MemoryMarshal.CreateSpan(ref _value32.HtmlTroubleShooter[0], 1);
+            }
+            else
+            {
+                return MemoryMarshal.CreateSpan(ref _value64.HtmlTroubleShooter[0], 1);
             }
         }
     }

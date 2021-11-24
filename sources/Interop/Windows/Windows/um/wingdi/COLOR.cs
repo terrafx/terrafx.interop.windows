@@ -3,14 +3,13 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class COLOR
-    {
-        [NativeTypeName("#define COLOR_ADJ_MIN (SHORT)-100")]
-        public const short COLOR_ADJ_MIN = (short)(-100);
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("#define COLOR_ADJ_MAX (SHORT)100")]
-        public const short COLOR_ADJ_MAX = (short)(100);
-    }
+public static partial class COLOR
+{
+    [NativeTypeName("#define COLOR_ADJ_MIN (SHORT)-100")]
+    public const short COLOR_ADJ_MIN = (short)(-100);
+
+    [NativeTypeName("#define COLOR_ADJ_MAX (SHORT)100")]
+    public const short COLOR_ADJ_MAX = (short)(100);
 }

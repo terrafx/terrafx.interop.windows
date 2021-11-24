@@ -3,14 +3,13 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct SCRUB_PARITY_EXTENT
-    {
-        [NativeTypeName("LONGLONG")]
-        public long Offset;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("ULONGLONG")]
-        public ulong Length;
-    }
+public partial struct SCRUB_PARITY_EXTENT
+{
+    [NativeTypeName("LONGLONG")]
+    public long Offset;
+
+    [NativeTypeName("ULONGLONG")]
+    public ulong Length;
 }

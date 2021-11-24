@@ -3,13 +3,12 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MEM_SECTION_EXTENDED_PARAMETER_TYPE
 {
-    public enum MEM_SECTION_EXTENDED_PARAMETER_TYPE
-    {
-        MemSectionExtendedParameterInvalidType = 0,
-        MemSectionExtendedParameterUserPhysicalFlags,
-        MemSectionExtendedParameterNumaNode,
-        MemSectionExtendedParameterMax,
-    }
+    MemSectionExtendedParameterInvalidType = 0,
+    MemSectionExtendedParameterUserPhysicalFlags,
+    MemSectionExtendedParameterNumaNode,
+    MemSectionExtendedParameterMax,
 }

@@ -3,14 +3,13 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct PPM_THERMALCHANGE_EVENT
-    {
-        [NativeTypeName("DWORD")]
-        public uint ThermalConstraint;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD64")]
-        public ulong Processors;
-    }
+public partial struct PPM_THERMALCHANGE_EVENT
+{
+    [NativeTypeName("DWORD")]
+    public uint ThermalConstraint;
+
+    [NativeTypeName("DWORD64")]
+    public ulong Processors;
 }

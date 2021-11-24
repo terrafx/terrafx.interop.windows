@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDirectDrawVideo" /> struct.</summary>
+public static unsafe partial class IDirectDrawVideoTests
 {
-    /// <summary>Provides validation of the <see cref="IDirectDrawVideo" /> struct.</summary>
-    public static unsafe partial class IDirectDrawVideoTests
+    /// <summary>Validates that the <see cref="IDirectDrawVideo" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IDirectDrawVideo" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDirectDrawVideo>(), Is.EqualTo(sizeof(IDirectDrawVideo)));
-        }
+        Assert.That(Marshal.SizeOf<IDirectDrawVideo>(), Is.EqualTo(sizeof(IDirectDrawVideo)));
+    }
 
-        /// <summary>Validates that the <see cref="IDirectDrawVideo" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDirectDrawVideo).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDirectDrawVideo" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDirectDrawVideo).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDirectDrawVideo" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDirectDrawVideo" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDirectDrawVideo), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDirectDrawVideo), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDirectDrawVideo), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDirectDrawVideo), Is.EqualTo(4));
         }
     }
 }

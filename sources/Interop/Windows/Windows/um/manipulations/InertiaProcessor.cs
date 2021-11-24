@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("ABB27087-4CE0-4E58-A0CB-E24DF96814BE")]
+public partial struct InertiaProcessor
 {
-    [Guid("ABB27087-4CE0-4E58-A0CB-E24DF96814BE")]
-    public partial struct InertiaProcessor
-    {
-    }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES" /> struct.</summary>
+public static unsafe partial class D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIESTests
 {
-    /// <summary>Provides validation of the <see cref="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES" /> struct.</summary>
-    public static unsafe partial class D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIESTests
+    /// <summary>Validates that the <see cref="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES>(), Is.EqualTo(sizeof(D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES)));
-        }
+        Assert.That(Marshal.SizeOf<D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES>(), Is.EqualTo(sizeof(D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES)));
+    }
 
-        /// <summary>Validates that the <see cref="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES), Is.EqualTo(24));
-        }
+    /// <summary>Validates that the <see cref="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES), Is.EqualTo(24));
     }
 }

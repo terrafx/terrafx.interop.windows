@@ -5,16 +5,15 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TS_ATTRVAL
 {
-    public partial struct TS_ATTRVAL
-    {
-        [NativeTypeName("TS_ATTRID")]
-        public Guid idAttr;
+    [NativeTypeName("TS_ATTRID")]
+    public Guid idAttr;
 
-        [NativeTypeName("DWORD")]
-        public uint dwOverlapId;
+    [NativeTypeName("DWORD")]
+    public uint dwOverlapId;
 
-        public VARIANT varValue;
-    }
+    public VARIANT varValue;
 }

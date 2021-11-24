@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("C2CF3110-460E-4FC1-B9D0-8A1C0C9CC4BD")]
+public partial struct DesktopWallpaper
 {
-    [Guid("C2CF3110-460E-4FC1-B9D0-8A1C0C9CC4BD")]
-    public partial struct DesktopWallpaper
-    {
-    }
 }

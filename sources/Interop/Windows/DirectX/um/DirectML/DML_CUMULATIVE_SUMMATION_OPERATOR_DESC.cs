@@ -5,20 +5,19 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct DML_CUMULATIVE_SUMMATION_OPERATOR_DESC
 {
-    public unsafe partial struct DML_CUMULATIVE_SUMMATION_OPERATOR_DESC
-    {
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* InputTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* InputTensor;
 
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* OutputTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* OutputTensor;
 
-        public uint Axis;
+    public uint Axis;
 
-        public DML_AXIS_DIRECTION AxisDirection;
+    public DML_AXIS_DIRECTION AxisDirection;
 
-        public BOOL HasExclusiveSum;
-    }
+    public BOOL HasExclusiveSum;
 }

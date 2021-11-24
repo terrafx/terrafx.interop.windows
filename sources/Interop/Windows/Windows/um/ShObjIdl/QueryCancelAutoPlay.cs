@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("331F1768-05A9-4DDD-B86E-DAE34DDC998A")]
+public partial struct QueryCancelAutoPlay
 {
-    [Guid("331F1768-05A9-4DDD-B86E-DAE34DDC998A")]
-    public partial struct QueryCancelAutoPlay
-    {
-    }
 }

@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct WS_UNKNOWN_ENDPOINT_IDENTITY
-    {
-        public WS_ENDPOINT_IDENTITY identity;
+namespace TerraFX.Interop.Windows;
 
-        public IntPtr element;
-    }
+public partial struct WS_UNKNOWN_ENDPOINT_IDENTITY
+{
+    public WS_ENDPOINT_IDENTITY identity;
+
+    public IntPtr element;
 }

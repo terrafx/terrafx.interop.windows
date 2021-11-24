@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IAMDevMemoryAllocator" /> struct.</summary>
+public static unsafe partial class IAMDevMemoryAllocatorTests
 {
-    /// <summary>Provides validation of the <see cref="IAMDevMemoryAllocator" /> struct.</summary>
-    public static unsafe partial class IAMDevMemoryAllocatorTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMDevMemoryAllocator" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMDevMemoryAllocator" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAMDevMemoryAllocator).GUID, Is.EqualTo(IID_IAMDevMemoryAllocator));
-        }
+        Assert.That(typeof(IAMDevMemoryAllocator).GUID, Is.EqualTo(IID_IAMDevMemoryAllocator));
+    }
 
-        /// <summary>Validates that the <see cref="IAMDevMemoryAllocator" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IAMDevMemoryAllocator>(), Is.EqualTo(sizeof(IAMDevMemoryAllocator)));
-        }
+    /// <summary>Validates that the <see cref="IAMDevMemoryAllocator" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IAMDevMemoryAllocator>(), Is.EqualTo(sizeof(IAMDevMemoryAllocator)));
+    }
 
-        /// <summary>Validates that the <see cref="IAMDevMemoryAllocator" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IAMDevMemoryAllocator).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IAMDevMemoryAllocator" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IAMDevMemoryAllocator).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IAMDevMemoryAllocator" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IAMDevMemoryAllocator" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IAMDevMemoryAllocator), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IAMDevMemoryAllocator), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IAMDevMemoryAllocator), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IAMDevMemoryAllocator), Is.EqualTo(4));
         }
     }
 }

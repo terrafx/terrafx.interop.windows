@@ -3,18 +3,17 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct PUBLICKEYSTRUC
 {
-    public partial struct PUBLICKEYSTRUC
-    {
-        public byte bType;
+    public byte bType;
 
-        public byte bVersion;
+    public byte bVersion;
 
-        [NativeTypeName("WORD")]
-        public ushort reserved;
+    [NativeTypeName("WORD")]
+    public ushort reserved;
 
-        [NativeTypeName("ALG_ID")]
-        public uint aiKeyAlg;
-    }
+    [NativeTypeName("ALG_ID")]
+    public uint aiKeyAlg;
 }

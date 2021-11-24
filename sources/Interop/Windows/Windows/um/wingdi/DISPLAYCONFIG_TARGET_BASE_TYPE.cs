@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.1")]
-    public partial struct DISPLAYCONFIG_TARGET_BASE_TYPE
-    {
-        public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
+namespace TerraFX.Interop.Windows;
 
-        public DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY baseOutputTechnology;
-    }
+[SupportedOSPlatform("windows8.1")]
+public partial struct DISPLAYCONFIG_TARGET_BASE_TYPE
+{
+    public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
+
+    public DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY baseOutputTechnology;
 }

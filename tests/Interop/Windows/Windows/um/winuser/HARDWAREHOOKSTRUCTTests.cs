@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HARDWAREHOOKSTRUCT" /> struct.</summary>
+public static unsafe partial class HARDWAREHOOKSTRUCTTests
 {
-    /// <summary>Provides validation of the <see cref="HARDWAREHOOKSTRUCT" /> struct.</summary>
-    public static unsafe partial class HARDWAREHOOKSTRUCTTests
+    /// <summary>Validates that the <see cref="HARDWAREHOOKSTRUCT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="HARDWAREHOOKSTRUCT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HARDWAREHOOKSTRUCT>(), Is.EqualTo(sizeof(HARDWAREHOOKSTRUCT)));
-        }
+        Assert.That(Marshal.SizeOf<HARDWAREHOOKSTRUCT>(), Is.EqualTo(sizeof(HARDWAREHOOKSTRUCT)));
+    }
 
-        /// <summary>Validates that the <see cref="HARDWAREHOOKSTRUCT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HARDWAREHOOKSTRUCT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HARDWAREHOOKSTRUCT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HARDWAREHOOKSTRUCT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HARDWAREHOOKSTRUCT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="HARDWAREHOOKSTRUCT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(HARDWAREHOOKSTRUCT), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(HARDWAREHOOKSTRUCT), Is.EqualTo(16));
-            }
+            Assert.That(sizeof(HARDWAREHOOKSTRUCT), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(HARDWAREHOOKSTRUCT), Is.EqualTo(16));
         }
     }
 }

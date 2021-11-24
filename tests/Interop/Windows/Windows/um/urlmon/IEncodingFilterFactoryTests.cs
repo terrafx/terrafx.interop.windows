@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IEncodingFilterFactory" /> struct.</summary>
+public static unsafe partial class IEncodingFilterFactoryTests
 {
-    /// <summary>Provides validation of the <see cref="IEncodingFilterFactory" /> struct.</summary>
-    public static unsafe partial class IEncodingFilterFactoryTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IEncodingFilterFactory" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IEncodingFilterFactory" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IEncodingFilterFactory).GUID, Is.EqualTo(IID_IEncodingFilterFactory));
-        }
+        Assert.That(typeof(IEncodingFilterFactory).GUID, Is.EqualTo(IID_IEncodingFilterFactory));
+    }
 
-        /// <summary>Validates that the <see cref="IEncodingFilterFactory" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IEncodingFilterFactory>(), Is.EqualTo(sizeof(IEncodingFilterFactory)));
-        }
+    /// <summary>Validates that the <see cref="IEncodingFilterFactory" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IEncodingFilterFactory>(), Is.EqualTo(sizeof(IEncodingFilterFactory)));
+    }
 
-        /// <summary>Validates that the <see cref="IEncodingFilterFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IEncodingFilterFactory).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IEncodingFilterFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IEncodingFilterFactory).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IEncodingFilterFactory" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IEncodingFilterFactory" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IEncodingFilterFactory), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IEncodingFilterFactory), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IEncodingFilterFactory), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IEncodingFilterFactory), Is.EqualTo(4));
         }
     }
 }

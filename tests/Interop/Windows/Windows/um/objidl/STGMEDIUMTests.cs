@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="STGMEDIUM" /> struct.</summary>
+public static unsafe partial class STGMEDIUMTests
 {
-    /// <summary>Provides validation of the <see cref="STGMEDIUM" /> struct.</summary>
-    public static unsafe partial class STGMEDIUMTests
+    /// <summary>Validates that the <see cref="STGMEDIUM" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="STGMEDIUM" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<STGMEDIUM>(), Is.EqualTo(sizeof(STGMEDIUM)));
-        }
+        Assert.That(Marshal.SizeOf<STGMEDIUM>(), Is.EqualTo(sizeof(STGMEDIUM)));
+    }
 
-        /// <summary>Validates that the <see cref="STGMEDIUM" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(STGMEDIUM).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="STGMEDIUM" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(STGMEDIUM).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="STGMEDIUM" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="STGMEDIUM" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(STGMEDIUM), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(STGMEDIUM), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(STGMEDIUM), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(STGMEDIUM), Is.EqualTo(12));
         }
     }
 }

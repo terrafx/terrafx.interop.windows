@@ -7,16 +7,16 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static unsafe partial class CLSID
 {
-    public static unsafe partial class CLSID
+    public static ref readonly Guid CLSID_WICImagingFactory
     {
-        public static ref readonly Guid CLSID_WICImagingFactory
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x62, 0xF2, 0xCA, 0xCA,
                     0x70, 0x93,
                     0x15, 0x46,
@@ -30,16 +30,16 @@ namespace TerraFX.Interop.Windows
                     0x0A
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid CLSID_WICPngDecoder
+    public static ref readonly Guid CLSID_WICPngDecoder
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x7B, 0xA1, 0x9E, 0x38,
                     0x78, 0x50,
                     0xDE, 0x4C,
@@ -53,8 +53,7 @@ namespace TerraFX.Interop.Windows
                     0x51
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

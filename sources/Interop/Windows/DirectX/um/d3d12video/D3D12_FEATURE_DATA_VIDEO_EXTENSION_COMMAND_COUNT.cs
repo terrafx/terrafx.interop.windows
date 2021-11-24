@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
-{
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public partial struct D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_COUNT
-    {
-        public uint NodeIndex;
+namespace TerraFX.Interop.DirectX;
 
-        public uint CommandCount;
-    }
+[SupportedOSPlatform("windows10.0.19041.0")]
+public partial struct D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_COUNT
+{
+    public uint NodeIndex;
+
+    public uint CommandCount;
 }

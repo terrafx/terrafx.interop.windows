@@ -3,12 +3,11 @@
 // Ported from um/DirectML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum DML_RECURRENT_NETWORK_DIRECTION
 {
-    public enum DML_RECURRENT_NETWORK_DIRECTION
-    {
-        DML_RECURRENT_NETWORK_DIRECTION_FORWARD,
-        DML_RECURRENT_NETWORK_DIRECTION_BACKWARD,
-        DML_RECURRENT_NETWORK_DIRECTION_BIDIRECTIONAL,
-    }
+    DML_RECURRENT_NETWORK_DIRECTION_FORWARD,
+    DML_RECURRENT_NETWORK_DIRECTION_BACKWARD,
+    DML_RECURRENT_NETWORK_DIRECTION_BIDIRECTIONAL,
 }

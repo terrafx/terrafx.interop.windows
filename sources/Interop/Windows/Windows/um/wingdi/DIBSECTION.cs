@@ -3,20 +3,19 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct DIBSECTION
 {
-    public unsafe partial struct DIBSECTION
-    {
-        public BITMAP dsBm;
+    public BITMAP dsBm;
 
-        public BITMAPINFOHEADER dsBmih;
+    public BITMAPINFOHEADER dsBmih;
 
-        [NativeTypeName("DWORD [3]")]
-        public fixed uint dsBitfields[3];
+    [NativeTypeName("DWORD [3]")]
+    public fixed uint dsBitfields[3];
 
-        public HANDLE dshSection;
+    public HANDLE dshSection;
 
-        [NativeTypeName("DWORD")]
-        public uint dsOffset;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dsOffset;
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("2D59FCDA-BF4E-4ED6-B5DF-5B03B36B0A1F")]
+public partial struct CODECAPI_AVEncMPAEmphasisType
 {
-    [Guid("2D59FCDA-BF4E-4ED6-B5DF-5B03B36B0A1F")]
-    public partial struct CODECAPI_AVEncMPAEmphasisType
-    {
-    }
 }

@@ -7,34 +7,33 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SUBSCRIBE_GENERIC_TLS_EXTENSION
 {
-    public partial struct SUBSCRIBE_GENERIC_TLS_EXTENSION
+    [NativeTypeName("DWORD")]
+    public uint Flags;
+
+    [NativeTypeName("DWORD")]
+    public uint SubscriptionsCount;
+
+    [NativeTypeName("TLS_EXTENSION_SUBSCRIPTION [1]")]
+    public _Subscriptions_e__FixedBuffer Subscriptions;
+
+    public partial struct _Subscriptions_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+        public TLS_EXTENSION_SUBSCRIPTION e0;
 
-        [NativeTypeName("DWORD")]
-        public uint SubscriptionsCount;
-
-        [NativeTypeName("TLS_EXTENSION_SUBSCRIPTION [1]")]
-        public _Subscriptions_e__FixedBuffer Subscriptions;
-
-        public partial struct _Subscriptions_e__FixedBuffer
+        public ref TLS_EXTENSION_SUBSCRIPTION this[int index]
         {
-            public TLS_EXTENSION_SUBSCRIPTION e0;
-
-            public ref TLS_EXTENSION_SUBSCRIPTION this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<TLS_EXTENSION_SUBSCRIPTION> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<TLS_EXTENSION_SUBSCRIPTION> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

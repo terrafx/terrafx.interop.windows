@@ -3,26 +3,25 @@
 // Ported from um/d2d1.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public static unsafe partial class D2D1
 {
-    public static unsafe partial class D2D1
-    {
-        public const ulong D2D1_INVALID_TAG = ulong.MaxValue;
+    public const ulong D2D1_INVALID_TAG = ulong.MaxValue;
 
-        public const uint D2D1_INTERPOLATION_MODE_DEFINITION_NEAREST_NEIGHBOR = 0;
+    public const uint D2D1_INTERPOLATION_MODE_DEFINITION_NEAREST_NEIGHBOR = 0;
 
-        public const uint D2D1_INTERPOLATION_MODE_DEFINITION_LINEAR = 1;
+    public const uint D2D1_INTERPOLATION_MODE_DEFINITION_LINEAR = 1;
 
-        public const uint D2D1_INTERPOLATION_MODE_DEFINITION_CUBIC = 2;
+    public const uint D2D1_INTERPOLATION_MODE_DEFINITION_CUBIC = 2;
 
-        public const uint D2D1_INTERPOLATION_MODE_DEFINITION_MULTI_SAMPLE_LINEAR = 3;
+    public const uint D2D1_INTERPOLATION_MODE_DEFINITION_MULTI_SAMPLE_LINEAR = 3;
 
-        public const uint D2D1_INTERPOLATION_MODE_DEFINITION_ANISOTROPIC = 4;
+    public const uint D2D1_INTERPOLATION_MODE_DEFINITION_ANISOTROPIC = 4;
 
-        public const uint D2D1_INTERPOLATION_MODE_DEFINITION_HIGH_QUALITY_CUBIC = 5;
+    public const uint D2D1_INTERPOLATION_MODE_DEFINITION_HIGH_QUALITY_CUBIC = 5;
 
-        public const uint D2D1_INTERPOLATION_MODE_DEFINITION_FANT = 6;
+    public const uint D2D1_INTERPOLATION_MODE_DEFINITION_FANT = 6;
 
-        public const uint D2D1_INTERPOLATION_MODE_DEFINITION_MIPMAP_LINEAR = 7;
-    }
+    public const uint D2D1_INTERPOLATION_MODE_DEFINITION_MIPMAP_LINEAR = 7;
 }

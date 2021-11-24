@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("47206204-5ECA-11D2-960F-00C04F8EE628")]
+public partial struct SpSharedRecoContext
 {
-    [Guid("47206204-5ECA-11D2-960F-00C04F8EE628")]
-    public partial struct SpSharedRecoContext
-    {
-    }
 }

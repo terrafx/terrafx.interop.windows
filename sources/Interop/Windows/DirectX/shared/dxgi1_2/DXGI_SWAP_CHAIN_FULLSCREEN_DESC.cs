@@ -5,16 +5,15 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DXGI_SWAP_CHAIN_FULLSCREEN_DESC
 {
-    public partial struct DXGI_SWAP_CHAIN_FULLSCREEN_DESC
-    {
-        public DXGI_RATIONAL RefreshRate;
+    public DXGI_RATIONAL RefreshRate;
 
-        public DXGI_MODE_SCANLINE_ORDER ScanlineOrdering;
+    public DXGI_MODE_SCANLINE_ORDER ScanlineOrdering;
 
-        public DXGI_MODE_SCALING Scaling;
+    public DXGI_MODE_SCALING Scaling;
 
-        public BOOL Windowed;
-    }
+    public BOOL Windowed;
 }

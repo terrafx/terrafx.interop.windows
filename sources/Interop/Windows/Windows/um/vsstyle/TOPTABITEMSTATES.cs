@@ -3,14 +3,13 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum TOPTABITEMSTATES
 {
-    public enum TOPTABITEMSTATES
-    {
-        TTIS_NORMAL = 1,
-        TTIS_HOT = 2,
-        TTIS_SELECTED = 3,
-        TTIS_DISABLED = 4,
-        TTIS_FOCUSED = 5,
-    }
+    TTIS_NORMAL = 1,
+    TTIS_HOT = 2,
+    TTIS_SELECTED = 3,
+    TTIS_DISABLED = 4,
+    TTIS_FOCUSED = 5,
 }

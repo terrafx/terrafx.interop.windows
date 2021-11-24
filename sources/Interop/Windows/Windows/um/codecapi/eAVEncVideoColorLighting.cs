@@ -3,15 +3,14 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum eAVEncVideoColorLighting
 {
-    public enum eAVEncVideoColorLighting
-    {
-        eAVEncVideoColorLighting_SameAsSource = 0,
-        eAVEncVideoColorLighting_Unknown = 1,
-        eAVEncVideoColorLighting_Bright = 2,
-        eAVEncVideoColorLighting_Office = 3,
-        eAVEncVideoColorLighting_Dim = 4,
-        eAVEncVideoColorLighting_Dark = 5,
-    }
+    eAVEncVideoColorLighting_SameAsSource = 0,
+    eAVEncVideoColorLighting_Unknown = 1,
+    eAVEncVideoColorLighting_Bright = 2,
+    eAVEncVideoColorLighting_Office = 3,
+    eAVEncVideoColorLighting_Dim = 4,
+    eAVEncVideoColorLighting_Dark = 5,
 }

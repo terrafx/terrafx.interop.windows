@@ -7,416 +7,415 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3050F23D-98B5-11CF-BB82-00AA00BDCE0B")]
+[NativeTypeName("struct IHTMLTableCell : IDispatch")]
+[NativeInheritance("IDispatch")]
+public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
 {
-    [Guid("3050F23D-98B5-11CF-BB82-00AA00BDCE0B")]
-    [NativeTypeName("struct IHTMLTableCell : IDispatch")]
-    [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IHTMLTableCell*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, uint>)(lpVtbl[1]))((IHTMLTableCell*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, uint>)(lpVtbl[1]))((IHTMLTableCell*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, uint>)(lpVtbl[2]))((IHTMLTableCell*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, uint>)(lpVtbl[2]))((IHTMLTableCell*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetTypeInfoCount(uint* pctinfo)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, uint*, int>)(lpVtbl[3]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), pctinfo);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetTypeInfoCount(uint* pctinfo)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, uint*, int>)(lpVtbl[3]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), pctinfo);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(6)]
-        public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT put_rowSpan([NativeTypeName("long")] int v)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, int, int>)(lpVtbl[7]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT get_rowSpan([NativeTypeName("long *")] int* p)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, int*, int>)(lpVtbl[8]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT put_colSpan([NativeTypeName("long")] int v)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, int, int>)(lpVtbl[9]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT get_colSpan([NativeTypeName("long *")] int* p)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, int*, int>)(lpVtbl[10]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT put_align([NativeTypeName("BSTR")] ushort* v)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, ushort*, int>)(lpVtbl[11]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT get_align([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, ushort**, int>)(lpVtbl[12]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT put_vAlign([NativeTypeName("BSTR")] ushort* v)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, ushort*, int>)(lpVtbl[13]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT get_vAlign([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, ushort**, int>)(lpVtbl[14]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT put_bgColor(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, VARIANT, int>)(lpVtbl[15]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT get_bgColor(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, VARIANT*, int>)(lpVtbl[16]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT put_noWrap([NativeTypeName("VARIANT_BOOL")] short v)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, short, int>)(lpVtbl[17]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT get_noWrap([NativeTypeName("VARIANT_BOOL *")] short* p)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, short*, int>)(lpVtbl[18]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
+    public HRESULT put_background([NativeTypeName("BSTR")] ushort* v)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, ushort*, int>)(lpVtbl[19]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(20)]
+    public HRESULT get_background([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, ushort**, int>)(lpVtbl[20]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(21)]
+    public HRESULT put_borderColor(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, VARIANT, int>)(lpVtbl[21]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(22)]
+    public HRESULT get_borderColor(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, VARIANT*, int>)(lpVtbl[22]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(23)]
+    public HRESULT put_borderColorLight(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, VARIANT, int>)(lpVtbl[23]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(24)]
+    public HRESULT get_borderColorLight(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, VARIANT*, int>)(lpVtbl[24]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(25)]
+    public HRESULT put_borderColorDark(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, VARIANT, int>)(lpVtbl[25]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(26)]
+    public HRESULT get_borderColorDark(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, VARIANT*, int>)(lpVtbl[26]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(27)]
+    public HRESULT put_width(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, VARIANT, int>)(lpVtbl[27]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(28)]
+    public HRESULT get_width(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, VARIANT*, int>)(lpVtbl[28]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(29)]
+    public HRESULT put_height(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, VARIANT, int>)(lpVtbl[29]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(30)]
+    public HRESULT get_height(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, VARIANT*, int>)(lpVtbl[30]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(31)]
+    public HRESULT get_cellIndex([NativeTypeName("long *")] int* p)
+    {
+        return ((delegate* unmanaged<IHTMLTableCell*, int*, int>)(lpVtbl[31]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
+    }
+
+    public interface Interface : IDispatch.Interface
+    {
         [VtblIndex(7)]
-        public HRESULT put_rowSpan([NativeTypeName("long")] int v)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, int, int>)(lpVtbl[7]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_rowSpan([NativeTypeName("long")] int v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT get_rowSpan([NativeTypeName("long *")] int* p)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, int*, int>)(lpVtbl[8]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_rowSpan([NativeTypeName("long *")] int* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT put_colSpan([NativeTypeName("long")] int v)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, int, int>)(lpVtbl[9]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_colSpan([NativeTypeName("long")] int v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT get_colSpan([NativeTypeName("long *")] int* p)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, int*, int>)(lpVtbl[10]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_colSpan([NativeTypeName("long *")] int* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT put_align([NativeTypeName("BSTR")] ushort* v)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, ushort*, int>)(lpVtbl[11]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_align([NativeTypeName("BSTR")] ushort* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT get_align([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, ushort**, int>)(lpVtbl[12]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_align([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT put_vAlign([NativeTypeName("BSTR")] ushort* v)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, ushort*, int>)(lpVtbl[13]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_vAlign([NativeTypeName("BSTR")] ushort* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT get_vAlign([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, ushort**, int>)(lpVtbl[14]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_vAlign([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT put_bgColor(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, VARIANT, int>)(lpVtbl[15]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_bgColor(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT get_bgColor(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, VARIANT*, int>)(lpVtbl[16]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_bgColor(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT put_noWrap([NativeTypeName("VARIANT_BOOL")] short v)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, short, int>)(lpVtbl[17]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_noWrap([NativeTypeName("VARIANT_BOOL")] short v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT get_noWrap([NativeTypeName("VARIANT_BOOL *")] short* p)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, short*, int>)(lpVtbl[18]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_noWrap([NativeTypeName("VARIANT_BOOL *")] short* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT put_background([NativeTypeName("BSTR")] ushort* v)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, ushort*, int>)(lpVtbl[19]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_background([NativeTypeName("BSTR")] ushort* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT get_background([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, ushort**, int>)(lpVtbl[20]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_background([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public HRESULT put_borderColor(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, VARIANT, int>)(lpVtbl[21]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_borderColor(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        public HRESULT get_borderColor(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, VARIANT*, int>)(lpVtbl[22]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_borderColor(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        public HRESULT put_borderColorLight(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, VARIANT, int>)(lpVtbl[23]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_borderColorLight(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT get_borderColorLight(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, VARIANT*, int>)(lpVtbl[24]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_borderColorLight(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        public HRESULT put_borderColorDark(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, VARIANT, int>)(lpVtbl[25]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_borderColorDark(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        public HRESULT get_borderColorDark(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, VARIANT*, int>)(lpVtbl[26]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_borderColorDark(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        public HRESULT put_width(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, VARIANT, int>)(lpVtbl[27]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_width(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        public HRESULT get_width(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, VARIANT*, int>)(lpVtbl[28]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_width(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(29)]
-        public HRESULT put_height(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, VARIANT, int>)(lpVtbl[29]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_height(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
-        public HRESULT get_height(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, VARIANT*, int>)(lpVtbl[30]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_height(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        public HRESULT get_cellIndex([NativeTypeName("long *")] int* p)
-        {
-            return ((delegate* unmanaged<IHTMLTableCell*, int*, int>)(lpVtbl[31]))((IHTMLTableCell*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_cellIndex([NativeTypeName("long *")] int* p);
+    }
 
-        public interface Interface : IDispatch.Interface
-        {
-            [VtblIndex(7)]
-            HRESULT put_rowSpan([NativeTypeName("long")] int v);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(8)]
-            HRESULT get_rowSpan([NativeTypeName("long *")] int* p);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, uint> AddRef;
 
-            [VtblIndex(9)]
-            HRESULT put_colSpan([NativeTypeName("long")] int v);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, uint> Release;
 
-            [VtblIndex(10)]
-            HRESULT get_colSpan([NativeTypeName("long *")] int* p);
+        [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, uint*, int> GetTypeInfoCount;
 
-            [VtblIndex(11)]
-            HRESULT put_align([NativeTypeName("BSTR")] ushort* v);
+        [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
-            [VtblIndex(12)]
-            HRESULT get_align([NativeTypeName("BSTR *")] ushort** p);
+        [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
-            [VtblIndex(13)]
-            HRESULT put_vAlign([NativeTypeName("BSTR")] ushort* v);
+        [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
-            [VtblIndex(14)]
-            HRESULT get_vAlign([NativeTypeName("BSTR *")] ushort** p);
+        [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, int, int> put_rowSpan;
 
-            [VtblIndex(15)]
-            HRESULT put_bgColor(VARIANT v);
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, int*, int> get_rowSpan;
 
-            [VtblIndex(16)]
-            HRESULT get_bgColor(VARIANT* p);
+        [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, int, int> put_colSpan;
 
-            [VtblIndex(17)]
-            HRESULT put_noWrap([NativeTypeName("VARIANT_BOOL")] short v);
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, int*, int> get_colSpan;
 
-            [VtblIndex(18)]
-            HRESULT get_noWrap([NativeTypeName("VARIANT_BOOL *")] short* p);
+        [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, ushort*, int> put_align;
 
-            [VtblIndex(19)]
-            HRESULT put_background([NativeTypeName("BSTR")] ushort* v);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, ushort**, int> get_align;
 
-            [VtblIndex(20)]
-            HRESULT get_background([NativeTypeName("BSTR *")] ushort** p);
+        [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, ushort*, int> put_vAlign;
 
-            [VtblIndex(21)]
-            HRESULT put_borderColor(VARIANT v);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, ushort**, int> get_vAlign;
 
-            [VtblIndex(22)]
-            HRESULT get_borderColor(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, VARIANT, int> put_bgColor;
 
-            [VtblIndex(23)]
-            HRESULT put_borderColorLight(VARIANT v);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, VARIANT*, int> get_bgColor;
 
-            [VtblIndex(24)]
-            HRESULT get_borderColorLight(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, short, int> put_noWrap;
 
-            [VtblIndex(25)]
-            HRESULT put_borderColorDark(VARIANT v);
+        [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, short*, int> get_noWrap;
 
-            [VtblIndex(26)]
-            HRESULT get_borderColorDark(VARIANT* p);
+        [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, ushort*, int> put_background;
 
-            [VtblIndex(27)]
-            HRESULT put_width(VARIANT v);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, ushort**, int> get_background;
 
-            [VtblIndex(28)]
-            HRESULT get_width(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, VARIANT, int> put_borderColor;
 
-            [VtblIndex(29)]
-            HRESULT put_height(VARIANT v);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, VARIANT*, int> get_borderColor;
 
-            [VtblIndex(30)]
-            HRESULT get_height(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, VARIANT, int> put_borderColorLight;
 
-            [VtblIndex(31)]
-            HRESULT get_cellIndex([NativeTypeName("long *")] int* p);
-        }
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, VARIANT*, int> get_borderColorLight;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, VARIANT, int> put_borderColorDark;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, uint> AddRef;
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, VARIANT*, int> get_borderColorDark;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, uint> Release;
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, VARIANT, int> put_width;
 
-            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, uint*, int> GetTypeInfoCount;
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, VARIANT*, int> get_width;
 
-            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, VARIANT, int> put_height;
 
-            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, VARIANT*, int> get_height;
 
-            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
-
-            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, int, int> put_rowSpan;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, int*, int> get_rowSpan;
-
-            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, int, int> put_colSpan;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, int*, int> get_colSpan;
-
-            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, ushort*, int> put_align;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, ushort**, int> get_align;
-
-            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, ushort*, int> put_vAlign;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, ushort**, int> get_vAlign;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, VARIANT, int> put_bgColor;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, VARIANT*, int> get_bgColor;
-
-            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, short, int> put_noWrap;
-
-            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, short*, int> get_noWrap;
-
-            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, ushort*, int> put_background;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, ushort**, int> get_background;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, VARIANT, int> put_borderColor;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, VARIANT*, int> get_borderColor;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, VARIANT, int> put_borderColorLight;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, VARIANT*, int> get_borderColorLight;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, VARIANT, int> put_borderColorDark;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, VARIANT*, int> get_borderColorDark;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, VARIANT, int> put_width;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, VARIANT*, int> get_width;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, VARIANT, int> put_height;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, VARIANT*, int> get_height;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTableCell*, int*, int> get_cellIndex;
-        }
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTableCell*, int*, int> get_cellIndex;
     }
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMalloc" /> struct.</summary>
+public static unsafe partial class IMallocTests
 {
-    /// <summary>Provides validation of the <see cref="IMalloc" /> struct.</summary>
-    public static unsafe partial class IMallocTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMalloc" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMalloc" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMalloc).GUID, Is.EqualTo(IID_IMalloc));
-        }
+        Assert.That(typeof(IMalloc).GUID, Is.EqualTo(IID_IMalloc));
+    }
 
-        /// <summary>Validates that the <see cref="IMalloc" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMalloc>(), Is.EqualTo(sizeof(IMalloc)));
-        }
+    /// <summary>Validates that the <see cref="IMalloc" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMalloc>(), Is.EqualTo(sizeof(IMalloc)));
+    }
 
-        /// <summary>Validates that the <see cref="IMalloc" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMalloc).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMalloc" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMalloc).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMalloc" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMalloc" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMalloc), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMalloc), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMalloc), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMalloc), Is.EqualTo(4));
         }
     }
 }

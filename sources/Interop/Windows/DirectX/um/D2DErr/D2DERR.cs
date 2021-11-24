@@ -6,17 +6,16 @@
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.Windows.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public static partial class D2DERR
 {
-    public static partial class D2DERR
-    {
-        [NativeTypeName("#define D2DERR_UNSUPPORTED_PIXEL_FORMAT WINCODEC_ERR_UNSUPPORTEDPIXELFORMAT")]
-        public const int D2DERR_UNSUPPORTED_PIXEL_FORMAT = unchecked((int)(0x88982F80));
+    [NativeTypeName("#define D2DERR_UNSUPPORTED_PIXEL_FORMAT WINCODEC_ERR_UNSUPPORTEDPIXELFORMAT")]
+    public const int D2DERR_UNSUPPORTED_PIXEL_FORMAT = unchecked((int)(0x88982F80));
 
-        [NativeTypeName("#define D2DERR_INSUFFICIENT_BUFFER HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)")]
-        public static HRESULT D2DERR_INSUFFICIENT_BUFFER => HRESULT_FROM_WIN32(122);
+    [NativeTypeName("#define D2DERR_INSUFFICIENT_BUFFER HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)")]
+    public static HRESULT D2DERR_INSUFFICIENT_BUFFER => HRESULT_FROM_WIN32(122);
 
-        [NativeTypeName("#define D2DERR_FILE_NOT_FOUND HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND)")]
-        public static HRESULT D2DERR_FILE_NOT_FOUND => HRESULT_FROM_WIN32(2);
-    }
+    [NativeTypeName("#define D2DERR_FILE_NOT_FOUND HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND)")]
+    public static HRESULT D2DERR_FILE_NOT_FOUND => HRESULT_FROM_WIN32(2);
 }

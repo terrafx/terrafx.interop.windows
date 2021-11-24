@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PSAPI_WORKING_SET_EX_BLOCK" /> struct.</summary>
+public static unsafe partial class PSAPI_WORKING_SET_EX_BLOCKTests
 {
-    /// <summary>Provides validation of the <see cref="PSAPI_WORKING_SET_EX_BLOCK" /> struct.</summary>
-    public static unsafe partial class PSAPI_WORKING_SET_EX_BLOCKTests
+    /// <summary>Validates that the <see cref="PSAPI_WORKING_SET_EX_BLOCK" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PSAPI_WORKING_SET_EX_BLOCK" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PSAPI_WORKING_SET_EX_BLOCK>(), Is.EqualTo(sizeof(PSAPI_WORKING_SET_EX_BLOCK)));
-        }
+        Assert.That(Marshal.SizeOf<PSAPI_WORKING_SET_EX_BLOCK>(), Is.EqualTo(sizeof(PSAPI_WORKING_SET_EX_BLOCK)));
+    }
 
-        /// <summary>Validates that the <see cref="PSAPI_WORKING_SET_EX_BLOCK" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutExplicitTest()
-        {
-            Assert.That(typeof(PSAPI_WORKING_SET_EX_BLOCK).IsExplicitLayout, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PSAPI_WORKING_SET_EX_BLOCK" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutExplicitTest()
+    {
+        Assert.That(typeof(PSAPI_WORKING_SET_EX_BLOCK).IsExplicitLayout, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PSAPI_WORKING_SET_EX_BLOCK" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="PSAPI_WORKING_SET_EX_BLOCK" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(PSAPI_WORKING_SET_EX_BLOCK), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(PSAPI_WORKING_SET_EX_BLOCK), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(PSAPI_WORKING_SET_EX_BLOCK), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(PSAPI_WORKING_SET_EX_BLOCK), Is.EqualTo(4));
         }
     }
 }

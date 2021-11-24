@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDeskBar" /> struct.</summary>
+public static unsafe partial class IDeskBarTests
 {
-    /// <summary>Provides validation of the <see cref="IDeskBar" /> struct.</summary>
-    public static unsafe partial class IDeskBarTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDeskBar" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDeskBar" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDeskBar).GUID, Is.EqualTo(IID_IDeskBar));
-        }
+        Assert.That(typeof(IDeskBar).GUID, Is.EqualTo(IID_IDeskBar));
+    }
 
-        /// <summary>Validates that the <see cref="IDeskBar" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDeskBar>(), Is.EqualTo(sizeof(IDeskBar)));
-        }
+    /// <summary>Validates that the <see cref="IDeskBar" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDeskBar>(), Is.EqualTo(sizeof(IDeskBar)));
+    }
 
-        /// <summary>Validates that the <see cref="IDeskBar" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDeskBar).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDeskBar" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDeskBar).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDeskBar" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDeskBar" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDeskBar), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDeskBar), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDeskBar), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDeskBar), Is.EqualTo(4));
         }
     }
 }

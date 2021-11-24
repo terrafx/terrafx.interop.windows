@@ -7,18 +7,18 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
-{
-    public static unsafe partial class D3D11
-    {
-        public const int D3D11_OMAC_SIZE = 16;
+namespace TerraFX.Interop.DirectX;
 
-        public static ref readonly Guid D3D11_DECODER_PROFILE_MPEG2AND1_VLD
+public static unsafe partial class D3D11
+{
+    public const int D3D11_OMAC_SIZE = 16;
+
+    public static ref readonly Guid D3D11_DECODER_PROFILE_MPEG2AND1_VLD
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x12, 0x5F, 0x69, 0x86,
                     0x0E, 0x34,
                     0x04, 0x4F,
@@ -32,8 +32,7 @@ namespace TerraFX.Interop.DirectX
                     0x60
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ITfInputProcessorProfilesEx" /> struct.</summary>
+public static unsafe partial class ITfInputProcessorProfilesExTests
 {
-    /// <summary>Provides validation of the <see cref="ITfInputProcessorProfilesEx" /> struct.</summary>
-    public static unsafe partial class ITfInputProcessorProfilesExTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfInputProcessorProfilesEx" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfInputProcessorProfilesEx" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ITfInputProcessorProfilesEx).GUID, Is.EqualTo(IID_ITfInputProcessorProfilesEx));
-        }
+        Assert.That(typeof(ITfInputProcessorProfilesEx).GUID, Is.EqualTo(IID_ITfInputProcessorProfilesEx));
+    }
 
-        /// <summary>Validates that the <see cref="ITfInputProcessorProfilesEx" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ITfInputProcessorProfilesEx>(), Is.EqualTo(sizeof(ITfInputProcessorProfilesEx)));
-        }
+    /// <summary>Validates that the <see cref="ITfInputProcessorProfilesEx" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ITfInputProcessorProfilesEx>(), Is.EqualTo(sizeof(ITfInputProcessorProfilesEx)));
+    }
 
-        /// <summary>Validates that the <see cref="ITfInputProcessorProfilesEx" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ITfInputProcessorProfilesEx).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ITfInputProcessorProfilesEx" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ITfInputProcessorProfilesEx).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ITfInputProcessorProfilesEx" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ITfInputProcessorProfilesEx" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ITfInputProcessorProfilesEx), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ITfInputProcessorProfilesEx), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ITfInputProcessorProfilesEx), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ITfInputProcessorProfilesEx), Is.EqualTo(4));
         }
     }
 }

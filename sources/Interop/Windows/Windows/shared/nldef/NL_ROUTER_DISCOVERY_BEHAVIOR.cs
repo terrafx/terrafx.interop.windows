@@ -3,13 +3,12 @@
 // Ported from shared/nldef.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum NL_ROUTER_DISCOVERY_BEHAVIOR
 {
-    public enum NL_ROUTER_DISCOVERY_BEHAVIOR
-    {
-        RouterDiscoveryDisabled = 0,
-        RouterDiscoveryEnabled,
-        RouterDiscoveryDhcp,
-        RouterDiscoveryUnchanged = -1,
-    }
+    RouterDiscoveryDisabled = 0,
+    RouterDiscoveryEnabled,
+    RouterDiscoveryDhcp,
+    RouterDiscoveryUnchanged = -1,
 }

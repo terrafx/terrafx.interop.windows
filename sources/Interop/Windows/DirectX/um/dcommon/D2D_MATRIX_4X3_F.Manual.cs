@@ -8,34 +8,34 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D_MATRIX_4X3_F : IEquatable<D2D_MATRIX_4X3_F>
 {
-    public partial struct D2D_MATRIX_4X3_F : IEquatable<D2D_MATRIX_4X3_F>
+    public D2D_MATRIX_4X3_F(float m11, float m12, float m13, float m21, float m22, float m23, float m31, float m32, float m33, float m41, float m42, float m43)
     {
-        public D2D_MATRIX_4X3_F(float m11, float m12, float m13, float m21, float m22, float m23, float m31, float m32, float m33, float m41, float m42, float m43)
-        {
-            Unsafe.SkipInit(out this);
+        Unsafe.SkipInit(out this);
 
-            _11 = m11;
-            _12 = m12;
-            _13 = m13;
-            _21 = m21;
-            _22 = m22;
-            _23 = m23;
-            _31 = m31;
-            _32 = m32;
-            _33 = m33;
-            _41 = m41;
-            _42 = m42;
-            _43 = m43;
-        }
+        _11 = m11;
+        _12 = m12;
+        _13 = m13;
+        _21 = m21;
+        _22 = m22;
+        _23 = m23;
+        _31 = m31;
+        _32 = m32;
+        _33 = m33;
+        _41 = m41;
+        _42 = m42;
+        _43 = m43;
+    }
 
-        public static ref readonly D2D_MATRIX_4X3_F Identity
+    public static ref readonly D2D_MATRIX_4X3_F Identity
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x00, 0x00, 0x80, 0x3F,
                     0x00, 0x00, 0x00, 0x00,
                     0x00, 0x00, 0x00, 0x00,
@@ -50,44 +50,43 @@ namespace TerraFX.Interop.DirectX
                     0x00, 0x00, 0x00, 0x00,
                 };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<D2D_MATRIX_4X3_F>());
-                return ref Unsafe.As<byte, D2D_MATRIX_4X3_F>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<D2D_MATRIX_4X3_F>());
+            return ref Unsafe.As<byte, D2D_MATRIX_4X3_F>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static bool operator ==([NativeTypeName("const D2D_MATRIX_4X3_F &")] in D2D_MATRIX_4X3_F l, [NativeTypeName("const D2D_MATRIX_4X3_F &")] in D2D_MATRIX_4X3_F r)
+    public static bool operator ==([NativeTypeName("const D2D_MATRIX_4X3_F &")] in D2D_MATRIX_4X3_F l, [NativeTypeName("const D2D_MATRIX_4X3_F &")] in D2D_MATRIX_4X3_F r)
+    {
+        return (l._11 == r._11) && (l._12 == r._12) && (l._13 == r._13)
+            && (l._21 == r._21) && (l._22 == r._22) && (l._23 == r._23)
+            && (l._31 == r._31) && (l._32 == r._32) && (l._33 == r._33)
+            && (l._41 == r._41) && (l._42 == r._42) && (l._43 == r._43);
+    }
+
+    public static bool operator !=([NativeTypeName("const D2D_MATRIX_4X3_F &")] in D2D_MATRIX_4X3_F l, [NativeTypeName("const D2D_MATRIX_4X3_F &")] in D2D_MATRIX_4X3_F r)
+        => !(l == r);
+
+    public bool Equals(D2D_MATRIX_4X3_F other) => this == other;
+
+    public override bool Equals(object? obj) => (obj is D2D_MATRIX_4X3_F other) && this == other;
+
+    public override int GetHashCode()
+    {
+        var hashCode = new HashCode();
         {
-            return (l._11 == r._11) && (l._12 == r._12) && (l._13 == r._13)
-                && (l._21 == r._21) && (l._22 == r._22) && (l._23 == r._23)
-                && (l._31 == r._31) && (l._32 == r._32) && (l._33 == r._33)
-                && (l._41 == r._41) && (l._42 == r._42) && (l._43 == r._43);
+            hashCode.Add(_11);
+            hashCode.Add(_12);
+            hashCode.Add(_13);
+            hashCode.Add(_21);
+            hashCode.Add(_22);
+            hashCode.Add(_23);
+            hashCode.Add(_31);
+            hashCode.Add(_32);
+            hashCode.Add(_33);
+            hashCode.Add(_41);
+            hashCode.Add(_42);
+            hashCode.Add(_43);
         }
-
-        public static bool operator !=([NativeTypeName("const D2D_MATRIX_4X3_F &")] in D2D_MATRIX_4X3_F l, [NativeTypeName("const D2D_MATRIX_4X3_F &")] in D2D_MATRIX_4X3_F r)
-            => !(l == r);
-
-        public bool Equals(D2D_MATRIX_4X3_F other) => this == other;
-
-        public override bool Equals(object? obj) => (obj is D2D_MATRIX_4X3_F other) && this == other;
-
-        public override int GetHashCode()
-        {
-            var hashCode = new HashCode();
-            {
-                hashCode.Add(_11);
-                hashCode.Add(_12);
-                hashCode.Add(_13);
-                hashCode.Add(_21);
-                hashCode.Add(_22);
-                hashCode.Add(_23);
-                hashCode.Add(_31);
-                hashCode.Add(_32);
-                hashCode.Add(_33);
-                hashCode.Add(_41);
-                hashCode.Add(_42);
-                hashCode.Add(_43);
-            }
-            return hashCode.ToHashCode();
-        }
+        return hashCode.ToHashCode();
     }
 }

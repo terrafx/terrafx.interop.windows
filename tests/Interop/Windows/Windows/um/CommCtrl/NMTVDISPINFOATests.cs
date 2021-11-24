@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NMTVDISPINFOA" /> struct.</summary>
+public static unsafe partial class NMTVDISPINFOATests
 {
-    /// <summary>Provides validation of the <see cref="NMTVDISPINFOA" /> struct.</summary>
-    public static unsafe partial class NMTVDISPINFOATests
+    /// <summary>Validates that the <see cref="NMTVDISPINFOA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NMTVDISPINFOA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NMTVDISPINFOA>(), Is.EqualTo(sizeof(NMTVDISPINFOA)));
-        }
+        Assert.That(Marshal.SizeOf<NMTVDISPINFOA>(), Is.EqualTo(sizeof(NMTVDISPINFOA)));
+    }
 
-        /// <summary>Validates that the <see cref="NMTVDISPINFOA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NMTVDISPINFOA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NMTVDISPINFOA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NMTVDISPINFOA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NMTVDISPINFOA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="NMTVDISPINFOA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(NMTVDISPINFOA), Is.EqualTo(80));
-            }
-            else
-            {
-                Assert.That(sizeof(NMTVDISPINFOA), Is.EqualTo(52));
-            }
+            Assert.That(sizeof(NMTVDISPINFOA), Is.EqualTo(80));
+        }
+        else
+        {
+            Assert.That(sizeof(NMTVDISPINFOA), Is.EqualTo(52));
         }
     }
 }

@@ -3,26 +3,25 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TAPE_STATISTICS
 {
-    public partial struct TAPE_STATISTICS
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        public LARGE_INTEGER RecoveredWrites;
+    public LARGE_INTEGER RecoveredWrites;
 
-        public LARGE_INTEGER UnrecoveredWrites;
+    public LARGE_INTEGER UnrecoveredWrites;
 
-        public LARGE_INTEGER RecoveredReads;
+    public LARGE_INTEGER RecoveredReads;
 
-        public LARGE_INTEGER UnrecoveredReads;
+    public LARGE_INTEGER UnrecoveredReads;
 
-        public byte CompressionRatioReads;
+    public byte CompressionRatioReads;
 
-        public byte CompressionRatioWrites;
-    }
+    public byte CompressionRatioWrites;
 }

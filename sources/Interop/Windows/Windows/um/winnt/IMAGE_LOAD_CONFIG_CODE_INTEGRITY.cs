@@ -3,20 +3,19 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct IMAGE_LOAD_CONFIG_CODE_INTEGRITY
 {
-    public partial struct IMAGE_LOAD_CONFIG_CODE_INTEGRITY
-    {
-        [NativeTypeName("WORD")]
-        public ushort Flags;
+    [NativeTypeName("WORD")]
+    public ushort Flags;
 
-        [NativeTypeName("WORD")]
-        public ushort Catalog;
+    [NativeTypeName("WORD")]
+    public ushort Catalog;
 
-        [NativeTypeName("DWORD")]
-        public uint CatalogOffset;
+    [NativeTypeName("DWORD")]
+    public uint CatalogOffset;
 
-        [NativeTypeName("DWORD")]
-        public uint Reserved;
-    }
+    [NativeTypeName("DWORD")]
+    public uint Reserved;
 }

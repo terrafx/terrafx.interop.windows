@@ -3,13 +3,12 @@
 // Ported from um/mfplay.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum _MFP_CREATION_OPTIONS
 {
-    public enum _MFP_CREATION_OPTIONS
-    {
-        MFP_OPTION_NONE = 0,
-        MFP_OPTION_FREE_THREADED_CALLBACK = 0x1,
-        MFP_OPTION_NO_MMCSS = 0x2,
-        MFP_OPTION_NO_REMOTE_DESKTOP_OPTIMIZATION = 0x4,
-    }
+    MFP_OPTION_NONE = 0,
+    MFP_OPTION_FREE_THREADED_CALLBACK = 0x1,
+    MFP_OPTION_NO_MMCSS = 0x2,
+    MFP_OPTION_NO_REMOTE_DESKTOP_OPTIMIZATION = 0x4,
 }

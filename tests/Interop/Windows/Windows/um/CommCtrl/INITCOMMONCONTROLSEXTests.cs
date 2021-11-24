@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="INITCOMMONCONTROLSEX" /> struct.</summary>
+public static unsafe partial class INITCOMMONCONTROLSEXTests
 {
-    /// <summary>Provides validation of the <see cref="INITCOMMONCONTROLSEX" /> struct.</summary>
-    public static unsafe partial class INITCOMMONCONTROLSEXTests
+    /// <summary>Validates that the <see cref="INITCOMMONCONTROLSEX" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="INITCOMMONCONTROLSEX" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<INITCOMMONCONTROLSEX>(), Is.EqualTo(sizeof(INITCOMMONCONTROLSEX)));
-        }
+        Assert.That(Marshal.SizeOf<INITCOMMONCONTROLSEX>(), Is.EqualTo(sizeof(INITCOMMONCONTROLSEX)));
+    }
 
-        /// <summary>Validates that the <see cref="INITCOMMONCONTROLSEX" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(INITCOMMONCONTROLSEX).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="INITCOMMONCONTROLSEX" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(INITCOMMONCONTROLSEX).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="INITCOMMONCONTROLSEX" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(INITCOMMONCONTROLSEX), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="INITCOMMONCONTROLSEX" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(INITCOMMONCONTROLSEX), Is.EqualTo(8));
     }
 }

@@ -3,21 +3,20 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct HELPINFO
 {
-    public partial struct HELPINFO
-    {
-        public uint cbSize;
+    public uint cbSize;
 
-        public int iContextType;
+    public int iContextType;
 
-        public int iCtrlId;
+    public int iCtrlId;
 
-        public HANDLE hItemHandle;
+    public HANDLE hItemHandle;
 
-        [NativeTypeName("DWORD_PTR")]
-        public nuint dwContextId;
+    [NativeTypeName("DWORD_PTR")]
+    public nuint dwContextId;
 
-        public POINT MousePos;
-    }
+    public POINT MousePos;
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ITensorNative" /> struct.</summary>
+public static unsafe partial class ITensorNativeTests
 {
-    /// <summary>Provides validation of the <see cref="ITensorNative" /> struct.</summary>
-    public static unsafe partial class ITensorNativeTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITensorNative" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITensorNative" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ITensorNative).GUID, Is.EqualTo(IID_ITensorNative));
-        }
+        Assert.That(typeof(ITensorNative).GUID, Is.EqualTo(IID_ITensorNative));
+    }
 
-        /// <summary>Validates that the <see cref="ITensorNative" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ITensorNative>(), Is.EqualTo(sizeof(ITensorNative)));
-        }
+    /// <summary>Validates that the <see cref="ITensorNative" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ITensorNative>(), Is.EqualTo(sizeof(ITensorNative)));
+    }
 
-        /// <summary>Validates that the <see cref="ITensorNative" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ITensorNative).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ITensorNative" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ITensorNative).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ITensorNative" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ITensorNative" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ITensorNative), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ITensorNative), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ITensorNative), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ITensorNative), Is.EqualTo(4));
         }
     }
 }

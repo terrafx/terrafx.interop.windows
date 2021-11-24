@@ -8,38 +8,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class CRYPT_OBJECT_LOCATOR_PROVIDER_TABLETests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class CRYPT_OBJECT_LOCATOR_PROVIDER_TABLETests
+    /// <summary>Validates that the <see cref="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE>(), Is.EqualTo(sizeof(CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE)));
-        }
+        Assert.That(Marshal.SizeOf<CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE>(), Is.EqualTo(sizeof(CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE)));
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE), Is.EqualTo(48));
-            }
-            else
-            {
-                Assert.That(sizeof(CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE), Is.EqualTo(24));
-            }
+            Assert.That(sizeof(CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE), Is.EqualTo(48));
+        }
+        else
+        {
+            Assert.That(sizeof(CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE), Is.EqualTo(24));
         }
     }
 }

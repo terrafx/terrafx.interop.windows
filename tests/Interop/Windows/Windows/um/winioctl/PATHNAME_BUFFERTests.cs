@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PATHNAME_BUFFER" /> struct.</summary>
+public static unsafe partial class PATHNAME_BUFFERTests
 {
-    /// <summary>Provides validation of the <see cref="PATHNAME_BUFFER" /> struct.</summary>
-    public static unsafe partial class PATHNAME_BUFFERTests
+    /// <summary>Validates that the <see cref="PATHNAME_BUFFER" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PATHNAME_BUFFER" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PATHNAME_BUFFER>(), Is.EqualTo(sizeof(PATHNAME_BUFFER)));
-        }
+        Assert.That(Marshal.SizeOf<PATHNAME_BUFFER>(), Is.EqualTo(sizeof(PATHNAME_BUFFER)));
+    }
 
-        /// <summary>Validates that the <see cref="PATHNAME_BUFFER" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PATHNAME_BUFFER).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PATHNAME_BUFFER" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PATHNAME_BUFFER).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PATHNAME_BUFFER" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(PATHNAME_BUFFER), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="PATHNAME_BUFFER" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(PATHNAME_BUFFER), Is.EqualTo(8));
     }
 }

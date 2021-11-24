@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="StartParam" /> struct.</summary>
+public static unsafe partial class StartParamTests
 {
-    /// <summary>Provides validation of the <see cref="StartParam" /> struct.</summary>
-    public static unsafe partial class StartParamTests
+    /// <summary>Validates that the <see cref="StartParam" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="StartParam" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<StartParam>(), Is.EqualTo(sizeof(StartParam)));
-        }
+        Assert.That(Marshal.SizeOf<StartParam>(), Is.EqualTo(sizeof(StartParam)));
+    }
 
-        /// <summary>Validates that the <see cref="StartParam" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(StartParam).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="StartParam" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(StartParam).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="StartParam" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="StartParam" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(StartParam), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(StartParam), Is.EqualTo(24));
-            }
+            Assert.That(sizeof(StartParam), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(StartParam), Is.EqualTo(24));
         }
     }
 }

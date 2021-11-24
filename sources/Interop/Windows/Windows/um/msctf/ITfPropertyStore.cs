@@ -7,168 +7,167 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("6834B120-88CB-11D2-BF45-00105A2799B5")]
+[NativeTypeName("struct ITfPropertyStore : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface
 {
-    [Guid("6834B120-88CB-11D2-BF45-00105A2799B5")]
-    [NativeTypeName("struct ITfPropertyStore : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ITfPropertyStore*, Guid*, void**, int>)(lpVtbl[0]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ITfPropertyStore*, Guid*, void**, int>)(lpVtbl[0]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ITfPropertyStore*, uint>)(lpVtbl[1]))((ITfPropertyStore*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ITfPropertyStore*, uint>)(lpVtbl[1]))((ITfPropertyStore*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ITfPropertyStore*, uint>)(lpVtbl[2]))((ITfPropertyStore*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ITfPropertyStore*, uint>)(lpVtbl[2]))((ITfPropertyStore*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetType(Guid* pguid)
+    {
+        return ((delegate* unmanaged<ITfPropertyStore*, Guid*, int>)(lpVtbl[3]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pguid);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetDataType([NativeTypeName("DWORD *")] uint* pdwReserved)
+    {
+        return ((delegate* unmanaged<ITfPropertyStore*, uint*, int>)(lpVtbl[4]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pdwReserved);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetData(VARIANT* pvarValue)
+    {
+        return ((delegate* unmanaged<ITfPropertyStore*, VARIANT*, int>)(lpVtbl[5]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pvarValue);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT OnTextUpdated([NativeTypeName("DWORD")] uint dwFlags, ITfRange* pRangeNew, BOOL* pfAccept)
+    {
+        return ((delegate* unmanaged<ITfPropertyStore*, uint, ITfRange*, BOOL*, int>)(lpVtbl[6]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), dwFlags, pRangeNew, pfAccept);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT Shrink(ITfRange* pRangeNew, BOOL* pfFree)
+    {
+        return ((delegate* unmanaged<ITfPropertyStore*, ITfRange*, BOOL*, int>)(lpVtbl[7]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pRangeNew, pfFree);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT Divide(ITfRange* pRangeThis, ITfRange* pRangeNew, ITfPropertyStore** ppPropStore)
+    {
+        return ((delegate* unmanaged<ITfPropertyStore*, ITfRange*, ITfRange*, ITfPropertyStore**, int>)(lpVtbl[8]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pRangeThis, pRangeNew, ppPropStore);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT Clone(ITfPropertyStore** pPropStore)
+    {
+        return ((delegate* unmanaged<ITfPropertyStore*, ITfPropertyStore**, int>)(lpVtbl[9]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pPropStore);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT GetPropertyRangeCreator([NativeTypeName("CLSID *")] Guid* pclsid)
+    {
+        return ((delegate* unmanaged<ITfPropertyStore*, Guid*, int>)(lpVtbl[10]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pclsid);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT Serialize(IStream* pStream, [NativeTypeName("ULONG *")] uint* pcb)
+    {
+        return ((delegate* unmanaged<ITfPropertyStore*, IStream*, uint*, int>)(lpVtbl[11]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pStream, pcb);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetType(Guid* pguid)
-        {
-            return ((delegate* unmanaged<ITfPropertyStore*, Guid*, int>)(lpVtbl[3]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pguid);
-        }
+        HRESULT GetType(Guid* pguid);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetDataType([NativeTypeName("DWORD *")] uint* pdwReserved)
-        {
-            return ((delegate* unmanaged<ITfPropertyStore*, uint*, int>)(lpVtbl[4]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pdwReserved);
-        }
+        HRESULT GetDataType([NativeTypeName("DWORD *")] uint* pdwReserved);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetData(VARIANT* pvarValue)
-        {
-            return ((delegate* unmanaged<ITfPropertyStore*, VARIANT*, int>)(lpVtbl[5]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pvarValue);
-        }
+        HRESULT GetData(VARIANT* pvarValue);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT OnTextUpdated([NativeTypeName("DWORD")] uint dwFlags, ITfRange* pRangeNew, BOOL* pfAccept)
-        {
-            return ((delegate* unmanaged<ITfPropertyStore*, uint, ITfRange*, BOOL*, int>)(lpVtbl[6]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), dwFlags, pRangeNew, pfAccept);
-        }
+        HRESULT OnTextUpdated([NativeTypeName("DWORD")] uint dwFlags, ITfRange* pRangeNew, BOOL* pfAccept);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT Shrink(ITfRange* pRangeNew, BOOL* pfFree)
-        {
-            return ((delegate* unmanaged<ITfPropertyStore*, ITfRange*, BOOL*, int>)(lpVtbl[7]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pRangeNew, pfFree);
-        }
+        HRESULT Shrink(ITfRange* pRangeNew, BOOL* pfFree);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT Divide(ITfRange* pRangeThis, ITfRange* pRangeNew, ITfPropertyStore** ppPropStore)
-        {
-            return ((delegate* unmanaged<ITfPropertyStore*, ITfRange*, ITfRange*, ITfPropertyStore**, int>)(lpVtbl[8]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pRangeThis, pRangeNew, ppPropStore);
-        }
+        HRESULT Divide(ITfRange* pRangeThis, ITfRange* pRangeNew, ITfPropertyStore** ppPropStore);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT Clone(ITfPropertyStore** pPropStore)
-        {
-            return ((delegate* unmanaged<ITfPropertyStore*, ITfPropertyStore**, int>)(lpVtbl[9]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pPropStore);
-        }
+        HRESULT Clone(ITfPropertyStore** pPropStore);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetPropertyRangeCreator([NativeTypeName("CLSID *")] Guid* pclsid)
-        {
-            return ((delegate* unmanaged<ITfPropertyStore*, Guid*, int>)(lpVtbl[10]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pclsid);
-        }
+        HRESULT GetPropertyRangeCreator([NativeTypeName("CLSID *")] Guid* pclsid);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT Serialize(IStream* pStream, [NativeTypeName("ULONG *")] uint* pcb)
-        {
-            return ((delegate* unmanaged<ITfPropertyStore*, IStream*, uint*, int>)(lpVtbl[11]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pStream, pcb);
-        }
+        HRESULT Serialize(IStream* pStream, [NativeTypeName("ULONG *")] uint* pcb);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetType(Guid* pguid);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfPropertyStore*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetDataType([NativeTypeName("DWORD *")] uint* pdwReserved);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfPropertyStore*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT GetData(VARIANT* pvarValue);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfPropertyStore*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT OnTextUpdated([NativeTypeName("DWORD")] uint dwFlags, ITfRange* pRangeNew, BOOL* pfAccept);
+        [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+        public new delegate* unmanaged<ITfPropertyStore*, Guid*, int> GetType;
 
-            [VtblIndex(7)]
-            HRESULT Shrink(ITfRange* pRangeNew, BOOL* pfFree);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfPropertyStore*, uint*, int> GetDataType;
 
-            [VtblIndex(8)]
-            HRESULT Divide(ITfRange* pRangeThis, ITfRange* pRangeNew, ITfPropertyStore** ppPropStore);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfPropertyStore*, VARIANT*, int> GetData;
 
-            [VtblIndex(9)]
-            HRESULT Clone(ITfPropertyStore** pPropStore);
+        [NativeTypeName("HRESULT (DWORD, ITfRange *, BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfPropertyStore*, uint, ITfRange*, BOOL*, int> OnTextUpdated;
 
-            [VtblIndex(10)]
-            HRESULT GetPropertyRangeCreator([NativeTypeName("CLSID *")] Guid* pclsid);
+        [NativeTypeName("HRESULT (ITfRange *, BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfPropertyStore*, ITfRange*, BOOL*, int> Shrink;
 
-            [VtblIndex(11)]
-            HRESULT Serialize(IStream* pStream, [NativeTypeName("ULONG *")] uint* pcb);
-        }
+        [NativeTypeName("HRESULT (ITfRange *, ITfRange *, ITfPropertyStore **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfPropertyStore*, ITfRange*, ITfRange*, ITfPropertyStore**, int> Divide;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfPropertyStore*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (ITfPropertyStore **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfPropertyStore*, ITfPropertyStore**, int> Clone;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfPropertyStore*, uint> AddRef;
+        [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfPropertyStore*, Guid*, int> GetPropertyRangeCreator;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfPropertyStore*, uint> Release;
-
-            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-            public new delegate* unmanaged<ITfPropertyStore*, Guid*, int> GetType;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfPropertyStore*, uint*, int> GetDataType;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfPropertyStore*, VARIANT*, int> GetData;
-
-            [NativeTypeName("HRESULT (DWORD, ITfRange *, BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfPropertyStore*, uint, ITfRange*, BOOL*, int> OnTextUpdated;
-
-            [NativeTypeName("HRESULT (ITfRange *, BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfPropertyStore*, ITfRange*, BOOL*, int> Shrink;
-
-            [NativeTypeName("HRESULT (ITfRange *, ITfRange *, ITfPropertyStore **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfPropertyStore*, ITfRange*, ITfRange*, ITfPropertyStore**, int> Divide;
-
-            [NativeTypeName("HRESULT (ITfPropertyStore **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfPropertyStore*, ITfPropertyStore**, int> Clone;
-
-            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfPropertyStore*, Guid*, int> GetPropertyRangeCreator;
-
-            [NativeTypeName("HRESULT (IStream *, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfPropertyStore*, IStream*, uint*, int> Serialize;
-        }
+        [NativeTypeName("HRESULT (IStream *, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfPropertyStore*, IStream*, uint*, int> Serialize;
     }
 }

@@ -7,31 +7,30 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct BIN_RESULTS
 {
-    public partial struct BIN_RESULTS
+    [NativeTypeName("DWORD")]
+    public uint NumberOfBins;
+
+    [NativeTypeName("BIN_COUNT [1]")]
+    public _BinCounts_e__FixedBuffer BinCounts;
+
+    public partial struct _BinCounts_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint NumberOfBins;
+        public BIN_COUNT e0;
 
-        [NativeTypeName("BIN_COUNT [1]")]
-        public _BinCounts_e__FixedBuffer BinCounts;
-
-        public partial struct _BinCounts_e__FixedBuffer
+        public ref BIN_COUNT this[int index]
         {
-            public BIN_COUNT e0;
-
-            public ref BIN_COUNT this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<BIN_COUNT> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<BIN_COUNT> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

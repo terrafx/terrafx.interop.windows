@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDWriteFontSetBuilder" /> struct.</summary>
+public static unsafe partial class IDWriteFontSetBuilderTests
 {
-    /// <summary>Provides validation of the <see cref="IDWriteFontSetBuilder" /> struct.</summary>
-    public static unsafe partial class IDWriteFontSetBuilderTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWriteFontSetBuilder" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWriteFontSetBuilder" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDWriteFontSetBuilder).GUID, Is.EqualTo(IID_IDWriteFontSetBuilder));
-        }
+        Assert.That(typeof(IDWriteFontSetBuilder).GUID, Is.EqualTo(IID_IDWriteFontSetBuilder));
+    }
 
-        /// <summary>Validates that the <see cref="IDWriteFontSetBuilder" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDWriteFontSetBuilder>(), Is.EqualTo(sizeof(IDWriteFontSetBuilder)));
-        }
+    /// <summary>Validates that the <see cref="IDWriteFontSetBuilder" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDWriteFontSetBuilder>(), Is.EqualTo(sizeof(IDWriteFontSetBuilder)));
+    }
 
-        /// <summary>Validates that the <see cref="IDWriteFontSetBuilder" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDWriteFontSetBuilder).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDWriteFontSetBuilder" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDWriteFontSetBuilder).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDWriteFontSetBuilder" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDWriteFontSetBuilder" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDWriteFontSetBuilder), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDWriteFontSetBuilder), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDWriteFontSetBuilder), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDWriteFontSetBuilder), Is.EqualTo(4));
         }
     }
 }

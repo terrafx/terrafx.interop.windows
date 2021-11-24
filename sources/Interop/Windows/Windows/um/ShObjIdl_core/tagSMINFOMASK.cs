@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum tagSMINFOMASK
 {
-    [Flags]
-    public enum tagSMINFOMASK
-    {
-        SMIM_TYPE = 0x1,
-        SMIM_FLAGS = 0x2,
-        SMIM_ICON = 0x4,
-    }
+    SMIM_TYPE = 0x1,
+    SMIM_FLAGS = 0x2,
+    SMIM_ICON = 0x4,
 }

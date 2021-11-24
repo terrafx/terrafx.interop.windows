@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IRoSimpleMetaDataBuilder" /> struct.</summary>
+public static unsafe partial class IRoSimpleMetaDataBuilderTests
 {
-    /// <summary>Provides validation of the <see cref="IRoSimpleMetaDataBuilder" /> struct.</summary>
-    public static unsafe partial class IRoSimpleMetaDataBuilderTests
+    /// <summary>Validates that the <see cref="IRoSimpleMetaDataBuilder" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IRoSimpleMetaDataBuilder" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IRoSimpleMetaDataBuilder>(), Is.EqualTo(sizeof(IRoSimpleMetaDataBuilder)));
-        }
+        Assert.That(Marshal.SizeOf<IRoSimpleMetaDataBuilder>(), Is.EqualTo(sizeof(IRoSimpleMetaDataBuilder)));
+    }
 
-        /// <summary>Validates that the <see cref="IRoSimpleMetaDataBuilder" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IRoSimpleMetaDataBuilder).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IRoSimpleMetaDataBuilder" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IRoSimpleMetaDataBuilder).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IRoSimpleMetaDataBuilder" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IRoSimpleMetaDataBuilder" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IRoSimpleMetaDataBuilder), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IRoSimpleMetaDataBuilder), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IRoSimpleMetaDataBuilder), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IRoSimpleMetaDataBuilder), Is.EqualTo(4));
         }
     }
 }

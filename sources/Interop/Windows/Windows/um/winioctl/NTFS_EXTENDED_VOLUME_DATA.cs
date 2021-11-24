@@ -3,38 +3,37 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct NTFS_EXTENDED_VOLUME_DATA
 {
-    public partial struct NTFS_EXTENDED_VOLUME_DATA
-    {
-        [NativeTypeName("DWORD")]
-        public uint ByteCount;
+    [NativeTypeName("DWORD")]
+    public uint ByteCount;
 
-        [NativeTypeName("WORD")]
-        public ushort MajorVersion;
+    [NativeTypeName("WORD")]
+    public ushort MajorVersion;
 
-        [NativeTypeName("WORD")]
-        public ushort MinorVersion;
+    [NativeTypeName("WORD")]
+    public ushort MinorVersion;
 
-        [NativeTypeName("DWORD")]
-        public uint BytesPerPhysicalSector;
+    [NativeTypeName("DWORD")]
+    public uint BytesPerPhysicalSector;
 
-        [NativeTypeName("WORD")]
-        public ushort LfsMajorVersion;
+    [NativeTypeName("WORD")]
+    public ushort LfsMajorVersion;
 
-        [NativeTypeName("WORD")]
-        public ushort LfsMinorVersion;
+    [NativeTypeName("WORD")]
+    public ushort LfsMinorVersion;
 
-        [NativeTypeName("DWORD")]
-        public uint MaxDeviceTrimExtentCount;
+    [NativeTypeName("DWORD")]
+    public uint MaxDeviceTrimExtentCount;
 
-        [NativeTypeName("DWORD")]
-        public uint MaxDeviceTrimByteCount;
+    [NativeTypeName("DWORD")]
+    public uint MaxDeviceTrimByteCount;
 
-        [NativeTypeName("DWORD")]
-        public uint MaxVolumeTrimExtentCount;
+    [NativeTypeName("DWORD")]
+    public uint MaxVolumeTrimExtentCount;
 
-        [NativeTypeName("DWORD")]
-        public uint MaxVolumeTrimByteCount;
-    }
+    [NativeTypeName("DWORD")]
+    public uint MaxVolumeTrimByteCount;
 }

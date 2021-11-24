@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("D5E8041D-920F-45E9-B8FB-B1DEB82C6E5E")]
+public partial struct InternetExplorerMedium
 {
-    [Guid("D5E8041D-920F-45E9-B8FB-B1DEB82C6E5E")]
-    public partial struct InternetExplorerMedium
-    {
-    }
 }

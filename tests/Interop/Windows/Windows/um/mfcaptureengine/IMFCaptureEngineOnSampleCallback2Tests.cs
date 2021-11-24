@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFCaptureEngineOnSampleCallback2" /> struct.</summary>
+[SupportedOSPlatform("windows8.1")]
+public static unsafe partial class IMFCaptureEngineOnSampleCallback2Tests
 {
-    /// <summary>Provides validation of the <see cref="IMFCaptureEngineOnSampleCallback2" /> struct.</summary>
-    [SupportedOSPlatform("windows8.1")]
-    public static unsafe partial class IMFCaptureEngineOnSampleCallback2Tests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFCaptureEngineOnSampleCallback2" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFCaptureEngineOnSampleCallback2" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFCaptureEngineOnSampleCallback2).GUID, Is.EqualTo(IID_IMFCaptureEngineOnSampleCallback2));
-        }
+        Assert.That(typeof(IMFCaptureEngineOnSampleCallback2).GUID, Is.EqualTo(IID_IMFCaptureEngineOnSampleCallback2));
+    }
 
-        /// <summary>Validates that the <see cref="IMFCaptureEngineOnSampleCallback2" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFCaptureEngineOnSampleCallback2>(), Is.EqualTo(sizeof(IMFCaptureEngineOnSampleCallback2)));
-        }
+    /// <summary>Validates that the <see cref="IMFCaptureEngineOnSampleCallback2" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFCaptureEngineOnSampleCallback2>(), Is.EqualTo(sizeof(IMFCaptureEngineOnSampleCallback2)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFCaptureEngineOnSampleCallback2" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFCaptureEngineOnSampleCallback2).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFCaptureEngineOnSampleCallback2" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFCaptureEngineOnSampleCallback2).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFCaptureEngineOnSampleCallback2" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFCaptureEngineOnSampleCallback2" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFCaptureEngineOnSampleCallback2), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFCaptureEngineOnSampleCallback2), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFCaptureEngineOnSampleCallback2), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFCaptureEngineOnSampleCallback2), Is.EqualTo(4));
         }
     }
 }

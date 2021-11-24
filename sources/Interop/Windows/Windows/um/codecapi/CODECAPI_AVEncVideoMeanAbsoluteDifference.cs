@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("E5C0C10F-81A4-422D-8C3F-B474A4581336")]
+public partial struct CODECAPI_AVEncVideoMeanAbsoluteDifference
 {
-    [Guid("E5C0C10F-81A4-422D-8C3F-B474A4581336")]
-    public partial struct CODECAPI_AVEncVideoMeanAbsoluteDifference
-    {
-    }
 }

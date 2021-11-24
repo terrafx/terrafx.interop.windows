@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLElementCollection" /> struct.</summary>
+public static unsafe partial class HTMLElementCollectionTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLElementCollection" /> struct.</summary>
-    public static unsafe partial class HTMLElementCollectionTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLElementCollection" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLElementCollection" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLElementCollection).GUID, Is.EqualTo(IID_HTMLElementCollection));
-        }
+        Assert.That(typeof(HTMLElementCollection).GUID, Is.EqualTo(IID_HTMLElementCollection));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLElementCollection" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLElementCollection>(), Is.EqualTo(sizeof(HTMLElementCollection)));
-        }
+    /// <summary>Validates that the <see cref="HTMLElementCollection" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLElementCollection>(), Is.EqualTo(sizeof(HTMLElementCollection)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLElementCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLElementCollection).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLElementCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLElementCollection).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLElementCollection" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HTMLElementCollection), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="HTMLElementCollection" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HTMLElementCollection), Is.EqualTo(1));
     }
 }

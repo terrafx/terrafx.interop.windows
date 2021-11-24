@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SIGNER_ATTR_AUTHCODE" /> struct.</summary>
+public static unsafe partial class SIGNER_ATTR_AUTHCODETests
 {
-    /// <summary>Provides validation of the <see cref="SIGNER_ATTR_AUTHCODE" /> struct.</summary>
-    public static unsafe partial class SIGNER_ATTR_AUTHCODETests
+    /// <summary>Validates that the <see cref="SIGNER_ATTR_AUTHCODE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SIGNER_ATTR_AUTHCODE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SIGNER_ATTR_AUTHCODE>(), Is.EqualTo(sizeof(SIGNER_ATTR_AUTHCODE)));
-        }
+        Assert.That(Marshal.SizeOf<SIGNER_ATTR_AUTHCODE>(), Is.EqualTo(sizeof(SIGNER_ATTR_AUTHCODE)));
+    }
 
-        /// <summary>Validates that the <see cref="SIGNER_ATTR_AUTHCODE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SIGNER_ATTR_AUTHCODE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SIGNER_ATTR_AUTHCODE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SIGNER_ATTR_AUTHCODE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SIGNER_ATTR_AUTHCODE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SIGNER_ATTR_AUTHCODE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SIGNER_ATTR_AUTHCODE), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(SIGNER_ATTR_AUTHCODE), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(SIGNER_ATTR_AUTHCODE), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(SIGNER_ATTR_AUTHCODE), Is.EqualTo(20));
         }
     }
 }

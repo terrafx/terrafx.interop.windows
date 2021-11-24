@@ -5,18 +5,18 @@
 
 using static TerraFX.Interop.Windows.WINDOWTHEMEATTRIBUTETYPE;
 
-namespace TerraFX.Interop.Windows
-{
-    public static unsafe partial class Windows
-    {
-        public static HRESULT BufferedPaintMakeOpaque(HPAINTBUFFER hBufferedPaint, RECT* prc) => BufferedPaintSetAlpha(hBufferedPaint, prc, 255);
+namespace TerraFX.Interop.Windows;
 
-        public static HRESULT SetWindowThemeNonClientAttributes(HWND hwnd, uint dwMask, uint dwAttributes)
-        {
-            var wta = new WTA_OPTIONS();
-            wta.dwFlags = dwAttributes;
-            wta.dwMask = dwMask;
-            return SetWindowThemeAttribute(hwnd, WTA_NONCLIENT, (void*)&(wta), (uint) sizeof(WTA_OPTIONS));
-        }
+public static unsafe partial class Windows
+{
+    public static HRESULT BufferedPaintMakeOpaque(HPAINTBUFFER hBufferedPaint, RECT* prc) => BufferedPaintSetAlpha(hBufferedPaint, prc, 255);
+
+    public static HRESULT SetWindowThemeNonClientAttributes(HWND hwnd, uint dwMask, uint dwAttributes)
+    {
+        var wta = new WTA_OPTIONS {
+            dwFlags = dwAttributes,
+            dwMask = dwMask,
+        };
+        return SetWindowThemeAttribute(hwnd, WTA_NONCLIENT, (void*)&(wta), (uint)sizeof(WTA_OPTIONS));
     }
 }

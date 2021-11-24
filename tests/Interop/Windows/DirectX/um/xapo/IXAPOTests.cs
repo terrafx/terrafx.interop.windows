@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IXAPO" /> struct.</summary>
+public static unsafe partial class IXAPOTests
 {
-    /// <summary>Provides validation of the <see cref="IXAPO" /> struct.</summary>
-    public static unsafe partial class IXAPOTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IXAPO" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IXAPO" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IXAPO).GUID, Is.EqualTo(IID_IXAPO));
-        }
+        Assert.That(typeof(IXAPO).GUID, Is.EqualTo(IID_IXAPO));
+    }
 
-        /// <summary>Validates that the <see cref="IXAPO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IXAPO>(), Is.EqualTo(sizeof(IXAPO)));
-        }
+    /// <summary>Validates that the <see cref="IXAPO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IXAPO>(), Is.EqualTo(sizeof(IXAPO)));
+    }
 
-        /// <summary>Validates that the <see cref="IXAPO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IXAPO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IXAPO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IXAPO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IXAPO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IXAPO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IXAPO), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IXAPO), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IXAPO), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IXAPO), Is.EqualTo(4));
         }
     }
 }

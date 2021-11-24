@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="STORAGE_SPEC_VERSION" /> struct.</summary>
+[SupportedOSPlatform("windows10.0")]
+public static unsafe partial class STORAGE_SPEC_VERSIONTests
 {
-    /// <summary>Provides validation of the <see cref="STORAGE_SPEC_VERSION" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0")]
-    public static unsafe partial class STORAGE_SPEC_VERSIONTests
+    /// <summary>Validates that the <see cref="STORAGE_SPEC_VERSION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="STORAGE_SPEC_VERSION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<STORAGE_SPEC_VERSION>(), Is.EqualTo(sizeof(STORAGE_SPEC_VERSION)));
-        }
+        Assert.That(Marshal.SizeOf<STORAGE_SPEC_VERSION>(), Is.EqualTo(sizeof(STORAGE_SPEC_VERSION)));
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_SPEC_VERSION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutExplicitTest()
-        {
-            Assert.That(typeof(STORAGE_SPEC_VERSION).IsExplicitLayout, Is.True);
-        }
+    /// <summary>Validates that the <see cref="STORAGE_SPEC_VERSION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutExplicitTest()
+    {
+        Assert.That(typeof(STORAGE_SPEC_VERSION).IsExplicitLayout, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_SPEC_VERSION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(STORAGE_SPEC_VERSION), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="STORAGE_SPEC_VERSION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(STORAGE_SPEC_VERSION), Is.EqualTo(4));
     }
 }

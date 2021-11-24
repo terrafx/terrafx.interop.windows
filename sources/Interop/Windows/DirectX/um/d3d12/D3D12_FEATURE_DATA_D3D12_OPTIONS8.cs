@@ -5,10 +5,9 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_FEATURE_DATA_D3D12_OPTIONS8
 {
-    public partial struct D3D12_FEATURE_DATA_D3D12_OPTIONS8
-    {
-        public BOOL UnalignedBlockTexturesSupported;
-    }
+    public BOOL UnalignedBlockTexturesSupported;
 }

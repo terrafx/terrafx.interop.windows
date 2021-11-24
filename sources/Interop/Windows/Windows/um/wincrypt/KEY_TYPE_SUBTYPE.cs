@@ -5,15 +5,14 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct KEY_TYPE_SUBTYPE
 {
-    public partial struct KEY_TYPE_SUBTYPE
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwKeySpec;
+    [NativeTypeName("DWORD")]
+    public uint dwKeySpec;
 
-        public Guid Type;
+    public Guid Type;
 
-        public Guid Subtype;
-    }
+    public Guid Subtype;
 }

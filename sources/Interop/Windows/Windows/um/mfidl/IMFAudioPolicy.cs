@@ -7,129 +7,128 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("A0638C2B-6465-4395-9AE7-A321A9FD2856")]
+[NativeTypeName("struct IMFAudioPolicy : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface
 {
-    [Guid("A0638C2B-6465-4395-9AE7-A321A9FD2856")]
-    [NativeTypeName("struct IMFAudioPolicy : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMFAudioPolicy*, Guid*, void**, int>)(lpVtbl[0]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMFAudioPolicy*, Guid*, void**, int>)(lpVtbl[0]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMFAudioPolicy*, uint>)(lpVtbl[1]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMFAudioPolicy*, uint>)(lpVtbl[1]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMFAudioPolicy*, uint>)(lpVtbl[2]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMFAudioPolicy*, uint>)(lpVtbl[2]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT SetGroupingParam([NativeTypeName("const GUID &")] Guid* rguidClass)
+    {
+        return ((delegate* unmanaged<IMFAudioPolicy*, Guid*, int>)(lpVtbl[3]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), rguidClass);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetGroupingParam(Guid* pguidClass)
+    {
+        return ((delegate* unmanaged<IMFAudioPolicy*, Guid*, int>)(lpVtbl[4]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pguidClass);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] ushort* pszName)
+    {
+        return ((delegate* unmanaged<IMFAudioPolicy*, ushort*, int>)(lpVtbl[5]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszName);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetDisplayName([NativeTypeName("LPWSTR *")] ushort** pszName)
+    {
+        return ((delegate* unmanaged<IMFAudioPolicy*, ushort**, int>)(lpVtbl[6]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszName);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT SetIconPath([NativeTypeName("LPCWSTR")] ushort* pszPath)
+    {
+        return ((delegate* unmanaged<IMFAudioPolicy*, ushort*, int>)(lpVtbl[7]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszPath);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT GetIconPath([NativeTypeName("LPWSTR *")] ushort** pszPath)
+    {
+        return ((delegate* unmanaged<IMFAudioPolicy*, ushort**, int>)(lpVtbl[8]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszPath);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT SetGroupingParam([NativeTypeName("const GUID &")] Guid* rguidClass)
-        {
-            return ((delegate* unmanaged<IMFAudioPolicy*, Guid*, int>)(lpVtbl[3]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), rguidClass);
-        }
+        HRESULT SetGroupingParam([NativeTypeName("const GUID &")] Guid* rguidClass);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetGroupingParam(Guid* pguidClass)
-        {
-            return ((delegate* unmanaged<IMFAudioPolicy*, Guid*, int>)(lpVtbl[4]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pguidClass);
-        }
+        HRESULT GetGroupingParam(Guid* pguidClass);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] ushort* pszName)
-        {
-            return ((delegate* unmanaged<IMFAudioPolicy*, ushort*, int>)(lpVtbl[5]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszName);
-        }
+        HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] ushort* pszName);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetDisplayName([NativeTypeName("LPWSTR *")] ushort** pszName)
-        {
-            return ((delegate* unmanaged<IMFAudioPolicy*, ushort**, int>)(lpVtbl[6]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszName);
-        }
+        HRESULT GetDisplayName([NativeTypeName("LPWSTR *")] ushort** pszName);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT SetIconPath([NativeTypeName("LPCWSTR")] ushort* pszPath)
-        {
-            return ((delegate* unmanaged<IMFAudioPolicy*, ushort*, int>)(lpVtbl[7]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszPath);
-        }
+        HRESULT SetIconPath([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT GetIconPath([NativeTypeName("LPWSTR *")] ushort** pszPath)
-        {
-            return ((delegate* unmanaged<IMFAudioPolicy*, ushort**, int>)(lpVtbl[8]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszPath);
-        }
+        HRESULT GetIconPath([NativeTypeName("LPWSTR *")] ushort** pszPath);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT SetGroupingParam([NativeTypeName("const GUID &")] Guid* rguidClass);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFAudioPolicy*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetGroupingParam(Guid* pguidClass);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFAudioPolicy*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] ushort* pszName);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFAudioPolicy*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT GetDisplayName([NativeTypeName("LPWSTR *")] ushort** pszName);
+        [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFAudioPolicy*, Guid*, int> SetGroupingParam;
 
-            [VtblIndex(7)]
-            HRESULT SetIconPath([NativeTypeName("LPCWSTR")] ushort* pszPath);
+        [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFAudioPolicy*, Guid*, int> GetGroupingParam;
 
-            [VtblIndex(8)]
-            HRESULT GetIconPath([NativeTypeName("LPWSTR *")] ushort** pszPath);
-        }
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFAudioPolicy*, ushort*, int> SetDisplayName;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFAudioPolicy*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFAudioPolicy*, ushort**, int> GetDisplayName;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFAudioPolicy*, uint> AddRef;
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFAudioPolicy*, ushort*, int> SetIconPath;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFAudioPolicy*, uint> Release;
-
-            [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFAudioPolicy*, Guid*, int> SetGroupingParam;
-
-            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFAudioPolicy*, Guid*, int> GetGroupingParam;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFAudioPolicy*, ushort*, int> SetDisplayName;
-
-            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFAudioPolicy*, ushort**, int> GetDisplayName;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFAudioPolicy*, ushort*, int> SetIconPath;
-
-            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFAudioPolicy*, ushort**, int> GetIconPath;
-        }
+        [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFAudioPolicy*, ushort**, int> GetIconPath;
     }
 }

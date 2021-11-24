@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MIDIOUTCAPS2W" /> struct.</summary>
+public static unsafe partial class MIDIOUTCAPS2WTests
 {
-    /// <summary>Provides validation of the <see cref="MIDIOUTCAPS2W" /> struct.</summary>
-    public static unsafe partial class MIDIOUTCAPS2WTests
+    /// <summary>Validates that the <see cref="MIDIOUTCAPS2W" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MIDIOUTCAPS2W" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MIDIOUTCAPS2W>(), Is.EqualTo(sizeof(MIDIOUTCAPS2W)));
-        }
+        Assert.That(Marshal.SizeOf<MIDIOUTCAPS2W>(), Is.EqualTo(sizeof(MIDIOUTCAPS2W)));
+    }
 
-        /// <summary>Validates that the <see cref="MIDIOUTCAPS2W" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MIDIOUTCAPS2W).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MIDIOUTCAPS2W" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MIDIOUTCAPS2W).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MIDIOUTCAPS2W" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MIDIOUTCAPS2W), Is.EqualTo(132));
-        }
+    /// <summary>Validates that the <see cref="MIDIOUTCAPS2W" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MIDIOUTCAPS2W), Is.EqualTo(132));
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="RAWKEYBOARD" /> struct.</summary>
+public static unsafe partial class RAWKEYBOARDTests
 {
-    /// <summary>Provides validation of the <see cref="RAWKEYBOARD" /> struct.</summary>
-    public static unsafe partial class RAWKEYBOARDTests
+    /// <summary>Validates that the <see cref="RAWKEYBOARD" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="RAWKEYBOARD" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<RAWKEYBOARD>(), Is.EqualTo(sizeof(RAWKEYBOARD)));
-        }
+        Assert.That(Marshal.SizeOf<RAWKEYBOARD>(), Is.EqualTo(sizeof(RAWKEYBOARD)));
+    }
 
-        /// <summary>Validates that the <see cref="RAWKEYBOARD" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(RAWKEYBOARD).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="RAWKEYBOARD" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(RAWKEYBOARD).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="RAWKEYBOARD" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(RAWKEYBOARD), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="RAWKEYBOARD" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(RAWKEYBOARD), Is.EqualTo(16));
     }
 }

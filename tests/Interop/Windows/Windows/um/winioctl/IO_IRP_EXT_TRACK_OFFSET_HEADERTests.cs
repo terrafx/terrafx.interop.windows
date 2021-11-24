@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IO_IRP_EXT_TRACK_OFFSET_HEADER" /> struct.</summary>
+public static unsafe partial class IO_IRP_EXT_TRACK_OFFSET_HEADERTests
 {
-    /// <summary>Provides validation of the <see cref="IO_IRP_EXT_TRACK_OFFSET_HEADER" /> struct.</summary>
-    public static unsafe partial class IO_IRP_EXT_TRACK_OFFSET_HEADERTests
+    /// <summary>Validates that the <see cref="IO_IRP_EXT_TRACK_OFFSET_HEADER" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IO_IRP_EXT_TRACK_OFFSET_HEADER" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IO_IRP_EXT_TRACK_OFFSET_HEADER>(), Is.EqualTo(sizeof(IO_IRP_EXT_TRACK_OFFSET_HEADER)));
-        }
+        Assert.That(Marshal.SizeOf<IO_IRP_EXT_TRACK_OFFSET_HEADER>(), Is.EqualTo(sizeof(IO_IRP_EXT_TRACK_OFFSET_HEADER)));
+    }
 
-        /// <summary>Validates that the <see cref="IO_IRP_EXT_TRACK_OFFSET_HEADER" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IO_IRP_EXT_TRACK_OFFSET_HEADER).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IO_IRP_EXT_TRACK_OFFSET_HEADER" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IO_IRP_EXT_TRACK_OFFSET_HEADER).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IO_IRP_EXT_TRACK_OFFSET_HEADER" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IO_IRP_EXT_TRACK_OFFSET_HEADER" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IO_IRP_EXT_TRACK_OFFSET_HEADER), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(IO_IRP_EXT_TRACK_OFFSET_HEADER), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(IO_IRP_EXT_TRACK_OFFSET_HEADER), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(IO_IRP_EXT_TRACK_OFFSET_HEADER), Is.EqualTo(8));
         }
     }
 }

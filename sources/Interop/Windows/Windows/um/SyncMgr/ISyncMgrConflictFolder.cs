@@ -7,64 +7,63 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("59287F5E-BC81-4FCA-A7F1-E5A8ECDB1D69")]
+[NativeTypeName("struct ISyncMgrConflictFolder : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ISyncMgrConflictFolder : ISyncMgrConflictFolder.Interface
 {
-    [Guid("59287F5E-BC81-4FCA-A7F1-E5A8ECDB1D69")]
-    [NativeTypeName("struct ISyncMgrConflictFolder : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrConflictFolder : ISyncMgrConflictFolder.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ISyncMgrConflictFolder*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrConflictFolder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ISyncMgrConflictFolder*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrConflictFolder*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ISyncMgrConflictFolder*, uint>)(lpVtbl[1]))((ISyncMgrConflictFolder*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ISyncMgrConflictFolder*, uint>)(lpVtbl[1]))((ISyncMgrConflictFolder*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ISyncMgrConflictFolder*, uint>)(lpVtbl[2]))((ISyncMgrConflictFolder*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ISyncMgrConflictFolder*, uint>)(lpVtbl[2]))((ISyncMgrConflictFolder*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetConflictIDList(ISyncMgrConflict* pConflict, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlConflict)
+    {
+        return ((delegate* unmanaged<ISyncMgrConflictFolder*, ISyncMgrConflict*, ITEMIDLIST**, int>)(lpVtbl[3]))((ISyncMgrConflictFolder*)Unsafe.AsPointer(ref this), pConflict, ppidlConflict);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetConflictIDList(ISyncMgrConflict* pConflict, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlConflict)
-        {
-            return ((delegate* unmanaged<ISyncMgrConflictFolder*, ISyncMgrConflict*, ITEMIDLIST**, int>)(lpVtbl[3]))((ISyncMgrConflictFolder*)Unsafe.AsPointer(ref this), pConflict, ppidlConflict);
-        }
+        HRESULT GetConflictIDList(ISyncMgrConflict* pConflict, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlConflict);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetConflictIDList(ISyncMgrConflict* pConflict, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlConflict);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISyncMgrConflictFolder*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISyncMgrConflictFolder*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISyncMgrConflictFolder*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISyncMgrConflictFolder*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISyncMgrConflictFolder*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISyncMgrConflictFolder*, uint> Release;
-
-            [NativeTypeName("HRESULT (ISyncMgrConflict *, LPITEMIDLIST *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISyncMgrConflictFolder*, ISyncMgrConflict*, ITEMIDLIST**, int> GetConflictIDList;
-        }
+        [NativeTypeName("HRESULT (ISyncMgrConflict *, LPITEMIDLIST *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISyncMgrConflictFolder*, ISyncMgrConflict*, ITEMIDLIST**, int> GetConflictIDList;
     }
 }

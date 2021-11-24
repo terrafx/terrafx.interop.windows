@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CONTAINER_ROOT_INFO_INPUT" /> struct.</summary>
+public static unsafe partial class CONTAINER_ROOT_INFO_INPUTTests
 {
-    /// <summary>Provides validation of the <see cref="CONTAINER_ROOT_INFO_INPUT" /> struct.</summary>
-    public static unsafe partial class CONTAINER_ROOT_INFO_INPUTTests
+    /// <summary>Validates that the <see cref="CONTAINER_ROOT_INFO_INPUT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CONTAINER_ROOT_INFO_INPUT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CONTAINER_ROOT_INFO_INPUT>(), Is.EqualTo(sizeof(CONTAINER_ROOT_INFO_INPUT)));
-        }
+        Assert.That(Marshal.SizeOf<CONTAINER_ROOT_INFO_INPUT>(), Is.EqualTo(sizeof(CONTAINER_ROOT_INFO_INPUT)));
+    }
 
-        /// <summary>Validates that the <see cref="CONTAINER_ROOT_INFO_INPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CONTAINER_ROOT_INFO_INPUT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CONTAINER_ROOT_INFO_INPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CONTAINER_ROOT_INFO_INPUT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CONTAINER_ROOT_INFO_INPUT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CONTAINER_ROOT_INFO_INPUT), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="CONTAINER_ROOT_INFO_INPUT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CONTAINER_ROOT_INFO_INPUT), Is.EqualTo(4));
     }
 }

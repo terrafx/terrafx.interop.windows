@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct WIN_TRUST_ACTDATA_SUBJECT_ONLY
-    {
-        public Guid* SubjectType;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("WIN_TRUST_SUBJECT")]
-        public void* Subject;
-    }
+public unsafe partial struct WIN_TRUST_ACTDATA_SUBJECT_ONLY
+{
+    public Guid* SubjectType;
+
+    [NativeTypeName("WIN_TRUST_SUBJECT")]
+    public void* Subject;
 }

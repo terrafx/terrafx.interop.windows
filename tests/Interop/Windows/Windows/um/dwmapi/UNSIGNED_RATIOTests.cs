@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="UNSIGNED_RATIO" /> struct.</summary>
+public static unsafe partial class UNSIGNED_RATIOTests
 {
-    /// <summary>Provides validation of the <see cref="UNSIGNED_RATIO" /> struct.</summary>
-    public static unsafe partial class UNSIGNED_RATIOTests
+    /// <summary>Validates that the <see cref="UNSIGNED_RATIO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="UNSIGNED_RATIO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<UNSIGNED_RATIO>(), Is.EqualTo(sizeof(UNSIGNED_RATIO)));
-        }
+        Assert.That(Marshal.SizeOf<UNSIGNED_RATIO>(), Is.EqualTo(sizeof(UNSIGNED_RATIO)));
+    }
 
-        /// <summary>Validates that the <see cref="UNSIGNED_RATIO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(UNSIGNED_RATIO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="UNSIGNED_RATIO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(UNSIGNED_RATIO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="UNSIGNED_RATIO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(UNSIGNED_RATIO), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="UNSIGNED_RATIO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(UNSIGNED_RATIO), Is.EqualTo(8));
     }
 }

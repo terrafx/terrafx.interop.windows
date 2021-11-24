@@ -3,11 +3,10 @@
 // Ported from shared/winerror.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class DS
 {
-    public static partial class DS
-    {
-        [NativeTypeName("#define DS_S_SUCCESS NO_ERROR")]
-        public const int DS_S_SUCCESS = 0;
-    }
+    [NativeTypeName("#define DS_S_SUCCESS NO_ERROR")]
+    public const int DS_S_SUCCESS = 0;
 }

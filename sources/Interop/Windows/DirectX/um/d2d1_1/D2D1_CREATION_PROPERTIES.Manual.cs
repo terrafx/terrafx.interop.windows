@@ -5,13 +5,12 @@
 
 using static TerraFX.Interop.DirectX.DirectX;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D1_CREATION_PROPERTIES
 {
-    public partial struct D2D1_CREATION_PROPERTIES
+    public D2D1_CREATION_PROPERTIES(D2D1_THREADING_MODE threadingMode, D2D1_DEBUG_LEVEL debugLevel, D2D1_DEVICE_CONTEXT_OPTIONS options)
     {
-        public D2D1_CREATION_PROPERTIES(D2D1_THREADING_MODE threadingMode, D2D1_DEBUG_LEVEL debugLevel, D2D1_DEVICE_CONTEXT_OPTIONS options)
-        {
-            this = CreationProperties(threadingMode, debugLevel, options);
-        }
+        this = CreationProperties(threadingMode, debugLevel, options);
     }
 }

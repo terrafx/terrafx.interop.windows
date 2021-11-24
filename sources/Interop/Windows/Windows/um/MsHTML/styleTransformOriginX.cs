@@ -3,14 +3,13 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum styleTransformOriginX
 {
-    public enum styleTransformOriginX
-    {
-        styleTransformOriginXNotSet = 0,
-        styleTransformOriginXLeft = 1,
-        styleTransformOriginXCenter = 2,
-        styleTransformOriginXRight = 3,
-        styleTransformOriginX_Max = 2147483647,
-    }
+    styleTransformOriginXNotSet = 0,
+    styleTransformOriginXLeft = 1,
+    styleTransformOriginXCenter = 2,
+    styleTransformOriginXRight = 3,
+    styleTransformOriginX_Max = 2147483647,
 }

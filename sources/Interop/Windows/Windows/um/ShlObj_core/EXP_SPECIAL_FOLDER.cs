@@ -5,21 +5,20 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct EXP_SPECIAL_FOLDER
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct EXP_SPECIAL_FOLDER
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("DWORD")]
-        public uint dwSignature;
+    [NativeTypeName("DWORD")]
+    public uint dwSignature;
 
-        [NativeTypeName("DWORD")]
-        public uint idSpecialFolder;
+    [NativeTypeName("DWORD")]
+    public uint idSpecialFolder;
 
-        [NativeTypeName("DWORD")]
-        public uint cbOffset;
-    }
+    [NativeTypeName("DWORD")]
+    public uint cbOffset;
 }

@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DirectManipulationViewport" /> struct.</summary>
+public static unsafe partial class DirectManipulationViewportTests
 {
-    /// <summary>Provides validation of the <see cref="DirectManipulationViewport" /> struct.</summary>
-    public static unsafe partial class DirectManipulationViewportTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DirectManipulationViewport" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DirectManipulationViewport" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DirectManipulationViewport).GUID, Is.EqualTo(CLSID_DirectManipulationViewport));
-        }
+        Assert.That(typeof(DirectManipulationViewport).GUID, Is.EqualTo(CLSID_DirectManipulationViewport));
+    }
 
-        /// <summary>Validates that the <see cref="DirectManipulationViewport" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DirectManipulationViewport>(), Is.EqualTo(sizeof(DirectManipulationViewport)));
-        }
+    /// <summary>Validates that the <see cref="DirectManipulationViewport" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DirectManipulationViewport>(), Is.EqualTo(sizeof(DirectManipulationViewport)));
+    }
 
-        /// <summary>Validates that the <see cref="DirectManipulationViewport" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DirectManipulationViewport).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DirectManipulationViewport" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DirectManipulationViewport).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DirectManipulationViewport" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DirectManipulationViewport), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="DirectManipulationViewport" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DirectManipulationViewport), Is.EqualTo(1));
     }
 }

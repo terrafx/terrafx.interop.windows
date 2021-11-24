@@ -5,43 +5,42 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SP_FILE_COPY_PARAMS32_W
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SP_FILE_COPY_PARAMS32_W
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public HSPFILEQ QueueHandle;
+    public HSPFILEQ QueueHandle;
 
-        [NativeTypeName("PCWSTR")]
-        public ushort* SourceRootPath;
+    [NativeTypeName("PCWSTR")]
+    public ushort* SourceRootPath;
 
-        [NativeTypeName("PCWSTR")]
-        public ushort* SourcePath;
+    [NativeTypeName("PCWSTR")]
+    public ushort* SourcePath;
 
-        [NativeTypeName("PCWSTR")]
-        public ushort* SourceFilename;
+    [NativeTypeName("PCWSTR")]
+    public ushort* SourceFilename;
 
-        [NativeTypeName("PCWSTR")]
-        public ushort* SourceDescription;
+    [NativeTypeName("PCWSTR")]
+    public ushort* SourceDescription;
 
-        [NativeTypeName("PCWSTR")]
-        public ushort* SourceTagfile;
+    [NativeTypeName("PCWSTR")]
+    public ushort* SourceTagfile;
 
-        [NativeTypeName("PCWSTR")]
-        public ushort* TargetDirectory;
+    [NativeTypeName("PCWSTR")]
+    public ushort* TargetDirectory;
 
-        [NativeTypeName("PCWSTR")]
-        public ushort* TargetFilename;
+    [NativeTypeName("PCWSTR")]
+    public ushort* TargetFilename;
 
-        [NativeTypeName("DWORD")]
-        public uint CopyStyle;
+    [NativeTypeName("DWORD")]
+    public uint CopyStyle;
 
-        public HINF LayoutInf;
+    public HINF LayoutInf;
 
-        [NativeTypeName("PCWSTR")]
-        public ushort* SecurityDescriptor;
-    }
+    [NativeTypeName("PCWSTR")]
+    public ushort* SecurityDescriptor;
 }

@@ -3,17 +3,16 @@
 // Ported from um/manipulations.h and um/manipulations_i.c in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class Windows
 {
-    public static partial class Windows
-    {
-        [NativeTypeName("const float")]
-        public const float POSITIVE_INFINITY = ((float)(1e308 * 10));
+    [NativeTypeName("const float")]
+    public const float POSITIVE_INFINITY = ((float)(1e308 * 10));
 
-        [NativeTypeName("const float")]
-        public const float NEGATIVE_INFINITY = ((float)(-1e308 * 10));
+    [NativeTypeName("const float")]
+    public const float NEGATIVE_INFINITY = ((float)(-1e308 * 10));
 
-        [NativeTypeName("const float")]
-        public const float NaN = ((float)((1e308 * 10) * 0.0));
-    }
+    [NativeTypeName("const float")]
+    public const float NaN = ((float)((1e308 * 10) * 0.0));
 }

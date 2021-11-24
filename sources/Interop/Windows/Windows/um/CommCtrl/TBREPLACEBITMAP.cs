@@ -3,20 +3,19 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TBREPLACEBITMAP
 {
-    public partial struct TBREPLACEBITMAP
-    {
-        public HINSTANCE hInstOld;
+    public HINSTANCE hInstOld;
 
-        [NativeTypeName("UINT_PTR")]
-        public nuint nIDOld;
+    [NativeTypeName("UINT_PTR")]
+    public nuint nIDOld;
 
-        public HINSTANCE hInstNew;
+    public HINSTANCE hInstNew;
 
-        [NativeTypeName("UINT_PTR")]
-        public nuint nIDNew;
+    [NativeTypeName("UINT_PTR")]
+    public nuint nIDNew;
 
-        public int nButtons;
-    }
+    public int nButtons;
 }

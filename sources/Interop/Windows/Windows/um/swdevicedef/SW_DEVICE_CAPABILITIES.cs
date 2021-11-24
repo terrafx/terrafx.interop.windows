@@ -5,15 +5,14 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum SW_DEVICE_CAPABILITIES
 {
-    [Flags]
-    public enum SW_DEVICE_CAPABILITIES
-    {
-        SWDeviceCapabilitiesNone = 0x00000000,
-        SWDeviceCapabilitiesRemovable = 0x00000001,
-        SWDeviceCapabilitiesSilentInstall = 0x00000002,
-        SWDeviceCapabilitiesNoDisplayInUI = 0x00000004,
-        SWDeviceCapabilitiesDriverRequired = 0x00000008,
-    }
+    SWDeviceCapabilitiesNone = 0x00000000,
+    SWDeviceCapabilitiesRemovable = 0x00000001,
+    SWDeviceCapabilitiesSilentInstall = 0x00000002,
+    SWDeviceCapabilitiesNoDisplayInUI = 0x00000004,
+    SWDeviceCapabilitiesDriverRequired = 0x00000008,
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="EventRegistrationToken" /> struct.</summary>
+public static unsafe partial class EventRegistrationTokenTests
 {
-    /// <summary>Provides validation of the <see cref="EventRegistrationToken" /> struct.</summary>
-    public static unsafe partial class EventRegistrationTokenTests
+    /// <summary>Validates that the <see cref="EventRegistrationToken" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="EventRegistrationToken" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<EventRegistrationToken>(), Is.EqualTo(sizeof(EventRegistrationToken)));
-        }
+        Assert.That(Marshal.SizeOf<EventRegistrationToken>(), Is.EqualTo(sizeof(EventRegistrationToken)));
+    }
 
-        /// <summary>Validates that the <see cref="EventRegistrationToken" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(EventRegistrationToken).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="EventRegistrationToken" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(EventRegistrationToken).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="EventRegistrationToken" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(EventRegistrationToken), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="EventRegistrationToken" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(EventRegistrationToken), Is.EqualTo(8));
     }
 }

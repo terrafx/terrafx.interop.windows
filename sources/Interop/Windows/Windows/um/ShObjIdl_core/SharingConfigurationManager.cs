@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("49F371E1-8C5C-4D9C-9A3B-54A6827F513C")]
+public partial struct SharingConfigurationManager
 {
-    [Guid("49F371E1-8C5C-4D9C-9A3B-54A6827F513C")]
-    public partial struct SharingConfigurationManager
-    {
-    }
 }

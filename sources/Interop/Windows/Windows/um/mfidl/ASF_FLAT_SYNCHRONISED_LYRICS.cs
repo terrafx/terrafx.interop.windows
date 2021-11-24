@@ -5,16 +5,15 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct ASF_FLAT_SYNCHRONISED_LYRICS
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct ASF_FLAT_SYNCHRONISED_LYRICS
-    {
-        public byte bTimeStampFormat;
+    public byte bTimeStampFormat;
 
-        public byte bContentType;
+    public byte bContentType;
 
-        [NativeTypeName("DWORD")]
-        public uint dwLyricsLen;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwLyricsLen;
 }

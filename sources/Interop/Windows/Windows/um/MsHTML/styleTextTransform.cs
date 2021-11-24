@@ -3,15 +3,14 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum styleTextTransform
 {
-    public enum styleTextTransform
-    {
-        styleTextTransformNotSet = 0,
-        styleTextTransformCapitalize = 1,
-        styleTextTransformLowercase = 2,
-        styleTextTransformUppercase = 3,
-        styleTextTransformNone = 4,
-        styleTextTransform_Max = 2147483647,
-    }
+    styleTextTransformNotSet = 0,
+    styleTextTransformCapitalize = 1,
+    styleTextTransformLowercase = 2,
+    styleTextTransformUppercase = 3,
+    styleTextTransformNone = 4,
+    styleTextTransform_Max = 2147483647,
 }

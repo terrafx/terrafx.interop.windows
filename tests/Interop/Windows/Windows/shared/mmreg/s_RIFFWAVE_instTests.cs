@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="s_RIFFWAVE_inst" /> struct.</summary>
+public static unsafe partial class s_RIFFWAVE_instTests
 {
-    /// <summary>Provides validation of the <see cref="s_RIFFWAVE_inst" /> struct.</summary>
-    public static unsafe partial class s_RIFFWAVE_instTests
+    /// <summary>Validates that the <see cref="s_RIFFWAVE_inst" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="s_RIFFWAVE_inst" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<s_RIFFWAVE_inst>(), Is.EqualTo(sizeof(s_RIFFWAVE_inst)));
-        }
+        Assert.That(Marshal.SizeOf<s_RIFFWAVE_inst>(), Is.EqualTo(sizeof(s_RIFFWAVE_inst)));
+    }
 
-        /// <summary>Validates that the <see cref="s_RIFFWAVE_inst" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(s_RIFFWAVE_inst).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="s_RIFFWAVE_inst" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(s_RIFFWAVE_inst).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="s_RIFFWAVE_inst" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(s_RIFFWAVE_inst), Is.EqualTo(7));
-        }
+    /// <summary>Validates that the <see cref="s_RIFFWAVE_inst" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(s_RIFFWAVE_inst), Is.EqualTo(7));
     }
 }

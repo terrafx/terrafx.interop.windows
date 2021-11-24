@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLCSSImportRule" /> struct.</summary>
+public static unsafe partial class HTMLCSSImportRuleTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLCSSImportRule" /> struct.</summary>
-    public static unsafe partial class HTMLCSSImportRuleTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLCSSImportRule" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLCSSImportRule" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLCSSImportRule).GUID, Is.EqualTo(IID_HTMLCSSImportRule));
-        }
+        Assert.That(typeof(HTMLCSSImportRule).GUID, Is.EqualTo(IID_HTMLCSSImportRule));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLCSSImportRule" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLCSSImportRule>(), Is.EqualTo(sizeof(HTMLCSSImportRule)));
-        }
+    /// <summary>Validates that the <see cref="HTMLCSSImportRule" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLCSSImportRule>(), Is.EqualTo(sizeof(HTMLCSSImportRule)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLCSSImportRule" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLCSSImportRule).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLCSSImportRule" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLCSSImportRule).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLCSSImportRule" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HTMLCSSImportRule), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="HTMLCSSImportRule" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HTMLCSSImportRule), Is.EqualTo(1));
     }
 }

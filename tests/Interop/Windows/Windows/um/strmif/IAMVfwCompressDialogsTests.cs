@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IAMVfwCompressDialogs" /> struct.</summary>
+public static unsafe partial class IAMVfwCompressDialogsTests
 {
-    /// <summary>Provides validation of the <see cref="IAMVfwCompressDialogs" /> struct.</summary>
-    public static unsafe partial class IAMVfwCompressDialogsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMVfwCompressDialogs" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMVfwCompressDialogs" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAMVfwCompressDialogs).GUID, Is.EqualTo(IID_IAMVfwCompressDialogs));
-        }
+        Assert.That(typeof(IAMVfwCompressDialogs).GUID, Is.EqualTo(IID_IAMVfwCompressDialogs));
+    }
 
-        /// <summary>Validates that the <see cref="IAMVfwCompressDialogs" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IAMVfwCompressDialogs>(), Is.EqualTo(sizeof(IAMVfwCompressDialogs)));
-        }
+    /// <summary>Validates that the <see cref="IAMVfwCompressDialogs" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IAMVfwCompressDialogs>(), Is.EqualTo(sizeof(IAMVfwCompressDialogs)));
+    }
 
-        /// <summary>Validates that the <see cref="IAMVfwCompressDialogs" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IAMVfwCompressDialogs).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IAMVfwCompressDialogs" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IAMVfwCompressDialogs).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IAMVfwCompressDialogs" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IAMVfwCompressDialogs" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IAMVfwCompressDialogs), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IAMVfwCompressDialogs), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IAMVfwCompressDialogs), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IAMVfwCompressDialogs), Is.EqualTo(4));
         }
     }
 }

@@ -5,19 +5,18 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TXFS_LIST_TRANSACTION_LOCKED_FILES
 {
-    public partial struct TXFS_LIST_TRANSACTION_LOCKED_FILES
-    {
-        public Guid KtmTransaction;
+    public Guid KtmTransaction;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong NumberOfFiles;
+    [NativeTypeName("DWORDLONG")]
+    public ulong NumberOfFiles;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong BufferSizeRequired;
+    [NativeTypeName("DWORDLONG")]
+    public ulong BufferSizeRequired;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong Offset;
-    }
+    [NativeTypeName("DWORDLONG")]
+    public ulong Offset;
 }

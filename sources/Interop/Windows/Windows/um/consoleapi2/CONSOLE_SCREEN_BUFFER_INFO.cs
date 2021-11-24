@@ -3,19 +3,18 @@
 // Ported from um/consoleapi2.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct CONSOLE_SCREEN_BUFFER_INFO
 {
-    public partial struct CONSOLE_SCREEN_BUFFER_INFO
-    {
-        public COORD dwSize;
+    public COORD dwSize;
 
-        public COORD dwCursorPosition;
+    public COORD dwCursorPosition;
 
-        [NativeTypeName("WORD")]
-        public ushort wAttributes;
+    [NativeTypeName("WORD")]
+    public ushort wAttributes;
 
-        public SMALL_RECT srWindow;
+    public SMALL_RECT srWindow;
 
-        public COORD dwMaximumWindowSize;
-    }
+    public COORD dwMaximumWindowSize;
 }

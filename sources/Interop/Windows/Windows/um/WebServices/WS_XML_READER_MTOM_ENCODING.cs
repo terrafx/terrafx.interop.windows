@@ -3,20 +3,19 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_XML_READER_MTOM_ENCODING
 {
-    public unsafe partial struct WS_XML_READER_MTOM_ENCODING
-    {
-        public WS_XML_READER_ENCODING encoding;
+    public WS_XML_READER_ENCODING encoding;
 
-        public WS_XML_READER_ENCODING* textEncoding;
+    public WS_XML_READER_ENCODING* textEncoding;
 
-        public BOOL readMimeHeader;
+    public BOOL readMimeHeader;
 
-        public WS_STRING startInfo;
+    public WS_STRING startInfo;
 
-        public WS_STRING boundary;
+    public WS_STRING boundary;
 
-        public WS_STRING startUri;
-    }
+    public WS_STRING startUri;
 }

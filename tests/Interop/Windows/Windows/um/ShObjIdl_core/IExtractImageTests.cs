@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IExtractImage" /> struct.</summary>
+public static unsafe partial class IExtractImageTests
 {
-    /// <summary>Provides validation of the <see cref="IExtractImage" /> struct.</summary>
-    public static unsafe partial class IExtractImageTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IExtractImage" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IExtractImage" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IExtractImage).GUID, Is.EqualTo(IID_IExtractImage));
-        }
+        Assert.That(typeof(IExtractImage).GUID, Is.EqualTo(IID_IExtractImage));
+    }
 
-        /// <summary>Validates that the <see cref="IExtractImage" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IExtractImage>(), Is.EqualTo(sizeof(IExtractImage)));
-        }
+    /// <summary>Validates that the <see cref="IExtractImage" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IExtractImage>(), Is.EqualTo(sizeof(IExtractImage)));
+    }
 
-        /// <summary>Validates that the <see cref="IExtractImage" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IExtractImage).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IExtractImage" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IExtractImage).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IExtractImage" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IExtractImage" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IExtractImage), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IExtractImage), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IExtractImage), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IExtractImage), Is.EqualTo(4));
         }
     }
 }

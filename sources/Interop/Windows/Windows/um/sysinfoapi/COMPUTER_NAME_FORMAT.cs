@@ -3,18 +3,17 @@
 // Ported from um/sysinfoapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum COMPUTER_NAME_FORMAT
 {
-    public enum COMPUTER_NAME_FORMAT
-    {
-        ComputerNameNetBIOS,
-        ComputerNameDnsHostname,
-        ComputerNameDnsDomain,
-        ComputerNameDnsFullyQualified,
-        ComputerNamePhysicalNetBIOS,
-        ComputerNamePhysicalDnsHostname,
-        ComputerNamePhysicalDnsDomain,
-        ComputerNamePhysicalDnsFullyQualified,
-        ComputerNameMax,
-    }
+    ComputerNameNetBIOS,
+    ComputerNameDnsHostname,
+    ComputerNameDnsDomain,
+    ComputerNameDnsFullyQualified,
+    ComputerNamePhysicalNetBIOS,
+    ComputerNamePhysicalDnsHostname,
+    ComputerNamePhysicalDnsDomain,
+    ComputerNamePhysicalDnsFullyQualified,
+    ComputerNameMax,
 }

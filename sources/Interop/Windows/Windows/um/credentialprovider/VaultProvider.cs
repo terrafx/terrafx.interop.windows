@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("503739D0-4C5E-4CFD-B3BA-D881334F0DF2")]
+public partial struct VaultProvider
 {
-    [Guid("503739D0-4C5E-4CFD-B3BA-D881334F0DF2")]
-    public partial struct VaultProvider
-    {
-    }
 }

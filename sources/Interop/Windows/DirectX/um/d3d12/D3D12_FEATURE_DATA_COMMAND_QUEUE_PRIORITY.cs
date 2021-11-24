@@ -5,14 +5,13 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_FEATURE_DATA_COMMAND_QUEUE_PRIORITY
 {
-    public partial struct D3D12_FEATURE_DATA_COMMAND_QUEUE_PRIORITY
-    {
-        public D3D12_COMMAND_LIST_TYPE CommandListType;
+    public D3D12_COMMAND_LIST_TYPE CommandListType;
 
-        public uint Priority;
+    public uint Priority;
 
-        public BOOL PriorityForTypeIsSupported;
-    }
+    public BOOL PriorityForTypeIsSupported;
 }

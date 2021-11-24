@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IFsiDirectoryItem" /> struct.</summary>
+public static unsafe partial class IFsiDirectoryItemTests
 {
-    /// <summary>Provides validation of the <see cref="IFsiDirectoryItem" /> struct.</summary>
-    public static unsafe partial class IFsiDirectoryItemTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IFsiDirectoryItem" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IFsiDirectoryItem" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IFsiDirectoryItem).GUID, Is.EqualTo(IID_IFsiDirectoryItem));
-        }
+        Assert.That(typeof(IFsiDirectoryItem).GUID, Is.EqualTo(IID_IFsiDirectoryItem));
+    }
 
-        /// <summary>Validates that the <see cref="IFsiDirectoryItem" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IFsiDirectoryItem>(), Is.EqualTo(sizeof(IFsiDirectoryItem)));
-        }
+    /// <summary>Validates that the <see cref="IFsiDirectoryItem" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IFsiDirectoryItem>(), Is.EqualTo(sizeof(IFsiDirectoryItem)));
+    }
 
-        /// <summary>Validates that the <see cref="IFsiDirectoryItem" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IFsiDirectoryItem).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IFsiDirectoryItem" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IFsiDirectoryItem).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IFsiDirectoryItem" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IFsiDirectoryItem" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IFsiDirectoryItem), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IFsiDirectoryItem), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IFsiDirectoryItem), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IFsiDirectoryItem), Is.EqualTo(4));
         }
     }
 }

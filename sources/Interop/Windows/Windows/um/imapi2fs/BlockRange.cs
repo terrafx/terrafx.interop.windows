@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("B507CA27-2204-11DD-966A-001AA01BBC58")]
+public partial struct BlockRange
 {
-    [Guid("B507CA27-2204-11DD-966A-001AA01BBC58")]
-    public partial struct BlockRange
-    {
-    }
 }

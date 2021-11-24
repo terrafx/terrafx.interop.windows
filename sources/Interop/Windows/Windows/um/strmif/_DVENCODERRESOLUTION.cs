@@ -3,13 +3,12 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum _DVENCODERRESOLUTION
 {
-    public enum _DVENCODERRESOLUTION
-    {
-        DVENCODERRESOLUTION_720x480 = 2012,
-        DVENCODERRESOLUTION_360x240 = 2013,
-        DVENCODERRESOLUTION_180x120 = 2014,
-        DVENCODERRESOLUTION_88x60 = 2015,
-    }
+    DVENCODERRESOLUTION_720x480 = 2012,
+    DVENCODERRESOLUTION_360x240 = 2013,
+    DVENCODERRESOLUTION_180x120 = 2014,
+    DVENCODERRESOLUTION_88x60 = 2015,
 }

@@ -3,18 +3,17 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT
 {
-    public partial struct WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT
+    public WS_SECURITY_BINDING_CONSTRAINT bindingConstraint;
+
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WebServices.h:6172:5)")]
+    public _out_e__Struct @out;
+
+    public partial struct _out_e__Struct
     {
-        public WS_SECURITY_BINDING_CONSTRAINT bindingConstraint;
-
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WebServices.h:6172:5)")]
-        public _out_e__Struct @out;
-
-        public partial struct _out_e__Struct
-        {
-            public BOOL clientCertCredentialRequired;
-        }
+        public BOOL clientCertCredentialRequired;
     }
 }

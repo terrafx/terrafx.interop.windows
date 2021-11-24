@@ -3,10 +3,9 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum TRACKSTATES
 {
-    public enum TRACKSTATES
-    {
-        TRS_NORMAL = 1,
-    }
+    TRS_NORMAL = 1,
 }

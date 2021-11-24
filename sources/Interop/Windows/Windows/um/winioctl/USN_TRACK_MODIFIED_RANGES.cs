@@ -5,21 +5,20 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public partial struct USN_TRACK_MODIFIED_RANGES
 {
-    [SupportedOSPlatform("windows8.1")]
-    public partial struct USN_TRACK_MODIFIED_RANGES
-    {
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        [NativeTypeName("DWORD")]
-        public uint Unused;
+    [NativeTypeName("DWORD")]
+    public uint Unused;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong ChunkSize;
+    [NativeTypeName("DWORDLONG")]
+    public ulong ChunkSize;
 
-        [NativeTypeName("LONGLONG")]
-        public long FileSizeThreshold;
-    }
+    [NativeTypeName("LONGLONG")]
+    public long FileSizeThreshold;
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WSABUF" /> struct.</summary>
+public static unsafe partial class WSABUFTests
 {
-    /// <summary>Provides validation of the <see cref="WSABUF" /> struct.</summary>
-    public static unsafe partial class WSABUFTests
+    /// <summary>Validates that the <see cref="WSABUF" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WSABUF" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WSABUF>(), Is.EqualTo(sizeof(WSABUF)));
-        }
+        Assert.That(Marshal.SizeOf<WSABUF>(), Is.EqualTo(sizeof(WSABUF)));
+    }
 
-        /// <summary>Validates that the <see cref="WSABUF" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WSABUF).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WSABUF" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WSABUF).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WSABUF" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="WSABUF" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(WSABUF), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(WSABUF), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(WSABUF), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(WSABUF), Is.EqualTo(8));
         }
     }
 }

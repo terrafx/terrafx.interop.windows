@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SCH_CRED_SECRET_CAPI" /> struct.</summary>
+public static unsafe partial class SCH_CRED_SECRET_CAPITests
 {
-    /// <summary>Provides validation of the <see cref="SCH_CRED_SECRET_CAPI" /> struct.</summary>
-    public static unsafe partial class SCH_CRED_SECRET_CAPITests
+    /// <summary>Validates that the <see cref="SCH_CRED_SECRET_CAPI" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SCH_CRED_SECRET_CAPI" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SCH_CRED_SECRET_CAPI>(), Is.EqualTo(sizeof(SCH_CRED_SECRET_CAPI)));
-        }
+        Assert.That(Marshal.SizeOf<SCH_CRED_SECRET_CAPI>(), Is.EqualTo(sizeof(SCH_CRED_SECRET_CAPI)));
+    }
 
-        /// <summary>Validates that the <see cref="SCH_CRED_SECRET_CAPI" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SCH_CRED_SECRET_CAPI).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SCH_CRED_SECRET_CAPI" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SCH_CRED_SECRET_CAPI).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SCH_CRED_SECRET_CAPI" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SCH_CRED_SECRET_CAPI" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SCH_CRED_SECRET_CAPI), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(SCH_CRED_SECRET_CAPI), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(SCH_CRED_SECRET_CAPI), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(SCH_CRED_SECRET_CAPI), Is.EqualTo(8));
         }
     }
 }

@@ -5,28 +5,27 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct PROVDATA_SIP
 {
-    public unsafe partial struct PROVDATA_SIP
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbStruct;
+    [NativeTypeName("DWORD")]
+    public uint cbStruct;
 
-        public Guid gSubject;
+    public Guid gSubject;
 
-        [NativeTypeName("struct SIP_DISPATCH_INFO_ *")]
-        public SIP_DISPATCH_INFO* pSip;
+    [NativeTypeName("struct SIP_DISPATCH_INFO_ *")]
+    public SIP_DISPATCH_INFO* pSip;
 
-        [NativeTypeName("struct SIP_DISPATCH_INFO_ *")]
-        public SIP_DISPATCH_INFO* pCATSip;
+    [NativeTypeName("struct SIP_DISPATCH_INFO_ *")]
+    public SIP_DISPATCH_INFO* pCATSip;
 
-        [NativeTypeName("struct SIP_SUBJECTINFO_ *")]
-        public SIP_SUBJECTINFO* psSipSubjectInfo;
+    [NativeTypeName("struct SIP_SUBJECTINFO_ *")]
+    public SIP_SUBJECTINFO* psSipSubjectInfo;
 
-        [NativeTypeName("struct SIP_SUBJECTINFO_ *")]
-        public SIP_SUBJECTINFO* psSipCATSubjectInfo;
+    [NativeTypeName("struct SIP_SUBJECTINFO_ *")]
+    public SIP_SUBJECTINFO* psSipCATSubjectInfo;
 
-        [NativeTypeName("struct SIP_INDIRECT_DATA_ *")]
-        public SIP_INDIRECT_DATA* psIndirectData;
-    }
+    [NativeTypeName("struct SIP_INDIRECT_DATA_ *")]
+    public SIP_INDIRECT_DATA* psIndirectData;
 }

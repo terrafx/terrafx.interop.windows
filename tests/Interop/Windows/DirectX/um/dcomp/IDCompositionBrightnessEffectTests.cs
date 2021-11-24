@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDCompositionBrightnessEffect" /> struct.</summary>
+public static unsafe partial class IDCompositionBrightnessEffectTests
 {
-    /// <summary>Provides validation of the <see cref="IDCompositionBrightnessEffect" /> struct.</summary>
-    public static unsafe partial class IDCompositionBrightnessEffectTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDCompositionBrightnessEffect" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDCompositionBrightnessEffect" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDCompositionBrightnessEffect).GUID, Is.EqualTo(IID_IDCompositionBrightnessEffect));
-        }
+        Assert.That(typeof(IDCompositionBrightnessEffect).GUID, Is.EqualTo(IID_IDCompositionBrightnessEffect));
+    }
 
-        /// <summary>Validates that the <see cref="IDCompositionBrightnessEffect" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDCompositionBrightnessEffect>(), Is.EqualTo(sizeof(IDCompositionBrightnessEffect)));
-        }
+    /// <summary>Validates that the <see cref="IDCompositionBrightnessEffect" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDCompositionBrightnessEffect>(), Is.EqualTo(sizeof(IDCompositionBrightnessEffect)));
+    }
 
-        /// <summary>Validates that the <see cref="IDCompositionBrightnessEffect" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDCompositionBrightnessEffect).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDCompositionBrightnessEffect" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDCompositionBrightnessEffect).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDCompositionBrightnessEffect" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDCompositionBrightnessEffect" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDCompositionBrightnessEffect), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDCompositionBrightnessEffect), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDCompositionBrightnessEffect), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDCompositionBrightnessEffect), Is.EqualTo(4));
         }
     }
 }

@@ -8,100 +8,99 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class IID
 {
-    public static partial class IID
+    public static ref readonly Guid IID_IHolographicCameraInterop
     {
-        public static ref readonly Guid IID_IHolographicCameraInterop
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xC5, 0xF9, 0xC1, 0x7C,
-                    0x02, 0x6D,
-                    0xFA, 0x41,
-                    0x95,
-                    0x00,
-                    0xE1,
-                    0x80,
-                    0x9E,
-                    0xB4,
-                    0x8E,
-                    0xEC
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0xC5, 0xF9, 0xC1, 0x7C,
+                0x02, 0x6D,
+                0xFA, 0x41,
+                0x95,
+                0x00,
+                0xE1,
+                0x80,
+                0x9E,
+                0xB4,
+                0x8E,
+                0xEC
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid IID_IHolographicCameraRenderingParametersInterop
+    public static ref readonly Guid IID_IHolographicCameraRenderingParametersInterop
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xD6, 0x68, 0x5B, 0xF7,
-                    0xFD, 0xD1,
-                    0x07, 0x47,
-                    0xAA,
-                    0xFD,
-                    0xFA,
-                    0x6F,
-                    0x4C,
-                    0x0E,
-                    0x3B,
-                    0xF4
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0xD6, 0x68, 0x5B, 0xF7,
+                0xFD, 0xD1,
+                0x07, 0x47,
+                0xAA,
+                0xFD,
+                0xFA,
+                0x6F,
+                0x4C,
+                0x0E,
+                0x3B,
+                0xF4
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid IID_IHolographicQuadLayerInterop
+    public static ref readonly Guid IID_IHolographicQuadLayerInterop
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xF0, 0x88, 0xA6, 0xCF,
-                    0x9E, 0x63,
-                    0x47, 0x4A,
-                    0x83,
-                    0xD7,
-                    0x6B,
-                    0x7F,
-                    0x5E,
-                    0xBF,
-                    0x7F,
-                    0xED
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0xF0, 0x88, 0xA6, 0xCF,
+                0x9E, 0x63,
+                0x47, 0x4A,
+                0x83,
+                0xD7,
+                0x6B,
+                0x7F,
+                0x5E,
+                0xBF,
+                0x7F,
+                0xED
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid IID_IHolographicQuadLayerUpdateParametersInterop
+    public static ref readonly Guid IID_IHolographicQuadLayerUpdateParametersInterop
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xCD, 0x49, 0xF5, 0xE5,
-                    0x09, 0xC9,
-                    0x4F, 0x44,
-                    0x88,
-                    0x09,
-                    0x7C,
-                    0xC1,
-                    0x8A,
-                    0x9C,
-                    0x89,
-                    0x20
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0xCD, 0x49, 0xF5, 0xE5,
+                0x09, 0xC9,
+                0x4F, 0x44,
+                0x88,
+                0x09,
+                0x7C,
+                0xC1,
+                0x8A,
+                0x9C,
+                0x89,
+                0x20
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

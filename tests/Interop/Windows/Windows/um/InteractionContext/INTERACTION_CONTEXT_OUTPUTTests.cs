@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="INTERACTION_CONTEXT_OUTPUT" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class INTERACTION_CONTEXT_OUTPUTTests
 {
-    /// <summary>Provides validation of the <see cref="INTERACTION_CONTEXT_OUTPUT" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class INTERACTION_CONTEXT_OUTPUTTests
+    /// <summary>Validates that the <see cref="INTERACTION_CONTEXT_OUTPUT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="INTERACTION_CONTEXT_OUTPUT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<INTERACTION_CONTEXT_OUTPUT>(), Is.EqualTo(sizeof(INTERACTION_CONTEXT_OUTPUT)));
-        }
+        Assert.That(Marshal.SizeOf<INTERACTION_CONTEXT_OUTPUT>(), Is.EqualTo(sizeof(INTERACTION_CONTEXT_OUTPUT)));
+    }
 
-        /// <summary>Validates that the <see cref="INTERACTION_CONTEXT_OUTPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(INTERACTION_CONTEXT_OUTPUT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="INTERACTION_CONTEXT_OUTPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(INTERACTION_CONTEXT_OUTPUT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="INTERACTION_CONTEXT_OUTPUT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(INTERACTION_CONTEXT_OUTPUT), Is.EqualTo(80));
-        }
+    /// <summary>Validates that the <see cref="INTERACTION_CONTEXT_OUTPUT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(INTERACTION_CONTEXT_OUTPUT), Is.EqualTo(80));
     }
 }

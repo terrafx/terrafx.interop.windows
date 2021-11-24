@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CERT_CHAIN_FIND_BY_ISSUER_PARA" /> struct.</summary>
+public static unsafe partial class CERT_CHAIN_FIND_BY_ISSUER_PARATests
 {
-    /// <summary>Provides validation of the <see cref="CERT_CHAIN_FIND_BY_ISSUER_PARA" /> struct.</summary>
-    public static unsafe partial class CERT_CHAIN_FIND_BY_ISSUER_PARATests
+    /// <summary>Validates that the <see cref="CERT_CHAIN_FIND_BY_ISSUER_PARA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CERT_CHAIN_FIND_BY_ISSUER_PARA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CERT_CHAIN_FIND_BY_ISSUER_PARA>(), Is.EqualTo(sizeof(CERT_CHAIN_FIND_BY_ISSUER_PARA)));
-        }
+        Assert.That(Marshal.SizeOf<CERT_CHAIN_FIND_BY_ISSUER_PARA>(), Is.EqualTo(sizeof(CERT_CHAIN_FIND_BY_ISSUER_PARA)));
+    }
 
-        /// <summary>Validates that the <see cref="CERT_CHAIN_FIND_BY_ISSUER_PARA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CERT_CHAIN_FIND_BY_ISSUER_PARA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CERT_CHAIN_FIND_BY_ISSUER_PARA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CERT_CHAIN_FIND_BY_ISSUER_PARA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CERT_CHAIN_FIND_BY_ISSUER_PARA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CERT_CHAIN_FIND_BY_ISSUER_PARA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CERT_CHAIN_FIND_BY_ISSUER_PARA), Is.EqualTo(56));
-            }
-            else
-            {
-                Assert.That(sizeof(CERT_CHAIN_FIND_BY_ISSUER_PARA), Is.EqualTo(32));
-            }
+            Assert.That(sizeof(CERT_CHAIN_FIND_BY_ISSUER_PARA), Is.EqualTo(56));
+        }
+        else
+        {
+            Assert.That(sizeof(CERT_CHAIN_FIND_BY_ISSUER_PARA), Is.EqualTo(32));
         }
     }
 }

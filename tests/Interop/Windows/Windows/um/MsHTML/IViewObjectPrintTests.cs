@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IViewObjectPrint" /> struct.</summary>
+public static unsafe partial class IViewObjectPrintTests
 {
-    /// <summary>Provides validation of the <see cref="IViewObjectPrint" /> struct.</summary>
-    public static unsafe partial class IViewObjectPrintTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IViewObjectPrint" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IViewObjectPrint" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IViewObjectPrint).GUID, Is.EqualTo(IID_IViewObjectPrint));
-        }
+        Assert.That(typeof(IViewObjectPrint).GUID, Is.EqualTo(IID_IViewObjectPrint));
+    }
 
-        /// <summary>Validates that the <see cref="IViewObjectPrint" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IViewObjectPrint>(), Is.EqualTo(sizeof(IViewObjectPrint)));
-        }
+    /// <summary>Validates that the <see cref="IViewObjectPrint" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IViewObjectPrint>(), Is.EqualTo(sizeof(IViewObjectPrint)));
+    }
 
-        /// <summary>Validates that the <see cref="IViewObjectPrint" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IViewObjectPrint).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IViewObjectPrint" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IViewObjectPrint).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IViewObjectPrint" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IViewObjectPrint" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IViewObjectPrint), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IViewObjectPrint), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IViewObjectPrint), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IViewObjectPrint), Is.EqualTo(4));
         }
     }
 }

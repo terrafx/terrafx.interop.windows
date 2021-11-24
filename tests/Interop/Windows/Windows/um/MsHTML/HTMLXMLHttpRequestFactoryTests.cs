@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLXMLHttpRequestFactory" /> struct.</summary>
+public static unsafe partial class HTMLXMLHttpRequestFactoryTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLXMLHttpRequestFactory" /> struct.</summary>
-    public static unsafe partial class HTMLXMLHttpRequestFactoryTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLXMLHttpRequestFactory" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLXMLHttpRequestFactory" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLXMLHttpRequestFactory).GUID, Is.EqualTo(IID_HTMLXMLHttpRequestFactory));
-        }
+        Assert.That(typeof(HTMLXMLHttpRequestFactory).GUID, Is.EqualTo(IID_HTMLXMLHttpRequestFactory));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLXMLHttpRequestFactory" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLXMLHttpRequestFactory>(), Is.EqualTo(sizeof(HTMLXMLHttpRequestFactory)));
-        }
+    /// <summary>Validates that the <see cref="HTMLXMLHttpRequestFactory" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLXMLHttpRequestFactory>(), Is.EqualTo(sizeof(HTMLXMLHttpRequestFactory)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLXMLHttpRequestFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLXMLHttpRequestFactory).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLXMLHttpRequestFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLXMLHttpRequestFactory).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLXMLHttpRequestFactory" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HTMLXMLHttpRequestFactory), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="HTMLXMLHttpRequestFactory" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HTMLXMLHttpRequestFactory), Is.EqualTo(1));
     }
 }

@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("BEE3D220-157B-11D0-BD23-00A0C911CE86")]
+[NativeTypeName("struct IConfigInterleaving : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IConfigInterleaving : IConfigInterleaving.Interface
 {
-    [Guid("BEE3D220-157B-11D0-BD23-00A0C911CE86")]
-    [NativeTypeName("struct IConfigInterleaving : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IConfigInterleaving : IConfigInterleaving.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IConfigInterleaving*, Guid*, void**, int>)(lpVtbl[0]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IConfigInterleaving*, Guid*, void**, int>)(lpVtbl[0]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IConfigInterleaving*, uint>)(lpVtbl[1]))((IConfigInterleaving*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IConfigInterleaving*, uint>)(lpVtbl[1]))((IConfigInterleaving*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IConfigInterleaving*, uint>)(lpVtbl[2]))((IConfigInterleaving*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IConfigInterleaving*, uint>)(lpVtbl[2]))((IConfigInterleaving*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT put_Mode(InterleavingMode mode)
+    {
+        return ((delegate* unmanaged<IConfigInterleaving*, InterleavingMode, int>)(lpVtbl[3]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), mode);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT get_Mode(InterleavingMode* pMode)
+    {
+        return ((delegate* unmanaged<IConfigInterleaving*, InterleavingMode*, int>)(lpVtbl[4]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), pMode);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT put_Interleaving([NativeTypeName("const REFERENCE_TIME *")] long* prtInterleave, [NativeTypeName("const REFERENCE_TIME *")] long* prtPreroll)
+    {
+        return ((delegate* unmanaged<IConfigInterleaving*, long*, long*, int>)(lpVtbl[5]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), prtInterleave, prtPreroll);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT get_Interleaving([NativeTypeName("REFERENCE_TIME *")] long* prtInterleave, [NativeTypeName("REFERENCE_TIME *")] long* prtPreroll)
+    {
+        return ((delegate* unmanaged<IConfigInterleaving*, long*, long*, int>)(lpVtbl[6]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), prtInterleave, prtPreroll);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT put_Mode(InterleavingMode mode)
-        {
-            return ((delegate* unmanaged<IConfigInterleaving*, InterleavingMode, int>)(lpVtbl[3]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), mode);
-        }
+        HRESULT put_Mode(InterleavingMode mode);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT get_Mode(InterleavingMode* pMode)
-        {
-            return ((delegate* unmanaged<IConfigInterleaving*, InterleavingMode*, int>)(lpVtbl[4]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), pMode);
-        }
+        HRESULT get_Mode(InterleavingMode* pMode);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT put_Interleaving([NativeTypeName("const REFERENCE_TIME *")] long* prtInterleave, [NativeTypeName("const REFERENCE_TIME *")] long* prtPreroll)
-        {
-            return ((delegate* unmanaged<IConfigInterleaving*, long*, long*, int>)(lpVtbl[5]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), prtInterleave, prtPreroll);
-        }
+        HRESULT put_Interleaving([NativeTypeName("const REFERENCE_TIME *")] long* prtInterleave, [NativeTypeName("const REFERENCE_TIME *")] long* prtPreroll);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT get_Interleaving([NativeTypeName("REFERENCE_TIME *")] long* prtInterleave, [NativeTypeName("REFERENCE_TIME *")] long* prtPreroll)
-        {
-            return ((delegate* unmanaged<IConfigInterleaving*, long*, long*, int>)(lpVtbl[6]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), prtInterleave, prtPreroll);
-        }
+        HRESULT get_Interleaving([NativeTypeName("REFERENCE_TIME *")] long* prtInterleave, [NativeTypeName("REFERENCE_TIME *")] long* prtPreroll);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT put_Mode(InterleavingMode mode);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IConfigInterleaving*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT get_Mode(InterleavingMode* pMode);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IConfigInterleaving*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT put_Interleaving([NativeTypeName("const REFERENCE_TIME *")] long* prtInterleave, [NativeTypeName("const REFERENCE_TIME *")] long* prtPreroll);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IConfigInterleaving*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT get_Interleaving([NativeTypeName("REFERENCE_TIME *")] long* prtInterleave, [NativeTypeName("REFERENCE_TIME *")] long* prtPreroll);
-        }
+        [NativeTypeName("HRESULT (InterleavingMode) __attribute__((stdcall))")]
+        public delegate* unmanaged<IConfigInterleaving*, InterleavingMode, int> put_Mode;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IConfigInterleaving*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (InterleavingMode *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IConfigInterleaving*, InterleavingMode*, int> get_Mode;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IConfigInterleaving*, uint> AddRef;
+        [NativeTypeName("HRESULT (const REFERENCE_TIME *, const REFERENCE_TIME *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IConfigInterleaving*, long*, long*, int> put_Interleaving;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IConfigInterleaving*, uint> Release;
-
-            [NativeTypeName("HRESULT (InterleavingMode) __attribute__((stdcall))")]
-            public delegate* unmanaged<IConfigInterleaving*, InterleavingMode, int> put_Mode;
-
-            [NativeTypeName("HRESULT (InterleavingMode *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IConfigInterleaving*, InterleavingMode*, int> get_Mode;
-
-            [NativeTypeName("HRESULT (const REFERENCE_TIME *, const REFERENCE_TIME *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IConfigInterleaving*, long*, long*, int> put_Interleaving;
-
-            [NativeTypeName("HRESULT (REFERENCE_TIME *, REFERENCE_TIME *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IConfigInterleaving*, long*, long*, int> get_Interleaving;
-        }
+        [NativeTypeName("HRESULT (REFERENCE_TIME *, REFERENCE_TIME *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IConfigInterleaving*, long*, long*, int> get_Interleaving;
     }
 }

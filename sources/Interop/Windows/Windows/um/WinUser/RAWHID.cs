@@ -3,17 +3,16 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct RAWHID
 {
-    public unsafe partial struct RAWHID
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwSizeHid;
+    [NativeTypeName("DWORD")]
+    public uint dwSizeHid;
 
-        [NativeTypeName("DWORD")]
-        public uint dwCount;
+    [NativeTypeName("DWORD")]
+    public uint dwCount;
 
-        [NativeTypeName("BYTE [1]")]
-        public fixed byte bRawData[1];
-    }
+    [NativeTypeName("BYTE [1]")]
+    public fixed byte bRawData[1];
 }

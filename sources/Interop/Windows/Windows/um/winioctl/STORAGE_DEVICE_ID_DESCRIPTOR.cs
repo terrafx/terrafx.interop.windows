@@ -3,20 +3,19 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct STORAGE_DEVICE_ID_DESCRIPTOR
 {
-    public unsafe partial struct STORAGE_DEVICE_ID_DESCRIPTOR
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("DWORD")]
-        public uint NumberOfIdentifiers;
+    [NativeTypeName("DWORD")]
+    public uint NumberOfIdentifiers;
 
-        [NativeTypeName("BYTE [1]")]
-        public fixed byte Identifiers[1];
-    }
+    [NativeTypeName("BYTE [1]")]
+    public fixed byte Identifiers[1];
 }

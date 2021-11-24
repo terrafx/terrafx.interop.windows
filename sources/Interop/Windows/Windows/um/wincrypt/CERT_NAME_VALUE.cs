@@ -3,14 +3,13 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct CERT_NAME_VALUE
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwValueType;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("CERT_RDN_VALUE_BLOB")]
-        public CRYPT_DATA_BLOB Value;
-    }
+public partial struct CERT_NAME_VALUE
+{
+    [NativeTypeName("DWORD")]
+    public uint dwValueType;
+
+    [NativeTypeName("CERT_RDN_VALUE_BLOB")]
+    public CRYPT_DATA_BLOB Value;
 }

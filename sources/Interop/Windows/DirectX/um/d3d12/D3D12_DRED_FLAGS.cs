@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum D3D12_DRED_FLAGS
 {
-    [Flags]
-    public enum D3D12_DRED_FLAGS
-    {
-        D3D12_DRED_FLAG_NONE = 0,
-        D3D12_DRED_FLAG_FORCE_ENABLE = 1,
-        D3D12_DRED_FLAG_DISABLE_AUTOBREADCRUMBS = 2,
-    }
+    D3D12_DRED_FLAG_NONE = 0,
+    D3D12_DRED_FLAG_FORCE_ENABLE = 1,
+    D3D12_DRED_FLAG_DISABLE_AUTOBREADCRUMBS = 2,
 }

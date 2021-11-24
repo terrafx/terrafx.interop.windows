@@ -5,14 +5,13 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct ENLISTMENT_CRM_INFORMATION
 {
-    public partial struct ENLISTMENT_CRM_INFORMATION
-    {
-        public Guid CrmTransactionManagerId;
+    public Guid CrmTransactionManagerId;
 
-        public Guid CrmResourceManagerId;
+    public Guid CrmResourceManagerId;
 
-        public Guid CrmEnlistmentId;
-    }
+    public Guid CrmEnlistmentId;
 }

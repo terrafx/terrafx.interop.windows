@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SPPHRASEELEMENT" /> struct.</summary>
+public static unsafe partial class SPPHRASEELEMENTTests
 {
-    /// <summary>Provides validation of the <see cref="SPPHRASEELEMENT" /> struct.</summary>
-    public static unsafe partial class SPPHRASEELEMENTTests
+    /// <summary>Validates that the <see cref="SPPHRASEELEMENT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SPPHRASEELEMENT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SPPHRASEELEMENT>(), Is.EqualTo(sizeof(SPPHRASEELEMENT)));
-        }
+        Assert.That(Marshal.SizeOf<SPPHRASEELEMENT>(), Is.EqualTo(sizeof(SPPHRASEELEMENT)));
+    }
 
-        /// <summary>Validates that the <see cref="SPPHRASEELEMENT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SPPHRASEELEMENT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SPPHRASEELEMENT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SPPHRASEELEMENT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SPPHRASEELEMENT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SPPHRASEELEMENT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SPPHRASEELEMENT), Is.EqualTo(56));
-            }
-            else
-            {
-                Assert.That(sizeof(SPPHRASEELEMENT), Is.EqualTo(44));
-            }
+            Assert.That(sizeof(SPPHRASEELEMENT), Is.EqualTo(56));
+        }
+        else
+        {
+            Assert.That(sizeof(SPPHRASEELEMENT), Is.EqualTo(44));
         }
     }
 }

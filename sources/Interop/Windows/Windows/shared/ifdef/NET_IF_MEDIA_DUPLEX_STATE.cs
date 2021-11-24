@@ -3,12 +3,11 @@
 // Ported from shared/ifdef.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum NET_IF_MEDIA_DUPLEX_STATE
 {
-    public enum NET_IF_MEDIA_DUPLEX_STATE
-    {
-        MediaDuplexStateUnknown,
-        MediaDuplexStateHalf,
-        MediaDuplexStateFull,
-    }
+    MediaDuplexStateUnknown,
+    MediaDuplexStateHalf,
+    MediaDuplexStateFull,
 }

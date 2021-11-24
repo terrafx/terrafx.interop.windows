@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("5752238B-24F0-495A-82F1-2FD593056796")]
+[NativeTypeName("struct IFrameworkInputPane : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IFrameworkInputPane : IFrameworkInputPane.Interface
 {
-    [Guid("5752238B-24F0-495A-82F1-2FD593056796")]
-    [NativeTypeName("struct IFrameworkInputPane : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFrameworkInputPane : IFrameworkInputPane.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IFrameworkInputPane*, Guid*, void**, int>)(lpVtbl[0]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IFrameworkInputPane*, Guid*, void**, int>)(lpVtbl[0]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IFrameworkInputPane*, uint>)(lpVtbl[1]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IFrameworkInputPane*, uint>)(lpVtbl[1]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IFrameworkInputPane*, uint>)(lpVtbl[2]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IFrameworkInputPane*, uint>)(lpVtbl[2]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Advise(IUnknown* pWindow, IFrameworkInputPaneHandler* pHandler, [NativeTypeName("DWORD *")] uint* pdwCookie)
+    {
+        return ((delegate* unmanaged<IFrameworkInputPane*, IUnknown*, IFrameworkInputPaneHandler*, uint*, int>)(lpVtbl[3]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), pWindow, pHandler, pdwCookie);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT AdviseWithHWND(HWND hwnd, IFrameworkInputPaneHandler* pHandler, [NativeTypeName("DWORD *")] uint* pdwCookie)
+    {
+        return ((delegate* unmanaged<IFrameworkInputPane*, HWND, IFrameworkInputPaneHandler*, uint*, int>)(lpVtbl[4]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), hwnd, pHandler, pdwCookie);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie)
+    {
+        return ((delegate* unmanaged<IFrameworkInputPane*, uint, int>)(lpVtbl[5]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), dwCookie);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Location(RECT* prcInputPaneScreenLocation)
+    {
+        return ((delegate* unmanaged<IFrameworkInputPane*, RECT*, int>)(lpVtbl[6]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), prcInputPaneScreenLocation);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Advise(IUnknown* pWindow, IFrameworkInputPaneHandler* pHandler, [NativeTypeName("DWORD *")] uint* pdwCookie)
-        {
-            return ((delegate* unmanaged<IFrameworkInputPane*, IUnknown*, IFrameworkInputPaneHandler*, uint*, int>)(lpVtbl[3]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), pWindow, pHandler, pdwCookie);
-        }
+        HRESULT Advise(IUnknown* pWindow, IFrameworkInputPaneHandler* pHandler, [NativeTypeName("DWORD *")] uint* pdwCookie);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT AdviseWithHWND(HWND hwnd, IFrameworkInputPaneHandler* pHandler, [NativeTypeName("DWORD *")] uint* pdwCookie)
-        {
-            return ((delegate* unmanaged<IFrameworkInputPane*, HWND, IFrameworkInputPaneHandler*, uint*, int>)(lpVtbl[4]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), hwnd, pHandler, pdwCookie);
-        }
+        HRESULT AdviseWithHWND(HWND hwnd, IFrameworkInputPaneHandler* pHandler, [NativeTypeName("DWORD *")] uint* pdwCookie);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie)
-        {
-            return ((delegate* unmanaged<IFrameworkInputPane*, uint, int>)(lpVtbl[5]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), dwCookie);
-        }
+        HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Location(RECT* prcInputPaneScreenLocation)
-        {
-            return ((delegate* unmanaged<IFrameworkInputPane*, RECT*, int>)(lpVtbl[6]))((IFrameworkInputPane*)Unsafe.AsPointer(ref this), prcInputPaneScreenLocation);
-        }
+        HRESULT Location(RECT* prcInputPaneScreenLocation);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Advise(IUnknown* pWindow, IFrameworkInputPaneHandler* pHandler, [NativeTypeName("DWORD *")] uint* pdwCookie);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFrameworkInputPane*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT AdviseWithHWND(HWND hwnd, IFrameworkInputPaneHandler* pHandler, [NativeTypeName("DWORD *")] uint* pdwCookie);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IFrameworkInputPane*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IFrameworkInputPane*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT Location(RECT* prcInputPaneScreenLocation);
-        }
+        [NativeTypeName("HRESULT (IUnknown *, IFrameworkInputPaneHandler *, DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFrameworkInputPane*, IUnknown*, IFrameworkInputPaneHandler*, uint*, int> Advise;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFrameworkInputPane*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (HWND, IFrameworkInputPaneHandler *, DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFrameworkInputPane*, HWND, IFrameworkInputPaneHandler*, uint*, int> AdviseWithHWND;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IFrameworkInputPane*, uint> AddRef;
+        [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFrameworkInputPane*, uint, int> Unadvise;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IFrameworkInputPane*, uint> Release;
-
-            [NativeTypeName("HRESULT (IUnknown *, IFrameworkInputPaneHandler *, DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFrameworkInputPane*, IUnknown*, IFrameworkInputPaneHandler*, uint*, int> Advise;
-
-            [NativeTypeName("HRESULT (HWND, IFrameworkInputPaneHandler *, DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFrameworkInputPane*, HWND, IFrameworkInputPaneHandler*, uint*, int> AdviseWithHWND;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFrameworkInputPane*, uint, int> Unadvise;
-
-            [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFrameworkInputPane*, RECT*, int> Location;
-        }
+        [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFrameworkInputPane*, RECT*, int> Location;
     }
 }

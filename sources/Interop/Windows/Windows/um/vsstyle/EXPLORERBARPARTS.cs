@@ -3,21 +3,20 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum EXPLORERBARPARTS
 {
-    public enum EXPLORERBARPARTS
-    {
-        EBP_HEADERBACKGROUND = 1,
-        EBP_HEADERCLOSE = 2,
-        EBP_HEADERPIN = 3,
-        EBP_IEBARMENU = 4,
-        EBP_NORMALGROUPBACKGROUND = 5,
-        EBP_NORMALGROUPCOLLAPSE = 6,
-        EBP_NORMALGROUPEXPAND = 7,
-        EBP_NORMALGROUPHEAD = 8,
-        EBP_SPECIALGROUPBACKGROUND = 9,
-        EBP_SPECIALGROUPCOLLAPSE = 10,
-        EBP_SPECIALGROUPEXPAND = 11,
-        EBP_SPECIALGROUPHEAD = 12,
-    }
+    EBP_HEADERBACKGROUND = 1,
+    EBP_HEADERCLOSE = 2,
+    EBP_HEADERPIN = 3,
+    EBP_IEBARMENU = 4,
+    EBP_NORMALGROUPBACKGROUND = 5,
+    EBP_NORMALGROUPCOLLAPSE = 6,
+    EBP_NORMALGROUPEXPAND = 7,
+    EBP_NORMALGROUPHEAD = 8,
+    EBP_SPECIALGROUPBACKGROUND = 9,
+    EBP_SPECIALGROUPCOLLAPSE = 10,
+    EBP_SPECIALGROUPEXPAND = 11,
+    EBP_SPECIALGROUPHEAD = 12,
 }

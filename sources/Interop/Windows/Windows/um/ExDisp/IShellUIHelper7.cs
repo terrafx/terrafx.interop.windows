@@ -7,1018 +7,1017 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("60E567C8-9573-4AB2-A264-637C6C161CB1")]
+[NativeTypeName("struct IShellUIHelper7 : IShellUIHelper6")]
+[NativeInheritance("IShellUIHelper6")]
+public unsafe partial struct IShellUIHelper7 : IShellUIHelper7.Interface
 {
-    [Guid("60E567C8-9573-4AB2-A264-637C6C161CB1")]
-    [NativeTypeName("struct IShellUIHelper7 : IShellUIHelper6")]
-    [NativeInheritance("IShellUIHelper6")]
-    public unsafe partial struct IShellUIHelper7 : IShellUIHelper7.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, Guid*, void**, int>)(lpVtbl[0]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, uint>)(lpVtbl[1]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, uint>)(lpVtbl[2]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetTypeInfoCount(uint* pctinfo)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, uint*, int>)(lpVtbl[3]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pctinfo);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(6)]
-        public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(7)]
-        public HRESULT ResetFirstBootMode()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[7]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(8)]
-        public HRESULT ResetSafeMode()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[8]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(9)]
-        public HRESULT RefreshOfflineDesktop()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[9]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(10)]
-        public HRESULT AddFavorite([NativeTypeName("BSTR")] ushort* URL, VARIANT* Title)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT*, int>)(lpVtbl[10]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), URL, Title);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(11)]
-        public HRESULT AddChannel([NativeTypeName("BSTR")] ushort* URL)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, int>)(lpVtbl[11]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), URL);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(12)]
-        public HRESULT AddDesktopComponent([NativeTypeName("BSTR")] ushort* URL, [NativeTypeName("BSTR")] ushort* Type, VARIANT* Left, VARIANT* Top, VARIANT* Width, VARIANT* Height)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, VARIANT*, VARIANT*, VARIANT*, int>)(lpVtbl[12]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), URL, Type, Left, Top, Width, Height);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(13)]
-        public HRESULT IsSubscribed([NativeTypeName("BSTR")] ushort* URL, [NativeTypeName("VARIANT_BOOL *")] short* pBool)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, short*, int>)(lpVtbl[13]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), URL, pBool);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(14)]
-        public HRESULT NavigateAndFind([NativeTypeName("BSTR")] ushort* URL, [NativeTypeName("BSTR")] ushort* strQuery, VARIANT* varTargetFrame)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, int>)(lpVtbl[14]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), URL, strQuery, varTargetFrame);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(15)]
-        public HRESULT ImportExportFavorites([NativeTypeName("VARIANT_BOOL")] short fImport, [NativeTypeName("BSTR")] ushort* strImpExpPath)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, short, ushort*, int>)(lpVtbl[15]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fImport, strImpExpPath);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(16)]
-        public HRESULT AutoCompleteSaveForm(VARIANT* Form)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, VARIANT*, int>)(lpVtbl[16]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), Form);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(17)]
-        public HRESULT AutoScan([NativeTypeName("BSTR")] ushort* strSearch, [NativeTypeName("BSTR")] ushort* strFailureUrl, VARIANT* pvarTargetFrame)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, int>)(lpVtbl[17]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), strSearch, strFailureUrl, pvarTargetFrame);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(18)]
-        public HRESULT AutoCompleteAttach(VARIANT* Reserved)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, VARIANT*, int>)(lpVtbl[18]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), Reserved);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(19)]
-        public HRESULT ShowBrowserUI([NativeTypeName("BSTR")] ushort* bstrName, VARIANT* pvarIn, VARIANT* pvarOut)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT*, VARIANT*, int>)(lpVtbl[19]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrName, pvarIn, pvarOut);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(20)]
-        public HRESULT AddSearchProvider([NativeTypeName("BSTR")] ushort* URL)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, int>)(lpVtbl[20]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), URL);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(21)]
-        public HRESULT RunOnceShown()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[21]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(22)]
-        public HRESULT SkipRunOnce()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[22]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(23)]
-        public HRESULT CustomizeSettings([NativeTypeName("VARIANT_BOOL")] short fSQM, [NativeTypeName("VARIANT_BOOL")] short fPhishing, [NativeTypeName("BSTR")] ushort* bstrLocale)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, short, short, ushort*, int>)(lpVtbl[23]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fSQM, fPhishing, bstrLocale);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(24)]
-        public HRESULT SqmEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, short*, int>)(lpVtbl[24]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pfEnabled);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(25)]
-        public HRESULT PhishingEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, short*, int>)(lpVtbl[25]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pfEnabled);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(26)]
-        public HRESULT BrandImageUri([NativeTypeName("BSTR *")] ushort** pbstrUri)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort**, int>)(lpVtbl[26]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pbstrUri);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(27)]
-        public HRESULT SkipTabsWelcome()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[27]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(28)]
-        public HRESULT DiagnoseConnection()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[28]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(29)]
-        public HRESULT CustomizeClearType([NativeTypeName("VARIANT_BOOL")] short fSet)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, short, int>)(lpVtbl[29]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fSet);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(30)]
-        public HRESULT IsSearchProviderInstalled([NativeTypeName("BSTR")] ushort* URL, [NativeTypeName("DWORD *")] uint* pdwResult)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, uint*, int>)(lpVtbl[30]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), URL, pdwResult);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(31)]
-        public HRESULT IsSearchMigrated([NativeTypeName("VARIANT_BOOL *")] short* pfMigrated)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, short*, int>)(lpVtbl[31]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pfMigrated);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(32)]
-        public HRESULT DefaultSearchProvider([NativeTypeName("BSTR *")] ushort** pbstrName)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort**, int>)(lpVtbl[32]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pbstrName);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(33)]
-        public HRESULT RunOnceRequiredSettingsComplete([NativeTypeName("VARIANT_BOOL")] short fComplete)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, short, int>)(lpVtbl[33]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fComplete);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(34)]
-        public HRESULT RunOnceHasShown([NativeTypeName("VARIANT_BOOL *")] short* pfShown)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, short*, int>)(lpVtbl[34]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pfShown);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(35)]
-        public HRESULT SearchGuideUrl([NativeTypeName("BSTR *")] ushort** pbstrUrl)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort**, int>)(lpVtbl[35]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pbstrUrl);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(36)]
-        public HRESULT AddService([NativeTypeName("BSTR")] ushort* URL)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, int>)(lpVtbl[36]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), URL);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(37)]
-        public HRESULT IsServiceInstalled([NativeTypeName("BSTR")] ushort* URL, [NativeTypeName("BSTR")] ushort* Verb, [NativeTypeName("DWORD *")] uint* pdwResult)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, uint*, int>)(lpVtbl[37]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), URL, Verb, pdwResult);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(38)]
-        public HRESULT InPrivateFilteringEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, short*, int>)(lpVtbl[38]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pfEnabled);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(39)]
-        public HRESULT AddToFavoritesBar([NativeTypeName("BSTR")] ushort* URL, [NativeTypeName("BSTR")] ushort* Title, VARIANT* Type)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, int>)(lpVtbl[39]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), URL, Title, Type);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(40)]
-        public HRESULT BuildNewTabPage()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[40]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(41)]
-        public HRESULT SetRecentlyClosedVisible([NativeTypeName("VARIANT_BOOL")] short fVisible)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, short, int>)(lpVtbl[41]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fVisible);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(42)]
-        public HRESULT SetActivitiesVisible([NativeTypeName("VARIANT_BOOL")] short fVisible)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, short, int>)(lpVtbl[42]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fVisible);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(43)]
-        public HRESULT ContentDiscoveryReset()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[43]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(44)]
-        public HRESULT IsSuggestedSitesEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, short*, int>)(lpVtbl[44]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pfEnabled);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(45)]
-        public HRESULT EnableSuggestedSites([NativeTypeName("VARIANT_BOOL")] short fEnable)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, short, int>)(lpVtbl[45]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fEnable);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(46)]
-        public HRESULT NavigateToSuggestedSites([NativeTypeName("BSTR")] ushort* bstrRelativeUrl)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, int>)(lpVtbl[46]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrRelativeUrl);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(47)]
-        public HRESULT ShowTabsHelp()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[47]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(48)]
-        public HRESULT ShowInPrivateHelp()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[48]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(49)]
-        public HRESULT msIsSiteMode([NativeTypeName("VARIANT_BOOL *")] short* pfSiteMode)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, short*, int>)(lpVtbl[49]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pfSiteMode);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(50)]
-        public HRESULT msSiteModeShowThumbBar()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[50]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(51)]
-        public HRESULT msSiteModeAddThumbBarButton([NativeTypeName("BSTR")] ushort* bstrIconURL, [NativeTypeName("BSTR")] ushort* bstrTooltip, VARIANT* pvarButtonID)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, int>)(lpVtbl[51]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrIconURL, bstrTooltip, pvarButtonID);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(52)]
-        public HRESULT msSiteModeUpdateThumbBarButton(VARIANT ButtonID, [NativeTypeName("VARIANT_BOOL")] short fEnabled, [NativeTypeName("VARIANT_BOOL")] short fVisible)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, VARIANT, short, short, int>)(lpVtbl[52]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), ButtonID, fEnabled, fVisible);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(53)]
-        public HRESULT msSiteModeSetIconOverlay([NativeTypeName("BSTR")] ushort* IconUrl, VARIANT* pvarDescription)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT*, int>)(lpVtbl[53]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), IconUrl, pvarDescription);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(54)]
-        public HRESULT msSiteModeClearIconOverlay()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[54]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(55)]
-        public HRESULT msAddSiteMode()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[55]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(56)]
-        public HRESULT msSiteModeCreateJumpList([NativeTypeName("BSTR")] ushort* bstrHeader)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, int>)(lpVtbl[56]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrHeader);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(57)]
-        public HRESULT msSiteModeAddJumpListItem([NativeTypeName("BSTR")] ushort* bstrName, [NativeTypeName("BSTR")] ushort* bstrActionUri, [NativeTypeName("BSTR")] ushort* bstrIconUri, VARIANT* pvarWindowType)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, ushort*, VARIANT*, int>)(lpVtbl[57]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrName, bstrActionUri, bstrIconUri, pvarWindowType);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(58)]
-        public HRESULT msSiteModeClearJumpList()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[58]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(59)]
-        public HRESULT msSiteModeShowJumpList()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[59]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(60)]
-        public HRESULT msSiteModeAddButtonStyle(VARIANT uiButtonID, [NativeTypeName("BSTR")] ushort* bstrIconUrl, [NativeTypeName("BSTR")] ushort* bstrTooltip, VARIANT* pvarStyleID)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, VARIANT, ushort*, ushort*, VARIANT*, int>)(lpVtbl[60]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), uiButtonID, bstrIconUrl, bstrTooltip, pvarStyleID);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(61)]
-        public HRESULT msSiteModeShowButtonStyle(VARIANT uiButtonID, VARIANT uiStyleID)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, VARIANT, VARIANT, int>)(lpVtbl[61]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), uiButtonID, uiStyleID);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(62)]
-        public HRESULT msSiteModeActivate()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[62]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(63)]
-        public HRESULT msIsSiteModeFirstRun([NativeTypeName("VARIANT_BOOL")] short fPreserveState, VARIANT* puiFirstRun)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, short, VARIANT*, int>)(lpVtbl[63]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fPreserveState, puiFirstRun);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(64)]
-        public HRESULT msAddTrackingProtectionList([NativeTypeName("BSTR")] ushort* URL, [NativeTypeName("BSTR")] ushort* bstrFilterName)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, int>)(lpVtbl[64]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), URL, bstrFilterName);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(65)]
-        public HRESULT msTrackingProtectionEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, short*, int>)(lpVtbl[65]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pfEnabled);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(66)]
-        public HRESULT msActiveXFilteringEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, short*, int>)(lpVtbl[66]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pfEnabled);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(67)]
-        public HRESULT msProvisionNetworks([NativeTypeName("BSTR")] ushort* bstrProvisioningXml, VARIANT* puiResult)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT*, int>)(lpVtbl[67]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrProvisioningXml, puiResult);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(68)]
-        public HRESULT msReportSafeUrl()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[68]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(69)]
-        public HRESULT msSiteModeRefreshBadge()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[69]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(70)]
-        public HRESULT msSiteModeClearBadge()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[70]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(71)]
-        public HRESULT msDiagnoseConnectionUILess()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[71]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(72)]
-        public HRESULT msLaunchNetworkClientHelp()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[72]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(73)]
-        public HRESULT msChangeDefaultBrowser([NativeTypeName("VARIANT_BOOL")] short fChange)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, short, int>)(lpVtbl[73]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fChange);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(74)]
-        public HRESULT msStopPeriodicTileUpdate()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[74]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(75)]
-        public HRESULT msStartPeriodicTileUpdate(VARIANT pollingUris, VARIANT startTime, VARIANT uiUpdateRecurrence)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, VARIANT, VARIANT, VARIANT, int>)(lpVtbl[75]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pollingUris, startTime, uiUpdateRecurrence);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(76)]
-        public HRESULT msStartPeriodicTileUpdateBatch(VARIANT pollingUris, VARIANT startTime, VARIANT uiUpdateRecurrence)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, VARIANT, VARIANT, VARIANT, int>)(lpVtbl[76]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pollingUris, startTime, uiUpdateRecurrence);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(77)]
-        public HRESULT msClearTile()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[77]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(78)]
-        public HRESULT msEnableTileNotificationQueue([NativeTypeName("VARIANT_BOOL")] short fChange)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, short, int>)(lpVtbl[78]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fChange);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(79)]
-        public HRESULT msPinnedSiteState(VARIANT* pvarSiteState)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, VARIANT*, int>)(lpVtbl[79]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pvarSiteState);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(80)]
-        public HRESULT msEnableTileNotificationQueueForSquare150x150([NativeTypeName("VARIANT_BOOL")] short fChange)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, short, int>)(lpVtbl[80]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fChange);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(81)]
-        public HRESULT msEnableTileNotificationQueueForWide310x150([NativeTypeName("VARIANT_BOOL")] short fChange)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, short, int>)(lpVtbl[81]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fChange);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(82)]
-        public HRESULT msEnableTileNotificationQueueForSquare310x310([NativeTypeName("VARIANT_BOOL")] short fChange)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, short, int>)(lpVtbl[82]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fChange);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(83)]
-        public HRESULT msScheduledTileNotification([NativeTypeName("BSTR")] ushort* bstrNotificationXml, [NativeTypeName("BSTR")] ushort* bstrNotificationId, [NativeTypeName("BSTR")] ushort* bstrNotificationTag, VARIANT startTime, VARIANT expirationTime)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, ushort*, VARIANT, VARIANT, int>)(lpVtbl[83]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrNotificationXml, bstrNotificationId, bstrNotificationTag, startTime, expirationTime);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(84)]
-        public HRESULT msRemoveScheduledTileNotification([NativeTypeName("BSTR")] ushort* bstrNotificationId)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, int>)(lpVtbl[84]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrNotificationId);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(85)]
-        public HRESULT msStartPeriodicBadgeUpdate([NativeTypeName("BSTR")] ushort* pollingUri, VARIANT startTime, VARIANT uiUpdateRecurrence)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT, VARIANT, int>)(lpVtbl[85]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pollingUri, startTime, uiUpdateRecurrence);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(86)]
-        public HRESULT msStopPeriodicBadgeUpdate()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[86]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(87)]
-        public HRESULT msLaunchInternetOptions()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[87]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        return ((delegate* unmanaged<IShellUIHelper7*, Guid*, void**, int>)(lpVtbl[0]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, uint>)(lpVtbl[1]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, uint>)(lpVtbl[2]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetTypeInfoCount(uint* pctinfo)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, uint*, int>)(lpVtbl[3]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pctinfo);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT ResetFirstBootMode()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[7]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT ResetSafeMode()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[8]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT RefreshOfflineDesktop()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[9]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT AddFavorite([NativeTypeName("BSTR")] ushort* URL, VARIANT* Title)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT*, int>)(lpVtbl[10]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), URL, Title);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT AddChannel([NativeTypeName("BSTR")] ushort* URL)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, int>)(lpVtbl[11]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), URL);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT AddDesktopComponent([NativeTypeName("BSTR")] ushort* URL, [NativeTypeName("BSTR")] ushort* Type, VARIANT* Left, VARIANT* Top, VARIANT* Width, VARIANT* Height)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, VARIANT*, VARIANT*, VARIANT*, int>)(lpVtbl[12]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), URL, Type, Left, Top, Width, Height);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT IsSubscribed([NativeTypeName("BSTR")] ushort* URL, [NativeTypeName("VARIANT_BOOL *")] short* pBool)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, short*, int>)(lpVtbl[13]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), URL, pBool);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT NavigateAndFind([NativeTypeName("BSTR")] ushort* URL, [NativeTypeName("BSTR")] ushort* strQuery, VARIANT* varTargetFrame)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, int>)(lpVtbl[14]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), URL, strQuery, varTargetFrame);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT ImportExportFavorites([NativeTypeName("VARIANT_BOOL")] short fImport, [NativeTypeName("BSTR")] ushort* strImpExpPath)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, short, ushort*, int>)(lpVtbl[15]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fImport, strImpExpPath);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT AutoCompleteSaveForm(VARIANT* Form)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, VARIANT*, int>)(lpVtbl[16]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), Form);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT AutoScan([NativeTypeName("BSTR")] ushort* strSearch, [NativeTypeName("BSTR")] ushort* strFailureUrl, VARIANT* pvarTargetFrame)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, int>)(lpVtbl[17]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), strSearch, strFailureUrl, pvarTargetFrame);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT AutoCompleteAttach(VARIANT* Reserved)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, VARIANT*, int>)(lpVtbl[18]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), Reserved);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
+    public HRESULT ShowBrowserUI([NativeTypeName("BSTR")] ushort* bstrName, VARIANT* pvarIn, VARIANT* pvarOut)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT*, VARIANT*, int>)(lpVtbl[19]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrName, pvarIn, pvarOut);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(20)]
+    public HRESULT AddSearchProvider([NativeTypeName("BSTR")] ushort* URL)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, int>)(lpVtbl[20]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), URL);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(21)]
+    public HRESULT RunOnceShown()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[21]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(22)]
+    public HRESULT SkipRunOnce()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[22]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(23)]
+    public HRESULT CustomizeSettings([NativeTypeName("VARIANT_BOOL")] short fSQM, [NativeTypeName("VARIANT_BOOL")] short fPhishing, [NativeTypeName("BSTR")] ushort* bstrLocale)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, short, short, ushort*, int>)(lpVtbl[23]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fSQM, fPhishing, bstrLocale);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(24)]
+    public HRESULT SqmEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, short*, int>)(lpVtbl[24]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pfEnabled);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(25)]
+    public HRESULT PhishingEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, short*, int>)(lpVtbl[25]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pfEnabled);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(26)]
+    public HRESULT BrandImageUri([NativeTypeName("BSTR *")] ushort** pbstrUri)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort**, int>)(lpVtbl[26]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pbstrUri);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(27)]
+    public HRESULT SkipTabsWelcome()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[27]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(28)]
+    public HRESULT DiagnoseConnection()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[28]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(29)]
+    public HRESULT CustomizeClearType([NativeTypeName("VARIANT_BOOL")] short fSet)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, short, int>)(lpVtbl[29]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fSet);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(30)]
+    public HRESULT IsSearchProviderInstalled([NativeTypeName("BSTR")] ushort* URL, [NativeTypeName("DWORD *")] uint* pdwResult)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, uint*, int>)(lpVtbl[30]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), URL, pdwResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(31)]
+    public HRESULT IsSearchMigrated([NativeTypeName("VARIANT_BOOL *")] short* pfMigrated)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, short*, int>)(lpVtbl[31]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pfMigrated);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(32)]
+    public HRESULT DefaultSearchProvider([NativeTypeName("BSTR *")] ushort** pbstrName)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort**, int>)(lpVtbl[32]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pbstrName);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(33)]
+    public HRESULT RunOnceRequiredSettingsComplete([NativeTypeName("VARIANT_BOOL")] short fComplete)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, short, int>)(lpVtbl[33]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fComplete);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(34)]
+    public HRESULT RunOnceHasShown([NativeTypeName("VARIANT_BOOL *")] short* pfShown)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, short*, int>)(lpVtbl[34]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pfShown);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(35)]
+    public HRESULT SearchGuideUrl([NativeTypeName("BSTR *")] ushort** pbstrUrl)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort**, int>)(lpVtbl[35]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pbstrUrl);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(36)]
+    public HRESULT AddService([NativeTypeName("BSTR")] ushort* URL)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, int>)(lpVtbl[36]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), URL);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(37)]
+    public HRESULT IsServiceInstalled([NativeTypeName("BSTR")] ushort* URL, [NativeTypeName("BSTR")] ushort* Verb, [NativeTypeName("DWORD *")] uint* pdwResult)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, uint*, int>)(lpVtbl[37]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), URL, Verb, pdwResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(38)]
+    public HRESULT InPrivateFilteringEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, short*, int>)(lpVtbl[38]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pfEnabled);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(39)]
+    public HRESULT AddToFavoritesBar([NativeTypeName("BSTR")] ushort* URL, [NativeTypeName("BSTR")] ushort* Title, VARIANT* Type)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, int>)(lpVtbl[39]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), URL, Title, Type);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(40)]
+    public HRESULT BuildNewTabPage()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[40]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(41)]
+    public HRESULT SetRecentlyClosedVisible([NativeTypeName("VARIANT_BOOL")] short fVisible)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, short, int>)(lpVtbl[41]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fVisible);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(42)]
+    public HRESULT SetActivitiesVisible([NativeTypeName("VARIANT_BOOL")] short fVisible)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, short, int>)(lpVtbl[42]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fVisible);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(43)]
+    public HRESULT ContentDiscoveryReset()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[43]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(44)]
+    public HRESULT IsSuggestedSitesEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, short*, int>)(lpVtbl[44]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pfEnabled);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(45)]
+    public HRESULT EnableSuggestedSites([NativeTypeName("VARIANT_BOOL")] short fEnable)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, short, int>)(lpVtbl[45]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fEnable);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(46)]
+    public HRESULT NavigateToSuggestedSites([NativeTypeName("BSTR")] ushort* bstrRelativeUrl)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, int>)(lpVtbl[46]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrRelativeUrl);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(47)]
+    public HRESULT ShowTabsHelp()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[47]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(48)]
+    public HRESULT ShowInPrivateHelp()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[48]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(49)]
+    public HRESULT msIsSiteMode([NativeTypeName("VARIANT_BOOL *")] short* pfSiteMode)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, short*, int>)(lpVtbl[49]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pfSiteMode);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(50)]
+    public HRESULT msSiteModeShowThumbBar()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[50]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(51)]
+    public HRESULT msSiteModeAddThumbBarButton([NativeTypeName("BSTR")] ushort* bstrIconURL, [NativeTypeName("BSTR")] ushort* bstrTooltip, VARIANT* pvarButtonID)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, int>)(lpVtbl[51]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrIconURL, bstrTooltip, pvarButtonID);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(52)]
+    public HRESULT msSiteModeUpdateThumbBarButton(VARIANT ButtonID, [NativeTypeName("VARIANT_BOOL")] short fEnabled, [NativeTypeName("VARIANT_BOOL")] short fVisible)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, VARIANT, short, short, int>)(lpVtbl[52]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), ButtonID, fEnabled, fVisible);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(53)]
+    public HRESULT msSiteModeSetIconOverlay([NativeTypeName("BSTR")] ushort* IconUrl, VARIANT* pvarDescription)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT*, int>)(lpVtbl[53]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), IconUrl, pvarDescription);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(54)]
+    public HRESULT msSiteModeClearIconOverlay()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[54]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(55)]
+    public HRESULT msAddSiteMode()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[55]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(56)]
+    public HRESULT msSiteModeCreateJumpList([NativeTypeName("BSTR")] ushort* bstrHeader)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, int>)(lpVtbl[56]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrHeader);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(57)]
+    public HRESULT msSiteModeAddJumpListItem([NativeTypeName("BSTR")] ushort* bstrName, [NativeTypeName("BSTR")] ushort* bstrActionUri, [NativeTypeName("BSTR")] ushort* bstrIconUri, VARIANT* pvarWindowType)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, ushort*, VARIANT*, int>)(lpVtbl[57]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrName, bstrActionUri, bstrIconUri, pvarWindowType);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(58)]
+    public HRESULT msSiteModeClearJumpList()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[58]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(59)]
+    public HRESULT msSiteModeShowJumpList()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[59]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(60)]
+    public HRESULT msSiteModeAddButtonStyle(VARIANT uiButtonID, [NativeTypeName("BSTR")] ushort* bstrIconUrl, [NativeTypeName("BSTR")] ushort* bstrTooltip, VARIANT* pvarStyleID)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, VARIANT, ushort*, ushort*, VARIANT*, int>)(lpVtbl[60]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), uiButtonID, bstrIconUrl, bstrTooltip, pvarStyleID);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(61)]
+    public HRESULT msSiteModeShowButtonStyle(VARIANT uiButtonID, VARIANT uiStyleID)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, VARIANT, VARIANT, int>)(lpVtbl[61]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), uiButtonID, uiStyleID);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(62)]
+    public HRESULT msSiteModeActivate()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[62]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(63)]
+    public HRESULT msIsSiteModeFirstRun([NativeTypeName("VARIANT_BOOL")] short fPreserveState, VARIANT* puiFirstRun)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, short, VARIANT*, int>)(lpVtbl[63]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fPreserveState, puiFirstRun);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(64)]
+    public HRESULT msAddTrackingProtectionList([NativeTypeName("BSTR")] ushort* URL, [NativeTypeName("BSTR")] ushort* bstrFilterName)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, int>)(lpVtbl[64]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), URL, bstrFilterName);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(65)]
+    public HRESULT msTrackingProtectionEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, short*, int>)(lpVtbl[65]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pfEnabled);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(66)]
+    public HRESULT msActiveXFilteringEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, short*, int>)(lpVtbl[66]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pfEnabled);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(67)]
+    public HRESULT msProvisionNetworks([NativeTypeName("BSTR")] ushort* bstrProvisioningXml, VARIANT* puiResult)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT*, int>)(lpVtbl[67]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrProvisioningXml, puiResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(68)]
+    public HRESULT msReportSafeUrl()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[68]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(69)]
+    public HRESULT msSiteModeRefreshBadge()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[69]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(70)]
+    public HRESULT msSiteModeClearBadge()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[70]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(71)]
+    public HRESULT msDiagnoseConnectionUILess()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[71]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(72)]
+    public HRESULT msLaunchNetworkClientHelp()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[72]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(73)]
+    public HRESULT msChangeDefaultBrowser([NativeTypeName("VARIANT_BOOL")] short fChange)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, short, int>)(lpVtbl[73]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fChange);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(74)]
+    public HRESULT msStopPeriodicTileUpdate()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[74]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(75)]
+    public HRESULT msStartPeriodicTileUpdate(VARIANT pollingUris, VARIANT startTime, VARIANT uiUpdateRecurrence)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, VARIANT, VARIANT, VARIANT, int>)(lpVtbl[75]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pollingUris, startTime, uiUpdateRecurrence);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(76)]
+    public HRESULT msStartPeriodicTileUpdateBatch(VARIANT pollingUris, VARIANT startTime, VARIANT uiUpdateRecurrence)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, VARIANT, VARIANT, VARIANT, int>)(lpVtbl[76]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pollingUris, startTime, uiUpdateRecurrence);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(77)]
+    public HRESULT msClearTile()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[77]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(78)]
+    public HRESULT msEnableTileNotificationQueue([NativeTypeName("VARIANT_BOOL")] short fChange)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, short, int>)(lpVtbl[78]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fChange);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(79)]
+    public HRESULT msPinnedSiteState(VARIANT* pvarSiteState)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, VARIANT*, int>)(lpVtbl[79]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pvarSiteState);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(80)]
+    public HRESULT msEnableTileNotificationQueueForSquare150x150([NativeTypeName("VARIANT_BOOL")] short fChange)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, short, int>)(lpVtbl[80]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fChange);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(81)]
+    public HRESULT msEnableTileNotificationQueueForWide310x150([NativeTypeName("VARIANT_BOOL")] short fChange)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, short, int>)(lpVtbl[81]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fChange);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(82)]
+    public HRESULT msEnableTileNotificationQueueForSquare310x310([NativeTypeName("VARIANT_BOOL")] short fChange)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, short, int>)(lpVtbl[82]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), fChange);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(83)]
+    public HRESULT msScheduledTileNotification([NativeTypeName("BSTR")] ushort* bstrNotificationXml, [NativeTypeName("BSTR")] ushort* bstrNotificationId, [NativeTypeName("BSTR")] ushort* bstrNotificationTag, VARIANT startTime, VARIANT expirationTime)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, ushort*, VARIANT, VARIANT, int>)(lpVtbl[83]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrNotificationXml, bstrNotificationId, bstrNotificationTag, startTime, expirationTime);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(84)]
+    public HRESULT msRemoveScheduledTileNotification([NativeTypeName("BSTR")] ushort* bstrNotificationId)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, int>)(lpVtbl[84]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrNotificationId);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(85)]
+    public HRESULT msStartPeriodicBadgeUpdate([NativeTypeName("BSTR")] ushort* pollingUri, VARIANT startTime, VARIANT uiUpdateRecurrence)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT, VARIANT, int>)(lpVtbl[85]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), pollingUri, startTime, uiUpdateRecurrence);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(86)]
+    public HRESULT msStopPeriodicBadgeUpdate()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[86]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(87)]
+    public HRESULT msLaunchInternetOptions()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[87]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(88)]
+    public HRESULT SetExperimentalFlag([NativeTypeName("BSTR")] ushort* bstrFlagString, [NativeTypeName("VARIANT_BOOL")] short vfFlag)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, short, int>)(lpVtbl[88]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrFlagString, vfFlag);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(89)]
+    public HRESULT GetExperimentalFlag([NativeTypeName("BSTR")] ushort* bstrFlagString, [NativeTypeName("VARIANT_BOOL *")] short* vfFlag)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, short*, int>)(lpVtbl[89]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrFlagString, vfFlag);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(90)]
+    public HRESULT SetExperimentalValue([NativeTypeName("BSTR")] ushort* bstrValueString, [NativeTypeName("DWORD")] uint dwValue)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, uint, int>)(lpVtbl[90]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrValueString, dwValue);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(91)]
+    public HRESULT GetExperimentalValue([NativeTypeName("BSTR")] ushort* bstrValueString, [NativeTypeName("DWORD *")] uint* pdwValue)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, uint*, int>)(lpVtbl[91]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrValueString, pdwValue);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(92)]
+    public HRESULT ResetAllExperimentalFlagsAndValues()
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[92]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(93)]
+    public HRESULT GetNeedIEAutoLaunchFlag([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL *")] short* flag)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, short*, int>)(lpVtbl[93]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrUrl, flag);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(94)]
+    public HRESULT SetNeedIEAutoLaunchFlag([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL")] short flag)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, short, int>)(lpVtbl[94]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrUrl, flag);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(95)]
+    public HRESULT HasNeedIEAutoLaunchFlag([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL *")] short* exists)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, short*, int>)(lpVtbl[95]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrUrl, exists);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(96)]
+    public HRESULT LaunchIE([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL")] short automated)
+    {
+        return ((delegate* unmanaged<IShellUIHelper7*, ushort*, short, int>)(lpVtbl[96]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrUrl, automated);
+    }
+
+    public interface Interface : IShellUIHelper6.Interface
+    {
         [VtblIndex(88)]
-        public HRESULT SetExperimentalFlag([NativeTypeName("BSTR")] ushort* bstrFlagString, [NativeTypeName("VARIANT_BOOL")] short vfFlag)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, short, int>)(lpVtbl[88]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrFlagString, vfFlag);
-        }
+        HRESULT SetExperimentalFlag([NativeTypeName("BSTR")] ushort* bstrFlagString, [NativeTypeName("VARIANT_BOOL")] short vfFlag);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(89)]
-        public HRESULT GetExperimentalFlag([NativeTypeName("BSTR")] ushort* bstrFlagString, [NativeTypeName("VARIANT_BOOL *")] short* vfFlag)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, short*, int>)(lpVtbl[89]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrFlagString, vfFlag);
-        }
+        HRESULT GetExperimentalFlag([NativeTypeName("BSTR")] ushort* bstrFlagString, [NativeTypeName("VARIANT_BOOL *")] short* vfFlag);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(90)]
-        public HRESULT SetExperimentalValue([NativeTypeName("BSTR")] ushort* bstrValueString, [NativeTypeName("DWORD")] uint dwValue)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, uint, int>)(lpVtbl[90]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrValueString, dwValue);
-        }
+        HRESULT SetExperimentalValue([NativeTypeName("BSTR")] ushort* bstrValueString, [NativeTypeName("DWORD")] uint dwValue);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(91)]
-        public HRESULT GetExperimentalValue([NativeTypeName("BSTR")] ushort* bstrValueString, [NativeTypeName("DWORD *")] uint* pdwValue)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, uint*, int>)(lpVtbl[91]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrValueString, pdwValue);
-        }
+        HRESULT GetExperimentalValue([NativeTypeName("BSTR")] ushort* bstrValueString, [NativeTypeName("DWORD *")] uint* pdwValue);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(92)]
-        public HRESULT ResetAllExperimentalFlagsAndValues()
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, int>)(lpVtbl[92]))((IShellUIHelper7*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT ResetAllExperimentalFlagsAndValues();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(93)]
-        public HRESULT GetNeedIEAutoLaunchFlag([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL *")] short* flag)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, short*, int>)(lpVtbl[93]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrUrl, flag);
-        }
+        HRESULT GetNeedIEAutoLaunchFlag([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL *")] short* flag);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(94)]
-        public HRESULT SetNeedIEAutoLaunchFlag([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL")] short flag)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, short, int>)(lpVtbl[94]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrUrl, flag);
-        }
+        HRESULT SetNeedIEAutoLaunchFlag([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL")] short flag);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(95)]
-        public HRESULT HasNeedIEAutoLaunchFlag([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL *")] short* exists)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, short*, int>)(lpVtbl[95]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrUrl, exists);
-        }
+        HRESULT HasNeedIEAutoLaunchFlag([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL *")] short* exists);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(96)]
-        public HRESULT LaunchIE([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL")] short automated)
-        {
-            return ((delegate* unmanaged<IShellUIHelper7*, ushort*, short, int>)(lpVtbl[96]))((IShellUIHelper7*)Unsafe.AsPointer(ref this), bstrUrl, automated);
-        }
+        HRESULT LaunchIE([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL")] short automated);
+    }
 
-        public interface Interface : IShellUIHelper6.Interface
-        {
-            [VtblIndex(88)]
-            HRESULT SetExperimentalFlag([NativeTypeName("BSTR")] ushort* bstrFlagString, [NativeTypeName("VARIANT_BOOL")] short vfFlag);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(89)]
-            HRESULT GetExperimentalFlag([NativeTypeName("BSTR")] ushort* bstrFlagString, [NativeTypeName("VARIANT_BOOL *")] short* vfFlag);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, uint> AddRef;
 
-            [VtblIndex(90)]
-            HRESULT SetExperimentalValue([NativeTypeName("BSTR")] ushort* bstrValueString, [NativeTypeName("DWORD")] uint dwValue);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, uint> Release;
 
-            [VtblIndex(91)]
-            HRESULT GetExperimentalValue([NativeTypeName("BSTR")] ushort* bstrValueString, [NativeTypeName("DWORD *")] uint* pdwValue);
+        [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, uint*, int> GetTypeInfoCount;
 
-            [VtblIndex(92)]
-            HRESULT ResetAllExperimentalFlagsAndValues();
+        [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
-            [VtblIndex(93)]
-            HRESULT GetNeedIEAutoLaunchFlag([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL *")] short* flag);
+        [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
-            [VtblIndex(94)]
-            HRESULT SetNeedIEAutoLaunchFlag([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL")] short flag);
+        [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
-            [VtblIndex(95)]
-            HRESULT HasNeedIEAutoLaunchFlag([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL *")] short* exists);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> ResetFirstBootMode;
 
-            [VtblIndex(96)]
-            HRESULT LaunchIE([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("VARIANT_BOOL")] short automated);
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> ResetSafeMode;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> RefreshOfflineDesktop;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, uint> AddRef;
+        [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT*, int> AddFavorite;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, uint> Release;
+        [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, int> AddChannel;
 
-            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, uint*, int> GetTypeInfoCount;
+        [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *, VARIANT *, VARIANT *, VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, VARIANT*, VARIANT*, VARIANT*, int> AddDesktopComponent;
 
-            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, short*, int> IsSubscribed;
 
-            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, int> NavigateAndFind;
 
-            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        [NativeTypeName("HRESULT (VARIANT_BOOL, BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, short, ushort*, int> ImportExportFavorites;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> ResetFirstBootMode;
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, VARIANT*, int> AutoCompleteSaveForm;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> ResetSafeMode;
+        [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, int> AutoScan;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> RefreshOfflineDesktop;
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, VARIANT*, int> AutoCompleteAttach;
 
-            [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT*, int> AddFavorite;
+        [NativeTypeName("HRESULT (BSTR, VARIANT *, VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT*, VARIANT*, int> ShowBrowserUI;
 
-            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, int> AddChannel;
+        [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, int> AddSearchProvider;
 
-            [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *, VARIANT *, VARIANT *, VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, VARIANT*, VARIANT*, VARIANT*, int> AddDesktopComponent;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> RunOnceShown;
 
-            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, short*, int> IsSubscribed;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> SkipRunOnce;
 
-            [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, int> NavigateAndFind;
+        [NativeTypeName("HRESULT (VARIANT_BOOL, VARIANT_BOOL, BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, short, short, ushort*, int> CustomizeSettings;
 
-            [NativeTypeName("HRESULT (VARIANT_BOOL, BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, short, ushort*, int> ImportExportFavorites;
+        [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, short*, int> SqmEnabled;
 
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, VARIANT*, int> AutoCompleteSaveForm;
+        [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, short*, int> PhishingEnabled;
 
-            [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, int> AutoScan;
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort**, int> BrandImageUri;
 
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, VARIANT*, int> AutoCompleteAttach;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> SkipTabsWelcome;
 
-            [NativeTypeName("HRESULT (BSTR, VARIANT *, VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT*, VARIANT*, int> ShowBrowserUI;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> DiagnoseConnection;
 
-            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, int> AddSearchProvider;
+        [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, short, int> CustomizeClearType;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> RunOnceShown;
+        [NativeTypeName("HRESULT (BSTR, DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, uint*, int> IsSearchProviderInstalled;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> SkipRunOnce;
+        [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, short*, int> IsSearchMigrated;
 
-            [NativeTypeName("HRESULT (VARIANT_BOOL, VARIANT_BOOL, BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, short, short, ushort*, int> CustomizeSettings;
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort**, int> DefaultSearchProvider;
 
-            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, short*, int> SqmEnabled;
+        [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, short, int> RunOnceRequiredSettingsComplete;
 
-            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, short*, int> PhishingEnabled;
+        [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, short*, int> RunOnceHasShown;
 
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort**, int> BrandImageUri;
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort**, int> SearchGuideUrl;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> SkipTabsWelcome;
+        [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, int> AddService;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> DiagnoseConnection;
+        [NativeTypeName("HRESULT (BSTR, BSTR, DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, uint*, int> IsServiceInstalled;
 
-            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, short, int> CustomizeClearType;
+        [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, short*, int> InPrivateFilteringEnabled;
 
-            [NativeTypeName("HRESULT (BSTR, DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, uint*, int> IsSearchProviderInstalled;
+        [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, int> AddToFavoritesBar;
 
-            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, short*, int> IsSearchMigrated;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> BuildNewTabPage;
 
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort**, int> DefaultSearchProvider;
+        [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, short, int> SetRecentlyClosedVisible;
 
-            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, short, int> RunOnceRequiredSettingsComplete;
+        [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, short, int> SetActivitiesVisible;
 
-            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, short*, int> RunOnceHasShown;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> ContentDiscoveryReset;
 
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort**, int> SearchGuideUrl;
+        [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, short*, int> IsSuggestedSitesEnabled;
 
-            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, int> AddService;
+        [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, short, int> EnableSuggestedSites;
 
-            [NativeTypeName("HRESULT (BSTR, BSTR, DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, uint*, int> IsServiceInstalled;
+        [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, int> NavigateToSuggestedSites;
 
-            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, short*, int> InPrivateFilteringEnabled;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> ShowTabsHelp;
 
-            [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, int> AddToFavoritesBar;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> ShowInPrivateHelp;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> BuildNewTabPage;
+        [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, short*, int> msIsSiteMode;
 
-            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, short, int> SetRecentlyClosedVisible;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> msSiteModeShowThumbBar;
 
-            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, short, int> SetActivitiesVisible;
+        [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, int> msSiteModeAddThumbBarButton;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> ContentDiscoveryReset;
+        [NativeTypeName("HRESULT (VARIANT, VARIANT_BOOL, VARIANT_BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, VARIANT, short, short, int> msSiteModeUpdateThumbBarButton;
 
-            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, short*, int> IsSuggestedSitesEnabled;
+        [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT*, int> msSiteModeSetIconOverlay;
 
-            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, short, int> EnableSuggestedSites;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> msSiteModeClearIconOverlay;
 
-            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, int> NavigateToSuggestedSites;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> msAddSiteMode;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> ShowTabsHelp;
+        [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, int> msSiteModeCreateJumpList;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> ShowInPrivateHelp;
+        [NativeTypeName("HRESULT (BSTR, BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, ushort*, VARIANT*, int> msSiteModeAddJumpListItem;
 
-            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, short*, int> msIsSiteMode;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> msSiteModeClearJumpList;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> msSiteModeShowThumbBar;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> msSiteModeShowJumpList;
 
-            [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, VARIANT*, int> msSiteModeAddThumbBarButton;
+        [NativeTypeName("HRESULT (VARIANT, BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, VARIANT, ushort*, ushort*, VARIANT*, int> msSiteModeAddButtonStyle;
 
-            [NativeTypeName("HRESULT (VARIANT, VARIANT_BOOL, VARIANT_BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, VARIANT, short, short, int> msSiteModeUpdateThumbBarButton;
+        [NativeTypeName("HRESULT (VARIANT, VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, VARIANT, VARIANT, int> msSiteModeShowButtonStyle;
 
-            [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT*, int> msSiteModeSetIconOverlay;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> msSiteModeActivate;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> msSiteModeClearIconOverlay;
+        [NativeTypeName("HRESULT (VARIANT_BOOL, VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, short, VARIANT*, int> msIsSiteModeFirstRun;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> msAddSiteMode;
+        [NativeTypeName("HRESULT (BSTR, BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, int> msAddTrackingProtectionList;
 
-            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, int> msSiteModeCreateJumpList;
+        [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, short*, int> msTrackingProtectionEnabled;
 
-            [NativeTypeName("HRESULT (BSTR, BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, ushort*, VARIANT*, int> msSiteModeAddJumpListItem;
+        [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, short*, int> msActiveXFilteringEnabled;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> msSiteModeClearJumpList;
+        [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT*, int> msProvisionNetworks;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> msSiteModeShowJumpList;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> msReportSafeUrl;
 
-            [NativeTypeName("HRESULT (VARIANT, BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, VARIANT, ushort*, ushort*, VARIANT*, int> msSiteModeAddButtonStyle;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> msSiteModeRefreshBadge;
 
-            [NativeTypeName("HRESULT (VARIANT, VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, VARIANT, VARIANT, int> msSiteModeShowButtonStyle;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> msSiteModeClearBadge;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> msSiteModeActivate;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> msDiagnoseConnectionUILess;
 
-            [NativeTypeName("HRESULT (VARIANT_BOOL, VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, short, VARIANT*, int> msIsSiteModeFirstRun;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> msLaunchNetworkClientHelp;
 
-            [NativeTypeName("HRESULT (BSTR, BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, int> msAddTrackingProtectionList;
+        [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, short, int> msChangeDefaultBrowser;
 
-            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, short*, int> msTrackingProtectionEnabled;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> msStopPeriodicTileUpdate;
 
-            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, short*, int> msActiveXFilteringEnabled;
+        [NativeTypeName("HRESULT (VARIANT, VARIANT, VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, VARIANT, VARIANT, VARIANT, int> msStartPeriodicTileUpdate;
 
-            [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT*, int> msProvisionNetworks;
+        [NativeTypeName("HRESULT (VARIANT, VARIANT, VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, VARIANT, VARIANT, VARIANT, int> msStartPeriodicTileUpdateBatch;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> msReportSafeUrl;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> msClearTile;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> msSiteModeRefreshBadge;
+        [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, short, int> msEnableTileNotificationQueue;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> msSiteModeClearBadge;
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, VARIANT*, int> msPinnedSiteState;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> msDiagnoseConnectionUILess;
+        [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, short, int> msEnableTileNotificationQueueForSquare150x150;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> msLaunchNetworkClientHelp;
+        [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, short, int> msEnableTileNotificationQueueForWide310x150;
 
-            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, short, int> msChangeDefaultBrowser;
+        [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, short, int> msEnableTileNotificationQueueForSquare310x310;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> msStopPeriodicTileUpdate;
+        [NativeTypeName("HRESULT (BSTR, BSTR, BSTR, VARIANT, VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, ushort*, VARIANT, VARIANT, int> msScheduledTileNotification;
 
-            [NativeTypeName("HRESULT (VARIANT, VARIANT, VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, VARIANT, VARIANT, VARIANT, int> msStartPeriodicTileUpdate;
+        [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, int> msRemoveScheduledTileNotification;
 
-            [NativeTypeName("HRESULT (VARIANT, VARIANT, VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, VARIANT, VARIANT, VARIANT, int> msStartPeriodicTileUpdateBatch;
+        [NativeTypeName("HRESULT (BSTR, VARIANT, VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT, VARIANT, int> msStartPeriodicBadgeUpdate;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> msClearTile;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> msStopPeriodicBadgeUpdate;
 
-            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, short, int> msEnableTileNotificationQueue;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> msLaunchInternetOptions;
 
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, VARIANT*, int> msPinnedSiteState;
+        [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, short, int> SetExperimentalFlag;
 
-            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, short, int> msEnableTileNotificationQueueForSquare150x150;
+        [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, short*, int> GetExperimentalFlag;
 
-            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, short, int> msEnableTileNotificationQueueForWide310x150;
+        [NativeTypeName("HRESULT (BSTR, DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, uint, int> SetExperimentalValue;
 
-            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, short, int> msEnableTileNotificationQueueForSquare310x310;
+        [NativeTypeName("HRESULT (BSTR, DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, uint*, int> GetExperimentalValue;
 
-            [NativeTypeName("HRESULT (BSTR, BSTR, BSTR, VARIANT, VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, ushort*, ushort*, VARIANT, VARIANT, int> msScheduledTileNotification;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, int> ResetAllExperimentalFlagsAndValues;
 
-            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, int> msRemoveScheduledTileNotification;
+        [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, short*, int> GetNeedIEAutoLaunchFlag;
 
-            [NativeTypeName("HRESULT (BSTR, VARIANT, VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, VARIANT, VARIANT, int> msStartPeriodicBadgeUpdate;
+        [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, short, int> SetNeedIEAutoLaunchFlag;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> msStopPeriodicBadgeUpdate;
+        [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, short*, int> HasNeedIEAutoLaunchFlag;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> msLaunchInternetOptions;
-
-            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, short, int> SetExperimentalFlag;
-
-            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, short*, int> GetExperimentalFlag;
-
-            [NativeTypeName("HRESULT (BSTR, DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, uint, int> SetExperimentalValue;
-
-            [NativeTypeName("HRESULT (BSTR, DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, uint*, int> GetExperimentalValue;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, int> ResetAllExperimentalFlagsAndValues;
-
-            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, short*, int> GetNeedIEAutoLaunchFlag;
-
-            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, short, int> SetNeedIEAutoLaunchFlag;
-
-            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, short*, int> HasNeedIEAutoLaunchFlag;
-
-            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellUIHelper7*, ushort*, short, int> LaunchIE;
-        }
+        [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellUIHelper7*, ushort*, short, int> LaunchIE;
     }
 }

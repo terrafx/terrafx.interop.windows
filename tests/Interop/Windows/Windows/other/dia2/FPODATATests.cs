@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="FPODATA" /> struct.</summary>
+public static unsafe partial class FPODATATests
 {
-    /// <summary>Provides validation of the <see cref="FPODATA" /> struct.</summary>
-    public static unsafe partial class FPODATATests
+    /// <summary>Validates that the <see cref="FPODATA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="FPODATA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<FPODATA>(), Is.EqualTo(sizeof(FPODATA)));
-        }
+        Assert.That(Marshal.SizeOf<FPODATA>(), Is.EqualTo(sizeof(FPODATA)));
+    }
 
-        /// <summary>Validates that the <see cref="FPODATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(FPODATA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="FPODATA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(FPODATA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="FPODATA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(FPODATA), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="FPODATA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(FPODATA), Is.EqualTo(16));
     }
 }

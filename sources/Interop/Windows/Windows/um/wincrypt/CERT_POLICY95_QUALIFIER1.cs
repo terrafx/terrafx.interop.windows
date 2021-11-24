@@ -3,22 +3,21 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CERT_POLICY95_QUALIFIER1
 {
-    public unsafe partial struct CERT_POLICY95_QUALIFIER1
-    {
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszPracticesReference;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszPracticesReference;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* pszNoticeIdentifier;
+    [NativeTypeName("LPSTR")]
+    public sbyte* pszNoticeIdentifier;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* pszNSINoticeIdentifier;
+    [NativeTypeName("LPSTR")]
+    public sbyte* pszNSINoticeIdentifier;
 
-        [NativeTypeName("DWORD")]
-        public uint cCPSURLs;
+    [NativeTypeName("DWORD")]
+    public uint cCPSURLs;
 
-        public CPS_URLS* rgCPSURLs;
-    }
+    public CPS_URLS* rgCPSURLs;
 }

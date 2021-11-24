@@ -3,22 +3,21 @@
 // Ported from um/winnetwk.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct DISCDLGSTRUCTA
 {
-    public unsafe partial struct DISCDLGSTRUCTA
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbStructure;
+    [NativeTypeName("DWORD")]
+    public uint cbStructure;
 
-        public HWND hwndOwner;
+    public HWND hwndOwner;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* lpLocalName;
+    [NativeTypeName("LPSTR")]
+    public sbyte* lpLocalName;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* lpRemoteName;
+    [NativeTypeName("LPSTR")]
+    public sbyte* lpRemoteName;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 }

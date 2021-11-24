@@ -7,64 +7,63 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3050F6E0-98B5-11CF-BB82-00AA00BDCE0B")]
+[NativeTypeName("struct IHTMLChangePlayback : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IHTMLChangePlayback : IHTMLChangePlayback.Interface
 {
-    [Guid("3050F6E0-98B5-11CF-BB82-00AA00BDCE0B")]
-    [NativeTypeName("struct IHTMLChangePlayback : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHTMLChangePlayback : IHTMLChangePlayback.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IHTMLChangePlayback*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLChangePlayback*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IHTMLChangePlayback*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLChangePlayback*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IHTMLChangePlayback*, uint>)(lpVtbl[1]))((IHTMLChangePlayback*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IHTMLChangePlayback*, uint>)(lpVtbl[1]))((IHTMLChangePlayback*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IHTMLChangePlayback*, uint>)(lpVtbl[2]))((IHTMLChangePlayback*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IHTMLChangePlayback*, uint>)(lpVtbl[2]))((IHTMLChangePlayback*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT ExecChange(byte* pbRecord, BOOL fForward)
+    {
+        return ((delegate* unmanaged<IHTMLChangePlayback*, byte*, BOOL, int>)(lpVtbl[3]))((IHTMLChangePlayback*)Unsafe.AsPointer(ref this), pbRecord, fForward);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT ExecChange(byte* pbRecord, BOOL fForward)
-        {
-            return ((delegate* unmanaged<IHTMLChangePlayback*, byte*, BOOL, int>)(lpVtbl[3]))((IHTMLChangePlayback*)Unsafe.AsPointer(ref this), pbRecord, fForward);
-        }
+        HRESULT ExecChange(byte* pbRecord, BOOL fForward);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT ExecChange(byte* pbRecord, BOOL fForward);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLChangePlayback*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLChangePlayback*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLChangePlayback*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLChangePlayback*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLChangePlayback*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLChangePlayback*, uint> Release;
-
-            [NativeTypeName("HRESULT (BYTE *, BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLChangePlayback*, byte*, BOOL, int> ExecChange;
-        }
+        [NativeTypeName("HRESULT (BYTE *, BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLChangePlayback*, byte*, BOOL, int> ExecChange;
     }
 }

@@ -3,14 +3,13 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SERVERSILO_STATE
 {
-    public enum SERVERSILO_STATE
-    {
-        SERVERSILO_INITING = 0,
-        SERVERSILO_STARTED,
-        SERVERSILO_SHUTTING_DOWN,
-        SERVERSILO_TERMINATING,
-        SERVERSILO_TERMINATED,
-    }
+    SERVERSILO_INITING = 0,
+    SERVERSILO_STARTED,
+    SERVERSILO_SHUTTING_DOWN,
+    SERVERSILO_TERMINATING,
+    SERVERSILO_TERMINATED,
 }

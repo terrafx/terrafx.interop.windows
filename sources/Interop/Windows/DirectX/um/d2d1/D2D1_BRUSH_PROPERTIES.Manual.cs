@@ -9,16 +9,16 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.DirectX.DirectX;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D1_BRUSH_PROPERTIES
 {
-    public partial struct D2D1_BRUSH_PROPERTIES
+    public static ref readonly D2D1_BRUSH_PROPERTIES DEFAULT
     {
-        public static ref readonly D2D1_BRUSH_PROPERTIES DEFAULT
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x00, 0x00, 0x80, 0x3F,
                     0x00, 0x00, 0x80, 0x3F,
                     0x00, 0x00, 0x00, 0x00,
@@ -28,18 +28,17 @@ namespace TerraFX.Interop.DirectX
                     0x00, 0x00, 0x00, 0x00,
                 };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<D2D1_BRUSH_PROPERTIES>());
-                return ref Unsafe.As<byte, D2D1_BRUSH_PROPERTIES>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<D2D1_BRUSH_PROPERTIES>());
+            return ref Unsafe.As<byte, D2D1_BRUSH_PROPERTIES>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public D2D1_BRUSH_PROPERTIES(float opacity = 1.0f) : this(opacity, IdentityMatrix)
-        {
-        }
+    public D2D1_BRUSH_PROPERTIES(float opacity = 1.0f) : this(opacity, IdentityMatrix)
+    {
+    }
 
-        public D2D1_BRUSH_PROPERTIES([Optional, DefaultParameterValue(1.0f)] float opacity, [NativeTypeName("const D2D1_MATRIX_3X2_F &")] in D2D_MATRIX_3X2_F transform)
-        {
-            this = BrushProperties(opacity, transform);
-        }
+    public D2D1_BRUSH_PROPERTIES([Optional, DefaultParameterValue(1.0f)] float opacity, [NativeTypeName("const D2D1_MATRIX_3X2_F &")] in D2D_MATRIX_3X2_F transform)
+    {
+        this = BrushProperties(opacity, transform);
     }
 }

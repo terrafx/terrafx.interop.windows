@@ -5,13 +5,12 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct SpatialAudioHrtfDirectivity
-    {
-        public SpatialAudioHrtfDirectivityType Type;
+namespace TerraFX.Interop.Windows;
 
-        public float Scaling;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct SpatialAudioHrtfDirectivity
+{
+    public SpatialAudioHrtfDirectivityType Type;
+
+    public float Scaling;
 }

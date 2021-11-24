@@ -5,17 +5,16 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_USERNAME_MESSAGE_SECURITY_BINDING_TEMPLATE
 {
-    public unsafe partial struct WS_USERNAME_MESSAGE_SECURITY_BINDING_TEMPLATE
-    {
-        public WS_SECURITY_BINDING_PROPERTIES securityBindingProperties;
+    public WS_SECURITY_BINDING_PROPERTIES securityBindingProperties;
 
-        public WS_USERNAME_CREDENTIAL* clientCredential;
+    public WS_USERNAME_CREDENTIAL* clientCredential;
 
-        [NativeTypeName("WS_VALIDATE_PASSWORD_CALLBACK")]
-        public delegate* unmanaged<void*, WS_STRING*, WS_STRING*, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> passwordValidator;
+    [NativeTypeName("WS_VALIDATE_PASSWORD_CALLBACK")]
+    public delegate* unmanaged<void*, WS_STRING*, WS_STRING*, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> passwordValidator;
 
-        public void* passwordValidatorCallbackState;
-    }
+    public void* passwordValidatorCallbackState;
 }

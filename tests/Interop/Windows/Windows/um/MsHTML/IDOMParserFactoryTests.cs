@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDOMParserFactory" /> struct.</summary>
+public static unsafe partial class IDOMParserFactoryTests
 {
-    /// <summary>Provides validation of the <see cref="IDOMParserFactory" /> struct.</summary>
-    public static unsafe partial class IDOMParserFactoryTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDOMParserFactory" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDOMParserFactory" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDOMParserFactory).GUID, Is.EqualTo(IID_IDOMParserFactory));
-        }
+        Assert.That(typeof(IDOMParserFactory).GUID, Is.EqualTo(IID_IDOMParserFactory));
+    }
 
-        /// <summary>Validates that the <see cref="IDOMParserFactory" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDOMParserFactory>(), Is.EqualTo(sizeof(IDOMParserFactory)));
-        }
+    /// <summary>Validates that the <see cref="IDOMParserFactory" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDOMParserFactory>(), Is.EqualTo(sizeof(IDOMParserFactory)));
+    }
 
-        /// <summary>Validates that the <see cref="IDOMParserFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDOMParserFactory).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDOMParserFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDOMParserFactory).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDOMParserFactory" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDOMParserFactory" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDOMParserFactory), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDOMParserFactory), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDOMParserFactory), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDOMParserFactory), Is.EqualTo(4));
         }
     }
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("D197380A-0A79-4DC8-A033-ED882C2FA14B")]
+public partial struct FSCopyHandler
 {
-    [Guid("D197380A-0A79-4DC8-A033-ED882C2FA14B")]
-    public partial struct FSCopyHandler
-    {
-    }
 }

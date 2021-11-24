@@ -5,22 +5,21 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Explicit)]
+public partial struct USN_RECORD_UNION
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public partial struct USN_RECORD_UNION
-    {
-        [FieldOffset(0)]
-        public USN_RECORD_COMMON_HEADER Header;
+    [FieldOffset(0)]
+    public USN_RECORD_COMMON_HEADER Header;
 
-        [FieldOffset(0)]
-        [NativeTypeName("USN_RECORD_V2")]
-        public USN_RECORD V2;
+    [FieldOffset(0)]
+    [NativeTypeName("USN_RECORD_V2")]
+    public USN_RECORD V2;
 
-        [FieldOffset(0)]
-        public USN_RECORD_V3 V3;
+    [FieldOffset(0)]
+    public USN_RECORD_V3 V3;
 
-        [FieldOffset(0)]
-        public USN_RECORD_V4 V4;
-    }
+    [FieldOffset(0)]
+    public USN_RECORD_V4 V4;
 }

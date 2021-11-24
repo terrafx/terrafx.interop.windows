@@ -7,16 +7,16 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static unsafe partial class GUID
 {
-    public static unsafe partial class GUID
+    public static ref readonly Guid GUID_DEVINTERFACE_DISK
     {
-        public static ref readonly Guid GUID_DEVINTERFACE_DISK
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x07, 0x63, 0xF5, 0x53,
                     0xBF, 0xB6,
                     0xD0, 0x11,
@@ -30,16 +30,16 @@ namespace TerraFX.Interop.Windows
                     0x8B
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid GUID_DEVINTERFACE_CDROM
+    public static ref readonly Guid GUID_DEVINTERFACE_CDROM
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x08, 0x63, 0xF5, 0x53,
                     0xBF, 0xB6,
                     0xD0, 0x11,
@@ -53,16 +53,16 @@ namespace TerraFX.Interop.Windows
                     0x8B
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid GUID_DEVINTERFACE_PARTITION
+    public static ref readonly Guid GUID_DEVINTERFACE_PARTITION
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x0A, 0x63, 0xF5, 0x53,
                     0xBF, 0xB6,
                     0xD0, 0x11,
@@ -76,16 +76,16 @@ namespace TerraFX.Interop.Windows
                     0x8B
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid GUID_DEVINTERFACE_TAPE
+    public static ref readonly Guid GUID_DEVINTERFACE_TAPE
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x0B, 0x63, 0xF5, 0x53,
                     0xBF, 0xB6,
                     0xD0, 0x11,
@@ -99,16 +99,16 @@ namespace TerraFX.Interop.Windows
                     0x8B
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid GUID_DEVINTERFACE_WRITEONCEDISK
+    public static ref readonly Guid GUID_DEVINTERFACE_WRITEONCEDISK
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x0C, 0x63, 0xF5, 0x53,
                     0xBF, 0xB6,
                     0xD0, 0x11,
@@ -122,16 +122,16 @@ namespace TerraFX.Interop.Windows
                     0x8B
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid GUID_DEVINTERFACE_VOLUME
+    public static ref readonly Guid GUID_DEVINTERFACE_VOLUME
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x0D, 0x63, 0xF5, 0x53,
                     0xBF, 0xB6,
                     0xD0, 0x11,
@@ -145,16 +145,16 @@ namespace TerraFX.Interop.Windows
                     0x8B
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid GUID_DEVINTERFACE_MEDIUMCHANGER
+    public static ref readonly Guid GUID_DEVINTERFACE_MEDIUMCHANGER
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x10, 0x63, 0xF5, 0x53,
                     0xBF, 0xB6,
                     0xD0, 0x11,
@@ -168,16 +168,16 @@ namespace TerraFX.Interop.Windows
                     0x8B
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid GUID_DEVINTERFACE_FLOPPY
+    public static ref readonly Guid GUID_DEVINTERFACE_FLOPPY
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x11, 0x63, 0xF5, 0x53,
                     0xBF, 0xB6,
                     0xD0, 0x11,
@@ -191,16 +191,16 @@ namespace TerraFX.Interop.Windows
                     0x8B
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid GUID_DEVINTERFACE_CDCHANGER
+    public static ref readonly Guid GUID_DEVINTERFACE_CDCHANGER
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x12, 0x63, 0xF5, 0x53,
                     0xBF, 0xB6,
                     0xD0, 0x11,
@@ -214,16 +214,16 @@ namespace TerraFX.Interop.Windows
                     0x8B
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid GUID_DEVINTERFACE_STORAGEPORT
+    public static ref readonly Guid GUID_DEVINTERFACE_STORAGEPORT
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x60, 0xFE, 0xCC, 0x2A,
                     0x30, 0xC1,
                     0xD2, 0x11,
@@ -237,16 +237,16 @@ namespace TerraFX.Interop.Windows
                     0x8B
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid GUID_DEVINTERFACE_VMLUN
+    public static ref readonly Guid GUID_DEVINTERFACE_VMLUN
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x19, 0x66, 0x41, 0x6F,
                     0x29, 0x9F,
                     0xA5, 0x42,
@@ -260,16 +260,16 @@ namespace TerraFX.Interop.Windows
                     0xB0
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid GUID_DEVINTERFACE_SES
+    public static ref readonly Guid GUID_DEVINTERFACE_SES
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0xEC, 0xC9, 0x90, 0x17,
                     0xD5, 0x47,
                     0xF3, 0x4D,
@@ -283,16 +283,16 @@ namespace TerraFX.Interop.Windows
                     0x48
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid GUID_DEVINTERFACE_SERVICE_VOLUME
+    public static ref readonly Guid GUID_DEVINTERFACE_SERVICE_VOLUME
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x82, 0x3D, 0xAD, 0x6E,
                     0xEC, 0x25,
                     0xBC, 0x46,
@@ -306,16 +306,16 @@ namespace TerraFX.Interop.Windows
                     0x37
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid GUID_DEVINTERFACE_HIDDEN_VOLUME
+    public static ref readonly Guid GUID_DEVINTERFACE_HIDDEN_VOLUME
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x28, 0x8A, 0x10, 0x7F,
                     0x33, 0x98,
                     0x3B, 0x4B,
@@ -329,16 +329,16 @@ namespace TerraFX.Interop.Windows
                     0x62
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid GUID_DEVINTERFACE_UNIFIED_ACCESS_RPMB
+    public static ref readonly Guid GUID_DEVINTERFACE_UNIFIED_ACCESS_RPMB
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x21, 0x7C, 0x44, 0x27,
                     0xC3, 0xBC,
                     0x07, 0x4D,
@@ -352,16 +352,16 @@ namespace TerraFX.Interop.Windows
                     0xE7
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid GUID_DEVINTERFACE_SCM_PHYSICAL_DEVICE
+    public static ref readonly Guid GUID_DEVINTERFACE_SCM_PHYSICAL_DEVICE
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x9D, 0x60, 0x83, 0x42,
                     0xC2, 0x4D,
                     0xBE, 0x43,
@@ -375,16 +375,16 @@ namespace TerraFX.Interop.Windows
                     0x61
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid GUID_SCM_PD_HEALTH_NOTIFICATION
+    public static ref readonly Guid GUID_SCM_PD_HEALTH_NOTIFICATION
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x86, 0xD3, 0xA2, 0x9D,
                     0xF5, 0x72,
                     0xE3, 0x4E,
@@ -398,16 +398,16 @@ namespace TerraFX.Interop.Windows
                     0x06
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid GUID_SCM_PD_PASSTHROUGH_INVDIMM
+    public static ref readonly Guid GUID_SCM_PD_PASSTHROUGH_INVDIMM
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x30, 0xAC, 0x09, 0x43,
                     0x11, 0x0D,
                     0xE4, 0x11,
@@ -421,16 +421,16 @@ namespace TerraFX.Interop.Windows
                     0x66
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid GUID_DEVINTERFACE_COMPORT
+    public static ref readonly Guid GUID_DEVINTERFACE_COMPORT
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0xE0, 0xD1, 0xE0, 0x86,
                     0x89, 0x80,
                     0xD0, 0x11,
@@ -444,16 +444,16 @@ namespace TerraFX.Interop.Windows
                     0x73
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR
+    public static ref readonly Guid GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x78, 0xE9, 0x36, 0x4D,
                     0x25, 0xE3,
                     0xCE, 0x11,
@@ -467,8 +467,7 @@ namespace TerraFX.Interop.Windows
                     0x18
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

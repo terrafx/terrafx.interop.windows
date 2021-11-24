@@ -3,14 +3,13 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA
-    {
-        [NativeTypeName("DWORD")]
-        public uint cOID;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("LPSTR *")]
-        public sbyte** rgpszOID;
-    }
+public unsafe partial struct CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA
+{
+    [NativeTypeName("DWORD")]
+    public uint cOID;
+
+    [NativeTypeName("LPSTR *")]
+    public sbyte** rgpszOID;
 }

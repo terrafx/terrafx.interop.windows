@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IHTMLTableRow" /> struct.</summary>
+public static unsafe partial class IHTMLTableRowTests
 {
-    /// <summary>Provides validation of the <see cref="IHTMLTableRow" /> struct.</summary>
-    public static unsafe partial class IHTMLTableRowTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHTMLTableRow" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHTMLTableRow" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IHTMLTableRow).GUID, Is.EqualTo(IID_IHTMLTableRow));
-        }
+        Assert.That(typeof(IHTMLTableRow).GUID, Is.EqualTo(IID_IHTMLTableRow));
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLTableRow" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IHTMLTableRow>(), Is.EqualTo(sizeof(IHTMLTableRow)));
-        }
+    /// <summary>Validates that the <see cref="IHTMLTableRow" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IHTMLTableRow>(), Is.EqualTo(sizeof(IHTMLTableRow)));
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLTableRow" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IHTMLTableRow).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IHTMLTableRow" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IHTMLTableRow).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLTableRow" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IHTMLTableRow" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IHTMLTableRow), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IHTMLTableRow), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IHTMLTableRow), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IHTMLTableRow), Is.EqualTo(4));
         }
     }
 }

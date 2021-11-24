@@ -6,115 +6,114 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WINTRUST_DATA
 {
-    public unsafe partial struct WINTRUST_DATA
+    [NativeTypeName("DWORD")]
+    public uint cbStruct;
+
+    [NativeTypeName("LPVOID")]
+    public void* pPolicyCallbackData;
+
+    [NativeTypeName("LPVOID")]
+    public void* pSIPClientData;
+
+    [NativeTypeName("DWORD")]
+    public uint dwUIChoice;
+
+    [NativeTypeName("DWORD")]
+    public uint fdwRevocationChecks;
+
+    [NativeTypeName("DWORD")]
+    public uint dwUnionChoice;
+
+    [NativeTypeName("_WINTRUST_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinTrust.h:116:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    [NativeTypeName("DWORD")]
+    public uint dwStateAction;
+
+    public HANDLE hWVTStateData;
+
+    [NativeTypeName("WCHAR *")]
+    public ushort* pwszURLReference;
+
+    [NativeTypeName("DWORD")]
+    public uint dwProvFlags;
+
+    [NativeTypeName("DWORD")]
+    public uint dwUIContext;
+
+    [NativeTypeName("struct WINTRUST_SIGNATURE_SETTINGS_ *")]
+    public WINTRUST_SIGNATURE_SETTINGS* pSignatureSettings;
+
+    public ref WINTRUST_FILE_INFO* pFile
     {
-        [NativeTypeName("DWORD")]
-        public uint cbStruct;
-
-        [NativeTypeName("LPVOID")]
-        public void* pPolicyCallbackData;
-
-        [NativeTypeName("LPVOID")]
-        public void* pSIPClientData;
-
-        [NativeTypeName("DWORD")]
-        public uint dwUIChoice;
-
-        [NativeTypeName("DWORD")]
-        public uint fdwRevocationChecks;
-
-        [NativeTypeName("DWORD")]
-        public uint dwUnionChoice;
-
-        [NativeTypeName("_WINTRUST_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinTrust.h:116:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        [NativeTypeName("DWORD")]
-        public uint dwStateAction;
-
-        public HANDLE hWVTStateData;
-
-        [NativeTypeName("WCHAR *")]
-        public ushort* pwszURLReference;
-
-        [NativeTypeName("DWORD")]
-        public uint dwProvFlags;
-
-        [NativeTypeName("DWORD")]
-        public uint dwUIContext;
-
-        [NativeTypeName("struct WINTRUST_SIGNATURE_SETTINGS_ *")]
-        public WINTRUST_SIGNATURE_SETTINGS* pSignatureSettings;
-
-        public ref WINTRUST_FILE_INFO* pFile
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pFile;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pFile;
         }
+    }
 
-        public ref WINTRUST_CATALOG_INFO* pCatalog
+    public ref WINTRUST_CATALOG_INFO* pCatalog
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pCatalog;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pCatalog;
         }
+    }
 
-        public ref WINTRUST_BLOB_INFO* pBlob
+    public ref WINTRUST_BLOB_INFO* pBlob
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pBlob;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pBlob;
         }
+    }
 
-        public ref WINTRUST_SGNR_INFO* pSgnr
+    public ref WINTRUST_SGNR_INFO* pSgnr
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pSgnr;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pSgnr;
         }
+    }
 
-        public ref WINTRUST_CERT_INFO* pCert
+    public ref WINTRUST_CERT_INFO* pCert
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pCert;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pCert;
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("struct WINTRUST_FILE_INFO_ *")]
-            public WINTRUST_FILE_INFO* pFile;
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("struct WINTRUST_FILE_INFO_ *")]
+        public WINTRUST_FILE_INFO* pFile;
 
-            [FieldOffset(0)]
-            [NativeTypeName("struct WINTRUST_CATALOG_INFO_ *")]
-            public WINTRUST_CATALOG_INFO* pCatalog;
+        [FieldOffset(0)]
+        [NativeTypeName("struct WINTRUST_CATALOG_INFO_ *")]
+        public WINTRUST_CATALOG_INFO* pCatalog;
 
-            [FieldOffset(0)]
-            [NativeTypeName("struct WINTRUST_BLOB_INFO_ *")]
-            public WINTRUST_BLOB_INFO* pBlob;
+        [FieldOffset(0)]
+        [NativeTypeName("struct WINTRUST_BLOB_INFO_ *")]
+        public WINTRUST_BLOB_INFO* pBlob;
 
-            [FieldOffset(0)]
-            [NativeTypeName("struct WINTRUST_SGNR_INFO_ *")]
-            public WINTRUST_SGNR_INFO* pSgnr;
+        [FieldOffset(0)]
+        [NativeTypeName("struct WINTRUST_SGNR_INFO_ *")]
+        public WINTRUST_SGNR_INFO* pSgnr;
 
-            [FieldOffset(0)]
-            [NativeTypeName("struct WINTRUST_CERT_INFO_ *")]
-            public WINTRUST_CERT_INFO* pCert;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("struct WINTRUST_CERT_INFO_ *")]
+        public WINTRUST_CERT_INFO* pCert;
     }
 }

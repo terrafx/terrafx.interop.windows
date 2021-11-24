@@ -3,12 +3,11 @@
 // Ported from um/DirectML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum DML_ROUNDING_MODE
 {
-    public enum DML_ROUNDING_MODE
-    {
-        DML_ROUNDING_MODE_HALVES_TO_NEAREST_EVEN,
-        DML_ROUNDING_MODE_TOWARD_ZERO,
-        DML_ROUNDING_MODE_TOWARD_INFINITY,
-    }
+    DML_ROUNDING_MODE_HALVES_TO_NEAREST_EVEN,
+    DML_ROUNDING_MODE_TOWARD_ZERO,
+    DML_ROUNDING_MODE_TOWARD_INFINITY,
 }

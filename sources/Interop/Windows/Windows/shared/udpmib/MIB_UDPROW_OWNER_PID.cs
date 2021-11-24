@@ -3,17 +3,16 @@
 // Ported from shared/udpmib.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MIB_UDPROW_OWNER_PID
 {
-    public partial struct MIB_UDPROW_OWNER_PID
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwLocalAddr;
+    [NativeTypeName("DWORD")]
+    public uint dwLocalAddr;
 
-        [NativeTypeName("DWORD")]
-        public uint dwLocalPort;
+    [NativeTypeName("DWORD")]
+    public uint dwLocalPort;
 
-        [NativeTypeName("DWORD")]
-        public uint dwOwningPid;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwOwningPid;
 }

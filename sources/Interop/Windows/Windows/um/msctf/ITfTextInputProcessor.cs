@@ -7,77 +7,76 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("AA80E7F7-2021-11D2-93E0-0060B067B86E")]
+[NativeTypeName("struct ITfTextInputProcessor : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ITfTextInputProcessor : ITfTextInputProcessor.Interface
 {
-    [Guid("AA80E7F7-2021-11D2-93E0-0060B067B86E")]
-    [NativeTypeName("struct ITfTextInputProcessor : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfTextInputProcessor : ITfTextInputProcessor.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ITfTextInputProcessor*, Guid*, void**, int>)(lpVtbl[0]))((ITfTextInputProcessor*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ITfTextInputProcessor*, Guid*, void**, int>)(lpVtbl[0]))((ITfTextInputProcessor*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ITfTextInputProcessor*, uint>)(lpVtbl[1]))((ITfTextInputProcessor*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ITfTextInputProcessor*, uint>)(lpVtbl[1]))((ITfTextInputProcessor*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ITfTextInputProcessor*, uint>)(lpVtbl[2]))((ITfTextInputProcessor*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ITfTextInputProcessor*, uint>)(lpVtbl[2]))((ITfTextInputProcessor*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Activate(ITfThreadMgr* ptim, [NativeTypeName("TfClientId")] uint tid)
+    {
+        return ((delegate* unmanaged<ITfTextInputProcessor*, ITfThreadMgr*, uint, int>)(lpVtbl[3]))((ITfTextInputProcessor*)Unsafe.AsPointer(ref this), ptim, tid);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Deactivate()
+    {
+        return ((delegate* unmanaged<ITfTextInputProcessor*, int>)(lpVtbl[4]))((ITfTextInputProcessor*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Activate(ITfThreadMgr* ptim, [NativeTypeName("TfClientId")] uint tid)
-        {
-            return ((delegate* unmanaged<ITfTextInputProcessor*, ITfThreadMgr*, uint, int>)(lpVtbl[3]))((ITfTextInputProcessor*)Unsafe.AsPointer(ref this), ptim, tid);
-        }
+        HRESULT Activate(ITfThreadMgr* ptim, [NativeTypeName("TfClientId")] uint tid);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Deactivate()
-        {
-            return ((delegate* unmanaged<ITfTextInputProcessor*, int>)(lpVtbl[4]))((ITfTextInputProcessor*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Deactivate();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Activate(ITfThreadMgr* ptim, [NativeTypeName("TfClientId")] uint tid);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfTextInputProcessor*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT Deactivate();
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfTextInputProcessor*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfTextInputProcessor*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfTextInputProcessor*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfTextInputProcessor*, uint> AddRef;
+        [NativeTypeName("HRESULT (ITfThreadMgr *, TfClientId) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfTextInputProcessor*, ITfThreadMgr*, uint, int> Activate;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfTextInputProcessor*, uint> Release;
-
-            [NativeTypeName("HRESULT (ITfThreadMgr *, TfClientId) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfTextInputProcessor*, ITfThreadMgr*, uint, int> Activate;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfTextInputProcessor*, int> Deactivate;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfTextInputProcessor*, int> Deactivate;
     }
 }

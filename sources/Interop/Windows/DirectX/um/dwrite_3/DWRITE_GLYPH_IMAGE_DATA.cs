@@ -5,35 +5,34 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct DWRITE_GLYPH_IMAGE_DATA
 {
-    public unsafe partial struct DWRITE_GLYPH_IMAGE_DATA
-    {
-        [NativeTypeName("const void *")]
-        public void* imageData;
+    [NativeTypeName("const void *")]
+    public void* imageData;
 
-        [NativeTypeName("UINT32")]
-        public uint imageDataSize;
+    [NativeTypeName("UINT32")]
+    public uint imageDataSize;
 
-        [NativeTypeName("UINT32")]
-        public uint uniqueDataId;
+    [NativeTypeName("UINT32")]
+    public uint uniqueDataId;
 
-        [NativeTypeName("UINT32")]
-        public uint pixelsPerEm;
+    [NativeTypeName("UINT32")]
+    public uint pixelsPerEm;
 
-        [NativeTypeName("D2D1_SIZE_U")]
-        public D2D_SIZE_U pixelSize;
+    [NativeTypeName("D2D1_SIZE_U")]
+    public D2D_SIZE_U pixelSize;
 
-        [NativeTypeName("D2D1_POINT_2L")]
-        public POINT horizontalLeftOrigin;
+    [NativeTypeName("D2D1_POINT_2L")]
+    public POINT horizontalLeftOrigin;
 
-        [NativeTypeName("D2D1_POINT_2L")]
-        public POINT horizontalRightOrigin;
+    [NativeTypeName("D2D1_POINT_2L")]
+    public POINT horizontalRightOrigin;
 
-        [NativeTypeName("D2D1_POINT_2L")]
-        public POINT verticalTopOrigin;
+    [NativeTypeName("D2D1_POINT_2L")]
+    public POINT verticalTopOrigin;
 
-        [NativeTypeName("D2D1_POINT_2L")]
-        public POINT verticalBottomOrigin;
-    }
+    [NativeTypeName("D2D1_POINT_2L")]
+    public POINT verticalBottomOrigin;
 }

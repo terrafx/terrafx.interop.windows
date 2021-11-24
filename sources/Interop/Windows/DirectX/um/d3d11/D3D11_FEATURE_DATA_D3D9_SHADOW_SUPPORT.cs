@@ -5,10 +5,9 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT
 {
-    public partial struct D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT
-    {
-        public BOOL SupportsDepthAsTextureWithLessEqualComparisonFilter;
-    }
+    public BOOL SupportsDepthAsTextureWithLessEqualComparisonFilter;
 }

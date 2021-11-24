@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct CROSS_SLIDE_PARAMETER
-    {
-        public CROSS_SLIDE_THRESHOLD threshold;
+namespace TerraFX.Interop.Windows;
 
-        public float distance;
-    }
+[SupportedOSPlatform("windows8.0")]
+public partial struct CROSS_SLIDE_PARAMETER
+{
+    public CROSS_SLIDE_THRESHOLD threshold;
+
+    public float distance;
 }

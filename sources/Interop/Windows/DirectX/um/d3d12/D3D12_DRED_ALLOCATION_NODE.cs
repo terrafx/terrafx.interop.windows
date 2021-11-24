@@ -3,19 +3,18 @@
 // Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D12_DRED_ALLOCATION_NODE
 {
-    public unsafe partial struct D3D12_DRED_ALLOCATION_NODE
-    {
-        [NativeTypeName("const char *")]
-        public sbyte* ObjectNameA;
+    [NativeTypeName("const char *")]
+    public sbyte* ObjectNameA;
 
-        [NativeTypeName("const wchar_t *")]
-        public ushort* ObjectNameW;
+    [NativeTypeName("const wchar_t *")]
+    public ushort* ObjectNameW;
 
-        public D3D12_DRED_ALLOCATION_TYPE AllocationType;
+    public D3D12_DRED_ALLOCATION_TYPE AllocationType;
 
-        [NativeTypeName("const struct D3D12_DRED_ALLOCATION_NODE *")]
-        public D3D12_DRED_ALLOCATION_NODE* pNext;
-    }
+    [NativeTypeName("const struct D3D12_DRED_ALLOCATION_NODE *")]
+    public D3D12_DRED_ALLOCATION_NODE* pNext;
 }

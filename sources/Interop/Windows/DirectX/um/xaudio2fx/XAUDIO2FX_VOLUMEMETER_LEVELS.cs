@@ -5,16 +5,15 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct XAUDIO2FX_VOLUMEMETER_LEVELS
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct XAUDIO2FX_VOLUMEMETER_LEVELS
-    {
-        public float* pPeakLevels;
+    public float* pPeakLevels;
 
-        public float* pRMSLevels;
+    public float* pRMSLevels;
 
-        [NativeTypeName("UINT32")]
-        public uint ChannelCount;
-    }
+    [NativeTypeName("UINT32")]
+    public uint ChannelCount;
 }

@@ -3,36 +3,35 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static unsafe partial class XSTATE
 {
-    public static unsafe partial class XSTATE
+    public static ulong XSTATE_MASK_ALLOWED
     {
-        public static ulong XSTATE_MASK_ALLOWED
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return (XSTATE_MASK_LEGACY |
-                            XSTATE_MASK_AVX |
-                            XSTATE_MASK_MPX |
-                            XSTATE_MASK_AVX512 |
-                            XSTATE_MASK_IPT |
-                            XSTATE_MASK_CET_U |
-                            XSTATE_MASK_LWP);
-                }
-                else
-                {
-                    return (XSTATE_MASK_LEGACY |
-                            XSTATE_MASK_AVX |
-                            XSTATE_MASK_MPX |
-                            XSTATE_MASK_AVX512 |
-                            XSTATE_MASK_IPT |
-                            XSTATE_MASK_CET_U |
-                            XSTATE_MASK_AMX_TILE_CONFIG |
-                            XSTATE_MASK_AMX_TILE_DATA |
-                            XSTATE_MASK_LWP);
-                }
+                return (XSTATE_MASK_LEGACY |
+                        XSTATE_MASK_AVX |
+                        XSTATE_MASK_MPX |
+                        XSTATE_MASK_AVX512 |
+                        XSTATE_MASK_IPT |
+                        XSTATE_MASK_CET_U |
+                        XSTATE_MASK_LWP);
+            }
+            else
+            {
+                return (XSTATE_MASK_LEGACY |
+                        XSTATE_MASK_AVX |
+                        XSTATE_MASK_MPX |
+                        XSTATE_MASK_AVX512 |
+                        XSTATE_MASK_IPT |
+                        XSTATE_MASK_CET_U |
+                        XSTATE_MASK_AMX_TILE_CONFIG |
+                        XSTATE_MASK_AMX_TILE_DATA |
+                        XSTATE_MASK_LWP);
             }
         }
     }

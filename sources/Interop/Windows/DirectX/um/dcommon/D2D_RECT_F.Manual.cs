@@ -7,49 +7,48 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D_RECT_F : IEquatable<D2D_RECT_F>
 {
-    public partial struct D2D_RECT_F : IEquatable<D2D_RECT_F>
+    public static ref readonly D2D_RECT_F Infinite
     {
-        public static ref readonly D2D_RECT_F Infinite
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0xFF, 0xFF, 0x7F, 0xFF,
                     0xFF, 0xFF, 0x7F, 0xFF,
                     0xFF, 0xFF, 0x7F, 0x7F,
                     0xFF, 0xFF, 0x7F, 0x7F,
                 };
 
-                return ref Unsafe.As<byte, D2D_RECT_F>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, D2D_RECT_F>(ref MemoryMarshal.GetReference(data));
         }
-
-        public D2D_RECT_F(float left = 0.0f, float top = 0.0f, float right = 0.0f, float bottom = 0.0f)
-        {
-            this.left = left;
-            this.top = top;
-            this.right = right;
-            this.bottom = bottom;
-        }
-
-        public static bool operator ==([NativeTypeName("const D2D1_RECT_F &")] in D2D_RECT_F l, [NativeTypeName("const D2D1_RECT_F &")] in D2D_RECT_F r)
-        {
-            return (l.left == r.left)
-                && (l.top == r.top)
-                && (l.right == r.right)
-                && (l.bottom == r.bottom);
-        }
-
-        public static bool operator !=([NativeTypeName("const D2D1_RECT_F &")] in D2D_RECT_F l, [NativeTypeName("const D2D1_RECT_F &")] in D2D_RECT_F r)
-            => !(l == r);
-
-        public bool Equals(D2D_RECT_F other) => this == other;
-
-        public override bool Equals(object? obj) => (obj is D2D_RECT_F other) && this == other;
-
-        public override int GetHashCode() => HashCode.Combine(left, top, right, bottom);
     }
+
+    public D2D_RECT_F(float left = 0.0f, float top = 0.0f, float right = 0.0f, float bottom = 0.0f)
+    {
+        this.left = left;
+        this.top = top;
+        this.right = right;
+        this.bottom = bottom;
+    }
+
+    public static bool operator ==([NativeTypeName("const D2D1_RECT_F &")] in D2D_RECT_F l, [NativeTypeName("const D2D1_RECT_F &")] in D2D_RECT_F r)
+    {
+        return (l.left == r.left)
+            && (l.top == r.top)
+            && (l.right == r.right)
+            && (l.bottom == r.bottom);
+    }
+
+    public static bool operator !=([NativeTypeName("const D2D1_RECT_F &")] in D2D_RECT_F l, [NativeTypeName("const D2D1_RECT_F &")] in D2D_RECT_F r)
+        => !(l == r);
+
+    public bool Equals(D2D_RECT_F other) => this == other;
+
+    public override bool Equals(object? obj) => (obj is D2D_RECT_F other) && this == other;
+
+    public override int GetHashCode() => HashCode.Combine(left, top, right, bottom);
 }

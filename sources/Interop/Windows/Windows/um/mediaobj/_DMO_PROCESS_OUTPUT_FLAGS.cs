@@ -3,10 +3,9 @@
 // Ported from um/mediaobj.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum _DMO_PROCESS_OUTPUT_FLAGS
 {
-    public enum _DMO_PROCESS_OUTPUT_FLAGS
-    {
-        DMO_PROCESS_OUTPUT_DISCARD_WHEN_NO_BUFFER = 0x1,
-    }
+    DMO_PROCESS_OUTPUT_DISCARD_WHEN_NO_BUFFER = 0x1,
 }

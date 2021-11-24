@@ -5,16 +5,15 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct DIRECTX_AUDIO_ACTIVATION_PARAMS
 {
-    public partial struct DIRECTX_AUDIO_ACTIVATION_PARAMS
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbDirectXAudioActivationParams;
+    [NativeTypeName("DWORD")]
+    public uint cbDirectXAudioActivationParams;
 
-        public Guid guidAudioSession;
+    public Guid guidAudioSession;
 
-        [NativeTypeName("DWORD")]
-        public uint dwAudioStreamFlags;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwAudioStreamFlags;
 }

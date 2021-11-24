@@ -3,16 +3,15 @@
 // Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct COINSTALLER_CONTEXT_DATA64
 {
-    public unsafe partial struct COINSTALLER_CONTEXT_DATA64
-    {
-        public BOOL PostProcessing;
+    public BOOL PostProcessing;
 
-        [NativeTypeName("DWORD")]
-        public uint InstallResult;
+    [NativeTypeName("DWORD")]
+    public uint InstallResult;
 
-        [NativeTypeName("PVOID")]
-        public void* PrivateData;
-    }
+    [NativeTypeName("PVOID")]
+    public void* PrivateData;
 }

@@ -3,19 +3,18 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CRYPT_X942_OTHER_INFO
 {
-    public unsafe partial struct CRYPT_X942_OTHER_INFO
-    {
-        [NativeTypeName("LPSTR")]
-        public sbyte* pszContentEncryptionObjId;
+    [NativeTypeName("LPSTR")]
+    public sbyte* pszContentEncryptionObjId;
 
-        [NativeTypeName("BYTE [4]")]
-        public fixed byte rgbCounter[4];
+    [NativeTypeName("BYTE [4]")]
+    public fixed byte rgbCounter[4];
 
-        [NativeTypeName("BYTE [4]")]
-        public fixed byte rgbKeyLength[4];
+    [NativeTypeName("BYTE [4]")]
+    public fixed byte rgbKeyLength[4];
 
-        public CRYPT_DATA_BLOB PubInfo;
-    }
+    public CRYPT_DATA_BLOB PubInfo;
 }

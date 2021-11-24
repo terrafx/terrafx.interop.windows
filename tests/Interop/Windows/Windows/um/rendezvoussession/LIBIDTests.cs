@@ -7,16 +7,15 @@ using NUnit.Framework;
 using System;
 using static TerraFX.Interop.Windows.LIBID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="LIBID" /> class.</summary>
+public static partial class LIBIDTests
 {
-    /// <summary>Provides validation of the <see cref="LIBID" /> class.</summary>
-    public static partial class LIBIDTests
+    /// <summary>Validates that the value of the <see cref="LIBID_RendezvousSessionLib" /> property is correct.</summary>
+    [Test]
+    public static void LIBID_RendezvousSessionLibTest()
     {
-        /// <summary>Validates that the value of the <see cref="LIBID_RendezvousSessionLib" /> property is correct.</summary>
-        [Test]
-        public static void LIBID_RendezvousSessionLibTest()
-        {
-            Assert.That(LIBID_RendezvousSessionLib, Is.EqualTo(new Guid(0xEFD856A4, 0x5A85, 0x4A1B, 0xAD, 0xD5, 0x2E, 0xAD, 0xAC, 0xE6, 0xF6, 0xA2)));
-        }
+        Assert.That(LIBID_RendezvousSessionLib, Is.EqualTo(new Guid(0xEFD856A4, 0x5A85, 0x4A1B, 0xAD, 0xD5, 0x2E, 0xAD, 0xAC, 0xE6, 0xF6, 0xA2)));
     }
 }

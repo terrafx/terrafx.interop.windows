@@ -5,19 +5,18 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SHNAMEMAPPING32W
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SHNAMEMAPPING32W
-    {
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszOldPath;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszOldPath;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszNewPath;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszNewPath;
 
-        public int cchOldPath;
+    public int cchOldPath;
 
-        public int cchNewPath;
-    }
+    public int cchNewPath;
 }

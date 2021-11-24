@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CODECAPI_AVEncInputVideoSystem" /> struct.</summary>
+public static unsafe partial class CODECAPI_AVEncInputVideoSystemTests
 {
-    /// <summary>Provides validation of the <see cref="CODECAPI_AVEncInputVideoSystem" /> struct.</summary>
-    public static unsafe partial class CODECAPI_AVEncInputVideoSystemTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncInputVideoSystem" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncInputVideoSystem" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncInputVideoSystem).GUID, Is.EqualTo(IID_CODECAPI_AVEncInputVideoSystem));
-        }
+        Assert.That(typeof(CODECAPI_AVEncInputVideoSystem).GUID, Is.EqualTo(IID_CODECAPI_AVEncInputVideoSystem));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncInputVideoSystem" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CODECAPI_AVEncInputVideoSystem>(), Is.EqualTo(sizeof(CODECAPI_AVEncInputVideoSystem)));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncInputVideoSystem" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<CODECAPI_AVEncInputVideoSystem>(), Is.EqualTo(sizeof(CODECAPI_AVEncInputVideoSystem)));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncInputVideoSystem" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncInputVideoSystem).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncInputVideoSystem" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CODECAPI_AVEncInputVideoSystem).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncInputVideoSystem" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CODECAPI_AVEncInputVideoSystem), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncInputVideoSystem" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CODECAPI_AVEncInputVideoSystem), Is.EqualTo(1));
     }
 }

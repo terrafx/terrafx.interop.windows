@@ -8,31 +8,30 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class IID
-    {
-        public static ref readonly Guid IID_IAccountsSettingsPaneInterop
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xAD, 0x12, 0xEE, 0xD3,
-                    0x65, 0x38,
-                    0x62, 0x43,
-                    0x97,
-                    0x46,
-                    0xB7,
-                    0x5A,
-                    0x68,
-                    0x2D,
-                    0xF0,
-                    0xE6
-                };
+namespace TerraFX.Interop.Windows;
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+public static partial class IID
+{
+    public static ref readonly Guid IID_IAccountsSettingsPaneInterop
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xAD, 0x12, 0xEE, 0xD3,
+                0x65, 0x38,
+                0x62, 0x43,
+                0x97,
+                0x46,
+                0xB7,
+                0x5A,
+                0x68,
+                0x2D,
+                0xF0,
+                0xE6
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

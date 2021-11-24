@@ -7,40 +7,39 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct DEVICE_DSM_TIERING_QUERY_INPUT
 {
-    public partial struct DEVICE_DSM_TIERING_QUERY_INPUT
+    [NativeTypeName("DWORD")]
+    public uint Version;
+
+    [NativeTypeName("DWORD")]
+    public uint Size;
+
+    [NativeTypeName("DWORD")]
+    public uint Flags;
+
+    [NativeTypeName("DWORD")]
+    public uint NumberOfTierIds;
+
+    [NativeTypeName("GUID [1]")]
+    public _TierIds_e__FixedBuffer TierIds;
+
+    public partial struct _TierIds_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+        public Guid e0;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
-
-        [NativeTypeName("DWORD")]
-        public uint Flags;
-
-        [NativeTypeName("DWORD")]
-        public uint NumberOfTierIds;
-
-        [NativeTypeName("GUID [1]")]
-        public _TierIds_e__FixedBuffer TierIds;
-
-        public partial struct _TierIds_e__FixedBuffer
+        public ref Guid this[int index]
         {
-            public Guid e0;
-
-            public ref Guid this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<Guid> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<Guid> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

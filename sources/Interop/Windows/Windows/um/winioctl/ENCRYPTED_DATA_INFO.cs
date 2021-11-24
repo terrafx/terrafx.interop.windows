@@ -3,37 +3,36 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct ENCRYPTED_DATA_INFO
 {
-    public unsafe partial struct ENCRYPTED_DATA_INFO
-    {
-        [NativeTypeName("DWORDLONG")]
-        public ulong StartingFileOffset;
+    [NativeTypeName("DWORDLONG")]
+    public ulong StartingFileOffset;
 
-        [NativeTypeName("DWORD")]
-        public uint OutputBufferOffset;
+    [NativeTypeName("DWORD")]
+    public uint OutputBufferOffset;
 
-        [NativeTypeName("DWORD")]
-        public uint BytesWithinFileSize;
+    [NativeTypeName("DWORD")]
+    public uint BytesWithinFileSize;
 
-        [NativeTypeName("DWORD")]
-        public uint BytesWithinValidDataLength;
+    [NativeTypeName("DWORD")]
+    public uint BytesWithinValidDataLength;
 
-        [NativeTypeName("WORD")]
-        public ushort CompressionFormat;
+    [NativeTypeName("WORD")]
+    public ushort CompressionFormat;
 
-        public byte DataUnitShift;
+    public byte DataUnitShift;
 
-        public byte ChunkShift;
+    public byte ChunkShift;
 
-        public byte ClusterShift;
+    public byte ClusterShift;
 
-        public byte EncryptionFormat;
+    public byte EncryptionFormat;
 
-        [NativeTypeName("WORD")]
-        public ushort NumberOfDataBlocks;
+    [NativeTypeName("WORD")]
+    public ushort NumberOfDataBlocks;
 
-        [NativeTypeName("DWORD [1]")]
-        public fixed uint DataBlockSize[1];
-    }
+    [NativeTypeName("DWORD [1]")]
+    public fixed uint DataBlockSize[1];
 }

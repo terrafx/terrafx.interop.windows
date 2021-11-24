@@ -6,13 +6,12 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+[SupportedOSPlatform("windows8.1")]
+public enum PSS_DUPLICATE_FLAGS
 {
-    [Flags]
-    [SupportedOSPlatform("windows8.1")]
-    public enum PSS_DUPLICATE_FLAGS
-    {
-        PSS_DUPLICATE_NONE = 0x00,
-        PSS_DUPLICATE_CLOSE_SOURCE = 0x01,
-    }
+    PSS_DUPLICATE_NONE = 0x00,
+    PSS_DUPLICATE_CLOSE_SOURCE = 0x01,
 }

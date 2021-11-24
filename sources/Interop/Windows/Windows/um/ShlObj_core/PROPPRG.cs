@@ -5,45 +5,44 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct PROPPRG
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct PROPPRG
-    {
-        [NativeTypeName("WORD")]
-        public ushort flPrg;
+    [NativeTypeName("WORD")]
+    public ushort flPrg;
 
-        [NativeTypeName("WORD")]
-        public ushort flPrgInit;
+    [NativeTypeName("WORD")]
+    public ushort flPrgInit;
 
-        [NativeTypeName("CHAR [30]")]
-        public fixed sbyte achTitle[30];
+    [NativeTypeName("CHAR [30]")]
+    public fixed sbyte achTitle[30];
 
-        [NativeTypeName("CHAR [128]")]
-        public fixed sbyte achCmdLine[128];
+    [NativeTypeName("CHAR [128]")]
+    public fixed sbyte achCmdLine[128];
 
-        [NativeTypeName("CHAR [64]")]
-        public fixed sbyte achWorkDir[64];
+    [NativeTypeName("CHAR [64]")]
+    public fixed sbyte achWorkDir[64];
 
-        [NativeTypeName("WORD")]
-        public ushort wHotKey;
+    [NativeTypeName("WORD")]
+    public ushort wHotKey;
 
-        [NativeTypeName("CHAR [80]")]
-        public fixed sbyte achIconFile[80];
+    [NativeTypeName("CHAR [80]")]
+    public fixed sbyte achIconFile[80];
 
-        [NativeTypeName("WORD")]
-        public ushort wIconIndex;
+    [NativeTypeName("WORD")]
+    public ushort wIconIndex;
 
-        [NativeTypeName("DWORD")]
-        public uint dwEnhModeFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwEnhModeFlags;
 
-        [NativeTypeName("DWORD")]
-        public uint dwRealModeFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwRealModeFlags;
 
-        [NativeTypeName("CHAR [80]")]
-        public fixed sbyte achOtherFile[80];
+    [NativeTypeName("CHAR [80]")]
+    public fixed sbyte achOtherFile[80];
 
-        [NativeTypeName("CHAR [260]")]
-        public fixed sbyte achPIFFile[260];
-    }
+    [NativeTypeName("CHAR [260]")]
+    public fixed sbyte achPIFFile[260];
 }

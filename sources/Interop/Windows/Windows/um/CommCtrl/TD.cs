@@ -3,20 +3,19 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static unsafe partial class TD
 {
-    public static unsafe partial class TD
-    {
-        [NativeTypeName("#define TD_WARNING_ICON MAKEINTRESOURCEW(-1)")]
-        public static ushort* TD_WARNING_ICON => unchecked((ushort*)((nuint)((ushort)(-1))));
+    [NativeTypeName("#define TD_WARNING_ICON MAKEINTRESOURCEW(-1)")]
+    public static ushort* TD_WARNING_ICON => unchecked((ushort*)((nuint)((ushort)(-1))));
 
-        [NativeTypeName("#define TD_ERROR_ICON MAKEINTRESOURCEW(-2)")]
-        public static ushort* TD_ERROR_ICON => unchecked((ushort*)((nuint)((ushort)(-2))));
+    [NativeTypeName("#define TD_ERROR_ICON MAKEINTRESOURCEW(-2)")]
+    public static ushort* TD_ERROR_ICON => unchecked((ushort*)((nuint)((ushort)(-2))));
 
-        [NativeTypeName("#define TD_INFORMATION_ICON MAKEINTRESOURCEW(-3)")]
-        public static ushort* TD_INFORMATION_ICON => unchecked((ushort*)((nuint)((ushort)(-3))));
+    [NativeTypeName("#define TD_INFORMATION_ICON MAKEINTRESOURCEW(-3)")]
+    public static ushort* TD_INFORMATION_ICON => unchecked((ushort*)((nuint)((ushort)(-3))));
 
-        [NativeTypeName("#define TD_SHIELD_ICON MAKEINTRESOURCEW(-4)")]
-        public static ushort* TD_SHIELD_ICON => unchecked((ushort*)((nuint)((ushort)(-4))));
-    }
+    [NativeTypeName("#define TD_SHIELD_ICON MAKEINTRESOURCEW(-4)")]
+    public static ushort* TD_SHIELD_ICON => unchecked((ushort*)((nuint)((ushort)(-4))));
 }

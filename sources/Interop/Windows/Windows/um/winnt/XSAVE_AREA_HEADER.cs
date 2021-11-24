@@ -3,17 +3,16 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct XSAVE_AREA_HEADER
 {
-    public unsafe partial struct XSAVE_AREA_HEADER
-    {
-        [NativeTypeName("DWORD64")]
-        public ulong Mask;
+    [NativeTypeName("DWORD64")]
+    public ulong Mask;
 
-        [NativeTypeName("DWORD64")]
-        public ulong CompactionMask;
+    [NativeTypeName("DWORD64")]
+    public ulong CompactionMask;
 
-        [NativeTypeName("DWORD64 [6]")]
-        public fixed ulong Reserved2[6];
-    }
+    [NativeTypeName("DWORD64 [6]")]
+    public fixed ulong Reserved2[6];
 }

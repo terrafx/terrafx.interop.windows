@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="EMRCOLORCORRECTPALETTE" /> struct.</summary>
+public static unsafe partial class EMRCOLORCORRECTPALETTETests
 {
-    /// <summary>Provides validation of the <see cref="EMRCOLORCORRECTPALETTE" /> struct.</summary>
-    public static unsafe partial class EMRCOLORCORRECTPALETTETests
+    /// <summary>Validates that the <see cref="EMRCOLORCORRECTPALETTE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="EMRCOLORCORRECTPALETTE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<EMRCOLORCORRECTPALETTE>(), Is.EqualTo(sizeof(EMRCOLORCORRECTPALETTE)));
-        }
+        Assert.That(Marshal.SizeOf<EMRCOLORCORRECTPALETTE>(), Is.EqualTo(sizeof(EMRCOLORCORRECTPALETTE)));
+    }
 
-        /// <summary>Validates that the <see cref="EMRCOLORCORRECTPALETTE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(EMRCOLORCORRECTPALETTE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="EMRCOLORCORRECTPALETTE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(EMRCOLORCORRECTPALETTE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="EMRCOLORCORRECTPALETTE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(EMRCOLORCORRECTPALETTE), Is.EqualTo(24));
-        }
+    /// <summary>Validates that the <see cref="EMRCOLORCORRECTPALETTE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(EMRCOLORCORRECTPALETTE), Is.EqualTo(24));
     }
 }

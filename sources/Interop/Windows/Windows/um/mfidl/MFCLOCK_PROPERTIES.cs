@@ -5,25 +5,24 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MFCLOCK_PROPERTIES
 {
-    public partial struct MFCLOCK_PROPERTIES
-    {
-        [NativeTypeName("unsigned long long")]
-        public ulong qwCorrelationRate;
+    [NativeTypeName("unsigned long long")]
+    public ulong qwCorrelationRate;
 
-        public Guid guidClockId;
+    public Guid guidClockId;
 
-        [NativeTypeName("DWORD")]
-        public uint dwClockFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwClockFlags;
 
-        [NativeTypeName("unsigned long long")]
-        public ulong qwClockFrequency;
+    [NativeTypeName("unsigned long long")]
+    public ulong qwClockFrequency;
 
-        [NativeTypeName("DWORD")]
-        public uint dwClockTolerance;
+    [NativeTypeName("DWORD")]
+    public uint dwClockTolerance;
 
-        [NativeTypeName("DWORD")]
-        public uint dwClockJitter;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwClockJitter;
 }

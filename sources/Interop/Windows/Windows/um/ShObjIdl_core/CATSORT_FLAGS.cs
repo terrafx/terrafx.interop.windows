@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum CATSORT_FLAGS
 {
-    [Flags]
-    public enum CATSORT_FLAGS
-    {
-        CATSORT_DEFAULT = 0,
-        CATSORT_NAME = 0x1,
-    }
+    CATSORT_DEFAULT = 0,
+    CATSORT_NAME = 0x1,
 }

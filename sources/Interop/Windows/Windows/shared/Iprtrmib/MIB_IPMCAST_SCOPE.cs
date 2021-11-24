@@ -3,20 +3,19 @@
 // Ported from shared/Iprtrmib.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct MIB_IPMCAST_SCOPE
 {
-    public unsafe partial struct MIB_IPMCAST_SCOPE
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwGroupAddress;
+    [NativeTypeName("DWORD")]
+    public uint dwGroupAddress;
 
-        [NativeTypeName("DWORD")]
-        public uint dwGroupMask;
+    [NativeTypeName("DWORD")]
+    public uint dwGroupMask;
 
-        [NativeTypeName("SCOPE_NAME_BUFFER")]
-        public fixed ushort snNameBuffer[256];
+    [NativeTypeName("SCOPE_NAME_BUFFER")]
+    public fixed ushort snNameBuffer[256];
 
-        [NativeTypeName("DWORD")]
-        public uint dwStatus;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwStatus;
 }

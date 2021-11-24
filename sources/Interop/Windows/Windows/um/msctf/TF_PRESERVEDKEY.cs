@@ -3,12 +3,11 @@
 // Ported from um/msctf.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct TF_PRESERVEDKEY
-    {
-        public uint uVKey;
+namespace TerraFX.Interop.Windows;
 
-        public uint uModifiers;
-    }
+public partial struct TF_PRESERVEDKEY
+{
+    public uint uVKey;
+
+    public uint uModifiers;
 }

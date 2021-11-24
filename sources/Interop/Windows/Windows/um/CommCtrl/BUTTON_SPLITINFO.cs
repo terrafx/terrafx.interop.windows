@@ -3,16 +3,15 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct BUTTON_SPLITINFO
 {
-    public partial struct BUTTON_SPLITINFO
-    {
-        public uint mask;
+    public uint mask;
 
-        public HIMAGELIST himlGlyph;
+    public HIMAGELIST himlGlyph;
 
-        public uint uSplitStyle;
+    public uint uSplitStyle;
 
-        public SIZE size;
-    }
+    public SIZE size;
 }

@@ -3,13 +3,12 @@
 // Ported from shared/ws2ipdef.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct GROUP_REQ
-    {
-        [NativeTypeName("ULONG")]
-        public uint gr_interface;
+namespace TerraFX.Interop.Windows;
 
-        public SOCKADDR_STORAGE gr_group;
-    }
+public partial struct GROUP_REQ
+{
+    [NativeTypeName("ULONG")]
+    public uint gr_interface;
+
+    public SOCKADDR_STORAGE gr_group;
 }

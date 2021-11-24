@@ -8,172 +8,171 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[Guid("7A5B6FD1-CD73-4B6C-9CF4-2E869EAF470A")]
+[NativeTypeName("struct ICoreWindowAdapterInterop : IInspectable")]
+[NativeInheritance("IInspectable")]
+public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInterop.Interface
 {
-    [Guid("7A5B6FD1-CD73-4B6C-9CF4-2E869EAF470A")]
-    [NativeTypeName("struct ICoreWindowAdapterInterop : IInspectable")]
-    [NativeInheritance("IInspectable")]
-    public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInterop.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, Guid*, void**, int>)(lpVtbl[0]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ICoreWindowAdapterInterop*, Guid*, void**, int>)(lpVtbl[0]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, uint>)(lpVtbl[1]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ICoreWindowAdapterInterop*, uint>)(lpVtbl[1]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, uint>)(lpVtbl[2]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ICoreWindowAdapterInterop*, uint>)(lpVtbl[2]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
+    {
+        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, uint*, Guid**, int>)(lpVtbl[3]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
-        {
-            return ((delegate* unmanaged<ICoreWindowAdapterInterop*, uint*, Guid**, int>)(lpVtbl[3]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetRuntimeClassName(HSTRING* className)
+    {
+        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, HSTRING*, int>)(lpVtbl[4]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), className);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT GetRuntimeClassName(HSTRING* className)
-        {
-            return ((delegate* unmanaged<ICoreWindowAdapterInterop*, HSTRING*, int>)(lpVtbl[4]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), className);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetTrustLevel(TrustLevel* trustLevel)
+    {
+        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, TrustLevel*, int>)(lpVtbl[5]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), trustLevel);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT GetTrustLevel(TrustLevel* trustLevel)
-        {
-            return ((delegate* unmanaged<ICoreWindowAdapterInterop*, TrustLevel*, int>)(lpVtbl[5]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), trustLevel);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT get_AppActivationClientAdapter(IUnknown** value)
+    {
+        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[6]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT get_ApplicationViewClientAdapter(IUnknown** value)
+    {
+        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[7]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT get_CoreApplicationViewClientAdapter(IUnknown** value)
+    {
+        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[8]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT get_HoloViewClientAdapter(IUnknown** value)
+    {
+        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[9]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT get_SystemNavigationClientAdapter(IUnknown** value)
+    {
+        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[10]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT get_TitleBarClientAdapter(IUnknown** value)
+    {
+        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[11]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT SetWindowClientAdapter(IUnknown* value)
+    {
+        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown*, int>)(lpVtbl[12]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
+    }
+
+    public interface Interface : IInspectable.Interface
+    {
         [VtblIndex(6)]
-        public HRESULT get_AppActivationClientAdapter(IUnknown** value)
-        {
-            return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[6]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
-        }
+        HRESULT get_AppActivationClientAdapter(IUnknown** value);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT get_ApplicationViewClientAdapter(IUnknown** value)
-        {
-            return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[7]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
-        }
+        HRESULT get_ApplicationViewClientAdapter(IUnknown** value);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT get_CoreApplicationViewClientAdapter(IUnknown** value)
-        {
-            return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[8]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
-        }
+        HRESULT get_CoreApplicationViewClientAdapter(IUnknown** value);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT get_HoloViewClientAdapter(IUnknown** value)
-        {
-            return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[9]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
-        }
+        HRESULT get_HoloViewClientAdapter(IUnknown** value);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT get_SystemNavigationClientAdapter(IUnknown** value)
-        {
-            return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[10]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
-        }
+        HRESULT get_SystemNavigationClientAdapter(IUnknown** value);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT get_TitleBarClientAdapter(IUnknown** value)
-        {
-            return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[11]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
-        }
+        HRESULT get_TitleBarClientAdapter(IUnknown** value);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT SetWindowClientAdapter(IUnknown* value)
-        {
-            return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown*, int>)(lpVtbl[12]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
-        }
+        HRESULT SetWindowClientAdapter(IUnknown* value);
+    }
 
-        public interface Interface : IInspectable.Interface
-        {
-            [VtblIndex(6)]
-            HRESULT get_AppActivationClientAdapter(IUnknown** value);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICoreWindowAdapterInterop*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(7)]
-            HRESULT get_ApplicationViewClientAdapter(IUnknown** value);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ICoreWindowAdapterInterop*, uint> AddRef;
 
-            [VtblIndex(8)]
-            HRESULT get_CoreApplicationViewClientAdapter(IUnknown** value);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ICoreWindowAdapterInterop*, uint> Release;
 
-            [VtblIndex(9)]
-            HRESULT get_HoloViewClientAdapter(IUnknown** value);
+        [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICoreWindowAdapterInterop*, uint*, Guid**, int> GetIids;
 
-            [VtblIndex(10)]
-            HRESULT get_SystemNavigationClientAdapter(IUnknown** value);
+        [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICoreWindowAdapterInterop*, HSTRING*, int> GetRuntimeClassName;
 
-            [VtblIndex(11)]
-            HRESULT get_TitleBarClientAdapter(IUnknown** value);
+        [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICoreWindowAdapterInterop*, TrustLevel*, int> GetTrustLevel;
 
-            [VtblIndex(12)]
-            HRESULT SetWindowClientAdapter(IUnknown* value);
-        }
+        [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int> get_AppActivationClientAdapter;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICoreWindowAdapterInterop*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int> get_ApplicationViewClientAdapter;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ICoreWindowAdapterInterop*, uint> AddRef;
+        [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int> get_CoreApplicationViewClientAdapter;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ICoreWindowAdapterInterop*, uint> Release;
+        [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int> get_HoloViewClientAdapter;
 
-            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICoreWindowAdapterInterop*, uint*, Guid**, int> GetIids;
+        [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int> get_SystemNavigationClientAdapter;
 
-            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICoreWindowAdapterInterop*, HSTRING*, int> GetRuntimeClassName;
+        [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int> get_TitleBarClientAdapter;
 
-            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICoreWindowAdapterInterop*, TrustLevel*, int> GetTrustLevel;
-
-            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int> get_AppActivationClientAdapter;
-
-            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int> get_ApplicationViewClientAdapter;
-
-            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int> get_CoreApplicationViewClientAdapter;
-
-            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int> get_HoloViewClientAdapter;
-
-            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int> get_SystemNavigationClientAdapter;
-
-            [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int> get_TitleBarClientAdapter;
-
-            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown*, int> SetWindowClientAdapter;
-        }
+        [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown*, int> SetWindowClientAdapter;
     }
 }

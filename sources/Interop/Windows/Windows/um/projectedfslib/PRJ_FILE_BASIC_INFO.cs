@@ -5,26 +5,25 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.17763.0")]
+public partial struct PRJ_FILE_BASIC_INFO
 {
-    [SupportedOSPlatform("windows10.0.17763.0")]
-    public partial struct PRJ_FILE_BASIC_INFO
-    {
-        [NativeTypeName("BOOLEAN")]
-        public byte IsDirectory;
+    [NativeTypeName("BOOLEAN")]
+    public byte IsDirectory;
 
-        [NativeTypeName("INT64")]
-        public long FileSize;
+    [NativeTypeName("INT64")]
+    public long FileSize;
 
-        public LARGE_INTEGER CreationTime;
+    public LARGE_INTEGER CreationTime;
 
-        public LARGE_INTEGER LastAccessTime;
+    public LARGE_INTEGER LastAccessTime;
 
-        public LARGE_INTEGER LastWriteTime;
+    public LARGE_INTEGER LastWriteTime;
 
-        public LARGE_INTEGER ChangeTime;
+    public LARGE_INTEGER ChangeTime;
 
-        [NativeTypeName("UINT32")]
-        public uint FileAttributes;
-    }
+    [NativeTypeName("UINT32")]
+    public uint FileAttributes;
 }

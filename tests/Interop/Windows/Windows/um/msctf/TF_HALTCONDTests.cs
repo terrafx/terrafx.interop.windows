@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TF_HALTCOND" /> struct.</summary>
+public static unsafe partial class TF_HALTCONDTests
 {
-    /// <summary>Provides validation of the <see cref="TF_HALTCOND" /> struct.</summary>
-    public static unsafe partial class TF_HALTCONDTests
+    /// <summary>Validates that the <see cref="TF_HALTCOND" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TF_HALTCOND" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TF_HALTCOND>(), Is.EqualTo(sizeof(TF_HALTCOND)));
-        }
+        Assert.That(Marshal.SizeOf<TF_HALTCOND>(), Is.EqualTo(sizeof(TF_HALTCOND)));
+    }
 
-        /// <summary>Validates that the <see cref="TF_HALTCOND" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TF_HALTCOND).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TF_HALTCOND" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TF_HALTCOND).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TF_HALTCOND" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="TF_HALTCOND" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(TF_HALTCOND), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(TF_HALTCOND), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(TF_HALTCOND), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(TF_HALTCOND), Is.EqualTo(12));
         }
     }
 }

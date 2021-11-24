@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IShellLinkDataList" /> struct.</summary>
+public static unsafe partial class IShellLinkDataListTests
 {
-    /// <summary>Provides validation of the <see cref="IShellLinkDataList" /> struct.</summary>
-    public static unsafe partial class IShellLinkDataListTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IShellLinkDataList" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IShellLinkDataList" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IShellLinkDataList).GUID, Is.EqualTo(IID_IShellLinkDataList));
-        }
+        Assert.That(typeof(IShellLinkDataList).GUID, Is.EqualTo(IID_IShellLinkDataList));
+    }
 
-        /// <summary>Validates that the <see cref="IShellLinkDataList" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IShellLinkDataList>(), Is.EqualTo(sizeof(IShellLinkDataList)));
-        }
+    /// <summary>Validates that the <see cref="IShellLinkDataList" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IShellLinkDataList>(), Is.EqualTo(sizeof(IShellLinkDataList)));
+    }
 
-        /// <summary>Validates that the <see cref="IShellLinkDataList" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IShellLinkDataList).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IShellLinkDataList" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IShellLinkDataList).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IShellLinkDataList" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IShellLinkDataList" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IShellLinkDataList), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IShellLinkDataList), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IShellLinkDataList), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IShellLinkDataList), Is.EqualTo(4));
         }
     }
 }

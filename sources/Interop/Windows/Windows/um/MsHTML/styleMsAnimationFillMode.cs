@@ -3,15 +3,14 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum styleMsAnimationFillMode
 {
-    public enum styleMsAnimationFillMode
-    {
-        styleMsAnimationFillModeNone = 0,
-        styleMsAnimationFillModeForwards = 1,
-        styleMsAnimationFillModeBackwards = 2,
-        styleMsAnimationFillModeBoth = 3,
-        styleMsAnimationFillModeNotSet = 4,
-        styleMsAnimationFillMode_Max = 2147483647,
-    }
+    styleMsAnimationFillModeNone = 0,
+    styleMsAnimationFillModeForwards = 1,
+    styleMsAnimationFillModeBackwards = 2,
+    styleMsAnimationFillModeBoth = 3,
+    styleMsAnimationFillModeNotSet = 4,
+    styleMsAnimationFillMode_Max = 2147483647,
 }

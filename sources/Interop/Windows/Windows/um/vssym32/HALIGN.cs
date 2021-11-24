@@ -3,12 +3,11 @@
 // Ported from um/vssym32.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum HALIGN
 {
-    public enum HALIGN
-    {
-        HA_LEFT = 0,
-        HA_CENTER = 1,
-        HA_RIGHT = 2,
-    }
+    HA_LEFT = 0,
+    HA_CENTER = 1,
+    HA_RIGHT = 2,
 }

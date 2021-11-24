@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IPV6_MREQ" /> struct.</summary>
+public static unsafe partial class IPV6_MREQTests
 {
-    /// <summary>Provides validation of the <see cref="IPV6_MREQ" /> struct.</summary>
-    public static unsafe partial class IPV6_MREQTests
+    /// <summary>Validates that the <see cref="IPV6_MREQ" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IPV6_MREQ" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IPV6_MREQ>(), Is.EqualTo(sizeof(IPV6_MREQ)));
-        }
+        Assert.That(Marshal.SizeOf<IPV6_MREQ>(), Is.EqualTo(sizeof(IPV6_MREQ)));
+    }
 
-        /// <summary>Validates that the <see cref="IPV6_MREQ" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IPV6_MREQ).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IPV6_MREQ" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IPV6_MREQ).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IPV6_MREQ" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(IPV6_MREQ), Is.EqualTo(20));
-        }
+    /// <summary>Validates that the <see cref="IPV6_MREQ" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(IPV6_MREQ), Is.EqualTo(20));
     }
 }

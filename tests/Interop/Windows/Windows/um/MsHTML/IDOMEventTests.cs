@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDOMEvent" /> struct.</summary>
+public static unsafe partial class IDOMEventTests
 {
-    /// <summary>Provides validation of the <see cref="IDOMEvent" /> struct.</summary>
-    public static unsafe partial class IDOMEventTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDOMEvent" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDOMEvent" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDOMEvent).GUID, Is.EqualTo(IID_IDOMEvent));
-        }
+        Assert.That(typeof(IDOMEvent).GUID, Is.EqualTo(IID_IDOMEvent));
+    }
 
-        /// <summary>Validates that the <see cref="IDOMEvent" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDOMEvent>(), Is.EqualTo(sizeof(IDOMEvent)));
-        }
+    /// <summary>Validates that the <see cref="IDOMEvent" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDOMEvent>(), Is.EqualTo(sizeof(IDOMEvent)));
+    }
 
-        /// <summary>Validates that the <see cref="IDOMEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDOMEvent).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDOMEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDOMEvent).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDOMEvent" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDOMEvent" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDOMEvent), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDOMEvent), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDOMEvent), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDOMEvent), Is.EqualTo(4));
         }
     }
 }

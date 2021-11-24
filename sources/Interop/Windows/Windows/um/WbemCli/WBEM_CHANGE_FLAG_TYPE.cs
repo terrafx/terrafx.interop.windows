@@ -3,17 +3,16 @@
 // Ported from um/WbemCli.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum WBEM_CHANGE_FLAG_TYPE
 {
-    public enum WBEM_CHANGE_FLAG_TYPE
-    {
-        WBEM_FLAG_CREATE_OR_UPDATE = 0,
-        WBEM_FLAG_UPDATE_ONLY = 0x1,
-        WBEM_FLAG_CREATE_ONLY = 0x2,
-        WBEM_FLAG_UPDATE_COMPATIBLE = 0,
-        WBEM_FLAG_UPDATE_SAFE_MODE = 0x20,
-        WBEM_FLAG_UPDATE_FORCE_MODE = 0x40,
-        WBEM_MASK_UPDATE_MODE = 0x60,
-        WBEM_FLAG_ADVISORY = 0x10000,
-    }
+    WBEM_FLAG_CREATE_OR_UPDATE = 0,
+    WBEM_FLAG_UPDATE_ONLY = 0x1,
+    WBEM_FLAG_CREATE_ONLY = 0x2,
+    WBEM_FLAG_UPDATE_COMPATIBLE = 0,
+    WBEM_FLAG_UPDATE_SAFE_MODE = 0x20,
+    WBEM_FLAG_UPDATE_FORCE_MODE = 0x40,
+    WBEM_MASK_UPDATE_MODE = 0x60,
+    WBEM_FLAG_ADVISORY = 0x10000,
 }

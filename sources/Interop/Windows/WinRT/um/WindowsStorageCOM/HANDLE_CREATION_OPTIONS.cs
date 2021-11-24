@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[SupportedOSPlatform("windows10.0")]
+public enum HANDLE_CREATION_OPTIONS
 {
-    [SupportedOSPlatform("windows10.0")]
-    public enum HANDLE_CREATION_OPTIONS
-    {
-        HCO_CREATE_NEW = 0x1,
-        HCO_CREATE_ALWAYS = 0x2,
-        HCO_OPEN_EXISTING = 0x3,
-        HCO_OPEN_ALWAYS = 0x4,
-        HCO_TRUNCATE_EXISTING = 0x5,
-    }
+    HCO_CREATE_NEW = 0x1,
+    HCO_CREATE_ALWAYS = 0x2,
+    HCO_OPEN_EXISTING = 0x3,
+    HCO_OPEN_ALWAYS = 0x4,
+    HCO_TRUNCATE_EXISTING = 0x5,
 }

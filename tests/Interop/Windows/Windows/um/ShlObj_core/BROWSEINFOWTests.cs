@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="BROWSEINFOW" /> struct.</summary>
+public static unsafe partial class BROWSEINFOWTests
 {
-    /// <summary>Provides validation of the <see cref="BROWSEINFOW" /> struct.</summary>
-    public static unsafe partial class BROWSEINFOWTests
+    /// <summary>Validates that the <see cref="BROWSEINFOW" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="BROWSEINFOW" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<BROWSEINFOW>(), Is.EqualTo(sizeof(BROWSEINFOW)));
-        }
+        Assert.That(Marshal.SizeOf<BROWSEINFOW>(), Is.EqualTo(sizeof(BROWSEINFOW)));
+    }
 
-        /// <summary>Validates that the <see cref="BROWSEINFOW" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(BROWSEINFOW).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="BROWSEINFOW" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(BROWSEINFOW).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="BROWSEINFOW" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="BROWSEINFOW" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(BROWSEINFOW), Is.EqualTo(64));
-            }
-            else
-            {
-                Assert.That(sizeof(BROWSEINFOW), Is.EqualTo(32));
-            }
+            Assert.That(sizeof(BROWSEINFOW), Is.EqualTo(64));
+        }
+        else
+        {
+            Assert.That(sizeof(BROWSEINFOW), Is.EqualTo(32));
         }
     }
 }

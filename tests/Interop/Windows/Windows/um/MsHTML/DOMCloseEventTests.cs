@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DOMCloseEvent" /> struct.</summary>
+public static unsafe partial class DOMCloseEventTests
 {
-    /// <summary>Provides validation of the <see cref="DOMCloseEvent" /> struct.</summary>
-    public static unsafe partial class DOMCloseEventTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DOMCloseEvent" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DOMCloseEvent" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DOMCloseEvent).GUID, Is.EqualTo(IID_DOMCloseEvent));
-        }
+        Assert.That(typeof(DOMCloseEvent).GUID, Is.EqualTo(IID_DOMCloseEvent));
+    }
 
-        /// <summary>Validates that the <see cref="DOMCloseEvent" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DOMCloseEvent>(), Is.EqualTo(sizeof(DOMCloseEvent)));
-        }
+    /// <summary>Validates that the <see cref="DOMCloseEvent" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DOMCloseEvent>(), Is.EqualTo(sizeof(DOMCloseEvent)));
+    }
 
-        /// <summary>Validates that the <see cref="DOMCloseEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DOMCloseEvent).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DOMCloseEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DOMCloseEvent).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DOMCloseEvent" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DOMCloseEvent), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="DOMCloseEvent" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DOMCloseEvent), Is.EqualTo(1));
     }
 }

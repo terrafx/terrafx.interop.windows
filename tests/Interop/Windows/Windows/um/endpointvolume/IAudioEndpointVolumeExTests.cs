@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IAudioEndpointVolumeEx" /> struct.</summary>
+public static unsafe partial class IAudioEndpointVolumeExTests
 {
-    /// <summary>Provides validation of the <see cref="IAudioEndpointVolumeEx" /> struct.</summary>
-    public static unsafe partial class IAudioEndpointVolumeExTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAudioEndpointVolumeEx" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAudioEndpointVolumeEx" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAudioEndpointVolumeEx).GUID, Is.EqualTo(IID_IAudioEndpointVolumeEx));
-        }
+        Assert.That(typeof(IAudioEndpointVolumeEx).GUID, Is.EqualTo(IID_IAudioEndpointVolumeEx));
+    }
 
-        /// <summary>Validates that the <see cref="IAudioEndpointVolumeEx" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IAudioEndpointVolumeEx>(), Is.EqualTo(sizeof(IAudioEndpointVolumeEx)));
-        }
+    /// <summary>Validates that the <see cref="IAudioEndpointVolumeEx" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IAudioEndpointVolumeEx>(), Is.EqualTo(sizeof(IAudioEndpointVolumeEx)));
+    }
 
-        /// <summary>Validates that the <see cref="IAudioEndpointVolumeEx" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IAudioEndpointVolumeEx).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IAudioEndpointVolumeEx" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IAudioEndpointVolumeEx).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IAudioEndpointVolumeEx" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IAudioEndpointVolumeEx" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IAudioEndpointVolumeEx), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IAudioEndpointVolumeEx), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IAudioEndpointVolumeEx), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IAudioEndpointVolumeEx), Is.EqualTo(4));
         }
     }
 }

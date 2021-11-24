@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="BULK_SECURITY_TEST_DATA" /> struct.</summary>
+public static unsafe partial class BULK_SECURITY_TEST_DATATests
 {
-    /// <summary>Provides validation of the <see cref="BULK_SECURITY_TEST_DATA" /> struct.</summary>
-    public static unsafe partial class BULK_SECURITY_TEST_DATATests
+    /// <summary>Validates that the <see cref="BULK_SECURITY_TEST_DATA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="BULK_SECURITY_TEST_DATA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<BULK_SECURITY_TEST_DATA>(), Is.EqualTo(sizeof(BULK_SECURITY_TEST_DATA)));
-        }
+        Assert.That(Marshal.SizeOf<BULK_SECURITY_TEST_DATA>(), Is.EqualTo(sizeof(BULK_SECURITY_TEST_DATA)));
+    }
 
-        /// <summary>Validates that the <see cref="BULK_SECURITY_TEST_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(BULK_SECURITY_TEST_DATA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="BULK_SECURITY_TEST_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(BULK_SECURITY_TEST_DATA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="BULK_SECURITY_TEST_DATA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(BULK_SECURITY_TEST_DATA), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="BULK_SECURITY_TEST_DATA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(BULK_SECURITY_TEST_DATA), Is.EqualTo(8));
     }
 }

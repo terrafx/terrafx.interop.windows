@@ -3,46 +3,45 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct IMAGELISTDRAWPARAMS
 {
-    public partial struct IMAGELISTDRAWPARAMS
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public HIMAGELIST himl;
+    public HIMAGELIST himl;
 
-        public int i;
+    public int i;
 
-        public HDC hdcDst;
+    public HDC hdcDst;
 
-        public int x;
+    public int x;
 
-        public int y;
+    public int y;
 
-        public int cx;
+    public int cx;
 
-        public int cy;
+    public int cy;
 
-        public int xBitmap;
+    public int xBitmap;
 
-        public int yBitmap;
+    public int yBitmap;
 
-        public COLORREF rgbBk;
+    public COLORREF rgbBk;
 
-        public COLORREF rgbFg;
+    public COLORREF rgbFg;
 
-        public uint fStyle;
+    public uint fStyle;
 
-        [NativeTypeName("DWORD")]
-        public uint dwRop;
+    [NativeTypeName("DWORD")]
+    public uint dwRop;
 
-        [NativeTypeName("DWORD")]
-        public uint fState;
+    [NativeTypeName("DWORD")]
+    public uint fState;
 
-        [NativeTypeName("DWORD")]
-        public uint Frame;
+    [NativeTypeName("DWORD")]
+    public uint Frame;
 
-        public COLORREF crEffect;
-    }
+    public COLORREF crEffect;
 }

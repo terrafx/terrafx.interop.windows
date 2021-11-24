@@ -5,17 +5,16 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum MANDATORY_LEVEL
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum MANDATORY_LEVEL
-    {
-        MandatoryLevelUntrusted = 0,
-        MandatoryLevelLow,
-        MandatoryLevelMedium,
-        MandatoryLevelHigh,
-        MandatoryLevelSystem,
-        MandatoryLevelSecureProcess,
-        MandatoryLevelCount,
-    }
+    MandatoryLevelUntrusted = 0,
+    MandatoryLevelLow,
+    MandatoryLevelMedium,
+    MandatoryLevelHigh,
+    MandatoryLevelSystem,
+    MandatoryLevelSecureProcess,
+    MandatoryLevelCount,
 }

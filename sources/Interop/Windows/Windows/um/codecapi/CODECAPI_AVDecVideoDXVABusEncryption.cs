@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("42153C8B-FD0B-4765-A462-DDD9E8BCC388")]
+public partial struct CODECAPI_AVDecVideoDXVABusEncryption
 {
-    [Guid("42153C8B-FD0B-4765-A462-DDD9E8BCC388")]
-    public partial struct CODECAPI_AVDecVideoDXVABusEncryption
-    {
-    }
 }

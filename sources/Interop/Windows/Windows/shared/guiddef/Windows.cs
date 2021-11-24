@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static unsafe partial class Windows
 {
-    public static unsafe partial class Windows
+    public static int InlineIsEqualGUID([NativeTypeName("const GUID &")] Guid* rguid1, [NativeTypeName("const GUID &")] Guid* rguid2)
     {
-        public static int InlineIsEqualGUID([NativeTypeName("const GUID &")] Guid* rguid1, [NativeTypeName("const GUID &")] Guid* rguid2)
-        {
-            return unchecked(((uint*)(rguid1))[0] == ((uint*)(rguid2))[0] && ((uint*)(rguid1))[1] == ((uint*)(rguid2))[1] && ((uint*)(rguid1))[2] == ((uint*)(rguid2))[2] && ((uint*)(rguid1))[3] == ((uint*)(rguid2))[3]) ? 1 : 0;
-        }
+        return unchecked(((uint*)(rguid1))[0] == ((uint*)(rguid2))[0] && ((uint*)(rguid1))[1] == ((uint*)(rguid2))[1] && ((uint*)(rguid1))[2] == ((uint*)(rguid2))[2] && ((uint*)(rguid1))[3] == ((uint*)(rguid2))[3]) ? 1 : 0;
     }
 }

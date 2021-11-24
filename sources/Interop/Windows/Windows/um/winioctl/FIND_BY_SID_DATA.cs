@@ -3,13 +3,12 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct FIND_BY_SID_DATA
-    {
-        [NativeTypeName("DWORD")]
-        public uint Restart;
+namespace TerraFX.Interop.Windows;
 
-        public SID Sid;
-    }
+public partial struct FIND_BY_SID_DATA
+{
+    [NativeTypeName("DWORD")]
+    public uint Restart;
+
+    public SID Sid;
 }

@@ -3,18 +3,17 @@
 // Ported from um/objidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct STATDATA
 {
-    public unsafe partial struct STATDATA
-    {
-        public FORMATETC formatetc;
+    public FORMATETC formatetc;
 
-        [NativeTypeName("DWORD")]
-        public uint advf;
+    [NativeTypeName("DWORD")]
+    public uint advf;
 
-        public IAdviseSink* pAdvSink;
+    public IAdviseSink* pAdvSink;
 
-        [NativeTypeName("DWORD")]
-        public uint dwConnection;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwConnection;
 }

@@ -3,41 +3,40 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CERT_CHAIN_ENGINE_CONFIG
 {
-    public unsafe partial struct CERT_CHAIN_ENGINE_CONFIG
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public HCERTSTORE hRestrictedRoot;
+    public HCERTSTORE hRestrictedRoot;
 
-        public HCERTSTORE hRestrictedTrust;
+    public HCERTSTORE hRestrictedTrust;
 
-        public HCERTSTORE hRestrictedOther;
+    public HCERTSTORE hRestrictedOther;
 
-        [NativeTypeName("DWORD")]
-        public uint cAdditionalStore;
+    [NativeTypeName("DWORD")]
+    public uint cAdditionalStore;
 
-        public HCERTSTORE* rghAdditionalStore;
+    public HCERTSTORE* rghAdditionalStore;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        [NativeTypeName("DWORD")]
-        public uint dwUrlRetrievalTimeout;
+    [NativeTypeName("DWORD")]
+    public uint dwUrlRetrievalTimeout;
 
-        [NativeTypeName("DWORD")]
-        public uint MaximumCachedCertificates;
+    [NativeTypeName("DWORD")]
+    public uint MaximumCachedCertificates;
 
-        [NativeTypeName("DWORD")]
-        public uint CycleDetectionModulus;
+    [NativeTypeName("DWORD")]
+    public uint CycleDetectionModulus;
 
-        public HCERTSTORE hExclusiveRoot;
+    public HCERTSTORE hExclusiveRoot;
 
-        public HCERTSTORE hExclusiveTrustedPeople;
+    public HCERTSTORE hExclusiveTrustedPeople;
 
-        [NativeTypeName("DWORD")]
-        public uint dwExclusiveFlags;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwExclusiveFlags;
 }

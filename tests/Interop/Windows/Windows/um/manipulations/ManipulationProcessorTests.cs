@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ManipulationProcessor" /> struct.</summary>
+public static unsafe partial class ManipulationProcessorTests
 {
-    /// <summary>Provides validation of the <see cref="ManipulationProcessor" /> struct.</summary>
-    public static unsafe partial class ManipulationProcessorTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ManipulationProcessor" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ManipulationProcessor" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ManipulationProcessor).GUID, Is.EqualTo(CLSID_ManipulationProcessor));
-        }
+        Assert.That(typeof(ManipulationProcessor).GUID, Is.EqualTo(CLSID_ManipulationProcessor));
+    }
 
-        /// <summary>Validates that the <see cref="ManipulationProcessor" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ManipulationProcessor>(), Is.EqualTo(sizeof(ManipulationProcessor)));
-        }
+    /// <summary>Validates that the <see cref="ManipulationProcessor" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ManipulationProcessor>(), Is.EqualTo(sizeof(ManipulationProcessor)));
+    }
 
-        /// <summary>Validates that the <see cref="ManipulationProcessor" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ManipulationProcessor).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ManipulationProcessor" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ManipulationProcessor).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ManipulationProcessor" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(ManipulationProcessor), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="ManipulationProcessor" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(ManipulationProcessor), Is.EqualTo(1));
     }
 }

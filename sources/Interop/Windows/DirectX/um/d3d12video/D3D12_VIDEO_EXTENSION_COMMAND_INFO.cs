@@ -6,16 +6,15 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+public unsafe partial struct D3D12_VIDEO_EXTENSION_COMMAND_INFO
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public unsafe partial struct D3D12_VIDEO_EXTENSION_COMMAND_INFO
-    {
-        public Guid CommandId;
+    public Guid CommandId;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* Name;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* Name;
 
-        public D3D12_COMMAND_LIST_SUPPORT_FLAGS CommandListSupportFlags;
-    }
+    public D3D12_COMMAND_LIST_SUPPORT_FLAGS CommandListSupportFlags;
 }

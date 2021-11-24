@@ -3,13 +3,12 @@
 // Ported from um/mfidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MFVideoSphericalFormat
 {
-    public enum MFVideoSphericalFormat
-    {
-        MFVideoSphericalFormat_Unsupported = 0,
-        MFVideoSphericalFormat_Equirectangular = 1,
-        MFVideoSphericalFormat_CubeMap = 2,
-        MFVideoSphericalFormat_3DMesh = 3,
-    }
+    MFVideoSphericalFormat_Unsupported = 0,
+    MFVideoSphericalFormat_Equirectangular = 1,
+    MFVideoSphericalFormat_CubeMap = 2,
+    MFVideoSphericalFormat_3DMesh = 3,
 }

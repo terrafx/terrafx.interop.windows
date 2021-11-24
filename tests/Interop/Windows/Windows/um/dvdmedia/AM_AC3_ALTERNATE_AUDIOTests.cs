@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="AM_AC3_ALTERNATE_AUDIO" /> struct.</summary>
+public static unsafe partial class AM_AC3_ALTERNATE_AUDIOTests
 {
-    /// <summary>Provides validation of the <see cref="AM_AC3_ALTERNATE_AUDIO" /> struct.</summary>
-    public static unsafe partial class AM_AC3_ALTERNATE_AUDIOTests
+    /// <summary>Validates that the <see cref="AM_AC3_ALTERNATE_AUDIO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="AM_AC3_ALTERNATE_AUDIO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<AM_AC3_ALTERNATE_AUDIO>(), Is.EqualTo(sizeof(AM_AC3_ALTERNATE_AUDIO)));
-        }
+        Assert.That(Marshal.SizeOf<AM_AC3_ALTERNATE_AUDIO>(), Is.EqualTo(sizeof(AM_AC3_ALTERNATE_AUDIO)));
+    }
 
-        /// <summary>Validates that the <see cref="AM_AC3_ALTERNATE_AUDIO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(AM_AC3_ALTERNATE_AUDIO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="AM_AC3_ALTERNATE_AUDIO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(AM_AC3_ALTERNATE_AUDIO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="AM_AC3_ALTERNATE_AUDIO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(AM_AC3_ALTERNATE_AUDIO), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="AM_AC3_ALTERNATE_AUDIO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(AM_AC3_ALTERNATE_AUDIO), Is.EqualTo(8));
     }
 }

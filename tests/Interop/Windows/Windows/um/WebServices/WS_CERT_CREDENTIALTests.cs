@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WS_CERT_CREDENTIAL" /> struct.</summary>
+public static unsafe partial class WS_CERT_CREDENTIALTests
 {
-    /// <summary>Provides validation of the <see cref="WS_CERT_CREDENTIAL" /> struct.</summary>
-    public static unsafe partial class WS_CERT_CREDENTIALTests
+    /// <summary>Validates that the <see cref="WS_CERT_CREDENTIAL" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WS_CERT_CREDENTIAL" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WS_CERT_CREDENTIAL>(), Is.EqualTo(sizeof(WS_CERT_CREDENTIAL)));
-        }
+        Assert.That(Marshal.SizeOf<WS_CERT_CREDENTIAL>(), Is.EqualTo(sizeof(WS_CERT_CREDENTIAL)));
+    }
 
-        /// <summary>Validates that the <see cref="WS_CERT_CREDENTIAL" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WS_CERT_CREDENTIAL).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WS_CERT_CREDENTIAL" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WS_CERT_CREDENTIAL).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WS_CERT_CREDENTIAL" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(WS_CERT_CREDENTIAL), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="WS_CERT_CREDENTIAL" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(WS_CERT_CREDENTIAL), Is.EqualTo(4));
     }
 }

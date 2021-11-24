@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="AppxFactory" /> struct.</summary>
+public static unsafe partial class AppxFactoryTests
 {
-    /// <summary>Provides validation of the <see cref="AppxFactory" /> struct.</summary>
-    public static unsafe partial class AppxFactoryTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="AppxFactory" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="AppxFactory" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(AppxFactory).GUID, Is.EqualTo(IID_AppxFactory));
-        }
+        Assert.That(typeof(AppxFactory).GUID, Is.EqualTo(IID_AppxFactory));
+    }
 
-        /// <summary>Validates that the <see cref="AppxFactory" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<AppxFactory>(), Is.EqualTo(sizeof(AppxFactory)));
-        }
+    /// <summary>Validates that the <see cref="AppxFactory" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<AppxFactory>(), Is.EqualTo(sizeof(AppxFactory)));
+    }
 
-        /// <summary>Validates that the <see cref="AppxFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(AppxFactory).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="AppxFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(AppxFactory).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="AppxFactory" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(AppxFactory), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="AppxFactory" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(AppxFactory), Is.EqualTo(1));
     }
 }

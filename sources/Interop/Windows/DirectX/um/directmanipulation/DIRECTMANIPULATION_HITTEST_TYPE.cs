@@ -6,14 +6,13 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+[SupportedOSPlatform("windows8.0")]
+public enum DIRECTMANIPULATION_HITTEST_TYPE
 {
-    [Flags]
-    [SupportedOSPlatform("windows8.0")]
-    public enum DIRECTMANIPULATION_HITTEST_TYPE
-    {
-        DIRECTMANIPULATION_HITTEST_TYPE_ASYNCHRONOUS = 0,
-        DIRECTMANIPULATION_HITTEST_TYPE_SYNCHRONOUS = 0x1,
-        DIRECTMANIPULATION_HITTEST_TYPE_AUTO_SYNCHRONOUS = 0x2,
-    }
+    DIRECTMANIPULATION_HITTEST_TYPE_ASYNCHRONOUS = 0,
+    DIRECTMANIPULATION_HITTEST_TYPE_SYNCHRONOUS = 0x1,
+    DIRECTMANIPULATION_HITTEST_TYPE_AUTO_SYNCHRONOUS = 0x2,
 }

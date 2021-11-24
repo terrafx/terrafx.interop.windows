@@ -5,21 +5,20 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Explicit)]
+public partial struct sockaddr_gen
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public partial struct sockaddr_gen
-    {
-        [FieldOffset(0)]
-        [NativeTypeName("struct sockaddr")]
-        public SOCKADDR Address;
+    [FieldOffset(0)]
+    [NativeTypeName("struct sockaddr")]
+    public SOCKADDR Address;
 
-        [FieldOffset(0)]
-        [NativeTypeName("struct sockaddr_in")]
-        public SOCKADDR_IN AddressIn;
+    [FieldOffset(0)]
+    [NativeTypeName("struct sockaddr_in")]
+    public SOCKADDR_IN AddressIn;
 
-        [FieldOffset(0)]
-        [NativeTypeName("struct sockaddr_in6_old")]
-        public sockaddr_in6_old AddressIn6;
-    }
+    [FieldOffset(0)]
+    [NativeTypeName("struct sockaddr_in6_old")]
+    public sockaddr_in6_old AddressIn6;
 }

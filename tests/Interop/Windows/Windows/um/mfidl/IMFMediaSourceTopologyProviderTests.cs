@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFMediaSourceTopologyProvider" /> struct.</summary>
+public static unsafe partial class IMFMediaSourceTopologyProviderTests
 {
-    /// <summary>Provides validation of the <see cref="IMFMediaSourceTopologyProvider" /> struct.</summary>
-    public static unsafe partial class IMFMediaSourceTopologyProviderTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFMediaSourceTopologyProvider" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFMediaSourceTopologyProvider" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFMediaSourceTopologyProvider).GUID, Is.EqualTo(IID_IMFMediaSourceTopologyProvider));
-        }
+        Assert.That(typeof(IMFMediaSourceTopologyProvider).GUID, Is.EqualTo(IID_IMFMediaSourceTopologyProvider));
+    }
 
-        /// <summary>Validates that the <see cref="IMFMediaSourceTopologyProvider" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFMediaSourceTopologyProvider>(), Is.EqualTo(sizeof(IMFMediaSourceTopologyProvider)));
-        }
+    /// <summary>Validates that the <see cref="IMFMediaSourceTopologyProvider" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFMediaSourceTopologyProvider>(), Is.EqualTo(sizeof(IMFMediaSourceTopologyProvider)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFMediaSourceTopologyProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFMediaSourceTopologyProvider).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFMediaSourceTopologyProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFMediaSourceTopologyProvider).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFMediaSourceTopologyProvider" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFMediaSourceTopologyProvider" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFMediaSourceTopologyProvider), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFMediaSourceTopologyProvider), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFMediaSourceTopologyProvider), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFMediaSourceTopologyProvider), Is.EqualTo(4));
         }
     }
 }

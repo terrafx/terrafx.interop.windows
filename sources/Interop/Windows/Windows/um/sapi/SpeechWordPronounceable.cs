@@ -5,12 +5,11 @@
 
 using static TerraFX.Interop.Windows.SPWORDPRONOUNCEABLE;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechWordPronounceable
 {
-    public enum SpeechWordPronounceable
-    {
-        SWPUnknownWordUnpronounceable = SPWP_UNKNOWN_WORD_UNPRONOUNCEABLE,
-        SWPUnknownWordPronounceable = SPWP_UNKNOWN_WORD_PRONOUNCEABLE,
-        SWPKnownWordPronounceable = SPWP_KNOWN_WORD_PRONOUNCEABLE,
-    }
+    SWPUnknownWordUnpronounceable = SPWP_UNKNOWN_WORD_UNPRONOUNCEABLE,
+    SWPUnknownWordPronounceable = SPWP_UNKNOWN_WORD_PRONOUNCEABLE,
+    SWPKnownWordPronounceable = SPWP_KNOWN_WORD_PRONOUNCEABLE,
 }

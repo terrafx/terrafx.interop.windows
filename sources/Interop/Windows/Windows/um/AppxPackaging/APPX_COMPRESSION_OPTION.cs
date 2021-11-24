@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum APPX_COMPRESSION_OPTION
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum APPX_COMPRESSION_OPTION
-    {
-        APPX_COMPRESSION_OPTION_NONE = 0,
-        APPX_COMPRESSION_OPTION_NORMAL = 1,
-        APPX_COMPRESSION_OPTION_MAXIMUM = 2,
-        APPX_COMPRESSION_OPTION_FAST = 3,
-        APPX_COMPRESSION_OPTION_SUPERFAST = 4,
-    }
+    APPX_COMPRESSION_OPTION_NONE = 0,
+    APPX_COMPRESSION_OPTION_NORMAL = 1,
+    APPX_COMPRESSION_OPTION_MAXIMUM = 2,
+    APPX_COMPRESSION_OPTION_FAST = 3,
+    APPX_COMPRESSION_OPTION_SUPERFAST = 4,
 }

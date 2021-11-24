@@ -3,16 +3,15 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct NMLVEMPTYMARKUP
 {
-    public unsafe partial struct NMLVEMPTYMARKUP
-    {
-        public NMHDR hdr;
+    public NMHDR hdr;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        [NativeTypeName("WCHAR [2084]")]
-        public fixed ushort szMarkup[2084];
-    }
+    [NativeTypeName("WCHAR [2084]")]
+    public fixed ushort szMarkup[2084];
 }

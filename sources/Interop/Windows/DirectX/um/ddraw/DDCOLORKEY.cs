@@ -3,14 +3,13 @@
 // Ported from um/ddraw.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
-{
-    public partial struct DDCOLORKEY
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwColorSpaceLowValue;
+namespace TerraFX.Interop.DirectX;
 
-        [NativeTypeName("DWORD")]
-        public uint dwColorSpaceHighValue;
-    }
+public partial struct DDCOLORKEY
+{
+    [NativeTypeName("DWORD")]
+    public uint dwColorSpaceLowValue;
+
+    [NativeTypeName("DWORD")]
+    public uint dwColorSpaceHighValue;
 }

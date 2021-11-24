@@ -3,12 +3,11 @@
 // Ported from um/d2d1svg.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
-{
-    public partial struct D2D1_SVG_LENGTH
-    {
-        public float value;
+namespace TerraFX.Interop.DirectX;
 
-        public D2D1_SVG_LENGTH_UNITS units;
-    }
+public partial struct D2D1_SVG_LENGTH
+{
+    public float value;
+
+    public D2D1_SVG_LENGTH_UNITS units;
 }

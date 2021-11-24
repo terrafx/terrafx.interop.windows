@@ -8,77 +8,76 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[Guid("A6BA4205-E59E-4E71-B25B-4E436D21EE3D")]
+[NativeTypeName("struct IDisplayPathInterop : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IDisplayPathInterop : IDisplayPathInterop.Interface
 {
-    [Guid("A6BA4205-E59E-4E71-B25B-4E436D21EE3D")]
-    [NativeTypeName("struct IDisplayPathInterop : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDisplayPathInterop : IDisplayPathInterop.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDisplayPathInterop*, Guid*, void**, int>)(lpVtbl[0]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDisplayPathInterop*, Guid*, void**, int>)(lpVtbl[0]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDisplayPathInterop*, uint>)(lpVtbl[1]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDisplayPathInterop*, uint>)(lpVtbl[1]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDisplayPathInterop*, uint>)(lpVtbl[2]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDisplayPathInterop*, uint>)(lpVtbl[2]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT CreateSourcePresentationHandle(HANDLE* pValue)
+    {
+        return ((delegate* unmanaged<IDisplayPathInterop*, HANDLE*, int>)(lpVtbl[3]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this), pValue);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetSourceId(uint* pSourceId)
+    {
+        return ((delegate* unmanaged<IDisplayPathInterop*, uint*, int>)(lpVtbl[4]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this), pSourceId);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT CreateSourcePresentationHandle(HANDLE* pValue)
-        {
-            return ((delegate* unmanaged<IDisplayPathInterop*, HANDLE*, int>)(lpVtbl[3]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this), pValue);
-        }
+        HRESULT CreateSourcePresentationHandle(HANDLE* pValue);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetSourceId(uint* pSourceId)
-        {
-            return ((delegate* unmanaged<IDisplayPathInterop*, uint*, int>)(lpVtbl[4]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this), pSourceId);
-        }
+        HRESULT GetSourceId(uint* pSourceId);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT CreateSourcePresentationHandle(HANDLE* pValue);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPathInterop*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetSourceId(uint* pSourceId);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPathInterop*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPathInterop*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPathInterop*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPathInterop*, uint> AddRef;
+        [NativeTypeName("HRESULT (HANDLE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPathInterop*, HANDLE*, int> CreateSourcePresentationHandle;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPathInterop*, uint> Release;
-
-            [NativeTypeName("HRESULT (HANDLE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPathInterop*, HANDLE*, int> CreateSourcePresentationHandle;
-
-            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDisplayPathInterop*, uint*, int> GetSourceId;
-        }
+        [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDisplayPathInterop*, uint*, int> GetSourceId;
     }
 }

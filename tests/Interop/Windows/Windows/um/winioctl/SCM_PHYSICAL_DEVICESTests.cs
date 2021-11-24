@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SCM_PHYSICAL_DEVICES" /> struct.</summary>
+public static unsafe partial class SCM_PHYSICAL_DEVICESTests
 {
-    /// <summary>Provides validation of the <see cref="SCM_PHYSICAL_DEVICES" /> struct.</summary>
-    public static unsafe partial class SCM_PHYSICAL_DEVICESTests
+    /// <summary>Validates that the <see cref="SCM_PHYSICAL_DEVICES" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SCM_PHYSICAL_DEVICES" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SCM_PHYSICAL_DEVICES>(), Is.EqualTo(sizeof(SCM_PHYSICAL_DEVICES)));
-        }
+        Assert.That(Marshal.SizeOf<SCM_PHYSICAL_DEVICES>(), Is.EqualTo(sizeof(SCM_PHYSICAL_DEVICES)));
+    }
 
-        /// <summary>Validates that the <see cref="SCM_PHYSICAL_DEVICES" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SCM_PHYSICAL_DEVICES).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SCM_PHYSICAL_DEVICES" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SCM_PHYSICAL_DEVICES).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SCM_PHYSICAL_DEVICES" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SCM_PHYSICAL_DEVICES), Is.EqualTo(536));
-        }
+    /// <summary>Validates that the <see cref="SCM_PHYSICAL_DEVICES" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SCM_PHYSICAL_DEVICES), Is.EqualTo(536));
     }
 }

@@ -5,18 +5,17 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct DWM_BLURBEHIND
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct DWM_BLURBEHIND
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        public BOOL fEnable;
+    public BOOL fEnable;
 
-        public HRGN hRgnBlur;
+    public HRGN hRgnBlur;
 
-        public BOOL fTransitionOnMaximized;
-    }
+    public BOOL fTransitionOnMaximized;
 }

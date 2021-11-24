@@ -16,6 +16,7 @@ exclude-empty-records
 exclude-enum-operators
 generate-aggressive-inlining
 generate-cpp-attributes
+generate-file-scoped-namespaces
 generate-macro-bindings
 generate-marker-interfaces
 generate-native-inheritance-attribute

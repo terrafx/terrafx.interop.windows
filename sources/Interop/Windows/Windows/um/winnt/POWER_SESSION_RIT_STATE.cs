@@ -3,14 +3,13 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct POWER_SESSION_RIT_STATE
-    {
-        [NativeTypeName("BOOLEAN")]
-        public byte Active;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint LastInputTime;
-    }
+public partial struct POWER_SESSION_RIT_STATE
+{
+    [NativeTypeName("BOOLEAN")]
+    public byte Active;
+
+    [NativeTypeName("DWORD")]
+    public uint LastInputTime;
 }

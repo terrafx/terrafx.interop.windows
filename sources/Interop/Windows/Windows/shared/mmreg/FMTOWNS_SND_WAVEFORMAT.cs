@@ -5,14 +5,13 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct FMTOWNS_SND_WAVEFORMAT
-    {
-        public WAVEFORMATEX wfx;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("WORD")]
-        public ushort wRevision;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct FMTOWNS_SND_WAVEFORMAT
+{
+    public WAVEFORMATEX wfx;
+
+    [NativeTypeName("WORD")]
+    public ushort wRevision;
 }

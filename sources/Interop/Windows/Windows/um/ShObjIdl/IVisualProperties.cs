@@ -7,155 +7,154 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("E693CF68-D967-4112-8763-99172AEE5E5A")]
+[NativeTypeName("struct IVisualProperties : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IVisualProperties : IVisualProperties.Interface
 {
-    [Guid("E693CF68-D967-4112-8763-99172AEE5E5A")]
-    [NativeTypeName("struct IVisualProperties : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IVisualProperties : IVisualProperties.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IVisualProperties*, Guid*, void**, int>)(lpVtbl[0]))((IVisualProperties*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IVisualProperties*, Guid*, void**, int>)(lpVtbl[0]))((IVisualProperties*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IVisualProperties*, uint>)(lpVtbl[1]))((IVisualProperties*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IVisualProperties*, uint>)(lpVtbl[1]))((IVisualProperties*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IVisualProperties*, uint>)(lpVtbl[2]))((IVisualProperties*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IVisualProperties*, uint>)(lpVtbl[2]))((IVisualProperties*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT SetWatermark(HBITMAP hbmp, VPWATERMARKFLAGS vpwf)
+    {
+        return ((delegate* unmanaged<IVisualProperties*, HBITMAP, VPWATERMARKFLAGS, int>)(lpVtbl[3]))((IVisualProperties*)Unsafe.AsPointer(ref this), hbmp, vpwf);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT SetColor(VPCOLORFLAGS vpcf, COLORREF cr)
+    {
+        return ((delegate* unmanaged<IVisualProperties*, VPCOLORFLAGS, COLORREF, int>)(lpVtbl[4]))((IVisualProperties*)Unsafe.AsPointer(ref this), vpcf, cr);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetColor(VPCOLORFLAGS vpcf, COLORREF* pcr)
+    {
+        return ((delegate* unmanaged<IVisualProperties*, VPCOLORFLAGS, COLORREF*, int>)(lpVtbl[5]))((IVisualProperties*)Unsafe.AsPointer(ref this), vpcf, pcr);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT SetItemHeight(int cyItemInPixels)
+    {
+        return ((delegate* unmanaged<IVisualProperties*, int, int>)(lpVtbl[6]))((IVisualProperties*)Unsafe.AsPointer(ref this), cyItemInPixels);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT GetItemHeight(int* cyItemInPixels)
+    {
+        return ((delegate* unmanaged<IVisualProperties*, int*, int>)(lpVtbl[7]))((IVisualProperties*)Unsafe.AsPointer(ref this), cyItemInPixels);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT SetFont([NativeTypeName("const LOGFONTW *")] LOGFONTW* plf, BOOL bRedraw)
+    {
+        return ((delegate* unmanaged<IVisualProperties*, LOGFONTW*, BOOL, int>)(lpVtbl[8]))((IVisualProperties*)Unsafe.AsPointer(ref this), plf, bRedraw);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT GetFont(LOGFONTW* plf)
+    {
+        return ((delegate* unmanaged<IVisualProperties*, LOGFONTW*, int>)(lpVtbl[9]))((IVisualProperties*)Unsafe.AsPointer(ref this), plf);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT SetTheme([NativeTypeName("LPCWSTR")] ushort* pszSubAppName, [NativeTypeName("LPCWSTR")] ushort* pszSubIdList)
+    {
+        return ((delegate* unmanaged<IVisualProperties*, ushort*, ushort*, int>)(lpVtbl[10]))((IVisualProperties*)Unsafe.AsPointer(ref this), pszSubAppName, pszSubIdList);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT SetWatermark(HBITMAP hbmp, VPWATERMARKFLAGS vpwf)
-        {
-            return ((delegate* unmanaged<IVisualProperties*, HBITMAP, VPWATERMARKFLAGS, int>)(lpVtbl[3]))((IVisualProperties*)Unsafe.AsPointer(ref this), hbmp, vpwf);
-        }
+        HRESULT SetWatermark(HBITMAP hbmp, VPWATERMARKFLAGS vpwf);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetColor(VPCOLORFLAGS vpcf, COLORREF cr)
-        {
-            return ((delegate* unmanaged<IVisualProperties*, VPCOLORFLAGS, COLORREF, int>)(lpVtbl[4]))((IVisualProperties*)Unsafe.AsPointer(ref this), vpcf, cr);
-        }
+        HRESULT SetColor(VPCOLORFLAGS vpcf, COLORREF cr);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetColor(VPCOLORFLAGS vpcf, COLORREF* pcr)
-        {
-            return ((delegate* unmanaged<IVisualProperties*, VPCOLORFLAGS, COLORREF*, int>)(lpVtbl[5]))((IVisualProperties*)Unsafe.AsPointer(ref this), vpcf, pcr);
-        }
+        HRESULT GetColor(VPCOLORFLAGS vpcf, COLORREF* pcr);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT SetItemHeight(int cyItemInPixels)
-        {
-            return ((delegate* unmanaged<IVisualProperties*, int, int>)(lpVtbl[6]))((IVisualProperties*)Unsafe.AsPointer(ref this), cyItemInPixels);
-        }
+        HRESULT SetItemHeight(int cyItemInPixels);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetItemHeight(int* cyItemInPixels)
-        {
-            return ((delegate* unmanaged<IVisualProperties*, int*, int>)(lpVtbl[7]))((IVisualProperties*)Unsafe.AsPointer(ref this), cyItemInPixels);
-        }
+        HRESULT GetItemHeight(int* cyItemInPixels);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT SetFont([NativeTypeName("const LOGFONTW *")] LOGFONTW* plf, BOOL bRedraw)
-        {
-            return ((delegate* unmanaged<IVisualProperties*, LOGFONTW*, BOOL, int>)(lpVtbl[8]))((IVisualProperties*)Unsafe.AsPointer(ref this), plf, bRedraw);
-        }
+        HRESULT SetFont([NativeTypeName("const LOGFONTW *")] LOGFONTW* plf, BOOL bRedraw);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetFont(LOGFONTW* plf)
-        {
-            return ((delegate* unmanaged<IVisualProperties*, LOGFONTW*, int>)(lpVtbl[9]))((IVisualProperties*)Unsafe.AsPointer(ref this), plf);
-        }
+        HRESULT GetFont(LOGFONTW* plf);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT SetTheme([NativeTypeName("LPCWSTR")] ushort* pszSubAppName, [NativeTypeName("LPCWSTR")] ushort* pszSubIdList)
-        {
-            return ((delegate* unmanaged<IVisualProperties*, ushort*, ushort*, int>)(lpVtbl[10]))((IVisualProperties*)Unsafe.AsPointer(ref this), pszSubAppName, pszSubIdList);
-        }
+        HRESULT SetTheme([NativeTypeName("LPCWSTR")] ushort* pszSubAppName, [NativeTypeName("LPCWSTR")] ushort* pszSubIdList);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT SetWatermark(HBITMAP hbmp, VPWATERMARKFLAGS vpwf);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IVisualProperties*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT SetColor(VPCOLORFLAGS vpcf, COLORREF cr);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IVisualProperties*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT GetColor(VPCOLORFLAGS vpcf, COLORREF* pcr);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IVisualProperties*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT SetItemHeight(int cyItemInPixels);
+        [NativeTypeName("HRESULT (HBITMAP, VPWATERMARKFLAGS) __attribute__((stdcall))")]
+        public delegate* unmanaged<IVisualProperties*, HBITMAP, VPWATERMARKFLAGS, int> SetWatermark;
 
-            [VtblIndex(7)]
-            HRESULT GetItemHeight(int* cyItemInPixels);
+        [NativeTypeName("HRESULT (VPCOLORFLAGS, COLORREF) __attribute__((stdcall))")]
+        public delegate* unmanaged<IVisualProperties*, VPCOLORFLAGS, COLORREF, int> SetColor;
 
-            [VtblIndex(8)]
-            HRESULT SetFont([NativeTypeName("const LOGFONTW *")] LOGFONTW* plf, BOOL bRedraw);
+        [NativeTypeName("HRESULT (VPCOLORFLAGS, COLORREF *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IVisualProperties*, VPCOLORFLAGS, COLORREF*, int> GetColor;
 
-            [VtblIndex(9)]
-            HRESULT GetFont(LOGFONTW* plf);
+        [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
+        public delegate* unmanaged<IVisualProperties*, int, int> SetItemHeight;
 
-            [VtblIndex(10)]
-            HRESULT SetTheme([NativeTypeName("LPCWSTR")] ushort* pszSubAppName, [NativeTypeName("LPCWSTR")] ushort* pszSubIdList);
-        }
+        [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IVisualProperties*, int*, int> GetItemHeight;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IVisualProperties*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (const LOGFONTW *, BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IVisualProperties*, LOGFONTW*, BOOL, int> SetFont;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IVisualProperties*, uint> AddRef;
+        [NativeTypeName("HRESULT (LOGFONTW *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IVisualProperties*, LOGFONTW*, int> GetFont;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IVisualProperties*, uint> Release;
-
-            [NativeTypeName("HRESULT (HBITMAP, VPWATERMARKFLAGS) __attribute__((stdcall))")]
-            public delegate* unmanaged<IVisualProperties*, HBITMAP, VPWATERMARKFLAGS, int> SetWatermark;
-
-            [NativeTypeName("HRESULT (VPCOLORFLAGS, COLORREF) __attribute__((stdcall))")]
-            public delegate* unmanaged<IVisualProperties*, VPCOLORFLAGS, COLORREF, int> SetColor;
-
-            [NativeTypeName("HRESULT (VPCOLORFLAGS, COLORREF *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IVisualProperties*, VPCOLORFLAGS, COLORREF*, int> GetColor;
-
-            [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
-            public delegate* unmanaged<IVisualProperties*, int, int> SetItemHeight;
-
-            [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IVisualProperties*, int*, int> GetItemHeight;
-
-            [NativeTypeName("HRESULT (const LOGFONTW *, BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IVisualProperties*, LOGFONTW*, BOOL, int> SetFont;
-
-            [NativeTypeName("HRESULT (LOGFONTW *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IVisualProperties*, LOGFONTW*, int> GetFont;
-
-            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IVisualProperties*, ushort*, ushort*, int> SetTheme;
-        }
+        [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IVisualProperties*, ushort*, ushort*, int> SetTheme;
     }
 }

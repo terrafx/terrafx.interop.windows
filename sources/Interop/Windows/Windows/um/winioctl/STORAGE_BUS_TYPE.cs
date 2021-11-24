@@ -3,31 +3,30 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum STORAGE_BUS_TYPE
 {
-    public enum STORAGE_BUS_TYPE
-    {
-        BusTypeUnknown = 0x00,
-        BusTypeScsi,
-        BusTypeAtapi,
-        BusTypeAta,
-        BusType1394,
-        BusTypeSsa,
-        BusTypeFibre,
-        BusTypeUsb,
-        BusTypeRAID,
-        BusTypeiScsi,
-        BusTypeSas,
-        BusTypeSata,
-        BusTypeSd,
-        BusTypeMmc,
-        BusTypeVirtual,
-        BusTypeFileBackedVirtual,
-        BusTypeSpaces,
-        BusTypeNvme,
-        BusTypeSCM,
-        BusTypeUfs,
-        BusTypeMax,
-        BusTypeMaxReserved = 0x7F,
-    }
+    BusTypeUnknown = 0x00,
+    BusTypeScsi,
+    BusTypeAtapi,
+    BusTypeAta,
+    BusType1394,
+    BusTypeSsa,
+    BusTypeFibre,
+    BusTypeUsb,
+    BusTypeRAID,
+    BusTypeiScsi,
+    BusTypeSas,
+    BusTypeSata,
+    BusTypeSd,
+    BusTypeMmc,
+    BusTypeVirtual,
+    BusTypeFileBackedVirtual,
+    BusTypeSpaces,
+    BusTypeNvme,
+    BusTypeSCM,
+    BusTypeUfs,
+    BusTypeMax,
+    BusTypeMaxReserved = 0x7F,
 }

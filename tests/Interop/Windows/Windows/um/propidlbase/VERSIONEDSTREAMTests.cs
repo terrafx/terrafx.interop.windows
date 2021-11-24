@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="VERSIONEDSTREAM" /> struct.</summary>
+public static unsafe partial class VERSIONEDSTREAMTests
 {
-    /// <summary>Provides validation of the <see cref="VERSIONEDSTREAM" /> struct.</summary>
-    public static unsafe partial class VERSIONEDSTREAMTests
+    /// <summary>Validates that the <see cref="VERSIONEDSTREAM" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="VERSIONEDSTREAM" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<VERSIONEDSTREAM>(), Is.EqualTo(sizeof(VERSIONEDSTREAM)));
-        }
+        Assert.That(Marshal.SizeOf<VERSIONEDSTREAM>(), Is.EqualTo(sizeof(VERSIONEDSTREAM)));
+    }
 
-        /// <summary>Validates that the <see cref="VERSIONEDSTREAM" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(VERSIONEDSTREAM).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="VERSIONEDSTREAM" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(VERSIONEDSTREAM).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="VERSIONEDSTREAM" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="VERSIONEDSTREAM" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(VERSIONEDSTREAM), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(VERSIONEDSTREAM), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(VERSIONEDSTREAM), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(VERSIONEDSTREAM), Is.EqualTo(20));
         }
     }
 }

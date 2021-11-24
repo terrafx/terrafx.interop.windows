@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IElementBehaviorFocus" /> struct.</summary>
+public static unsafe partial class IElementBehaviorFocusTests
 {
-    /// <summary>Provides validation of the <see cref="IElementBehaviorFocus" /> struct.</summary>
-    public static unsafe partial class IElementBehaviorFocusTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IElementBehaviorFocus" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IElementBehaviorFocus" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IElementBehaviorFocus).GUID, Is.EqualTo(IID_IElementBehaviorFocus));
-        }
+        Assert.That(typeof(IElementBehaviorFocus).GUID, Is.EqualTo(IID_IElementBehaviorFocus));
+    }
 
-        /// <summary>Validates that the <see cref="IElementBehaviorFocus" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IElementBehaviorFocus>(), Is.EqualTo(sizeof(IElementBehaviorFocus)));
-        }
+    /// <summary>Validates that the <see cref="IElementBehaviorFocus" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IElementBehaviorFocus>(), Is.EqualTo(sizeof(IElementBehaviorFocus)));
+    }
 
-        /// <summary>Validates that the <see cref="IElementBehaviorFocus" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IElementBehaviorFocus).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IElementBehaviorFocus" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IElementBehaviorFocus).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IElementBehaviorFocus" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IElementBehaviorFocus" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IElementBehaviorFocus), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IElementBehaviorFocus), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IElementBehaviorFocus), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IElementBehaviorFocus), Is.EqualTo(4));
         }
     }
 }

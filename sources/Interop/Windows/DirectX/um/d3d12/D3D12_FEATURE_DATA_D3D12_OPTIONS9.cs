@@ -5,20 +5,19 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_FEATURE_DATA_D3D12_OPTIONS9
 {
-    public partial struct D3D12_FEATURE_DATA_D3D12_OPTIONS9
-    {
-        public BOOL MeshShaderPipelineStatsSupported;
+    public BOOL MeshShaderPipelineStatsSupported;
 
-        public BOOL MeshShaderSupportsFullRangeRenderTargetArrayIndex;
+    public BOOL MeshShaderSupportsFullRangeRenderTargetArrayIndex;
 
-        public BOOL AtomicInt64OnTypedResourceSupported;
+    public BOOL AtomicInt64OnTypedResourceSupported;
 
-        public BOOL AtomicInt64OnGroupSharedSupported;
+    public BOOL AtomicInt64OnGroupSharedSupported;
 
-        public BOOL DerivativesInMeshAndAmplificationShadersSupported;
+    public BOOL DerivativesInMeshAndAmplificationShadersSupported;
 
-        public D3D12_WAVE_MMA_TIER WaveMMATier;
-    }
+    public D3D12_WAVE_MMA_TIER WaveMMATier;
 }

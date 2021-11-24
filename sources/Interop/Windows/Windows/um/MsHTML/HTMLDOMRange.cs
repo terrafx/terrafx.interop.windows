@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("305106C3-98B5-11CF-BB82-00AA00BDCE0B")]
+public partial struct HTMLDOMRange
 {
-    [Guid("305106C3-98B5-11CF-BB82-00AA00BDCE0B")]
-    public partial struct HTMLDOMRange
-    {
-    }
 }

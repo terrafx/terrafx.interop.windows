@@ -5,15 +5,14 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct XAUDIO2_BUFFER_WMA
-    {
-        [NativeTypeName("const UINT32 *")]
-        public uint* pDecodedPacketCumulativeBytes;
+namespace TerraFX.Interop.DirectX;
 
-        [NativeTypeName("UINT32")]
-        public uint PacketCount;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct XAUDIO2_BUFFER_WMA
+{
+    [NativeTypeName("const UINT32 *")]
+    public uint* pDecodedPacketCumulativeBytes;
+
+    [NativeTypeName("UINT32")]
+    public uint PacketCount;
 }

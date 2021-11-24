@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("5ACD6AA0-F482-11CE-8B67-00AA00A3F1A6")]
+[NativeTypeName("struct IConfigAviMux : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IConfigAviMux : IConfigAviMux.Interface
 {
-    [Guid("5ACD6AA0-F482-11CE-8B67-00AA00A3F1A6")]
-    [NativeTypeName("struct IConfigAviMux : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IConfigAviMux : IConfigAviMux.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IConfigAviMux*, Guid*, void**, int>)(lpVtbl[0]))((IConfigAviMux*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IConfigAviMux*, Guid*, void**, int>)(lpVtbl[0]))((IConfigAviMux*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IConfigAviMux*, uint>)(lpVtbl[1]))((IConfigAviMux*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IConfigAviMux*, uint>)(lpVtbl[1]))((IConfigAviMux*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IConfigAviMux*, uint>)(lpVtbl[2]))((IConfigAviMux*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IConfigAviMux*, uint>)(lpVtbl[2]))((IConfigAviMux*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT SetMasterStream([NativeTypeName("LONG")] int iStream)
+    {
+        return ((delegate* unmanaged<IConfigAviMux*, int, int>)(lpVtbl[3]))((IConfigAviMux*)Unsafe.AsPointer(ref this), iStream);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetMasterStream([NativeTypeName("LONG *")] int* pStream)
+    {
+        return ((delegate* unmanaged<IConfigAviMux*, int*, int>)(lpVtbl[4]))((IConfigAviMux*)Unsafe.AsPointer(ref this), pStream);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT SetOutputCompatibilityIndex(BOOL fOldIndex)
+    {
+        return ((delegate* unmanaged<IConfigAviMux*, BOOL, int>)(lpVtbl[5]))((IConfigAviMux*)Unsafe.AsPointer(ref this), fOldIndex);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetOutputCompatibilityIndex(BOOL* pfOldIndex)
+    {
+        return ((delegate* unmanaged<IConfigAviMux*, BOOL*, int>)(lpVtbl[6]))((IConfigAviMux*)Unsafe.AsPointer(ref this), pfOldIndex);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT SetMasterStream([NativeTypeName("LONG")] int iStream)
-        {
-            return ((delegate* unmanaged<IConfigAviMux*, int, int>)(lpVtbl[3]))((IConfigAviMux*)Unsafe.AsPointer(ref this), iStream);
-        }
+        HRESULT SetMasterStream([NativeTypeName("LONG")] int iStream);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetMasterStream([NativeTypeName("LONG *")] int* pStream)
-        {
-            return ((delegate* unmanaged<IConfigAviMux*, int*, int>)(lpVtbl[4]))((IConfigAviMux*)Unsafe.AsPointer(ref this), pStream);
-        }
+        HRESULT GetMasterStream([NativeTypeName("LONG *")] int* pStream);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetOutputCompatibilityIndex(BOOL fOldIndex)
-        {
-            return ((delegate* unmanaged<IConfigAviMux*, BOOL, int>)(lpVtbl[5]))((IConfigAviMux*)Unsafe.AsPointer(ref this), fOldIndex);
-        }
+        HRESULT SetOutputCompatibilityIndex(BOOL fOldIndex);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetOutputCompatibilityIndex(BOOL* pfOldIndex)
-        {
-            return ((delegate* unmanaged<IConfigAviMux*, BOOL*, int>)(lpVtbl[6]))((IConfigAviMux*)Unsafe.AsPointer(ref this), pfOldIndex);
-        }
+        HRESULT GetOutputCompatibilityIndex(BOOL* pfOldIndex);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT SetMasterStream([NativeTypeName("LONG")] int iStream);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IConfigAviMux*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetMasterStream([NativeTypeName("LONG *")] int* pStream);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IConfigAviMux*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT SetOutputCompatibilityIndex(BOOL fOldIndex);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IConfigAviMux*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT GetOutputCompatibilityIndex(BOOL* pfOldIndex);
-        }
+        [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IConfigAviMux*, int, int> SetMasterStream;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IConfigAviMux*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IConfigAviMux*, int*, int> GetMasterStream;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IConfigAviMux*, uint> AddRef;
+        [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IConfigAviMux*, BOOL, int> SetOutputCompatibilityIndex;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IConfigAviMux*, uint> Release;
-
-            [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IConfigAviMux*, int, int> SetMasterStream;
-
-            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IConfigAviMux*, int*, int> GetMasterStream;
-
-            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IConfigAviMux*, BOOL, int> SetOutputCompatibilityIndex;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IConfigAviMux*, BOOL*, int> GetOutputCompatibilityIndex;
-        }
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IConfigAviMux*, BOOL*, int> GetOutputCompatibilityIndex;
     }
 }

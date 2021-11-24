@@ -3,23 +3,22 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CERT_X942_DH_PARAMETERS
 {
-    public unsafe partial struct CERT_X942_DH_PARAMETERS
-    {
-        [NativeTypeName("CRYPT_UINT_BLOB")]
-        public CRYPT_DATA_BLOB p;
+    [NativeTypeName("CRYPT_UINT_BLOB")]
+    public CRYPT_DATA_BLOB p;
 
-        [NativeTypeName("CRYPT_UINT_BLOB")]
-        public CRYPT_DATA_BLOB g;
+    [NativeTypeName("CRYPT_UINT_BLOB")]
+    public CRYPT_DATA_BLOB g;
 
-        [NativeTypeName("CRYPT_UINT_BLOB")]
-        public CRYPT_DATA_BLOB q;
+    [NativeTypeName("CRYPT_UINT_BLOB")]
+    public CRYPT_DATA_BLOB q;
 
-        [NativeTypeName("CRYPT_UINT_BLOB")]
-        public CRYPT_DATA_BLOB j;
+    [NativeTypeName("CRYPT_UINT_BLOB")]
+    public CRYPT_DATA_BLOB j;
 
-        [NativeTypeName("PCERT_X942_DH_VALIDATION_PARAMS")]
-        public CERT_X942_DH_VALIDATION_PARAMS* pValidationParams;
-    }
+    [NativeTypeName("PCERT_X942_DH_VALIDATION_PARAMS")]
+    public CERT_X942_DH_VALIDATION_PARAMS* pValidationParams;
 }

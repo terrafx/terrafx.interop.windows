@@ -3,20 +3,19 @@
 // Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct IMAGEHLP_CBA_READ_MEMORY
 {
-    public unsafe partial struct IMAGEHLP_CBA_READ_MEMORY
-    {
-        [NativeTypeName("DWORD64")]
-        public ulong addr;
+    [NativeTypeName("DWORD64")]
+    public ulong addr;
 
-        [NativeTypeName("PVOID")]
-        public void* buf;
+    [NativeTypeName("PVOID")]
+    public void* buf;
 
-        [NativeTypeName("DWORD")]
-        public uint bytes;
+    [NativeTypeName("DWORD")]
+    public uint bytes;
 
-        [NativeTypeName("DWORD *")]
-        public uint* bytesread;
-    }
+    [NativeTypeName("DWORD *")]
+    public uint* bytesread;
 }

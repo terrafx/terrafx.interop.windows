@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.19043.0")]
+public enum AUDIOCLIENT_ACTIVATION_TYPE
 {
-    [SupportedOSPlatform("windows10.0.19043.0")]
-    public enum AUDIOCLIENT_ACTIVATION_TYPE
-    {
-        AUDIOCLIENT_ACTIVATION_TYPE_DEFAULT = 0,
-        AUDIOCLIENT_ACTIVATION_TYPE_PROCESS_LOOPBACK = 1,
-    }
+    AUDIOCLIENT_ACTIVATION_TYPE_DEFAULT = 0,
+    AUDIOCLIENT_ACTIVATION_TYPE_PROCESS_LOOPBACK = 1,
 }

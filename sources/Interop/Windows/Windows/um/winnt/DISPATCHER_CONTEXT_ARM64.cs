@@ -3,44 +3,43 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct DISPATCHER_CONTEXT_ARM64
 {
-    public unsafe partial struct DISPATCHER_CONTEXT_ARM64
-    {
-        [NativeTypeName("ULONG_PTR")]
-        public nuint ControlPc;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint ControlPc;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint ImageBase;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint ImageBase;
 
-        [NativeTypeName("PARM64_RUNTIME_FUNCTION")]
-        public IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY* FunctionEntry;
+    [NativeTypeName("PARM64_RUNTIME_FUNCTION")]
+    public IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY* FunctionEntry;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint EstablisherFrame;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint EstablisherFrame;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint TargetPc;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint TargetPc;
 
-        [NativeTypeName("PARM64_NT_CONTEXT")]
-        public ARM64_NT_CONTEXT* ContextRecord;
+    [NativeTypeName("PARM64_NT_CONTEXT")]
+    public ARM64_NT_CONTEXT* ContextRecord;
 
-        [NativeTypeName("PEXCEPTION_ROUTINE")]
-        public delegate* unmanaged<EXCEPTION_RECORD*, void*, void*, void*, int> LanguageHandler;
+    [NativeTypeName("PEXCEPTION_ROUTINE")]
+    public delegate* unmanaged<EXCEPTION_RECORD*, void*, void*, void*, int> LanguageHandler;
 
-        [NativeTypeName("PVOID")]
-        public void* HandlerData;
+    [NativeTypeName("PVOID")]
+    public void* HandlerData;
 
-        [NativeTypeName("struct _UNWIND_HISTORY_TABLE *")]
-        public UNWIND_HISTORY_TABLE* HistoryTable;
+    [NativeTypeName("struct _UNWIND_HISTORY_TABLE *")]
+    public UNWIND_HISTORY_TABLE* HistoryTable;
 
-        [NativeTypeName("DWORD")]
-        public uint ScopeIndex;
+    [NativeTypeName("DWORD")]
+    public uint ScopeIndex;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte ControlPcIsUnwound;
+    [NativeTypeName("BOOLEAN")]
+    public byte ControlPcIsUnwound;
 
-        [NativeTypeName("PBYTE")]
-        public byte* NonVolatileRegisters;
-    }
+    [NativeTypeName("PBYTE")]
+    public byte* NonVolatileRegisters;
 }

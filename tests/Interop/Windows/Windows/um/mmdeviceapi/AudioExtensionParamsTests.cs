@@ -8,38 +8,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="AudioExtensionParams" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class AudioExtensionParamsTests
 {
-    /// <summary>Provides validation of the <see cref="AudioExtensionParams" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class AudioExtensionParamsTests
+    /// <summary>Validates that the <see cref="AudioExtensionParams" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="AudioExtensionParams" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<AudioExtensionParams>(), Is.EqualTo(sizeof(AudioExtensionParams)));
-        }
+        Assert.That(Marshal.SizeOf<AudioExtensionParams>(), Is.EqualTo(sizeof(AudioExtensionParams)));
+    }
 
-        /// <summary>Validates that the <see cref="AudioExtensionParams" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(AudioExtensionParams).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="AudioExtensionParams" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(AudioExtensionParams).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="AudioExtensionParams" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="AudioExtensionParams" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(AudioExtensionParams), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(AudioExtensionParams), Is.EqualTo(16));
-            }
+            Assert.That(sizeof(AudioExtensionParams), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(AudioExtensionParams), Is.EqualTo(16));
         }
     }
 }

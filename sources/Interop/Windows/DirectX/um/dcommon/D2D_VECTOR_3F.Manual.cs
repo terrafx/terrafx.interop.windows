@@ -5,31 +5,30 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D_VECTOR_3F : IEquatable<D2D_VECTOR_3F>
 {
-    public partial struct D2D_VECTOR_3F : IEquatable<D2D_VECTOR_3F>
+    public D2D_VECTOR_3F(float x = 0.0f, float y = 0.0f, float z = 0.0f)
     {
-        public D2D_VECTOR_3F(float x = 0.0f, float y = 0.0f, float z = 0.0f)
-        {
-            this.x = x;
-            this.y = y;
-            this.z = z;
-        }
-
-        public static bool operator ==([NativeTypeName("const D2D_VECTOR_2F &")] in D2D_VECTOR_3F l, [NativeTypeName("const D2D_VECTOR_2F &")] in D2D_VECTOR_3F r)
-        {
-            return (l.x == r.x)
-                && (l.y == r.y)
-                && (l.z == r.z);
-        }
-
-        public static bool operator !=([NativeTypeName("const D2D_VECTOR_2F &")] in D2D_VECTOR_3F l, [NativeTypeName("const D2D_VECTOR_2F &")] in D2D_VECTOR_3F r)
-            => !(l == r);
-
-        public bool Equals(D2D_VECTOR_3F other) => this == other;
-
-        public override bool Equals(object? obj) => (obj is D2D_VECTOR_3F other) && this == other;
-
-        public override int GetHashCode() => HashCode.Combine(x, y, z);
+        this.x = x;
+        this.y = y;
+        this.z = z;
     }
+
+    public static bool operator ==([NativeTypeName("const D2D_VECTOR_2F &")] in D2D_VECTOR_3F l, [NativeTypeName("const D2D_VECTOR_2F &")] in D2D_VECTOR_3F r)
+    {
+        return (l.x == r.x)
+            && (l.y == r.y)
+            && (l.z == r.z);
+    }
+
+    public static bool operator !=([NativeTypeName("const D2D_VECTOR_2F &")] in D2D_VECTOR_3F l, [NativeTypeName("const D2D_VECTOR_2F &")] in D2D_VECTOR_3F r)
+        => !(l == r);
+
+    public bool Equals(D2D_VECTOR_3F other) => this == other;
+
+    public override bool Equals(object? obj) => (obj is D2D_VECTOR_3F other) && this == other;
+
+    public override int GetHashCode() => HashCode.Combine(x, y, z);
 }

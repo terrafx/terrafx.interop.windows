@@ -5,69 +5,68 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SCM_PD_DEVICE_INFO
 {
-    public unsafe partial struct SCM_PD_DEVICE_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        public Guid DeviceGuid;
+    public Guid DeviceGuid;
 
-        [NativeTypeName("DWORD")]
-        public uint UnsafeShutdownCount;
+    [NativeTypeName("DWORD")]
+    public uint UnsafeShutdownCount;
 
-        [NativeTypeName("DWORD64")]
-        public ulong PersistentMemorySizeInBytes;
+    [NativeTypeName("DWORD64")]
+    public ulong PersistentMemorySizeInBytes;
 
-        [NativeTypeName("DWORD64")]
-        public ulong VolatileMemorySizeInBytes;
+    [NativeTypeName("DWORD64")]
+    public ulong VolatileMemorySizeInBytes;
 
-        [NativeTypeName("DWORD64")]
-        public ulong TotalMemorySizeInBytes;
+    [NativeTypeName("DWORD64")]
+    public ulong TotalMemorySizeInBytes;
 
-        [NativeTypeName("DWORD")]
-        public uint SlotNumber;
+    [NativeTypeName("DWORD")]
+    public uint SlotNumber;
 
-        [NativeTypeName("DWORD")]
-        public uint DeviceHandle;
+    [NativeTypeName("DWORD")]
+    public uint DeviceHandle;
 
-        [NativeTypeName("WORD")]
-        public ushort PhysicalId;
+    [NativeTypeName("WORD")]
+    public ushort PhysicalId;
 
-        public byte NumberOfFormatInterfaceCodes;
+    public byte NumberOfFormatInterfaceCodes;
 
-        [NativeTypeName("WORD [8]")]
-        public fixed ushort FormatInterfaceCodes[8];
+    [NativeTypeName("WORD [8]")]
+    public fixed ushort FormatInterfaceCodes[8];
 
-        [NativeTypeName("DWORD")]
-        public uint VendorId;
+    [NativeTypeName("DWORD")]
+    public uint VendorId;
 
-        [NativeTypeName("DWORD")]
-        public uint ProductId;
+    [NativeTypeName("DWORD")]
+    public uint ProductId;
 
-        [NativeTypeName("DWORD")]
-        public uint SubsystemDeviceId;
+    [NativeTypeName("DWORD")]
+    public uint SubsystemDeviceId;
 
-        [NativeTypeName("DWORD")]
-        public uint SubsystemVendorId;
+    [NativeTypeName("DWORD")]
+    public uint SubsystemVendorId;
 
-        public byte ManufacturingLocation;
+    public byte ManufacturingLocation;
 
-        public byte ManufacturingWeek;
+    public byte ManufacturingWeek;
 
-        public byte ManufacturingYear;
+    public byte ManufacturingYear;
 
-        [NativeTypeName("DWORD")]
-        public uint SerialNumber4Byte;
+    [NativeTypeName("DWORD")]
+    public uint SerialNumber4Byte;
 
-        [NativeTypeName("DWORD")]
-        public uint SerialNumberLengthInChars;
+    [NativeTypeName("DWORD")]
+    public uint SerialNumberLengthInChars;
 
-        [NativeTypeName("CHAR [1]")]
-        public fixed sbyte SerialNumber[1];
-    }
+    [NativeTypeName("CHAR [1]")]
+    public fixed sbyte SerialNumber[1];
 }

@@ -3,13 +3,12 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum svgPreserveAspectMeetOrSliceType
 {
-    public enum svgPreserveAspectMeetOrSliceType
-    {
-        SVG_MEETORSLICE_UNKNOWN = 0,
-        SVG_MEETORSLICE_MEET = 1,
-        SVG_MEETORSLICE_SLICE = 2,
-        svgPreserveAspectMeetOrSliceType_Max = 2147483647,
-    }
+    SVG_MEETORSLICE_UNKNOWN = 0,
+    SVG_MEETORSLICE_MEET = 1,
+    SVG_MEETORSLICE_SLICE = 2,
+    svgPreserveAspectMeetOrSliceType_Max = 2147483647,
 }

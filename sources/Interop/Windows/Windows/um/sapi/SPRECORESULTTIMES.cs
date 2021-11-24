@@ -3,19 +3,18 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SPRECORESULTTIMES
 {
-    public partial struct SPRECORESULTTIMES
-    {
-        public FILETIME ftStreamTime;
+    public FILETIME ftStreamTime;
 
-        [NativeTypeName("ULONGLONG")]
-        public ulong ullLength;
+    [NativeTypeName("ULONGLONG")]
+    public ulong ullLength;
 
-        [NativeTypeName("DWORD")]
-        public uint dwTickCount;
+    [NativeTypeName("DWORD")]
+    public uint dwTickCount;
 
-        [NativeTypeName("ULONGLONG")]
-        public ulong ullStart;
-    }
+    [NativeTypeName("ULONGLONG")]
+    public ulong ullStart;
 }

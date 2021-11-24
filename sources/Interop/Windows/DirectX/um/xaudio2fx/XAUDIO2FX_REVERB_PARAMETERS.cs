@@ -6,58 +6,57 @@
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct XAUDIO2FX_REVERB_PARAMETERS
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct XAUDIO2FX_REVERB_PARAMETERS
-    {
-        public float WetDryMix;
+    public float WetDryMix;
 
-        [NativeTypeName("UINT32")]
-        public uint ReflectionsDelay;
+    [NativeTypeName("UINT32")]
+    public uint ReflectionsDelay;
 
-        public byte ReverbDelay;
+    public byte ReverbDelay;
 
-        public byte RearDelay;
+    public byte RearDelay;
 
-        public byte SideDelay;
+    public byte SideDelay;
 
-        public byte PositionLeft;
+    public byte PositionLeft;
 
-        public byte PositionRight;
+    public byte PositionRight;
 
-        public byte PositionMatrixLeft;
+    public byte PositionMatrixLeft;
 
-        public byte PositionMatrixRight;
+    public byte PositionMatrixRight;
 
-        public byte EarlyDiffusion;
+    public byte EarlyDiffusion;
 
-        public byte LateDiffusion;
+    public byte LateDiffusion;
 
-        public byte LowEQGain;
+    public byte LowEQGain;
 
-        public byte LowEQCutoff;
+    public byte LowEQCutoff;
 
-        public byte HighEQGain;
+    public byte HighEQGain;
 
-        public byte HighEQCutoff;
+    public byte HighEQCutoff;
 
-        public float RoomFilterFreq;
+    public float RoomFilterFreq;
 
-        public float RoomFilterMain;
+    public float RoomFilterMain;
 
-        public float RoomFilterHF;
+    public float RoomFilterHF;
 
-        public float ReflectionsGain;
+    public float ReflectionsGain;
 
-        public float ReverbGain;
+    public float ReverbGain;
 
-        public float DecayTime;
+    public float DecayTime;
 
-        public float Density;
+    public float Density;
 
-        public float RoomSize;
+    public float RoomSize;
 
-        public BOOL DisableLateField;
-    }
+    public BOOL DisableLateField;
 }

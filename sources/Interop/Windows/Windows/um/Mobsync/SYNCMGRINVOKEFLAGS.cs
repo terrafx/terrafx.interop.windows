@@ -3,11 +3,10 @@
 // Ported from um/Mobsync.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SYNCMGRINVOKEFLAGS
 {
-    public enum SYNCMGRINVOKEFLAGS
-    {
-        SYNCMGRINVOKE_STARTSYNC = 0x2,
-        SYNCMGRINVOKE_MINIMIZED = 0x4,
-    }
+    SYNCMGRINVOKE_STARTSYNC = 0x2,
+    SYNCMGRINVOKE_MINIMIZED = 0x4,
 }

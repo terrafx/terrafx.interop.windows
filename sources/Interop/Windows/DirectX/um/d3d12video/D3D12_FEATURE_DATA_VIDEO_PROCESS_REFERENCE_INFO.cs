@@ -5,26 +5,25 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_FEATURE_DATA_VIDEO_PROCESS_REFERENCE_INFO
 {
-    public partial struct D3D12_FEATURE_DATA_VIDEO_PROCESS_REFERENCE_INFO
-    {
-        public uint NodeIndex;
+    public uint NodeIndex;
 
-        public D3D12_VIDEO_PROCESS_DEINTERLACE_FLAGS DeinterlaceMode;
+    public D3D12_VIDEO_PROCESS_DEINTERLACE_FLAGS DeinterlaceMode;
 
-        public D3D12_VIDEO_PROCESS_FILTER_FLAGS Filters;
+    public D3D12_VIDEO_PROCESS_FILTER_FLAGS Filters;
 
-        public D3D12_VIDEO_PROCESS_FEATURE_FLAGS FeatureSupport;
+    public D3D12_VIDEO_PROCESS_FEATURE_FLAGS FeatureSupport;
 
-        public DXGI_RATIONAL InputFrameRate;
+    public DXGI_RATIONAL InputFrameRate;
 
-        public DXGI_RATIONAL OutputFrameRate;
+    public DXGI_RATIONAL OutputFrameRate;
 
-        public BOOL EnableAutoProcessing;
+    public BOOL EnableAutoProcessing;
 
-        public uint PastFrames;
+    public uint PastFrames;
 
-        public uint FutureFrames;
-    }
+    public uint FutureFrames;
 }

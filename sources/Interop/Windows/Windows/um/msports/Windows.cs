@@ -5,52 +5,51 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static unsafe partial class Windows
 {
-    public static unsafe partial class Windows
-    {
-        [DllImport("msports", ExactSpelling = true)]
-        [return: NativeTypeName("LONG")]
-        public static extern int SerialDisplayAdvancedSettings(HWND ParentHwnd, HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
+    [DllImport("msports", ExactSpelling = true)]
+    [return: NativeTypeName("LONG")]
+    public static extern int SerialDisplayAdvancedSettings(HWND ParentHwnd, HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
-        [DllImport("msports", ExactSpelling = true)]
-        [return: NativeTypeName("LONG")]
-        public static extern int ComDBOpen([NativeTypeName("PHCOMDB")] HCOMDB* PHComDB);
+    [DllImport("msports", ExactSpelling = true)]
+    [return: NativeTypeName("LONG")]
+    public static extern int ComDBOpen([NativeTypeName("PHCOMDB")] HCOMDB* PHComDB);
 
-        [DllImport("msports", ExactSpelling = true)]
-        [return: NativeTypeName("LONG")]
-        public static extern int ComDBClose(HCOMDB HComDB);
+    [DllImport("msports", ExactSpelling = true)]
+    [return: NativeTypeName("LONG")]
+    public static extern int ComDBClose(HCOMDB HComDB);
 
-        [DllImport("msports", ExactSpelling = true)]
-        [return: NativeTypeName("LONG")]
-        public static extern int ComDBGetCurrentPortUsage(HCOMDB HComDB, [NativeTypeName("PBYTE")] byte* Buffer, [NativeTypeName("DWORD")] uint BufferSize, [NativeTypeName("ULONG")] uint ReportType, [NativeTypeName("LPDWORD")] uint* MaxPortsReported);
+    [DllImport("msports", ExactSpelling = true)]
+    [return: NativeTypeName("LONG")]
+    public static extern int ComDBGetCurrentPortUsage(HCOMDB HComDB, [NativeTypeName("PBYTE")] byte* Buffer, [NativeTypeName("DWORD")] uint BufferSize, [NativeTypeName("ULONG")] uint ReportType, [NativeTypeName("LPDWORD")] uint* MaxPortsReported);
 
-        [DllImport("msports", ExactSpelling = true)]
-        [return: NativeTypeName("LONG")]
-        public static extern int ComDBClaimNextFreePort(HCOMDB HComDB, [NativeTypeName("LPDWORD")] uint* ComNumber);
+    [DllImport("msports", ExactSpelling = true)]
+    [return: NativeTypeName("LONG")]
+    public static extern int ComDBClaimNextFreePort(HCOMDB HComDB, [NativeTypeName("LPDWORD")] uint* ComNumber);
 
-        [DllImport("msports", ExactSpelling = true)]
-        [return: NativeTypeName("LONG")]
-        public static extern int ComDBClaimPort(HCOMDB HComDB, [NativeTypeName("DWORD")] uint ComNumber, BOOL ForceClaim, [NativeTypeName("PBOOL")] BOOL* Forced);
+    [DllImport("msports", ExactSpelling = true)]
+    [return: NativeTypeName("LONG")]
+    public static extern int ComDBClaimPort(HCOMDB HComDB, [NativeTypeName("DWORD")] uint ComNumber, BOOL ForceClaim, [NativeTypeName("PBOOL")] BOOL* Forced);
 
-        [DllImport("msports", ExactSpelling = true)]
-        [return: NativeTypeName("LONG")]
-        public static extern int ComDBReleasePort(HCOMDB HComDB, [NativeTypeName("DWORD")] uint ComNumber);
+    [DllImport("msports", ExactSpelling = true)]
+    [return: NativeTypeName("LONG")]
+    public static extern int ComDBReleasePort(HCOMDB HComDB, [NativeTypeName("DWORD")] uint ComNumber);
 
-        [DllImport("msports", ExactSpelling = true)]
-        [return: NativeTypeName("LONG")]
-        public static extern int ComDBResizeDatabase(HCOMDB HComDB, [NativeTypeName("DWORD")] uint NewSize);
+    [DllImport("msports", ExactSpelling = true)]
+    [return: NativeTypeName("LONG")]
+    public static extern int ComDBResizeDatabase(HCOMDB HComDB, [NativeTypeName("DWORD")] uint NewSize);
 
-        [NativeTypeName("#define COMDB_MIN_PORTS_ARBITRATED 256")]
-        public const int COMDB_MIN_PORTS_ARBITRATED = 256;
+    [NativeTypeName("#define COMDB_MIN_PORTS_ARBITRATED 256")]
+    public const int COMDB_MIN_PORTS_ARBITRATED = 256;
 
-        [NativeTypeName("#define COMDB_MAX_PORTS_ARBITRATED 4096")]
-        public const int COMDB_MAX_PORTS_ARBITRATED = 4096;
+    [NativeTypeName("#define COMDB_MAX_PORTS_ARBITRATED 4096")]
+    public const int COMDB_MAX_PORTS_ARBITRATED = 4096;
 
-        [NativeTypeName("#define CDB_REPORT_BITS 0x0")]
-        public const int CDB_REPORT_BITS = 0x0;
+    [NativeTypeName("#define CDB_REPORT_BITS 0x0")]
+    public const int CDB_REPORT_BITS = 0x0;
 
-        [NativeTypeName("#define CDB_REPORT_BYTES 0x1")]
-        public const int CDB_REPORT_BYTES = 0x1;
-    }
+    [NativeTypeName("#define CDB_REPORT_BYTES 0x1")]
+    public const int CDB_REPORT_BYTES = 0x1;
 }

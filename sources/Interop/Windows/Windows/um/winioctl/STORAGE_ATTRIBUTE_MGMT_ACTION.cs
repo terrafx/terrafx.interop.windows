@@ -3,12 +3,11 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum STORAGE_ATTRIBUTE_MGMT_ACTION
 {
-    public enum STORAGE_ATTRIBUTE_MGMT_ACTION
-    {
-        StorAttributeMgmt_ClearAttribute = 0,
-        StorAttributeMgmt_SetAttribute = 1,
-        StorAttributeMgmt_ResetAttribute = 2,
-    }
+    StorAttributeMgmt_ClearAttribute = 0,
+    StorAttributeMgmt_SetAttribute = 1,
+    StorAttributeMgmt_ResetAttribute = 2,
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WINHTTP_EXTENDED_HEADER" /> struct.</summary>
+public static unsafe partial class WINHTTP_EXTENDED_HEADERTests
 {
-    /// <summary>Provides validation of the <see cref="WINHTTP_EXTENDED_HEADER" /> struct.</summary>
-    public static unsafe partial class WINHTTP_EXTENDED_HEADERTests
+    /// <summary>Validates that the <see cref="WINHTTP_EXTENDED_HEADER" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WINHTTP_EXTENDED_HEADER" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WINHTTP_EXTENDED_HEADER>(), Is.EqualTo(sizeof(WINHTTP_EXTENDED_HEADER)));
-        }
+        Assert.That(Marshal.SizeOf<WINHTTP_EXTENDED_HEADER>(), Is.EqualTo(sizeof(WINHTTP_EXTENDED_HEADER)));
+    }
 
-        /// <summary>Validates that the <see cref="WINHTTP_EXTENDED_HEADER" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WINHTTP_EXTENDED_HEADER).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WINHTTP_EXTENDED_HEADER" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WINHTTP_EXTENDED_HEADER).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WINHTTP_EXTENDED_HEADER" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="WINHTTP_EXTENDED_HEADER" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(WINHTTP_EXTENDED_HEADER), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(WINHTTP_EXTENDED_HEADER), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(WINHTTP_EXTENDED_HEADER), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(WINHTTP_EXTENDED_HEADER), Is.EqualTo(8));
         }
     }
 }

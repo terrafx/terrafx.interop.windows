@@ -7,31 +7,30 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MIB_UDP6TABLE
 {
-    public partial struct MIB_UDP6TABLE
+    [NativeTypeName("DWORD")]
+    public uint dwNumEntries;
+
+    [NativeTypeName("MIB_UDP6ROW [1]")]
+    public _table_e__FixedBuffer table;
+
+    public partial struct _table_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint dwNumEntries;
+        public MIB_UDP6ROW e0;
 
-        [NativeTypeName("MIB_UDP6ROW [1]")]
-        public _table_e__FixedBuffer table;
-
-        public partial struct _table_e__FixedBuffer
+        public ref MIB_UDP6ROW this[int index]
         {
-            public MIB_UDP6ROW e0;
-
-            public ref MIB_UDP6ROW this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<MIB_UDP6ROW> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<MIB_UDP6ROW> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

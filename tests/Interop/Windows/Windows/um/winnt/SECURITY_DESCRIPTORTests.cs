@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SECURITY_DESCRIPTOR" /> struct.</summary>
+public static unsafe partial class SECURITY_DESCRIPTORTests
 {
-    /// <summary>Provides validation of the <see cref="SECURITY_DESCRIPTOR" /> struct.</summary>
-    public static unsafe partial class SECURITY_DESCRIPTORTests
+    /// <summary>Validates that the <see cref="SECURITY_DESCRIPTOR" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SECURITY_DESCRIPTOR" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SECURITY_DESCRIPTOR>(), Is.EqualTo(sizeof(SECURITY_DESCRIPTOR)));
-        }
+        Assert.That(Marshal.SizeOf<SECURITY_DESCRIPTOR>(), Is.EqualTo(sizeof(SECURITY_DESCRIPTOR)));
+    }
 
-        /// <summary>Validates that the <see cref="SECURITY_DESCRIPTOR" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SECURITY_DESCRIPTOR).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SECURITY_DESCRIPTOR" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SECURITY_DESCRIPTOR).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SECURITY_DESCRIPTOR" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SECURITY_DESCRIPTOR" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SECURITY_DESCRIPTOR), Is.EqualTo(40));
-            }
-            else
-            {
-                Assert.That(sizeof(SECURITY_DESCRIPTOR), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(SECURITY_DESCRIPTOR), Is.EqualTo(40));
+        }
+        else
+        {
+            Assert.That(sizeof(SECURITY_DESCRIPTOR), Is.EqualTo(20));
         }
     }
 }

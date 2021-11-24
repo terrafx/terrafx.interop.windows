@@ -5,15 +5,14 @@
 
 using static TerraFX.Interop.Windows.SPRECOEVENTFLAGS;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechRecognitionType
 {
-    public enum SpeechRecognitionType
-    {
-        SRTStandard = 0,
-        SRTAutopause = SPREF_AutoPause,
-        SRTEmulated = SPREF_Emulated,
-        SRTSMLTimeout = SPREF_SMLTimeout,
-        SRTExtendableParse = SPREF_ExtendableParse,
-        SRTReSent = SPREF_ReSent,
-    }
+    SRTStandard = 0,
+    SRTAutopause = SPREF_AutoPause,
+    SRTEmulated = SPREF_Emulated,
+    SRTSMLTimeout = SPREF_SMLTimeout,
+    SRTExtendableParse = SPREF_ExtendableParse,
+    SRTReSent = SPREF_ReSent,
 }

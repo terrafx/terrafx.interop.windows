@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DXGI_OUTPUT_DESC" /> struct.</summary>
+public static unsafe partial class DXGI_OUTPUT_DESCTests
 {
-    /// <summary>Provides validation of the <see cref="DXGI_OUTPUT_DESC" /> struct.</summary>
-    public static unsafe partial class DXGI_OUTPUT_DESCTests
+    /// <summary>Validates that the <see cref="DXGI_OUTPUT_DESC" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DXGI_OUTPUT_DESC" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DXGI_OUTPUT_DESC>(), Is.EqualTo(sizeof(DXGI_OUTPUT_DESC)));
-        }
+        Assert.That(Marshal.SizeOf<DXGI_OUTPUT_DESC>(), Is.EqualTo(sizeof(DXGI_OUTPUT_DESC)));
+    }
 
-        /// <summary>Validates that the <see cref="DXGI_OUTPUT_DESC" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DXGI_OUTPUT_DESC).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DXGI_OUTPUT_DESC" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DXGI_OUTPUT_DESC).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DXGI_OUTPUT_DESC" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DXGI_OUTPUT_DESC" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DXGI_OUTPUT_DESC), Is.EqualTo(96));
-            }
-            else
-            {
-                Assert.That(sizeof(DXGI_OUTPUT_DESC), Is.EqualTo(92));
-            }
+            Assert.That(sizeof(DXGI_OUTPUT_DESC), Is.EqualTo(96));
+        }
+        else
+        {
+            Assert.That(sizeof(DXGI_OUTPUT_DESC), Is.EqualTo(92));
         }
     }
 }

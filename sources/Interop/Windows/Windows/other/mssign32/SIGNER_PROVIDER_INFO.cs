@@ -6,56 +6,55 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SIGNER_PROVIDER_INFO
 {
-    public unsafe partial struct SIGNER_PROVIDER_INFO
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
+
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pwszProviderName;
+
+    [NativeTypeName("DWORD")]
+    public uint dwProviderType;
+
+    [NativeTypeName("DWORD")]
+    public uint dwKeySpec;
+
+    [NativeTypeName("DWORD")]
+    public uint dwPvkChoice;
+
+    [NativeTypeName("_SIGNER_PROVIDER_INFO::(anonymous union at ./mssign32.h:74:9)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public ref ushort* pwszPvkFileName
     {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
-
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pwszProviderName;
-
-        [NativeTypeName("DWORD")]
-        public uint dwProviderType;
-
-        [NativeTypeName("DWORD")]
-        public uint dwKeySpec;
-
-        [NativeTypeName("DWORD")]
-        public uint dwPvkChoice;
-
-        [NativeTypeName("_SIGNER_PROVIDER_INFO::(anonymous union at ./mssign32.h:74:9)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public ref ushort* pwszPvkFileName
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pwszPvkFileName;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pwszPvkFileName;
         }
+    }
 
-        public ref ushort* pwszKeyContainer
+    public ref ushort* pwszKeyContainer
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pwszKeyContainer;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pwszKeyContainer;
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("LPWSTR")]
-            public ushort* pwszPvkFileName;
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("LPWSTR")]
+        public ushort* pwszPvkFileName;
 
-            [FieldOffset(0)]
-            [NativeTypeName("LPWSTR")]
-            public ushort* pwszKeyContainer;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("LPWSTR")]
+        public ushort* pwszKeyContainer;
     }
 }

@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ShellItem" /> struct.</summary>
+public static unsafe partial class ShellItemTests
 {
-    /// <summary>Provides validation of the <see cref="ShellItem" /> struct.</summary>
-    public static unsafe partial class ShellItemTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ShellItem" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ShellItem" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ShellItem).GUID, Is.EqualTo(IID_ShellItem));
-        }
+        Assert.That(typeof(ShellItem).GUID, Is.EqualTo(IID_ShellItem));
+    }
 
-        /// <summary>Validates that the <see cref="ShellItem" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ShellItem>(), Is.EqualTo(sizeof(ShellItem)));
-        }
+    /// <summary>Validates that the <see cref="ShellItem" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ShellItem>(), Is.EqualTo(sizeof(ShellItem)));
+    }
 
-        /// <summary>Validates that the <see cref="ShellItem" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ShellItem).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ShellItem" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ShellItem).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ShellItem" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(ShellItem), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="ShellItem" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(ShellItem), Is.EqualTo(1));
     }
 }

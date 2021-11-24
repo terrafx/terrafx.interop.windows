@@ -11,60 +11,59 @@ using System.Runtime.InteropServices;
 using TerraFX.Interop.DirectX;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Samples.DirectX
+namespace TerraFX.Samples.DirectX;
+
+public static unsafe class DXSampleHelper
 {
-    public static unsafe class DXSampleHelper
+    public static void ThrowIfFailed(HRESULT hr, [CallerArgumentExpression("hr")] string methodName = "")
     {
-        public static void ThrowIfFailed(HRESULT hr, [CallerArgumentExpression("hr")] string methodName = "")
+        if (hr.FAILED)
         {
-            if (hr.FAILED)
-            {
-                throw new ExternalException($"'{methodName}' failed with an error code of '{hr}'", hr);
-            }
+            throw new ExternalException($"'{methodName}' failed with an error code of '{hr}'", hr);
         }
+    }
 
-        public static string GetAssetsPath()
+    public static string GetAssetsPath()
+    {
+        var entryAssembly = Assembly.GetEntryAssembly()!;
+        return Path.GetDirectoryName(entryAssembly.Location)!;
+    }
+
+    public static byte[] ReadDataFromFile(string filename)
+    {
+        byte[] data;
+
+        using (var fileReader = File.OpenRead(filename))
         {
-            var entryAssembly = Assembly.GetEntryAssembly()!;
-            return Path.GetDirectoryName(entryAssembly.Location)!;
-        }
+            var endOfFile = fileReader.Length;
 
-        public static byte[] ReadDataFromFile(string filename)
-        {
-            byte[] data;
-
-            using (var fileReader = File.OpenRead(filename))
+            if (endOfFile > int.MaxValue)
             {
-                var endOfFile = fileReader.Length;
-
-                if (endOfFile > int.MaxValue)
-                {
-                    throw new IOException();
-                }
-
-                var size = (int)endOfFile;
-                data = new byte[size];
-
-                _ = fileReader.Read(data, 0, size);
+                throw new IOException();
             }
 
-            return data;
+            var size = (int)endOfFile;
+            data = new byte[size];
+
+            _ = fileReader.Read(data, 0, size);
         }
 
-        [Conditional("DEBUG")]
-        public static void SetName(ID3D12Object* pObject, string name)
-        {
-            fixed (char* pName = name)
-            {
-                _ = pObject->SetName((ushort*)pName);
-            }
-        }
+        return data;
+    }
 
-        [Conditional("DEBUG")]
-        public static void SetNameIndexed(ID3D12Object* pObject, string name, uint index)
+    [Conditional("DEBUG")]
+    public static void SetName(ID3D12Object* pObject, string name)
+    {
+        fixed (char* pName = name)
         {
-            var fullName = $"{name}[{index}]";
-            SetName(pObject, fullName);
+            _ = pObject->SetName((ushort*)pName);
         }
+    }
+
+    [Conditional("DEBUG")]
+    public static void SetNameIndexed(ID3D12Object* pObject, string name, uint index)
+    {
+        var fullName = $"{name}[{index}]";
+        SetName(pObject, fullName);
     }
 }

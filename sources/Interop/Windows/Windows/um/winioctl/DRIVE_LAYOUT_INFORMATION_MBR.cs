@@ -3,14 +3,13 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct DRIVE_LAYOUT_INFORMATION_MBR
-    {
-        [NativeTypeName("DWORD")]
-        public uint Signature;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint CheckSum;
-    }
+public partial struct DRIVE_LAYOUT_INFORMATION_MBR
+{
+    [NativeTypeName("DWORD")]
+    public uint Signature;
+
+    [NativeTypeName("DWORD")]
+    public uint CheckSum;
 }

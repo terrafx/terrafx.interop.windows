@@ -7,34 +7,33 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct JOBOBJECT_BASIC_PROCESS_ID_LIST
 {
-    public partial struct JOBOBJECT_BASIC_PROCESS_ID_LIST
+    [NativeTypeName("DWORD")]
+    public uint NumberOfAssignedProcesses;
+
+    [NativeTypeName("DWORD")]
+    public uint NumberOfProcessIdsInList;
+
+    [NativeTypeName("ULONG_PTR [1]")]
+    public _ProcessIdList_e__FixedBuffer ProcessIdList;
+
+    public partial struct _ProcessIdList_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint NumberOfAssignedProcesses;
+        public nuint e0;
 
-        [NativeTypeName("DWORD")]
-        public uint NumberOfProcessIdsInList;
-
-        [NativeTypeName("ULONG_PTR [1]")]
-        public _ProcessIdList_e__FixedBuffer ProcessIdList;
-
-        public partial struct _ProcessIdList_e__FixedBuffer
+        public ref nuint this[int index]
         {
-            public nuint e0;
-
-            public ref nuint this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<nuint> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<nuint> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

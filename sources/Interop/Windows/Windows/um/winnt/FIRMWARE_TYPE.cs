@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum FIRMWARE_TYPE
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum FIRMWARE_TYPE
-    {
-        FirmwareTypeUnknown,
-        FirmwareTypeBios,
-        FirmwareTypeUefi,
-        FirmwareTypeMax,
-    }
+    FirmwareTypeUnknown,
+    FirmwareTypeBios,
+    FirmwareTypeUefi,
+    FirmwareTypeMax,
 }

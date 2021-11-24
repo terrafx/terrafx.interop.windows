@@ -8,103 +8,102 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Guid("9B7E4E00-342C-4106-A19F-4F2704F689F0")]
+[NativeTypeName("struct ID3D10Multithread : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ID3D10Multithread : ID3D10Multithread.Interface
 {
-    [Guid("9B7E4E00-342C-4106-A19F-4F2704F689F0")]
-    [NativeTypeName("struct ID3D10Multithread : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D10Multithread : ID3D10Multithread.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ID3D10Multithread*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10Multithread*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ID3D10Multithread*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10Multithread*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ID3D10Multithread*, uint>)(lpVtbl[1]))((ID3D10Multithread*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ID3D10Multithread*, uint>)(lpVtbl[1]))((ID3D10Multithread*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ID3D10Multithread*, uint>)(lpVtbl[2]))((ID3D10Multithread*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ID3D10Multithread*, uint>)(lpVtbl[2]))((ID3D10Multithread*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public void Enter()
+    {
+        ((delegate* unmanaged<ID3D10Multithread*, void>)(lpVtbl[3]))((ID3D10Multithread*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public void Leave()
+    {
+        ((delegate* unmanaged<ID3D10Multithread*, void>)(lpVtbl[4]))((ID3D10Multithread*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public BOOL SetMultithreadProtected(BOOL bMTProtect)
+    {
+        return ((delegate* unmanaged<ID3D10Multithread*, BOOL, int>)(lpVtbl[5]))((ID3D10Multithread*)Unsafe.AsPointer(ref this), bMTProtect);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public BOOL GetMultithreadProtected()
+    {
+        return ((delegate* unmanaged<ID3D10Multithread*, int>)(lpVtbl[6]))((ID3D10Multithread*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public void Enter()
-        {
-            ((delegate* unmanaged<ID3D10Multithread*, void>)(lpVtbl[3]))((ID3D10Multithread*)Unsafe.AsPointer(ref this));
-        }
+        void Enter();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public void Leave()
-        {
-            ((delegate* unmanaged<ID3D10Multithread*, void>)(lpVtbl[4]))((ID3D10Multithread*)Unsafe.AsPointer(ref this));
-        }
+        void Leave();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public BOOL SetMultithreadProtected(BOOL bMTProtect)
-        {
-            return ((delegate* unmanaged<ID3D10Multithread*, BOOL, int>)(lpVtbl[5]))((ID3D10Multithread*)Unsafe.AsPointer(ref this), bMTProtect);
-        }
+        BOOL SetMultithreadProtected(BOOL bMTProtect);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public BOOL GetMultithreadProtected()
-        {
-            return ((delegate* unmanaged<ID3D10Multithread*, int>)(lpVtbl[6]))((ID3D10Multithread*)Unsafe.AsPointer(ref this));
-        }
+        BOOL GetMultithreadProtected();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            void Enter();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D10Multithread*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            void Leave();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D10Multithread*, uint> AddRef;
 
-            [VtblIndex(5)]
-            BOOL SetMultithreadProtected(BOOL bMTProtect);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D10Multithread*, uint> Release;
 
-            [VtblIndex(6)]
-            BOOL GetMultithreadProtected();
-        }
+        [NativeTypeName("void () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D10Multithread*, void> Enter;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D10Multithread*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("void () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D10Multithread*, void> Leave;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D10Multithread*, uint> AddRef;
+        [NativeTypeName("BOOL (BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D10Multithread*, BOOL, int> SetMultithreadProtected;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D10Multithread*, uint> Release;
-
-            [NativeTypeName("void () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D10Multithread*, void> Enter;
-
-            [NativeTypeName("void () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D10Multithread*, void> Leave;
-
-            [NativeTypeName("BOOL (BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D10Multithread*, BOOL, int> SetMultithreadProtected;
-
-            [NativeTypeName("BOOL () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D10Multithread*, int> GetMultithreadProtected;
-        }
+        [NativeTypeName("BOOL () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D10Multithread*, int> GetMultithreadProtected;
     }
 }

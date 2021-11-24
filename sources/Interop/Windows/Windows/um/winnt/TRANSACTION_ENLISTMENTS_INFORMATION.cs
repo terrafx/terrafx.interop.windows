@@ -7,31 +7,30 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TRANSACTION_ENLISTMENTS_INFORMATION
 {
-    public partial struct TRANSACTION_ENLISTMENTS_INFORMATION
+    [NativeTypeName("DWORD")]
+    public uint NumberOfEnlistments;
+
+    [NativeTypeName("TRANSACTION_ENLISTMENT_PAIR [1]")]
+    public _EnlistmentPair_e__FixedBuffer EnlistmentPair;
+
+    public partial struct _EnlistmentPair_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint NumberOfEnlistments;
+        public TRANSACTION_ENLISTMENT_PAIR e0;
 
-        [NativeTypeName("TRANSACTION_ENLISTMENT_PAIR [1]")]
-        public _EnlistmentPair_e__FixedBuffer EnlistmentPair;
-
-        public partial struct _EnlistmentPair_e__FixedBuffer
+        public ref TRANSACTION_ENLISTMENT_PAIR this[int index]
         {
-            public TRANSACTION_ENLISTMENT_PAIR e0;
-
-            public ref TRANSACTION_ENLISTMENT_PAIR this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<TRANSACTION_ENLISTMENT_PAIR> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<TRANSACTION_ENLISTMENT_PAIR> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

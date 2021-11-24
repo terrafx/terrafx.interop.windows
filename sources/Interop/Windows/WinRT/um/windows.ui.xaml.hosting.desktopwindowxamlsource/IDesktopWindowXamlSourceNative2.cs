@@ -9,85 +9,84 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[SupportedOSPlatform("windows10.0.18362.0")]
+[Guid("E3DCD8C7-3057-4692-99C3-7B7720AFDA31")]
+[NativeTypeName("struct IDesktopWindowXamlSourceNative2 : IDesktopWindowXamlSourceNative")]
+[NativeInheritance("IDesktopWindowXamlSourceNative")]
+public unsafe partial struct IDesktopWindowXamlSourceNative2 : IDesktopWindowXamlSourceNative2.Interface
 {
-    [SupportedOSPlatform("windows10.0.18362.0")]
-    [Guid("E3DCD8C7-3057-4692-99C3-7B7720AFDA31")]
-    [NativeTypeName("struct IDesktopWindowXamlSourceNative2 : IDesktopWindowXamlSourceNative")]
-    [NativeInheritance("IDesktopWindowXamlSourceNative")]
-    public unsafe partial struct IDesktopWindowXamlSourceNative2 : IDesktopWindowXamlSourceNative2.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, Guid*, void**, int>)(lpVtbl[0]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, Guid*, void**, int>)(lpVtbl[0]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, uint>)(lpVtbl[1]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, uint>)(lpVtbl[1]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, uint>)(lpVtbl[2]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, uint>)(lpVtbl[2]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT AttachToWindow(HWND parentWnd)
+    {
+        return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, HWND, int>)(lpVtbl[3]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), parentWnd);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT AttachToWindow(HWND parentWnd)
-        {
-            return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, HWND, int>)(lpVtbl[3]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), parentWnd);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT get_WindowHandle(HWND* hWnd)
+    {
+        return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, HWND*, int>)(lpVtbl[4]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), hWnd);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT get_WindowHandle(HWND* hWnd)
-        {
-            return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, HWND*, int>)(lpVtbl[4]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), hWnd);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT PreTranslateMessage([NativeTypeName("const MSG *")] MSG* message, BOOL* result)
+    {
+        return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, MSG*, BOOL*, int>)(lpVtbl[5]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), message, result);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IDesktopWindowXamlSourceNative.Interface
+    {
         [VtblIndex(5)]
-        public HRESULT PreTranslateMessage([NativeTypeName("const MSG *")] MSG* message, BOOL* result)
-        {
-            return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, MSG*, BOOL*, int>)(lpVtbl[5]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), message, result);
-        }
+        HRESULT PreTranslateMessage([NativeTypeName("const MSG *")] MSG* message, BOOL* result);
+    }
 
-        public interface Interface : IDesktopWindowXamlSourceNative.Interface
-        {
-            [VtblIndex(5)]
-            HRESULT PreTranslateMessage([NativeTypeName("const MSG *")] MSG* message, BOOL* result);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, uint> Release;
+        [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, HWND, int> AttachToWindow;
 
-            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, HWND, int> AttachToWindow;
+        [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, HWND*, int> get_WindowHandle;
 
-            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, HWND*, int> get_WindowHandle;
-
-            [NativeTypeName("HRESULT (const MSG *, BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, MSG*, BOOL*, int> PreTranslateMessage;
-        }
+        [NativeTypeName("HRESULT (const MSG *, BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, MSG*, BOOL*, int> PreTranslateMessage;
     }
 }

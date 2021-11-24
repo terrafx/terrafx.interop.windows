@@ -3,28 +3,27 @@
 // Ported from shared/wtypesbase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct COAUTHINFO
 {
-    public unsafe partial struct COAUTHINFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwAuthnSvc;
+    [NativeTypeName("DWORD")]
+    public uint dwAuthnSvc;
 
-        [NativeTypeName("DWORD")]
-        public uint dwAuthzSvc;
+    [NativeTypeName("DWORD")]
+    public uint dwAuthzSvc;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pwszServerPrincName;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pwszServerPrincName;
 
-        [NativeTypeName("DWORD")]
-        public uint dwAuthnLevel;
+    [NativeTypeName("DWORD")]
+    public uint dwAuthnLevel;
 
-        [NativeTypeName("DWORD")]
-        public uint dwImpersonationLevel;
+    [NativeTypeName("DWORD")]
+    public uint dwImpersonationLevel;
 
-        public COAUTHIDENTITY* pAuthIdentityData;
+    public COAUTHIDENTITY* pAuthIdentityData;
 
-        [NativeTypeName("DWORD")]
-        public uint dwCapabilities;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwCapabilities;
 }

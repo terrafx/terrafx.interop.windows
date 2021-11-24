@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATE" /> struct.</summary>
+public static unsafe partial class WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATETests
 {
-    /// <summary>Provides validation of the <see cref="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATE" /> struct.</summary>
-    public static unsafe partial class WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATETests
+    /// <summary>Validates that the <see cref="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATE>(), Is.EqualTo(sizeof(WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATE)));
-        }
+        Assert.That(Marshal.SizeOf<WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATE>(), Is.EqualTo(sizeof(WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATE)));
+    }
 
-        /// <summary>Validates that the <see cref="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATE), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATE), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATE), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TEMPLATE), Is.EqualTo(12));
         }
     }
 }

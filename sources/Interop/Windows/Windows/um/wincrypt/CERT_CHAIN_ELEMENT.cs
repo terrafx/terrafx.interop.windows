@@ -3,28 +3,27 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CERT_CHAIN_ELEMENT
 {
-    public unsafe partial struct CERT_CHAIN_ELEMENT
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("PCCERT_CONTEXT")]
-        public CERT_CONTEXT* pCertContext;
+    [NativeTypeName("PCCERT_CONTEXT")]
+    public CERT_CONTEXT* pCertContext;
 
-        public CERT_TRUST_STATUS TrustStatus;
+    public CERT_TRUST_STATUS TrustStatus;
 
-        [NativeTypeName("PCERT_REVOCATION_INFO")]
-        public CERT_REVOCATION_INFO* pRevocationInfo;
+    [NativeTypeName("PCERT_REVOCATION_INFO")]
+    public CERT_REVOCATION_INFO* pRevocationInfo;
 
-        [NativeTypeName("PCERT_ENHKEY_USAGE")]
-        public CTL_USAGE* pIssuanceUsage;
+    [NativeTypeName("PCERT_ENHKEY_USAGE")]
+    public CTL_USAGE* pIssuanceUsage;
 
-        [NativeTypeName("PCERT_ENHKEY_USAGE")]
-        public CTL_USAGE* pApplicationUsage;
+    [NativeTypeName("PCERT_ENHKEY_USAGE")]
+    public CTL_USAGE* pApplicationUsage;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pwszExtendedErrorInfo;
-    }
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pwszExtendedErrorInfo;
 }

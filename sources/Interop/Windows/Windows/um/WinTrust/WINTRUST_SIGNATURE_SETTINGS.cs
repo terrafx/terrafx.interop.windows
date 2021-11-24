@@ -5,27 +5,26 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct WINTRUST_SIGNATURE_SETTINGS
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct WINTRUST_SIGNATURE_SETTINGS
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbStruct;
+    [NativeTypeName("DWORD")]
+    public uint cbStruct;
 
-        [NativeTypeName("DWORD")]
-        public uint dwIndex;
+    [NativeTypeName("DWORD")]
+    public uint dwIndex;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        [NativeTypeName("DWORD")]
-        public uint cSecondarySigs;
+    [NativeTypeName("DWORD")]
+    public uint cSecondarySigs;
 
-        [NativeTypeName("DWORD")]
-        public uint dwVerifiedSigIndex;
+    [NativeTypeName("DWORD")]
+    public uint dwVerifiedSigIndex;
 
-        [NativeTypeName("PCERT_STRONG_SIGN_PARA")]
-        public CERT_STRONG_SIGN_PARA* pCryptoPolicy;
-    }
+    [NativeTypeName("PCERT_STRONG_SIGN_PARA")]
+    public CERT_STRONG_SIGN_PARA* pCryptoPolicy;
 }

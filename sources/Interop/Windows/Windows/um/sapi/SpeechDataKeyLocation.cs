@@ -5,13 +5,12 @@
 
 using static TerraFX.Interop.Windows.SPDATAKEYLOCATION;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechDataKeyLocation
 {
-    public enum SpeechDataKeyLocation
-    {
-        SDKLDefaultLocation = SPDKL_DefaultLocation,
-        SDKLCurrentUser = SPDKL_CurrentUser,
-        SDKLLocalMachine = SPDKL_LocalMachine,
-        SDKLCurrentConfig = SPDKL_CurrentConfig,
-    }
+    SDKLDefaultLocation = SPDKL_DefaultLocation,
+    SDKLCurrentUser = SPDKL_CurrentUser,
+    SDKLLocalMachine = SPDKL_LocalMachine,
+    SDKLCurrentConfig = SPDKL_CurrentConfig,
 }

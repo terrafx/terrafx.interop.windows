@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DXGI_SWAP_CHAIN_DESC1" /> struct.</summary>
+public static unsafe partial class DXGI_SWAP_CHAIN_DESC1Tests
 {
-    /// <summary>Provides validation of the <see cref="DXGI_SWAP_CHAIN_DESC1" /> struct.</summary>
-    public static unsafe partial class DXGI_SWAP_CHAIN_DESC1Tests
+    /// <summary>Validates that the <see cref="DXGI_SWAP_CHAIN_DESC1" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DXGI_SWAP_CHAIN_DESC1" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DXGI_SWAP_CHAIN_DESC1>(), Is.EqualTo(sizeof(DXGI_SWAP_CHAIN_DESC1)));
-        }
+        Assert.That(Marshal.SizeOf<DXGI_SWAP_CHAIN_DESC1>(), Is.EqualTo(sizeof(DXGI_SWAP_CHAIN_DESC1)));
+    }
 
-        /// <summary>Validates that the <see cref="DXGI_SWAP_CHAIN_DESC1" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DXGI_SWAP_CHAIN_DESC1).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DXGI_SWAP_CHAIN_DESC1" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DXGI_SWAP_CHAIN_DESC1).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DXGI_SWAP_CHAIN_DESC1" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DXGI_SWAP_CHAIN_DESC1), Is.EqualTo(48));
-        }
+    /// <summary>Validates that the <see cref="DXGI_SWAP_CHAIN_DESC1" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DXGI_SWAP_CHAIN_DESC1), Is.EqualTo(48));
     }
 }

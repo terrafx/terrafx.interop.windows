@@ -5,14 +5,13 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_PROTECTED_RESOURCE_SESSION_DESC1
 {
-    public partial struct D3D12_PROTECTED_RESOURCE_SESSION_DESC1
-    {
-        public uint NodeMask;
+    public uint NodeMask;
 
-        public D3D12_PROTECTED_RESOURCE_SESSION_FLAGS Flags;
+    public D3D12_PROTECTED_RESOURCE_SESSION_FLAGS Flags;
 
-        public Guid ProtectionType;
-    }
+    public Guid ProtectionType;
 }

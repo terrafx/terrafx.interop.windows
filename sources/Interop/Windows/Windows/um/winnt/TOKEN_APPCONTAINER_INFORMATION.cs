@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct TOKEN_APPCONTAINER_INFORMATION
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct TOKEN_APPCONTAINER_INFORMATION
-    {
-        [NativeTypeName("PSID")]
-        public void* TokenAppContainer;
-    }
+    [NativeTypeName("PSID")]
+    public void* TokenAppContainer;
 }

@@ -3,14 +3,13 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct CRYPT_ASYNC_RETRIEVAL_COMPLETION
-    {
-        [NativeTypeName("PFN_CRYPT_ASYNC_RETRIEVAL_COMPLETION_FUNC")]
-        public delegate* unmanaged<void*, uint, sbyte*, sbyte*, void*, void> pfnCompletion;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("LPVOID")]
-        public void* pvCompletion;
-    }
+public unsafe partial struct CRYPT_ASYNC_RETRIEVAL_COMPLETION
+{
+    [NativeTypeName("PFN_CRYPT_ASYNC_RETRIEVAL_COMPLETION_FUNC")]
+    public delegate* unmanaged<void*, uint, sbyte*, sbyte*, void*, void> pfnCompletion;
+
+    [NativeTypeName("LPVOID")]
+    public void* pvCompletion;
 }

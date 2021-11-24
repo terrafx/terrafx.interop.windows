@@ -5,29 +5,28 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DWRITE_HIT_TEST_METRICS
 {
-    public partial struct DWRITE_HIT_TEST_METRICS
-    {
-        [NativeTypeName("UINT32")]
-        public uint textPosition;
+    [NativeTypeName("UINT32")]
+    public uint textPosition;
 
-        [NativeTypeName("UINT32")]
-        public uint length;
+    [NativeTypeName("UINT32")]
+    public uint length;
 
-        public float left;
+    public float left;
 
-        public float top;
+    public float top;
 
-        public float width;
+    public float width;
 
-        public float height;
+    public float height;
 
-        [NativeTypeName("UINT32")]
-        public uint bidiLevel;
+    [NativeTypeName("UINT32")]
+    public uint bidiLevel;
 
-        public BOOL isText;
+    public BOOL isText;
 
-        public BOOL isTrimmed;
-    }
+    public BOOL isTrimmed;
 }

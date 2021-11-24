@@ -6,57 +6,56 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct TYPEDESC
 {
-    public unsafe partial struct TYPEDESC
+    [NativeTypeName("tagTYPEDESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/oaidl.h:653:36)")]
+    public _Anonymous_e__Union Anonymous;
+
+    [NativeTypeName("VARTYPE")]
+    public ushort vt;
+
+    public ref TYPEDESC* lptdesc
     {
-        [NativeTypeName("tagTYPEDESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/oaidl.h:653:36)")]
-        public _Anonymous_e__Union Anonymous;
-
-        [NativeTypeName("VARTYPE")]
-        public ushort vt;
-
-        public ref TYPEDESC* lptdesc
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.lptdesc;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.lptdesc;
         }
+    }
 
-        public ref ARRAYDESC* lpadesc
+    public ref ARRAYDESC* lpadesc
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.lpadesc;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.lpadesc;
         }
+    }
 
-        public ref uint hreftype
+    public ref uint hreftype
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hreftype, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hreftype, 1));
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("struct tagTYPEDESC *")]
-            public TYPEDESC* lptdesc;
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("struct tagTYPEDESC *")]
+        public TYPEDESC* lptdesc;
 
-            [FieldOffset(0)]
-            [NativeTypeName("struct tagARRAYDESC *")]
-            public ARRAYDESC* lpadesc;
+        [FieldOffset(0)]
+        [NativeTypeName("struct tagARRAYDESC *")]
+        public ARRAYDESC* lpadesc;
 
-            [FieldOffset(0)]
-            [NativeTypeName("HREFTYPE")]
-            public uint hreftype;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("HREFTYPE")]
+        public uint hreftype;
     }
 }

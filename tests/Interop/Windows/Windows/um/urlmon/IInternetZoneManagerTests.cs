@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IInternetZoneManager" /> struct.</summary>
+public static unsafe partial class IInternetZoneManagerTests
 {
-    /// <summary>Provides validation of the <see cref="IInternetZoneManager" /> struct.</summary>
-    public static unsafe partial class IInternetZoneManagerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IInternetZoneManager" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IInternetZoneManager" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IInternetZoneManager).GUID, Is.EqualTo(IID_IInternetZoneManager));
-        }
+        Assert.That(typeof(IInternetZoneManager).GUID, Is.EqualTo(IID_IInternetZoneManager));
+    }
 
-        /// <summary>Validates that the <see cref="IInternetZoneManager" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IInternetZoneManager>(), Is.EqualTo(sizeof(IInternetZoneManager)));
-        }
+    /// <summary>Validates that the <see cref="IInternetZoneManager" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IInternetZoneManager>(), Is.EqualTo(sizeof(IInternetZoneManager)));
+    }
 
-        /// <summary>Validates that the <see cref="IInternetZoneManager" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IInternetZoneManager).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IInternetZoneManager" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IInternetZoneManager).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IInternetZoneManager" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IInternetZoneManager" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IInternetZoneManager), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IInternetZoneManager), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IInternetZoneManager), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IInternetZoneManager), Is.EqualTo(4));
         }
     }
 }

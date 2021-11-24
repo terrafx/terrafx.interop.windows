@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PropertiesUI" /> struct.</summary>
+public static unsafe partial class PropertiesUITests
 {
-    /// <summary>Provides validation of the <see cref="PropertiesUI" /> struct.</summary>
-    public static unsafe partial class PropertiesUITests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="PropertiesUI" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="PropertiesUI" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(PropertiesUI).GUID, Is.EqualTo(IID_PropertiesUI));
-        }
+        Assert.That(typeof(PropertiesUI).GUID, Is.EqualTo(IID_PropertiesUI));
+    }
 
-        /// <summary>Validates that the <see cref="PropertiesUI" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PropertiesUI>(), Is.EqualTo(sizeof(PropertiesUI)));
-        }
+    /// <summary>Validates that the <see cref="PropertiesUI" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<PropertiesUI>(), Is.EqualTo(sizeof(PropertiesUI)));
+    }
 
-        /// <summary>Validates that the <see cref="PropertiesUI" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PropertiesUI).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PropertiesUI" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PropertiesUI).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PropertiesUI" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(PropertiesUI), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="PropertiesUI" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(PropertiesUI), Is.EqualTo(1));
     }
 }

@@ -7,273 +7,272 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("7A1EF0D5-1581-4741-88E4-209A49F11A10")]
+[NativeTypeName("struct ISpeechWaveFormatEx : IDispatch")]
+[NativeInheritance("IDispatch")]
+public unsafe partial struct ISpeechWaveFormatEx : ISpeechWaveFormatEx.Interface
 {
-    [Guid("7A1EF0D5-1581-4741-88E4-209A49F11A10")]
-    [NativeTypeName("struct ISpeechWaveFormatEx : IDispatch")]
-    [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechWaveFormatEx : ISpeechWaveFormatEx.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ISpeechWaveFormatEx*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ISpeechWaveFormatEx*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ISpeechWaveFormatEx*, uint>)(lpVtbl[1]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ISpeechWaveFormatEx*, uint>)(lpVtbl[1]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ISpeechWaveFormatEx*, uint>)(lpVtbl[2]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ISpeechWaveFormatEx*, uint>)(lpVtbl[2]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetTypeInfoCount(uint* pctinfo)
+    {
+        return ((delegate* unmanaged<ISpeechWaveFormatEx*, uint*, int>)(lpVtbl[3]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), pctinfo);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetTypeInfoCount(uint* pctinfo)
-        {
-            return ((delegate* unmanaged<ISpeechWaveFormatEx*, uint*, int>)(lpVtbl[3]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), pctinfo);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
+    {
+        return ((delegate* unmanaged<ISpeechWaveFormatEx*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
-        {
-            return ((delegate* unmanaged<ISpeechWaveFormatEx*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    {
+        return ((delegate* unmanaged<ISpeechWaveFormatEx*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
-        {
-            return ((delegate* unmanaged<ISpeechWaveFormatEx*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
+    {
+        return ((delegate* unmanaged<ISpeechWaveFormatEx*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(6)]
-        public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
-        {
-            return ((delegate* unmanaged<ISpeechWaveFormatEx*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT get_FormatTag(short* FormatTag)
+    {
+        return ((delegate* unmanaged<ISpeechWaveFormatEx*, short*, int>)(lpVtbl[7]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), FormatTag);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT put_FormatTag(short FormatTag)
+    {
+        return ((delegate* unmanaged<ISpeechWaveFormatEx*, short, int>)(lpVtbl[8]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), FormatTag);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT get_Channels(short* Channels)
+    {
+        return ((delegate* unmanaged<ISpeechWaveFormatEx*, short*, int>)(lpVtbl[9]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), Channels);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT put_Channels(short Channels)
+    {
+        return ((delegate* unmanaged<ISpeechWaveFormatEx*, short, int>)(lpVtbl[10]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), Channels);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT get_SamplesPerSec([NativeTypeName("long *")] int* SamplesPerSec)
+    {
+        return ((delegate* unmanaged<ISpeechWaveFormatEx*, int*, int>)(lpVtbl[11]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), SamplesPerSec);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT put_SamplesPerSec([NativeTypeName("long")] int SamplesPerSec)
+    {
+        return ((delegate* unmanaged<ISpeechWaveFormatEx*, int, int>)(lpVtbl[12]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), SamplesPerSec);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT get_AvgBytesPerSec([NativeTypeName("long *")] int* AvgBytesPerSec)
+    {
+        return ((delegate* unmanaged<ISpeechWaveFormatEx*, int*, int>)(lpVtbl[13]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), AvgBytesPerSec);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT put_AvgBytesPerSec([NativeTypeName("long")] int AvgBytesPerSec)
+    {
+        return ((delegate* unmanaged<ISpeechWaveFormatEx*, int, int>)(lpVtbl[14]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), AvgBytesPerSec);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT get_BlockAlign(short* BlockAlign)
+    {
+        return ((delegate* unmanaged<ISpeechWaveFormatEx*, short*, int>)(lpVtbl[15]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), BlockAlign);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT put_BlockAlign(short BlockAlign)
+    {
+        return ((delegate* unmanaged<ISpeechWaveFormatEx*, short, int>)(lpVtbl[16]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), BlockAlign);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT get_BitsPerSample(short* BitsPerSample)
+    {
+        return ((delegate* unmanaged<ISpeechWaveFormatEx*, short*, int>)(lpVtbl[17]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), BitsPerSample);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT put_BitsPerSample(short BitsPerSample)
+    {
+        return ((delegate* unmanaged<ISpeechWaveFormatEx*, short, int>)(lpVtbl[18]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), BitsPerSample);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
+    public HRESULT get_ExtraData(VARIANT* ExtraData)
+    {
+        return ((delegate* unmanaged<ISpeechWaveFormatEx*, VARIANT*, int>)(lpVtbl[19]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), ExtraData);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(20)]
+    public HRESULT put_ExtraData(VARIANT ExtraData)
+    {
+        return ((delegate* unmanaged<ISpeechWaveFormatEx*, VARIANT, int>)(lpVtbl[20]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), ExtraData);
+    }
+
+    public interface Interface : IDispatch.Interface
+    {
         [VtblIndex(7)]
-        public HRESULT get_FormatTag(short* FormatTag)
-        {
-            return ((delegate* unmanaged<ISpeechWaveFormatEx*, short*, int>)(lpVtbl[7]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), FormatTag);
-        }
+        HRESULT get_FormatTag(short* FormatTag);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT put_FormatTag(short FormatTag)
-        {
-            return ((delegate* unmanaged<ISpeechWaveFormatEx*, short, int>)(lpVtbl[8]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), FormatTag);
-        }
+        HRESULT put_FormatTag(short FormatTag);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT get_Channels(short* Channels)
-        {
-            return ((delegate* unmanaged<ISpeechWaveFormatEx*, short*, int>)(lpVtbl[9]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), Channels);
-        }
+        HRESULT get_Channels(short* Channels);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT put_Channels(short Channels)
-        {
-            return ((delegate* unmanaged<ISpeechWaveFormatEx*, short, int>)(lpVtbl[10]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), Channels);
-        }
+        HRESULT put_Channels(short Channels);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT get_SamplesPerSec([NativeTypeName("long *")] int* SamplesPerSec)
-        {
-            return ((delegate* unmanaged<ISpeechWaveFormatEx*, int*, int>)(lpVtbl[11]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), SamplesPerSec);
-        }
+        HRESULT get_SamplesPerSec([NativeTypeName("long *")] int* SamplesPerSec);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT put_SamplesPerSec([NativeTypeName("long")] int SamplesPerSec)
-        {
-            return ((delegate* unmanaged<ISpeechWaveFormatEx*, int, int>)(lpVtbl[12]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), SamplesPerSec);
-        }
+        HRESULT put_SamplesPerSec([NativeTypeName("long")] int SamplesPerSec);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT get_AvgBytesPerSec([NativeTypeName("long *")] int* AvgBytesPerSec)
-        {
-            return ((delegate* unmanaged<ISpeechWaveFormatEx*, int*, int>)(lpVtbl[13]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), AvgBytesPerSec);
-        }
+        HRESULT get_AvgBytesPerSec([NativeTypeName("long *")] int* AvgBytesPerSec);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT put_AvgBytesPerSec([NativeTypeName("long")] int AvgBytesPerSec)
-        {
-            return ((delegate* unmanaged<ISpeechWaveFormatEx*, int, int>)(lpVtbl[14]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), AvgBytesPerSec);
-        }
+        HRESULT put_AvgBytesPerSec([NativeTypeName("long")] int AvgBytesPerSec);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT get_BlockAlign(short* BlockAlign)
-        {
-            return ((delegate* unmanaged<ISpeechWaveFormatEx*, short*, int>)(lpVtbl[15]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), BlockAlign);
-        }
+        HRESULT get_BlockAlign(short* BlockAlign);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT put_BlockAlign(short BlockAlign)
-        {
-            return ((delegate* unmanaged<ISpeechWaveFormatEx*, short, int>)(lpVtbl[16]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), BlockAlign);
-        }
+        HRESULT put_BlockAlign(short BlockAlign);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT get_BitsPerSample(short* BitsPerSample)
-        {
-            return ((delegate* unmanaged<ISpeechWaveFormatEx*, short*, int>)(lpVtbl[17]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), BitsPerSample);
-        }
+        HRESULT get_BitsPerSample(short* BitsPerSample);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT put_BitsPerSample(short BitsPerSample)
-        {
-            return ((delegate* unmanaged<ISpeechWaveFormatEx*, short, int>)(lpVtbl[18]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), BitsPerSample);
-        }
+        HRESULT put_BitsPerSample(short BitsPerSample);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT get_ExtraData(VARIANT* ExtraData)
-        {
-            return ((delegate* unmanaged<ISpeechWaveFormatEx*, VARIANT*, int>)(lpVtbl[19]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), ExtraData);
-        }
+        HRESULT get_ExtraData(VARIANT* ExtraData);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT put_ExtraData(VARIANT ExtraData)
-        {
-            return ((delegate* unmanaged<ISpeechWaveFormatEx*, VARIANT, int>)(lpVtbl[20]))((ISpeechWaveFormatEx*)Unsafe.AsPointer(ref this), ExtraData);
-        }
+        HRESULT put_ExtraData(VARIANT ExtraData);
+    }
 
-        public interface Interface : IDispatch.Interface
-        {
-            [VtblIndex(7)]
-            HRESULT get_FormatTag(short* FormatTag);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechWaveFormatEx*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(8)]
-            HRESULT put_FormatTag(short FormatTag);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechWaveFormatEx*, uint> AddRef;
 
-            [VtblIndex(9)]
-            HRESULT get_Channels(short* Channels);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechWaveFormatEx*, uint> Release;
 
-            [VtblIndex(10)]
-            HRESULT put_Channels(short Channels);
+        [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechWaveFormatEx*, uint*, int> GetTypeInfoCount;
 
-            [VtblIndex(11)]
-            HRESULT get_SamplesPerSec([NativeTypeName("long *")] int* SamplesPerSec);
+        [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechWaveFormatEx*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
-            [VtblIndex(12)]
-            HRESULT put_SamplesPerSec([NativeTypeName("long")] int SamplesPerSec);
+        [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechWaveFormatEx*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
-            [VtblIndex(13)]
-            HRESULT get_AvgBytesPerSec([NativeTypeName("long *")] int* AvgBytesPerSec);
+        [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechWaveFormatEx*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
-            [VtblIndex(14)]
-            HRESULT put_AvgBytesPerSec([NativeTypeName("long")] int AvgBytesPerSec);
+        [NativeTypeName("HRESULT (short *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechWaveFormatEx*, short*, int> get_FormatTag;
 
-            [VtblIndex(15)]
-            HRESULT get_BlockAlign(short* BlockAlign);
+        [NativeTypeName("HRESULT (short) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechWaveFormatEx*, short, int> put_FormatTag;
 
-            [VtblIndex(16)]
-            HRESULT put_BlockAlign(short BlockAlign);
+        [NativeTypeName("HRESULT (short *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechWaveFormatEx*, short*, int> get_Channels;
 
-            [VtblIndex(17)]
-            HRESULT get_BitsPerSample(short* BitsPerSample);
+        [NativeTypeName("HRESULT (short) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechWaveFormatEx*, short, int> put_Channels;
 
-            [VtblIndex(18)]
-            HRESULT put_BitsPerSample(short BitsPerSample);
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechWaveFormatEx*, int*, int> get_SamplesPerSec;
 
-            [VtblIndex(19)]
-            HRESULT get_ExtraData(VARIANT* ExtraData);
+        [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechWaveFormatEx*, int, int> put_SamplesPerSec;
 
-            [VtblIndex(20)]
-            HRESULT put_ExtraData(VARIANT ExtraData);
-        }
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechWaveFormatEx*, int*, int> get_AvgBytesPerSec;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechWaveFormatEx*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechWaveFormatEx*, int, int> put_AvgBytesPerSec;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechWaveFormatEx*, uint> AddRef;
+        [NativeTypeName("HRESULT (short *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechWaveFormatEx*, short*, int> get_BlockAlign;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechWaveFormatEx*, uint> Release;
+        [NativeTypeName("HRESULT (short) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechWaveFormatEx*, short, int> put_BlockAlign;
 
-            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechWaveFormatEx*, uint*, int> GetTypeInfoCount;
+        [NativeTypeName("HRESULT (short *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechWaveFormatEx*, short*, int> get_BitsPerSample;
 
-            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechWaveFormatEx*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        [NativeTypeName("HRESULT (short) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechWaveFormatEx*, short, int> put_BitsPerSample;
 
-            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechWaveFormatEx*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechWaveFormatEx*, VARIANT*, int> get_ExtraData;
 
-            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechWaveFormatEx*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
-
-            [NativeTypeName("HRESULT (short *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechWaveFormatEx*, short*, int> get_FormatTag;
-
-            [NativeTypeName("HRESULT (short) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechWaveFormatEx*, short, int> put_FormatTag;
-
-            [NativeTypeName("HRESULT (short *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechWaveFormatEx*, short*, int> get_Channels;
-
-            [NativeTypeName("HRESULT (short) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechWaveFormatEx*, short, int> put_Channels;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechWaveFormatEx*, int*, int> get_SamplesPerSec;
-
-            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechWaveFormatEx*, int, int> put_SamplesPerSec;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechWaveFormatEx*, int*, int> get_AvgBytesPerSec;
-
-            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechWaveFormatEx*, int, int> put_AvgBytesPerSec;
-
-            [NativeTypeName("HRESULT (short *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechWaveFormatEx*, short*, int> get_BlockAlign;
-
-            [NativeTypeName("HRESULT (short) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechWaveFormatEx*, short, int> put_BlockAlign;
-
-            [NativeTypeName("HRESULT (short *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechWaveFormatEx*, short*, int> get_BitsPerSample;
-
-            [NativeTypeName("HRESULT (short) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechWaveFormatEx*, short, int> put_BitsPerSample;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechWaveFormatEx*, VARIANT*, int> get_ExtraData;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechWaveFormatEx*, VARIANT, int> put_ExtraData;
-        }
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechWaveFormatEx*, VARIANT, int> put_ExtraData;
     }
 }

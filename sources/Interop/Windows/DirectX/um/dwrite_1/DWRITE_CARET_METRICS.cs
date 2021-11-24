@@ -3,17 +3,16 @@
 // Ported from um/dwrite_1.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DWRITE_CARET_METRICS
 {
-    public partial struct DWRITE_CARET_METRICS
-    {
-        [NativeTypeName("INT16")]
-        public short slopeRise;
+    [NativeTypeName("INT16")]
+    public short slopeRise;
 
-        [NativeTypeName("INT16")]
-        public short slopeRun;
+    [NativeTypeName("INT16")]
+    public short slopeRun;
 
-        [NativeTypeName("INT16")]
-        public short offset;
-    }
+    [NativeTypeName("INT16")]
+    public short offset;
 }

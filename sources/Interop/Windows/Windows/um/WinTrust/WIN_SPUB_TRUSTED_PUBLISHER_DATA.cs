@@ -3,13 +3,12 @@
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct WIN_SPUB_TRUSTED_PUBLISHER_DATA
-    {
-        public HANDLE hClientToken;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("LPWIN_CERTIFICATE")]
-        public WIN_CERTIFICATE* lpCertificate;
-    }
+public unsafe partial struct WIN_SPUB_TRUSTED_PUBLISHER_DATA
+{
+    public HANDLE hClientToken;
+
+    [NativeTypeName("LPWIN_CERTIFICATE")]
+    public WIN_CERTIFICATE* lpCertificate;
 }

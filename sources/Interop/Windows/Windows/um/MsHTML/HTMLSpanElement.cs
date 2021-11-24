@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3050F3F5-98B4-11CF-BB82-00AA00BDCE0B")]
+public partial struct HTMLSpanElement
 {
-    [Guid("3050F3F5-98B4-11CF-BB82-00AA00BDCE0B")]
-    public partial struct HTMLSpanElement
-    {
-    }
 }

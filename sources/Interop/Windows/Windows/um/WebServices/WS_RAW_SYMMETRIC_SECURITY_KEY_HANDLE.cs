@@ -3,12 +3,11 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct WS_RAW_SYMMETRIC_SECURITY_KEY_HANDLE
-    {
-        public WS_SECURITY_KEY_HANDLE keyHandle;
+namespace TerraFX.Interop.Windows;
 
-        public WS_BYTES rawKeyBytes;
-    }
+public partial struct WS_RAW_SYMMETRIC_SECURITY_KEY_HANDLE
+{
+    public WS_SECURITY_KEY_HANDLE keyHandle;
+
+    public WS_BYTES rawKeyBytes;
 }

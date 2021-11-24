@@ -5,21 +5,20 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct TOUCH_HIT_TESTING_INPUT
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct TOUCH_HIT_TESTING_INPUT
-    {
-        [NativeTypeName("UINT32")]
-        public uint pointerId;
+    [NativeTypeName("UINT32")]
+    public uint pointerId;
 
-        public POINT point;
+    public POINT point;
 
-        public RECT boundingBox;
+    public RECT boundingBox;
 
-        public RECT nonOccludedBoundingBox;
+    public RECT nonOccludedBoundingBox;
 
-        [NativeTypeName("UINT32")]
-        public uint orientation;
-    }
+    [NativeTypeName("UINT32")]
+    public uint orientation;
 }

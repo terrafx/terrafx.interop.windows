@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WS_SECURITY_ALGORITHM_SUITE" /> struct.</summary>
+public static unsafe partial class WS_SECURITY_ALGORITHM_SUITETests
 {
-    /// <summary>Provides validation of the <see cref="WS_SECURITY_ALGORITHM_SUITE" /> struct.</summary>
-    public static unsafe partial class WS_SECURITY_ALGORITHM_SUITETests
+    /// <summary>Validates that the <see cref="WS_SECURITY_ALGORITHM_SUITE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WS_SECURITY_ALGORITHM_SUITE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WS_SECURITY_ALGORITHM_SUITE>(), Is.EqualTo(sizeof(WS_SECURITY_ALGORITHM_SUITE)));
-        }
+        Assert.That(Marshal.SizeOf<WS_SECURITY_ALGORITHM_SUITE>(), Is.EqualTo(sizeof(WS_SECURITY_ALGORITHM_SUITE)));
+    }
 
-        /// <summary>Validates that the <see cref="WS_SECURITY_ALGORITHM_SUITE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WS_SECURITY_ALGORITHM_SUITE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WS_SECURITY_ALGORITHM_SUITE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WS_SECURITY_ALGORITHM_SUITE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WS_SECURITY_ALGORITHM_SUITE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="WS_SECURITY_ALGORITHM_SUITE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(WS_SECURITY_ALGORITHM_SUITE), Is.EqualTo(64));
-            }
-            else
-            {
-                Assert.That(sizeof(WS_SECURITY_ALGORITHM_SUITE), Is.EqualTo(56));
-            }
+            Assert.That(sizeof(WS_SECURITY_ALGORITHM_SUITE), Is.EqualTo(64));
+        }
+        else
+        {
+            Assert.That(sizeof(WS_SECURITY_ALGORITHM_SUITE), Is.EqualTo(56));
         }
     }
 }

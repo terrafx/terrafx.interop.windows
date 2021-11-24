@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DedupBackupSupport" /> struct.</summary>
+public static unsafe partial class DedupBackupSupportTests
 {
-    /// <summary>Provides validation of the <see cref="DedupBackupSupport" /> struct.</summary>
-    public static unsafe partial class DedupBackupSupportTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DedupBackupSupport" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DedupBackupSupport" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DedupBackupSupport).GUID, Is.EqualTo(CLSID_DedupBackupSupport));
-        }
+        Assert.That(typeof(DedupBackupSupport).GUID, Is.EqualTo(CLSID_DedupBackupSupport));
+    }
 
-        /// <summary>Validates that the <see cref="DedupBackupSupport" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DedupBackupSupport>(), Is.EqualTo(sizeof(DedupBackupSupport)));
-        }
+    /// <summary>Validates that the <see cref="DedupBackupSupport" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DedupBackupSupport>(), Is.EqualTo(sizeof(DedupBackupSupport)));
+    }
 
-        /// <summary>Validates that the <see cref="DedupBackupSupport" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DedupBackupSupport).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DedupBackupSupport" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DedupBackupSupport).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DedupBackupSupport" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DedupBackupSupport), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="DedupBackupSupport" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DedupBackupSupport), Is.EqualTo(1));
     }
 }

@@ -5,48 +5,47 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct userSTGMEDIUM
 {
-    public unsafe partial struct userSTGMEDIUM
+    public IUnknown* pUnkForRelease;
+
+    public partial struct _STGMEDIUM_UNION
     {
-        public IUnknown* pUnkForRelease;
+        [NativeTypeName("DWORD")]
+        public uint tymed;
 
-        public partial struct _STGMEDIUM_UNION
+        [NativeTypeName("union __MIDL_IAdviseSink_0003")]
+        public _u_e__Union u;
+
+        [StructLayout(LayoutKind.Explicit)]
+        public unsafe partial struct _u_e__Union
         {
-            [NativeTypeName("DWORD")]
-            public uint tymed;
+            [FieldOffset(0)]
+            [NativeTypeName("wireHMETAFILEPICT")]
+            public userHMETAFILEPICT* hMetaFilePict;
 
-            [NativeTypeName("union __MIDL_IAdviseSink_0003")]
-            public _u_e__Union u;
+            [FieldOffset(0)]
+            [NativeTypeName("wireHENHMETAFILE")]
+            public userHENHMETAFILE* hHEnhMetaFile;
 
-            [StructLayout(LayoutKind.Explicit)]
-            public unsafe partial struct _u_e__Union
-            {
-                [FieldOffset(0)]
-                [NativeTypeName("wireHMETAFILEPICT")]
-                public userHMETAFILEPICT* hMetaFilePict;
+            [FieldOffset(0)]
+            public GDI_OBJECT* hGdiHandle;
 
-                [FieldOffset(0)]
-                [NativeTypeName("wireHENHMETAFILE")]
-                public userHENHMETAFILE* hHEnhMetaFile;
+            [FieldOffset(0)]
+            [NativeTypeName("wireHGLOBAL")]
+            public userHGLOBAL* hGlobal;
 
-                [FieldOffset(0)]
-                public GDI_OBJECT* hGdiHandle;
+            [FieldOffset(0)]
+            [NativeTypeName("LPOLESTR")]
+            public ushort* lpszFileName;
 
-                [FieldOffset(0)]
-                [NativeTypeName("wireHGLOBAL")]
-                public userHGLOBAL* hGlobal;
+            [FieldOffset(0)]
+            public BYTE_BLOB* pstm;
 
-                [FieldOffset(0)]
-                [NativeTypeName("LPOLESTR")]
-                public ushort* lpszFileName;
-
-                [FieldOffset(0)]
-                public BYTE_BLOB* pstm;
-
-                [FieldOffset(0)]
-                public BYTE_BLOB* pstg;
-            }
+            [FieldOffset(0)]
+            public BYTE_BLOB* pstg;
         }
     }
 }

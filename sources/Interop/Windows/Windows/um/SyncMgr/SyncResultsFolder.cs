@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("71D99464-3B6B-475C-B241-E15883207529")]
+public partial struct SyncResultsFolder
 {
-    [Guid("71D99464-3B6B-475C-B241-E15883207529")]
-    public partial struct SyncResultsFolder
-    {
-    }
 }

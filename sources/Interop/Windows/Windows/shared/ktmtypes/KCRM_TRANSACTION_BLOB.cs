@@ -5,25 +5,24 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct KCRM_TRANSACTION_BLOB
 {
-    public unsafe partial struct KCRM_TRANSACTION_BLOB
-    {
-        [NativeTypeName("UOW")]
-        public Guid UOW;
+    [NativeTypeName("UOW")]
+    public Guid UOW;
 
-        public Guid TmIdentity;
+    public Guid TmIdentity;
 
-        [NativeTypeName("ULONG")]
-        public uint IsolationLevel;
+    [NativeTypeName("ULONG")]
+    public uint IsolationLevel;
 
-        [NativeTypeName("ULONG")]
-        public uint IsolationFlags;
+    [NativeTypeName("ULONG")]
+    public uint IsolationFlags;
 
-        [NativeTypeName("ULONG")]
-        public uint Timeout;
+    [NativeTypeName("ULONG")]
+    public uint Timeout;
 
-        [NativeTypeName("WCHAR [64]")]
-        public fixed ushort Description[64];
-    }
+    [NativeTypeName("WCHAR [64]")]
+    public fixed ushort Description[64];
 }

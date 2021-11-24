@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("4842669E-9947-46EA-8BA2-D8CCE432C2CA")]
+public partial struct PrintDocumentPackageTarget
 {
-    [Guid("4842669E-9947-46EA-8BA2-D8CCE432C2CA")]
-    public partial struct PrintDocumentPackageTarget
-    {
-    }
 }

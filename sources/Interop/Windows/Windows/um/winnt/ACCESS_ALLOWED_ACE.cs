@@ -3,16 +3,15 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct ACCESS_ALLOWED_ACE
 {
-    public partial struct ACCESS_ALLOWED_ACE
-    {
-        public ACE_HEADER Header;
+    public ACE_HEADER Header;
 
-        [NativeTypeName("ACCESS_MASK")]
-        public uint Mask;
+    [NativeTypeName("ACCESS_MASK")]
+    public uint Mask;
 
-        [NativeTypeName("DWORD")]
-        public uint SidStart;
-    }
+    [NativeTypeName("DWORD")]
+    public uint SidStart;
 }

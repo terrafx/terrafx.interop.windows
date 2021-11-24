@@ -5,22 +5,21 @@
 
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct IShellBrowser
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(17)]
-        public HRESULT SetToolbarItems32([NativeTypeName("LPTBBUTTONSB")] TBBUTTON32* lpButtons, uint nButtons, uint uFlags)
-        {
-            return SetToolbarItems(lpButtons, nButtons, uFlags);
-        }
+namespace TerraFX.Interop.Windows;
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(17)]
-        public HRESULT SetToolbarItems32([NativeTypeName("LPTBBUTTONSB")] TBBUTTON64* lpButtons, uint nButtons, uint uFlags)
-        {
-            return SetToolbarItems(lpButtons, nButtons, uFlags);
-        }
+public unsafe partial struct IShellBrowser
+{
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT SetToolbarItems32([NativeTypeName("LPTBBUTTONSB")] TBBUTTON32* lpButtons, uint nButtons, uint uFlags)
+    {
+        return SetToolbarItems(lpButtons, nButtons, uFlags);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT SetToolbarItems32([NativeTypeName("LPTBBUTTONSB")] TBBUTTON64* lpButtons, uint nButtons, uint uFlags)
+    {
+        return SetToolbarItems(lpButtons, nButtons, uFlags);
     }
 }

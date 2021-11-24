@@ -5,11 +5,10 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum D3D12_COMMAND_LIST_FLAGS
 {
-    [Flags]
-    public enum D3D12_COMMAND_LIST_FLAGS
-    {
-        D3D12_COMMAND_LIST_FLAG_NONE = 0,
-    }
+    D3D12_COMMAND_LIST_FLAG_NONE = 0,
 }

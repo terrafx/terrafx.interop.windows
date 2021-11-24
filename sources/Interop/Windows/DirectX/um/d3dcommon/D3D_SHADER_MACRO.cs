@@ -3,14 +3,13 @@
 // Ported from um/d3dcommon.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
-{
-    public unsafe partial struct D3D_SHADER_MACRO
-    {
-        [NativeTypeName("LPCSTR")]
-        public sbyte* Name;
+namespace TerraFX.Interop.DirectX;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* Definition;
-    }
+public unsafe partial struct D3D_SHADER_MACRO
+{
+    [NativeTypeName("LPCSTR")]
+    public sbyte* Name;
+
+    [NativeTypeName("LPCSTR")]
+    public sbyte* Definition;
 }

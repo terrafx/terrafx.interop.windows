@@ -7,314 +7,313 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("C05C768F-FAE8-4EC2-8E07-338321C12452")]
+[NativeTypeName("struct ISpAudio : ISpStreamFormat")]
+[NativeInheritance("ISpStreamFormat")]
+public unsafe partial struct ISpAudio : ISpAudio.Interface
 {
-    [Guid("C05C768F-FAE8-4EC2-8E07-338321C12452")]
-    [NativeTypeName("struct ISpAudio : ISpStreamFormat")]
-    [NativeInheritance("ISpStreamFormat")]
-    public unsafe partial struct ISpAudio : ISpAudio.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ISpAudio*, Guid*, void**, int>)(lpVtbl[0]))((ISpAudio*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ISpAudio*, Guid*, void**, int>)(lpVtbl[0]))((ISpAudio*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ISpAudio*, uint>)(lpVtbl[1]))((ISpAudio*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ISpAudio*, uint>)(lpVtbl[1]))((ISpAudio*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ISpAudio*, uint>)(lpVtbl[2]))((ISpAudio*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ISpAudio*, uint>)(lpVtbl[2]))((ISpAudio*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Read(void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead)
+    {
+        return ((delegate* unmanaged<ISpAudio*, void*, uint, uint*, int>)(lpVtbl[3]))((ISpAudio*)Unsafe.AsPointer(ref this), pv, cb, pcbRead);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT Read(void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead)
-        {
-            return ((delegate* unmanaged<ISpAudio*, void*, uint, uint*, int>)(lpVtbl[3]))((ISpAudio*)Unsafe.AsPointer(ref this), pv, cb, pcbRead);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Write([NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten)
+    {
+        return ((delegate* unmanaged<ISpAudio*, void*, uint, uint*, int>)(lpVtbl[4]))((ISpAudio*)Unsafe.AsPointer(ref this), pv, cb, pcbWritten);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT Write([NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten)
-        {
-            return ((delegate* unmanaged<ISpAudio*, void*, uint, uint*, int>)(lpVtbl[4]))((ISpAudio*)Unsafe.AsPointer(ref this), pv, cb, pcbWritten);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Seek(LARGE_INTEGER dlibMove, [NativeTypeName("DWORD")] uint dwOrigin, ULARGE_INTEGER* plibNewPosition)
+    {
+        return ((delegate* unmanaged<ISpAudio*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int>)(lpVtbl[5]))((ISpAudio*)Unsafe.AsPointer(ref this), dlibMove, dwOrigin, plibNewPosition);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT Seek(LARGE_INTEGER dlibMove, [NativeTypeName("DWORD")] uint dwOrigin, ULARGE_INTEGER* plibNewPosition)
-        {
-            return ((delegate* unmanaged<ISpAudio*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int>)(lpVtbl[5]))((ISpAudio*)Unsafe.AsPointer(ref this), dlibMove, dwOrigin, plibNewPosition);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT SetSize(ULARGE_INTEGER libNewSize)
+    {
+        return ((delegate* unmanaged<ISpAudio*, ULARGE_INTEGER, int>)(lpVtbl[6]))((ISpAudio*)Unsafe.AsPointer(ref this), libNewSize);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(6)]
-        public HRESULT SetSize(ULARGE_INTEGER libNewSize)
-        {
-            return ((delegate* unmanaged<ISpAudio*, ULARGE_INTEGER, int>)(lpVtbl[6]))((ISpAudio*)Unsafe.AsPointer(ref this), libNewSize);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT CopyTo(IStream* pstm, ULARGE_INTEGER cb, ULARGE_INTEGER* pcbRead, ULARGE_INTEGER* pcbWritten)
+    {
+        return ((delegate* unmanaged<ISpAudio*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int>)(lpVtbl[7]))((ISpAudio*)Unsafe.AsPointer(ref this), pstm, cb, pcbRead, pcbWritten);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(7)]
-        public HRESULT CopyTo(IStream* pstm, ULARGE_INTEGER cb, ULARGE_INTEGER* pcbRead, ULARGE_INTEGER* pcbWritten)
-        {
-            return ((delegate* unmanaged<ISpAudio*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int>)(lpVtbl[7]))((ISpAudio*)Unsafe.AsPointer(ref this), pstm, cb, pcbRead, pcbWritten);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT Commit([NativeTypeName("DWORD")] uint grfCommitFlags)
+    {
+        return ((delegate* unmanaged<ISpAudio*, uint, int>)(lpVtbl[8]))((ISpAudio*)Unsafe.AsPointer(ref this), grfCommitFlags);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(8)]
-        public HRESULT Commit([NativeTypeName("DWORD")] uint grfCommitFlags)
-        {
-            return ((delegate* unmanaged<ISpAudio*, uint, int>)(lpVtbl[8]))((ISpAudio*)Unsafe.AsPointer(ref this), grfCommitFlags);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT Revert()
+    {
+        return ((delegate* unmanaged<ISpAudio*, int>)(lpVtbl[9]))((ISpAudio*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(9)]
-        public HRESULT Revert()
-        {
-            return ((delegate* unmanaged<ISpAudio*, int>)(lpVtbl[9]))((ISpAudio*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT LockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType)
+    {
+        return ((delegate* unmanaged<ISpAudio*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[10]))((ISpAudio*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(10)]
-        public HRESULT LockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType)
-        {
-            return ((delegate* unmanaged<ISpAudio*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[10]))((ISpAudio*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT UnlockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType)
+    {
+        return ((delegate* unmanaged<ISpAudio*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[11]))((ISpAudio*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(11)]
-        public HRESULT UnlockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType)
-        {
-            return ((delegate* unmanaged<ISpAudio*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[11]))((ISpAudio*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT Stat(STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag)
+    {
+        return ((delegate* unmanaged<ISpAudio*, STATSTG*, uint, int>)(lpVtbl[12]))((ISpAudio*)Unsafe.AsPointer(ref this), pstatstg, grfStatFlag);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(12)]
-        public HRESULT Stat(STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag)
-        {
-            return ((delegate* unmanaged<ISpAudio*, STATSTG*, uint, int>)(lpVtbl[12]))((ISpAudio*)Unsafe.AsPointer(ref this), pstatstg, grfStatFlag);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT Clone(IStream** ppstm)
+    {
+        return ((delegate* unmanaged<ISpAudio*, IStream**, int>)(lpVtbl[13]))((ISpAudio*)Unsafe.AsPointer(ref this), ppstm);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(13)]
-        public HRESULT Clone(IStream** ppstm)
-        {
-            return ((delegate* unmanaged<ISpAudio*, IStream**, int>)(lpVtbl[13]))((ISpAudio*)Unsafe.AsPointer(ref this), ppstm);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT GetFormat(Guid* pguidFormatId, WAVEFORMATEX** ppCoMemWaveFormatEx)
+    {
+        return ((delegate* unmanaged<ISpAudio*, Guid*, WAVEFORMATEX**, int>)(lpVtbl[14]))((ISpAudio*)Unsafe.AsPointer(ref this), pguidFormatId, ppCoMemWaveFormatEx);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(14)]
-        public HRESULT GetFormat(Guid* pguidFormatId, WAVEFORMATEX** ppCoMemWaveFormatEx)
-        {
-            return ((delegate* unmanaged<ISpAudio*, Guid*, WAVEFORMATEX**, int>)(lpVtbl[14]))((ISpAudio*)Unsafe.AsPointer(ref this), pguidFormatId, ppCoMemWaveFormatEx);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT SetState(SPAUDIOSTATE NewState, [NativeTypeName("ULONGLONG")] ulong ullReserved)
+    {
+        return ((delegate* unmanaged<ISpAudio*, SPAUDIOSTATE, ulong, int>)(lpVtbl[15]))((ISpAudio*)Unsafe.AsPointer(ref this), NewState, ullReserved);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT SetFormat([NativeTypeName("const GUID &")] Guid* rguidFmtId, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pWaveFormatEx)
+    {
+        return ((delegate* unmanaged<ISpAudio*, Guid*, WAVEFORMATEX*, int>)(lpVtbl[16]))((ISpAudio*)Unsafe.AsPointer(ref this), rguidFmtId, pWaveFormatEx);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT GetStatus(SPAUDIOSTATUS* pStatus)
+    {
+        return ((delegate* unmanaged<ISpAudio*, SPAUDIOSTATUS*, int>)(lpVtbl[17]))((ISpAudio*)Unsafe.AsPointer(ref this), pStatus);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT SetBufferInfo([NativeTypeName("const SPAUDIOBUFFERINFO *")] SPAUDIOBUFFERINFO* pBuffInfo)
+    {
+        return ((delegate* unmanaged<ISpAudio*, SPAUDIOBUFFERINFO*, int>)(lpVtbl[18]))((ISpAudio*)Unsafe.AsPointer(ref this), pBuffInfo);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
+    public HRESULT GetBufferInfo(SPAUDIOBUFFERINFO* pBuffInfo)
+    {
+        return ((delegate* unmanaged<ISpAudio*, SPAUDIOBUFFERINFO*, int>)(lpVtbl[19]))((ISpAudio*)Unsafe.AsPointer(ref this), pBuffInfo);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(20)]
+    public HRESULT GetDefaultFormat(Guid* pFormatId, WAVEFORMATEX** ppCoMemWaveFormatEx)
+    {
+        return ((delegate* unmanaged<ISpAudio*, Guid*, WAVEFORMATEX**, int>)(lpVtbl[20]))((ISpAudio*)Unsafe.AsPointer(ref this), pFormatId, ppCoMemWaveFormatEx);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(21)]
+    public HANDLE EventHandle()
+    {
+        return ((HANDLE)(((delegate* unmanaged<ISpAudio*, void*>)(lpVtbl[21]))((ISpAudio*)Unsafe.AsPointer(ref this))));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(22)]
+    public HRESULT GetVolumeLevel([NativeTypeName("ULONG *")] uint* pLevel)
+    {
+        return ((delegate* unmanaged<ISpAudio*, uint*, int>)(lpVtbl[22]))((ISpAudio*)Unsafe.AsPointer(ref this), pLevel);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(23)]
+    public HRESULT SetVolumeLevel([NativeTypeName("ULONG")] uint Level)
+    {
+        return ((delegate* unmanaged<ISpAudio*, uint, int>)(lpVtbl[23]))((ISpAudio*)Unsafe.AsPointer(ref this), Level);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(24)]
+    public HRESULT GetBufferNotifySize([NativeTypeName("ULONG *")] uint* pcbSize)
+    {
+        return ((delegate* unmanaged<ISpAudio*, uint*, int>)(lpVtbl[24]))((ISpAudio*)Unsafe.AsPointer(ref this), pcbSize);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(25)]
+    public HRESULT SetBufferNotifySize([NativeTypeName("ULONG")] uint cbSize)
+    {
+        return ((delegate* unmanaged<ISpAudio*, uint, int>)(lpVtbl[25]))((ISpAudio*)Unsafe.AsPointer(ref this), cbSize);
+    }
+
+    public interface Interface : ISpStreamFormat.Interface
+    {
         [VtblIndex(15)]
-        public HRESULT SetState(SPAUDIOSTATE NewState, [NativeTypeName("ULONGLONG")] ulong ullReserved)
-        {
-            return ((delegate* unmanaged<ISpAudio*, SPAUDIOSTATE, ulong, int>)(lpVtbl[15]))((ISpAudio*)Unsafe.AsPointer(ref this), NewState, ullReserved);
-        }
+        HRESULT SetState(SPAUDIOSTATE NewState, [NativeTypeName("ULONGLONG")] ulong ullReserved);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT SetFormat([NativeTypeName("const GUID &")] Guid* rguidFmtId, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pWaveFormatEx)
-        {
-            return ((delegate* unmanaged<ISpAudio*, Guid*, WAVEFORMATEX*, int>)(lpVtbl[16]))((ISpAudio*)Unsafe.AsPointer(ref this), rguidFmtId, pWaveFormatEx);
-        }
+        HRESULT SetFormat([NativeTypeName("const GUID &")] Guid* rguidFmtId, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pWaveFormatEx);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT GetStatus(SPAUDIOSTATUS* pStatus)
-        {
-            return ((delegate* unmanaged<ISpAudio*, SPAUDIOSTATUS*, int>)(lpVtbl[17]))((ISpAudio*)Unsafe.AsPointer(ref this), pStatus);
-        }
+        HRESULT GetStatus(SPAUDIOSTATUS* pStatus);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT SetBufferInfo([NativeTypeName("const SPAUDIOBUFFERINFO *")] SPAUDIOBUFFERINFO* pBuffInfo)
-        {
-            return ((delegate* unmanaged<ISpAudio*, SPAUDIOBUFFERINFO*, int>)(lpVtbl[18]))((ISpAudio*)Unsafe.AsPointer(ref this), pBuffInfo);
-        }
+        HRESULT SetBufferInfo([NativeTypeName("const SPAUDIOBUFFERINFO *")] SPAUDIOBUFFERINFO* pBuffInfo);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT GetBufferInfo(SPAUDIOBUFFERINFO* pBuffInfo)
-        {
-            return ((delegate* unmanaged<ISpAudio*, SPAUDIOBUFFERINFO*, int>)(lpVtbl[19]))((ISpAudio*)Unsafe.AsPointer(ref this), pBuffInfo);
-        }
+        HRESULT GetBufferInfo(SPAUDIOBUFFERINFO* pBuffInfo);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT GetDefaultFormat(Guid* pFormatId, WAVEFORMATEX** ppCoMemWaveFormatEx)
-        {
-            return ((delegate* unmanaged<ISpAudio*, Guid*, WAVEFORMATEX**, int>)(lpVtbl[20]))((ISpAudio*)Unsafe.AsPointer(ref this), pFormatId, ppCoMemWaveFormatEx);
-        }
+        HRESULT GetDefaultFormat(Guid* pFormatId, WAVEFORMATEX** ppCoMemWaveFormatEx);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public HANDLE EventHandle()
-        {
-            return ((HANDLE)(((delegate* unmanaged<ISpAudio*, void*>)(lpVtbl[21]))((ISpAudio*)Unsafe.AsPointer(ref this))));
-        }
+        HANDLE EventHandle();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        public HRESULT GetVolumeLevel([NativeTypeName("ULONG *")] uint* pLevel)
-        {
-            return ((delegate* unmanaged<ISpAudio*, uint*, int>)(lpVtbl[22]))((ISpAudio*)Unsafe.AsPointer(ref this), pLevel);
-        }
+        HRESULT GetVolumeLevel([NativeTypeName("ULONG *")] uint* pLevel);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        public HRESULT SetVolumeLevel([NativeTypeName("ULONG")] uint Level)
-        {
-            return ((delegate* unmanaged<ISpAudio*, uint, int>)(lpVtbl[23]))((ISpAudio*)Unsafe.AsPointer(ref this), Level);
-        }
+        HRESULT SetVolumeLevel([NativeTypeName("ULONG")] uint Level);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT GetBufferNotifySize([NativeTypeName("ULONG *")] uint* pcbSize)
-        {
-            return ((delegate* unmanaged<ISpAudio*, uint*, int>)(lpVtbl[24]))((ISpAudio*)Unsafe.AsPointer(ref this), pcbSize);
-        }
+        HRESULT GetBufferNotifySize([NativeTypeName("ULONG *")] uint* pcbSize);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        public HRESULT SetBufferNotifySize([NativeTypeName("ULONG")] uint cbSize)
-        {
-            return ((delegate* unmanaged<ISpAudio*, uint, int>)(lpVtbl[25]))((ISpAudio*)Unsafe.AsPointer(ref this), cbSize);
-        }
+        HRESULT SetBufferNotifySize([NativeTypeName("ULONG")] uint cbSize);
+    }
 
-        public interface Interface : ISpStreamFormat.Interface
-        {
-            [VtblIndex(15)]
-            HRESULT SetState(SPAUDIOSTATE NewState, [NativeTypeName("ULONGLONG")] ulong ullReserved);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(16)]
-            HRESULT SetFormat([NativeTypeName("const GUID &")] Guid* rguidFmtId, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pWaveFormatEx);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, uint> AddRef;
 
-            [VtblIndex(17)]
-            HRESULT GetStatus(SPAUDIOSTATUS* pStatus);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, uint> Release;
 
-            [VtblIndex(18)]
-            HRESULT SetBufferInfo([NativeTypeName("const SPAUDIOBUFFERINFO *")] SPAUDIOBUFFERINFO* pBuffInfo);
+        [NativeTypeName("HRESULT (void *, ULONG, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, void*, uint, uint*, int> Read;
 
-            [VtblIndex(19)]
-            HRESULT GetBufferInfo(SPAUDIOBUFFERINFO* pBuffInfo);
+        [NativeTypeName("HRESULT (const void *, ULONG, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, void*, uint, uint*, int> Write;
 
-            [VtblIndex(20)]
-            HRESULT GetDefaultFormat(Guid* pFormatId, WAVEFORMATEX** ppCoMemWaveFormatEx);
+        [NativeTypeName("HRESULT (LARGE_INTEGER, DWORD, ULARGE_INTEGER *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int> Seek;
 
-            [VtblIndex(21)]
-            HANDLE EventHandle();
+        [NativeTypeName("HRESULT (ULARGE_INTEGER) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, ULARGE_INTEGER, int> SetSize;
 
-            [VtblIndex(22)]
-            HRESULT GetVolumeLevel([NativeTypeName("ULONG *")] uint* pLevel);
+        [NativeTypeName("HRESULT (IStream *, ULARGE_INTEGER, ULARGE_INTEGER *, ULARGE_INTEGER *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int> CopyTo;
 
-            [VtblIndex(23)]
-            HRESULT SetVolumeLevel([NativeTypeName("ULONG")] uint Level);
+        [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, uint, int> Commit;
 
-            [VtblIndex(24)]
-            HRESULT GetBufferNotifySize([NativeTypeName("ULONG *")] uint* pcbSize);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, int> Revert;
 
-            [VtblIndex(25)]
-            HRESULT SetBufferNotifySize([NativeTypeName("ULONG")] uint cbSize);
-        }
+        [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> LockRegion;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> UnlockRegion;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, uint> AddRef;
+        [NativeTypeName("HRESULT (STATSTG *, DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, STATSTG*, uint, int> Stat;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, uint> Release;
+        [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, IStream**, int> Clone;
 
-            [NativeTypeName("HRESULT (void *, ULONG, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, void*, uint, uint*, int> Read;
+        [NativeTypeName("HRESULT (GUID *, WAVEFORMATEX **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, Guid*, WAVEFORMATEX**, int> GetFormat;
 
-            [NativeTypeName("HRESULT (const void *, ULONG, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, void*, uint, uint*, int> Write;
+        [NativeTypeName("HRESULT (SPAUDIOSTATE, ULONGLONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, SPAUDIOSTATE, ulong, int> SetState;
 
-            [NativeTypeName("HRESULT (LARGE_INTEGER, DWORD, ULARGE_INTEGER *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int> Seek;
+        [NativeTypeName("HRESULT (const GUID &, const WAVEFORMATEX *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, Guid*, WAVEFORMATEX*, int> SetFormat;
 
-            [NativeTypeName("HRESULT (ULARGE_INTEGER) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, ULARGE_INTEGER, int> SetSize;
+        [NativeTypeName("HRESULT (SPAUDIOSTATUS *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, SPAUDIOSTATUS*, int> GetStatus;
 
-            [NativeTypeName("HRESULT (IStream *, ULARGE_INTEGER, ULARGE_INTEGER *, ULARGE_INTEGER *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int> CopyTo;
+        [NativeTypeName("HRESULT (const SPAUDIOBUFFERINFO *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, SPAUDIOBUFFERINFO*, int> SetBufferInfo;
 
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, uint, int> Commit;
+        [NativeTypeName("HRESULT (SPAUDIOBUFFERINFO *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, SPAUDIOBUFFERINFO*, int> GetBufferInfo;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, int> Revert;
+        [NativeTypeName("HRESULT (GUID *, WAVEFORMATEX **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, Guid*, WAVEFORMATEX**, int> GetDefaultFormat;
 
-            [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> LockRegion;
+        [NativeTypeName("HANDLE () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, void*> EventHandle;
 
-            [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> UnlockRegion;
+        [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, uint*, int> GetVolumeLevel;
 
-            [NativeTypeName("HRESULT (STATSTG *, DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, STATSTG*, uint, int> Stat;
+        [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, uint, int> SetVolumeLevel;
 
-            [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, IStream**, int> Clone;
+        [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, uint*, int> GetBufferNotifySize;
 
-            [NativeTypeName("HRESULT (GUID *, WAVEFORMATEX **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, Guid*, WAVEFORMATEX**, int> GetFormat;
-
-            [NativeTypeName("HRESULT (SPAUDIOSTATE, ULONGLONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, SPAUDIOSTATE, ulong, int> SetState;
-
-            [NativeTypeName("HRESULT (const GUID &, const WAVEFORMATEX *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, Guid*, WAVEFORMATEX*, int> SetFormat;
-
-            [NativeTypeName("HRESULT (SPAUDIOSTATUS *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, SPAUDIOSTATUS*, int> GetStatus;
-
-            [NativeTypeName("HRESULT (const SPAUDIOBUFFERINFO *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, SPAUDIOBUFFERINFO*, int> SetBufferInfo;
-
-            [NativeTypeName("HRESULT (SPAUDIOBUFFERINFO *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, SPAUDIOBUFFERINFO*, int> GetBufferInfo;
-
-            [NativeTypeName("HRESULT (GUID *, WAVEFORMATEX **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, Guid*, WAVEFORMATEX**, int> GetDefaultFormat;
-
-            [NativeTypeName("HANDLE () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, void*> EventHandle;
-
-            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, uint*, int> GetVolumeLevel;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, uint, int> SetVolumeLevel;
-
-            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, uint*, int> GetBufferNotifySize;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpAudio*, uint, int> SetBufferNotifySize;
-        }
+        [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpAudio*, uint, int> SetBufferNotifySize;
     }
 }

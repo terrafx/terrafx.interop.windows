@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum MF_VIDEO_PROCESSOR_ROTATION
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum MF_VIDEO_PROCESSOR_ROTATION
-    {
-        ROTATION_NONE = 0,
-        ROTATION_NORMAL = 1,
-    }
+    ROTATION_NONE = 0,
+    ROTATION_NORMAL = 1,
 }

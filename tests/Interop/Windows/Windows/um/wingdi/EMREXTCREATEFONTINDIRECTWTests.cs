@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="EMREXTCREATEFONTINDIRECTW" /> struct.</summary>
+public static unsafe partial class EMREXTCREATEFONTINDIRECTWTests
 {
-    /// <summary>Provides validation of the <see cref="EMREXTCREATEFONTINDIRECTW" /> struct.</summary>
-    public static unsafe partial class EMREXTCREATEFONTINDIRECTWTests
+    /// <summary>Validates that the <see cref="EMREXTCREATEFONTINDIRECTW" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="EMREXTCREATEFONTINDIRECTW" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<EMREXTCREATEFONTINDIRECTW>(), Is.EqualTo(sizeof(EMREXTCREATEFONTINDIRECTW)));
-        }
+        Assert.That(Marshal.SizeOf<EMREXTCREATEFONTINDIRECTW>(), Is.EqualTo(sizeof(EMREXTCREATEFONTINDIRECTW)));
+    }
 
-        /// <summary>Validates that the <see cref="EMREXTCREATEFONTINDIRECTW" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(EMREXTCREATEFONTINDIRECTW).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="EMREXTCREATEFONTINDIRECTW" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(EMREXTCREATEFONTINDIRECTW).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="EMREXTCREATEFONTINDIRECTW" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(EMREXTCREATEFONTINDIRECTW), Is.EqualTo(332));
-        }
+    /// <summary>Validates that the <see cref="EMREXTCREATEFONTINDIRECTW" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(EMREXTCREATEFONTINDIRECTW), Is.EqualTo(332));
     }
 }

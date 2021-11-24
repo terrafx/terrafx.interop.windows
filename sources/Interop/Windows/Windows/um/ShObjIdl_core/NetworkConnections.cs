@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("7007ACC7-3202-11D1-AAD2-00805FC1270E")]
+public partial struct NetworkConnections
 {
-    [Guid("7007ACC7-3202-11D1-AAD2-00805FC1270E")]
-    public partial struct NetworkConnections
-    {
-    }
 }

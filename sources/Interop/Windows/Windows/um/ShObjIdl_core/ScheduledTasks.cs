@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("D6277990-4C6A-11CF-8D87-00AA0060F5BF")]
+public partial struct ScheduledTasks
 {
-    [Guid("D6277990-4C6A-11CF-8D87-00AA0060F5BF")]
-    public partial struct ScheduledTasks
-    {
-    }
 }

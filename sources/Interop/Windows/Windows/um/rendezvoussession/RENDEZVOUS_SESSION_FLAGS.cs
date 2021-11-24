@@ -5,16 +5,15 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum RENDEZVOUS_SESSION_FLAGS
 {
-    [Flags]
-    public enum RENDEZVOUS_SESSION_FLAGS
-    {
-        RSF_NONE = 0,
-        RSF_INVITER = 0x1,
-        RSF_INVITEE = 0x2,
-        RSF_ORIGINAL_INVITER = 0x4,
-        RSF_REMOTE_LEGACYSESSION = 0x8,
-        RSF_REMOTE_WIN7SESSION = 0x10,
-    }
+    RSF_NONE = 0,
+    RSF_INVITER = 0x1,
+    RSF_INVITEE = 0x2,
+    RSF_ORIGINAL_INVITER = 0x4,
+    RSF_REMOTE_LEGACYSESSION = 0x8,
+    RSF_REMOTE_WIN7SESSION = 0x10,
 }

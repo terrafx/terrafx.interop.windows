@@ -7,32 +7,31 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct FILEGROUPDESCRIPTORW
 {
+    public uint cItems;
+
+    [NativeTypeName("FILEDESCRIPTORW [1]")]
+    public _fgd_e__FixedBuffer fgd;
+
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct FILEGROUPDESCRIPTORW
+    public partial struct _fgd_e__FixedBuffer
     {
-        public uint cItems;
+        public FILEDESCRIPTORW e0;
 
-        [NativeTypeName("FILEDESCRIPTORW [1]")]
-        public _fgd_e__FixedBuffer fgd;
-
-        [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public partial struct _fgd_e__FixedBuffer
+        public ref FILEDESCRIPTORW this[int index]
         {
-            public FILEDESCRIPTORW e0;
-
-            public ref FILEDESCRIPTORW this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<FILEDESCRIPTORW> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<FILEDESCRIPTORW> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

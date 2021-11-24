@@ -5,11 +5,10 @@
 
 using static TerraFX.Interop.Windows.SPLEXICONTYPE;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechLexiconType
 {
-    public enum SpeechLexiconType
-    {
-        SLTUser = eLEXTYPE_USER,
-        SLTApp = eLEXTYPE_APP,
-    }
+    SLTUser = eLEXTYPE_USER,
+    SLTApp = eLEXTYPE_APP,
 }

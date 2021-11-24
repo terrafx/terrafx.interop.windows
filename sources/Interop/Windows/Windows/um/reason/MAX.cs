@@ -3,23 +3,22 @@
 // Ported from um/reason.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class MAX
 {
-    public static partial class MAX
-    {
-        [NativeTypeName("#define MAX_REASON_NAME_LEN 64")]
-        public const int MAX_REASON_NAME_LEN = 64;
+    [NativeTypeName("#define MAX_REASON_NAME_LEN 64")]
+    public const int MAX_REASON_NAME_LEN = 64;
 
-        [NativeTypeName("#define MAX_REASON_DESC_LEN 256")]
-        public const int MAX_REASON_DESC_LEN = 256;
+    [NativeTypeName("#define MAX_REASON_DESC_LEN 256")]
+    public const int MAX_REASON_DESC_LEN = 256;
 
-        [NativeTypeName("#define MAX_REASON_BUGID_LEN 32")]
-        public const int MAX_REASON_BUGID_LEN = 32;
+    [NativeTypeName("#define MAX_REASON_BUGID_LEN 32")]
+    public const int MAX_REASON_BUGID_LEN = 32;
 
-        [NativeTypeName("#define MAX_REASON_COMMENT_LEN 512")]
-        public const int MAX_REASON_COMMENT_LEN = 512;
+    [NativeTypeName("#define MAX_REASON_COMMENT_LEN 512")]
+    public const int MAX_REASON_COMMENT_LEN = 512;
 
-        [NativeTypeName("#define MAX_NUM_REASONS 256")]
-        public const int MAX_NUM_REASONS = 256;
-    }
+    [NativeTypeName("#define MAX_NUM_REASONS 256")]
+    public const int MAX_NUM_REASONS = 256;
 }

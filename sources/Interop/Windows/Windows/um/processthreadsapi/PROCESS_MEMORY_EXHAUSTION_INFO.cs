@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.10586.0")]
+public partial struct PROCESS_MEMORY_EXHAUSTION_INFO
 {
-    [SupportedOSPlatform("windows10.0.10586.0")]
-    public partial struct PROCESS_MEMORY_EXHAUSTION_INFO
-    {
-        public ushort Version;
+    public ushort Version;
 
-        public ushort Reserved;
+    public ushort Reserved;
 
-        public PROCESS_MEMORY_EXHAUSTION_TYPE Type;
+    public PROCESS_MEMORY_EXHAUSTION_TYPE Type;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint Value;
-    }
+    [NativeTypeName("ULONG_PTR")]
+    public nuint Value;
 }

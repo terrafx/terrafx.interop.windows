@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="EMRSETMAPPERFLAGS" /> struct.</summary>
+public static unsafe partial class EMRSETMAPPERFLAGSTests
 {
-    /// <summary>Provides validation of the <see cref="EMRSETMAPPERFLAGS" /> struct.</summary>
-    public static unsafe partial class EMRSETMAPPERFLAGSTests
+    /// <summary>Validates that the <see cref="EMRSETMAPPERFLAGS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="EMRSETMAPPERFLAGS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<EMRSETMAPPERFLAGS>(), Is.EqualTo(sizeof(EMRSETMAPPERFLAGS)));
-        }
+        Assert.That(Marshal.SizeOf<EMRSETMAPPERFLAGS>(), Is.EqualTo(sizeof(EMRSETMAPPERFLAGS)));
+    }
 
-        /// <summary>Validates that the <see cref="EMRSETMAPPERFLAGS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(EMRSETMAPPERFLAGS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="EMRSETMAPPERFLAGS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(EMRSETMAPPERFLAGS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="EMRSETMAPPERFLAGS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(EMRSETMAPPERFLAGS), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="EMRSETMAPPERFLAGS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(EMRSETMAPPERFLAGS), Is.EqualTo(12));
     }
 }

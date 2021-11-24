@@ -3,16 +3,15 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CHANGER_SEND_VOLUME_TAG_INFORMATION
 {
-    public unsafe partial struct CHANGER_SEND_VOLUME_TAG_INFORMATION
-    {
-        public CHANGER_ELEMENT StartingElement;
+    public CHANGER_ELEMENT StartingElement;
 
-        [NativeTypeName("DWORD")]
-        public uint ActionCode;
+    [NativeTypeName("DWORD")]
+    public uint ActionCode;
 
-        [NativeTypeName("BYTE [40]")]
-        public fixed byte VolumeIDTemplate[40];
-    }
+    [NativeTypeName("BYTE [40]")]
+    public fixed byte VolumeIDTemplate[40];
 }

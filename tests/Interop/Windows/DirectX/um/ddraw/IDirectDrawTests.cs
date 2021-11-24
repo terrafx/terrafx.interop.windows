@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDirectDraw" /> struct.</summary>
+public static unsafe partial class IDirectDrawTests
 {
-    /// <summary>Provides validation of the <see cref="IDirectDraw" /> struct.</summary>
-    public static unsafe partial class IDirectDrawTests
+    /// <summary>Validates that the <see cref="IDirectDraw" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IDirectDraw" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDirectDraw>(), Is.EqualTo(sizeof(IDirectDraw)));
-        }
+        Assert.That(Marshal.SizeOf<IDirectDraw>(), Is.EqualTo(sizeof(IDirectDraw)));
+    }
 
-        /// <summary>Validates that the <see cref="IDirectDraw" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDirectDraw).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDirectDraw" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDirectDraw).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDirectDraw" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDirectDraw" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDirectDraw), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDirectDraw), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDirectDraw), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDirectDraw), Is.EqualTo(4));
         }
     }
 }

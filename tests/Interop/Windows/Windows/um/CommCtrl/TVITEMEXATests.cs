@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TVITEMEXA" /> struct.</summary>
+public static unsafe partial class TVITEMEXATests
 {
-    /// <summary>Provides validation of the <see cref="TVITEMEXA" /> struct.</summary>
-    public static unsafe partial class TVITEMEXATests
+    /// <summary>Validates that the <see cref="TVITEMEXA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TVITEMEXA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TVITEMEXA>(), Is.EqualTo(sizeof(TVITEMEXA)));
-        }
+        Assert.That(Marshal.SizeOf<TVITEMEXA>(), Is.EqualTo(sizeof(TVITEMEXA)));
+    }
 
-        /// <summary>Validates that the <see cref="TVITEMEXA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TVITEMEXA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TVITEMEXA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TVITEMEXA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TVITEMEXA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="TVITEMEXA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(TVITEMEXA), Is.EqualTo(80));
-            }
-            else
-            {
-                Assert.That(sizeof(TVITEMEXA), Is.EqualTo(60));
-            }
+            Assert.That(sizeof(TVITEMEXA), Is.EqualTo(80));
+        }
+        else
+        {
+            Assert.That(sizeof(TVITEMEXA), Is.EqualTo(60));
         }
     }
 }

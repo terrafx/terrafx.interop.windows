@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLNextIdElement" /> struct.</summary>
+public static unsafe partial class HTMLNextIdElementTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLNextIdElement" /> struct.</summary>
-    public static unsafe partial class HTMLNextIdElementTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLNextIdElement" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLNextIdElement" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLNextIdElement).GUID, Is.EqualTo(IID_HTMLNextIdElement));
-        }
+        Assert.That(typeof(HTMLNextIdElement).GUID, Is.EqualTo(IID_HTMLNextIdElement));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLNextIdElement" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLNextIdElement>(), Is.EqualTo(sizeof(HTMLNextIdElement)));
-        }
+    /// <summary>Validates that the <see cref="HTMLNextIdElement" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLNextIdElement>(), Is.EqualTo(sizeof(HTMLNextIdElement)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLNextIdElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLNextIdElement).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLNextIdElement" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLNextIdElement).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLNextIdElement" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HTMLNextIdElement), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="HTMLNextIdElement" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HTMLNextIdElement), Is.EqualTo(1));
     }
 }

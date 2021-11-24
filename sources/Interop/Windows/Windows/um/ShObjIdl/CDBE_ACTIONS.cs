@@ -3,12 +3,11 @@
 // Ported from um/ShObjIdl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum CDBE_ACTIONS
 {
-    public enum CDBE_ACTIONS
-    {
-        CDBE_TYPE_MUSIC = 0x1,
-        CDBE_TYPE_DATA = 0x2,
-        CDBE_TYPE_ALL = unchecked((int)(0xffffffff)),
-    }
+    CDBE_TYPE_MUSIC = 0x1,
+    CDBE_TYPE_DATA = 0x2,
+    CDBE_TYPE_ALL = unchecked((int)(0xffffffff)),
 }

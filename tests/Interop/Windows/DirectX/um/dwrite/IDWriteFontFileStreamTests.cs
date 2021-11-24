@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDWriteFontFileStream" /> struct.</summary>
+public static unsafe partial class IDWriteFontFileStreamTests
 {
-    /// <summary>Provides validation of the <see cref="IDWriteFontFileStream" /> struct.</summary>
-    public static unsafe partial class IDWriteFontFileStreamTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWriteFontFileStream" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWriteFontFileStream" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDWriteFontFileStream).GUID, Is.EqualTo(IID_IDWriteFontFileStream));
-        }
+        Assert.That(typeof(IDWriteFontFileStream).GUID, Is.EqualTo(IID_IDWriteFontFileStream));
+    }
 
-        /// <summary>Validates that the <see cref="IDWriteFontFileStream" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDWriteFontFileStream>(), Is.EqualTo(sizeof(IDWriteFontFileStream)));
-        }
+    /// <summary>Validates that the <see cref="IDWriteFontFileStream" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDWriteFontFileStream>(), Is.EqualTo(sizeof(IDWriteFontFileStream)));
+    }
 
-        /// <summary>Validates that the <see cref="IDWriteFontFileStream" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDWriteFontFileStream).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDWriteFontFileStream" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDWriteFontFileStream).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDWriteFontFileStream" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDWriteFontFileStream" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDWriteFontFileStream), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDWriteFontFileStream), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDWriteFontFileStream), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDWriteFontFileStream), Is.EqualTo(4));
         }
     }
 }

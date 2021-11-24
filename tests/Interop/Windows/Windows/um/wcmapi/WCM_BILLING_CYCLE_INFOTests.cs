@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WCM_BILLING_CYCLE_INFO" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class WCM_BILLING_CYCLE_INFOTests
 {
-    /// <summary>Provides validation of the <see cref="WCM_BILLING_CYCLE_INFO" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class WCM_BILLING_CYCLE_INFOTests
+    /// <summary>Validates that the <see cref="WCM_BILLING_CYCLE_INFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WCM_BILLING_CYCLE_INFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WCM_BILLING_CYCLE_INFO>(), Is.EqualTo(sizeof(WCM_BILLING_CYCLE_INFO)));
-        }
+        Assert.That(Marshal.SizeOf<WCM_BILLING_CYCLE_INFO>(), Is.EqualTo(sizeof(WCM_BILLING_CYCLE_INFO)));
+    }
 
-        /// <summary>Validates that the <see cref="WCM_BILLING_CYCLE_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WCM_BILLING_CYCLE_INFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WCM_BILLING_CYCLE_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WCM_BILLING_CYCLE_INFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WCM_BILLING_CYCLE_INFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(WCM_BILLING_CYCLE_INFO), Is.EqualTo(28));
-        }
+    /// <summary>Validates that the <see cref="WCM_BILLING_CYCLE_INFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(WCM_BILLING_CYCLE_INFO), Is.EqualTo(28));
     }
 }

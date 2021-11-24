@@ -5,15 +5,14 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct MIDIPROPTIMEDIV
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbStruct;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint dwTimeDiv;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct MIDIPROPTIMEDIV
+{
+    [NativeTypeName("DWORD")]
+    public uint cbStruct;
+
+    [NativeTypeName("DWORD")]
+    public uint dwTimeDiv;
 }

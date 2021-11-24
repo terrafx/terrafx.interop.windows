@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NEWCPLINFOA" /> struct.</summary>
+public static unsafe partial class NEWCPLINFOATests
 {
-    /// <summary>Provides validation of the <see cref="NEWCPLINFOA" /> struct.</summary>
-    public static unsafe partial class NEWCPLINFOATests
+    /// <summary>Validates that the <see cref="NEWCPLINFOA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NEWCPLINFOA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NEWCPLINFOA>(), Is.EqualTo(sizeof(NEWCPLINFOA)));
-        }
+        Assert.That(Marshal.SizeOf<NEWCPLINFOA>(), Is.EqualTo(sizeof(NEWCPLINFOA)));
+    }
 
-        /// <summary>Validates that the <see cref="NEWCPLINFOA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NEWCPLINFOA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NEWCPLINFOA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NEWCPLINFOA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NEWCPLINFOA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="NEWCPLINFOA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(NEWCPLINFOA), Is.EqualTo(252));
-            }
-            else
-            {
-                Assert.That(sizeof(NEWCPLINFOA), Is.EqualTo(244));
-            }
+            Assert.That(sizeof(NEWCPLINFOA), Is.EqualTo(252));
+        }
+        else
+        {
+            Assert.That(sizeof(NEWCPLINFOA), Is.EqualTo(244));
         }
     }
 }

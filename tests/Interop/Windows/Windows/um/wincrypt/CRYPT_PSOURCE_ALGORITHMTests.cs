@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CRYPT_PSOURCE_ALGORITHM" /> struct.</summary>
+public static unsafe partial class CRYPT_PSOURCE_ALGORITHMTests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_PSOURCE_ALGORITHM" /> struct.</summary>
-    public static unsafe partial class CRYPT_PSOURCE_ALGORITHMTests
+    /// <summary>Validates that the <see cref="CRYPT_PSOURCE_ALGORITHM" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CRYPT_PSOURCE_ALGORITHM" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CRYPT_PSOURCE_ALGORITHM>(), Is.EqualTo(sizeof(CRYPT_PSOURCE_ALGORITHM)));
-        }
+        Assert.That(Marshal.SizeOf<CRYPT_PSOURCE_ALGORITHM>(), Is.EqualTo(sizeof(CRYPT_PSOURCE_ALGORITHM)));
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_PSOURCE_ALGORITHM" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CRYPT_PSOURCE_ALGORITHM).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CRYPT_PSOURCE_ALGORITHM" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CRYPT_PSOURCE_ALGORITHM).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_PSOURCE_ALGORITHM" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CRYPT_PSOURCE_ALGORITHM" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CRYPT_PSOURCE_ALGORITHM), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(CRYPT_PSOURCE_ALGORITHM), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(CRYPT_PSOURCE_ALGORITHM), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(CRYPT_PSOURCE_ALGORITHM), Is.EqualTo(12));
         }
     }
 }

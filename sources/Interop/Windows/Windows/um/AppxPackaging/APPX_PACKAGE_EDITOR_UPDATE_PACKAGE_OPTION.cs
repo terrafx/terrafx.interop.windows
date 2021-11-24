@@ -5,11 +5,10 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public enum APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION
 {
-    [SupportedOSPlatform("windows10.0")]
-    public enum APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION
-    {
-        APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION_APPEND_DELTA = 0,
-    }
+    APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION_APPEND_DELTA = 0,
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DATAINFO" /> struct.</summary>
+public static unsafe partial class DATAINFOTests
 {
-    /// <summary>Provides validation of the <see cref="DATAINFO" /> struct.</summary>
-    public static unsafe partial class DATAINFOTests
+    /// <summary>Validates that the <see cref="DATAINFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DATAINFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DATAINFO>(), Is.EqualTo(sizeof(DATAINFO)));
-        }
+        Assert.That(Marshal.SizeOf<DATAINFO>(), Is.EqualTo(sizeof(DATAINFO)));
+    }
 
-        /// <summary>Validates that the <see cref="DATAINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DATAINFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DATAINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DATAINFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DATAINFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DATAINFO), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="DATAINFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DATAINFO), Is.EqualTo(16));
     }
 }

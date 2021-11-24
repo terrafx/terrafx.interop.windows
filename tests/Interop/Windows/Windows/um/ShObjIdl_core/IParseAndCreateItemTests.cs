@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IParseAndCreateItem" /> struct.</summary>
+public static unsafe partial class IParseAndCreateItemTests
 {
-    /// <summary>Provides validation of the <see cref="IParseAndCreateItem" /> struct.</summary>
-    public static unsafe partial class IParseAndCreateItemTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IParseAndCreateItem" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IParseAndCreateItem" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IParseAndCreateItem).GUID, Is.EqualTo(IID_IParseAndCreateItem));
-        }
+        Assert.That(typeof(IParseAndCreateItem).GUID, Is.EqualTo(IID_IParseAndCreateItem));
+    }
 
-        /// <summary>Validates that the <see cref="IParseAndCreateItem" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IParseAndCreateItem>(), Is.EqualTo(sizeof(IParseAndCreateItem)));
-        }
+    /// <summary>Validates that the <see cref="IParseAndCreateItem" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IParseAndCreateItem>(), Is.EqualTo(sizeof(IParseAndCreateItem)));
+    }
 
-        /// <summary>Validates that the <see cref="IParseAndCreateItem" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IParseAndCreateItem).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IParseAndCreateItem" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IParseAndCreateItem).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IParseAndCreateItem" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IParseAndCreateItem" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IParseAndCreateItem), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IParseAndCreateItem), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IParseAndCreateItem), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IParseAndCreateItem), Is.EqualTo(4));
         }
     }
 }

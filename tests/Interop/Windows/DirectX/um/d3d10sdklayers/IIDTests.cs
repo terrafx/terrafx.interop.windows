@@ -7,30 +7,29 @@ using NUnit.Framework;
 using System;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IID" /> class.</summary>
+public static partial class IIDTests
 {
-    /// <summary>Provides validation of the <see cref="IID" /> class.</summary>
-    public static partial class IIDTests
+    /// <summary>Validates that the value of the <see cref="IID_ID3D10Debug" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D10DebugTest()
     {
-        /// <summary>Validates that the value of the <see cref="IID_ID3D10Debug" /> property is correct.</summary>
-        [Test]
-        public static void IID_ID3D10DebugTest()
-        {
-            Assert.That(IID_ID3D10Debug, Is.EqualTo(new Guid(0x9B7E4E01, 0x342C, 0x4106, 0xA1, 0x9F, 0x4F, 0x27, 0x04, 0xF6, 0x89, 0xF0)));
-        }
+        Assert.That(IID_ID3D10Debug, Is.EqualTo(new Guid(0x9B7E4E01, 0x342C, 0x4106, 0xA1, 0x9F, 0x4F, 0x27, 0x04, 0xF6, 0x89, 0xF0)));
+    }
 
-        /// <summary>Validates that the value of the <see cref="IID_ID3D10SwitchToRef" /> property is correct.</summary>
-        [Test]
-        public static void IID_ID3D10SwitchToRefTest()
-        {
-            Assert.That(IID_ID3D10SwitchToRef, Is.EqualTo(new Guid(0x9B7E4E02, 0x342C, 0x4106, 0xA1, 0x9F, 0x4F, 0x27, 0x04, 0xF6, 0x89, 0xF0)));
-        }
+    /// <summary>Validates that the value of the <see cref="IID_ID3D10SwitchToRef" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D10SwitchToRefTest()
+    {
+        Assert.That(IID_ID3D10SwitchToRef, Is.EqualTo(new Guid(0x9B7E4E02, 0x342C, 0x4106, 0xA1, 0x9F, 0x4F, 0x27, 0x04, 0xF6, 0x89, 0xF0)));
+    }
 
-        /// <summary>Validates that the value of the <see cref="IID_ID3D10InfoQueue" /> property is correct.</summary>
-        [Test]
-        public static void IID_ID3D10InfoQueueTest()
-        {
-            Assert.That(IID_ID3D10InfoQueue, Is.EqualTo(new Guid(0x1b940b17, 0x2642, 0x4d1f, 0xab, 0x1f, 0xb9, 0x9b, 0xad, 0x0c, 0x39, 0x5f)));
-        }
+    /// <summary>Validates that the value of the <see cref="IID_ID3D10InfoQueue" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D10InfoQueueTest()
+    {
+        Assert.That(IID_ID3D10InfoQueue, Is.EqualTo(new Guid(0x1b940b17, 0x2642, 0x4d1f, 0xab, 0x1f, 0xb9, 0x9b, 0xad, 0x0c, 0x39, 0x5f)));
     }
 }

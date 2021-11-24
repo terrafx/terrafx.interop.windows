@@ -5,14 +5,13 @@
 
 using static TerraFX.Interop.Windows.Windows;
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class E
-    {
-        [NativeTypeName("#define E_NOTFOUND HRESULT_FROM_WIN32(ERROR_NOT_FOUND)")]
-        public static HRESULT E_NOTFOUND => HRESULT_FROM_WIN32(1168);
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("#define E_UNSUPPORTED_TYPE HRESULT_FROM_WIN32(ERROR_UNSUPPORTED_TYPE)")]
-        public static HRESULT E_UNSUPPORTED_TYPE => HRESULT_FROM_WIN32(1630);
-    }
+public static partial class E
+{
+    [NativeTypeName("#define E_NOTFOUND HRESULT_FROM_WIN32(ERROR_NOT_FOUND)")]
+    public static HRESULT E_NOTFOUND => HRESULT_FROM_WIN32(1168);
+
+    [NativeTypeName("#define E_UNSUPPORTED_TYPE HRESULT_FROM_WIN32(ERROR_UNSUPPORTED_TYPE)")]
+    public static HRESULT E_UNSUPPORTED_TYPE => HRESULT_FROM_WIN32(1630);
 }

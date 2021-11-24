@@ -3,21 +3,20 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct DISK_GEOMETRY
 {
-    public partial struct DISK_GEOMETRY
-    {
-        public LARGE_INTEGER Cylinders;
+    public LARGE_INTEGER Cylinders;
 
-        public MEDIA_TYPE MediaType;
+    public MEDIA_TYPE MediaType;
 
-        [NativeTypeName("DWORD")]
-        public uint TracksPerCylinder;
+    [NativeTypeName("DWORD")]
+    public uint TracksPerCylinder;
 
-        [NativeTypeName("DWORD")]
-        public uint SectorsPerTrack;
+    [NativeTypeName("DWORD")]
+    public uint SectorsPerTrack;
 
-        [NativeTypeName("DWORD")]
-        public uint BytesPerSector;
-    }
+    [NativeTypeName("DWORD")]
+    public uint BytesPerSector;
 }

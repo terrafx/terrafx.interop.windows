@@ -5,74 +5,73 @@
 
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DWRITE_SHAPING_TEXT_PROPERTIES
 {
-    public partial struct DWRITE_SHAPING_TEXT_PROPERTIES
+    public ushort _bitfield;
+
+    [NativeTypeName("UINT16 : 1")]
+    public ushort isShapedAlone
     {
-        public ushort _bitfield;
-
-        [NativeTypeName("UINT16 : 1")]
-        public ushort isShapedAlone
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (ushort)(_bitfield & 0x1u);
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (ushort)((_bitfield & ~0x1u) | (value & 0x1u));
-            }
+            return (ushort)(_bitfield & 0x1u);
         }
 
-        [NativeTypeName("UINT16 : 1")]
-        public ushort reserved1
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (ushort)((_bitfield >> 1) & 0x1u);
-            }
+            _bitfield = (ushort)((_bitfield & ~0x1u) | (value & 0x1u));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (ushort)((_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1));
-            }
+    [NativeTypeName("UINT16 : 1")]
+    public ushort reserved1
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (ushort)((_bitfield >> 1) & 0x1u);
         }
 
-        [NativeTypeName("UINT16 : 1")]
-        public ushort canBreakShapingAfter
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (ushort)((_bitfield >> 2) & 0x1u);
-            }
+            _bitfield = (ushort)((_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (ushort)((_bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2));
-            }
+    [NativeTypeName("UINT16 : 1")]
+    public ushort canBreakShapingAfter
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (ushort)((_bitfield >> 2) & 0x1u);
         }
 
-        [NativeTypeName("UINT16 : 13")]
-        public ushort reserved
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (ushort)((_bitfield >> 3) & 0x1FFFu);
-            }
+            _bitfield = (ushort)((_bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (ushort)((_bitfield & ~(0x1FFFu << 3)) | ((value & 0x1FFFu) << 3));
-            }
+    [NativeTypeName("UINT16 : 13")]
+    public ushort reserved
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (ushort)((_bitfield >> 3) & 0x1FFFu);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield = (ushort)((_bitfield & ~(0x1FFFu << 3)) | ((value & 0x1FFFu) << 3));
         }
     }
 }

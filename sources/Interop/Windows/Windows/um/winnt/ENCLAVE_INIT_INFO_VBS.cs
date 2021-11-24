@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows10.0.16299.0")]
-    public partial struct ENCLAVE_INIT_INFO_VBS
-    {
-        [NativeTypeName("DWORD")]
-        public uint Length;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint ThreadCount;
-    }
+[SupportedOSPlatform("windows10.0.16299.0")]
+public partial struct ENCLAVE_INIT_INFO_VBS
+{
+    [NativeTypeName("DWORD")]
+    public uint Length;
+
+    [NativeTypeName("DWORD")]
+    public uint ThreadCount;
 }

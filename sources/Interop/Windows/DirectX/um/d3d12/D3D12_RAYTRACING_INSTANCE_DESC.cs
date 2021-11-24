@@ -5,82 +5,81 @@
 
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D12_RAYTRACING_INSTANCE_DESC
 {
-    public unsafe partial struct D3D12_RAYTRACING_INSTANCE_DESC
+    [NativeTypeName("FLOAT [3][4]")]
+    public fixed float Transform[3 * 4];
+
+    public uint _bitfield1;
+
+    [NativeTypeName("uint : 24")]
+    public uint InstanceID
     {
-        [NativeTypeName("FLOAT [3][4]")]
-        public fixed float Transform[3 * 4];
-
-        public uint _bitfield1;
-
-        [NativeTypeName("uint : 24")]
-        public uint InstanceID
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return _bitfield1 & 0xFFFFFFu;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield1 = (_bitfield1 & ~0xFFFFFFu) | (value & 0xFFFFFFu);
-            }
+            return _bitfield1 & 0xFFFFFFu;
         }
 
-        [NativeTypeName("uint : 8")]
-        public uint InstanceMask
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield1 >> 24) & 0xFFu;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield1 = (_bitfield1 & ~(0xFFu << 24)) | ((value & 0xFFu) << 24);
-            }
+            _bitfield1 = (_bitfield1 & ~0xFFFFFFu) | (value & 0xFFFFFFu);
         }
-
-        public uint _bitfield2;
-
-        [NativeTypeName("uint : 24")]
-        public uint InstanceContributionToHitGroupIndex
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return _bitfield2 & 0xFFFFFFu;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield2 = (_bitfield2 & ~0xFFFFFFu) | (value & 0xFFFFFFu);
-            }
-        }
-
-        [NativeTypeName("uint : 8")]
-        public uint Flags
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (_bitfield2 >> 24) & 0xFFu;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield2 = (_bitfield2 & ~(0xFFu << 24)) | ((value & 0xFFu) << 24);
-            }
-        }
-
-        [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
-        public ulong AccelerationStructure;
     }
+
+    [NativeTypeName("uint : 8")]
+    public uint InstanceMask
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield1 >> 24) & 0xFFu;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield1 = (_bitfield1 & ~(0xFFu << 24)) | ((value & 0xFFu) << 24);
+        }
+    }
+
+    public uint _bitfield2;
+
+    [NativeTypeName("uint : 24")]
+    public uint InstanceContributionToHitGroupIndex
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return _bitfield2 & 0xFFFFFFu;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield2 = (_bitfield2 & ~0xFFFFFFu) | (value & 0xFFFFFFu);
+        }
+    }
+
+    [NativeTypeName("uint : 8")]
+    public uint Flags
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (_bitfield2 >> 24) & 0xFFu;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield2 = (_bitfield2 & ~(0xFFu << 24)) | ((value & 0xFFu) << 24);
+        }
+    }
+
+    [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
+    public ulong AccelerationStructure;
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IEnumSyncMgrSyncItems" /> struct.</summary>
+public static unsafe partial class IEnumSyncMgrSyncItemsTests
 {
-    /// <summary>Provides validation of the <see cref="IEnumSyncMgrSyncItems" /> struct.</summary>
-    public static unsafe partial class IEnumSyncMgrSyncItemsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IEnumSyncMgrSyncItems" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IEnumSyncMgrSyncItems" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IEnumSyncMgrSyncItems).GUID, Is.EqualTo(IID_IEnumSyncMgrSyncItems));
-        }
+        Assert.That(typeof(IEnumSyncMgrSyncItems).GUID, Is.EqualTo(IID_IEnumSyncMgrSyncItems));
+    }
 
-        /// <summary>Validates that the <see cref="IEnumSyncMgrSyncItems" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IEnumSyncMgrSyncItems>(), Is.EqualTo(sizeof(IEnumSyncMgrSyncItems)));
-        }
+    /// <summary>Validates that the <see cref="IEnumSyncMgrSyncItems" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IEnumSyncMgrSyncItems>(), Is.EqualTo(sizeof(IEnumSyncMgrSyncItems)));
+    }
 
-        /// <summary>Validates that the <see cref="IEnumSyncMgrSyncItems" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IEnumSyncMgrSyncItems).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IEnumSyncMgrSyncItems" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IEnumSyncMgrSyncItems).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IEnumSyncMgrSyncItems" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IEnumSyncMgrSyncItems" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IEnumSyncMgrSyncItems), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IEnumSyncMgrSyncItems), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IEnumSyncMgrSyncItems), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IEnumSyncMgrSyncItems), Is.EqualTo(4));
         }
     }
 }

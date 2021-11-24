@@ -3,22 +3,21 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CRYPT_TIMESTAMP_PARA
 {
-    public unsafe partial struct CRYPT_TIMESTAMP_PARA
-    {
-        [NativeTypeName("LPCSTR")]
-        public sbyte* pszTSAPolicyId;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* pszTSAPolicyId;
 
-        public BOOL fRequestCerts;
+    public BOOL fRequestCerts;
 
-        [NativeTypeName("CRYPT_INTEGER_BLOB")]
-        public CRYPT_DATA_BLOB Nonce;
+    [NativeTypeName("CRYPT_INTEGER_BLOB")]
+    public CRYPT_DATA_BLOB Nonce;
 
-        [NativeTypeName("DWORD")]
-        public uint cExtension;
+    [NativeTypeName("DWORD")]
+    public uint cExtension;
 
-        [NativeTypeName("PCERT_EXTENSION")]
-        public CERT_EXTENSION* rgExtension;
-    }
+    [NativeTypeName("PCERT_EXTENSION")]
+    public CERT_EXTENSION* rgExtension;
 }

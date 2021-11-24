@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum WINHTTP_WEB_SOCKET_OPERATION
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum WINHTTP_WEB_SOCKET_OPERATION
-    {
-        WINHTTP_WEB_SOCKET_SEND_OPERATION = 0,
-        WINHTTP_WEB_SOCKET_RECEIVE_OPERATION = 1,
-        WINHTTP_WEB_SOCKET_CLOSE_OPERATION = 2,
-        WINHTTP_WEB_SOCKET_SHUTDOWN_OPERATION = 3,
-    }
+    WINHTTP_WEB_SOCKET_SEND_OPERATION = 0,
+    WINHTTP_WEB_SOCKET_RECEIVE_OPERATION = 1,
+    WINHTTP_WEB_SOCKET_CLOSE_OPERATION = 2,
+    WINHTTP_WEB_SOCKET_SHUTDOWN_OPERATION = 3,
 }

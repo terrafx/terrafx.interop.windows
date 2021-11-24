@@ -3,12 +3,11 @@
 // Ported from um/DirectML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
-{
-    public partial struct DML_SIZE_2D
-    {
-        public uint Width;
+namespace TerraFX.Interop.DirectX;
 
-        public uint Height;
-    }
+public partial struct DML_SIZE_2D
+{
+    public uint Width;
+
+    public uint Height;
 }

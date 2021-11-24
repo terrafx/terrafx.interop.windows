@@ -3,11 +3,10 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct DEVICEDUMP_RESTRICTED_SUBSECTION
 {
-    public unsafe partial struct DEVICEDUMP_RESTRICTED_SUBSECTION
-    {
-        [NativeTypeName("BYTE [1]")]
-        public fixed byte bData[1];
-    }
+    [NativeTypeName("BYTE [1]")]
+    public fixed byte bData[1];
 }

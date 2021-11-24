@@ -5,12 +5,11 @@
 
 using static TerraFX.Interop.Windows.FACILITY;
 
-namespace TerraFX.Interop.Windows
-{
-    public static unsafe partial class Windows
-    {
-        public static HRESULT AUDCLNT_ERR(int n) => MAKE_HRESULT(SEVERITY_ERROR, FACILITY_AUDCLNT, n);
+namespace TerraFX.Interop.Windows;
 
-        public static HRESULT AUDCLNT_SUCCESS(int n) => MAKE_SCODE(SEVERITY_SUCCESS, FACILITY_AUDCLNT, n);        
-    }
+public static unsafe partial class Windows
+{
+    public static HRESULT AUDCLNT_ERR(int n) => MAKE_HRESULT(SEVERITY_ERROR, FACILITY_AUDCLNT, n);
+
+    public static HRESULT AUDCLNT_SUCCESS(int n) => MAKE_SCODE(SEVERITY_SUCCESS, FACILITY_AUDCLNT, n);
 }

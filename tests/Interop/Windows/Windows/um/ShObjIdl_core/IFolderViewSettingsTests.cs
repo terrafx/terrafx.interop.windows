@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IFolderViewSettings" /> struct.</summary>
+public static unsafe partial class IFolderViewSettingsTests
 {
-    /// <summary>Provides validation of the <see cref="IFolderViewSettings" /> struct.</summary>
-    public static unsafe partial class IFolderViewSettingsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IFolderViewSettings" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IFolderViewSettings" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IFolderViewSettings).GUID, Is.EqualTo(IID_IFolderViewSettings));
-        }
+        Assert.That(typeof(IFolderViewSettings).GUID, Is.EqualTo(IID_IFolderViewSettings));
+    }
 
-        /// <summary>Validates that the <see cref="IFolderViewSettings" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IFolderViewSettings>(), Is.EqualTo(sizeof(IFolderViewSettings)));
-        }
+    /// <summary>Validates that the <see cref="IFolderViewSettings" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IFolderViewSettings>(), Is.EqualTo(sizeof(IFolderViewSettings)));
+    }
 
-        /// <summary>Validates that the <see cref="IFolderViewSettings" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IFolderViewSettings).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IFolderViewSettings" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IFolderViewSettings).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IFolderViewSettings" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IFolderViewSettings" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IFolderViewSettings), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IFolderViewSettings), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IFolderViewSettings), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IFolderViewSettings), Is.EqualTo(4));
         }
     }
 }

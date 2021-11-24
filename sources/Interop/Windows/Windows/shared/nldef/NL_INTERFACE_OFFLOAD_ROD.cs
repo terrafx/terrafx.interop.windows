@@ -5,138 +5,137 @@
 
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct NL_INTERFACE_OFFLOAD_ROD
 {
-    public partial struct NL_INTERFACE_OFFLOAD_ROD
+    public byte _bitfield;
+
+    [NativeTypeName("BOOLEAN : 1")]
+    public byte NlChecksumSupported
     {
-        public byte _bitfield;
-
-        [NativeTypeName("BOOLEAN : 1")]
-        public byte NlChecksumSupported
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)(_bitfield & 0x1u);
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (byte)((_bitfield & ~0x1u) | (value & 0x1u));
-            }
+            return (byte)(_bitfield & 0x1u);
         }
 
-        [NativeTypeName("BOOLEAN : 1")]
-        public byte NlOptionsSupported
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)((_bitfield >> 1) & 0x1u);
-            }
+            _bitfield = (byte)((_bitfield & ~0x1u) | (value & 0x1u));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (byte)((_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1));
-            }
+    [NativeTypeName("BOOLEAN : 1")]
+    public byte NlOptionsSupported
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)((_bitfield >> 1) & 0x1u);
         }
 
-        [NativeTypeName("BOOLEAN : 1")]
-        public byte TlDatagramChecksumSupported
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)((_bitfield >> 2) & 0x1u);
-            }
+            _bitfield = (byte)((_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (byte)((_bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2));
-            }
+    [NativeTypeName("BOOLEAN : 1")]
+    public byte TlDatagramChecksumSupported
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)((_bitfield >> 2) & 0x1u);
         }
 
-        [NativeTypeName("BOOLEAN : 1")]
-        public byte TlStreamChecksumSupported
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)((_bitfield >> 3) & 0x1u);
-            }
+            _bitfield = (byte)((_bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (byte)((_bitfield & ~(0x1u << 3)) | ((value & 0x1u) << 3));
-            }
+    [NativeTypeName("BOOLEAN : 1")]
+    public byte TlStreamChecksumSupported
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)((_bitfield >> 3) & 0x1u);
         }
 
-        [NativeTypeName("BOOLEAN : 1")]
-        public byte TlStreamOptionsSupported
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)((_bitfield >> 4) & 0x1u);
-            }
+            _bitfield = (byte)((_bitfield & ~(0x1u << 3)) | ((value & 0x1u) << 3));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (byte)((_bitfield & ~(0x1u << 4)) | ((value & 0x1u) << 4));
-            }
+    [NativeTypeName("BOOLEAN : 1")]
+    public byte TlStreamOptionsSupported
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)((_bitfield >> 4) & 0x1u);
         }
 
-        [NativeTypeName("BOOLEAN : 1")]
-        public byte FastPathCompatible
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)((_bitfield >> 5) & 0x1u);
-            }
+            _bitfield = (byte)((_bitfield & ~(0x1u << 4)) | ((value & 0x1u) << 4));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (byte)((_bitfield & ~(0x1u << 5)) | ((value & 0x1u) << 5));
-            }
+    [NativeTypeName("BOOLEAN : 1")]
+    public byte FastPathCompatible
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)((_bitfield >> 5) & 0x1u);
         }
 
-        [NativeTypeName("BOOLEAN : 1")]
-        public byte TlLargeSendOffloadSupported
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)((_bitfield >> 6) & 0x1u);
-            }
+            _bitfield = (byte)((_bitfield & ~(0x1u << 5)) | ((value & 0x1u) << 5));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (byte)((_bitfield & ~(0x1u << 6)) | ((value & 0x1u) << 6));
-            }
+    [NativeTypeName("BOOLEAN : 1")]
+    public byte TlLargeSendOffloadSupported
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)((_bitfield >> 6) & 0x1u);
         }
 
-        [NativeTypeName("BOOLEAN : 1")]
-        public byte TlGiantSendOffloadSupported
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)((_bitfield >> 7) & 0x1u);
-            }
+            _bitfield = (byte)((_bitfield & ~(0x1u << 6)) | ((value & 0x1u) << 6));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (byte)((_bitfield & ~(0x1u << 7)) | ((value & 0x1u) << 7));
-            }
+    [NativeTypeName("BOOLEAN : 1")]
+    public byte TlGiantSendOffloadSupported
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)((_bitfield >> 7) & 0x1u);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield = (byte)((_bitfield & ~(0x1u << 7)) | ((value & 0x1u) << 7));
         }
     }
 }

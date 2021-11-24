@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct CREATE_DISK_GPT
-    {
-        public Guid DiskId;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint MaxPartitionCount;
-    }
+public partial struct CREATE_DISK_GPT
+{
+    public Guid DiskId;
+
+    [NativeTypeName("DWORD")]
+    public uint MaxPartitionCount;
 }

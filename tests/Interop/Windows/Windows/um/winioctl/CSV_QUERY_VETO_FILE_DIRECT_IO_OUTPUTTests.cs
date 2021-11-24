@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT" /> struct.</summary>
+public static unsafe partial class CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUTTests
 {
-    /// <summary>Provides validation of the <see cref="CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT" /> struct.</summary>
-    public static unsafe partial class CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUTTests
+    /// <summary>Validates that the <see cref="CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT>(), Is.EqualTo(sizeof(CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT)));
-        }
+        Assert.That(Marshal.SizeOf<CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT>(), Is.EqualTo(sizeof(CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT)));
+    }
 
-        /// <summary>Validates that the <see cref="CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT), Is.EqualTo(528));
-        }
+    /// <summary>Validates that the <see cref="CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT), Is.EqualTo(528));
     }
 }

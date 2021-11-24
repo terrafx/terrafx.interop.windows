@@ -7,75 +7,74 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct REFS_VOLUME_DATA_BUFFER
 {
-    public partial struct REFS_VOLUME_DATA_BUFFER
+    [NativeTypeName("DWORD")]
+    public uint ByteCount;
+
+    [NativeTypeName("DWORD")]
+    public uint MajorVersion;
+
+    [NativeTypeName("DWORD")]
+    public uint MinorVersion;
+
+    [NativeTypeName("DWORD")]
+    public uint BytesPerPhysicalSector;
+
+    public LARGE_INTEGER VolumeSerialNumber;
+
+    public LARGE_INTEGER NumberSectors;
+
+    public LARGE_INTEGER TotalClusters;
+
+    public LARGE_INTEGER FreeClusters;
+
+    public LARGE_INTEGER TotalReserved;
+
+    [NativeTypeName("DWORD")]
+    public uint BytesPerSector;
+
+    [NativeTypeName("DWORD")]
+    public uint BytesPerCluster;
+
+    public LARGE_INTEGER MaximumSizeOfResidentFile;
+
+    [NativeTypeName("WORD")]
+    public ushort FastTierDataFillRatio;
+
+    [NativeTypeName("WORD")]
+    public ushort SlowTierDataFillRatio;
+
+    [NativeTypeName("DWORD")]
+    public uint DestagesFastTierToSlowTierRate;
+
+    [NativeTypeName("LARGE_INTEGER [9]")]
+    public _Reserved_e__FixedBuffer Reserved;
+
+    public partial struct _Reserved_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint ByteCount;
+        public LARGE_INTEGER e0;
+        public LARGE_INTEGER e1;
+        public LARGE_INTEGER e2;
+        public LARGE_INTEGER e3;
+        public LARGE_INTEGER e4;
+        public LARGE_INTEGER e5;
+        public LARGE_INTEGER e6;
+        public LARGE_INTEGER e7;
+        public LARGE_INTEGER e8;
 
-        [NativeTypeName("DWORD")]
-        public uint MajorVersion;
-
-        [NativeTypeName("DWORD")]
-        public uint MinorVersion;
-
-        [NativeTypeName("DWORD")]
-        public uint BytesPerPhysicalSector;
-
-        public LARGE_INTEGER VolumeSerialNumber;
-
-        public LARGE_INTEGER NumberSectors;
-
-        public LARGE_INTEGER TotalClusters;
-
-        public LARGE_INTEGER FreeClusters;
-
-        public LARGE_INTEGER TotalReserved;
-
-        [NativeTypeName("DWORD")]
-        public uint BytesPerSector;
-
-        [NativeTypeName("DWORD")]
-        public uint BytesPerCluster;
-
-        public LARGE_INTEGER MaximumSizeOfResidentFile;
-
-        [NativeTypeName("WORD")]
-        public ushort FastTierDataFillRatio;
-
-        [NativeTypeName("WORD")]
-        public ushort SlowTierDataFillRatio;
-
-        [NativeTypeName("DWORD")]
-        public uint DestagesFastTierToSlowTierRate;
-
-        [NativeTypeName("LARGE_INTEGER [9]")]
-        public _Reserved_e__FixedBuffer Reserved;
-
-        public partial struct _Reserved_e__FixedBuffer
+        public ref LARGE_INTEGER this[int index]
         {
-            public LARGE_INTEGER e0;
-            public LARGE_INTEGER e1;
-            public LARGE_INTEGER e2;
-            public LARGE_INTEGER e3;
-            public LARGE_INTEGER e4;
-            public LARGE_INTEGER e5;
-            public LARGE_INTEGER e6;
-            public LARGE_INTEGER e7;
-            public LARGE_INTEGER e8;
-
-            public ref LARGE_INTEGER this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan()[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<LARGE_INTEGER> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 9);
+            get
+            {
+                return ref AsSpan()[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<LARGE_INTEGER> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 9);
     }
 }

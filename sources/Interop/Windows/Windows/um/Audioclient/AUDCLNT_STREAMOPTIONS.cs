@@ -6,15 +6,14 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+[SupportedOSPlatform("windows8.1")]
+public enum AUDCLNT_STREAMOPTIONS
 {
-    [Flags]
-    [SupportedOSPlatform("windows8.1")]
-    public enum AUDCLNT_STREAMOPTIONS
-    {
-        AUDCLNT_STREAMOPTIONS_NONE = 0,
-        AUDCLNT_STREAMOPTIONS_RAW = 0x1,
-        AUDCLNT_STREAMOPTIONS_MATCH_FORMAT = 0x2,
-        AUDCLNT_STREAMOPTIONS_AMBISONICS = 0x4,
-    }
+    AUDCLNT_STREAMOPTIONS_NONE = 0,
+    AUDCLNT_STREAMOPTIONS_RAW = 0x1,
+    AUDCLNT_STREAMOPTIONS_MATCH_FORMAT = 0x2,
+    AUDCLNT_STREAMOPTIONS_AMBISONICS = 0x4,
 }

@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[SupportedOSPlatform("windows10.0.14393.0")]
+public enum RenderTargetBitmapOptions
 {
-    [SupportedOSPlatform("windows10.0.14393.0")]
-    public enum RenderTargetBitmapOptions
-    {
-        RenderTarget = 0,
-        RenderTargetAndChildren = (RenderTarget + 1),
-    }
+    RenderTarget = 0,
+    RenderTargetAndChildren = (RenderTarget + 1),
 }

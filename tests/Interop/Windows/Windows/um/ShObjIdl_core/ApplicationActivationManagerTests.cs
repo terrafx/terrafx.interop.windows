@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ApplicationActivationManager" /> struct.</summary>
+public static unsafe partial class ApplicationActivationManagerTests
 {
-    /// <summary>Provides validation of the <see cref="ApplicationActivationManager" /> struct.</summary>
-    public static unsafe partial class ApplicationActivationManagerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ApplicationActivationManager" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ApplicationActivationManager" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ApplicationActivationManager).GUID, Is.EqualTo(IID_ApplicationActivationManager));
-        }
+        Assert.That(typeof(ApplicationActivationManager).GUID, Is.EqualTo(IID_ApplicationActivationManager));
+    }
 
-        /// <summary>Validates that the <see cref="ApplicationActivationManager" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ApplicationActivationManager>(), Is.EqualTo(sizeof(ApplicationActivationManager)));
-        }
+    /// <summary>Validates that the <see cref="ApplicationActivationManager" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ApplicationActivationManager>(), Is.EqualTo(sizeof(ApplicationActivationManager)));
+    }
 
-        /// <summary>Validates that the <see cref="ApplicationActivationManager" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ApplicationActivationManager).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ApplicationActivationManager" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ApplicationActivationManager).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ApplicationActivationManager" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(ApplicationActivationManager), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="ApplicationActivationManager" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(ApplicationActivationManager), Is.EqualTo(1));
     }
 }

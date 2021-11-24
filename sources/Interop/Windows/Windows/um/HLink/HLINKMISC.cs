@@ -3,10 +3,9 @@
 // Ported from um/HLink.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum HLINKMISC
 {
-    public enum HLINKMISC
-    {
-        HLINKMISC_RELATIVE = 0x1,
-    }
+    HLINKMISC_RELATIVE = 0x1,
 }

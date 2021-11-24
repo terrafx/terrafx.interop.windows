@@ -6,12 +6,11 @@
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public static unsafe partial class DirectX
 {
-    public static unsafe partial class DirectX
-    {
-        [SupportedOSPlatform("windows10.0")]
-        [DllImport("d2d1", ExactSpelling = true)]
-        public static extern void D2D1GetGradientMeshInteriorPointsFromCoonsPatch([NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint0, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint1, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint2, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint3, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint4, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint5, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint6, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint7, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint8, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint9, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint10, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint11, [NativeTypeName("D2D1_POINT_2F *")] D2D_POINT_2F* pTensorPoint11, [NativeTypeName("D2D1_POINT_2F *")] D2D_POINT_2F* pTensorPoint12, [NativeTypeName("D2D1_POINT_2F *")] D2D_POINT_2F* pTensorPoint21, [NativeTypeName("D2D1_POINT_2F *")] D2D_POINT_2F* pTensorPoint22);
-    }
+    [SupportedOSPlatform("windows10.0")]
+    [DllImport("d2d1", ExactSpelling = true)]
+    public static extern void D2D1GetGradientMeshInteriorPointsFromCoonsPatch([NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint0, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint1, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint2, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint3, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint4, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint5, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint6, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint7, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint8, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint9, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint10, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* pPoint11, [NativeTypeName("D2D1_POINT_2F *")] D2D_POINT_2F* pTensorPoint11, [NativeTypeName("D2D1_POINT_2F *")] D2D_POINT_2F* pTensorPoint12, [NativeTypeName("D2D1_POINT_2F *")] D2D_POINT_2F* pTensorPoint21, [NativeTypeName("D2D1_POINT_2F *")] D2D_POINT_2F* pTensorPoint22);
 }

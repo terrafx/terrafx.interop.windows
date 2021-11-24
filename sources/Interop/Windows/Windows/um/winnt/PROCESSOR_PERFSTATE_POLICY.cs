@@ -6,201 +6,200 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct PROCESSOR_PERFSTATE_POLICY
 {
-    public partial struct PROCESSOR_PERFSTATE_POLICY
+    [NativeTypeName("DWORD")]
+    public uint Revision;
+
+    public byte MaxThrottle;
+
+    public byte MinThrottle;
+
+    public byte BusyAdjThreshold;
+
+    [NativeTypeName("PROCESSOR_PERFSTATE_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:17974:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    [NativeTypeName("DWORD")]
+    public uint TimeCheck;
+
+    [NativeTypeName("DWORD")]
+    public uint IncreaseTime;
+
+    [NativeTypeName("DWORD")]
+    public uint DecreaseTime;
+
+    [NativeTypeName("DWORD")]
+    public uint IncreasePercent;
+
+    [NativeTypeName("DWORD")]
+    public uint DecreasePercent;
+
+    public ref byte Spare
     {
-        [NativeTypeName("DWORD")]
-        public uint Revision;
-
-        public byte MaxThrottle;
-
-        public byte MinThrottle;
-
-        public byte BusyAdjThreshold;
-
-        [NativeTypeName("PROCESSOR_PERFSTATE_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:17974:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        [NativeTypeName("DWORD")]
-        public uint TimeCheck;
-
-        [NativeTypeName("DWORD")]
-        public uint IncreaseTime;
-
-        [NativeTypeName("DWORD")]
-        public uint DecreaseTime;
-
-        [NativeTypeName("DWORD")]
-        public uint IncreasePercent;
-
-        [NativeTypeName("DWORD")]
-        public uint DecreasePercent;
-
-        public ref byte Spare
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Spare, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Spare, 1));
         }
+    }
 
-        public ref _Anonymous_e__Union._Flags_e__Union Flags
+    public ref _Anonymous_e__Union._Flags_e__Union Flags
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
         }
+    }
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        public byte Spare;
+
+        [FieldOffset(0)]
+        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:17976:9)")]
+        public _Flags_e__Union Flags;
 
         [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
+        public partial struct _Flags_e__Union
         {
             [FieldOffset(0)]
-            public byte Spare;
+            public byte AsBYTE;
 
             [FieldOffset(0)]
-            [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:17976:9)")]
-            public _Flags_e__Union Flags;
+            [NativeTypeName("PROCESSOR_PERFSTATE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:17978:13)")]
+            public _Anonymous_e__Struct Anonymous;
 
-            [StructLayout(LayoutKind.Explicit)]
-            public partial struct _Flags_e__Union
+            public byte NoDomainAccounting
             {
-                [FieldOffset(0)]
-                public byte AsBYTE;
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return Anonymous.NoDomainAccounting;
+                }
 
-                [FieldOffset(0)]
-                [NativeTypeName("PROCESSOR_PERFSTATE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:17978:13)")]
-                public _Anonymous_e__Struct Anonymous;
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    Anonymous.NoDomainAccounting = value;
+                }
+            }
 
+            public byte IncreasePolicy
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return Anonymous.IncreasePolicy;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    Anonymous.IncreasePolicy = value;
+                }
+            }
+
+            public byte DecreasePolicy
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return Anonymous.DecreasePolicy;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    Anonymous.DecreasePolicy = value;
+                }
+            }
+
+            public byte Reserved
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return Anonymous.Reserved;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    Anonymous.Reserved = value;
+                }
+            }
+
+            public partial struct _Anonymous_e__Struct
+            {
+                public byte _bitfield;
+
+                [NativeTypeName("byte : 1")]
                 public byte NoDomainAccounting
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
-                        return Anonymous.NoDomainAccounting;
+                        return (byte)(_bitfield & 0x1u);
                     }
 
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
-                        Anonymous.NoDomainAccounting = value;
+                        _bitfield = (byte)((_bitfield & ~0x1u) | (value & 0x1u));
                     }
                 }
 
+                [NativeTypeName("byte : 2")]
                 public byte IncreasePolicy
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
-                        return Anonymous.IncreasePolicy;
+                        return (byte)((_bitfield >> 1) & 0x3u);
                     }
 
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
-                        Anonymous.IncreasePolicy = value;
+                        _bitfield = (byte)((_bitfield & ~(0x3u << 1)) | ((value & 0x3u) << 1));
                     }
                 }
 
+                [NativeTypeName("byte : 2")]
                 public byte DecreasePolicy
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
-                        return Anonymous.DecreasePolicy;
+                        return (byte)((_bitfield >> 3) & 0x3u);
                     }
 
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
-                        Anonymous.DecreasePolicy = value;
+                        _bitfield = (byte)((_bitfield & ~(0x3u << 3)) | ((value & 0x3u) << 3));
                     }
                 }
 
+                [NativeTypeName("byte : 3")]
                 public byte Reserved
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
-                        return Anonymous.Reserved;
+                        return (byte)((_bitfield >> 5) & 0x7u);
                     }
 
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
-                        Anonymous.Reserved = value;
-                    }
-                }
-
-                public partial struct _Anonymous_e__Struct
-                {
-                    public byte _bitfield;
-
-                    [NativeTypeName("byte : 1")]
-                    public byte NoDomainAccounting
-                    {
-                        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                        get
-                        {
-                            return (byte)(_bitfield & 0x1u);
-                        }
-
-                        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                        set
-                        {
-                            _bitfield = (byte)((_bitfield & ~0x1u) | (value & 0x1u));
-                        }
-                    }
-
-                    [NativeTypeName("byte : 2")]
-                    public byte IncreasePolicy
-                    {
-                        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                        get
-                        {
-                            return (byte)((_bitfield >> 1) & 0x3u);
-                        }
-
-                        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                        set
-                        {
-                            _bitfield = (byte)((_bitfield & ~(0x3u << 1)) | ((value & 0x3u) << 1));
-                        }
-                    }
-
-                    [NativeTypeName("byte : 2")]
-                    public byte DecreasePolicy
-                    {
-                        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                        get
-                        {
-                            return (byte)((_bitfield >> 3) & 0x3u);
-                        }
-
-                        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                        set
-                        {
-                            _bitfield = (byte)((_bitfield & ~(0x3u << 3)) | ((value & 0x3u) << 3));
-                        }
-                    }
-
-                    [NativeTypeName("byte : 3")]
-                    public byte Reserved
-                    {
-                        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                        get
-                        {
-                            return (byte)((_bitfield >> 5) & 0x7u);
-                        }
-
-                        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                        set
-                        {
-                            _bitfield = (byte)((_bitfield & ~(0x7u << 5)) | ((value & 0x7u) << 5));
-                        }
+                        _bitfield = (byte)((_bitfield & ~(0x7u << 5)) | ((value & 0x7u) << 5));
                     }
                 }
             }

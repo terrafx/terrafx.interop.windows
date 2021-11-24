@@ -7,64 +7,63 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("85075ACF-231F-40EA-9610-D26B7B58F638")]
+[NativeTypeName("struct IInitializeCommand : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IInitializeCommand : IInitializeCommand.Interface
 {
-    [Guid("85075ACF-231F-40EA-9610-D26B7B58F638")]
-    [NativeTypeName("struct IInitializeCommand : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInitializeCommand : IInitializeCommand.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IInitializeCommand*, Guid*, void**, int>)(lpVtbl[0]))((IInitializeCommand*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IInitializeCommand*, Guid*, void**, int>)(lpVtbl[0]))((IInitializeCommand*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IInitializeCommand*, uint>)(lpVtbl[1]))((IInitializeCommand*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IInitializeCommand*, uint>)(lpVtbl[1]))((IInitializeCommand*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IInitializeCommand*, uint>)(lpVtbl[2]))((IInitializeCommand*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IInitializeCommand*, uint>)(lpVtbl[2]))((IInitializeCommand*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Initialize([NativeTypeName("LPCWSTR")] ushort* pszCommandName, IPropertyBag* ppb)
+    {
+        return ((delegate* unmanaged<IInitializeCommand*, ushort*, IPropertyBag*, int>)(lpVtbl[3]))((IInitializeCommand*)Unsafe.AsPointer(ref this), pszCommandName, ppb);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Initialize([NativeTypeName("LPCWSTR")] ushort* pszCommandName, IPropertyBag* ppb)
-        {
-            return ((delegate* unmanaged<IInitializeCommand*, ushort*, IPropertyBag*, int>)(lpVtbl[3]))((IInitializeCommand*)Unsafe.AsPointer(ref this), pszCommandName, ppb);
-        }
+        HRESULT Initialize([NativeTypeName("LPCWSTR")] ushort* pszCommandName, IPropertyBag* ppb);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Initialize([NativeTypeName("LPCWSTR")] ushort* pszCommandName, IPropertyBag* ppb);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IInitializeCommand*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IInitializeCommand*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IInitializeCommand*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IInitializeCommand*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IInitializeCommand*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IInitializeCommand*, uint> Release;
-
-            [NativeTypeName("HRESULT (LPCWSTR, IPropertyBag *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IInitializeCommand*, ushort*, IPropertyBag*, int> Initialize;
-        }
+        [NativeTypeName("HRESULT (LPCWSTR, IPropertyBag *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IInitializeCommand*, ushort*, IPropertyBag*, int> Initialize;
     }
 }

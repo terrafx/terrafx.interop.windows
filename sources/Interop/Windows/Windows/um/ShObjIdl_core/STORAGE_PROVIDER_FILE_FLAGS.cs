@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum STORAGE_PROVIDER_FILE_FLAGS
 {
-    [Flags]
-    public enum STORAGE_PROVIDER_FILE_FLAGS
-    {
-        SPFF_NONE = 0,
-        SPFF_DOWNLOAD_BY_DEFAULT = 0x1,
-        SPFF_CREATED_ON_THIS_DEVICE = 0x2,
-    }
+    SPFF_NONE = 0,
+    SPFF_DOWNLOAD_BY_DEFAULT = 0x1,
+    SPFF_CREATED_ON_THIS_DEVICE = 0x2,
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDWriteLocalizedStrings" /> struct.</summary>
+public static unsafe partial class IDWriteLocalizedStringsTests
 {
-    /// <summary>Provides validation of the <see cref="IDWriteLocalizedStrings" /> struct.</summary>
-    public static unsafe partial class IDWriteLocalizedStringsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWriteLocalizedStrings" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWriteLocalizedStrings" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDWriteLocalizedStrings).GUID, Is.EqualTo(IID_IDWriteLocalizedStrings));
-        }
+        Assert.That(typeof(IDWriteLocalizedStrings).GUID, Is.EqualTo(IID_IDWriteLocalizedStrings));
+    }
 
-        /// <summary>Validates that the <see cref="IDWriteLocalizedStrings" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDWriteLocalizedStrings>(), Is.EqualTo(sizeof(IDWriteLocalizedStrings)));
-        }
+    /// <summary>Validates that the <see cref="IDWriteLocalizedStrings" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDWriteLocalizedStrings>(), Is.EqualTo(sizeof(IDWriteLocalizedStrings)));
+    }
 
-        /// <summary>Validates that the <see cref="IDWriteLocalizedStrings" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDWriteLocalizedStrings).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDWriteLocalizedStrings" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDWriteLocalizedStrings).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDWriteLocalizedStrings" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDWriteLocalizedStrings" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDWriteLocalizedStrings), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDWriteLocalizedStrings), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDWriteLocalizedStrings), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDWriteLocalizedStrings), Is.EqualTo(4));
         }
     }
 }

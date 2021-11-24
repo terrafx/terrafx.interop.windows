@@ -3,12 +3,11 @@
 // Ported from um/xmllite.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum DtdProcessing
 {
-    public enum DtdProcessing
-    {
-        DtdProcessing_Prohibit = 0,
-        DtdProcessing_Parse = (DtdProcessing_Prohibit + 1),
-        _DtdProcessing_Last = DtdProcessing_Parse,
-    }
+    DtdProcessing_Prohibit = 0,
+    DtdProcessing_Parse = (DtdProcessing_Prohibit + 1),
+    _DtdProcessing_Last = DtdProcessing_Parse,
 }

@@ -5,55 +5,54 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct VIDEO_STREAM_CONFIG_CAPS
 {
-    public partial struct VIDEO_STREAM_CONFIG_CAPS
-    {
-        public Guid guid;
+    public Guid guid;
 
-        [NativeTypeName("ULONG")]
-        public uint VideoStandard;
+    [NativeTypeName("ULONG")]
+    public uint VideoStandard;
 
-        public SIZE InputSize;
+    public SIZE InputSize;
 
-        public SIZE MinCroppingSize;
+    public SIZE MinCroppingSize;
 
-        public SIZE MaxCroppingSize;
+    public SIZE MaxCroppingSize;
 
-        public int CropGranularityX;
+    public int CropGranularityX;
 
-        public int CropGranularityY;
+    public int CropGranularityY;
 
-        public int CropAlignX;
+    public int CropAlignX;
 
-        public int CropAlignY;
+    public int CropAlignY;
 
-        public SIZE MinOutputSize;
+    public SIZE MinOutputSize;
 
-        public SIZE MaxOutputSize;
+    public SIZE MaxOutputSize;
 
-        public int OutputGranularityX;
+    public int OutputGranularityX;
 
-        public int OutputGranularityY;
+    public int OutputGranularityY;
 
-        public int StretchTapsX;
+    public int StretchTapsX;
 
-        public int StretchTapsY;
+    public int StretchTapsY;
 
-        public int ShrinkTapsX;
+    public int ShrinkTapsX;
 
-        public int ShrinkTapsY;
+    public int ShrinkTapsY;
 
-        [NativeTypeName("LONGLONG")]
-        public long MinFrameInterval;
+    [NativeTypeName("LONGLONG")]
+    public long MinFrameInterval;
 
-        [NativeTypeName("LONGLONG")]
-        public long MaxFrameInterval;
+    [NativeTypeName("LONGLONG")]
+    public long MaxFrameInterval;
 
-        [NativeTypeName("LONG")]
-        public int MinBitsPerSecond;
+    [NativeTypeName("LONG")]
+    public int MinBitsPerSecond;
 
-        [NativeTypeName("LONG")]
-        public int MaxBitsPerSecond;
-    }
+    [NativeTypeName("LONG")]
+    public int MaxBitsPerSecond;
 }

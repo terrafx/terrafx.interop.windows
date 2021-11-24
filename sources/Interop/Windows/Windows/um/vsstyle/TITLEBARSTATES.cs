@@ -3,11 +3,10 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum TITLEBARSTATES
 {
-    public enum TITLEBARSTATES
-    {
-        AW_S_TITLEBAR_ACTIVE = 1,
-        AW_S_TITLEBAR_INACTIVE = 2,
-    }
+    AW_S_TITLEBAR_ACTIVE = 1,
+    AW_S_TITLEBAR_INACTIVE = 2,
 }

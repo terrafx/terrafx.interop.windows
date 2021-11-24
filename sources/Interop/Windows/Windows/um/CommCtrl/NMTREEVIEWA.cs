@@ -3,18 +3,17 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct NMTREEVIEWA
 {
-    public partial struct NMTREEVIEWA
-    {
-        public NMHDR hdr;
+    public NMHDR hdr;
 
-        public uint action;
+    public uint action;
 
-        public TVITEMA itemOld;
+    public TVITEMA itemOld;
 
-        public TVITEMA itemNew;
+    public TVITEMA itemNew;
 
-        public POINT ptDrag;
-    }
+    public POINT ptDrag;
 }

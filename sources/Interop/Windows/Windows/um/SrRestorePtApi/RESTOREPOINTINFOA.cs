@@ -5,21 +5,20 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct RESTOREPOINTINFOA
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct RESTOREPOINTINFOA
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwEventType;
+    [NativeTypeName("DWORD")]
+    public uint dwEventType;
 
-        [NativeTypeName("DWORD")]
-        public uint dwRestorePtType;
+    [NativeTypeName("DWORD")]
+    public uint dwRestorePtType;
 
-        [NativeTypeName("INT64")]
-        public long llSequenceNumber;
+    [NativeTypeName("INT64")]
+    public long llSequenceNumber;
 
-        [NativeTypeName("CHAR [64]")]
-        public fixed sbyte szDescription[64];
-    }
+    [NativeTypeName("CHAR [64]")]
+    public fixed sbyte szDescription[64];
 }

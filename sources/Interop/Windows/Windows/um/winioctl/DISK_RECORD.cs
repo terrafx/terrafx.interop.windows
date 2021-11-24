@@ -3,25 +3,24 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct DISK_RECORD
 {
-    public unsafe partial struct DISK_RECORD
-    {
-        public LARGE_INTEGER ByteOffset;
+    public LARGE_INTEGER ByteOffset;
 
-        public LARGE_INTEGER StartTime;
+    public LARGE_INTEGER StartTime;
 
-        public LARGE_INTEGER EndTime;
+    public LARGE_INTEGER EndTime;
 
-        [NativeTypeName("PVOID")]
-        public void* VirtualAddress;
+    [NativeTypeName("PVOID")]
+    public void* VirtualAddress;
 
-        [NativeTypeName("DWORD")]
-        public uint NumberOfBytes;
+    [NativeTypeName("DWORD")]
+    public uint NumberOfBytes;
 
-        public byte DeviceNumber;
+    public byte DeviceNumber;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte ReadRequest;
-    }
+    [NativeTypeName("BOOLEAN")]
+    public byte ReadRequest;
 }

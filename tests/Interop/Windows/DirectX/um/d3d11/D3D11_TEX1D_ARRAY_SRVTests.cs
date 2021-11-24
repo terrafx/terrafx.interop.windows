@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="D3D11_TEX1D_ARRAY_SRV" /> struct.</summary>
+public static unsafe partial class D3D11_TEX1D_ARRAY_SRVTests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_TEX1D_ARRAY_SRV" /> struct.</summary>
-    public static unsafe partial class D3D11_TEX1D_ARRAY_SRVTests
+    /// <summary>Validates that the <see cref="D3D11_TEX1D_ARRAY_SRV" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="D3D11_TEX1D_ARRAY_SRV" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<D3D11_TEX1D_ARRAY_SRV>(), Is.EqualTo(sizeof(D3D11_TEX1D_ARRAY_SRV)));
-        }
+        Assert.That(Marshal.SizeOf<D3D11_TEX1D_ARRAY_SRV>(), Is.EqualTo(sizeof(D3D11_TEX1D_ARRAY_SRV)));
+    }
 
-        /// <summary>Validates that the <see cref="D3D11_TEX1D_ARRAY_SRV" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(D3D11_TEX1D_ARRAY_SRV).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="D3D11_TEX1D_ARRAY_SRV" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(D3D11_TEX1D_ARRAY_SRV).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="D3D11_TEX1D_ARRAY_SRV" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(D3D11_TEX1D_ARRAY_SRV), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="D3D11_TEX1D_ARRAY_SRV" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(D3D11_TEX1D_ARRAY_SRV), Is.EqualTo(16));
     }
 }

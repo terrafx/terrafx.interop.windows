@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DXGI_DECODE_SWAP_CHAIN_DESC" /> struct.</summary>
+public static unsafe partial class DXGI_DECODE_SWAP_CHAIN_DESCTests
 {
-    /// <summary>Provides validation of the <see cref="DXGI_DECODE_SWAP_CHAIN_DESC" /> struct.</summary>
-    public static unsafe partial class DXGI_DECODE_SWAP_CHAIN_DESCTests
+    /// <summary>Validates that the <see cref="DXGI_DECODE_SWAP_CHAIN_DESC" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DXGI_DECODE_SWAP_CHAIN_DESC" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DXGI_DECODE_SWAP_CHAIN_DESC>(), Is.EqualTo(sizeof(DXGI_DECODE_SWAP_CHAIN_DESC)));
-        }
+        Assert.That(Marshal.SizeOf<DXGI_DECODE_SWAP_CHAIN_DESC>(), Is.EqualTo(sizeof(DXGI_DECODE_SWAP_CHAIN_DESC)));
+    }
 
-        /// <summary>Validates that the <see cref="DXGI_DECODE_SWAP_CHAIN_DESC" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DXGI_DECODE_SWAP_CHAIN_DESC).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DXGI_DECODE_SWAP_CHAIN_DESC" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DXGI_DECODE_SWAP_CHAIN_DESC).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DXGI_DECODE_SWAP_CHAIN_DESC" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DXGI_DECODE_SWAP_CHAIN_DESC), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="DXGI_DECODE_SWAP_CHAIN_DESC" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DXGI_DECODE_SWAP_CHAIN_DESC), Is.EqualTo(4));
     }
 }

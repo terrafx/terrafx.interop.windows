@@ -7,14 +7,13 @@ using System;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
-{
-    public static unsafe partial class WinRT
-    {
-        [DllImport("windows.ui.dll", ExactSpelling = true)]
-        public static extern HRESULT CreateControlInput([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+namespace TerraFX.Interop.WinRT;
 
-        [DllImport("windows.ui.dll", ExactSpelling = true)]
-        public static extern HRESULT CreateControlInputEx(IUnknown* pCoreWindow, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
-    }
+public static unsafe partial class WinRT
+{
+    [DllImport("windows.ui.dll", ExactSpelling = true)]
+    public static extern HRESULT CreateControlInput([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+    [DllImport("windows.ui.dll", ExactSpelling = true)]
+    public static extern HRESULT CreateControlInputEx(IUnknown* pCoreWindow, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 }

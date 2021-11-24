@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="VIRTUALIZATION_INSTANCE_INFO_OUTPUT" /> struct.</summary>
+public static unsafe partial class VIRTUALIZATION_INSTANCE_INFO_OUTPUTTests
 {
-    /// <summary>Provides validation of the <see cref="VIRTUALIZATION_INSTANCE_INFO_OUTPUT" /> struct.</summary>
-    public static unsafe partial class VIRTUALIZATION_INSTANCE_INFO_OUTPUTTests
+    /// <summary>Validates that the <see cref="VIRTUALIZATION_INSTANCE_INFO_OUTPUT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="VIRTUALIZATION_INSTANCE_INFO_OUTPUT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<VIRTUALIZATION_INSTANCE_INFO_OUTPUT>(), Is.EqualTo(sizeof(VIRTUALIZATION_INSTANCE_INFO_OUTPUT)));
-        }
+        Assert.That(Marshal.SizeOf<VIRTUALIZATION_INSTANCE_INFO_OUTPUT>(), Is.EqualTo(sizeof(VIRTUALIZATION_INSTANCE_INFO_OUTPUT)));
+    }
 
-        /// <summary>Validates that the <see cref="VIRTUALIZATION_INSTANCE_INFO_OUTPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(VIRTUALIZATION_INSTANCE_INFO_OUTPUT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="VIRTUALIZATION_INSTANCE_INFO_OUTPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(VIRTUALIZATION_INSTANCE_INFO_OUTPUT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="VIRTUALIZATION_INSTANCE_INFO_OUTPUT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(VIRTUALIZATION_INSTANCE_INFO_OUTPUT), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="VIRTUALIZATION_INSTANCE_INFO_OUTPUT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(VIRTUALIZATION_INSTANCE_INFO_OUTPUT), Is.EqualTo(16));
     }
 }

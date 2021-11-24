@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("C0B4E2F3-BA21-4773-8DBA-335EC946EB8B")]
+public partial struct FileSaveDialog
 {
-    [Guid("C0B4E2F3-BA21-4773-8DBA-335EC946EB8B")]
-    public partial struct FileSaveDialog
-    {
-    }
 }

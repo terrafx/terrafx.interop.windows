@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTCDefaultDispatch" /> struct.</summary>
+public static unsafe partial class HTCDefaultDispatchTests
 {
-    /// <summary>Provides validation of the <see cref="HTCDefaultDispatch" /> struct.</summary>
-    public static unsafe partial class HTCDefaultDispatchTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTCDefaultDispatch" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTCDefaultDispatch" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTCDefaultDispatch).GUID, Is.EqualTo(IID_HTCDefaultDispatch));
-        }
+        Assert.That(typeof(HTCDefaultDispatch).GUID, Is.EqualTo(IID_HTCDefaultDispatch));
+    }
 
-        /// <summary>Validates that the <see cref="HTCDefaultDispatch" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTCDefaultDispatch>(), Is.EqualTo(sizeof(HTCDefaultDispatch)));
-        }
+    /// <summary>Validates that the <see cref="HTCDefaultDispatch" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTCDefaultDispatch>(), Is.EqualTo(sizeof(HTCDefaultDispatch)));
+    }
 
-        /// <summary>Validates that the <see cref="HTCDefaultDispatch" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTCDefaultDispatch).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTCDefaultDispatch" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTCDefaultDispatch).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTCDefaultDispatch" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HTCDefaultDispatch), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="HTCDefaultDispatch" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HTCDefaultDispatch), Is.EqualTo(1));
     }
 }

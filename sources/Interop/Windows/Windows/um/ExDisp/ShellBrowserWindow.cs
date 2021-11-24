@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("C08AFD90-F2A1-11D1-8455-00A0C91F3880")]
+public partial struct ShellBrowserWindow
 {
-    [Guid("C08AFD90-F2A1-11D1-8455-00A0C91F3880")]
-    public partial struct ShellBrowserWindow
-    {
-    }
 }

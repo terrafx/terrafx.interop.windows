@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DWRITE_SHAPING_GLYPH_PROPERTIES" /> struct.</summary>
+public static unsafe partial class DWRITE_SHAPING_GLYPH_PROPERTIESTests
 {
-    /// <summary>Provides validation of the <see cref="DWRITE_SHAPING_GLYPH_PROPERTIES" /> struct.</summary>
-    public static unsafe partial class DWRITE_SHAPING_GLYPH_PROPERTIESTests
+    /// <summary>Validates that the <see cref="DWRITE_SHAPING_GLYPH_PROPERTIES" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DWRITE_SHAPING_GLYPH_PROPERTIES" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DWRITE_SHAPING_GLYPH_PROPERTIES>(), Is.EqualTo(sizeof(DWRITE_SHAPING_GLYPH_PROPERTIES)));
-        }
+        Assert.That(Marshal.SizeOf<DWRITE_SHAPING_GLYPH_PROPERTIES>(), Is.EqualTo(sizeof(DWRITE_SHAPING_GLYPH_PROPERTIES)));
+    }
 
-        /// <summary>Validates that the <see cref="DWRITE_SHAPING_GLYPH_PROPERTIES" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DWRITE_SHAPING_GLYPH_PROPERTIES).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DWRITE_SHAPING_GLYPH_PROPERTIES" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DWRITE_SHAPING_GLYPH_PROPERTIES).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DWRITE_SHAPING_GLYPH_PROPERTIES" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DWRITE_SHAPING_GLYPH_PROPERTIES), Is.EqualTo(2));
-        }
+    /// <summary>Validates that the <see cref="DWRITE_SHAPING_GLYPH_PROPERTIES" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DWRITE_SHAPING_GLYPH_PROPERTIES), Is.EqualTo(2));
     }
 }

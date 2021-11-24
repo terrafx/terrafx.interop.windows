@@ -3,21 +3,20 @@
 // Ported from um/mssip.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct MS_ADDINFO_BLOB
 {
-    public unsafe partial struct MS_ADDINFO_BLOB
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbStruct;
+    [NativeTypeName("DWORD")]
+    public uint cbStruct;
 
-        [NativeTypeName("DWORD")]
-        public uint cbMemObject;
+    [NativeTypeName("DWORD")]
+    public uint cbMemObject;
 
-        public byte* pbMemObject;
+    public byte* pbMemObject;
 
-        [NativeTypeName("DWORD")]
-        public uint cbMemSignedMsg;
+    [NativeTypeName("DWORD")]
+    public uint cbMemSignedMsg;
 
-        public byte* pbMemSignedMsg;
-    }
+    public byte* pbMemSignedMsg;
 }

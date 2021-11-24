@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("866E4B4D-725A-467C-BB01-B496B23B25F9")]
+public partial struct CODECAPI_AVEncAudioIntervalToEncode
 {
-    [Guid("866E4B4D-725A-467C-BB01-B496B23B25F9")]
-    public partial struct CODECAPI_AVEncAudioIntervalToEncode
-    {
-    }
 }

@@ -5,16 +5,15 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct DXGI_PRESENT_PARAMETERS
 {
-    public unsafe partial struct DXGI_PRESENT_PARAMETERS
-    {
-        public uint DirtyRectsCount;
+    public uint DirtyRectsCount;
 
-        public RECT* pDirtyRects;
+    public RECT* pDirtyRects;
 
-        public RECT* pScrollRect;
+    public RECT* pScrollRect;
 
-        public POINT* pScrollOffset;
-    }
+    public POINT* pScrollOffset;
 }

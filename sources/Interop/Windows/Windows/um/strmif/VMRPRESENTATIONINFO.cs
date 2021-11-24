@@ -5,32 +5,31 @@
 
 using TerraFX.Interop.DirectX;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct VMRPRESENTATIONINFO
 {
-    public unsafe partial struct VMRPRESENTATIONINFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        [NativeTypeName("LPDIRECTDRAWSURFACE7")]
-        public IDirectDrawSurface7* lpSurf;
+    [NativeTypeName("LPDIRECTDRAWSURFACE7")]
+    public IDirectDrawSurface7* lpSurf;
 
-        [NativeTypeName("REFERENCE_TIME")]
-        public long rtStart;
+    [NativeTypeName("REFERENCE_TIME")]
+    public long rtStart;
 
-        [NativeTypeName("REFERENCE_TIME")]
-        public long rtEnd;
+    [NativeTypeName("REFERENCE_TIME")]
+    public long rtEnd;
 
-        public SIZE szAspectRatio;
+    public SIZE szAspectRatio;
 
-        public RECT rcSrc;
+    public RECT rcSrc;
 
-        public RECT rcDst;
+    public RECT rcDst;
 
-        [NativeTypeName("DWORD")]
-        public uint dwTypeSpecificFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwTypeSpecificFlags;
 
-        [NativeTypeName("DWORD")]
-        public uint dwInterlaceFlags;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwInterlaceFlags;
 }

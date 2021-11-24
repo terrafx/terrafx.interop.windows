@@ -9,78 +9,77 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+[Guid("1911C771-1587-413E-A7E0-FB26C3DE0268")]
+[NativeTypeName("struct ID3D11TracingDevice : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ID3D11TracingDevice : ID3D11TracingDevice.Interface
 {
-    [SupportedOSPlatform("windows8.0")]
-    [Guid("1911C771-1587-413E-A7E0-FB26C3DE0268")]
-    [NativeTypeName("struct ID3D11TracingDevice : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D11TracingDevice : ID3D11TracingDevice.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ID3D11TracingDevice*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11TracingDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ID3D11TracingDevice*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11TracingDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ID3D11TracingDevice*, uint>)(lpVtbl[1]))((ID3D11TracingDevice*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ID3D11TracingDevice*, uint>)(lpVtbl[1]))((ID3D11TracingDevice*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ID3D11TracingDevice*, uint>)(lpVtbl[2]))((ID3D11TracingDevice*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ID3D11TracingDevice*, uint>)(lpVtbl[2]))((ID3D11TracingDevice*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT SetShaderTrackingOptionsByType(uint ResourceTypeFlags, uint Options)
+    {
+        return ((delegate* unmanaged<ID3D11TracingDevice*, uint, uint, int>)(lpVtbl[3]))((ID3D11TracingDevice*)Unsafe.AsPointer(ref this), ResourceTypeFlags, Options);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT SetShaderTrackingOptions(IUnknown* pShader, uint Options)
+    {
+        return ((delegate* unmanaged<ID3D11TracingDevice*, IUnknown*, uint, int>)(lpVtbl[4]))((ID3D11TracingDevice*)Unsafe.AsPointer(ref this), pShader, Options);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT SetShaderTrackingOptionsByType(uint ResourceTypeFlags, uint Options)
-        {
-            return ((delegate* unmanaged<ID3D11TracingDevice*, uint, uint, int>)(lpVtbl[3]))((ID3D11TracingDevice*)Unsafe.AsPointer(ref this), ResourceTypeFlags, Options);
-        }
+        HRESULT SetShaderTrackingOptionsByType(uint ResourceTypeFlags, uint Options);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetShaderTrackingOptions(IUnknown* pShader, uint Options)
-        {
-            return ((delegate* unmanaged<ID3D11TracingDevice*, IUnknown*, uint, int>)(lpVtbl[4]))((ID3D11TracingDevice*)Unsafe.AsPointer(ref this), pShader, Options);
-        }
+        HRESULT SetShaderTrackingOptions(IUnknown* pShader, uint Options);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT SetShaderTrackingOptionsByType(uint ResourceTypeFlags, uint Options);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D11TracingDevice*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT SetShaderTrackingOptions(IUnknown* pShader, uint Options);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D11TracingDevice*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D11TracingDevice*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D11TracingDevice*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D11TracingDevice*, uint> AddRef;
+        [NativeTypeName("HRESULT (UINT, UINT) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D11TracingDevice*, uint, uint, int> SetShaderTrackingOptionsByType;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D11TracingDevice*, uint> Release;
-
-            [NativeTypeName("HRESULT (UINT, UINT) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D11TracingDevice*, uint, uint, int> SetShaderTrackingOptionsByType;
-
-            [NativeTypeName("HRESULT (IUnknown *, UINT) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D11TracingDevice*, IUnknown*, uint, int> SetShaderTrackingOptions;
-        }
+        [NativeTypeName("HRESULT (IUnknown *, UINT) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D11TracingDevice*, IUnknown*, uint, int> SetShaderTrackingOptions;
     }
 }

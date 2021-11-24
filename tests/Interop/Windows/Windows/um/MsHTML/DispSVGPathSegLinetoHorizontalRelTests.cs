@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DispSVGPathSegLinetoHorizontalRel" /> struct.</summary>
+public static unsafe partial class DispSVGPathSegLinetoHorizontalRelTests
 {
-    /// <summary>Provides validation of the <see cref="DispSVGPathSegLinetoHorizontalRel" /> struct.</summary>
-    public static unsafe partial class DispSVGPathSegLinetoHorizontalRelTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispSVGPathSegLinetoHorizontalRel" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispSVGPathSegLinetoHorizontalRel" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DispSVGPathSegLinetoHorizontalRel).GUID, Is.EqualTo(IID_DispSVGPathSegLinetoHorizontalRel));
-        }
+        Assert.That(typeof(DispSVGPathSegLinetoHorizontalRel).GUID, Is.EqualTo(IID_DispSVGPathSegLinetoHorizontalRel));
+    }
 
-        /// <summary>Validates that the <see cref="DispSVGPathSegLinetoHorizontalRel" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DispSVGPathSegLinetoHorizontalRel>(), Is.EqualTo(sizeof(DispSVGPathSegLinetoHorizontalRel)));
-        }
+    /// <summary>Validates that the <see cref="DispSVGPathSegLinetoHorizontalRel" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DispSVGPathSegLinetoHorizontalRel>(), Is.EqualTo(sizeof(DispSVGPathSegLinetoHorizontalRel)));
+    }
 
-        /// <summary>Validates that the <see cref="DispSVGPathSegLinetoHorizontalRel" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DispSVGPathSegLinetoHorizontalRel).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DispSVGPathSegLinetoHorizontalRel" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DispSVGPathSegLinetoHorizontalRel).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DispSVGPathSegLinetoHorizontalRel" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DispSVGPathSegLinetoHorizontalRel" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DispSVGPathSegLinetoHorizontalRel), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(DispSVGPathSegLinetoHorizontalRel), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(DispSVGPathSegLinetoHorizontalRel), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(DispSVGPathSegLinetoHorizontalRel), Is.EqualTo(4));
         }
     }
 }

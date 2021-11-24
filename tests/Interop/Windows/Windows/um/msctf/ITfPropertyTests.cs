@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ITfProperty" /> struct.</summary>
+public static unsafe partial class ITfPropertyTests
 {
-    /// <summary>Provides validation of the <see cref="ITfProperty" /> struct.</summary>
-    public static unsafe partial class ITfPropertyTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfProperty" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfProperty" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ITfProperty).GUID, Is.EqualTo(IID_ITfProperty));
-        }
+        Assert.That(typeof(ITfProperty).GUID, Is.EqualTo(IID_ITfProperty));
+    }
 
-        /// <summary>Validates that the <see cref="ITfProperty" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ITfProperty>(), Is.EqualTo(sizeof(ITfProperty)));
-        }
+    /// <summary>Validates that the <see cref="ITfProperty" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ITfProperty>(), Is.EqualTo(sizeof(ITfProperty)));
+    }
 
-        /// <summary>Validates that the <see cref="ITfProperty" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ITfProperty).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ITfProperty" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ITfProperty).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ITfProperty" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ITfProperty" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ITfProperty), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ITfProperty), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ITfProperty), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ITfProperty), Is.EqualTo(4));
         }
     }
 }

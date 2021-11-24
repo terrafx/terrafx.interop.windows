@@ -5,43 +5,42 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SIP_ADD_NEWPROVIDER
 {
-    public unsafe partial struct SIP_ADD_NEWPROVIDER
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbStruct;
+    [NativeTypeName("DWORD")]
+    public uint cbStruct;
 
-        public Guid* pgSubject;
+    public Guid* pgSubject;
 
-        [NativeTypeName("WCHAR *")]
-        public ushort* pwszDLLFileName;
+    [NativeTypeName("WCHAR *")]
+    public ushort* pwszDLLFileName;
 
-        [NativeTypeName("WCHAR *")]
-        public ushort* pwszMagicNumber;
+    [NativeTypeName("WCHAR *")]
+    public ushort* pwszMagicNumber;
 
-        [NativeTypeName("WCHAR *")]
-        public ushort* pwszIsFunctionName;
+    [NativeTypeName("WCHAR *")]
+    public ushort* pwszIsFunctionName;
 
-        [NativeTypeName("WCHAR *")]
-        public ushort* pwszGetFuncName;
+    [NativeTypeName("WCHAR *")]
+    public ushort* pwszGetFuncName;
 
-        [NativeTypeName("WCHAR *")]
-        public ushort* pwszPutFuncName;
+    [NativeTypeName("WCHAR *")]
+    public ushort* pwszPutFuncName;
 
-        [NativeTypeName("WCHAR *")]
-        public ushort* pwszCreateFuncName;
+    [NativeTypeName("WCHAR *")]
+    public ushort* pwszCreateFuncName;
 
-        [NativeTypeName("WCHAR *")]
-        public ushort* pwszVerifyFuncName;
+    [NativeTypeName("WCHAR *")]
+    public ushort* pwszVerifyFuncName;
 
-        [NativeTypeName("WCHAR *")]
-        public ushort* pwszRemoveFuncName;
+    [NativeTypeName("WCHAR *")]
+    public ushort* pwszRemoveFuncName;
 
-        [NativeTypeName("WCHAR *")]
-        public ushort* pwszIsFunctionNameFmt2;
+    [NativeTypeName("WCHAR *")]
+    public ushort* pwszIsFunctionNameFmt2;
 
-        [NativeTypeName("PWSTR")]
-        public ushort* pwszGetCapFuncName;
-    }
+    [NativeTypeName("PWSTR")]
+    public ushort* pwszGetCapFuncName;
 }

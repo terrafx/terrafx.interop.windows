@@ -5,17 +5,16 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct WINHTTP_HEADER_NAME
-    {
-        [FieldOffset(0)]
-        [NativeTypeName("PCWSTR")]
-        public ushort* pwszName;
+namespace TerraFX.Interop.Windows;
 
-        [FieldOffset(0)]
-        [NativeTypeName("PCSTR")]
-        public sbyte* pszName;
-    }
+[StructLayout(LayoutKind.Explicit)]
+public unsafe partial struct WINHTTP_HEADER_NAME
+{
+    [FieldOffset(0)]
+    [NativeTypeName("PCWSTR")]
+    public ushort* pwszName;
+
+    [FieldOffset(0)]
+    [NativeTypeName("PCSTR")]
+    public sbyte* pszName;
 }

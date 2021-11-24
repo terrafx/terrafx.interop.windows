@@ -3,31 +3,30 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum htmlInput
 {
-    public enum htmlInput
-    {
-        htmlInputNotSet = 0,
-        htmlInputButton = 1,
-        htmlInputCheckbox = 2,
-        htmlInputFile = 3,
-        htmlInputHidden = 4,
-        htmlInputImage = 5,
-        htmlInputPassword = 6,
-        htmlInputRadio = 7,
-        htmlInputReset = 8,
-        htmlInputSelectOne = 9,
-        htmlInputSelectMultiple = 10,
-        htmlInputSubmit = 11,
-        htmlInputText = 12,
-        htmlInputTextarea = 13,
-        htmlInputRichtext = 14,
-        htmlInputRange = 15,
-        htmlInputUrl = 16,
-        htmlInputEmail = 17,
-        htmlInputNumber = 18,
-        htmlInputTel = 19,
-        htmlInputSearch = 20,
-        htmlInput_Max = 2147483647,
-    }
+    htmlInputNotSet = 0,
+    htmlInputButton = 1,
+    htmlInputCheckbox = 2,
+    htmlInputFile = 3,
+    htmlInputHidden = 4,
+    htmlInputImage = 5,
+    htmlInputPassword = 6,
+    htmlInputRadio = 7,
+    htmlInputReset = 8,
+    htmlInputSelectOne = 9,
+    htmlInputSelectMultiple = 10,
+    htmlInputSubmit = 11,
+    htmlInputText = 12,
+    htmlInputTextarea = 13,
+    htmlInputRichtext = 14,
+    htmlInputRange = 15,
+    htmlInputUrl = 16,
+    htmlInputEmail = 17,
+    htmlInputNumber = 18,
+    htmlInputTel = 19,
+    htmlInputSearch = 20,
+    htmlInput_Max = 2147483647,
 }

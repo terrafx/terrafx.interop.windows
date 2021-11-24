@@ -5,17 +5,16 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SP_DETECTDEVICE_PARAMS32
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SP_DETECTDEVICE_PARAMS32
-    {
-        public SP_CLASSINSTALL_HEADER32 ClassInstallHeader;
+    public SP_CLASSINSTALL_HEADER32 ClassInstallHeader;
 
-        [NativeTypeName("PDETECT_PROGRESS_NOTIFY")]
-        public delegate* unmanaged<void*, uint, int> DetectProgressNotify;
+    [NativeTypeName("PDETECT_PROGRESS_NOTIFY")]
+    public delegate* unmanaged<void*, uint, int> DetectProgressNotify;
 
-        [NativeTypeName("PVOID")]
-        public void* ProgressNotifyParam;
-    }
+    [NativeTypeName("PVOID")]
+    public void* ProgressNotifyParam;
 }

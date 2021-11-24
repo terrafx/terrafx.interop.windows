@@ -3,16 +3,15 @@
 // Ported from um/xmllite.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum XmlWriterProperty
 {
-    public enum XmlWriterProperty
-    {
-        XmlWriterProperty_MultiLanguage = 0,
-        XmlWriterProperty_Indent = (XmlWriterProperty_MultiLanguage + 1),
-        XmlWriterProperty_ByteOrderMark = (XmlWriterProperty_Indent + 1),
-        XmlWriterProperty_OmitXmlDeclaration = (XmlWriterProperty_ByteOrderMark + 1),
-        XmlWriterProperty_ConformanceLevel = (XmlWriterProperty_OmitXmlDeclaration + 1),
-        XmlWriterProperty_CompactEmptyElement = (XmlWriterProperty_ConformanceLevel + 1),
-        _XmlWriterProperty_Last = XmlWriterProperty_CompactEmptyElement,
-    }
+    XmlWriterProperty_MultiLanguage = 0,
+    XmlWriterProperty_Indent = (XmlWriterProperty_MultiLanguage + 1),
+    XmlWriterProperty_ByteOrderMark = (XmlWriterProperty_Indent + 1),
+    XmlWriterProperty_OmitXmlDeclaration = (XmlWriterProperty_ByteOrderMark + 1),
+    XmlWriterProperty_ConformanceLevel = (XmlWriterProperty_OmitXmlDeclaration + 1),
+    XmlWriterProperty_CompactEmptyElement = (XmlWriterProperty_ConformanceLevel + 1),
+    _XmlWriterProperty_Last = XmlWriterProperty_CompactEmptyElement,
 }

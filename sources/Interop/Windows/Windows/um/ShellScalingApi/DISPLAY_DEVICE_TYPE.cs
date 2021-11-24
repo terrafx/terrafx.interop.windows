@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum DISPLAY_DEVICE_TYPE
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum DISPLAY_DEVICE_TYPE
-    {
-        DEVICE_PRIMARY = 0,
-        DEVICE_IMMERSIVE = 1,
-    }
+    DEVICE_PRIMARY = 0,
+    DEVICE_IMMERSIVE = 1,
 }

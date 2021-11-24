@@ -5,11 +5,10 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum DXGI_OUTDUPL_FLAG
 {
-    [Flags]
-    public enum DXGI_OUTDUPL_FLAG
-    {
-        DXGI_OUTDUPL_COMPOSITED_UI_CAPTURE_ONLY = 1,
-    }
+    DXGI_OUTDUPL_COMPOSITED_UI_CAPTURE_ONLY = 1,
 }

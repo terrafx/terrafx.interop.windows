@@ -7,16 +7,15 @@ using NUnit.Framework;
 using System;
 using static TerraFX.Interop.Windows.GUID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="GUID" /> class.</summary>
+public static partial class GUIDTests
 {
-    /// <summary>Provides validation of the <see cref="GUID" /> class.</summary>
-    public static partial class GUIDTests
+    /// <summary>Validates that the value of the <see cref="GUID_DeviceType" /> property is correct.</summary>
+    [Test]
+    public static void GUID_DeviceTypeTest()
     {
-        /// <summary>Validates that the value of the <see cref="GUID_DeviceType" /> property is correct.</summary>
-        [Test]
-        public static void GUID_DeviceTypeTest()
-        {
-            Assert.That(GUID_DeviceType, Is.EqualTo(new Guid(0xd722fb4d, 0x7a68, 0x437a, 0xb2, 0x0c, 0x58, 0x04, 0xee, 0x24, 0x94, 0xa6)));
-        }
+        Assert.That(GUID_DeviceType, Is.EqualTo(new Guid(0xd722fb4d, 0x7a68, 0x437a, 0xb2, 0x0c, 0x58, 0x04, 0xee, 0x24, 0x94, 0xa6)));
     }
 }

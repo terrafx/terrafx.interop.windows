@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SYMSRV_INDEX_INFOW" /> struct.</summary>
+public static unsafe partial class SYMSRV_INDEX_INFOWTests
 {
-    /// <summary>Provides validation of the <see cref="SYMSRV_INDEX_INFOW" /> struct.</summary>
-    public static unsafe partial class SYMSRV_INDEX_INFOWTests
+    /// <summary>Validates that the <see cref="SYMSRV_INDEX_INFOW" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SYMSRV_INDEX_INFOW" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SYMSRV_INDEX_INFOW>(), Is.EqualTo(sizeof(SYMSRV_INDEX_INFOW)));
-        }
+        Assert.That(Marshal.SizeOf<SYMSRV_INDEX_INFOW>(), Is.EqualTo(sizeof(SYMSRV_INDEX_INFOW)));
+    }
 
-        /// <summary>Validates that the <see cref="SYMSRV_INDEX_INFOW" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SYMSRV_INDEX_INFOW).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SYMSRV_INDEX_INFOW" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SYMSRV_INDEX_INFOW).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SYMSRV_INDEX_INFOW" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SYMSRV_INDEX_INFOW), Is.EqualTo(1608));
-        }
+    /// <summary>Validates that the <see cref="SYMSRV_INDEX_INFOW" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SYMSRV_INDEX_INFOW), Is.EqualTo(1608));
     }
 }

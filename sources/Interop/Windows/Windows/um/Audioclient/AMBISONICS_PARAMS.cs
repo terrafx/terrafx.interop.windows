@@ -3,29 +3,28 @@
 // Ported from um/Audioclient.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct AMBISONICS_PARAMS
 {
-    public unsafe partial struct AMBISONICS_PARAMS
-    {
-        [NativeTypeName("UINT32")]
-        public uint u32Size;
+    [NativeTypeName("UINT32")]
+    public uint u32Size;
 
-        [NativeTypeName("UINT32")]
-        public uint u32Version;
+    [NativeTypeName("UINT32")]
+    public uint u32Version;
 
-        public AMBISONICS_TYPE u32Type;
+    public AMBISONICS_TYPE u32Type;
 
-        public AMBISONICS_CHANNEL_ORDERING u32ChannelOrdering;
+    public AMBISONICS_CHANNEL_ORDERING u32ChannelOrdering;
 
-        public AMBISONICS_NORMALIZATION u32Normalization;
+    public AMBISONICS_NORMALIZATION u32Normalization;
 
-        [NativeTypeName("UINT32")]
-        public uint u32Order;
+    [NativeTypeName("UINT32")]
+    public uint u32Order;
 
-        [NativeTypeName("UINT32")]
-        public uint u32NumChannels;
+    [NativeTypeName("UINT32")]
+    public uint u32NumChannels;
 
-        [NativeTypeName("UINT32 *")]
-        public uint* pu32ChannelMap;
-    }
+    [NativeTypeName("UINT32 *")]
+    public uint* pu32ChannelMap;
 }

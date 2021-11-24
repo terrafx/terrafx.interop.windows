@@ -5,36 +5,35 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct ADDRINFOEXA
 {
-    public unsafe partial struct ADDRINFOEXA
-    {
-        public int ai_flags;
+    public int ai_flags;
 
-        public int ai_family;
+    public int ai_family;
 
-        public int ai_socktype;
+    public int ai_socktype;
 
-        public int ai_protocol;
+    public int ai_protocol;
 
-        [NativeTypeName("size_t")]
-        public nuint ai_addrlen;
+    [NativeTypeName("size_t")]
+    public nuint ai_addrlen;
 
-        [NativeTypeName("char *")]
-        public sbyte* ai_canonname;
+    [NativeTypeName("char *")]
+    public sbyte* ai_canonname;
 
-        [NativeTypeName("struct sockaddr *")]
-        public SOCKADDR* ai_addr;
+    [NativeTypeName("struct sockaddr *")]
+    public SOCKADDR* ai_addr;
 
-        public void* ai_blob;
+    public void* ai_blob;
 
-        [NativeTypeName("size_t")]
-        public nuint ai_bloblen;
+    [NativeTypeName("size_t")]
+    public nuint ai_bloblen;
 
-        [NativeTypeName("LPGUID")]
-        public Guid* ai_provider;
+    [NativeTypeName("LPGUID")]
+    public Guid* ai_provider;
 
-        [NativeTypeName("struct addrinfoexA *")]
-        public ADDRINFOEXA* ai_next;
-    }
+    [NativeTypeName("struct addrinfoexA *")]
+    public ADDRINFOEXA* ai_next;
 }

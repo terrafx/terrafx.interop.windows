@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("995DC027-CB95-49E6-B91B-5967753CDCB8")]
+public partial struct CODECAPI_AVEncStatHardwareProcessorUtilitization
 {
-    [Guid("995DC027-CB95-49E6-B91B-5967753CDCB8")]
-    public partial struct CODECAPI_AVEncStatHardwareProcessorUtilitization
-    {
-    }
 }

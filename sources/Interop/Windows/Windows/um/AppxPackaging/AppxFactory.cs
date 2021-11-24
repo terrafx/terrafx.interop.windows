@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("5842A140-FF9F-4166-8F5C-62F5B7B0C781")]
+public partial struct AppxFactory
 {
-    [Guid("5842A140-FF9F-4166-8F5C-62F5B7B0C781")]
-    public partial struct AppxFactory
-    {
-    }
 }

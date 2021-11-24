@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum DWMTRANSITION_OWNEDWINDOW_TARGET
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum DWMTRANSITION_OWNEDWINDOW_TARGET
-    {
-        DWMTRANSITION_OWNEDWINDOW_NULL = -1,
-        DWMTRANSITION_OWNEDWINDOW_REPOSITION = 0,
-    }
+    DWMTRANSITION_OWNEDWINDOW_NULL = -1,
+    DWMTRANSITION_OWNEDWINDOW_REPOSITION = 0,
 }

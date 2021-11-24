@@ -5,11 +5,10 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum D3D11_CRYPTO_SESSION_KEY_EXCHANGE_FLAGS
 {
-    [Flags]
-    public enum D3D11_CRYPTO_SESSION_KEY_EXCHANGE_FLAGS
-    {
-        D3D11_CRYPTO_SESSION_KEY_EXCHANGE_FLAG_NONE = 0,
-    }
+    D3D11_CRYPTO_SESSION_KEY_EXCHANGE_FLAG_NONE = 0,
 }

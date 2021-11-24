@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("7EBFDD85-AD18-11D3-A4C5-00C04F72D6B8")]
+[NativeTypeName("struct IEnumTravelLogEntry : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IEnumTravelLogEntry : IEnumTravelLogEntry.Interface
 {
-    [Guid("7EBFDD85-AD18-11D3-A4C5-00C04F72D6B8")]
-    [NativeTypeName("struct IEnumTravelLogEntry : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumTravelLogEntry : IEnumTravelLogEntry.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IEnumTravelLogEntry*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTravelLogEntry*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IEnumTravelLogEntry*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTravelLogEntry*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IEnumTravelLogEntry*, uint>)(lpVtbl[1]))((IEnumTravelLogEntry*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IEnumTravelLogEntry*, uint>)(lpVtbl[1]))((IEnumTravelLogEntry*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IEnumTravelLogEntry*, uint>)(lpVtbl[2]))((IEnumTravelLogEntry*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IEnumTravelLogEntry*, uint>)(lpVtbl[2]))((IEnumTravelLogEntry*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Next([NativeTypeName("ULONG")] uint cElt, ITravelLogEntry** rgElt, [NativeTypeName("ULONG *")] uint* pcEltFetched)
+    {
+        return ((delegate* unmanaged<IEnumTravelLogEntry*, uint, ITravelLogEntry**, uint*, int>)(lpVtbl[3]))((IEnumTravelLogEntry*)Unsafe.AsPointer(ref this), cElt, rgElt, pcEltFetched);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Skip([NativeTypeName("ULONG")] uint cElt)
+    {
+        return ((delegate* unmanaged<IEnumTravelLogEntry*, uint, int>)(lpVtbl[4]))((IEnumTravelLogEntry*)Unsafe.AsPointer(ref this), cElt);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Reset()
+    {
+        return ((delegate* unmanaged<IEnumTravelLogEntry*, int>)(lpVtbl[5]))((IEnumTravelLogEntry*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Clone(IEnumTravelLogEntry** ppEnum)
+    {
+        return ((delegate* unmanaged<IEnumTravelLogEntry*, IEnumTravelLogEntry**, int>)(lpVtbl[6]))((IEnumTravelLogEntry*)Unsafe.AsPointer(ref this), ppEnum);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Next([NativeTypeName("ULONG")] uint cElt, ITravelLogEntry** rgElt, [NativeTypeName("ULONG *")] uint* pcEltFetched)
-        {
-            return ((delegate* unmanaged<IEnumTravelLogEntry*, uint, ITravelLogEntry**, uint*, int>)(lpVtbl[3]))((IEnumTravelLogEntry*)Unsafe.AsPointer(ref this), cElt, rgElt, pcEltFetched);
-        }
+        HRESULT Next([NativeTypeName("ULONG")] uint cElt, ITravelLogEntry** rgElt, [NativeTypeName("ULONG *")] uint* pcEltFetched);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Skip([NativeTypeName("ULONG")] uint cElt)
-        {
-            return ((delegate* unmanaged<IEnumTravelLogEntry*, uint, int>)(lpVtbl[4]))((IEnumTravelLogEntry*)Unsafe.AsPointer(ref this), cElt);
-        }
+        HRESULT Skip([NativeTypeName("ULONG")] uint cElt);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT Reset()
-        {
-            return ((delegate* unmanaged<IEnumTravelLogEntry*, int>)(lpVtbl[5]))((IEnumTravelLogEntry*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Reset();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Clone(IEnumTravelLogEntry** ppEnum)
-        {
-            return ((delegate* unmanaged<IEnumTravelLogEntry*, IEnumTravelLogEntry**, int>)(lpVtbl[6]))((IEnumTravelLogEntry*)Unsafe.AsPointer(ref this), ppEnum);
-        }
+        HRESULT Clone(IEnumTravelLogEntry** ppEnum);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Next([NativeTypeName("ULONG")] uint cElt, ITravelLogEntry** rgElt, [NativeTypeName("ULONG *")] uint* pcEltFetched);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumTravelLogEntry*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT Skip([NativeTypeName("ULONG")] uint cElt);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumTravelLogEntry*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT Reset();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumTravelLogEntry*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT Clone(IEnumTravelLogEntry** ppEnum);
-        }
+        [NativeTypeName("HRESULT (ULONG, ITravelLogEntry **, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumTravelLogEntry*, uint, ITravelLogEntry**, uint*, int> Next;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumTravelLogEntry*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumTravelLogEntry*, uint, int> Skip;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumTravelLogEntry*, uint> AddRef;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumTravelLogEntry*, int> Reset;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumTravelLogEntry*, uint> Release;
-
-            [NativeTypeName("HRESULT (ULONG, ITravelLogEntry **, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumTravelLogEntry*, uint, ITravelLogEntry**, uint*, int> Next;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumTravelLogEntry*, uint, int> Skip;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumTravelLogEntry*, int> Reset;
-
-            [NativeTypeName("HRESULT (IEnumTravelLogEntry **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumTravelLogEntry*, IEnumTravelLogEntry**, int> Clone;
-        }
+        [NativeTypeName("HRESULT (IEnumTravelLogEntry **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumTravelLogEntry*, IEnumTravelLogEntry**, int> Clone;
     }
 }

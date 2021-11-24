@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SecPkgContext_SrtpParameters" /> struct.</summary>
+public static unsafe partial class SecPkgContext_SrtpParametersTests
 {
-    /// <summary>Provides validation of the <see cref="SecPkgContext_SrtpParameters" /> struct.</summary>
-    public static unsafe partial class SecPkgContext_SrtpParametersTests
+    /// <summary>Validates that the <see cref="SecPkgContext_SrtpParameters" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SecPkgContext_SrtpParameters" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SecPkgContext_SrtpParameters>(), Is.EqualTo(sizeof(SecPkgContext_SrtpParameters)));
-        }
+        Assert.That(Marshal.SizeOf<SecPkgContext_SrtpParameters>(), Is.EqualTo(sizeof(SecPkgContext_SrtpParameters)));
+    }
 
-        /// <summary>Validates that the <see cref="SecPkgContext_SrtpParameters" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SecPkgContext_SrtpParameters).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SecPkgContext_SrtpParameters" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SecPkgContext_SrtpParameters).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SecPkgContext_SrtpParameters" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SecPkgContext_SrtpParameters" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SecPkgContext_SrtpParameters), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(SecPkgContext_SrtpParameters), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(SecPkgContext_SrtpParameters), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(SecPkgContext_SrtpParameters), Is.EqualTo(8));
         }
     }
 }

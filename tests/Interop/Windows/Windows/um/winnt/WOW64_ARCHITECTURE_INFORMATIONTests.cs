@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WOW64_ARCHITECTURE_INFORMATION" /> struct.</summary>
+public static unsafe partial class WOW64_ARCHITECTURE_INFORMATIONTests
 {
-    /// <summary>Provides validation of the <see cref="WOW64_ARCHITECTURE_INFORMATION" /> struct.</summary>
-    public static unsafe partial class WOW64_ARCHITECTURE_INFORMATIONTests
+    /// <summary>Validates that the <see cref="WOW64_ARCHITECTURE_INFORMATION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WOW64_ARCHITECTURE_INFORMATION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WOW64_ARCHITECTURE_INFORMATION>(), Is.EqualTo(sizeof(WOW64_ARCHITECTURE_INFORMATION)));
-        }
+        Assert.That(Marshal.SizeOf<WOW64_ARCHITECTURE_INFORMATION>(), Is.EqualTo(sizeof(WOW64_ARCHITECTURE_INFORMATION)));
+    }
 
-        /// <summary>Validates that the <see cref="WOW64_ARCHITECTURE_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WOW64_ARCHITECTURE_INFORMATION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WOW64_ARCHITECTURE_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WOW64_ARCHITECTURE_INFORMATION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WOW64_ARCHITECTURE_INFORMATION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(WOW64_ARCHITECTURE_INFORMATION), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="WOW64_ARCHITECTURE_INFORMATION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(WOW64_ARCHITECTURE_INFORMATION), Is.EqualTo(4));
     }
 }

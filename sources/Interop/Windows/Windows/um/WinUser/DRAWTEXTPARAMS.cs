@@ -3,18 +3,17 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct DRAWTEXTPARAMS
 {
-    public partial struct DRAWTEXTPARAMS
-    {
-        public uint cbSize;
+    public uint cbSize;
 
-        public int iTabLength;
+    public int iTabLength;
 
-        public int iLeftMargin;
+    public int iLeftMargin;
 
-        public int iRightMargin;
+    public int iRightMargin;
 
-        public uint uiLengthDrawn;
-    }
+    public uint uiLengthDrawn;
 }

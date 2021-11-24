@@ -6,579 +6,578 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct _wireVARIANT
 {
-    public unsafe partial struct _wireVARIANT
+    [NativeTypeName("DWORD")]
+    public uint clSize;
+
+    [NativeTypeName("DWORD")]
+    public uint rpcReserved;
+
+    public ushort vt;
+
+    public ushort wReserved1;
+
+    public ushort wReserved2;
+
+    public ushort wReserved3;
+
+    [NativeTypeName("_wireVARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/oaidl.h:581:36)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public ref long llVal
     {
-        [NativeTypeName("DWORD")]
-        public uint clSize;
-
-        [NativeTypeName("DWORD")]
-        public uint rpcReserved;
-
-        public ushort vt;
-
-        public ushort wReserved1;
-
-        public ushort wReserved2;
-
-        public ushort wReserved3;
-
-        [NativeTypeName("_wireVARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/oaidl.h:581:36)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public ref long llVal
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.llVal, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.llVal, 1));
         }
+    }
 
-        public ref int lVal
+    public ref int lVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.lVal, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.lVal, 1));
         }
+    }
 
-        public ref byte bVal
+    public ref byte bVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.bVal, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.bVal, 1));
         }
+    }
 
-        public ref short iVal
+    public ref short iVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.iVal, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.iVal, 1));
         }
+    }
 
-        public ref float fltVal
+    public ref float fltVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.fltVal, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.fltVal, 1));
         }
+    }
 
-        public ref double dblVal
+    public ref double dblVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dblVal, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dblVal, 1));
         }
+    }
 
-        public ref short boolVal
+    public ref short boolVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.boolVal, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.boolVal, 1));
         }
+    }
 
-        public ref int scode
+    public ref int scode
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.scode, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.scode, 1));
         }
+    }
 
-        public ref CY cyVal
+    public ref CY cyVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cyVal, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cyVal, 1));
         }
+    }
 
-        public ref double date
+    public ref double date
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.date, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.date, 1));
         }
+    }
 
-        public ref FLAGGED_WORD_BLOB* bstrVal
+    public ref FLAGGED_WORD_BLOB* bstrVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.bstrVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.bstrVal;
         }
+    }
 
-        public ref IUnknown* punkVal
+    public ref IUnknown* punkVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.punkVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.punkVal;
         }
+    }
 
-        public ref IDispatch* pdispVal
+    public ref IDispatch* pdispVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pdispVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pdispVal;
         }
+    }
 
-        public ref _wireSAFEARRAY** parray
+    public ref _wireSAFEARRAY** parray
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.parray;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.parray;
         }
+    }
 
-        public ref _wireBRECORD* brecVal
+    public ref _wireBRECORD* brecVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.brecVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.brecVal;
         }
+    }
 
-        public ref byte* pbVal
+    public ref byte* pbVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pbVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pbVal;
         }
+    }
 
-        public ref short* piVal
+    public ref short* piVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.piVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.piVal;
         }
+    }
 
-        public ref int* plVal
+    public ref int* plVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.plVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.plVal;
         }
+    }
 
-        public ref long* pllVal
+    public ref long* pllVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pllVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pllVal;
         }
+    }
 
-        public ref float* pfltVal
+    public ref float* pfltVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pfltVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pfltVal;
         }
+    }
 
-        public ref double* pdblVal
+    public ref double* pdblVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pdblVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pdblVal;
         }
+    }
 
-        public ref short* pboolVal
+    public ref short* pboolVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pboolVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pboolVal;
         }
+    }
 
-        public ref int* pscode
+    public ref int* pscode
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pscode;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pscode;
         }
+    }
 
-        public ref CY* pcyVal
+    public ref CY* pcyVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pcyVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pcyVal;
         }
+    }
 
-        public ref double* pdate
+    public ref double* pdate
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pdate;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pdate;
         }
+    }
 
-        public ref FLAGGED_WORD_BLOB** pbstrVal
+    public ref FLAGGED_WORD_BLOB** pbstrVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pbstrVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pbstrVal;
         }
+    }
 
-        public ref IUnknown** ppunkVal
+    public ref IUnknown** ppunkVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.ppunkVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.ppunkVal;
         }
+    }
 
-        public ref IDispatch** ppdispVal
+    public ref IDispatch** ppdispVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.ppdispVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.ppdispVal;
         }
+    }
 
-        public ref _wireSAFEARRAY*** pparray
+    public ref _wireSAFEARRAY*** pparray
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pparray;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pparray;
         }
+    }
 
-        public ref _wireVARIANT** pvarVal
+    public ref _wireVARIANT** pvarVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pvarVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pvarVal;
         }
+    }
 
-        public ref sbyte cVal
+    public ref sbyte cVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cVal, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cVal, 1));
         }
+    }
 
-        public ref ushort uiVal
+    public ref ushort uiVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.uiVal, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.uiVal, 1));
         }
+    }
 
-        public ref uint ulVal
+    public ref uint ulVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ulVal, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ulVal, 1));
         }
+    }
 
-        public ref ulong ullVal
+    public ref ulong ullVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ullVal, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ullVal, 1));
         }
+    }
 
-        public ref int intVal
+    public ref int intVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.intVal, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.intVal, 1));
         }
+    }
 
-        public ref uint uintVal
+    public ref uint uintVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.uintVal, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.uintVal, 1));
         }
+    }
 
-        public ref DECIMAL decVal
+    public ref DECIMAL decVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.decVal, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.decVal, 1));
         }
+    }
 
-        public ref DECIMAL* pdecVal
+    public ref DECIMAL* pdecVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pdecVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pdecVal;
         }
+    }
 
-        public ref sbyte* pcVal
+    public ref sbyte* pcVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pcVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pcVal;
         }
+    }
 
-        public ref ushort* puiVal
+    public ref ushort* puiVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.puiVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.puiVal;
         }
+    }
 
-        public ref uint* pulVal
+    public ref uint* pulVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pulVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pulVal;
         }
+    }
 
-        public ref ulong* pullVal
+    public ref ulong* pullVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pullVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pullVal;
         }
+    }
 
-        public ref int* pintVal
+    public ref int* pintVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pintVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pintVal;
         }
+    }
 
-        public ref uint* puintVal
+    public ref uint* puintVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.puintVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.puintVal;
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("LONGLONG")]
-            public long llVal;
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("LONGLONG")]
+        public long llVal;
 
-            [FieldOffset(0)]
-            [NativeTypeName("LONG")]
-            public int lVal;
+        [FieldOffset(0)]
+        [NativeTypeName("LONG")]
+        public int lVal;
 
-            [FieldOffset(0)]
-            public byte bVal;
+        [FieldOffset(0)]
+        public byte bVal;
 
-            [FieldOffset(0)]
-            public short iVal;
+        [FieldOffset(0)]
+        public short iVal;
 
-            [FieldOffset(0)]
-            public float fltVal;
+        [FieldOffset(0)]
+        public float fltVal;
 
-            [FieldOffset(0)]
-            public double dblVal;
+        [FieldOffset(0)]
+        public double dblVal;
 
-            [FieldOffset(0)]
-            [NativeTypeName("VARIANT_BOOL")]
-            public short boolVal;
+        [FieldOffset(0)]
+        [NativeTypeName("VARIANT_BOOL")]
+        public short boolVal;
 
-            [FieldOffset(0)]
-            [NativeTypeName("SCODE")]
-            public int scode;
+        [FieldOffset(0)]
+        [NativeTypeName("SCODE")]
+        public int scode;
 
-            [FieldOffset(0)]
-            public CY cyVal;
+        [FieldOffset(0)]
+        public CY cyVal;
 
-            [FieldOffset(0)]
-            [NativeTypeName("DATE")]
-            public double date;
+        [FieldOffset(0)]
+        [NativeTypeName("DATE")]
+        public double date;
 
-            [FieldOffset(0)]
-            [NativeTypeName("wireBSTR")]
-            public FLAGGED_WORD_BLOB* bstrVal;
+        [FieldOffset(0)]
+        [NativeTypeName("wireBSTR")]
+        public FLAGGED_WORD_BLOB* bstrVal;
 
-            [FieldOffset(0)]
-            public IUnknown* punkVal;
+        [FieldOffset(0)]
+        public IUnknown* punkVal;
 
-            [FieldOffset(0)]
-            public IDispatch* pdispVal;
+        [FieldOffset(0)]
+        public IDispatch* pdispVal;
 
-            [FieldOffset(0)]
-            [NativeTypeName("wirePSAFEARRAY")]
-            public _wireSAFEARRAY** parray;
+        [FieldOffset(0)]
+        [NativeTypeName("wirePSAFEARRAY")]
+        public _wireSAFEARRAY** parray;
 
-            [FieldOffset(0)]
-            [NativeTypeName("wireBRECORD")]
-            public _wireBRECORD* brecVal;
+        [FieldOffset(0)]
+        [NativeTypeName("wireBRECORD")]
+        public _wireBRECORD* brecVal;
 
-            [FieldOffset(0)]
-            public byte* pbVal;
+        [FieldOffset(0)]
+        public byte* pbVal;
 
-            [FieldOffset(0)]
-            public short* piVal;
+        [FieldOffset(0)]
+        public short* piVal;
 
-            [FieldOffset(0)]
-            [NativeTypeName("LONG *")]
-            public int* plVal;
+        [FieldOffset(0)]
+        [NativeTypeName("LONG *")]
+        public int* plVal;
 
-            [FieldOffset(0)]
-            [NativeTypeName("LONGLONG *")]
-            public long* pllVal;
+        [FieldOffset(0)]
+        [NativeTypeName("LONGLONG *")]
+        public long* pllVal;
 
-            [FieldOffset(0)]
-            public float* pfltVal;
+        [FieldOffset(0)]
+        public float* pfltVal;
 
-            [FieldOffset(0)]
-            public double* pdblVal;
+        [FieldOffset(0)]
+        public double* pdblVal;
 
-            [FieldOffset(0)]
-            [NativeTypeName("VARIANT_BOOL *")]
-            public short* pboolVal;
+        [FieldOffset(0)]
+        [NativeTypeName("VARIANT_BOOL *")]
+        public short* pboolVal;
 
-            [FieldOffset(0)]
-            [NativeTypeName("SCODE *")]
-            public int* pscode;
+        [FieldOffset(0)]
+        [NativeTypeName("SCODE *")]
+        public int* pscode;
 
-            [FieldOffset(0)]
-            public CY* pcyVal;
+        [FieldOffset(0)]
+        public CY* pcyVal;
 
-            [FieldOffset(0)]
-            [NativeTypeName("DATE *")]
-            public double* pdate;
+        [FieldOffset(0)]
+        [NativeTypeName("DATE *")]
+        public double* pdate;
 
-            [FieldOffset(0)]
-            [NativeTypeName("wireBSTR *")]
-            public FLAGGED_WORD_BLOB** pbstrVal;
+        [FieldOffset(0)]
+        [NativeTypeName("wireBSTR *")]
+        public FLAGGED_WORD_BLOB** pbstrVal;
 
-            [FieldOffset(0)]
-            public IUnknown** ppunkVal;
+        [FieldOffset(0)]
+        public IUnknown** ppunkVal;
 
-            [FieldOffset(0)]
-            public IDispatch** ppdispVal;
+        [FieldOffset(0)]
+        public IDispatch** ppdispVal;
 
-            [FieldOffset(0)]
-            [NativeTypeName("wirePSAFEARRAY *")]
-            public _wireSAFEARRAY*** pparray;
+        [FieldOffset(0)]
+        [NativeTypeName("wirePSAFEARRAY *")]
+        public _wireSAFEARRAY*** pparray;
 
-            [FieldOffset(0)]
-            [NativeTypeName("wireVARIANT *")]
-            public _wireVARIANT** pvarVal;
+        [FieldOffset(0)]
+        [NativeTypeName("wireVARIANT *")]
+        public _wireVARIANT** pvarVal;
 
-            [FieldOffset(0)]
-            [NativeTypeName("CHAR")]
-            public sbyte cVal;
+        [FieldOffset(0)]
+        [NativeTypeName("CHAR")]
+        public sbyte cVal;
 
-            [FieldOffset(0)]
-            public ushort uiVal;
+        [FieldOffset(0)]
+        public ushort uiVal;
 
-            [FieldOffset(0)]
-            [NativeTypeName("ULONG")]
-            public uint ulVal;
+        [FieldOffset(0)]
+        [NativeTypeName("ULONG")]
+        public uint ulVal;
 
-            [FieldOffset(0)]
-            [NativeTypeName("ULONGLONG")]
-            public ulong ullVal;
+        [FieldOffset(0)]
+        [NativeTypeName("ULONGLONG")]
+        public ulong ullVal;
 
-            [FieldOffset(0)]
-            public int intVal;
+        [FieldOffset(0)]
+        public int intVal;
 
-            [FieldOffset(0)]
-            public uint uintVal;
+        [FieldOffset(0)]
+        public uint uintVal;
 
-            [FieldOffset(0)]
-            public DECIMAL decVal;
+        [FieldOffset(0)]
+        public DECIMAL decVal;
 
-            [FieldOffset(0)]
-            public DECIMAL* pdecVal;
+        [FieldOffset(0)]
+        public DECIMAL* pdecVal;
 
-            [FieldOffset(0)]
-            [NativeTypeName("CHAR *")]
-            public sbyte* pcVal;
+        [FieldOffset(0)]
+        [NativeTypeName("CHAR *")]
+        public sbyte* pcVal;
 
-            [FieldOffset(0)]
-            public ushort* puiVal;
+        [FieldOffset(0)]
+        public ushort* puiVal;
 
-            [FieldOffset(0)]
-            [NativeTypeName("ULONG *")]
-            public uint* pulVal;
+        [FieldOffset(0)]
+        [NativeTypeName("ULONG *")]
+        public uint* pulVal;
 
-            [FieldOffset(0)]
-            [NativeTypeName("ULONGLONG *")]
-            public ulong* pullVal;
+        [FieldOffset(0)]
+        [NativeTypeName("ULONGLONG *")]
+        public ulong* pullVal;
 
-            [FieldOffset(0)]
-            public int* pintVal;
+        [FieldOffset(0)]
+        public int* pintVal;
 
-            [FieldOffset(0)]
-            public uint* puintVal;
-        }
+        [FieldOffset(0)]
+        public uint* puintVal;
     }
 }

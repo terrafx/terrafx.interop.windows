@@ -5,10 +5,9 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D1_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS
 {
-    public partial struct D2D1_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS
-    {
-        public BOOL computeShaders_Plus_RawAndStructuredBuffers_Via_Shader_4_x;
-    }
+    public BOOL computeShaders_Plus_RawAndStructuredBuffers_Via_Shader_4_x;
 }

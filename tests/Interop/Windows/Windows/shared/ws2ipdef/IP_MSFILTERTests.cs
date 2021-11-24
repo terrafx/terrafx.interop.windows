@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IP_MSFILTER" /> struct.</summary>
+public static unsafe partial class IP_MSFILTERTests
 {
-    /// <summary>Provides validation of the <see cref="IP_MSFILTER" /> struct.</summary>
-    public static unsafe partial class IP_MSFILTERTests
+    /// <summary>Validates that the <see cref="IP_MSFILTER" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IP_MSFILTER" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IP_MSFILTER>(), Is.EqualTo(sizeof(IP_MSFILTER)));
-        }
+        Assert.That(Marshal.SizeOf<IP_MSFILTER>(), Is.EqualTo(sizeof(IP_MSFILTER)));
+    }
 
-        /// <summary>Validates that the <see cref="IP_MSFILTER" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IP_MSFILTER).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IP_MSFILTER" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IP_MSFILTER).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IP_MSFILTER" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(IP_MSFILTER), Is.EqualTo(20));
-        }
+    /// <summary>Validates that the <see cref="IP_MSFILTER" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(IP_MSFILTER), Is.EqualTo(20));
     }
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IFontDisp" /> struct.</summary>
+public static unsafe partial class IFontDispTests
 {
-    /// <summary>Provides validation of the <see cref="IFontDisp" /> struct.</summary>
-    public static unsafe partial class IFontDispTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IFontDisp" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IFontDisp" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IFontDisp).GUID, Is.EqualTo(IID_IFontDisp));
-        }
+        Assert.That(typeof(IFontDisp).GUID, Is.EqualTo(IID_IFontDisp));
+    }
 
-        /// <summary>Validates that the <see cref="IFontDisp" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IFontDisp>(), Is.EqualTo(sizeof(IFontDisp)));
-        }
+    /// <summary>Validates that the <see cref="IFontDisp" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IFontDisp>(), Is.EqualTo(sizeof(IFontDisp)));
+    }
 
-        /// <summary>Validates that the <see cref="IFontDisp" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IFontDisp).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IFontDisp" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IFontDisp).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IFontDisp" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IFontDisp" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IFontDisp), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IFontDisp), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IFontDisp), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IFontDisp), Is.EqualTo(4));
         }
     }
 }

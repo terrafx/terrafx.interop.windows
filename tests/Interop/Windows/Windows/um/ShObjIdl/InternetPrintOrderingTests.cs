@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="InternetPrintOrdering" /> struct.</summary>
+public static unsafe partial class InternetPrintOrderingTests
 {
-    /// <summary>Provides validation of the <see cref="InternetPrintOrdering" /> struct.</summary>
-    public static unsafe partial class InternetPrintOrderingTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="InternetPrintOrdering" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="InternetPrintOrdering" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(InternetPrintOrdering).GUID, Is.EqualTo(IID_InternetPrintOrdering));
-        }
+        Assert.That(typeof(InternetPrintOrdering).GUID, Is.EqualTo(IID_InternetPrintOrdering));
+    }
 
-        /// <summary>Validates that the <see cref="InternetPrintOrdering" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<InternetPrintOrdering>(), Is.EqualTo(sizeof(InternetPrintOrdering)));
-        }
+    /// <summary>Validates that the <see cref="InternetPrintOrdering" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<InternetPrintOrdering>(), Is.EqualTo(sizeof(InternetPrintOrdering)));
+    }
 
-        /// <summary>Validates that the <see cref="InternetPrintOrdering" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(InternetPrintOrdering).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="InternetPrintOrdering" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(InternetPrintOrdering).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="InternetPrintOrdering" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(InternetPrintOrdering), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="InternetPrintOrdering" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(InternetPrintOrdering), Is.EqualTo(1));
     }
 }

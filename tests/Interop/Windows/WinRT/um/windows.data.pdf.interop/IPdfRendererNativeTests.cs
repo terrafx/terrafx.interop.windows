@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IPdfRendererNative" /> struct.</summary>
+[SupportedOSPlatform("windows8.1")]
+public static unsafe partial class IPdfRendererNativeTests
 {
-    /// <summary>Provides validation of the <see cref="IPdfRendererNative" /> struct.</summary>
-    [SupportedOSPlatform("windows8.1")]
-    public static unsafe partial class IPdfRendererNativeTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPdfRendererNative" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPdfRendererNative" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IPdfRendererNative).GUID, Is.EqualTo(IID_IPdfRendererNative));
-        }
+        Assert.That(typeof(IPdfRendererNative).GUID, Is.EqualTo(IID_IPdfRendererNative));
+    }
 
-        /// <summary>Validates that the <see cref="IPdfRendererNative" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IPdfRendererNative>(), Is.EqualTo(sizeof(IPdfRendererNative)));
-        }
+    /// <summary>Validates that the <see cref="IPdfRendererNative" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IPdfRendererNative>(), Is.EqualTo(sizeof(IPdfRendererNative)));
+    }
 
-        /// <summary>Validates that the <see cref="IPdfRendererNative" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IPdfRendererNative).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IPdfRendererNative" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IPdfRendererNative).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IPdfRendererNative" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IPdfRendererNative" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IPdfRendererNative), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IPdfRendererNative), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IPdfRendererNative), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IPdfRendererNative), Is.EqualTo(4));
         }
     }
 }

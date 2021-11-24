@@ -7,16 +7,15 @@ using NUnit.Framework;
 using System;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CLSID" /> class.</summary>
+public static partial class CLSIDTests
 {
-    /// <summary>Provides validation of the <see cref="CLSID" /> class.</summary>
-    public static partial class CLSIDTests
+    /// <summary>Validates that the value of the <see cref="CLSID_MFMediaEngineClassFactory" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_MFMediaEngineClassFactoryTest()
     {
-        /// <summary>Validates that the value of the <see cref="CLSID_MFMediaEngineClassFactory" /> property is correct.</summary>
-        [Test]
-        public static void CLSID_MFMediaEngineClassFactoryTest()
-        {
-            Assert.That(CLSID_MFMediaEngineClassFactory, Is.EqualTo(new Guid(0xb44392da, 0x499b, 0x446b, 0xa4, 0xcb, 0x0, 0x5f, 0xea, 0xd0, 0xe6, 0xd5)));
-        }
+        Assert.That(CLSID_MFMediaEngineClassFactory, Is.EqualTo(new Guid(0xb44392da, 0x499b, 0x446b, 0xa4, 0xcb, 0x0, 0x5f, 0xea, 0xd0, 0xe6, 0xd5)));
     }
 }

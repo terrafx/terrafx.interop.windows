@@ -3,12 +3,11 @@
 // Ported from um/shtypes.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum STRRET_TYPE
 {
-    public enum STRRET_TYPE
-    {
-        STRRET_WSTR = 0,
-        STRRET_OFFSET = 0x1,
-        STRRET_CSTR = 0x2,
-    }
+    STRRET_WSTR = 0,
+    STRRET_OFFSET = 0x1,
+    STRRET_CSTR = 0x2,
 }

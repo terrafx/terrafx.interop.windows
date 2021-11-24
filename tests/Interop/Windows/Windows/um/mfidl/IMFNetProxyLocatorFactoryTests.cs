@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFNetProxyLocatorFactory" /> struct.</summary>
+public static unsafe partial class IMFNetProxyLocatorFactoryTests
 {
-    /// <summary>Provides validation of the <see cref="IMFNetProxyLocatorFactory" /> struct.</summary>
-    public static unsafe partial class IMFNetProxyLocatorFactoryTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFNetProxyLocatorFactory" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFNetProxyLocatorFactory" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFNetProxyLocatorFactory).GUID, Is.EqualTo(IID_IMFNetProxyLocatorFactory));
-        }
+        Assert.That(typeof(IMFNetProxyLocatorFactory).GUID, Is.EqualTo(IID_IMFNetProxyLocatorFactory));
+    }
 
-        /// <summary>Validates that the <see cref="IMFNetProxyLocatorFactory" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFNetProxyLocatorFactory>(), Is.EqualTo(sizeof(IMFNetProxyLocatorFactory)));
-        }
+    /// <summary>Validates that the <see cref="IMFNetProxyLocatorFactory" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFNetProxyLocatorFactory>(), Is.EqualTo(sizeof(IMFNetProxyLocatorFactory)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFNetProxyLocatorFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFNetProxyLocatorFactory).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFNetProxyLocatorFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFNetProxyLocatorFactory).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFNetProxyLocatorFactory" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFNetProxyLocatorFactory" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFNetProxyLocatorFactory), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFNetProxyLocatorFactory), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFNetProxyLocatorFactory), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFNetProxyLocatorFactory), Is.EqualTo(4));
         }
     }
 }

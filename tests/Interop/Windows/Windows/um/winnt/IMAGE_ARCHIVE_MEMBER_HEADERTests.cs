@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMAGE_ARCHIVE_MEMBER_HEADER" /> struct.</summary>
+public static unsafe partial class IMAGE_ARCHIVE_MEMBER_HEADERTests
 {
-    /// <summary>Provides validation of the <see cref="IMAGE_ARCHIVE_MEMBER_HEADER" /> struct.</summary>
-    public static unsafe partial class IMAGE_ARCHIVE_MEMBER_HEADERTests
+    /// <summary>Validates that the <see cref="IMAGE_ARCHIVE_MEMBER_HEADER" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IMAGE_ARCHIVE_MEMBER_HEADER" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMAGE_ARCHIVE_MEMBER_HEADER>(), Is.EqualTo(sizeof(IMAGE_ARCHIVE_MEMBER_HEADER)));
-        }
+        Assert.That(Marshal.SizeOf<IMAGE_ARCHIVE_MEMBER_HEADER>(), Is.EqualTo(sizeof(IMAGE_ARCHIVE_MEMBER_HEADER)));
+    }
 
-        /// <summary>Validates that the <see cref="IMAGE_ARCHIVE_MEMBER_HEADER" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMAGE_ARCHIVE_MEMBER_HEADER).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMAGE_ARCHIVE_MEMBER_HEADER" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMAGE_ARCHIVE_MEMBER_HEADER).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMAGE_ARCHIVE_MEMBER_HEADER" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(IMAGE_ARCHIVE_MEMBER_HEADER), Is.EqualTo(60));
-        }
+    /// <summary>Validates that the <see cref="IMAGE_ARCHIVE_MEMBER_HEADER" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(IMAGE_ARCHIVE_MEMBER_HEADER), Is.EqualTo(60));
     }
 }

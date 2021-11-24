@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("DC664FDD-D868-46EE-8780-8D196CB739F7")]
+public partial struct AppxEncryptionFactory
 {
-    [Guid("DC664FDD-D868-46EE-8780-8D196CB739F7")]
-    public partial struct AppxEncryptionFactory
-    {
-    }
 }

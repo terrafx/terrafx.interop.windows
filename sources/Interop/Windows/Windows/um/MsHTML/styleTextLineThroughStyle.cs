@@ -3,13 +3,12 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum styleTextLineThroughStyle
 {
-    public enum styleTextLineThroughStyle
-    {
-        styleTextLineThroughStyleUndefined = 0,
-        styleTextLineThroughStyleSingle = 1,
-        styleTextLineThroughStyleDouble = 2,
-        styleTextLineThroughStyle_Max = 2147483647,
-    }
+    styleTextLineThroughStyleUndefined = 0,
+    styleTextLineThroughStyleSingle = 1,
+    styleTextLineThroughStyleDouble = 2,
+    styleTextLineThroughStyle_Max = 2147483647,
 }

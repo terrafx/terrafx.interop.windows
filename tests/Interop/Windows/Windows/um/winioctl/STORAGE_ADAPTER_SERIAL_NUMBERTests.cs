@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="STORAGE_ADAPTER_SERIAL_NUMBER" /> struct.</summary>
+[SupportedOSPlatform("windows10.0")]
+public static unsafe partial class STORAGE_ADAPTER_SERIAL_NUMBERTests
 {
-    /// <summary>Provides validation of the <see cref="STORAGE_ADAPTER_SERIAL_NUMBER" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0")]
-    public static unsafe partial class STORAGE_ADAPTER_SERIAL_NUMBERTests
+    /// <summary>Validates that the <see cref="STORAGE_ADAPTER_SERIAL_NUMBER" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="STORAGE_ADAPTER_SERIAL_NUMBER" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<STORAGE_ADAPTER_SERIAL_NUMBER>(), Is.EqualTo(sizeof(STORAGE_ADAPTER_SERIAL_NUMBER)));
-        }
+        Assert.That(Marshal.SizeOf<STORAGE_ADAPTER_SERIAL_NUMBER>(), Is.EqualTo(sizeof(STORAGE_ADAPTER_SERIAL_NUMBER)));
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_ADAPTER_SERIAL_NUMBER" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(STORAGE_ADAPTER_SERIAL_NUMBER).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="STORAGE_ADAPTER_SERIAL_NUMBER" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(STORAGE_ADAPTER_SERIAL_NUMBER).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_ADAPTER_SERIAL_NUMBER" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(STORAGE_ADAPTER_SERIAL_NUMBER), Is.EqualTo(264));
-        }
+    /// <summary>Validates that the <see cref="STORAGE_ADAPTER_SERIAL_NUMBER" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(STORAGE_ADAPTER_SERIAL_NUMBER), Is.EqualTo(264));
     }
 }

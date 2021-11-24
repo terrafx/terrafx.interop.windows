@@ -6,21 +6,20 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct D3D11_VIDEO_DECODER_BEGIN_FRAME_CRYPTO_SESSION
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct D3D11_VIDEO_DECODER_BEGIN_FRAME_CRYPTO_SESSION
-    {
-        public ID3D11CryptoSession* pCryptoSession;
+    public ID3D11CryptoSession* pCryptoSession;
 
-        public uint BlobSize;
+    public uint BlobSize;
 
-        public void* pBlob;
+    public void* pBlob;
 
-        public Guid* pKeyInfoId;
+    public Guid* pKeyInfoId;
 
-        public uint PrivateDataSize;
+    public uint PrivateDataSize;
 
-        public void* pPrivateData;
-    }
+    public void* pPrivateData;
 }

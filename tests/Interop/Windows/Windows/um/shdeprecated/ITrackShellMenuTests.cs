@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ITrackShellMenu" /> struct.</summary>
+public static unsafe partial class ITrackShellMenuTests
 {
-    /// <summary>Provides validation of the <see cref="ITrackShellMenu" /> struct.</summary>
-    public static unsafe partial class ITrackShellMenuTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITrackShellMenu" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITrackShellMenu" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ITrackShellMenu).GUID, Is.EqualTo(IID_ITrackShellMenu));
-        }
+        Assert.That(typeof(ITrackShellMenu).GUID, Is.EqualTo(IID_ITrackShellMenu));
+    }
 
-        /// <summary>Validates that the <see cref="ITrackShellMenu" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ITrackShellMenu>(), Is.EqualTo(sizeof(ITrackShellMenu)));
-        }
+    /// <summary>Validates that the <see cref="ITrackShellMenu" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ITrackShellMenu>(), Is.EqualTo(sizeof(ITrackShellMenu)));
+    }
 
-        /// <summary>Validates that the <see cref="ITrackShellMenu" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ITrackShellMenu).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ITrackShellMenu" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ITrackShellMenu).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ITrackShellMenu" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ITrackShellMenu" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ITrackShellMenu), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ITrackShellMenu), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ITrackShellMenu), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ITrackShellMenu), Is.EqualTo(4));
         }
     }
 }

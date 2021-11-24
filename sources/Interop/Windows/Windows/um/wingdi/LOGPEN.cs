@@ -3,14 +3,13 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct LOGPEN
 {
-    public partial struct LOGPEN
-    {
-        public uint lopnStyle;
+    public uint lopnStyle;
 
-        public POINT lopnWidth;
+    public POINT lopnWidth;
 
-        public COLORREF lopnColor;
-    }
+    public COLORREF lopnColor;
 }

@@ -5,16 +5,15 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CONFIRMSAFETY
 {
-    public unsafe partial struct CONFIRMSAFETY
-    {
-        [NativeTypeName("CLSID")]
-        public Guid clsid;
+    [NativeTypeName("CLSID")]
+    public Guid clsid;
 
-        public IUnknown* pUnk;
+    public IUnknown* pUnk;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 }

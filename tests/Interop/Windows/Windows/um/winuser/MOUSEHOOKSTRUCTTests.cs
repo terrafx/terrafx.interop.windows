@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MOUSEHOOKSTRUCT" /> struct.</summary>
+public static unsafe partial class MOUSEHOOKSTRUCTTests
 {
-    /// <summary>Provides validation of the <see cref="MOUSEHOOKSTRUCT" /> struct.</summary>
-    public static unsafe partial class MOUSEHOOKSTRUCTTests
+    /// <summary>Validates that the <see cref="MOUSEHOOKSTRUCT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MOUSEHOOKSTRUCT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MOUSEHOOKSTRUCT>(), Is.EqualTo(sizeof(MOUSEHOOKSTRUCT)));
-        }
+        Assert.That(Marshal.SizeOf<MOUSEHOOKSTRUCT>(), Is.EqualTo(sizeof(MOUSEHOOKSTRUCT)));
+    }
 
-        /// <summary>Validates that the <see cref="MOUSEHOOKSTRUCT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MOUSEHOOKSTRUCT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MOUSEHOOKSTRUCT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MOUSEHOOKSTRUCT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MOUSEHOOKSTRUCT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="MOUSEHOOKSTRUCT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(MOUSEHOOKSTRUCT), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(MOUSEHOOKSTRUCT), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(MOUSEHOOKSTRUCT), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(MOUSEHOOKSTRUCT), Is.EqualTo(20));
         }
     }
 }

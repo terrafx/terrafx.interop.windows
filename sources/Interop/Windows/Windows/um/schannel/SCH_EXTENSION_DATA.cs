@@ -3,17 +3,16 @@
 // Ported from um/schannel.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SCH_EXTENSION_DATA
 {
-    public unsafe partial struct SCH_EXTENSION_DATA
-    {
-        [NativeTypeName("WORD")]
-        public ushort ExtensionType;
+    [NativeTypeName("WORD")]
+    public ushort ExtensionType;
 
-        [NativeTypeName("const BYTE *")]
-        public byte* pExtData;
+    [NativeTypeName("const BYTE *")]
+    public byte* pExtData;
 
-        [NativeTypeName("DWORD")]
-        public uint cbExtData;
-    }
+    [NativeTypeName("DWORD")]
+    public uint cbExtData;
 }

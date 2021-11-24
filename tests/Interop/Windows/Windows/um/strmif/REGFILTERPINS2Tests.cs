@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="REGFILTERPINS2" /> struct.</summary>
+public static unsafe partial class REGFILTERPINS2Tests
 {
-    /// <summary>Provides validation of the <see cref="REGFILTERPINS2" /> struct.</summary>
-    public static unsafe partial class REGFILTERPINS2Tests
+    /// <summary>Validates that the <see cref="REGFILTERPINS2" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="REGFILTERPINS2" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<REGFILTERPINS2>(), Is.EqualTo(sizeof(REGFILTERPINS2)));
-        }
+        Assert.That(Marshal.SizeOf<REGFILTERPINS2>(), Is.EqualTo(sizeof(REGFILTERPINS2)));
+    }
 
-        /// <summary>Validates that the <see cref="REGFILTERPINS2" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(REGFILTERPINS2).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="REGFILTERPINS2" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(REGFILTERPINS2).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="REGFILTERPINS2" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="REGFILTERPINS2" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(REGFILTERPINS2), Is.EqualTo(48));
-            }
-            else
-            {
-                Assert.That(sizeof(REGFILTERPINS2), Is.EqualTo(28));
-            }
+            Assert.That(sizeof(REGFILTERPINS2), Is.EqualTo(48));
+        }
+        else
+        {
+            Assert.That(sizeof(REGFILTERPINS2), Is.EqualTo(28));
         }
     }
 }

@@ -7,43 +7,42 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct FSCTL_QUERY_STORAGE_CLASSES_OUTPUT
 {
-    public partial struct FSCTL_QUERY_STORAGE_CLASSES_OUTPUT
+    [NativeTypeName("DWORD")]
+    public uint Version;
+
+    [NativeTypeName("DWORD")]
+    public uint Size;
+
+    [NativeTypeName("DWORD")]
+    public uint Flags;
+
+    [NativeTypeName("DWORD")]
+    public uint TotalNumberOfTiers;
+
+    [NativeTypeName("DWORD")]
+    public uint NumberOfTiersReturned;
+
+    [NativeTypeName("FILE_STORAGE_TIER [1]")]
+    public _Tiers_e__FixedBuffer Tiers;
+
+    public partial struct _Tiers_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+        public FILE_STORAGE_TIER e0;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
-
-        [NativeTypeName("DWORD")]
-        public uint Flags;
-
-        [NativeTypeName("DWORD")]
-        public uint TotalNumberOfTiers;
-
-        [NativeTypeName("DWORD")]
-        public uint NumberOfTiersReturned;
-
-        [NativeTypeName("FILE_STORAGE_TIER [1]")]
-        public _Tiers_e__FixedBuffer Tiers;
-
-        public partial struct _Tiers_e__FixedBuffer
+        public ref FILE_STORAGE_TIER this[int index]
         {
-            public FILE_STORAGE_TIER e0;
-
-            public ref FILE_STORAGE_TIER this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<FILE_STORAGE_TIER> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<FILE_STORAGE_TIER> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

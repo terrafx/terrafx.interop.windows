@@ -6,166 +6,165 @@
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public unsafe partial struct PSS_HANDLE_ENTRY
 {
-    [SupportedOSPlatform("windows8.1")]
-    public unsafe partial struct PSS_HANDLE_ENTRY
+    public HANDLE Handle;
+
+    public PSS_HANDLE_FLAGS Flags;
+
+    public PSS_OBJECT_TYPE ObjectType;
+
+    public FILETIME CaptureTime;
+
+    [NativeTypeName("DWORD")]
+    public uint Attributes;
+
+    [NativeTypeName("DWORD")]
+    public uint GrantedAccess;
+
+    [NativeTypeName("DWORD")]
+    public uint HandleCount;
+
+    [NativeTypeName("DWORD")]
+    public uint PointerCount;
+
+    [NativeTypeName("DWORD")]
+    public uint PagedPoolCharge;
+
+    [NativeTypeName("DWORD")]
+    public uint NonPagedPoolCharge;
+
+    public FILETIME CreationTime;
+
+    [NativeTypeName("WORD")]
+    public ushort TypeNameLength;
+
+    [NativeTypeName("const wchar_t *")]
+    public ushort* TypeName;
+
+    [NativeTypeName("WORD")]
+    public ushort ObjectNameLength;
+
+    [NativeTypeName("const wchar_t *")]
+    public ushort* ObjectName;
+
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:258:5)")]
+    public _TypeSpecificInformation_e__Union TypeSpecificInformation;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _TypeSpecificInformation_e__Union
     {
-        public HANDLE Handle;
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:261:9)")]
+        public _Process_e__Struct Process;
 
-        public PSS_HANDLE_FLAGS Flags;
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:272:9)")]
+        public _Thread_e__Struct Thread;
 
-        public PSS_OBJECT_TYPE ObjectType;
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:284:9)")]
+        public _Mutant_e__Struct Mutant;
 
-        public FILETIME CaptureTime;
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:292:9)")]
+        public _Event_e__Struct Event;
 
-        [NativeTypeName("DWORD")]
-        public uint Attributes;
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:298:9)")]
+        public _Section_e__Struct Section;
 
-        [NativeTypeName("DWORD")]
-        public uint GrantedAccess;
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:306:9)")]
+        public _Semaphore_e__Struct Semaphore;
 
-        [NativeTypeName("DWORD")]
-        public uint HandleCount;
-
-        [NativeTypeName("DWORD")]
-        public uint PointerCount;
-
-        [NativeTypeName("DWORD")]
-        public uint PagedPoolCharge;
-
-        [NativeTypeName("DWORD")]
-        public uint NonPagedPoolCharge;
-
-        public FILETIME CreationTime;
-
-        [NativeTypeName("WORD")]
-        public ushort TypeNameLength;
-
-        [NativeTypeName("const wchar_t *")]
-        public ushort* TypeName;
-
-        [NativeTypeName("WORD")]
-        public ushort ObjectNameLength;
-
-        [NativeTypeName("const wchar_t *")]
-        public ushort* ObjectName;
-
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:258:5)")]
-        public _TypeSpecificInformation_e__Union TypeSpecificInformation;
-
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _TypeSpecificInformation_e__Union
+        public unsafe partial struct _Process_e__Struct
         {
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:261:9)")]
-            public _Process_e__Struct Process;
+            [NativeTypeName("DWORD")]
+            public uint ExitStatus;
 
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:272:9)")]
-            public _Thread_e__Struct Thread;
+            public void* PebBaseAddress;
 
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:284:9)")]
-            public _Mutant_e__Struct Mutant;
+            [NativeTypeName("ULONG_PTR")]
+            public nuint AffinityMask;
 
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:292:9)")]
-            public _Event_e__Struct Event;
+            [NativeTypeName("LONG")]
+            public int BasePriority;
 
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:298:9)")]
-            public _Section_e__Struct Section;
+            [NativeTypeName("DWORD")]
+            public uint ProcessId;
 
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:306:9)")]
-            public _Semaphore_e__Struct Semaphore;
+            [NativeTypeName("DWORD")]
+            public uint ParentProcessId;
 
-            public unsafe partial struct _Process_e__Struct
-            {
-                [NativeTypeName("DWORD")]
-                public uint ExitStatus;
+            [NativeTypeName("DWORD")]
+            public uint Flags;
+        }
 
-                public void* PebBaseAddress;
+        public unsafe partial struct _Thread_e__Struct
+        {
+            [NativeTypeName("DWORD")]
+            public uint ExitStatus;
 
-                [NativeTypeName("ULONG_PTR")]
-                public nuint AffinityMask;
+            public void* TebBaseAddress;
 
-                [NativeTypeName("LONG")]
-                public int BasePriority;
+            [NativeTypeName("DWORD")]
+            public uint ProcessId;
 
-                [NativeTypeName("DWORD")]
-                public uint ProcessId;
+            [NativeTypeName("DWORD")]
+            public uint ThreadId;
 
-                [NativeTypeName("DWORD")]
-                public uint ParentProcessId;
+            [NativeTypeName("ULONG_PTR")]
+            public nuint AffinityMask;
 
-                [NativeTypeName("DWORD")]
-                public uint Flags;
-            }
+            public int Priority;
 
-            public unsafe partial struct _Thread_e__Struct
-            {
-                [NativeTypeName("DWORD")]
-                public uint ExitStatus;
+            public int BasePriority;
 
-                public void* TebBaseAddress;
+            public void* Win32StartAddress;
+        }
 
-                [NativeTypeName("DWORD")]
-                public uint ProcessId;
+        public partial struct _Mutant_e__Struct
+        {
+            [NativeTypeName("LONG")]
+            public int CurrentCount;
 
-                [NativeTypeName("DWORD")]
-                public uint ThreadId;
+            public BOOL Abandoned;
 
-                [NativeTypeName("ULONG_PTR")]
-                public nuint AffinityMask;
+            [NativeTypeName("DWORD")]
+            public uint OwnerProcessId;
 
-                public int Priority;
+            [NativeTypeName("DWORD")]
+            public uint OwnerThreadId;
+        }
 
-                public int BasePriority;
+        public partial struct _Event_e__Struct
+        {
+            public BOOL ManualReset;
 
-                public void* Win32StartAddress;
-            }
+            public BOOL Signaled;
+        }
 
-            public partial struct _Mutant_e__Struct
-            {
-                [NativeTypeName("LONG")]
-                public int CurrentCount;
+        public unsafe partial struct _Section_e__Struct
+        {
+            public void* BaseAddress;
 
-                public BOOL Abandoned;
+            [NativeTypeName("DWORD")]
+            public uint AllocationAttributes;
 
-                [NativeTypeName("DWORD")]
-                public uint OwnerProcessId;
+            public LARGE_INTEGER MaximumSize;
+        }
 
-                [NativeTypeName("DWORD")]
-                public uint OwnerThreadId;
-            }
+        public partial struct _Semaphore_e__Struct
+        {
+            [NativeTypeName("LONG")]
+            public int CurrentCount;
 
-            public partial struct _Event_e__Struct
-            {
-                public BOOL ManualReset;
-
-                public BOOL Signaled;
-            }
-
-            public unsafe partial struct _Section_e__Struct
-            {
-                public void* BaseAddress;
-
-                [NativeTypeName("DWORD")]
-                public uint AllocationAttributes;
-
-                public LARGE_INTEGER MaximumSize;
-            }
-
-            public partial struct _Semaphore_e__Struct
-            {
-                [NativeTypeName("LONG")]
-                public int CurrentCount;
-
-                [NativeTypeName("LONG")]
-                public int MaximumCount;
-            }
+            [NativeTypeName("LONG")]
+            public int MaximumCount;
         }
     }
 }

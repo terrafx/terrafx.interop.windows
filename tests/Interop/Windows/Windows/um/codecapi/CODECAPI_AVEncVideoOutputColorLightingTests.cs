@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CODECAPI_AVEncVideoOutputColorLighting" /> struct.</summary>
+public static unsafe partial class CODECAPI_AVEncVideoOutputColorLightingTests
 {
-    /// <summary>Provides validation of the <see cref="CODECAPI_AVEncVideoOutputColorLighting" /> struct.</summary>
-    public static unsafe partial class CODECAPI_AVEncVideoOutputColorLightingTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncVideoOutputColorLighting" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncVideoOutputColorLighting" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncVideoOutputColorLighting).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoOutputColorLighting));
-        }
+        Assert.That(typeof(CODECAPI_AVEncVideoOutputColorLighting).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoOutputColorLighting));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoOutputColorLighting" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoOutputColorLighting>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoOutputColorLighting)));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoOutputColorLighting" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoOutputColorLighting>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoOutputColorLighting)));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoOutputColorLighting" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncVideoOutputColorLighting).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoOutputColorLighting" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CODECAPI_AVEncVideoOutputColorLighting).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoOutputColorLighting" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CODECAPI_AVEncVideoOutputColorLighting), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoOutputColorLighting" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CODECAPI_AVEncVideoOutputColorLighting), Is.EqualTo(1));
     }
 }

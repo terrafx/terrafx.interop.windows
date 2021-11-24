@@ -5,20 +5,19 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_CUSTOM_CERT_CREDENTIAL
 {
-    public unsafe partial struct WS_CUSTOM_CERT_CREDENTIAL
-    {
-        public WS_CERT_CREDENTIAL credential;
+    public WS_CERT_CREDENTIAL credential;
 
-        [NativeTypeName("WS_GET_CERT_CALLBACK")]
-        public delegate* unmanaged<void*, WS_ENDPOINT_ADDRESS*, WS_STRING*, CERT_CONTEXT**, IntPtr, HRESULT> getCertCallback;
+    [NativeTypeName("WS_GET_CERT_CALLBACK")]
+    public delegate* unmanaged<void*, WS_ENDPOINT_ADDRESS*, WS_STRING*, CERT_CONTEXT**, IntPtr, HRESULT> getCertCallback;
 
-        public void* getCertCallbackState;
+    public void* getCertCallbackState;
 
-        [NativeTypeName("WS_CERT_ISSUER_LIST_NOTIFICATION_CALLBACK")]
-        public delegate* unmanaged<void*, SecPkgContext_IssuerListInfoEx*, IntPtr, HRESULT> certIssuerListNotificationCallback;
+    [NativeTypeName("WS_CERT_ISSUER_LIST_NOTIFICATION_CALLBACK")]
+    public delegate* unmanaged<void*, SecPkgContext_IssuerListInfoEx*, IntPtr, HRESULT> certIssuerListNotificationCallback;
 
-        public void* certIssuerListNotificationCallbackState;
-    }
+    public void* certIssuerListNotificationCallbackState;
 }

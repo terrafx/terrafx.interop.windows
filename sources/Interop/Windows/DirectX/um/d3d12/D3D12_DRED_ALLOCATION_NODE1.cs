@@ -5,22 +5,21 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D12_DRED_ALLOCATION_NODE1
 {
-    public unsafe partial struct D3D12_DRED_ALLOCATION_NODE1
-    {
-        [NativeTypeName("const char *")]
-        public sbyte* ObjectNameA;
+    [NativeTypeName("const char *")]
+    public sbyte* ObjectNameA;
 
-        [NativeTypeName("const wchar_t *")]
-        public ushort* ObjectNameW;
+    [NativeTypeName("const wchar_t *")]
+    public ushort* ObjectNameW;
 
-        public D3D12_DRED_ALLOCATION_TYPE AllocationType;
+    public D3D12_DRED_ALLOCATION_TYPE AllocationType;
 
-        [NativeTypeName("const struct D3D12_DRED_ALLOCATION_NODE1 *")]
-        public D3D12_DRED_ALLOCATION_NODE1* pNext;
+    [NativeTypeName("const struct D3D12_DRED_ALLOCATION_NODE1 *")]
+    public D3D12_DRED_ALLOCATION_NODE1* pNext;
 
-        [NativeTypeName("const IUnknown *")]
-        public IUnknown* pObject;
-    }
+    [NativeTypeName("const IUnknown *")]
+    public IUnknown* pObject;
 }

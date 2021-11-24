@@ -7,40 +7,39 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct RETRIEVAL_POINTERS_BUFFER
 {
-    public partial struct RETRIEVAL_POINTERS_BUFFER
+    [NativeTypeName("DWORD")]
+    public uint ExtentCount;
+
+    public LARGE_INTEGER StartingVcn;
+
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:11232:5) [1]")]
+    public _Extents_e__FixedBuffer Extents;
+
+    public partial struct _Anonymous_e__Struct
     {
-        [NativeTypeName("DWORD")]
-        public uint ExtentCount;
+        public LARGE_INTEGER NextVcn;
 
-        public LARGE_INTEGER StartingVcn;
+        public LARGE_INTEGER Lcn;
+    }
 
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:11232:5) [1]")]
-        public _Extents_e__FixedBuffer Extents;
+    public partial struct _Extents_e__FixedBuffer
+    {
+        public _Anonymous_e__Struct e0;
 
-        public partial struct _Anonymous_e__Struct
+        public ref _Anonymous_e__Struct this[int index]
         {
-            public LARGE_INTEGER NextVcn;
-
-            public LARGE_INTEGER Lcn;
-        }
-
-        public partial struct _Extents_e__FixedBuffer
-        {
-            public _Anonymous_e__Struct e0;
-
-            public ref _Anonymous_e__Struct this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<_Anonymous_e__Struct> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<_Anonymous_e__Struct> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

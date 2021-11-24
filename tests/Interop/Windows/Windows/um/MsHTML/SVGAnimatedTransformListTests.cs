@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SVGAnimatedTransformList" /> struct.</summary>
+public static unsafe partial class SVGAnimatedTransformListTests
 {
-    /// <summary>Provides validation of the <see cref="SVGAnimatedTransformList" /> struct.</summary>
-    public static unsafe partial class SVGAnimatedTransformListTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGAnimatedTransformList" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGAnimatedTransformList" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SVGAnimatedTransformList).GUID, Is.EqualTo(IID_SVGAnimatedTransformList));
-        }
+        Assert.That(typeof(SVGAnimatedTransformList).GUID, Is.EqualTo(IID_SVGAnimatedTransformList));
+    }
 
-        /// <summary>Validates that the <see cref="SVGAnimatedTransformList" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SVGAnimatedTransformList>(), Is.EqualTo(sizeof(SVGAnimatedTransformList)));
-        }
+    /// <summary>Validates that the <see cref="SVGAnimatedTransformList" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SVGAnimatedTransformList>(), Is.EqualTo(sizeof(SVGAnimatedTransformList)));
+    }
 
-        /// <summary>Validates that the <see cref="SVGAnimatedTransformList" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SVGAnimatedTransformList).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SVGAnimatedTransformList" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SVGAnimatedTransformList).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SVGAnimatedTransformList" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SVGAnimatedTransformList), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SVGAnimatedTransformList" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SVGAnimatedTransformList), Is.EqualTo(1));
     }
 }

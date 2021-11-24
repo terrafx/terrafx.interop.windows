@@ -3,20 +3,19 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct FSCTL_OFFLOAD_READ_OUTPUT
 {
-    public unsafe partial struct FSCTL_OFFLOAD_READ_OUTPUT
-    {
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong TransferLength;
+    [NativeTypeName("DWORDLONG")]
+    public ulong TransferLength;
 
-        [NativeTypeName("BYTE [512]")]
-        public fixed byte Token[512];
-    }
+    [NativeTypeName("BYTE [512]")]
+    public fixed byte Token[512];
 }

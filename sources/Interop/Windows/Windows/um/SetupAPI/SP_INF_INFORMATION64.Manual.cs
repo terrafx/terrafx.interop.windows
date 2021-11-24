@@ -3,17 +3,16 @@
 // Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SP_INF_INFORMATION64
 {
-    public unsafe partial struct SP_INF_INFORMATION64
-    {
-        [NativeTypeName("DWORD")]
-        public uint InfStyle;
+    [NativeTypeName("DWORD")]
+    public uint InfStyle;
 
-        [NativeTypeName("DWORD")]
-        public uint InfCount;
+    [NativeTypeName("DWORD")]
+    public uint InfCount;
 
-        [NativeTypeName("BYTE [1]")]
-        public fixed byte VersionData[1];
-    }
+    [NativeTypeName("BYTE [1]")]
+    public fixed byte VersionData[1];
 }

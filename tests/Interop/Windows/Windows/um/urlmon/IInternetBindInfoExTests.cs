@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IInternetBindInfoEx" /> struct.</summary>
+public static unsafe partial class IInternetBindInfoExTests
 {
-    /// <summary>Provides validation of the <see cref="IInternetBindInfoEx" /> struct.</summary>
-    public static unsafe partial class IInternetBindInfoExTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IInternetBindInfoEx" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IInternetBindInfoEx" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IInternetBindInfoEx).GUID, Is.EqualTo(IID_IInternetBindInfoEx));
-        }
+        Assert.That(typeof(IInternetBindInfoEx).GUID, Is.EqualTo(IID_IInternetBindInfoEx));
+    }
 
-        /// <summary>Validates that the <see cref="IInternetBindInfoEx" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IInternetBindInfoEx>(), Is.EqualTo(sizeof(IInternetBindInfoEx)));
-        }
+    /// <summary>Validates that the <see cref="IInternetBindInfoEx" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IInternetBindInfoEx>(), Is.EqualTo(sizeof(IInternetBindInfoEx)));
+    }
 
-        /// <summary>Validates that the <see cref="IInternetBindInfoEx" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IInternetBindInfoEx).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IInternetBindInfoEx" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IInternetBindInfoEx).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IInternetBindInfoEx" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IInternetBindInfoEx" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IInternetBindInfoEx), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IInternetBindInfoEx), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IInternetBindInfoEx), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IInternetBindInfoEx), Is.EqualTo(4));
         }
     }
 }

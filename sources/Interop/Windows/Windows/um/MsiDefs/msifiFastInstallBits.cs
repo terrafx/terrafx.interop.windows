@@ -3,12 +3,11 @@
 // Ported from um/MsiDefs.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum msifiFastInstallBits
 {
-    public enum msifiFastInstallBits
-    {
-        msifiFastInstallNoSR = 0x00000001,
-        msifiFastInstallQuickCosting = 0x00000002,
-        msifiFastInstallLessPrgMsg = 0x00000004,
-    }
+    msifiFastInstallNoSR = 0x00000001,
+    msifiFastInstallQuickCosting = 0x00000002,
+    msifiFastInstallLessPrgMsg = 0x00000004,
 }

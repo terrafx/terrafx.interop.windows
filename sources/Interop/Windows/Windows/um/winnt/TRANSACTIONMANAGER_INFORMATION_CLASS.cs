@@ -3,15 +3,14 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum TRANSACTIONMANAGER_INFORMATION_CLASS
 {
-    public enum TRANSACTIONMANAGER_INFORMATION_CLASS
-    {
-        TransactionManagerBasicInformation,
-        TransactionManagerLogInformation,
-        TransactionManagerLogPathInformation,
-        TransactionManagerRecoveryInformation = 4,
-        TransactionManagerOnlineProbeInformation = 3,
-        TransactionManagerOldestTransactionInformation = 5,
-    }
+    TransactionManagerBasicInformation,
+    TransactionManagerLogInformation,
+    TransactionManagerLogPathInformation,
+    TransactionManagerRecoveryInformation = 4,
+    TransactionManagerOnlineProbeInformation = 3,
+    TransactionManagerOldestTransactionInformation = 5,
 }

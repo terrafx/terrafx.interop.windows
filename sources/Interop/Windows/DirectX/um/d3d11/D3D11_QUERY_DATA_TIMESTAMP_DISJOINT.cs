@@ -5,13 +5,12 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
-{
-    public partial struct D3D11_QUERY_DATA_TIMESTAMP_DISJOINT
-    {
-        [NativeTypeName("UINT64")]
-        public ulong Frequency;
+namespace TerraFX.Interop.DirectX;
 
-        public BOOL Disjoint;
-    }
+public partial struct D3D11_QUERY_DATA_TIMESTAMP_DISJOINT
+{
+    [NativeTypeName("UINT64")]
+    public ulong Frequency;
+
+    public BOOL Disjoint;
 }

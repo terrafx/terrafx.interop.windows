@@ -3,11 +3,10 @@
 // Ported from um/appmodel.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum AppPolicyMediaFoundationCodecLoading
 {
-    public enum AppPolicyMediaFoundationCodecLoading
-    {
-        AppPolicyMediaFoundationCodecLoading_All = 0,
-        AppPolicyMediaFoundationCodecLoading_InboxOnly = 1,
-    }
+    AppPolicyMediaFoundationCodecLoading_All = 0,
+    AppPolicyMediaFoundationCodecLoading_InboxOnly = 1,
 }

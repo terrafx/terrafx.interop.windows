@@ -5,25 +5,24 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SV2CVW2_PARAMS
 {
-    public unsafe partial struct SV2CVW2_PARAMS
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public IShellView* psvPrev;
+    public IShellView* psvPrev;
 
-        [NativeTypeName("LPCFOLDERSETTINGS")]
-        public FOLDERSETTINGS* pfs;
+    [NativeTypeName("LPCFOLDERSETTINGS")]
+    public FOLDERSETTINGS* pfs;
 
-        public IShellBrowser* psbOwner;
+    public IShellBrowser* psbOwner;
 
-        public RECT* prcView;
+    public RECT* prcView;
 
-        [NativeTypeName("const SHELLVIEWID *")]
-        public Guid* pvid;
+    [NativeTypeName("const SHELLVIEWID *")]
+    public Guid* pvid;
 
-        public HWND hwndView;
-    }
+    public HWND hwndView;
 }

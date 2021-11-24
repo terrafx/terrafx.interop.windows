@@ -5,17 +5,16 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CATEGORYINFO
 {
-    public unsafe partial struct CATEGORYINFO
-    {
-        [NativeTypeName("CATID")]
-        public Guid catid;
+    [NativeTypeName("CATID")]
+    public Guid catid;
 
-        [NativeTypeName("LCID")]
-        public uint lcid;
+    [NativeTypeName("LCID")]
+    public uint lcid;
 
-        [NativeTypeName("OLECHAR [128]")]
-        public fixed ushort szDescription[128];
-    }
+    [NativeTypeName("OLECHAR [128]")]
+    public fixed ushort szDescription[128];
 }

@@ -3,10 +3,9 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct WS_POLICY_EXTENSION
 {
-    public partial struct WS_POLICY_EXTENSION
-    {
-        public WS_POLICY_EXTENSION_TYPE type;
-    }
+    public WS_POLICY_EXTENSION_TYPE type;
 }

@@ -5,19 +5,18 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct INFCONTEXT32
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct INFCONTEXT32
-    {
-        [NativeTypeName("PVOID")]
-        public void* Inf;
+    [NativeTypeName("PVOID")]
+    public void* Inf;
 
-        [NativeTypeName("PVOID")]
-        public void* CurrentInf;
+    [NativeTypeName("PVOID")]
+    public void* CurrentInf;
 
-        public uint Section;
+    public uint Section;
 
-        public uint Line;
-    }
+    public uint Line;
 }

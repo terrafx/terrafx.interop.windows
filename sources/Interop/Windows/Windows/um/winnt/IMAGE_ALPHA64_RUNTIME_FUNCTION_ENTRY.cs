@@ -5,24 +5,23 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 4)]
+public partial struct IMAGE_ALPHA64_RUNTIME_FUNCTION_ENTRY
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 4)]
-    public partial struct IMAGE_ALPHA64_RUNTIME_FUNCTION_ENTRY
-    {
-        [NativeTypeName("ULONGLONG")]
-        public ulong BeginAddress;
+    [NativeTypeName("ULONGLONG")]
+    public ulong BeginAddress;
 
-        [NativeTypeName("ULONGLONG")]
-        public ulong EndAddress;
+    [NativeTypeName("ULONGLONG")]
+    public ulong EndAddress;
 
-        [NativeTypeName("ULONGLONG")]
-        public ulong ExceptionHandler;
+    [NativeTypeName("ULONGLONG")]
+    public ulong ExceptionHandler;
 
-        [NativeTypeName("ULONGLONG")]
-        public ulong HandlerData;
+    [NativeTypeName("ULONGLONG")]
+    public ulong HandlerData;
 
-        [NativeTypeName("ULONGLONG")]
-        public ulong PrologEndAddress;
-    }
+    [NativeTypeName("ULONGLONG")]
+    public ulong PrologEndAddress;
 }

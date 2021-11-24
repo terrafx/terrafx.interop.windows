@@ -3,21 +3,20 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct NMDATETIMEFORMATA
 {
-    public unsafe partial struct NMDATETIMEFORMATA
-    {
-        public NMHDR nmhdr;
+    public NMHDR nmhdr;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* pszFormat;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* pszFormat;
 
-        public SYSTEMTIME st;
+    public SYSTEMTIME st;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* pszDisplay;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* pszDisplay;
 
-        [NativeTypeName("CHAR [64]")]
-        public fixed sbyte szDisplay[64];
-    }
+    [NativeTypeName("CHAR [64]")]
+    public fixed sbyte szDisplay[64];
 }

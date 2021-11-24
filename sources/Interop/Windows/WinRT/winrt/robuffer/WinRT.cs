@@ -6,11 +6,10 @@
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+public static unsafe partial class WinRT
 {
-    public static unsafe partial class WinRT
-    {
-        [DllImport("wintypes", ExactSpelling = true)]
-        public static extern HRESULT RoGetBufferMarshaler(IMarshal** bufferMarshaler);
-    }
+    [DllImport("wintypes", ExactSpelling = true)]
+    public static extern HRESULT RoGetBufferMarshaler(IMarshal** bufferMarshaler);
 }

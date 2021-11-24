@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="THUMBBUTTON" /> struct.</summary>
+public static unsafe partial class THUMBBUTTONTests
 {
-    /// <summary>Provides validation of the <see cref="THUMBBUTTON" /> struct.</summary>
-    public static unsafe partial class THUMBBUTTONTests
+    /// <summary>Validates that the <see cref="THUMBBUTTON" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="THUMBBUTTON" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<THUMBBUTTON>(), Is.EqualTo(sizeof(THUMBBUTTON)));
-        }
+        Assert.That(Marshal.SizeOf<THUMBBUTTON>(), Is.EqualTo(sizeof(THUMBBUTTON)));
+    }
 
-        /// <summary>Validates that the <see cref="THUMBBUTTON" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(THUMBBUTTON).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="THUMBBUTTON" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(THUMBBUTTON).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="THUMBBUTTON" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="THUMBBUTTON" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(THUMBBUTTON), Is.EqualTo(552));
-            }
-            else
-            {
-                Assert.That(sizeof(THUMBBUTTON), Is.EqualTo(540));
-            }
+            Assert.That(sizeof(THUMBBUTTON), Is.EqualTo(552));
+        }
+        else
+        {
+            Assert.That(sizeof(THUMBBUTTON), Is.EqualTo(540));
         }
     }
 }

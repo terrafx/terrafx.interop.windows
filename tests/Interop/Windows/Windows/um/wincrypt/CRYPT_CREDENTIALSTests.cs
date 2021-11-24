@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CRYPT_CREDENTIALS" /> struct.</summary>
+public static unsafe partial class CRYPT_CREDENTIALSTests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_CREDENTIALS" /> struct.</summary>
-    public static unsafe partial class CRYPT_CREDENTIALSTests
+    /// <summary>Validates that the <see cref="CRYPT_CREDENTIALS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CRYPT_CREDENTIALS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CRYPT_CREDENTIALS>(), Is.EqualTo(sizeof(CRYPT_CREDENTIALS)));
-        }
+        Assert.That(Marshal.SizeOf<CRYPT_CREDENTIALS>(), Is.EqualTo(sizeof(CRYPT_CREDENTIALS)));
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_CREDENTIALS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CRYPT_CREDENTIALS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CRYPT_CREDENTIALS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CRYPT_CREDENTIALS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_CREDENTIALS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CRYPT_CREDENTIALS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CRYPT_CREDENTIALS), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(CRYPT_CREDENTIALS), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(CRYPT_CREDENTIALS), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(CRYPT_CREDENTIALS), Is.EqualTo(12));
         }
     }
 }

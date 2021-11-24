@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct MEM_ADDRESS_REQUIREMENTS
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct MEM_ADDRESS_REQUIREMENTS
-    {
-        [NativeTypeName("PVOID")]
-        public void* LowestStartingAddress;
+    [NativeTypeName("PVOID")]
+    public void* LowestStartingAddress;
 
-        [NativeTypeName("PVOID")]
-        public void* HighestEndingAddress;
+    [NativeTypeName("PVOID")]
+    public void* HighestEndingAddress;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint Alignment;
-    }
+    [NativeTypeName("SIZE_T")]
+    public nuint Alignment;
 }

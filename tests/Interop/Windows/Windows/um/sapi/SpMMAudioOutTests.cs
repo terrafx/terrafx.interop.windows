@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SpMMAudioOut" /> struct.</summary>
+public static unsafe partial class SpMMAudioOutTests
 {
-    /// <summary>Provides validation of the <see cref="SpMMAudioOut" /> struct.</summary>
-    public static unsafe partial class SpMMAudioOutTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SpMMAudioOut" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SpMMAudioOut" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SpMMAudioOut).GUID, Is.EqualTo(CLSID_SpMMAudioOut));
-        }
+        Assert.That(typeof(SpMMAudioOut).GUID, Is.EqualTo(CLSID_SpMMAudioOut));
+    }
 
-        /// <summary>Validates that the <see cref="SpMMAudioOut" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SpMMAudioOut>(), Is.EqualTo(sizeof(SpMMAudioOut)));
-        }
+    /// <summary>Validates that the <see cref="SpMMAudioOut" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SpMMAudioOut>(), Is.EqualTo(sizeof(SpMMAudioOut)));
+    }
 
-        /// <summary>Validates that the <see cref="SpMMAudioOut" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SpMMAudioOut).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SpMMAudioOut" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SpMMAudioOut).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SpMMAudioOut" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SpMMAudioOut), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SpMMAudioOut" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SpMMAudioOut), Is.EqualTo(1));
     }
 }
