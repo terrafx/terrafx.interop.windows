@@ -59,6 +59,7 @@ public partial struct DISPLAYCONFIG_MODE_INFO
         public DISPLAYCONFIG_SOURCE_MODE sourceMode;
 
         [FieldOffset(0)]
+        [SupportedOSPlatform("windows10.0.17763.0")]
         public DISPLAYCONFIG_DESKTOP_IMAGE_INFO desktopImageInfo;
     }
 }

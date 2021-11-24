@@ -5,6 +5,7 @@
 
 using NUnit.Framework;
 using System;
+using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.SID;
 
 namespace TerraFX.Interop.Windows.UnitTests;
