@@ -14,34 +14,43 @@ public static unsafe partial class Windows
     [return: NativeTypeName("BOOLEAN")]
     public static extern byte Wow64EnableWow64FsRedirection([NativeTypeName("BOOLEAN")] byte Wow64FsEnableRedirection);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL Wow64DisableWow64FsRedirection([NativeTypeName("PVOID *")] void** OldValue);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL Wow64RevertWow64FsRedirection([NativeTypeName("PVOID")] void* OlValue);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL IsWow64Process(HANDLE hProcess, [NativeTypeName("PBOOL")] BOOL* Wow64Process);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern uint GetSystemWow64DirectoryA([NativeTypeName("LPSTR")] sbyte* lpBuffer, uint uSize);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern uint GetSystemWow64DirectoryW([NativeTypeName("LPWSTR")] ushort* lpBuffer, uint uSize);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.10586.0")]
     public static extern BOOL IsWow64Process2(HANDLE hProcess, ushort* pProcessMachine, ushort* pNativeMachine);
 
-    [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernelbase", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.10586.0")]
     public static extern uint GetSystemWow64Directory2A([NativeTypeName("LPSTR")] sbyte* lpBuffer, uint uSize, [NativeTypeName("WORD")] ushort ImageFileMachineType);
 
-    [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernelbase", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.10586.0")]
     public static extern uint GetSystemWow64Directory2W([NativeTypeName("LPWSTR")] ushort* lpBuffer, uint uSize, [NativeTypeName("WORD")] ushort ImageFileMachineType);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.16299.0")]
     public static extern HRESULT IsWow64GuestMachineSupported(ushort WowGuestMachine, BOOL* MachineIsSupported);
 

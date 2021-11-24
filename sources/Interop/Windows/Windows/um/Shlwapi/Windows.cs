@@ -347,10 +347,12 @@ public static unsafe partial class Windows
     [return: NativeTypeName("LPWSTR")]
     public static extern ushort* PathBuildRootW([NativeTypeName("LPWSTR")] ushort* pszRoot, int iDrive);
 
-    [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
+    [DllImport("shlwapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL PathCanonicalizeA([NativeTypeName("LPSTR")] sbyte* pszBuf, [NativeTypeName("LPCSTR")] sbyte* pszPath);
 
-    [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
+    [DllImport("shlwapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL PathCanonicalizeW([NativeTypeName("LPWSTR")] ushort* pszBuf, [NativeTypeName("LPCWSTR")] ushort* pszPath);
 
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -379,10 +381,12 @@ public static unsafe partial class Windows
     [DllImport("shlwapi", ExactSpelling = true)]
     public static extern int PathCommonPrefixW([NativeTypeName("LPCWSTR")] ushort* pszFile1, [NativeTypeName("LPCWSTR")] ushort* pszFile2, [NativeTypeName("LPWSTR")] ushort* achPath);
 
-    [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
+    [DllImport("shlwapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL PathFileExistsA([NativeTypeName("LPCSTR")] sbyte* pszPath);
 
-    [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
+    [DllImport("shlwapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL PathFileExistsW([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1137,13 +1141,15 @@ public static unsafe partial class Windows
     [DllImport("shlwapi", ExactSpelling = true)]
     public static extern HANDLE SHAllocShared([NativeTypeName("const void *")] void* pvData, [NativeTypeName("DWORD")] uint dwSize, [NativeTypeName("DWORD")] uint dwProcessId);
 
-    [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
+    [DllImport("shlwapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SHFreeShared(HANDLE hData, [NativeTypeName("DWORD")] uint dwProcessId);
 
     [DllImport("shlwapi", ExactSpelling = true)]
     public static extern void* SHLockShared(HANDLE hData, [NativeTypeName("DWORD")] uint dwProcessId);
 
-    [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
+    [DllImport("shlwapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SHUnlockShared(void* pvData);
 
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1176,7 +1182,8 @@ public static unsafe partial class Windows
     [DllImport("shlwapi", ExactSpelling = true)]
     public static extern BOOL SHSkipJunction(IBindCtx* pbc, [NativeTypeName("const CLSID *")] Guid* pclsid);
 
-    [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
+    [DllImport("shlwapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SHCreateThread([NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> pfnThreadProc, void* pData, [NativeTypeName("SHCT_FLAGS")] uint flags, [NativeTypeName("LPTHREAD_START_ROUTINE")] delegate* unmanaged<void*, uint> pfnCallback);
 
     [DllImport("shlwapi", ExactSpelling = true)]

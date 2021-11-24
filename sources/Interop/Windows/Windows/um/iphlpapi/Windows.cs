@@ -303,7 +303,8 @@ public static unsafe partial class Windows
     [return: NativeTypeName("DWORD")]
     public static extern uint SendARP([NativeTypeName("IPAddr")] uint DestIP, [NativeTypeName("IPAddr")] uint SrcIP, [NativeTypeName("PVOID")] void* pMacAddr, [NativeTypeName("PULONG")] uint* PhyAddrLen);
 
-    [DllImport("iphlpapi", ExactSpelling = true, SetLastError = true)]
+    [DllImport("iphlpapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL GetRTTAndHopCount([NativeTypeName("IPAddr")] uint DestIpAddress, [NativeTypeName("PULONG")] uint* HopCount, [NativeTypeName("ULONG")] uint MaxHops, [NativeTypeName("PULONG")] uint* RTT);
 
     [DllImport("iphlpapi", ExactSpelling = true)]

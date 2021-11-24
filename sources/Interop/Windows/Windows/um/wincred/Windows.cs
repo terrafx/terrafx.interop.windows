@@ -9,64 +9,84 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredWriteW([NativeTypeName("PCREDENTIALW")] CREDENTIALW* Credential, [NativeTypeName("DWORD")] uint Flags);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredWriteA([NativeTypeName("PCREDENTIALA")] CREDENTIALA* Credential, [NativeTypeName("DWORD")] uint Flags);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredReadW([NativeTypeName("LPCWSTR")] ushort* TargetName, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCREDENTIALW *")] CREDENTIALW** Credential);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredReadA([NativeTypeName("LPCSTR")] sbyte* TargetName, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCREDENTIALA *")] CREDENTIALA** Credential);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredEnumerateW([NativeTypeName("LPCWSTR")] ushort* Filter, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD *")] uint* Count, [NativeTypeName("PCREDENTIALW **")] CREDENTIALW*** Credential);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredEnumerateA([NativeTypeName("LPCSTR")] sbyte* Filter, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD *")] uint* Count, [NativeTypeName("PCREDENTIALA **")] CREDENTIALA*** Credential);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredWriteDomainCredentialsW([NativeTypeName("PCREDENTIAL_TARGET_INFORMATIONW")] CREDENTIAL_TARGET_INFORMATIONW* TargetInfo, [NativeTypeName("PCREDENTIALW")] CREDENTIALW* Credential, [NativeTypeName("DWORD")] uint Flags);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredWriteDomainCredentialsA([NativeTypeName("PCREDENTIAL_TARGET_INFORMATIONA")] CREDENTIAL_TARGET_INFORMATIONA* TargetInfo, [NativeTypeName("PCREDENTIALA")] CREDENTIALA* Credential, [NativeTypeName("DWORD")] uint Flags);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredReadDomainCredentialsW([NativeTypeName("PCREDENTIAL_TARGET_INFORMATIONW")] CREDENTIAL_TARGET_INFORMATIONW* TargetInfo, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD *")] uint* Count, [NativeTypeName("PCREDENTIALW **")] CREDENTIALW*** Credential);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredReadDomainCredentialsA([NativeTypeName("PCREDENTIAL_TARGET_INFORMATIONA")] CREDENTIAL_TARGET_INFORMATIONA* TargetInfo, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD *")] uint* Count, [NativeTypeName("PCREDENTIALA **")] CREDENTIALA*** Credential);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredDeleteW([NativeTypeName("LPCWSTR")] ushort* TargetName, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("DWORD")] uint Flags);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredDeleteA([NativeTypeName("LPCSTR")] sbyte* TargetName, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("DWORD")] uint Flags);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredRenameW([NativeTypeName("LPCWSTR")] ushort* OldTargetName, [NativeTypeName("LPCWSTR")] ushort* NewTargetName, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("DWORD")] uint Flags);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredRenameA([NativeTypeName("LPCSTR")] sbyte* OldTargetName, [NativeTypeName("LPCSTR")] sbyte* NewTargetName, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("DWORD")] uint Flags);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredGetTargetInfoW([NativeTypeName("LPCWSTR")] ushort* TargetName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCREDENTIAL_TARGET_INFORMATIONW *")] CREDENTIAL_TARGET_INFORMATIONW** TargetInfo);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredGetTargetInfoA([NativeTypeName("LPCSTR")] sbyte* TargetName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCREDENTIAL_TARGET_INFORMATIONA *")] CREDENTIAL_TARGET_INFORMATIONA** TargetInfo);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredMarshalCredentialW(CRED_MARSHAL_TYPE CredType, [NativeTypeName("PVOID")] void* Credential, [NativeTypeName("LPWSTR *")] ushort** MarshaledCredential);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredMarshalCredentialA(CRED_MARSHAL_TYPE CredType, [NativeTypeName("PVOID")] void* Credential, [NativeTypeName("LPSTR *")] sbyte** MarshaledCredential);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredUnmarshalCredentialW([NativeTypeName("LPCWSTR")] ushort* MarshaledCredential, [NativeTypeName("PCRED_MARSHAL_TYPE")] CRED_MARSHAL_TYPE* CredType, [NativeTypeName("PVOID *")] void** Credential);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredUnmarshalCredentialA([NativeTypeName("LPCSTR")] sbyte* MarshaledCredential, [NativeTypeName("PCRED_MARSHAL_TYPE")] CRED_MARSHAL_TYPE* CredType, [NativeTypeName("PVOID *")] void** Credential);
 
     [DllImport("advapi32", ExactSpelling = true)]
@@ -75,43 +95,56 @@ public static unsafe partial class Windows
     [DllImport("advapi32", ExactSpelling = true)]
     public static extern BOOL CredIsMarshaledCredentialA([NativeTypeName("LPCSTR")] sbyte* MarshaledCredential);
 
-    [DllImport("credui", ExactSpelling = true, SetLastError = true)]
+    [DllImport("credui", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredUnPackAuthenticationBufferW([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PVOID")] void* pAuthBuffer, [NativeTypeName("DWORD")] uint cbAuthBuffer, [NativeTypeName("LPWSTR")] ushort* pszUserName, [NativeTypeName("DWORD *")] uint* pcchMaxUserName, [NativeTypeName("LPWSTR")] ushort* pszDomainName, [NativeTypeName("DWORD *")] uint* pcchMaxDomainName, [NativeTypeName("LPWSTR")] ushort* pszPassword, [NativeTypeName("DWORD *")] uint* pcchMaxPassword);
 
-    [DllImport("credui", ExactSpelling = true, SetLastError = true)]
+    [DllImport("credui", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredUnPackAuthenticationBufferA([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PVOID")] void* pAuthBuffer, [NativeTypeName("DWORD")] uint cbAuthBuffer, [NativeTypeName("LPSTR")] sbyte* pszUserName, [NativeTypeName("DWORD *")] uint* pcchlMaxUserName, [NativeTypeName("LPSTR")] sbyte* pszDomainName, [NativeTypeName("DWORD *")] uint* pcchMaxDomainName, [NativeTypeName("LPSTR")] sbyte* pszPassword, [NativeTypeName("DWORD *")] uint* pcchMaxPassword);
 
-    [DllImport("credui", ExactSpelling = true, SetLastError = true)]
+    [DllImport("credui", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredPackAuthenticationBufferW([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* pszUserName, [NativeTypeName("LPWSTR")] ushort* pszPassword, [NativeTypeName("PBYTE")] byte* pPackedCredentials, [NativeTypeName("DWORD *")] uint* pcbPackedCredentials);
 
-    [DllImport("credui", ExactSpelling = true, SetLastError = true)]
+    [DllImport("credui", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredPackAuthenticationBufferA([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPSTR")] sbyte* pszUserName, [NativeTypeName("LPSTR")] sbyte* pszPassword, [NativeTypeName("PBYTE")] byte* pPackedCredentials, [NativeTypeName("DWORD *")] uint* pcbPackedCredentials);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredProtectW(BOOL fAsSelf, [NativeTypeName("LPWSTR")] ushort* pszCredentials, [NativeTypeName("DWORD")] uint cchCredentials, [NativeTypeName("LPWSTR")] ushort* pszProtectedCredentials, [NativeTypeName("DWORD *")] uint* pcchMaxChars, CRED_PROTECTION_TYPE* ProtectionType);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredProtectA(BOOL fAsSelf, [NativeTypeName("LPSTR")] sbyte* pszCredentials, [NativeTypeName("DWORD")] uint cchCredentials, [NativeTypeName("LPSTR")] sbyte* pszProtectedCredentials, [NativeTypeName("DWORD *")] uint* pcchMaxChars, CRED_PROTECTION_TYPE* ProtectionType);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredUnprotectW(BOOL fAsSelf, [NativeTypeName("LPWSTR")] ushort* pszProtectedCredentials, [NativeTypeName("DWORD")] uint cchProtectedCredentials, [NativeTypeName("LPWSTR")] ushort* pszCredentials, [NativeTypeName("DWORD *")] uint* pcchMaxChars);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredUnprotectA(BOOL fAsSelf, [NativeTypeName("LPSTR")] sbyte* pszProtectedCredentials, [NativeTypeName("DWORD")] uint cchProtectedCredentials, [NativeTypeName("LPSTR")] sbyte* pszCredentials, [NativeTypeName("DWORD *")] uint* pcchMaxChars);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredIsProtectedW([NativeTypeName("LPWSTR")] ushort* pszProtectedCredentials, CRED_PROTECTION_TYPE* pProtectionType);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredIsProtectedA([NativeTypeName("LPSTR")] sbyte* pszProtectedCredentials, CRED_PROTECTION_TYPE* pProtectionType);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredFindBestCredentialW([NativeTypeName("LPCWSTR")] ushort* TargetName, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCREDENTIALW *")] CREDENTIALW** Credential);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredFindBestCredentialA([NativeTypeName("LPCSTR")] sbyte* TargetName, [NativeTypeName("DWORD")] uint Type, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCREDENTIALA *")] CREDENTIALA** Credential);
 
-    [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CredGetSessionTypes([NativeTypeName("DWORD")] uint MaximumPersistCount, [NativeTypeName("LPDWORD")] uint* MaximumPersist);
 
     [DllImport("advapi32", ExactSpelling = true)]

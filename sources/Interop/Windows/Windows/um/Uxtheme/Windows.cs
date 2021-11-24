@@ -205,7 +205,8 @@ public static unsafe partial class Windows
     [DllImport("uxtheme", ExactSpelling = true)]
     public static extern HRESULT BufferedPaintUnInit();
 
-    [DllImport("uxtheme", ExactSpelling = true, SetLastError = true)]
+    [DllImport("uxtheme", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HPAINTBUFFER BeginBufferedPaint(HDC hdcTarget, [NativeTypeName("const RECT *")] RECT* prcTarget, BP_BUFFERFORMAT dwFormat, BP_PAINTPARAMS* pPaintParams, HDC* phdc);
 
     [DllImport("uxtheme", ExactSpelling = true)]

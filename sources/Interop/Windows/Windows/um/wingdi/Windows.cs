@@ -22,7 +22,8 @@ public static unsafe partial class Windows
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL Arc(HDC hdc, int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4);
 
-    [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("gdi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL BitBlt(HDC hdc, int x, int y, int cx, int cy, HDC hdcSrc, int x1, int y1, [NativeTypeName("DWORD")] uint rop);
 
     [DllImport("gdi32", ExactSpelling = true)]
@@ -31,7 +32,8 @@ public static unsafe partial class Windows
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL Chord(HDC hdc, int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4);
 
-    [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("gdi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern int ChoosePixelFormat(HDC hdc, [NativeTypeName("const PIXELFORMATDESCRIPTOR *")] PIXELFORMATDESCRIPTOR* ppfd);
 
     [DllImport("gdi32", ExactSpelling = true)]
@@ -136,10 +138,12 @@ public static unsafe partial class Windows
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HRGN CreateRoundRectRgn(int x1, int y1, int x2, int y2, int w, int h);
 
-    [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("gdi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CreateScalableFontResourceA([NativeTypeName("DWORD")] uint fdwHidden, [NativeTypeName("LPCSTR")] sbyte* lpszFont, [NativeTypeName("LPCSTR")] sbyte* lpszFile, [NativeTypeName("LPCSTR")] sbyte* lpszPath);
 
-    [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("gdi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CreateScalableFontResourceW([NativeTypeName("DWORD")] uint fdwHidden, [NativeTypeName("LPCWSTR")] ushort* lpszFont, [NativeTypeName("LPCWSTR")] ushort* lpszFile, [NativeTypeName("LPCWSTR")] ushort* lpszPath);
 
     [DllImport("gdi32", ExactSpelling = true)]
@@ -154,7 +158,8 @@ public static unsafe partial class Windows
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL DeleteObject(HGDIOBJ ho);
 
-    [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("gdi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern int DescribePixelFormat(HDC hdc, int iPixelFormat, uint nBytes, [NativeTypeName("LPPIXELFORMATDESCRIPTOR")] PIXELFORMATDESCRIPTOR* ppfd);
 
     [DllImport("gdi32", ExactSpelling = true)]
@@ -342,7 +347,8 @@ public static unsafe partial class Windows
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern COLORREF GetPixel(HDC hdc, int x, int y);
 
-    [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("gdi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern int GetPixelFormat(HDC hdc);
 
     [DllImport("gdi32", ExactSpelling = true)]
@@ -406,7 +412,8 @@ public static unsafe partial class Windows
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int GetTextCharsetInfo(HDC hdc, [NativeTypeName("LPFONTSIGNATURE")] FONTSIGNATURE* lpSig, [NativeTypeName("DWORD")] uint dwFlags);
 
-    [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("gdi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL TranslateCharsetInfo([NativeTypeName("DWORD *")] uint* lpSrc, [NativeTypeName("LPCHARSETINFO")] CHARSETINFO* lpCs, [NativeTypeName("DWORD")] uint dwFlags);
 
     [DllImport("gdi32", ExactSpelling = true)]
@@ -616,7 +623,8 @@ public static unsafe partial class Windows
     [return: NativeTypeName("DWORD")]
     public static extern uint SetLayout(HDC hdc, [NativeTypeName("DWORD")] uint l);
 
-    [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("gdi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetLayout(HDC hdc);
 
@@ -632,7 +640,8 @@ public static unsafe partial class Windows
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL SetPixelV(HDC hdc, int x, int y, COLORREF color);
 
-    [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("gdi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetPixelFormat(HDC hdc, int format, [NativeTypeName("const PIXELFORMATDESCRIPTOR *")] PIXELFORMATDESCRIPTOR* ppfd);
 
     [DllImport("gdi32", ExactSpelling = true)]
@@ -737,7 +746,8 @@ public static unsafe partial class Windows
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern uint GetEnhMetaFilePaletteEntries(HENHMETAFILE hemf, uint nNumEntries, [NativeTypeName("LPPALETTEENTRY")] PALETTEENTRY* lpPaletteEntries);
 
-    [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("gdi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern uint GetEnhMetaFilePixelFormat(HENHMETAFILE hemf, uint cbBuffer, PIXELFORMATDESCRIPTOR* ppfd);
 
     [DllImport("gdi32", ExactSpelling = true)]
@@ -782,7 +792,8 @@ public static unsafe partial class Windows
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL CombineTransform([NativeTypeName("LPXFORM")] XFORM* lpxfOut, [NativeTypeName("const XFORM *")] XFORM* lpxf1, [NativeTypeName("const XFORM *")] XFORM* lpxf2);
 
-    [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("gdi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HBITMAP CreateDIBSection(HDC hdc, [NativeTypeName("const BITMAPINFO *")] BITMAPINFO* pbmi, uint usage, void** ppvBits, HANDLE hSection, [NativeTypeName("DWORD")] uint offset);
 
     [DllImport("gdi32", ExactSpelling = true)]
@@ -1056,16 +1067,20 @@ public static unsafe partial class Windows
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL ColorCorrectPalette(HDC hdc, HPALETTE hPal, [NativeTypeName("DWORD")] uint deFirst, [NativeTypeName("DWORD")] uint num);
 
-    [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("opengl32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL wglCopyContext(HGLRC param0, HGLRC param1, uint param2);
 
-    [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("opengl32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HGLRC wglCreateContext(HDC param0);
 
-    [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("opengl32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HGLRC wglCreateLayerContext(HDC param0, int param1);
 
-    [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("opengl32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL wglDeleteContext(HGLRC param0);
 
     [DllImport("opengl32", ExactSpelling = true)]
@@ -1074,44 +1089,56 @@ public static unsafe partial class Windows
     [DllImport("opengl32", ExactSpelling = true)]
     public static extern HDC wglGetCurrentDC();
 
-    [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("opengl32", ExactSpelling = true)]
+    [SetsLastSystemError]
     [return: NativeTypeName("PROC")]
     public static extern IntPtr wglGetProcAddress([NativeTypeName("LPCSTR")] sbyte* param0);
 
-    [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("opengl32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL wglMakeCurrent(HDC param0, HGLRC param1);
 
-    [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("opengl32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL wglShareLists(HGLRC param0, HGLRC param1);
 
-    [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("opengl32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL wglUseFontBitmapsA(HDC param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3);
 
-    [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("opengl32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL wglUseFontBitmapsW(HDC param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3);
 
-    [DllImport("gdi32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("gdi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SwapBuffers(HDC param0);
 
-    [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("opengl32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL wglUseFontOutlinesA(HDC param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3, float param4, float param5, int param6, [NativeTypeName("LPGLYPHMETRICSFLOAT")] GLYPHMETRICSFLOAT* param7);
 
-    [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("opengl32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL wglUseFontOutlinesW(HDC param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3, float param4, float param5, int param6, [NativeTypeName("LPGLYPHMETRICSFLOAT")] GLYPHMETRICSFLOAT* param7);
 
     [DllImport("opengl32", ExactSpelling = true)]
     public static extern BOOL wglDescribeLayerPlane(HDC param0, int param1, int param2, uint param3, [NativeTypeName("LPLAYERPLANEDESCRIPTOR")] LAYERPLANEDESCRIPTOR* param4);
 
-    [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("opengl32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern int wglSetLayerPaletteEntries(HDC param0, int param1, int param2, int param3, [NativeTypeName("const COLORREF *")] COLORREF* param4);
 
-    [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("opengl32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern int wglGetLayerPaletteEntries(HDC param0, int param1, int param2, int param3, COLORREF* param4);
 
-    [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("opengl32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL wglRealizeLayerPalette(HDC param0, int param1, BOOL param2);
 
-    [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("opengl32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL wglSwapLayerBuffers(HDC param0, uint param1);
 
     [DllImport("opengl32", ExactSpelling = true)]

@@ -23,7 +23,8 @@ public static unsafe partial class Windows
     [DllImport("wintrust", ExactSpelling = true)]
     public static extern BOOL WintrustSetRegPolicyFlags([NativeTypeName("DWORD")] uint dwPolicyFlags);
 
-    [DllImport("wintrust", ExactSpelling = true, SetLastError = true)]
+    [DllImport("wintrust", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL WintrustAddActionID(Guid* pgActionID, [NativeTypeName("DWORD")] uint fdwFlags, CRYPT_REGISTER_ACTIONID* psProvInfo);
 
     [DllImport("wintrust", ExactSpelling = true)]
@@ -32,10 +33,12 @@ public static unsafe partial class Windows
     [DllImport("wintrust", ExactSpelling = true)]
     public static extern BOOL WintrustLoadFunctionPointers(Guid* pgActionID, CRYPT_PROVIDER_FUNCTIONS* pPfns);
 
-    [DllImport("wintrust", ExactSpelling = true, SetLastError = true)]
+    [DllImport("wintrust", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL WintrustAddDefaultForUsage([NativeTypeName("const char *")] sbyte* pszUsageOID, CRYPT_PROVIDER_REGDEFUSAGE* psDefUsage);
 
-    [DllImport("wintrust", ExactSpelling = true, SetLastError = true)]
+    [DllImport("wintrust", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL WintrustGetDefaultForUsage([NativeTypeName("DWORD")] uint dwAction, [NativeTypeName("const char *")] sbyte* pszUsageOID, CRYPT_PROVIDER_DEFUSAGE* psUsage);
 
     [DllImport("wintrust", ExactSpelling = true)]

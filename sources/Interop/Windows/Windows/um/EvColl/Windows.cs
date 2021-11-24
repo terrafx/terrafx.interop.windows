@@ -9,13 +9,15 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
-    [DllImport("wecapi", ExactSpelling = true, SetLastError = true)]
+    [DllImport("wecapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern EC_HANDLE EcOpenSubscriptionEnum([NativeTypeName("DWORD")] uint Flags);
 
     [DllImport("wecapi", ExactSpelling = true)]
     public static extern BOOL EcEnumNextSubscription(EC_HANDLE SubscriptionEnum, [NativeTypeName("DWORD")] uint SubscriptionNameBufferSize, [NativeTypeName("LPWSTR")] ushort* SubscriptionNameBuffer, [NativeTypeName("PDWORD")] uint* SubscriptionNameBufferUsed);
 
-    [DllImport("wecapi", ExactSpelling = true, SetLastError = true)]
+    [DllImport("wecapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern EC_HANDLE EcOpenSubscription([NativeTypeName("LPCWSTR")] ushort* SubscriptionName, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("DWORD")] uint Flags);
 
     [DllImport("wecapi", ExactSpelling = true)]

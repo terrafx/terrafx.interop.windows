@@ -9,52 +9,67 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HANDLE CreateToolhelp32Snapshot([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint th32ProcessID);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL Heap32ListFirst(HANDLE hSnapshot, [NativeTypeName("LPHEAPLIST32")] HEAPLIST32* lphl);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL Heap32ListNext(HANDLE hSnapshot, [NativeTypeName("LPHEAPLIST32")] HEAPLIST32* lphl);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL Heap32First([NativeTypeName("LPHEAPENTRY32")] HEAPENTRY32* lphe, [NativeTypeName("DWORD")] uint th32ProcessID, [NativeTypeName("ULONG_PTR")] nuint th32HeapID);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL Heap32Next([NativeTypeName("LPHEAPENTRY32")] HEAPENTRY32* lphe);
 
     [DllImport("kernel32", ExactSpelling = true)]
     public static extern BOOL Toolhelp32ReadProcessMemory([NativeTypeName("DWORD")] uint th32ProcessID, [NativeTypeName("LPCVOID")] void* lpBaseAddress, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("SIZE_T")] nuint cbRead, [NativeTypeName("SIZE_T *")] nuint* lpNumberOfBytesRead);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL Process32FirstW(HANDLE hSnapshot, [NativeTypeName("LPPROCESSENTRY32W")] PROCESSENTRY32W* lppe);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL Process32NextW(HANDLE hSnapshot, [NativeTypeName("LPPROCESSENTRY32W")] PROCESSENTRY32W* lppe);
 
-    [DllImport("kernel32", EntryPoint = "Process32First", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", EntryPoint = "Process32First", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL Process32FirstA(HANDLE hSnapshot, [NativeTypeName("LPPROCESSENTRY32")] PROCESSENTRY32* lppe);
 
-    [DllImport("kernel32", EntryPoint = "Process32Next", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", EntryPoint = "Process32Next", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL Process32NextA(HANDLE hSnapshot, [NativeTypeName("LPPROCESSENTRY32")] PROCESSENTRY32* lppe);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL Thread32First(HANDLE hSnapshot, [NativeTypeName("LPTHREADENTRY32")] THREADENTRY32* lpte);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL Thread32Next(HANDLE hSnapshot, [NativeTypeName("LPTHREADENTRY32")] THREADENTRY32* lpte);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL Module32FirstW(HANDLE hSnapshot, [NativeTypeName("LPMODULEENTRY32W")] MODULEENTRY32W* lpme);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL Module32NextW(HANDLE hSnapshot, [NativeTypeName("LPMODULEENTRY32W")] MODULEENTRY32W* lpme);
 
-    [DllImport("kernel32", EntryPoint = "Module32First", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", EntryPoint = "Module32First", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL Module32FirstA(HANDLE hSnapshot, [NativeTypeName("LPMODULEENTRY32")] MODULEENTRY32* lpme);
 
-    [DllImport("kernel32", EntryPoint = "Module32Next", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", EntryPoint = "Module32Next", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL Module32NextA(HANDLE hSnapshot, [NativeTypeName("LPMODULEENTRY32")] MODULEENTRY32* lpme);
 
     [NativeTypeName("#define TH32CS_SNAPHEAPLIST 0x00000001")]

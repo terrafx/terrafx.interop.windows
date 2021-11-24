@@ -10,51 +10,63 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
-    [DllImport("cabinet", ExactSpelling = true, SetLastError = true)]
+    [DllImport("cabinet", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL CreateCompressor([NativeTypeName("DWORD")] uint Algorithm, [NativeTypeName("PCOMPRESS_ALLOCATION_ROUTINES")] COMPRESS_ALLOCATION_ROUTINES* AllocationRoutines, [NativeTypeName("PCOMPRESSOR_HANDLE")] COMPRESSOR_HANDLE* CompressorHandle);
 
-    [DllImport("cabinet", ExactSpelling = true, SetLastError = true)]
+    [DllImport("cabinet", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL SetCompressorInformation(COMPRESSOR_HANDLE CompressorHandle, COMPRESS_INFORMATION_CLASS CompressInformationClass, [NativeTypeName("LPCVOID")] void* CompressInformation, [NativeTypeName("SIZE_T")] nuint CompressInformationSize);
 
-    [DllImport("cabinet", ExactSpelling = true, SetLastError = true)]
+    [DllImport("cabinet", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL QueryCompressorInformation(COMPRESSOR_HANDLE CompressorHandle, COMPRESS_INFORMATION_CLASS CompressInformationClass, [NativeTypeName("PVOID")] void* CompressInformation, [NativeTypeName("SIZE_T")] nuint CompressInformationSize);
 
-    [DllImport("cabinet", ExactSpelling = true, SetLastError = true)]
+    [DllImport("cabinet", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL Compress(COMPRESSOR_HANDLE CompressorHandle, [NativeTypeName("LPCVOID")] void* UncompressedData, [NativeTypeName("SIZE_T")] nuint UncompressedDataSize, [NativeTypeName("PVOID")] void* CompressedBuffer, [NativeTypeName("SIZE_T")] nuint CompressedBufferSize, [NativeTypeName("PSIZE_T")] nuint* CompressedDataSize);
 
-    [DllImport("cabinet", ExactSpelling = true, SetLastError = true)]
+    [DllImport("cabinet", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL ResetCompressor(COMPRESSOR_HANDLE CompressorHandle);
 
-    [DllImport("cabinet", ExactSpelling = true, SetLastError = true)]
+    [DllImport("cabinet", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL CloseCompressor(COMPRESSOR_HANDLE CompressorHandle);
 
-    [DllImport("cabinet", ExactSpelling = true, SetLastError = true)]
+    [DllImport("cabinet", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL CreateDecompressor([NativeTypeName("DWORD")] uint Algorithm, [NativeTypeName("PCOMPRESS_ALLOCATION_ROUTINES")] COMPRESS_ALLOCATION_ROUTINES* AllocationRoutines, [NativeTypeName("PDECOMPRESSOR_HANDLE")] COMPRESSOR_HANDLE* DecompressorHandle);
 
-    [DllImport("cabinet", ExactSpelling = true, SetLastError = true)]
+    [DllImport("cabinet", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL SetDecompressorInformation([NativeTypeName("DECOMPRESSOR_HANDLE")] COMPRESSOR_HANDLE DecompressorHandle, COMPRESS_INFORMATION_CLASS CompressInformationClass, [NativeTypeName("LPCVOID")] void* CompressInformation, [NativeTypeName("SIZE_T")] nuint CompressInformationSize);
 
-    [DllImport("cabinet", ExactSpelling = true, SetLastError = true)]
+    [DllImport("cabinet", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL QueryDecompressorInformation([NativeTypeName("DECOMPRESSOR_HANDLE")] COMPRESSOR_HANDLE DecompressorHandle, COMPRESS_INFORMATION_CLASS CompressInformationClass, [NativeTypeName("PVOID")] void* CompressInformation, [NativeTypeName("SIZE_T")] nuint CompressInformationSize);
 
-    [DllImport("cabinet", ExactSpelling = true, SetLastError = true)]
+    [DllImport("cabinet", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL Decompress([NativeTypeName("DECOMPRESSOR_HANDLE")] COMPRESSOR_HANDLE DecompressorHandle, [NativeTypeName("LPCVOID")] void* CompressedData, [NativeTypeName("SIZE_T")] nuint CompressedDataSize, [NativeTypeName("PVOID")] void* UncompressedBuffer, [NativeTypeName("SIZE_T")] nuint UncompressedBufferSize, [NativeTypeName("PSIZE_T")] nuint* UncompressedDataSize);
 
-    [DllImport("cabinet", ExactSpelling = true, SetLastError = true)]
+    [DllImport("cabinet", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL ResetDecompressor([NativeTypeName("DECOMPRESSOR_HANDLE")] COMPRESSOR_HANDLE DecompressorHandle);
 
-    [DllImport("cabinet", ExactSpelling = true, SetLastError = true)]
+    [DllImport("cabinet", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL CloseDecompressor([NativeTypeName("DECOMPRESSOR_HANDLE")] COMPRESSOR_HANDLE DecompressorHandle);
 
