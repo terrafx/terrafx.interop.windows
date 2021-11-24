@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows10.0.19041.0")]
 [Guid("7D5ABF16-4CBB-4E08-B977-9BA59049943E")]
 [NativeTypeName("struct IMFContentDecryptionModuleFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0.19041.0")]
 public unsafe partial struct IMFContentDecryptionModuleFactory : IMFContentDecryptionModuleFactory.Interface
 {
     public void** lpVtbl;

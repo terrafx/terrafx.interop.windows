@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
-[SupportedOSPlatform("windows10.0.19041.0")]
 [Guid("554E41E8-AE8E-4A8C-B7D2-5B4F274A30E4")]
 [NativeTypeName("struct ID3D12VideoExtensionCommand : ID3D12Pageable")]
 [NativeInheritance("ID3D12Pageable")]
+[SupportedOSPlatform("windows10.0.19041.0")]
 public unsafe partial struct ID3D12VideoExtensionCommand : ID3D12VideoExtensionCommand.Interface
 {
     public void** lpVtbl;

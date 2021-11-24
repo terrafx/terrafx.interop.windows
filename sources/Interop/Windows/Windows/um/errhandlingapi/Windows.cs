@@ -20,13 +20,13 @@ public static unsafe partial class Windows
     [return: NativeTypeName("LPTOP_LEVEL_EXCEPTION_FILTER")]
     public static extern delegate* unmanaged<EXCEPTION_POINTERS*, int> SetUnhandledExceptionFilter([NativeTypeName("LPTOP_LEVEL_EXCEPTION_FILTER")] delegate* unmanaged<EXCEPTION_POINTERS*, int> lpTopLevelExceptionFilter);
 
-    [SuppressGCTransition]
     [DllImport("kernel32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
+    [SuppressGCTransition]
     public static extern uint GetLastError();
 
-    [SuppressGCTransition]
     [DllImport("kernel32", ExactSpelling = true)]
+    [SuppressGCTransition]
     public static extern void SetLastError([NativeTypeName("DWORD")] uint dwErrCode);
 
     [DllImport("kernel32", ExactSpelling = true)]
@@ -64,8 +64,8 @@ public static unsafe partial class Windows
     [return: NativeTypeName("DWORD")]
     public static extern uint GetThreadErrorMode();
 
-    [SuppressGCTransition]
     [DllImport("kernel32", ExactSpelling = true)]
+    [SuppressGCTransition]
     public static extern BOOL SetThreadErrorMode([NativeTypeName("DWORD")] uint dwNewMode, [NativeTypeName("LPDWORD")] uint* lpOldMode);
 
     [NativeTypeName("#define FatalAppExit FatalAppExitW")]

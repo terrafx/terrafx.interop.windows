@@ -132,10 +132,12 @@ public static unsafe partial class Windows
         return (HIMAGELIST)(himl);
     }
 
-    [DllImport("comctl32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("comctl32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HWND CreateToolbarEx(HWND hwnd, [NativeTypeName("DWORD")] uint ws, uint wID, int nBitmaps, HINSTANCE hBMInst, [NativeTypeName("UINT_PTR")] nuint wBMID, [NativeTypeName("LPCTBBUTTON")] void* lpButtons, int iNumButtons, int dxButton, int dyButton, int dxBitmap, int dyBitmap, uint uStructSize);
 
-    [DllImport("comctl32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("comctl32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HBITMAP CreateMappedBitmap(HINSTANCE hInstance, [NativeTypeName("INT_PTR")] nint idBitmap, uint wFlags, [NativeTypeName("LPCOLORMAP")] COLORMAP* lpColorMap, int iNumMaps);
 
     [DllImport("comctl32", ExactSpelling = true)]
@@ -144,10 +146,12 @@ public static unsafe partial class Windows
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern void DrawStatusTextW(HDC hDC, [NativeTypeName("LPCRECT")] RECT* lprc, [NativeTypeName("LPCWSTR")] ushort* pszText, uint uFlags);
 
-    [DllImport("comctl32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("comctl32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HWND CreateStatusWindowA([NativeTypeName("LONG")] int style, [NativeTypeName("LPCSTR")] sbyte* lpszText, HWND hwndParent, uint wID);
 
-    [DllImport("comctl32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("comctl32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HWND CreateStatusWindowW([NativeTypeName("LONG")] int style, [NativeTypeName("LPCWSTR")] ushort* lpszText, HWND hwndParent, uint wID);
 
     [DllImport("comctl32", ExactSpelling = true)]

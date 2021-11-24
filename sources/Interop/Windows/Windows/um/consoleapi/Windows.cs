@@ -9,55 +9,72 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL AllocConsole();
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL FreeConsole();
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL AttachConsole([NativeTypeName("DWORD")] uint dwProcessId);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern uint GetConsoleCP();
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern uint GetConsoleOutputCP();
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL GetConsoleMode(HANDLE hConsoleHandle, [NativeTypeName("LPDWORD")] uint* lpMode);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetConsoleMode(HANDLE hConsoleHandle, [NativeTypeName("DWORD")] uint dwMode);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL GetNumberOfConsoleInputEvents(HANDLE hConsoleInput, [NativeTypeName("LPDWORD")] uint* lpNumberOfEvents);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL ReadConsoleInputA(HANDLE hConsoleInput, [NativeTypeName("PINPUT_RECORD")] INPUT_RECORD* lpBuffer, [NativeTypeName("DWORD")] uint nLength, [NativeTypeName("LPDWORD")] uint* lpNumberOfEventsRead);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL ReadConsoleInputW(HANDLE hConsoleInput, [NativeTypeName("PINPUT_RECORD")] INPUT_RECORD* lpBuffer, [NativeTypeName("DWORD")] uint nLength, [NativeTypeName("LPDWORD")] uint* lpNumberOfEventsRead);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL PeekConsoleInputA(HANDLE hConsoleInput, [NativeTypeName("PINPUT_RECORD")] INPUT_RECORD* lpBuffer, [NativeTypeName("DWORD")] uint nLength, [NativeTypeName("LPDWORD")] uint* lpNumberOfEventsRead);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL PeekConsoleInputW(HANDLE hConsoleInput, [NativeTypeName("PINPUT_RECORD")] INPUT_RECORD* lpBuffer, [NativeTypeName("DWORD")] uint nLength, [NativeTypeName("LPDWORD")] uint* lpNumberOfEventsRead);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL ReadConsoleA(HANDLE hConsoleInput, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint nNumberOfCharsToRead, [NativeTypeName("LPDWORD")] uint* lpNumberOfCharsRead, [NativeTypeName("PCONSOLE_READCONSOLE_CONTROL")] CONSOLE_READCONSOLE_CONTROL* pInputControl);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL ReadConsoleW(HANDLE hConsoleInput, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint nNumberOfCharsToRead, [NativeTypeName("LPDWORD")] uint* lpNumberOfCharsRead, [NativeTypeName("PCONSOLE_READCONSOLE_CONTROL")] CONSOLE_READCONSOLE_CONTROL* pInputControl);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL WriteConsoleA(HANDLE hConsoleOutput, [NativeTypeName("const void *")] void* lpBuffer, [NativeTypeName("DWORD")] uint nNumberOfCharsToWrite, [NativeTypeName("LPDWORD")] uint* lpNumberOfCharsWritten, [NativeTypeName("LPVOID")] void* lpReserved);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL WriteConsoleW(HANDLE hConsoleOutput, [NativeTypeName("const void *")] void* lpBuffer, [NativeTypeName("DWORD")] uint nNumberOfCharsToWrite, [NativeTypeName("LPDWORD")] uint* lpNumberOfCharsWritten, [NativeTypeName("LPVOID")] void* lpReserved);
 
-    [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetConsoleCtrlHandler([NativeTypeName("PHANDLER_ROUTINE")] delegate* unmanaged<uint, BOOL> HandlerRoutine, BOOL Add);
 
     [DllImport("kernel32", ExactSpelling = true)]

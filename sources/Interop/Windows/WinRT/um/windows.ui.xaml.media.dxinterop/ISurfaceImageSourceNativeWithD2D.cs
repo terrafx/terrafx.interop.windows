@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
-[SupportedOSPlatform("windows8.1")]
 [Guid("54298223-41E1-4A41-9C08-02E8256864A1")]
 [NativeTypeName("struct ISurfaceImageSourceNativeWithD2D : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows8.1")]
 public unsafe partial struct ISurfaceImageSourceNativeWithD2D : ISurfaceImageSourceNativeWithD2D.Interface
 {
     public void** lpVtbl;

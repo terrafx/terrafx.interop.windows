@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows10.0.19041.0")]
 [Guid("DA62B958-3A38-4A97-BD27-149C640C0771")]
 [NativeTypeName("struct IMFSampleAllocatorControl : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0.19041.0")]
 public unsafe partial struct IMFSampleAllocatorControl : IMFSampleAllocatorControl.Interface
 {
     public void** lpVtbl;

@@ -7,8 +7,8 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
-[SupportedOSPlatform("windows10.0.19041.0")]
 [NativeTypeName("uint32_t")]
+[SupportedOSPlatform("windows10.0.19041.0")]
 public enum DXCoreAdapterState : uint
 {
     IsDriverUpdateInProgress = 0,

@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows8.0")]
 [Guid("F86AD89F-5FE4-4B8D-BB9F-EF3797A84F1F")]
 [NativeTypeName("struct ITextStoreACP2 : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows8.0")]
 public unsafe partial struct ITextStoreACP2 : ITextStoreACP2.Interface
 {
     public void** lpVtbl;

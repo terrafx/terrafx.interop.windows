@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows8.0")]
 [Guid("72D6135B-35E9-412C-B926-FD5265F2A885")]
 [NativeTypeName("struct IMFCaptureSink : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows8.0")]
 public unsafe partial struct IMFCaptureSink : IMFCaptureSink.Interface
 {
     public void** lpVtbl;

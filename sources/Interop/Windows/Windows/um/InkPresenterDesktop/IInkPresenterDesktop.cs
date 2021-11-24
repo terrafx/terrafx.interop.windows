@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows10.0")]
 [Guid("73F3C0D9-2E8B-48F3-895E-20CBD27B723B")]
 [NativeTypeName("struct IInkPresenterDesktop : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IInkPresenterDesktop : IInkPresenterDesktop.Interface
 {
     public void** lpVtbl;

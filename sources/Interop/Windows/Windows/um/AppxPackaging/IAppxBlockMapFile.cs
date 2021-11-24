@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows8.0")]
 [Guid("277672AC-4F63-42C1-8ABC-BEAE3600EB59")]
 [NativeTypeName("struct IAppxBlockMapFile : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows8.0")]
 public unsafe partial struct IAppxBlockMapFile : IAppxBlockMapFile.Interface
 {
     public void** lpVtbl;

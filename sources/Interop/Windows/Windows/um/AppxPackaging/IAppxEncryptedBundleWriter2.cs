@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows10.0")]
 [Guid("E644BE82-F0FA-42B8-A956-8D1CB48EE379")]
 [NativeTypeName("struct IAppxEncryptedBundleWriter2 : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IAppxEncryptedBundleWriter2 : IAppxEncryptedBundleWriter2.Interface
 {
     public void** lpVtbl;

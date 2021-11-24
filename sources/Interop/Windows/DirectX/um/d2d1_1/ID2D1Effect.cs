@@ -50,7 +50,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface
         SetInput(index, output, invalidate);
         if (output != null)
         {
-            output->Release();
+            _ = output->Release();
         }
     }
 

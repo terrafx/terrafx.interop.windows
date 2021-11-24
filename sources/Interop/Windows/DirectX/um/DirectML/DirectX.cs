@@ -27,8 +27,8 @@ public static unsafe partial class DirectX
     [NativeTypeName("const UINT")]
     public const uint DML_MINIMUM_BUFFER_TENSOR_ALIGNMENT = 16;
 
-    [SupportedOSPlatform("windows10.0")]
     [DllImport("directml", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0")]
     public static extern HRESULT DMLCreateDevice(ID3D12Device* d3d12Device, DML_CREATE_DEVICE_FLAGS flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
     [DllImport("directml", ExactSpelling = true)]

@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
-[SupportedOSPlatform("windows8.1")]
 [Guid("1B35A14A-6094-4799-A60E-E474E15D4DC9")]
 [NativeTypeName("struct IContentPrefetcherTaskTrigger : IInspectable")]
 [NativeInheritance("IInspectable")]
+[SupportedOSPlatform("windows8.1")]
 public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherTaskTrigger.Interface
 {
     public void** lpVtbl;

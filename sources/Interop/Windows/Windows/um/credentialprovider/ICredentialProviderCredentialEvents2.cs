@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows8.0")]
 [Guid("B53C00B6-9922-4B78-B1F4-DDFE774DC39B")]
 [NativeTypeName("struct ICredentialProviderCredentialEvents2 : ICredentialProviderCredentialEvents")]
 [NativeInheritance("ICredentialProviderCredentialEvents")]
+[SupportedOSPlatform("windows8.0")]
 public unsafe partial struct ICredentialProviderCredentialEvents2 : ICredentialProviderCredentialEvents2.Interface
 {
     public void** lpVtbl;

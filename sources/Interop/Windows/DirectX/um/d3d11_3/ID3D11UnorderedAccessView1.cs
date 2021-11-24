@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
-[SupportedOSPlatform("windows10.0")]
 [Guid("7B3B6153-A886-4544-AB37-6537C8500403")]
 [NativeTypeName("struct ID3D11UnorderedAccessView1 : ID3D11UnorderedAccessView")]
 [NativeInheritance("ID3D11UnorderedAccessView")]
+[SupportedOSPlatform("windows10.0")]
 public unsafe partial struct ID3D11UnorderedAccessView1 : ID3D11UnorderedAccessView1.Interface
 {
     public void** lpVtbl;

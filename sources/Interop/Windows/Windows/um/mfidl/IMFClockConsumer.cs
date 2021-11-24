@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows10.0.15063.0")]
 [Guid("6EF2A662-47C0-4666-B13D-CBB717F2FA2C")]
 [NativeTypeName("struct IMFClockConsumer : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0.15063.0")]
 public unsafe partial struct IMFClockConsumer : IMFClockConsumer.Interface
 {
     public void** lpVtbl;

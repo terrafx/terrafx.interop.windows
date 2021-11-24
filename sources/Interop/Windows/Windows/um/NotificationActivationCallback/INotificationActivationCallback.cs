@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows10.0")]
 [Guid("53E31837-6600-4A81-9395-75CFFE746F94")]
 [NativeTypeName("struct INotificationActivationCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0")]
 public unsafe partial struct INotificationActivationCallback : INotificationActivationCallback.Interface
 {
     public void** lpVtbl;

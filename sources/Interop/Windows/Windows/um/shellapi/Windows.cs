@@ -10,7 +10,8 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
-    [DllImport("shell32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("shell32", ExactSpelling = true)]
+    [SetsLastSystemError]
     [return: NativeTypeName("LPWSTR *")]
     public static extern ushort** CommandLineToArgvW([NativeTypeName("LPCWSTR")] ushort* lpCmdLine, int* pNumArgs);
 
@@ -29,10 +30,12 @@ public static unsafe partial class Windows
     [DllImport("shell32", ExactSpelling = true)]
     public static extern void DragAcceptFiles(HWND hWnd, BOOL fAccept);
 
-    [DllImport("shell32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("shell32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HINSTANCE ShellExecuteA(HWND hwnd, [NativeTypeName("LPCSTR")] sbyte* lpOperation, [NativeTypeName("LPCSTR")] sbyte* lpFile, [NativeTypeName("LPCSTR")] sbyte* lpParameters, [NativeTypeName("LPCSTR")] sbyte* lpDirectory, int nShowCmd);
 
-    [DllImport("shell32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("shell32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HINSTANCE ShellExecuteW(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* lpOperation, [NativeTypeName("LPCWSTR")] ushort* lpFile, [NativeTypeName("LPCWSTR")] ushort* lpParameters, [NativeTypeName("LPCWSTR")] ushort* lpDirectory, int nShowCmd);
 
     [DllImport("shell32", ExactSpelling = true)]
@@ -86,22 +89,27 @@ public static unsafe partial class Windows
     [DllImport("shell32", ExactSpelling = true)]
     public static extern uint ExtractIconExW([NativeTypeName("LPCWSTR")] ushort* lpszFile, int nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint nIcons);
 
-    [DllImport("shell32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("shell32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern int SHFileOperationA([NativeTypeName("LPSHFILEOPSTRUCTA")] void* lpFileOp);
 
-    [DllImport("shell32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("shell32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern int SHFileOperationW([NativeTypeName("LPSHFILEOPSTRUCTW")] void* lpFileOp);
 
     [DllImport("shell32", ExactSpelling = true)]
     public static extern void SHFreeNameMappings(HANDLE hNameMappings);
 
-    [DllImport("shell32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("shell32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL ShellExecuteExA(void* pExecInfo);
 
-    [DllImport("shell32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("shell32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL ShellExecuteExW(void* pExecInfo);
 
-    [DllImport("shell32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("shell32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SHCreateProcessAsUserW([NativeTypeName("PSHCREATEPROCESSINFOW")] void* pscpi);
 
     [DllImport("shell32", ExactSpelling = true)]
@@ -181,10 +189,12 @@ public static unsafe partial class Windows
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHGetLocalizedName([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("PWSTR")] ushort* pszResModule, uint cch, int* pidsRes);
 
-    [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
+    [DllImport("shlwapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern int ShellMessageBoxA(HINSTANCE hAppInst, HWND hWnd, [NativeTypeName("LPCSTR")] sbyte* lpcText, [NativeTypeName("LPCSTR")] sbyte* lpcTitle, uint fuStyle);
 
-    [DllImport("shlwapi", ExactSpelling = true, SetLastError = true)]
+    [DllImport("shlwapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern int ShellMessageBoxW(HINSTANCE hAppInst, HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* lpcText, [NativeTypeName("LPCWSTR")] ushort* lpcTitle, uint fuStyle);
 
     [DllImport("shell32", ExactSpelling = true)]

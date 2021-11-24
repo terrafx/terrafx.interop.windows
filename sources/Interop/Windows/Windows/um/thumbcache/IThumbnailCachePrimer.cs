@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows8.0")]
 [Guid("0F03F8FE-2B26-46F0-965A-212AA8D66B76")]
 [NativeTypeName("struct IThumbnailCachePrimer : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows8.0")]
 public unsafe partial struct IThumbnailCachePrimer : IThumbnailCachePrimer.Interface
 {
     public void** lpVtbl;

@@ -50,3 +50,4 @@ IsWow64Process
 IsWow64Process2
 Wow64DisableWow64FsRedirection
 Wow64RevertWow64FsRedirection
+Wow64SuspendThread

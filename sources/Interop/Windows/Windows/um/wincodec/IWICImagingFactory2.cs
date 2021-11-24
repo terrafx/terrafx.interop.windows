@@ -11,10 +11,10 @@ using TerraFX.Interop.DirectX;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows8.0")]
 [Guid("7B816B45-1996-4476-B132-DE9E247C8AF0")]
 [NativeTypeName("struct IWICImagingFactory2 : IWICImagingFactory")]
 [NativeInheritance("IWICImagingFactory")]
+[SupportedOSPlatform("windows8.0")]
 public unsafe partial struct IWICImagingFactory2 : IWICImagingFactory2.Interface
 {
     public void** lpVtbl;

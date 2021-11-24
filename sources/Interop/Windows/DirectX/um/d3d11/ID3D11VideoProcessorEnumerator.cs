@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
-[SupportedOSPlatform("windows8.0")]
 [Guid("31627037-53AB-4200-9061-05FAA9AB45F9")]
 [NativeTypeName("struct ID3D11VideoProcessorEnumerator : ID3D11DeviceChild")]
 [NativeInheritance("ID3D11DeviceChild")]
+[SupportedOSPlatform("windows8.0")]
 public unsafe partial struct ID3D11VideoProcessorEnumerator : ID3D11VideoProcessorEnumerator.Interface
 {
     public void** lpVtbl;

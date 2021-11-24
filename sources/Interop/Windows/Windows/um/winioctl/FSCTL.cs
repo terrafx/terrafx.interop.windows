@@ -306,8 +306,8 @@ public static partial class FSCTL
     [NativeTypeName("#define FSCTL_FILE_TYPE_NOTIFICATION CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 129, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
     public const int FSCTL_FILE_TYPE_NOTIFICATION = (((0x00000009) << 16) | ((0) << 14) | ((129) << 2) | (0));
 
-    [SupportedOSPlatform("windows8.0")]
     [NativeTypeName("#define FSCTL_FILE_LEVEL_TRIM CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 130, METHOD_BUFFERED, FILE_WRITE_DATA)")]
+    [SupportedOSPlatform("windows8.0")]
     public const int FSCTL_FILE_LEVEL_TRIM = (((0x00000009) << 16) | (((0x0002)) << 14) | ((130) << 2) | (0));
 
     [NativeTypeName("#define FSCTL_GET_BOOT_AREA_INFO CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 140, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
@@ -421,8 +421,8 @@ public static partial class FSCTL
     [NativeTypeName("#define FSCTL_QUERY_REGION_INFO CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 188, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
     public const int FSCTL_QUERY_REGION_INFO = (((0x00000009) << 16) | ((0) << 14) | ((188) << 2) | (0));
 
-    [SupportedOSPlatform("windows8.1")]
     [NativeTypeName("#define FSCTL_USN_TRACK_MODIFIED_RANGES CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 189, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    [SupportedOSPlatform("windows8.1")]
     public const int FSCTL_USN_TRACK_MODIFIED_RANGES = (((0x00000009) << 16) | ((0) << 14) | ((189) << 2) | (0));
 
     [NativeTypeName("#define FSCTL_QUERY_SHARED_VIRTUAL_DISK_SUPPORT CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 192, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
@@ -506,8 +506,8 @@ public static partial class FSCTL
     [NativeTypeName("#define FSCTL_VIRTUAL_STORAGE_QUERY_PROPERTY CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 226, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
     public const int FSCTL_VIRTUAL_STORAGE_QUERY_PROPERTY = (((0x00000009) << 16) | ((0) << 14) | ((226) << 2) | (0));
 
-    [SupportedOSPlatform("windows10.0")]
     [NativeTypeName("#define FSCTL_FILESYSTEM_GET_STATISTICS_EX CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 227, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    [SupportedOSPlatform("windows10.0")]
     public const int FSCTL_FILESYSTEM_GET_STATISTICS_EX = (((0x00000009) << 16) | ((0) << 14) | ((227) << 2) | (0));
 
     [NativeTypeName("#define FSCTL_QUERY_VOLUME_CONTAINER_STATE CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 228, METHOD_BUFFERED, FILE_ANY_ACCESS)")]

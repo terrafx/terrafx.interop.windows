@@ -20,6 +20,7 @@ generate-file-scoped-namespaces
 generate-macro-bindings
 generate-marker-interfaces
 generate-native-inheritance-attribute
+generate-setslastsystemerror-attribute
 generate-tests-nunit
 generate-unmanaged-constants
 generate-vtbl-index-attribute

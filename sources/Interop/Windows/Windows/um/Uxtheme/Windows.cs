@@ -20,23 +20,23 @@ public static unsafe partial class Windows
     [DllImport("uxtheme", ExactSpelling = true)]
     public static extern BOOL EndPanningFeedback(HWND hwnd, BOOL fAnimateBack);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("uxtheme", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT GetThemeAnimationProperty(HTHEME hTheme, int iStoryboardId, int iTargetId, TA_PROPERTY eProperty, void* pvProperty, [NativeTypeName("DWORD")] uint cbSize, [NativeTypeName("DWORD *")] uint* pcbSizeOut);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("uxtheme", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT GetThemeAnimationTransform(HTHEME hTheme, int iStoryboardId, int iTargetId, [NativeTypeName("DWORD")] uint dwTransformIndex, TA_TRANSFORM* pTransform, [NativeTypeName("DWORD")] uint cbSize, [NativeTypeName("DWORD *")] uint* pcbSizeOut);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("uxtheme", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT GetThemeTimingFunction(HTHEME hTheme, int iTimingFunctionId, TA_TIMINGFUNCTION* pTimingFunction, [NativeTypeName("DWORD")] uint cbSize, [NativeTypeName("DWORD *")] uint* pcbSizeOut);
 
     [DllImport("uxtheme", ExactSpelling = true)]
     public static extern HTHEME OpenThemeData(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszClassList);
 
-    [SupportedOSPlatform("windows10.0.15063.0")]
     [DllImport("uxtheme", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.15063.0")]
     public static extern HTHEME OpenThemeDataForDpi(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszClassList, uint dpi);
 
     [DllImport("uxtheme", ExactSpelling = true)]
@@ -205,7 +205,8 @@ public static unsafe partial class Windows
     [DllImport("uxtheme", ExactSpelling = true)]
     public static extern HRESULT BufferedPaintUnInit();
 
-    [DllImport("uxtheme", ExactSpelling = true, SetLastError = true)]
+    [DllImport("uxtheme", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HPAINTBUFFER BeginBufferedPaint(HDC hdcTarget, [NativeTypeName("const RECT *")] RECT* prcTarget, BP_BUFFERFORMAT dwFormat, BP_PAINTPARAMS* pPaintParams, HDC* phdc);
 
     [DllImport("uxtheme", ExactSpelling = true)]

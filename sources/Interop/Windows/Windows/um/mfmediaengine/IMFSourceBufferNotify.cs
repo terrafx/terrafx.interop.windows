@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows8.1")]
 [Guid("87E47623-2CEB-45D6-9B88-D8520C4DCBBC")]
 [NativeTypeName("struct IMFSourceBufferNotify : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows8.1")]
 public unsafe partial struct IMFSourceBufferNotify : IMFSourceBufferNotify.Interface
 {
     public void** lpVtbl;

@@ -767,9 +767,6 @@ RaiseCustomSystemEventTrigger=kernelbase
 WTSGetServiceSessionId=kernelbase
 WTSIsServerContainer=kernelbase
 --with-setlasterror
-_lcreat
-_llseek
-_lwrite
 AccessCheckAndAuditAlarm
 AccessCheckAndAuditAlarmA
 AccessCheckAndAuditAlarmW
@@ -1054,6 +1051,9 @@ GetNumaProcessorNodeEx
 GetNumaProximityNode
 GetNumberOfEventLogRecords
 GetOldestEventLogRecord
+GetPrivateProfileString
+GetPrivateProfileStringA
+GetPrivateProfileStringW
 GetProcessAffinityMask
 GetProcessDEPPolicy
 GetProcessIoCounters
@@ -1177,6 +1177,8 @@ OpenFileMappingW
 OpenJobObject
 OpenJobObjectA
 OpenJobObjectW
+OperationEnd
+OperationStart
 PowerClearRequest
 PowerCreateRequest
 PowerSetRequest
@@ -1294,3 +1296,6 @@ WriteProfileString
 WriteProfileStringA
 WriteProfileStringW
 ZombifyActCtx
+_lcreat
+_llseek
+_lwrite

@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows10.0")]
 [Guid("FABEA3FC-B108-45B6-A9FC-8D08FA9F85CF")]
 [NativeTypeName("struct IInkCommitRequestHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IInkCommitRequestHandler : IInkCommitRequestHandler.Interface
 {
     public void** lpVtbl;

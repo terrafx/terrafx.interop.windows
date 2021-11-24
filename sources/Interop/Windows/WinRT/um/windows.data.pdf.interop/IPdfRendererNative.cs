@@ -12,10 +12,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
-[SupportedOSPlatform("windows8.1")]
 [Guid("7D9DCD91-D277-4947-8527-07A0DAEDA94A")]
 [NativeTypeName("struct IPdfRendererNative : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows8.1")]
 public unsafe partial struct IPdfRendererNative : IPdfRendererNative.Interface
 {
     public void** lpVtbl;

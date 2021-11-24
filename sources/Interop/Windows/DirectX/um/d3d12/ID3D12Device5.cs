@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
-[SupportedOSPlatform("windows10.0.17763.0")]
 [Guid("8B4F173B-2FEA-4B80-8F58-4307191AB95D")]
 [NativeTypeName("struct ID3D12Device5 : ID3D12Device4")]
 [NativeInheritance("ID3D12Device4")]
+[SupportedOSPlatform("windows10.0.17763.0")]
 public unsafe partial struct ID3D12Device5 : ID3D12Device5.Interface
 {
     public void** lpVtbl;

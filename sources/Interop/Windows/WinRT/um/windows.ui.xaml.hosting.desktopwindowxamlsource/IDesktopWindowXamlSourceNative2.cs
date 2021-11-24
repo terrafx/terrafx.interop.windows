@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
-[SupportedOSPlatform("windows10.0.18362.0")]
 [Guid("E3DCD8C7-3057-4692-99C3-7B7720AFDA31")]
 [NativeTypeName("struct IDesktopWindowXamlSourceNative2 : IDesktopWindowXamlSourceNative")]
 [NativeInheritance("IDesktopWindowXamlSourceNative")]
+[SupportedOSPlatform("windows10.0.18362.0")]
 public unsafe partial struct IDesktopWindowXamlSourceNative2 : IDesktopWindowXamlSourceNative2.Interface
 {
     public void** lpVtbl;

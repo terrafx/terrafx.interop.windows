@@ -23,9 +23,9 @@ public static unsafe partial class Windows
     [DllImport("schannel", ExactSpelling = true)]
     public static extern void SslFreeCertificate([NativeTypeName("PX509Certificate")] X509Certificate* pCertificate);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("schannel", ExactSpelling = true)]
     [return: NativeTypeName("SECURITY_STATUS")]
+    [SupportedOSPlatform("windows8.0")]
     public static extern int SslGetServerIdentity([NativeTypeName("PBYTE")] byte* ClientHello, [NativeTypeName("DWORD")] uint ClientHelloSize, [NativeTypeName("PBYTE *")] byte** ServerIdentity, [NativeTypeName("PDWORD")] uint* ServerIdentitySize, [NativeTypeName("DWORD")] uint Flags);
 
     [NativeTypeName("#define UNISP_NAME_A \"Microsoft Unified Security Protocol Provider\"")]

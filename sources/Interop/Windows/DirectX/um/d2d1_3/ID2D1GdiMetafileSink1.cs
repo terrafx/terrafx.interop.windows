@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
-[SupportedOSPlatform("windows10.0")]
 [Guid("FD0ECB6B-91E6-411E-8655-395E760F91B4")]
 [NativeTypeName("struct ID2D1GdiMetafileSink1 : ID2D1GdiMetafileSink")]
 [NativeInheritance("ID2D1GdiMetafileSink")]
+[SupportedOSPlatform("windows10.0")]
 public unsafe partial struct ID2D1GdiMetafileSink1 : ID2D1GdiMetafileSink1.Interface
 {
     public void** lpVtbl;

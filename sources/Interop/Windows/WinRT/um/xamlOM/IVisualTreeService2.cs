@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
-[SupportedOSPlatform("windows10.0.14393.0")]
 [Guid("130F5136-EC43-4F61-89C7-9801A36D2E95")]
 [NativeTypeName("struct IVisualTreeService2 : IVisualTreeService")]
 [NativeInheritance("IVisualTreeService")]
+[SupportedOSPlatform("windows10.0.14393.0")]
 public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
 {
     public void** lpVtbl;

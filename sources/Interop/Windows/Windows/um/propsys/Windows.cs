@@ -11,12 +11,12 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("propsys", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT PropVariantToWinRTPropertyValue([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("propsys", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT WinRTPropertyValueToPropVariant(IUnknown* punkPropertyValue, PROPVARIANT* ppropvar);
 
     [DllImport("propsys", ExactSpelling = true)]

@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
-[SupportedOSPlatform("windows8.0")]
 [Guid("A7929A74-E6B2-4BD6-8B95-4040119CA34D")]
 [NativeTypeName("struct IDCompositionEffectGroup : IDCompositionEffect")]
 [NativeInheritance("IDCompositionEffect")]
+[SupportedOSPlatform("windows8.0")]
 public unsafe partial struct IDCompositionEffectGroup : IDCompositionEffectGroup.Interface
 {
     public void** lpVtbl;

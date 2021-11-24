@@ -9,8 +9,8 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows10.0")]
 [StructLayout(LayoutKind.Explicit)]
+[SupportedOSPlatform("windows10.0")]
 public partial struct STORAGE_SPEC_VERSION
 {
     [FieldOffset(0)]

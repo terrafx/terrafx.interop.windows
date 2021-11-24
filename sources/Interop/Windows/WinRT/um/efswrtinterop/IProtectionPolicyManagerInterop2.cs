@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
-[SupportedOSPlatform("windows10.0")]
 [Guid("157CFBE4-A78D-4156-B384-61FDAC41E686")]
 [NativeTypeName("struct IProtectionPolicyManagerInterop2 : IInspectable")]
 [NativeInheritance("IInspectable")]
+[SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolicyManagerInterop2.Interface
 {
     public void** lpVtbl;

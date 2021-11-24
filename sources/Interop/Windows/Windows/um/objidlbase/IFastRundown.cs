@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows8.0")]
 [Guid("00000040-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IFastRundown : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows8.0")]
 public unsafe partial struct IFastRundown : IFastRundown.Interface
 {
     public void** lpVtbl;

@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows10.0")]
 [Guid("C8D22AFC-BC47-4BDF-9B04-787E49CE3F58")]
 [NativeTypeName("struct IMFTimedTextRegion : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface
 {
     public void** lpVtbl;

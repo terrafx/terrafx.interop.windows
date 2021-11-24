@@ -11,91 +11,119 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL LoadUserProfileA(HANDLE hToken, [NativeTypeName("LPPROFILEINFOA")] PROFILEINFOA* lpProfileInfo);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL LoadUserProfileW(HANDLE hToken, [NativeTypeName("LPPROFILEINFOW")] PROFILEINFOW* lpProfileInfo);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL UnloadUserProfile(HANDLE hToken, HANDLE hProfile);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL GetProfilesDirectoryA([NativeTypeName("LPSTR")] sbyte* lpProfileDir, [NativeTypeName("LPDWORD")] uint* lpcchSize);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL GetProfilesDirectoryW([NativeTypeName("LPWSTR")] ushort* lpProfileDir, [NativeTypeName("LPDWORD")] uint* lpcchSize);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL GetProfileType([NativeTypeName("DWORD *")] uint* dwFlags);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL DeleteProfileA([NativeTypeName("LPCSTR")] sbyte* lpSidString, [NativeTypeName("LPCSTR")] sbyte* lpProfilePath, [NativeTypeName("LPCSTR")] sbyte* lpComputerName);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL DeleteProfileW([NativeTypeName("LPCWSTR")] ushort* lpSidString, [NativeTypeName("LPCWSTR")] ushort* lpProfilePath, [NativeTypeName("LPCWSTR")] ushort* lpComputerName);
 
     [DllImport("userenv", ExactSpelling = true)]
     public static extern HRESULT CreateProfile([NativeTypeName("LPCWSTR")] ushort* pszUserSid, [NativeTypeName("LPCWSTR")] ushort* pszUserName, [NativeTypeName("LPWSTR")] ushort* pszProfilePath, [NativeTypeName("DWORD")] uint cchProfilePath);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL GetDefaultUserProfileDirectoryA([NativeTypeName("LPSTR")] sbyte* lpProfileDir, [NativeTypeName("LPDWORD")] uint* lpcchSize);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL GetDefaultUserProfileDirectoryW([NativeTypeName("LPWSTR")] ushort* lpProfileDir, [NativeTypeName("LPDWORD")] uint* lpcchSize);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL GetAllUsersProfileDirectoryA([NativeTypeName("LPSTR")] sbyte* lpProfileDir, [NativeTypeName("LPDWORD")] uint* lpcchSize);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL GetAllUsersProfileDirectoryW([NativeTypeName("LPWSTR")] ushort* lpProfileDir, [NativeTypeName("LPDWORD")] uint* lpcchSize);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL GetUserProfileDirectoryA(HANDLE hToken, [NativeTypeName("LPSTR")] sbyte* lpProfileDir, [NativeTypeName("LPDWORD")] uint* lpcchSize);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL GetUserProfileDirectoryW(HANDLE hToken, [NativeTypeName("LPWSTR")] ushort* lpProfileDir, [NativeTypeName("LPDWORD")] uint* lpcchSize);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL CreateEnvironmentBlock([NativeTypeName("LPVOID *")] void** lpEnvironment, HANDLE hToken, BOOL bInherit);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL DestroyEnvironmentBlock([NativeTypeName("LPVOID")] void* lpEnvironment);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL ExpandEnvironmentStringsForUserA(HANDLE hToken, [NativeTypeName("LPCSTR")] sbyte* lpSrc, [NativeTypeName("LPSTR")] sbyte* lpDest, [NativeTypeName("DWORD")] uint dwSize);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL ExpandEnvironmentStringsForUserW(HANDLE hToken, [NativeTypeName("LPCWSTR")] ushort* lpSrc, [NativeTypeName("LPWSTR")] ushort* lpDest, [NativeTypeName("DWORD")] uint dwSize);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL RefreshPolicy(BOOL bMachine);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL RefreshPolicyEx(BOOL bMachine, [NativeTypeName("DWORD")] uint dwOptions);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HANDLE EnterCriticalPolicySection(BOOL bMachine);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL LeaveCriticalPolicySection(HANDLE hSection);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL RegisterGPNotification(HANDLE hEvent, BOOL bMachine);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL UnregisterGPNotification(HANDLE hEvent);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL GetGPOListA(HANDLE hToken, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("LPCSTR")] sbyte* lpHostName, [NativeTypeName("LPCSTR")] sbyte* lpComputerName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PGROUP_POLICY_OBJECTA *")] GROUP_POLICY_OBJECTA** pGPOList);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL GetGPOListW(HANDLE hToken, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPCWSTR")] ushort* lpHostName, [NativeTypeName("LPCWSTR")] ushort* lpComputerName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PGROUP_POLICY_OBJECTW *")] GROUP_POLICY_OBJECTW** pGPOList);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL FreeGPOListA([NativeTypeName("PGROUP_POLICY_OBJECTA")] GROUP_POLICY_OBJECTA* pGPOList);
 
-    [DllImport("userenv", ExactSpelling = true, SetLastError = true)]
+    [DllImport("userenv", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL FreeGPOListW([NativeTypeName("PGROUP_POLICY_OBJECTW")] GROUP_POLICY_OBJECTW* pGPOList);
 
     [DllImport("userenv", ExactSpelling = true)]
@@ -130,28 +158,28 @@ public static unsafe partial class Windows
     [return: NativeTypeName("DWORD")]
     public static extern uint GenerateGPNotification(BOOL bMachine, [NativeTypeName("LPCWSTR")] ushort* lpwszMgmtProduct, [NativeTypeName("DWORD")] uint dwMgmtProductOptions);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("userenv", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT CreateAppContainerProfile([NativeTypeName("PCWSTR")] ushort* pszAppContainerName, [NativeTypeName("PCWSTR")] ushort* pszDisplayName, [NativeTypeName("PCWSTR")] ushort* pszDescription, [NativeTypeName("PSID_AND_ATTRIBUTES")] SID_AND_ATTRIBUTES* pCapabilities, [NativeTypeName("DWORD")] uint dwCapabilityCount, [NativeTypeName("PSID *")] void** ppSidAppContainerSid);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("userenv", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT DeleteAppContainerProfile([NativeTypeName("PCWSTR")] ushort* pszAppContainerName);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("userenv", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT GetAppContainerRegistryLocation([NativeTypeName("REGSAM")] uint desiredAccess, [NativeTypeName("PHKEY")] HKEY* phAppContainerKey);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("userenv", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT GetAppContainerFolderPath([NativeTypeName("PCWSTR")] ushort* pszAppContainerSid, [NativeTypeName("PWSTR *")] ushort** ppszPath);
 
-    [SupportedOSPlatform("windows10.0")]
     [DllImport("userenv", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0")]
     public static extern HRESULT DeriveRestrictedAppContainerSidFromAppContainerSidAndRestrictedName([NativeTypeName("PSID")] void* psidAppContainerSid, [NativeTypeName("PCWSTR")] ushort* pszRestrictedAppContainerName, [NativeTypeName("PSID *")] void** ppsidRestrictedAppContainerSid);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("userenv", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT DeriveAppContainerSidFromAppContainerName([NativeTypeName("PCWSTR")] ushort* pszAppContainerName, [NativeTypeName("PSID *")] void** ppsidAppContainerSid);
 
     [NativeTypeName("#define PI_NOUI 0x00000001")]

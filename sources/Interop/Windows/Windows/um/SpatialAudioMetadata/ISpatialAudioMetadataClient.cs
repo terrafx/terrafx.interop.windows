@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows10.0.15063.0")]
 [Guid("777D4A3B-F6FF-4A26-85DC-68D7CDEDA1D4")]
 [NativeTypeName("struct ISpatialAudioMetadataClient : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0.15063.0")]
 public unsafe partial struct ISpatialAudioMetadataClient : ISpatialAudioMetadataClient.Interface
 {
     public void** lpVtbl;

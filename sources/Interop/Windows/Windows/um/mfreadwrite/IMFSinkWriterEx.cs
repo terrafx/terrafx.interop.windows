@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows8.0")]
 [Guid("588D72AB-5BC1-496A-8714-B70617141B25")]
 [NativeTypeName("struct IMFSinkWriterEx : IMFSinkWriter")]
 [NativeInheritance("IMFSinkWriter")]
+[SupportedOSPlatform("windows8.0")]
 public unsafe partial struct IMFSinkWriterEx : IMFSinkWriterEx.Interface
 {
     public void** lpVtbl;

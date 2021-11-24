@@ -34,19 +34,19 @@ public static unsafe partial class Windows
     [return: NativeTypeName("TBS_RESULT")]
     public static extern uint Tbsi_Get_TCG_Log([NativeTypeName("TBS_HCONTEXT")] void* hContext, [NativeTypeName("PBYTE")] byte* pOutputBuf, [NativeTypeName("PUINT32")] uint* pOutputBufLen);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("tbs", ExactSpelling = true)]
     [return: NativeTypeName("TBS_RESULT")]
+    [SupportedOSPlatform("windows8.0")]
     public static extern uint Tbsi_GetDeviceInfo([NativeTypeName("UINT32")] uint Size, [NativeTypeName("PVOID")] void* Info);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("tbs", ExactSpelling = true)]
     [return: NativeTypeName("TBS_RESULT")]
+    [SupportedOSPlatform("windows8.0")]
     public static extern uint Tbsi_Get_OwnerAuth([NativeTypeName("TBS_HCONTEXT")] void* hContext, [NativeTypeName("TBS_OWNERAUTH_TYPE")] uint ownerauthType, [NativeTypeName("PBYTE")] byte* pOutputBuf, [NativeTypeName("PUINT32")] uint* pOutputBufLen);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("tbs", ExactSpelling = true)]
     [return: NativeTypeName("TBS_RESULT")]
+    [SupportedOSPlatform("windows8.0")]
     public static extern uint Tbsi_Revoke_Attestation();
 
     [DllImport("tbs", ExactSpelling = true)]
@@ -59,8 +59,8 @@ public static unsafe partial class Windows
     [return: NativeTypeName("TBS_RESULT")]
     public static extern uint Tbsi_Create_Windows_Key([NativeTypeName("TBS_HANDLE")] uint keyHandle);
 
-    [SupportedOSPlatform("windows10.0.17134.0")]
     [DllImport("tbs", ExactSpelling = true)]
     [return: NativeTypeName("TBS_RESULT")]
+    [SupportedOSPlatform("windows10.0.17134.0")]
     public static extern uint Tbsi_Get_TCG_Log_Ex([NativeTypeName("UINT32")] uint logType, [NativeTypeName("PBYTE")] byte* pbOutput, [NativeTypeName("PUINT32")] uint* pcbOutput);
 }

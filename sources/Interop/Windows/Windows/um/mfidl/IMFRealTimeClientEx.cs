@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows8.0")]
 [Guid("03910848-AB16-4611-B100-17B88AE2F248")]
 [NativeTypeName("struct IMFRealTimeClientEx : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows8.0")]
 public unsafe partial struct IMFRealTimeClientEx : IMFRealTimeClientEx.Interface
 {
     public void** lpVtbl;

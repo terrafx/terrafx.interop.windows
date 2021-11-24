@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows10.0.19043.0")]
 [Guid("C789D381-A28C-4168-B28F-D3A837924DC3")]
 [NativeTypeName("struct IAudioClientDuckingControl : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0.19043.0")]
 public unsafe partial struct IAudioClientDuckingControl : IAudioClientDuckingControl.Interface
 {
     public void** lpVtbl;

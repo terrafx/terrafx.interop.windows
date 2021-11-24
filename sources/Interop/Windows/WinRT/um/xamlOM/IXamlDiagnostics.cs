@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
-[SupportedOSPlatform("windows10.0")]
 [Guid("18C9E2B6-3F43-4116-9F2B-FF935D7770D2")]
 [NativeTypeName("struct IXamlDiagnostics : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface
 {
     public void** lpVtbl;

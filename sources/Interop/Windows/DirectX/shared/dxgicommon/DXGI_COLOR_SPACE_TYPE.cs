@@ -7,8 +7,8 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
-[SupportedOSPlatform("windows10.0")]
 [NativeTypeName("int")]
+[SupportedOSPlatform("windows10.0")]
 public enum DXGI_COLOR_SPACE_TYPE : uint
 {
     DXGI_COLOR_SPACE_RGB_FULL_G22_NONE_P709 = 0,

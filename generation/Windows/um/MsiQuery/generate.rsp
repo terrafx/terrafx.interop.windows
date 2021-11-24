@@ -147,5 +147,7 @@ MsiViewGetError=msi
 MsiViewGetErrorA=msi
 MsiViewGetErrorW=msi
 MsiViewModify=msi
+--with-setlasterror
+MsiGetLastErrorRecord
 --with-type
 MSIDBOPEN_PATCHFILE=uint

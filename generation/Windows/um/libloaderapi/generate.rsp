@@ -66,9 +66,12 @@ DisableThreadLibraryCalls
 EnumResourceLanguagesEx
 EnumResourceLanguagesExA
 EnumResourceLanguagesExW
+EnumResourceNames
+EnumResourceNamesA
 EnumResourceNamesEx
 EnumResourceNamesExA
 EnumResourceNamesExW
+EnumResourceNamesW
 EnumResourceTypesEx
 EnumResourceTypesExA
 EnumResourceTypesExW

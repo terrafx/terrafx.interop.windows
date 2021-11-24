@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows8.0")]
 [Guid("94EA2B94-E9CC-49E0-C0FF-EE64CA8F5B90")]
 [NativeTypeName("struct IAgileObject : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows8.0")]
 public unsafe partial struct IAgileObject : IAgileObject.Interface
 {
     public void** lpVtbl;

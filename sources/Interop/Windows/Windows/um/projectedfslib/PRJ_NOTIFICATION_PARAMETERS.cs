@@ -8,8 +8,8 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows10.0.17763.0")]
 [StructLayout(LayoutKind.Explicit)]
+[SupportedOSPlatform("windows10.0.17763.0")]
 public partial struct PRJ_NOTIFICATION_PARAMETERS
 {
     [FieldOffset(0)]

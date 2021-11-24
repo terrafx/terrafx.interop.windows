@@ -20,3 +20,5 @@ RegisterWaitUntilOOBECompleted=kernel32
 UnregisterWaitUntilOOBECompleted=kernel32
 --with-setlasterror
 isOOBEComplete
+RegisterWaitUntilOOBECompleted
+UnregisterWaitUntilOOBECompleted

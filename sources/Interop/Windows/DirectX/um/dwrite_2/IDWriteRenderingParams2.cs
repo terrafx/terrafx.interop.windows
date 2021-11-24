@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
-[SupportedOSPlatform("windows8.1")]
 [Guid("F9D711C3-9777-40AE-87E8-3E5AF9BF0948")]
 [NativeTypeName("struct IDWriteRenderingParams2 : IDWriteRenderingParams1")]
 [NativeInheritance("IDWriteRenderingParams1")]
+[SupportedOSPlatform("windows8.1")]
 public unsafe partial struct IDWriteRenderingParams2 : IDWriteRenderingParams2.Interface
 {
     public void** lpVtbl;

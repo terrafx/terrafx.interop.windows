@@ -12,10 +12,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
-[SupportedOSPlatform("windows10.0.19041.0")]
 [Guid("7CC1F9C5-6D02-41FA-9500-E1809EB48EEC")]
 [NativeTypeName("struct IHolographicCameraInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
+[SupportedOSPlatform("windows10.0.19041.0")]
 public unsafe partial struct IHolographicCameraInterop : IHolographicCameraInterop.Interface
 {
     public void** lpVtbl;

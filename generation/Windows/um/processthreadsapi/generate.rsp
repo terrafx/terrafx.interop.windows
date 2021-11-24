@@ -162,6 +162,8 @@ FlushInstructionCache
 GetExitCodeProcess
 GetExitCodeThread
 GetPriorityClass
+GetProcessDefaultCpuSetMasks
+GetProcessDefaultCpuSets
 GetProcessHandleCount
 GetProcessId
 GetProcessIdOfThread
@@ -171,13 +173,17 @@ GetProcessPriorityBoost
 GetProcessShutdownParameters
 GetProcessTimes
 GetProcessVersion
+GetSystemCpuSetInformation
 GetSystemTimes
+GetThreadContext
 GetThreadId
 GetThreadIdealProcessorEx
 GetThreadInformation
 GetThreadIOPendingFlag
 GetThreadPriority
 GetThreadPriorityBoost
+GetThreadSelectedCpuSetMasks
+GetThreadSelectedCpuSets
 GetThreadTimes
 InitializeProcThreadAttributeList
 IsProcessCritical
@@ -201,6 +207,7 @@ SetThreadIdealProcessorEx
 SetThreadInformation
 SetThreadPriority
 SetThreadPriorityBoost
+SetThreadSelectedCpuSetMasks
 SetThreadStackGuarantee
 SetThreadToken
 SuspendThread

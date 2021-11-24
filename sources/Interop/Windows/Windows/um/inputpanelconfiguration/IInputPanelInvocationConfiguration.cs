@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows8.0")]
 [Guid("A213F136-3B45-4362-A332-EFB6547CD432")]
 [NativeTypeName("struct IInputPanelInvocationConfiguration : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows8.0")]
 public unsafe partial struct IInputPanelInvocationConfiguration : IInputPanelInvocationConfiguration.Interface
 {
     public void** lpVtbl;

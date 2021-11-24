@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows10.0.15063.0")]
 [Guid("71FA9A2C-53CE-4662-A132-1A7E8CBF62DB")]
 [NativeTypeName("struct IMFHttpDownloadSession : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0.15063.0")]
 public unsafe partial struct IMFHttpDownloadSession : IMFHttpDownloadSession.Interface
 {
     public void** lpVtbl;

@@ -7,8 +7,8 @@ using System;
 
 namespace TerraFX.Interop.WinRT;
 
-[Flags]
 [NativeTypeName("uint32_t")]
+[Flags]
 public enum MLOperatorParameterOptions : uint
 {
     Single = 0,

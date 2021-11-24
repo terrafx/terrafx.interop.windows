@@ -274,7 +274,8 @@ public static unsafe partial class Windows
     [DllImport("shell32", ExactSpelling = true)]
     public static extern int PathCleanupSpec([NativeTypeName("PCWSTR")] ushort* pszDir, [NativeTypeName("PWSTR")] ushort* pszSpec);
 
-    [DllImport("shell32", ExactSpelling = true, SetLastError = true)]
+    [DllImport("shell32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern int PathResolve([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("PZPCWSTR")] ushort** dirs, uint fFlags);
 
     [DllImport("shell32", ExactSpelling = true)]

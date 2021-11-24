@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
-[SupportedOSPlatform("windows10.0")]
 [Guid("DF19938F-5462-48A0-BE65-D2A3271A08D6")]
 [NativeTypeName("struct IStorageFolderHandleAccess : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IStorageFolderHandleAccess : IStorageFolderHandleAccess.Interface
 {
     public void** lpVtbl;

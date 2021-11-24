@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows10.0.14393.0")]
 [Guid("FB9F48F2-2A18-4E28-9730-786F30F04DC4")]
 [NativeTypeName("struct IMFSensorDevice : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0.14393.0")]
 public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface
 {
     public void** lpVtbl;

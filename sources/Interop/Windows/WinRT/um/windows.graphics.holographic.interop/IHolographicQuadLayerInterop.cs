@@ -12,10 +12,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
-[SupportedOSPlatform("windows10.0.19041.0")]
 [Guid("CFA688F0-639E-4A47-83D7-6B7F5EBF7FED")]
 [NativeTypeName("struct IHolographicQuadLayerInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
+[SupportedOSPlatform("windows10.0.19041.0")]
 public unsafe partial struct IHolographicQuadLayerInterop : IHolographicQuadLayerInterop.Interface
 {
     public void** lpVtbl;

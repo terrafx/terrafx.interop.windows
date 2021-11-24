@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
-[SupportedOSPlatform("windows10.0.19041.0")]
 [Guid("8455293A-0CBD-4831-9B39-FBDBAB724723")]
 [NativeTypeName("struct ID3D12VideoEncodeCommandList : ID3D12CommandList")]
 [NativeInheritance("ID3D12CommandList")]
+[SupportedOSPlatform("windows10.0.19041.0")]
 public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCommandList.Interface
 {
     public void** lpVtbl;

@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows8.1")]
 [Guid("5CB31C05-61FF-418F-AFDA-CAAF41421A38")]
 [NativeTypeName("struct IMFMediaKeys : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows8.1")]
 public unsafe partial struct IMFMediaKeys : IMFMediaKeys.Interface
 {
     public void** lpVtbl;
