@@ -45,7 +45,7 @@ public unsafe partial struct IDWriteFontCollection2 : IDWriteFontCollection2.Int
     [return: NativeTypeName("UINT32")]
     public uint GetFontFamilyCount()
     {
-        return ((delegate* unmanaged<IDWriteFontCollection2*, uint>)(lpVtbl[3]))((IDWriteFontCollection2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontCollection2*, uint>)(lpVtbl[3]))((IDWriteFontCollection2*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -101,7 +101,7 @@ public unsafe partial struct IDWriteFontCollection2 : IDWriteFontCollection2.Int
     [VtblIndex(11)]
     public DWRITE_FONT_FAMILY_MODEL GetFontFamilyModel()
     {
-        return ((delegate* unmanaged<IDWriteFontCollection2*, DWRITE_FONT_FAMILY_MODEL>)(lpVtbl[11]))((IDWriteFontCollection2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontCollection2*, DWRITE_FONT_FAMILY_MODEL>)(lpVtbl[11]))((IDWriteFontCollection2*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -138,7 +138,7 @@ public unsafe partial struct IDWriteFontCollection2 : IDWriteFontCollection2.Int
         public delegate* unmanaged<IDWriteFontCollection2*, uint> Release;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontCollection2*, uint> GetFontFamilyCount;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteFontCollection2*, uint> GetFontFamilyCount;
 
         [NativeTypeName("HRESULT (UINT32, IDWriteFontFamily **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<IDWriteFontCollection2*, uint, IDWriteFontFamily**, int> GetFontFamily;
@@ -162,7 +162,7 @@ public unsafe partial struct IDWriteFontCollection2 : IDWriteFontCollection2.Int
         public delegate* unmanaged<IDWriteFontCollection2*, ushort*, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontList2**, int> GetMatchingFonts;
 
         [NativeTypeName("DWRITE_FONT_FAMILY_MODEL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontCollection2*, DWRITE_FONT_FAMILY_MODEL> GetFontFamilyModel;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteFontCollection2*, DWRITE_FONT_FAMILY_MODEL> GetFontFamilyModel;
 
         [NativeTypeName("HRESULT (IDWriteFontSet1 **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<IDWriteFontCollection2*, IDWriteFontSet1**, int> GetFontSet1;

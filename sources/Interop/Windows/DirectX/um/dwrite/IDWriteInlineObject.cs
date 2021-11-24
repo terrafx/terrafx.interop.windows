@@ -51,7 +51,7 @@ public unsafe partial struct IDWriteInlineObject : IDWriteInlineObject.Interface
     [VtblIndex(4)]
     public HRESULT GetMetrics(DWRITE_INLINE_OBJECT_METRICS* metrics)
     {
-        return ((delegate* unmanaged<IDWriteInlineObject*, DWRITE_INLINE_OBJECT_METRICS*, int>)(lpVtbl[4]))((IDWriteInlineObject*)Unsafe.AsPointer(ref this), metrics);
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteInlineObject*, DWRITE_INLINE_OBJECT_METRICS*, int>)(lpVtbl[4]))((IDWriteInlineObject*)Unsafe.AsPointer(ref this), metrics);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -65,7 +65,7 @@ public unsafe partial struct IDWriteInlineObject : IDWriteInlineObject.Interface
     [VtblIndex(6)]
     public HRESULT GetBreakConditions(DWRITE_BREAK_CONDITION* breakConditionBefore, DWRITE_BREAK_CONDITION* breakConditionAfter)
     {
-        return ((delegate* unmanaged<IDWriteInlineObject*, DWRITE_BREAK_CONDITION*, DWRITE_BREAK_CONDITION*, int>)(lpVtbl[6]))((IDWriteInlineObject*)Unsafe.AsPointer(ref this), breakConditionBefore, breakConditionAfter);
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteInlineObject*, DWRITE_BREAK_CONDITION*, DWRITE_BREAK_CONDITION*, int>)(lpVtbl[6]))((IDWriteInlineObject*)Unsafe.AsPointer(ref this), breakConditionBefore, breakConditionAfter);
     }
 
     public interface Interface : IUnknown.Interface
@@ -98,12 +98,12 @@ public unsafe partial struct IDWriteInlineObject : IDWriteInlineObject.Interface
         public delegate* unmanaged<IDWriteInlineObject*, void*, IDWriteTextRenderer*, float, float, BOOL, BOOL, IUnknown*, int> Draw;
 
         [NativeTypeName("HRESULT (DWRITE_INLINE_OBJECT_METRICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteInlineObject*, DWRITE_INLINE_OBJECT_METRICS*, int> GetMetrics;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteInlineObject*, DWRITE_INLINE_OBJECT_METRICS*, int> GetMetrics;
 
         [NativeTypeName("HRESULT (DWRITE_OVERHANG_METRICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<IDWriteInlineObject*, DWRITE_OVERHANG_METRICS*, int> GetOverhangMetrics;
 
         [NativeTypeName("HRESULT (DWRITE_BREAK_CONDITION *, DWRITE_BREAK_CONDITION *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteInlineObject*, DWRITE_BREAK_CONDITION*, DWRITE_BREAK_CONDITION*, int> GetBreakConditions;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteInlineObject*, DWRITE_BREAK_CONDITION*, DWRITE_BREAK_CONDITION*, int> GetBreakConditions;
     }
 }

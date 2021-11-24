@@ -94,7 +94,7 @@ public unsafe partial struct ID3D12Resource2 : ID3D12Resource2.Interface
     public D3D12_RESOURCE_DESC GetDesc()
     {
         D3D12_RESOURCE_DESC result;
-        return *((delegate* unmanaged<ID3D12Resource2*, D3D12_RESOURCE_DESC*, D3D12_RESOURCE_DESC*>)(lpVtbl[10]))((ID3D12Resource2*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged[SuppressGCTransition]<ID3D12Resource2*, D3D12_RESOURCE_DESC*, D3D12_RESOURCE_DESC*>)(lpVtbl[10]))((ID3D12Resource2*)Unsafe.AsPointer(ref this), &result);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -102,7 +102,7 @@ public unsafe partial struct ID3D12Resource2 : ID3D12Resource2.Interface
     [return: NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
     public ulong GetGPUVirtualAddress()
     {
-        return ((delegate* unmanaged<ID3D12Resource2*, ulong>)(lpVtbl[11]))((ID3D12Resource2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID3D12Resource2*, ulong>)(lpVtbl[11]))((ID3D12Resource2*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -138,7 +138,7 @@ public unsafe partial struct ID3D12Resource2 : ID3D12Resource2.Interface
     public D3D12_RESOURCE_DESC1 GetDesc1()
     {
         D3D12_RESOURCE_DESC1 result;
-        return *((delegate* unmanaged<ID3D12Resource2*, D3D12_RESOURCE_DESC1*, D3D12_RESOURCE_DESC1*>)(lpVtbl[16]))((ID3D12Resource2*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged[SuppressGCTransition]<ID3D12Resource2*, D3D12_RESOURCE_DESC1*, D3D12_RESOURCE_DESC1*>)(lpVtbl[16]))((ID3D12Resource2*)Unsafe.AsPointer(ref this), &result);
     }
 
     public interface Interface : ID3D12Resource1.Interface
@@ -180,10 +180,10 @@ public unsafe partial struct ID3D12Resource2 : ID3D12Resource2.Interface
         public delegate* unmanaged<ID3D12Resource2*, uint, D3D12_RANGE*, void> Unmap;
 
         [NativeTypeName("D3D12_RESOURCE_DESC () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Resource2*, D3D12_RESOURCE_DESC*, D3D12_RESOURCE_DESC*> GetDesc;
+        public delegate* unmanaged[SuppressGCTransition]<ID3D12Resource2*, D3D12_RESOURCE_DESC*, D3D12_RESOURCE_DESC*> GetDesc;
 
         [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Resource2*, ulong> GetGPUVirtualAddress;
+        public delegate* unmanaged[SuppressGCTransition]<ID3D12Resource2*, ulong> GetGPUVirtualAddress;
 
         [NativeTypeName("HRESULT (UINT, const D3D12_BOX *, const void *, UINT, UINT) __attribute__((stdcall))")]
         public delegate* unmanaged<ID3D12Resource2*, uint, D3D12_BOX*, void*, uint, uint, int> WriteToSubresource;
@@ -198,6 +198,6 @@ public unsafe partial struct ID3D12Resource2 : ID3D12Resource2.Interface
         public delegate* unmanaged<ID3D12Resource2*, Guid*, void**, int> GetProtectedResourceSession;
 
         [NativeTypeName("D3D12_RESOURCE_DESC1 () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Resource2*, D3D12_RESOURCE_DESC1*, D3D12_RESOURCE_DESC1*> GetDesc1;
+        public delegate* unmanaged[SuppressGCTransition]<ID3D12Resource2*, D3D12_RESOURCE_DESC1*, D3D12_RESOURCE_DESC1*> GetDesc1;
     }
 }

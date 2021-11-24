@@ -44,7 +44,7 @@ public unsafe partial struct ID3D12LibraryReflection : ID3D12LibraryReflection.I
     [VtblIndex(3)]
     public HRESULT GetDesc(D3D12_LIBRARY_DESC* pDesc)
     {
-        return ((delegate* unmanaged<ID3D12LibraryReflection*, D3D12_LIBRARY_DESC*, int>)(lpVtbl[3]))((ID3D12LibraryReflection*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged[SuppressGCTransition]<ID3D12LibraryReflection*, D3D12_LIBRARY_DESC*, int>)(lpVtbl[3]))((ID3D12LibraryReflection*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -75,7 +75,7 @@ public unsafe partial struct ID3D12LibraryReflection : ID3D12LibraryReflection.I
         public delegate* unmanaged<ID3D12LibraryReflection*, uint> Release;
 
         [NativeTypeName("HRESULT (D3D12_LIBRARY_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12LibraryReflection*, D3D12_LIBRARY_DESC*, int> GetDesc;
+        public delegate* unmanaged[SuppressGCTransition]<ID3D12LibraryReflection*, D3D12_LIBRARY_DESC*, int> GetDesc;
 
         [NativeTypeName("ID3D12FunctionReflection *(INT) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<ID3D12LibraryReflection*, int, ID3D12FunctionReflection*> GetFunctionByIndex;

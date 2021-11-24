@@ -87,7 +87,7 @@ public unsafe partial struct ID2D1Device6 : ID2D1Device6.Interface
     [VtblIndex(9)]
     public D2D1_RENDERING_PRIORITY GetRenderingPriority()
     {
-        return ((delegate* unmanaged<ID2D1Device6*, D2D1_RENDERING_PRIORITY>)(lpVtbl[9]))((ID2D1Device6*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1Device6*, D2D1_RENDERING_PRIORITY>)(lpVtbl[9]))((ID2D1Device6*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -151,7 +151,7 @@ public unsafe partial struct ID2D1Device6 : ID2D1Device6.Interface
     [return: NativeTypeName("UINT64")]
     public ulong GetMaximumColorGlyphCacheMemory()
     {
-        return ((delegate* unmanaged<ID2D1Device6*, ulong>)(lpVtbl[18]))((ID2D1Device6*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1Device6*, ulong>)(lpVtbl[18]))((ID2D1Device6*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -204,7 +204,7 @@ public unsafe partial struct ID2D1Device6 : ID2D1Device6.Interface
         public delegate* unmanaged<ID2D1Device6*, uint, void> ClearResources;
 
         [NativeTypeName("D2D1_RENDERING_PRIORITY () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Device6*, D2D1_RENDERING_PRIORITY> GetRenderingPriority;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1Device6*, D2D1_RENDERING_PRIORITY> GetRenderingPriority;
 
         [NativeTypeName("void (D2D1_RENDERING_PRIORITY) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<ID2D1Device6*, D2D1_RENDERING_PRIORITY, void> SetRenderingPriority;
@@ -231,7 +231,7 @@ public unsafe partial struct ID2D1Device6 : ID2D1Device6.Interface
         public delegate* unmanaged<ID2D1Device6*, ulong, void> SetMaximumColorGlyphCacheMemory;
 
         [NativeTypeName("UINT64 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Device6*, ulong> GetMaximumColorGlyphCacheMemory;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1Device6*, ulong> GetMaximumColorGlyphCacheMemory;
 
         [NativeTypeName("HRESULT (D2D1_DEVICE_CONTEXT_OPTIONS, ID2D1DeviceContext5 **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<ID2D1Device6*, D2D1_DEVICE_CONTEXT_OPTIONS, ID2D1DeviceContext5**, int> CreateDeviceContext5;

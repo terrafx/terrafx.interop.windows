@@ -52,7 +52,7 @@ public unsafe partial struct IDWriteTypography : IDWriteTypography.Interface
     [return: NativeTypeName("UINT32")]
     public uint GetFontFeatureCount()
     {
-        return ((delegate* unmanaged<IDWriteTypography*, uint>)(lpVtbl[4]))((IDWriteTypography*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteTypography*, uint>)(lpVtbl[4]))((IDWriteTypography*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -90,7 +90,7 @@ public unsafe partial struct IDWriteTypography : IDWriteTypography.Interface
         public delegate* unmanaged<IDWriteTypography*, DWRITE_FONT_FEATURE, int> AddFontFeature;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTypography*, uint> GetFontFeatureCount;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteTypography*, uint> GetFontFeatureCount;
 
         [NativeTypeName("HRESULT (UINT32, DWRITE_FONT_FEATURE *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<IDWriteTypography*, uint, DWRITE_FONT_FEATURE*, int> GetFontFeature;

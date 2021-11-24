@@ -58,7 +58,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTar
     [VtblIndex(5)]
     public float GetPixelsPerDip()
     {
-        return ((delegate* unmanaged<IDWriteBitmapRenderTarget1*, float>)(lpVtbl[5]))((IDWriteBitmapRenderTarget1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteBitmapRenderTarget1*, float>)(lpVtbl[5]))((IDWriteBitmapRenderTarget1*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -72,7 +72,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTar
     [VtblIndex(7)]
     public HRESULT GetCurrentTransform(DWRITE_MATRIX* transform)
     {
-        return ((delegate* unmanaged<IDWriteBitmapRenderTarget1*, DWRITE_MATRIX*, int>)(lpVtbl[7]))((IDWriteBitmapRenderTarget1*)Unsafe.AsPointer(ref this), transform);
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteBitmapRenderTarget1*, DWRITE_MATRIX*, int>)(lpVtbl[7]))((IDWriteBitmapRenderTarget1*)Unsafe.AsPointer(ref this), transform);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -86,7 +86,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTar
     [VtblIndex(9)]
     public HRESULT GetSize(SIZE* size)
     {
-        return ((delegate* unmanaged<IDWriteBitmapRenderTarget1*, SIZE*, int>)(lpVtbl[9]))((IDWriteBitmapRenderTarget1*)Unsafe.AsPointer(ref this), size);
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteBitmapRenderTarget1*, SIZE*, int>)(lpVtbl[9]))((IDWriteBitmapRenderTarget1*)Unsafe.AsPointer(ref this), size);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -100,7 +100,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTar
     [VtblIndex(11)]
     public DWRITE_TEXT_ANTIALIAS_MODE GetTextAntialiasMode()
     {
-        return ((delegate* unmanaged<IDWriteBitmapRenderTarget1*, DWRITE_TEXT_ANTIALIAS_MODE>)(lpVtbl[11]))((IDWriteBitmapRenderTarget1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteBitmapRenderTarget1*, DWRITE_TEXT_ANTIALIAS_MODE>)(lpVtbl[11]))((IDWriteBitmapRenderTarget1*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -137,25 +137,25 @@ public unsafe partial struct IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTar
         public delegate* unmanaged<IDWriteBitmapRenderTarget1*, void*> GetMemoryDC;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteBitmapRenderTarget1*, float> GetPixelsPerDip;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteBitmapRenderTarget1*, float> GetPixelsPerDip;
 
         [NativeTypeName("HRESULT (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<IDWriteBitmapRenderTarget1*, float, int> SetPixelsPerDip;
 
         [NativeTypeName("HRESULT (DWRITE_MATRIX *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteBitmapRenderTarget1*, DWRITE_MATRIX*, int> GetCurrentTransform;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteBitmapRenderTarget1*, DWRITE_MATRIX*, int> GetCurrentTransform;
 
         [NativeTypeName("HRESULT (const DWRITE_MATRIX *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<IDWriteBitmapRenderTarget1*, DWRITE_MATRIX*, int> SetCurrentTransform;
 
         [NativeTypeName("HRESULT (SIZE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteBitmapRenderTarget1*, SIZE*, int> GetSize;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteBitmapRenderTarget1*, SIZE*, int> GetSize;
 
         [NativeTypeName("HRESULT (UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<IDWriteBitmapRenderTarget1*, uint, uint, int> Resize;
 
         [NativeTypeName("DWRITE_TEXT_ANTIALIAS_MODE () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteBitmapRenderTarget1*, DWRITE_TEXT_ANTIALIAS_MODE> GetTextAntialiasMode;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteBitmapRenderTarget1*, DWRITE_TEXT_ANTIALIAS_MODE> GetTextAntialiasMode;
 
         [NativeTypeName("HRESULT (DWRITE_TEXT_ANTIALIAS_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<IDWriteBitmapRenderTarget1*, DWRITE_TEXT_ANTIALIAS_MODE, int> SetTextAntialiasMode;

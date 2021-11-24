@@ -52,7 +52,7 @@ public unsafe partial struct ID2D1GradientStopCollection1 : ID2D1GradientStopCol
     [return: NativeTypeName("UINT32")]
     public uint GetGradientStopCount()
     {
-        return ((delegate* unmanaged<ID2D1GradientStopCollection1*, uint>)(lpVtbl[4]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection1*, uint>)(lpVtbl[4]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -66,14 +66,14 @@ public unsafe partial struct ID2D1GradientStopCollection1 : ID2D1GradientStopCol
     [VtblIndex(6)]
     public D2D1_GAMMA GetColorInterpolationGamma()
     {
-        return ((delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_GAMMA>)(lpVtbl[6]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection1*, D2D1_GAMMA>)(lpVtbl[6]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public D2D1_EXTEND_MODE GetExtendMode()
     {
-        return ((delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_EXTEND_MODE>)(lpVtbl[7]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection1*, D2D1_EXTEND_MODE>)(lpVtbl[7]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -87,28 +87,28 @@ public unsafe partial struct ID2D1GradientStopCollection1 : ID2D1GradientStopCol
     [VtblIndex(9)]
     public D2D1_COLOR_SPACE GetPreInterpolationSpace()
     {
-        return ((delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_COLOR_SPACE>)(lpVtbl[9]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection1*, D2D1_COLOR_SPACE>)(lpVtbl[9]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public D2D1_COLOR_SPACE GetPostInterpolationSpace()
     {
-        return ((delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_COLOR_SPACE>)(lpVtbl[10]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection1*, D2D1_COLOR_SPACE>)(lpVtbl[10]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public D2D1_BUFFER_PRECISION GetBufferPrecision()
     {
-        return ((delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_BUFFER_PRECISION>)(lpVtbl[11]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection1*, D2D1_BUFFER_PRECISION>)(lpVtbl[11]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public D2D1_COLOR_INTERPOLATION_MODE GetColorInterpolationMode()
     {
-        return ((delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_COLOR_INTERPOLATION_MODE>)(lpVtbl[12]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection1*, D2D1_COLOR_INTERPOLATION_MODE>)(lpVtbl[12]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : ID2D1GradientStopCollection.Interface
@@ -144,30 +144,30 @@ public unsafe partial struct ID2D1GradientStopCollection1 : ID2D1GradientStopCol
         public delegate* unmanaged<ID2D1GradientStopCollection1*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GradientStopCollection1*, uint> GetGradientStopCount;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection1*, uint> GetGradientStopCount;
 
         [NativeTypeName("void (D2D1_GRADIENT_STOP *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_GRADIENT_STOP*, uint, void> GetGradientStops;
 
         [NativeTypeName("D2D1_GAMMA () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_GAMMA> GetColorInterpolationGamma;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection1*, D2D1_GAMMA> GetColorInterpolationGamma;
 
         [NativeTypeName("D2D1_EXTEND_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_EXTEND_MODE> GetExtendMode;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection1*, D2D1_EXTEND_MODE> GetExtendMode;
 
         [NativeTypeName("void (D2D1_GRADIENT_STOP *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_GRADIENT_STOP*, uint, void> GetGradientStops1;
 
         [NativeTypeName("D2D1_COLOR_SPACE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_COLOR_SPACE> GetPreInterpolationSpace;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection1*, D2D1_COLOR_SPACE> GetPreInterpolationSpace;
 
         [NativeTypeName("D2D1_COLOR_SPACE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_COLOR_SPACE> GetPostInterpolationSpace;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection1*, D2D1_COLOR_SPACE> GetPostInterpolationSpace;
 
         [NativeTypeName("D2D1_BUFFER_PRECISION () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_BUFFER_PRECISION> GetBufferPrecision;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection1*, D2D1_BUFFER_PRECISION> GetBufferPrecision;
 
         [NativeTypeName("D2D1_COLOR_INTERPOLATION_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_COLOR_INTERPOLATION_MODE> GetColorInterpolationMode;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection1*, D2D1_COLOR_INTERPOLATION_MODE> GetColorInterpolationMode;
     }
 }

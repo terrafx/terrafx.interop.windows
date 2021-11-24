@@ -65,14 +65,14 @@ public unsafe partial struct ID2D1SolidColorBrush : ID2D1SolidColorBrush.Interfa
     [VtblIndex(6)]
     public float GetOpacity()
     {
-        return ((delegate* unmanaged<ID2D1SolidColorBrush*, float>)(lpVtbl[6]))((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1SolidColorBrush*, float>)(lpVtbl[6]))((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
     {
-        ((delegate* unmanaged<ID2D1SolidColorBrush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[7]))((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this), transform);
+        ((delegate* unmanaged[SuppressGCTransition]<ID2D1SolidColorBrush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[7]))((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this), transform);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -88,7 +88,7 @@ public unsafe partial struct ID2D1SolidColorBrush : ID2D1SolidColorBrush.Interfa
     public DXGI_RGBA GetColor()
     {
         DXGI_RGBA result;
-        return *((delegate* unmanaged<ID2D1SolidColorBrush*, DXGI_RGBA*, DXGI_RGBA*>)(lpVtbl[9]))((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged[SuppressGCTransition]<ID2D1SolidColorBrush*, DXGI_RGBA*, DXGI_RGBA*>)(lpVtbl[9]))((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this), &result);
     }
 
     public interface Interface : ID2D1Brush.Interface
@@ -122,15 +122,15 @@ public unsafe partial struct ID2D1SolidColorBrush : ID2D1SolidColorBrush.Interfa
         public delegate* unmanaged<ID2D1SolidColorBrush*, D2D_MATRIX_3X2_F*, void> SetTransform;
 
         [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SolidColorBrush*, float> GetOpacity;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1SolidColorBrush*, float> GetOpacity;
 
         [NativeTypeName("void (D2D1_MATRIX_3X2_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SolidColorBrush*, D2D_MATRIX_3X2_F*, void> GetTransform;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1SolidColorBrush*, D2D_MATRIX_3X2_F*, void> GetTransform;
 
         [NativeTypeName("void (const D2D1_COLOR_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<ID2D1SolidColorBrush*, DXGI_RGBA*, void> SetColor;
 
         [NativeTypeName("D2D1_COLOR_F () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SolidColorBrush*, DXGI_RGBA*, DXGI_RGBA*> GetColor;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1SolidColorBrush*, DXGI_RGBA*, DXGI_RGBA*> GetColor;
     }
 }

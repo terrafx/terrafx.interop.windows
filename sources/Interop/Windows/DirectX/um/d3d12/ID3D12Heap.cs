@@ -80,7 +80,7 @@ public unsafe partial struct ID3D12Heap : ID3D12Heap.Interface
     public D3D12_HEAP_DESC GetDesc()
     {
         D3D12_HEAP_DESC result;
-        return *((delegate* unmanaged<ID3D12Heap*, D3D12_HEAP_DESC*, D3D12_HEAP_DESC*>)(lpVtbl[8]))((ID3D12Heap*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged[SuppressGCTransition]<ID3D12Heap*, D3D12_HEAP_DESC*, D3D12_HEAP_DESC*>)(lpVtbl[8]))((ID3D12Heap*)Unsafe.AsPointer(ref this), &result);
     }
 
     public interface Interface : ID3D12Pageable.Interface
@@ -116,6 +116,6 @@ public unsafe partial struct ID3D12Heap : ID3D12Heap.Interface
         public delegate* unmanaged<ID3D12Heap*, Guid*, void**, int> GetDevice;
 
         [NativeTypeName("D3D12_HEAP_DESC () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Heap*, D3D12_HEAP_DESC*, D3D12_HEAP_DESC*> GetDesc;
+        public delegate* unmanaged[SuppressGCTransition]<ID3D12Heap*, D3D12_HEAP_DESC*, D3D12_HEAP_DESC*> GetDesc;
     }
 }

@@ -65,14 +65,14 @@ public unsafe partial struct ID2D1Brush : ID2D1Brush.Interface
     [VtblIndex(6)]
     public float GetOpacity()
     {
-        return ((delegate* unmanaged<ID2D1Brush*, float>)(lpVtbl[6]))((ID2D1Brush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1Brush*, float>)(lpVtbl[6]))((ID2D1Brush*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
     {
-        ((delegate* unmanaged<ID2D1Brush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[7]))((ID2D1Brush*)Unsafe.AsPointer(ref this), transform);
+        ((delegate* unmanaged[SuppressGCTransition]<ID2D1Brush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[7]))((ID2D1Brush*)Unsafe.AsPointer(ref this), transform);
     }
 
     public interface Interface : ID2D1Resource.Interface
@@ -111,9 +111,9 @@ public unsafe partial struct ID2D1Brush : ID2D1Brush.Interface
         public delegate* unmanaged<ID2D1Brush*, D2D_MATRIX_3X2_F*, void> SetTransform;
 
         [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Brush*, float> GetOpacity;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1Brush*, float> GetOpacity;
 
         [NativeTypeName("void (D2D1_MATRIX_3X2_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Brush*, D2D_MATRIX_3X2_F*, void> GetTransform;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1Brush*, D2D_MATRIX_3X2_F*, void> GetTransform;
     }
 }

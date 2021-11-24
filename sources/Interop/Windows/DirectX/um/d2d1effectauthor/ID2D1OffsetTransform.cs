@@ -61,7 +61,7 @@ public unsafe partial struct ID2D1OffsetTransform : ID2D1OffsetTransform.Interfa
     public POINT GetOffset()
     {
         POINT result;
-        return *((delegate* unmanaged<ID2D1OffsetTransform*, POINT*, POINT*>)(lpVtbl[5]))((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged[SuppressGCTransition]<ID2D1OffsetTransform*, POINT*, POINT*>)(lpVtbl[5]))((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this), &result);
     }
 
     public interface Interface : ID2D1TransformNode.Interface
@@ -92,6 +92,6 @@ public unsafe partial struct ID2D1OffsetTransform : ID2D1OffsetTransform.Interfa
         public delegate* unmanaged<ID2D1OffsetTransform*, POINT, void> SetOffset;
 
         [NativeTypeName("D2D1_POINT_2L () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1OffsetTransform*, POINT*, POINT*> GetOffset;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1OffsetTransform*, POINT*, POINT*> GetOffset;
     }
 }

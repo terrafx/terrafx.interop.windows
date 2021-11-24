@@ -74,7 +74,7 @@ public unsafe partial struct IDXGIOutput6 : IDXGIOutput6.Interface
     [VtblIndex(7)]
     public HRESULT GetDesc(DXGI_OUTPUT_DESC* pDesc)
     {
-        return ((delegate* unmanaged<IDXGIOutput6*, DXGI_OUTPUT_DESC*, int>)(lpVtbl[7]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged[SuppressGCTransition]<IDXGIOutput6*, DXGI_OUTPUT_DESC*, int>)(lpVtbl[7]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -214,7 +214,7 @@ public unsafe partial struct IDXGIOutput6 : IDXGIOutput6.Interface
     [VtblIndex(27)]
     public HRESULT GetDesc1(DXGI_OUTPUT_DESC1* pDesc)
     {
-        return ((delegate* unmanaged<IDXGIOutput6*, DXGI_OUTPUT_DESC1*, int>)(lpVtbl[27]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged[SuppressGCTransition]<IDXGIOutput6*, DXGI_OUTPUT_DESC1*, int>)(lpVtbl[27]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -257,7 +257,7 @@ public unsafe partial struct IDXGIOutput6 : IDXGIOutput6.Interface
         public delegate* unmanaged<IDXGIOutput6*, Guid*, void**, int> GetParent;
 
         [NativeTypeName("HRESULT (DXGI_OUTPUT_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIOutput6*, DXGI_OUTPUT_DESC*, int> GetDesc;
+        public delegate* unmanaged[SuppressGCTransition]<IDXGIOutput6*, DXGI_OUTPUT_DESC*, int> GetDesc;
 
         [NativeTypeName("HRESULT (DXGI_FORMAT, UINT, UINT *, DXGI_MODE_DESC *) __attribute__((stdcall))")]
         public delegate* unmanaged<IDXGIOutput6*, DXGI_FORMAT, uint, uint*, DXGI_MODE_DESC*, int> GetDisplayModeList;
@@ -317,7 +317,7 @@ public unsafe partial struct IDXGIOutput6 : IDXGIOutput6.Interface
         public delegate* unmanaged<IDXGIOutput6*, IUnknown*, uint, uint, DXGI_FORMAT*, IDXGIOutputDuplication**, int> DuplicateOutput1;
 
         [NativeTypeName("HRESULT (DXGI_OUTPUT_DESC1 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIOutput6*, DXGI_OUTPUT_DESC1*, int> GetDesc1;
+        public delegate* unmanaged[SuppressGCTransition]<IDXGIOutput6*, DXGI_OUTPUT_DESC1*, int> GetDesc1;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<IDXGIOutput6*, uint*, int> CheckHardwareCompositionSupport;

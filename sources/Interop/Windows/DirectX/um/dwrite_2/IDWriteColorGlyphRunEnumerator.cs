@@ -53,7 +53,7 @@ public unsafe partial struct IDWriteColorGlyphRunEnumerator : IDWriteColorGlyphR
     [VtblIndex(4)]
     public HRESULT GetCurrentRun([NativeTypeName("const DWRITE_COLOR_GLYPH_RUN **")] DWRITE_COLOR_GLYPH_RUN** colorGlyphRun)
     {
-        return ((delegate* unmanaged<IDWriteColorGlyphRunEnumerator*, DWRITE_COLOR_GLYPH_RUN**, int>)(lpVtbl[4]))((IDWriteColorGlyphRunEnumerator*)Unsafe.AsPointer(ref this), colorGlyphRun);
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteColorGlyphRunEnumerator*, DWRITE_COLOR_GLYPH_RUN**, int>)(lpVtbl[4]))((IDWriteColorGlyphRunEnumerator*)Unsafe.AsPointer(ref this), colorGlyphRun);
     }
 
     public interface Interface : IUnknown.Interface
@@ -80,6 +80,6 @@ public unsafe partial struct IDWriteColorGlyphRunEnumerator : IDWriteColorGlyphR
         public delegate* unmanaged<IDWriteColorGlyphRunEnumerator*, BOOL*, int> MoveNext;
 
         [NativeTypeName("HRESULT (const DWRITE_COLOR_GLYPH_RUN **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteColorGlyphRunEnumerator*, DWRITE_COLOR_GLYPH_RUN**, int> GetCurrentRun;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteColorGlyphRunEnumerator*, DWRITE_COLOR_GLYPH_RUN**, int> GetCurrentRun;
     }
 }

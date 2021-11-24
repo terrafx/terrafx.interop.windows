@@ -51,7 +51,7 @@ public unsafe partial struct ID2D1ColorContext : ID2D1ColorContext.Interface
     [VtblIndex(4)]
     public D2D1_COLOR_SPACE GetColorSpace()
     {
-        return ((delegate* unmanaged<ID2D1ColorContext*, D2D1_COLOR_SPACE>)(lpVtbl[4]))((ID2D1ColorContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1ColorContext*, D2D1_COLOR_SPACE>)(lpVtbl[4]))((ID2D1ColorContext*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -59,7 +59,7 @@ public unsafe partial struct ID2D1ColorContext : ID2D1ColorContext.Interface
     [return: NativeTypeName("UINT32")]
     public uint GetProfileSize()
     {
-        return ((delegate* unmanaged<ID2D1ColorContext*, uint>)(lpVtbl[5]))((ID2D1ColorContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1ColorContext*, uint>)(lpVtbl[5]))((ID2D1ColorContext*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -97,10 +97,10 @@ public unsafe partial struct ID2D1ColorContext : ID2D1ColorContext.Interface
         public delegate* unmanaged<ID2D1ColorContext*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("D2D1_COLOR_SPACE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ColorContext*, D2D1_COLOR_SPACE> GetColorSpace;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1ColorContext*, D2D1_COLOR_SPACE> GetColorSpace;
 
         [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ColorContext*, uint> GetProfileSize;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1ColorContext*, uint> GetProfileSize;
 
         [NativeTypeName("HRESULT (BYTE *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<ID2D1ColorContext*, byte*, uint, int> GetProfile;

@@ -73,7 +73,7 @@ public unsafe partial struct ID2D1BlendTransform : ID2D1BlendTransform.Interface
     [VtblIndex(7)]
     public void GetDescription(D2D1_BLEND_DESCRIPTION* description)
     {
-        ((delegate* unmanaged<ID2D1BlendTransform*, D2D1_BLEND_DESCRIPTION*, void>)(lpVtbl[7]))((ID2D1BlendTransform*)Unsafe.AsPointer(ref this), description);
+        ((delegate* unmanaged[SuppressGCTransition]<ID2D1BlendTransform*, D2D1_BLEND_DESCRIPTION*, void>)(lpVtbl[7]))((ID2D1BlendTransform*)Unsafe.AsPointer(ref this), description);
     }
 
     public interface Interface : ID2D1ConcreteTransform.Interface
@@ -109,6 +109,6 @@ public unsafe partial struct ID2D1BlendTransform : ID2D1BlendTransform.Interface
         public delegate* unmanaged<ID2D1BlendTransform*, D2D1_BLEND_DESCRIPTION*, void> SetDescription;
 
         [NativeTypeName("void (D2D1_BLEND_DESCRIPTION *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1BlendTransform*, D2D1_BLEND_DESCRIPTION*, void> GetDescription;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1BlendTransform*, D2D1_BLEND_DESCRIPTION*, void> GetDescription;
     }
 }

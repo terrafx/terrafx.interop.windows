@@ -52,7 +52,7 @@ public unsafe partial struct ID3D12VersionedRootSignatureDeserializer : ID3D12Ve
     [return: NativeTypeName("const D3D12_VERSIONED_ROOT_SIGNATURE_DESC *")]
     public D3D12_VERSIONED_ROOT_SIGNATURE_DESC* GetUnconvertedRootSignatureDesc()
     {
-        return ((delegate* unmanaged<ID3D12VersionedRootSignatureDeserializer*, D3D12_VERSIONED_ROOT_SIGNATURE_DESC*>)(lpVtbl[4]))((ID3D12VersionedRootSignatureDeserializer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID3D12VersionedRootSignatureDeserializer*, D3D12_VERSIONED_ROOT_SIGNATURE_DESC*>)(lpVtbl[4]))((ID3D12VersionedRootSignatureDeserializer*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -80,6 +80,6 @@ public unsafe partial struct ID3D12VersionedRootSignatureDeserializer : ID3D12Ve
         public delegate* unmanaged<ID3D12VersionedRootSignatureDeserializer*, D3D_ROOT_SIGNATURE_VERSION, D3D12_VERSIONED_ROOT_SIGNATURE_DESC**, int> GetRootSignatureDescAtVersion;
 
         [NativeTypeName("const D3D12_VERSIONED_ROOT_SIGNATURE_DESC *() __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VersionedRootSignatureDeserializer*, D3D12_VERSIONED_ROOT_SIGNATURE_DESC*> GetUnconvertedRootSignatureDesc;
+        public delegate* unmanaged[SuppressGCTransition]<ID3D12VersionedRootSignatureDeserializer*, D3D12_VERSIONED_ROOT_SIGNATURE_DESC*> GetUnconvertedRootSignatureDesc;
     }
 }

@@ -79,7 +79,7 @@ public unsafe partial struct IDXGIAdapter4 : IDXGIAdapter4.Interface
     [VtblIndex(8)]
     public HRESULT GetDesc(DXGI_ADAPTER_DESC* pDesc)
     {
-        return ((delegate* unmanaged<IDXGIAdapter4*, DXGI_ADAPTER_DESC*, int>)(lpVtbl[8]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged[SuppressGCTransition]<IDXGIAdapter4*, DXGI_ADAPTER_DESC*, int>)(lpVtbl[8]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -93,14 +93,14 @@ public unsafe partial struct IDXGIAdapter4 : IDXGIAdapter4.Interface
     [VtblIndex(10)]
     public HRESULT GetDesc1(DXGI_ADAPTER_DESC1* pDesc)
     {
-        return ((delegate* unmanaged<IDXGIAdapter4*, DXGI_ADAPTER_DESC1*, int>)(lpVtbl[10]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged[SuppressGCTransition]<IDXGIAdapter4*, DXGI_ADAPTER_DESC1*, int>)(lpVtbl[10]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetDesc2(DXGI_ADAPTER_DESC2* pDesc)
     {
-        return ((delegate* unmanaged<IDXGIAdapter4*, DXGI_ADAPTER_DESC2*, int>)(lpVtbl[11]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged[SuppressGCTransition]<IDXGIAdapter4*, DXGI_ADAPTER_DESC2*, int>)(lpVtbl[11]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -149,7 +149,7 @@ public unsafe partial struct IDXGIAdapter4 : IDXGIAdapter4.Interface
     [VtblIndex(18)]
     public HRESULT GetDesc3(DXGI_ADAPTER_DESC3* pDesc)
     {
-        return ((delegate* unmanaged<IDXGIAdapter4*, DXGI_ADAPTER_DESC3*, int>)(lpVtbl[18]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged[SuppressGCTransition]<IDXGIAdapter4*, DXGI_ADAPTER_DESC3*, int>)(lpVtbl[18]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     public interface Interface : IDXGIAdapter3.Interface
@@ -185,16 +185,16 @@ public unsafe partial struct IDXGIAdapter4 : IDXGIAdapter4.Interface
         public delegate* unmanaged<IDXGIAdapter4*, uint, IDXGIOutput**, int> EnumOutputs;
 
         [NativeTypeName("HRESULT (DXGI_ADAPTER_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIAdapter4*, DXGI_ADAPTER_DESC*, int> GetDesc;
+        public delegate* unmanaged[SuppressGCTransition]<IDXGIAdapter4*, DXGI_ADAPTER_DESC*, int> GetDesc;
 
         [NativeTypeName("HRESULT (const GUID &, LARGE_INTEGER *) __attribute__((stdcall))")]
         public delegate* unmanaged<IDXGIAdapter4*, Guid*, LARGE_INTEGER*, int> CheckInterfaceSupport;
 
         [NativeTypeName("HRESULT (DXGI_ADAPTER_DESC1 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIAdapter4*, DXGI_ADAPTER_DESC1*, int> GetDesc1;
+        public delegate* unmanaged[SuppressGCTransition]<IDXGIAdapter4*, DXGI_ADAPTER_DESC1*, int> GetDesc1;
 
         [NativeTypeName("HRESULT (DXGI_ADAPTER_DESC2 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIAdapter4*, DXGI_ADAPTER_DESC2*, int> GetDesc2;
+        public delegate* unmanaged[SuppressGCTransition]<IDXGIAdapter4*, DXGI_ADAPTER_DESC2*, int> GetDesc2;
 
         [NativeTypeName("HRESULT (HANDLE, DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<IDXGIAdapter4*, HANDLE, uint*, int> RegisterHardwareContentProtectionTeardownStatusEvent;
@@ -215,6 +215,6 @@ public unsafe partial struct IDXGIAdapter4 : IDXGIAdapter4.Interface
         public delegate* unmanaged<IDXGIAdapter4*, uint, void> UnregisterVideoMemoryBudgetChangeNotification;
 
         [NativeTypeName("HRESULT (DXGI_ADAPTER_DESC3 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIAdapter4*, DXGI_ADAPTER_DESC3*, int> GetDesc3;
+        public delegate* unmanaged[SuppressGCTransition]<IDXGIAdapter4*, DXGI_ADAPTER_DESC3*, int> GetDesc3;
     }
 }
