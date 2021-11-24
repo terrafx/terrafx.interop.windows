@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows8.1")]
 [Guid("3AFF9CCE-BE95-4303-B927-E7D16FF4A613")]
 [NativeTypeName("struct IWICPlanarBitmapSourceTransform : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows8.1")]
 public unsafe partial struct IWICPlanarBitmapSourceTransform : IWICPlanarBitmapSourceTransform.Interface
 {
     public void** lpVtbl;

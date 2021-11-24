@@ -7,9 +7,9 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
-[SupportedOSPlatform("windows8.1")]
 [NativeTypeName("struct DWRITE_TEXT_METRICS1 : DWRITE_TEXT_METRICS")]
 [NativeInheritance("DWRITE_TEXT_METRICS")]
+[SupportedOSPlatform("windows8.1")]
 public partial struct DWRITE_TEXT_METRICS1
 {
     public DWRITE_TEXT_METRICS Base;

@@ -126,7 +126,7 @@ public unsafe partial struct ID2D1DeviceContext : ID2D1DeviceContext.Interface
 
         effect->GetOutput(&output);
         DrawImage(output, targetOffset, imageRectangle, interpolationMode, compositeMode);
-        output->Release();
+        _ = output->Release();
     }
 
     public void DrawImage(ID2D1Image* image, D2D1_INTERPOLATION_MODE interpolationMode, D2D1_COMPOSITE_MODE compositeMode = D2D1_COMPOSITE_MODE_SOURCE_OVER)

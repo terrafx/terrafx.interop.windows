@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
-[SupportedOSPlatform("windows8.1")]
 [Guid("6D5954D4-2003-4356-9B31-D051C9FF0AF7")]
 [NativeTypeName("struct IDirectManipulationAutoScrollBehavior : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows8.1")]
 public unsafe partial struct IDirectManipulationAutoScrollBehavior : IDirectManipulationAutoScrollBehavior.Interface
 {
     public void** lpVtbl;

@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
     [DllImport("mf", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.19041.0")]
     public static extern HRESULT MFCreateEncryptedMediaExtensionsStoreActivate(IMFPMPHostApp* pmpHost, IStream* objectStream, [NativeTypeName("LPCWSTR")] ushort* classId, IMFActivate** activate);
 }

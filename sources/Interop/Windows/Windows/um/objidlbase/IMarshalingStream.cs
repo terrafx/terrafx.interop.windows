@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows8.0")]
 [Guid("D8F2F5E6-6102-4863-9F26-389A4676EFDE")]
 [NativeTypeName("struct IMarshalingStream : IStream")]
 [NativeInheritance("IStream")]
+[SupportedOSPlatform("windows8.0")]
 public unsafe partial struct IMarshalingStream : IMarshalingStream.Interface
 {
     public void** lpVtbl;

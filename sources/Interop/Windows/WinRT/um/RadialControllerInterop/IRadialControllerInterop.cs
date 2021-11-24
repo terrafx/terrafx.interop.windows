@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
-[SupportedOSPlatform("windows10.0.14393.0")]
 [Guid("1B0535C9-57AD-45C1-9D79-AD5C34360513")]
 [NativeTypeName("struct IRadialControllerInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
+[SupportedOSPlatform("windows10.0.14393.0")]
 public unsafe partial struct IRadialControllerInterop : IRadialControllerInterop.Interface
 {
     public void** lpVtbl;

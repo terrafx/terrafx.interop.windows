@@ -12,19 +12,19 @@ namespace TerraFX.Interop.DirectX;
 
 public static unsafe partial class DirectX
 {
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("dcomp", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT DCompositionCreateDevice(IDXGIDevice* dxgiDevice, [NativeTypeName("const IID &")] Guid* iid, void** dcompositionDevice);
 
-    [SupportedOSPlatform("windows8.1")]
     [DllImport("dcomp", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.1")]
     public static extern HRESULT DCompositionCreateDevice2(IUnknown* renderingDevice, [NativeTypeName("const IID &")] Guid* iid, void** dcompositionDevice);
 
     [DllImport("dcomp", ExactSpelling = true)]
     public static extern HRESULT DCompositionCreateDevice3(IUnknown* renderingDevice, [NativeTypeName("const IID &")] Guid* iid, void** dcompositionDevice);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("dcomp", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT DCompositionCreateSurfaceHandle([NativeTypeName("DWORD")] uint desiredAccess, SECURITY_ATTRIBUTES* securityAttributes, HANDLE* surfaceHandle);
 
     [DllImport("dcomp", ExactSpelling = true)]

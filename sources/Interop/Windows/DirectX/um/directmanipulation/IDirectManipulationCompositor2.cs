@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
-[SupportedOSPlatform("windows10.0")]
 [Guid("D38C7822-F1CB-43CB-B4B9-AC0C767A412E")]
 [NativeTypeName("struct IDirectManipulationCompositor2 : IDirectManipulationCompositor")]
 [NativeInheritance("IDirectManipulationCompositor")]
+[SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IDirectManipulationCompositor2 : IDirectManipulationCompositor2.Interface
 {
     public void** lpVtbl;

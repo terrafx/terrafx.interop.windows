@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
-[SupportedOSPlatform("windows8.0")]
 [Guid("D8F5B23F-D429-4A91-B55A-D2F45FD75B18")]
 [NativeTypeName("struct IDCompositionRotateTransform3D : IDCompositionTransform3D")]
 [NativeInheritance("IDCompositionTransform3D")]
+[SupportedOSPlatform("windows8.0")]
 public unsafe partial struct IDCompositionRotateTransform3D : IDCompositionRotateTransform3D.Interface
 {
     public void** lpVtbl;

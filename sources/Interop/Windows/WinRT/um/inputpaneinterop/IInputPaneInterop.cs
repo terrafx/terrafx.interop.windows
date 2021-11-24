@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
-[SupportedOSPlatform("windows10.0.14393.0")]
 [Guid("75CF2C57-9195-4931-8332-F0B409E916AF")]
 [NativeTypeName("struct IInputPaneInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
+[SupportedOSPlatform("windows10.0.14393.0")]
 public unsafe partial struct IInputPaneInterop : IInputPaneInterop.Interface
 {
     public void** lpVtbl;

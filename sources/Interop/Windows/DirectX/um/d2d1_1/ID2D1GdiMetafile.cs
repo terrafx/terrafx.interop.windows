@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
-[SupportedOSPlatform("windows8.0")]
 [Guid("2F543DC3-CFC1-4211-864F-CFD91C6F3395")]
 [NativeTypeName("struct ID2D1GdiMetafile : ID2D1Resource")]
 [NativeInheritance("ID2D1Resource")]
+[SupportedOSPlatform("windows8.0")]
 public unsafe partial struct ID2D1GdiMetafile : ID2D1GdiMetafile.Interface
 {
     public void** lpVtbl;

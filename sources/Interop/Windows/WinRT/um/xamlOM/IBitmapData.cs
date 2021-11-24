@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
-[SupportedOSPlatform("windows10.0.14393.0")]
 [Guid("D1A34EF2-CAD8-4635-A3D2-FCDA8D3F3CAF")]
 [NativeTypeName("struct IBitmapData : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0.14393.0")]
 public unsafe partial struct IBitmapData : IBitmapData.Interface
 {
     public void** lpVtbl;

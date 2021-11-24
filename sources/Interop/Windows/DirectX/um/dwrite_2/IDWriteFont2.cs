@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
-[SupportedOSPlatform("windows8.1")]
 [Guid("29748ED6-8C9C-4A6A-BE0B-D912E8538944")]
 [NativeTypeName("struct IDWriteFont2 : IDWriteFont1")]
 [NativeInheritance("IDWriteFont1")]
+[SupportedOSPlatform("windows8.1")]
 public unsafe partial struct IDWriteFont2 : IDWriteFont2.Interface
 {
     public void** lpVtbl;

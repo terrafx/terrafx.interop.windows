@@ -7,8 +7,8 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows8.0")]
 [NativeTypeName("int")]
+[SupportedOSPlatform("windows8.0")]
 public enum CO_MARSHALING_CONTEXT_ATTRIBUTES : uint
 {
     CO_MARSHALING_SOURCE_IS_APP_CONTAINER = 0,

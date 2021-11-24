@@ -333,13 +333,13 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
     public static extern BOOL WaitCommEvent(HANDLE hFile, [NativeTypeName("LPDWORD")] uint* lpEvtMask, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* lpOverlapped);
 
-    [SupportedOSPlatform("windows10.0.16299.0")]
     [DllImport("kernelbase", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.16299.0")]
     public static extern HANDLE OpenCommPort([NativeTypeName("ULONG")] uint uPortNumber, [NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("DWORD")] uint dwFlagsAndAttributes);
 
-    [SupportedOSPlatform("windows10.0.17134.0")]
     [DllImport("kernelbase", ExactSpelling = true)]
     [return: NativeTypeName("ULONG")]
+    [SupportedOSPlatform("windows10.0.17134.0")]
     public static extern uint GetCommPorts([NativeTypeName("PULONG")] uint* lpPortNumbers, [NativeTypeName("ULONG")] uint uPortNumbersCount, [NativeTypeName("PULONG")] uint* puPortNumbersFound);
 
     [DllImport("kernel32", ExactSpelling = true)]
@@ -564,8 +564,8 @@ public static unsafe partial class Windows
     [return: NativeTypeName("DWORD")]
     public static extern uint GetLogicalDriveStringsA([NativeTypeName("DWORD")] uint nBufferLength, [NativeTypeName("LPSTR")] sbyte* lpBuffer);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HMODULE LoadPackagedLibrary([NativeTypeName("LPCWSTR")] ushort* lpwLibFileName, [NativeTypeName("DWORD")] uint Reserved);
 
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
@@ -585,14 +585,14 @@ public static unsafe partial class Windows
     [return: NativeTypeName("DWORD")]
     public static extern uint GetFirmwareEnvironmentVariableW([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPCWSTR")] ushort* lpGuid, [NativeTypeName("PVOID")] void* pBuffer, [NativeTypeName("DWORD")] uint nSize);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
     [return: NativeTypeName("DWORD")]
+    [SupportedOSPlatform("windows8.0")]
     public static extern uint GetFirmwareEnvironmentVariableExA([NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("LPCSTR")] sbyte* lpGuid, [NativeTypeName("PVOID")] void* pBuffer, [NativeTypeName("DWORD")] uint nSize, [NativeTypeName("PDWORD")] uint* pdwAttribubutes);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
     [return: NativeTypeName("DWORD")]
+    [SupportedOSPlatform("windows8.0")]
     public static extern uint GetFirmwareEnvironmentVariableExW([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPCWSTR")] ushort* lpGuid, [NativeTypeName("PVOID")] void* pBuffer, [NativeTypeName("DWORD")] uint nSize, [NativeTypeName("PDWORD")] uint* pdwAttribubutes);
 
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
@@ -601,20 +601,20 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
     public static extern BOOL SetFirmwareEnvironmentVariableW([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPCWSTR")] ushort* lpGuid, [NativeTypeName("PVOID")] void* pValue, [NativeTypeName("DWORD")] uint nSize);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern BOOL SetFirmwareEnvironmentVariableExA([NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("LPCSTR")] sbyte* lpGuid, [NativeTypeName("PVOID")] void* pValue, [NativeTypeName("DWORD")] uint nSize, [NativeTypeName("DWORD")] uint dwAttributes);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern BOOL SetFirmwareEnvironmentVariableExW([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPCWSTR")] ushort* lpGuid, [NativeTypeName("PVOID")] void* pValue, [NativeTypeName("DWORD")] uint nSize, [NativeTypeName("DWORD")] uint dwAttributes);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetFirmwareType([NativeTypeName("PFIRMWARE_TYPE")] FIRMWARE_TYPE* FirmwareType);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern BOOL IsNativeVhdBoot([NativeTypeName("PBOOL")] BOOL* NativeVhdBoot);
 
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
@@ -908,8 +908,8 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
     public static extern BOOL CopyFileTransactedW([NativeTypeName("LPCWSTR")] ushort* lpExistingFileName, [NativeTypeName("LPCWSTR")] ushort* lpNewFileName, [NativeTypeName("LPPROGRESS_ROUTINE")] delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, HANDLE, HANDLE, void*, uint> lpProgressRoutine, [NativeTypeName("LPVOID")] void* lpData, [NativeTypeName("LPBOOL")] BOOL* pbCancel, [NativeTypeName("DWORD")] uint dwCopyFlags, HANDLE hTransaction);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("kernel32", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT CopyFile2([NativeTypeName("PCWSTR")] ushort* pwszExistingFileName, [NativeTypeName("PCWSTR")] ushort* pwszNewFileName, COPYFILE2_EXTENDED_PARAMETERS* pExtendedParameters);
 
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
@@ -1059,12 +1059,12 @@ public static unsafe partial class Windows
     [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
     public static extern BOOL GetEventLogInformation(HANDLE hEventLog, [NativeTypeName("DWORD")] uint dwInfoLevel, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint cbBufSize, [NativeTypeName("LPDWORD")] uint* pcbBytesNeeded);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("advapi32", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern BOOL OperationStart(OPERATION_START_PARAMETERS* OperationStartParams);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("advapi32", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern BOOL OperationEnd(OPERATION_END_PARAMETERS* OperationEndParams);
 
     [DllImport("advapi32", ExactSpelling = true, SetLastError = true)]
@@ -1106,8 +1106,8 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
     public static extern BOOL ReadDirectoryChangesW(HANDLE hDirectory, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint nBufferLength, BOOL bWatchSubtree, [NativeTypeName("DWORD")] uint dwNotifyFilter, [NativeTypeName("LPDWORD")] uint* lpBytesReturned, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* lpOverlapped, [NativeTypeName("LPOVERLAPPED_COMPLETION_ROUTINE")] delegate* unmanaged<uint, uint, OVERLAPPED*, void> lpCompletionRoutine);
 
-    [SupportedOSPlatform("windows10.0.16299.0")]
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [SupportedOSPlatform("windows10.0.16299.0")]
     public static extern BOOL ReadDirectoryChangesExW(HANDLE hDirectory, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint nBufferLength, BOOL bWatchSubtree, [NativeTypeName("DWORD")] uint dwNotifyFilter, [NativeTypeName("LPDWORD")] uint* lpBytesReturned, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* lpOverlapped, [NativeTypeName("LPOVERLAPPED_COMPLETION_ROUTINE")] delegate* unmanaged<uint, uint, OVERLAPPED*, void> lpCompletionRoutine, READ_DIRECTORY_NOTIFY_INFORMATION_CLASS ReadDirectoryNotifyInformationClass);
 
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
@@ -1916,15 +1916,15 @@ public static unsafe partial class Windows
     [NativeTypeName("#define GetFirmwareEnvironmentVariable GetFirmwareEnvironmentVariableW")]
     public static delegate*<ushort*, ushort*, void*, uint, uint> GetFirmwareEnvironmentVariable => &GetFirmwareEnvironmentVariableW;
 
-    [SupportedOSPlatform("windows8.0")]
     [NativeTypeName("#define GetFirmwareEnvironmentVariableEx GetFirmwareEnvironmentVariableExW")]
+    [SupportedOSPlatform("windows8.0")]
     public static delegate*<ushort*, ushort*, void*, uint, uint*, uint> GetFirmwareEnvironmentVariableEx => &GetFirmwareEnvironmentVariableExW;
 
     [NativeTypeName("#define SetFirmwareEnvironmentVariable SetFirmwareEnvironmentVariableW")]
     public static delegate*<ushort*, ushort*, void*, uint, BOOL> SetFirmwareEnvironmentVariable => &SetFirmwareEnvironmentVariableW;
 
-    [SupportedOSPlatform("windows8.0")]
     [NativeTypeName("#define SetFirmwareEnvironmentVariableEx SetFirmwareEnvironmentVariableExW")]
+    [SupportedOSPlatform("windows8.0")]
     public static delegate*<ushort*, ushort*, void*, uint, uint, BOOL> SetFirmwareEnvironmentVariableEx => &SetFirmwareEnvironmentVariableExW;
 
     [NativeTypeName("#define EnumResourceTypes EnumResourceTypesW")]

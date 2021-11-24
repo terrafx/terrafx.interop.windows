@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows8.0")]
 [Guid("4A724BCA-FF6A-4C07-8E0D-7A358421CF06")]
 [NativeTypeName("struct IMFSignedLibrary : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows8.0")]
 public unsafe partial struct IMFSignedLibrary : IMFSignedLibrary.Interface
 {
     public void** lpVtbl;

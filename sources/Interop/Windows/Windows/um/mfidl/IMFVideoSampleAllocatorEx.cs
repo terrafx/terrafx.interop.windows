@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows8.0")]
 [Guid("545B3A48-3283-4F62-866F-A62D8F598F9F")]
 [NativeTypeName("struct IMFVideoSampleAllocatorEx : IMFVideoSampleAllocator")]
 [NativeInheritance("IMFVideoSampleAllocator")]
+[SupportedOSPlatform("windows8.0")]
 public unsafe partial struct IMFVideoSampleAllocatorEx : IMFVideoSampleAllocatorEx.Interface
 {
     public void** lpVtbl;

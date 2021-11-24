@@ -23,10 +23,10 @@ using static TerraFX.Interop.DirectX.DWRITE_MEASURING_MODE;
 
 namespace TerraFX.Interop.DirectX;
 
-[SupportedOSPlatform("windows10.0")]
 [Guid("8C427831-3D90-4476-B647-C4FAE349E4DB")]
 [NativeTypeName("struct ID2D1DeviceContext4 : ID2D1DeviceContext3")]
 [NativeInheritance("ID2D1DeviceContext3")]
+[SupportedOSPlatform("windows10.0")]
 public unsafe partial struct ID2D1DeviceContext4 : ID2D1DeviceContext4.Interface
 {
     public void** lpVtbl;
@@ -132,7 +132,7 @@ public unsafe partial struct ID2D1DeviceContext4 : ID2D1DeviceContext4.Interface
 
         effect->GetOutput(&output);
         DrawImage(output, targetOffset, imageRectangle, interpolationMode, compositeMode);
-        output->Release();
+        _ = output->Release();
     }
 
     public void DrawImage(ID2D1Image* image, D2D1_INTERPOLATION_MODE interpolationMode, D2D1_COMPOSITE_MODE compositeMode = D2D1_COMPOSITE_MODE_SOURCE_OVER)

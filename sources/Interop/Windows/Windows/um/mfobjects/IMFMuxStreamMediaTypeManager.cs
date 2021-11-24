@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows10.0.15063.0")]
 [Guid("505A2C72-42F7-4690-AEAB-8F513D0FFDB8")]
 [NativeTypeName("struct IMFMuxStreamMediaTypeManager : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0.15063.0")]
 public unsafe partial struct IMFMuxStreamMediaTypeManager : IMFMuxStreamMediaTypeManager.Interface
 {
     public void** lpVtbl;

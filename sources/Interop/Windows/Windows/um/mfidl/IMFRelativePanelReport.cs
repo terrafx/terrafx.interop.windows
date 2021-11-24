@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows10.0.19041.0")]
 [Guid("F25362EA-2C0E-447F-81E2-755914CDC0C3")]
 [NativeTypeName("struct IMFRelativePanelReport : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0.19041.0")]
 public unsafe partial struct IMFRelativePanelReport : IMFRelativePanelReport.Interface
 {
     public void** lpVtbl;

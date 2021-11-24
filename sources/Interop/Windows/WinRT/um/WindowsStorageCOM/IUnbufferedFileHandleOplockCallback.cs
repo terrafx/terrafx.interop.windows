@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
-[SupportedOSPlatform("windows10.0")]
 [Guid("D1019A0E-6243-4329-8497-2E75894D7710")]
 [NativeTypeName("struct IUnbufferedFileHandleOplockCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IUnbufferedFileHandleOplockCallback : IUnbufferedFileHandleOplockCallback.Interface
 {
     public void** lpVtbl;

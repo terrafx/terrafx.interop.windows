@@ -12,8 +12,8 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     public static extern BOOL SetEnvironmentStringsW([NativeTypeName("LPWCH")] ushort* NewEnvironment);
 
-    [SuppressGCTransition]
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [SuppressGCTransition]
     public static extern HANDLE GetStdHandle([NativeTypeName("DWORD")] uint nStdHandle);
 
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]

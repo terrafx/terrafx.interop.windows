@@ -114,8 +114,8 @@ public static unsafe partial class Windows
         }
     }
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("mmdevapi", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT ActivateAudioInterfaceAsync([NativeTypeName("LPCWSTR")] ushort* deviceInterfacePath, [NativeTypeName("const IID &")] Guid* riid, PROPVARIANT* activationParams, IActivateAudioInterfaceCompletionHandler* completionHandler, IActivateAudioInterfaceAsyncOperation** activationOperation);
 
     [NativeTypeName("#define ENDPOINT_SYSFX_ENABLED 0x00000000")]

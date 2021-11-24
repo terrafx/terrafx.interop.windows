@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
-[SupportedOSPlatform("windows10.0")]
 [Guid("6CD696F4-F289-40CC-8091-5A6C0A099C3D")]
 [NativeTypeName("struct ID3D12ProtectedResourceSession : ID3D12ProtectedSession")]
 [NativeInheritance("ID3D12ProtectedSession")]
+[SupportedOSPlatform("windows10.0")]
 public unsafe partial struct ID3D12ProtectedResourceSession : ID3D12ProtectedResourceSession.Interface
 {
     public void** lpVtbl;

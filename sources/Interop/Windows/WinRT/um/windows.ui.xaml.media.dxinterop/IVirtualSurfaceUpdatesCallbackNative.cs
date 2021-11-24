@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
-[SupportedOSPlatform("windows8.1")]
 [Guid("DBF2E947-8E6C-4254-9EEE-7738F71386C9")]
 [NativeTypeName("struct IVirtualSurfaceUpdatesCallbackNative : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows8.1")]
 public unsafe partial struct IVirtualSurfaceUpdatesCallbackNative : IVirtualSurfaceUpdatesCallbackNative.Interface
 {
     public void** lpVtbl;

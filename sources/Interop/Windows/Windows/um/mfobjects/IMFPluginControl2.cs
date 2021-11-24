@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows8.0")]
 [Guid("C6982083-3DDC-45CB-AF5E-0F7A8CE4DE77")]
 [NativeTypeName("struct IMFPluginControl2 : IMFPluginControl")]
 [NativeInheritance("IMFPluginControl")]
+[SupportedOSPlatform("windows8.0")]
 public unsafe partial struct IMFPluginControl2 : IMFPluginControl2.Interface
 {
     public void** lpVtbl;

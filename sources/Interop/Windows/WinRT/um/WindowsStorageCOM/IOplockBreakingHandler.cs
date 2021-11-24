@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
-[SupportedOSPlatform("windows10.0")]
 [Guid("826ABE3D-3ACD-47D3-84F2-88AAEDCF6304")]
 [NativeTypeName("struct IOplockBreakingHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IOplockBreakingHandler : IOplockBreakingHandler.Interface
 {
     public void** lpVtbl;

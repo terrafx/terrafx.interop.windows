@@ -12,7 +12,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static unsafe partial class DirectX
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
     [DllImport("dxcore", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.19041.0")]
     public static extern HRESULT DXCoreCreateAdapterFactory([NativeTypeName("const IID &")] Guid* riid, void** ppvFactory);
 }

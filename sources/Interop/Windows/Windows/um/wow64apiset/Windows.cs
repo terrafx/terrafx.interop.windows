@@ -29,20 +29,20 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
     public static extern uint GetSystemWow64DirectoryW([NativeTypeName("LPWSTR")] ushort* lpBuffer, uint uSize);
 
-    [SupportedOSPlatform("windows10.0.10586.0")]
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [SupportedOSPlatform("windows10.0.10586.0")]
     public static extern BOOL IsWow64Process2(HANDLE hProcess, ushort* pProcessMachine, ushort* pNativeMachine);
 
-    [SupportedOSPlatform("windows10.0.10586.0")]
     [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
+    [SupportedOSPlatform("windows10.0.10586.0")]
     public static extern uint GetSystemWow64Directory2A([NativeTypeName("LPSTR")] sbyte* lpBuffer, uint uSize, [NativeTypeName("WORD")] ushort ImageFileMachineType);
 
-    [SupportedOSPlatform("windows10.0.10586.0")]
     [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
+    [SupportedOSPlatform("windows10.0.10586.0")]
     public static extern uint GetSystemWow64Directory2W([NativeTypeName("LPWSTR")] ushort* lpBuffer, uint uSize, [NativeTypeName("WORD")] ushort ImageFileMachineType);
 
-    [SupportedOSPlatform("windows10.0.16299.0")]
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [SupportedOSPlatform("windows10.0.16299.0")]
     public static extern HRESULT IsWow64GuestMachineSupported(ushort WowGuestMachine, BOOL* MachineIsSupported);
 
     [DllImport("kernel32", ExactSpelling = true)]
@@ -58,7 +58,7 @@ public static unsafe partial class Windows
     [NativeTypeName("#define GetSystemWow64Directory GetSystemWow64DirectoryW")]
     public static delegate*<ushort*, uint, uint> GetSystemWow64Directory => &GetSystemWow64DirectoryW;
 
-    [SupportedOSPlatform("windows10.0.10586.0")]
     [NativeTypeName("#define GetSystemWow64Directory2 GetSystemWow64Directory2W")]
+    [SupportedOSPlatform("windows10.0.10586.0")]
     public static delegate*<ushort*, uint, ushort, uint> GetSystemWow64Directory2 => &GetSystemWow64Directory2W;
 }

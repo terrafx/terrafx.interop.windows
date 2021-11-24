@@ -101,39 +101,39 @@ public static unsafe partial class Windows
     [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
     public static extern BOOL WinHttpGetProxyForUrl(HINTERNET hSession, [NativeTypeName("LPCWSTR")] ushort* lpcwszUrl, WINHTTP_AUTOPROXY_OPTIONS* pAutoProxyOptions, WINHTTP_PROXY_INFO* pProxyInfo);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("winhttp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
+    [SupportedOSPlatform("windows8.0")]
     public static extern uint WinHttpCreateProxyResolver(HINTERNET hSession, HINTERNET* phResolver);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("winhttp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
+    [SupportedOSPlatform("windows8.0")]
     public static extern uint WinHttpGetProxyForUrlEx(HINTERNET hResolver, [NativeTypeName("PCWSTR")] ushort* pcwszUrl, WINHTTP_AUTOPROXY_OPTIONS* pAutoProxyOptions, [NativeTypeName("DWORD_PTR")] nuint pContext);
 
     [DllImport("winhttp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WinHttpGetProxyForUrlEx2(HINTERNET hResolver, [NativeTypeName("PCWSTR")] ushort* pcwszUrl, WINHTTP_AUTOPROXY_OPTIONS* pAutoProxyOptions, [NativeTypeName("DWORD")] uint cbInterfaceSelectionContext, byte* pInterfaceSelectionContext, [NativeTypeName("DWORD_PTR")] nuint pContext);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("winhttp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
+    [SupportedOSPlatform("windows8.0")]
     public static extern uint WinHttpGetProxyResult(HINTERNET hResolver, WINHTTP_PROXY_RESULT* pProxyResult);
 
     [DllImport("winhttp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WinHttpGetProxyResultEx(HINTERNET hResolver, WINHTTP_PROXY_RESULT_EX* pProxyResultEx);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("winhttp", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern void WinHttpFreeProxyResult(WINHTTP_PROXY_RESULT* pProxyResult);
 
     [DllImport("winhttp", ExactSpelling = true)]
     public static extern void WinHttpFreeProxyResultEx(WINHTTP_PROXY_RESULT_EX* pProxyResultEx);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("winhttp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
+    [SupportedOSPlatform("windows8.0")]
     public static extern uint WinHttpResetAutoProxy(HINTERNET hSession, [NativeTypeName("DWORD")] uint dwFlags);
 
     [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
@@ -158,33 +158,33 @@ public static unsafe partial class Windows
     [return: NativeTypeName("DWORD")]
     public static extern uint WinHttpSetProxySettingsPerUser(BOOL fProxySettingsPerUser);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("winhttp", ExactSpelling = true, SetLastError = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HINTERNET WinHttpWebSocketCompleteUpgrade(HINTERNET hRequest, [NativeTypeName("DWORD_PTR")] nuint pContext);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("winhttp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
+    [SupportedOSPlatform("windows8.0")]
     public static extern uint WinHttpWebSocketSend(HINTERNET hWebSocket, WINHTTP_WEB_SOCKET_BUFFER_TYPE eBufferType, [NativeTypeName("PVOID")] void* pvBuffer, [NativeTypeName("DWORD")] uint dwBufferLength);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("winhttp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
+    [SupportedOSPlatform("windows8.0")]
     public static extern uint WinHttpWebSocketReceive(HINTERNET hWebSocket, [NativeTypeName("PVOID")] void* pvBuffer, [NativeTypeName("DWORD")] uint dwBufferLength, [NativeTypeName("DWORD *")] uint* pdwBytesRead, WINHTTP_WEB_SOCKET_BUFFER_TYPE* peBufferType);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("winhttp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
+    [SupportedOSPlatform("windows8.0")]
     public static extern uint WinHttpWebSocketShutdown(HINTERNET hWebSocket, ushort usStatus, [NativeTypeName("PVOID")] void* pvReason, [NativeTypeName("DWORD")] uint dwReasonLength);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("winhttp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
+    [SupportedOSPlatform("windows8.0")]
     public static extern uint WinHttpWebSocketClose(HINTERNET hWebSocket, ushort usStatus, [NativeTypeName("PVOID")] void* pvReason, [NativeTypeName("DWORD")] uint dwReasonLength);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("winhttp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
+    [SupportedOSPlatform("windows8.0")]
     public static extern uint WinHttpWebSocketQueryCloseStatus(HINTERNET hWebSocket, ushort* pusStatus, [NativeTypeName("PVOID")] void* pvReason, [NativeTypeName("DWORD")] uint dwReasonLength, [NativeTypeName("DWORD *")] uint* pdwReasonLengthConsumed);
 
     [NativeTypeName("#define NETWORKING_KEY_BUFSIZE 128")]

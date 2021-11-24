@@ -34,8 +34,8 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
     public static extern BOOL CancelIo(HANDLE hFile);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetOverlappedResultEx(HANDLE hFile, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* lpOverlapped, [NativeTypeName("LPDWORD")] uint* lpNumberOfBytesTransferred, [NativeTypeName("DWORD")] uint dwMilliseconds, BOOL bAlertable);
 
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]

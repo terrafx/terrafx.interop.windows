@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows10.0")]
 [Guid("1A09A2FD-7440-44EB-8C84-848205A6A1CC")]
 [NativeTypeName("struct IAppxContentGroupFilesEnumerator : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IAppxContentGroupFilesEnumerator : IAppxContentGroupFilesEnumerator.Interface
 {
     public void** lpVtbl;

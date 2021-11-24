@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows10.0")]
 [Guid("E2ADB6DC-5E71-4416-86B6-86E5F5291A6B")]
 [NativeTypeName("struct IAppxPackageEditor : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface
 {
     public void** lpVtbl;

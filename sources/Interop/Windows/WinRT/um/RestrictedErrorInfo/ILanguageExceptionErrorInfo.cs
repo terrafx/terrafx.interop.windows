@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
-[SupportedOSPlatform("windows8.1")]
 [Guid("04A2DBF3-DF83-116C-0946-0812ABF6E07D")]
 [NativeTypeName("struct ILanguageExceptionErrorInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows8.1")]
 public unsafe partial struct ILanguageExceptionErrorInfo : ILanguageExceptionErrorInfo.Interface
 {
     public void** lpVtbl;

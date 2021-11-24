@@ -10,51 +10,51 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("ninput", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT CreateInteractionContext(HINTERACTIONCONTEXT* interactionContext);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("ninput", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT DestroyInteractionContext(HINTERACTIONCONTEXT interactionContext);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("ninput", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT RegisterOutputCallbackInteractionContext(HINTERACTIONCONTEXT interactionContext, [NativeTypeName("INTERACTION_CONTEXT_OUTPUT_CALLBACK")] delegate* unmanaged<void*, INTERACTION_CONTEXT_OUTPUT*, void> outputCallback, void* clientData);
 
     [DllImport("ninput", ExactSpelling = true)]
     public static extern HRESULT RegisterOutputCallbackInteractionContext2(HINTERACTIONCONTEXT interactionContext, [NativeTypeName("INTERACTION_CONTEXT_OUTPUT_CALLBACK2")] delegate* unmanaged<void*, INTERACTION_CONTEXT_OUTPUT2*, void> outputCallback, void* clientData);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("ninput", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT SetInteractionConfigurationInteractionContext(HINTERACTIONCONTEXT interactionContext, [NativeTypeName("UINT32")] uint configurationCount, [NativeTypeName("const INTERACTION_CONTEXT_CONFIGURATION *")] INTERACTION_CONTEXT_CONFIGURATION* configuration);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("ninput", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT GetInteractionConfigurationInteractionContext(HINTERACTIONCONTEXT interactionContext, [NativeTypeName("UINT32")] uint configurationCount, INTERACTION_CONTEXT_CONFIGURATION* configuration);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("ninput", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT SetPropertyInteractionContext(HINTERACTIONCONTEXT interactionContext, INTERACTION_CONTEXT_PROPERTY contextProperty, [NativeTypeName("UINT32")] uint value);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("ninput", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT GetPropertyInteractionContext(HINTERACTIONCONTEXT interactionContext, INTERACTION_CONTEXT_PROPERTY contextProperty, [NativeTypeName("UINT32 *")] uint* value);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("ninput", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT SetInertiaParameterInteractionContext(HINTERACTIONCONTEXT interactionContext, INERTIA_PARAMETER inertiaParameter, float value);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("ninput", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT GetInertiaParameterInteractionContext(HINTERACTIONCONTEXT interactionContext, INERTIA_PARAMETER inertiaParameter, float* value);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("ninput", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT SetCrossSlideParametersInteractionContext(HINTERACTIONCONTEXT interactionContext, [NativeTypeName("UINT32")] uint parameterCount, CROSS_SLIDE_PARAMETER* crossSlideParameters);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("ninput", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT GetCrossSlideParameterInteractionContext(HINTERACTIONCONTEXT interactionContext, CROSS_SLIDE_THRESHOLD threshold, float* distance);
 
     [DllImport("ninput", ExactSpelling = true)]
@@ -75,52 +75,52 @@ public static unsafe partial class Windows
     [DllImport("ninput", ExactSpelling = true)]
     public static extern HRESULT GetTranslationParameterInteractionContext(HINTERACTIONCONTEXT interactionContext, TRANSLATION_PARAMETER parameter, float* value);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("ninput", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT SetMouseWheelParameterInteractionContext(HINTERACTIONCONTEXT interactionContext, MOUSE_WHEEL_PARAMETER parameter, float value);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("ninput", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT GetMouseWheelParameterInteractionContext(HINTERACTIONCONTEXT interactionContext, MOUSE_WHEEL_PARAMETER parameter, float* value);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("ninput", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT ResetInteractionContext(HINTERACTIONCONTEXT interactionContext);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("ninput", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT GetStateInteractionContext(HINTERACTIONCONTEXT interactionContext, [NativeTypeName("const POINTER_INFO *")] POINTER_INFO* pointerInfo, INTERACTION_STATE* state);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("ninput", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT AddPointerInteractionContext(HINTERACTIONCONTEXT interactionContext, [NativeTypeName("UINT32")] uint pointerId);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("ninput", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT RemovePointerInteractionContext(HINTERACTIONCONTEXT interactionContext, [NativeTypeName("UINT32")] uint pointerId);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("ninput", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT ProcessPointerFramesInteractionContext(HINTERACTIONCONTEXT interactionContext, [NativeTypeName("UINT32")] uint entriesCount, [NativeTypeName("UINT32")] uint pointerCount, [NativeTypeName("const POINTER_INFO *")] POINTER_INFO* pointerInfo);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("ninput", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT BufferPointerPacketsInteractionContext(HINTERACTIONCONTEXT interactionContext, [NativeTypeName("UINT32")] uint entriesCount, [NativeTypeName("const POINTER_INFO *")] POINTER_INFO* pointerInfo);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("ninput", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT ProcessBufferedPacketsInteractionContext(HINTERACTIONCONTEXT interactionContext);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("ninput", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT ProcessInertiaInteractionContext(HINTERACTIONCONTEXT interactionContext);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("ninput", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT StopInteractionContext(HINTERACTIONCONTEXT interactionContext);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("ninput", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT SetPivotInteractionContext(HINTERACTIONCONTEXT interactionContext, float x, float y, float radius);
 
     [NativeTypeName("#define CROSS_SLIDE_THRESHOLD_INVALID_VALUE FLT_MAX")]

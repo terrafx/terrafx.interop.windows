@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows8.0")]
 [Guid("A6B43F84-5C0A-42E8-A44D-B1857A76992F")]
 [NativeTypeName("struct IMFByteStreamProxyClassFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows8.0")]
 public unsafe partial struct IMFByteStreamProxyClassFactory : IMFByteStreamProxyClassFactory.Interface
 {
     public void** lpVtbl;

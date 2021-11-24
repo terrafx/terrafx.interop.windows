@@ -124,8 +124,8 @@ public static unsafe partial class Windows
         return Valid;
     }
 
-    [SupportedOSPlatform("windows8.0")]
     [return: NativeTypeName("PVOID")]
+    [SupportedOSPlatform("windows8.0")]
     public static void* DeviceDsmOutputBlock([NativeTypeName("PDEVICE_DSM_OUTPUT")] DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT* Output)
     {
         return (void*)((nuint)(Output) + Output->OutputBlockOffset);
@@ -202,8 +202,8 @@ public static unsafe partial class Windows
         return;
     }
 
-    [SupportedOSPlatform("windows8.0")]
     [return: NativeTypeName("BOOLEAN")]
+    [SupportedOSPlatform("windows8.0")]
     public static byte DeviceDsmValidateOutput([NativeTypeName("PDEVICE_DSM_DEFINITION")] DEVICE_DSM_DEFINITION* Definition, [NativeTypeName("PDEVICE_DSM_OUTPUT")] DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT* Output, [NativeTypeName("DWORD")] uint OutputLength)
     {
         uint Max = 0;

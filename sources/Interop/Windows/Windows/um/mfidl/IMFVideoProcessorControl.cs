@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows8.0")]
 [Guid("A3F675D5-6119-4F7F-A100-1D8B280F0EFB")]
 [NativeTypeName("struct IMFVideoProcessorControl : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows8.0")]
 public unsafe partial struct IMFVideoProcessorControl : IMFVideoProcessorControl.Interface
 {
     public void** lpVtbl;

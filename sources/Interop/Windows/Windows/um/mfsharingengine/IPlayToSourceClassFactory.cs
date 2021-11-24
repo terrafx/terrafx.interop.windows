@@ -11,10 +11,10 @@ using TerraFX.Interop.WinRT;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows8.0")]
 [Guid("842B32A3-9B9B-4D1C-B3F3-49193248A554")]
 [NativeTypeName("struct IPlayToSourceClassFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows8.0")]
 public unsafe partial struct IPlayToSourceClassFactory : IPlayToSourceClassFactory.Interface
 {
     public void** lpVtbl;

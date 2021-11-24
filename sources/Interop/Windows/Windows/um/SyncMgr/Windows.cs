@@ -13,7 +13,7 @@ public static unsafe partial class Windows
     {
         if ((pcci->pShellItem) != null)
         {
-            pcci->pShellItem->Release();
+            _ = pcci->pShellItem->Release();
         }
 
         CoTaskMemFree(pcci->pszOriginalName);

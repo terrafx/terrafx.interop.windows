@@ -105,8 +105,8 @@ public static partial class IOCTL
     [NativeTypeName("#define IOCTL_STORAGE_GET_DEVICE_TELEMETRY_RAW CTL_CODE(IOCTL_STORAGE_BASE, 0x0473, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)")]
     public const int IOCTL_STORAGE_GET_DEVICE_TELEMETRY_RAW = (((0x0000002d) << 16) | (((0x0001) | (0x0002)) << 14) | ((0x0473) << 2) | (0));
 
-    [SupportedOSPlatform("windows10.0")]
     [NativeTypeName("#define IOCTL_STORAGE_SET_TEMPERATURE_THRESHOLD CTL_CODE(IOCTL_STORAGE_BASE, 0x0480, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)")]
+    [SupportedOSPlatform("windows10.0")]
     public const int IOCTL_STORAGE_SET_TEMPERATURE_THRESHOLD = (((0x0000002d) << 16) | (((0x0001) | (0x0002)) << 14) | ((0x0480) << 2) | (0));
 
     [NativeTypeName("#define IOCTL_STORAGE_PROTOCOL_COMMAND CTL_CODE(IOCTL_STORAGE_BASE, 0x04F0, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)")]
@@ -115,8 +115,8 @@ public static partial class IOCTL
     [NativeTypeName("#define IOCTL_STORAGE_SET_PROPERTY CTL_CODE(IOCTL_STORAGE_BASE, 0x04FF, METHOD_BUFFERED, FILE_WRITE_ACCESS)")]
     public const int IOCTL_STORAGE_SET_PROPERTY = (((0x0000002d) << 16) | (((0x0002)) << 14) | ((0x04FF) << 2) | (0));
 
-    [SupportedOSPlatform("windows10.0")]
     [NativeTypeName("#define IOCTL_STORAGE_QUERY_PROPERTY CTL_CODE(IOCTL_STORAGE_BASE, 0x0500, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    [SupportedOSPlatform("windows10.0")]
     public const int IOCTL_STORAGE_QUERY_PROPERTY = (((0x0000002d) << 16) | ((0) << 14) | ((0x0500) << 2) | (0));
 
     [NativeTypeName("#define IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES CTL_CODE(IOCTL_STORAGE_BASE, 0x0501, METHOD_BUFFERED, FILE_WRITE_ACCESS)")]
@@ -146,16 +146,16 @@ public static partial class IOCTL
     [NativeTypeName("#define IOCTL_STORAGE_STOP_DATA_INTEGRITY_CHECK CTL_CODE(IOCTL_STORAGE_BASE, 0x0622, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)")]
     public const int IOCTL_STORAGE_STOP_DATA_INTEGRITY_CHECK = (((0x0000002d) << 16) | (((0x0001) | (0x0002)) << 14) | ((0x0622) << 2) | (0));
 
-    [SupportedOSPlatform("windows10.0")]
     [NativeTypeName("#define IOCTL_STORAGE_FIRMWARE_GET_INFO CTL_CODE(IOCTL_STORAGE_BASE, 0x0700, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    [SupportedOSPlatform("windows10.0")]
     public const int IOCTL_STORAGE_FIRMWARE_GET_INFO = (((0x0000002d) << 16) | ((0) << 14) | ((0x0700) << 2) | (0));
 
-    [SupportedOSPlatform("windows10.0")]
     [NativeTypeName("#define IOCTL_STORAGE_FIRMWARE_DOWNLOAD CTL_CODE(IOCTL_STORAGE_BASE, 0x0701, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)")]
+    [SupportedOSPlatform("windows10.0")]
     public const int IOCTL_STORAGE_FIRMWARE_DOWNLOAD = (((0x0000002d) << 16) | (((0x0001) | (0x0002)) << 14) | ((0x0701) << 2) | (0));
 
-    [SupportedOSPlatform("windows10.0")]
     [NativeTypeName("#define IOCTL_STORAGE_FIRMWARE_ACTIVATE CTL_CODE(IOCTL_STORAGE_BASE, 0x0702, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)")]
+    [SupportedOSPlatform("windows10.0")]
     public const int IOCTL_STORAGE_FIRMWARE_ACTIVATE = (((0x0000002d) << 16) | (((0x0001) | (0x0002)) << 14) | ((0x0702) << 2) | (0));
 
     [NativeTypeName("#define IOCTL_STORAGE_ENABLE_IDLE_POWER CTL_CODE(IOCTL_STORAGE_BASE, 0x0720, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
@@ -173,8 +173,8 @@ public static partial class IOCTL
     [NativeTypeName("#define IOCTL_STORAGE_EVENT_NOTIFICATION CTL_CODE(IOCTL_STORAGE_BASE, 0x0724, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
     public const int IOCTL_STORAGE_EVENT_NOTIFICATION = (((0x0000002d) << 16) | ((0) << 14) | ((0x0724) << 2) | (0));
 
-    [SupportedOSPlatform("windows10.0")]
     [NativeTypeName("#define IOCTL_STORAGE_DEVICE_POWER_CAP CTL_CODE(IOCTL_STORAGE_BASE, 0x0725, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    [SupportedOSPlatform("windows10.0")]
     public const int IOCTL_STORAGE_DEVICE_POWER_CAP = (((0x0000002d) << 16) | ((0) << 14) | ((0x0725) << 2) | (0));
 
     [NativeTypeName("#define IOCTL_STORAGE_RPMB_COMMAND CTL_CODE(IOCTL_STORAGE_BASE, 0x0726, METHOD_BUFFERED, FILE_ANY_ACCESS)")]

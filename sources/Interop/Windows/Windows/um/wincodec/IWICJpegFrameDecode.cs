@@ -11,10 +11,10 @@ using TerraFX.Interop.DirectX;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows10.0")]
 [Guid("8939F66E-C46A-4C21-A9D1-98B327CE1679")]
 [NativeTypeName("struct IWICJpegFrameDecode : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IWICJpegFrameDecode : IWICJpegFrameDecode.Interface
 {
     public void** lpVtbl;

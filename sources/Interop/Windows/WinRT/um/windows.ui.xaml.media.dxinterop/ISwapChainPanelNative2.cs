@@ -12,10 +12,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
-[SupportedOSPlatform("windows8.1")]
 [Guid("D5A2F60C-37B2-44A2-937B-8D8EB9726821")]
 [NativeTypeName("struct ISwapChainPanelNative2 : ISwapChainPanelNative")]
 [NativeInheritance("ISwapChainPanelNative")]
+[SupportedOSPlatform("windows8.1")]
 public unsafe partial struct ISwapChainPanelNative2 : ISwapChainPanelNative2.Interface
 {
     public void** lpVtbl;

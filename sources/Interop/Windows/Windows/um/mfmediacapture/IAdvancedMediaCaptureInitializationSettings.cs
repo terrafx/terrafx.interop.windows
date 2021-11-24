@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows8.0")]
 [Guid("3DE21209-8BA6-4F2A-A577-2819B56FF14D")]
 [NativeTypeName("struct IAdvancedMediaCaptureInitializationSettings : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows8.0")]
 public unsafe partial struct IAdvancedMediaCaptureInitializationSettings : IAdvancedMediaCaptureInitializationSettings.Interface
 {
     public void** lpVtbl;

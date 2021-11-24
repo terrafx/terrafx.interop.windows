@@ -11,10 +11,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
-[SupportedOSPlatform("windows8.1")]
 [Guid("2633066B-4514-4C7A-8FD8-12EA98059D18")]
 [NativeTypeName("struct IDXGIDecodeSwapChain : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows8.1")]
 public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interface
 {
     public void** lpVtbl;

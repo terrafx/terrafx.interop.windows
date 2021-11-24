@@ -10,10 +10,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
-[SupportedOSPlatform("windows8.1")]
 [Guid("DD75B8C0-BA76-43B0-AE0F-68656A1DC5C8")]
 [NativeTypeName("struct IAppxBundleReader : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows8.1")]
 public unsafe partial struct IAppxBundleReader : IAppxBundleReader.Interface
 {
     public void** lpVtbl;

@@ -16,8 +16,8 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     public static extern void GetSystemInfo([NativeTypeName("LPSYSTEM_INFO")] SYSTEM_INFO* lpSystemInfo);
 
-    [SuppressGCTransition]
     [DllImport("kernel32", ExactSpelling = true)]
+    [SuppressGCTransition]
     public static extern void GetSystemTime([NativeTypeName("LPSYSTEMTIME")] SYSTEMTIME* lpSystemTime);
 
     [DllImport("kernel32", ExactSpelling = true)]
@@ -50,8 +50,8 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
     public static extern BOOL GetSystemTimeAdjustment([NativeTypeName("PDWORD")] uint* lpTimeAdjustment, [NativeTypeName("PDWORD")] uint* lpTimeIncrement, [NativeTypeName("PBOOL")] BOOL* lpTimeAdjustmentDisabled);
 
-    [SupportedOSPlatform("windows10.0")]
     [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
+    [SupportedOSPlatform("windows10.0")]
     public static extern BOOL GetSystemTimeAdjustmentPrecise([NativeTypeName("PDWORD64")] ulong* lpTimeAdjustment, [NativeTypeName("PDWORD64")] ulong* lpTimeIncrement, [NativeTypeName("PBOOL")] BOOL* lpTimeAdjustmentDisabled);
 
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
@@ -99,8 +99,8 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     public static extern void GetNativeSystemInfo([NativeTypeName("LPSYSTEM_INFO")] SYSTEM_INFO* lpSystemInfo);
 
-    [SupportedOSPlatform("windows8.0")]
     [DllImport("kernel32", ExactSpelling = true)]
+    [SupportedOSPlatform("windows8.0")]
     public static extern void GetSystemTimePreciseAsFileTime([NativeTypeName("LPFILETIME")] FILETIME* lpSystemTimeAsFileTime);
 
     [DllImport("kernel32", ExactSpelling = true)]
@@ -131,12 +131,12 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
     public static extern BOOL SetSystemTimeAdjustment([NativeTypeName("DWORD")] uint dwTimeAdjustment, BOOL bTimeAdjustmentDisabled);
 
-    [SupportedOSPlatform("windows10.0")]
     [DllImport("kernelbase", ExactSpelling = true, SetLastError = true)]
+    [SupportedOSPlatform("windows10.0")]
     public static extern BOOL SetSystemTimeAdjustmentPrecise([NativeTypeName("DWORD64")] ulong dwTimeAdjustment, BOOL bTimeAdjustmentDisabled);
 
-    [SupportedOSPlatform("windows8.1")]
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
+    [SupportedOSPlatform("windows8.1")]
     public static extern BOOL InstallELAMCertificateInfo(HANDLE ELAMFile);
 
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
@@ -145,8 +145,8 @@ public static unsafe partial class Windows
     [DllImport("kernelbase", ExactSpelling = true)]
     public static extern BOOL GetOsManufacturingMode([NativeTypeName("PBOOL")] BOOL* pbEnabled);
 
-    [SupportedOSPlatform("windows10.0")]
     [DllImport("kernelbase", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0")]
     public static extern HRESULT GetIntegratedDisplaySize(double* sizeInInches);
 
     [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
