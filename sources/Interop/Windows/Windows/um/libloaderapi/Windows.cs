@@ -134,9 +134,11 @@ public static unsafe partial class Windows
     public static extern HMODULE LoadLibraryW([NativeTypeName("LPCWSTR")] ushort* lpLibFileName);
 
     [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL EnumResourceNamesW(HMODULE hModule, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("ENUMRESNAMEPROCW")] delegate* unmanaged<HMODULE, ushort*, ushort*, nint, BOOL> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
 
     [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL EnumResourceNamesA(HMODULE hModule, [NativeTypeName("LPCSTR")] sbyte* lpType, [NativeTypeName("ENUMRESNAMEPROCA")] delegate* unmanaged<HMODULE, sbyte*, sbyte*, nint, BOOL> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
 
     [NativeTypeName("#define FIND_RESOURCE_DIRECTORY_TYPES (0x0100)")]

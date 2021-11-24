@@ -726,6 +726,7 @@ public static unsafe partial class Windows
     public static extern HDEVINFO SetupDiCreateDeviceInfoListExW([NativeTypeName("const GUID *")] Guid* ClassGuid, HWND hwndParent, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetDeviceInfoListClass(HDEVINFO DeviceInfoSet, [NativeTypeName("LPGUID")] Guid* ClassGuid);
 
     [DllImport("setupapi", ExactSpelling = true)]
@@ -753,15 +754,19 @@ public static unsafe partial class Windows
     public static extern BOOL SetupDiGetDeviceInstanceIdW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PWSTR")] ushort* DeviceInstanceId, [NativeTypeName("DWORD")] uint DeviceInstanceIdSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiDeleteDeviceInfo(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiEnumDeviceInfo(HDEVINFO DeviceInfoSet, [NativeTypeName("DWORD")] uint MemberIndex, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiDestroyDeviceInfoList(HDEVINFO DeviceInfoSet);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiEnumDeviceInterfaces(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("const GUID *")] Guid* InterfaceClassGuid, [NativeTypeName("DWORD")] uint MemberIndex, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData);
 
     [DllImport("setupapi", ExactSpelling = true)]
@@ -777,12 +782,15 @@ public static unsafe partial class Windows
     public static extern BOOL SetupDiOpenDeviceInterfaceW(HDEVINFO DeviceInfoSet, [NativeTypeName("PCWSTR")] ushort* DevicePath, [NativeTypeName("DWORD")] uint OpenFlags, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetDeviceInterfaceAlias(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("const GUID *")] Guid* AliasInterfaceClassGuid, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* AliasDeviceInterfaceData);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiDeleteDeviceInterfaceData(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiRemoveDeviceInterface(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData);
 
     [DllImport("setupapi", ExactSpelling = true)]
@@ -792,12 +800,15 @@ public static unsafe partial class Windows
     public static extern BOOL SetupDiGetDeviceInterfaceDetailW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("PSP_DEVICE_INTERFACE_DETAIL_DATA_W")] void* DeviceInterfaceDetailData, [NativeTypeName("DWORD")] uint DeviceInterfaceDetailDataSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiInstallDeviceInterfaces(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiSetDeviceInterfaceDefault(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PVOID")] void* Reserved);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiRegisterDeviceInfo(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PSP_DETSIG_CMPPROC")] delegate* unmanaged<HDEVINFO, void*, void*, void*, uint> CompareProc, [NativeTypeName("PVOID")] void* CompareContext, [NativeTypeName("PSP_DEVINFO_DATA")] void* DupDeviceInfoData);
 
     [DllImport("setupapi", ExactSpelling = true)]
@@ -805,6 +816,7 @@ public static unsafe partial class Windows
     public static extern BOOL SetupDiBuildDriverInfoList(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint DriverType);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiCancelDriverInfoSearch(HDEVINFO DeviceInfoSet);
 
     [DllImport("setupapi", ExactSpelling = true)]
@@ -832,12 +844,15 @@ public static unsafe partial class Windows
     public static extern BOOL SetupDiGetDriverInfoDetailW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_W")] void* DriverInfoData, [NativeTypeName("PSP_DRVINFO_DETAIL_DATA_W")] void* DriverInfoDetailData, [NativeTypeName("DWORD")] uint DriverInfoDetailDataSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiDestroyDriverInfoList(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint DriverType);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HDEVINFO SetupDiGetClassDevsA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PCSTR")] sbyte* Enumerator, HWND hwndParent, [NativeTypeName("DWORD")] uint Flags);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HDEVINFO SetupDiGetClassDevsW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PCWSTR")] ushort* Enumerator, HWND hwndParent, [NativeTypeName("DWORD")] uint Flags);
 
     [DllImport("setupapi", ExactSpelling = true)]
@@ -853,6 +868,7 @@ public static unsafe partial class Windows
     public static extern BOOL SetupDiGetINFClassW([NativeTypeName("PCWSTR")] ushort* InfName, [NativeTypeName("LPGUID")] Guid* ClassGuid, [NativeTypeName("PWSTR")] ushort* ClassName, [NativeTypeName("DWORD")] uint ClassNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiBuildClassInfoList([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("LPGUID")] Guid* ClassGuidList, [NativeTypeName("DWORD")] uint ClassGuidListSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     [DllImport("setupapi", ExactSpelling = true)]
@@ -874,12 +890,15 @@ public static unsafe partial class Windows
     public static extern BOOL SetupDiGetClassDescriptionExW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PWSTR")] ushort* ClassDescription, [NativeTypeName("DWORD")] uint ClassDescriptionSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiCallClassInstaller([NativeTypeName("DI_FUNCTION")] uint InstallFunction, HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiSelectDevice(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiSelectBestCompatDrv(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
     [DllImport("setupapi", ExactSpelling = true)]
@@ -887,21 +906,27 @@ public static unsafe partial class Windows
     public static extern BOOL SetupDiInstallDevice(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiInstallDriverFiles(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiRegisterCoDeviceInstallers(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiRemoveDevice(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiUnremoveDevice(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiRestartDevices(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiChangeState(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
     [DllImport("setupapi", ExactSpelling = true)]
@@ -917,6 +942,7 @@ public static unsafe partial class Windows
     public static extern BOOL SetupDiInstallClassExW(HWND hwndParent, [NativeTypeName("PCWSTR")] ushort* InfFileName, [NativeTypeName("DWORD")] uint Flags, HSPFILEQ FileQueue, [NativeTypeName("const GUID *")] Guid* InterfaceClassGuid, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("PVOID")] void* Reserved2);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HKEY SetupDiOpenClassRegKey([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("REGSAM")] uint samDesired);
 
     [DllImport("setupapi", ExactSpelling = true)]
@@ -932,9 +958,11 @@ public static unsafe partial class Windows
     public static extern HKEY SetupDiCreateDeviceInterfaceRegKeyW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("REGSAM")] uint samDesired, HINF InfHandle, [NativeTypeName("PCWSTR")] ushort* InfSectionName);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HKEY SetupDiOpenDeviceInterfaceRegKey(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("REGSAM")] uint samDesired);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiDeleteDeviceInterfaceRegKey(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("DWORD")] uint Reserved);
 
     [DllImport("setupapi", ExactSpelling = true)]
@@ -944,12 +972,15 @@ public static unsafe partial class Windows
     public static extern HKEY SetupDiCreateDevRegKeyW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint Scope, [NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("DWORD")] uint KeyType, HINF InfHandle, [NativeTypeName("PCWSTR")] ushort* InfSectionName);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HKEY SetupDiOpenDevRegKey(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint Scope, [NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("DWORD")] uint KeyType, [NativeTypeName("REGSAM")] uint samDesired);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiDeleteDevRegKey(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("DWORD")] uint Scope, [NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("DWORD")] uint KeyType);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetHwProfileList([NativeTypeName("PDWORD")] uint* HwProfileList, [NativeTypeName("DWORD")] uint HwProfileListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PDWORD")] uint* CurrentlyActiveIndex);
 
     [DllImport("setupapi", ExactSpelling = true)]
@@ -959,15 +990,18 @@ public static unsafe partial class Windows
     public static extern BOOL SetupDiGetHwProfileListExW([NativeTypeName("PDWORD")] uint* HwProfileList, [NativeTypeName("DWORD")] uint HwProfileListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PDWORD")] uint* CurrentlyActiveIndex, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetDevicePropertyKeys(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, DEVPROPKEY* PropertyKeyArray, [NativeTypeName("DWORD")] uint PropertyKeyCount, [NativeTypeName("PDWORD")] uint* RequiredPropertyKeyCount, [NativeTypeName("DWORD")] uint Flags);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetDevicePropertyW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("const DEVPROPKEY *")] DEVPROPKEY* PropertyKey, [NativeTypeName("DEVPROPTYPE *")] uint* PropertyType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("DWORD")] uint Flags);
 
     [DllImport("setupapi", ExactSpelling = true)]
     public static extern BOOL SetupDiSetDevicePropertyW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("const DEVPROPKEY *")] DEVPROPKEY* PropertyKey, [NativeTypeName("DEVPROPTYPE")] uint PropertyType, [NativeTypeName("const PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("DWORD")] uint Flags);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetDeviceInterfacePropertyKeys(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, DEVPROPKEY* PropertyKeyArray, [NativeTypeName("DWORD")] uint PropertyKeyCount, [NativeTypeName("PDWORD")] uint* RequiredPropertyKeyCount, [NativeTypeName("DWORD")] uint Flags);
 
     [DllImport("setupapi", ExactSpelling = true)]
@@ -977,6 +1011,7 @@ public static unsafe partial class Windows
     public static extern BOOL SetupDiSetDeviceInterfacePropertyW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] void* DeviceInterfaceData, [NativeTypeName("const DEVPROPKEY *")] DEVPROPKEY* PropertyKey, [NativeTypeName("DEVPROPTYPE")] uint PropertyType, [NativeTypeName("const PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("DWORD")] uint Flags);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetClassPropertyKeys([NativeTypeName("const GUID *")] Guid* ClassGuid, DEVPROPKEY* PropertyKeyArray, [NativeTypeName("DWORD")] uint PropertyKeyCount, [NativeTypeName("PDWORD")] uint* RequiredPropertyKeyCount, [NativeTypeName("DWORD")] uint Flags);
 
     [DllImport("setupapi", ExactSpelling = true)]
@@ -1055,18 +1090,22 @@ public static unsafe partial class Windows
     public static extern BOOL SetupDiSetDriverInstallParamsW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_W")] void* DriverInfoData, [NativeTypeName("PSP_DRVINSTALL_PARAMS")] void* DriverInstallParams);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiLoadClassIcon([NativeTypeName("const GUID *")] Guid* ClassGuid, HICON* LargeIcon, [NativeTypeName("PINT")] int* MiniIconIndex);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiLoadDeviceIcon(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, uint cxIcon, uint cyIcon, [NativeTypeName("DWORD")] uint Flags, HICON* hIcon);
 
     [DllImport("setupapi", ExactSpelling = true)]
     public static extern int SetupDiDrawMiniIcon(HDC hdc, RECT rc, int MiniIconIndex, [NativeTypeName("DWORD")] uint Flags);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetClassBitmapIndex([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PINT")] int* MiniIconIndex);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetClassImageList([NativeTypeName("PSP_CLASSIMAGELIST_DATA")] void* ClassImageListData);
 
     [DllImport("setupapi", ExactSpelling = true)]
@@ -1076,9 +1115,11 @@ public static unsafe partial class Windows
     public static extern BOOL SetupDiGetClassImageListExW([NativeTypeName("PSP_CLASSIMAGELIST_DATA")] void* ClassImageListData, [NativeTypeName("PCWSTR")] ushort* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetClassImageIndex([NativeTypeName("PSP_CLASSIMAGELIST_DATA")] void* ClassImageListData, [NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PINT")] int* ImageIndex);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiDestroyClassImageList([NativeTypeName("PSP_CLASSIMAGELIST_DATA")] void* ClassImageListData);
 
     [DllImport("setupapi", ExactSpelling = true)]
@@ -1088,9 +1129,11 @@ public static unsafe partial class Windows
     public static extern BOOL SetupDiGetClassDevPropertySheetsW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("LPPROPSHEETHEADERW")] PROPSHEETHEADERW_V2* PropertySheetHeader, [NativeTypeName("DWORD")] uint PropertySheetHeaderPageListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("DWORD")] uint PropertySheetType);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiAskForOEMDisk(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiSelectOEMDrv(HWND hwndParent, HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
     [DllImport("setupapi", ExactSpelling = true)]
@@ -1133,9 +1176,11 @@ public static unsafe partial class Windows
     public static extern HPROPSHEETPAGE SetupDiGetWizardPage(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PSP_INSTALLWIZARD_DATA")] void* InstallWizardData, [NativeTypeName("DWORD")] uint PageType, [NativeTypeName("DWORD")] uint Flags);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetSelectedDevice(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiSetSelectedDevice(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData);
 
     [DllImport("setupapi", ExactSpelling = true)]
@@ -1171,9 +1216,11 @@ public static unsafe partial class Windows
     public static extern BOOL SetupVerifyInfFileW([NativeTypeName("PCWSTR")] ushort* InfName, [NativeTypeName("PSP_ALTPLATFORM_INFO")] void* AltPlatformInfo, [NativeTypeName("PSP_INF_SIGNER_INFO_W")] void* InfSignerInfo);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetCustomDevicePropertyA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PCSTR")] sbyte* CustomPropertyName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PDWORD")] uint* PropertyRegDataType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetCustomDevicePropertyW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] void* DeviceInfoData, [NativeTypeName("PCWSTR")] ushort* CustomPropertyName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PDWORD")] uint* PropertyRegDataType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     [DllImport("setupapi", ExactSpelling = true)]

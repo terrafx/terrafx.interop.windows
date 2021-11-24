@@ -115,6 +115,7 @@ UnmapViewOfFile2=kernelbase
 AllocateUserPhysicalPages
 AllocateUserPhysicalPagesNuma
 CreateFileMapping
+CreateFileMapping2
 CreateFileMappingA
 CreateFileMappingFromApp
 CreateFileMappingNuma
@@ -142,6 +143,8 @@ OpenFileMappingW
 PrefetchVirtualMemory
 QueryMemoryResourceNotification
 QueryVirtualMemoryInformation
+ReadProcessMemory
+SetProcessValidCallTargets
 SetProcessWorkingSetSize
 SetProcessWorkingSetSizeEx
 SetSystemFileCacheSize

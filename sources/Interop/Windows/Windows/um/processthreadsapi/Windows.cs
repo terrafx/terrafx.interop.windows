@@ -225,6 +225,7 @@ public static unsafe partial class Windows
     public static extern void GetCurrentThreadStackLimits([NativeTypeName("PULONG_PTR")] nuint* LowLimit, [NativeTypeName("PULONG_PTR")] nuint* HighLimit);
 
     [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL GetThreadContext(HANDLE hThread, [NativeTypeName("LPCONTEXT")] void* lpContext);
 
     [DllImport("kernel32", ExactSpelling = true)]
@@ -330,10 +331,12 @@ public static unsafe partial class Windows
     public static extern BOOL GetProcessInformation(HANDLE hProcess, PROCESS_INFORMATION_CLASS ProcessInformationClass, [NativeTypeName("LPVOID")] void* ProcessInformation, [NativeTypeName("DWORD")] uint ProcessInformationSize);
 
     [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0")]
     public static extern BOOL GetSystemCpuSetInformation([NativeTypeName("PSYSTEM_CPU_SET_INFORMATION")] SYSTEM_CPU_SET_INFORMATION* Information, [NativeTypeName("ULONG")] uint BufferLength, [NativeTypeName("PULONG")] uint* ReturnedLength, HANDLE Process, [NativeTypeName("ULONG")] uint Flags);
 
     [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0")]
     public static extern BOOL GetProcessDefaultCpuSets(HANDLE Process, [NativeTypeName("PULONG")] uint* CpuSetIds, [NativeTypeName("ULONG")] uint CpuSetIdCount, [NativeTypeName("PULONG")] uint* RequiredIdCount);
 
@@ -342,6 +345,7 @@ public static unsafe partial class Windows
     public static extern BOOL SetProcessDefaultCpuSets(HANDLE Process, [NativeTypeName("const ULONG *")] uint* CpuSetIds, [NativeTypeName("ULONG")] uint CpuSetIdCount);
 
     [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0")]
     public static extern BOOL GetThreadSelectedCpuSets(HANDLE Thread, [NativeTypeName("PULONG")] uint* CpuSetIds, [NativeTypeName("ULONG")] uint CpuSetIdCount, [NativeTypeName("PULONG")] uint* RequiredIdCount);
 
@@ -358,15 +362,18 @@ public static unsafe partial class Windows
     public static extern BOOL GetProcessShutdownParameters([NativeTypeName("LPDWORD")] uint* lpdwLevel, [NativeTypeName("LPDWORD")] uint* lpdwFlags);
 
     [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL GetProcessDefaultCpuSetMasks(HANDLE Process, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, ushort CpuSetMaskCount, [NativeTypeName("PUSHORT")] ushort* RequiredMaskCount);
 
     [DllImport("kernel32", ExactSpelling = true)]
     public static extern BOOL SetProcessDefaultCpuSetMasks(HANDLE Process, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, ushort CpuSetMaskCount);
 
     [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL GetThreadSelectedCpuSetMasks(HANDLE Thread, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, ushort CpuSetMaskCount, [NativeTypeName("PUSHORT")] ushort* RequiredMaskCount);
 
     [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetThreadSelectedCpuSetMasks(HANDLE Thread, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, ushort CpuSetMaskCount);
 
     [DllImport("kernel32", ExactSpelling = true)]

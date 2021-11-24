@@ -61,6 +61,7 @@ public static unsafe partial class Windows
     public static extern BOOL Wow64SetThreadContext(HANDLE hThread, [NativeTypeName("const WOW64_CONTEXT *")] WOW64_CONTEXT* lpContext);
 
     [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
     public static extern uint Wow64SuspendThread(HANDLE hThread);
 

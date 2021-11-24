@@ -43,6 +43,7 @@ public static unsafe partial class Windows
     public static extern nuint VirtualQueryEx(HANDLE hProcess, [NativeTypeName("LPCVOID")] void* lpAddress, [NativeTypeName("PMEMORY_BASIC_INFORMATION")] MEMORY_BASIC_INFORMATION* lpBuffer, [NativeTypeName("SIZE_T")] nuint dwLength);
 
     [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL ReadProcessMemory(HANDLE hProcess, [NativeTypeName("LPCVOID")] void* lpBaseAddress, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("SIZE_T")] nuint nSize, [NativeTypeName("SIZE_T *")] nuint* lpNumberOfBytesRead);
 
     [DllImport("kernel32", ExactSpelling = true)]
@@ -205,6 +206,7 @@ public static unsafe partial class Windows
     public static extern uint DiscardVirtualMemory([NativeTypeName("PVOID")] void* VirtualAddress, [NativeTypeName("SIZE_T")] nuint Size);
 
     [DllImport("kernelbase", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0")]
     public static extern BOOL SetProcessValidCallTargets(HANDLE hProcess, [NativeTypeName("PVOID")] void* VirtualAddress, [NativeTypeName("SIZE_T")] nuint RegionSize, [NativeTypeName("ULONG")] uint NumberOfOffsets, [NativeTypeName("PCFG_CALL_TARGET_INFO")] CFG_CALL_TARGET_INFO* OffsetInformation);
 
@@ -273,6 +275,7 @@ public static unsafe partial class Windows
     public static extern void* MapViewOfFile3FromApp(HANDLE FileMapping, HANDLE Process, [NativeTypeName("PVOID")] void* BaseAddress, [NativeTypeName("ULONG64")] ulong Offset, [NativeTypeName("SIZE_T")] nuint ViewSize, [NativeTypeName("ULONG")] uint AllocationType, [NativeTypeName("ULONG")] uint PageProtection, MEM_EXTENDED_PARAMETER* ExtendedParameters, [NativeTypeName("ULONG")] uint ParameterCount);
 
     [DllImport("kernelbase", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HANDLE CreateFileMapping2(HANDLE File, SECURITY_ATTRIBUTES* SecurityAttributes, [NativeTypeName("ULONG")] uint DesiredAccess, [NativeTypeName("ULONG")] uint PageProtection, [NativeTypeName("ULONG")] uint AllocationAttributes, [NativeTypeName("ULONG64")] ulong MaximumSize, [NativeTypeName("PCWSTR")] ushort* Name, MEM_EXTENDED_PARAMETER* ExtendedParameters, [NativeTypeName("ULONG")] uint ParameterCount);
 
     [NativeTypeName("#define CreateFileMapping CreateFileMappingW")]

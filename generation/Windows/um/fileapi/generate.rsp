@@ -254,9 +254,12 @@ GetVolumeInformationW
 GetVolumeNameForVolumeMountPoint
 GetVolumeNameForVolumeMountPointA
 GetVolumeNameForVolumeMountPointW
+GetVolumePathName
+GetVolumePathNameA
 GetVolumePathNamesForVolumeName
 GetVolumePathNamesForVolumeNameA
 GetVolumePathNamesForVolumeNameW
+GetVolumePathNameW
 LocalFileTimeToFileTime
 LockFile
 LockFileEx

@@ -302,6 +302,7 @@ public static unsafe partial class Windows
     public static extern uint MsiPreviewBillboardW(MSIHANDLE hPreview, [NativeTypeName("LPCWSTR")] ushort* szControlName, [NativeTypeName("LPCWSTR")] ushort* szBillboard);
 
     [DllImport("msi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern MSIHANDLE MsiGetLastErrorRecord();
 
     [NativeTypeName("#define MSI_NULL_INTEGER 0x80000000")]

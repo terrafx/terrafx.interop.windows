@@ -893,10 +893,12 @@ public static unsafe partial class Windows
     public static extern uint GetPrivateProfileIntW([NativeTypeName("LPCWSTR")] ushort* lpAppName, [NativeTypeName("LPCWSTR")] ushort* lpKeyName, int nDefault, [NativeTypeName("LPCWSTR")] ushort* lpFileName);
 
     [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetPrivateProfileStringA([NativeTypeName("LPCSTR")] sbyte* lpAppName, [NativeTypeName("LPCSTR")] sbyte* lpKeyName, [NativeTypeName("LPCSTR")] sbyte* lpDefault, [NativeTypeName("LPSTR")] sbyte* lpReturnedString, [NativeTypeName("DWORD")] uint nSize, [NativeTypeName("LPCSTR")] sbyte* lpFileName);
 
     [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetPrivateProfileStringW([NativeTypeName("LPCWSTR")] ushort* lpAppName, [NativeTypeName("LPCWSTR")] ushort* lpKeyName, [NativeTypeName("LPCWSTR")] ushort* lpDefault, [NativeTypeName("LPWSTR")] ushort* lpReturnedString, [NativeTypeName("DWORD")] uint nSize, [NativeTypeName("LPCWSTR")] ushort* lpFileName);
 
@@ -1298,10 +1300,12 @@ public static unsafe partial class Windows
     public static extern BOOL GetEventLogInformation(HANDLE hEventLog, [NativeTypeName("DWORD")] uint dwInfoLevel, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint cbBufSize, [NativeTypeName("LPDWORD")] uint* pcbBytesNeeded);
 
     [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL OperationStart(OPERATION_START_PARAMETERS* OperationStartParams);
 
     [DllImport("advapi32", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL OperationEnd(OPERATION_END_PARAMETERS* OperationEndParams);
 

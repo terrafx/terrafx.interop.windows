@@ -1255,6 +1255,8 @@ GetComboBoxInfo
 GetCurrentInputMessageSource
 GetCursorInfo
 GetCursorPos
+GetDialogControlDpiChangeBehavior
+GetDialogDpiChangeBehavior
 GetDlgCtrlID
 GetDlgItem
 GetDlgItemInt
@@ -1317,6 +1319,7 @@ GetPointerType
 GetPriorityClipboardFormat
 GetProcessDefaultLayout
 GetProcessWindowStation
+GetRawInputBuffer
 GetRawInputDeviceInfo
 GetRawInputDeviceInfoA
 GetRawInputDeviceInfoW
@@ -1509,6 +1512,7 @@ SetDlgItemText
 SetDlgItemTextA
 SetDlgItemTextW
 SetDoubleClickTime
+SetFocus
 SetGestureConfig
 SetKeyboardState
 SetLayeredWindowAttributes

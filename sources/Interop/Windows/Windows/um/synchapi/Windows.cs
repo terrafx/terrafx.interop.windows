@@ -68,6 +68,7 @@ public static unsafe partial class Windows
     public static extern BOOL InitOnceExecuteOnce([NativeTypeName("PINIT_ONCE")] INIT_ONCE* InitOnce, [NativeTypeName("PINIT_ONCE_FN")] delegate* unmanaged<INIT_ONCE*, void*, void**, BOOL> InitFn, [NativeTypeName("PVOID")] void* Parameter, [NativeTypeName("LPVOID *")] void** Context);
 
     [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL InitOnceBeginInitialize([NativeTypeName("LPINIT_ONCE")] INIT_ONCE* lpInitOnce, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PBOOL")] BOOL* fPending, [NativeTypeName("LPVOID *")] void** lpContext);
 
     [DllImport("kernel32", ExactSpelling = true)]

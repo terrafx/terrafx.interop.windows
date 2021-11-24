@@ -686,6 +686,7 @@ public static unsafe partial class Windows
     public static extern BOOL SetDialogControlDpiChangeBehavior(HWND hWnd, DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS mask, DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS values);
 
     [DllImport("user32", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.15063.0")]
     public static extern DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS GetDialogControlDpiChangeBehavior(HWND hWnd);
 
@@ -695,6 +696,7 @@ public static unsafe partial class Windows
     public static extern BOOL SetDialogDpiChangeBehavior(HWND hDlg, DIALOG_DPI_CHANGE_BEHAVIORS mask, DIALOG_DPI_CHANGE_BEHAVIORS values);
 
     [DllImport("user32", ExactSpelling = true)]
+    [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.15063.0")]
     public static extern DIALOG_DPI_CHANGE_BEHAVIORS GetDialogDpiChangeBehavior(HWND hDlg);
 
@@ -916,6 +918,7 @@ public static unsafe partial class Windows
     public static extern BOOL IsCharLowerW([NativeTypeName("WCHAR")] ushort ch);
 
     [DllImport("user32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HWND SetFocus(HWND hWnd);
 
     [DllImport("user32", ExactSpelling = true)]
@@ -2538,6 +2541,7 @@ public static unsafe partial class Windows
     public static extern uint GetRawInputDeviceInfoW(HANDLE hDevice, uint uiCommand, [NativeTypeName("LPVOID")] void* pData, [NativeTypeName("PUINT")] uint* pcbSize);
 
     [DllImport("user32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern uint GetRawInputBuffer([NativeTypeName("PRAWINPUT")] RAWINPUT* pData, [NativeTypeName("PUINT")] uint* pcbSize, uint cbSizeHeader);
 
     [DllImport("user32", ExactSpelling = true)]
