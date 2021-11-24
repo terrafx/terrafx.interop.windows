@@ -79,7 +79,7 @@ public unsafe partial struct ID2D1DrawingStateBlock1 : ID2D1DrawingStateBlock1.I
     [VtblIndex(8)]
     public void GetDescription(D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription)
     {
-        ((delegate* unmanaged<ID2D1DrawingStateBlock1*, D2D1_DRAWING_STATE_DESCRIPTION1*, void>)(lpVtbl[8]))((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this), stateDescription);
+        ((delegate* unmanaged[SuppressGCTransition]<ID2D1DrawingStateBlock1*, D2D1_DRAWING_STATE_DESCRIPTION1*, void>)(lpVtbl[8]))((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this), stateDescription);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -125,7 +125,7 @@ public unsafe partial struct ID2D1DrawingStateBlock1 : ID2D1DrawingStateBlock1.I
         public delegate* unmanaged<ID2D1DrawingStateBlock1*, IDWriteRenderingParams**, void> GetTextRenderingParams;
 
         [NativeTypeName("void (D2D1_DRAWING_STATE_DESCRIPTION1 *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1DrawingStateBlock1*, D2D1_DRAWING_STATE_DESCRIPTION1*, void> GetDescription1;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1DrawingStateBlock1*, D2D1_DRAWING_STATE_DESCRIPTION1*, void> GetDescription1;
 
         [NativeTypeName("void (const D2D1_DRAWING_STATE_DESCRIPTION1 *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<ID2D1DrawingStateBlock1*, D2D1_DRAWING_STATE_DESCRIPTION1*, void> SetDescription1;

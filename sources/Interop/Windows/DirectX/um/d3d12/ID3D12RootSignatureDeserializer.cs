@@ -45,7 +45,7 @@ public unsafe partial struct ID3D12RootSignatureDeserializer : ID3D12RootSignatu
     [return: NativeTypeName("const D3D12_ROOT_SIGNATURE_DESC *")]
     public D3D12_ROOT_SIGNATURE_DESC* GetRootSignatureDesc()
     {
-        return ((delegate* unmanaged<ID3D12RootSignatureDeserializer*, D3D12_ROOT_SIGNATURE_DESC*>)(lpVtbl[3]))((ID3D12RootSignatureDeserializer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID3D12RootSignatureDeserializer*, D3D12_ROOT_SIGNATURE_DESC*>)(lpVtbl[3]))((ID3D12RootSignatureDeserializer*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -67,6 +67,6 @@ public unsafe partial struct ID3D12RootSignatureDeserializer : ID3D12RootSignatu
         public delegate* unmanaged<ID3D12RootSignatureDeserializer*, uint> Release;
 
         [NativeTypeName("const D3D12_ROOT_SIGNATURE_DESC *() __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12RootSignatureDeserializer*, D3D12_ROOT_SIGNATURE_DESC*> GetRootSignatureDesc;
+        public delegate* unmanaged[SuppressGCTransition]<ID3D12RootSignatureDeserializer*, D3D12_ROOT_SIGNATURE_DESC*> GetRootSignatureDesc;
     }
 }

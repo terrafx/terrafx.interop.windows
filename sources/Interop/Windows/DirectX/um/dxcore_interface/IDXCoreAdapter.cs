@@ -46,7 +46,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface
     [VtblIndex(3)]
     public bool IsValid()
     {
-        return ((delegate* unmanaged<IDXCoreAdapter*, byte>)(lpVtbl[3]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this)) != 0;
+        return ((delegate* unmanaged[SuppressGCTransition]<IDXCoreAdapter*, byte>)(lpVtbl[3]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this)) != 0;
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -60,7 +60,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface
     [VtblIndex(5)]
     public bool IsPropertySupported(DXCoreAdapterProperty property)
     {
-        return ((delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterProperty, byte>)(lpVtbl[5]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property) != 0;
+        return ((delegate* unmanaged[SuppressGCTransition]<IDXCoreAdapter*, DXCoreAdapterProperty, byte>)(lpVtbl[5]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property) != 0;
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -81,7 +81,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface
     [VtblIndex(8)]
     public bool IsQueryStateSupported(DXCoreAdapterState property)
     {
-        return ((delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterState, byte>)(lpVtbl[8]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property) != 0;
+        return ((delegate* unmanaged[SuppressGCTransition]<IDXCoreAdapter*, DXCoreAdapterState, byte>)(lpVtbl[8]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property) != 0;
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -95,7 +95,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface
     [VtblIndex(10)]
     public bool IsSetStateSupported(DXCoreAdapterState property)
     {
-        return ((delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterState, byte>)(lpVtbl[10]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property) != 0;
+        return ((delegate* unmanaged[SuppressGCTransition]<IDXCoreAdapter*, DXCoreAdapterState, byte>)(lpVtbl[10]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property) != 0;
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -157,13 +157,13 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface
         public delegate* unmanaged<IDXCoreAdapter*, uint> Release;
 
         [NativeTypeName("bool () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapter*, byte> IsValid;
+        public delegate* unmanaged[SuppressGCTransition]<IDXCoreAdapter*, byte> IsValid;
 
         [NativeTypeName("bool (const GUID &) __attribute__((stdcall))")]
         public delegate* unmanaged<IDXCoreAdapter*, Guid*, byte> IsAttributeSupported;
 
         [NativeTypeName("bool (DXCoreAdapterProperty) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterProperty, byte> IsPropertySupported;
+        public delegate* unmanaged[SuppressGCTransition]<IDXCoreAdapter*, DXCoreAdapterProperty, byte> IsPropertySupported;
 
         [NativeTypeName("HRESULT (DXCoreAdapterProperty, size_t, void *) __attribute__((stdcall))")]
         public delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterProperty, nuint, void*, int> GetProperty;
@@ -172,13 +172,13 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface
         public delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterProperty, nuint*, int> GetPropertySize;
 
         [NativeTypeName("bool (DXCoreAdapterState) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterState, byte> IsQueryStateSupported;
+        public delegate* unmanaged[SuppressGCTransition]<IDXCoreAdapter*, DXCoreAdapterState, byte> IsQueryStateSupported;
 
         [NativeTypeName("HRESULT (DXCoreAdapterState, size_t, const void *, size_t, void *) __attribute__((stdcall))")]
         public delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterState, nuint, void*, nuint, void*, int> QueryState;
 
         [NativeTypeName("bool (DXCoreAdapterState) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterState, byte> IsSetStateSupported;
+        public delegate* unmanaged[SuppressGCTransition]<IDXCoreAdapter*, DXCoreAdapterState, byte> IsSetStateSupported;
 
         [NativeTypeName("HRESULT (DXCoreAdapterState, size_t, const void *, size_t, const void *) __attribute__((stdcall))")]
         public delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterState, nuint, void*, nuint, void*, int> SetState;

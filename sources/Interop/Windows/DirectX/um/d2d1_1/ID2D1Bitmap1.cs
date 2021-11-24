@@ -53,7 +53,7 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface
     public D2D_SIZE_F GetSize()
     {
         D2D_SIZE_F result;
-        return *((delegate* unmanaged<ID2D1Bitmap1*, D2D_SIZE_F*, D2D_SIZE_F*>)(lpVtbl[4]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged[SuppressGCTransition]<ID2D1Bitmap1*, D2D_SIZE_F*, D2D_SIZE_F*>)(lpVtbl[4]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), &result);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -62,7 +62,7 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface
     public D2D_SIZE_U GetPixelSize()
     {
         D2D_SIZE_U result;
-        return *((delegate* unmanaged<ID2D1Bitmap1*, D2D_SIZE_U*, D2D_SIZE_U*>)(lpVtbl[5]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged[SuppressGCTransition]<ID2D1Bitmap1*, D2D_SIZE_U*, D2D_SIZE_U*>)(lpVtbl[5]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), &result);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -70,14 +70,14 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface
     public D2D1_PIXEL_FORMAT GetPixelFormat()
     {
         D2D1_PIXEL_FORMAT result;
-        return *((delegate* unmanaged<ID2D1Bitmap1*, D2D1_PIXEL_FORMAT*, D2D1_PIXEL_FORMAT*>)(lpVtbl[6]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged[SuppressGCTransition]<ID2D1Bitmap1*, D2D1_PIXEL_FORMAT*, D2D1_PIXEL_FORMAT*>)(lpVtbl[6]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), &result);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public void GetDpi(float* dpiX, float* dpiY)
     {
-        ((delegate* unmanaged<ID2D1Bitmap1*, float*, float*, void>)(lpVtbl[7]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), dpiX, dpiY);
+        ((delegate* unmanaged[SuppressGCTransition]<ID2D1Bitmap1*, float*, float*, void>)(lpVtbl[7]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), dpiX, dpiY);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -112,7 +112,7 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface
     [VtblIndex(12)]
     public D2D1_BITMAP_OPTIONS GetOptions()
     {
-        return ((delegate* unmanaged<ID2D1Bitmap1*, D2D1_BITMAP_OPTIONS>)(lpVtbl[12]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1Bitmap1*, D2D1_BITMAP_OPTIONS>)(lpVtbl[12]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -169,16 +169,16 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface
         public delegate* unmanaged<ID2D1Bitmap1*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("D2D1_SIZE_F () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Bitmap1*, D2D_SIZE_F*, D2D_SIZE_F*> GetSize;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1Bitmap1*, D2D_SIZE_F*, D2D_SIZE_F*> GetSize;
 
         [NativeTypeName("D2D1_SIZE_U () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Bitmap1*, D2D_SIZE_U*, D2D_SIZE_U*> GetPixelSize;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1Bitmap1*, D2D_SIZE_U*, D2D_SIZE_U*> GetPixelSize;
 
         [NativeTypeName("D2D1_PIXEL_FORMAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Bitmap1*, D2D1_PIXEL_FORMAT*, D2D1_PIXEL_FORMAT*> GetPixelFormat;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1Bitmap1*, D2D1_PIXEL_FORMAT*, D2D1_PIXEL_FORMAT*> GetPixelFormat;
 
         [NativeTypeName("void (FLOAT *, FLOAT *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Bitmap1*, float*, float*, void> GetDpi;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1Bitmap1*, float*, float*, void> GetDpi;
 
         [NativeTypeName("HRESULT (const D2D1_POINT_2U *, ID2D1Bitmap *, const D2D1_RECT_U *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<ID2D1Bitmap1*, D2D_POINT_2U*, ID2D1Bitmap*, D2D_RECT_U*, int> CopyFromBitmap;
@@ -193,7 +193,7 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface
         public delegate* unmanaged<ID2D1Bitmap1*, ID2D1ColorContext**, void> GetColorContext;
 
         [NativeTypeName("D2D1_BITMAP_OPTIONS () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Bitmap1*, D2D1_BITMAP_OPTIONS> GetOptions;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1Bitmap1*, D2D1_BITMAP_OPTIONS> GetOptions;
 
         [NativeTypeName("HRESULT (IDXGISurface **) const __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<ID2D1Bitmap1*, IDXGISurface**, int> GetSurface;

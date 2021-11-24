@@ -44,7 +44,7 @@ public unsafe partial struct ID2D1Multithread : ID2D1Multithread.Interface
     [VtblIndex(3)]
     public BOOL GetMultithreadProtected()
     {
-        return ((delegate* unmanaged<ID2D1Multithread*, int>)(lpVtbl[3]))((ID2D1Multithread*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1Multithread*, int>)(lpVtbl[3]))((ID2D1Multithread*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -85,7 +85,7 @@ public unsafe partial struct ID2D1Multithread : ID2D1Multithread.Interface
         public delegate* unmanaged<ID2D1Multithread*, uint> Release;
 
         [NativeTypeName("BOOL () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Multithread*, int> GetMultithreadProtected;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1Multithread*, int> GetMultithreadProtected;
 
         [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<ID2D1Multithread*, void> Enter;

@@ -65,14 +65,14 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
     [VtblIndex(6)]
     public float GetOpacity()
     {
-        return ((delegate* unmanaged<ID2D1LinearGradientBrush*, float>)(lpVtbl[6]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1LinearGradientBrush*, float>)(lpVtbl[6]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
     {
-        ((delegate* unmanaged<ID2D1LinearGradientBrush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[7]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), transform);
+        ((delegate* unmanaged[SuppressGCTransition]<ID2D1LinearGradientBrush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[7]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), transform);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -95,7 +95,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
     public D2D_POINT_2F GetStartPoint()
     {
         D2D_POINT_2F result;
-        return *((delegate* unmanaged<ID2D1LinearGradientBrush*, D2D_POINT_2F*, D2D_POINT_2F*>)(lpVtbl[10]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged[SuppressGCTransition]<ID2D1LinearGradientBrush*, D2D_POINT_2F*, D2D_POINT_2F*>)(lpVtbl[10]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), &result);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -104,7 +104,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
     public D2D_POINT_2F GetEndPoint()
     {
         D2D_POINT_2F result;
-        return *((delegate* unmanaged<ID2D1LinearGradientBrush*, D2D_POINT_2F*, D2D_POINT_2F*>)(lpVtbl[11]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged[SuppressGCTransition]<ID2D1LinearGradientBrush*, D2D_POINT_2F*, D2D_POINT_2F*>)(lpVtbl[11]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), &result);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -155,10 +155,10 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
         public delegate* unmanaged<ID2D1LinearGradientBrush*, D2D_MATRIX_3X2_F*, void> SetTransform;
 
         [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1LinearGradientBrush*, float> GetOpacity;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1LinearGradientBrush*, float> GetOpacity;
 
         [NativeTypeName("void (D2D1_MATRIX_3X2_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1LinearGradientBrush*, D2D_MATRIX_3X2_F*, void> GetTransform;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1LinearGradientBrush*, D2D_MATRIX_3X2_F*, void> GetTransform;
 
         [NativeTypeName("void (D2D1_POINT_2F) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<ID2D1LinearGradientBrush*, D2D_POINT_2F, void> SetStartPoint;
@@ -167,10 +167,10 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
         public delegate* unmanaged<ID2D1LinearGradientBrush*, D2D_POINT_2F, void> SetEndPoint;
 
         [NativeTypeName("D2D1_POINT_2F () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1LinearGradientBrush*, D2D_POINT_2F*, D2D_POINT_2F*> GetStartPoint;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1LinearGradientBrush*, D2D_POINT_2F*, D2D_POINT_2F*> GetStartPoint;
 
         [NativeTypeName("D2D1_POINT_2F () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1LinearGradientBrush*, D2D_POINT_2F*, D2D_POINT_2F*> GetEndPoint;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1LinearGradientBrush*, D2D_POINT_2F*, D2D_POINT_2F*> GetEndPoint;
 
         [NativeTypeName("void (ID2D1GradientStopCollection **) const __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<ID2D1LinearGradientBrush*, ID2D1GradientStopCollection**, void> GetGradientStopCollection;

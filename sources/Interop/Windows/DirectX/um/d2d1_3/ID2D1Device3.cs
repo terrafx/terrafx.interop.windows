@@ -87,7 +87,7 @@ public unsafe partial struct ID2D1Device3 : ID2D1Device3.Interface
     [VtblIndex(9)]
     public D2D1_RENDERING_PRIORITY GetRenderingPriority()
     {
-        return ((delegate* unmanaged<ID2D1Device3*, D2D1_RENDERING_PRIORITY>)(lpVtbl[9]))((ID2D1Device3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1Device3*, D2D1_RENDERING_PRIORITY>)(lpVtbl[9]))((ID2D1Device3*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -168,7 +168,7 @@ public unsafe partial struct ID2D1Device3 : ID2D1Device3.Interface
         public delegate* unmanaged<ID2D1Device3*, uint, void> ClearResources;
 
         [NativeTypeName("D2D1_RENDERING_PRIORITY () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Device3*, D2D1_RENDERING_PRIORITY> GetRenderingPriority;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1Device3*, D2D1_RENDERING_PRIORITY> GetRenderingPriority;
 
         [NativeTypeName("void (D2D1_RENDERING_PRIORITY) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<ID2D1Device3*, D2D1_RENDERING_PRIORITY, void> SetRenderingPriority;

@@ -94,7 +94,7 @@ public unsafe partial struct ID3D12Resource : ID3D12Resource.Interface
     public D3D12_RESOURCE_DESC GetDesc()
     {
         D3D12_RESOURCE_DESC result;
-        return *((delegate* unmanaged<ID3D12Resource*, D3D12_RESOURCE_DESC*, D3D12_RESOURCE_DESC*>)(lpVtbl[10]))((ID3D12Resource*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged[SuppressGCTransition]<ID3D12Resource*, D3D12_RESOURCE_DESC*, D3D12_RESOURCE_DESC*>)(lpVtbl[10]))((ID3D12Resource*)Unsafe.AsPointer(ref this), &result);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -102,7 +102,7 @@ public unsafe partial struct ID3D12Resource : ID3D12Resource.Interface
     [return: NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
     public ulong GetGPUVirtualAddress()
     {
-        return ((delegate* unmanaged<ID3D12Resource*, ulong>)(lpVtbl[11]))((ID3D12Resource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID3D12Resource*, ulong>)(lpVtbl[11]))((ID3D12Resource*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -184,10 +184,10 @@ public unsafe partial struct ID3D12Resource : ID3D12Resource.Interface
         public delegate* unmanaged<ID3D12Resource*, uint, D3D12_RANGE*, void> Unmap;
 
         [NativeTypeName("D3D12_RESOURCE_DESC () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Resource*, D3D12_RESOURCE_DESC*, D3D12_RESOURCE_DESC*> GetDesc;
+        public delegate* unmanaged[SuppressGCTransition]<ID3D12Resource*, D3D12_RESOURCE_DESC*, D3D12_RESOURCE_DESC*> GetDesc;
 
         [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Resource*, ulong> GetGPUVirtualAddress;
+        public delegate* unmanaged[SuppressGCTransition]<ID3D12Resource*, ulong> GetGPUVirtualAddress;
 
         [NativeTypeName("HRESULT (UINT, const D3D12_BOX *, const void *, UINT, UINT) __attribute__((stdcall))")]
         public delegate* unmanaged<ID3D12Resource*, uint, D3D12_BOX*, void*, uint, uint, int> WriteToSubresource;

@@ -66,14 +66,14 @@ public unsafe partial struct IDWriteFontFaceReference1 : IDWriteFontFaceReferenc
     [return: NativeTypeName("UINT32")]
     public uint GetFontFaceIndex()
     {
-        return ((delegate* unmanaged<IDWriteFontFaceReference1*, uint>)(lpVtbl[6]))((IDWriteFontFaceReference1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFaceReference1*, uint>)(lpVtbl[6]))((IDWriteFontFaceReference1*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public DWRITE_FONT_SIMULATIONS GetSimulations()
     {
-        return ((delegate* unmanaged<IDWriteFontFaceReference1*, DWRITE_FONT_SIMULATIONS>)(lpVtbl[7]))((IDWriteFontFaceReference1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFaceReference1*, DWRITE_FONT_SIMULATIONS>)(lpVtbl[7]))((IDWriteFontFaceReference1*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -197,10 +197,10 @@ public unsafe partial struct IDWriteFontFaceReference1 : IDWriteFontFaceReferenc
         public new delegate* unmanaged<IDWriteFontFaceReference1*, IDWriteFontFaceReference*, int> Equals;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference1*, uint> GetFontFaceIndex;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteFontFaceReference1*, uint> GetFontFaceIndex;
 
         [NativeTypeName("DWRITE_FONT_SIMULATIONS () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference1*, DWRITE_FONT_SIMULATIONS> GetSimulations;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteFontFaceReference1*, DWRITE_FONT_SIMULATIONS> GetSimulations;
 
         [NativeTypeName("HRESULT (IDWriteFontFile **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<IDWriteFontFaceReference1*, IDWriteFontFile**, int> GetFontFile;

@@ -101,7 +101,7 @@ public unsafe partial struct ID2D1SvgStrokeDashArray : ID2D1SvgStrokeDashArray.I
     [return: NativeTypeName("UINT32")]
     public uint GetDashesCount()
     {
-        return ((delegate* unmanaged<ID2D1SvgStrokeDashArray*, uint>)(lpVtbl[11]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1SvgStrokeDashArray*, uint>)(lpVtbl[11]))((ID2D1SvgStrokeDashArray*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : ID2D1SvgAttribute.Interface
@@ -162,6 +162,6 @@ public unsafe partial struct ID2D1SvgStrokeDashArray : ID2D1SvgStrokeDashArray.I
         public delegate* unmanaged<ID2D1SvgStrokeDashArray*, float*, uint, uint, int> GetDashes1;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgStrokeDashArray*, uint> GetDashesCount;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1SvgStrokeDashArray*, uint> GetDashesCount;
     }
 }

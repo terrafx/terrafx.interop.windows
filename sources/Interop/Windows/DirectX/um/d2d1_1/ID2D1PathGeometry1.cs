@@ -221,14 +221,14 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface
     [VtblIndex(19)]
     public HRESULT GetSegmentCount([NativeTypeName("UINT32 *")] uint* count)
     {
-        return ((delegate* unmanaged<ID2D1PathGeometry1*, uint*, int>)(lpVtbl[19]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), count);
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1PathGeometry1*, uint*, int>)(lpVtbl[19]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), count);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT GetFigureCount([NativeTypeName("UINT32 *")] uint* count)
     {
-        return ((delegate* unmanaged<ID2D1PathGeometry1*, uint*, int>)(lpVtbl[20]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), count);
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1PathGeometry1*, uint*, int>)(lpVtbl[20]))((ID2D1PathGeometry1*)Unsafe.AsPointer(ref this), count);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -304,10 +304,10 @@ public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface
         public delegate* unmanaged<ID2D1PathGeometry1*, ID2D1GeometrySink*, int> Stream;
 
         [NativeTypeName("HRESULT (UINT32 *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1PathGeometry1*, uint*, int> GetSegmentCount;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1PathGeometry1*, uint*, int> GetSegmentCount;
 
         [NativeTypeName("HRESULT (UINT32 *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1PathGeometry1*, uint*, int> GetFigureCount;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1PathGeometry1*, uint*, int> GetFigureCount;
 
         [NativeTypeName("HRESULT (FLOAT, UINT32, const D2D1_MATRIX_3X2_F *, FLOAT, D2D1_POINT_DESCRIPTION *) const __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<ID2D1PathGeometry1*, float, uint, D2D_MATRIX_3X2_F*, float, D2D1_POINT_DESCRIPTION*, int> ComputePointAndSegmentAtLength1;

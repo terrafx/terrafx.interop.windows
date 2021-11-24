@@ -202,7 +202,7 @@ public unsafe partial struct ID2D1RectangleGeometry : ID2D1RectangleGeometry.Int
     [VtblIndex(17)]
     public void GetRect([NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* rect)
     {
-        ((delegate* unmanaged<ID2D1RectangleGeometry*, D2D_RECT_F*, void>)(lpVtbl[17]))((ID2D1RectangleGeometry*)Unsafe.AsPointer(ref this), rect);
+        ((delegate* unmanaged[SuppressGCTransition]<ID2D1RectangleGeometry*, D2D_RECT_F*, void>)(lpVtbl[17]))((ID2D1RectangleGeometry*)Unsafe.AsPointer(ref this), rect);
     }
 
     public interface Interface : ID2D1Geometry.Interface
@@ -265,6 +265,6 @@ public unsafe partial struct ID2D1RectangleGeometry : ID2D1RectangleGeometry.Int
         public delegate* unmanaged<ID2D1RectangleGeometry*, float, ID2D1StrokeStyle*, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int> Widen1;
 
         [NativeTypeName("void (D2D1_RECT_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1RectangleGeometry*, D2D_RECT_F*, void> GetRect;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1RectangleGeometry*, D2D_RECT_F*, void> GetRect;
     }
 }

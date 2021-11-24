@@ -53,7 +53,7 @@ public unsafe partial struct ID2D1Layer : ID2D1Layer.Interface
     public D2D_SIZE_F GetSize()
     {
         D2D_SIZE_F result;
-        return *((delegate* unmanaged<ID2D1Layer*, D2D_SIZE_F*, D2D_SIZE_F*>)(lpVtbl[4]))((ID2D1Layer*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged[SuppressGCTransition]<ID2D1Layer*, D2D_SIZE_F*, D2D_SIZE_F*>)(lpVtbl[4]))((ID2D1Layer*)Unsafe.AsPointer(ref this), &result);
     }
 
     public interface Interface : ID2D1Resource.Interface
@@ -78,6 +78,6 @@ public unsafe partial struct ID2D1Layer : ID2D1Layer.Interface
         public delegate* unmanaged<ID2D1Layer*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("D2D1_SIZE_F () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Layer*, D2D_SIZE_F*, D2D_SIZE_F*> GetSize;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1Layer*, D2D_SIZE_F*, D2D_SIZE_F*> GetSize;
     }
 }

@@ -44,7 +44,7 @@ public unsafe partial struct IDWriteFontFace : IDWriteFontFace.Interface
     [VtblIndex(3)]
     public new DWRITE_FONT_FACE_TYPE GetType()
     {
-        return ((delegate* unmanaged<IDWriteFontFace*, DWRITE_FONT_FACE_TYPE>)(lpVtbl[3]))((IDWriteFontFace*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace*, DWRITE_FONT_FACE_TYPE>)(lpVtbl[3]))((IDWriteFontFace*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -59,28 +59,28 @@ public unsafe partial struct IDWriteFontFace : IDWriteFontFace.Interface
     [return: NativeTypeName("UINT32")]
     public uint GetIndex()
     {
-        return ((delegate* unmanaged<IDWriteFontFace*, uint>)(lpVtbl[5]))((IDWriteFontFace*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace*, uint>)(lpVtbl[5]))((IDWriteFontFace*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public DWRITE_FONT_SIMULATIONS GetSimulations()
     {
-        return ((delegate* unmanaged<IDWriteFontFace*, DWRITE_FONT_SIMULATIONS>)(lpVtbl[6]))((IDWriteFontFace*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace*, DWRITE_FONT_SIMULATIONS>)(lpVtbl[6]))((IDWriteFontFace*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public BOOL IsSymbolFont()
     {
-        return ((delegate* unmanaged<IDWriteFontFace*, int>)(lpVtbl[7]))((IDWriteFontFace*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace*, int>)(lpVtbl[7]))((IDWriteFontFace*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public void GetMetrics(DWRITE_FONT_METRICS* fontFaceMetrics)
     {
-        ((delegate* unmanaged<IDWriteFontFace*, DWRITE_FONT_METRICS*, void>)(lpVtbl[8]))((IDWriteFontFace*)Unsafe.AsPointer(ref this), fontFaceMetrics);
+        ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace*, DWRITE_FONT_METRICS*, void>)(lpVtbl[8]))((IDWriteFontFace*)Unsafe.AsPointer(ref this), fontFaceMetrics);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -88,7 +88,7 @@ public unsafe partial struct IDWriteFontFace : IDWriteFontFace.Interface
     [return: NativeTypeName("UINT16")]
     public ushort GetGlyphCount()
     {
-        return ((delegate* unmanaged<IDWriteFontFace*, ushort>)(lpVtbl[9]))((IDWriteFontFace*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace*, ushort>)(lpVtbl[9]))((IDWriteFontFace*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -209,25 +209,25 @@ public unsafe partial struct IDWriteFontFace : IDWriteFontFace.Interface
         public delegate* unmanaged<IDWriteFontFace*, uint> Release;
 
         [NativeTypeName("DWRITE_FONT_FACE_TYPE () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public new delegate* unmanaged<IDWriteFontFace*, DWRITE_FONT_FACE_TYPE> GetType;
+        public new delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace*, DWRITE_FONT_FACE_TYPE> GetType;
 
         [NativeTypeName("HRESULT (UINT32 *, IDWriteFontFile **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<IDWriteFontFace*, uint*, IDWriteFontFile**, int> GetFiles;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFace*, uint> GetIndex;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace*, uint> GetIndex;
 
         [NativeTypeName("DWRITE_FONT_SIMULATIONS () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFace*, DWRITE_FONT_SIMULATIONS> GetSimulations;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace*, DWRITE_FONT_SIMULATIONS> GetSimulations;
 
         [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFace*, int> IsSymbolFont;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace*, int> IsSymbolFont;
 
         [NativeTypeName("void (DWRITE_FONT_METRICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFace*, DWRITE_FONT_METRICS*, void> GetMetrics;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace*, DWRITE_FONT_METRICS*, void> GetMetrics;
 
         [NativeTypeName("UINT16 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFace*, ushort> GetGlyphCount;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace*, ushort> GetGlyphCount;
 
         [NativeTypeName("HRESULT (const UINT16 *, UINT32, DWRITE_GLYPH_METRICS *, BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<IDWriteFontFace*, ushort*, uint, DWRITE_GLYPH_METRICS*, BOOL, int> GetDesignGlyphMetrics;

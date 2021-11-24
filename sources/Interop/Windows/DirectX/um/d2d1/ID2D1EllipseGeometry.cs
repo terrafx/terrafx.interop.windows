@@ -202,7 +202,7 @@ public unsafe partial struct ID2D1EllipseGeometry : ID2D1EllipseGeometry.Interfa
     [VtblIndex(17)]
     public void GetEllipse(D2D1_ELLIPSE* ellipse)
     {
-        ((delegate* unmanaged<ID2D1EllipseGeometry*, D2D1_ELLIPSE*, void>)(lpVtbl[17]))((ID2D1EllipseGeometry*)Unsafe.AsPointer(ref this), ellipse);
+        ((delegate* unmanaged[SuppressGCTransition]<ID2D1EllipseGeometry*, D2D1_ELLIPSE*, void>)(lpVtbl[17]))((ID2D1EllipseGeometry*)Unsafe.AsPointer(ref this), ellipse);
     }
 
     public interface Interface : ID2D1Geometry.Interface
@@ -265,6 +265,6 @@ public unsafe partial struct ID2D1EllipseGeometry : ID2D1EllipseGeometry.Interfa
         public delegate* unmanaged<ID2D1EllipseGeometry*, float, ID2D1StrokeStyle*, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int> Widen1;
 
         [NativeTypeName("void (D2D1_ELLIPSE *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1EllipseGeometry*, D2D1_ELLIPSE*, void> GetEllipse;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1EllipseGeometry*, D2D1_ELLIPSE*, void> GetEllipse;
     }
 }

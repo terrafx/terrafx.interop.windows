@@ -202,7 +202,7 @@ public unsafe partial struct ID2D1GeometryGroup : ID2D1GeometryGroup.Interface
     [VtblIndex(17)]
     public D2D1_FILL_MODE GetFillMode()
     {
-        return ((delegate* unmanaged<ID2D1GeometryGroup*, D2D1_FILL_MODE>)(lpVtbl[17]))((ID2D1GeometryGroup*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1GeometryGroup*, D2D1_FILL_MODE>)(lpVtbl[17]))((ID2D1GeometryGroup*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -210,7 +210,7 @@ public unsafe partial struct ID2D1GeometryGroup : ID2D1GeometryGroup.Interface
     [return: NativeTypeName("UINT32")]
     public uint GetSourceGeometryCount()
     {
-        return ((delegate* unmanaged<ID2D1GeometryGroup*, uint>)(lpVtbl[18]))((ID2D1GeometryGroup*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1GeometryGroup*, uint>)(lpVtbl[18]))((ID2D1GeometryGroup*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -287,10 +287,10 @@ public unsafe partial struct ID2D1GeometryGroup : ID2D1GeometryGroup.Interface
         public delegate* unmanaged<ID2D1GeometryGroup*, float, ID2D1StrokeStyle*, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int> Widen1;
 
         [NativeTypeName("D2D1_FILL_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GeometryGroup*, D2D1_FILL_MODE> GetFillMode;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1GeometryGroup*, D2D1_FILL_MODE> GetFillMode;
 
         [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GeometryGroup*, uint> GetSourceGeometryCount;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1GeometryGroup*, uint> GetSourceGeometryCount;
 
         [NativeTypeName("void (ID2D1Geometry **, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<ID2D1GeometryGroup*, ID2D1Geometry**, uint, void> GetSourceGeometries;

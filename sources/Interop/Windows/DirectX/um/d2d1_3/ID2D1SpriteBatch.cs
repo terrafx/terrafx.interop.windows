@@ -73,7 +73,7 @@ public unsafe partial struct ID2D1SpriteBatch : ID2D1SpriteBatch.Interface
     [return: NativeTypeName("UINT32")]
     public uint GetSpriteCount()
     {
-        return ((delegate* unmanaged<ID2D1SpriteBatch*, uint>)(lpVtbl[7]))((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1SpriteBatch*, uint>)(lpVtbl[7]))((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -126,7 +126,7 @@ public unsafe partial struct ID2D1SpriteBatch : ID2D1SpriteBatch.Interface
         public delegate* unmanaged<ID2D1SpriteBatch*, uint, uint, D2D_RECT_F*, D2D_RECT_U*, DXGI_RGBA*, D2D_MATRIX_3X2_F*, int> GetSprites;
 
         [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SpriteBatch*, uint> GetSpriteCount;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1SpriteBatch*, uint> GetSpriteCount;
 
         [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<ID2D1SpriteBatch*, void> Clear;

@@ -102,42 +102,42 @@ public unsafe partial struct IDWriteTextFormat1 : IDWriteTextFormat1.Interface
     [VtblIndex(11)]
     public DWRITE_TEXT_ALIGNMENT GetTextAlignment()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat1*, DWRITE_TEXT_ALIGNMENT>)(lpVtbl[11]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, DWRITE_TEXT_ALIGNMENT>)(lpVtbl[11]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public DWRITE_PARAGRAPH_ALIGNMENT GetParagraphAlignment()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat1*, DWRITE_PARAGRAPH_ALIGNMENT>)(lpVtbl[12]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, DWRITE_PARAGRAPH_ALIGNMENT>)(lpVtbl[12]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public DWRITE_WORD_WRAPPING GetWordWrapping()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat1*, DWRITE_WORD_WRAPPING>)(lpVtbl[13]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, DWRITE_WORD_WRAPPING>)(lpVtbl[13]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public DWRITE_READING_DIRECTION GetReadingDirection()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat1*, DWRITE_READING_DIRECTION>)(lpVtbl[14]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, DWRITE_READING_DIRECTION>)(lpVtbl[14]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public DWRITE_FLOW_DIRECTION GetFlowDirection()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat1*, DWRITE_FLOW_DIRECTION>)(lpVtbl[15]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, DWRITE_FLOW_DIRECTION>)(lpVtbl[15]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public float GetIncrementalTabStop()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat1*, float>)(lpVtbl[16]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, float>)(lpVtbl[16]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -151,7 +151,7 @@ public unsafe partial struct IDWriteTextFormat1 : IDWriteTextFormat1.Interface
     [VtblIndex(18)]
     public HRESULT GetLineSpacing(DWRITE_LINE_SPACING_METHOD* lineSpacingMethod, float* lineSpacing, float* baseline)
     {
-        return ((delegate* unmanaged<IDWriteTextFormat1*, DWRITE_LINE_SPACING_METHOD*, float*, float*, int>)(lpVtbl[18]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this), lineSpacingMethod, lineSpacing, baseline);
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, DWRITE_LINE_SPACING_METHOD*, float*, float*, int>)(lpVtbl[18]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this), lineSpacingMethod, lineSpacing, baseline);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -180,28 +180,28 @@ public unsafe partial struct IDWriteTextFormat1 : IDWriteTextFormat1.Interface
     [VtblIndex(22)]
     public DWRITE_FONT_WEIGHT GetFontWeight()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat1*, DWRITE_FONT_WEIGHT>)(lpVtbl[22]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, DWRITE_FONT_WEIGHT>)(lpVtbl[22]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public DWRITE_FONT_STYLE GetFontStyle()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat1*, DWRITE_FONT_STYLE>)(lpVtbl[23]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, DWRITE_FONT_STYLE>)(lpVtbl[23]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public DWRITE_FONT_STRETCH GetFontStretch()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat1*, DWRITE_FONT_STRETCH>)(lpVtbl[24]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, DWRITE_FONT_STRETCH>)(lpVtbl[24]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public float GetFontSize()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat1*, float>)(lpVtbl[25]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, float>)(lpVtbl[25]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -230,7 +230,7 @@ public unsafe partial struct IDWriteTextFormat1 : IDWriteTextFormat1.Interface
     [VtblIndex(29)]
     public DWRITE_VERTICAL_GLYPH_ORIENTATION GetVerticalGlyphOrientation()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat1*, DWRITE_VERTICAL_GLYPH_ORIENTATION>)(lpVtbl[29]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, DWRITE_VERTICAL_GLYPH_ORIENTATION>)(lpVtbl[29]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -244,7 +244,7 @@ public unsafe partial struct IDWriteTextFormat1 : IDWriteTextFormat1.Interface
     [VtblIndex(31)]
     public BOOL GetLastLineWrapping()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat1*, int>)(lpVtbl[31]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, int>)(lpVtbl[31]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -258,7 +258,7 @@ public unsafe partial struct IDWriteTextFormat1 : IDWriteTextFormat1.Interface
     [VtblIndex(33)]
     public DWRITE_OPTICAL_ALIGNMENT GetOpticalAlignment()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat1*, DWRITE_OPTICAL_ALIGNMENT>)(lpVtbl[33]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, DWRITE_OPTICAL_ALIGNMENT>)(lpVtbl[33]))((IDWriteTextFormat1*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -338,28 +338,28 @@ public unsafe partial struct IDWriteTextFormat1 : IDWriteTextFormat1.Interface
         public delegate* unmanaged<IDWriteTextFormat1*, DWRITE_LINE_SPACING_METHOD, float, float, int> SetLineSpacing;
 
         [NativeTypeName("DWRITE_TEXT_ALIGNMENT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat1*, DWRITE_TEXT_ALIGNMENT> GetTextAlignment;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, DWRITE_TEXT_ALIGNMENT> GetTextAlignment;
 
         [NativeTypeName("DWRITE_PARAGRAPH_ALIGNMENT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat1*, DWRITE_PARAGRAPH_ALIGNMENT> GetParagraphAlignment;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, DWRITE_PARAGRAPH_ALIGNMENT> GetParagraphAlignment;
 
         [NativeTypeName("DWRITE_WORD_WRAPPING () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat1*, DWRITE_WORD_WRAPPING> GetWordWrapping;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, DWRITE_WORD_WRAPPING> GetWordWrapping;
 
         [NativeTypeName("DWRITE_READING_DIRECTION () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat1*, DWRITE_READING_DIRECTION> GetReadingDirection;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, DWRITE_READING_DIRECTION> GetReadingDirection;
 
         [NativeTypeName("DWRITE_FLOW_DIRECTION () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat1*, DWRITE_FLOW_DIRECTION> GetFlowDirection;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, DWRITE_FLOW_DIRECTION> GetFlowDirection;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat1*, float> GetIncrementalTabStop;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, float> GetIncrementalTabStop;
 
         [NativeTypeName("HRESULT (DWRITE_TRIMMING *, IDWriteInlineObject **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<IDWriteTextFormat1*, DWRITE_TRIMMING*, IDWriteInlineObject**, int> GetTrimming;
 
         [NativeTypeName("HRESULT (DWRITE_LINE_SPACING_METHOD *, FLOAT *, FLOAT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat1*, DWRITE_LINE_SPACING_METHOD*, float*, float*, int> GetLineSpacing;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, DWRITE_LINE_SPACING_METHOD*, float*, float*, int> GetLineSpacing;
 
         [NativeTypeName("HRESULT (IDWriteFontCollection **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<IDWriteTextFormat1*, IDWriteFontCollection**, int> GetFontCollection;
@@ -371,16 +371,16 @@ public unsafe partial struct IDWriteTextFormat1 : IDWriteTextFormat1.Interface
         public delegate* unmanaged<IDWriteTextFormat1*, ushort*, uint, int> GetFontFamilyName;
 
         [NativeTypeName("DWRITE_FONT_WEIGHT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat1*, DWRITE_FONT_WEIGHT> GetFontWeight;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, DWRITE_FONT_WEIGHT> GetFontWeight;
 
         [NativeTypeName("DWRITE_FONT_STYLE () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat1*, DWRITE_FONT_STYLE> GetFontStyle;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, DWRITE_FONT_STYLE> GetFontStyle;
 
         [NativeTypeName("DWRITE_FONT_STRETCH () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat1*, DWRITE_FONT_STRETCH> GetFontStretch;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, DWRITE_FONT_STRETCH> GetFontStretch;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat1*, float> GetFontSize;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, float> GetFontSize;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<IDWriteTextFormat1*, uint> GetLocaleNameLength;
@@ -392,19 +392,19 @@ public unsafe partial struct IDWriteTextFormat1 : IDWriteTextFormat1.Interface
         public delegate* unmanaged<IDWriteTextFormat1*, DWRITE_VERTICAL_GLYPH_ORIENTATION, int> SetVerticalGlyphOrientation;
 
         [NativeTypeName("DWRITE_VERTICAL_GLYPH_ORIENTATION () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat1*, DWRITE_VERTICAL_GLYPH_ORIENTATION> GetVerticalGlyphOrientation;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, DWRITE_VERTICAL_GLYPH_ORIENTATION> GetVerticalGlyphOrientation;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<IDWriteTextFormat1*, BOOL, int> SetLastLineWrapping;
 
         [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat1*, int> GetLastLineWrapping;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, int> GetLastLineWrapping;
 
         [NativeTypeName("HRESULT (DWRITE_OPTICAL_ALIGNMENT) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<IDWriteTextFormat1*, DWRITE_OPTICAL_ALIGNMENT, int> SetOpticalAlignment;
 
         [NativeTypeName("DWRITE_OPTICAL_ALIGNMENT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat1*, DWRITE_OPTICAL_ALIGNMENT> GetOpticalAlignment;
+        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat1*, DWRITE_OPTICAL_ALIGNMENT> GetOpticalAlignment;
 
         [NativeTypeName("HRESULT (IDWriteFontFallback *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<IDWriteTextFormat1*, IDWriteFontFallback*, int> SetFontFallback;

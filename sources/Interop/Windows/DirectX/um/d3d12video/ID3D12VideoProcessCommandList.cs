@@ -79,7 +79,7 @@ public unsafe partial struct ID3D12VideoProcessCommandList : ID3D12VideoProcessC
     [VtblIndex(8)]
     public new D3D12_COMMAND_LIST_TYPE GetType()
     {
-        return ((delegate* unmanaged<ID3D12VideoProcessCommandList*, D3D12_COMMAND_LIST_TYPE>)(lpVtbl[8]))((ID3D12VideoProcessCommandList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID3D12VideoProcessCommandList*, D3D12_COMMAND_LIST_TYPE>)(lpVtbl[8]))((ID3D12VideoProcessCommandList*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -252,7 +252,7 @@ public unsafe partial struct ID3D12VideoProcessCommandList : ID3D12VideoProcessC
         public delegate* unmanaged<ID3D12VideoProcessCommandList*, Guid*, void**, int> GetDevice;
 
         [NativeTypeName("D3D12_COMMAND_LIST_TYPE () __attribute__((stdcall))")]
-        public new delegate* unmanaged<ID3D12VideoProcessCommandList*, D3D12_COMMAND_LIST_TYPE> GetType;
+        public new delegate* unmanaged[SuppressGCTransition]<ID3D12VideoProcessCommandList*, D3D12_COMMAND_LIST_TYPE> GetType;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<ID3D12VideoProcessCommandList*, int> Close;

@@ -65,14 +65,14 @@ public unsafe partial struct ID2D1RadialGradientBrush : ID2D1RadialGradientBrush
     [VtblIndex(6)]
     public float GetOpacity()
     {
-        return ((delegate* unmanaged<ID2D1RadialGradientBrush*, float>)(lpVtbl[6]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1RadialGradientBrush*, float>)(lpVtbl[6]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
     {
-        ((delegate* unmanaged<ID2D1RadialGradientBrush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[7]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this), transform);
+        ((delegate* unmanaged[SuppressGCTransition]<ID2D1RadialGradientBrush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[7]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this), transform);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -109,7 +109,7 @@ public unsafe partial struct ID2D1RadialGradientBrush : ID2D1RadialGradientBrush
     public D2D_POINT_2F GetCenter()
     {
         D2D_POINT_2F result;
-        return *((delegate* unmanaged<ID2D1RadialGradientBrush*, D2D_POINT_2F*, D2D_POINT_2F*>)(lpVtbl[12]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged[SuppressGCTransition]<ID2D1RadialGradientBrush*, D2D_POINT_2F*, D2D_POINT_2F*>)(lpVtbl[12]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this), &result);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -118,21 +118,21 @@ public unsafe partial struct ID2D1RadialGradientBrush : ID2D1RadialGradientBrush
     public D2D_POINT_2F GetGradientOriginOffset()
     {
         D2D_POINT_2F result;
-        return *((delegate* unmanaged<ID2D1RadialGradientBrush*, D2D_POINT_2F*, D2D_POINT_2F*>)(lpVtbl[13]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged[SuppressGCTransition]<ID2D1RadialGradientBrush*, D2D_POINT_2F*, D2D_POINT_2F*>)(lpVtbl[13]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this), &result);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public float GetRadiusX()
     {
-        return ((delegate* unmanaged<ID2D1RadialGradientBrush*, float>)(lpVtbl[14]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1RadialGradientBrush*, float>)(lpVtbl[14]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public float GetRadiusY()
     {
-        return ((delegate* unmanaged<ID2D1RadialGradientBrush*, float>)(lpVtbl[15]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1RadialGradientBrush*, float>)(lpVtbl[15]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -195,10 +195,10 @@ public unsafe partial struct ID2D1RadialGradientBrush : ID2D1RadialGradientBrush
         public delegate* unmanaged<ID2D1RadialGradientBrush*, D2D_MATRIX_3X2_F*, void> SetTransform;
 
         [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1RadialGradientBrush*, float> GetOpacity;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1RadialGradientBrush*, float> GetOpacity;
 
         [NativeTypeName("void (D2D1_MATRIX_3X2_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1RadialGradientBrush*, D2D_MATRIX_3X2_F*, void> GetTransform;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1RadialGradientBrush*, D2D_MATRIX_3X2_F*, void> GetTransform;
 
         [NativeTypeName("void (D2D1_POINT_2F) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<ID2D1RadialGradientBrush*, D2D_POINT_2F, void> SetCenter;
@@ -213,16 +213,16 @@ public unsafe partial struct ID2D1RadialGradientBrush : ID2D1RadialGradientBrush
         public delegate* unmanaged<ID2D1RadialGradientBrush*, float, void> SetRadiusY;
 
         [NativeTypeName("D2D1_POINT_2F () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1RadialGradientBrush*, D2D_POINT_2F*, D2D_POINT_2F*> GetCenter;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1RadialGradientBrush*, D2D_POINT_2F*, D2D_POINT_2F*> GetCenter;
 
         [NativeTypeName("D2D1_POINT_2F () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1RadialGradientBrush*, D2D_POINT_2F*, D2D_POINT_2F*> GetGradientOriginOffset;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1RadialGradientBrush*, D2D_POINT_2F*, D2D_POINT_2F*> GetGradientOriginOffset;
 
         [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1RadialGradientBrush*, float> GetRadiusX;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1RadialGradientBrush*, float> GetRadiusX;
 
         [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1RadialGradientBrush*, float> GetRadiusY;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1RadialGradientBrush*, float> GetRadiusY;
 
         [NativeTypeName("void (ID2D1GradientStopCollection **) const __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<ID2D1RadialGradientBrush*, ID2D1GradientStopCollection**, void> GetGradientStopCollection;

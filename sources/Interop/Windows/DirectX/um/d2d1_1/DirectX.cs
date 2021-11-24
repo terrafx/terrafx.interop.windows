@@ -21,11 +21,14 @@ public static unsafe partial class DirectX
     public static extern DXGI_RGBA D2D1ConvertColorSpace(D2D1_COLOR_SPACE sourceColorSpace, D2D1_COLOR_SPACE destinationColorSpace, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color);
 
     [DllImport("d2d1", ExactSpelling = true)]
+    [SuppressGCTransition]
     public static extern void D2D1SinCos(float angle, float* s, float* c);
 
     [DllImport("d2d1", ExactSpelling = true)]
+    [SuppressGCTransition]
     public static extern float D2D1Tan(float angle);
 
     [DllImport("d2d1", ExactSpelling = true)]
+    [SuppressGCTransition]
     public static extern float D2D1Vec3Length(float x, float y, float z);
 }

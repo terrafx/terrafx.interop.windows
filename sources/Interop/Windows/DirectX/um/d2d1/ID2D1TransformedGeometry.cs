@@ -209,7 +209,7 @@ public unsafe partial struct ID2D1TransformedGeometry : ID2D1TransformedGeometry
     [VtblIndex(18)]
     public void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
     {
-        ((delegate* unmanaged<ID2D1TransformedGeometry*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[18]))((ID2D1TransformedGeometry*)Unsafe.AsPointer(ref this), transform);
+        ((delegate* unmanaged[SuppressGCTransition]<ID2D1TransformedGeometry*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[18]))((ID2D1TransformedGeometry*)Unsafe.AsPointer(ref this), transform);
     }
 
     public interface Interface : ID2D1Geometry.Interface
@@ -278,6 +278,6 @@ public unsafe partial struct ID2D1TransformedGeometry : ID2D1TransformedGeometry
         public delegate* unmanaged<ID2D1TransformedGeometry*, ID2D1Geometry**, void> GetSourceGeometry;
 
         [NativeTypeName("void (D2D1_MATRIX_3X2_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1TransformedGeometry*, D2D_MATRIX_3X2_F*, void> GetTransform;
+        public delegate* unmanaged[SuppressGCTransition]<ID2D1TransformedGeometry*, D2D_MATRIX_3X2_F*, void> GetTransform;
     }
 }

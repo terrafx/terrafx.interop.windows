@@ -44,7 +44,7 @@ public unsafe partial struct ID3D12ShaderReflection : ID3D12ShaderReflection.Int
     [VtblIndex(3)]
     public HRESULT GetDesc(D3D12_SHADER_DESC* pDesc)
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflection*, D3D12_SHADER_DESC*, int>)(lpVtbl[3]))((ID3D12ShaderReflection*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflection*, D3D12_SHADER_DESC*, int>)(lpVtbl[3]))((ID3D12ShaderReflection*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -107,49 +107,49 @@ public unsafe partial struct ID3D12ShaderReflection : ID3D12ShaderReflection.Int
     [VtblIndex(12)]
     public uint GetMovInstructionCount()
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflection*, uint>)(lpVtbl[12]))((ID3D12ShaderReflection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflection*, uint>)(lpVtbl[12]))((ID3D12ShaderReflection*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public uint GetMovcInstructionCount()
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflection*, uint>)(lpVtbl[13]))((ID3D12ShaderReflection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflection*, uint>)(lpVtbl[13]))((ID3D12ShaderReflection*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public uint GetConversionInstructionCount()
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflection*, uint>)(lpVtbl[14]))((ID3D12ShaderReflection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflection*, uint>)(lpVtbl[14]))((ID3D12ShaderReflection*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public uint GetBitwiseInstructionCount()
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflection*, uint>)(lpVtbl[15]))((ID3D12ShaderReflection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflection*, uint>)(lpVtbl[15]))((ID3D12ShaderReflection*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public D3D_PRIMITIVE GetGSInputPrimitive()
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflection*, D3D_PRIMITIVE>)(lpVtbl[16]))((ID3D12ShaderReflection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflection*, D3D_PRIMITIVE>)(lpVtbl[16]))((ID3D12ShaderReflection*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public BOOL IsSampleFrequencyShader()
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflection*, int>)(lpVtbl[17]))((ID3D12ShaderReflection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflection*, int>)(lpVtbl[17]))((ID3D12ShaderReflection*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public uint GetNumInterfaceSlots()
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflection*, uint>)(lpVtbl[18]))((ID3D12ShaderReflection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflection*, uint>)(lpVtbl[18]))((ID3D12ShaderReflection*)Unsafe.AsPointer(ref this));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -163,7 +163,7 @@ public unsafe partial struct ID3D12ShaderReflection : ID3D12ShaderReflection.Int
     [VtblIndex(20)]
     public uint GetThreadGroupSize(uint* pSizeX, uint* pSizeY, uint* pSizeZ)
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflection*, uint*, uint*, uint*, uint>)(lpVtbl[20]))((ID3D12ShaderReflection*)Unsafe.AsPointer(ref this), pSizeX, pSizeY, pSizeZ);
+        return ((delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflection*, uint*, uint*, uint*, uint>)(lpVtbl[20]))((ID3D12ShaderReflection*)Unsafe.AsPointer(ref this), pSizeX, pSizeY, pSizeZ);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -171,7 +171,7 @@ public unsafe partial struct ID3D12ShaderReflection : ID3D12ShaderReflection.Int
     [return: NativeTypeName("UINT64")]
     public ulong GetRequiresFlags()
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflection*, ulong>)(lpVtbl[21]))((ID3D12ShaderReflection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflection*, ulong>)(lpVtbl[21]))((ID3D12ShaderReflection*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -247,7 +247,7 @@ public unsafe partial struct ID3D12ShaderReflection : ID3D12ShaderReflection.Int
         public delegate* unmanaged<ID3D12ShaderReflection*, uint> Release;
 
         [NativeTypeName("HRESULT (D3D12_SHADER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12ShaderReflection*, D3D12_SHADER_DESC*, int> GetDesc;
+        public delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflection*, D3D12_SHADER_DESC*, int> GetDesc;
 
         [NativeTypeName("ID3D12ShaderReflectionConstantBuffer *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<ID3D12ShaderReflection*, uint, ID3D12ShaderReflectionConstantBuffer*> GetConstantBufferByIndex;
@@ -274,33 +274,33 @@ public unsafe partial struct ID3D12ShaderReflection : ID3D12ShaderReflection.Int
         public delegate* unmanaged<ID3D12ShaderReflection*, sbyte*, D3D12_SHADER_INPUT_BIND_DESC*, int> GetResourceBindingDescByName;
 
         [NativeTypeName("UINT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12ShaderReflection*, uint> GetMovInstructionCount;
+        public delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflection*, uint> GetMovInstructionCount;
 
         [NativeTypeName("UINT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12ShaderReflection*, uint> GetMovcInstructionCount;
+        public delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflection*, uint> GetMovcInstructionCount;
 
         [NativeTypeName("UINT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12ShaderReflection*, uint> GetConversionInstructionCount;
+        public delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflection*, uint> GetConversionInstructionCount;
 
         [NativeTypeName("UINT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12ShaderReflection*, uint> GetBitwiseInstructionCount;
+        public delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflection*, uint> GetBitwiseInstructionCount;
 
         [NativeTypeName("D3D_PRIMITIVE () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12ShaderReflection*, D3D_PRIMITIVE> GetGSInputPrimitive;
+        public delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflection*, D3D_PRIMITIVE> GetGSInputPrimitive;
 
         [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12ShaderReflection*, int> IsSampleFrequencyShader;
+        public delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflection*, int> IsSampleFrequencyShader;
 
         [NativeTypeName("UINT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12ShaderReflection*, uint> GetNumInterfaceSlots;
+        public delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflection*, uint> GetNumInterfaceSlots;
 
         [NativeTypeName("HRESULT (enum D3D_FEATURE_LEVEL *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<ID3D12ShaderReflection*, D3D_FEATURE_LEVEL*, int> GetMinFeatureLevel;
 
         [NativeTypeName("UINT (UINT *, UINT *, UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12ShaderReflection*, uint*, uint*, uint*, uint> GetThreadGroupSize;
+        public delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflection*, uint*, uint*, uint*, uint> GetThreadGroupSize;
 
         [NativeTypeName("UINT64 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12ShaderReflection*, ulong> GetRequiresFlags;
+        public delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflection*, ulong> GetRequiresFlags;
     }
 }
